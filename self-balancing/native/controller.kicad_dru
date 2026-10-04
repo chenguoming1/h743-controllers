@@ -8,5 +8,26 @@
   (constraint clearance (min 0.160mm)))
 
 (rule "P3 calculated USB data width"
-  (condition "A.NetName == '/power/USB_DM_CONN' || A.NetName == '/power/USB_DP_CONN' || A.NetName == '/power/USB_DM_ESD' || A.NetName == '/power/USB_DP_ESD' || A.NetName == 'USB_DM_MCU' || A.NetName == 'USB_DP_MCU'")
-  (constraint track_width (min 0.1392mm) (max 0.1392mm)))
+  (condition "A.NetName == '/power/USB_CONN_N' || A.NetName == '/power/USB_CONN_P' || A.NetName == '/power/USB_ESD_N' || A.NetName == '/power/USB_ESD_P' || A.NetName == 'USB_MCU_N' || A.NetName == 'USB_MCU_P'")
+  (constraint track_width (min 0.1392mm) (opt 0.1392mm) (max 0.1392mm)))
+
+# The P6 controlled-impedance basis is 0.1392 mm width / 0.1600 mm gap.
+# These DRC bounds check routed geometry, not measured 90-ohm impedance.
+# The 2 mm uncoupled and 1 mm skew caps are provisional review thresholds.
+# Apply each skew check to one physical segment so separate USB branches
+# are not compared against each other.
+(rule "USB connector pair geometry"
+  (condition "A.inDiffPair('/power/USB_CONN_')")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 0.165mm))
+  (constraint diff_pair_uncoupled (max 2mm))
+  (constraint skew (max 1mm)))
+(rule "USB ESD pair geometry"
+  (condition "A.inDiffPair('/power/USB_ESD_')")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 0.165mm))
+  (constraint diff_pair_uncoupled (max 2mm))
+  (constraint skew (max 1mm)))
+(rule "USB MCU pair geometry"
+  (condition "A.inDiffPair('USB_MCU_')")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 0.165mm))
+  (constraint diff_pair_uncoupled (max 2mm))
+  (constraint skew (max 1mm)))
