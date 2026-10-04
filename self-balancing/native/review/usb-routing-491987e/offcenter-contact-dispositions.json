@@ -1,0 +1,3390 @@
+{
+  "status": "ALL OFF-CENTER PROMPTS MATCH PASSING PHYSICAL ATTACHMENTS",
+  "final_sha256": "89886cf0ecfdb62a90a56810d75ac765d837435076423a0c173a33a3647a4579",
+  "baseline_sha256": "a085a9764d787c6b587198927b2fb03e2fb5e284838a609465c762d1c485020f",
+  "source_files_sha256": {
+    "all-diagnostics/drc.json": "aa4969bc2ca839595300bf4fec9d923128552f61537b35729fb13ecd80f1b54d",
+    "physical-final-89886cf0/vias.json": "fe08ab530bef05bf7cd63f4e100f90cf98919caa9b779bcd2fdfee7aa06b2579",
+    "physical-final-89886cf0/scope-topology-reference.json": "02837aa2c0f19681dbc93148bb2feb8ef61ddd83c5601d21cc5df09138b6b30e"
+  },
+  "summary": {
+    "warning_count": 48,
+    "matched_warning_count": 48,
+    "unmapped_warning_count": 0,
+    "physical_group_pass_warning_count": 48,
+    "shallow_warning_count": 0,
+    "unchanged_pair_geometry_warning_count": 48,
+    "warning_pairs_touching_changed_items_count": 0,
+    "contained_group_warning_count": 0,
+    "single_track_group_warning_count": 35,
+    "multi_track_group_warning_count": 13,
+    "ground_warning_count": 6
+  },
+  "thresholds": {
+    "mid_annulus_radial_fraction": 0.5,
+    "minimum_largest_mid_annulus_contact_arc_fraction_of_incident_width": 0.5,
+    "regression_comparison_tolerance_mm": 1e-06
+  },
+  "warnings": [
+    {
+      "warning_index": 0,
+      "via_uuid": "17fbab60-e62d-4ca4-94b3-b2db11ac3491",
+      "track_uuid": "0d61e874-020e-4f54-bab1-929141bd168f",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [EXT_SENSOR_INT] on B.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 11.2,
+              "y": 17.5
+            },
+            "uuid": "0d61e874-020e-4f54-bab1-929141bd168f"
+          },
+          {
+            "description": "Via [EXT_SENSOR_INT] on F.Cu - B.Cu",
+            "pos": {
+              "x": 11.425,
+              "y": 17.6
+            },
+            "uuid": "17fbab60-e62d-4ca4-94b3-b2db11ac3491"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "17fbab60-e62d-4ca4-94b3-b2db11ac3491:B.Cu",
+          "group_index": 0,
+          "net": "EXT_SENSOR_INT",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            11.425,
+            17.6
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "0d61e874-020e-4f54-bab1-929141bd168f",
+            "net": "EXT_SENSOR_INT",
+            "layer": "B.Cu",
+            "start_mm": [
+              11.2,
+              17.5
+            ],
+            "end_mm": [
+              11.25,
+              17.55
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8639780221438893,
+          "largest_mid_annulus_contact_arc_mm": 0.1178446730465927,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "0d61e874-020e-4f54-bab1-929141bd168f",
+            "571ddd95-164b-4210-b11f-62b2f72e421b"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 1,
+      "via_uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250",
+      "track_uuid": "30e31311-a25f-4687-81b1-90586f916c04",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 31.8,
+              "y": 28.25
+            },
+            "uuid": "30e31311-a25f-4687-81b1-90586f916c04"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 32.0,
+              "y": 28.1
+            },
+            "uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b7b32f09-4e97-486c-b882-cb6fa86fc250:F.Cu",
+          "group_index": 0,
+          "net": "GND",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            32.0,
+            28.1
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "30e31311-a25f-4687-81b1-90586f916c04",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start_mm": [
+              31.8,
+              28.25
+            ],
+            "end_mm": [
+              31.85,
+              28.2
+            ],
+            "width_mm": 0.2
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 6,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.23456010732886334,
+          "required_half_incident_width_mm": 0.1,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U6.2"
+          ],
+          "group_tracks": [
+            "30e31311-a25f-4687-81b1-90586f916c04",
+            "6b6fd83e-c64f-4a34-869c-7221d49349db",
+            "86bb819a-06ae-4342-b48a-1dd790f39a6a",
+            "914e48a3-fd58-4731-abcd-97178ae3dfc4",
+            "c37f7216-f0e6-4231-9387-534f3dca77f5",
+            "ffbfd200-a13c-453a-b304-83aabed58b83"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 2,
+      "via_uuid": "5a99b71c-9112-4f29-8abb-504e1cecee99",
+      "track_uuid": "4ce045cc-55f3-4285-a56e-508145d0ea38",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.5375 mm",
+            "pos": {
+              "x": 7.4,
+              "y": 30.5125
+            },
+            "uuid": "4ce045cc-55f3-4285-a56e-508145d0ea38"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 7.4,
+              "y": 31.15
+            },
+            "uuid": "5a99b71c-9112-4f29-8abb-504e1cecee99"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "5a99b71c-9112-4f29-8abb-504e1cecee99:F.Cu",
+          "group_index": 0,
+          "net": "GND",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            7.4,
+            31.15
+          ],
+          "via_diameter_mm": 0.5,
+          "drill_mm": 0.25,
+          "track": {
+            "uuid": "4ce045cc-55f3-4285-a56e-508145d0ea38",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start_mm": [
+              7.4,
+              30.5125
+            ],
+            "end_mm": [
+              7.4,
+              31.05
+            ],
+            "width_mm": 0.3
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.5190045638681107,
+          "required_half_incident_width_mm": 0.15,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U3.7"
+          ],
+          "group_tracks": [
+            "4ce045cc-55f3-4285-a56e-508145d0ea38",
+            "6db758ef-0c40-4619-a684-8045f0f05eb4"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 3,
+      "via_uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250",
+      "track_uuid": "6b6fd83e-c64f-4a34-869c-7221d49349db",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.0500 mm",
+            "pos": {
+              "x": 31.95,
+              "y": 28.15
+            },
+            "uuid": "6b6fd83e-c64f-4a34-869c-7221d49349db"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 32.0,
+              "y": 28.1
+            },
+            "uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b7b32f09-4e97-486c-b882-cb6fa86fc250:F.Cu",
+          "group_index": 0,
+          "net": "GND",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            32.0,
+            28.1
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "6b6fd83e-c64f-4a34-869c-7221d49349db",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start_mm": [
+              31.95,
+              28.15
+            ],
+            "end_mm": [
+              32.0,
+              28.15
+            ],
+            "width_mm": 0.2
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 6,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.23456010732886334,
+          "required_half_incident_width_mm": 0.1,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U6.2"
+          ],
+          "group_tracks": [
+            "30e31311-a25f-4687-81b1-90586f916c04",
+            "6b6fd83e-c64f-4a34-869c-7221d49349db",
+            "86bb819a-06ae-4342-b48a-1dd790f39a6a",
+            "914e48a3-fd58-4731-abcd-97178ae3dfc4",
+            "c37f7216-f0e6-4231-9387-534f3dca77f5",
+            "ffbfd200-a13c-453a-b304-83aabed58b83"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 4,
+      "via_uuid": "5a99b71c-9112-4f29-8abb-504e1cecee99",
+      "track_uuid": "6db758ef-0c40-4619-a684-8045f0f05eb4",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.5000 mm",
+            "pos": {
+              "x": 7.4,
+              "y": 31.05
+            },
+            "uuid": "6db758ef-0c40-4619-a684-8045f0f05eb4"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 7.4,
+              "y": 31.15
+            },
+            "uuid": "5a99b71c-9112-4f29-8abb-504e1cecee99"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "5a99b71c-9112-4f29-8abb-504e1cecee99:F.Cu",
+          "group_index": 0,
+          "net": "GND",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            7.4,
+            31.15
+          ],
+          "via_diameter_mm": 0.5,
+          "drill_mm": 0.25,
+          "track": {
+            "uuid": "6db758ef-0c40-4619-a684-8045f0f05eb4",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start_mm": [
+              7.4,
+              31.05
+            ],
+            "end_mm": [
+              6.9,
+              31.05
+            ],
+            "width_mm": 0.3
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.5190045638681107,
+          "required_half_incident_width_mm": 0.15,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U3.7"
+          ],
+          "group_tracks": [
+            "4ce045cc-55f3-4285-a56e-508145d0ea38",
+            "6db758ef-0c40-4619-a684-8045f0f05eb4"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 5,
+      "via_uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250",
+      "track_uuid": "86bb819a-06ae-4342-b48a-1dd790f39a6a",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.0500 mm",
+            "pos": {
+              "x": 31.85,
+              "y": 28.2
+            },
+            "uuid": "86bb819a-06ae-4342-b48a-1dd790f39a6a"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 32.0,
+              "y": 28.1
+            },
+            "uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b7b32f09-4e97-486c-b882-cb6fa86fc250:F.Cu",
+          "group_index": 0,
+          "net": "GND",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            32.0,
+            28.1
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "86bb819a-06ae-4342-b48a-1dd790f39a6a",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start_mm": [
+              31.85,
+              28.2
+            ],
+            "end_mm": [
+              31.9,
+              28.2
+            ],
+            "width_mm": 0.2
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 6,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.23456010732886334,
+          "required_half_incident_width_mm": 0.1,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U6.2"
+          ],
+          "group_tracks": [
+            "30e31311-a25f-4687-81b1-90586f916c04",
+            "6b6fd83e-c64f-4a34-869c-7221d49349db",
+            "86bb819a-06ae-4342-b48a-1dd790f39a6a",
+            "914e48a3-fd58-4731-abcd-97178ae3dfc4",
+            "c37f7216-f0e6-4231-9387-534f3dca77f5",
+            "ffbfd200-a13c-453a-b304-83aabed58b83"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 6,
+      "via_uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250",
+      "track_uuid": "c37f7216-f0e6-4231-9387-534f3dca77f5",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [GND] on F.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 31.9,
+              "y": 28.2
+            },
+            "uuid": "c37f7216-f0e6-4231-9387-534f3dca77f5"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 32.0,
+              "y": 28.1
+            },
+            "uuid": "b7b32f09-4e97-486c-b882-cb6fa86fc250"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b7b32f09-4e97-486c-b882-cb6fa86fc250:F.Cu",
+          "group_index": 0,
+          "net": "GND",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            32.0,
+            28.1
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "c37f7216-f0e6-4231-9387-534f3dca77f5",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start_mm": [
+              31.9,
+              28.2
+            ],
+            "end_mm": [
+              31.95,
+              28.15
+            ],
+            "width_mm": 0.2
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 6,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.23456010732886334,
+          "required_half_incident_width_mm": 0.1,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U6.2"
+          ],
+          "group_tracks": [
+            "30e31311-a25f-4687-81b1-90586f916c04",
+            "6b6fd83e-c64f-4a34-869c-7221d49349db",
+            "86bb819a-06ae-4342-b48a-1dd790f39a6a",
+            "914e48a3-fd58-4731-abcd-97178ae3dfc4",
+            "c37f7216-f0e6-4231-9387-534f3dca77f5",
+            "ffbfd200-a13c-453a-b304-83aabed58b83"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 7,
+      "via_uuid": "0bb6ca1f-3003-4e77-acbe-f0b5bb954bb0",
+      "track_uuid": "48c25beb-95f8-4757-a9e4-9853b221a695",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [VLOGIC_IN] on B.Cu, length 1.9000 mm",
+            "pos": {
+              "x": 20.5,
+              "y": 7.5
+            },
+            "uuid": "48c25beb-95f8-4757-a9e4-9853b221a695"
+          },
+          {
+            "description": "Via [VLOGIC_IN] on F.Cu - B.Cu",
+            "pos": {
+              "x": 20.5,
+              "y": 9.35
+            },
+            "uuid": "0bb6ca1f-3003-4e77-acbe-f0b5bb954bb0"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "0bb6ca1f-3003-4e77-acbe-f0b5bb954bb0:B.Cu",
+          "group_index": 0,
+          "net": "VLOGIC_IN",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            20.5,
+            9.35
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "48c25beb-95f8-4757-a9e4-9853b221a695",
+            "net": "VLOGIC_IN",
+            "layer": "B.Cu",
+            "start_mm": [
+              20.5,
+              7.5
+            ],
+            "end_mm": [
+              20.5,
+              9.4
+            ],
+            "width_mm": 0.3
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.38220169230591894,
+          "required_half_incident_width_mm": 0.15,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "48c25beb-95f8-4757-a9e4-9853b221a695"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 8,
+      "via_uuid": "0b84655d-7512-40fa-8360-adc780d0a408",
+      "track_uuid": "4cace8da-594f-448b-8071-60ec1d45f14f",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART2_RX] on In2.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 20.125,
+              "y": 3.0
+            },
+            "uuid": "4cace8da-594f-448b-8071-60ec1d45f14f"
+          },
+          {
+            "description": "Via [UART2_RX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 20.1925,
+              "y": 2.8775
+            },
+            "uuid": "0b84655d-7512-40fa-8360-adc780d0a408"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "0b84655d-7512-40fa-8360-adc780d0a408:In2.Cu",
+          "group_index": 0,
+          "net": "UART2_RX",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            20.1925,
+            2.8775
+          ],
+          "via_diameter_mm": 0.35,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "4cace8da-594f-448b-8071-60ec1d45f14f",
+            "net": "UART2_RX",
+            "layer": "In2.Cu",
+            "start_mm": [
+              20.125,
+              3.0
+            ],
+            "end_mm": [
+              20.025,
+              3.1
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13002122193896293,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "4cace8da-594f-448b-8071-60ec1d45f14f"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 9,
+      "via_uuid": "529e9dd5-d864-457a-91ea-aa2083ad95fc",
+      "track_uuid": "505aa93e-8af5-4ccf-b35b-5eb6219e4329",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [NRST] on In2.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 12.95,
+              "y": 19.05
+            },
+            "uuid": "505aa93e-8af5-4ccf-b35b-5eb6219e4329"
+          },
+          {
+            "description": "Via [NRST] on F.Cu - B.Cu",
+            "pos": {
+              "x": 13.05,
+              "y": 19.2
+            },
+            "uuid": "529e9dd5-d864-457a-91ea-aa2083ad95fc"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "529e9dd5-d864-457a-91ea-aa2083ad95fc:In2.Cu",
+          "group_index": 0,
+          "net": "NRST",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            13.05,
+            19.2
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "505aa93e-8af5-4ccf-b35b-5eb6219e4329",
+            "net": "NRST",
+            "layer": "In2.Cu",
+            "start_mm": [
+              12.95,
+              19.05
+            ],
+            "end_mm": [
+              12.85,
+              18.95
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144076,
+          "largest_mid_annulus_contact_arc_mm": 0.11938809084463978,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "505aa93e-8af5-4ccf-b35b-5eb6219e4329"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 10,
+      "via_uuid": "8d81d7ac-ae3d-4af5-8fb3-77f4e78371b2",
+      "track_uuid": "91a495cf-a103-44f4-9b8e-3e9be824e8e0",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [NRST] on In2.Cu, length 15.4000 mm",
+            "pos": {
+              "x": 0.75,
+              "y": 20.1
+            },
+            "uuid": "91a495cf-a103-44f4-9b8e-3e9be824e8e0"
+          },
+          {
+            "description": "Via [NRST] on F.Cu - B.Cu",
+            "pos": {
+              "x": 0.7,
+              "y": 19.95
+            },
+            "uuid": "8d81d7ac-ae3d-4af5-8fb3-77f4e78371b2"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "8d81d7ac-ae3d-4af5-8fb3-77f4e78371b2:In2.Cu",
+          "group_index": 0,
+          "net": "NRST",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            0.7,
+            19.95
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "91a495cf-a103-44f4-9b8e-3e9be824e8e0",
+            "net": "NRST",
+            "layer": "In2.Cu",
+            "start_mm": [
+              0.75,
+              20.1
+            ],
+            "end_mm": [
+              0.75,
+              35.5
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.15399468479842882,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "91a495cf-a103-44f4-9b8e-3e9be824e8e0"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 11,
+      "via_uuid": "b3534f08-8641-4f21-835f-89452c69716b",
+      "track_uuid": "911fa9aa-079f-43cf-865e-e979d5d604d4",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [STACK_5V_GOOD] on F.Cu, length 3.7477 mm",
+            "pos": {
+              "x": 21.85,
+              "y": 14.55
+            },
+            "uuid": "911fa9aa-079f-43cf-865e-e979d5d604d4"
+          },
+          {
+            "description": "Via [STACK_5V_GOOD] on F.Cu - B.Cu",
+            "pos": {
+              "x": 22.0,
+              "y": 14.45
+            },
+            "uuid": "b3534f08-8641-4f21-835f-89452c69716b"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b3534f08-8641-4f21-835f-89452c69716b:F.Cu",
+          "group_index": 0,
+          "net": "STACK_5V_GOOD",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            22.0,
+            14.45
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "911fa9aa-079f-43cf-865e-e979d5d604d4",
+            "net": "STACK_5V_GOOD",
+            "layer": "F.Cu",
+            "start_mm": [
+              21.85,
+              14.55
+            ],
+            "end_mm": [
+              19.2,
+              17.2
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144076,
+          "largest_mid_annulus_contact_arc_mm": 0.11938809084463978,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "911fa9aa-079f-43cf-865e-e979d5d604d4"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 12,
+      "via_uuid": "ab7ea46c-d602-42f1-884e-f82366236f62",
+      "track_uuid": "04c3d4da-9e18-40b9-b826-5a56974eb997",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [STACK_5V_GOOD] on In2.Cu, length 0.5657 mm",
+            "pos": {
+              "x": 21.85,
+              "y": 16.55
+            },
+            "uuid": "04c3d4da-9e18-40b9-b826-5a56974eb997"
+          },
+          {
+            "description": "Via [STACK_5V_GOOD] on F.Cu - B.Cu",
+            "pos": {
+              "x": 22.0,
+              "y": 16.45
+            },
+            "uuid": "ab7ea46c-d602-42f1-884e-f82366236f62"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "ab7ea46c-d602-42f1-884e-f82366236f62:In2.Cu",
+          "group_index": 0,
+          "net": "STACK_5V_GOOD",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            22.0,
+            16.45
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "04c3d4da-9e18-40b9-b826-5a56974eb997",
+            "net": "STACK_5V_GOOD",
+            "layer": "In2.Cu",
+            "start_mm": [
+              21.85,
+              16.55
+            ],
+            "end_mm": [
+              21.45,
+              16.95
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144076,
+          "largest_mid_annulus_contact_arc_mm": 0.11938809084463978,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "04c3d4da-9e18-40b9-b826-5a56974eb997"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 13,
+      "via_uuid": "e79e3ba8-5bbe-41f9-afae-ac4734a95d97",
+      "track_uuid": "dafecd4b-c53a-46fd-84dc-3537f863e00a",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [EXT_SPI_MOSI] on In2.Cu, length 4.9500 mm",
+            "pos": {
+              "x": 17.55,
+              "y": 34.65
+            },
+            "uuid": "dafecd4b-c53a-46fd-84dc-3537f863e00a"
+          },
+          {
+            "description": "Via [EXT_SPI_MOSI] on F.Cu - B.Cu",
+            "pos": {
+              "x": 17.5,
+              "y": 34.8
+            },
+            "uuid": "e79e3ba8-5bbe-41f9-afae-ac4734a95d97"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "e79e3ba8-5bbe-41f9-afae-ac4734a95d97:In2.Cu",
+          "group_index": 0,
+          "net": "EXT_SPI_MOSI",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            17.5,
+            34.8
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "dafecd4b-c53a-46fd-84dc-3537f863e00a",
+            "net": "EXT_SPI_MOSI",
+            "layer": "In2.Cu",
+            "start_mm": [
+              17.55,
+              34.65
+            ],
+            "end_mm": [
+              17.55,
+              29.7
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.14670033834811924,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "dafecd4b-c53a-46fd-84dc-3537f863e00a"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 14,
+      "via_uuid": "f61e86b2-2d6f-430c-af31-0b2347152328",
+      "track_uuid": "3b0e2885-c488-42fb-9cc5-d12386674695",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [+5V_STACK] on In2.Cu, length 0.8000 mm",
+            "pos": {
+              "x": 27.85,
+              "y": 4.35
+            },
+            "uuid": "3b0e2885-c488-42fb-9cc5-d12386674695"
+          },
+          {
+            "description": "Via [+5V_STACK] on F.Cu - B.Cu",
+            "pos": {
+              "x": 27.85,
+              "y": 3.4
+            },
+            "uuid": "f61e86b2-2d6f-430c-af31-0b2347152328"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "f61e86b2-2d6f-430c-af31-0b2347152328:In2.Cu",
+          "group_index": 0,
+          "net": "+5V_STACK",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            27.85,
+            3.4
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "3b0e2885-c488-42fb-9cc5-d12386674695",
+            "net": "+5V_STACK",
+            "layer": "In2.Cu",
+            "start_mm": [
+              27.85,
+              4.35
+            ],
+            "end_mm": [
+              27.85,
+              3.55
+            ],
+            "width_mm": 0.45
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.5219695146828104,
+          "required_half_incident_width_mm": 0.225,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "3b0e2885-c488-42fb-9cc5-d12386674695"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 15,
+      "via_uuid": "950ce320-2cad-43ae-98d7-36b833785f1d",
+      "track_uuid": "c3a268eb-d411-45c4-87a8-67e594673fc1",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART1_TX] on F.Cu, length 0.4500 mm",
+            "pos": {
+              "x": 11.7,
+              "y": 2.4
+            },
+            "uuid": "c3a268eb-d411-45c4-87a8-67e594673fc1"
+          },
+          {
+            "description": "Via [UART1_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 11.7,
+              "y": 2.9
+            },
+            "uuid": "950ce320-2cad-43ae-98d7-36b833785f1d"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "950ce320-2cad-43ae-98d7-36b833785f1d:F.Cu",
+          "group_index": 0,
+          "net": "UART1_TX",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            11.7,
+            2.9
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "c3a268eb-d411-45c4-87a8-67e594673fc1",
+            "net": "UART1_TX",
+            "layer": "F.Cu",
+            "start_mm": [
+              11.7,
+              2.4
+            ],
+            "end_mm": [
+              11.7,
+              2.85
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13374297497193355,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "J103.1"
+          ],
+          "group_tracks": [
+            "c3a268eb-d411-45c4-87a8-67e594673fc1"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 16,
+      "via_uuid": "950ce320-2cad-43ae-98d7-36b833785f1d",
+      "track_uuid": "6da9da1a-d01f-4b61-a1c9-19fd1b0ee90b",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART1_TX] on B.Cu, length 1.2200 mm",
+            "pos": {
+              "x": 11.525,
+              "y": 2.775
+            },
+            "uuid": "6da9da1a-d01f-4b61-a1c9-19fd1b0ee90b"
+          },
+          {
+            "description": "Via [UART1_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 11.7,
+              "y": 2.9
+            },
+            "uuid": "950ce320-2cad-43ae-98d7-36b833785f1d"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "950ce320-2cad-43ae-98d7-36b833785f1d:B.Cu",
+          "group_index": 0,
+          "net": "UART1_TX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            11.7,
+            2.9
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "6da9da1a-d01f-4b61-a1c9-19fd1b0ee90b",
+            "net": "UART1_TX",
+            "layer": "B.Cu",
+            "start_mm": [
+              11.525,
+              2.775
+            ],
+            "end_mm": [
+              10.305,
+              2.775
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.5995349465914817,
+          "largest_mid_annulus_contact_arc_mm": 0.06660520420905629,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "6da9da1a-d01f-4b61-a1c9-19fd1b0ee90b"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 17,
+      "via_uuid": "de38426f-c4c8-4895-9a5b-ba47455fde75",
+      "track_uuid": "8e0c106a-d98e-47e2-8a39-2ee0fb77c689",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART1_TX] on B.Cu, length 0.0354 mm",
+            "pos": {
+              "x": 24.375,
+              "y": 17.7
+            },
+            "uuid": "8e0c106a-d98e-47e2-8a39-2ee0fb77c689"
+          },
+          {
+            "description": "Via [UART1_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 24.55,
+              "y": 17.75
+            },
+            "uuid": "de38426f-c4c8-4895-9a5b-ba47455fde75"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "de38426f-c4c8-4895-9a5b-ba47455fde75:B.Cu",
+          "group_index": 0,
+          "net": "UART1_TX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            24.55,
+            17.75
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "8e0c106a-d98e-47e2-8a39-2ee0fb77c689",
+            "net": "UART1_TX",
+            "layer": "B.Cu",
+            "start_mm": [
+              24.375,
+              17.7
+            ],
+            "end_mm": [
+              24.35,
+              17.675
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 3,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8299725276798616,
+          "largest_mid_annulus_contact_arc_mm": 0.10323152675356229,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "30039413-7939-4a44-96fb-6aab6af05fff",
+            "5278a392-32f9-4c5f-b2e2-b9153eb9f374",
+            "8e0c106a-d98e-47e2-8a39-2ee0fb77c689"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 18,
+      "via_uuid": "c0e00382-9ee2-45e2-acdb-6eb6873d26a4",
+      "track_uuid": "857317e5-cdcd-4550-a094-b45afad0a739",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART3_TX] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 30.85,
+              "y": 25.1
+            },
+            "uuid": "857317e5-cdcd-4550-a094-b45afad0a739"
+          },
+          {
+            "description": "Via [UART3_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 30.7,
+              "y": 25.2
+            },
+            "uuid": "c0e00382-9ee2-45e2-acdb-6eb6873d26a4"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "c0e00382-9ee2-45e2-acdb-6eb6873d26a4:F.Cu",
+          "group_index": 0,
+          "net": "UART3_TX",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            30.7,
+            25.2
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "857317e5-cdcd-4550-a094-b45afad0a739",
+            "net": "UART3_TX",
+            "layer": "F.Cu",
+            "start_mm": [
+              30.85,
+              25.1
+            ],
+            "end_mm": [
+              31.05,
+              25.1
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.9577794898143995,
+          "largest_mid_annulus_contact_arc_mm": 0.1401608409769179,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "857317e5-cdcd-4550-a094-b45afad0a739"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 19,
+      "via_uuid": "8480bc59-77d4-492f-8efd-f7617821c41b",
+      "track_uuid": "15dd03fc-e2d6-4eb6-8e51-9492aee6678f",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART3_TX] on B.Cu, length 0.7071 mm",
+            "pos": {
+              "x": 27.05,
+              "y": 24.45
+            },
+            "uuid": "15dd03fc-e2d6-4eb6-8e51-9492aee6678f"
+          },
+          {
+            "description": "Via [UART3_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 27.028554,
+              "y": 24.478554
+            },
+            "uuid": "8480bc59-77d4-492f-8efd-f7617821c41b"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "8480bc59-77d4-492f-8efd-f7617821c41b:B.Cu",
+          "group_index": 0,
+          "net": "UART3_TX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            27.028554,
+            24.478554
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "15dd03fc-e2d6-4eb6-8e51-9492aee6678f",
+            "net": "UART3_TX",
+            "layer": "B.Cu",
+            "start_mm": [
+              27.05,
+              24.45
+            ],
+            "end_mm": [
+              27.55,
+              24.95
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13797989775828715,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "15dd03fc-e2d6-4eb6-8e51-9492aee6678f"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 20,
+      "via_uuid": "41ab89ba-cfeb-4e89-b863-b2d7297ecf91",
+      "track_uuid": "bd419a98-fdd8-4734-ac08-3ff693710cc7",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART3_TX] on B.Cu, length 6.0104 mm",
+            "pos": {
+              "x": 29.65,
+              "y": 3.4
+            },
+            "uuid": "bd419a98-fdd8-4734-ac08-3ff693710cc7"
+          },
+          {
+            "description": "Via [UART3_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 29.5,
+              "y": 3.3
+            },
+            "uuid": "41ab89ba-cfeb-4e89-b863-b2d7297ecf91"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "41ab89ba-cfeb-4e89-b863-b2d7297ecf91:B.Cu",
+          "group_index": 0,
+          "net": "UART3_TX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            29.5,
+            3.3
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "bd419a98-fdd8-4734-ac08-3ff693710cc7",
+            "net": "UART3_TX",
+            "layer": "B.Cu",
+            "start_mm": [
+              29.65,
+              3.4
+            ],
+            "end_mm": [
+              33.9,
+              7.65
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144133,
+          "largest_mid_annulus_contact_arc_mm": 0.11938809084464039,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "bd419a98-fdd8-4734-ac08-3ff693710cc7"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 21,
+      "via_uuid": "de27960a-d294-4e8b-aa62-8885108ec314",
+      "track_uuid": "1cd38553-f4a5-4a9d-8a51-d42f6b92b584",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART4_RX] on F.Cu, length 0.7000 mm",
+            "pos": {
+              "x": 35.2,
+              "y": 14.25
+            },
+            "uuid": "1cd38553-f4a5-4a9d-8a51-d42f6b92b584"
+          },
+          {
+            "description": "Via [UART4_RX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 35.05,
+              "y": 14.35
+            },
+            "uuid": "de27960a-d294-4e8b-aa62-8885108ec314"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "de27960a-d294-4e8b-aa62-8885108ec314:F.Cu",
+          "group_index": 0,
+          "net": "UART4_RX",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            35.05,
+            14.35
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "1cd38553-f4a5-4a9d-8a51-d42f6b92b584",
+            "net": "UART4_RX",
+            "layer": "F.Cu",
+            "start_mm": [
+              35.2,
+              14.25
+            ],
+            "end_mm": [
+              35.9,
+              14.25
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.877779489814368,
+          "largest_mid_annulus_contact_arc_mm": 0.11996804675144812,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "1cd38553-f4a5-4a9d-8a51-d42f6b92b584"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 22,
+      "via_uuid": "02e67c87-6252-4810-97cc-ffeca4bb5c58",
+      "track_uuid": "3c2ba0ef-ebab-4891-9a0a-9132549035ea",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [USB_PRESENT_n] on B.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 18.9,
+              "y": 26.55
+            },
+            "uuid": "3c2ba0ef-ebab-4891-9a0a-9132549035ea"
+          },
+          {
+            "description": "Via [USB_PRESENT_n] on F.Cu - B.Cu",
+            "pos": {
+              "x": 19.1,
+              "y": 26.7
+            },
+            "uuid": "02e67c87-6252-4810-97cc-ffeca4bb5c58"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "02e67c87-6252-4810-97cc-ffeca4bb5c58:B.Cu",
+          "group_index": 0,
+          "net": "USB_PRESENT_n",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            19.1,
+            26.7
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "3c2ba0ef-ebab-4891-9a0a-9132549035ea",
+            "net": "USB_PRESENT_n",
+            "layer": "B.Cu",
+            "start_mm": [
+              18.9,
+              26.55
+            ],
+            "end_mm": [
+              18.95,
+              26.6
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898143996,
+          "largest_mid_annulus_contact_arc_mm": 0.1193880908446387,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "3c2ba0ef-ebab-4891-9a0a-9132549035ea",
+            "8ec85855-40e5-4e7e-a94d-99c6e68d5896"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 23,
+      "via_uuid": "36c33788-120d-4f4e-8e4e-7efd601c5d0d",
+      "track_uuid": "2dd308c7-d6bf-43f2-bc58-18039c063a96",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART2_TX] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 19.625,
+              "y": 2.95
+            },
+            "uuid": "2dd308c7-d6bf-43f2-bc58-18039c063a96"
+          },
+          {
+            "description": "Via [UART2_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 19.6825,
+              "y": 2.8375
+            },
+            "uuid": "36c33788-120d-4f4e-8e4e-7efd601c5d0d"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "36c33788-120d-4f4e-8e4e-7efd601c5d0d:B.Cu",
+          "group_index": 0,
+          "net": "UART2_TX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            19.6825,
+            2.8375
+          ],
+          "via_diameter_mm": 0.35,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "2dd308c7-d6bf-43f2-bc58-18039c063a96",
+            "net": "UART2_TX",
+            "layer": "B.Cu",
+            "start_mm": [
+              19.625,
+              2.95
+            ],
+            "end_mm": [
+              19.525,
+              3.05
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13677055242909733,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "2dd308c7-d6bf-43f2-bc58-18039c063a96"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 24,
+      "via_uuid": "64167f1d-999f-4dab-87db-b024fe82f97b",
+      "track_uuid": "447198a4-fabb-4279-a80c-8b21be8b2676",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [IMU_MISO] on B.Cu, length 0.5000 mm",
+            "pos": {
+              "x": 4.5,
+              "y": 28.15
+            },
+            "uuid": "447198a4-fabb-4279-a80c-8b21be8b2676"
+          },
+          {
+            "description": "Via [IMU_MISO] on F.Cu - B.Cu",
+            "pos": {
+              "x": 4.45,
+              "y": 28.85
+            },
+            "uuid": "64167f1d-999f-4dab-87db-b024fe82f97b"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "64167f1d-999f-4dab-87db-b024fe82f97b:B.Cu",
+          "group_index": 0,
+          "net": "IMU_MISO",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            4.45,
+            28.85
+          ],
+          "via_diameter_mm": 0.5,
+          "drill_mm": 0.25,
+          "track": {
+            "uuid": "447198a4-fabb-4279-a80c-8b21be8b2676",
+            "net": "IMU_MISO",
+            "layer": "B.Cu",
+            "start_mm": [
+              4.5,
+              28.15
+            ],
+            "end_mm": [
+              4.5,
+              28.65
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.870757749752914,
+          "largest_mid_annulus_contact_arc_mm": 0.11926475056980679,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "447198a4-fabb-4279-a80c-8b21be8b2676"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 25,
+      "via_uuid": "bd24a2ad-a0f0-4c6c-9bf3-715c1aa392d5",
+      "track_uuid": "a5834191-1aaa-47a4-b9ee-1449212c5a06",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [IMU_MISO] on B.Cu, length 0.3536 mm",
+            "pos": {
+              "x": 14.1,
+              "y": 30.15
+            },
+            "uuid": "a5834191-1aaa-47a4-b9ee-1449212c5a06"
+          },
+          {
+            "description": "Via [IMU_MISO] on F.Cu - B.Cu",
+            "pos": {
+              "x": 14.25,
+              "y": 30.025
+            },
+            "uuid": "bd24a2ad-a0f0-4c6c-9bf3-715c1aa392d5"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "bd24a2ad-a0f0-4c6c-9bf3-715c1aa392d5:B.Cu",
+          "group_index": 0,
+          "net": "IMU_MISO",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            14.25,
+            30.025
+          ],
+          "via_diameter_mm": 0.5,
+          "drill_mm": 0.25,
+          "track": {
+            "uuid": "a5834191-1aaa-47a4-b9ee-1449212c5a06",
+            "net": "IMU_MISO",
+            "layer": "B.Cu",
+            "start_mm": [
+              14.1,
+              30.15
+            ],
+            "end_mm": [
+              13.85,
+              30.4
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.957950064818667,
+          "largest_mid_annulus_contact_arc_mm": 0.1270889362653549,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "a5834191-1aaa-47a4-b9ee-1449212c5a06"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 26,
+      "via_uuid": "5c636725-5194-45f0-9fcd-3e2b6e7c5592",
+      "track_uuid": "5448fbf4-ef47-4a5b-b94a-8def676e4573",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [IMU_MOSI] on B.Cu, length 0.4500 mm",
+            "pos": {
+              "x": 4.95,
+              "y": 29.0
+            },
+            "uuid": "5448fbf4-ef47-4a5b-b94a-8def676e4573"
+          },
+          {
+            "description": "Via [IMU_MOSI] on F.Cu - B.Cu",
+            "pos": {
+              "x": 5.0,
+              "y": 28.35
+            },
+            "uuid": "5c636725-5194-45f0-9fcd-3e2b6e7c5592"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "5c636725-5194-45f0-9fcd-3e2b6e7c5592:B.Cu",
+          "group_index": 0,
+          "net": "IMU_MOSI",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            5.0,
+            28.35
+          ],
+          "via_diameter_mm": 0.5,
+          "drill_mm": 0.25,
+          "track": {
+            "uuid": "5448fbf4-ef47-4a5b-b94a-8def676e4573",
+            "net": "IMU_MOSI",
+            "layer": "B.Cu",
+            "start_mm": [
+              4.95,
+              29.0
+            ],
+            "end_mm": [
+              4.95,
+              28.55
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8707577497529417,
+          "largest_mid_annulus_contact_arc_mm": 0.11926475056981008,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "5448fbf4-ef47-4a5b-b94a-8def676e4573"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 27,
+      "via_uuid": "a799b90d-7961-4806-b5b1-5fa5a1d0d55c",
+      "track_uuid": "0c69b0d2-1b77-43c3-95af-defdc320f6df",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [ADC1_RAW] on In2.Cu, length 3.2000 mm",
+            "pos": {
+              "x": 11.35,
+              "y": 21.45
+            },
+            "uuid": "0c69b0d2-1b77-43c3-95af-defdc320f6df"
+          },
+          {
+            "description": "Via [ADC1_RAW] on F.Cu - B.Cu",
+            "pos": {
+              "x": 11.5,
+              "y": 21.5
+            },
+            "uuid": "a799b90d-7961-4806-b5b1-5fa5a1d0d55c"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "a799b90d-7961-4806-b5b1-5fa5a1d0d55c:In2.Cu",
+          "group_index": 0,
+          "net": "ADC1_RAW",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            11.5,
+            21.5
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "0c69b0d2-1b77-43c3-95af-defdc320f6df",
+            "net": "ADC1_RAW",
+            "layer": "In2.Cu",
+            "start_mm": [
+              11.35,
+              21.45
+            ],
+            "end_mm": [
+              8.15,
+              21.45
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.15399468479842965,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "0c69b0d2-1b77-43c3-95af-defdc320f6df"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 28,
+      "via_uuid": "119e7c11-f872-469d-b4c3-75a665458e2c",
+      "track_uuid": "f413f001-3ab8-4b9f-90ea-eb0988c1e049",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [ADC2_RAW] on In2.Cu, length 4.5000 mm",
+            "pos": {
+              "x": 6.85,
+              "y": 22.25
+            },
+            "uuid": "f413f001-3ab8-4b9f-90ea-eb0988c1e049"
+          },
+          {
+            "description": "Via [ADC2_RAW] on F.Cu - B.Cu",
+            "pos": {
+              "x": 11.5,
+              "y": 22.15
+            },
+            "uuid": "119e7c11-f872-469d-b4c3-75a665458e2c"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "119e7c11-f872-469d-b4c3-75a665458e2c:In2.Cu",
+          "group_index": 0,
+          "net": "ADC2_RAW",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            11.5,
+            22.15
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "f413f001-3ab8-4b9f-90ea-eb0988c1e049",
+            "net": "ADC2_RAW",
+            "layer": "In2.Cu",
+            "start_mm": [
+              6.85,
+              22.25
+            ],
+            "end_mm": [
+              11.35,
+              22.25
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898143956,
+          "largest_mid_annulus_contact_arc_mm": 0.11996804675145188,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "f413f001-3ab8-4b9f-90ea-eb0988c1e049"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 29,
+      "via_uuid": "a5ff7ff1-720e-419f-b307-358a694922ad",
+      "track_uuid": "753665c6-fee5-4f40-833f-07c537c19422",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [BUZZER_CTRL] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 18.55,
+              "y": 31.15
+            },
+            "uuid": "753665c6-fee5-4f40-833f-07c537c19422"
+          },
+          {
+            "description": "Via [BUZZER_CTRL] on F.Cu - B.Cu",
+            "pos": {
+              "x": 18.45,
+              "y": 31.3
+            },
+            "uuid": "a5ff7ff1-720e-419f-b307-358a694922ad"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "a5ff7ff1-720e-419f-b307-358a694922ad:F.Cu",
+          "group_index": 0,
+          "net": "BUZZER_CTRL",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            18.45,
+            31.3
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "753665c6-fee5-4f40-833f-07c537c19422",
+            "net": "BUZZER_CTRL",
+            "layer": "F.Cu",
+            "start_mm": [
+              18.55,
+              31.15
+            ],
+            "end_mm": [
+              18.65,
+              31.05
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.9577794898143838,
+          "largest_mid_annulus_contact_arc_mm": 0.13942020530823535,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "753665c6-fee5-4f40-833f-07c537c19422"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 30,
+      "via_uuid": "b5f20f56-0e9b-4da5-9e1d-3f0dd3c333a3",
+      "track_uuid": "da4713a0-eb76-4fc7-9c4e-3cbabcec0e45",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [MOTOR_OK_BUF] on In2.Cu, length 0.7455 mm",
+            "pos": {
+              "x": 17.45,
+              "y": 6.65
+            },
+            "uuid": "da4713a0-eb76-4fc7-9c4e-3cbabcec0e45"
+          },
+          {
+            "description": "Via [MOTOR_OK_BUF] on F.Cu - B.Cu",
+            "pos": {
+              "x": 17.6,
+              "y": 6.55
+            },
+            "uuid": "b5f20f56-0e9b-4da5-9e1d-3f0dd3c333a3"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b5f20f56-0e9b-4da5-9e1d-3f0dd3c333a3:In2.Cu",
+          "group_index": 0,
+          "net": "MOTOR_OK_BUF",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            17.6,
+            6.55
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "da4713a0-eb76-4fc7-9c4e-3cbabcec0e45",
+            "net": "MOTOR_OK_BUF",
+            "layer": "In2.Cu",
+            "start_mm": [
+              17.45,
+              6.65
+            ],
+            "end_mm": [
+              16.704495,
+              6.657744
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898143878,
+          "largest_mid_annulus_contact_arc_mm": 0.11987944038289011,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "da4713a0-eb76-4fc7-9c4e-3cbabcec0e45"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 31,
+      "via_uuid": "3a5b990b-2c8b-41b8-9611-a9e38420df7b",
+      "track_uuid": "94b07745-0d3c-4a78-98fe-37b16120a642",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART3_RX] on In2.Cu, length 0.2121 mm",
+            "pos": {
+              "x": 31.15,
+              "y": 22.3
+            },
+            "uuid": "94b07745-0d3c-4a78-98fe-37b16120a642"
+          },
+          {
+            "description": "Via [UART3_RX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 31.4,
+              "y": 22.0
+            },
+            "uuid": "3a5b990b-2c8b-41b8-9611-a9e38420df7b"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "3a5b990b-2c8b-41b8-9611-a9e38420df7b:In2.Cu",
+          "group_index": 0,
+          "net": "UART3_RX",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            31.4,
+            22.0
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "94b07745-0d3c-4a78-98fe-37b16120a642",
+            "net": "UART3_RX",
+            "layer": "In2.Cu",
+            "start_mm": [
+              31.15,
+              22.3
+            ],
+            "end_mm": [
+              31.3,
+              22.15
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.9577794898144233,
+          "largest_mid_annulus_contact_arc_mm": 0.13942020530823954,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "94b07745-0d3c-4a78-98fe-37b16120a642"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 32,
+      "via_uuid": "62fdeca6-99b9-493f-b9c2-b1f0ed52f3f7",
+      "track_uuid": "b9e1e432-2700-49cf-8828-2911644dbc2f",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [AUX_PD14] on In2.Cu, length 0.4000 mm",
+            "pos": {
+              "x": 23.15,
+              "y": 31.65
+            },
+            "uuid": "b9e1e432-2700-49cf-8828-2911644dbc2f"
+          },
+          {
+            "description": "Via [AUX_PD14] on F.Cu - B.Cu",
+            "pos": {
+              "x": 23.2,
+              "y": 31.1
+            },
+            "uuid": "62fdeca6-99b9-493f-b9c2-b1f0ed52f3f7"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "62fdeca6-99b9-493f-b9c2-b1f0ed52f3f7:In2.Cu",
+          "group_index": 0,
+          "net": "AUX_PD14",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            23.2,
+            31.1
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "b9e1e432-2700-49cf-8828-2911644dbc2f",
+            "net": "AUX_PD14",
+            "layer": "In2.Cu",
+            "start_mm": [
+              23.15,
+              31.65
+            ],
+            "end_mm": [
+              23.15,
+              31.25
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.14670033834811919,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "b9e1e432-2700-49cf-8828-2911644dbc2f"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 33,
+      "via_uuid": "73c98fca-55f3-41a9-b740-903713ae6656",
+      "track_uuid": "47136658-f988-47be-8af2-14cc77f25d5c",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [AUX_PC8] on B.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 27.95,
+              "y": 34.1
+            },
+            "uuid": "47136658-f988-47be-8af2-14cc77f25d5c"
+          },
+          {
+            "description": "Via [AUX_PC8] on F.Cu - B.Cu",
+            "pos": {
+              "x": 27.75,
+              "y": 34.2
+            },
+            "uuid": "73c98fca-55f3-41a9-b740-903713ae6656"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "73c98fca-55f3-41a9-b740-903713ae6656:B.Cu",
+          "group_index": 0,
+          "net": "AUX_PC8",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            27.75,
+            34.2
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "47136658-f988-47be-8af2-14cc77f25d5c",
+            "net": "AUX_PC8",
+            "layer": "B.Cu",
+            "start_mm": [
+              27.95,
+              34.1
+            ],
+            "end_mm": [
+              27.9,
+              34.15
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 3,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.1471872171848361,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "41b2cbc4-2980-4944-a37f-cb2c3e46b068",
+            "47136658-f988-47be-8af2-14cc77f25d5c",
+            "c7f8ad11-0741-435a-87f1-4a14b2db27da"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 34,
+      "via_uuid": "ebd6bec7-2956-4dab-a3a6-7a1796875cff",
+      "track_uuid": "d0476fe8-d3bf-474a-8072-69c11c3bb757",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [AUX_PC8] on B.Cu, length 0.7071 mm",
+            "pos": {
+              "x": 29.0,
+              "y": 33.2
+            },
+            "uuid": "d0476fe8-d3bf-474a-8072-69c11c3bb757"
+          },
+          {
+            "description": "Via [AUX_PC8] on F.Cu - B.Cu",
+            "pos": {
+              "x": 29.15,
+              "y": 33.15
+            },
+            "uuid": "ebd6bec7-2956-4dab-a3a6-7a1796875cff"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "ebd6bec7-2956-4dab-a3a6-7a1796875cff:B.Cu",
+          "group_index": 0,
+          "net": "AUX_PC8",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            29.15,
+            33.15
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "d0476fe8-d3bf-474a-8072-69c11c3bb757",
+            "net": "AUX_PC8",
+            "layer": "B.Cu",
+            "start_mm": [
+              29.0,
+              33.2
+            ],
+            "end_mm": [
+              28.5,
+              33.7
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.1471872171848363,
+          "required_half_incident_width_mm": 0.075,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "d0476fe8-d3bf-474a-8072-69c11c3bb757"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 35,
+      "via_uuid": "d9ee9c0d-13a8-4896-9837-c426d6c45014",
+      "track_uuid": "fd53cb15-7618-4d8e-9985-0e33a962b118",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART1_RX] on B.Cu, length 0.8000 mm",
+            "pos": {
+              "x": 23.525,
+              "y": 17.175
+            },
+            "uuid": "fd53cb15-7618-4d8e-9985-0e33a962b118"
+          },
+          {
+            "description": "Via [UART1_RX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 24.5,
+              "y": 17.05
+            },
+            "uuid": "d9ee9c0d-13a8-4896-9837-c426d6c45014"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "d9ee9c0d-13a8-4896-9837-c426d6c45014:B.Cu",
+          "group_index": 0,
+          "net": "UART1_RX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            24.5,
+            17.05
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "fd53cb15-7618-4d8e-9985-0e33a962b118",
+            "net": "UART1_RX",
+            "layer": "B.Cu",
+            "start_mm": [
+              23.525,
+              17.175
+            ],
+            "end_mm": [
+              24.325,
+              17.175
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.5995349465914701,
+          "largest_mid_annulus_contact_arc_mm": 0.06660520420905268,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "fd53cb15-7618-4d8e-9985-0e33a962b118"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 36,
+      "via_uuid": "a629639a-e16b-4d65-b33a-c741bbb3beb9",
+      "track_uuid": "06f11e11-36e1-4145-84c9-d4ce02c1f544",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [SWCLK] on In2.Cu, length 0.4142 mm",
+            "pos": {
+              "x": 27.279008,
+              "y": 15.745315
+            },
+            "uuid": "06f11e11-36e1-4145-84c9-d4ce02c1f544"
+          },
+          {
+            "description": "Via [SWCLK] on F.Cu - B.Cu",
+            "pos": {
+              "x": 27.375,
+              "y": 15.35
+            },
+            "uuid": "a629639a-e16b-4d65-b33a-c741bbb3beb9"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "a629639a-e16b-4d65-b33a-c741bbb3beb9:In2.Cu",
+          "group_index": 0,
+          "net": "SWCLK",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            27.375,
+            15.35
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "06f11e11-36e1-4145-84c9-d4ce02c1f544",
+            "net": "SWCLK",
+            "layer": "In2.Cu",
+            "start_mm": [
+              27.279008,
+              15.745315
+            ],
+            "end_mm": [
+              27.279008,
+              15.331101
+            ],
+            "width_mm": 0.15
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.4199168126763779,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "06f11e11-36e1-4145-84c9-d4ce02c1f544",
+            "5b28024f-4446-480c-93c7-085cc6b1d08c"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 37,
+      "via_uuid": "a629639a-e16b-4d65-b33a-c741bbb3beb9",
+      "track_uuid": "5b28024f-4446-480c-93c7-085cc6b1d08c",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [SWCLK] on In2.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 27.35,
+              "y": 15.3
+            },
+            "uuid": "5b28024f-4446-480c-93c7-085cc6b1d08c"
+          },
+          {
+            "description": "Via [SWCLK] on F.Cu - B.Cu",
+            "pos": {
+              "x": 27.375,
+              "y": 15.35
+            },
+            "uuid": "a629639a-e16b-4d65-b33a-c741bbb3beb9"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "a629639a-e16b-4d65-b33a-c741bbb3beb9:In2.Cu",
+          "group_index": 0,
+          "net": "SWCLK",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            27.375,
+            15.35
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "5b28024f-4446-480c-93c7-085cc6b1d08c",
+            "net": "SWCLK",
+            "layer": "In2.Cu",
+            "start_mm": [
+              27.35,
+              15.3
+            ],
+            "end_mm": [
+              27.3,
+              15.25
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.4199168126763779,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "06f11e11-36e1-4145-84c9-d4ce02c1f544",
+            "5b28024f-4446-480c-93c7-085cc6b1d08c"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 38,
+      "via_uuid": "906318cb-9a56-4478-abe3-4db743d6dac8",
+      "track_uuid": "916ebfed-f98f-496a-8034-5a835b0cb2b7",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART4_TX] on B.Cu, length 0.4950 mm",
+            "pos": {
+              "x": 34.05,
+              "y": 12.5
+            },
+            "uuid": "916ebfed-f98f-496a-8034-5a835b0cb2b7"
+          },
+          {
+            "description": "Via [UART4_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 34.4,
+              "y": 12.8
+            },
+            "uuid": "906318cb-9a56-4478-abe3-4db743d6dac8"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "906318cb-9a56-4478-abe3-4db743d6dac8:B.Cu",
+          "group_index": 0,
+          "net": "UART4_TX",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            34.4,
+            12.8
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "916ebfed-f98f-496a-8034-5a835b0cb2b7",
+            "net": "UART4_TX",
+            "layer": "B.Cu",
+            "start_mm": [
+              34.05,
+              12.5
+            ],
+            "end_mm": [
+              34.4,
+              12.85
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13797989775828698,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "916ebfed-f98f-496a-8034-5a835b0cb2b7"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 39,
+      "via_uuid": "b7f88af3-712a-4dbe-91c8-c8f9b7631fe1",
+      "track_uuid": "35a41284-b25a-4003-b95f-48c1a2430134",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [UART4_TX] on In2.Cu, length 1.6263 mm",
+            "pos": {
+              "x": 14.65,
+              "y": 3.9
+            },
+            "uuid": "35a41284-b25a-4003-b95f-48c1a2430134"
+          },
+          {
+            "description": "Via [UART4_TX] on F.Cu - B.Cu",
+            "pos": {
+              "x": 14.8,
+              "y": 3.8
+            },
+            "uuid": "b7f88af3-712a-4dbe-91c8-c8f9b7631fe1"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b7f88af3-712a-4dbe-91c8-c8f9b7631fe1:In2.Cu",
+          "group_index": 0,
+          "net": "UART4_TX",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            14.8,
+            3.8
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "35a41284-b25a-4003-b95f-48c1a2430134",
+            "net": "UART4_TX",
+            "layer": "In2.Cu",
+            "start_mm": [
+              14.65,
+              3.9
+            ],
+            "end_mm": [
+              13.5,
+              5.05
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144016,
+          "largest_mid_annulus_contact_arc_mm": 0.1193880908446389,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "35a41284-b25a-4003-b95f-48c1a2430134"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 40,
+      "via_uuid": "af5ceaf6-0d89-4eaa-9556-833192c40e38",
+      "track_uuid": "b7afe06a-967f-4763-86d6-1adc50d74f55",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [EXT_SPI_SCK] on B.Cu, length 1.6263 mm",
+            "pos": {
+              "x": 6.85,
+              "y": 24.65
+            },
+            "uuid": "b7afe06a-967f-4763-86d6-1adc50d74f55"
+          },
+          {
+            "description": "Via [EXT_SPI_SCK] on F.Cu - B.Cu",
+            "pos": {
+              "x": 8.05,
+              "y": 23.45
+            },
+            "uuid": "af5ceaf6-0d89-4eaa-9556-833192c40e38"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "af5ceaf6-0d89-4eaa-9556-833192c40e38:B.Cu",
+          "group_index": 0,
+          "net": "EXT_SPI_SCK",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            8.05,
+            23.45
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "b7afe06a-967f-4763-86d6-1adc50d74f55",
+            "net": "EXT_SPI_SCK",
+            "layer": "B.Cu",
+            "start_mm": [
+              6.85,
+              24.65
+            ],
+            "end_mm": [
+              8.0,
+              23.5
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13374297497193363,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "b7afe06a-967f-4763-86d6-1adc50d74f55"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 41,
+      "via_uuid": "c8de4d91-b229-463d-af55-0776e5d2880a",
+      "track_uuid": "a9dd3796-9474-49ce-b662-400a81dce42d",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [EXT_SPI_SCK] on In2.Cu, length 2.1500 mm",
+            "pos": {
+              "x": 20.25,
+              "y": 11.45
+            },
+            "uuid": "a9dd3796-9474-49ce-b662-400a81dce42d"
+          },
+          {
+            "description": "Via [EXT_SPI_SCK] on F.Cu - B.Cu",
+            "pos": {
+              "x": 17.95,
+              "y": 11.5
+            },
+            "uuid": "c8de4d91-b229-463d-af55-0776e5d2880a"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "c8de4d91-b229-463d-af55-0776e5d2880a:In2.Cu",
+          "group_index": 0,
+          "net": "EXT_SPI_SCK",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            17.95,
+            11.5
+          ],
+          "via_diameter_mm": 0.4,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "a9dd3796-9474-49ce-b662-400a81dce42d",
+            "net": "EXT_SPI_SCK",
+            "layer": "In2.Cu",
+            "start_mm": [
+              20.25,
+              11.45
+            ],
+            "end_mm": [
+              18.1,
+              11.45
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.12656666133132088,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "a9dd3796-9474-49ce-b662-400a81dce42d"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 42,
+      "via_uuid": "979e1a51-ef22-4d46-b226-0928806b3efe",
+      "track_uuid": "cbc9d102-bb2a-413f-bc46-a4aa6f558394",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [EXT_I2C_SCL] on F.Cu, length 0.4243 mm",
+            "pos": {
+              "x": 23.85,
+              "y": 6.75
+            },
+            "uuid": "cbc9d102-bb2a-413f-bc46-a4aa6f558394"
+          },
+          {
+            "description": "Via [EXT_I2C_SCL] on F.Cu - B.Cu",
+            "pos": {
+              "x": 24.0,
+              "y": 6.85
+            },
+            "uuid": "979e1a51-ef22-4d46-b226-0928806b3efe"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "979e1a51-ef22-4d46-b226-0928806b3efe:F.Cu",
+          "group_index": 0,
+          "net": "EXT_I2C_SCL",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            24.0,
+            6.85
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "cbc9d102-bb2a-413f-bc46-a4aa6f558394",
+            "net": "EXT_I2C_SCL",
+            "layer": "F.Cu",
+            "start_mm": [
+              23.85,
+              6.75
+            ],
+            "end_mm": [
+              23.55,
+              6.45
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144153,
+          "largest_mid_annulus_contact_arc_mm": 0.1193880908446405,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "cbc9d102-bb2a-413f-bc46-a4aa6f558394"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 43,
+      "via_uuid": "8778e8f8-c66e-4306-98a9-b03c19b9f079",
+      "track_uuid": "443f1658-4a9f-45cc-b18e-d7159be267e5",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [MOTOR_TX_BUF] on F.Cu, length 0.7500 mm",
+            "pos": {
+              "x": 16.3,
+              "y": 9.7
+            },
+            "uuid": "443f1658-4a9f-45cc-b18e-d7159be267e5"
+          },
+          {
+            "description": "Via [MOTOR_TX_BUF] on F.Cu - B.Cu",
+            "pos": {
+              "x": 16.149999,
+              "y": 9.6
+            },
+            "uuid": "8778e8f8-c66e-4306-98a9-b03c19b9f079"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "8778e8f8-c66e-4306-98a9-b03c19b9f079:F.Cu",
+          "group_index": 0,
+          "net": "MOTOR_TX_BUF",
+          "layer": "F.Cu",
+          "via_xy_mm": [
+            16.149999,
+            9.6
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "443f1658-4a9f-45cc-b18e-d7159be267e5",
+            "net": "MOTOR_TX_BUF",
+            "layer": "F.Cu",
+            "start_mm": [
+              16.3,
+              9.7
+            ],
+            "end_mm": [
+              17.05,
+              9.7
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777728334052268,
+          "largest_mid_annulus_contact_arc_mm": 0.11996717896062088,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "443f1658-4a9f-45cc-b18e-d7159be267e5"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 44,
+      "via_uuid": "69250c9f-5bc4-4ec7-9cb6-c74a0b311cd8",
+      "track_uuid": "94f976a3-8c25-482b-8353-637cced63f0c",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [MOTOR_TX_BUF] on B.Cu, length 0.0707 mm",
+            "pos": {
+              "x": 13.65,
+              "y": 14.15
+            },
+            "uuid": "94f976a3-8c25-482b-8353-637cced63f0c"
+          },
+          {
+            "description": "Via [MOTOR_TX_BUF] on F.Cu - B.Cu",
+            "pos": {
+              "x": 13.625,
+              "y": 13.975
+            },
+            "uuid": "69250c9f-5bc4-4ec7-9cb6-c74a0b311cd8"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "69250c9f-5bc4-4ec7-9cb6-c74a0b311cd8:B.Cu",
+          "group_index": 0,
+          "net": "MOTOR_TX_BUF",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            13.625,
+            13.975
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "94f976a3-8c25-482b-8353-637cced63f0c",
+            "net": "MOTOR_TX_BUF",
+            "layer": "B.Cu",
+            "start_mm": [
+              13.65,
+              14.15
+            ],
+            "end_mm": [
+              13.7,
+              14.2
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 2,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.9057864376268989,
+          "largest_mid_annulus_contact_arc_mm": 0.12421125813694794,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "7d0e897f-cd5b-45c6-8879-74bc4d99f418",
+            "94f976a3-8c25-482b-8353-637cced63f0c"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 45,
+      "via_uuid": "8778e8f8-c66e-4306-98a9-b03c19b9f079",
+      "track_uuid": "cb71f864-d93e-4bda-a674-f5c3a2c27217",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [MOTOR_TX_BUF] on B.Cu, length 0.6500 mm",
+            "pos": {
+              "x": 16.15,
+              "y": 8.95
+            },
+            "uuid": "cb71f864-d93e-4bda-a674-f5c3a2c27217"
+          },
+          {
+            "description": "Via [MOTOR_TX_BUF] on F.Cu - B.Cu",
+            "pos": {
+              "x": 16.149999,
+              "y": 9.6
+            },
+            "uuid": "8778e8f8-c66e-4306-98a9-b03c19b9f079"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "8778e8f8-c66e-4306-98a9-b03c19b9f079:B.Cu",
+          "group_index": 0,
+          "net": "MOTOR_TX_BUF",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            16.149999,
+            9.6
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "cb71f864-d93e-4bda-a674-f5c3a2c27217",
+            "net": "MOTOR_TX_BUF",
+            "layer": "B.Cu",
+            "start_mm": [
+              16.15,
+              8.95
+            ],
+            "end_mm": [
+              16.15,
+              9.6
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 1,
+          "largest_mid_annulus_contact_arc_mm": 0.13374297497513102,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [
+            "U10.6"
+          ],
+          "group_tracks": [
+            "cb71f864-d93e-4bda-a674-f5c3a2c27217"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 46,
+      "via_uuid": "0c6a7021-f162-496b-a2c8-8b3e2f4b287a",
+      "track_uuid": "cefdd656-3eea-4806-8ced-d0f51bdc24b3",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [HOST_TX_RAW] on B.Cu, length 0.4243 mm",
+            "pos": {
+              "x": 15.2,
+              "y": 14.5
+            },
+            "uuid": "cefdd656-3eea-4806-8ced-d0f51bdc24b3"
+          },
+          {
+            "description": "Via [HOST_TX_RAW] on F.Cu - B.Cu",
+            "pos": {
+              "x": 15.1,
+              "y": 14.65
+            },
+            "uuid": "0c6a7021-f162-496b-a2c8-8b3e2f4b287a"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "0c6a7021-f162-496b-a2c8-8b3e2f4b287a:B.Cu",
+          "group_index": 0,
+          "net": "HOST_TX_RAW",
+          "layer": "B.Cu",
+          "via_xy_mm": [
+            15.1,
+            14.65
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "cefdd656-3eea-4806-8ced-d0f51bdc24b3",
+            "net": "HOST_TX_RAW",
+            "layer": "B.Cu",
+            "start_mm": [
+              15.2,
+              14.5
+            ],
+            "end_mm": [
+              15.5,
+              14.2
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898144036,
+          "largest_mid_annulus_contact_arc_mm": 0.1193880908446392,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "cefdd656-3eea-4806-8ced-d0f51bdc24b3"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    },
+    {
+      "warning_index": 47,
+      "via_uuid": "b4294193-472f-4587-8220-6f3dd8fbfe40",
+      "track_uuid": "dfd66868-ffa9-4419-8107-000a93339bd5",
+      "source_warning": {
+        "description": "Track endpoint not centered on via",
+        "items": [
+          {
+            "description": "Track [MOTOR_TX_LINK] on In2.Cu, length 0.7778 mm",
+            "pos": {
+              "x": 20.7,
+              "y": 3.6
+            },
+            "uuid": "dfd66868-ffa9-4419-8107-000a93339bd5"
+          },
+          {
+            "description": "Via [MOTOR_TX_LINK] on F.Cu - B.Cu",
+            "pos": {
+              "x": 21.35,
+              "y": 2.9
+            },
+            "uuid": "b4294193-472f-4587-8220-6f3dd8fbfe40"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_not_centered_on_via"
+      },
+      "physical_matches": [
+        {
+          "profile_key": "b4294193-472f-4587-8220-6f3dd8fbfe40:In2.Cu",
+          "group_index": 0,
+          "net": "MOTOR_TX_LINK",
+          "layer": "In2.Cu",
+          "via_xy_mm": [
+            21.35,
+            2.9
+          ],
+          "via_diameter_mm": 0.45,
+          "drill_mm": 0.2,
+          "track": {
+            "uuid": "dfd66868-ffa9-4419-8107-000a93339bd5",
+            "net": "MOTOR_TX_LINK",
+            "layer": "In2.Cu",
+            "start_mm": [
+              20.7,
+              3.6
+            ],
+            "end_mm": [
+              21.25,
+              3.05
+            ],
+            "width_mm": 0.13
+          },
+          "warning_pair_geometry_unchanged_from_baseline": true,
+          "contact_group_track_count": 1,
+          "fully_contained_within_via_land": false,
+          "annulus_radial_penetration_fraction": 0.8777794898143987,
+          "largest_mid_annulus_contact_arc_mm": 0.11938809084463872,
+          "required_half_incident_width_mm": 0.065,
+          "shallow_review_prompt": false,
+          "direct_pad_contacts": [],
+          "group_tracks": [
+            "dfd66868-ffa9-4419-8107-000a93339bd5"
+          ]
+        }
+      ],
+      "changed_item_uuids": [],
+      "disposition": "BENIGN ENDPOINT-CENTER HEURISTIC; PHYSICAL ANNULUS GROUP PASS"
+    }
+  ],
+  "limits": "Off-center endpoint diagnostics are geometric heuristics; this mapping proves finite annulus engagement through outside-via-connected copper groups. It is not independent manufacturing or hardware certification. Baseline diagnostics set comparison is separate from pair-geometry preservation."
+}

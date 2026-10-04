@@ -1,0 +1,50 @@
+{
+  "status": "PASS NATIVE CAD / PHYSICAL COPPER REVIEW; NOT A FABRICATION RELEASE OR USB COMPLIANCE TEST",
+  "base_commit": "491987ef141ab32f39821675928d32dd1ad8e66f",
+  "final_board_sha256": "89886cf0ecfdb62a90a56810d75ac765d837435076423a0c173a33a3647a4579",
+  "final_rules_sha256": "acbd06431102e140f3b6d58d2eb633a196007c28dc6924d65df644eb15543a1a",
+  "kicad_version": "10.0.6",
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "physical_audit_errors": [],
+  "reference_review": {
+    "status": "PASS: all newly uncovered trace metal/centerlines are confined to exact isolated own-via antipads; no new foreign-plane void under paired trunks",
+    "outside_exact_own_via_exposure_mm2": 0,
+    "in1_ground_neck_under_P_approx_mm": 0.349,
+    "nearest_return_stitch_distance_mm": 1.005,
+    "qualification": "Localized via/pad escapes are not field-solver-verified90-ohm structures."
+  },
+  "external_copper_skew_mm": {
+    "A": -0.7995741339205118,
+    "B": 2.8104258660794876
+  },
+  "preserved": {
+    "footprints": 151,
+    "placement_count": 79,
+    "bom_groups": 35,
+    "via_count": 406,
+    "gnd_stitches": 97,
+    "schematics_project_libraries_bom_cpl": true
+  },
+  "release_status": "Historical P6 exports/qualification/guard unchanged and not applicable to the new board hash; verified manufacturing regeneration required. No push or merge.",
+  "inherited_ignored_diagnostic_categories": [
+    "footprint_filters_mismatch",
+    "footprint_type_mismatch",
+    "missing_courtyard",
+    "npth_inside_courtyard",
+    "pth_inside_courtyard",
+    "track_not_centered_on_via",
+    "tuning_profile_track_geometries"
+  ],
+  "drc_scope": "All severities under unchanged project rule-severity settings; inherited ignored diagnostics are listed explicitly and not claimed as separately passed.",
+  "fully_enabled_diagnostic_audit": {
+    "offcenter_warnings": 48,
+    "footprint_filter_advisories": 134,
+    "new_records": 0,
+    "all_offcenter_contacts_physically_pass": true,
+    "other_reenabled_categories": 0,
+    "report": "all-enabled-audit-summary.json"
+  }
+}
