@@ -31,3 +31,36 @@
   (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 0.165mm))
   (constraint diff_pair_uncoupled (max 2mm))
   (constraint skew (max 1mm)))
+
+# Bounded fixed-footprint escapes, reviewed against native copper.
+# Track endpoints must BOTH be inside the stated box. Straight segments are
+# split at the boundaries; no long paired trunk may inherit these allowances.
+# Gaps below remain fixed by connector/channel/resistor pad pitch, not impedance.
+# Nominal 0.1392/0.160 geometry and 1 mm total-net skew remain enforced above.
+# Uncoupled caps below count branch copper in that local rule group, not a
+# connector-to-MCU signal path. See review/usb-routing-491987e/README.md.
+
+(rule "USB-C alternate-contact fanout"
+  (condition "A.Type == 'Track' && A.inDiffPair('/power/USB_CONN_') && A.Origin_X >= 29.1mm && A.Origin_X <= 32.95mm && A.End_X >= 29.1mm && A.End_X <= 32.95mm && A.Origin_Y >= 19.25mm && A.Origin_Y <= 20.85mm && A.End_Y >= 19.25mm && A.End_Y <= 20.85mm")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 0.365mm))
+  (constraint diff_pair_uncoupled (max 5.5mm)))
+
+(rule "USB ESD input pad escape and crossover"
+  (condition "A.Type == 'Track' && A.inDiffPair('/power/USB_CONN_') && A.Origin_X >= 31.5mm && A.Origin_X <= 33.2mm && A.End_X >= 31.5mm && A.End_X <= 33.2mm && A.Origin_Y >= 11.45mm && A.Origin_Y <= 14.85mm && A.End_Y >= 11.45mm && A.End_Y <= 14.85mm")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 1.765mm))
+  (constraint diff_pair_uncoupled (max 4.25mm)))
+
+(rule "USB ESD output pad escape"
+  (condition "A.Type == 'Track' && A.inDiffPair('/power/USB_ESD_') && A.Origin_X >= 28.35mm && A.Origin_X <= 29.45mm && A.End_X >= 28.35mm && A.End_X <= 29.45mm && A.Origin_Y >= 11.45mm && A.Origin_Y <= 13.45mm && A.End_Y >= 11.45mm && A.End_Y <= 13.45mm")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 1.765mm))
+  (constraint diff_pair_uncoupled (max 2.9mm)))
+
+(rule "USB series-resistor pad escape"
+  (condition "A.Type == 'Track' && A.inDiffPair('/power/USB_ESD_') && A.Origin_X >= 28.3mm && A.Origin_X <= 29.3mm && A.End_X >= 28.3mm && A.End_X <= 29.3mm && A.Origin_Y >= 16.5mm && A.Origin_Y <= 18.1mm && A.End_Y >= 16.5mm && A.End_Y <= 18.1mm")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 1.365mm))
+  (constraint diff_pair_uncoupled (max 2.2mm)))
+
+(rule "USB MCU-resistor fixed-pad fanout"
+  (condition "A.Type == 'Track' && A.inDiffPair('USB_MCU_') && A.Origin_X >= 25.55mm && A.Origin_X <= 27.5mm && A.End_X >= 25.55mm && A.End_X <= 27.5mm && A.Origin_Y >= 16.4mm && A.Origin_Y <= 18.1mm && A.End_Y >= 16.4mm && A.End_Y <= 18.1mm")
+  (constraint diff_pair_gap (min 0.155mm) (opt 0.160mm) (max 0.365mm))
+  (constraint diff_pair_uncoupled (max 2.2mm)))

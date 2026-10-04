@@ -1,3 +1,13 @@
+# Current native repair (2026-10-04)
+
+This working native board is the DRC/physical-copper repair of main `491987e`. See [the current repair review](review/usb-routing-491987e/README.md) for exact source hash, checks, measured USB-C orientation skew, and bounded fanout rules.
+
+**Native CAD checks pass, but this is not a regenerated manufacturing release.** Existing P6 Gerbers, supplier reports, manifests and source-hash export guard remain historical and unchanged. Do not fabricate from stale exports or bypass that guard. Component placement, CPL, BOM, schematics and local libraries are preserved.
+
+---
+
+## Historical P6 package description (not qualification of the current native hash)
+
 # R3-S6-P6 controller
 
 **Use this P6 package only. It supersedes all earlier fabrication packages. P5 contained confirmed narrow copper attachments and must not be fabricated.**
