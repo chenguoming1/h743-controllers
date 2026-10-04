@@ -1,0 +1,421 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-04T20:57:43",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "controller.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Skew between tracks out of range (rule 'USB connector pair geometry' max skew 1.0000 mm; actual -5.1999 mm; target net length 18.1524 mm (from /power/USB_CONN_N); actual 12.9525 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 2.2450 mm",
+                    "pos": {
+                        "x": 30.305,
+                        "y": 19.25
+                    },
+                    "uuid": "bf73998f-4f11-4688-9ed2-1b1d90892468"
+                }
+            ],
+            "severity": "error",
+            "type": "skew_out_of_range"
+        },
+        {
+            "description": "Skew between tracks out of range (rule 'USB ESD pair geometry' max skew 1.0000 mm; actual -1.1669 mm; target net length 6.5530 mm (from /power/USB_ESD_P); actual 5.3861 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_ESD_N] on F.Cu, length 0.1533 mm",
+                    "pos": {
+                        "x": 29.3625,
+                        "y": 13.45
+                    },
+                    "uuid": "5c2ac3ad-62d9-4cab-b89a-db5ea6d89bf2"
+                }
+            ],
+            "severity": "error",
+            "type": "skew_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.3608 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 1.0950 mm",
+                    "pos": {
+                        "x": 31.4,
+                        "y": 20.25
+                    },
+                    "uuid": "728444c6-fb56-48b0-ab70-447bc981d6af"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 2.5442 mm",
+                    "pos": {
+                        "x": 30.305,
+                        "y": 20.75
+                    },
+                    "uuid": "9c8c0ffa-85a3-433a-876e-a0b378c307aa"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.7108 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 7.7000 mm",
+                    "pos": {
+                        "x": 32.549999,
+                        "y": 19.25
+                    },
+                    "uuid": "b0bdd9f8-6df7-4b58-9425-8724623471de"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 0.0357 mm",
+                    "pos": {
+                        "x": 33.4,
+                        "y": 14.4357
+                    },
+                    "uuid": "2ce8bbed-0196-45e7-b060-18073d0f7044"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.8108 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 7.7000 mm",
+                    "pos": {
+                        "x": 32.549999,
+                        "y": 19.25
+                    },
+                    "uuid": "b0bdd9f8-6df7-4b58-9425-8724623471de"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 0.9125 mm",
+                    "pos": {
+                        "x": 31.6,
+                        "y": 14.4
+                    },
+                    "uuid": "49c8d827-2580-4b85-ad8e-c27abe3d32a4"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential uncoupled length too long (USB connector pair geometry maximum uncoupled length 2.0000 mm; actual 10.8344 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 0.9125 mm",
+                    "pos": {
+                        "x": 32.549999,
+                        "y": 11.55
+                    },
+                    "uuid": "6deef7eb-429a-4645-afc0-e783bd5bf6c5"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 29.2,
+                        "y": 19.75
+                    },
+                    "uuid": "0f3afd52-8cb0-4655-9757-b90f2f534b8b"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_uncoupled_length_too_long"
+        },
+        {
+            "description": "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.3608 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 1.0950 mm",
+                    "pos": {
+                        "x": 31.4,
+                        "y": 20.25
+                    },
+                    "uuid": "728444c6-fb56-48b0-ab70-447bc981d6af"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 2.5442 mm",
+                    "pos": {
+                        "x": 30.305,
+                        "y": 20.75
+                    },
+                    "uuid": "9c8c0ffa-85a3-433a-876e-a0b378c307aa"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.7108 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 7.7000 mm",
+                    "pos": {
+                        "x": 32.549999,
+                        "y": 19.25
+                    },
+                    "uuid": "b0bdd9f8-6df7-4b58-9425-8724623471de"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 0.0357 mm",
+                    "pos": {
+                        "x": 33.4,
+                        "y": 14.4357
+                    },
+                    "uuid": "2ce8bbed-0196-45e7-b060-18073d0f7044"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.8108 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_CONN_P] on F.Cu, length 7.7000 mm",
+                    "pos": {
+                        "x": 32.549999,
+                        "y": 19.25
+                    },
+                    "uuid": "b0bdd9f8-6df7-4b58-9425-8724623471de"
+                },
+                {
+                    "description": "Track [/power/USB_CONN_N] on F.Cu, length 0.9125 mm",
+                    "pos": {
+                        "x": 31.6,
+                        "y": 14.4
+                    },
+                    "uuid": "49c8d827-2580-4b85-ad8e-c27abe3d32a4"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 0.6200 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_ESD_P] on F.Cu, length 2.5500 mm",
+                    "pos": {
+                        "x": 28.45,
+                        "y": 11.55
+                    },
+                    "uuid": "63ccaaac-4a4b-431b-af4a-a680183d5b92"
+                },
+                {
+                    "description": "Track [/power/USB_ESD_N] on F.Cu, length 4.5500 mm",
+                    "pos": {
+                        "x": 29.2092,
+                        "y": 13.45
+                    },
+                    "uuid": "46fa19f7-8f1d-42c4-958c-047ce456613a"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 1.3608 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_ESD_P] on F.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 28.91,
+                        "y": 16.5
+                    },
+                    "uuid": "b21b5fd2-6610-440d-83bb-a8b503392efc"
+                },
+                {
+                    "description": "Track [/power/USB_ESD_N] on F.Cu, length 0.7992 mm",
+                    "pos": {
+                        "x": 29.2092,
+                        "y": 18.0
+                    },
+                    "uuid": "0e4a3126-218b-494f-9a2d-90a20d1d43aa"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential uncoupled length too long (USB ESD pair geometry maximum uncoupled length 2.0000 mm; actual 4.6130 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_ESD_P] on F.Cu, length 2.5500 mm",
+                    "pos": {
+                        "x": 28.45,
+                        "y": 11.55
+                    },
+                    "uuid": "63ccaaac-4a4b-431b-af4a-a680183d5b92"
+                },
+                {
+                    "description": "Track [/power/USB_ESD_N] on F.Cu, length 0.7992 mm",
+                    "pos": {
+                        "x": 29.2092,
+                        "y": 18.0
+                    },
+                    "uuid": "0e4a3126-218b-494f-9a2d-90a20d1d43aa"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_uncoupled_length_too_long"
+        },
+        {
+            "description": "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 0.6200 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_ESD_P] on F.Cu, length 2.5500 mm",
+                    "pos": {
+                        "x": 28.45,
+                        "y": 11.55
+                    },
+                    "uuid": "63ccaaac-4a4b-431b-af4a-a680183d5b92"
+                },
+                {
+                    "description": "Track [/power/USB_ESD_N] on F.Cu, length 4.5500 mm",
+                    "pos": {
+                        "x": 29.2092,
+                        "y": 13.45
+                    },
+                    "uuid": "46fa19f7-8f1d-42c4-958c-047ce456613a"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 1.3608 mm)",
+            "items": [
+                {
+                    "description": "Track [/power/USB_ESD_P] on F.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 28.91,
+                        "y": 16.5
+                    },
+                    "uuid": "b21b5fd2-6610-440d-83bb-a8b503392efc"
+                },
+                {
+                    "description": "Track [/power/USB_ESD_N] on F.Cu, length 0.7992 mm",
+                    "pos": {
+                        "x": 29.2092,
+                        "y": 18.0
+                    },
+                    "uuid": "0e4a3126-218b-494f-9a2d-90a20d1d43aa"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential pair gap out of range (USB MCU pair geometry maximum gap 0.1650 mm; actual 0.3608 mm)",
+            "items": [
+                {
+                    "description": "Track [USB_MCU_P] on F.Cu, length 1.7150 mm",
+                    "pos": {
+                        "x": 27.39,
+                        "y": 16.5
+                    },
+                    "uuid": "efbb118f-7581-43a3-9a5a-6ecb7c1526ee"
+                },
+                {
+                    "description": "Track [USB_MCU_N] on F.Cu, length 1.1250 mm",
+                    "pos": {
+                        "x": 26.8,
+                        "y": 17.0
+                    },
+                    "uuid": "f69bd93d-d3f6-4ae0-b326-9cff69d2af49"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        },
+        {
+            "description": "Differential uncoupled length too long (USB MCU pair geometry maximum uncoupled length 2.0000 mm; actual 2.3694 mm)",
+            "items": [
+                {
+                    "description": "Track [USB_MCU_P] on F.Cu, length 1.7150 mm",
+                    "pos": {
+                        "x": 27.39,
+                        "y": 16.5
+                    },
+                    "uuid": "efbb118f-7581-43a3-9a5a-6ecb7c1526ee"
+                },
+                {
+                    "description": "Track [USB_MCU_N] on F.Cu, length 0.4100 mm",
+                    "pos": {
+                        "x": 27.39,
+                        "y": 18.0
+                    },
+                    "uuid": "63a9f088-412b-404f-a3d9-3c3e581c9999"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_uncoupled_length_too_long"
+        },
+        {
+            "description": "Differential pair gap out of range (USB MCU pair geometry maximum gap 0.1650 mm; actual 0.3608 mm)",
+            "items": [
+                {
+                    "description": "Track [USB_MCU_P] on F.Cu, length 1.7150 mm",
+                    "pos": {
+                        "x": 27.39,
+                        "y": 16.5
+                    },
+                    "uuid": "efbb118f-7581-43a3-9a5a-6ecb7c1526ee"
+                },
+                {
+                    "description": "Track [USB_MCU_N] on F.Cu, length 1.1250 mm",
+                    "pos": {
+                        "x": 26.8,
+                        "y": 17.0
+                    },
+                    "uuid": "f69bd93d-d3f6-4ae0-b326-9cff69d2af49"
+                }
+            ],
+            "severity": "error",
+            "type": "diff_pair_gap_out_of_range"
+        }
+    ]
+}

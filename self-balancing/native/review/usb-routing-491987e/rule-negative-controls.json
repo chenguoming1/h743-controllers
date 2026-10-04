@@ -1,0 +1,26 @@
+{
+  "status": "PASS: unchanged bad copper is not cured by the bounded rules, and a 0.030 mm trunk offset trips the strict gap rule",
+  "rules_sha256": "acbd06431102e140f3b6d58d2eb633a196007c28dc6924d65df644eb15543a1a",
+  "cases": {
+    "old-copper-new-rules": {
+      "violation_count": 7,
+      "gap_violations": [
+        "Differential pair gap out of range (USB-C alternate-contact fanout maximum gap 0.1650 mm; actual 0.7108 mm)",
+        "Differential pair gap out of range (USB connector pair geometry maximum gap 0.1650 mm; actual 0.7108 mm)",
+        "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 0.6200 mm)"
+      ],
+      "skew_violations": [
+        "Skew between tracks out of range (rule 'USB ESD pair geometry' max skew 1.0000 mm; actual -1.1669 mm; target net length 6.5530 mm (from /power/USB_ESD_P); actual 5.3861 mm)",
+        "Skew between tracks out of range (rule 'USB connector pair geometry' max skew 1.0000 mm; actual -5.1999 mm; target net length 18.1524 mm (from /power/USB_CONN_N); actual 12.9525 mm)"
+      ]
+    },
+    "wide-esd-trunk": {
+      "violation_count": 3,
+      "gap_violations": [
+        "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 0.1900 mm)",
+        "Differential pair gap out of range (USB ESD pair geometry maximum gap 0.1650 mm; actual 0.1900 mm)"
+      ],
+      "skew_violations": []
+    }
+  }
+}
