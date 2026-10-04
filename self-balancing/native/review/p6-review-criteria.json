@@ -1,0 +1,37 @@
+{
+  "baseline_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+  "status": "IN PROGRESS",
+  "coverage_required": "Every one of the 85 routed nets, all copper layers, high-resolution whole-layer and individual path views",
+  "specific_user_example": {
+    "net": "STACK_5V_GOOD",
+    "layer": "F.Cu",
+    "region_mm": [
+      21.35,
+      22.825,
+      21.7,
+      24.65
+    ],
+    "cause": "Overlapping endpoints and alternating widths leave visible hooks; no intentional length matching"
+  },
+  "geometry_goal": "Coherent straight/45-degree complete routes, no unnecessary microjogs, hooks, arrows, scallops, width bulbs or detours",
+  "acceptance": [
+    "Per-net visual coverage complete",
+    "Each retained awkward region has exact obstacle/electrical explanation",
+    "No final approval based on segment count alone",
+    "Independent native, physical topology, 405-pin, manufacturing and reference checks pass",
+    "Supplier width/spacing remain green; other changes reviewed",
+    "Actual final pixels and before/after views inspected"
+  ],
+  "protected": [
+    "38mm outline",
+    "six-layer JLC06161H-3313 stack",
+    "component poses and corrected CPL",
+    "pin map",
+    "P4 USB slots and D4 lands",
+    "USB .1392/.160 differential geometry",
+    "power-path widths and reference planes"
+  ],
+  "baseline_visual_target_regions": 159,
+  "baseline_visual_acceptance": "P5 not accepted as complete visual cleanup for this renewed request",
+  "prior_numerical_validation": "P5 electrical/manufacturing evidence remains valid for P5; visual completeness is a separate criterion"
+}

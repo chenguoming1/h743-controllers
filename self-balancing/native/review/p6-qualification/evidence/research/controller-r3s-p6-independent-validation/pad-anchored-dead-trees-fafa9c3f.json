@@ -1,0 +1,1162 @@
+{
+  "status": "REVIEW REQUIRED",
+  "candidate_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+  "source": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-route-cleanup/freeze-repairs/controller.kicad_pcb",
+  "audit_script_sha256": "b903521a38c133f58894db4b3656882302c1ecaaf9f2da3f228735e37c82db5b",
+  "component_census_script_sha256": "0cd90511b86d913d64bb067312ccf248be407cf52ecc6cff8c177801e996100d",
+  "routed_nets": 85,
+  "graph_nodes": 1407,
+  "peeled_node_count": 21,
+  "peeled_via_count": 4,
+  "trees": [
+    {
+      "net": "IMU_CS",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [
+        {
+          "kind": "via",
+          "net": "IMU_CS",
+          "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+          "xy_mm": [
+            7.05,
+            21.8
+          ]
+        },
+        {
+          "kind": "via",
+          "net": "IMU_CS",
+          "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+          "xy_mm": [
+            6.35,
+            25.0
+          ]
+        }
+      ],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "15a5ca54-efad-40f6-8ebe-ecc8a0fd0c68",
+            "1831ff90-0ebd-45cc-b96b-cccb2873c035",
+            "c37c2b7f-0a2c-4eca-ab48-cebf990370c7",
+            "ecef9c28-2834-4265-a37f-d1e0a2f8d445"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+              "at_mm": [
+                6.35,
+                25.0
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "pad",
+              "uuid": "8fc36516-6d66-4838-935f-24162deb7fc1",
+              "reference": "R13.2",
+              "at_mm": [
+                7.25,
+                26.825
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "trace_component",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "63f43b78-981a-4893-9c83-4abc792aa1a3"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+              "at_mm": [
+                7.05,
+                21.8
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        },
+        {
+          "kind": "trace_component",
+          "net": "IMU_CS",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "101f1277-3f43-4d70-93a9-52a06ea773de",
+            "12c6453f-3a2b-46b9-bc85-625c5ad63065",
+            "dce93b48-4f3c-4b3b-877d-f07a4ed1280c",
+            "ea404da7-90b2-4ec4-a1bd-31442785bfc9"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+              "at_mm": [
+                7.05,
+                21.8
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+              "at_mm": [
+                6.35,
+                25.0
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "IMU_CS",
+          "uuid": "8fc36516-6d66-4838-935f-24162deb7fc1",
+          "xy_mm": [
+            7.25,
+            26.825
+          ],
+          "reference": "R13.2"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "+5V_STACK",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [
+        {
+          "kind": "via",
+          "net": "+5V_STACK",
+          "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+          "xy_mm": [
+            21.15,
+            7.75
+          ]
+        }
+      ],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "+5V_STACK",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "17113324-243e-4cf1-b80b-334fc047125c",
+            "21cf9fc3-db12-4282-b832-15eec02f4640",
+            "4bf6f402-443f-419e-af68-233a4deaeb24",
+            "60e127d5-9edb-4e7c-b82d-d5260549de40",
+            "69a7a517-fddf-4448-a892-ca7be538db70",
+            "9c770be8-9dd2-473a-8c82-e909b92c9cc8"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+              "at_mm": [
+                21.15,
+                7.75
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "trace_component",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "099d8d70-39ec-4d59-82ad-83d3e5bd6950",
+            "12e439c4-ec95-46c4-b878-455fd3a4d78b",
+            "1ea4252a-dcce-4f97-939f-c0958af99cbd",
+            "31f2e6e9-eea4-4be5-b6f7-e20f9597459f",
+            "3d896c3a-8947-4ee0-8d18-f4ddb280b19e",
+            "600fdad2-5338-4463-b801-5d2be184dc45",
+            "6527df0f-657f-4a8f-8f24-ace6c345b147",
+            "7cadd0ad-2bc5-488d-9a2b-18e8e241963b",
+            "7e2ffd08-d91a-4edd-b69b-154086d5ea3a",
+            "7ff57c52-9f53-4536-8928-b03e9050371e",
+            "8335836a-57d1-4bbf-87aa-1a65b6884959",
+            "8b6d5a6f-2b17-424e-a342-f45ff905d2e4",
+            "8fb33d82-cbfe-41e1-b291-8e14e9688a95",
+            "a49a327d-78a1-442f-bd8d-54e33706969a",
+            "acf45089-d4f7-4b7d-a626-7e7656b0d2b3",
+            "af2715c3-64ab-45dc-b5ea-caf225d7d34e",
+            "baf1a6c6-4f28-4d59-9d7d-0d3a1c802805",
+            "bc54eec1-8629-4af5-9c5e-15ed492d8e05",
+            "cb660280-bc7d-4329-b6dd-8c5478e739db",
+            "dc0e6452-8993-4d62-a8da-6c851a9187c6",
+            "efeb1491-4037-4cb4-bf79-23468fc0eadd",
+            "f42d75d2-3764-4ea5-b762-ac0d26c6a044"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "55105f22-e5c6-4c29-b50c-cb576ebf6e5f",
+              "at_mm": [
+                29.55,
+                8.0
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+              "at_mm": [
+                21.15,
+                7.75
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "bede6699-4cab-43f9-b27e-2ce322db56e8",
+              "at_mm": [
+                27.65,
+                10.05
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "f61e86b2-2d6f-430c-af31-0b2347152328",
+              "at_mm": [
+                27.85,
+                3.4
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "USB_SOURCE_DISABLE",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [
+        {
+          "kind": "via",
+          "net": "USB_SOURCE_DISABLE",
+          "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+          "xy_mm": [
+            18.5,
+            29.9
+          ]
+        }
+      ],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "ac07069b-c2fe-4e43-bae0-a97020ecb7ba"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+              "at_mm": [
+                18.5,
+                29.9
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        },
+        {
+          "kind": "trace_component",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "track_uuids": [
+            "3c712f09-4d75-429d-a103-670f5ad2b991",
+            "42acb293-932e-4721-b7c0-e3d64f430b7c",
+            "506fff78-2f84-44c2-b497-45e01cb1e164",
+            "586c86d7-ea62-4d9c-afe4-b072fd8cea6a",
+            "6f644034-ff03-4b4d-9c7d-008d9ce8ca63",
+            "81783e32-2cbd-47f5-a74b-538794e69bcf",
+            "c9592ed5-097a-4637-9b20-ec5ee28de56f",
+            "da11d1c9-2707-471d-a625-699b333daa5f",
+            "fe5b4fbd-1e9f-47e7-9cf3-96d0c2930956"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+              "at_mm": [
+                18.5,
+                29.9
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "e662c27f-1468-4ab2-86f2-d1b4a98b1610",
+              "at_mm": [
+                19.35,
+                29.4
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "via",
+          "net": "USB_SOURCE_DISABLE",
+          "uuid": "e662c27f-1468-4ab2-86f2-d1b4a98b1610",
+          "xy_mm": [
+            19.35,
+            29.4
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "EXT_I2C_SCL",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "EXT_I2C_SCL",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "1f4a03b7-3101-4062-8ac4-516693ee900c",
+            "bcc2a9e8-7d52-4b52-afda-b8e1a76e75c4"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "e7fd5fa9-f718-4aa8-87eb-1fcd78c95fbc",
+              "reference": "J119.1",
+              "at_mm": [
+                22.0,
+                5.15
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "EXT_I2C_SCL",
+          "uuid": "e7fd5fa9-f718-4aa8-87eb-1fcd78c95fbc",
+          "xy_mm": [
+            22.0,
+            5.15
+          ],
+          "reference": "J119.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "EXT_I2C_SDA",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "EXT_I2C_SDA",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "465dfd11-50d1-4ec6-b61e-2c3bd6d9f327",
+            "90bd196b-e111-4646-b24b-147bf292a8b2"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "feb7dce7-fc90-4af5-9bc2-0ffd43e2991d",
+              "reference": "J120.1",
+              "at_mm": [
+                24.0,
+                5.15
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "EXT_I2C_SDA",
+          "uuid": "feb7dce7-fc90-4af5-9bc2-0ffd43e2991d",
+          "xy_mm": [
+            24.0,
+            5.15
+          ],
+          "reference": "J120.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "EXT_SPI_MISO",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "EXT_SPI_MISO",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "4f689b38-7e47-4a1f-921e-1ad322ed0529",
+            "ead3c77b-5131-4f61-836f-1ec2344d31cf"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "016bf602-f1c8-480b-bb37-1562ecf823cb",
+              "reference": "J126.1",
+              "at_mm": [
+                16.0,
+                36.5
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "EXT_SPI_MISO",
+          "uuid": "016bf602-f1c8-480b-bb37-1562ecf823cb",
+          "xy_mm": [
+            16.0,
+            36.5
+          ],
+          "reference": "J126.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "FDCAN1_RX",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "FDCAN1_RX",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "c5bd988c-1ff1-4f2c-a866-04c079967ef3"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "0339b82d-3353-4627-9f03-57d192f6ea21",
+              "at_mm": [
+                26.75,
+                13.35
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "via",
+          "net": "FDCAN1_RX",
+          "uuid": "0339b82d-3353-4627-9f03-57d192f6ea21",
+          "xy_mm": [
+            26.75,
+            13.35
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "GND",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "GND",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "9e1c0fec-d71b-4f91-8389-0d38318508bb"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "09f44d63-5967-4274-aed9-0dbf03dd697c",
+              "at_mm": [
+                32.2,
+                29.85
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "via",
+          "net": "GND",
+          "uuid": "09f44d63-5967-4274-aed9-0dbf03dd697c",
+          "xy_mm": [
+            32.2,
+            29.85
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "OUT3",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "OUT3",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "9558103f-0ad7-4515-888d-52ed1873563c",
+            "aec6f718-10a4-416c-b3c1-c09c605d1fba"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "640ffe13-d69b-4785-a283-b3efe97977e8",
+              "reference": "J136.1",
+              "at_mm": [
+                16.0,
+                32.85
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "OUT3",
+          "uuid": "640ffe13-d69b-4785-a283-b3efe97977e8",
+          "xy_mm": [
+            16.0,
+            32.85
+          ],
+          "reference": "J136.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "OUT4",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "OUT4",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "c8aa1b7f-1afe-4b2c-8f13-ed0c3bfc704e",
+            "ee43bc20-0ab8-4532-9ebf-0bbce398d463"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "8e5a2d70-8589-424f-99fa-83d63c49d140",
+              "reference": "J137.1",
+              "at_mm": [
+                18.0,
+                32.85
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "OUT4",
+          "uuid": "8e5a2d70-8589-424f-99fa-83d63c49d140",
+          "xy_mm": [
+            18.0,
+            32.85
+          ],
+          "reference": "J137.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "OUT5",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "OUT5",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "2fd8ceb0-fa89-4387-9d01-98dae131e35e",
+            "8c30e0b1-2093-4489-aba9-705fd6f993ee"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "c07632a2-c32d-4159-aefa-ed471c90649a",
+              "reference": "J139.1",
+              "at_mm": [
+                22.05,
+                32.85
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "OUT5",
+          "uuid": "c07632a2-c32d-4159-aefa-ed471c90649a",
+          "xy_mm": [
+            22.05,
+            32.85
+          ],
+          "reference": "J139.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "UART3_TX",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "UART3_TX",
+          "layer": "In2.Cu",
+          "track_uuids": [
+            "035503f7-b2ea-41a0-95e3-b8e270203c31",
+            "87fbeeb1-f586-4839-8fc2-d82c7e451507",
+            "dc407b9d-ac57-41a8-93af-cb2d30ab0922"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "24ff4382-6c48-4794-abe9-9a57776d555d",
+              "at_mm": [
+                29.4,
+                26.55
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "via",
+          "net": "UART3_TX",
+          "uuid": "24ff4382-6c48-4794-abe9-9a57776d555d",
+          "xy_mm": [
+            29.4,
+            26.55
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "UART4_RX",
+      "classification": "BENIGN LAND-CONTAINED COPPER",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "UART4_RX",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "e3bde25e-3a11-4e91-9797-e0d88b39b515",
+            "eecc1663-8190-4e6d-b6ff-ec451a9f4708"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "a2472f5f-7763-4e6a-a96a-d4f817e5b4fb",
+              "reference": "J116.1",
+              "at_mm": [
+                16.0,
+                5.15
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "UART4_RX",
+          "uuid": "a2472f5f-7763-4e6a-a96a-d4f817e5b4fb",
+          "xy_mm": [
+            16.0,
+            5.15
+          ],
+          "reference": "J116.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "3V3_CORE",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "3V3_CORE",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "bf260a0d-701f-4a56-933c-cd4d4024505d",
+            "d350b7dc-2805-46d0-a775-3efad197d72c"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "de4a9077-676b-415b-8ad2-3e996940fd62",
+              "reference": "C26.1",
+              "at_mm": [
+                22.475,
+                26.5
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "3V3_CORE",
+          "uuid": "de4a9077-676b-415b-8ad2-3e996940fd62",
+          "xy_mm": [
+            22.475,
+            26.5
+          ],
+          "reference": "C26.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    }
+  ],
+  "review_trees": [
+    {
+      "net": "IMU_CS",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [
+        {
+          "kind": "via",
+          "net": "IMU_CS",
+          "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+          "xy_mm": [
+            7.05,
+            21.8
+          ]
+        },
+        {
+          "kind": "via",
+          "net": "IMU_CS",
+          "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+          "xy_mm": [
+            6.35,
+            25.0
+          ]
+        }
+      ],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "15a5ca54-efad-40f6-8ebe-ecc8a0fd0c68",
+            "1831ff90-0ebd-45cc-b96b-cccb2873c035",
+            "c37c2b7f-0a2c-4eca-ab48-cebf990370c7",
+            "ecef9c28-2834-4265-a37f-d1e0a2f8d445"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+              "at_mm": [
+                6.35,
+                25.0
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "pad",
+              "uuid": "8fc36516-6d66-4838-935f-24162deb7fc1",
+              "reference": "R13.2",
+              "at_mm": [
+                7.25,
+                26.825
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "trace_component",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "63f43b78-981a-4893-9c83-4abc792aa1a3"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+              "at_mm": [
+                7.05,
+                21.8
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        },
+        {
+          "kind": "trace_component",
+          "net": "IMU_CS",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "101f1277-3f43-4d70-93a9-52a06ea773de",
+            "12c6453f-3a2b-46b9-bc85-625c5ad63065",
+            "dce93b48-4f3c-4b3b-877d-f07a4ed1280c",
+            "ea404da7-90b2-4ec4-a1bd-31442785bfc9"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+              "at_mm": [
+                7.05,
+                21.8
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+              "at_mm": [
+                6.35,
+                25.0
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "IMU_CS",
+          "uuid": "8fc36516-6d66-4838-935f-24162deb7fc1",
+          "xy_mm": [
+            7.25,
+            26.825
+          ],
+          "reference": "R13.2"
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "+5V_STACK",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [
+        {
+          "kind": "via",
+          "net": "+5V_STACK",
+          "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+          "xy_mm": [
+            21.15,
+            7.75
+          ]
+        }
+      ],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "+5V_STACK",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "17113324-243e-4cf1-b80b-334fc047125c",
+            "21cf9fc3-db12-4282-b832-15eec02f4640",
+            "4bf6f402-443f-419e-af68-233a4deaeb24",
+            "60e127d5-9edb-4e7c-b82d-d5260549de40",
+            "69a7a517-fddf-4448-a892-ca7be538db70",
+            "9c770be8-9dd2-473a-8c82-e909b92c9cc8"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+              "at_mm": [
+                21.15,
+                7.75
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "trace_component",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "099d8d70-39ec-4d59-82ad-83d3e5bd6950",
+            "12e439c4-ec95-46c4-b878-455fd3a4d78b",
+            "1ea4252a-dcce-4f97-939f-c0958af99cbd",
+            "31f2e6e9-eea4-4be5-b6f7-e20f9597459f",
+            "3d896c3a-8947-4ee0-8d18-f4ddb280b19e",
+            "600fdad2-5338-4463-b801-5d2be184dc45",
+            "6527df0f-657f-4a8f-8f24-ace6c345b147",
+            "7cadd0ad-2bc5-488d-9a2b-18e8e241963b",
+            "7e2ffd08-d91a-4edd-b69b-154086d5ea3a",
+            "7ff57c52-9f53-4536-8928-b03e9050371e",
+            "8335836a-57d1-4bbf-87aa-1a65b6884959",
+            "8b6d5a6f-2b17-424e-a342-f45ff905d2e4",
+            "8fb33d82-cbfe-41e1-b291-8e14e9688a95",
+            "a49a327d-78a1-442f-bd8d-54e33706969a",
+            "acf45089-d4f7-4b7d-a626-7e7656b0d2b3",
+            "af2715c3-64ab-45dc-b5ea-caf225d7d34e",
+            "baf1a6c6-4f28-4d59-9d7d-0d3a1c802805",
+            "bc54eec1-8629-4af5-9c5e-15ed492d8e05",
+            "cb660280-bc7d-4329-b6dd-8c5478e739db",
+            "dc0e6452-8993-4d62-a8da-6c851a9187c6",
+            "efeb1491-4037-4cb4-bf79-23468fc0eadd",
+            "f42d75d2-3764-4ea5-b762-ac0d26c6a044"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "55105f22-e5c6-4c29-b50c-cb576ebf6e5f",
+              "at_mm": [
+                29.55,
+                8.0
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+              "at_mm": [
+                21.15,
+                7.75
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "bede6699-4cab-43f9-b27e-2ce322db56e8",
+              "at_mm": [
+                27.65,
+                10.05
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "f61e86b2-2d6f-430c-af31-0b2347152328",
+              "at_mm": [
+                27.85,
+                3.4
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "USB_SOURCE_DISABLE",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [
+        {
+          "kind": "via",
+          "net": "USB_SOURCE_DISABLE",
+          "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+          "xy_mm": [
+            18.5,
+            29.9
+          ]
+        }
+      ],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "F.Cu",
+          "track_uuids": [
+            "ac07069b-c2fe-4e43-bae0-a97020ecb7ba"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+              "at_mm": [
+                18.5,
+                29.9
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        },
+        {
+          "kind": "trace_component",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "track_uuids": [
+            "3c712f09-4d75-429d-a103-670f5ad2b991",
+            "42acb293-932e-4721-b7c0-e3d64f430b7c",
+            "506fff78-2f84-44c2-b497-45e01cb1e164",
+            "586c86d7-ea62-4d9c-afe4-b072fd8cea6a",
+            "6f644034-ff03-4b4d-9c7d-008d9ce8ca63",
+            "81783e32-2cbd-47f5-a74b-538794e69bcf",
+            "c9592ed5-097a-4637-9b20-ec5ee28de56f",
+            "da11d1c9-2707-471d-a625-699b333daa5f",
+            "fe5b4fbd-1e9f-47e7-9cf3-96d0c2930956"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+              "at_mm": [
+                18.5,
+                29.9
+              ],
+              "diameter_mm": 0.45
+            },
+            {
+              "kind": "via",
+              "uuid": "e662c27f-1468-4ab2-86f2-d1b4a98b1610",
+              "at_mm": [
+                19.35,
+                29.4
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "via",
+          "net": "USB_SOURCE_DISABLE",
+          "uuid": "e662c27f-1468-4ab2-86f2-d1b4a98b1610",
+          "xy_mm": [
+            19.35,
+            29.4
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "UART3_TX",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "UART3_TX",
+          "layer": "In2.Cu",
+          "track_uuids": [
+            "035503f7-b2ea-41a0-95e3-b8e270203c31",
+            "87fbeeb1-f586-4839-8fc2-d82c7e451507",
+            "dc407b9d-ac57-41a8-93af-cb2d30ab0922"
+          ],
+          "terminals": [
+            {
+              "kind": "via",
+              "uuid": "24ff4382-6c48-4794-abe9-9a57776d555d",
+              "at_mm": [
+                29.4,
+                26.55
+              ],
+              "diameter_mm": 0.45
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "via",
+          "net": "UART3_TX",
+          "uuid": "24ff4382-6c48-4794-abe9-9a57776d555d",
+          "xy_mm": [
+            29.4,
+            26.55
+          ]
+        }
+      ],
+      "remaining_attachment_count": 1
+    },
+    {
+      "net": "3V3_CORE",
+      "classification": "DANGLING COPPER TREE; REVIEW",
+      "peeled_vias": [],
+      "peeled_trace_components": [
+        {
+          "kind": "trace_component",
+          "net": "3V3_CORE",
+          "layer": "B.Cu",
+          "track_uuids": [
+            "bf260a0d-701f-4a56-933c-cd4d4024505d",
+            "d350b7dc-2805-46d0-a775-3efad197d72c"
+          ],
+          "terminals": [
+            {
+              "kind": "pad",
+              "uuid": "de4a9077-676b-415b-8ad2-3e996940fd62",
+              "reference": "C26.1",
+              "at_mm": [
+                22.475,
+                26.5
+              ]
+            }
+          ]
+        }
+      ],
+      "remaining_attachment_nodes": [
+        {
+          "kind": "pad",
+          "net": "3V3_CORE",
+          "uuid": "de4a9077-676b-415b-8ad2-3e996940fd62",
+          "xy_mm": [
+            22.475,
+            26.5
+          ],
+          "reference": "C26.1"
+        }
+      ],
+      "remaining_attachment_count": 1
+    }
+  ],
+  "method": "Read-only dangling-tree screen with vias treated as junctions, not loads.\n\nActual same-layer trace components form graph nodes joined to native pads/vias.\nPads and legitimate filled-zone contacts are protected anchors; all GND vias\nremain protected because their return/stitch function is separately reviewed.\nIteratively peel non-anchor leaves. No loop or genuine two-anchor path is deleted\nor classified by this screen. Native source remains unchanged.\n"
+}

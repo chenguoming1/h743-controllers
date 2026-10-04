@@ -1,0 +1,187 @@
+{
+  "source_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+  "source_modified": false,
+  "operation": {
+    "operation": "Read-only R140 topology proof; no source saved",
+    "net": "UART3_TX",
+    "layer": "B.Cu",
+    "removed": [
+      {
+        "id": "40770755-32b3-4f9e-9179-3c99e38a75d2",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          29.65,
+          3.4
+        ],
+        "end": [
+          33.45,
+          7.2
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "2206629f-f38a-4ed0-803e-a8776f53f001",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.45,
+          7.2
+        ],
+        "end": [
+          33.5,
+          7.2
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "436a36c5-4691-43a4-90ed-72ed3329739e",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.5,
+          7.2
+        ],
+        "end": [
+          33.9,
+          7.6
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "ef7849a7-a432-487b-99bb-39ca830c62ba",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.6
+        ],
+        "end": [
+          33.9,
+          7.7
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "ada97bc0-d665-4002-9b51-603af2d7b874",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.7
+        ],
+        "end": [
+          36.1,
+          9.9
+        ],
+        "width_mm": 0.13
+      }
+    ],
+    "added": [
+      {
+        "id": "bd419a98-fdd8-4734-ac08-3ff693710cc7",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          29.65,
+          3.4
+        ],
+        "end": [
+          33.9,
+          7.65
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "7fc28913-7b63-42a8-8e32-677c9969a590",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.65
+        ],
+        "end": [
+          33.9,
+          7.7
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "c1aef5d8-c6d6-4032-bffd-a3171e47362f",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.7
+        ],
+        "end": [
+          36.1,
+          9.9
+        ],
+        "width_mm": 0.13
+      }
+    ],
+    "old_length_mm": 9.20096679918781,
+    "new_length_mm": 9.171677477306464,
+    "physical_terminal_partitions_equal": true,
+    "no_new_terminal_free_copper": true
+  },
+  "physical_and_reference_test": {
+    "width_mm": 0.13,
+    "points_mm": [
+      [
+        29.65,
+        3.4
+      ],
+      [
+        33.9,
+        7.65
+      ],
+      [
+        33.9,
+        7.7
+      ],
+      [
+        36.1,
+        9.9
+      ]
+    ],
+    "physical": true,
+    "contacts": true,
+    "blockers": [],
+    "new_unsupported_area_mm2": 0.0,
+    "new_unsupported_bbox_mm": null
+  },
+  "native_opens_in_memory": 0,
+  "terminal_attachment_proof": {
+    "pad_contacts": 0,
+    "via_contacts": [
+      {
+        "id": "41ab89ba-cfeb-4e89-b863-b2d7297ecf91",
+        "type": "PCB_VIA",
+        "net": "UART3_TX",
+        "xy_mm": [
+          29.5,
+          3.3
+        ],
+        "track": null
+      },
+      {
+        "id": "3700beb9-fb30-4158-9363-7b02564e3959",
+        "type": "PCB_VIA",
+        "net": "UART3_TX",
+        "xy_mm": [
+          36.1,
+          9.9
+        ],
+        "track": null
+      }
+    ],
+    "first_via": "29.5,3.3: same endpoint (29.65,3.4), same 0.130 mm width and same 45-degree departure; first segment only extends farther along the original line",
+    "last_via": "36.1,9.9: entire final segment from (33.9,7.7) is exactly unchanged at 0.130 mm",
+    "internal_join_proof": "All three new centerline segments meet exactly at common endpoints with identical 0.130 mm width; no overlapping off-center cap contact is introduced"
+  },
+  "visual_benefit": "Removes the unnecessary 0.050 mm horizontal shoulder and reduces the compensating vertical shoulder from 0.100 to 0.050 mm. All source and proposed segments are already 0.130 mm; the former apparent width bulb is geometric overlap, not a nominal width change.",
+  "pixels": "context/r140-read-only-before-after.png",
+  "ledger_review": "This was the only retained region with no candidate or preservation evidence among all 159 final region rows."
+}

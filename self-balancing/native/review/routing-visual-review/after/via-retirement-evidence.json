@@ -1,0 +1,785 @@
+{
+  "source": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-route-cleanup/freeze-last/controller.kicad_pcb",
+  "source_sha256": "8340e3520015ee3c92cc19c1da31ad055eb6c769eb89879a18ab4c41ac32be21",
+  "candidate_sha256_before_refill": "bfb0574e7686d5146f770510df6fe7393299a3a9b27f501ce639e9f3ce4fdd7f",
+  "authorized_removed_via_ids": [
+    "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+    "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+    "24ff4382-6c48-4794-abe9-9a57776d555d",
+    "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+    "0339b82d-3353-4627-9f03-57d192f6ea21",
+    "cc569dba-8c17-4a1b-a17d-55d48ca98df2"
+  ],
+  "changes": [
+    {
+      "operation": "Retire unused +5V_STACK via and five-track B.Cu dead arm to genuine three-way junction",
+      "net": "+5V_STACK",
+      "removed": [
+        {
+          "id": "600fdad2-5338-4463-b801-5d2be184dc45",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "start": [
+            21.15,
+            7.75
+          ],
+          "end": [
+            21.85,
+            8.45
+          ],
+          "width_mm": 0.45
+        },
+        {
+          "id": "baf1a6c6-4f28-4d59-9d7d-0d3a1c802805",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "start": [
+            21.85,
+            8.45
+          ],
+          "end": [
+            25.85,
+            8.45
+          ],
+          "width_mm": 0.45
+        },
+        {
+          "id": "af2715c3-64ab-45dc-b5ea-caf225d7d34e",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "start": [
+            25.85,
+            8.45
+          ],
+          "end": [
+            26.4,
+            9.0
+          ],
+          "width_mm": 0.45
+        },
+        {
+          "id": "3d896c3a-8947-4ee0-8d18-f4ddb280b19e",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "start": [
+            26.4,
+            9.0
+          ],
+          "end": [
+            27.35,
+            9.0
+          ],
+          "width_mm": 0.45
+        },
+        {
+          "id": "efeb1491-4037-4cb4-bf79-23468fc0eadd",
+          "net": "+5V_STACK",
+          "layer": "B.Cu",
+          "start": [
+            27.35,
+            9.0
+          ],
+          "end": [
+            27.65,
+            9.3
+          ],
+          "width_mm": 0.45
+        }
+      ],
+      "removed_vias": [
+        {
+          "id": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+          "kind": "via",
+          "net": "+5V_STACK",
+          "start": [
+            21.15,
+            7.75
+          ],
+          "width_mm": 0.45,
+          "drill_mm": 0.2,
+          "layer_pair": [
+            0,
+            2
+          ]
+        }
+      ],
+      "added": [],
+      "new_bridge_copper_containment": []
+    },
+    {
+      "operation": "Retire independently proven pad-anchored IMU_CS antenna tree",
+      "net": "IMU_CS",
+      "removed": [
+        {
+          "id": "15a5ca54-efad-40f6-8ebe-ecc8a0fd0c68",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "start": [
+            6.85,
+            26.7
+          ],
+          "end": [
+            6.15,
+            26.7
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "1831ff90-0ebd-45cc-b96b-cccb2873c035",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "start": [
+            5.9,
+            26.45
+          ],
+          "end": [
+            5.9,
+            25.45
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "c37c2b7f-0a2c-4eca-ab48-cebf990370c7",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "start": [
+            6.15,
+            26.7
+          ],
+          "end": [
+            5.9,
+            26.45
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "ecef9c28-2834-4265-a37f-d1e0a2f8d445",
+          "net": "IMU_CS",
+          "layer": "F.Cu",
+          "start": [
+            5.9,
+            25.45
+          ],
+          "end": [
+            6.35,
+            25.0
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "101f1277-3f43-4d70-93a9-52a06ea773de",
+          "net": "IMU_CS",
+          "layer": "B.Cu",
+          "start": [
+            6.35,
+            24.2
+          ],
+          "end": [
+            6.65,
+            23.9
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "12c6453f-3a2b-46b9-bc85-625c5ad63065",
+          "net": "IMU_CS",
+          "layer": "B.Cu",
+          "start": [
+            6.35,
+            25.0
+          ],
+          "end": [
+            6.35,
+            24.2
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "dce93b48-4f3c-4b3b-877d-f07a4ed1280c",
+          "net": "IMU_CS",
+          "layer": "B.Cu",
+          "start": [
+            6.65,
+            23.9
+          ],
+          "end": [
+            6.65,
+            22.2
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "ea404da7-90b2-4ec4-a1bd-31442785bfc9",
+          "net": "IMU_CS",
+          "layer": "B.Cu",
+          "start": [
+            6.65,
+            22.2
+          ],
+          "end": [
+            7.05,
+            21.8
+          ],
+          "width_mm": 0.15
+        }
+      ],
+      "removed_vias": [
+        {
+          "id": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+          "kind": "via",
+          "net": "IMU_CS",
+          "start": [
+            7.05,
+            21.8
+          ],
+          "width_mm": 0.45,
+          "drill_mm": 0.2,
+          "layer_pair": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+          "kind": "via",
+          "net": "IMU_CS",
+          "start": [
+            6.35,
+            25.0
+          ],
+          "width_mm": 0.45,
+          "drill_mm": 0.2,
+          "layer_pair": [
+            0,
+            2
+          ]
+        }
+      ],
+      "added": [],
+      "new_bridge_copper_containment": []
+    },
+    {
+      "operation": "Retire independently proven pad-anchored USB_SOURCE_DISABLE antenna tree",
+      "net": "USB_SOURCE_DISABLE",
+      "removed": [
+        {
+          "id": "3c712f09-4d75-429d-a103-670f5ad2b991",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            18.999463,
+            29.597026
+          ],
+          "end": [
+            18.949741,
+            29.648817
+          ],
+          "width_mm": 0.13
+        },
+        {
+          "id": "42acb293-932e-4721-b7c0-e3d64f430b7c",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            18.8,
+            29.75
+          ],
+          "end": [
+            18.7,
+            29.75
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "506fff78-2f84-44c2-b497-45e01cb1e164",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            19.15,
+            29.55
+          ],
+          "end": [
+            19.098814,
+            29.593751
+          ],
+          "width_mm": 0.13
+        },
+        {
+          "id": "586c86d7-ea62-4d9c-afe4-b072fd8cea6a",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            18.85,
+            29.7
+          ],
+          "end": [
+            18.8,
+            29.75
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "6f644034-ff03-4b4d-9c7d-008d9ce8ca63",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            18.9,
+            29.7
+          ],
+          "end": [
+            18.85,
+            29.7
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "81783e32-2cbd-47f5-a74b-538794e69bcf",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            19.2,
+            29.5
+          ],
+          "end": [
+            19.15,
+            29.55
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "c9592ed5-097a-4637-9b20-ec5ee28de56f",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            19.098814,
+            29.593751
+          ],
+          "end": [
+            18.999463,
+            29.597026
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "da11d1c9-2707-471d-a625-699b333daa5f",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            18.949741,
+            29.648817
+          ],
+          "end": [
+            18.9,
+            29.7
+          ],
+          "width_mm": 0.13
+        },
+        {
+          "id": "fe5b4fbd-1e9f-47e7-9cf3-96d0c2930956",
+          "net": "USB_SOURCE_DISABLE",
+          "layer": "In2.Cu",
+          "start": [
+            18.7,
+            29.75
+          ],
+          "end": [
+            18.65,
+            29.8
+          ],
+          "width_mm": 0.15
+        }
+      ],
+      "removed_vias": [
+        {
+          "id": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+          "kind": "via",
+          "net": "USB_SOURCE_DISABLE",
+          "start": [
+            18.5,
+            29.9
+          ],
+          "width_mm": 0.45,
+          "drill_mm": 0.2,
+          "layer_pair": [
+            0,
+            2
+          ]
+        }
+      ],
+      "added": [],
+      "new_bridge_copper_containment": []
+    },
+    {
+      "operation": "Replace UART3_TX via junction with continuous same-layer full-width shoulder",
+      "net": "UART3_TX",
+      "removed": [
+        {
+          "id": "8d8fbc81-beaf-4360-86cc-30e3b8bd3333",
+          "net": "UART3_TX",
+          "layer": "F.Cu",
+          "start": [
+            29.799956,
+            26.199955
+          ],
+          "end": [
+            29.55,
+            26.45
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "6ddaa690-6452-4bd2-ab41-6de93d55710a",
+          "net": "UART3_TX",
+          "layer": "F.Cu",
+          "start": [
+            29.4,
+            26.55
+          ],
+          "end": [
+            29.0,
+            26.15
+          ],
+          "width_mm": 0.13
+        }
+      ],
+      "removed_vias": [
+        {
+          "id": "24ff4382-6c48-4794-abe9-9a57776d555d",
+          "kind": "via",
+          "net": "UART3_TX",
+          "start": [
+            29.4,
+            26.55
+          ],
+          "width_mm": 0.45,
+          "drill_mm": 0.2,
+          "layer_pair": [
+            0,
+            2
+          ]
+        }
+      ],
+      "added": [
+        {
+          "id": "58736390-a580-47b8-a22a-c715ef483c4e",
+          "net": "UART3_TX",
+          "layer": "F.Cu",
+          "start": [
+            29.0,
+            26.15
+          ],
+          "end": [
+            29.3,
+            26.45
+          ],
+          "width_mm": 0.13
+        },
+        {
+          "id": "0eee92c4-40c2-4741-a429-28d9ef7426d3",
+          "net": "UART3_TX",
+          "layer": "F.Cu",
+          "start": [
+            29.3,
+            26.45
+          ],
+          "end": [
+            29.55,
+            26.45
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "e545d9fb-4574-4598-82fd-28254caf4407",
+          "net": "UART3_TX",
+          "layer": "F.Cu",
+          "start": [
+            29.55,
+            26.45
+          ],
+          "end": [
+            29.799956,
+            26.199955
+          ],
+          "width_mm": 0.15
+        }
+      ],
+      "new_bridge_copper_containment": [
+        {
+          "layer": "F.Cu",
+          "added_outside_source_copper_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "operation": "Replace FDCAN1_RX via junction with continuous same-layer .150mm shoulder; remove internal unused F stub",
+      "net": "FDCAN1_RX",
+      "removed": [
+        {
+          "id": "6a138ac8-db1a-4662-97b5-319847f70a73",
+          "net": "FDCAN1_RX",
+          "layer": "In2.Cu",
+          "start": [
+            26.2,
+            13.35
+          ],
+          "end": [
+            26.75,
+            13.35
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "7e11e95b-5e46-4877-b5c7-016fd6dfdf9e",
+          "net": "FDCAN1_RX",
+          "layer": "In2.Cu",
+          "start": [
+            27.5,
+            14.05
+          ],
+          "end": [
+            26.9,
+            13.45
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "c5bd988c-1ff1-4f2c-a866-04c079967ef3",
+          "net": "FDCAN1_RX",
+          "layer": "F.Cu",
+          "start": [
+            26.75,
+            13.35
+          ],
+          "end": [
+            26.75,
+            13.5
+          ],
+          "width_mm": 0.15
+        }
+      ],
+      "removed_vias": [
+        {
+          "id": "0339b82d-3353-4627-9f03-57d192f6ea21",
+          "kind": "via",
+          "net": "FDCAN1_RX",
+          "start": [
+            26.75,
+            13.35
+          ],
+          "width_mm": 0.45,
+          "drill_mm": 0.2,
+          "layer_pair": [
+            0,
+            2
+          ]
+        }
+      ],
+      "added": [
+        {
+          "id": "5d96149f-b6fe-4a61-a9c5-962411cf1959",
+          "net": "FDCAN1_RX",
+          "layer": "In2.Cu",
+          "start": [
+            26.2,
+            13.35
+          ],
+          "end": [
+            26.8,
+            13.35
+          ],
+          "width_mm": 0.15
+        },
+        {
+          "id": "9ede1ace-b6cf-4f50-a663-dc0fd397ee49",
+          "net": "FDCAN1_RX",
+          "layer": "In2.Cu",
+          "start": [
+            26.8,
+            13.35
+          ],
+          "end": [
+            27.5,
+            14.05
+          ],
+          "width_mm": 0.15
+        }
+      ],
+      "new_bridge_copper_containment": [
+        {
+          "layer": "In2.Cu",
+          "added_outside_source_copper_mm2": 0.0
+        }
+      ]
+    }
+  ],
+  "terminal_checks": [
+    {
+      "net": "+5V_STACK",
+      "remaining_pad_via_partitions_exact": true,
+      "no_terminal_free_copper": true,
+      "before": [
+        [
+          "1118e782-5158-4c54-80a3-a2663dda483b",
+          "1389428f-3727-4e4c-b216-8983e904cc48",
+          "17406538-25a4-48b9-b541-1c9ffe7821e0",
+          "19cd7f96-be27-4eba-b832-52b4bbe0926e",
+          "1a51664e-3dcf-44d3-a9d8-d355ba064fa3",
+          "23d5aec1-c933-4418-bd05-44e158b530fd",
+          "2663958f-2716-42ad-8e7a-96e0a9efb5c1",
+          "3b41d03d-41ea-49e9-8b9c-1051cf027530",
+          "4b144203-834c-4a4b-813f-605c297221b8",
+          "51cab34e-3473-4cb1-a51f-5515eed9798d",
+          "55105f22-e5c6-4c29-b50c-cb576ebf6e5f",
+          "60f00deb-c457-4493-aa2b-60984c0ae04b",
+          "781d5e67-52da-4921-a7fa-6d968606bdd3",
+          "7e410b65-f537-4bfe-a9f2-db87e55d7665",
+          "88c7e6f4-f933-43e9-b27c-4c0c65cf0d0a",
+          "907e1b30-70f7-4ce9-81cd-87bebce289e5",
+          "9bb1bef9-5db4-4901-95fb-e3fdbd4b3cf9",
+          "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+          "a0363f87-5057-4be4-aad9-c0e238f559ee",
+          "adb46a93-f01b-4094-8237-b63861592bd9",
+          "bede6699-4cab-43f9-b27e-2ce322db56e8",
+          "d8408feb-d292-4c2f-a0fb-dec28bbb2cac",
+          "e5f09be0-6ae8-4a70-a63d-b6b1362926c1",
+          "f40b6968-23c1-4a33-83a2-e16dac036c81",
+          "f61e86b2-2d6f-430c-af31-0b2347152328"
+        ]
+      ],
+      "after": [
+        [
+          "1118e782-5158-4c54-80a3-a2663dda483b",
+          "1389428f-3727-4e4c-b216-8983e904cc48",
+          "17406538-25a4-48b9-b541-1c9ffe7821e0",
+          "19cd7f96-be27-4eba-b832-52b4bbe0926e",
+          "1a51664e-3dcf-44d3-a9d8-d355ba064fa3",
+          "23d5aec1-c933-4418-bd05-44e158b530fd",
+          "2663958f-2716-42ad-8e7a-96e0a9efb5c1",
+          "3b41d03d-41ea-49e9-8b9c-1051cf027530",
+          "4b144203-834c-4a4b-813f-605c297221b8",
+          "51cab34e-3473-4cb1-a51f-5515eed9798d",
+          "55105f22-e5c6-4c29-b50c-cb576ebf6e5f",
+          "60f00deb-c457-4493-aa2b-60984c0ae04b",
+          "781d5e67-52da-4921-a7fa-6d968606bdd3",
+          "7e410b65-f537-4bfe-a9f2-db87e55d7665",
+          "88c7e6f4-f933-43e9-b27c-4c0c65cf0d0a",
+          "907e1b30-70f7-4ce9-81cd-87bebce289e5",
+          "9bb1bef9-5db4-4901-95fb-e3fdbd4b3cf9",
+          "a0363f87-5057-4be4-aad9-c0e238f559ee",
+          "adb46a93-f01b-4094-8237-b63861592bd9",
+          "bede6699-4cab-43f9-b27e-2ce322db56e8",
+          "d8408feb-d292-4c2f-a0fb-dec28bbb2cac",
+          "e5f09be0-6ae8-4a70-a63d-b6b1362926c1",
+          "f40b6968-23c1-4a33-83a2-e16dac036c81",
+          "f61e86b2-2d6f-430c-af31-0b2347152328"
+        ]
+      ]
+    },
+    {
+      "net": "FDCAN1_RX",
+      "remaining_pad_via_partitions_exact": true,
+      "no_terminal_free_copper": true,
+      "before": [
+        [
+          "0339b82d-3353-4627-9f03-57d192f6ea21",
+          "3035f5d9-9664-433e-83c9-8b63961bedd4",
+          "55876fd1-e97b-4735-b723-8ef909082570",
+          "ce4fdab0-03ed-4af9-89b8-d338d4e1dfdf",
+          "e59d39aa-6274-46bf-98a6-b13f7694517d"
+        ]
+      ],
+      "after": [
+        [
+          "3035f5d9-9664-433e-83c9-8b63961bedd4",
+          "55876fd1-e97b-4735-b723-8ef909082570",
+          "ce4fdab0-03ed-4af9-89b8-d338d4e1dfdf",
+          "e59d39aa-6274-46bf-98a6-b13f7694517d"
+        ]
+      ]
+    },
+    {
+      "net": "IMU_CS",
+      "remaining_pad_via_partitions_exact": true,
+      "no_terminal_free_copper": true,
+      "before": [
+        [
+          "24a41a3c-6e15-4614-9fa7-46ff61128902",
+          "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+          "720cbc76-4327-4cae-bd47-cb06916babb3",
+          "8fc36516-6d66-4838-935f-24162deb7fc1",
+          "a1e8d102-1001-459f-b395-06148597fa7b",
+          "b4699a41-cdb4-4fe1-9739-26312480c1b1",
+          "c0316ce6-4b00-42e7-8007-2e09d6c8ecc5",
+          "cc569dba-8c17-4a1b-a17d-55d48ca98df2"
+        ]
+      ],
+      "after": [
+        [
+          "24a41a3c-6e15-4614-9fa7-46ff61128902",
+          "720cbc76-4327-4cae-bd47-cb06916babb3",
+          "8fc36516-6d66-4838-935f-24162deb7fc1",
+          "a1e8d102-1001-459f-b395-06148597fa7b",
+          "b4699a41-cdb4-4fe1-9739-26312480c1b1",
+          "c0316ce6-4b00-42e7-8007-2e09d6c8ecc5"
+        ]
+      ]
+    },
+    {
+      "net": "UART3_TX",
+      "remaining_pad_via_partitions_exact": true,
+      "no_terminal_free_copper": true,
+      "before": [
+        [
+          "181af6ed-94a6-4fe9-bb91-d62a25f26f7d",
+          "24ff4382-6c48-4794-abe9-9a57776d555d",
+          "28711e3f-929c-4cec-b0af-a3ddeed6bf48",
+          "3700beb9-fb30-4158-9363-7b02564e3959",
+          "41ab89ba-cfeb-4e89-b863-b2d7297ecf91",
+          "4c36ad73-e570-42f9-822d-53a91bd03e53",
+          "6402b0f9-3b86-4c5f-8371-107d32bae4d8",
+          "8480bc59-77d4-492f-8efd-f7617821c41b",
+          "c0e00382-9ee2-45e2-acdb-6eb6873d26a4"
+        ]
+      ],
+      "after": [
+        [
+          "181af6ed-94a6-4fe9-bb91-d62a25f26f7d",
+          "28711e3f-929c-4cec-b0af-a3ddeed6bf48",
+          "3700beb9-fb30-4158-9363-7b02564e3959",
+          "41ab89ba-cfeb-4e89-b863-b2d7297ecf91",
+          "4c36ad73-e570-42f9-822d-53a91bd03e53",
+          "6402b0f9-3b86-4c5f-8371-107d32bae4d8",
+          "8480bc59-77d4-492f-8efd-f7617821c41b",
+          "c0e00382-9ee2-45e2-acdb-6eb6873d26a4"
+        ]
+      ]
+    },
+    {
+      "net": "USB_SOURCE_DISABLE",
+      "remaining_pad_via_partitions_exact": true,
+      "no_terminal_free_copper": true,
+      "before": [
+        [
+          "1c8c5028-07a7-44a2-8e57-b1898535be73",
+          "5c901c66-de13-4f4f-86f3-751ea6001ede",
+          "805ece14-4c55-4f5c-bf56-0f248f1d1205",
+          "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+          "e662c27f-1468-4ab2-86f2-d1b4a98b1610"
+        ]
+      ],
+      "after": [
+        [
+          "1c8c5028-07a7-44a2-8e57-b1898535be73",
+          "5c901c66-de13-4f4f-86f3-751ea6001ede",
+          "805ece14-4c55-4f5c-bf56-0f248f1d1205",
+          "e662c27f-1468-4ab2-86f2-d1b4a98b1610"
+        ]
+      ]
+    }
+  ],
+  "native_opens_before_refill": 0,
+  "scope": "Six explicitly authorized redundant vias only; actual planar joins, pad-anchored unused antenna trees, no placeholder copper",
+  "candidate_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+  "native_opens_after_refill": 0,
+  "refill_proof": "retirement-refill-proof.json"
+}

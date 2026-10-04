@@ -1,0 +1,89 @@
+{
+  "status": "PASS EXACT LOCAL J162 PAD/FEED REDUNDANCY PROOF; FINAL CANDIDATE MUST PRESERVE FEED RECORDS",
+  "source_path": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-route-cleanup/candidate-branches.kicad_pcb",
+  "source_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+  "proposal_path": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-critical-shapes/j162-rebased-787910ef-proposal.json",
+  "proposal_sha256": "96d74d8b9f8929e8404cab3e2efdaab5fd8a5157f3bf0e71161cc31c91ceb603",
+  "errors": [],
+  "pad_uuid": "f033bae3-30e5-46a0-9885-a09cf30a9873",
+  "pad_reference": "J162.1",
+  "deleted_tracks": 8,
+  "deleted_widths_mm": [
+    0.3
+  ],
+  "deleted_copper_outside_native_pad_mm2": 0.401737533258,
+  "retained_feeds": [
+    {
+      "record": {
+        "id": "0a585d33-9792-4e33-8caf-59e56442f3b3",
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "start": [
+          15.7,
+          31.9
+        ],
+        "end": [
+          15.7,
+          31.95
+        ],
+        "width_mm": 0.45
+      },
+      "directly_contacts_retained_pad": true
+    },
+    {
+      "record": {
+        "id": "837871e3-c11a-4433-8c98-90604fc54db3",
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "start": [
+          15.7,
+          31.9
+        ],
+        "end": [
+          16.15,
+          31.45
+        ],
+        "width_mm": 0.3
+      },
+      "directly_contacts_retained_pad": true
+    },
+    {
+      "record": {
+        "id": "b45fc48b-66a8-4bc0-b55e-8fcbbc59fd2d",
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "start": [
+          14.85,
+          33.2
+        ],
+        "end": [
+          13.9,
+          34.15
+        ],
+        "width_mm": 0.3
+      },
+      "directly_contacts_retained_pad": true
+    }
+  ],
+  "all_external_contacts": [
+    {
+      "uuid": "0a585d33-9792-4e33-8caf-59e56442f3b3",
+      "kind": "PCB_TRACK",
+      "directly_contacts_retained_pad": true
+    },
+    {
+      "uuid": "b45fc48b-66a8-4bc0-b55e-8fcbbc59fd2d",
+      "kind": "PCB_TRACK",
+      "directly_contacts_retained_pad": true
+    },
+    {
+      "uuid": "f033bae3-30e5-46a0-9885-a09cf30a9873",
+      "kind": "PAD",
+      "directly_contacts_retained_pad": true,
+      "ref": "J162",
+      "pin": "1"
+    }
+  ],
+  "reason": "Every connection between deleted branch copper and retained conductors directly overlaps the same unchanged native J162 copper pad; all declared original feed segments physically touch that pad and remain independently frozen. The protruding redundant branch does not supply any separate terminal.",
+  "limits": "Final physical all-net connectivity, feed record equality, unchanged native pad, and no width-reduced replacements remain mandatory."
+}

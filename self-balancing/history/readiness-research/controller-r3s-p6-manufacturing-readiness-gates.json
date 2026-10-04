@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-03T17:35:55.007358+00:00",
+  "source_board_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+  "scope": "Read-only manufacturing readiness audit; only research artifacts written; no CAD, uploads, communications or order changes",
+  "recommendation": "Source suitable for prototype PCB submission after exact final export/package/supplier-rerun gates. No demonstrated bare-PCB geometry blocker remains. Unconditional assembled production is not yet released.",
+  "parent_owned_pending_gates": [
+    "final_export",
+    "final_supplier_rerun"
+  ],
+  "real_external_assembly_deliverables": [
+    "placement",
+    "carrier_fixture",
+    "stencil",
+    "usb_shell_solder"
+  ],
+  "inherited_smt_counts": {
+    "red": 24,
+    "yellow": 6,
+    "basis": "P5 equals P4; P6 observed final counts pending owner"
+  },
+  "gates": [
+    {
+      "id": "source",
+      "phase": "source",
+      "status": "closed",
+      "subject": "Exact-P6 CAD and complete copper attachment",
+      "closure_requirement": "No further source change required by this audit",
+      "evidence": [
+        "controller-r3s-p6-independent-validation/final-fafa9c3f/complete-source-qualification.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "final_export",
+      "phase": "package",
+      "status": "pending_owner",
+      "subject": "Final Gerber/drill/BOM/CPL/export parity and one-package manifest",
+      "closure_requirement": "Owner must verify final exports and package bytes against frozen native SHA; inherited exports are insufficient",
+      "evidence": [],
+      "blocks_bare_pcb_submission": true,
+      "blocks_unconditional_assembly_release": true,
+      "can_close_locally": true
+    },
+    {
+      "id": "final_supplier_rerun",
+      "phase": "package",
+      "status": "pending_owner",
+      "subject": "P6 supplier-input rerun",
+      "closure_requirement": "Owner must reconcile final P6 counts and confirm exact manufacturing ZIP/BOM/CPL upload provenance",
+      "evidence": [],
+      "blocks_bare_pcb_submission": true,
+      "blocks_unconditional_assembly_release": true,
+      "can_close_locally": true
+    },
+    {
+      "id": "small_vias",
+      "phase": "fabrication_order",
+      "status": "closed_with_order_selection",
+      "subject": "Seven approved 0.35/0.20 mm vias",
+      "closure_requirement": "Select documented small-via manufacturing tier; preserve exact seven-item allowlist",
+      "evidence": [
+        "https://jlcpcb.com/capabilities/Capabilities",
+        "../controller-r3s-p6/review/approved-small-vias.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "stack_impedance",
+      "phase": "fabrication_order",
+      "status": "specified_normal_cam_confirmation",
+      "subject": "JLC06161H-3313 and 90-ohm outer USB pairs",
+      "closure_requirement": "Select fixed stack/copper/mask/finish, controlled impedance and production-file confirmation; retain W0.1392/G0.1600 mm",
+      "evidence": [
+        "https://jlcpcb.com/impedance",
+        "../controller-r3s-p6/review/manufacturing-profile.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": false
+    },
+    {
+      "id": "usb_slots",
+      "phase": "fabrication_order",
+      "status": "closed_supported_geometry",
+      "subject": "Four J2 plated slots",
+      "closure_requirement": "Preserve front0.60x1.40/rear0.60x1.70 mm plated slots and0.20 mm rings; do not resin-fill component slots",
+      "evidence": [
+        "https://jlcpcb.com/capabilities/Capabilities",
+        "controller-r3s-p6-manufacturing-readiness-native.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "mask_via_gaps",
+      "phase": "fabrication_order",
+      "status": "closed_supported_geometry",
+      "subject": "Foreign mask and via-hole clearances",
+      "closure_requirement": "Exact-P6 minima meet applicable process limits; reconcile final export unchanged",
+      "evidence": [
+        "controller-r3s-p6-independent-validation/final-fafa9c3f/advisories/advisory-clearance-census.json",
+        "https://jlcpcb.com/capabilities/Capabilities"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "via_cover",
+      "phase": "fabrication_order",
+      "status": "closed_with_order_selection",
+      "subject": "Silkscreen over covered vias",
+      "closure_requirement": "Specify epoxy-filled/copper-capped/mask-covered0.20 mm vias; check CAM hole treatment; keep component slots/NPTH open",
+      "evidence": [
+        "https://jlcpcb.com/help/article/pcb-via-covering"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": false
+    },
+    {
+      "id": "u2_edges",
+      "phase": "smt_disposition",
+      "status": "closed_generic_rule_exception",
+      "subject": "U2:16 inherited edge reds",
+      "closure_requirement": "Preserve TI-supported land and paste geometry; production placement/stencil checks remain separate",
+      "evidence": [
+        "../controller-r3s-p6/review/smt-manufacturer-evidence/u2/U2-P3-SMT-disposition.md"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "d4_edges_overlap",
+      "phase": "smt_disposition",
+      "status": "closed_manufacturer_pattern_exception",
+      "subject": "D4:5 inherited edge reds and2 overlap yellows",
+      "closure_requirement": "Preserve exact ST rectangular lands; no arbitrary enlargement",
+      "evidence": [
+        "../controller-r3s-p6/review/smt-manufacturer-evidence/d4/README.md",
+        "../controller-r3s-p6/review/smt-manufacturer-evidence/controlled-diagnostic-disposition.json",
+        "controller-r3s-p6-manufacturing-readiness-native.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "split_paste",
+      "phase": "smt_disposition",
+      "status": "closed_diagnostic_recognition_dependency",
+      "subject": "U2/U11:2 inherited overlap reds",
+      "closure_requirement": "Retain production split paste; diagnostic full-EP files must not enter release",
+      "evidence": [
+        "../controller-r3s-p6/review/smt-manufacturer-evidence/controlled-diagnostic-disposition.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "j3_hole_class",
+      "phase": "smt_disposition",
+      "status": "closed_false_classification",
+      "subject": "J3:1 inherited through-hole yellow",
+      "closure_requirement": "Exact C7527621 drawing depicts surface contacts/anchors with matching dimensional pattern and no PCB-hole requirement; no hole addition",
+      "evidence": [
+        "controller-r3s-p6-manufacturing-readiness-native.json",
+        "controller-r3s-manufacturing-sources/lian-xin-c7527621.pdf",
+        "https://jlcpcb.com/partdetail/Lian_XinTechnology-XDWF_091006P/C7527621"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": true
+    },
+    {
+      "id": "placement",
+      "phase": "assembly_production",
+      "status": "open_order_artifact",
+      "subject": "Final two-face physical polarity/placement",
+      "closure_requirement": "Obtain actual supplier2D production placement with physical pin1/cathode marks against native pads, exact79 corrected CPL rows and selected parts; public EasyEDA model revision is not bound to this DFM model",
+      "evidence": [
+        "https://jlcpcb.com/help/article/pcb-assembly-faqs-part-2",
+        "https://jlcpcb.com/help/article/component-polarity-and-orientation-identification-guide",
+        "https://jlcpcb.com/help/article/terms-and-conditions-of-jlcpcb-assembly-service",
+        "../controller-r3s-p6/review/assembly-drawing/controller-r3s-assembly-manufacturing.pdf"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": true,
+      "can_close_locally": false
+    },
+    {
+      "id": "carrier_fixture",
+      "phase": "assembly_production",
+      "status": "open_order_artifact",
+      "subject": "J3 edge red/J4-J5 edge yellows and near-flush J2 carrier access",
+      "closure_requirement": "Standard double-sided JLC carrier/rails/tooling/fiducials with protected mouth/depanel/nozzle access; determine actual connector support/fixture suitability. Newer retained live C7527621 capture has no fixture notice; older indexed notice does not establish a current mandatory fixture.",
+      "evidence": [
+        "https://jlcpcb.com/help/article/panelizing-your-pcb-for-assembly",
+        "https://jlcpcb.com/help/article/how-to-add-edge-rails-fiducials-for-pcb-assembly-order",
+        "https://jlcpcb.com/partdetail/Lian_XinTechnology-XDWF_091006P/C7527621",
+        "https://jlcpcb.com/help/article/terms-and-conditions-of-jlcpcb-assembly-service"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": true,
+      "can_close_locally": false
+    },
+    {
+      "id": "stencil",
+      "phase": "assembly_production",
+      "status": "open_order_artifact",
+      "subject": "Production stencil and solder volume",
+      "closure_requirement": "Request top0.12 mm with U13 region0.10 mm and bottom0.10 mm evaluation, preserve real U2/U11 split windows; stencil engineer must verify local boundary/neighbor apertures and volume or document alternative",
+      "evidence": [
+        "https://jlcpcb.com/help/article/smt-stencil-data-prepared-for-smt-orders",
+        "https://jlcpcb.com/resources/jlcpcb-stencil",
+        "controller-r3s-p6-manufacturing-readiness-native.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": true,
+      "can_close_locally": false
+    },
+    {
+      "id": "usb_shell_solder",
+      "phase": "assembly_production",
+      "status": "open_process_definition",
+      "subject": "Four J2S1 shell joints have no paste apertures",
+      "closure_requirement": "Include explicit accepted manual/selective/qualified shell-joint solder step for all4 anchors and inspect joints; SMT item selection alone is insufficient",
+      "evidence": [
+        "https://jlcpcb.com/partdetail/C165948",
+        "https://jlcpcb.com/help/article/pcb-assembly-faqs",
+        "controller-r3s-p6-manufacturing-readiness-native.json"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": true,
+      "can_close_locally": false
+    },
+    {
+      "id": "j3_harness",
+      "phase": "first_article",
+      "status": "open_hardware_validation",
+      "subject": "J3 cavity convention, exact harness and load",
+      "closure_requirement": "Verify actual matched housing/terminal/wire continuity to +5V/GND/signals before powering; respect1 A combined path budget",
+      "evidence": [
+        "../controller-r3s-p6/review/smt-manufacturer-evidence/connectors/README.md"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": false
+    },
+    {
+      "id": "usb_mating",
+      "phase": "first_article",
+      "status": "open_hardware_validation",
+      "subject": "J2 near-flush mouth and enclosure",
+      "closure_requirement": "Test actual mating plug/cable/enclosure;8.94 mm DFM width is not overhang depth",
+      "evidence": [
+        "../controller-r3s-p6/review/smt-manufacturer-evidence/connectors/README.md"
+      ],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": false
+    },
+    {
+      "id": "system_validation",
+      "phase": "first_article",
+      "status": "open_hardware_validation",
+      "subject": "Electrical, thermal, firmware and application",
+      "closure_requirement": "Current-limited bring-up, rails/mux/HSE/peripheral/USB current-policy tests, thermal/EMI/application qualification; no flight or success-probability assertion",
+      "evidence": [],
+      "blocks_bare_pcb_submission": false,
+      "blocks_unconditional_assembly_release": false,
+      "can_close_locally": false
+    }
+  ],
+  "public_sources": {
+    "capabilities": "https://jlcpcb.com/capabilities/Capabilities",
+    "stack": "https://jlcpcb.com/impedance",
+    "via_cover": "https://jlcpcb.com/help/article/pcb-via-covering",
+    "pcba_terms": "https://jlcpcb.com/help/article/terms-and-conditions-of-jlcpcb-assembly-service",
+    "panel": "https://jlcpcb.com/help/article/panelizing-your-pcb-for-assembly",
+    "rails": "https://jlcpcb.com/help/article/how-to-add-edge-rails-fiducials-for-pcb-assembly-order",
+    "stencil_workflow": "https://jlcpcb.com/help/article/smt-stencil-data-prepared-for-smt-orders",
+    "stencil_options": "https://jlcpcb.com/resources/jlcpcb-stencil",
+    "orientation": "https://jlcpcb.com/help/article/pcb-assembly-faqs-part-2",
+    "polarity": "https://jlcpcb.com/help/article/component-polarity-and-orientation-identification-guide",
+    "J3": "https://jlcpcb.com/partdetail/Lian_XinTechnology-XDWF_091006P/C7527621",
+    "J2": "https://jlcpcb.com/partdetail/C165948",
+    "manual_solder": "https://jlcpcb.com/help/article/pcb-assembly-faqs"
+  },
+  "supporting_artifacts_sha256": {
+    "controller-r3s-p6-manufacturing-readiness.md": "744193340fa93b50cb0ceb60b18034fcfdd9dda7fca51454cf96f8eea38b1210",
+    "controller-r3s-p6-manufacturing-readiness-native.json": "54c400aa5f0a2bfe9d5f42ce9d5b1ea4e65f56ef0b145560c0007a2087af059e"
+  },
+  "not_claimed": [
+    "Supplier exact-model zero-angle verification",
+    "Approved production panel/stencil",
+    "Manufactured or measured hardware",
+    "Success probability",
+    "Flight readiness"
+  ],
+  "sourcing_fixture_correction": {
+    "at_utc": "2026-10-03T18:07:00Z",
+    "basis": "../controller-r3s-p6/review/sourcing/controller-r3s-bom-source-status.json",
+    "J3_live_observed_at_utc": "2026-10-02T20:26:24.669Z",
+    "J3_current_mandatory_fixture_established": false,
+    "reason": "Newer retained live observation records no fixture notice; older indexed page is weaker evidence."
+  }
+}

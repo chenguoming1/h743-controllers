@@ -1,0 +1,102 @@
+{
+  "status": "REVIEWED PROSE-ONLY DELTA; owner export guard must be rebound",
+  "helper": "tools/build_assembly_pdf_p6.py",
+  "helper_sha256_before": "361dd61c2e333269570c89c6cb589aee5623273facd8b1f2a9457a70a48b3be6",
+  "helper_sha256_after": "001e2b8b5cbe5445a43aee6307a71bb988efd95c68c0014ff9ba4d203a24c6af",
+  "changed_utc": "2026-10-03T18:09:42.817681+00:00",
+  "string_only_AST_equivalence": true,
+  "exact_replacements": [
+    {
+      "before": "supplier model alignment and hardware qualification pending",
+      "after": "assembly production definitions and hardware qualification pending"
+    },
+    {
+      "before": "ASSEMBLY NOT CLEARED: residual supplier model/process findings remain.",
+      "after": "ASSEMBLY NOT CLEARED: final placement, carrier, stencil and shell-solder production definitions are required."
+    },
+    {
+      "before": "R3-S6-P6 | JLC06161H-3313 | ASSEMBLY NOT CLEARED: supplier placement alignment pending",
+      "after": "R3-S6-P6 | JLC06161H-3313 | ASSEMBLY NOT CLEARED: production definitions required"
+    },
+    {
+      "before": "Shared process acceptance",
+      "after": "Production stencil definition"
+    },
+    {
+      "before": "TI illustrates 0.125 mm stencil for U2 and 0.10 mm for U13. U13 aperture XY matches its DRL drawing. The assembler must accept the shared stencil thickness/local treatment and reflow process; matching XY is not qualification of solder volume or voiding. JLC six-layer ordering defaults to filled/capped vias; the actual quoted process remains an acceptance gate.",
+      "after": "JLC regenerates SMT stencil data; require the real U2/U11 split windows in order remarks. Request evaluation of top 0.12 mm with a 0.10 mm U13 region, and bottom 0.10 mm. The stencil engineer must check step boundaries, nearby apertures and solder volume, or document a qualified alternative. This is a proposal, not process qualification."
+    },
+    {
+      "before": "J2 has two front 0.60 x 1.40 mm plated slots and two rear 0.60 x 1.70 mm slots, with 0.20 mm copper rings. No shell paste apertures are provided. Explicitly include all four shell joints in the accepted assembly process. Do not treat contacts-only SMT reflow as proof of shell soldering. HRO specifies -30 to +80 C operation; this limits any whole-board temperature claim.",
+      "after": "J2 has two front 0.60 x 1.40 mm plated slots and two rear 0.60 x 1.70 mm slots, with 0.20 mm copper rings. No shell paste is provided. Require an accepted manual/selective or other qualified solder operation covering all four shell joints, then inspect them. Contacts-only reflow is insufficient. HRO specifies -30 to +80 C operation."
+    },
+    {
+      "before": "The supplier CPL incorporates the user corrections; the unchanged native audit is supplied separately. Residual model/land/process warnings mean assembly is NOT CLEARED. Resolve each remaining warning and part orientation before approval. Use Standard double-sided PCBA with an accepted JLC carrier/panel. Approve connector access, rails, tooling, both-face fiducials and depaneling against the supplier drawing. No customer array is supplied; page 6 records the explicit supplier-CPL corrections.",
+      "after": "Obtain the final supplier two-face 2D placement/polarity drawing for the exact 79-row corrected CPL. Use Standard double-sided PCBA with accepted carrier/rails/tooling/fiducials, connector mouth and depaneling access, with actual connector support/fixture suitability confirmed during order engineering. A customer-designed array is not required. Page 6 records the exact supplier-CPL corrections; the native placement audit remains separate."
+    },
+    {
+      "before": "Via geometry",
+      "after": "Via fabrication settings"
+    },
+    {
+      "before": "Exactly seven documented through vias use 0.35 mm diameter / 0.20 mm drill and 0.075 mm radial annulus. All other vias retain at least 0.40 mm diameter. The exact UUID/net/position allowance accompanies the native package; supplier process acceptance is pending.",
+      "after": "Select the 0.20 mm drill/small-via tier and epoxy-filled, copper-capped, mask-covered vias. Seven 0.35/0.20 mm vias have 0.075 mm radial annuli and meet the published preferred diameter-minus-drill rule; all other vias are at least 0.40 mm. Keep component slots and NPTH holes open. These are specified process selections."
+    },
+    {
+      "before": "Exact J3 mating harness/fixture and 1 A combined input-path budget, TXC lot/HSE startup, stencil/reflow, thermal behaviour and production CAM remain open qualifications. Local CAD or file checks do not establish these physical results.",
+      "after": "Assembly production definitions are separate from bare-PCB fabrication. First-article checks cover the exact J3 harness and 1 A input-path budget, near-flush USB mating, HSE startup, rails, USB current/attachment firmware, thermal and EMI behaviour. CAD review does not establish these measured hardware results."
+    },
+    {
+      "before": "the corrected file cleared pin-without-pad, lead-to-hole, outer-lead and USB hole-alignment failures in the separate P2 geometry test. Residual U2/D4 land checks, the U11 bottom overlap finding and connector edge/process warnings remain. The P6-Routing-Review records the current review status; this page does not claim assembly clearance.",
+      "after": "The P6-Routing-Review reconciles current supplier findings against manufacturer lands and process evidence. J3 through-hole classification is a model error: the exact selected part and native lands have no drilled lead. Generic coloured rows do not replace the four production definitions on page 5. This page does not claim assembly clearance."
+    },
+    {
+      "before": "confirm supplier model pin 1, actual package terminals and approved lands for every remaining finding, and accept the panel, stencil/reflow and shell-joint process before assembly. No purchase or assembly approval is implied by these files.",
+      "after": "verify the final supplier two-face pin-1/polarity drawing, carrier and connector support, actual production stencil and all four USB shell solder joints before assembly. No purchase or assembly approval is implied by these files."
+    },
+    {
+      "before": "Supplier carrier/panel and exact-part placement alignment pending",
+      "after": "Before assembly: final two-face placement/polarity drawing and carrier with connector support/fixture suitability confirmed during order engineering"
+    },
+    {
+      "before": "Stencil/reflow and USB shell solder process acceptance pending",
+      "after": "Before assembly: recorded stencil preserving split U2/U11 windows and solder operation for four J2 shell anchors"
+    },
+    {
+      "before": "JLC orientation</link>",
+      "after": "JLC orientation</link> | <link href=\"https://jlcpcb.com/help/article/smt-stencil-data-prepared-for-smt-orders\" color=\"#173d58\">Stencil workflow</link> | <link href=\"https://jlcpcb.com/help/article/pcb-via-covering\" color=\"#173d58\">Via covering</link> | <link href=\"https://jlcpcb.com/partdetail/Lian_XinTechnology-XDWF_091006P/C7527621\" color=\"#173d58\">J3 listing</link>"
+    }
+  ],
+  "readiness_evidence": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-manufacturing-readiness.md",
+  "readiness_evidence_sha256": "53db4d237ff37bad9cd7b85829de988bc6728e4679a7665f3bb5e53155fa26e9",
+  "native_or_CPL_changes": false,
+  "notes": [
+    "Required order selections replace generic small-via uncertainty",
+    "Explicit supplier-generated stencil review and bounded thickness proposal",
+    "Four concrete PCBA production deliverables distinguished from bare-PCB fabrication",
+    "Exact selected J3 SMD-only classification replaces generic hole warning"
+  ],
+  "reviewed_source_correction": {
+    "helper_sha256_before": "1786a74c50b1885f7f9f17269fe1a2d7bc7b9d8f31404f185506c4780cbd5085",
+    "helper_sha256_after": "001e2b8b5cbe5445a43aee6307a71bb988efd95c68c0014ff9ba4d203a24c6af",
+    "reason": "Earlier mandatory current-SKU fixture claim relied on a five-month cached page. Newer retained live capture 2026-10-02T20:26:24Z has no fixture notice. Require actual carrier and connector support/fixture suitability during order engineering; do not claim catalogue mandate.",
+    "exact_replacements": [
+      {
+        "before": "and the C7527621 support fixture.",
+        "after": "with actual connector support/fixture suitability confirmed during order engineering."
+      },
+      {
+        "before": "carrier with C7527621 support fixture",
+        "after": "carrier with connector support/fixture suitability confirmed during order engineering"
+      },
+      {
+        "before": "carrier and support fixture, actual production stencil",
+        "after": "carrier and connector support, actual production stencil"
+      },
+      {
+        "before": ">J3 fixture</link>",
+        "after": ">J3 listing</link>"
+      }
+    ]
+  }
+}

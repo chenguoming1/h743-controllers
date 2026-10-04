@@ -1,0 +1,644 @@
+{
+  "source_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "baseline_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+  "all_85_net_images_inspected_as_pixels": true,
+  "all_159_region_images_inspected_as_pixels": true,
+  "all_six_native_copper_layer_images_inspected_as_pixels": true,
+  "overall_status": "VISUAL REVIEW ACCEPTED WITH DOCUMENTED CONSTRAINTS",
+  "summary": "All 85 routed nets, all 159 targeted regions, and all six native copper layers were inspected as pixels on the final geometry. The last R140 change was re-inspected directly; 84 unchanged net views and 158 region crops carry from the preceding full review by byte-identical rendered images and exact geometry. The original screenshot arrows, long staircases, west paired teeth, local GND scallops, exposed tail and unused branch trees are addressed. Six redundant non-ground vias are retired with genuine planar joins where needed. Remaining constrained terminal escapes and shoulders are shown with exact tested alternatives and obstacles; no further actionable visual defect was found in this bounded review.",
+  "nets": [
+    {
+      "index": 0,
+      "net": "+5V_STACK",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The unused front power spur, its redundant via and its five-track rear arm were removed back to the real junction. Main distribution branches are simpler. The protected buck supply corridor retains its full widths and terminal feeds."
+    },
+    {
+      "index": 1,
+      "net": "/clock/HSE_XOUT",
+      "status": "FIXED",
+      "note": "The short crystal-output rear approach is now a coherent vertical/45-degree route with its via attachment preserved."
+    },
+    {
+      "index": 2,
+      "net": "/power/BUCK_SW",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The three-segment buck switch connection is short, direct and uniformly wide; its protected local layout is preserved."
+    },
+    {
+      "index": 3,
+      "net": "/power/STACK_5V_DIV",
+      "status": "FIXED",
+      "note": "The divider staircase and narrow V are replaced with an explicit 0.150 mm Y/T fork. The branch enters the via center at (25.75,10.85); no shallow annulus-only contact is used."
+    },
+    {
+      "index": 4,
+      "net": "/power/USB_CC1",
+      "status": "FIXED",
+      "note": "The inner-layer wavy corner is now a clean polygon; front and rear terminal connections remain direct."
+    },
+    {
+      "index": 5,
+      "net": "/power/USB_CC2",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The USB CC2 course uses coherent straight spans and clear bends around the connector corridor."
+    },
+    {
+      "index": 6,
+      "net": "/power/USB_DM_CONN",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected USB connector branch topology remains regular, with its original 0.1392 mm geometry retained."
+    },
+    {
+      "index": 7,
+      "net": "/power/USB_DM_ESD",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected short USB ESD link is regular and unchanged."
+    },
+    {
+      "index": 8,
+      "net": "/power/USB_DP_CONN",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected USB connector branch geometry is regular and unchanged."
+    },
+    {
+      "index": 9,
+      "net": "/power/USB_DP_ESD",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected USB ESD route has a single clear diagonal transition and no repeated microjog."
+    },
+    {
+      "index": 10,
+      "net": "/power/USB_SLEW_CT",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The short slew-control pad/via links are direct; visible terminal-pad copper is intentional."
+    },
+    {
+      "index": 11,
+      "net": "/power/USB_SWITCH_ON",
+      "status": "FIXED",
+      "note": "The long rear staircases and bottom wave are replaced with coherent spans; the front pad entry is clean. Terminal connections are checked separately from nominal widths."
+    },
+    {
+      "index": 12,
+      "net": "/power/USB_VBUS_SLEW",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The wide slew-power corridor retains its original via and pad feeds and its fixed connector/neighbor clearances; no fine staircase is present."
+    },
+    {
+      "index": 13,
+      "net": "/storage/FLASH_HOLD_n",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long flash-hold diagonal is clean. Short via-entry details retain the fixed terminal and adjacent reference-aperture geometry."
+    },
+    {
+      "index": 14,
+      "net": "/storage/FLASH_SCLK",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The flash-clock loop is coherent; the local via approach remains inside its fixed terminal/reference corridor."
+    },
+    {
+      "index": 15,
+      "net": "/storage/FLASH_WP_n",
+      "status": "FIXED",
+      "note": "The rear V-shaped excursion is now a clear polygon with a level bottom segment."
+    },
+    {
+      "index": 16,
+      "net": "3V3_CORE",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long 3V3 serpentine and redundant pad branches are simplified. The rear fold around x15.45\u201318.5,y21.6\u201324.4 remains a real through-feed plus capacitor branch. U11.5 FLASH_MOSI at (16.8,22.28), SWDIO (16.8,23.35), OUT1 (16.3,23.05) and the OUT1 corridor bound it; the lower shortcut is blocked by VDDA (17.6,25.3)."
+    },
+    {
+      "index": 17,
+      "net": "ADC1_RAW",
+      "status": "FIXED",
+      "note": "The northwest arch, lower connector approach and long rear course are clean, coherent spans."
+    },
+    {
+      "index": 18,
+      "net": "ADC2_RAW",
+      "status": "FIXED",
+      "note": "The long inner-layer descent and southern front route are simplified. Short terminal-entry details retain their fixed connection geometry."
+    },
+    {
+      "index": 19,
+      "net": "ADC3_RAW",
+      "status": "FIXED",
+      "note": "The front and inner diagonals are clean; the rear edge-pad approach is a simple terminal connection."
+    },
+    {
+      "index": 20,
+      "net": "AUX_PC8",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long return and lower arc are simplified. The east shoulder is confined between J2.S1 and the adjacent 3V3 route; tested straight polygons at 0.130 and 0.150 mm collide with those exact objects."
+    },
+    {
+      "index": 21,
+      "net": "AUX_PC9",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long inner course is clean. Short launch steps remain beside the fixed vias at the R029\u2013R031 regions and their In1 reference apertures; tested alternatives are recorded with exact copper/reference conflicts. The actual local track-join screen finds no narrow join."
+    },
+    {
+      "index": 22,
+      "net": "AUX_PD14",
+      "status": "FIXED",
+      "note": "The large inner-layer scalloped hooks and perimeter waves are replaced with a compact polygonal course and a direct lower connection."
+    },
+    {
+      "index": 23,
+      "net": "BOOT0",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long reset/boot course is regular. Short offsets at fixed vias remain in their existing reference-covered launch corridors."
+    },
+    {
+      "index": 24,
+      "net": "BUZZER_CTRL",
+      "status": "FIXED",
+      "note": "The pronounced arch/reversal and lower staircase are replaced with a clean connected path around the fixed return/via area."
+    },
+    {
+      "index": 25,
+      "net": "EXT_I2C_SCL",
+      "status": "FIXED",
+      "note": "The pad launch and central course are simplified; the remaining U-shaped inner detour passes the fixed central via field."
+    },
+    {
+      "index": 26,
+      "net": "EXT_I2C_SDA",
+      "status": "FIXED",
+      "note": "The rear pad spear and front via staircase are removed; the long inner span is level and the connector terminal tail is contained in its pad."
+    },
+    {
+      "index": 27,
+      "net": "EXT_SENSOR_INT",
+      "status": "FIXED",
+      "note": "The north perimeter is a straight coherent run; the multi-branch rear course and terminal fanout remain regular."
+    },
+    {
+      "index": 28,
+      "net": "EXT_SPI_CS",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long route and northern loop are simplified. The west shoulder was cleaned together with USB_PRESENT_n using uniform 0.130 mm segments, preserving 0.160 mm mutual spacing. Short terminal-aperture launches elsewhere remain constrained and are documented."
+    },
+    {
+      "index": 29,
+      "net": "EXT_SPI_MISO",
+      "status": "FIXED",
+      "note": "Repeated inner-layer humps and southeast staircases are replaced by deliberate straight/diagonal spans around the fixed via field."
+    },
+    {
+      "index": 30,
+      "net": "EXT_SPI_MOSI",
+      "status": "FIXED",
+      "note": "The central inner turnaround, northeast bend and rear approach are simplified; branches and terminal attachments remain explicit."
+    },
+    {
+      "index": 31,
+      "net": "EXT_SPI_SCK",
+      "status": "FIXED",
+      "note": "The north rim, west descent and long southern inner route have coherent corners instead of repeated small waves."
+    },
+    {
+      "index": 32,
+      "net": "FDCAN1_RX",
+      "status": "FIXED",
+      "note": "The long east descent and lower inner sweep are simplified. The redundant via at (26.75,13.35) is retired with a real full-width In2 junction; the remaining lower bypass follows the fixed via/copper corridor."
+    },
+    {
+      "index": 33,
+      "net": "FDCAN1_TX",
+      "status": "FIXED",
+      "note": "The front east incline and inner vertical run are clean; the rear offset is an intentional clearance step."
+    },
+    {
+      "index": 34,
+      "net": "FLASH_CS",
+      "status": "FIXED",
+      "note": "The front and rear flash-select paths are direct polygons; no overlapping wave remains in the bulk path."
+    },
+    {
+      "index": 35,
+      "net": "FLASH_MISO",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long flash-MISO route is clean; the short two-layer via launch retains the fixed terminal/reference approach."
+    },
+    {
+      "index": 36,
+      "net": "FLASH_MOSI",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long flash-MOSI rear path is clean. The very short front and rear via approaches preserve the reference apertures and are checked for real neck width."
+    },
+    {
+      "index": 37,
+      "net": "FLASH_SCLK_RAW",
+      "status": "FIXED",
+      "note": "The local clock hook is completely removed, leaving a straight run and one 45-degree diagonal."
+    },
+    {
+      "index": 38,
+      "net": "GND",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "Thirty supported local returns were simplified while preserving physical pad/via feeds and source widths. Both Q2.2 rear and U1.49 front scallops are now clean polygons. The protected buck return and all 97 ground vias remain. Ground-plane structure is preserved; six obsolete non-ground via apertures close locally after the approved retirements."
+    },
+    {
+      "index": 39,
+      "net": "HOST_RUN_LINK",
+      "status": "FIXED",
+      "note": "The top edge-pad escape is a simple diagonal/vertical launch; the inner branch remains coherent."
+    },
+    {
+      "index": 40,
+      "net": "HOST_RUN_RAW",
+      "status": "FIXED",
+      "note": "The upper rear pad link and long front trunk are clean and direct."
+    },
+    {
+      "index": 41,
+      "net": "HOST_TX_LINK",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long host link is regular. The top terminal corridor and short inner via approach retain constrained local details."
+    },
+    {
+      "index": 42,
+      "net": "HOST_TX_RAW",
+      "status": "FIXED",
+      "note": "Both formerly noncoincident endcap contacts near (13.05,13.75) and (13.15,14.25) now use explicit full-width diagonal joins. The previous 0.050 mm copper throats are removed. The long host route and rear connection remain coherent."
+    },
+    {
+      "index": 43,
+      "net": "HSE_IN",
+      "status": "FIXED",
+      "note": "The protected crystal input rear staircase is replaced with a short clean vertical/diagonal connection."
+    },
+    {
+      "index": 44,
+      "net": "HSE_OUT",
+      "status": "FIXED",
+      "note": "Both protected crystal-output terminal approaches are simplified and retain the explicit via connection."
+    },
+    {
+      "index": 45,
+      "net": "IMU_3V3",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The short IMU supply links are regular, uniformly wide routes between fixed pads and vias."
+    },
+    {
+      "index": 46,
+      "net": "IMU_CS",
+      "status": "FIXED",
+      "note": "The unused pad-anchored branch and its two redundant vias at (7.05,21.8) and (6.35,25.0) are removed. The functional IMU-select connection is a coherent polygon between its real terminals."
+    },
+    {
+      "index": 47,
+      "net": "IMU_INT",
+      "status": "FIXED",
+      "note": "The former free-angle MCU-side span is straightened; the remaining short links retain clear polygonal bends."
+    },
+    {
+      "index": 48,
+      "net": "IMU_MISO",
+      "status": "FIXED",
+      "note": "The rear west-entry corner is clean; the remainder is a coherent loop around fixed obstacles."
+    },
+    {
+      "index": 49,
+      "net": "IMU_MOSI",
+      "status": "FIXED",
+      "note": "The MCU corner is clean, and the long rear return is regular; short via launch copper is preserved."
+    },
+    {
+      "index": 50,
+      "net": "IMU_SCLK",
+      "status": "FIXED",
+      "note": "The front local arch and MCU elbow no longer carry protruding teeth; the rear link is direct."
+    },
+    {
+      "index": 51,
+      "net": "LED_DATA",
+      "status": "FIXED",
+      "note": "The rear LED pad approach is clean and the long inner descent is direct."
+    },
+    {
+      "index": 52,
+      "net": "MOTOR_OK_BUF",
+      "status": "FIXED",
+      "note": "The front serial offsets and inner hairpin wave are removed. The inner bypass still avoids the fixed USB_PRESENT_n terminal/trace corridor."
+    },
+    {
+      "index": 53,
+      "net": "MOTOR_OK_LINK",
+      "status": "FIXED",
+      "note": "The top inner branch and rear connector launch are coherent; required multiple terminals remain connected."
+    },
+    {
+      "index": 54,
+      "net": "MOTOR_TX_BUF",
+      "status": "FIXED",
+      "note": "The shallow rear span is replaced with a level run and a clear 45-degree step; terminal geometry remains explicit."
+    },
+    {
+      "index": 55,
+      "net": "MOTOR_TX_LINK",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The bulk motor-link route is simplified; the west passage and central peak follow fixed via/copper clearances."
+    },
+    {
+      "index": 56,
+      "net": "NRST",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long reset perimeter and rear terminal approach are clean. The front branch elbow retains both connected conductors; the source-bound actual-copper screen confirms the local attachment rather than inferring it from segment width."
+    },
+    {
+      "index": 57,
+      "net": "OUT1",
+      "status": "FIXED",
+      "note": "The front diagonal staircases and rear upper trough are removed; the complete route is a deliberate polygon."
+    },
+    {
+      "index": 58,
+      "net": "OUT2",
+      "status": "FIXED",
+      "note": "The rear turn and front lower arc are clean; the short MCU via entry remains explicit."
+    },
+    {
+      "index": 59,
+      "net": "OUT3",
+      "status": "FIXED",
+      "note": "The front stepped launch is simplified; the short inner course and pad-contained tail are regular."
+    },
+    {
+      "index": 60,
+      "net": "OUT4",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The short front output route is a coherent diagonal/vertical path with a pad-contained tail."
+    },
+    {
+      "index": 61,
+      "net": "OUT5",
+      "status": "FIXED",
+      "note": "The rear bend and front terminal launches are simpler and retain the same physical terminals."
+    },
+    {
+      "index": 62,
+      "net": "OUT6",
+      "status": "FIXED",
+      "note": "The repeated inner-layer stair steps and lower hook are removed, leaving a few coherent corridor bends."
+    },
+    {
+      "index": 63,
+      "net": "OUT7",
+      "status": "FIXED",
+      "note": "The inner entry and front offset are replaced with clean long spans."
+    },
+    {
+      "index": 64,
+      "net": "OUT8",
+      "status": "FIXED",
+      "note": "The many inner drop steps, middle hook and lower arc are replaced with a coherent polygonal descent."
+    },
+    {
+      "index": 65,
+      "net": "RPM_IN",
+      "status": "FIXED",
+      "note": "The west perimeter and long bottom run are cleaned, with the small terminal bend retained."
+    },
+    {
+      "index": 66,
+      "net": "STACK_5V_GOOD",
+      "status": "FIXED",
+      "note": "The exact user-screenshot arrows, teeth and bulge are gone. A uniform 0.130 mm six-segment course provides the necessary AUX_PC9 via bypass."
+    },
+    {
+      "index": 67,
+      "net": "SWCLK",
+      "status": "FIXED",
+      "note": "The long inner route has clean west and bottom bends; the upper front branch is simplified."
+    },
+    {
+      "index": 68,
+      "net": "SWDIO",
+      "status": "FIXED",
+      "note": "The inner top-right arch, west turn and bottom sweep are simplified; clearance bends remain around the fixed via field."
+    },
+    {
+      "index": 69,
+      "net": "UART1_RX",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long route is regular. The rear crossing-height offsets follow the fixed paired UART corridor, with physical terminals and reference apertures retained. Exact tested alternative conflicts are attached to its region entries."
+    },
+    {
+      "index": 70,
+      "net": "UART1_TX",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long perimeter route is coherent, and the exposed rear tail at (1.3,13.15\u201313.525) is removed. Small remaining rear offsets follow their fixed terminal/reference corridor; exact tested conflicts are documented."
+    },
+    {
+      "index": 71,
+      "net": "UART2_RX",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long front and inner runs are clean. The northwest MCU shoulder passes GND (10.2,13.9), BOOT0 (11.3,13.41), 3V3_CORE (11.5,16.0), NRST (12.665,15.995), and the neighboring UART2_TX route. Actual In1 apertures and both routes are shown together; bounded coupled alternatives have separate evidence."
+    },
+    {
+      "index": 72,
+      "net": "UART2_TX",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The inner northwest detour is simplified. The front MCU shoulder shares UART2_RX\u2019s fixed pad/via corridor; the annotated context includes native In1 apertures, BOOT0/GND above, and 3V3/NRST below. Coupled alternatives are assessed jointly."
+    },
+    {
+      "index": 73,
+      "net": "UART3_RX",
+      "status": "FIXED",
+      "note": "The lower inner U and east bulge have coherent corners; the rear via bridge is level rather than shallow-angle."
+    },
+    {
+      "index": 74,
+      "net": "UART3_TX",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The main loop is simplified. The redundant via at (29.4,26.55) is retired with a real full-width front junction. Short front launch/paired-corridor offsets remain at x29\u201331,y25.9 and near J111 (28,1.5), constrained by fixed copper and reference apertures. The rear R140 double offset is now a uniform 0.130 mm three-segment path; both via approaches are unchanged."
+    },
+    {
+      "index": 75,
+      "net": "UART4_RX",
+      "status": "FIXED",
+      "note": "The inner branch hump and trough are coherent polygons around the fixed via/copper field."
+    },
+    {
+      "index": 76,
+      "net": "UART4_TX",
+      "status": "FIXED",
+      "note": "The long north run and central branch are clean. The two nonexact central joins are replaced with full-width copper; the branch remains explicit and the actual local track-join screen reports no narrow contact."
+    },
+    {
+      "index": 77,
+      "net": "USB_DM_MCU",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected three-segment MCU USB link is short and regular at its original 0.1392 mm width."
+    },
+    {
+      "index": 78,
+      "net": "USB_DP_MCU",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected MCU USB link is one straight 0.1392 mm segment."
+    },
+    {
+      "index": 79,
+      "net": "USB_PRESENT_n",
+      "status": "RETAINED WITH CONSTRAINTS",
+      "note": "The long outer/inner runs and actual-copper joins are simplified and repaired. The west shoulder is now a clean coordinated 0.130 mm four-run path beside EXT_SPI_CS, preserving 0.160 mm mutual spacing. Fixed terminal-aperture launches remain documented."
+    },
+    {
+      "index": 80,
+      "net": "USB_SOURCE_DISABLE",
+      "status": "FIXED",
+      "note": "The unused inter-via branch and redundant via at (18.5,29.9) are removed; the remaining functional front/rear loop has coherent corners and explicit real-terminal connections."
+    },
+    {
+      "index": 81,
+      "net": "USB_VBUS",
+      "status": "FIXED",
+      "note": "The long power corridor has simpler corners; rail widths, via feeds and branch terminals are retained."
+    },
+    {
+      "index": 82,
+      "net": "VCAP",
+      "status": "GEOMETRICALLY CLEAN",
+      "note": "The protected VCAP route remains a coherent orthogonal connection with its fixed power/reference geometry."
+    },
+    {
+      "index": 83,
+      "net": "VDDA",
+      "status": "FIXED",
+      "note": "The west analog-supply branch and rear terminal approaches are simpler; the long distribution path is regular."
+    },
+    {
+      "index": 84,
+      "net": "VLOGIC_IN",
+      "status": "FIXED",
+      "note": "The rear southeast width bump is removed and the power course is simplified; the broad front supply branches retain their required widths."
+    }
+  ],
+  "net_disposition_counts": {
+    "RETAINED WITH CONSTRAINTS": 21,
+    "FIXED": 52,
+    "GEOMETRICALLY CLEAN": 12
+  },
+  "region_disposition_counts": {
+    "FIXED": 96,
+    "GEOMETRICALLY CLEAN": 9,
+    "RETAINED WITH CONSTRAINTS": 54
+  },
+  "coverage": {
+    "routed_nets": 85,
+    "region_images": 159,
+    "native_copper_layers": 6,
+    "separate_net_layer_views": 202,
+    "combined_net_views": 85
+  },
+  "limitations": [
+    "Copper-geometry and visual review; not physical hardware testing or fabrication release.",
+    "Per-net views omit filled zones; six native layer exports and separate exact plane/reference checks cover fill.",
+    "Retained alternatives are bounded practical tests, not an exhaustive mathematical proof."
+  ],
+  "supplemental_via_retirement": {
+    "removed_count": 6,
+    "removed_ids": [
+      "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+      "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+      "24ff4382-6c48-4794-abe9-9a57776d555d",
+      "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+      "0339b82d-3353-4627-9f03-57d192f6ea21",
+      "cc569dba-8c17-4a1b-a17d-55d48ca98df2"
+    ],
+    "ground_vias_preserved": 97,
+    "reference_planes": "Ground structure retained; local obsolete clearance apertures close after the six approved non-ground via removals."
+  },
+  "residual_disposition_complete": true,
+  "track_count": 3178,
+  "supplemental_findings": {
+    "five_exposed_single_terminal_components": "removed, with their unused parent branch trees trimmed where needed",
+    "redundant_non_ground_vias_retired": 6,
+    "genuine_planar_junctions_inspected": [
+      "UART3_TX F.Cu at (29.4,26.55)",
+      "FDCAN1_RX In2.Cu at (26.75,13.35)"
+    ]
+  },
+  "net_count": 85,
+  "via_count": 406,
+  "scope": "Visual CAD routing review only. Electrical/native qualification, fabrication export parity, supplier acceptance and hardware testing remain separate gates.",
+  "classification_legend": {
+    "FIXED": "The identified path, branch or attachment defect is addressed. Any separately retained local feature remains explicit in its region record.",
+    "GEOMETRICALLY CLEAN": "The reviewed routing is coherent; protected geometry or pad-contained copper is intentional.",
+    "RETAINED WITH CONSTRAINTS": "Visible local detail remains; exact blocked alternatives or a named preservation constraint are recorded. This is not a claim of global optimality."
+  },
+  "inspected_image_files": [
+    "sheets/00-05.png",
+    "sheets/06-11.png",
+    "sheets/12-17.png",
+    "sheets/18-23.png",
+    "sheets/24-29.png",
+    "sheets/30-35.png",
+    "sheets/36-41.png",
+    "sheets/42-47.png",
+    "sheets/48-53.png",
+    "sheets/54-59.png",
+    "sheets/60-65.png",
+    "sheets/66-71.png",
+    "sheets/72-77.png",
+    "sheets/78-83.png",
+    "sheets/84-84.png",
+    "region-sheets/000.png",
+    "region-sheets/006.png",
+    "region-sheets/012.png",
+    "region-sheets/018.png",
+    "region-sheets/024.png",
+    "region-sheets/030.png",
+    "region-sheets/036.png",
+    "region-sheets/042.png",
+    "region-sheets/048.png",
+    "region-sheets/054.png",
+    "region-sheets/060.png",
+    "region-sheets/066.png",
+    "region-sheets/072.png",
+    "region-sheets/078.png",
+    "region-sheets/084.png",
+    "region-sheets/090.png",
+    "region-sheets/096.png",
+    "region-sheets/102.png",
+    "region-sheets/108.png",
+    "region-sheets/114.png",
+    "region-sheets/120.png",
+    "region-sheets/126.png",
+    "region-sheets/132.png",
+    "region-sheets/138.png",
+    "region-sheets/144.png",
+    "region-sheets/150.png",
+    "region-sheets/156.png",
+    "native-layers/B-Cu.png",
+    "native-layers/F-Cu.png",
+    "native-layers/In1-Cu.png",
+    "native-layers/In2-Cu.png",
+    "native-layers/In3-Cu.png",
+    "native-layers/In4-Cu.png",
+    "context/east-connector-reference-context.png",
+    "context/uart2-reference-context.png",
+    "context/uart2-rx-rejected-candidate.png",
+    "context/uart2-tx-rejected-candidate.png",
+    "context/west-paired-reference-context.png",
+    "screenshot-route-before-after.png"
+  ],
+  "review_carry": {
+    "basis_source_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+    "direct_final_pixel_review": [
+      "UART3_TX complete net image",
+      "R140 local crop",
+      "final front/rear comparison"
+    ],
+    "carried_by_exact_geometry_and_PNG_equality": {
+      "nets": 84,
+      "regions": 158
+    },
+    "reference_planes": "All three extracted native filled-polygon arrays exactly equal; source-tagged exports refreshed",
+    "evidence": "carried-review-proof.json"
+  }
+}

@@ -1,0 +1,539 @@
+- text: 
+- main:
+  - list:
+    - listitem "Undo(Ctrl+Z)"
+    - listitem "Redo(Ctrl+Y)"
+    - listitem "Zoom in(A)"
+    - listitem "Zoom out(Z)"
+    - listitem "Fit selection"
+    - listitem "Fit window(K)"
+    - listitem "Flip board(Shift+F)"
+    - listitem "Measure(Ctrl+M)"
+    - listitem "Export analysis report"
+    - listitem "Configure custom rules"
+    - listitem "Help Document"
+    - listitem "Settings"
+  - generic "R3-S6-P6-Gerbers.zip"
+  - generic: Units：
+  - generic: Metric（cm/mm）
+  - button "PCB DFM"
+  - button "SMT DFM"
+  - button "DFM check"
+  - generic: Description
+  - generic: All
+  - table:
+    - rowgroup:
+      - row "Analyze project Statistics Operation":
+        - columnheader "Analyze project"
+        - columnheader "Statistics"
+        - columnheader "Operation"
+  - generic: Routing layer analysis
+  - table:
+    - rowgroup:
+      - row "Sharp trace corner 0, 0, 0 Details":
+        - cell "Sharp trace corner"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "BGA pad 0, 0, 0 Details":
+        - cell "BGA pad"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Via placed within a pad 0, 0, 0 Details":
+        - cell "Via placed within a pad"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Trace to board edge 0, 0, 0 Details":
+        - cell "Trace to board edge"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Trace spacing 0, 0, 32 Details":
+        - cell "Trace spacing"
+        - cell "0, 0, 32"
+        - cell "Details":
+          - button "Details"
+      - row "Unconnected trace end 0, 0, 0 Details":
+        - cell "Unconnected trace end"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Trace width 0, 0, 100 Details":
+        - cell "Trace width"
+        - cell "0, 0, 100"
+        - cell "Details":
+          - button "Details"
+      - row "Fiducial 0, 0, 0 Details":
+        - cell "Fiducial"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Pad to board edge 0, 0, 8 Details":
+        - cell "Pad to board edge"
+        - cell "0, 0, 8"
+        - cell "Details":
+          - button "Details"
+      - row "Pad spacing 0, 54, 46 Details":
+        - cell "Pad spacing"
+        - cell "0, 54, 46"
+        - cell "Details":
+          - button "Details"
+      - row "Plated through-hole to trace clearance 0, 0, 100 Details":
+        - cell "Plated through-hole to trace clearance"
+        - cell "0, 0, 100"
+        - cell "Details":
+          - button "Details"
+      - row "Annular ring 100, 0, 0 Details":
+        - cell "Annular ring"
+        - cell "100, 0, 0"
+        - cell "Details":
+          - button "Details"
+      - row "tht to smd 0, 0, 0 Details":
+        - cell "tht to smd"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Via to pad 0, 0, 1 Details":
+        - cell "Via to pad"
+        - cell "0, 0, 1"
+        - cell "Details":
+          - button "Details"
+  - generic: Soldermask layer analysis
+  - table:
+    - rowgroup:
+      - row "Soldermask bridge 0, 10, 40 Details":
+        - cell "Soldermask bridge"
+        - cell "0, 10, 40"
+        - cell "Details":
+          - button "Details"
+      - row "Solder mask opening exposing trace 0, 58, 39 Details":
+        - cell "Solder mask opening exposing trace"
+        - cell "0, 58, 39"
+        - cell "Details":
+          - button "Details"
+      - row "Soldermask opening with multiple segments 0, 0, 0 Details":
+        - cell "Soldermask opening with multiple segments"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Negative soldermask expansion 0, 0, 0 Details":
+        - cell "Negative soldermask expansion"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+  - generic: Silkscreen layer analysis
+  - table:
+    - rowgroup:
+      - row "Silkscreen to pad 0, 12, 88 Details":
+        - cell "Silkscreen to pad"
+        - cell "0, 12, 88"
+        - cell "Details":
+          - button "Details"
+      - row "Silkscreen to hole 100, 0, 0 Details":
+        - cell "Silkscreen to hole"
+        - cell "100, 0, 0"
+        - cell "Details":
+          - button "Details"
+      - row "Silkscreen line width 0, 76, 0 Details":
+        - cell "Silkscreen line width"
+        - cell "0, 76, 0"
+        - cell "Details":
+          - button "Details"
+  - generic: Drill layer analysis
+  - table:
+    - rowgroup:
+      - row "Unconnected via 0, 0, 0 Details":
+        - cell "Unconnected via"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Missing plated through-hole 0, 18, 0 Details":
+        - cell "Missing plated through-hole"
+        - cell "0, 18, 0"
+        - cell "Details":
+          - button "Details"
+      - row "Unconnected via 0, 0, 0 Details":
+        - cell "Unconnected via"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Plated through-hole spacing 0, 0, 0 Details":
+        - cell "Plated through-hole spacing"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Short slot detection 0, 0, 0 Details":
+        - cell "Short slot detection"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Slot width check 4, 0, 0 Details":
+        - cell "Slot width check"
+        - cell "4, 0, 0"
+        - cell "Details":
+          - button "Details"
+      - row "Via to PTH spacing 0, 0, 0 Details":
+        - cell "Via to PTH spacing"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+      - row "Unconnected via 0, 0, 0 Details":
+        - cell "Unconnected via"
+        - cell "0, 0, 0"
+        - cell "Details":
+          - button "Details" [disabled]
+  - generic "Close左侧栏"
+  - generic "Gerber(5)": Gerber
+  - generic "Gerber(6)": Wireframe
+  - generic "2D(2)": 2D
+  - generic "3D(3)": 3D
+  - generic "Close右侧栏"
+  - generic: Show layer controls
+  - table:
+    - rowgroup:
+      - row "Edit Layer type":
+        - columnheader
+        - columnheader "Edit"
+        - columnheader "Layer type"
+    - rowgroup
+  - status
+  - generic: Routing layer analysis > Plated through-hole to trace clearance
+  - paragraph: Measure clearance of plated through-holes to traces
+  - generic: Layer
+  - generic "controller-F_Cu.gtl": controller-F_Cu.gtl (0, 0, 50)
+  - generic "controller-B_Cu.gbl": controller-B_Cu.gbl (0, 0, 50)
+  - table:
+    - rowgroup:
+      - row "No. All Value Object 1 Object 2":
+        - columnheader "No."
+        - columnheader "All":
+          - combobox:
+            - option "All" [selected]
+            - option "Good"
+            - option "Warning"
+            - option "Danger"
+        - columnheader "Value"
+        - columnheader "Object 1"
+        - columnheader "Object 2"
+  - table:
+    - rowgroup:
+      - row "1 Good 0.23mm r7.87402 r5.11811":
+        - cell "1"
+        - cell "Good"
+        - cell "0.23mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "2 Good 0.23mm r7.87402 r5.11811":
+        - cell "2"
+        - cell "Good"
+        - cell "0.23mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "3 Good 0.23mm r7.87402 r5.11811":
+        - cell "3"
+        - cell "Good"
+        - cell "0.23mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "4 Good 0.25mm r7.87402 r5.11811":
+        - cell "4"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "5 Good 0.25mm r7.87402 r5.11811":
+        - cell "5"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "6 Good 0.25mm r7.87402 r5.11811":
+        - cell "6"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "7 Good 0.25mm r7.87402 r5.11811":
+        - cell "7"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "8 Good 0.25mm r25.5906 r5.90551":
+        - cell "8"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r25.5906"
+        - cell "r5.90551"
+      - row "9 Good 0.25mm r7.87402 r5.11811":
+        - cell "9"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "10 Good 0.25mm r9.84252 r7.87402":
+        - cell "10"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r9.84252"
+        - cell "r7.87402"
+      - row "11 Good 0.25mm r7.87402 r5.11811":
+        - cell "11"
+        - cell "Good"
+        - cell "0.25mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "12 Good 0.26mm r7.87402 r5.90551":
+        - cell "12"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "13 Good 0.26mm r7.87402 r5.90551":
+        - cell "13"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "14 Good 0.26mm r7.87402 r5.11811":
+        - cell "14"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "15 Good 0.26mm r7.87402 r5.11811":
+        - cell "15"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "16 Good 0.26mm r7.87402 r5.11811":
+        - cell "16"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "17 Good 0.26mm r7.87402 r5.11811":
+        - cell "17"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "18 Good 0.26mm r7.87402 r5.11811":
+        - cell "18"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "19 Good 0.26mm r7.87402 r5.11811":
+        - cell "19"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "20 Good 0.26mm r7.87402 r11.811":
+        - cell "20"
+        - cell "Good"
+        - cell "0.26mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "21 Good 0.27mm r25.5906 r5.90551":
+        - cell "21"
+        - cell "Good"
+        - cell "0.27mm"
+        - cell "r25.5906"
+        - cell "r5.90551"
+      - row "22 Good 0.28mm r7.87402 r17.7165":
+        - cell "22"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r17.7165"
+      - row "23 Good 0.28mm r7.87402 r17.7165":
+        - cell "23"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r17.7165"
+      - row "24 Good 0.28mm r7.87402 r17.7165":
+        - cell "24"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r17.7165"
+      - row "25 Good 0.28mm r7.87402 r17.7165":
+        - cell "25"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r17.7165"
+      - row "26 Good 0.28mm r7.87402 r17.7165":
+        - cell "26"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r17.7165"
+      - row "27 Good 0.28mm r7.87402 r5.11811":
+        - cell "27"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "28 Good 0.28mm r7.87402 r17.7165":
+        - cell "28"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r17.7165"
+      - row "29 Good 0.28mm r7.87402 r5.11811":
+        - cell "29"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "30 Good 0.28mm r7.87402 r5.11811":
+        - cell "30"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "31 Good 0.28mm r7.87402 r5.11811":
+        - cell "31"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "32 Good 0.28mm r7.87402 r11.811":
+        - cell "32"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "33 Good 0.28mm r7.87402 r11.811":
+        - cell "33"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "34 Good 0.28mm r7.87402 r11.811":
+        - cell "34"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "35 Good 0.28mm r7.87402 r11.811":
+        - cell "35"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "36 Good 0.28mm r7.87402 r11.811":
+        - cell "36"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "37 Good 0.28mm r7.87402 r11.811":
+        - cell "37"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "38 Good 0.28mm r7.87402 r11.811":
+        - cell "38"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r11.811"
+      - row "39 Good 0.28mm r9.84252 r5.11811":
+        - cell "39"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r9.84252"
+        - cell "r5.11811"
+      - row "40 Good 0.28mm r9.84252 r5.11811":
+        - cell "40"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r9.84252"
+        - cell "r5.11811"
+      - row "41 Good 0.28mm r7.87402 r5.11811":
+        - cell "41"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "42 Good 0.28mm r7.87402 r5.11811":
+        - cell "42"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.11811"
+      - row "43 Good 0.28mm r7.87402 r5.90551":
+        - cell "43"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "44 Good 0.28mm r7.87402 r5.90551":
+        - cell "44"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "45 Good 0.28mm r7.87402 r5.90551":
+        - cell "45"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "46 Good 0.28mm r7.87402 r5.90551":
+        - cell "46"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "47 Good 0.28mm r7.87402 r5.90551":
+        - cell "47"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "48 Good 0.28mm r7.87402 r5.90551":
+        - cell "48"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "49 Good 0.28mm r7.87402 r5.90551":
+        - cell "49"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+      - row "50 Good 0.28mm r7.87402 r5.90551":
+        - cell "50"
+        - cell "Good"
+        - cell "0.28mm"
+        - cell "r7.87402"
+        - cell "r5.90551"
+  - checkbox "Smart layer display" [checked]
+  - text: Smart layer display
+  - checkbox "Auto fit view" [checked]
+  - text: Auto fit view
+  - button "First"
+  - button "Previous"
+  - button "Next"
+  - button "Last"
+  - button "All"
+  - generic: "Note: This analysis item has 155 results, only showing the first 50 results 。"
+  - 'generic "If traces are too close to plated through-holes, it can cause shorts. Inner layers may short due to the board''s fiber weave effect (note: avoid using substandard materials like FR4 with only 6 fibreglass layers)."'
+  - generic: Alert value：
+  - generic: Danger
+  - generic: Warning
+  - generic: Good
+  - generic: 0.18mm
+  - generic: 0.23mm
+  - text: 

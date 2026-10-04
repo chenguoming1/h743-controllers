@@ -1,0 +1,81 @@
+{
+  "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "baseline_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+  "audit_script_sha256": {
+    "audit_copper_join_throats.py": "a01660421a52d5cde60f8ad2ca8897bd7ae674653f76e77854532fba9154cb27",
+    "audit_via_attachments.py": "fb878f17ff4ecf8de21eb592fd414bf18accef2ecd1057ac313795ce05295c93",
+    "audit_pad_attachments.py": "7725cfdd2d1bc09f5ac37cff3483f10ab6787fa64361e6493d6aa6d959311ec3",
+    "audit_via_functional_layers.py": "ed03807ad48af33e7c58bef0ee70d05fc8e87ee909d448193354c48b8a3b0ddd",
+    "audit_pad_anchored_dead_trees.py": "b903521a38c133f58894db4b3656882302c1ecaaf9f2da3f228735e37c82db5b",
+    "audit_ground_plane_attachments.py": "1fad54a8577df257854b200fce209f5929c54e0f46ef3248d105ae8b512a449f",
+    "audit_single_terminal_copper.py": "0cd90511b86d913d64bb067312ccf248be407cf52ecc6cff8c177801e996100d",
+    "audit_reference_retirement.py": "8973745579ef92b121fa94657772045a5a8b9cf77761f584dd72901486af7f70"
+  },
+  "reviewed_incidental_via_contacts": [],
+  "reviewed_above_floor_pad_contacts": [
+    {
+      "name": "U1.20",
+      "reason": "Redundant VDDA graze; separate .200mm native-copper route to the pad is independently proved full width",
+      "proof": "evidence/final-pad-closure.json",
+      "contact": {
+        "pad_uuid": "3ca6dbe4-fd76-465d-885c-30bfeed52f0a",
+        "net": "VDDA",
+        "layer": "F.Cu",
+        "tracks": [
+          {
+            "uuid": "74cbd0c0-d37d-4a20-ac13-81aa582dedee",
+            "start_mm": [
+              9.85,
+              24.5
+            ],
+            "end_mm": [
+              9.2,
+              23.85
+            ],
+            "width_mm": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "name": "J162.1",
+      "reason": "The .450mm terminal flare is fed by a .300mm trace; the actual .300mm current path into the unchanged pad is independently proved full width",
+      "proof": "evidence/final-pad-closure.json",
+      "contact": {
+        "pad_uuid": "f033bae3-30e5-46a0-9885-a09cf30a9873",
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "tracks": [
+          {
+            "uuid": "0a585d33-9792-4e33-8caf-59e56442f3b3",
+            "start_mm": [
+              15.7,
+              31.9
+            ],
+            "end_mm": [
+              15.7,
+              31.95
+            ],
+            "width_mm": 0.45
+          },
+          {
+            "uuid": "837871e3-c11a-4433-8c98-90604fc54db3",
+            "start_mm": [
+              15.7,
+              31.9
+            ],
+            "end_mm": [
+              16.15,
+              31.45
+            ],
+            "width_mm": 0.3
+          }
+        ]
+      }
+    }
+  ],
+  "approval_scope": "Only these exact two non-bottleneck terminal advisories. No narrow functional route join or shallow via contact is accepted.",
+  "expected_final_vias": 406,
+  "expected_ground_vias": 97,
+  "expected_reference_plane_terminal_attachments": 303
+}

@@ -1,0 +1,216 @@
+{
+  "status": "PASS P6 FINAL RELEASE QUALIFICATION",
+  "revision": "R3-S6-P6",
+  "native_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "source_qualification_sha256": "90cf0c96961b5711d6827e7f5f33a8d46be328a1152fda17a68a2a9fa724d94f",
+  "release_manifest_sha256": "acc885dd1630abe30311cc14638085667fdb02cf2fba2c10c1ec60566f2b84e7",
+  "submission_zip_sha256": "13e92e821b3554f2e4bf15a7b83eb201f8afd29b863b4f257c50691a027e70ce",
+  "errors": [],
+  "PCB_submission": {
+    "ready": true,
+    "supplier_rerun_complete": true,
+    "scope": "Prototype bare-PCB submission using this exact source and export set with the specified process selections; no purchase, order or physical hardware qualification is implied",
+    "required_fabrication_selections": {
+      "stack": "JLC06161H-3313",
+      "layer_count": 6,
+      "thickness_mm": 1.6,
+      "outer_copper_oz": 1,
+      "inner_copper_oz": 0.5,
+      "finish": "ENIG",
+      "mask": "Green",
+      "silk": "White",
+      "small_vias": "Seven exact0.35/0.20mm vias; select the documented small-via process",
+      "covering": "Epoxy-filled, copper-capped, mask-covered0.20mm vias; keep component shell slots and NPTH holes open",
+      "controlled_impedance": "Preserve90ohm USB specification and exact0.1392mm tracks/0.160mm gap; confirm final order CAM/coupon definition"
+    }
+  },
+  "PCBA_production": {
+    "approved": false,
+    "required_before_assembly": [
+      "Verify the final supplier two-face placement/polarity drawing against exact selected parts, native pin/cathode markings and the unchanged79-row corrected CPL",
+      "Accept the actual double-sided carrier, rails/tooling/fiducials and connector support/nozzle/depaneling access; no unsupported SKU-mandated fixture claim",
+      "Record production stencil definition retaining U2/U11 split EP windows, with appropriate U13 thickness/step treatment or a qualified documented alternative; no diagnostic full-EP substitution",
+      "Include and inspect soldering all four J2 plated shell anchors through an accepted shell-joint process"
+    ]
+  },
+  "validation_summary": {
+    "native_counts": {
+      "ERC": 0,
+      "DRC": 0,
+      "opens": 0,
+      "parity": 0
+    },
+    "logical_pin_entries": 405,
+    "routed_nets": 85,
+    "tracks": 3178,
+    "vias": 406,
+    "ground_vias": 97,
+    "actual_track_contacts": 5151,
+    "direct_pad_contacts": 835,
+    "reference_plane_attachments": 303,
+    "unresolved_functional_vias": 0,
+    "unresolved_dangling_trees": 0,
+    "Gerbers_exactly_regenerated": 13,
+    "native_drill_and_slot_features": 416,
+    "BOM_groups": 35,
+    "fitted_components": 79,
+    "user_CPL_corrections_preserved": 11
+  },
+  "visual_review": {
+    "status": "VISUAL REVIEW ACCEPTED WITH DOCUMENTED CONSTRAINTS",
+    "nets": 85,
+    "regions": 159,
+    "copper_layers": 6,
+    "net_disposition_counts": {
+      "RETAINED WITH CONSTRAINTS": 21,
+      "FIXED": 52,
+      "GEOMETRICALLY CLEAN": 12
+    },
+    "region_disposition_counts": {
+      "FIXED": 96,
+      "GEOMETRICALLY CLEAN": 9,
+      "RETAINED WITH CONSTRAINTS": 54
+    },
+    "scope": "No further actionable route defect found in the bounded all-route review; retained local details have explicit practical obstacle/preservation evidence, not a claim of global optimality"
+  },
+  "supplier_review": {
+    "project": "https://jlcdfm.com/viewer?pcbUploadFileId=629361373570224129",
+    "PCB_categories": 29,
+    "SMT_categories": 18,
+    "trace_width_red_yellow_good": [
+      0,
+      0,
+      100
+    ],
+    "trace_spacing_red_yellow_good": [
+      0,
+      0,
+      32
+    ],
+    "hole_to_trace_red_yellow_good": [
+      0,
+      0,
+      100
+    ],
+    "mask_opening_red_yellow_good": [
+      0,
+      58,
+      39
+    ],
+    "SMT_red_yellow_good": [
+      24,
+      6,
+      104
+    ],
+    "universal_green_claimed": false,
+    "mask_disposition": "Exact-source minimum foreign mask-to-track/via gap0.100mm on both faces exceeds official0.090mm floor; three consistent added display sites are documented without inventing UI-coordinate identity",
+    "model_process_dispositions": "Manufacturer land/stencil and package-classification dispositions carry through exact unchanged footprints, pads, paste, slots and CPL. Historical source counts in the focused readiness memo are superseded by this final qualification."
+  },
+  "evidence_sha256": {
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/complete-source-qualification.json": "90cf0c96961b5711d6827e7f5f33a8d46be328a1152fda17a68a2a9fa724d94f",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/release-independent-validation.json": "6fb732e48a72bea53bd5b64edd460a3b88af52792b09de667a2dd4dc8b949c8d",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/export-parity/exact-gerber-regeneration.json": "ade3850a59599ec864bbd4565ab575be8de72aa87d5aac745830bdb1dd19e379",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/export-guard-and-submission-zip.json": "7994202fc326baac77322aafa2d175d68eccaf56ecdc9a831a0634daff34b60b",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/supplier-correlation/mask-process-closure.json": "7e17dafa263c044302ab290176605cd12ffb719a8c2b6b3bcc8f780f844f3102",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-visual-audit/final-cf16a6f5/final-review.json": "f319148dd4c377a3e998cb341276d18f8a97a90a0c3f52682f41643f142eb49d",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-visual-audit/final-cf16a6f5/carried-review-proof.json": "322e10cb18402d9b6510587dab4e07f4ad0a27ed9715dc8a9e939f0957a17e15",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-visual-audit/final-cf16a6f5/region-dispositions.json": "90cf55e65f2e3834dd305a3ecae56727cea82799b6931fe8e6033541d598c37d",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-visual-audit/final-cf16a6f5/retained-constraints.json": "31cc14513f76e076b20d4bc9ff59444641df2398c8b00ba488bd46d455c204be",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/p6-presentation-qa.json": "c349b4337cfc571d84bcfe7f253cbbe4a7a0c3ba515546fc805b62839ea204f3",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/p6-presentation-source-integrity.json": "9decacdc7ec7ef8cf0662b55675773e6130eec304d83ffc0e299d4a1d4d52d07",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/p6-presentation-geometry-proof.json": "6bf08e6b76d109d55e29594662f53cf1c510c242ecf88036a684b2205e37c3d2",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/p6-supplier-result.json": "334f0312d8a15aa5007d42b00bc0ad408d2079a87f2e8e58b20738f592b6a48f",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/p6-qualified-export-guard.json": "fbd8d6068dbc8de3e6d38a8ebda197e1fb22c9e42ad7e01d46029b496343d7d1",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/p6-export-guard-result.json": "9dba7333257f9cc6f35624d04a94a5c474b7e28f974320b3c02637766260b70d",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/manufacturing-profile.json": "fb173c513e4f346e00940ca3ba7d22d56a371cd3358dc2a98c62566c6eb2295f",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/P6-Production-Instructions.txt": "acf76a78cdf316067b0f5b5183e55b4aa2f5b892347efb6c3e2628702253d629",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-manufacturing-readiness.md": "744193340fa93b50cb0ceb60b18034fcfdd9dda7fca51454cf96f8eea38b1210",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-manufacturing-readiness-gates.json": "9dd37bfc4369c5eaf3f00d65064dfed85d721edfaf0e1ba48cc696b7f8c30dba",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/close_release_qualification.py": "87071bbb19deacd43aa60c8acc59fe63e990c1cdee68f294f18973fe721479c3"
+  },
+  "artifact_hashes": {
+    "presentation_outputs": {
+      "review/assembly-drawing/controller-r3s-assembly-manufacturing.pdf": "9d52291e98424f183920c2b6b60864f47f7af8fc6c1a9ae6833b498148d4b96c",
+      "review/controller-r3s-p6-schematic.pdf": "d78cd70f333f502857bb5e26bfb8119d70b8eb8566f7fa59c57542bbe69de242",
+      "review/controller-r3s-front-copper.svg": "6b37e65a7d2b03abb7421b92f90f4cc1dfa58512154b9c47f230ccd57d921174",
+      "review/controller-r3s-In1-Cu.png": "9414b63ffbb7d40409e77aff1b6cd778266d1ae0ef47cf722862c15ae99e4093",
+      "review/controller-r3s-In2-Cu.png": "6ac36e65286a0eeb34efa3e14375b807528c018879b92ed2c80ee60f8c2446bd",
+      "review/controller-r3s-front-copper.png": "31d01002a856362cdeb1c7db2de14726dbe968e3c9420c023da0c94e0512d6aa",
+      "review/controller-r3s-In4-Cu.svg": "67894eccc449d0bbf7b8fe95a5ef068cddf9ae83ee32a97e7582fb5358375b0f",
+      "review/controller-r3s-In2-Cu.svg": "9af8db010a50dd7297230e5f7ed9d772cc14786344ac393f7f065fa5ab765c84",
+      "review/controller-r3s-In1-Cu.svg": "84133920bfbf4e147a18ee65ce11462dc6017b6e1bf78c0308579dea59daa359",
+      "review/controller-r3s-rear-copper.png": "fc16ed44df20caed8456c81d77a94cbae83b3818afd2f96646b9530606d11c86",
+      "review/controller-r3s-In3-Cu.png": "454ccf95c5c2ea4004ab3ea783ef991df9030f30406ac2aee6a2c465c0a2f126",
+      "review/controller-r3s-In4-Cu.png": "ba81b6d43a29c72ad5cb1944d11b884c1c0ca763a3488f9c758805d63918562a",
+      "review/controller-r3s-In3-Cu.svg": "d42a15fabe9b98d92a74db2bed3987dcbb98b9b68bbfe629b00175077073eeec",
+      "review/controller-r3s-rear-copper.svg": "3adb221ab43d5b3492d6f4f2e848c90b4cc9c36e81cf4d57291dc3dea67cb5ed",
+      "review/copper-review-manifest.json": "00aabf42bd63e4d37c75b99a670b7acdde6b176a517aba0a3e29902a50188076",
+      "review/assembly-drawing/assembly-drawing-manifest.json": "c04716f03cb24e518099ce59c45019325c829f5393086b0cffa0e2dd56720105",
+      "review/schematic-pdf-visual-qa.json": "ab7350fcce93b5abed670f45a055c7a23877ff1b3806e35015a76f576eb4e7ab",
+      "review/p6-presentation-source-integrity.json": "9decacdc7ec7ef8cf0662b55675773e6130eec304d83ffc0e299d4a1d4d52d07",
+      "review/p6-presentation-geometry-proof.json": "6bf08e6b76d109d55e29594662f53cf1c510c242ecf88036a684b2205e37c3d2",
+      "tools/build_assembly_pdf_p6.py": "001e2b8b5cbe5445a43aee6307a71bb988efd95c68c0014ff9ba4d203a24c6af",
+      "tools/export_copper_review_p6.py": "f914a16e87c7429ae4f2482903ae8cef655c3abebd9f1622b11e4cf01c06e8c9",
+      "tools/render_p6_drawings.py": "e473e0dceb58ceea21c650c97c3b4533d107c6078f678673fd8218642d8eb766",
+      "review/p6-assembly-prose-update.json": "cb5c83c6ecb6f9cb76a7896a9e5acdc6134690608f6161bba6eb4b7371719a8e",
+      "review/p6-assembly-prose-diff.txt": "1c14e67d5c9eea5c94a820ea19adca27b82003bf38622e629c21ab1098fd2964",
+      "review/P6-Production-Instructions.txt": "acf76a78cdf316067b0f5b5183e55b4aa2f5b892347efb6c3e2628702253d629",
+      "review/p6-schematic-export-integrity.json": "fb757fde68bbb4166834ae133614149f04dd0525ada00dfcdb33ccd78b676a9b",
+      "tools/render_p6_review.py": "d474d1d7a24a63478c3fb36f1836567b66e98248408a2dc34e09475cc086ed79",
+      "review/p6-report-footer-update.json": "fca5f131095be97a92be9d2cefd380b405147d304b816ad69be04220b2ea2ce0"
+    },
+    "supplier_evidence": {
+      "review/supplier-p6-evidence/mask-warning-comparison.json": "a1b77d2a27c2e9ab108d9a371491f1277d26174a965ef283fe51063df068e852",
+      "review/supplier-p6-evidence/trace-width-top.txt": "37c2e79067e9f9f672fca8a7eb9ba1f97d26fbdfe445f7e324f95d2d97f3404d",
+      "review/supplier-p6-evidence/smt-summary.txt": "c66df8290449e2a5932e5eff86073822d7a7b8ee9b35a99cd7caeac7b100a282",
+      "review/supplier-p6-evidence/mask-to-trace-top-mil.txt": "c7f83b6b5b0e01a1072eadda1909c72e7304e06ffe464dc15fdfe87aa415acea",
+      "review/supplier-p6-evidence/overlap-top.txt": "e6d314a16b69b32a03c61bd86ce7a970e32be7dbdc0490cf929661223f00ba8c",
+      "review/supplier-p6-evidence/pcb-summary.jpg": "cff2de2ca9641f5da943c918d875c01d1fd4cef5ca52d2ae40eb07b3ee32665d",
+      "review/supplier-p6-evidence/upload-provenance.json": "a92cb49fb59c1da4ce85f7905a114df22951428a2d29d242a2a3628f6175521d",
+      "review/supplier-p6-evidence/bom-matches.txt": "764f3f2cf61a507f21d632dd704246ef1ea8762d95cb73b919665a832dc48d69",
+      "review/supplier-p6-evidence/j3-live-stock.txt": "8c96ba6539377076e3589bd98602ecfabe13a052b80ad916626e8c0e1a9c50ba",
+      "review/supplier-p6-evidence/q2-live-stock.txt": "b7f33f9503d34a38add9dfd26decebe712b968c4a59a84ce79519f6d64544d23",
+      "review/supplier-p6-evidence/q2-live-stock.jpg": "a7552ea3e9f65b82e85cece15e3a3247114a62b9b3d0bbe751200dfaf090a97c",
+      "review/supplier-p6-evidence/mask-to-trace-bottom-mil.txt": "3bd5365ea761a2b7f10b5b5b6ccf9e942e4ffbe05d0af62841806384f34e36a8",
+      "review/supplier-p6-evidence/bom-comparison.json": "da923fd327076c8dd84c0d0da464a27b0cc28a7508040e1f9be82d93819239eb",
+      "review/supplier-p6-evidence/placement-preview-limit.jpg": "52abb3664c9e690e477e22b00b8955d3ed0681c5cd527e53a760a4f9ada4562e",
+      "review/supplier-p6-evidence/trace-width-bottom.txt": "2d5a3f4db3deec0871972337aa8b8529e9f76c6d1b2cf25ccedeeba4295bdef2",
+      "review/supplier-p6-evidence/live-stock-q2-j3.json": "cb5cd639226491589ee870377a84c91016aaf87abce2d13b9656cfd80654738c",
+      "review/supplier-p6-evidence/overlap-bottom.txt": "79cded2d77fe2babfdc21e6abd5db5f07d9234916d13155dae35c6cba1b6c2b0",
+      "review/supplier-p6-evidence/trace-spacing-bottom.txt": "1ec0ee7adfa9991c7c019dc5483bce82f059bbee1ef8d915365d4fc7d4096c37",
+      "review/supplier-p6-evidence/pth-to-trace-top.txt": "c8727dcb0326014f64eefa1639d2b9ae957bf8dd205e3706215c57e188a6ea21",
+      "review/supplier-p6-evidence/smt-summary.jpg": "4ea3c21fb6b5ff4b277fe90dac78b196601654ce940773576f9debc94bcafda5",
+      "review/supplier-p6-evidence/usb-slot-alignment.txt": "da9505d9e900cba999771d365b8bc9e90297822f6ce9889196bffd52d433fb2a",
+      "review/supplier-p6-evidence/smt-comparison.json": "42e6bba8d041fd6c72446b06d8694140621d57c5135e79af28b4960bf27b4e0c",
+      "review/supplier-p6-evidence/pcb-summary.txt": "537d345f34d1bc669a1b43d23640ddb2e64546a16a0d6d17b38c2d27ceea4211",
+      "review/supplier-p6-evidence/pcb-comparison.json": "bd301228e188f1fc7188de0528bdb5b43ed5bcb87865f5a50a28a76562d965a9",
+      "review/supplier-p6-evidence/trace-spacing-top.txt": "c4e06cc7521faa945d5d7eb6f1c29a45a27fd8cb056348f1daa120730f2aa861",
+      "review/supplier-p6-evidence/j3-live-stock.jpg": "715b55ca3a9f1442472c50b5131828dc0725f04248081af8ceb2c61775d6db64",
+      "review/supplier-p6-evidence/pth-to-trace-bottom.txt": "d21fbd3cca2491941aecafbe1a2fe458cb592ed13a1350bc9e347ab8af1f69d8"
+    },
+    "submission_files": [
+      {
+        "path": "/workspace/scratch/8a35c1f26232/p6-output/R3-S6-P6-Gerbers.zip",
+        "sha256": "13e92e821b3554f2e4bf15a7b83eb201f8afd29b863b4f257c50691a027e70ce",
+        "bytes": 441949
+      },
+      {
+        "path": "/workspace/scratch/8a35c1f26232/p6-output/R3-S6-P6-JLC_BOM.csv",
+        "sha256": "b9df641ea0d48e4e4001fa614a05244837c18669b80712dc1e35be8038369fd3",
+        "bytes": 3035
+      },
+      {
+        "path": "/workspace/scratch/8a35c1f26232/p6-output/R3-S6-P6-JLC_CPL.csv",
+        "sha256": "ed23023d67402462e10042c7a7e8467062def891a487c25afa7da5a2af2c00a2",
+        "bytes": 3198
+      }
+    ]
+  },
+  "package_closure": {
+    "not_yet_claimed": true,
+    "required": "Owner package manifest plus post-write CRC and every-member SHA256 audit must bind this qualification, final routing handoff PDF and its separate PDF QA",
+    "circular_hash_avoidance": "Final routing handoff PDF may cite this qualification hash; it is intentionally bound later by the package manifest rather than inside this report"
+  },
+  "prior_release_disposition": "P5 and earlier fabrication packages are superseded and must not be fabricated; any retained baseline is reconstruction evidence only",
+  "physical_qualification": "First-article electrical/polarity, shell/hidden-joint, harness/USB fit, current/thermal, firmware and EMI checks remain measured hardware work"
+}

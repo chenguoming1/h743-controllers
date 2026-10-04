@@ -1,0 +1,154 @@
+{
+  "sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "counts": {
+    "pads": 431,
+    "examined_pad_layer_pairs": 467,
+    "pad_layer_pairs_without_direct_trace_contacts": 96,
+    "routed_pad_layer_profiles": 371,
+    "pad_track_contacts": 835,
+    "contact_groups": 389,
+    "failed_groups": 2,
+    "tracks": 3178
+  },
+  "elapsed_seconds": 6.709648370742798,
+  "failures": [
+    {
+      "pad_uuid": "3ca6dbe4-fd76-465d-885c-30bfeed52f0a",
+      "reference": "U1",
+      "pin": "20",
+      "net": "VDDA",
+      "layer": "F.Cu",
+      "xy_mm": [
+        10.325,
+        24.0
+      ],
+      "size_mm": [
+        1.6,
+        0.3
+      ],
+      "drill_mm": [
+        0.0,
+        0.0
+      ],
+      "shape": 4,
+      "group": {
+        "tracks": [
+          {
+            "uuid": "74cbd0c0-d37d-4a20-ac13-81aa582dedee",
+            "start_mm": [
+              9.85,
+              24.5
+            ],
+            "end_mm": [
+              9.2,
+              23.85
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "review_width_mm": 0.2,
+        "erosion_radius_mm": 0.0998,
+        "local_finite_width_pass": false,
+        "failed_track_uuids": [
+          "74cbd0c0-d37d-4a20-ac13-81aa582dedee"
+        ],
+        "estimated_local_max_passage_width_mm": 0.164697,
+        "pad_connected_eroded_components": [
+          []
+        ],
+        "individual_nominal_tests": [
+          {
+            "track_uuid": "74cbd0c0-d37d-4a20-ac13-81aa582dedee",
+            "nominal_track_width_mm": 0.2,
+            "land_narrow_dimension_mm": 0.3,
+            "review_width_mm": 0.2,
+            "land_limited": false,
+            "local_finite_width_pass": false,
+            "estimated_local_max_passage_width_mm": 0.164697
+          }
+        ]
+      }
+    },
+    {
+      "pad_uuid": "f033bae3-30e5-46a0-9885-a09cf30a9873",
+      "reference": "J162",
+      "pin": "1",
+      "net": "3V3_CORE",
+      "layer": "B.Cu",
+      "xy_mm": [
+        15.0,
+        32.85
+      ],
+      "size_mm": [
+        1.6,
+        2.0
+      ],
+      "drill_mm": [
+        0.0,
+        0.0
+      ],
+      "shape": 4,
+      "group": {
+        "tracks": [
+          {
+            "uuid": "0a585d33-9792-4e33-8caf-59e56442f3b3",
+            "start_mm": [
+              15.7,
+              31.9
+            ],
+            "end_mm": [
+              15.7,
+              31.95
+            ],
+            "width_mm": 0.45
+          },
+          {
+            "uuid": "837871e3-c11a-4433-8c98-90604fc54db3",
+            "start_mm": [
+              15.7,
+              31.9
+            ],
+            "end_mm": [
+              16.15,
+              31.45
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "review_width_mm": 0.3,
+        "erosion_radius_mm": 0.1498,
+        "local_finite_width_pass": false,
+        "failed_track_uuids": [
+          "0a585d33-9792-4e33-8caf-59e56442f3b3"
+        ],
+        "estimated_local_max_passage_width_mm": null,
+        "pad_connected_eroded_components": [
+          [
+            "0a585d33-9792-4e33-8caf-59e56442f3b3",
+            "837871e3-c11a-4433-8c98-90604fc54db3"
+          ]
+        ],
+        "individual_nominal_tests": [
+          {
+            "track_uuid": "0a585d33-9792-4e33-8caf-59e56442f3b3",
+            "nominal_track_width_mm": 0.45,
+            "land_narrow_dimension_mm": 1.6,
+            "review_width_mm": 0.45,
+            "land_limited": false,
+            "local_finite_width_pass": false,
+            "estimated_local_max_passage_width_mm": 0.439233
+          },
+          {
+            "track_uuid": "837871e3-c11a-4433-8c98-90604fc54db3",
+            "nominal_track_width_mm": 0.3,
+            "land_narrow_dimension_mm": 1.6,
+            "review_width_mm": 0.3,
+            "land_limited": false,
+            "local_finite_width_pass": true,
+            "estimated_local_max_passage_width_mm": null
+          }
+        ]
+      }
+    }
+  ]
+}

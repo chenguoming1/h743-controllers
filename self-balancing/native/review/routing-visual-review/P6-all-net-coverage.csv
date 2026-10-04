@@ -1,0 +1,86 @@
+net,F.Cu,In1.Cu,In2.Cu,In3.Cu,In4.Cu,B.Cu,segments_before,segments_after,disposition,evidence
++5V_STACK,89,0,17,0,0,53,276,159,RETAINED WITH CONSTRAINTS,"The unused front power spur, its redundant via and its five-track rear arm were removed back to the real junction. Main distribution branches are simpler. The protected buck supply corridor retains its full widths and terminal feeds."
+/clock/HSE_XOUT,5,0,0,0,0,2,10,7,FIXED,The short crystal-output rear approach is now a coherent vertical/45-degree route with its via attachment preserved.
+/power/BUCK_SW,3,0,0,0,0,0,3,3,GEOMETRICALLY CLEAN,"The three-segment buck switch connection is short, direct and uniformly wide; its protected local layout is preserved."
+/power/STACK_5V_DIV,3,0,3,0,0,6,25,12,FIXED,"The divider staircase and narrow V are replaced with an explicit 0.150 mm Y/T fork. The branch enters the via center at (25.75,10.85); no shallow annulus-only contact is used."
+/power/USB_CC1,4,0,8,0,0,2,16,14,FIXED,The inner-layer wavy corner is now a clean polygon; front and rear terminal connections remain direct.
+/power/USB_CC2,2,0,0,0,0,8,11,10,GEOMETRICALLY CLEAN,The USB CC2 course uses coherent straight spans and clear bends around the connector corridor.
+/power/USB_DM_CONN,9,0,0,0,0,1,10,10,GEOMETRICALLY CLEAN,"The protected USB connector branch topology remains regular, with its original 0.1392 mm geometry retained."
+/power/USB_DM_ESD,3,0,0,0,0,0,3,3,GEOMETRICALLY CLEAN,The protected short USB ESD link is regular and unchanged.
+/power/USB_DP_CONN,5,0,0,0,0,0,5,5,GEOMETRICALLY CLEAN,The protected USB connector branch geometry is regular and unchanged.
+/power/USB_DP_ESD,5,0,0,0,0,0,5,5,GEOMETRICALLY CLEAN,The protected USB ESD route has a single clear diagonal transition and no repeated microjog.
+/power/USB_SLEW_CT,2,0,0,0,0,1,3,3,GEOMETRICALLY CLEAN,The short slew-control pad/via links are direct; visible terminal-pad copper is intentional.
+/power/USB_SWITCH_ON,6,0,0,0,0,15,80,21,FIXED,The long rear staircases and bottom wave are replaced with coherent spans; the front pad entry is clean. Terminal connections are checked separately from nominal widths.
+/power/USB_VBUS_SLEW,9,0,0,0,0,1,8,10,RETAINED WITH CONSTRAINTS,The wide slew-power corridor retains its original via and pad feeds and its fixed connector/neighbor clearances; no fine staircase is present.
+/storage/FLASH_HOLD_n,9,0,0,0,0,12,22,21,RETAINED WITH CONSTRAINTS,The long flash-hold diagonal is clean. Short via-entry details retain the fixed terminal and adjacent reference-aperture geometry.
+/storage/FLASH_SCLK,11,0,0,0,0,9,20,20,RETAINED WITH CONSTRAINTS,The flash-clock loop is coherent; the local via approach remains inside its fixed terminal/reference corridor.
+/storage/FLASH_WP_n,0,0,0,0,0,6,7,6,FIXED,The rear V-shaped excursion is now a clear polygon with a level bottom segment.
+3V3_CORE,146,0,13,0,0,197,779,356,RETAINED WITH CONSTRAINTS,"The long 3V3 serpentine and redundant pad branches are simplified. The rear fold around x15.45–18.5,y21.6–24.4 remains a real through-feed plus capacitor branch. U11.5 FLASH_MOSI at (16.8,22.28), SWDIO (16.8,23.35), OUT1 (16.3,23.05) and the OUT1 corridor bound it; the lower shortcut is blocked by VDDA (17.6,25.3)."
+ADC1_RAW,13,0,1,0,0,17,73,31,FIXED,"The northwest arch, lower connector approach and long rear course are clean, coherent spans."
+ADC2_RAW,23,0,9,0,0,2,80,34,FIXED,The long inner-layer descent and southern front route are simplified. Short terminal-entry details retain their fixed connection geometry.
+ADC3_RAW,8,0,3,0,0,6,34,17,FIXED,The front and inner diagonals are clean; the rear edge-pad approach is a simple terminal connection.
+AUX_PC8,35,0,14,0,0,12,103,61,RETAINED WITH CONSTRAINTS,The long return and lower arc are simplified. The east shoulder is confined between J2.S1 and the adjacent 3V3 route; tested straight polygons at 0.130 and 0.150 mm collide with those exact objects.
+AUX_PC9,7,0,32,0,0,9,63,48,RETAINED WITH CONSTRAINTS,The long inner course is clean. Short launch steps remain beside the fixed vias at the R029–R031 regions and their In1 reference apertures; tested alternatives are recorded with exact copper/reference conflicts. The actual local track-join screen finds no narrow join.
+AUX_PD14,16,0,28,0,0,3,151,47,FIXED,The large inner-layer scalloped hooks and perimeter waves are replaced with a compact polygonal course and a direct lower connection.
+BOOT0,14,0,17,0,0,4,40,35,RETAINED WITH CONSTRAINTS,The long reset/boot course is regular. Short offsets at fixed vias remain in their existing reference-covered launch corridors.
+BUZZER_CTRL,9,0,2,0,0,2,38,13,FIXED,The pronounced arch/reversal and lower staircase are replaced with a clean connected path around the fixed return/via area.
+EXT_I2C_SCL,9,0,25,0,0,2,68,36,FIXED,The pad launch and central course are simplified; the remaining U-shaped inner detour passes the fixed central via field.
+EXT_I2C_SDA,11,0,6,0,0,12,58,29,FIXED,The rear pad spear and front via staircase are removed; the long inner span is level and the connector terminal tail is contained in its pad.
+EXT_SENSOR_INT,8,0,6,0,0,23,44,37,FIXED,The north perimeter is a straight coherent run; the multi-branch rear course and terminal fanout remain regular.
+EXT_SPI_CS,60,0,36,0,0,38,198,134,RETAINED WITH CONSTRAINTS,"The long route and northern loop are simplified. The west shoulder was cleaned together with USB_PRESENT_n using uniform 0.130 mm segments, preserving 0.160 mm mutual spacing. Short terminal-aperture launches elsewhere remain constrained and are documented."
+EXT_SPI_MISO,11,0,35,0,0,13,160,59,FIXED,Repeated inner-layer humps and southeast staircases are replaced by deliberate straight/diagonal spans around the fixed via field.
+EXT_SPI_MOSI,15,0,33,0,0,4,94,52,FIXED,"The central inner turnaround, northeast bend and rear approach are simplified; branches and terminal attachments remain explicit."
+EXT_SPI_SCK,18,0,29,0,0,12,186,59,FIXED,"The north rim, west descent and long southern inner route have coherent corners instead of repeated small waves."
+FDCAN1_RX,10,0,43,0,0,0,130,53,FIXED,"The long east descent and lower inner sweep are simplified. The redundant via at (26.75,13.35) is retired with a real full-width In2 junction; the remaining lower bypass follows the fixed via/copper corridor."
+FDCAN1_TX,7,0,13,0,0,10,61,30,FIXED,The front east incline and inner vertical run are clean; the rear offset is an intentional clearance step.
+FLASH_CS,8,0,0,0,0,7,16,15,FIXED,The front and rear flash-select paths are direct polygons; no overlapping wave remains in the bulk path.
+FLASH_MISO,10,0,0,0,0,8,19,18,RETAINED WITH CONSTRAINTS,The long flash-MISO route is clean; the short two-layer via launch retains the fixed terminal/reference approach.
+FLASH_MOSI,16,0,0,0,0,20,36,36,RETAINED WITH CONSTRAINTS,The long flash-MOSI rear path is clean. The very short front and rear via approaches preserve the reference apertures and are checked for real neck width.
+FLASH_SCLK_RAW,2,0,0,0,0,0,18,2,FIXED,"The local clock hook is completely removed, leaving a straight run and one 45-degree diagonal."
+GND,106,0,0,0,0,141,343,247,RETAINED WITH CONSTRAINTS,Thirty supported local returns were simplified while preserving physical pad/via feeds and source widths. Both Q2.2 rear and U1.49 front scallops are now clean polygons. The protected buck return and all 97 ground vias remain. Ground-plane structure is preserved; six obsolete non-ground via apertures close locally after the approved retirements.
+HOST_RUN_LINK,0,0,11,0,0,8,40,19,FIXED,The top edge-pad escape is a simple diagonal/vertical launch; the inner branch remains coherent.
+HOST_RUN_RAW,2,0,8,0,0,3,29,13,FIXED,The upper rear pad link and long front trunk are clean and direct.
+HOST_TX_LINK,2,0,11,0,0,28,47,41,RETAINED WITH CONSTRAINTS,The long host link is regular. The top terminal corridor and short inner via approach retain constrained local details.
+HOST_TX_RAW,15,0,0,0,0,11,24,26,FIXED,"Both formerly noncoincident endcap contacts near (13.05,13.75) and (13.15,14.25) now use explicit full-width diagonal joins. The previous 0.050 mm copper throats are removed. The long host route and rear connection remain coherent."
+HSE_IN,5,0,0,0,0,4,18,9,FIXED,The protected crystal input rear staircase is replaced with a short clean vertical/diagonal connection.
+HSE_OUT,2,0,0,0,0,2,14,4,FIXED,Both protected crystal-output terminal approaches are simplified and retain the explicit via connection.
+IMU_3V3,7,0,0,0,0,6,14,13,GEOMETRICALLY CLEAN,"The short IMU supply links are regular, uniformly wide routes between fixed pads and vias."
+IMU_CS,14,0,0,0,0,4,26,18,FIXED,"The unused pad-anchored branch and its two redundant vias at (7.05,21.8) and (6.35,25.0) are removed. The functional IMU-select connection is a coherent polygon between its real terminals."
+IMU_INT,9,0,0,0,0,6,15,15,FIXED,The former free-angle MCU-side span is straightened; the remaining short links retain clear polygonal bends.
+IMU_MISO,3,0,0,0,0,11,15,14,FIXED,The rear west-entry corner is clean; the remainder is a coherent loop around fixed obstacles.
+IMU_MOSI,12,0,0,0,0,13,27,25,FIXED,"The MCU corner is clean, and the long rear return is regular; short via launch copper is preserved."
+IMU_SCLK,10,0,0,0,0,4,19,14,FIXED,The front local arch and MCU elbow no longer carry protruding teeth; the rear link is direct.
+LED_DATA,2,0,3,0,0,8,18,13,FIXED,The rear LED pad approach is clean and the long inner descent is direct.
+MOTOR_OK_BUF,11,0,14,0,0,11,92,36,FIXED,The front serial offsets and inner hairpin wave are removed. The inner bypass still avoids the fixed USB_PRESENT_n terminal/trace corridor.
+MOTOR_OK_LINK,4,0,5,0,0,19,34,28,FIXED,The top inner branch and rear connector launch are coherent; required multiple terminals remain connected.
+MOTOR_TX_BUF,8,0,0,0,0,11,19,19,FIXED,The shallow rear span is replaced with a level run and a clear 45-degree step; terminal geometry remains explicit.
+MOTOR_TX_LINK,0,0,21,0,0,17,45,38,RETAINED WITH CONSTRAINTS,The bulk motor-link route is simplified; the west passage and central peak follow fixed via/copper clearances.
+NRST,12,0,21,0,0,20,82,53,RETAINED WITH CONSTRAINTS,The long reset perimeter and rear terminal approach are clean. The front branch elbow retains both connected conductors; the source-bound actual-copper screen confirms the local attachment rather than inferring it from segment width.
+OUT1,13,0,0,0,0,10,72,23,FIXED,The front diagonal staircases and rear upper trough are removed; the complete route is a deliberate polygon.
+OUT2,16,0,0,0,0,4,48,20,FIXED,The rear turn and front lower arc are clean; the short MCU via entry remains explicit.
+OUT3,7,0,5,0,0,0,16,12,FIXED,The front stepped launch is simplified; the short inner course and pad-contained tail are regular.
+OUT4,6,0,0,0,0,0,7,6,GEOMETRICALLY CLEAN,The short front output route is a coherent diagonal/vertical path with a pad-contained tail.
+OUT5,15,0,0,0,0,10,38,25,FIXED,The rear bend and front terminal launches are simpler and retain the same physical terminals.
+OUT6,4,0,13,0,0,0,48,17,FIXED,"The repeated inner-layer stair steps and lower hook are removed, leaving a few coherent corridor bends."
+OUT7,5,0,5,0,0,0,30,10,FIXED,The inner entry and front offset are replaced with clean long spans.
+OUT8,5,0,15,0,0,0,79,20,FIXED,"The many inner drop steps, middle hook and lower arc are replaced with a coherent polygonal descent."
+RPM_IN,4,0,12,0,0,6,72,22,FIXED,"The west perimeter and long bottom run are cleaned, with the small terminal bend retained."
+STACK_5V_GOOD,14,0,6,0,0,10,74,30,FIXED,"The exact user-screenshot arrows, teeth and bulge are gone. A uniform 0.130 mm six-segment course provides the necessary AUX_PC9 via bypass."
+SWCLK,6,0,26,0,0,2,142,34,FIXED,The long inner route has clean west and bottom bends; the upper front branch is simplified.
+SWDIO,15,0,31,0,0,4,160,50,FIXED,"The inner top-right arch, west turn and bottom sweep are simplified; clearance bends remain around the fixed via field."
+UART1_RX,22,0,6,0,0,25,58,53,RETAINED WITH CONSTRAINTS,"The long route is regular. The rear crossing-height offsets follow the fixed paired UART corridor, with physical terminals and reference apertures retained. Exact tested alternative conflicts are attached to its region entries."
+UART1_TX,7,0,20,0,0,24,56,51,RETAINED WITH CONSTRAINTS,"The long perimeter route is coherent, and the exposed rear tail at (1.3,13.15–13.525) is removed. Small remaining rear offsets follow their fixed terminal/reference corridor; exact tested conflicts are documented."
+UART2_RX,26,0,24,0,0,3,65,53,RETAINED WITH CONSTRAINTS,"The long front and inner runs are clean. The northwest MCU shoulder passes GND (10.2,13.9), BOOT0 (11.3,13.41), 3V3_CORE (11.5,16.0), NRST (12.665,15.995), and the neighboring UART2_TX route. Actual In1 apertures and both routes are shown together; bounded coupled alternatives have separate evidence."
+UART2_TX,28,0,10,0,0,13,60,51,RETAINED WITH CONSTRAINTS,"The inner northwest detour is simplified. The front MCU shoulder shares UART2_RX’s fixed pad/via corridor; the annotated context includes native In1 apertures, BOOT0/GND above, and 3V3/NRST below. Coupled alternatives are assessed jointly."
+UART3_RX,12,0,39,0,0,6,78,57,FIXED,The lower inner U and east bulge have coherent corners; the rear via bridge is level rather than shallow-angle.
+UART3_TX,43,0,5,0,0,18,79,66,RETAINED WITH CONSTRAINTS,"The main loop is simplified. The redundant via at (29.4,26.55) is retired with a real full-width front junction. Short front launch/paired-corridor offsets remain at x29–31,y25.9 and near J111 (28,1.5), constrained by fixed copper and reference apertures. The rear R140 double offset is now a uniform 0.130 mm three-segment path; both via approaches are unchanged."
+UART4_RX,10,0,19,0,0,4,53,33,FIXED,The inner branch hump and trough are coherent polygons around the fixed via/copper field.
+UART4_TX,14,0,25,0,0,5,57,44,FIXED,The long north run and central branch are clean. The two nonexact central joins are replaced with full-width copper; the branch remains explicit and the actual local track-join screen reports no narrow contact.
+USB_DM_MCU,3,0,0,0,0,0,3,3,GEOMETRICALLY CLEAN,The protected three-segment MCU USB link is short and regular at its original 0.1392 mm width.
+USB_DP_MCU,1,0,0,0,0,0,1,1,GEOMETRICALLY CLEAN,The protected MCU USB link is one straight 0.1392 mm segment.
+USB_PRESENT_n,40,0,46,0,0,4,225,90,RETAINED WITH CONSTRAINTS,"The long outer/inner runs and actual-copper joins are simplified and repaired. The west shoulder is now a clean coordinated 0.130 mm four-run path beside EXT_SPI_CS, preserving 0.160 mm mutual spacing. Fixed terminal-aperture launches remain documented."
+USB_SOURCE_DISABLE,5,0,0,0,0,18,50,23,FIXED,"The unused inter-via branch and redundant via at (18.5,29.9) are removed; the remaining functional front/rear loop has coherent corners and explicit real-terminal connections."
+USB_VBUS,26,0,6,0,0,45,114,77,FIXED,"The long power corridor has simpler corners; rail widths, via feeds and branch terminals are retained."
+VCAP,8,0,0,0,0,2,10,10,GEOMETRICALLY CLEAN,The protected VCAP route remains a coherent orthogonal connection with its fixed power/reference geometry.
+VDDA,11,0,0,0,0,15,42,26,FIXED,The west analog-supply branch and rear terminal approaches are simpler; the long distribution path is regular.
+VLOGIC_IN,93,0,3,0,0,19,130,115,FIXED,The rear southeast width bump is removed and the power course is simplified; the broad front supply branches retain their required widths.

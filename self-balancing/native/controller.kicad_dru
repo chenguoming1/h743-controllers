@@ -1,0 +1,12 @@
+(version 1)
+# P3 targets are above the unmodified JLCDFM green boundaries of 5 mil and 6 mil.
+# Pad/via clearances retain the existing project constraints; these rules strengthen traces.
+(rule "P3 minimum trace width"
+  (constraint track_width (min 0.130mm)))
+(rule "P3 trace-to-trace clearance"
+  (condition "A.Type == 'Track' && B.Type == 'Track'")
+  (constraint clearance (min 0.160mm)))
+
+(rule "P3 calculated USB data width"
+  (condition "A.NetName == '/power/USB_DM_CONN' || A.NetName == '/power/USB_DP_CONN' || A.NetName == '/power/USB_DM_ESD' || A.NetName == '/power/USB_DP_ESD' || A.NetName == 'USB_DM_MCU' || A.NetName == 'USB_DP_MCU'")
+  (constraint track_width (min 0.1392mm) (max 0.1392mm)))

@@ -1,0 +1,2602 @@
+{
+  "board_sha256": "0850991d8aacd22138487804c24eefbae634a21ba218c18196f13fad795c3696",
+  "source": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps62162.pdf",
+    "datasheet": "SLVSAM2E, Rev E, May 2017 with current package appendix",
+    "package": "DSG0008A 4218900/E 08/2022",
+    "pdf_pages_1_based": [
+      4,
+      39,
+      40,
+      41
+    ],
+    "pdf_sha256": "abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72"
+  },
+  "assumptions": [
+    "Package centered at native/CPL origin, manufacturer top-view pin 1 at top left, no rotation or translation error",
+    "Nominal terminal dimensions are midpoint of min/max; they are a constructed comparison case, not a separate TI nominal specification",
+    "Dimension-only grid does not apply composite positional tolerance, PCB fabrication or assembly placement error",
+    "Two terminal variants: rectangular envelope and the drawing alternative with inward semicircle; results do not assert JLC uses either variant",
+    "Overlap uses intersection/lead area, matching captured JLC help. JLC terminal polygon, selected pin and registration are not available; intersection/land is a separate diagnostic only."
+  ],
+  "footprint": {
+    "origin_native_mm": [
+      5.05,
+      10.8
+    ],
+    "origin_manufacturing_mm": [
+      5.05,
+      27.2
+    ],
+    "orientation_deg": 0
+  },
+  "pins": [
+    {
+      "pin": "1",
+      "function": "PGND",
+      "native_xy_mm": [
+        4.1,
+        10.05
+      ],
+      "manufacturing_xy_mm": [
+        4.1,
+        27.95
+      ],
+      "local_native_xy_mm": [
+        -0.9500000000000002,
+        -0.75
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "GND",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "2",
+      "function": "VIN",
+      "native_xy_mm": [
+        4.1,
+        10.55
+      ],
+      "manufacturing_xy_mm": [
+        4.1,
+        27.45
+      ],
+      "local_native_xy_mm": [
+        -0.9500000000000002,
+        -0.25
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "VLOGIC_IN",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "3",
+      "function": "EN",
+      "native_xy_mm": [
+        4.1,
+        11.05
+      ],
+      "manufacturing_xy_mm": [
+        4.1,
+        26.95
+      ],
+      "local_native_xy_mm": [
+        -0.9500000000000002,
+        0.25
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "VLOGIC_IN",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "4",
+      "function": "AGND",
+      "native_xy_mm": [
+        4.1,
+        11.55
+      ],
+      "manufacturing_xy_mm": [
+        4.1,
+        26.45
+      ],
+      "local_native_xy_mm": [
+        -0.9500000000000002,
+        0.75
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "GND",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "5",
+      "function": "FB",
+      "native_xy_mm": [
+        6.0,
+        11.55
+      ],
+      "manufacturing_xy_mm": [
+        6.0,
+        26.45
+      ],
+      "local_native_xy_mm": [
+        0.9500000000000002,
+        0.75
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "GND",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "6",
+      "function": "VOS",
+      "native_xy_mm": [
+        6.0,
+        11.05
+      ],
+      "manufacturing_xy_mm": [
+        6.0,
+        26.95
+      ],
+      "local_native_xy_mm": [
+        0.9500000000000002,
+        0.25
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "3V3_CORE",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "7",
+      "function": "SW",
+      "native_xy_mm": [
+        6.0,
+        10.55
+      ],
+      "manufacturing_xy_mm": [
+        6.0,
+        27.45
+      ],
+      "local_native_xy_mm": [
+        0.9500000000000002,
+        -0.25
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "/power/BUCK_SW",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "8",
+      "function": "PG",
+      "native_xy_mm": [
+        6.0,
+        10.05
+      ],
+      "manufacturing_xy_mm": [
+        6.0,
+        27.95
+      ],
+      "local_native_xy_mm": [
+        0.9500000000000002,
+        -0.75
+      ],
+      "size_mm": [
+        0.6,
+        0.25
+      ],
+      "radius_mm": 0.0625,
+      "net": "unconnected-(U2-PG-Pad8)",
+      "nominal_rectangular_metrics": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "max_rectangular_terminal_min_body_metrics": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "dimension_only_margin_ranges_mm": {
+        "toe": [
+          0.2,
+          0.3
+        ],
+        "heel": [
+          -0.1,
+          0.2
+        ],
+        "side_each": [
+          -0.035,
+          0.035
+        ]
+      }
+    },
+    {
+      "pin": "9",
+      "function": "EP",
+      "native_xy_mm": [
+        5.05,
+        10.8
+      ],
+      "manufacturing_xy_mm": [
+        5.05,
+        27.2
+      ],
+      "local_native_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "size_mm": [
+        0.9,
+        1.6
+      ],
+      "radius_mm": 0.05,
+      "net": "GND"
+    }
+  ],
+  "gerber_pins": {
+    "1": {
+      "aperture": 11,
+      "xy_mm": [
+        4.1,
+        27.95
+      ]
+    },
+    "2": {
+      "aperture": 11,
+      "xy_mm": [
+        4.1,
+        27.45
+      ]
+    },
+    "3": {
+      "aperture": 11,
+      "xy_mm": [
+        4.1,
+        26.95
+      ]
+    },
+    "4": {
+      "aperture": 11,
+      "xy_mm": [
+        4.1,
+        26.45
+      ]
+    },
+    "5": {
+      "aperture": 11,
+      "xy_mm": [
+        6.0,
+        26.45
+      ]
+    },
+    "6": {
+      "aperture": 11,
+      "xy_mm": [
+        6.0,
+        26.95
+      ]
+    },
+    "7": {
+      "aperture": 11,
+      "xy_mm": [
+        6.0,
+        27.45
+      ]
+    },
+    "8": {
+      "aperture": 11,
+      "xy_mm": [
+        6.0,
+        27.95
+      ]
+    },
+    "9": {
+      "aperture": 12,
+      "xy_mm": [
+        5.05,
+        27.2
+      ]
+    }
+  },
+  "cpl": {
+    "controller-r3s-green/release/assembly/JLC_CPL.csv": {
+      "Designator": "U2",
+      "Mid X": "5.050000",
+      "Mid Y": "27.200000",
+      "Layer": "Top",
+      "Rotation": "0.000000"
+    },
+    "controller-r3s-green/release/assembly/JLC_CPL_NATIVE_AUDIT.csv": {
+      "Designator": "U2",
+      "Mid X": "5.050000",
+      "Mid Y": "27.200000",
+      "Layer": "Top",
+      "Rotation": "0.000000"
+    },
+    "controller-r3s-green/inputs/user-corrected-JLC_CPL.csv": {
+      "Designator": "U2",
+      "Mid X": "5.050000",
+      "Mid Y": "27.200000",
+      "Layer": "Top",
+      "Rotation": "0.000000"
+    }
+  },
+  "case_summary": {
+    "nominal_rectangular": {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9856932108931634,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    "nominal_round_inner": {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.46570174761905897
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.5558931969306568
+      }
+    },
+    "maximum_terminal_nominal_body": {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.08582342315154257,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.6704954933714263,
+        "intersection_over_land": 0.5852387917989412
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.5775546157577129,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    "maximum_terminal_minimum_body": {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.47989836575771283,
+        "intersection_over_land": 0.5
+      }
+    },
+    "maximum_terminal_maximum_body": {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.0983234231515426,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7681517433714266,
+        "intersection_over_land": 0.6704775835978827
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.08642699081698724,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6752108657577127,
+        "intersection_over_land": 0.7034936081639084
+      }
+    },
+    "minimum_terminal_nominal_body": {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.24548772038095057
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.293030795756028
+      }
+    }
+  },
+  "all_centered_dimension_cases": [
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.24548772038095057
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.293030795756028
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03252345024703866,
+        "terminal_area_mm2": 0.03252345024703866,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0,
+        "intersection_over_land": 0.22178076833524407
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03252345024703866,
+        "terminal_area_mm2": 0.03252345024703866,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0,
+        "intersection_over_land": 0.26473256962837016
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.05,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.3409551671957647
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.05,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.40698721632781665
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04329369260617025,
+        "terminal_area_mm2": 0.04329369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999997,
+        "intersection_over_land": 0.2952241640211764
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04329369260617025,
+        "terminal_area_mm2": 0.04329369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999997,
+        "intersection_over_land": 0.3523995887667482
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.064,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7812499999999998,
+        "intersection_over_land": 0.3409551671957647
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.064,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7812499999999998,
+        "intersection_over_land": 0.40698721632781665
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04543901021741493,
+        "terminal_area_mm2": 0.05301238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8571395040887441,
+        "intersection_over_land": 0.3098533065177754
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.045439010217414935,
+        "terminal_area_mm2": 0.05301238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8571395040887442,
+        "intersection_over_land": 0.3698619256215386
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05388561598999669,
+        "terminal_area_mm2": 0.054,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9978817775925313,
+        "intersection_over_land": 0.3674515841863219
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0449771860361012,
+        "terminal_area_mm2": 0.054,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8329108525203927,
+        "intersection_over_land": 0.36610279486182357
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05052345024703867,
+        "terminal_area_mm2": 0.050523450247038665,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.34452462852571947
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0447541504781416,
+        "terminal_area_mm2": 0.050523450247038665,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8858094658878682,
+        "intersection_over_land": 0.3642873424443016
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9776456420205675,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8190265442264966,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.46570174761905897
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.0611386343138063,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8952310525420688,
+        "intersection_over_land": 0.49765285178920726
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.0,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.096,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7637856578285682,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.096,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6398644876769505,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": 0.0,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07043901021741494,
+        "terminal_area_mm2": 0.08501238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8285735004029695,
+        "intersection_over_land": 0.4803308901156579
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.08501238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7225651899899745,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05388561598999669,
+        "terminal_area_mm2": 0.072,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7484113331943985,
+        "intersection_over_land": 0.3674515841863219
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0449771860361012,
+        "terminal_area_mm2": 0.072,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6246831393902945,
+        "intersection_over_land": 0.36610279486182357
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05388561598999669,
+        "terminal_area_mm2": 0.06852345024703865,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7863821187597809,
+        "intersection_over_land": 0.3674515841863219
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0449771860361012,
+        "terminal_area_mm2": 0.06852345024703865,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6563765524641684,
+        "intersection_over_land": 0.36610279486182357
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.1,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7332342315154255,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.1,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6142699081698724,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.09329369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7859419120761985,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.09329369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6584259782308647,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.5728392433714262,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.47989836575771283,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 1.9,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.30000000000000004,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07332342315154255,
+        "terminal_area_mm2": 0.11701238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.6266295875111861,
+        "intersection_over_land": 0.5
+      },
+      "ti_example": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.15000000000000002,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.06142699081698724,
+        "terminal_area_mm2": 0.11701238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.5249614415593792,
+        "intersection_over_land": 0.5
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.24548772038095057
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.293030795756028
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03252345024703866,
+        "terminal_area_mm2": 0.03252345024703866,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0,
+        "intersection_over_land": 0.22178076833524407
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03252345024703866,
+        "terminal_area_mm2": 0.03252345024703866,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0,
+        "intersection_over_land": 0.26473256962837016
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.05,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.3409551671957647
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.05,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.40698721632781665
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04329369260617025,
+        "terminal_area_mm2": 0.04329369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999997,
+        "intersection_over_land": 0.2952241640211764
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04329369260617025,
+        "terminal_area_mm2": 0.04329369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999997,
+        "intersection_over_land": 0.3523995887667482
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.064,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7812499999999998,
+        "intersection_over_land": 0.3409551671957647
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.064,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7812499999999998,
+        "intersection_over_land": 0.40698721632781665
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04543901021741493,
+        "terminal_area_mm2": 0.05301238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8571395040887441,
+        "intersection_over_land": 0.3098533065177754
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.045439010217414935,
+        "terminal_area_mm2": 0.05301238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8571395040887442,
+        "intersection_over_land": 0.3698619256215386
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.054000000000000006,
+        "terminal_area_mm2": 0.054,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.36823158057142596
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05397718603610121,
+        "terminal_area_mm2": 0.054,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9995775191870594,
+        "intersection_over_land": 0.43936049380083064
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05052345024703867,
+        "terminal_area_mm2": 0.050523450247038665,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.34452462852571947
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05052345024703868,
+        "terminal_area_mm2": 0.050523450247038665,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.41124796750638437
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9998602656362127,
+        "intersection_over_land": 0.511361286063595
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9856932108931634,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.46570174761905897
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.5558931969306568
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07498951992271595,
+        "terminal_area_mm2": 0.096,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7811408325282911,
+        "intersection_over_land": 0.511361286063595
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.096,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7700728210102838,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07043901021741494,
+        "terminal_area_mm2": 0.08501238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8285735004029695,
+        "intersection_over_land": 0.4803308901156579
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.0,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07043901021741496,
+        "terminal_area_mm2": 0.08501238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8285735004029697,
+        "intersection_over_land": 0.5733555337854471
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.06288561598999669,
+        "terminal_area_mm2": 0.072,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8734113331943985,
+        "intersection_over_land": 0.42882351428155957
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05397718603610121,
+        "terminal_area_mm2": 0.072,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7496831393902946,
+        "intersection_over_land": 0.43936049380083064
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0627191621394184,
+        "terminal_area_mm2": 0.06852345024703865,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9152948649448501,
+        "intersection_over_land": 0.4276884482724736
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05397718603610121,
+        "terminal_area_mm2": 0.06852345024703865,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7877184502751147,
+        "intersection_over_land": 0.43936049380083064
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.08582342315154257,
+        "terminal_area_mm2": 0.1,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8582342315154257,
+        "intersection_over_land": 0.5852387917989412
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.1,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7392699081698725,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.08576417010622682,
+        "terminal_area_mm2": 0.09329369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9192922662871911,
+        "intersection_over_land": 0.5848347391594915
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.09329369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7924114562499144,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.08582342315154257,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.6704954933714263,
+        "intersection_over_land": 0.5852387917989412
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.5775546157577129,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    {
+      "body_width_mm": 2,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.25,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.08582342315154257,
+        "terminal_area_mm2": 0.11701238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.733455885401031,
+        "intersection_over_land": 0.5852387917989412
+      },
+      "ti_example": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": -0.09999999999999998,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07392699081698725,
+        "terminal_area_mm2": 0.11701238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6317877394492241,
+        "intersection_over_land": 0.6017468040819542
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.20000000000000018,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.24548772038095057
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03599999999999999,
+        "terminal_area_mm2": 0.036,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.293030795756028
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.20000000000000018,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03252345024703866,
+        "terminal_area_mm2": 0.03252345024703866,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0,
+        "intersection_over_land": 0.22178076833524407
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.03252345024703866,
+        "terminal_area_mm2": 0.03252345024703866,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0,
+        "intersection_over_land": 0.26473256962837016
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.20000000000000018,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.05,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.3409551671957647
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.05,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999998,
+        "intersection_over_land": 0.40698721632781665
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.20000000000000018,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04329369260617025,
+        "terminal_area_mm2": 0.04329369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999997,
+        "intersection_over_land": 0.2952241640211764
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.04329369260617025,
+        "terminal_area_mm2": 0.04329369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9999999999999997,
+        "intersection_over_land": 0.3523995887667482
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.20000000000000018,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.064,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7812499999999998,
+        "intersection_over_land": 0.3409551671957647
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04999999999999999,
+        "terminal_area_mm2": 0.064,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7812499999999998,
+        "intersection_over_land": 0.40698721632781665
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.2,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.20000000000000018,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.045439010217414956,
+        "terminal_area_mm2": 0.05301238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8571395040887446,
+        "intersection_over_land": 0.3098533065177756
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.15000000000000013,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.04543901021741495,
+        "terminal_area_mm2": 0.05301238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8571395040887445,
+        "intersection_over_land": 0.3698619256215387
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.054000000000000006,
+        "terminal_area_mm2": 0.054,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.36823158057142596
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.054000000000000006,
+        "terminal_area_mm2": 0.054,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.4395461936340421
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05052345024703867,
+        "terminal_area_mm2": 0.050523450247038665,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.34452462852571947
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.05052345024703868,
+        "terminal_area_mm2": 0.050523450247038665,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.41124796750638437
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07500000000000001,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.5114327507936473
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.07500000000000001,
+        "terminal_area_mm2": 0.075,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.6104808244917252
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.46570174761905897
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.06829369260617027,
+        "terminal_area_mm2": 0.06829369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 1.0000000000000002,
+        "intersection_over_land": 0.5558931969306568
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07500000000000001,
+        "terminal_area_mm2": 0.096,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7812500000000001,
+        "intersection_over_land": 0.5114327507936473
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07500000000000001,
+        "terminal_area_mm2": 0.096,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7812500000000001,
+        "intersection_over_land": 0.6104808244917252
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.3,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 0.10000000000000009,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07043901021741494,
+        "terminal_area_mm2": 0.08501238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8285735004029695,
+        "intersection_over_land": 0.4803308901156579
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": 0.050000000000000044,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.07043901021741496,
+        "terminal_area_mm2": 0.08501238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8285735004029697,
+        "intersection_over_land": 0.5733555337854471
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0718856159899967,
+        "terminal_area_mm2": 0.072,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9984113331943987,
+        "intersection_over_land": 0.4901954443767973
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.06297718603610121,
+        "terminal_area_mm2": 0.072,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8746831393902946,
+        "intersection_over_land": 0.5126181927398377
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.18,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.06852345024703868,
+        "terminal_area_mm2": 0.06852345024703865,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 1.0000000000000004,
+        "intersection_over_land": 0.4672684887161948
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.035,
+        "side_minus_mm": 0.035,
+        "intersection_mm2": 0.0627541504781416,
+        "terminal_area_mm2": 0.06852345024703865,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9158054688125343,
+        "intersection_over_land": 0.5108027403223157
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.0983234231515426,
+        "terminal_area_mm2": 0.1,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.983234231515426,
+        "intersection_over_land": 0.6704775835978827
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.08642699081698724,
+        "terminal_area_mm2": 0.1,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.8642699081698724,
+        "intersection_over_land": 0.7034936081639084
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.25,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.09329369260617025,
+        "terminal_area_mm2": 0.09329369260617026,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.9999999999999999,
+        "intersection_over_land": 0.6361793312169411
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": 0.0,
+        "side_minus_mm": 0.0,
+        "intersection_mm2": 0.08613863431380629,
+        "terminal_area_mm2": 0.09329369260617026,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.9233060875554758,
+        "intersection_over_land": 0.7011464599531156
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "rectangular",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.0983234231515426,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.7681517433714266,
+        "intersection_over_land": 0.6704775835978827
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.08642699081698724,
+        "terminal_area_mm2": 0.128,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.6752108657577127,
+        "intersection_over_land": 0.7034936081639084
+      }
+    },
+    {
+      "body_width_mm": 2.1,
+      "terminal_length_mm": 0.4,
+      "terminal_width_mm": 0.32,
+      "terminal_shape": "round_inner",
+      "native": {
+        "toe_mm": 0.19999999999999996,
+        "heel_mm": 1.1102230246251565e-16,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.09543901021741495,
+        "terminal_area_mm2": 0.11701238596594936,
+        "land_area_mm2": 0.1466468463030851,
+        "intersection_over_terminal": 0.8156316908638008,
+        "intersection_over_land": 0.6508084737135403
+      },
+      "ti_example": {
+        "toe_mm": 0.1499999999999999,
+        "heel_mm": -0.04999999999999993,
+        "side_plus_mm": -0.035,
+        "side_minus_mm": -0.035,
+        "intersection_mm2": 0.08642699081698724,
+        "terminal_area_mm2": 0.11701238596594936,
+        "land_area_mm2": 0.12285398163397449,
+        "intersection_over_terminal": 0.7386140373390687,
+        "intersection_over_land": 0.7034936081639084
+      }
+    }
+  ],
+  "containment": {
+    "native_contains_entire_ti_example": true,
+    "min_horizontal_extension_mm": 0.03750000000000009,
+    "max_horizontal_extension_mm": 0.050000000000000044,
+    "transverse_edge_margin_mm": 0,
+    "corner_exception": false,
+    "native_land_area_mm2": 0.1466468463030851,
+    "ti_land_area_mm2": 0.12285398163397449
+  },
+  "stencil": {
+    "board": "controller-r3s-green/controller.kicad_pcb",
+    "sha256": "0850991d8aacd22138487804c24eefbae634a21ba218c18196f13fad795c3696",
+    "footprint": "Controller_R3:TPS62162_DSG_R3S",
+    "copper_pad_count": 9,
+    "separate_paste_pad_count": 10,
+    "apertures": [
+      {
+        "copper_pad": "1",
+        "paste_center": [
+          4.1,
+          10.05
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "2",
+        "paste_center": [
+          4.1,
+          10.55
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "3",
+        "paste_center": [
+          4.1,
+          11.05
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "4",
+        "paste_center": [
+          4.1,
+          11.55
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "9",
+        "paste_center": [
+          5.05,
+          10.35
+        ],
+        "size": [
+          0.9,
+          0.7
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "9",
+        "paste_center": [
+          5.05,
+          11.25
+        ],
+        "size": [
+          0.9,
+          0.7
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "8",
+        "paste_center": [
+          6.0,
+          10.05
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "7",
+        "paste_center": [
+          6.0,
+          10.55
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "6",
+        "paste_center": [
+          6.0,
+          11.05
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      },
+      {
+        "copper_pad": "5",
+        "paste_center": [
+          6.0,
+          11.55
+        ],
+        "size": [
+          0.5,
+          0.25
+        ],
+        "radius": 0.05,
+        "perimeter_samples": 124,
+        "outside_samples": 0
+      }
+    ],
+    "EP_paste_coverage_percent": 87.332,
+    "holes_in_apertures": [],
+    "errors": [],
+    "scope": "Read-only design geometry check. Roundrect dimensions plus perimeter samples verify containment; actual stencil thickness/release, solder volume, placement, EP wetting and voiding remain assembly-process qualifications."
+  },
+  "hashes": {
+    "controller-r3s-green/controller.kicad_pcb": "0850991d8aacd22138487804c24eefbae634a21ba218c18196f13fad795c3696",
+    "controller-r3s-green/release/single-board-gerbers/controller-F_Cu.gtl": "b0332e3623ec51f6bbd7370248c217efc744e765c4133efdd2bd5fcbe7c335e3",
+    "controller-r3s-green/release/single-board-gerbers/controller-F_Paste.gtp": "f1257af2da298e9b7803a1845359632dc0da629f71263519d0bd593d8d415e08",
+    "controller-r3s-green/release/single-board-gerbers/controller-F_Mask.gts": "de58a5c9d24203b285b497d6a4226b75e8da4776245f17d9ba5605cd0d980bb4",
+    "controller-r3s-green/release/assembly/JLC_CPL.csv": "ed23023d67402462e10042c7a7e8467062def891a487c25afa7da5a2af2c00a2",
+    "controller-r3s-green/release/assembly/JLC_CPL_NATIVE_AUDIT.csv": "2af8d2593d96204987af71be3eab6e706ae00062e5cbddac4527c2818a179a8a",
+    "controller-r3s-green/inputs/user-corrected-JLC_CPL.csv": "ed23023d67402462e10042c7a7e8467062def891a487c25afa7da5a2af2c00a2",
+    "controller-r3s-green/release/assembly/JLC_BOM.csv": "b9df641ea0d48e4e4001fa614a05244837c18669b80712dc1e35be8038369fd3",
+    "research/controller-r3s-stage20-buck-stencil-result.json": "e5989657e2ce00049022085d2571203d9306021b162ba1a718bbb81d0c2eb9b8",
+    "research/audit_controller_r3s_buck_stencil.py": "26c34cad90f780f335ab42bf337839a92a6c2f2110ec11558bc737b0eeff8e98",
+    "research/controller-r3s-p3-smt-closure/u2/tps62162-current-ti.pdf": "abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72",
+    "research/controller-r3s-p3-smt-closure/u2/current-stencil-audit.json": "0afd650cbe299b0fce704d987f238b5458c7f9a62b7e29439ba4fafc5a71d333",
+    "research/controller-r3s-p3-smt-closure/u2/corrected-cpl-smt-pin-inner.txt": "eddffe6b9b6a4234cbbb21d72e452c09e28f2e4ccf04b81f370502d1c71e7d16",
+    "research/controller-r3s-p3-smt-closure/u2/corrected-cpl-smt-pin-left.txt": "f17517ddd6c7d82cc300d554bd58155978e6fb74664108d8c55ad5e82dd04244",
+    "research/controller-r3s-p3-smt-closure/u2/corrected-cpl-smt-pin-right.txt": "adaa19985889dc918bdf6aadd70177a667e88940a8b1482b1a7f45c0e8a9625c",
+    "research/controller-r3s-p3-smt-closure/u2/corrected-cpl-smt-lead-pad-overlap.txt": "008ecb99d6fd101bb754e48a4503d2f0bf889fa0ce787d242dc4be83e58bed2f",
+    "controller-r3s-green/review/supplier-p3-evidence/p3-smt-comparison.json": "703fac84c2e9c3722ca6a893d85e8ec4479fcedf2ac0fa665a4f350487478a99",
+    "controller-r3s-green/review/supplier-p3-evidence/p3-upload-provenance.json": "5c067d89c8adab6baf38685b93bb2dbac86fc5f5eb4cbbed167eaca410670f46"
+  },
+  "supplier_rule": {
+    "ratio_definition": "lead/pad intersection area divided by lead area",
+    "danger_boundary": 0.75,
+    "warning_boundary": 0.9,
+    "U2_reported_ratio": 0.44,
+    "object": "i274x.RoundRect.d11",
+    "selected_pin_number": null,
+    "model_terminal_geometry": null,
+    "model_pose_verified": false,
+    "edge_threshold_numeric": null,
+    "detail_capture_project": "629258777493983233 (corrected-CPL P2)",
+    "P3_project": "629271171624820737",
+    "P3_evidence": "P3 SMT category counts match corrected-CPL P2; native U2 copper/paste and pose are unchanged",
+    "object_source_layer": null,
+    "aperture11_candidates": {
+      "F.Cu": "0.60 x 0.25 R0.0625 signal land, pins 1-8",
+      "F.Paste": "0.90 x 0.70 R0.05 exposed-pad paste window, two U2 flashes"
+    }
+  },
+  "split_stencil_recognition_evidence": {
+    "interpretation": "Strong numerical and aperture/component-association evidence of a split-paste-window being compared to full exposed-pad lead; not proof of the JLC i274x source-file mapping",
+    "source_file": "controller-r3s-green/release/single-board-gerbers/controller-F_Paste.gtp",
+    "source_sha256": "f1257af2da298e9b7803a1845359632dc0da629f71263519d0bd593d8d415e08",
+    "file_function": "Paste,Top",
+    "aperture": 11,
+    "component_attribute": "%TO.C,U2*%",
+    "flashes": [
+      {
+        "line": 66,
+        "xy_mm": [
+          5.05,
+          27.65
+        ]
+      },
+      {
+        "line": 67,
+        "xy_mm": [
+          5.05,
+          26.75
+        ]
+      }
+    ],
+    "gerber_excerpts": [
+      {
+        "line": 5,
+        "text": "%TF.FileFunction,Paste,Top*%"
+      },
+      {
+        "line": 33,
+        "text": "%ADD11RoundRect,0.050000X-0.400000X-0.300000X0.400000X-0.300000X0.400000X0.300000X-0.400000X0.300000X0*%"
+      },
+      {
+        "line": 60,
+        "text": "%TO.C,U2*%"
+      },
+      {
+        "line": 61,
+        "text": "X4100000Y27950000D03*"
+      },
+      {
+        "line": 62,
+        "text": "X4100000Y27450000D03*"
+      },
+      {
+        "line": 63,
+        "text": "X4100000Y26950000D03*"
+      },
+      {
+        "line": 64,
+        "text": "X4100000Y26450000D03*"
+      },
+      {
+        "line": 65,
+        "text": "D11*"
+      },
+      {
+        "line": 66,
+        "text": "X5050000Y27650000D03*"
+      },
+      {
+        "line": 67,
+        "text": "X5050000Y26750000D03*"
+      },
+      {
+        "line": 68,
+        "text": "D10*"
+      },
+      {
+        "line": 69,
+        "text": "X6000000Y27950000D03*"
+      },
+      {
+        "line": 70,
+        "text": "X6000000Y27450000D03*"
+      },
+      {
+        "line": 71,
+        "text": "X6000000Y26950000D03*"
+      },
+      {
+        "line": 72,
+        "text": "X6000000Y26450000D03*"
+      }
+    ],
+    "single_window_dimensions_mm": [
+      0.9,
+      0.7
+    ],
+    "single_window_corner_radius_mm": 0.05,
+    "single_window_area_mm2": 0.6278539816339744,
+    "nominal_ep_dimensions_mm": [
+      0.9,
+      1.6
+    ],
+    "rounded_ep_corner_radius_mm": 0.05,
+    "rounded_ep_area_mm2": 1.4378539816339746,
+    "rectangular_ep_area_mm2": 1.4400000000000002,
+    "single_window_over_rounded_ep": 0.43666046041788076,
+    "both_windows_over_rounded_ep": 0.8733209208357615,
+    "single_window_over_rectangular_ep": 0.43600970946803774,
+    "both_windows_over_rectangular_ep": 0.8720194189360755,
+    "displayed_two_decimal_ratio": "0.44",
+    "jlc_reported_ratio": 0.44,
+    "source_layer_mapping_confirmed": false,
+    "actual_jlc_ep_polygon_confirmed": false,
+    "caution": "Aperture numbers are file-local. F.Cu ADD11 is a signal land, whereas F.Paste ADD11 is this EP window. The object name alone cannot select a source file. The denominator cases are explicit geometric hypotheses; the actual package/model EP shape and tolerance are not known."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "status": "ACCEPT EXACT DC-RAIL OUTER-EDGE EXCEPTION; FINAL FULL GATES REQUIRED",
+  "source": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-route-cleanup/candidate-attachments.kicad_pcb",
+  "source_sha256": "b0fb2842a47de947736d7587447909fe8f85acc37910d99fcaaeab60998b35fe",
+  "proposal_path": "/workspace/shared/storm32-redesign/research/controller-r3s-p6-route-cleanup/east-rail-reference-disposition.json",
+  "proposal_sha256": "758887e5ecaeb07ea9cfb13e79c207645cc8a4afc6d29fbc4020fdd7a2b1bf9d",
+  "errors": [],
+  "net": "3V3_CORE",
+  "layer": "B.Cu",
+  "exact_proposal": {
+    "id": "27c44f59-142b-4920-bd79-481167d7f0ff",
+    "net": "3V3_CORE",
+    "layer": "B.Cu",
+    "start": [
+      37.5,
+      26.2
+    ],
+    "end": [
+      37.5,
+      26.7
+    ],
+    "width_mm": 0.45
+  },
+  "exact_removed": [
+    {
+      "id": "0197ba6a-c28c-456a-ac5e-5442c744f27a",
+      "net": "3V3_CORE",
+      "layer": "B.Cu",
+      "start": [
+        37.5,
+        26.2
+      ],
+      "end": [
+        37.5,
+        26.3
+      ],
+      "width_mm": 0.45
+    },
+    {
+      "id": "4c9bbe30-688c-47d9-b116-6bdc9e369105",
+      "net": "3V3_CORE",
+      "layer": "B.Cu",
+      "start": [
+        37.5,
+        26.6
+      ],
+      "end": [
+        37.5,
+        26.7
+      ],
+      "width_mm": 0.45
+    }
+  ],
+  "native_polygon_error_nm": 100,
+  "area_comparison_basis": "Candidate proposal minus all source 3V3_CORE B.Cu uncovered copper, not only the two replaced primitives",
+  "declared_local_pair_area_bound_mm2": 0.005391978843,
+  "new_unsupported_mm2": 0.0053311982125,
+  "new_unsupported_bbox_mm": [
+    37.675,
+    26.306313,
+    37.725,
+    26.831958
+  ],
+  "new_unsupported_inside_reference_outer_contour_mm2": 0.0,
+  "one_um_centerline_tube_unsupported_mm2": 0.0,
+  "plane_outer_edge_x_mm": 37.65,
+  "trace_center_x_mm": 37.5,
+  "outward_centerline_to_plane_edge_mm": 0.15,
+  "supported_width_mm": 0.375,
+  "unsupported_outward_width_mm": 0.075,
+  "supported_fraction_of_nominal_width": 0.8333333333333333,
+  "broad_continuous_inward_ground_rectangle_mm": [
+    37.05,
+    26.0,
+    37.649,
+    26.9
+  ],
+  "ground_rectangle_missing_area_mm2": 0.0,
+  "ground_return_via_uuid": "6205b157-b859-4a01-8c91-789457fec278",
+  "ground_return_via_xy_mm": [
+    36.9,
+    26.45
+  ],
+  "trace_to_ground_via_copper_gap_mm": 0.15,
+  "trace_outer_edge_to_board_edge_mm": 0.275,
+  "assessment": "This exact regulated DC rail repair replaces a .335410mm physical neck with a continuous .450mm stroke. Its centerline and .375mm of its width remain referenced; only the outward .075mm strip overhangs the unchanged board-edge-side plane boundary. There is no internal foreign-hole/slot exposure, and a continuous broad inward GND strip plus fixed nearby return via remain unchanged. Accept as this specific asymmetric DC return geometry, not a general high-speed/reference waiver.",
+  "limits": "Does not claim a tested load-current rating, impedance, or physical thermal/EMI performance. All planes, return vias and source geometry must remain fixed; further inward movement would violate the .150mm foreign-via clearance. Final topology, clearance, attachment, and visual checks remain mandatory."
+}

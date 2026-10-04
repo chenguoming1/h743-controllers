@@ -1,0 +1,86 @@
+index,net,segments,F.Cu,In1.Cu,In2.Cu,In3.Cu,In4.Cu,B.Cu,vias,priority,pixels_inspected,regions,observation
+0,+5V_STACK,276,159,0,17,0,0,100,15,2,True,"R001,R002,R003",Top branch width bulbs and stepped fanouts; left rear feed retains short stairs; inspect southeast branch as a complete power corridor
+1,/clock/HSE_XOUT,10,5,0,0,0,0,5,1,3,True,,"Short HSE path has a small rear offset, ordinary escape rather than a repeated wave"
+2,/power/BUCK_SW,3,3,0,0,0,0,0,0,3,True,,Three-segment buck switch link is visually direct and uniformly wide
+3,/power/STACK_5V_DIV,25,4,0,3,0,0,18,2,1,True,R004,Rear pad connection contains a visible parallel spear/triangular spur and staircase beside via
+4,/power/USB_CC1,16,4,0,10,0,0,2,2,2,True,R005,In2 corner has a short wavy width/junction artifact near y15; other long spans are coherent
+5,/power/USB_CC2,11,2,0,0,0,0,9,1,3,True,,"Coherent polygonal course, no repeated microjog visible; large turn needs corridor context"
+6,/power/USB_DM_CONN,10,9,0,0,0,0,1,2,3,True,,"Orthogonal USB connector joining topology, no microjog visible; do not move a single branch without USB geometry validation"
+7,/power/USB_DM_ESD,3,3,0,0,0,0,0,0,3,True,,"Short orthogonal USB path, no microjog visible"
+8,/power/USB_DP_CONN,5,5,0,0,0,0,0,0,3,True,,"Orthogonal USB connector branches, no microjog visible"
+9,/power/USB_DP_ESD,5,5,0,0,0,0,0,0,3,True,,"Single clear 45-degree transition in USB path, no microjog visible"
+10,/power/USB_SLEW_CT,3,2,0,0,0,0,1,1,3,True,,"Short wide pad/via links, no visible staircase"
+11,/power/USB_SWITCH_ON,80,15,0,0,0,0,65,1,1,True,"R006,R007,R008,R009","Long rear route contains multiple rounded staircases, a bottom wave and a hooked pad entry; front final pad entry also scalloped"
+12,/power/USB_VBUS_SLEW,8,7,0,0,0,0,1,1,2,True,R010,Wide front USB slew route has a non-45-degree final incline and abrupt width neck; retain power envelope
+13,/storage/FLASH_HOLD_n,22,9,0,0,0,0,13,2,2,True,"R011,R012",Both sides of the lower via carry tiny width bulbs/stairs
+14,/storage/FLASH_SCLK,20,11,0,0,0,0,9,3,2,True,R013,Front approach to lower via has a tiny jog/bulb; rear loop is polygonal
+15,/storage/FLASH_WP_n,7,0,0,0,0,0,7,0,3,True,,"Large rear V-shaped detour is smooth, no microjog visible; obstacle justification is still needed before calling its length necessary"
+16,3V3_CORE,779,297,0,15,0,0,467,28,1,True,"R014,R015,R016,R017","Extensive rear snake with width alternation, branching arrows and scallops; front fanout and east-edge small waves remain"
+17,ADC1_RAW,73,38,0,1,0,0,34,3,1,True,"R018,R019",Front northwest entry arch and dogleg remain scalloped; rear lower pad approach has small staircase arc
+18,ADC2_RAW,80,43,0,32,0,0,5,5,2,True,"R020,R021,R022",Front diagonal starts with stairs; In2 midroute has serial tiny offsets; south front horizontal contains small width steps
+19,ADC3_RAW,34,13,0,13,0,0,8,2,2,True,"R023,R024,R025",Front and In2 diagonal joints have small steps; rear last pad entry is scalloped
+20,AUX_PC8,103,50,0,35,0,0,18,9,1,True,"R026,R027,R028",Right-edge front route has an S wave and scalloped bends; In2 northwest and southwest tails also staircase
+21,AUX_PC9,63,7,0,41,0,0,15,4,2,True,"R029,R030,R031","In2 entry/exit near vias has dense microsteps, middle corridor otherwise clean"
+22,AUX_PD14,151,21,0,127,0,0,3,4,1,True,"R032,R033,R034",Multiple In2 scalloped humps and a large lower hook remain; top crossing corridor and lower west region require coordinated review
+23,BOOT0,40,14,0,17,0,0,9,6,2,True,"R035,R036",Mostly clean long routes; tiny In2 via-adjacent steps at north and midline
+24,BUZZER_CTRL,38,29,0,2,0,0,7,2,1,True,R037,Front route has a pronounced arch followed by an arrow-like reversal and stepped via entry
+25,EXT_I2C_SCL,68,29,0,26,0,0,13,4,2,True,"R038,R039",North front edge-pad tail is a short staircase; In2 central U detour is coherent but needs obstacle evidence
+26,EXT_I2C_SDA,58,23,0,7,0,0,28,4,2,True,"R040,R041,R042","Rear west pad escape has double-path spear/width bulb, front via entry stairs, north edge tiny tail"
+27,EXT_SENSOR_INT,44,9,0,12,0,0,23,5,3,True,,All long paths visibly polygonal; minor offset near rear y17.5 requires context but no repeated wave
+28,EXT_SPI_CS,198,78,0,66,0,0,54,15,1,True,"R043,R044,R045",Long multi-layer net still has rounded staircase corners: west front perimeter and north In2 especially; possible gratuitous north loop
+29,EXT_SPI_MISO,160,15,0,128,0,0,17,8,1,True,"R046,R047,R048,R049","Long In2 course retains repeated humps and staircases on north, west, middle and southeast; whole corridor review needed"
+30,EXT_SPI_MOSI,94,20,0,52,0,0,22,5,1,True,"R050,R051,R052","In2 central U turnaround, rounded northeast turn and exit jogs remain; west rear via approach is scalloped"
+31,EXT_SPI_SCK,186,26,0,126,0,0,34,8,1,True,"R053,R054,R055","Long In2 net has many small waves at north rim, west corners and south meander; evaluate whole connected course"
+32,FDCAN1_RX,130,32,0,98,0,0,0,3,1,True,"R056,R057",In2 southeast route has repeated width/offset steps and prominent wavy lower bend
+33,FDCAN1_TX,61,30,0,22,0,0,9,6,2,True,"R058,R059,R060",Rear north rectangular indentation; front east incline has microsteps; In2 east route has short side hook
+34,FLASH_CS,16,8,0,0,0,0,8,2,3,True,,Clean short front and rear polygonal paths; tiny rear north offset is not visibly problematic
+35,FLASH_MISO,19,11,0,0,0,0,8,1,2,True,"R061,R062",Tiny stair/bulb through via on both layers near y20.4
+36,FLASH_MOSI,36,16,0,0,0,0,20,3,2,True,"R063,R064,R065",Small width bulbs at F/B via entries and slight rear corner teeth; otherwise clean
+37,FLASH_SCLK_RAW,18,18,0,0,0,0,0,0,1,True,R066,Front local trace has obvious wave and reverse arrow between MCU pad and memory series part
+38,GND,343,135,0,0,0,0,208,97,2,True,"R067,R068,R069",Ground connections include small local scallops and thin serpentine return; full reference planes themselves are regular
+39,HOST_RUN_LINK,40,0,0,11,0,0,29,3,2,True,R070,Rear top-edge pad escape has small staircase and width transition; In2 long course coherent
+40,HOST_RUN_RAW,29,5,0,8,0,0,16,2,2,True,R071,Rear local upper pad escape has small step; long front trunk visually clean
+41,HOST_TX_LINK,47,2,0,11,0,0,34,4,2,True,"R072,R073",Rear top pad escape uses a rounded loop/stair; small In2 via-entry step
+42,HOST_TX_RAW,24,13,0,0,0,0,11,3,2,True,"R074,R075",Front MCU escape has sharp offset and small width bulb; rear pad entry has tiny bulb
+43,HSE_IN,18,5,0,0,0,0,13,1,2,True,R076,Protected HSE rear pad approach has visible serial stairs/width bulbs
+44,HSE_OUT,14,9,0,0,0,0,5,1,2,True,"R077,R078",Protected HSE front and rear short entries have paired scallops/width bulbs
+45,IMU_3V3,14,8,0,0,0,0,6,3,3,True,,Compact wide IMU supply links are regular; possible pad-contained extra tails are not exposed routing defects
+46,IMU_CS,26,18,0,0,0,0,8,5,3,True,,Mostly clean polygonal short links; tiny pad-contained tails need only redundant-copper review
+47,IMU_INT,15,8,0,0,0,0,7,2,2,True,"R079,R080",Front upper-right escape is free-angle; lower-left pad junction has tiny duplicated offset
+48,IMU_MISO,15,3,0,0,0,0,12,2,2,True,R081,Rear west approach has a small stair corner; rest of wide loop is coherent
+49,IMU_MOSI,27,14,0,0,0,0,13,4,2,True,"R082,R083",Rear short via links and front MCU turn carry tiny stairs
+50,IMU_SCLK,19,15,0,0,0,0,4,2,2,True,"R084,R085",Front short local arch includes extra teeth at both slopes and MCU elbow has a visible rounded nub
+51,LED_DATA,18,2,0,3,0,0,13,2,2,True,R086,Rear pad approach has minor stepped bulb; long In2 course is direct
+52,MOTOR_OK_BUF,92,41,0,39,0,0,12,5,1,True,"R087,R088",Lower front route has serial offset stairs and In2 hairpin/wave around a pair of vias
+53,MOTOR_OK_LINK,34,4,0,9,0,0,21,3,3,True,,Multi-branch route is polygonal; small rear y5.2 offset is minor and no repeated waves are visible
+54,MOTOR_TX_BUF,19,9,0,0,0,0,10,3,2,True,"R089,R090",Long rear lower edge uses a shallow free-angle span; tiny via-entry bulb; front short offset
+55,MOTOR_TX_LINK,45,0,0,24,0,0,21,3,2,True,"R091,R092,R093",In2 west rounded hairpin and central peak/stub; top rear pad escape has small staircase
+56,NRST,82,14,0,37,0,0,31,6,2,True,"R094,R095,R096",Front center route has arrow at rectangular elbow; rear southeast via hook scalloped; In2 bottom minor width steps
+57,OUT1,72,46,0,0,0,0,26,2,1,True,"R097,R098,R099",Several front lower diagonal corners have repeated stair/bulb edges; rear upper U trough has extra teeth
+58,OUT2,48,29,0,0,0,0,19,2,1,True,"R100,R101,R102",Front lower U arc and rear upper-right bend are scalloped; front MCU escape also stairs
+59,OUT3,16,11,0,5,0,0,0,2,3,True,,Short coarse stepped path has no repeated microjog; pad-contained tail is separate from exposed path
+60,OUT4,7,7,0,0,0,0,0,0,3,True,,Short front route is coherent and visibly clean
+61,OUT5,38,26,0,0,0,0,12,4,2,True,"R103,R104",Front southwest edge pad connection and far end neck contain tiny stair bulbs; rear course clean
+62,OUT6,48,10,0,38,0,0,0,2,1,True,"R105,R106,R107","In2 path has multiple little stair steps around wide turns, a small hook near y29.5 and scalloped F pad entry"
+63,OUT7,30,16,0,14,0,0,0,2,2,True,"R108,R109",In2 via entry and front midspan offset are stair-stepped
+64,OUT8,79,11,0,68,0,0,0,2,1,True,"R110,R111","In2 entire drop repeatedly changes width/direction: north stairs, middle bulb, lower hook and scalloped exit"
+65,RPM_IN,72,10,0,57,0,0,5,2,2,True,"R112,R113,R114",In2 west perimeter bends and bottom bump have small stairs; front top bend scalloped
+66,STACK_5V_GOOD,74,45,0,15,0,0,14,4,1,True,"R115,R116,R117",Exact user screenshot: three arrow/bulb joints and fine S staircase in front trunk; other In2/F branches also carry small waves
+67,SWCLK,142,22,0,116,0,0,4,2,1,True,"R118,R119,R120,R121",In2 long course still has rounded stair arches at both ends and west turn; front upper branch retains small wave
+68,SWDIO,160,17,0,132,0,0,11,4,1,True,"R122,R123,R124,R125","In2 repeated waves on top-right arch, west turn and bottom-left sweep; rear bottom pad has small hook"
+69,UART1_RX,58,22,0,7,0,0,29,5,2,True,R126,Long course is mainly regular but rear horizontal y17 has multiple tiny offsets; check paired corridor
+70,UART1_TX,56,8,0,22,0,0,26,6,2,True,"R127,R128,R129",North rear horizontal and west rear vertical have tiny offsets; southeast rear horizontal has a small tooth
+71,UART2_RX,65,35,0,27,0,0,3,4,1,True,"R130,R131,R132",Front MCU northwest fanout remains a long free-angle wavy path; In2 west bend and north top have angular kinks
+72,UART2_TX,60,36,0,10,0,0,14,4,1,True,"R133,R134",Front northwest fanout has pronounced shallow wave and several angle changes; In2 northwest diagonal has kinked entry
+73,UART3_RX,78,14,0,59,0,0,5,6,1,True,"R135,R136,R137",In2 bottom U and east semicircular bulge still stair-stepped; rear via bridge is shallow free angle
+74,UART3_TX,79,51,0,8,0,0,20,7,1,True,"R138,R139,R140",Front southeast via loop is a visible scalloped horseshoe and tiny steps at edge-pad escape; rear north incline has small tooth
+75,UART4_RX,53,10,0,30,0,0,13,4,1,True,R141,In2 north branch makes a rounded hump and narrow trough with stairs; rest coarse course regular
+76,UART4_TX,57,16,0,36,0,0,5,7,2,True,"R142,R143,R144",In2 north long run has serial small height shifts; northwest via approach and central branch have tiny stairs
+77,USB_DM_MCU,3,3,0,0,0,0,0,0,3,True,,Three-segment USB MCU link is visually clean
+78,USB_DP_MCU,1,1,0,0,0,0,0,0,3,True,,Single straight USB MCU link is visually clean
+79,USB_PRESENT_n,225,99,0,120,0,0,6,10,1,True,"R145,R146,R147,R148,R149",Front west perimeter remains scalloped S curve; In2 west/corner and central lower route have stair waves; front lower MCU escape has tiny hooks
+80,USB_SOURCE_DISABLE,50,18,0,9,0,0,23,2,2,True,R150,In2 short inter-via diagonal has repeated staircase bulbs; front U return otherwise clean but obstacle must be kept
+81,USB_VBUS,114,43,0,6,0,0,65,7,2,True,"R151,R152,R153",Power rear west/center route has abrupt width changes and small corner teeth; front bottom pad links have protrusions
+82,VCAP,10,8,0,0,0,0,2,1,3,True,,Protected VCAP exposed path is coarse orthogonal but no repeated microjog visible; length rationale belongs to critical review
+83,VDDA,42,19,0,0,0,0,23,4,2,True,"R154,R155,R156",Power west junction has front diagonal spur/branch and rear tiny bulb; long central path coherent
+84,VLOGIC_IN,130,93,0,5,0,0,32,8,2,True,"R157,R158,R159",Power front northwest incline and top connector branch have small scallops; rear southeast horizontal has prominent width bump

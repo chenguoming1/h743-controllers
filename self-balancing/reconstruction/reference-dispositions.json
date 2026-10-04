@@ -1,0 +1,4639 @@
+{
+  "baseline_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+  "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "scope": "Exact physical geometry only. No whole merged-hole or general reference-gap waiver. Reference-plane changes are limited to the six explicitly retired nonfunctional via antipads, with separately qualified native polygon rounding; see retirement-dispositions.json.",
+  "named_own_antipad_transitions": [
+    {
+      "net": "HSE_OUT",
+      "layer": "F.Cu",
+      "via_uuid": "489cb706-6cac-473a-8fb2-739065011aaf",
+      "isolated_reference_via_uuid": "060b047c-d688-49da-9f40-03b3572d6506",
+      "reason": "Exact locally reviewed HSE approach; exposure contained within own isolated native antipad",
+      "proof": "evidence/hse-proposal-independent.json"
+    },
+    {
+      "net": "HSE_OUT",
+      "layer": "B.Cu",
+      "via_uuid": "489cb706-6cac-473a-8fb2-739065011aaf",
+      "isolated_reference_via_uuid": "060b047c-d688-49da-9f40-03b3572d6506",
+      "reason": "Exact locally reviewed HSE approach; exposure contained within own isolated native antipad",
+      "proof": "evidence/hse-proposal-independent.json"
+    },
+    {
+      "net": "EXT_I2C_SCL",
+      "layer": "In2.Cu",
+      "via_uuid": "eecb45f2-bdc5-4b57-9d1e-4bc469376b39",
+      "isolated_reference_via_uuid": "1389428f-3727-4e4c-b216-8983e904cc48",
+      "exact_final_track_uuids": [
+        "c6e078f1-3c59-4912-b509-f6caa42742db",
+        "1d896c46-f20b-437f-9d0f-6dbeb89c5d3d"
+      ],
+      "reason": "Repair inherited shallow functional attachment by ending the existing-width trace exactly at the fixed via center",
+      "proof": "evidence/attachment-patch.json"
+    },
+    {
+      "net": "NRST",
+      "layer": "In2.Cu",
+      "via_uuid": "ea2e4f26-0c68-495d-a43b-0bfc3c7c1847",
+      "isolated_reference_via_uuid": "5419f160-b591-437b-bbdd-6ae179c039c4",
+      "exact_final_track_uuids": [
+        "ead003f7-b81e-4cc8-ab4c-715b025851b7",
+        "c7b98fc1-bafc-44cf-97f1-5870081402ef"
+      ],
+      "reason": "Repair inherited shallow functional attachment by ending the existing-width trace exactly at the fixed via center",
+      "proof": "evidence/attachment-patch.json"
+    },
+    {
+      "net": "OUT5",
+      "layer": "B.Cu",
+      "via_uuid": "6497a7a4-6e27-4c9d-92a0-2261dda216af",
+      "isolated_reference_via_uuid": "5419f160-b591-437b-bbdd-6ae179c039c4",
+      "exact_final_track_uuids": [
+        "a5714d39-c046-448c-acdf-8e237b30e905",
+        "9188fb5a-f631-41b6-aef0-5bc70b9b9d4c"
+      ],
+      "reason": "Repair inherited shallow functional attachment by ending the existing-width trace exactly at the fixed via center",
+      "proof": "evidence/attachment-patch.json"
+    },
+    {
+      "net": "EXT_SPI_CS",
+      "layer": "F.Cu",
+      "via_uuid": "8f098bd7-097e-4ae1-afa8-6d3702a36d55",
+      "isolated_reference_via_uuid": "5419f160-b591-437b-bbdd-6ae179c039c4",
+      "reason": "Replace two sub-.130mm cap necks by one continuous .150mm via-centered approach",
+      "proof": "evidence/local-attachment-patch.json",
+      "new_unsupported_outside_exact_named_antipad_mm2": 0.0
+    }
+  ],
+  "dc_rail_outer_edge_exception": {
+    "net": "3V3_CORE",
+    "layer": "B.Cu",
+    "added_track": {
+      "id": "ed78564b-44ee-4a8a-a58b-fd079cc5cde4",
+      "net": "3V3_CORE",
+      "layer": "B.Cu",
+      "start": [
+        37.5,
+        26.2
+      ],
+      "end": [
+        37.5,
+        26.7
+      ],
+      "width_mm": 0.45
+    },
+    "removed_tracks": [
+      {
+        "id": "0197ba6a-c28c-456a-ac5e-5442c744f27a",
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "start": [
+          37.5,
+          26.2
+        ],
+        "end": [
+          37.5,
+          26.3
+        ],
+        "width_mm": 0.45
+      },
+      {
+        "id": "4c9bbe30-688c-47d9-b116-6bdc9e369105",
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "start": [
+          37.5,
+          26.6
+        ],
+        "end": [
+          37.5,
+          26.7
+        ],
+        "width_mm": 0.45
+      }
+    ],
+    "reference_layer": "In4.Cu",
+    "plane_outer_x_mm": 37.65,
+    "centerline_inward_ground_margin_mm": 0.15,
+    "supported_trace_width_mm": 0.375,
+    "outward_copper_strip_mm": 0.075,
+    "new_unsupported_copper_net_level_mm2": 0.005331198,
+    "maximum_local_pair_bound_mm2": 0.005391979,
+    "internal_hole_or_slot_exposure_mm2": 0,
+    "centerline_reference_loss_mm2": 0,
+    "continuous_inward_ground_rectangle_mm": [
+      37.05,
+      26,
+      37.649,
+      26.9
+    ],
+    "ground_via_clearance_mm": 0.15,
+    "board_edge_clearance_mm": 0.275,
+    "proof": "evidence/east-rail-reference-independent.json",
+    "reason": "Restore full .450mm DC-supply continuity across an inherited cap-only neck. Fixed neighboring ground via blocks inward movement; the supported centerline and broad inward ground remain continuous."
+  },
+  "mandatory_rechecks": [
+    "Native all-severity DRC, zero opens and schematic parity",
+    "Exact planes, pose/netmap/CPL, source-current widths and approved protected geometry",
+    "Actual native copper union track-join width",
+    "All pad finite-width entries and all via-annulus contact groups",
+    "Complete85-net/159-region visual review"
+  ],
+  "retirement_dispositions_file": "retirement-dispositions.json",
+  "approved_ground_return_operation_count": 30,
+  "approved_ground_return_operations": [
+    {
+      "sequence": 1,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 5,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 11,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "a52d7813-8b17-4540-9d2c-b79ae9697472",
+          "net": "GND",
+          "xy": [
+            11.5,
+            23.1
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "8e6b8c55-f174-48d3-a0f3-d738e26858e1",
+          "net": "GND",
+          "ref": "U1",
+          "pin": "19",
+          "xy": [
+            10.325,
+            23.5
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "547e1d70-38fe-4b92-8b59-3e680af5fdca",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.5,
+              23.15
+            ],
+            "end": [
+              11.5,
+              23.1
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "642e137a-aa31-49a2-9a9f-87545d704bad",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.45,
+              23.2
+            ],
+            "end": [
+              11.5,
+              23.15
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "46087623-5072-4ebe-9168-c860f2f99751",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.45,
+              23.25
+            ],
+            "end": [
+              11.45,
+              23.2
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "935a257d-99ab-4afc-9a53-707e59bb1a9f",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.4,
+              23.3
+            ],
+            "end": [
+              11.45,
+              23.25
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "b16dac7a-8212-4e25-a950-066422f2ac5c",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.4,
+              23.35
+            ],
+            "end": [
+              11.4,
+              23.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "13cb5f43-dfce-4d28-91c5-b2c22e64ca45",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.3,
+              23.45
+            ],
+            "end": [
+              11.4,
+              23.35
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "33e1f49a-21e0-4b42-b1db-d059e18a6ae1",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.25,
+              23.45
+            ],
+            "end": [
+              11.3,
+              23.45
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "fc66398a-2be4-4e56-aa4b-ef3b6074d3f9",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.2,
+              23.5
+            ],
+            "end": [
+              11.25,
+              23.45
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "d98d3ef3-a578-4283-af50-930f383141bd",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              10.3,
+              23.5
+            ],
+            "end": [
+              11.2,
+              23.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f0e8a489-4841-4bec-891b-832d3423c776",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              10.325,
+              23.5
+            ],
+            "end": [
+              10.3,
+              23.5
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "748c7bce-47bf-48d2-b3b7-7a3e2341f698",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.5,
+              23.1
+            ],
+            "end": [
+              11.1,
+              23.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "c30f1784-3a1a-494d-8014-7075afe37b01",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              11.1,
+              23.5
+            ],
+            "end": [
+              10.325,
+              23.5
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 1.478553390593274,
+        "new_length_mm": 1.3406854249492381,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 2,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 6,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 17,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "cd9c1235-a00d-4133-bf33-e41ea7c57d69",
+          "net": "GND",
+          "xy": [
+            31.6,
+            10.3
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "84aa49e3-440d-44f1-9dc0-75483f8a2946",
+          "net": "GND",
+          "ref": "J5",
+          "pin": "2",
+          "xy": [
+            32.8,
+            10.05
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "1f552a66-4211-4a64-8685-9bed3c37e047",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.65,
+              10.25
+            ],
+            "end": [
+              31.6,
+              10.3
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "04091f55-992d-41cf-a41d-dab592f9dce7",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.75,
+              10.25
+            ],
+            "end": [
+              31.65,
+              10.25
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "a3a03f1c-e75c-435b-b33b-77a63baac520",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.8,
+              10.2
+            ],
+            "end": [
+              31.75,
+              10.25
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "f5dc6ee1-aacb-496e-b179-6f104e0758e1",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.85,
+              10.2
+            ],
+            "end": [
+              31.8,
+              10.2
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "aa494d52-b2c8-4028-9630-ecab964be34a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.9,
+              10.15
+            ],
+            "end": [
+              31.85,
+              10.2
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "6b4f1619-b4b7-4edb-815d-c3d1f52d52e7",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.95,
+              10.15
+            ],
+            "end": [
+              31.9,
+              10.15
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "ebb74737-c0d9-46fd-a818-a3f3e51ef79e",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              32.05,
+              10.05
+            ],
+            "end": [
+              31.95,
+              10.15
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "69e6485d-6db6-4bae-99ac-963e4f12a16f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              32.8,
+              10.05
+            ],
+            "end": [
+              32.05,
+              10.05
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "951f66c7-8bbb-4231-aafd-9a1a60292f78",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.6,
+              10.3
+            ],
+            "end": [
+              31.85,
+              10.05
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "dd62443e-caad-41be-ad4f-3214b454d175",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.85,
+              10.05
+            ],
+            "end": [
+              32.8,
+              10.05
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 1.303553390593274,
+        "new_length_mm": 1.3035533905932737,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 3,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 7,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 19,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "03426d71-70bb-4006-b224-9aa37ce7e290",
+          "net": "GND",
+          "xy": [
+            33.7,
+            26.85
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "8f44e87a-1182-434c-aca5-5cae87240da4",
+          "net": "GND",
+          "ref": "C4",
+          "pin": "2",
+          "xy": [
+            32.875,
+            27.0
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "4cbcfe4a-7f9c-4a73-99e5-dde2bcd4b156",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.65,
+              26.9
+            ],
+            "end": [
+              33.7,
+              26.85
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "dad58b2b-d4d8-456b-9ed2-cab024faed70",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.55,
+              26.9
+            ],
+            "end": [
+              33.65,
+              26.9
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "57f22c6b-abc8-4bcc-b9bd-c1f76623a234",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.5,
+              26.95
+            ],
+            "end": [
+              33.55,
+              26.9
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "1e3a68f2-e6c8-4d9c-9e70-27f7644376c2",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.45,
+              26.95
+            ],
+            "end": [
+              33.5,
+              26.95
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f46e4fa8-1a0e-419b-bc13-6eb89a9d1ee7",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.4,
+              27.0
+            ],
+            "end": [
+              33.45,
+              26.95
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "eb30826b-83ee-422b-b3af-88299d60cbbd",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              32.9,
+              27.0
+            ],
+            "end": [
+              33.4,
+              27.0
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f4e24e23-d0e4-4837-a2da-40f95d3b55e0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              32.875,
+              27.0
+            ],
+            "end": [
+              32.9,
+              27.0
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "08abdc0c-1165-45ba-9a6e-a4a055419887",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.7,
+              26.85
+            ],
+            "end": [
+              33.55,
+              27.0
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "253560f0-e658-42c7-8e57-4cac202b7dd9",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              33.55,
+              27.0
+            ],
+            "end": [
+              32.875,
+              27.0
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8871320343559643,
+        "new_length_mm": 0.8871320343559643,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 4,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 8,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 20,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "87974215-0cb2-44de-a636-063f397f837f",
+          "net": "GND",
+          "ref": "C25",
+          "pin": "2",
+          "xy": [
+            12.0,
+            11.225
+          ]
+        },
+        {
+          "id": "191d43b4-7fe7-4f3e-869e-e04a503b7543",
+          "net": "GND",
+          "xy": [
+            12.85,
+            11.35
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "9076b324-7fdd-449c-9cf5-19efa02d06c0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.0,
+              11.225
+            ],
+            "end": [
+              12.0,
+              11.2
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "cbcde5b2-aa12-476e-ba2b-5a7658ab5be4",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.0,
+              11.2
+            ],
+            "end": [
+              12.55,
+              11.2
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "13716466-87f2-4971-a939-954fd874b85c",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.55,
+              11.2
+            ],
+            "end": [
+              12.6,
+              11.25
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "2b98ecf6-c8cd-47e9-993d-ea4c465eea68",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.6,
+              11.25
+            ],
+            "end": [
+              12.65,
+              11.25
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f7782eda-2bde-4efa-ac5c-0dfc4e7db254",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.65,
+              11.25
+            ],
+            "end": [
+              12.7,
+              11.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "52f1ed65-0d55-4a32-96ce-406831d7bf41",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.7,
+              11.3
+            ],
+            "end": [
+              12.8,
+              11.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "b6b28823-d55b-402e-959a-a6c69f91b74d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.8,
+              11.3
+            ],
+            "end": [
+              12.85,
+              11.35
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "279d7f7d-19bc-4ba0-9dae-7e1853a5a494",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.0,
+              11.225
+            ],
+            "end": [
+              12.125,
+              11.35
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "02fe3ef9-3609-40ed-a294-4b45c883f7f4",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              12.125,
+              11.35
+            ],
+            "end": [
+              12.85,
+              11.35
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.9371320343559644,
+        "new_length_mm": 0.9017766952966368,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 5,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 9,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 22,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "1243e17e-271b-4736-81c8-921d922005a3",
+          "net": "GND",
+          "ref": "J2",
+          "pin": "B12",
+          "xy": [
+            30.305,
+            23.25
+          ]
+        },
+        {
+          "id": "0b33ff1b-38a6-46ee-be23-78b34ceb91dd",
+          "net": "GND",
+          "ref": "J2",
+          "pin": "A1",
+          "xy": [
+            30.305,
+            23.25
+          ]
+        },
+        {
+          "id": "5256359a-8c7a-42dd-ad39-998b13e3433c",
+          "net": "GND",
+          "xy": [
+            29.75,
+            23.95
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed. USB connector paired ground pads keep their exact common contact and the same immediately adjacent stitching via; each lead remains .30mm.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "10e2ed1b-c833-4cb8-bee5-d196bd414f99",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.305,
+              23.25
+            ],
+            "end": [
+              30.3,
+              23.25
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "e966013d-020f-44df-ac44-3d84685c53d0",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.3,
+              23.25
+            ],
+            "end": [
+              29.85,
+              23.7
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "353b3038-d07e-490c-87fb-b4e39a0a57ca",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.85,
+              23.7
+            ],
+            "end": [
+              29.85,
+              23.75
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "ca9b96b5-79a2-4719-b45c-7324ae517c69",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.85,
+              23.75
+            ],
+            "end": [
+              29.8,
+              23.8
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "54453f8d-6dda-41b3-8358-49723d8b69cf",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.8,
+              23.8
+            ],
+            "end": [
+              29.8,
+              23.9
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "7b02a83d-17bc-4110-905a-584dbb28fa35",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.8,
+              23.9
+            ],
+            "end": [
+              29.75,
+              23.95
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "4d3a9bb8-14f5-47a2-8139-09d60cb7a628",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.305,
+              23.25
+            ],
+            "end": [
+              29.75,
+              23.805
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "59698e20-34d8-4131-85d7-55026a41313f",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.75,
+              23.805
+            ],
+            "end": [
+              29.75,
+              23.95
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 0.9328174593052024,
+        "new_length_mm": 0.9298885271170678,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 6,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 10,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 23,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "7613264f-1ed1-489c-8ab2-118b0f9e4650",
+          "net": "GND",
+          "xy": [
+            29.75,
+            16.05
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "8adc2cf2-d9af-482c-8423-1af9e3209c17",
+          "net": "GND",
+          "ref": "J2",
+          "pin": "A12",
+          "xy": [
+            30.305,
+            16.75
+          ]
+        },
+        {
+          "id": "1b688163-1032-4fb2-8fab-ab69ec8b2470",
+          "net": "GND",
+          "ref": "J2",
+          "pin": "B1",
+          "xy": [
+            30.305,
+            16.75
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed. USB connector paired ground pads keep their exact common contact and the same immediately adjacent stitching via; each lead remains .30mm.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "3d4e5600-8d7a-4e93-a780-f504acbe91da",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.8,
+              16.1
+            ],
+            "end": [
+              29.75,
+              16.05
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "94918da6-c362-4aa8-b6a8-11de8854a230",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.8,
+              16.2
+            ],
+            "end": [
+              29.8,
+              16.1
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "90035648-99f5-466e-96a6-8d6a89194595",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.85,
+              16.25
+            ],
+            "end": [
+              29.8,
+              16.2
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "37a87a0b-aba6-4320-838c-280338b78816",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.85,
+              16.3
+            ],
+            "end": [
+              29.85,
+              16.25
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "58caab7b-09b3-4a3b-9f44-bb799816cd2d",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.3,
+              16.75
+            ],
+            "end": [
+              29.85,
+              16.3
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "f22e5c02-670d-476f-b4b2-f82fd0aca196",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.305,
+              16.75
+            ],
+            "end": [
+              30.3,
+              16.75
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "c4b37272-4136-4421-998d-aff26545f936",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              29.75,
+              16.05
+            ],
+            "end": [
+              30.305,
+              16.605
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "d6c32074-4ad5-44cc-822a-b675bd06d952",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.305,
+              16.605
+            ],
+            "end": [
+              30.305,
+              16.75
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 0.9328174593052024,
+        "new_length_mm": 0.9298885271170678,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 7,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 11,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 26,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "a6db1442-316e-46dc-98a1-7bcd3d79fe35",
+          "net": "GND",
+          "ref": "C10",
+          "pin": "2",
+          "xy": [
+            8.725,
+            24.5
+          ]
+        },
+        {
+          "id": "0e7db503-056f-4731-a8d9-5d76b5ee8d4a",
+          "net": "GND",
+          "xy": [
+            7.9,
+            24.4
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "4df20704-39b8-495f-8d25-adf4f7fa5c77",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              8.725,
+              24.5
+            ],
+            "end": [
+              8.7,
+              24.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "08260440-9803-4c5e-9573-bc6f72e50125",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              8.7,
+              24.5
+            ],
+            "end": [
+              8.1,
+              24.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "9da9d990-6a00-4aee-9ffb-2a98ba65f1ed",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              8.1,
+              24.5
+            ],
+            "end": [
+              8.05,
+              24.45
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f725b3aa-29df-4b81-bf9b-156c92cdf2a5",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              8.05,
+              24.45
+            ],
+            "end": [
+              7.95,
+              24.45
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "8c846237-b0ca-46f9-a591-062b08043834",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              7.95,
+              24.45
+            ],
+            "end": [
+              7.9,
+              24.4
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "d9680629-db3c-4308-a9e5-9457c9d55d8b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              8.725,
+              24.5
+            ],
+            "end": [
+              8.625,
+              24.4
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "cb069b2c-db13-4c36-a521-da9c3487a1c3",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              8.625,
+              24.4
+            ],
+            "end": [
+              7.9,
+              24.4
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8664213562373095,
+        "new_length_mm": 0.8664213562373095,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 8,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 12,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 27,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "4ec2b633-994a-4a12-8bac-90c883d8d210",
+          "net": "GND",
+          "xy": [
+            1.15,
+            14.25
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "d54c998a-85c0-4379-a1db-59b17a06c8b9",
+          "net": "GND",
+          "ref": "J3",
+          "pin": "MP",
+          "xy": [
+            1.325,
+            15.25
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "55342e43-2326-458e-8548-4e61148f95f5",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.2,
+              14.3
+            ],
+            "end": [
+              1.15,
+              14.25
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "f7984897-7622-4761-bc06-12859426b0fe",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.2,
+              14.4
+            ],
+            "end": [
+              1.2,
+              14.3
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "e1ac8c89-0a5a-4560-8fc6-f0e1f7ce759a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.3,
+              14.5
+            ],
+            "end": [
+              1.2,
+              14.4
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "743ed81f-26f0-4e3b-9d05-ba3ba3d8d2cc",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.3,
+              15.25
+            ],
+            "end": [
+              1.3,
+              14.5
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "74ea483d-fbc0-4471-9592-43543cbfd7ba",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.325,
+              15.25
+            ],
+            "end": [
+              1.3,
+              15.25
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "45e84dd3-c892-4aa6-bb11-704fc3cbb1ea",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.15,
+              14.25
+            ],
+            "end": [
+              1.325,
+              14.425
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "0b623d7c-0189-4870-98bf-276c38b9c14c",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.325,
+              14.425
+            ],
+            "end": [
+              1.325,
+              15.25
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 1.0871320343559643,
+        "new_length_mm": 1.0724873734152915,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 9,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 13,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 28,
+      "width_mm": 0.25,
+      "contacts": [
+        {
+          "id": "93523000-9521-41d5-b419-9631301de5a6",
+          "net": "GND",
+          "xy": [
+            24.5,
+            22.95
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "35811eab-331c-402b-a78b-492d9927ea73",
+          "net": "GND",
+          "ref": "U11",
+          "pin": "4",
+          "xy": [
+            24.3,
+            22.28
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "5a52de21-7ee6-4904-a6e0-4b6c7aa40128",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.25,
+              22.9
+            ],
+            "end": [
+              24.5,
+              22.95
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "8ece48b8-2e66-4ade-8918-f187426d7d54",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.25,
+              22.8
+            ],
+            "end": [
+              24.25,
+              22.9
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "5859ec16-4de5-4812-9217-4cb57f0e1e7a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.3,
+              22.75
+            ],
+            "end": [
+              24.25,
+              22.8
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "54c16ed1-dfac-4aa8-a385-6dd2a27f253f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.3,
+              22.3
+            ],
+            "end": [
+              24.3,
+              22.75
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "ec02264d-e56f-4927-b8d8-423835f9c937",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.3,
+              22.28
+            ],
+            "end": [
+              24.3,
+              22.3
+            ],
+            "width_mm": 0.25
+          }
+        ],
+        "added": [
+          {
+            "id": "6b58741e-edd6-4194-b7a9-8b61bcf194bb",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.5,
+              22.95
+            ],
+            "end": [
+              24.3,
+              22.75
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "ad08c4ea-f32e-401c-b1e4-afe76bb2db4c",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.3,
+              22.75
+            ],
+            "end": [
+              24.3,
+              22.28
+            ],
+            "width_mm": 0.25
+          }
+        ],
+        "old_length_mm": 0.895661653798294,
+        "new_length_mm": 0.7528427124746191,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 10,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 14,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 29,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "ffac8da7-d8f5-42f7-89c7-67b33650a892",
+          "net": "GND",
+          "ref": "J4",
+          "pin": "8",
+          "xy": [
+            5.2,
+            20.25
+          ]
+        },
+        {
+          "id": "f71b4f1b-c007-403f-9f67-7b7a16bf34bf",
+          "net": "GND",
+          "xy": [
+            5.05,
+            19.55
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "908dc539-5971-4387-b4c1-742cc1fb9619",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.05,
+              19.85
+            ],
+            "end": [
+              5.05,
+              19.55
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "5e0fbc79-0303-4a6d-959d-ac0de03b0ab5",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.1,
+              19.9
+            ],
+            "end": [
+              5.05,
+              19.85
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "2df6d243-2eed-4166-a69c-8a43d0bcd0d3",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.1,
+              20.05
+            ],
+            "end": [
+              5.1,
+              19.9
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "8812c13f-a3b0-40a9-8a0a-e7566668e6b2",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.2,
+              20.15
+            ],
+            "end": [
+              5.1,
+              20.05
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "ac8bc6ad-9ac2-408b-bcf6-78ec26d6e76d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.2,
+              20.25
+            ],
+            "end": [
+              5.2,
+              20.15
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "04c9506e-bb06-482b-904e-e4440c24bc42",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.05,
+              19.55
+            ],
+            "end": [
+              5.2,
+              19.7
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "9ed48da3-3b36-428a-8b3e-aafb23db981c",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              5.2,
+              19.7
+            ],
+            "end": [
+              5.2,
+              20.25
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 0.7621320343559643,
+        "new_length_mm": 0.7621320343559643,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 11,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 15,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 32,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "5f9f93a5-867e-4831-bac1-72d292d55003",
+          "net": "GND",
+          "ref": "U3",
+          "pin": "7",
+          "xy": [
+            7.4,
+            30.5125
+          ]
+        },
+        {
+          "id": "5a99b71c-9112-4f29-8abb-504e1cecee99",
+          "net": "GND",
+          "xy": [
+            7.4,
+            31.15
+          ],
+          "diameter": 0.5,
+          "drill": 0.25
+        },
+        {
+          "id": "15da9deb-ec81-4895-b5c1-55c8056c0086",
+          "net": "GND",
+          "ref": "U3",
+          "pin": "6",
+          "xy": [
+            6.9,
+            30.5125
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed. Both U3 ground-pin feeds and the existing via contact remain; the reverse-pointing bar becomes a flat local bar.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "37b67d07-023b-43ba-b434-a4ab5151d367",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              7.4,
+              30.5125
+            ],
+            "end": [
+              7.4,
+              31.05
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "82dd340a-325b-415d-bca9-e9ab3be27f11",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              7.4,
+              31.05
+            ],
+            "end": [
+              7.4,
+              31.15
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "f6e8759f-8430-4dfb-bb33-0884746e7a67",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              6.9,
+              31.05
+            ],
+            "end": [
+              7.4,
+              31.15
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "ee2dcaa2-59c7-405c-861f-a384a2b70bcb",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              6.9,
+              30.5125
+            ],
+            "end": [
+              6.9,
+              31.05
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "4ce045cc-55f3-4285-a56e-508145d0ea38",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              7.4,
+              30.5125
+            ],
+            "end": [
+              7.4,
+              31.05
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "6db758ef-0c40-4619-a684-8045f0f05eb4",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              7.4,
+              31.05
+            ],
+            "end": [
+              6.9,
+              31.05
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "6fb5d5e8-f824-4906-9c1f-75bd45983611",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              6.9,
+              31.05
+            ],
+            "end": [
+              6.9,
+              30.5125
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 1.6849019513592784,
+        "new_length_mm": 1.575,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 12,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 16,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 34,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "9e4f0de9-343a-4ce3-9b16-6bb19b53f28d",
+          "net": "GND",
+          "xy": [
+            24.9,
+            29.65
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "0c6c7541-d27d-48db-93a2-a09c8a30c8d2",
+          "net": "GND",
+          "ref": "C8",
+          "pin": "2",
+          "xy": [
+            24.0,
+            29.775
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "39c08e77-8fdb-4ae0-8eb1-a6f4be764545",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.85,
+              29.65
+            ],
+            "end": [
+              24.9,
+              29.65
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "261a180e-f24d-47bf-8670-dee729f0e91b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.75,
+              29.75
+            ],
+            "end": [
+              24.85,
+              29.65
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "b3519b2a-b35d-4269-af2d-a1ea61c37cd0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.0,
+              29.75
+            ],
+            "end": [
+              24.75,
+              29.75
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "3ab95984-e01f-4545-b23a-d4607a27f11d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.0,
+              29.775
+            ],
+            "end": [
+              24.0,
+              29.75
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "64c15310-8e2f-4ce8-b7c9-d22fe67115ce",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.9,
+              29.65
+            ],
+            "end": [
+              24.775,
+              29.775
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "ba7ba42f-e436-4f3c-bb40-9a837362c444",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.775,
+              29.775
+            ],
+            "end": [
+              24.0,
+              29.775
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.9664213562373095,
+        "new_length_mm": 0.9517766952966369,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 13,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 17,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 35,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "44c4f5d1-c1a0-4e36-b2d1-0007859b3b73",
+          "net": "GND",
+          "ref": "C26",
+          "pin": "2",
+          "xy": [
+            24.025,
+            26.5
+          ]
+        },
+        {
+          "id": "3f40d614-0abc-4950-a482-2bac5b4f6e54",
+          "net": "GND",
+          "xy": [
+            23.95,
+            25.6
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "65c7cc92-1084-49c4-add1-3a356285406e",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.025,
+              26.5
+            ],
+            "end": [
+              24.0,
+              26.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "24fd5e9f-153e-4699-8e66-d2cc3bf0f9f0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.0,
+              26.5
+            ],
+            "end": [
+              24.0,
+              25.7
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "318aca66-461d-42ef-b773-337e0feff497",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.0,
+              25.7
+            ],
+            "end": [
+              23.95,
+              25.65
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f7ec965d-e308-41eb-8eff-724fc43b9d34",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              23.95,
+              25.65
+            ],
+            "end": [
+              23.95,
+              25.6
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "db3f7604-1ec3-4798-9006-00673269729a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.025,
+              26.5
+            ],
+            "end": [
+              23.95,
+              26.425
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "c3c88955-b4af-4fba-a37e-813fd1b7b0d0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              23.95,
+              26.425
+            ],
+            "end": [
+              23.95,
+              25.6
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.9457106781186548,
+        "new_length_mm": 0.9310660171779821,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 14,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 18,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 37,
+      "width_mm": 0.3,
+      "contacts": [
+        {
+          "id": "49566bfe-c7fb-4e4d-9ec7-1b677f05c4c8",
+          "net": "GND",
+          "xy": [
+            1.35,
+            19.95
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "8509ae01-139c-4e34-88f4-a513e5777d96",
+          "net": "GND",
+          "ref": "J4",
+          "pin": "MP",
+          "xy": [
+            1.325,
+            18.95
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "970e0135-4f03-4a8b-8284-b8864c60ba5a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.35,
+              19.9
+            ],
+            "end": [
+              1.35,
+              19.95
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "ee9e140d-ce16-40d6-a5a5-93c0ee931402",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.3,
+              19.85
+            ],
+            "end": [
+              1.35,
+              19.9
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "5c0eb456-7df3-4af6-a855-b2229e028a61",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.3,
+              18.95
+            ],
+            "end": [
+              1.3,
+              19.85
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "a6d443b0-b988-4896-89f9-3171d78ee4a0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.325,
+              18.95
+            ],
+            "end": [
+              1.3,
+              18.95
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "added": [
+          {
+            "id": "2b058fd7-b0a1-428f-a156-7cbb70d89240",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.35,
+              19.95
+            ],
+            "end": [
+              1.35,
+              18.95
+            ],
+            "width_mm": 0.3
+          },
+          {
+            "id": "7a632cab-e518-42b7-81e0-197eaefc2c0f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              1.35,
+              18.95
+            ],
+            "end": [
+              1.325,
+              18.95
+            ],
+            "width_mm": 0.3
+          }
+        ],
+        "old_length_mm": 1.0457106781186547,
+        "new_length_mm": 1.025,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 15,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 19,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 41,
+      "width_mm": 0.25,
+      "contacts": [
+        {
+          "id": "f49bed0a-63f9-412f-b1d8-097107e0b68e",
+          "net": "GND",
+          "ref": "U4",
+          "pin": "2",
+          "xy": [
+            31.6375,
+            12.5
+          ]
+        },
+        {
+          "id": "02212878-d9d3-403e-a876-bff38b9725d1",
+          "net": "GND",
+          "xy": [
+            30.6,
+            12.95
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "57ee3b37-f3e0-4f1b-b6ce-5e50928fea50",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              31.6375,
+              12.5
+            ],
+            "end": [
+              31.0,
+              12.5
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "bd06735d-c120-4acf-a44d-12388d99f707",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              31.0,
+              12.5
+            ],
+            "end": [
+              30.6,
+              12.9
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "8e452dc2-b4b5-4970-a8cf-4135c65ca3f2",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              30.6,
+              12.9
+            ],
+            "end": [
+              30.6,
+              12.95
+            ],
+            "width_mm": 0.25
+          }
+        ],
+        "added": [
+          {
+            "id": "f8a887f4-e629-4410-8bdb-09d72b2dbc83",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              31.6375,
+              12.5
+            ],
+            "end": [
+              31.05,
+              12.5
+            ],
+            "width_mm": 0.25
+          },
+          {
+            "id": "c318cd5e-5fdf-4c3c-a270-619c976266b8",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              31.05,
+              12.5
+            ],
+            "end": [
+              30.6,
+              12.95
+            ],
+            "width_mm": 0.25
+          }
+        ],
+        "old_length_mm": 1.253185424949238,
+        "new_length_mm": 1.2238961030678928,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 16,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 20,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 44,
+      "width_mm": 0.15,
+      "contacts": [
+        {
+          "id": "6d448e8f-f398-432f-96fd-fbc4a69ed4d8",
+          "net": "GND",
+          "ref": "U2",
+          "pin": "9",
+          "xy": [
+            5.05,
+            10.8
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed. Buck ground geometry is a collinear merge only; physical copper is unchanged.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "109087f6-d0bd-4908-b4b3-b06ba9409694",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              5.05,
+              10.8
+            ],
+            "end": [
+              5.05,
+              11.55
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "fa3ef922-9a81-4761-b39f-7e97171e51d6",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              5.05,
+              10.05
+            ],
+            "end": [
+              5.05,
+              10.8
+            ],
+            "width_mm": 0.15
+          }
+        ],
+        "added": [
+          {
+            "id": "cb5f1296-1edf-4810-a6ad-d195743c437a",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              5.05,
+              11.55
+            ],
+            "end": [
+              5.05,
+              10.05
+            ],
+            "width_mm": 0.15
+          }
+        ],
+        "old_length_mm": 1.5,
+        "new_length_mm": 1.5,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 17,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 21,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 50,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "59c181f0-8389-462f-bffb-40a3b3ee60a5",
+          "net": "GND",
+          "ref": "C38",
+          "pin": "2",
+          "xy": [
+            2.0,
+            13.625
+          ]
+        },
+        {
+          "id": "9ebd8b31-c824-42a4-97c4-9393a0d6c88b",
+          "net": "GND",
+          "xy": [
+            2.0,
+            12.8
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "5cf642e7-8bd4-48a4-b4d9-1c5902405d22",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              2.0,
+              13.625
+            ],
+            "end": [
+              2.0,
+              13.6
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "623d0277-a577-4530-9695-aa329246600a",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              2.0,
+              13.6
+            ],
+            "end": [
+              2.0,
+              12.8
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "5d18ce68-e38f-4731-8fe4-f09be5d952c3",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              2.0,
+              13.625
+            ],
+            "end": [
+              2.0,
+              12.8
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8250000000000001,
+        "new_length_mm": 0.825,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 18,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 22,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 52,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "30fba205-502c-49ca-9a67-e65be10f7756",
+          "net": "GND",
+          "ref": "D4",
+          "pin": "2",
+          "xy": [
+            36.225,
+            26.45
+          ]
+        },
+        {
+          "id": "6205b157-b859-4a01-8c91-789457fec278",
+          "net": "GND",
+          "xy": [
+            36.9,
+            26.45
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed. The ESD return keeps its straight .20mm centerline to the same via; only the .025mm overlapping reversal at the D4 pad is removed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "85fc1b7d-ceb8-4ee9-bddd-40fb42541b08",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              36.225,
+              26.45
+            ],
+            "end": [
+              36.2,
+              26.45
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "b370f288-1fb9-40a4-bbe6-c2b19481b1e7",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              36.2,
+              26.45
+            ],
+            "end": [
+              36.9,
+              26.45
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "50afcf9b-1873-4280-b72e-70db1168904f",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              36.225,
+              26.45
+            ],
+            "end": [
+              36.9,
+              26.45
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.725,
+        "new_length_mm": 0.675,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 19,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 23,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 56,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "0ac4e5f3-7a6f-42a5-af75-65da355e4d09",
+          "net": "GND",
+          "ref": "U8",
+          "pin": "2",
+          "xy": [
+            22.1625,
+            9.25
+          ]
+        },
+        {
+          "id": "6efcec26-9334-4992-95ad-f55990226b20",
+          "net": "GND",
+          "xy": [
+            23.2,
+            9.25
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "b9480b9e-5d9f-48ba-a360-9d018e8e7abb",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              22.1625,
+              9.25
+            ],
+            "end": [
+              22.15,
+              9.25
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "bbc0a5ea-89f5-4696-b5ac-3886e6528c54",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              22.15,
+              9.25
+            ],
+            "end": [
+              23.2,
+              9.25
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "f3f04243-7634-41b5-911a-4f2961c7c4b8",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              22.1625,
+              9.25
+            ],
+            "end": [
+              23.2,
+              9.25
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 1.0625,
+        "new_length_mm": 1.0375,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 20,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 24,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 59,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "ec9d766b-aa14-43dd-9708-069a12d8adae",
+          "net": "GND",
+          "ref": "C9",
+          "pin": "2",
+          "xy": [
+            27.275,
+            14.5
+          ]
+        },
+        {
+          "id": "3d40d4ad-b255-4bb8-8fa3-45ecdfa22603",
+          "net": "GND",
+          "xy": [
+            28.1,
+            14.5
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "0717084f-5fea-4af3-a9b8-12d1afaa4a5b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              27.275,
+              14.5
+            ],
+            "end": [
+              27.25,
+              14.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "ddeaae84-a0b7-4223-8eb3-a14b69aa1519",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              27.25,
+              14.5
+            ],
+            "end": [
+              28.1,
+              14.5
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "d97e1020-44d8-4f28-8479-3e0f3dd22e9f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              27.275,
+              14.5
+            ],
+            "end": [
+              28.1,
+              14.5
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.875,
+        "new_length_mm": 0.825,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 21,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 25,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 62,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "64ca6b69-211e-4391-a945-7bb0ce05d87d",
+          "net": "GND",
+          "ref": "C5",
+          "pin": "2",
+          "xy": [
+            31.325,
+            29.0
+          ]
+        },
+        {
+          "id": "b7b32f09-4e97-486c-b882-cb6fa86fc250",
+          "net": "GND",
+          "xy": [
+            32.0,
+            28.1
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "119be77d-e2d7-4bd5-9011-357c5af13bdc",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.325,
+              29.0
+            ],
+            "end": [
+              31.325,
+              28.5
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "2a408efe-fd02-4396-911c-09c47222732f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.325,
+              28.5
+            ],
+            "end": [
+              32.0,
+              28.1
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "3e9b4359-9b84-4f2e-85b5-cb3968b1541c",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.325,
+              29.0
+            ],
+            "end": [
+              31.325,
+              28.775
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "0421e47b-c866-4f8a-bcc0-de55b92e4f67",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              31.325,
+              28.775
+            ],
+            "end": [
+              32.0,
+              28.1
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 1.284617741323761,
+        "new_length_mm": 1.1795941546018394,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 22,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 26,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 63,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "c3673436-d434-4bb4-8aee-6c28496b1124",
+          "net": "GND",
+          "ref": "R3",
+          "pin": "2",
+          "xy": [
+            10.25,
+            11.425
+          ]
+        },
+        {
+          "id": "07c5afbe-7160-425b-ad86-06f8fef86359",
+          "net": "GND",
+          "xy": [
+            10.25,
+            12.2
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "1279f179-a1ee-423d-af13-a611e667a2df",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              10.25,
+              11.425
+            ],
+            "end": [
+              10.25,
+              11.4
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "8c491ad9-164a-44bf-bb9a-b049bdef5346",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              10.25,
+              11.4
+            ],
+            "end": [
+              10.25,
+              12.2
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "9a1d1de9-13cf-4634-b50d-8a1632bc05f0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              10.25,
+              11.425
+            ],
+            "end": [
+              10.25,
+              12.2
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8250000000000001,
+        "new_length_mm": 0.775,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 23,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 27,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 64,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "1f1b6bdf-6d88-46fc-a41a-3b4415234810",
+          "net": "GND",
+          "ref": "R12",
+          "pin": "2",
+          "xy": [
+            30.5,
+            6.425
+          ]
+        },
+        {
+          "id": "774c8b0e-0e9d-4299-b11f-9235fd38c800",
+          "net": "GND",
+          "xy": [
+            30.5,
+            7.2
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "1c46a950-b9d3-42d8-8935-2e764c7769b3",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              30.5,
+              6.425
+            ],
+            "end": [
+              30.5,
+              6.4
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "38718a2c-4aa2-4433-8ac8-ccdec0cec86c",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              30.5,
+              6.4
+            ],
+            "end": [
+              30.5,
+              7.2
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "0a4f1d38-bddd-40e7-8f77-e3aca19e3dae",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              30.5,
+              6.425
+            ],
+            "end": [
+              30.5,
+              7.2
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8250000000000001,
+        "new_length_mm": 0.775,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 24,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 28,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 65,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "7dac0373-a7c4-490a-83fa-efcf1f688e89",
+          "net": "GND",
+          "xy": [
+            27.6,
+            11.7
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        },
+        {
+          "id": "72efe530-c736-4999-a2a1-68106a1d2638",
+          "net": "GND",
+          "ref": "R45",
+          "pin": "2",
+          "xy": [
+            26.825,
+            11.7
+          ]
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "1c7d03d3-8ca0-4f27-9ef2-647a4f941e8b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              26.8,
+              11.7
+            ],
+            "end": [
+              27.6,
+              11.7
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "ad720f21-1566-4535-bd14-1016b27a01e0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              26.825,
+              11.7
+            ],
+            "end": [
+              26.8,
+              11.7
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "c60308f3-5461-47d8-aa2a-61b0f57a19a7",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              27.6,
+              11.7
+            ],
+            "end": [
+              26.825,
+              11.7
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8250000000000001,
+        "new_length_mm": 0.775,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 25,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 29,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 69,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "7d0829fb-7dd0-46d1-9044-bd67569d2933",
+          "net": "GND",
+          "ref": "R5",
+          "pin": "2",
+          "xy": [
+            28.75,
+            9.675
+          ]
+        },
+        {
+          "id": "9aaa18af-37c9-4a27-a022-cd7507fd0776",
+          "net": "GND",
+          "xy": [
+            28.75,
+            10.45
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "3c5f7a9a-a836-4fa6-a1bb-ca0b8d4bc0a1",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              28.75,
+              9.7
+            ],
+            "end": [
+              28.75,
+              10.45
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "cfca8c29-e58f-40fd-8d3c-3a2804e2e6db",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              28.75,
+              9.675
+            ],
+            "end": [
+              28.75,
+              9.7
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "32f45079-fd81-428a-9934-8fb1855e3456",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              28.75,
+              10.45
+            ],
+            "end": [
+              28.75,
+              9.675
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.775,
+        "new_length_mm": 0.775,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 26,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 30,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 71,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "bd0f7c01-682e-47e1-a993-6e74eadb968d",
+          "net": "GND",
+          "ref": "U10",
+          "pin": "2",
+          "xy": [
+            13.8625,
+            8.0
+          ]
+        },
+        {
+          "id": "23d8e6ac-1e04-4c13-97b6-c7bd72263521",
+          "net": "GND",
+          "xy": [
+            14.9,
+            8.0
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "51158af6-cb86-452f-a6a6-70e856681021",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              13.8625,
+              8.0
+            ],
+            "end": [
+              13.85,
+              8.0
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "82be1fdb-145e-4c5f-ba1e-2ff5e488c57f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              13.85,
+              8.0
+            ],
+            "end": [
+              14.9,
+              8.0
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "0bf330a0-7703-4705-9203-2fe6d0681c9d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              13.8625,
+              8.0
+            ],
+            "end": [
+              14.9,
+              8.0
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 1.0625,
+        "new_length_mm": 1.0375,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 27,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 31,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 74,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "1740e62c-2d32-4ad7-95cd-4faca6ba4103",
+          "net": "GND",
+          "ref": "R6",
+          "pin": "2",
+          "xy": [
+            30.5,
+            9.675
+          ]
+        },
+        {
+          "id": "309a8187-3c3b-4021-8604-68aa06cc26b8",
+          "net": "GND",
+          "xy": [
+            30.5,
+            10.45
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "70d9b7f0-7010-417c-9fc2-67e8a9d19120",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              30.5,
+              9.675
+            ],
+            "end": [
+              30.5,
+              9.7
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "c7baadbd-ae72-4e8c-a6cd-0610b9d82967",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              30.5,
+              9.7
+            ],
+            "end": [
+              30.5,
+              10.45
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "7fe32830-b6c5-4f9b-84f3-74ebb472b44a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              30.5,
+              9.675
+            ],
+            "end": [
+              30.5,
+              10.45
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.775,
+        "new_length_mm": 0.775,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 28,
+      "source_ledger": "evidence/reviewed-patch.json",
+      "source_operation_index": 32,
+      "source_stage_sha256": "787910ef33afcc4c30ca2aa9fec9016624c1451f1f91099bad3276c409159462",
+      "qualification_source_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+      "qualification_file": "evidence/gnd-final-supported-packet.json",
+      "qualification_source_proposal_index": 75,
+      "width_mm": 0.2,
+      "contacts": [
+        {
+          "id": "ff83d89e-4c2b-42dc-9761-cfb7ef9213d9",
+          "net": "GND",
+          "ref": "R49",
+          "pin": "2",
+          "xy": [
+            24.825,
+            6.6
+          ]
+        },
+        {
+          "id": "d4114f9e-5b45-493e-b7f5-89bc6b9c121d",
+          "net": "GND",
+          "xy": [
+            25.6,
+            6.6
+          ],
+          "diameter": 0.45,
+          "drill": 0.2
+        }
+      ],
+      "all_external_copper_contacts_preserved": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "local_return_review": "Original pad(s) and original ground via stay fixed. No return is moved to another via, remote shared connection, or plane-only path. The whole native local pad/via conductor contact set remains, all branch contacts remain, source width is constant and retained, and the local path does not lengthen. New copper remains within the original copper expanded by 0.20mm. All native GND reference planes and surrounding components stay fixed.",
+      "operation": {
+        "operation": "Declared same-width equal-or-shorter local GND return with per-path critical review",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "87d80aa2-0ed7-4d34-b45b-6f2f212bc7f5",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.8,
+              6.6
+            ],
+            "end": [
+              25.6,
+              6.6
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "d73fcfbc-8cce-4e2d-a149-36def050bc19",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              24.825,
+              6.6
+            ],
+            "end": [
+              24.8,
+              6.6
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "2e109fbc-a969-4075-85f2-59779a4c3613",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              25.6,
+              6.6
+            ],
+            "end": [
+              24.825,
+              6.6
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 0.8250000000000001,
+        "new_length_mm": 0.775,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 29,
+      "source_ledger": "evidence/last-visual-patch.json",
+      "source_operation_index": 8,
+      "source_stage_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+      "qualification_source_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+      "qualification_file": "evidence/ground-shoulder-final-probes.json",
+      "local_return": "U1.49",
+      "width_mm": 0.2,
+      "source_segment_count": 11,
+      "final_segment_count": 4,
+      "source_endpoints_mm": [
+        [
+          23.5,
+          28.175
+        ],
+        [
+          24.7,
+          28.95
+        ]
+      ],
+      "final_points_mm": [
+        [
+          23.5,
+          28.175
+        ],
+        [
+          23.5,
+          29.15
+        ],
+        [
+          23.65,
+          29.3
+        ],
+        [
+          24.35,
+          29.3
+        ],
+        [
+          24.7,
+          28.95
+        ]
+      ],
+      "pad_via_contact_ids": [
+        "c5f348f6-8770-4b9e-ad7a-5119d784d4aa",
+        "04f6280a-efad-4f43-a248-0beb26c25051"
+      ],
+      "source_length_mm": 2.4235281374238573,
+      "final_length_mm": 2.3821067811865477,
+      "all_external_copper_contacts_preserved": true,
+      "physical_terminal_partitions_equal": true,
+      "not_longer": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "outside_old_copper_plus_0200mm_mm2": 0.0,
+      "local_return_review": "Same original pad and GND via endpoints, source width and all external branch contacts preserved. No remote or shared return substituted. Equal or shorter local path and no added unsupported reference copper.",
+      "owner_approval": {
+        "approved_at_utc": "2026-10-03T17:39:00Z",
+        "scope": "Exact two shorter/equal local GND shoulder polygons; every endpoint, attachment and reference preserved; approved as part of final bounded bundle"
+      },
+      "visual_review": {
+        "status": "Accepted by complete-route visual reviewer",
+        "evidence": "evidence/ground-proposals-before-after.png",
+        "finding": "U1.49 clean constant-width bends; Q2.2 coherent seven-run return replaces bump and scalloped corner"
+      },
+      "operation": {
+        "operation": "Reviewed U1.49 local ground shoulder; same width/endpoints/contacts, no length or reference increase",
+        "net": "GND",
+        "layer": "F.Cu",
+        "removed": [
+          {
+            "id": "33a0c8d4-07a2-42b1-b92a-eb3f72d10780",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.55,
+              29.2
+            ],
+            "end": [
+              23.65,
+              29.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "4d462b85-ce07-4656-95c1-3ffb4aef1e09",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.5,
+              28.2
+            ],
+            "end": [
+              23.5,
+              29.1
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "525f1e06-5819-439a-9ae4-a44cb79d02d9",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.55,
+              29.15
+            ],
+            "end": [
+              23.55,
+              29.2
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "6bc76e3c-f03e-4471-8959-081374f078d7",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.5,
+              29.1
+            ],
+            "end": [
+              23.55,
+              29.15
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "790fa410-17c5-4932-a92f-bf560b03581f",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              24.3,
+              29.3
+            ],
+            "end": [
+              24.35,
+              29.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "7bd3f262-b4d9-4e6c-bcd0-47c98fe9bc71",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.65,
+              29.3
+            ],
+            "end": [
+              23.7,
+              29.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "7bd6704b-3150-47c3-b6d8-70981fabc366",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.7,
+              29.3
+            ],
+            "end": [
+              23.75,
+              29.35
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "98784576-d1e9-4235-b35d-54785eb149d0",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              24.35,
+              29.3
+            ],
+            "end": [
+              24.7,
+              28.95
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "b618e9f7-0ae6-415a-aee8-5923304fd663",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.5,
+              28.175
+            ],
+            "end": [
+              23.5,
+              28.2
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "c6dfe640-ea09-4f6b-bc09-dba3288cdb7e",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              24.25,
+              29.35
+            ],
+            "end": [
+              24.3,
+              29.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "d3bafc55-3cda-4149-91de-31c344717383",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.75,
+              29.35
+            ],
+            "end": [
+              24.25,
+              29.35
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "added": [
+          {
+            "id": "aa980288-2669-4a14-9fc6-45dec0ec1b63",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.5,
+              28.175
+            ],
+            "end": [
+              23.5,
+              29.15
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "6c0708d9-4f00-42a5-9913-d05ebc3bc275",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.5,
+              29.15
+            ],
+            "end": [
+              23.65,
+              29.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "7b04952b-ddae-4553-b705-830493540161",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              23.65,
+              29.3
+            ],
+            "end": [
+              24.35,
+              29.3
+            ],
+            "width_mm": 0.2
+          },
+          {
+            "id": "f55162f0-94c3-4eb3-b22e-2d50c914b471",
+            "net": "GND",
+            "layer": "F.Cu",
+            "start": [
+              24.35,
+              29.3
+            ],
+            "end": [
+              24.7,
+              28.95
+            ],
+            "width_mm": 0.2
+          }
+        ],
+        "old_length_mm": 2.4235281374238573,
+        "new_length_mm": 2.3821067811865477,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    },
+    {
+      "sequence": 30,
+      "source_ledger": "evidence/last-visual-patch.json",
+      "source_operation_index": 9,
+      "source_stage_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+      "qualification_source_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+      "qualification_file": "evidence/ground-shoulder-final-probes.json",
+      "local_return": "Q2.2",
+      "width_mm": 0.15,
+      "source_segment_count": 32,
+      "final_segment_count": 7,
+      "source_endpoints_mm": [
+        [
+          18.1,
+          27.375
+        ],
+        [
+          21.0,
+          29.95
+        ]
+      ],
+      "final_points_mm": [
+        [
+          18.1,
+          27.375
+        ],
+        [
+          18.375,
+          27.65
+        ],
+        [
+          18.775,
+          27.65
+        ],
+        [
+          19.7,
+          28.575
+        ],
+        [
+          20.575,
+          28.575
+        ],
+        [
+          20.9,
+          28.9
+        ],
+        [
+          20.9,
+          29.85
+        ],
+        [
+          21.0,
+          29.95
+        ]
+      ],
+      "pad_via_contact_ids": [
+        "1c99b8b3-0b96-470a-b5b0-c77af93ee0b8",
+        "497001b5-f0ee-4dfe-b1b5-44cf4ab41d32"
+      ],
+      "source_length_mm": 4.52309703885628,
+      "final_length_mm": 4.523097038856279,
+      "all_external_copper_contacts_preserved": true,
+      "physical_terminal_partitions_equal": true,
+      "not_longer": true,
+      "new_reference_exposure_mm2": 0,
+      "max_local_copper_deviation_bound_mm": 0.2,
+      "outside_old_copper_plus_0200mm_mm2": 0.0,
+      "local_return_review": "Same original pad and GND via endpoints, source width and all external branch contacts preserved. No remote or shared return substituted. Equal or shorter local path and no added unsupported reference copper.",
+      "owner_approval": {
+        "approved_at_utc": "2026-10-03T17:39:00Z",
+        "scope": "Exact two shorter/equal local GND shoulder polygons; every endpoint, attachment and reference preserved; approved as part of final bounded bundle"
+      },
+      "visual_review": {
+        "status": "Accepted by complete-route visual reviewer",
+        "evidence": "evidence/ground-proposals-before-after.png",
+        "finding": "U1.49 clean constant-width bends; Q2.2 coherent seven-run return replaces bump and scalloped corner"
+      },
+      "operation": {
+        "operation": "Reviewed Q2.2 local ground shoulder; same width/endpoints/contacts, no length or reference increase",
+        "net": "GND",
+        "layer": "B.Cu",
+        "removed": [
+          {
+            "id": "071217cf-2668-4eb5-9429-1674d674651f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.925,
+              29.8
+            ],
+            "end": [
+              20.95,
+              29.825
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "074b570d-f76c-4ba7-a920-7542e2621a3a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              19.3,
+              28.175
+            ],
+            "end": [
+              19.375,
+              28.175
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "12baf2a8-b4a3-4d62-ab6c-6ff75d427cc4",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              19.775,
+              28.575
+            ],
+            "end": [
+              20.4,
+              28.575
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "2202c342-67cb-4c9e-85f7-57a7a86ea5f7",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.95,
+              29.825
+            ],
+            "end": [
+              20.95,
+              29.85
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "2bfea4b0-ecc6-40c1-8bd7-eea8577736ce",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.4,
+              28.575
+            ],
+            "end": [
+              20.425,
+              28.6
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "2d795476-0e2a-46f2-8e39-a6a7be40b4ca",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.425,
+              28.6
+            ],
+            "end": [
+              20.525,
+              28.6
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "2dd958fa-ecf7-43bf-a042-c8f1ffb2c619",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              18.1,
+              27.375
+            ],
+            "end": [
+              18.375,
+              27.65
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "31e403ed-9ef1-40a6-a354-dc5258ec5829",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.775,
+              28.85
+            ],
+            "end": [
+              20.8,
+              28.875
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "36fca0ae-2544-4c0f-8c84-aca7382d1409",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.7,
+              28.725
+            ],
+            "end": [
+              20.775,
+              28.8
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "3a981a98-bed0-4d4f-9c76-c21d15694a57",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.6,
+              28.625
+            ],
+            "end": [
+              20.675,
+              28.7
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "3c7c936d-be68-43e9-b09f-28f62b843715",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.85,
+              29.6
+            ],
+            "end": [
+              20.85,
+              29.625
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "3e4db516-043c-4e12-bdcc-086e2bdb7973",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.85,
+              29.625
+            ],
+            "end": [
+              20.875,
+              29.65
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "3fae779a-3e88-48b7-896e-81db3d65747f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.875,
+              29.7
+            ],
+            "end": [
+              20.9,
+              29.725
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "40204a85-7c82-4f1b-8a43-67877327f724",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.975,
+              29.875
+            ],
+            "end": [
+              20.975,
+              29.925
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "4158a920-23b9-4b6d-b7b3-8e2ab402102a",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.675,
+              28.7
+            ],
+            "end": [
+              20.7,
+              28.7
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "49315cb5-2f82-4399-ac95-f7c427be8620",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.55,
+              28.625
+            ],
+            "end": [
+              20.6,
+              28.625
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "4af55edd-bcb0-4d8c-b4be-899c77bd173b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              19.375,
+              28.175
+            ],
+            "end": [
+              19.775,
+              28.575
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "4fc0dac6-12c1-46e7-8cf0-a81b6b1ce2a5",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.825,
+              29.575
+            ],
+            "end": [
+              20.85,
+              29.6
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "57b6ed59-2c28-46a8-b466-8f25b0623650",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.7,
+              28.7
+            ],
+            "end": [
+              20.7,
+              28.725
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "612ec0db-030f-49d7-9b28-1e339ca57979",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.8,
+              28.975
+            ],
+            "end": [
+              20.825,
+              29.0
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "6874cbe4-cbb6-4d7b-902d-9c573cb2b34d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.9,
+              29.725
+            ],
+            "end": [
+              20.9,
+              29.75
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "6ed76520-be10-49c5-904d-0e6a01feb28b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              18.375,
+              27.65
+            ],
+            "end": [
+              18.775,
+              27.65
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "80d7e729-b8d3-423f-8d4b-679d28171ba4",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.975,
+              29.925
+            ],
+            "end": [
+              21.0,
+              29.95
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "862a3eba-da98-49f4-bd45-d249783d9ce2",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.825,
+              29.0
+            ],
+            "end": [
+              20.825,
+              29.575
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "862de359-7bb0-42dc-9982-2530368dfd23",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.95,
+              29.85
+            ],
+            "end": [
+              20.975,
+              29.875
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "a0ac3d7f-2aa8-40e1-89b1-b35209482742",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.925,
+              29.775
+            ],
+            "end": [
+              20.925,
+              29.8
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "cce0502e-c38f-4a69-b617-878882153640",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.525,
+              28.6
+            ],
+            "end": [
+              20.55,
+              28.625
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "d5310f52-db26-45b1-b465-0e4c9d6afacb",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.875,
+              29.65
+            ],
+            "end": [
+              20.875,
+              29.7
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "e6042d09-be41-48d7-a78d-e11201b82cd6",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.775,
+              28.8
+            ],
+            "end": [
+              20.775,
+              28.85
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "ebf9967d-31c0-4b68-9f18-fa6f325e302d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.8,
+              28.875
+            ],
+            "end": [
+              20.8,
+              28.975
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "ed35f57e-f693-4565-b043-47228276b704",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              18.775,
+              27.65
+            ],
+            "end": [
+              19.3,
+              28.175
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "f9bb6447-e9e1-419f-9abd-9921c23d658d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.9,
+              29.75
+            ],
+            "end": [
+              20.925,
+              29.775
+            ],
+            "width_mm": 0.15
+          }
+        ],
+        "added": [
+          {
+            "id": "cad944bd-bbb3-45ea-a240-6d3241dd67a0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              18.1,
+              27.375
+            ],
+            "end": [
+              18.375,
+              27.65
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "df390ea3-eb7e-4752-96f0-4af72e10a06b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              18.375,
+              27.65
+            ],
+            "end": [
+              18.775,
+              27.65
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "79ba8950-3620-4cf7-9963-3eb54746098b",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              18.775,
+              27.65
+            ],
+            "end": [
+              19.7,
+              28.575
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "90cc69ac-7806-4266-8d77-835db622a46f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              19.7,
+              28.575
+            ],
+            "end": [
+              20.575,
+              28.575
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "db47bc12-7db0-4c97-9ee4-967e8ae12e6d",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.575,
+              28.575
+            ],
+            "end": [
+              20.9,
+              28.9
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "b41a2180-201f-4879-8983-920b1c2e942f",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.9,
+              28.9
+            ],
+            "end": [
+              20.9,
+              29.85
+            ],
+            "width_mm": 0.15
+          },
+          {
+            "id": "71c03ce1-f095-417e-9729-ba3db63cf3df",
+            "net": "GND",
+            "layer": "B.Cu",
+            "start": [
+              20.9,
+              29.85
+            ],
+            "end": [
+              21.0,
+              29.95
+            ],
+            "width_mm": 0.15
+          }
+        ],
+        "old_length_mm": 4.52309703885628,
+        "new_length_mm": 4.52309703885628,
+        "physical_terminal_partitions_equal": true,
+        "no_new_terminal_free_copper": true
+      }
+    }
+  ],
+  "ground_return_scope": "Exactly28 initially qualified local returns plus the two final owner-approved shoulders U1.49 and Q2.2. All30 adopted UUID deltas are present in the canonical PCB and each retains its source width, all actual local terminal/branch contacts, equal or shorter path, and reference coverage.",
+  "ground_return_evidence_sha256": {
+    "evidence/reviewed-patch.json": "6ec4723632a558742dd355b684be538b9cc100e28c4aa61eb23d89bd5bb8cbe1",
+    "evidence/gnd-final-supported-packet.json": "a236ecfd9e8498b08c10fd1e93ef8082a8ae90509e7c9ded942a711c979d6d38",
+    "evidence/last-visual-patch.json": "8c16003755ee70f1ad33faa71fcf561ea80783a1af1905308bd939fc7093a62c",
+    "evidence/ground-shoulder-final-probes.json": "24ee6d6061fbccbd50ead8181ac857737cb64fc04406d96f4d8b876b760c9284",
+    "evidence/ground-proposals-before-after.png": "c6d3b4182abe4753f12d4ed8b9edf9d51441b4040a526405c4492eb52696825f"
+  },
+  "final_r140_disposition": {
+    "source_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+    "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+    "proof": "evidence/r140-final-patch.json",
+    "zone_equivalence_proof": "evidence/r140-refill-proof.json",
+    "visual_proof": "evidence/r140-before-after.png",
+    "scope": "Exactly the owner-approved UART3_TX B.Cu .130mm five-to-three segment shoulder; same terminal approaches and continuous centerline joints; no added reference exposure"
+  },
+  "independent_30_ground_packet": "evidence/gnd-30-approved-packet.json",
+  "independent_final_two_ground_proof": "evidence/two-ground-shoulders-3c80eba2.json",
+  "all_ground_records_unchanged_by_final_r140": "evidence/r140-final-patch.json"
+}

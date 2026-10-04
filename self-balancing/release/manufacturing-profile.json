@@ -1,0 +1,132 @@
+{
+  "manufacturer": "JLCPCB",
+  "stack_id": "JLC06161H-3313",
+  "copper_layers": 6,
+  "order_nominal_thickness_mm": 1.6,
+  "published_finished_thickness_mm": 1.54,
+  "published_finished_tolerance_percent": 10,
+  "copper_and_dielectric_model_total_mm": 1.5384,
+  "layer_assignment": {
+    "F.Cu": "L1 signals/components",
+    "In1.Cu": "L2 continuous GND, front reference",
+    "In2.Cu": "L3 retained mixed signal/power routing, close reference L4",
+    "In3.Cu": "L4 continuous GND, L3 reference",
+    "In4.Cu": "L5 continuous GND, rear reference",
+    "B.Cu": "L6 signals/components"
+  },
+  "layer_thickness_mm": [
+    0.035,
+    0.0994,
+    0.0152,
+    0.55,
+    0.0152,
+    0.1088,
+    0.0152,
+    0.55,
+    0.0152,
+    0.0994,
+    0.035
+  ],
+  "dielectric_constants": {
+    "3313": 4.1,
+    "2116": 4.16,
+    "FR4_core": 4.6
+  },
+  "mask": "Green",
+  "silk": "White",
+  "finish": "ENIG",
+  "soldermask_thickness": "Manufacturer standard. Zero in CAD means unmodelled coating, not omitted soldermask.",
+  "manufacturing_origin_native_mm": [
+    0,
+    38
+  ],
+  "manufacturing_xy": "X=nativeX;Y=38-nativeY; identical coordinate frame both faces, no bottom X mirror.",
+  "sources": [
+    "https://jlcpcb.com/impedance",
+    "https://jlcpcb.com/pcb-impedance-calculator",
+    "https://jlcpcb.com/help/article/user-guide-to-the-jlcpcb-impedance-calculator"
+  ],
+  "via_process": {
+    "minimum_finished_drill_mm": 0.2,
+    "preferred_via_diameter_mm": 0.45,
+    "ordinary_constrained_via_diameter_mm": 0.4,
+    "localized_via_diameter_mm": 0.35,
+    "localized_radial_annulus_mm": 0.075,
+    "localized_count": 7,
+    "allowlist": "approved-small-vias.json",
+    "limits": "Exactly seven checked UART2/HOST_RUN vias use 0.35 mm copper; all other vias remain at least 0.40 mm. All drills remain 0.20 mm. Published JLC capabilities support this via geometry; select the priced small-via manufacturing option. Final order CAM must confirm the selected process, not waive the geometry.",
+    "source": "https://jlcpcb.com/capabilities/Capabilities",
+    "unchanged_rules_mm": {
+      "copper_clearance": 0.15,
+      "hole_to_hole": 0.25,
+      "copper_to_edge": 0.25
+    },
+    "covering": {
+      "selection": "Epoxy-filled, copper-capped and soldermask-covered through vias",
+      "via_drill_mm": 0.2,
+      "keep_open": "All four component USB shell slots and all NPTH holes",
+      "reason": "The silk-over-via disposition relies on a filled, capped and mask-covered surface, not ink over an open hole. Confirm treatment in CAM production files.",
+      "source": "https://jlcpcb.com/help/article/pcb-via-covering",
+      "cost": "This is a specific quoted manufacturing selection; no default-cost or purchase claim."
+    }
+  },
+  "historical_P2_usb_calculator": {
+    "verified_utc": "2026-10-02T14:07:27Z",
+    "calculation": {
+      "url": "https://jlcpcb.com/pcb-impedance-calculator",
+      "stack": "JLC06161H-3313(Standard/Finished thickness1.54mm\u00b110%)",
+      "layers": 6,
+      "nominal_thickness_mm": 1.6,
+      "outer_copper_oz": 1,
+      "inner_copper_oz": 0.5,
+      "model": "Differential Pair (Non coplanar), soldermask included",
+      "signal": "L1",
+      "reference": "L2",
+      "target_ohm": 90,
+      "spacing_mm": 0.1501,
+      "returned_width_mm": 0.1356,
+      "native_usb_change": "None; outer dielectric/copper and returned dimensions equal the verified former USB basis. Rear geometry uses the symmetric L6/L5 pair.",
+      "limits": "Manufacturer calculator result, not measured impedance; etched width, coating, vias, launches and final supplier controlled-impedance confirmation still apply."
+    }
+  },
+  "usb_calculator": {
+    "url": "https://jlcpcb.com/pcb-impedance-calculator",
+    "stack": "JLC06161H-3313 Standard;finished1.54mm \u00b110%",
+    "layers": 6,
+    "nominal_thickness_mm": 1.6,
+    "outer_copper_oz": 1,
+    "inner_copper_oz": 0.5,
+    "model": "Differential Pair (Non coplanar), soldermask included",
+    "signal_reference_pairs": [
+      "L1/L2",
+      "L6/L5"
+    ],
+    "target_ohm": 90,
+    "spacing_mm": 0.16,
+    "returned_width_mm": 0.1392,
+    "solver_tolerance_percent": 0.5,
+    "width_spacing_complement": false,
+    "native_usb_change": "Implemented: all27 data segments0.1392mm; both coupled gaps0.1600mm; existing2 DM vias; cumulative native and reference checks pass",
+    "limits": "Supplier calculator result, not measured impedance. Final copper launch/via review and supplier controlled-impedance confirmation still required."
+  },
+  "trace_rules_mm": {
+    "minimum_track_width": 0.13,
+    "minimum_foreign_track_to_track_clearance": 0.16,
+    "other_copper_clearance": 0.15,
+    "supplier_green_boundaries": {
+      "width": 0.127,
+      "spacing": 0.1524
+    },
+    "supplier_rules_modified": false
+  },
+  "usb_calculator_verified_utc": "2026-10-03T11:45:19Z",
+  "supplier_trace_rules_verified_utc": "2026-10-03T11:51:11Z",
+  "assembly_production_requirements": {
+    "service": "Standard double-sided PCBA with supplier-added carrier/rails/tooling/fiducials",
+    "placement": "Verify the final supplier two-face 2D production placement drawing against physical pin1/cathode marks and the exact corrected 79-row CPL before assembly.",
+    "carrier": "Protect J2/J3/J4/J5 mating mouths, nozzle and depanel access. Determine actual connector support/fixture requirements during order engineering; the newer live C7527621 capture had no fixture notice, superseding an older cached warning.",
+    "stencil": "JLC regenerates its stencil. Order remarks must retain U2/U11 production split EP apertures. Evaluate top 0.12 mm with a 0.10 mm U13 region and bottom 0.10 mm; supplier stencil engineer must define step boundary and approve volumes or identify a qualified alternative.",
+    "usb_shell": "Include and inspect soldering all four J2 S1 plated shell anchors; no shell paste is supplied.",
+    "status": "Specified production deliverables; no order or unconditional assembly approval exists."
+  }
+}

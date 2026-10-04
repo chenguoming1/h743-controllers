@@ -1,0 +1,150 @@
+{
+  "gerber_job_proof": {
+    "original_sha256": "ac407a7182b1139930646f6ff56369fe8169d2e553e7929c7e56c9280de59e86",
+    "normalized_sha256": "d43d55a6298c279dffca2fb1658e0c66bdeb4c0359a7acf7d2f49464264aad20",
+    "corrections": [
+      {
+        "file": "controller-In1_Cu.g1",
+        "field": "FileFunction",
+        "before": "Copper,L5,Inr",
+        "after": "Copper,L2,Inr"
+      },
+      {
+        "file": "controller-In2_Cu.g2",
+        "field": "FileFunction",
+        "before": "Copper,L7,Inr",
+        "after": "Copper,L3,Inr"
+      },
+      {
+        "file": "controller-In3_Cu.g3",
+        "field": "FileFunction",
+        "before": "Copper,L9,Inr",
+        "after": "Copper,L4,Inr"
+      },
+      {
+        "file": "controller-In4_Cu.g4",
+        "field": "FileFunction",
+        "before": "Copper,L11,Inr",
+        "after": "Copper,L5,Inr"
+      },
+      {
+        "field": "GeneralSpecs.Size",
+        "before": {
+          "X": 38.05,
+          "Y": 38.05
+        },
+        "after": {
+          "X": 38.0,
+          "Y": 38.0
+        },
+        "basis": "Profile centerline extrema; excludes plotted stroke width"
+      },
+      {
+        "field": "DesignRules",
+        "before": {
+          "Layers": "Outer",
+          "PadToPad": 0.15,
+          "PadToTrack": 0.15,
+          "TrackToTrack": 0.15,
+          "MinLineWidth": 0.13
+        },
+        "after": {
+          "Layers": "Outer",
+          "PadToPad": 0.15,
+          "PadToTrack": 0.15,
+          "TrackToTrack": 0.16,
+          "MinLineWidth": 0.13
+        }
+      },
+      {
+        "field": "DesignRules",
+        "before": {
+          "Layers": "Inner",
+          "PadToPad": 0.0,
+          "PadToTrack": 0.0,
+          "TrackToTrack": 0.15,
+          "MinLineWidth": 0.13,
+          "TrackToRegion": 0.15,
+          "RegionToRegion": 0.15
+        },
+        "after": {
+          "Layers": "Inner",
+          "PadToPad": 0.15,
+          "PadToTrack": 0.15,
+          "TrackToTrack": 0.16,
+          "MinLineWidth": 0.13,
+          "TrackToRegion": 0.15,
+          "RegionToRegion": 0.15
+        }
+      }
+    ],
+    "actual_X2_file_functions": {
+      "controller-F_Cu.gtl": "Copper,L1,Top",
+      "controller-In1_Cu.g1": "Copper,L2,Inr",
+      "controller-In2_Cu.g2": "Copper,L3,Inr",
+      "controller-In3_Cu.g3": "Copper,L4,Inr",
+      "controller-In4_Cu.g4": "Copper,L5,Inr",
+      "controller-B_Cu.gbl": "Copper,L6,Bot",
+      "controller-F_Paste.gtp": "Paste,Top",
+      "controller-B_Paste.gbp": "Paste,Bot",
+      "controller-F_Silkscreen.gto": "Legend,Top",
+      "controller-B_Silkscreen.gbo": "Legend,Bot",
+      "controller-F_Mask.gts": "Soldermask,Top",
+      "controller-B_Mask.gbs": "Soldermask,Bot",
+      "controller-Edge_Cuts.gm1": "Profile,NP"
+    },
+    "outline_centerline_bounds_mm": [
+      0.0,
+      0.0,
+      38.0,
+      38.0
+    ],
+    "scope": "Optional job metadata only; no Gerber copper/mask/paste/outline or drill bytes changed. Non-copper job vocabulary retains its emitted aliases."
+  },
+  "drill_coordinate_proof": {
+    "native_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+    "status": "PASS EXACT NATIVE DRILL COORDINATES",
+    "format": "Metric absolute explicit decimal, six fractional digits; separate PTH/NPTH, G85 oval records",
+    "conversion": "Native KiCad 3:6 coordinate integers reformatted exactly, never rounded",
+    "files": {
+      "controller-NPTH.drl": {
+        "sha256": "c0c318792003b573c0a5a39ac955be8579084a35665121e92d4a72284df60841",
+        "exact_coordinate_tokens": 12
+      },
+      "controller-PTH.drl": {
+        "sha256": "e0da05475fbcf69341d9d82ffadcea9d93c03c55b2c3e4da2a058f1c44344d0a",
+        "exact_coordinate_tokens": 828
+      }
+    }
+  },
+  "status": "Local single-board submission export; independent artifact review and manufacturer panel/placement approval still required",
+  "native_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "fitted_count": 79,
+  "bom_group_count": 35,
+  "cpl_count": 79,
+  "excluded_feature_count": 72,
+  "origin_native_mm": [
+    0.0,
+    38.0
+  ],
+  "cpl_coordinates": "Native audit:X=nativeX;Y=38-nativeY,same frame both faces,no bottomXmirror. Supplier CPL adds explicit user overrides; angles normalized modulo360.",
+  "cpl_supplier_alignment": "User-supplied corrections applied to11 references:10 rotation offsets and J2 pickup X\u22121.35mm. Actual PCB footprint poses are unchanged. Native audit CSV and exact override provenance accompany this export; final supplier model/pin1 acceptance remains separate.",
+  "cpl_override_source_sha256": "ed23023d67402462e10042c7a7e8467062def891a487c25afa7da5a2af2c00a2",
+  "cpl_override_count": 11,
+  "panel_workflow": "Single-piece BOM/CPL, JLC-assisted panel/carrier subject to acceptance; no fabricated array data",
+  "gerber_layers": [
+    "F.Cu",
+    "In1.Cu",
+    "In2.Cu",
+    "In3.Cu",
+    "In4.Cu",
+    "B.Cu",
+    "F.Mask",
+    "B.Mask",
+    "F.SilkS",
+    "B.SilkS",
+    "F.Paste",
+    "B.Paste",
+    "Edge.Cuts"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "NO NARROW LOCAL TRACK JOINS FOUND",
+  "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "summary": {
+    "routed_nets": 85,
+    "track_count": 3178,
+    "actual_track_contacts": 5151,
+    "centerlines_meet": 2885,
+    "noncoincident_centerline_contacts": 2266,
+    "native_union_proves_local_bridge": 2051,
+    "circle_lens_proves_width": 215,
+    "flagged_nets": 0
+  },
+  "method": "Native-copper local join-width screening for every net/layer.\n\nEvery same-net contacting pair whose straight centerlines do not meet is\nconsidered. An exact circle-lens lower bound proves many joins wide enough.\nRemaining contacts are tested on the actual local native copper union including\nall same-net tracks and pad/via lands. Erosion asks whether track-center anchors\nremain connected through that local copper at the required width. Pad/via lands\nare intentionally treated as terminal copper; via annulus attachment is audited\nseparately. This does not infer adequate neck width from nominal segment widths.\n",
+  "limits": "Loose erosion screens at target minus200nm; acceptance requires target plus200nm erosion or a constructive target-width path, or a separate1nm-native-polygon check whose worst-case width uncertainty is6nm. Nominal-width trace arms cannot survive positive-margin erosion; the near-exact fallback distinguishes that numerical degeneracy from a real contact bottleneck. Land copper is included so legal pad/via-contained overlaps are not automatically failures. Via annulus penetration and trace-to-pad attachment depth require their separate audits. Non-local alternative paths do not waive a narrow local join."
+}

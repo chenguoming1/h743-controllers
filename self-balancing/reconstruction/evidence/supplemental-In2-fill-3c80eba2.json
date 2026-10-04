@@ -1,0 +1,74 @@
+{
+  "status": "PASS BOUNDED SUPPLEMENTAL In2 GND FILL DISPOSITION",
+  "candidate_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+  "source_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+  "audit_script_sha256": "a7b1db2f931c0cf57592df29d6a967a1cadaf7b576152727e24fe52b11f8341e",
+  "raw_loss_mm2": 0.00017473174,
+  "raw_gain_mm2": 4.468539664316,
+  "loss_beyond2nm_mm2": 0.0001706277525,
+  "loss_polygons": [
+    {
+      "area_mm2": 4.414e-09,
+      "bbox_mm": [
+        27.328231,
+        14.374444,
+        27.32844,
+        14.374499
+      ]
+    },
+    {
+      "area_mm2": 5.66095475e-05,
+      "bbox_mm": [
+        27.360431,
+        14.345698,
+        27.383276,
+        14.360964
+      ]
+    },
+    {
+      "area_mm2": 5.6626165e-05,
+      "bbox_mm": [
+        27.393646,
+        14.293273,
+        27.40186,
+        14.320224
+      ]
+    },
+    {
+      "area_mm2": 5.7387626e-05,
+      "bbox_mm": [
+        27.372267,
+        14.241171,
+        27.388325,
+        14.26793
+      ]
+    }
+  ],
+  "bound_region_mm": [
+    27.32,
+    14.23,
+    27.41,
+    14.38
+  ],
+  "ground_terminal_attachment_checks": [
+    {
+      "layer": "In1.Cu",
+      "all101_terminal_attachment_results_unchanged": true
+    },
+    {
+      "layer": "In2.Cu",
+      "all101_terminal_attachment_results_unchanged": true
+    },
+    {
+      "layer": "In3.Cu",
+      "all101_terminal_attachment_results_unchanged": true
+    },
+    {
+      "layer": "In4.Cu",
+      "all101_terminal_attachment_results_unchanged": true
+    }
+  ],
+  "reference_plane_terminal_checks": 303,
+  "disposition": "Only local native-fill fillets beside the actual FDCAN1_RX planar join change in supplemental In2 GND. All101 ground terminals retain identical broad-component attachment results on every filled layer, and all303 actual solid reference-plane attachments pass. The adjacent In3 reference is independently reproduced by the exact six-via-only refill proof; no new ordinary trace reference loss is allowed. In2 remains supplemental copper, not a claimed continuous reference plane.",
+  "limits": "Bounded native geometry and attachment evidence; not measured current, thermal or EMI certification."
+}

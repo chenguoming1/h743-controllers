@@ -1,0 +1,919 @@
+{
+  "status": "PASS FINAL SOURCE CAD AND COMPLETE COPPER-ATTACHMENT QUALIFICATION",
+  "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+  "baseline_sha256": "6e2031b040ce8f3a534c2f73abb0091e25b3e6adcab982463264ad8898d65cf8",
+  "errors": [],
+  "native_counts": {
+    "ERC": 0,
+    "DRC": 0,
+    "opens": 0,
+    "parity": 0
+  },
+  "logical_pin_entries": 405,
+  "physical_live_nets": 85,
+  "reference_planes_unchanged": false,
+  "unchanged_footprints": {
+    "count": 151,
+    "identical": true
+  },
+  "exact_USB_tracks": 27,
+  "USB_width_mm": 0.1392,
+  "ordinary_trace_floor_mm": 0.13,
+  "foreign_trace_clearance_mm": 0.16,
+  "all_vias": 406,
+  "ground_vias": 97,
+  "ground_pads": 99,
+  "operation_count": 674,
+  "rail_operation_count": 164,
+  "copper_joins": {
+    "summary": {
+      "routed_nets": 85,
+      "track_count": 3178,
+      "actual_track_contacts": 5151,
+      "centerlines_meet": 2885,
+      "noncoincident_centerline_contacts": 2266,
+      "native_union_proves_local_bridge": 2051,
+      "circle_lens_proves_width": 215,
+      "flagged_nets": 0
+    },
+    "all_narrow_local_join_flags": 0,
+    "proof_modes": {
+      "strict_erosion_connected": 1290,
+      "constructive_full_width_path_connected": 358,
+      "contained_target_width_virtual_stroke": 389,
+      "one_nm_polygon_near_exact_nominal_width_connected": 14
+    },
+    "negative_control": "The same exact script rejects both P5 HOST_TX_RAW .050mm throats and finds no unresolved final join",
+    "numerical_limits": {
+      "erosion_radius_screen_margin_nm": 100,
+      "strict_erosion_radius_extra_nm": 100,
+      "constructive_centerline_tube_nm": 1,
+      "native_polygon_error_nm": 50,
+      "fallback_native_polygon_error_nm": 1,
+      "fallback_maximum_width_uncertainty_nm": 6,
+      "nominal_signal_join_width_mm": 0.13,
+      "rail_join_requirement": "Minimum of the two incident rail widths; separate branch/path-width preservation still required"
+    }
+  },
+  "via_attachments": {
+    "audited_vias": 406,
+    "signal_vias": 309,
+    "ground_vias": 97,
+    "baseline_routed_via_layer_profiles": 722,
+    "candidate_routed_via_layer_profiles": 709,
+    "baseline_contact_groups": 731,
+    "candidate_contact_groups": 715,
+    "changed_contact_groups": 264,
+    "new_or_worsened_shallow_groups": 0,
+    "inherited_or_improved_shallow_groups": 0,
+    "via_layer_contacts_disappeared": 13
+  },
+  "pad_attachments": {
+    "counts": {
+      "pads": 431,
+      "examined_pad_layer_pairs": 467,
+      "pad_layer_pairs_without_direct_trace_contacts": 96,
+      "routed_pad_layer_profiles": 371,
+      "pad_track_contacts": 835,
+      "contact_groups": 389,
+      "failed_groups": 0,
+      "tracks": 3178
+    },
+    "unresolved_functional_nominal_advisories": 0,
+    "all_pad_inventory_unchanged": true,
+    "manufactured_land_limited_contacts": [
+      {
+        "reference": "U2",
+        "pin": "1",
+        "layer": "F.Cu",
+        "test": {
+          "track_uuid": "74985466-5a1c-4c48-812f-4a159d7ba8fe",
+          "nominal_track_width_mm": 0.3,
+          "land_narrow_dimension_mm": 0.25,
+          "review_width_mm": 0.25,
+          "land_limited": true,
+          "local_finite_width_pass": true,
+          "estimated_local_max_passage_width_mm": null
+        }
+      },
+      {
+        "reference": "U2",
+        "pin": "1",
+        "layer": "F.Cu",
+        "test": {
+          "track_uuid": "cfa6fe6a-91f7-4246-8e04-63789105edd2",
+          "nominal_track_width_mm": 0.3,
+          "land_narrow_dimension_mm": 0.25,
+          "review_width_mm": 0.25,
+          "land_limited": true,
+          "local_finite_width_pass": true,
+          "estimated_local_max_passage_width_mm": null
+        }
+      },
+      {
+        "reference": "U2",
+        "pin": "2",
+        "layer": "F.Cu",
+        "test": {
+          "track_uuid": "999fc47d-dc9e-41aa-8090-8c296440eedf",
+          "nominal_track_width_mm": 0.3,
+          "land_narrow_dimension_mm": 0.25,
+          "review_width_mm": 0.25,
+          "land_limited": true,
+          "local_finite_width_pass": true,
+          "estimated_local_max_passage_width_mm": null
+        }
+      },
+      {
+        "reference": "U2",
+        "pin": "7",
+        "layer": "F.Cu",
+        "test": {
+          "track_uuid": "6410742a-2af6-4dd1-87fc-14ae96f4b736",
+          "nominal_track_width_mm": 0.3,
+          "land_narrow_dimension_mm": 0.25,
+          "review_width_mm": 0.25,
+          "land_limited": true,
+          "local_finite_width_pass": true,
+          "estimated_local_max_passage_width_mm": null
+        }
+      }
+    ],
+    "qualified_local_contexts": {
+      "VDDA": "Original small redundant corner graze has a separately proven full .200mm native-union route",
+      "J162": "The .450\u00d7.050mm endpoint flare does not set feed width; its sole .300mm incoming path passes the full nominal check"
+    },
+    "carried_dispositions_with_exact_profile_equality": true
+  },
+  "ground_plane_attachments": {
+    "plane_only_live_pads": 4,
+    "reference_plane_terminal_attachment_checks": 303,
+    "actual_modes": "FULL_SOLID; no thermal spokes are relied upon",
+    "annular_geometry": "Native plated annuli remain intentionally exempt from ordinary .130mm trace-width rules. Their exact unchanged diameter/drill/slot geometry and approved manufacturing floors are checked separately. Filling a terminal land for this attachment test does not claim copper exists in its drilled hole.",
+    "routing_layer_GND_fill": "In2 GND fill is supplemental and may form separate islands; every ground terminal independently passes all three solid reference planes",
+    "outside_terminal_proof_width_mm": 0.1302,
+    "carried_from_exact_unchanged_filled_copper_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47"
+  },
+  "reference_dispositions": {
+    "method": "Raw filled-plane minus physical drills; compare candidate uncovered copper to baseline uncovered copper. True newly uncovered foreign copper means residual outside the baseline copper-edge or centerline gap expanded by exactly 2nm and individually bounded same-net via antipads. Area alone never waives a gap.",
+    "declared_DC_outer_edge_exception_net_layers": [
+      {
+        "net": "3V3_CORE",
+        "layer": "B.Cu",
+        "added_unsupported_mm2": 4.94626925e-05,
+        "bbox_mm": [
+          37.669945,
+          26.306313,
+          37.725,
+          26.847493
+        ],
+        "inside_reference_outer_contour_mm2": 0.0,
+        "new_centerline_exposure_mm2": 0.0,
+        "missing_inward_ground_rectangle_mm2": 0.0,
+        "supported_width_mm": 0.375,
+        "outward_unreferenced_width_mm": 0.075,
+        "scope": "Exact regulated DC rail only; outer edge strip, not a foreign hole or slot"
+      }
+    ],
+    "raw_new_gap_net_layers": 21,
+    "true_new_foreign_gap_net_layers": 0,
+    "rounding_only_net_layers": [
+      {
+        "net": "UART1_RX",
+        "layer": "In2.Cu",
+        "raw_new_foreign_edge_mm2": 4.5358e-08,
+        "raw_new_foreign_centerline_mm2": 0.0,
+        "above_2nm_envelope_mm2": 0.0
+      },
+      {
+        "net": "USB_PRESENT_n",
+        "layer": "In2.Cu",
+        "raw_new_foreign_edge_mm2": 0.0,
+        "raw_new_foreign_centerline_mm2": 6.15e-11,
+        "above_2nm_envelope_mm2": 0.0
+      }
+    ]
+  },
+  "route_quality_before": {
+    "routed_nets": 85,
+    "track_count": 5741,
+    "arc_count": 0,
+    "total_length_mm": 2894.434169,
+    "chains": 968,
+    "signals": {
+      "scallops": 527,
+      "width_transitions": 1443,
+      "detour_windows": 85,
+      "reverse_hooks": 73,
+      "long_chain_detours": 46,
+      "collinear_joins": 108,
+      "short_width_pulses": 957
+    },
+    "ordinary_signals": {
+      "scallops": 524,
+      "width_transitions": 1443,
+      "detour_windows": 80,
+      "reverse_hooks": 69,
+      "long_chain_detours": 44,
+      "collinear_joins": 105,
+      "short_width_pulses": 957
+    },
+    "external_terminal_signals": {
+      "scallops": 511,
+      "width_transitions": 1403,
+      "detour_windows": 84,
+      "reverse_hooks": 8,
+      "long_chain_detours": 46,
+      "collinear_joins": 93,
+      "short_width_pulses": 955
+    },
+    "external_ordinary_signals": {
+      "scallops": 508,
+      "width_transitions": 1403,
+      "detour_windows": 79,
+      "reverse_hooks": 8,
+      "long_chain_detours": 44,
+      "collinear_joins": 90,
+      "short_width_pulses": 955
+    },
+    "nets_with_signals": 79
+  },
+  "route_quality_after": {
+    "routed_nets": 85,
+    "track_count": 3178,
+    "arc_count": 0,
+    "total_length_mm": 2832.738156,
+    "chains": 760,
+    "signals": {
+      "collinear_joins": 45,
+      "scallops": 165,
+      "reverse_hooks": 29,
+      "width_transitions": 160,
+      "detour_windows": 102,
+      "long_chain_detours": 44,
+      "short_width_pulses": 52
+    },
+    "ordinary_signals": {
+      "collinear_joins": 42,
+      "scallops": 165,
+      "reverse_hooks": 29,
+      "width_transitions": 160,
+      "detour_windows": 97,
+      "long_chain_detours": 42,
+      "short_width_pulses": 52
+    },
+    "external_terminal_signals": {
+      "collinear_joins": 42,
+      "scallops": 164,
+      "width_transitions": 126,
+      "detour_windows": 102,
+      "reverse_hooks": 5,
+      "long_chain_detours": 44,
+      "short_width_pulses": 50
+    },
+    "external_ordinary_signals": {
+      "collinear_joins": 39,
+      "scallops": 164,
+      "width_transitions": 126,
+      "detour_windows": 97,
+      "reverse_hooks": 5,
+      "long_chain_detours": 42,
+      "short_width_pulses": 50
+    },
+    "nets_with_signals": 70
+  },
+  "metadata_closure": {
+    "status": "PASS UNCHANGED SCHEMATIC/XML AND EXACT FOOTER METADATA CLOSURE",
+    "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+    "current_main_XML_sha256": "fb68b6b4dd8fcc69bc42cbb55800bfb6ca1d31af367d5471c3884321470213bf",
+    "fresh_cli_XML_sha256": "14715d9397a2f01925c475668a1d5e0465818ac923f4d10dd45a586237a965bc",
+    "retained_main_XML_from_qualified_3c80": true,
+    "unchanged_schematic_count": 7,
+    "fresh_export_electrical_sections_identical": {
+      "components": true,
+      "libparts": true,
+      "nets": true
+    },
+    "footer_only_helper_delta": {
+      "before_sha256": "cb187205864515964b0f03d70c357222aba8f450405df5dee44ed0229834917a",
+      "after_sha256": "d474d1d7a24a63478c3fb36f1836567b66e98248408a2dc34e09475cc086ed79",
+      "before": "ASSEMBLY NOT CLEARED",
+      "after": "PCBA production approval required"
+    },
+    "all_other_main_source_files_unchanged_except": [
+      "Exact authorized R140 copper",
+      "Truthful PCB hash rebinding in legend and seven-via inventory"
+    ]
+  },
+  "export_guard_source_sha256": {
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/clock-reset.kicad_sch": "4d45d521c1b3e06ed7fb35c16a355bf6babb4d71529035c2fb8ac2b4b82db6a8",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/side-sockets.kicad_sch": "746c43b73be7d27361e447b2818ea931876e9711a3e459d6cc708caa7de127da",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/peripherals.kicad_sch": "51abfc8eb4f060fc28402d343a7fb9b9c6bf4814889c9f1c030c74c8e841aeb2",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/storage.kicad_sch": "ea71993ce58938363f0435455af74ed6d712b0b42460bbb950b39efbf8eddf90",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/power.kicad_sch": "41af889e41a494df506998e8ddab4a811d4331e2fbc03b3850a96591561361ca",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/controller.kicad_pro": "62f30937a67e89ebc9e8c5bcc74e0671692ed6ae82753a794557cd7d6f6daa66",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/controller.kicad_dru": "9e7c0d44c7e11374990d96e40dc6dda7d63861877f240659572e1d916ea46481",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/edge-pads.kicad_sch": "38193e73ebea5f973d672f7b0653d7fbe524b6407455107bdc51ad05e310656d",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/controller.kicad_sch": "00f243c5c4b6fbc83700f38e138492532518420bbc39d5e62129bef90d6ec512",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/controller.kicad_pcb": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/fp-lib-table": "d1d4eec47400163fe8d95d9e20946cab3bbc5bba9b66ad05d90c56322052d1f6",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/sym-lib-table": "98a15a832f45f845d9308badcc3ee0e8d63a66462d002d6198a671ad3b138a8d",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Analog_Switch.kicad_sym": "372033e71a650fd2f753888cc2367b9ead7d2a890fab9e95156b97d773b6afae",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Regulator_Switching.kicad_sym": "70c21b4fa4892fdd18a5597d2b2bb122d8e2820231caf30f4dfbe15633be4a7b",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/MCU_ST_STM32G4.kicad_sym": "5a6708adcb21b2f1c0060959ef9223683a2971bd8dfbe3c6b12c667418629665",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Device.kicad_sym": "5ff863f4f8f33cb8666fa49c50383d1dee0b1ac1379d63a3702402c8e6a4bade",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Transistor_FET.kicad_sym": "1c3dd147ca8b11b79e53530bb7533b4a325824a98265940926ddfe17a46368df",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller.kicad_sym": "69e60ae336eae1d162dcb5fc1096406f621d17b8aa068daa7da429ade93840a3",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Jumper.kicad_sym": "a215739e6a9392afc50dbedf9a3dcf9729c1d0160a90ddf81410d5cdcba497fa",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Connector.kicad_sym": "032d0e13432262917584059ceeda9f28e9e59d78e5107458544b099fdeb66a79",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/MCU_ST_STM32H7.kicad_sym": "1e9041b39f2fdc224222f61bae6cfbe410e81d64344052cf908c7e111d195d3c",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/power.kicad_sym": "4b5f7e8c86217c8835845efa9be416ed713e3a19b07dc6b23f0cfec9e38c4e84",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Regulator_Linear.kicad_sym": "c0cdff201da1525b24dfeefc9c26b0d996cf92bd3355d3924246fe299d9b5a91",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Power_Protection.kicad_sym": "6681729d0e4b011d9252a031edb11e5bb48659d177f59a34a7d3f4afba4a042b",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Connector_Generic.kicad_sym": "55695c42dc474d4c01716ce7af3ac432ef3f9a49e18465adce6f43dcffa68131",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Storm32_Review.pretty/USB_C_HRO_TYPE-C-31-M-12_EdgeSilk.kicad_mod": "1b251d7e5ea11ee62eab8352b71643e86b9c6d754f109f42954725ab716846c4",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Storm32_Review.pretty/ServicePads_1x05_P1.27mm.kicad_mod": "83368680c2cbc9ff4d54b3bd98e1ab055e27f6730815807ae693ad60f84e0e40",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Storm32_Review.pretty/Hirose_DF40HC3.5-40DS-0.4V_40pin_ProjectMatched.kicad_mod": "58c15185ba64aad3090241b82ae636f868440f095e83c4a9051a15a97b8fa783",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Storm32_Review.pretty/ServicePads_1x06_P1.27mm.kicad_mod": "586113981b153165ed79610b9b0ff0d4c9c196b540a115072146ad6958137864",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Storm32_Review.pretty/ST_QFN-2L_1.6x1.0mm_DS14419.kicad_mod": "9e9d4d4d4f7cbdc77cf91d2f7d0455dd16035dadadec406798d179ca5d579fb6",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R2.pretty/WirePad_1.6x2.0mm.kicad_mod": "b070cc052e6d09855031e2b74e136f21f2b89ba5f81a12157854fb9c8b280280",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R2.pretty/WirePad_3.6x2.0mm.kicad_mod": "fb89fc0441e9bf0ec26cf25f8a03a5bcd272ddaeb5f0ffa2c9a5481af870083e",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/TPS62162_DSG_R3S.kicad_mod": "18b3af59f485278e7f281c31594973f704ac8d63786d9579ae42fb1343d9d8ca",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/R_0402_1005Metric_R3S_NoSilk.kicad_mod": "5fc986e6a4f99333af39c94a068ccbcb60503b2b97eaa9b853b2eff9f58ddad1",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/DMN2310UW_SOT323.kicad_mod": "daf25402deb962c0f4e107b89393126187d375c60008a833687afeb7d457ee2c",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/TestPoint_Pad_D1.0mm_R3S_NoRing.kicad_mod": "322b8151e45938de986f3df08ae0b5ec575507059e249d403f6b03034474671b",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/TXC_A308000003_3225_2pad.kicad_mod": "616784a210d97b8089ad0cd7c93c09e8ded008013df135e41f57d629fe851513",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/TSOT-23-6_R3S_ClearLabels.kicad_mod": "6e08e7e04ca9da811b91d2bfb47f0a2fb98c6c3d8d83e50736d74fe5ab032aad",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/LianXin_XDWF-0910_06P_Horizontal.kicad_mod": "32865743fd1b53f2c1409312f86d6c522a0db6f940426c50d71d8d10407cacff",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/library/Controller_R3.pretty/TDK_VLS3012HBX.kicad_mod": "b945eeee38f115e1564f015fbdde00035c32043fb38384b2f788dbab165de6c4",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/inputs/user-corrected-JLC_CPL.csv": "ed23023d67402462e10042c7a7e8467062def891a487c25afa7da5a2af2c00a2",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/package_p4.py": "f15978f767f386ebc2479d64440a0d058dd5c9743d0a963b84d5b8c0eee65472",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/render_p6_review.py": "d474d1d7a24a63478c3fb36f1836567b66e98248408a2dc34e09475cc086ed79",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/check_current_geometry.py": "b6119387c2c7f6ada3d9f100a6151531bd037cdb8913a52cd166e0ed058c8461",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/export_actual_pad_legend.py": "6e111ddbf2c9965d5369a1b41edd82110aa07027672c0fc06dd949b16a1d3b56",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/build_assembly_pdf_p6.py": "001e2b8b5cbe5445a43aee6307a71bb988efd95c68c0014ff9ba4d203a24c6af",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/export_release_p6.py": "ddf7600ab39eb4686fb39a4d3e60199ee62f959a1f00fcf4c7a0e9b477a9a4af",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/export_release.py": "ffad03c054771870744aa509b93a5303ee779bb2ca14a7336fa5bb1ed9fe059c",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/build_assembly_pdf.py": "57720ea89e47204d318aeb034f2d2b71bb6b670838a4433c53d6cc1502d34c94",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/render_p5_review.py": "c725729a68fc150bd4521d1b76ca7b42c323b5b122b32d108f70dba6cd98aef2",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/render_p6_drawings.py": "e473e0dceb58ceea21c650c97c3b4533d107c6078f678673fd8218642d8eb766",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/export_copper_review_p6.py": "f914a16e87c7429ae4f2482903ae8cef655c3abebd9f1622b11e4cf01c06e8c9",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/package_p6.py": "4c8da74b3f68b2cbe53b941800c23f6ff797754dc4753e6dc31dbb501c251731",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/render_dfm_report.py": "0dc95e44668187b3d067e08cf9becb964497d5e27882b3061a6e4d11c390ec7a",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/audit_native.py": "99c394badc0a7edcb6b93559e9af32034041b4f723f9cc4d90c322821fc816b0",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/export_copper_review.py": "d32ffde9c0462e29181eeca28dac3f8ace2558165d27407000c44a9d104022b9",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/validate_release.py": "981e2c9a2b931a78f108fe10341515a1c69d6f5334772f1e86d62eca28bea888",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/build_assembly_pdf_p5.py": "0cbb62514dcb86b7ef50b92d8869941955376258d9e83181058277a2ebbc8f4c",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/kicad_cli.sh": "b37323684efc101a671ba4b4ff889fe992ca74a16a369d81a2c483393c552f22",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/package_p5.py": "25442275fa981b574735694bff0e647dd7e3b7cbace410f7ba0052f3bbf87238",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/normalize_gerber_job.py": "9912dd8063ddeb02cb18335ff29bdee71be1899b6be6f6ca516fb017360152f5",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/refresh_small_via_record.py": "caae50384ba0498060bda811007599b737a8343a88a66f12889b37a5f07181e0",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/export_precise_decimal_drills.py": "7b03f48767efcda509f51213bcab752a821f798552a76f7754a2185907157a34",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/history-P3/summarize_revision_changes.py": "fb4b380bf5a6539716cb1872b05ee839381f8a1dccee3f5eb53052ca7f47c229",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/history-P3/README.txt": "61dbd67e442d77db32590394e4e790f7646d9e583cdeacc4ca7d49b66d72a4a4",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/tools/history-P3/package_p3.py": "e8c974627d69f794aee9c29cfa4adfd0fcc5250a939045212395d7d0faab5aed",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/design-netmap.json": "a58d47a807a3975b0b93768ddb33e62476614773ba54066023bcde83900dc773",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/controller-netlist.xml": "fb68b6b4dd8fcc69bc42cbb55800bfb6ca1d31af367d5471c3884321470213bf",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/controller-r3s-independent-expectations.json": "e0da4e263428b62785c3987b7b2c98e718714e46b32a5f194db0a0987177d3ec",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/bom-draft.csv": "80c8acd07b1334d36ac23211de681f2def3cdb0fd4175262a4eeeee4ac9b3068",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/manufacturing-profile.json": "fb173c513e4f346e00940ca3ba7d22d56a371cd3358dc2a98c62566c6eb2295f",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/sourcing/controller-r3s-bom-source-status.json": "ac0bfa98f7bd72d10754e4f43c2fa41d3a0fe5611b265de2b48e60217f005883",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/sourcing/controller-r3s-bom-source-status.csv": "06054a8d7e21d9a86aaca5989720a80f1d34221123f266c2bede060c480b084b",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/printed-pad-legend.json": "e93a7b00a7424fd2c4a6ab1223e2d9a0f1f1d5288a7ba4f8203a37cddf7d620b",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/approved-small-vias.json": "5a1d36bd21fa14eab40783598d71096937bd7ae9284f7225e8c9f6bcb345df8a",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/pad-wiring-map.csv": "c1a02fdb8a34705242d0cd0dcb556686215342aee0371469ac29468959c40e19",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/assembly-cpl-overrides.json": "b750c9254fd3f2c927715cd6f1cecb749b8112b6eaca9090926813a38c043bdf",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/edge-pad-map.json": "9c5f66866803359e75040b0c824b6e8f2b05960738c10a1586f13594bb0120c9",
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/review/h743-pin-map.json": "0e6e416129c234528fe0f9ebe17b8bbb4814f8c3a9a2721cc0055abb1b138970"
+  },
+  "evidence_sha256": {
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/native-gate-summary.json": "e6bf90c746ca3e9a5bf515da36e4bf576fc614b02cf61f1cb2aff6b8c1d03ab3",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/revision-geometry.json": "5599eac4b1e65d7781094564d33044a11f0254ef7125a3382f54a457a374e7d5",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/route-replay.json": "c2f290eed8991fa71256c47c7c1844d1c9043d0fa484d9b00b77384c7972ed02",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/topology.json": "b62dcc4a4e920b17da95282666f5d3110ef69b9cbed921d7f9eecd2792352ab0",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/XML-metadata-closure.json": "320d26a7d442abb455238b653e6ded43ea5fe5661287bcd135d9639724848cdc",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/erc.json": "2a452105d4154baaa75b2c46aa0d390924ab96f741920b535618dafb386aecf9",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/drc.json": "98c7957e30601ae1f004bea1b890bfdebafb00f5ed129a4333391d1c07d483d1",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/refill-verification.json": "c29599b475716a72f6c0830f49cd617ec08eb080e9571940021e85fae74d5936",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/uncapped-copper-census.json": "33bd5999616ae775858740b7bc599fed2a1de85e80c862779dd1433763b16b8b",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/advisories/advisory-clearance-census.json": "106a55ed2dca8bcf45236fd3f44e522db8302de1006f3dde7200e3de68e44b94",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/pin-audit-run.log": "327c41a70b9fb3138c38e6201712754ddebab97f1e530c045d9f241d72eb1fe8",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/native-audit.json": "dd67ffd18c2c5105ac041adc862919bf967f07432d805a904208d9c7cf8a607e",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/join-throats-3c80eba2.json": "7803d21b92b59b314d1eab81a9fd7b00f2d4c13c88bd42c20d6b7ad57deb0a17",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/join-throats-p5-constructive.json": "e16587c7eaf7d6ff51c37af9a0039d94db28b3d083e2780c6505643a80f6c35b",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/all-via-attachments-3c80eba2.json": "880120f285adefa10ff001aa0644a680d9f98456d5f2b4723ca1f11c2fcd7bc9",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/ground-plane-attachments-3c80eba2.json": "f92ca4c34c55f46534a9cf6992ffab8444e908c0483251429336951fd443d8e6",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-pad-attachment-audit/final-3c80eba2-closure.json": "3b8028fb9eb467617ab554f196c7a4110e0d5faeefb5471143156cc441dfa198",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-pad-attachment-audit/final-3c80eba2-integration-proof.json": "434ef4be602096ae4e047e3414cd870bdebf4b5b71700277dbb7e2a7098300e2",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2-exceptions.json": "83bb61b60f2809d8818fc126d088a842530f12be2dc961298fe50fb0e311eee1",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/east-rail-reference-independent.json": "ec8205529a59b9bc6316888876e1ecaa1449776ed6e2b566407968168490d835",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/j162-pruning-rebased-independent.json": "7f4e365a2745d6d2ff9b49a09577ea97822d8015d5dfe0274b4f83335a5ea77c",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/authorized-pruning-3c80eba2.json": "4c44abaabcecce8b6c802228a52e92be3d5061d1b4f156722f79bf3158f08071",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/all-via-functional-layer-roles-3c80eba2.json": "829d0b74676e44e3a585f645594f3695d51968f4dda1a5c7ad54c95e1e35681e",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/pad-anchored-dead-trees-3c80eba2.json": "0d9f7c0540543e555e3889b8d19c4339947f843aa812135155c7fc0a5f566960",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/supplemental-In2-fill-3c80eba2.json": "b0a089d3862322e088e5d777ffb684d665c79fd62a25f3a377e731d229ecf316",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/two-ground-shoulders-3c80eba2.json": "01185a16af8805c9047b1ea104b51e18022058d0119addbd462cdf64b3c26454",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/single-terminal-copper-fafa9c3f.json": "2dcc16b1b6fab82ff2fd1bb34dd1895b5b71b4ba166cae716a760e134558dfc8",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/pad-anchored-dead-trees-fafa9c3f.json": "37f1bf75d283a625491cbd27b70f3708a2544366182a98c462b45c11571b0937",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/close_source_qualification.py": "e8a71e7ab13fb896764a71e4af500783bbe163aed61cd75c51a1bcd504556d5c",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/audit_supplemental_fill.py": "a7b1db2f931c0cf57592df29d6a967a1cadaf7b576152727e24fe52b11f8341e",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-3c80eba2/complete-source-qualification.json": "9dedb67152fe8a87b00efee14eb8b461511b9688169b67b7e6c038db9de88df1",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/native-gate-summary.json": "feb9217c2a4cfe527c80a0d6eca74bc2e898764492a540d5baaa768663fc903c",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/revision-geometry.json": "884fe03fa13fe107c2d3dd83d4c303cdebf2125029b6abb2873025c6bb010367",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/route-replay.json": "ef91ff073b32ea22f11c986e45300135be79b68dd8ddd68b00660a9f988a82db",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/topology.json": "d75ba2c7ec36f170ed6adf8f764e9954ea1f8bd19705e60effe63c17451f803f",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/metadata-closure.json": "c17244727174bcc16dd63b6091046057e1b02ae21e34855f03b7f8bf132597fa",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/erc.json": "eb008696b06fef087b6f9fa0e03537a85d120e1e13ad754aa983bf9ff72c3436",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/drc.json": "de9316cf2374c761805ab85db6bdf3f9be75ec017c8e6e2b2fd2e12c4805348b",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/refill-verification.json": "ed944b751f0249203bb74048131a2f223bd911a52dddd308f67a6115f0d52c4c",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/uncapped-copper-census.json": "5d098de375c07556e9519f11c2da06be97333af671f125e8921ad2048c9bdd8a",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/advisories/advisory-clearance-census.json": "76906a8feeb4385e3dc937d1e90271528a813fae18916bfa30c7e4188e999e79",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/pin-audit-run.log": "9c2c672dbdc4cd60f9fb95709d7468fce933776915a9f44f169f07433870a8e9",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/native-audit.json": "31c677f073bf01e950aa903ee0d369b7fbe0f8a556a8fab623e4ec2122ceff22",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5/close_source_qualification.py": "a40841537efc99498b3eabbd1bbab6909c4652599f8a3e7276e0efc71dd20171",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/join-throats-cf16a6f5.json": "e78ebf87d8a3a05614fae4cba7a33575728620324d3426bbe83486a43b7a25b5",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/all-via-attachments-cf16a6f5.json": "a216d1904cd6be22ca810104022a155a4d43476b4a8c01f1dba82a4da3d0fa5c",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/all-via-functional-layer-roles-cf16a6f5.json": "3e6e7e8a90a05f040183ae9280c22b227111725e71714377875ccd1ce610950f",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/pad-anchored-dead-trees-cf16a6f5.json": "611dbfd1b15a2ea0a5383c970e60f525cb6b8fa20ad8eb5c62a22f0d268757e1",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/authorized-pruning-cf16a6f5.json": "ede73d50c543e083beb77fe92471a2c05650794ce3909d13a2cd94f8991b4d17",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/final-cf16a6f5-exceptions.json": "d32ce63fffb3fc0a7e762891b50741583969340bc928bdfad6d3cc0565d207fa",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/r140-final-delta/exact-delta.json": "f5674afb00e5fe76d8d9135e70350147f03e7a6ee7d770dbc6b5cf1ea0ea8c78",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/r140-final-delta/check_delta.py": "efa6db9da43fa366e0c6f9b3711f333fa9f1598a44828941edd312ae0be0a086",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/r140-final-delta/pad-floor.json": "3a48b64a4ac148924327037eefc9be45e905ffd33cd6b4c9d5e87de025a2de19",
+    "/workspace/shared/storm32-redesign/research/controller-r3s-p6-independent-validation/r140-final-delta/pad-nominal.json": "d18eb9627612f97bfebaca9e130b8dc4acaa931565fbb1b75320f8e441d92791"
+  },
+  "qualification_limits": [
+    "Final all-route visual acceptance is owned by the independent visual reviewer; shape-count reductions alone are not acceptance",
+    "This source qualification permits final export generation under the exact hash guard; final Gerber/drill/BOM/CPL/package parity must still be verified",
+    "Native land and approved plated-annulus dimensions are intentionally distinguished from ordinary trace necks",
+    "Measured load-current/thermal capacity, impedance, EMI, firmware and hardware performance are not certified by CAD checks; the release report separately states selected fabrication and preassembly production requirements"
+  ],
+  "functional_vias": {
+    "audited_vias": 406,
+    "ground_vias": 97,
+    "unresolved_count": 0,
+    "method": "Require real multilayer use of vias; internal placeholder strokes do not count.\n\nA functional layer has actual via contact to a native trace component reaching\nanother distinct pad/via terminal, direct pad copper contact, or native filled\nzone overlap. Trace-to-land quality and interterminal topology are separate gates.\n"
+  },
+  "pad_anchored_dead_trees": {
+    "unresolved_count": 0,
+    "peeled_via_count": 0,
+    "method": "Read-only dangling-tree screen with vias treated as junctions, not loads.\n\nActual same-layer trace components form graph nodes joined to native pads/vias.\nPads and legitimate filled-zone contacts are protected anchors; all GND vias\nremain protected because their return/stitch function is separately reviewed.\nIteratively peel non-anchor leaves. No loop or genuine two-anchor path is deleted\nor classified by this screen. Native source remains unchanged.\n"
+  },
+  "qualified_redundant_via_retirement": {
+    "retired_via_count": 6,
+    "removed_vias": [
+      {
+        "uuid": "0339b82d-3353-4627-9f03-57d192f6ea21",
+        "type": "PCB_VIA",
+        "net": "FDCAN1_RX",
+        "start_nm": [
+          26750000,
+          13350000
+        ],
+        "end_nm": [
+          26750000,
+          13350000
+        ],
+        "width_nm": 450000,
+        "drill_nm": 200000,
+        "layers": [
+          0,
+          2
+        ],
+        "via_type": 3,
+        "tented_front": true,
+        "tented_back": true
+      },
+      {
+        "uuid": "24ff4382-6c48-4794-abe9-9a57776d555d",
+        "type": "PCB_VIA",
+        "net": "UART3_TX",
+        "start_nm": [
+          29400000,
+          26550000
+        ],
+        "end_nm": [
+          29400000,
+          26550000
+        ],
+        "width_nm": 450000,
+        "drill_nm": 200000,
+        "layers": [
+          0,
+          2
+        ],
+        "via_type": 3,
+        "tented_front": true,
+        "tented_back": true
+      },
+      {
+        "uuid": "5a501fc3-ea58-40d5-9413-78ad9c4f02b6",
+        "type": "PCB_VIA",
+        "net": "IMU_CS",
+        "start_nm": [
+          7050000,
+          21800000
+        ],
+        "end_nm": [
+          7050000,
+          21800000
+        ],
+        "width_nm": 450000,
+        "drill_nm": 200000,
+        "layers": [
+          0,
+          2
+        ],
+        "via_type": 3,
+        "tented_front": true,
+        "tented_back": true
+      },
+      {
+        "uuid": "9c197846-e3b5-4a56-9a25-a11e9b673ef5",
+        "type": "PCB_VIA",
+        "net": "+5V_STACK",
+        "start_nm": [
+          21150000,
+          7750000
+        ],
+        "end_nm": [
+          21150000,
+          7750000
+        ],
+        "width_nm": 450000,
+        "drill_nm": 200000,
+        "layers": [
+          0,
+          2
+        ],
+        "via_type": 3,
+        "tented_front": true,
+        "tented_back": true
+      },
+      {
+        "uuid": "b1deabfa-acc0-4236-bcdc-9327e2653b94",
+        "type": "PCB_VIA",
+        "net": "USB_SOURCE_DISABLE",
+        "start_nm": [
+          18500000,
+          29900000
+        ],
+        "end_nm": [
+          18500000,
+          29900000
+        ],
+        "width_nm": 450000,
+        "drill_nm": 200000,
+        "layers": [
+          0,
+          2
+        ],
+        "via_type": 3,
+        "tented_front": true,
+        "tented_back": true
+      },
+      {
+        "uuid": "cc569dba-8c17-4a1b-a17d-55d48ca98df2",
+        "type": "PCB_VIA",
+        "net": "IMU_CS",
+        "start_nm": [
+          6350000,
+          25000000
+        ],
+        "end_nm": [
+          6350000,
+          25000000
+        ],
+        "width_nm": 450000,
+        "drill_nm": 200000,
+        "layers": [
+          0,
+          2
+        ],
+        "via_type": 3,
+        "tented_front": true,
+        "tented_back": true
+      }
+    ],
+    "qualified_disappeared_via_layer_profiles": 13,
+    "all_surviving_via_records_unchanged": true,
+    "retained_USB_SOURCE_DISABLE_root": "Its retired In2 antenna branch is gone; functional F.Cu and B.Cu routes remain"
+  },
+  "reference_plane_integrity": {
+    "status": "PASS EXACT SIX-VIA-ONLY NATIVE REFILL",
+    "raw_deltas": [
+      {
+        "layer": "In1.Cu",
+        "loss_mm2": 1.620985e-07,
+        "gain_mm2": 2.5688609554245,
+        "loss_beyond_2nm_boundary_mm2": 0.0,
+        "gain_outside_translated_isolated_templates_mm2": 0.0242875491195,
+        "exact_six_via_only_refill_loss_mm2": 0.0,
+        "exact_six_via_only_refill_gain_mm2": 0.0,
+        "exact_six_via_only_refill_loss_beyond_2nm_mm2": 0.0,
+        "exact_six_via_only_refill_gain_beyond_2nm_mm2": 0.0,
+        "rounding_envelope_nm": 2,
+        "template_uuid": "060b047c-d688-49da-9f40-03b3572d6506",
+        "template_area_mm2": 0.445513163929,
+        "merged_hole_disposition": "Exact native source board refilled after deleting only the six named vias; every other source object and zone definition retained. This captures local native merged-hole fillets without allowing arbitrary merged-hole area."
+      },
+      {
+        "layer": "In3.Cu",
+        "loss_mm2": 1.620985e-07,
+        "gain_mm2": 2.5688609554245,
+        "loss_beyond_2nm_boundary_mm2": 0.0,
+        "gain_outside_translated_isolated_templates_mm2": 0.0242875491195,
+        "exact_six_via_only_refill_loss_mm2": 0.0,
+        "exact_six_via_only_refill_gain_mm2": 0.0,
+        "exact_six_via_only_refill_loss_beyond_2nm_mm2": 0.0,
+        "exact_six_via_only_refill_gain_beyond_2nm_mm2": 0.0,
+        "rounding_envelope_nm": 2,
+        "template_uuid": "060b047c-d688-49da-9f40-03b3572d6506",
+        "template_area_mm2": 0.445513163929,
+        "merged_hole_disposition": "Exact native source board refilled after deleting only the six named vias; every other source object and zone definition retained. This captures local native merged-hole fillets without allowing arbitrary merged-hole area."
+      },
+      {
+        "layer": "In4.Cu",
+        "loss_mm2": 1.620985e-07,
+        "gain_mm2": 2.5688609554245,
+        "loss_beyond_2nm_boundary_mm2": 0.0,
+        "gain_outside_translated_isolated_templates_mm2": 0.0242875491195,
+        "exact_six_via_only_refill_loss_mm2": 0.0,
+        "exact_six_via_only_refill_gain_mm2": 0.0,
+        "exact_six_via_only_refill_loss_beyond_2nm_mm2": 0.0,
+        "exact_six_via_only_refill_gain_beyond_2nm_mm2": 0.0,
+        "rounding_envelope_nm": 2,
+        "template_uuid": "060b047c-d688-49da-9f40-03b3572d6506",
+        "template_area_mm2": 0.445513163929,
+        "merged_hole_disposition": "Exact native source board refilled after deleting only the six named vias; every other source object and zone definition retained. This captures local native merged-hole fillets without allowing arbitrary merged-hole area."
+      }
+    ],
+    "reference_plane_definitions_unchanged": true,
+    "oracle": "Frozen fafa board with only six named vias removed reproduces all three final reference-plane copper unions exactly"
+  },
+  "supplemental_In2_ground_fill": {
+    "status": "PASS BOUNDED SUPPLEMENTAL In2 GND FILL DISPOSITION",
+    "candidate_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+    "source_sha256": "fafa9c3f0efc570ab70c69d45ffb7bfc7e548dae520a391ed167540ffccf6c6a",
+    "audit_script_sha256": "a7b1db2f931c0cf57592df29d6a967a1cadaf7b576152727e24fe52b11f8341e",
+    "raw_loss_mm2": 0.00017473174,
+    "raw_gain_mm2": 4.468539664316,
+    "loss_beyond2nm_mm2": 0.0001706277525,
+    "loss_polygons": [
+      {
+        "area_mm2": 4.414e-09,
+        "bbox_mm": [
+          27.328231,
+          14.374444,
+          27.32844,
+          14.374499
+        ]
+      },
+      {
+        "area_mm2": 5.66095475e-05,
+        "bbox_mm": [
+          27.360431,
+          14.345698,
+          27.383276,
+          14.360964
+        ]
+      },
+      {
+        "area_mm2": 5.6626165e-05,
+        "bbox_mm": [
+          27.393646,
+          14.293273,
+          27.40186,
+          14.320224
+        ]
+      },
+      {
+        "area_mm2": 5.7387626e-05,
+        "bbox_mm": [
+          27.372267,
+          14.241171,
+          27.388325,
+          14.26793
+        ]
+      }
+    ],
+    "bound_region_mm": [
+      27.32,
+      14.23,
+      27.41,
+      14.38
+    ],
+    "ground_terminal_attachment_checks": [
+      {
+        "layer": "In1.Cu",
+        "all101_terminal_attachment_results_unchanged": true
+      },
+      {
+        "layer": "In2.Cu",
+        "all101_terminal_attachment_results_unchanged": true
+      },
+      {
+        "layer": "In3.Cu",
+        "all101_terminal_attachment_results_unchanged": true
+      },
+      {
+        "layer": "In4.Cu",
+        "all101_terminal_attachment_results_unchanged": true
+      }
+    ],
+    "reference_plane_terminal_checks": 303,
+    "disposition": "Only local native-fill fillets beside the actual FDCAN1_RX planar join change in supplemental In2 GND. All101 ground terminals retain identical broad-component attachment results on every filled layer, and all303 actual solid reference-plane attachments pass. The adjacent In3 reference is independently reproduced by the exact six-via-only refill proof; no new ordinary trace reference loss is allowed. In2 remains supplemental copper, not a claimed continuous reference plane.",
+    "limits": "Bounded native geometry and attachment evidence; not measured current, thermal or EMI certification.",
+    "carried_to_candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc"
+  },
+  "portable_guard_exclusions": {
+    "/workspace/shared/storm32-redesign/controller-r3s-p6/controller.kicad_prl": {
+      "snapshot_sha256": "0296f82c2ac48bd733df8fcb719058aa66d7acf2b97fab85c624165fa99a8142",
+      "reason": "Volatile KiCad UI cache only; all design inputs and tool bytes remain required"
+    }
+  },
+  "exact_R140_delta": {
+    "status": "PASS EXACT R140-ONLY DELTA",
+    "baseline_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+    "candidate_sha256": "cf16a6f5ceae65aad217e29eef23a60dbc8f15af743b363df03aa5a42c9c71dc",
+    "errors": [],
+    "packet_sha256": "005f96c34cf298fd3dd3265d2409cdb1343569c65b2c6c67aed890b4407ed97a",
+    "audit_script_sha256": "efa6db9da43fa366e0c6f9b3711f333fa9f1598a44828941edd312ae0be0a086",
+    "removed": [
+      {
+        "id": "2206629f-f38a-4ed0-803e-a8776f53f001",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.45,
+          7.2
+        ],
+        "end": [
+          33.5,
+          7.2
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "40770755-32b3-4f9e-9179-3c99e38a75d2",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          29.65,
+          3.4
+        ],
+        "end": [
+          33.45,
+          7.2
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "436a36c5-4691-43a4-90ed-72ed3329739e",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.5,
+          7.2
+        ],
+        "end": [
+          33.9,
+          7.6
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "ada97bc0-d665-4002-9b51-603af2d7b874",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.7
+        ],
+        "end": [
+          36.1,
+          9.9
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "ef7849a7-a432-487b-99bb-39ca830c62ba",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.6
+        ],
+        "end": [
+          33.9,
+          7.7
+        ],
+        "width_mm": 0.13
+      }
+    ],
+    "added": [
+      {
+        "id": "7fc28913-7b63-42a8-8e32-677c9969a590",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.65
+        ],
+        "end": [
+          33.9,
+          7.7
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "bd419a98-fdd8-4734-ac08-3ff693710cc7",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          29.65,
+          3.4
+        ],
+        "end": [
+          33.9,
+          7.65
+        ],
+        "width_mm": 0.13
+      },
+      {
+        "id": "c1aef5d8-c6d6-4032-bffd-a3171e47362f",
+        "net": "UART3_TX",
+        "layer": "B.Cu",
+        "start": [
+          33.9,
+          7.7
+        ],
+        "end": [
+          36.1,
+          9.9
+        ],
+        "width_mm": 0.13
+      }
+    ],
+    "all_other_native_semantics_unchanged": true,
+    "direct_pad_attachment_geometry_unchanged": true,
+    "unchanged_via_approaches": [
+      {
+        "uuid": "3700beb9-fb30-4158-9363-7b02564e3959",
+        "raw_loss_mm2": 0.0,
+        "raw_gain_mm2": 0.0,
+        "loss_beyond2nm_mm2": 0.0,
+        "gain_beyond2nm_mm2": 0.0
+      },
+      {
+        "uuid": "41ab89ba-cfeb-4e89-b863-b2d7297ecf91",
+        "raw_loss_mm2": 0.0,
+        "raw_gain_mm2": 0.0,
+        "loss_beyond2nm_mm2": 0.0,
+        "gain_beyond2nm_mm2": 0.0
+      }
+    ],
+    "filled_zone_deltas": [
+      {
+        "uuid": "fd6f2a6a-07ab-4a21-92b8-dca77ecec809",
+        "layer": "In1.Cu",
+        "loss_mm2": 0.0,
+        "gain_mm2": 0.0
+      },
+      {
+        "uuid": "8abfeee1-ab61-4986-86a8-9d109dddd5c4",
+        "layer": "In2.Cu",
+        "loss_mm2": 0.0,
+        "gain_mm2": 0.0
+      },
+      {
+        "uuid": "0f13e94b-a608-4171-9c6a-01c6b6c50054",
+        "layer": "In3.Cu",
+        "loss_mm2": 0.0,
+        "gain_mm2": 0.0
+      },
+      {
+        "uuid": "069c777b-3ee1-4c6e-a501-56a54d95a395",
+        "layer": "In4.Cu",
+        "loss_mm2": 0.0,
+        "gain_mm2": 0.0
+      }
+    ],
+    "track_count": 3178,
+    "scope": "Exact bounded R140 delta; preserve every completed proof outside this run."
+  },
+  "qualification_carry_forward": {
+    "from_source_sha256": "3c80eba2e6dfd7161f875436aff8c64bcaee0ad8d6cc94a55b24bfc5e2014e47",
+    "qualification_sha256": "9dedb67152fe8a87b00efee14eb8b461511b9688169b67b7e6c038db9de88df1",
+    "unchanged_scopes": [
+      "All component and pad geometry",
+      "Every filled zone copper union and ground attachment",
+      "All via geometry and six named retirements",
+      "Exact USB/HSE/VCAP/buck/GND exceptions",
+      "Current/power rail geometry",
+      "All7 schematic sheets,405pins and normalized XML",
+      "Qualified VDDA/J162 local pad contexts"
+    ],
+    "pad_regression": "Fresh floor and nominal runs produce exact same835 pad-contact profiles; only total track count differs"
+  }
+}

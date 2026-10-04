@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+from pathlib import Path
+import json,hashlib,os,sys
+import pcbnew as p
+D=Path(__file__).resolve().parents[1];BASE=D/'review/historical-P2-via-inventory.json';OUT=D/'review/approved-small-vias.json';d=json.loads(BASE.read_text());b=p.LoadBoard(str(D/'controller.kicad_pcb'));actual={v.m_Uuid.AsString():v for v in b.GetTracks() if isinstance(v,p.PCB_VIA) and v.GetWidth(p.F_Cu)<400000};assert len(actual)==7 and set(actual)=={x['uuid'] for x in d['small_vias']}
+for row in d['small_vias']:
+ v=actual[row['uuid']];assert v.GetNetname()==row['net'];assert [p.ToMM(v.GetPosition().x),p.ToMM(v.GetPosition().y)]==row['xy_mm'];assert p.ToMM(v.GetWidth(p.F_Cu))==row['diameter_mm']==.35 and p.ToMM(v.GetDrillValue())==row['drill_mm']==.2;assert v.TopLayer()==p.F_Cu and v.BottomLayer()==p.B_Cu
+sha=lambda q:hashlib.sha256(q.read_bytes()).hexdigest();d['approval_scope']='Exactly these seven native vias only; no other via below0.40mm diameter is accepted. Published JLC capabilities support this geometry; select the documented small-via process and confirm it in the order CAM files.';d['P2_record_sha256']=sha(BASE);d['board_sha256']=sha(D/'controller.kicad_pcb');d['project_sha256']=sha(D/'controller.kicad_pro');d['required_project_rules']['min_track_width']=.13;d['P3_scope']='All seven previously accepted small-via UUIDs, nets, positions, diameters and drills are unchanged. Only the minimum trace-width rule strengthens0.100 to0.130mm; trace spacing separately strengthens to0.160mm.';OUT.write_text(json.dumps(d,indent=2)+'\n');print('Verified seven unchanged0.35/0.20 vias and refreshed exact current source hashes');sys.stdout.flush();os._exit(0)

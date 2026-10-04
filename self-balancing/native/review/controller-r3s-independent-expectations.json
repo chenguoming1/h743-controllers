@@ -1,0 +1,879 @@
+{
+  "source": "Independently transcribed from visually inspected recovered seven-page PDF and canonical MCU pin map, not generated from reconstructed native netlist. MPN identities checked separately; sourcing codes are identities, not stock claims. Explicit reviewed power correction: replace D1/D2 with U13 TPS2116 and C39/C40/C41; expectations below were authored from TI pin table and selected automatic-mode contract, not copied from the new generated netmap.",
+  "date_utc": "2026-10-02",
+  "source_sha256": {
+    "recovered_7_page_pdf": "82b3916edd729383a4f88b0ade29926489426c2b9be6234502baa3d2d69ff5ac",
+    "canonical_100_pin_json": "3b5cffff3d8234ff6310e00a71447c090ae53bac53b17c976385c5826b0d090d",
+    "reattached_100_pin_csv": "e22db236903ed6d4d69bc165c3368017d4b6444db53ac57770aa71a2b20d235c",
+    "TPS2116_TI_datasheet": "5babd88afb84e2e65c9c0da23b75f85758c0c730e34102a0fb746ac9573ed1d5"
+  },
+  "intentional_local_subdivision": "MCU pin52 is FLASH_SCLK_RAW before R57; canonical logical signal FLASH_SCLK is after R57.",
+  "components": {
+    "U1": {
+      "1": null,
+      "2": null,
+      "3": null,
+      "4": null,
+      "5": null,
+      "6": "3V3_CORE",
+      "7": "EXT_SENSOR_INT",
+      "8": null,
+      "9": null,
+      "10": "GND",
+      "11": "3V3_CORE",
+      "12": "HSE_IN",
+      "13": "HSE_OUT",
+      "14": "NRST",
+      "15": "ADC1_RAW",
+      "16": "ADC2_RAW",
+      "17": null,
+      "18": null,
+      "19": "GND",
+      "20": "VDDA",
+      "21": "VDDA",
+      "22": "RPM_IN",
+      "23": "ADC3_RAW",
+      "24": "UART2_TX",
+      "25": "UART2_RX",
+      "26": "GND",
+      "27": "3V3_CORE",
+      "28": "IMU_CS",
+      "29": "IMU_SCLK",
+      "30": "IMU_MISO",
+      "31": "IMU_MOSI",
+      "32": "IMU_INT",
+      "33": "HOST_RUN_RAW",
+      "34": "LED_DATA",
+      "35": "BUZZER_CTRL",
+      "36": "MOTOR_OK_BUF",
+      "37": null,
+      "38": null,
+      "39": "OUT1",
+      "40": "USB_PRESENT_n",
+      "41": "OUT2",
+      "42": "USB_SOURCE_DISABLE",
+      "43": "OUT3",
+      "44": "OUT4",
+      "45": "STACK_5V_GOOD",
+      "46": null,
+      "47": null,
+      "48": "VCAP",
+      "49": "GND",
+      "50": "3V3_CORE",
+      "51": "FLASH_CS",
+      "52": "FLASH_SCLK_RAW",
+      "53": "FLASH_MISO",
+      "54": "FLASH_MOSI",
+      "55": "UART3_TX",
+      "56": "UART3_RX",
+      "57": null,
+      "58": null,
+      "59": "OUT7",
+      "60": "OUT8",
+      "61": "AUX_PD14",
+      "62": null,
+      "63": "OUT5",
+      "64": "OUT6",
+      "65": "AUX_PC8",
+      "66": "AUX_PC9",
+      "67": null,
+      "68": "UART1_TX",
+      "69": "UART1_RX",
+      "70": "USB_DM_MCU",
+      "71": "USB_DP_MCU",
+      "72": "SWDIO",
+      "73": "VCAP",
+      "74": "GND",
+      "75": "3V3_CORE",
+      "76": "SWCLK",
+      "77": "EXT_SPI_CS",
+      "78": "UART4_TX",
+      "79": "UART4_RX",
+      "80": null,
+      "81": "FDCAN1_RX",
+      "82": "FDCAN1_TX",
+      "83": null,
+      "84": null,
+      "85": null,
+      "86": null,
+      "87": null,
+      "88": null,
+      "89": "EXT_SPI_SCK",
+      "90": "EXT_SPI_MISO",
+      "91": "EXT_SPI_MOSI",
+      "92": null,
+      "93": null,
+      "94": "BOOT0",
+      "95": "EXT_I2C_SCL",
+      "96": "EXT_I2C_SDA",
+      "97": "MOTOR_TX_BUF",
+      "98": "HOST_TX_RAW",
+      "99": "GND",
+      "100": "3V3_CORE"
+    },
+    "U2": {
+      "1": "GND",
+      "2": "VLOGIC_IN",
+      "3": "VLOGIC_IN",
+      "4": "GND",
+      "5": "GND",
+      "6": "3V3_CORE",
+      "7": "BUCK_SW",
+      "8": null,
+      "9": "GND"
+    },
+    "U3": {
+      "1": "IMU_MISO",
+      "2": null,
+      "3": null,
+      "4": "IMU_INT",
+      "5": "IMU_3V3",
+      "6": "GND",
+      "7": "GND",
+      "8": "IMU_3V3",
+      "9": "GND",
+      "10": null,
+      "11": null,
+      "12": "IMU_CS",
+      "13": "IMU_SCLK",
+      "14": "IMU_MOSI"
+    },
+    "U4": {
+      "1": "USB_DM_CONN",
+      "2": "GND",
+      "3": "USB_DP_CONN",
+      "4": "USB_DP_ESD",
+      "5": "VLOGIC_IN",
+      "6": "USB_DM_ESD"
+    },
+    "U6": {
+      "1": "USB_VBUS",
+      "2": "GND",
+      "3": "USB_SWITCH_ON",
+      "4": "USB_SLEW_CT",
+      "5": null,
+      "6": "USB_VBUS_SLEW"
+    },
+    "U8": {
+      "1": "STACK_5V_GOOD",
+      "2": "GND",
+      "3": "STACK_5V_DIV",
+      "4": "GND",
+      "5": "3V3_CORE",
+      "6": null
+    },
+    "U10": {
+      "1": "MOTOR_TX_LINK",
+      "2": "GND",
+      "3": "MOTOR_OK_LINK",
+      "4": "MOTOR_OK_BUF",
+      "5": "3V3_CORE",
+      "6": "MOTOR_TX_BUF"
+    },
+    "U11": {
+      "1": "FLASH_CS",
+      "2": "FLASH_MISO",
+      "3": "FLASH_WP_n",
+      "4": "GND",
+      "5": "FLASH_MOSI",
+      "6": "FLASH_SCLK",
+      "7": "FLASH_HOLD_n",
+      "8": "3V3_CORE",
+      "9": "GND"
+    },
+    "U12": {
+      "1": "GND",
+      "2": "NRST",
+      "3": "3V3_CORE"
+    },
+    "Q1": {
+      "1": "USB_VBUS",
+      "2": "GND",
+      "3": "USB_PRESENT_n"
+    },
+    "Q2": {
+      "1": "USB_SOURCE_DISABLE",
+      "2": "GND",
+      "3": "USB_SWITCH_ON"
+    },
+    "J2": {
+      "A1": "GND",
+      "A4": "USB_VBUS",
+      "A5": "USB_CC1",
+      "A6": "USB_DP_CONN",
+      "A7": "USB_DM_CONN",
+      "A8": null,
+      "A9": "USB_VBUS",
+      "A12": "GND",
+      "B1": "GND",
+      "B4": "USB_VBUS",
+      "B5": "USB_CC2",
+      "B6": "USB_DP_CONN",
+      "B7": "USB_DM_CONN",
+      "B8": null,
+      "B9": "USB_VBUS",
+      "B12": "GND",
+      "S1": "GND"
+    },
+    "J3": {
+      "1": "+5V_STACK",
+      "2": "GND",
+      "3": "HOST_TX_LINK",
+      "4": "MOTOR_TX_LINK",
+      "5": "HOST_RUN_LINK",
+      "6": "MOTOR_OK_LINK",
+      "MP": "GND"
+    },
+    "J4": {
+      "1": "3V3_CORE",
+      "2": "GND",
+      "3": "EXT_SPI_SCK",
+      "4": "EXT_SPI_MOSI",
+      "5": "EXT_SPI_MISO",
+      "6": "EXT_SPI_CS",
+      "7": "EXT_SENSOR_INT",
+      "8": "GND",
+      "MP": "GND"
+    },
+    "J5": {
+      "1": "+5V_STACK",
+      "2": "GND",
+      "3": "UART4_TX",
+      "4": "UART4_RX",
+      "MP": "GND"
+    },
+    "TP1": {
+      "1": "FLASH_CS"
+    },
+    "D4": {
+      "1": "USB_VBUS",
+      "2": "GND"
+    },
+    "L1": {
+      "1": "BUCK_SW",
+      "2": "3V3_CORE"
+    },
+    "X1": {
+      "1": "HSE_IN",
+      "2": "HSE_XOUT"
+    },
+    "R1": {
+      "1": "3V3_CORE",
+      "2": "VDDA"
+    },
+    "R2": {
+      "1": "3V3_CORE",
+      "2": "IMU_3V3"
+    },
+    "R3": {
+      "1": "BOOT0",
+      "2": "GND"
+    },
+    "R4": {
+      "1": "3V3_CORE",
+      "2": "NRST"
+    },
+    "R5": {
+      "1": "USB_CC1",
+      "2": "GND"
+    },
+    "R6": {
+      "1": "USB_CC2",
+      "2": "GND"
+    },
+    "R7": {
+      "1": "USB_DM_ESD",
+      "2": "USB_DM_MCU"
+    },
+    "R8": {
+      "1": "USB_DP_ESD",
+      "2": "USB_DP_MCU"
+    },
+    "R9": {
+      "1": "3V3_CORE",
+      "2": "EXT_I2C_SCL"
+    },
+    "R10": {
+      "1": "3V3_CORE",
+      "2": "EXT_I2C_SDA"
+    },
+    "R11": {
+      "1": "3V3_CORE",
+      "2": "USB_PRESENT_n"
+    },
+    "R12": {
+      "1": "USB_VBUS",
+      "2": "GND"
+    },
+    "R13": {
+      "1": "3V3_CORE",
+      "2": "IMU_CS"
+    },
+    "R42": {
+      "1": "USB_VBUS",
+      "2": "USB_SWITCH_ON"
+    },
+    "R43": {
+      "1": "USB_SOURCE_DISABLE",
+      "2": "GND"
+    },
+    "R44": {
+      "1": "+5V_STACK",
+      "2": "STACK_5V_DIV"
+    },
+    "R45": {
+      "1": "STACK_5V_DIV",
+      "2": "GND"
+    },
+    "R46": {
+      "1": "3V3_CORE",
+      "2": "STACK_5V_GOOD"
+    },
+    "R48": {
+      "1": "MOTOR_TX_LINK",
+      "2": "GND"
+    },
+    "R49": {
+      "1": "MOTOR_OK_LINK",
+      "2": "GND"
+    },
+    "R50": {
+      "1": "HOST_RUN_RAW",
+      "2": "GND"
+    },
+    "R51": {
+      "1": "HOST_TX_RAW",
+      "2": "HOST_TX_LINK"
+    },
+    "R52": {
+      "1": "HOST_RUN_RAW",
+      "2": "HOST_RUN_LINK"
+    },
+    "R53": {
+      "1": "3V3_CORE",
+      "2": "FLASH_CS"
+    },
+    "R54": {
+      "1": "3V3_CORE",
+      "2": "FLASH_WP_n"
+    },
+    "R55": {
+      "1": "3V3_CORE",
+      "2": "FLASH_HOLD_n"
+    },
+    "R56": {
+      "1": "3V3_CORE",
+      "2": "EXT_SPI_CS"
+    },
+    "R57": {
+      "1": "FLASH_SCLK_RAW",
+      "2": "FLASH_SCLK"
+    },
+    "R58": {
+      "1": "HSE_OUT",
+      "2": "HSE_XOUT"
+    },
+    "C2": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C3": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C6": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C7": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C8": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C9": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C25": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C26": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C29": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C31": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C32": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C33": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C38": {
+      "1": "3V3_CORE",
+      "2": "GND"
+    },
+    "C1": {
+      "1": "VLOGIC_IN",
+      "2": "GND"
+    },
+    "C24": {
+      "1": "VLOGIC_IN",
+      "2": "GND"
+    },
+    "C10": {
+      "1": "VDDA",
+      "2": "GND"
+    },
+    "C11": {
+      "1": "VDDA",
+      "2": "GND"
+    },
+    "C12": {
+      "1": "IMU_3V3",
+      "2": "GND"
+    },
+    "C13": {
+      "1": "IMU_3V3",
+      "2": "GND"
+    },
+    "C14": {
+      "1": "IMU_3V3",
+      "2": "GND"
+    },
+    "C36": {
+      "1": "VCAP",
+      "2": "GND"
+    },
+    "C37": {
+      "1": "VCAP",
+      "2": "GND"
+    },
+    "C4": {
+      "1": "USB_VBUS",
+      "2": "GND"
+    },
+    "C5": {
+      "1": "USB_SLEW_CT",
+      "2": "GND"
+    },
+    "C15": {
+      "1": "NRST",
+      "2": "GND"
+    },
+    "C16": {
+      "1": "USB_PRESENT_n",
+      "2": "GND"
+    },
+    "C34": {
+      "1": "HSE_IN",
+      "2": "GND"
+    },
+    "C35": {
+      "1": "HSE_XOUT",
+      "2": "GND"
+    },
+    "J101": {
+      "1": "GND"
+    },
+    "J102": {
+      "1": "+5V_STACK"
+    },
+    "J103": {
+      "1": "UART1_TX"
+    },
+    "J104": {
+      "1": "UART1_RX"
+    },
+    "J105": {
+      "1": "GND"
+    },
+    "J106": {
+      "1": "+5V_STACK"
+    },
+    "J107": {
+      "1": "UART2_TX"
+    },
+    "J108": {
+      "1": "UART2_RX"
+    },
+    "J109": {
+      "1": "GND"
+    },
+    "J110": {
+      "1": "+5V_STACK"
+    },
+    "J111": {
+      "1": "UART3_TX"
+    },
+    "J112": {
+      "1": "UART3_RX"
+    },
+    "J113": {
+      "1": "GND"
+    },
+    "J114": {
+      "1": "+5V_STACK"
+    },
+    "J115": {
+      "1": "UART4_TX"
+    },
+    "J116": {
+      "1": "UART4_RX"
+    },
+    "J117": {
+      "1": "GND"
+    },
+    "J118": {
+      "1": "3V3_CORE"
+    },
+    "J119": {
+      "1": "EXT_I2C_SCL"
+    },
+    "J120": {
+      "1": "EXT_I2C_SDA"
+    },
+    "J121": {
+      "1": "EXT_SENSOR_INT"
+    },
+    "J122": {
+      "1": "GND"
+    },
+    "J123": {
+      "1": "GND"
+    },
+    "J124": {
+      "1": "3V3_CORE"
+    },
+    "J125": {
+      "1": "EXT_SPI_SCK"
+    },
+    "J126": {
+      "1": "EXT_SPI_MISO"
+    },
+    "J127": {
+      "1": "EXT_SPI_MOSI"
+    },
+    "J128": {
+      "1": "EXT_SPI_CS"
+    },
+    "J129": {
+      "1": "GND"
+    },
+    "J130": {
+      "1": "3V3_CORE"
+    },
+    "J131": {
+      "1": "FDCAN1_RX"
+    },
+    "J132": {
+      "1": "FDCAN1_TX"
+    },
+    "J133": {
+      "1": "GND"
+    },
+    "J134": {
+      "1": "OUT1"
+    },
+    "J135": {
+      "1": "OUT2"
+    },
+    "J136": {
+      "1": "OUT3"
+    },
+    "J137": {
+      "1": "OUT4"
+    },
+    "J138": {
+      "1": "GND"
+    },
+    "J139": {
+      "1": "OUT5"
+    },
+    "J140": {
+      "1": "OUT6"
+    },
+    "J141": {
+      "1": "OUT7"
+    },
+    "J142": {
+      "1": "OUT8"
+    },
+    "J143": {
+      "1": "GND"
+    },
+    "J144": {
+      "1": "+5V_STACK"
+    },
+    "J145": {
+      "1": "HOST_TX_LINK"
+    },
+    "J146": {
+      "1": "MOTOR_TX_LINK"
+    },
+    "J147": {
+      "1": "HOST_RUN_LINK"
+    },
+    "J148": {
+      "1": "MOTOR_OK_LINK"
+    },
+    "J149": {
+      "1": "GND"
+    },
+    "J150": {
+      "1": "3V3_CORE"
+    },
+    "J151": {
+      "1": "SWDIO"
+    },
+    "J152": {
+      "1": "SWCLK"
+    },
+    "J153": {
+      "1": "NRST"
+    },
+    "J154": {
+      "1": "BOOT0"
+    },
+    "J155": {
+      "1": "GND"
+    },
+    "J156": {
+      "1": "3V3_CORE"
+    },
+    "J157": {
+      "1": "ADC1_RAW"
+    },
+    "J158": {
+      "1": "ADC2_RAW"
+    },
+    "J159": {
+      "1": "ADC3_RAW"
+    },
+    "J160": {
+      "1": "RPM_IN"
+    },
+    "J161": {
+      "1": "GND"
+    },
+    "J162": {
+      "1": "3V3_CORE"
+    },
+    "J163": {
+      "1": "LED_DATA"
+    },
+    "J164": {
+      "1": "BUZZER_CTRL"
+    },
+    "J165": {
+      "1": "AUX_PC8"
+    },
+    "J166": {
+      "1": "AUX_PC9"
+    },
+    "J167": {
+      "1": "AUX_PD14"
+    },
+    "U13": {
+      "1": "GND",
+      "2": "VLOGIC_IN",
+      "3": "+5V_STACK",
+      "4": "GND",
+      "5": "GND",
+      "6": "USB_VBUS_SLEW",
+      "7": "VLOGIC_IN",
+      "8": null
+    },
+    "C39": {
+      "1": "+5V_STACK",
+      "2": "GND"
+    },
+    "C40": {
+      "1": "USB_VBUS_SLEW",
+      "2": "GND"
+    },
+    "C41": {
+      "1": "VLOGIC_IN",
+      "2": "GND"
+    }
+  },
+  "value_prefixes": {
+    "R1": "10R",
+    "R2": "10R",
+    "R3": "10k",
+    "R4": "10k",
+    "R5": "5.1k",
+    "R6": "5.1k",
+    "R7": "0R",
+    "R8": "0R",
+    "R9": "4.7k",
+    "R10": "4.7k",
+    "R11": "10k",
+    "R12": "10k",
+    "R13": "10k",
+    "R42": "47k",
+    "R43": "10k",
+    "R44": "47k",
+    "R45": "4.7k",
+    "R46": "10k",
+    "R48": "10k",
+    "R49": "10k",
+    "R50": "10k",
+    "R51": "33R",
+    "R52": "33R",
+    "R53": "10k",
+    "R54": "10k",
+    "R55": "10k",
+    "R56": "10k",
+    "R57": "33R",
+    "R58": "0R",
+    "C1": "10uF",
+    "C2": "22uF",
+    "C3": "100nF",
+    "C4": "1uF",
+    "C5": "10nF",
+    "C6": "100nF",
+    "C7": "100nF",
+    "C8": "100nF",
+    "C9": "100nF",
+    "C10": "1uF",
+    "C11": "100nF",
+    "C12": "100nF",
+    "C13": "2.2uF",
+    "C14": "10nF",
+    "C15": "100nF",
+    "C16": "100nF",
+    "C24": "100nF",
+    "C25": "100nF",
+    "C26": "10uF",
+    "C29": "100nF",
+    "C31": "100nF",
+    "C32": "100nF",
+    "C33": "1uF",
+    "C34": "18pF",
+    "C35": "18pF",
+    "C36": "2.2uF",
+    "C37": "2.2uF",
+    "C38": "100nF",
+    "L1": "3.3uH",
+    "X1": "8MHz",
+    "C39": "2.2uF",
+    "C40": "2.2uF",
+    "C41": "10uF",
+    "Q2": "DMN2310UW-7"
+  },
+  "selected_parts": {
+    "U1": [
+      "STM32H743VIT6",
+      "C114409"
+    ],
+    "U2": [
+      "TPS62162DSGR",
+      "C40256"
+    ],
+    "U3": [
+      "ICM-42688-P",
+      "C1850418"
+    ],
+    "U4": [
+      "USBLC6-2SC6",
+      "C7519"
+    ],
+    "U6": [
+      "TPS22918DBVR",
+      "C131941"
+    ],
+    "U8": [
+      "TPS3700DDCR",
+      "C33002"
+    ],
+    "U10": [
+      "SN74LVC2G17DBVR",
+      "C10429"
+    ],
+    "U11": [
+      "W25N01GVZEIG",
+      "C88868"
+    ],
+    "U12": [
+      "TLV803EA29DBZR",
+      "C1852114"
+    ],
+    "L1": [
+      "VLS3012HBX-3R3M",
+      "C404495"
+    ],
+    "X1": [
+      "A308000003",
+      "C409345"
+    ],
+    "J2": [
+      "TYPE-C-31-M-12",
+      "C165948"
+    ],
+    "J3": [
+      "XDWF-0910-06P",
+      "C7527621"
+    ],
+    "J4": [
+      "SM08B-SRSS-TB(LF)(SN)",
+      "C160407"
+    ],
+    "J5": [
+      "SM04B-SRSS-TB(LF)(SN)",
+      "C160404"
+    ],
+    "U13": [
+      "TPS2116DRLR",
+      "C3235557"
+    ],
+    "C39": [
+      "CL10A225KO8NNNC",
+      "C23630"
+    ],
+    "C40": [
+      "CL10A225KO8NNNC",
+      "C23630"
+    ],
+    "C41": [
+      "CL21A106KAYNNNE",
+      "C15850"
+    ],
+    "Q2": [
+      "DMN2310UW-7",
+      "C7264627"
+    ],
+    "R43": [
+      "0603WAF1002T5E",
+      "C25804"
+    ]
+  },
+  "absent_obsolete_refs": [
+    "D3",
+    "C22",
+    "C23",
+    "U7",
+    "U9",
+    "D1",
+    "D2",
+    "U14"
+  ],
+  "power_correction": {
+    "date_utc": "2026-10-02T10:45:00Z",
+    "source": "https://www.ti.com/lit/ds/symlink/tps2116.pdf",
+    "mode": "MODE=GND,PR1=GND;automatic highest-voltage selection",
+    "preserved": "Entire original MCU/interface map, U6 source gating, recovery, sensing, buck, IMU, NAND and connector contracts"
+  }
+}

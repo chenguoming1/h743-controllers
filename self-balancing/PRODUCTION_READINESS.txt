@@ -1,0 +1,65 @@
+R3-S6-P6 production instructions
+
+Use only the final P6 release files and their SHA-256 manifest. All earlier
+fabrication packages are superseded. P5 contained confirmed narrow copper
+attachments and must not be fabricated.
+
+PCB selections
+- 38 x 38 mm, six layers, nominal 1.6 mm, JLC06161H-3313.
+  Published finished thickness: 1.54 mm +/-10%.
+- 1 oz outer / 0.5 oz inner copper; ENIG; green mask; white silk.
+- Controlled-impedance USB pairs: 90 ohms, 0.1392 mm width and 0.1600 mm gap,
+  front referenced to L2 and rear referenced to L5. Confirm the named stack
+  and impedance requirement in the manufacturer's CAM production files.
+- Select the documented 0.20 mm drill / small-via process. Seven vias use
+  0.35 mm copper diameter; all other vias are at least 0.40 mm.
+- Epoxy-fill, copper-cap and mask-cover the 0.20 mm vias. Keep the USB shell
+  component slots and the NPTH mounting/locating holes open. Confirm this
+  treatment in CAM. The selected process may affect the quote.
+- Preserve the four plated USB shell slots: two 0.60 x 1.40 mm and two
+  0.60 x 1.70 mm. Do not replace them with round holes.
+
+Before authorizing assembly
+- Use Standard double-sided PCBA with an approved carrier, tooling and
+  fiducials. Determine connector support/fixture needs during production
+  engineering. A newer live J3 catalog capture had no fixture notice; an
+  older cached warning is not a confirmed mandatory charge. Preserve
+  connector mouth, nozzle and depaneling access.
+- Review the final supplier TWO-FACE 2D production placement drawing.
+  Match physical pin-1/cathode marks to native numbered pads and the exact
+  79-row corrected CPL. A symmetric outline fit or a generic 3D red dot
+  is not a polarity proof. The native audit CPL is reference data; submit
+  JLC_CPL.csv, which preserves the user's supplier corrections.
+- Include and inspect soldering all four J2 S1 plated shell anchors.
+  Their paste openings are intentionally absent; contacts-only reflow
+  does not establish mechanical shell joints.
+
+Stencil request for production engineering
+JLC regenerates stencil data, so enter these requirements in order remarks:
+Review a top-side 0.12 mm base stencil with a 0.10 mm U13 region and a
+0.10 mm bottom stencil. Preserve U2's eight 0.50 x 0.25 mm R0.05 lead
+apertures and two 0.90 x 0.70 mm R0.05 exposed-pad windows. Preserve U11's
+four 1.37 x 1.73 mm R0.25 exposed-pad windows. Do not replace split windows
+with full exposed-pad openings. Confirm the actual step boundary, nearby
+aperture clearance and deposited volumes, or identify a qualified
+alternative for approval. This is a feasible review proposal, not an
+already-approved stencil. Inspect the hidden solder joints.
+
+First article
+Use current-limited initial power and inspect shorts/polarity first. Test
+rails, source switching, HSE, USB, IMU, NAND and external interfaces. Verify
+the actual J3 harness cavity-to-pad mapping before applying power. Validate
+thermal loading, connector/stack access and the required USB attach/current
+firmware policy. Compilation alone is not firmware or flight qualification.
+
+These notes specify production requirements. They are not an order, supplier
+production approval, measured impedance certificate or hardware test result.
+
+Primary process references
+https://jlcpcb.com/impedance
+https://jlcpcb.com/capabilities/Capabilities
+https://jlcpcb.com/help/article/pcb-via-covering
+https://jlcpcb.com/help/article/smt-stencil-data-prepared-for-smt-orders
+https://jlcpcb.com/resources/jlcpcb-stencil
+https://jlcpcb.com/help/article/pcb-assembly-faqs-part-2
+https://jlcpcb.com/help/article/panelizing-your-pcb-for-assembly
