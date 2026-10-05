@@ -1,113 +1,41 @@
 {
-  "baseline_commit": "49f0dc7eff8898f60f018e8f3afb51b441e74d49",
-  "changed_files": [
-    "storage.kicad_sch",
-    "controller.kicad_sch",
-    "peripherals.kicad_sch",
-    "clock-reset.kicad_sch",
-    "power.kicad_sch",
-    "library/power.kicad_sym"
+  "status": "CORRECTED AND VERIFIED; supersedes the original KiCad9-only readability validation",
+  "date_utc": "2026-10-05",
+  "base_commit": "84e0caa5466f805946e9f0449e3c47c5e3318447",
+  "erroneous_readability_pr": 3,
+  "kicad_version": "10.0.6",
+  "root_cause": "C33 supply wire from (124.46,66.04) to (124.46,130.81) passed through R53 pin2 and the FLASH_CS wire junction, bypassing the pull-up and shorting FLASH_CS to 3V3_CORE. Prior KiCad9 export did not resolve the interior contacts; relying on it and endpoint-only connectivity checks missed a real geometry error.",
+  "repair": "Only the offending vertical wire is replaced by three orthogonal segments via x=110.49 mm, away from R53 and its FLASH_CS node.",
+  "changed_native_files": [
+    "storage.kicad_sch"
   ],
-  "component_metadata_identical": true,
+  "non_wire_storage_objects_exactly_preserved": true,
+  "canonical_named_nets_equal_original_baseline": true,
+  "named_net_count": 121,
   "component_count": 147,
-  "canonical_net_pin_sets_identical": true,
-  "net_count": 121,
-  "schematic_statistics": {
-    "source": {
-      "storage.kicad_sch": {
-        "wire": 24,
-        "global_label": 18,
-        "label": 6,
-        "junction": 0
-      },
-      "controller.kicad_sch": {
-        "wire": 104,
-        "global_label": 88,
-        "label": 0,
-        "junction": 0
-      },
-      "peripherals.kicad_sch": {
-        "wire": 46,
-        "global_label": 45,
-        "label": 0,
-        "junction": 0
-      },
-      "side-sockets.kicad_sch": {
-        "wire": 21,
-        "global_label": 21,
-        "label": 0,
-        "junction": 0
-      },
-      "edge-pads.kicad_sch": {
-        "wire": 67,
-        "global_label": 67,
-        "label": 0,
-        "junction": 0
-      },
-      "clock-reset.kicad_sch": {
-        "wire": 19,
-        "global_label": 16,
-        "label": 3,
-        "junction": 0
-      },
-      "power.kicad_sch": {
-        "wire": 99,
-        "global_label": 66,
-        "label": 27,
-        "junction": 0
-      }
+  "checks": {
+    "current-main": {
+      "erc": 2,
+      "copper_drc": 0,
+      "unconnected": 0,
+      "schematic_parity": 4
     },
-    "edit": {
-      "storage.kicad_sch": {
-        "wire": 33,
-        "global_label": 7,
-        "label": 3,
-        "junction": 6
-      },
-      "controller.kicad_sch": {
-        "wire": 125,
-        "global_label": 62,
-        "label": 0,
-        "junction": 23
-      },
-      "peripherals.kicad_sch": {
-        "wire": 66,
-        "global_label": 23,
-        "label": 0,
-        "junction": 10
-      },
-      "side-sockets.kicad_sch": {
-        "wire": 21,
-        "global_label": 21,
-        "label": 0,
-        "junction": 0
-      },
-      "edge-pads.kicad_sch": {
-        "wire": 67,
-        "global_label": 67,
-        "label": 0,
-        "junction": 0
-      },
-      "clock-reset.kicad_sch": {
-        "wire": 27,
-        "global_label": 5,
-        "label": 1,
-        "junction": 4
-      },
-      "power.kicad_sch": {
-        "wire": 143,
-        "global_label": 19,
-        "label": 12,
-        "junction": 25
-      }
+    "corrected-main": {
+      "erc": 0,
+      "copper_drc": 0,
+      "unconnected": 0,
+      "schematic_parity": 0
     }
   },
-  "pcb_sha256": "89886cf0ecfdb62a90a56810d75ac765d837435076423a0c173a33a3647a4579",
-  "pcb_bytes_unchanged": true,
-  "validation_version": "KiCad 9.0.2",
-  "configured_erc_violations_before": 0,
-  "configured_erc_violations_after": 0,
-  "filter_enabled_erc_before": 0,
-  "filter_enabled_erc_after": 0,
-  "kicad10_verification": "Not run; later Mac-only rule/filter changes are not incorporated or overwritten."
+  "all_seven_sheets_geometry_contact_audit": {
+    "other_net_pin_in_wire_interior": 0,
+    "other_net_collinear_or_endpoint_on_wire_contacts": 0,
+    "unused_pins_included": true
+  },
+  "pcb_sha256_before": "8c368734e6bc9dcd3cb1e7e1e9f567496161012585981a712f24d933e386cefa",
+  "pcb_sha256_after": "8c368734e6bc9dcd3cb1e7e1e9f567496161012585981a712f24d933e386cefa",
+  "storage_sha256_before": "bc2e6b426b41a2c437b19430197d99ad682b3a44bdda6bf9634064e424999c45",
+  "storage_sha256_after": "ae99aac89cf4a142356305fdc61ae9ada507ca8ec8591443bbffa5301e95892e",
+  "visual_review": "Corrected storage page inspected; remaining six pages unchanged from published layout.",
+  "scope": "No PCB update, project/rule change, symbol metadata change, component movement, footprint change, or merge."
 }
