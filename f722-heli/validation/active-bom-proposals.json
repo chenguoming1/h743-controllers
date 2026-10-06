@@ -1,0 +1,2049 @@
+{
+  "schema_version": 1,
+  "project": "F722-HELI",
+  "prepared_date_utc": "2026-10-04",
+  "prepared_utc": "2026-10-04T19:14:45.956276+00:00",
+  "source_manifest": "validation/circuit-manifest.json",
+  "source_manifest_sha256": "2ad33673c52965e287c1cd58e7f0a10544d7a37a3c056a4d8ed53cc06a057d4c",
+  "passive_proposals": "validation/passive-bom-proposals.json",
+  "passive_proposals_sha256": "8975ee61dde8dbd5be96a2adb02dda1a2d6fb96f55d8a11bb858faa3a03baa6e",
+  "stage": "prototype procurement proposals; NOT fabrication/flight qualification",
+  "scope": "ICs, protection/TVS diodes, LEDs, transistors, connectors, HSE crystal and BOOT switch. All 107 passive references are covered separately. Bare test pads and PWR_FLAG symbols are excluded from purchasable parts. No CAD changes or orders by this file.",
+  "global_caveats": [
+    "Inventory timestamps retain the original same-day observation; earlier evidence was reused rather than falsely relabeled as a fresh check. Stock is not reserved. Recheck exact manufacturer, suffix, available quantity and assembly eligibility at quote/order time.",
+    "A distributor listing with the correct manufacturer establishes catalog identity, not independent authentication of a future lot or authorized-distributor chain. Obtain traceability when procuring. No similarly named alternative manufacturer is an approved substitute.",
+    "Null stock means unknown/unverified, not zero. Null JLC code means no verified JLC procurement SKU. Samtec connectors require manual THT procurement/consignment and are not included in an automated JLC SMT order.",
+    "Footprint metadata preserves the current native design. Final native pin-to-pad parity, CPL polarity/rotation, mask/paste, assembler DFM and all physical bring-up remain required.",
+    "LED physical cathode-to-KiCad-pad-1 mapping must be preserved even if supplier documentation uses opposite terminal numbering. Low-current brightness has not been physically qualified."
+  ],
+  "coverage": {
+    "source_manifest_entries_including_nonphysical": 159,
+    "physical_manifest_entries": 153,
+    "excluded_passive_references": 107,
+    "excluded_bare_testpads": 5,
+    "excluded_nonphysical_symbols": 6,
+    "manifest_active_component_references": 41,
+    "proposed_total_references": 41,
+    "groups": 25,
+    "jlc_identified_references": 34,
+    "manual_tht_references": 7,
+    "missing_refs": [],
+    "additional_refs": [],
+    "duplicate_refs": [],
+    "overlap_with_passive_refs": []
+  },
+  "parts": [
+    {
+      "refs": [
+        "U1"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "STMicroelectronics",
+      "mpn": "STM32F722RET6",
+      "jlcpcb_lcsc_code": "C118207",
+      "package": "LQFP-64, 10x10x1.4 mm, 0.5 mm pitch",
+      "proposed_footprint": "F722_Heli:LQFP-64_10x10mm_P0.5mm",
+      "manifest_entries": [
+        {
+          "ref": "U1",
+          "value": "STM32F722RET6",
+          "footprint": "F722_Heli:LQFP-64_10x10mm_P0.5mm",
+          "mpn": "STM32F722RET6",
+          "pins": {
+            "7": "NRST",
+            "60": "BOOT0",
+            "5": "HSE_IN",
+            "6": "HSE_OUT",
+            "9": "ADC_BEC",
+            "10": "ADC_BUS",
+            "37": "PORT_B_RX_MCU",
+            "38": "PORT_B_TX_MCU",
+            "3": "LED_GREEN_K",
+            "4": "LED_RED_K",
+            "30": "VCAP",
+            "1": "+3V3_CORE",
+            "13": "+3V3_ANALOG",
+            "12": "GND",
+            "14": "PORT_A_RX_MCU",
+            "15": "PORT_A_TX_MCU",
+            "16": "RPM_MCU",
+            "17": "SBUS_MCU",
+            "20": "IMU_CS",
+            "21": "IMU_SCK",
+            "22": "IMU_MISO",
+            "23": "IMU_MOSI",
+            "43": "DSM_RX_MCU",
+            "44": "USB_N",
+            "45": "USB_P",
+            "46": "SWDIO",
+            "49": "SWCLK",
+            "50": "IMU_INT",
+            "25": "SERVO3_MCU",
+            "55": "TAIL_MCU",
+            "56": "SERVO1_MCU",
+            "57": "SERVO2_MCU",
+            "58": "ESC_MCU",
+            "61": "BARO_SCL",
+            "62": "BARO_SDA",
+            "28": "PORT_C_RX_MCU",
+            "29": "PORT_C_TX_MCU",
+            "33": "FLASH_CS",
+            "34": "FLASH_SCK",
+            "35": "FLASH_MISO",
+            "36": "FLASH_MOSI",
+            "19": "+3V3_CORE",
+            "32": "+3V3_CORE",
+            "48": "+3V3_CORE",
+            "64": "+3V3_CORE",
+            "18": "GND",
+            "31": "GND",
+            "47": "GND",
+            "63": "GND"
+          },
+          "sheet": "f722-heli"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "19:07:38\u201319:08:04",
+        "stock": 1682,
+        "available_order_qty": 1551,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data",
+        "identity_verified": {
+          "manufacturer": "STMicroelectronics",
+          "mpn": "STM32F722RET6",
+          "code": "C118207"
+        }
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "Active; volume production",
+        "source": "https://www.st.com/en/microcontrollers-microprocessors/stm32f722re.html",
+        "observed_date_utc": "2026-10-04",
+        "longevity_years": 10,
+        "longevity_start_date": "2026-01-01"
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/Stmicroelectronics-STM32F722RET6/C118207",
+        "https://www.st.com/en/microcontrollers-microprocessors/stm32f722re.html",
+        "https://www.st.com/resource/en/datasheet/stm32f722re.pdf",
+        "https://estore.st.com/en/stm32f722ret6-cpn.html"
+      ],
+      "evidence_documents": [],
+      "notes": "Exact JLC listing manufacturer is STMicroelectronics, not a similarly named third-party device. LQFP64, 10x10 mm body, 0.5 mm pitch, industrial -40 to +85 C. Preserve RET6 identity; RET6TR is a separate tape/reel ordering suffix, not silently substituted. Current live page quantities supersede the stale web-index 470/295 snapshot. ST eStore was out of stock at this review. Catalog identity is verified; authenticity/traceability of a future delivered lot cannot be certified from a web listing.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U2"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "TDK InvenSense",
+      "mpn": "ICM-42688-P",
+      "jlcpcb_lcsc_code": "C1850418",
+      "package": "LGA-14, 3.0x2.5 mm, 0.5 mm pitch",
+      "proposed_footprint": "F722_Heli:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y",
+      "manifest_entries": [
+        {
+          "ref": "U2",
+          "value": "ICM-42688-P",
+          "footprint": "F722_Heli:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y",
+          "mpn": "ICM-42688-P",
+          "pins": {
+            "1": "IMU_MISO",
+            "2": null,
+            "3": null,
+            "4": "IMU_INT",
+            "5": "+3V3_IMU",
+            "6": "GND",
+            "7": "GND",
+            "8": "+3V3_IMU",
+            "9": "GND",
+            "10": null,
+            "11": null,
+            "12": "IMU_CS",
+            "13": "IMU_SCK",
+            "14": "IMU_MOSI"
+          },
+          "sheet": "sensors"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:26\u201316:28",
+        "stock": 4642,
+        "available_order_qty": 4201,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC purchasing-panel observation recorded in sensor evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "Production",
+        "source": "https://www.invensense.tdk.com/en-us/products/6-axis/icm-42688-p",
+        "observed_date_utc": "2026-10-04"
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/ICM-42688-P/C1850418",
+        "https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/ds-000347-icm-42688-p-v1.6.pdf",
+        "https://www.invensense.tdk.com/en-us/products/6-axis/icm-42688-p"
+      ],
+      "evidence_documents": [
+        "docs/sensor-evidence.md"
+      ],
+      "notes": "Pin map, decoupling, package contacts and sensor axes checked in sensor evidence. MSL1; JLC X-ray required; Economic/Standard. Firmware CW90 means corrected X=raw Y and corrected Y=-raw X; preserve physical-axis and CPL review gates.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U3"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Winbond",
+      "mpn": "W25N01GVZEIG",
+      "jlcpcb_lcsc_code": "C88868",
+      "package": "WSON-8, 8x6 mm, 1.27 mm pitch, EP 3.4x4.3 mm",
+      "proposed_footprint": "F722_Heli:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm",
+      "manifest_entries": [
+        {
+          "ref": "U3",
+          "value": "W25N01GVZEIG / 128MiB",
+          "footprint": "F722_Heli:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm",
+          "mpn": "W25N01GVZEIG",
+          "pins": {
+            "1": "FLASH_CS",
+            "2": "FLASH_MISO",
+            "3": "FLASH_WP_N",
+            "4": "GND",
+            "5": "FLASH_MOSI",
+            "6": "FLASH_SCK",
+            "7": "FLASH_HOLD_N",
+            "8": "+3V3_CORE",
+            "9": "GND"
+          },
+          "sheet": "sensors"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:26\u201316:28",
+        "stock": 3826,
+        "available_order_qty": 3721,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC purchasing-panel observation recorded in sensor evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "P / mass production; longevity Y since 2016/11",
+        "source": "https://www.winbond.com/hq/product/code-storage-flash/qspi-nand/w25n-gv/?__locale=en&partNo=W25N01GVZEIG",
+        "observed_date_utc": "2026-10-04"
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/W25N01GVZEIG/C88868",
+        "https://www.mouser.com/pdfDocs/W25N01GV_DS.pdf",
+        "https://www.winbond.com/hq/product/code-storage-flash/qspi-nand/w25n-gv/?__locale=en&partNo=W25N01GVZEIG"
+      ],
+      "evidence_documents": [
+        "docs/sensor-evidence.md"
+      ],
+      "notes": "1 Gbit SPI NAND = 128 MiB user storage. Exact ZEIG WSON8 package. Exposed center pad may float or connect GND; native circuit chooses GND. No exposed/open via under pad. MSL3; Economic/Standard.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U4"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Infineon Technologies",
+      "mpn": "DPS368XTSA1",
+      "jlcpcb_lcsc_code": "C3232508",
+      "package": "VLGA-8-2, 2.5x2.0 mm, clockwise numbering",
+      "proposed_footprint": "F722_Heli:Infineon_DPS368_VLGA-8_2.5x2mm_SMD",
+      "manifest_entries": [
+        {
+          "ref": "U4",
+          "value": "DPS368XTSA1 / 0x76",
+          "footprint": "F722_Heli:Infineon_DPS368_VLGA-8_2.5x2mm_SMD",
+          "mpn": "DPS368XTSA1",
+          "pins": {
+            "1": "GND",
+            "2": "+3V3_CORE",
+            "3": "BARO_SDA",
+            "4": "BARO_SCL",
+            "5": "GND",
+            "6": "+3V3_CORE",
+            "7": "GND",
+            "8": "+3V3_CORE"
+          },
+          "sheet": "sensors"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:26\u201316:28",
+        "stock": 5082,
+        "available_order_qty": 5002,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC purchasing-panel observation recorded in sensor evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "Active and preferred; planned availability at least 2034 as observed",
+        "source": "https://www.infineon.com/part/DPS368",
+        "observed_date_utc": "2026-10-04"
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/InfineonTechnologies-DPS368XTSA1/C3232508",
+        "https://www.infineon.com/assets/row/public/documents/24/49/infineon-dps368-datasheet-en.pdf",
+        "https://www.infineon.com/part/DPS368",
+        "https://community.infineon.com/t5/Pressure-sensors/DPS310-vs-DPS368/td-p/813752"
+      ],
+      "evidence_documents": [
+        "docs/sensor-evidence.md"
+      ],
+      "notes": "User-approved replacement for unavailable SPL06-001, recorded 2026-10-04. I2C address 0x76, CSB high, SDO grounded, local 4.7k pull-ups. Standard assembly only; MSL1. Generic DPS368 C535115 has separate zero-stock listing and is not this orderable SKU. Manufacturer confirms shared DPS310 driver; actual stock Rotorflight prototype bring-up remains pending. Preserve pressure opening and final solder mask/paste review.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "J1"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "GCT",
+      "mpn": "USB4105-GF-A-120",
+      "jlcpcb_lcsc_code": "C5184243",
+      "package": "USB-C top mount, horizontal, SMT contacts + THT shell stakes",
+      "proposed_footprint": "F722_Heli:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+      "manifest_entries": [
+        {
+          "ref": "J1",
+          "value": "USB4105-GF-A-120",
+          "footprint": "F722_Heli:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+          "mpn": "USB4105-GF-A-120",
+          "pins": {
+            "S1": "GND",
+            "A1": "GND",
+            "A12": "GND",
+            "B1": "GND",
+            "B12": "GND",
+            "A4": "USB_VBUS_RAW",
+            "A9": "USB_VBUS_RAW",
+            "B4": "USB_VBUS_RAW",
+            "B9": "USB_VBUS_RAW",
+            "A5": "USB_CC1",
+            "B5": "USB_CC2",
+            "A6": "USB_P",
+            "B6": "USB_P",
+            "A7": "USB_N",
+            "B7": "USB_N",
+            "A8": null,
+            "B8": null
+          },
+          "sheet": "usb-clock"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:33\u201316:46",
+        "stock": 3886,
+        "available_order_qty": 2473,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC detail-page stock recorded in USB/clock evidence"
+      },
+      "assembly_method": "SMT contacts plus plated-slot shell stakes; assembler DFM required",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/5849584-USB4105_GF_A120/C5184243",
+        "https://gct.co/files/drawings/usb4105.pdf",
+        "https://gct.co/connector/usb4105"
+      ],
+      "evidence_documents": [
+        "docs/usb-clock-parts-evidence.md"
+      ],
+      "notes": "Exact -120 shell stake option, 16 USB contacts with 12 physical tails. Preserve four shell stakes. Plated-slot fill and retention need assembler review at selected 1.03 mm +/-10% board thickness; positive stake protrusion is not guaranteed at tolerance extremes. Read the later land-to-NPTH corner-radius adaptation in USB evidence.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7"
+      ],
+      "quantity_per_board": 5,
+      "manufacturer": "onsemi",
+      "mpn": "ESD9M5.0ST5G",
+      "jlcpcb_lcsc_code": "C242267",
+      "package": "SOD-923, onsemi case 514AB",
+      "proposed_footprint": "F722_Heli:D_SOD-923",
+      "manifest_entries": [
+        {
+          "ref": "D3",
+          "value": "ESD9M5.0ST5G",
+          "footprint": "F722_Heli:D_SOD-923",
+          "mpn": "ESD9M5.0ST5G",
+          "pins": {
+            "1": "USB_P",
+            "2": "GND"
+          },
+          "sheet": "usb-clock"
+        },
+        {
+          "ref": "D4",
+          "value": "ESD9M5.0ST5G",
+          "footprint": "F722_Heli:D_SOD-923",
+          "mpn": "ESD9M5.0ST5G",
+          "pins": {
+            "1": "USB_N",
+            "2": "GND"
+          },
+          "sheet": "usb-clock"
+        },
+        {
+          "ref": "D5",
+          "value": "ESD9M5.0ST5G",
+          "footprint": "F722_Heli:D_SOD-923",
+          "mpn": "ESD9M5.0ST5G",
+          "pins": {
+            "1": "USB_CC1",
+            "2": "GND"
+          },
+          "sheet": "usb-clock"
+        },
+        {
+          "ref": "D6",
+          "value": "ESD9M5.0ST5G",
+          "footprint": "F722_Heli:D_SOD-923",
+          "mpn": "ESD9M5.0ST5G",
+          "pins": {
+            "1": "USB_CC2",
+            "2": "GND"
+          },
+          "sheet": "usb-clock"
+        },
+        {
+          "ref": "D7",
+          "value": "ESD9M5.0ST5G",
+          "footprint": "F722_Heli:D_SOD-923",
+          "mpn": "ESD9M5.0ST5G",
+          "pins": {
+            "1": "DSM_RX_EXT",
+            "2": "GND"
+          },
+          "sheet": "io-ports"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:33\u201316:46; reconfirmed 18:18",
+        "stock": 16097,
+        "available_order_qty": 15976,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC page inventory in USB/clock and UART evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C242267",
+        "https://www.onsemi.com/download/data-sheet/pdf/esd9m5.0s-d.pdf"
+      ],
+      "evidence_documents": [
+        "docs/usb-clock-parts-evidence.md"
+      ],
+      "notes": "Five instances: USB D+/D-/CC1/CC2 and DSM signal. Pin 1 cathode to signal; pin 2 anode to GND. Ground-only 5 V standoff protector, not a series diode or VBUS TVS. Actual SOD-923 land geometry checked in USB evidence.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "Y1"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Yajingxin (YJX)",
+      "mpn": "TAXM8M4RDBCCT2T",
+      "jlcpcb_lcsc_code": "C400090",
+      "package": "3225 four-pad passive crystal, 3.2x2.5x0.7 mm nominal",
+      "proposed_footprint": "F722_Heli:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+      "manifest_entries": [
+        {
+          "ref": "Y1",
+          "value": "8MHz / CL10pF / TAXM8M4RDBCCT2T",
+          "footprint": "F722_Heli:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+          "mpn": "TAXM8M4RDBCCT2T",
+          "pins": {
+            "1": "HSE_IN",
+            "2": "GND",
+            "3": "HSE_XTAL_OUT",
+            "4": "GND"
+          },
+          "sheet": "usb-clock"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:33\u201316:46",
+        "stock": 189901,
+        "available_order_qty": 181234,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC detail-page stock recorded in USB/clock evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/TAXM8M4RDBCCT2T/C400090",
+        "https://datasheet.lcsc.com/lcsc/1912111437_Yajingxin-TAXM8M4RDBCCT2T_C400090.pdf"
+      ],
+      "evidence_documents": [
+        "docs/usb-clock-parts-evidence.md"
+      ],
+      "notes": "8 MHz fundamental passive crystal, CL10 pF, ESR <=250 ohm. Pads 1/3 resonator, pads 2/4 grounded case; not a powered oscillator. 3.2x2.5 mm four-pad package with drawing-matched lands. Two 15 pF C0G capacitors and 0-ohm drive-tuning resistor are in passive proposal file. Startup/load/10 uW drive-level interpretation remain bench gates.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "SW1"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "C&K",
+      "mpn": "KMT031NGJLHS",
+      "jlcpcb_lcsc_code": "C221708",
+      "package": "C&K KMT0 J-lead, four lands / two electrical terminals",
+      "proposed_footprint": "F722_Heli:CK_KMT031NGJLHS",
+      "manifest_entries": [
+        {
+          "ref": "SW1",
+          "value": "BOOT / KMT031NGJLHS",
+          "footprint": "F722_Heli:CK_KMT031NGJLHS",
+          "mpn": "KMT031NGJLHS",
+          "pins": {
+            "1": "+3V3_CORE",
+            "2": "BOOT0"
+          },
+          "sheet": "usb-clock"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:33\u201316:46",
+        "stock": 2521,
+        "available_order_qty": 2521,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC detail-page stock recorded in USB/clock evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C221708",
+        "https://www.farnell.com/datasheets/2969021.pdf"
+      ],
+      "evidence_documents": [
+        "docs/usb-clock-parts-evidence.md"
+      ],
+      "notes": "Top-actuated normally-open BOOT switch, NGJ no-ground-pin J-lead variant. Custom footprint upper two lands share terminal 1 and lower pair terminal 2. 3.0x2.6 mm body, overall lead span 3.4 +/-0.1 mm, height 0.65 +/-0.07 mm. At 3.3 V, the 2.2k BOOT pull-down gives about 1.5 mA pressed, above catalog 1 mA minimum contact-current condition. This is a momentary contact, not a latching switch.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "D1"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Hubei KENTO Elec",
+      "mpn": "KT-0603YG",
+      "jlcpcb_lcsc_code": "C2289",
+      "proposed_value": "YELLOW-GREEN / KT-0603YG",
+      "package": "0603 LED, 1.60x0.80x0.60 mm",
+      "proposed_footprint": "F722_Heli:LED_0603_1608Metric",
+      "manifest_entries": [
+        {
+          "ref": "D1",
+          "value": "GREEN",
+          "footprint": "F722_Heli:LED_0603_1608Metric",
+          "mpn": "",
+          "pins": {
+            "1": "LED_GREEN_K",
+            "2": "D1_A"
+          },
+          "sheet": "usb-clock"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate; brightness_and_assembly_orientation_pending",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:06:39Z",
+        "window_utc": "19:06:39",
+        "stock": 33507,
+        "available_order_qty": 31210,
+        "state": "in_stock_and_orderable_at_observation",
+        "class": "Extended",
+        "msl": 3,
+        "method": "live cloud-browser JLC purchasing panel"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "Stocked manufacturer-specific listing; no separate manufacturer lifecycle statement established."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C2289",
+        "https://datasheet.lcsc.com/datasheet/pdf/26e5131f4b051119ebc8b24acf5eb4fa.pdf?productCode=C2289"
+      ],
+      "evidence_documents": [],
+      "manufacturer_drawing": {
+        "revision": "A.0",
+        "date": "2018-12-06",
+        "polarity_and_dimensions_page": 2,
+        "electrical_table_page": 3,
+        "body_mm": [
+          1.6,
+          0.8,
+          0.6
+        ],
+        "general_dimensional_tolerance_mm": 0.1,
+        "terminal_1": "anode (+)",
+        "terminal_2": "cathode (-)",
+        "cathode_mark": "small green corner mark on manufacturer package drawing"
+      },
+      "footprint_comparison": {
+        "native_file": "hardware/library/F722_Heli.pretty/LED_0603_1608Metric.kicad_mod",
+        "verified_date_utc": "2026-10-04",
+        "top_view_unrotated_pad_1": {
+          "function": "cathode",
+          "center_mm": [
+            -0.7875,
+            0
+          ],
+          "size_mm": [
+            0.875,
+            0.95
+          ]
+        },
+        "top_view_unrotated_pad_2": {
+          "function": "anode",
+          "center_mm": [
+            0.7875,
+            0
+          ],
+          "size_mm": [
+            0.875,
+            0.95
+          ]
+        },
+        "native_cathode_graphics": "left vertical silk line at x=-1.485 mm and top-left F.Fab chamfer near x=-0.8 mm; both identify the negative-X/pad-1 end",
+        "manufacturer_recommended_lands_mm": [
+          0.7,
+          0.7
+        ],
+        "manufacturer_recommended_inner_gap_mm": 0.7,
+        "native_inner_gap_mm": 0.7,
+        "finding": "Device body/contact geometry is compatible; native lands are larger than manufacturer recommendation. Preserve existing logical 1=K/2=A."
+      },
+      "electrical": {
+        "color": "yellow-green",
+        "supply_v_nominal": 3.3,
+        "series_resistance_ohm": 2200,
+        "mcu_pin": "PC14",
+        "active_level": "low",
+        "datasheet_vf_range_v": [
+          1.8,
+          2.4
+        ],
+        "datasheet_vf_test_current_ma": 10,
+        "estimated_operating_current_ma": "0.6\u20130.7",
+        "estimate_qualification": "Typical curve/engineering estimate, including unknown actual MCU VOL; not a guaranteed sub-mA corner or brightness specification. Verify prototype brightness and current with the selected lot."
+      },
+      "soldering": {
+        "max_reflow_peak_c": 260,
+        "max_time_at_peak_s": 10,
+        "max_reflow_cycles": 2,
+        "hand_solder_repair_only": true,
+        "hand_solder_max_c": 300,
+        "hand_solder_max_s": 3,
+        "hand_solder_max_iron_w": 25,
+        "hand_solder_max_cycles": 1,
+        "ultrasonic_cleaning": "not permitted per manufacturer precautions"
+      },
+      "assembly_orientation": {
+        "supplier_terminal_to_kicad_pad": {
+          "2": "1",
+          "1": "2"
+        },
+        "physical_requirement": "Manufacturer green cathode corner mark / terminal 2 must lie at KiCad pad 1, connected to LED_GREEN_K. Manufacturer terminal 1 anode must lie at KiCad pad 2, connected to D1_A. In the unrotated front-side footprint, cathode is on the left/negative-X side, matching the silk cathode end and F.Fab chamfer. Transform this physical requirement with actual board rotation and side.",
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Confirm the exact JLC component-library zero-degree datum, feeder polarity and final assembler placement preview. No 180-degree offset is inferred from the supplier/KiCad terminal-number difference."
+      },
+      "notes": "The selected yellow-green part intentionally has lower Vf than emerald-green KT-0603G C12624."
+    },
+    {
+      "refs": [
+        "D2"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Hubei KENTO Elec",
+      "mpn": "KT-0603R",
+      "jlcpcb_lcsc_code": "C2286",
+      "proposed_value": "RED / KT-0603R",
+      "package": "0603 LED, 1.60x0.80x0.60 mm",
+      "proposed_footprint": "F722_Heli:LED_0603_1608Metric",
+      "manifest_entries": [
+        {
+          "ref": "D2",
+          "value": "RED",
+          "footprint": "F722_Heli:LED_0603_1608Metric",
+          "mpn": "",
+          "pins": {
+            "1": "LED_RED_K",
+            "2": "D2_A"
+          },
+          "sheet": "usb-clock"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate; brightness_and_assembly_orientation_pending",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:07:14Z",
+        "window_utc": "19:07:14",
+        "stock": 4792976,
+        "available_order_qty": 4248076,
+        "state": "in_stock_and_orderable_at_observation",
+        "class": "Basic",
+        "msl": 3,
+        "method": "live cloud-browser JLC purchasing panel"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "Stocked manufacturer-specific listing; no separate manufacturer lifecycle statement established."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C2286",
+        "https://datasheet.lcsc.com/datasheet/pdf/011ec3e8cb1e825f6961d29bc4db4c7a.pdf?productCode=C2286"
+      ],
+      "evidence_documents": [],
+      "manufacturer_drawing": {
+        "revision": "A.0",
+        "date": "2018-12-06",
+        "polarity_and_dimensions_page": 2,
+        "electrical_table_page": 3,
+        "body_mm": [
+          1.6,
+          0.8,
+          0.6
+        ],
+        "general_dimensional_tolerance_mm": 0.1,
+        "terminal_1": "anode (+)",
+        "terminal_2": "cathode (-)",
+        "cathode_mark": "small green corner mark on manufacturer package drawing"
+      },
+      "footprint_comparison": {
+        "native_file": "hardware/library/F722_Heli.pretty/LED_0603_1608Metric.kicad_mod",
+        "verified_date_utc": "2026-10-04",
+        "top_view_unrotated_pad_1": {
+          "function": "cathode",
+          "center_mm": [
+            -0.7875,
+            0
+          ],
+          "size_mm": [
+            0.875,
+            0.95
+          ]
+        },
+        "top_view_unrotated_pad_2": {
+          "function": "anode",
+          "center_mm": [
+            0.7875,
+            0
+          ],
+          "size_mm": [
+            0.875,
+            0.95
+          ]
+        },
+        "native_cathode_graphics": "left vertical silk line at x=-1.485 mm and top-left F.Fab chamfer near x=-0.8 mm; both identify the negative-X/pad-1 end",
+        "manufacturer_recommended_lands_mm": [
+          0.7,
+          0.7
+        ],
+        "manufacturer_recommended_inner_gap_mm": 0.7,
+        "native_inner_gap_mm": 0.7,
+        "finding": "Device body/contact geometry is compatible; native lands are larger than manufacturer recommendation. Preserve existing logical 1=K/2=A."
+      },
+      "electrical": {
+        "color": "red",
+        "supply_v_nominal": 3.3,
+        "series_resistance_ohm": 2200,
+        "mcu_pin": "PC15",
+        "active_level": "low",
+        "datasheet_vf_range_v": [
+          1.8,
+          2.4
+        ],
+        "datasheet_vf_test_current_ma": 20,
+        "estimated_operating_current_ma": "0.6\u20130.8",
+        "estimate_qualification": "Typical curve/engineering estimate, including unknown actual MCU VOL; not a guaranteed sub-mA corner or brightness specification. Verify prototype brightness and current with the selected lot."
+      },
+      "soldering": {
+        "max_reflow_peak_c": 260,
+        "max_time_at_peak_s": 10,
+        "max_reflow_cycles": 2,
+        "hand_solder_repair_only": true,
+        "hand_solder_max_c": 300,
+        "hand_solder_max_s": 3,
+        "hand_solder_max_iron_w": 25,
+        "hand_solder_max_cycles": 1,
+        "ultrasonic_cleaning": "not permitted per manufacturer precautions"
+      },
+      "assembly_orientation": {
+        "supplier_terminal_to_kicad_pad": {
+          "2": "1",
+          "1": "2"
+        },
+        "physical_requirement": "Manufacturer green cathode corner mark / terminal 2 must lie at KiCad pad 1, connected to LED_RED_K. Manufacturer terminal 1 anode must lie at KiCad pad 2, connected to D2_A. In the unrotated front-side footprint, cathode is on the left/negative-X side, matching the silk cathode end and F.Fab chamfer. Transform this physical requirement with actual board rotation and side.",
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Confirm the exact JLC component-library zero-degree datum, feeder polarity and final assembler placement preview. No 180-degree offset is inferred from the supplier/KiCad terminal-number difference."
+      },
+      "notes": "Exact red companion. The supplier terminal numbering is opposite the KiCad LED convention; apply the documented physical mapping, not a silent logical pad swap."
+    },
+    {
+      "refs": [
+        "J2",
+        "J3",
+        "J4",
+        "J5",
+        "J6",
+        "J7",
+        "J8"
+      ],
+      "quantity_per_board": 7,
+      "manufacturer": "Samtec",
+      "mpn": "HTSW-101-08-L-T-RA",
+      "jlcpcb_lcsc_code": null,
+      "package": "1 position x 3 rows, right-angle THT, 2.54 mm",
+      "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+      "manifest_entries": [
+        {
+          "ref": "J2",
+          "value": "S1 / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "SERVO1_EXT"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J3",
+          "value": "S2 / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "SERVO2_EXT"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J4",
+          "value": "S3 / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "SERVO3_EXT"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J5",
+          "value": "TAIL / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "TAIL_EXT"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J6",
+          "value": "ESC / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "ESC_EXT"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J7",
+          "value": "RPM / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "RPM_EXT"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J8",
+          "value": "SBUS / GND-VX-S",
+          "footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+          "mpn": "HTSW-101-08-L-T-RA",
+          "pins": {
+            "1": "GND",
+            "2": "VX_RAW",
+            "3": "SBUS_EXT"
+          },
+          "sheet": "io-ports"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "manual_procurement_required",
+      "inventory": {
+        "supplier": "Samtec / authorized distributor; manual THT or consignment",
+        "observed_date_utc": null,
+        "observed_at_utc": null,
+        "window_utc": null,
+        "stock": null,
+        "available_order_qty": null,
+        "state": "not_in_jlc_smt_procurement; manual_quantity_and_lead_time_unverified",
+        "method": "exact manufacturer/MPN catalog identity only; live quantity not verified"
+      },
+      "assembly_method": "Manual THT / separately approved consignment",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
+        "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
+      ],
+      "evidence_documents": [],
+      "notes": "Manual THT population or explicitly arranged consignment only. One position by three rows, three contacts, 2.54 mm pitch, right angle. No JLC SKU verified or assigned. Exact quantity/lead time must be quoted; distributor catalog identity is not an inventory observation. Do not omit these seven required connectors from the overall physical BOM merely because they are outside the SMT BOM. Footprint/terminal orientation and solder process still require manufacturing review."
+    },
+    {
+      "refs": [
+        "U12",
+        "U13"
+      ],
+      "quantity_per_board": 2,
+      "manufacturer": "STMicroelectronics",
+      "mpn": "USBLC6-4SC6",
+      "jlcpcb_lcsc_code": "C111212",
+      "package": "SOT-23-6L",
+      "proposed_footprint": "F722_Heli:SOT-23-6",
+      "manifest_entries": [
+        {
+          "ref": "U12",
+          "value": "USBLC6-4SC6 / header clamp",
+          "footprint": "F722_Heli:SOT-23-6",
+          "mpn": "USBLC6-4SC6",
+          "pins": {
+            "1": "SERVO1_MCU",
+            "3": "SERVO2_MCU",
+            "4": "SERVO3_MCU",
+            "6": "TAIL_MCU",
+            "5": "+3V3_CORE",
+            "2": "GND"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "U13",
+          "value": "USBLC6-4SC6 / header clamp",
+          "footprint": "F722_Heli:SOT-23-6",
+          "mpn": "USBLC6-4SC6",
+          "manufacturer": "STMicroelectronics",
+          "lcsc": "C111212",
+          "pins": {
+            "1": "ESC_MCU",
+            "3": "RPM_MCU",
+            "4": null,
+            "6": "SBUS_MCU",
+            "5": "+3V3_CORE",
+            "2": "GND"
+          },
+          "sheet": "io-ports"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:08:52Z",
+        "window_utc": "19:08:52",
+        "stock": 7916,
+        "available_order_qty": 7176,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "Active; volume production",
+        "source": "https://www.st.com/en/protections-and-emi-filters/usblc6-4.html",
+        "observed_date_utc": "2026-10-04"
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/Stmicroelectronics-USBLC64SC6/C111212",
+        "https://www.st.com/resource/en/datasheet/usblc6-4.pdf",
+        "https://www.st.com/en/protections-and-emi-filters/usblc6-4.html"
+      ],
+      "evidence_documents": [
+        "docs/hv-input-clamp-evidence.md"
+      ],
+      "notes": "Four protected channels, pins 1/3/4/6; pin 2 GND, pin 5 +3V3_CORE in the existing header clamp circuit. This is the selected header clamp, not the removed UART clamp or USB signal ESD choice. Economic/Standard, MSL1. Do not replace with identically named third-party maker.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "J9",
+        "J10",
+        "J11"
+      ],
+      "quantity_per_board": 3,
+      "manufacturer": "JST",
+      "mpn": "BM04B-GHS-TBT(LF)(SN)",
+      "jlcpcb_lcsc_code": "C161692",
+      "package": "JST GH 1x4, 1.25 mm, top-entry SMT",
+      "proposed_footprint": "F722_Heli:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical",
+      "manifest_entries": [
+        {
+          "ref": "J9",
+          "value": "PORT A / JST GH",
+          "footprint": "F722_Heli:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical",
+          "mpn": "BM04B-GHS-TBT(LF)(SN)",
+          "pins": {
+            "1": "PORT_A_RX_EXT",
+            "2": "PORT_A_TX_EXT",
+            "3": "+5V_PERIPH",
+            "4": "GND"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J10",
+          "value": "PORT B / JST GH",
+          "footprint": "F722_Heli:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical",
+          "mpn": "BM04B-GHS-TBT(LF)(SN)",
+          "pins": {
+            "1": "PORT_B_RX_EXT",
+            "2": "PORT_B_TX_EXT",
+            "3": "+5V_PERIPH",
+            "4": "GND"
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "J11",
+          "value": "PORT C / JST GH",
+          "footprint": "F722_Heli:JST_GH_BM04B-GHS-TBT_1x04-1MP_P1.25mm_Vertical",
+          "mpn": "BM04B-GHS-TBT(LF)(SN)",
+          "pins": {
+            "1": "PORT_C_RX_EXT",
+            "2": "PORT_C_TX_EXT",
+            "3": "+5V_PERIPH",
+            "4": "GND"
+          },
+          "sheet": "io-ports"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:08:44Z",
+        "window_utc": "19:08:44",
+        "stock": 13970,
+        "available_order_qty": 12011,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C161692",
+        "https://www.jst-mfg.com/product/index.php?lang=2&series=105",
+        "https://www.jst-mfg.com/product/pdf/jpn/GH.pdf"
+      ],
+      "evidence_documents": [],
+      "notes": "Exact JST GH top-entry four-circuit header, 1.25 mm pitch. Official catalog notes (LF)(SN) labeling. Limit mating contact to the specified wire/contact rating; 2 A aggregate ABC allocation is not 2 A per GH contact. Preserve current native pin-1-to-pin-4 RX/TX/5V/GND mapping and independently check mating face/CPL.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U14",
+        "U15"
+      ],
+      "quantity_per_board": 2,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPD4E05U06DQAR",
+      "jlcpcb_lcsc_code": "C138714",
+      "package": "DQA0010B USON-10, 2.5x1.0 mm",
+      "proposed_footprint": "F722_Heli:Texas_DQA0010B_TPD4E05U06_2.5x1mm",
+      "manifest_entries": [
+        {
+          "ref": "U14",
+          "value": "TPD4E05U06DQAR / UART ESD",
+          "footprint": "F722_Heli:Texas_DQA0010B_TPD4E05U06_2.5x1mm",
+          "mpn": "TPD4E05U06DQAR",
+          "pins": {
+            "1": "PORT_A_RX_EXT",
+            "2": "PORT_A_TX_EXT",
+            "4": "PORT_B_RX_EXT",
+            "5": "PORT_B_TX_EXT",
+            "3": "GND",
+            "8": "GND",
+            "6": null,
+            "7": null,
+            "9": null,
+            "10": null
+          },
+          "sheet": "io-ports"
+        },
+        {
+          "ref": "U15",
+          "value": "TPD4E05U06DQAR / UART ESD",
+          "footprint": "F722_Heli:Texas_DQA0010B_TPD4E05U06_2.5x1mm",
+          "mpn": "TPD4E05U06DQAR",
+          "pins": {
+            "1": "PORT_C_RX_EXT",
+            "2": "PORT_C_TX_EXT",
+            "4": null,
+            "5": null,
+            "3": "GND",
+            "8": "GND",
+            "6": null,
+            "7": null,
+            "9": null,
+            "10": null
+          },
+          "sheet": "io-ports"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "18:18",
+        "stock": 143564,
+        "available_order_qty": 139399,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day public page data plus visible cloud-browser stock panel recorded in UART evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C138714",
+        "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf"
+      ],
+      "evidence_documents": [
+        "docs/uart-esd-evidence.md"
+      ],
+      "notes": "Two ground-only four-channel arrays. Pins 3/8 GND; 1/2/4/5 I/O; 6/7/9/10 NC. Local footprint follows newer DQA0010B ground/paste geometry. Confirm actual A/B lot construction with assembler if needed. Economic/Standard, MSL1.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "J12"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "JST",
+      "mpn": "B3B-ZR-SM4-TF(LF)(SN)",
+      "jlcpcb_lcsc_code": "C489717",
+      "package": "JST ZR/ZH header, 1x3, 1.50 mm, reinforced top-entry SMT",
+      "proposed_footprint": "F722_Heli:JST_ZH_B3B-ZR-SM4-TF_1x03-1MP_P1.50mm_Vertical",
+      "manifest_entries": [
+        {
+          "ref": "J12",
+          "value": "DSM / JST ZH",
+          "footprint": "F722_Heli:JST_ZH_B3B-ZR-SM4-TF_1x03-1MP_P1.50mm_Vertical",
+          "mpn": "B3B-ZR-SM4-TF(LF)(SN)",
+          "pins": {
+            "1": "+3V3_DSM",
+            "2": "GND",
+            "3": "DSM_RX_EXT"
+          },
+          "sheet": "io-ports"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:08:44Z",
+        "window_utc": "19:08:44",
+        "stock": 10122,
+        "available_order_qty": 9781,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/Jst-B3B_ZR_SM4_TF_LF_SN/C489717",
+        "https://www.jst-mfg.com/product/pdf/eng/eZR.pdf",
+        "https://www.jst.com/wp-content/uploads/2021/01/eZH-new.pdf"
+      ],
+      "evidence_documents": [],
+      "notes": "Exact JST three-circuit top-entry reinforced header, 1.50 mm pitch, also listed as a shared ZR/ZH header. Use C489717 with full LF/SN identity; short-name C20489856 is a separate unavailable listing. Native pads 1/2/3 are +3V3_DSM/GND/DSM_RX_EXT. Mating-face polarity still needs independent assembly review.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "Q1",
+        "Q2"
+      ],
+      "quantity_per_board": 2,
+      "manufacturer": "onsemi",
+      "mpn": "BSS138LT1G",
+      "jlcpcb_lcsc_code": "C82045",
+      "package": "SOT-23",
+      "proposed_footprint": "F722_Heli:SOT-23",
+      "manifest_entries": [
+        {
+          "ref": "Q1",
+          "value": "BSS138LT1G",
+          "footprint": "F722_Heli:SOT-23",
+          "mpn": "BSS138LT1G",
+          "pins": {
+            "1": "+3V3_CORE",
+            "2": "RPM_LV",
+            "3": "RPM_HV"
+          },
+          "sheet": "input-levels"
+        },
+        {
+          "ref": "Q2",
+          "value": "BSS138LT1G",
+          "footprint": "F722_Heli:SOT-23",
+          "mpn": "BSS138LT1G",
+          "pins": {
+            "1": "+3V3_CORE",
+            "2": "SBUS_LV",
+            "3": "SBUS_HV"
+          },
+          "sheet": "input-levels"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:08:52Z",
+        "window_utc": "19:08:52",
+        "stock": 550710,
+        "available_order_qty": 548105,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/onsemi-BSS138LT1G/C82045",
+        "https://www.onsemi.com/pdf/datasheet/bss138lt1-d.pdf"
+      ],
+      "evidence_documents": [
+        "docs/hv-input-clamp-evidence.md"
+      ],
+      "notes": "Exact onsemi BSS138LT1G, not unqualified generic BSS138. Native pin 1 gate +3V3_CORE, pin 2 source LV signal, pin 3 drain HV signal. 50 V VDS and +/-20 V VGS absolute limits; external-first operation/transients and SBUS edges require the tests in HV clamp evidence. Economic/Standard, MSL1.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U16"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Nexperia",
+      "mpn": "PESD15VS2UT,215",
+      "jlcpcb_lcsc_code": "C282556",
+      "package": "SOT-23 / TO-236AB",
+      "proposed_footprint": "F722_Heli:SOT-23",
+      "manifest_entries": [
+        {
+          "ref": "U16",
+          "value": "PESD15VS2UT,215 / 15V ESD",
+          "footprint": "F722_Heli:SOT-23",
+          "mpn": "PESD15VS2UT,215",
+          "pins": {
+            "1": "RPM_HV",
+            "2": "SBUS_HV",
+            "3": "GND"
+          },
+          "sheet": "input-levels"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "18:05\u201318:10",
+        "stock": 1265,
+        "available_order_qty": 1239,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live public product inventory fields recorded in HV clamp evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "Production",
+        "source": "https://www.nexperia.com/product/PESD15VS2UT",
+        "observed_date_utc": "2026-10-04"
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C282556",
+        "https://assets.nexperia.com/documents/data-sheet/PESD15VS2UT.pdf",
+        "https://www.nexperia.com/product/PESD15VS2UT"
+      ],
+      "evidence_documents": [
+        "docs/hv-input-clamp-evidence.md"
+      ],
+      "notes": "Dual unidirectional common-anode: pin 1 K1/RPM_HV, pin 2 K2/SBUS_HV, pin 3 anode/GND. Do not substitute PESD15VS2UAT or a bidirectional part. Negative-clamp selection corrected, but whole-circuit transient and powered-off tests remain pending.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U5"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS259472ARPWR",
+      "jlcpcb_lcsc_code": "C3662789",
+      "package": "RPW0010A WQFN-HR-10, 2x2 mm",
+      "proposed_footprint": "F722_Heli:Texas_RPW0010A_TPS259472_2x2mm",
+      "manifest_entries": [
+        {
+          "ref": "U5",
+          "value": "TPS259472ARPWR",
+          "footprint": "F722_Heli:Texas_RPW0010A_TPS259472_2x2mm",
+          "mpn": "TPS259472ARPWR",
+          "pins": {
+            "1": "EFUSE_EN",
+            "2": "EFUSE_OVC",
+            "3": null,
+            "4": "GND",
+            "5": "VX_RAW",
+            "6": "VX_PROTECTED",
+            "7": "EFUSE_DVDT",
+            "8": "GND",
+            "9": "EFUSE_ILM",
+            "10": null
+          },
+          "sheet": "power-bec"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:37\u201316:50",
+        "stock": 3781,
+        "available_order_qty": 3667,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC selected-part snapshot recorded in power evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C3662789",
+        "https://www.ti.com/lit/ds/symlink/tps25947.pdf"
+      ],
+      "evidence_documents": [
+        "docs/power-evidence.md"
+      ],
+      "notes": "Exact TPS259472A variant; central power strips are IN/OUT pins 5/6, not a ground EP. Native manufacturer-derived footprint review is recorded in power evidence; board thermal/current/transient qualification remains pending.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "D9"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Littelfuse",
+      "mpn": "SMF15CA",
+      "jlcpcb_lcsc_code": "C1851361",
+      "package": "SOD-123FL / Littelfuse SMF",
+      "proposed_footprint": "F722_Heli:Littelfuse_SMF_SOD123FL",
+      "manifest_entries": [
+        {
+          "ref": "D9",
+          "value": "SMF15CA / bidirectional",
+          "footprint": "F722_Heli:Littelfuse_SMF_SOD123FL",
+          "mpn": "SMF15CA",
+          "pins": {
+            "1": "VX_RAW",
+            "2": "GND"
+          },
+          "sheet": "power-bec"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:08:52Z",
+        "window_utc": "19:08:52",
+        "stock": 17867,
+        "available_order_qty": 17655,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C1851361",
+        "https://www.lcsc.com/product-detail/esd-and-surge-protection-tvs-esd_littelfuse-smf15ca_C1851361.html",
+        "https://www.littelfuse.com/assetdocs/tvs-diodes-smf-datasheet?assetguid=7eb8a5b6-bdd0-4561-8f19-0c3cc6f9b2af"
+      ],
+      "evidence_documents": [],
+      "notes": "Exact Littelfuse bidirectional SMF15CA. Native pad 1 VX_RAW, pad 2 GND; electrical polarity is symmetric. Do not substitute similarly named PAKER/LGE/TDD or JLC Assembly-only SKU C9900205618. Footprint and TVS pulse-envelope qualification remain separate from procurement identity.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U6"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS63070RNMR",
+      "jlcpcb_lcsc_code": "C109322",
+      "package": "RNM0015A VQFN-HR-15, 2.5x3 mm",
+      "proposed_footprint": "F722_Heli:Texas_RNM0015A_TPS63070_2.5x3mm",
+      "manifest_entries": [
+        {
+          "ref": "U6",
+          "value": "TPS63070RNMR / nominal 5.088V",
+          "footprint": "F722_Heli:Texas_RNM0015A_TPS63070_2.5x3mm",
+          "mpn": "TPS63070RNMR",
+          "pins": {
+            "1": "GND",
+            "2": "ABC_PG",
+            "3": "ABC_VAUX",
+            "4": "GND",
+            "5": "ABC_FB",
+            "6": "GND",
+            "7": "+5V_BEC",
+            "8": "+5V_BEC",
+            "9": "ABC_L2",
+            "10": "GND",
+            "11": "ABC_L1",
+            "12": "VX_PROTECTED",
+            "13": "VX_PROTECTED",
+            "14": "ABC_EN",
+            "15": "GND"
+          },
+          "sheet": "power-bec"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:37\u201316:50",
+        "stock": 24003,
+        "available_order_qty": 22866,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC selected-part snapshot recorded in power evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C109322",
+        "https://www.ti.com/lit/ds/symlink/tps63070.pdf"
+      ],
+      "evidence_documents": [
+        "docs/power-evidence.md"
+      ],
+      "notes": "Selected TPS63070, not TPS630702. Joined power lands and solder-mask-defined geometry require drawing-specific assembly review. Native manufacturer-derived footprint review is recorded in power evidence; board thermal/current/transient qualification remains pending.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U7"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS2117DRLR",
+      "jlcpcb_lcsc_code": "C22399676",
+      "package": "DRL8 / SOT-583-8",
+      "proposed_footprint": "F722_Heli:SOT-583-8",
+      "manifest_entries": [
+        {
+          "ref": "U7",
+          "value": "TPS2117DRLR / ABC priority mux",
+          "footprint": "F722_Heli:SOT-583-8",
+          "mpn": "TPS2117DRLR",
+          "manufacturer": "Texas Instruments",
+          "lcsc": "C22399676",
+          "pins": {
+            "1": "GND",
+            "2": "+5V_PERIPH",
+            "3": "+5V_BEC",
+            "4": "ABC_PG",
+            "5": "+5V_BEC",
+            "6": "USB_LIMITED",
+            "7": "+5V_PERIPH",
+            "8": null
+          },
+          "sheet": "power-bec"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_at_utc": "2026-10-05T14:55:00Z",
+        "observed_date_utc": "2026-10-05",
+        "stock": 3610,
+        "available_order_qty": 3413,
+        "state": "available at observation; not reserved",
+        "method": "live exact-part page retained in mux review"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://www.ti.com/lit/ds/symlink/tps2117.pdf",
+        "https://jlcpcb.com/partdetail/C22399676"
+      ],
+      "evidence_documents": [
+        "validation/routing-45-tps2117-review/REPORT.md",
+        "validation/routing-45-tps2117-review/PROTOTYPE-DECISION.md"
+      ],
+      "notes": "Pin-compatible lower-resistance mux candidate; exact DRL pin map and footprint checked. Startup, handover and backfeed remain prototype bench gates. Approved prototype USB configuration scope on 2026-10-05; external loads disconnected. BEC supplies receivers and servos.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U8"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS2121RUXR",
+      "jlcpcb_lcsc_code": "C485916",
+      "package": "RUX0012A VQFN-HR-12, 2x2.5 mm",
+      "proposed_footprint": "F722_Heli:Texas_RUX0012A_TPS2121_2x2.5mm",
+      "manifest_entries": [
+        {
+          "ref": "U8",
+          "value": "TPS2121RUXR / BEC-priority core mux",
+          "footprint": "F722_Heli:Texas_RUX0012A_TPS2121_2x2.5mm",
+          "mpn": "TPS2121RUXR",
+          "pins": {
+            "1": "CORE_BUCK_IN",
+            "2": "USB_LIMITED",
+            "3": "CORE_REF",
+            "4": "GND",
+            "5": "GND",
+            "6": "CORE_PRIORITY",
+            "7": "VX_PROTECTED",
+            "8": "CORE_BUCK_IN",
+            "9": "CORE_MUX_ST",
+            "10": "CORE_ILIM",
+            "11": "CORE_SS",
+            "12": "GND"
+          },
+          "sheet": "power-core"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:37\u201316:50",
+        "stock": 32212,
+        "available_order_qty": 31601,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC selected-part snapshot recorded in power evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C485916",
+        "https://www.ti.com/lit/ds/symlink/tps2121.pdf"
+      ],
+      "evidence_documents": [
+        "docs/power-evidence.md"
+      ],
+      "notes": "BEC-priority core mux; broad power pads and no separate EP. Native manufacturer-derived footprint review is recorded in power evidence; board thermal/current/transient qualification remains pending.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U9"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS62162DSGR",
+      "jlcpcb_lcsc_code": "C40256",
+      "package": "DSG0008A WSON-8, 2x2 mm, EP 0.9x1.6 mm",
+      "proposed_footprint": "F722_Heli:Texas_DSG0008A_TPS62162_2x2mm_EP0.9x1.6mm",
+      "manifest_entries": [
+        {
+          "ref": "U9",
+          "value": "TPS62162DSGR / 3.3V 1A",
+          "footprint": "F722_Heli:Texas_DSG0008A_TPS62162_2x2mm_EP0.9x1.6mm",
+          "mpn": "TPS62162DSGR",
+          "pins": {
+            "1": "GND",
+            "2": "CORE_BUCK_IN",
+            "3": "CORE_BUCK_IN",
+            "4": "GND",
+            "5": "GND",
+            "6": "+3V3_CORE",
+            "7": "CORE_SW",
+            "8": null,
+            "9": "GND"
+          },
+          "sheet": "power-core"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:37\u201316:50",
+        "stock": 6621,
+        "available_order_qty": 6574,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC selected-part snapshot recorded in power evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C40256",
+        "https://www.ti.com/lit/ds/symlink/tps62160.pdf"
+      ],
+      "evidence_documents": [
+        "docs/power-evidence.md"
+      ],
+      "notes": "Fixed 3.3 V TPS62162 member; exposed pad must connect GND. Do not substitute adjustable TPS62160 silently. Native manufacturer-derived footprint review is recorded in power evidence; board thermal/current/transient qualification remains pending.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "U10",
+        "U11"
+      ],
+      "quantity_per_board": 2,
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS2553DRVR",
+      "jlcpcb_lcsc_code": "C138719",
+      "package": "DRV0006A WSON-6, 2x2 mm, EP 1x1.6 mm",
+      "proposed_footprint": "F722_Heli:Texas_DRV0006A_TPS2553_2x2mm_EP1x1.6mm",
+      "manifest_entries": [
+        {
+          "ref": "U10",
+          "value": "TPS2553DRVR / USB input limit",
+          "footprint": "F722_Heli:Texas_DRV0006A_TPS2553_2x2mm_EP1x1.6mm",
+          "mpn": "TPS2553DRVR",
+          "pins": {
+            "1": "USB_LIMITED",
+            "2": "USB_ILIM",
+            "3": null,
+            "4": "USB_VBUS_RAW",
+            "5": "GND",
+            "6": "USB_VBUS_RAW",
+            "7": "GND"
+          },
+          "sheet": "power-usb-dsm"
+        },
+        {
+          "ref": "U11",
+          "value": "TPS2553DRVR / DSM output limit",
+          "footprint": "F722_Heli:Texas_DRV0006A_TPS2553_2x2mm_EP1x1.6mm",
+          "mpn": "TPS2553DRVR",
+          "pins": {
+            "1": "+3V3_DSM",
+            "2": "DSM_ILIM",
+            "3": null,
+            "4": "+3V3_CORE",
+            "5": "GND",
+            "6": "+3V3_CORE",
+            "7": "GND"
+          },
+          "sheet": "power-usb-dsm"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": null,
+        "window_utc": "16:37\u201316:50",
+        "stock": 28919,
+        "available_order_qty": 28794,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "reused same-day live JLC selected-part snapshot recorded in power evidence"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/C138719",
+        "https://www.ti.com/lit/ds/symlink/tps2553.pdf"
+      ],
+      "evidence_documents": [
+        "docs/power-evidence.md"
+      ],
+      "notes": "Two instances, USB input and DSM output current limits. Standard auto-retry variant, not -1 latch-off. EP to GND. Native manufacturer-derived footprint review is recorded in power evidence; board thermal/current/transient qualification remains pending.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    },
+    {
+      "refs": [
+        "D8"
+      ],
+      "quantity_per_board": 1,
+      "manufacturer": "Littelfuse",
+      "mpn": "SMF5.0A",
+      "jlcpcb_lcsc_code": "C151296",
+      "package": "SOD-123FL / Littelfuse SMF",
+      "proposed_footprint": "F722_Heli:Littelfuse_SMF_SOD123FL",
+      "manifest_entries": [
+        {
+          "ref": "D8",
+          "value": "SMF5.0A / transient only",
+          "footprint": "F722_Heli:Littelfuse_SMF_SOD123FL",
+          "mpn": "SMF5.0A",
+          "pins": {
+            "1": "USB_VBUS_RAW",
+            "2": "GND"
+          },
+          "sheet": "power-usb-dsm"
+        }
+      ],
+      "new_refs": [],
+      "footprint_changes": [],
+      "status": "source_verified_prototype_candidate",
+      "inventory": {
+        "supplier": "JLCPCB",
+        "observed_date_utc": "2026-10-04",
+        "observed_at_utc": "2026-10-04T19:08:44Z",
+        "window_utc": "19:08:44",
+        "stock": 34989,
+        "available_order_qty": 34119,
+        "state": "in_stock_and_orderable_at_observation",
+        "method": "live JLC public product-page inventory data"
+      },
+      "assembly_method": "SMT",
+      "lifecycle": {
+        "status": "not_independently_checked",
+        "note": "A stocked distributor listing is not manufacturer lifecycle evidence."
+      },
+      "sources": [
+        "https://jlcpcb.com/partdetail/Littelfuse-SMF50A/C151296",
+        "https://www.littelfuse.com/assetdocs/tvs-diodes-smf-datasheet?assetguid=7eb8a5b6-bdd0-4561-8f19-0c3cc6f9b2af"
+      ],
+      "evidence_documents": [],
+      "notes": "Exact Littelfuse unidirectional SMF5.0A. Cathode/band to native pad 1 USB_VBUS_RAW; anode pad 2 GND. Local Littelfuse SOD123FL footprint is retained. Transient suppressor does not establish unrestricted overvoltage or continuous-input protection; preserve power-system validation gates.",
+      "assembly_orientation": {
+        "jlc_zero_degree_component_datum_verified": false,
+        "jlc_cpl_offset_deg": null,
+        "gate": "Verify manufacturer pin-1/polarity marking against native pad nets, board side/rotation and assembler preview. Footprint or package identity alone does not establish a JLC CPL offset."
+      }
+    }
+  ],
+  "excluded_testpad_refs": [
+    "TP1",
+    "TP2",
+    "TP3",
+    "TP4",
+    "TP5"
+  ],
+  "excluded_nonphysical_refs": [
+    "#FLG1",
+    "#FLG2",
+    "#FLG3",
+    "#FLG4",
+    "#FLG5",
+    "#FLG6"
+  ],
+  "pending_metadata_refs": [],
+  "pending_procurement_or_validation_gates": [
+    {
+      "refs": [
+        "J2",
+        "J3",
+        "J4",
+        "J5",
+        "J6",
+        "J7",
+        "J8"
+      ],
+      "gate": "Manual THT stock/lead time and consignment or hand-assembly arrangement remain unverified; no JLC code assigned."
+    },
+    {
+      "refs": [
+        "D1",
+        "D2"
+      ],
+      "gate": "Physical cathode mapping is verified; exact JLC zero-degree datum/CPL offset and prototype brightness are not verified."
+    },
+    {
+      "refs": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "J1",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "Y1",
+        "SW1",
+        "D1",
+        "D2",
+        "U12",
+        "U13",
+        "J9",
+        "J10",
+        "J11",
+        "U14",
+        "U15",
+        "J12",
+        "Q1",
+        "Q2",
+        "U16",
+        "U5",
+        "D9",
+        "U6",
+        "U7",
+        "U8",
+        "U9",
+        "U10",
+        "U11",
+        "D8"
+      ],
+      "gate": "Recheck inventory at procurement; final manufacturer marking, CPL/side/rotation, lot traceability and assembler process review remain required. No hardware bring-up is claimed."
+    }
+  ],
+  "footprint_adaptation_20261005": {
+    "reference": "U4",
+    "new_footprint": "F722_Heli:Infineon_DPS368_VLGA-8_2.5x2mm_SMD",
+    "reason": "DPS368 datasheet Figures17\u201318 SMD land and circular paste adaptation",
+    "prior_source_manifest_sha256": "ca4e8e1dde8b436425350a8cf4bf510fa1547758955eb89801afe7069c58974c",
+    "note": "No fresh supplier inventory claim"
+  },
+  "updated_utc": "2026-10-05T21:33:52.792834+00:00",
+  "current_reference_coverage": {
+    "groups": 25,
+    "references": 41,
+    "unique_references": 41
+  }
+}
