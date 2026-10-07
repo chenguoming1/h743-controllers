@@ -1,8 +1,10 @@
 # B-RID engineering checks
 
+Latest revision-specific checks and hashes: [CURRENT_REVISION.md](CURRENT_REVISION.md). Earlier evidence remains historical; current evidence is in `evidence/routing-cleanup-20261007/`.
+
 ## Result and scope
 
-The final editable KiCad 10.0.6 project passes native schematic ERC, PCB DRC, open-connection and schematic-parity checks: **0 / 0 / 0 / 0**. The project contains 60 footprint references,1,068 trace segments and 105 vias. Four references are test pads;56 have resolved 3D model associations. C13/C14 are native DNP tuning positions, leaving54 nominal populated component references.
+The final editable KiCad 10.0.6 project passes native schematic ERC, PCB DRC, open-connection and schematic-parity checks: **0 / 0 / 0 / 0**. The project contains 60 footprint references,688 trace segments and 104 vias. Four references are test pads;56 have resolved 3D model associations. C13/C14 are native DNP tuning positions, leaving54 nominal populated component references.
 
 These checks establish the reviewed CAD state, not a manufactured or electrically tested product. Battery/harness, procurement, assembly, USB power-policy and physical qualification gates remain. There is no fabrication, flight or compliance release.
 

@@ -4,6 +4,8 @@ Editable KiCad 10 project for a compact, battery-powered Broadcast Remote ID har
 
 **Status: engineering CAD completed for review; fabrication and battery connection are not released.** The final native schematic/PCB checks and remaining qualification gates are recorded in `review/`. No firmware, flashing, RF compliance, flight approval or production-readiness claim is included.
 
+**Current routing update:** VSYS bridges are simplified/widened, all remaining route widths are reviewed, redundant fragments are merged, the VBUS input feed is widened, and tested USB differential-pair rules are active. Fresh native checks are 0/0/0/0. See [review/CURRENT_REVISION.md](review/CURRENT_REVISION.md) for current hashes, before/after views and all eight regression checks. Older review artifacts retain their original revision context.
+
 ## Current hardware
 
 - Six layers, 35 × 24 mm nominal populated plan envelope; height unrestricted; parts on both faces
