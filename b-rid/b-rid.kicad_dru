@@ -1,0 +1,4 @@
+(version 1)
+(rule "USB coplanar clearance" (condition "A.Type == 'Track' && A.NetClass == 'USB90' && B.Type == 'Zone' && B.NetName == 'GND'") (constraint clearance (min 0.30mm)))
+
+(rule "GNSS coplanar clearance" (condition "A.Type == 'Track' && A.NetClass == 'RF50' && B.Type == 'Zone' && B.NetName == 'GND'") (constraint clearance (min 0.30mm)))
