@@ -1,0 +1,1691 @@
+{
+  "candidate_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+  "baseline_sha256": "d5fb5b64b0549616c1581b5cc41632f8e1f96e78a9d271fdd6c13ad27e949698",
+  "accepted": false,
+  "grids": {
+    "035": {
+      "cases": 83,
+      "USB_configuration_only": 27,
+      "max_budget_error_V": 9.919842725025774e-14,
+      "max_KCL_residual": 7.275957614183426e-12,
+      "max_power_error_W": 1.6262013957657473e-10,
+      "replay_max_terminal_error_V": 0.0,
+      "BEC_minima_V": {
+        "port_B": 4.88451412091092,
+        "port_C": 4.856048815269553,
+        "DSM_board": 3.147888078721336,
+        "CORE_load": 3.1171715915184204,
+        "U6_input": 4.7517278995259185,
+        "U9_input": 4.739607734225319
+      },
+      "RP3_H_reserve_V": 0.056048815269552854,
+      "DSM_reserve_V": 0.00848807872133639,
+      "loaded_barrel_coverage": {
+        "nets": [
+          "GND",
+          "VX_RAW",
+          "VX_PROTECTED",
+          "+5V_BEC",
+          "+5V_PERIPH",
+          "+3V3_CORE",
+          "USB_VBUS_RAW",
+          "USB_LIMITED",
+          "CORE_BUCK_IN",
+          "+3V3_DSM"
+        ],
+        "cases": 83,
+        "max_KCL_residual_A": 6.615152869926533e-12,
+        "added": [],
+        "removed": [
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 701548,
+            "b": 759940,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 3.1269092453377463e-12,
+            "signed_current_at_max_A": 3.1269092453377463e-12,
+            "case_index": 6,
+            "loss_at_max_W": 6.661068490667388e-27
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 759940,
+            "b": 796728,
+            "layers": [
+              "In4.Cu",
+              "B.Cu"
+            ],
+            "R_ohm": 0.0003198226207717683,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 2.0177344914069827e-12,
+            "signed_current_at_max_A": 2.0177344914069827e-12,
+            "case_index": 15,
+            "loss_at_max_W": 1.3020786372778356e-27
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 35636,
+            "b": 298324,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.0003198226207717681,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 7.745496918626809e-12,
+            "signed_current_at_max_A": 7.745496918626809e-12,
+            "case_index": 51,
+            "loss_at_max_W": 1.918702974244687e-26
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 329319,
+            "b": 701548,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.000560010693399562,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 5.0306020191944744e-12,
+            "signed_current_at_max_A": 5.0306020191944744e-12,
+            "case_index": 15,
+            "loss_at_max_W": 1.4172166355692604e-26
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 298324,
+            "b": 329319,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 6.620491887522916e-12,
+            "signed_current_at_max_A": 6.620491887522916e-12,
+            "case_index": 15,
+            "loss_at_max_W": 2.9860279019480014e-26
+          }
+        ],
+        "largest_matched_changes": [
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 6222,
+            "b": 243097,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.00010660754025725604,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.07637752784401305,
+            "signed_current_at_max_A": -0.07637752784401305,
+            "case_index": 56,
+            "loss_at_max_W": 6.218979388618918e-07,
+            "before_max_abs_current_A": 0.07667841109621838,
+            "delta_max_abs_current_A": -0.00030088325220532786
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              16.05
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+            "a": 703231,
+            "b": 711094,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00010182012607264763,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.9120547724048497,
+            "signed_current_at_max_A": -0.9120547724048497,
+            "case_index": 6,
+            "loss_at_max_W": 8.469845157172705e-05,
+            "before_max_abs_current_A": 0.9123369032475334,
+            "delta_max_abs_current_A": -0.00028213084268369215
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              16.05
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+            "a": 711094,
+            "b": 1124529,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.9120547724048508,
+            "signed_current_at_max_A": -0.9120547724048508,
+            "case_index": 6,
+            "loss_at_max_W": 0.0001030368319120278,
+            "before_max_abs_current_A": 0.9123369032475326,
+            "delta_max_abs_current_A": -0.00028213084268180477
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              16.05
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+            "a": 431609,
+            "b": 703231,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.9120547724048508,
+            "signed_current_at_max_A": -0.9120547724048508,
+            "case_index": 6,
+            "loss_at_max_W": 0.0001030368319120278,
+            "before_max_abs_current_A": 0.9123369032475256,
+            "delta_max_abs_current_A": -0.00028213084267481037
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              1.875,
+              18.325
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "da81672e-cda6-4156-9a81-ae3dd3fd615f",
+            "a": 704310,
+            "b": 712173,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.000560010693399562,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.02536581295847433,
+            "signed_current_at_max_A": -0.02536581295847433,
+            "case_index": 6,
+            "loss_at_max_W": 3.603245819397245e-07,
+            "before_max_abs_current_A": 0.025196228776097493,
+            "delta_max_abs_current_A": 0.00016958418237683626
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              1.875,
+              18.325
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "da81672e-cda6-4156-9a81-ae3dd3fd615f",
+            "a": 712173,
+            "b": 1204482,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.02536581295846596,
+            "signed_current_at_max_A": -0.02536581295846596,
+            "case_index": 6,
+            "loss_at_max_W": 4.3833981252454966e-07,
+            "before_max_abs_current_A": 0.02519622877608988,
+            "delta_max_abs_current_A": 0.00016958418237607992
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              1.875,
+              18.325
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "da81672e-cda6-4156-9a81-ae3dd3fd615f",
+            "a": 511562,
+            "b": 704310,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.025365812958481875,
+            "signed_current_at_max_A": -0.025365812958481875,
+            "case_index": 6,
+            "loss_at_max_W": 4.3833981252509976e-07,
+            "before_max_abs_current_A": 0.02519622877613253,
+            "delta_max_abs_current_A": 0.00016958418234934436
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 6223,
+            "b": 243175,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.00010660754025725604,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.06066320362596118,
+            "signed_current_at_max_A": -0.06066320362596118,
+            "case_index": 56,
+            "loss_at_max_W": 3.923183359557065e-07,
+            "before_max_abs_current_A": 0.060798370351876074,
+            "delta_max_abs_current_A": -0.0001351667259148967
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              17.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "b203e0ed-139a-4df3-b4eb-835166ac14fc",
+            "a": 16475,
+            "b": 459656,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.00010660754025725604,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.09125750076111927,
+            "signed_current_at_max_A": -0.09125750076111927,
+            "case_index": 59,
+            "loss_at_max_W": 8.878202868001692e-07,
+            "before_max_abs_current_A": 0.09112631332691928,
+            "delta_max_abs_current_A": 0.00013118743419998635
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              31.0,
+              16.81
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7969b855-b744-4dbe-a75e-d670e0098f63",
+            "a": 711696,
+            "b": 1162988,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00045417381005982807,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.018397215582275382,
+            "signed_current_at_max_A": -0.018397215582275382,
+            "case_index": 57,
+            "loss_at_max_W": 1.53718551021527e-07,
+            "before_max_abs_current_A": 0.018514110010517504,
+            "delta_max_abs_current_A": -0.00011689442824212165
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              31.0,
+              16.81
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7969b855-b744-4dbe-a75e-d670e0098f63",
+            "a": 703833,
+            "b": 711696,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00037334046226637465,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.01839721558227258,
+            "signed_current_at_max_A": -0.01839721558227258,
+            "case_index": 57,
+            "loss_at_max_W": 1.2635989488191057e-07,
+            "before_max_abs_current_A": 0.018514110010514628,
+            "delta_max_abs_current_A": -0.00011689442824204879
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              31.0,
+              16.81
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7969b855-b744-4dbe-a75e-d670e0098f63",
+            "a": 470068,
+            "b": 703833,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.00045417381005982807,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.018397215582269505,
+            "signed_current_at_max_A": -0.018397215582269505,
+            "case_index": 57,
+            "loss_at_max_W": 1.537185510214288e-07,
+            "before_max_abs_current_A": 0.018514110010511533,
+            "delta_max_abs_current_A": -0.00011689442824202798
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              0.5,
+              19.1
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "ae9ce3e5-67c7-41ed-8e29-fc4f15b9cfff",
+            "a": 704739,
+            "b": 712602,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.000560010693399562,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.016031470417713498,
+            "signed_current_at_max_A": -0.016031470417713498,
+            "case_index": 6,
+            "loss_at_max_W": 1.439272527919554e-07,
+            "before_max_abs_current_A": 0.01592776838581968,
+            "delta_max_abs_current_A": 0.0001037020318938181
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              0.5,
+              19.1
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "ae9ce3e5-67c7-41ed-8e29-fc4f15b9cfff",
+            "a": 529562,
+            "b": 704739,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.016031470417753546,
+            "signed_current_at_max_A": -0.016031470417753546,
+            "case_index": 6,
+            "loss_at_max_W": 1.7508948367255625e-07,
+            "before_max_abs_current_A": 0.01592776838586304,
+            "delta_max_abs_current_A": 0.00010370203189050478
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              0.5,
+              19.1
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "ae9ce3e5-67c7-41ed-8e29-fc4f15b9cfff",
+            "a": 712602,
+            "b": 1222482,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.016031470417680972,
+            "signed_current_at_max_A": -0.016031470417680972,
+            "case_index": 6,
+            "loss_at_max_W": 1.7508948367097097e-07,
+            "before_max_abs_current_A": 0.01592776838579429,
+            "delta_max_abs_current_A": 0.00010370203188668145
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 243097,
+            "b": 701177,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.02755807780068891,
+            "signed_current_at_max_A": -0.02755807780068891,
+            "case_index": 56,
+            "loss_at_max_W": 1.72460616840544e-07,
+            "before_max_abs_current_A": 0.027660238199754675,
+            "delta_max_abs_current_A": -0.00010216039906576352
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 709040,
+            "b": 936017,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.027558077800688734,
+            "signed_current_at_max_A": -0.027558077800688734,
+            "case_index": 56,
+            "loss_at_max_W": 1.724606168405418e-07,
+            "before_max_abs_current_A": 0.027660238199754494,
+            "delta_max_abs_current_A": -0.00010216039906576005
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 701177,
+            "b": 709040,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00018667023113318732,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.027558077800688772,
+            "signed_current_at_max_A": -0.027558077800688772,
+            "case_index": 56,
+            "loss_at_max_W": 1.4176626874524219e-07,
+            "before_max_abs_current_A": 0.027660238199754522,
+            "delta_max_abs_current_A": -0.00010216039906574964
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              19.15
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+            "a": 704323,
+            "b": 712186,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00010182012607264763,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.1363874842784214,
+            "signed_current_at_max_A": -0.1363874842784214,
+            "case_index": 6,
+            "loss_at_max_W": 1.894011745405192e-06,
+            "before_max_abs_current_A": 0.13630409043695987,
+            "delta_max_abs_current_A": 8.339384146152651e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              19.15
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+            "a": 512428,
+            "b": 704323,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.13638748427841627,
+            "signed_current_at_max_A": -0.13638748427841627,
+            "case_index": 6,
+            "loss_at_max_W": 2.304091352667059e-06,
+            "before_max_abs_current_A": 0.13630409043695715,
+            "delta_max_abs_current_A": 8.339384145911177e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              19.15
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+            "a": 712186,
+            "b": 1205348,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.13638748427841627,
+            "signed_current_at_max_A": -0.13638748427841627,
+            "case_index": 6,
+            "loss_at_max_W": 2.304091352667059e-06,
+            "before_max_abs_current_A": 0.13630409043696415,
+            "delta_max_abs_current_A": 8.339384145211737e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 243175,
+            "b": 701178,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.026171592354177858,
+            "signed_current_at_max_A": -0.026171592354177858,
+            "case_index": 56,
+            "loss_at_max_W": 1.5554368571764925e-07,
+            "before_max_abs_current_A": 0.026237466958781132,
+            "delta_max_abs_current_A": -6.587460460327418e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 701178,
+            "b": 709041,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00018667023113318732,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.026171592354177695,
+            "signed_current_at_max_A": -0.026171592354177695,
+            "case_index": 56,
+            "loss_at_max_W": 1.2786019414195748e-07,
+            "before_max_abs_current_A": 0.026237466958780965,
+            "delta_max_abs_current_A": -6.587460460327071e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 709041,
+            "b": 936095,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.02617159235417768,
+            "signed_current_at_max_A": -0.02617159235417768,
+            "case_index": 56,
+            "loss_at_max_W": 1.5554368571764713e-07,
+            "before_max_abs_current_A": 0.026237466958780896,
+            "delta_max_abs_current_A": -6.58746046032152e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              34.6,
+              13.35
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7b6827b1-1225-408f-aa19-099c9ce730fb",
+            "a": 710437,
+            "b": 1065547,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00045417381005982807,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.0032935459713795134,
+            "signed_current_at_max_A": -0.0032935459713795134,
+            "case_index": 57,
+            "loss_at_max_W": 4.926625454853794e-09,
+            "before_max_abs_current_A": 0.003239082471269053,
+            "delta_max_abs_current_A": 5.446350011046024e-05
+          }
+        ]
+      },
+      "local_loop_delta_ohm": {
+        "C59": -4.239252629489876e-10,
+        "C60": -1.4533540277500423e-08,
+        "C61": -4.239251311100034e-10,
+        "C73": -9.867863765694596e-10,
+        "C72": -2.0173731799660866e-08,
+        "C66": -9.335504061631916e-08,
+        "C2": -1.2401292844368972e-07,
+        "C3": 1.0581813203458523e-16,
+        "C11": 3.469446951953614e-17,
+        "C12": 3.8163916471489756e-17,
+        "C13": 2.7755575615628914e-17
+      },
+      "VCAP_worst_copper_ohm": 0.033813007283334355
+    },
+    "025": {
+      "cases": 83,
+      "USB_configuration_only": 27,
+      "max_budget_error_V": 1.2434497875801753e-13,
+      "max_KCL_residual": 7.275957614183426e-12,
+      "max_power_error_W": 2.1721291432186263e-10,
+      "replay_max_terminal_error_V": 0.0,
+      "BEC_minima_V": {
+        "port_B": 4.884492654130721,
+        "port_C": 4.856101780986736,
+        "DSM_board": 3.1478937322361005,
+        "CORE_load": 3.1172594148936854,
+        "U6_input": 4.751652463543548,
+        "U9_input": 4.739618528541783
+      },
+      "RP3_H_reserve_V": 0.05610178098673657,
+      "DSM_reserve_V": 0.008493732236100726,
+      "loaded_barrel_coverage": {
+        "nets": [
+          "GND",
+          "VX_RAW",
+          "VX_PROTECTED",
+          "+5V_BEC",
+          "+5V_PERIPH",
+          "+3V3_CORE",
+          "USB_VBUS_RAW",
+          "USB_LIMITED",
+          "CORE_BUCK_IN",
+          "+3V3_DSM"
+        ],
+        "cases": 83,
+        "max_KCL_residual_A": 6.274092356761685e-12,
+        "added": [],
+        "removed": [
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 701548,
+            "b": 759940,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 3.1269092453377463e-12,
+            "signed_current_at_max_A": 3.1269092453377463e-12,
+            "case_index": 6,
+            "loss_at_max_W": 6.661068490667388e-27
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 759940,
+            "b": 796728,
+            "layers": [
+              "In4.Cu",
+              "B.Cu"
+            ],
+            "R_ohm": 0.0003198226207717683,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 2.0177344914069827e-12,
+            "signed_current_at_max_A": 2.0177344914069827e-12,
+            "case_index": 6,
+            "loss_at_max_W": 1.3020786372778356e-27
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 35636,
+            "b": 298324,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.0003198226207717681,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 7.723800848826734e-12,
+            "signed_current_at_max_A": 7.723800848826734e-12,
+            "case_index": 6,
+            "loss_at_max_W": 1.907968992647056e-26
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 329319,
+            "b": 701548,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.000560010693399562,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 5.0306020191944744e-12,
+            "signed_current_at_max_A": 5.0306020191944744e-12,
+            "case_index": 6,
+            "loss_at_max_W": 1.4172166355692604e-26
+          },
+          {
+            "net": "+3V3_CORE",
+            "position_mm": [
+              37.3,
+              2.049999
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "576daa72-e25b-4b1e-9452-b3c6bfcfcbc6",
+            "a": 298324,
+            "b": 329319,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 6.630677259657567e-12,
+            "signed_current_at_max_A": 6.630677259657567e-12,
+            "case_index": 33,
+            "loss_at_max_W": 2.9952227476295027e-26
+          }
+        ],
+        "largest_matched_changes": [
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 12383,
+            "b": 476960,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.00010660754025725604,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.07708445974421989,
+            "signed_current_at_max_A": -0.07708445974421989,
+            "case_index": 56,
+            "loss_at_max_W": 6.334634896842919e-07,
+            "before_max_abs_current_A": 0.07739126208610327,
+            "delta_max_abs_current_A": -0.00030680234188337763
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              16.05
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+            "a": 846461,
+            "b": 1381190,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.9097960719860849,
+            "signed_current_at_max_A": -0.9097960719860849,
+            "case_index": 6,
+            "loss_at_max_W": 0.0001025271231407288,
+            "before_max_abs_current_A": 0.9100687957814415,
+            "delta_max_abs_current_A": -0.00027272379535658864
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              16.05
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+            "a": 1381190,
+            "b": 1397120,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00010182012607264763,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.9097960719860877,
+            "signed_current_at_max_A": -0.9097960719860877,
+            "case_index": 6,
+            "loss_at_max_W": 8.427946019863884e-05,
+            "before_max_abs_current_A": 0.9100687957814424,
+            "delta_max_abs_current_A": -0.00027272379535470126
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              16.05
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+            "a": 1397120,
+            "b": 2207603,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.9097960719860919,
+            "signed_current_at_max_A": -0.9097960719860919,
+            "case_index": 6,
+            "loss_at_max_W": 0.00010252712314073038,
+            "before_max_abs_current_A": 0.9100687957814415,
+            "delta_max_abs_current_A": -0.00027272379534959423
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              1.875,
+              18.325
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "da81672e-cda6-4156-9a81-ae3dd3fd615f",
+            "a": 1003545,
+            "b": 1383371,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.025567646706270236,
+            "signed_current_at_max_A": -0.025567646706270236,
+            "case_index": 6,
+            "loss_at_max_W": 4.4534323470634847e-07,
+            "before_max_abs_current_A": 0.025397863701681872,
+            "delta_max_abs_current_A": 0.00016978300458836415
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              1.875,
+              18.325
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "da81672e-cda6-4156-9a81-ae3dd3fd615f",
+            "a": 1383371,
+            "b": 1399301,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.000560010693399562,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.025567646706238168,
+            "signed_current_at_max_A": -0.025567646706238168,
+            "case_index": 6,
+            "loss_at_max_W": 3.6608154285724164e-07,
+            "before_max_abs_current_A": 0.02539786370165606,
+            "delta_max_abs_current_A": 0.00016978300458210874
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              1.875,
+              18.325
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "da81672e-cda6-4156-9a81-ae3dd3fd615f",
+            "a": 1399301,
+            "b": 2364687,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.02556764670618748,
+            "signed_current_at_max_A": -0.02556764670618748,
+            "case_index": 6,
+            "loss_at_max_W": 4.4534323470346554e-07,
+            "before_max_abs_current_A": 0.02539786370161121,
+            "delta_max_abs_current_A": 0.00016978300457626966
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              17.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "b203e0ed-139a-4df3-b4eb-835166ac14fc",
+            "a": 32640,
+            "b": 901119,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.00010660754025725604,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.09172275110472736,
+            "signed_current_at_max_A": -0.09172275110472736,
+            "case_index": 59,
+            "loss_at_max_W": 8.968959599452876e-07,
+            "before_max_abs_current_A": 0.09158582625314553,
+            "delta_max_abs_current_A": 0.00013692485158182943
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 12384,
+            "b": 477067,
+            "layers": [
+              "F.Cu",
+              "In1.Cu"
+            ],
+            "R_ohm": 0.00010660754025725604,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.06037907486949823,
+            "signed_current_at_max_A": -0.06037907486949823,
+            "case_index": 56,
+            "loss_at_max_W": 3.88651932919768e-07,
+            "before_max_abs_current_A": 0.060514350674444196,
+            "delta_max_abs_current_A": -0.0001352758049459682
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              31.0,
+              16.81
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7969b855-b744-4dbe-a75e-d670e0098f63",
+            "a": 1398339,
+            "b": 2284251,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00045417381005982807,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.018289327293639517,
+            "signed_current_at_max_A": -0.018289327293639517,
+            "case_index": 57,
+            "loss_at_max_W": 1.5192090913252118e-07,
+            "before_max_abs_current_A": 0.018403483935852925,
+            "delta_max_abs_current_A": -0.00011415664221340813
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              31.0,
+              16.81
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7969b855-b744-4dbe-a75e-d670e0098f63",
+            "a": 923109,
+            "b": 1382409,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.00045417381005982807,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.01828932729362934,
+            "signed_current_at_max_A": -0.01828932729362934,
+            "case_index": 57,
+            "loss_at_max_W": 1.5192090913235212e-07,
+            "before_max_abs_current_A": 0.01840348393584269,
+            "delta_max_abs_current_A": -0.00011415664221334915
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              31.0,
+              16.81
+            ],
+            "kind": "via",
+            "diameter_mm": 0.6,
+            "uuid": "7969b855-b744-4dbe-a75e-d670e0098f63",
+            "a": 1382409,
+            "b": 1398339,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00037334046226637465,
+            "drill_mm": 0.3,
+            "max_abs_current_A": 0.018289327293634257,
+            "signed_current_at_max_A": -0.018289327293634257,
+            "case_index": 57,
+            "loss_at_max_W": 1.248821952898589e-07,
+            "before_max_abs_current_A": 0.018403483935847287,
+            "delta_max_abs_current_A": -0.00011415664221302996
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 476960,
+            "b": 1377020,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.027750651418701883,
+            "signed_current_at_max_A": -0.027750651418701883,
+            "case_index": 56,
+            "loss_at_max_W": 1.7487931994141903e-07,
+            "before_max_abs_current_A": 0.027854532096647937,
+            "delta_max_abs_current_A": -0.0001038806779460541
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 1392950,
+            "b": 1838102,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.027750651418701706,
+            "signed_current_at_max_A": -0.027750651418701706,
+            "case_index": 56,
+            "loss_at_max_W": 1.748793199414168e-07,
+            "before_max_abs_current_A": 0.02785453209664776,
+            "delta_max_abs_current_A": -0.0001038806779460541
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              37.57,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "fb9f39dc-4736-4f91-9204-521a0a39c6be",
+            "a": 1377020,
+            "b": 1392950,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00018667023113318732,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.027750651418701713,
+            "signed_current_at_max_A": -0.027750651418701713,
+            "case_index": 56,
+            "loss_at_max_W": 1.4375449376783142e-07,
+            "before_max_abs_current_A": 0.02785453209664776,
+            "delta_max_abs_current_A": -0.00010388067794604716
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              0.5,
+              19.1
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "ae9ce3e5-67c7-41ed-8e29-fc4f15b9cfff",
+            "a": 1400152,
+            "b": 2400303,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.015939837035532804,
+            "signed_current_at_max_A": -0.015939837035532804,
+            "case_index": 6,
+            "loss_at_max_W": 1.7309363568796066e-07,
+            "before_max_abs_current_A": 0.015838484492660797,
+            "delta_max_abs_current_A": 0.00010135254287200676
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              0.5,
+              19.1
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "ae9ce3e5-67c7-41ed-8e29-fc4f15b9cfff",
+            "a": 1039161,
+            "b": 1384222,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0006812607150897421,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.015939837035599643,
+            "signed_current_at_max_A": -0.015939837035599643,
+            "case_index": 6,
+            "loss_at_max_W": 1.7309363568941232e-07,
+            "before_max_abs_current_A": 0.01583848449273528,
+            "delta_max_abs_current_A": 0.00010135254286436357
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              0.5,
+              19.1
+            ],
+            "kind": "via",
+            "diameter_mm": 0.45,
+            "uuid": "ae9ce3e5-67c7-41ed-8e29-fc4f15b9cfff",
+            "a": 1384222,
+            "b": 1400152,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.000560010693399562,
+            "drill_mm": 0.2,
+            "max_abs_current_A": 0.01593983703557892,
+            "signed_current_at_max_A": -0.01593983703557892,
+            "case_index": 6,
+            "loss_at_max_W": 1.4228662360555727e-07,
+            "before_max_abs_current_A": 0.01583848449271829,
+            "delta_max_abs_current_A": 0.00010135254286063045
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              19.15
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+            "a": 1383399,
+            "b": 1399329,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00010182012607264763,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.1360976298979121,
+            "signed_current_at_max_A": -0.1360976298979121,
+            "case_index": 6,
+            "loss_at_max_W": 1.8859698896238679e-06,
+            "before_max_abs_current_A": 0.1360122315518945,
+            "delta_max_abs_current_A": 8.539834601759e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              19.15
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+            "a": 1399329,
+            "b": 2367076,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.13609762989790794,
+            "signed_current_at_max_A": -0.13609762989790794,
+            "case_index": 6,
+            "loss_at_max_W": 2.2943083244413714e-06,
+            "before_max_abs_current_A": 0.13601223155189426,
+            "delta_max_abs_current_A": 8.539834601367646e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              19.15
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+            "a": 1005934,
+            "b": 1383399,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.13609762989790444,
+            "signed_current_at_max_A": -0.13609762989790444,
+            "case_index": 6,
+            "loss_at_max_W": 2.2943083244412537e-06,
+            "before_max_abs_current_A": 0.13601223155189077,
+            "delta_max_abs_current_A": 8.539834601367646e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 1392951,
+            "b": 1838209,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.02609831637884997,
+            "signed_current_at_max_A": -0.02609831637884997,
+            "case_index": 56,
+            "loss_at_max_W": 1.5467391368101796e-07,
+            "before_max_abs_current_A": 0.026164413717504775,
+            "delta_max_abs_current_A": -6.609733865480666e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 1377021,
+            "b": 1392951,
+            "layers": [
+              "In2.Cu",
+              "In3.Cu"
+            ],
+            "R_ohm": 0.00018667023113318732,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.02609831637885005,
+            "signed_current_at_max_A": -0.02609831637885005,
+            "case_index": 56,
+            "loss_at_max_W": 1.271452231616219e-07,
+            "before_max_abs_current_A": 0.02616441371750481,
+            "delta_max_abs_current_A": -6.609733865476156e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              40.43,
+              9.0
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.6,
+              1.1
+            ],
+            "uuid": "0307b72e-dc06-4ce5-a2d7-5705a0419910",
+            "a": 477067,
+            "b": 1377021,
+            "layers": [
+              "In1.Cu",
+              "In2.Cu"
+            ],
+            "R_ohm": 0.00022708690502991404,
+            "drill_mm": 0.6,
+            "max_abs_current_A": 0.026098316378850267,
+            "signed_current_at_max_A": -0.026098316378850267,
+            "case_index": 56,
+            "loss_at_max_W": 1.5467391368102148e-07,
+            "before_max_abs_current_A": 0.026164413717504956,
+            "delta_max_abs_current_A": -6.60973386546887e-05
+          },
+          {
+            "net": "GND",
+            "position_mm": [
+              4.06,
+              12.45
+            ],
+            "kind": "pad",
+            "diameter_mm": [
+              1.8,
+              1.8
+            ],
+            "uuid": "8e7c1dee-7d64-46fc-b147-5e938d07f96d",
+            "a": 1395044,
+            "b": 2010857,
+            "layers": [
+              "In3.Cu",
+              "In4.Cu"
+            ],
+            "R_ohm": 0.0001238655845617713,
+            "drill_mm": 1.1,
+            "max_abs_current_A": 0.09606744452473724,
+            "signed_current_at_max_A": -0.09606744452473724,
+            "case_index": 6,
+            "loss_at_max_W": 1.1431497694091433e-06,
+            "before_max_abs_current_A": 0.09612605474277436,
+            "delta_max_abs_current_A": -5.8610218037116746e-05
+          }
+        ]
+      },
+      "local_loop_delta_ohm": {
+        "C59": -4.1298646447085474e-10,
+        "C60": -1.4064823382342606e-08,
+        "C61": -4.129866483515432e-10,
+        "C73": -9.307297085814348e-10,
+        "C72": -1.9593942097301253e-08,
+        "C66": -9.178559280849374e-08,
+        "C2": -1.2103776455760218e-07,
+        "C3": 1.0755285551056204e-16,
+        "C11": -2.983724378680108e-16,
+        "C12": -3.469446951953614e-18,
+        "C13": 6.938893903907228e-18
+      },
+      "VCAP_worst_copper_ohm": 0.03348653062263135
+    }
+  },
+  "qualifications": "Conditional static copper model only; native, reference, thermal, transient, harness and fabrication gates remain separate.",
+  "CORE25um_sensitivity": {
+    "cases": 83,
+    "USB_configuration_only": 27,
+    "max_budget_error_V": 4.075906279155106e-14,
+    "max_KCL_residual": 7.275957614183426e-12,
+    "max_power_error_W": 2.2027357715614926e-10,
+    "BEC_minima_V": {
+      "port_B": 4.884492654130722,
+      "port_C": 4.85610178098674,
+      "DSM_board": 3.1476697036058443,
+      "CORE_load": 3.115935931437707,
+      "U6_input": 4.75165246354333,
+      "U9_input": 4.739618528540939
+    },
+    "RP3_H_reserve_V": 0.056101780986740124,
+    "DSM_reserve_V": 0.008269703605844558,
+    "replay_max_terminal_error_V": 0.0,
+    "scope": "Voltage-only CORE grid sensitivity; primary barrel envelopes retain 12.5um CORE"
+  },
+  "PERIPH12p5um_sensitivity": {
+    "cases": 83,
+    "USB_configuration_only": 27,
+    "max_budget_error_V": 1.3024303857633868e-13,
+    "max_KCL_residual": 7.275957614183426e-12,
+    "max_power_error_W": 1.6857804041592317e-10,
+    "BEC_minima_V": {
+      "port_B": 4.884474374269197,
+      "port_C": 4.856034975516602,
+      "DSM_board": 3.1478937322360947,
+      "CORE_load": 3.1172594148936605,
+      "U6_input": 4.751652463548087,
+      "U9_input": 4.739618528545435
+    },
+    "RP3_H_reserve_V": 0.05603497551660208,
+    "DSM_reserve_V": 0.008493732236094953,
+    "before_screen": {
+      "BEC_minima_V": {
+        "port_B": 4.884474945934312,
+        "port_C": 4.85603415954265,
+        "DSM_board": 3.147893158737612,
+        "CORE_load": 3.1172590418216637,
+        "U6_input": 4.751652371388534,
+        "U9_input": 4.739618689946284
+      },
+      "RP3_H_reserve_V": 0.05603415954265056,
+      "DSM_reserve_V": 0.008493158737612472
+    },
+    "scope": "Matched voltage-only PERIPH sensitivity; primary barrel envelopes retain 10um PERIPH"
+  },
+  "changed_nets": [
+    "+3V3_CORE",
+    "+5V_PERIPH",
+    "GND",
+    "VX_PROTECTED",
+    "VX_RAW"
+  ],
+  "flags": [],
+  "scope_limitations": [
+    "Do not sum maxima from different barrel/current cases",
+    "Gyro coupled load is at FB2.1 returned at U2.6, not a solved ferrite/downstream VDD model",
+    "Conserved CORE .32A plus classic DSM .020A; no arbitrary .5A DSM/fault guarantee",
+    "R55 feedback counted once within regulated-source equation",
+    "No silent reuse across changed drills, terminal movement, altered via contacts, or physical copper"
+  ]
+}

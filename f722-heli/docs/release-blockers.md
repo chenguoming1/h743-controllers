@@ -1,22 +1,7 @@
-# Release blockers
+# Current prototype CAM and assembly review conditions
 
-**Do not fabricate, purchase as a qualified assembly, or fly this design.**
+The frozen final95 geometry, native checks, exact-board electrical analysis and manufacturing-export verification are complete. The package is **verified prototype files for CAM/assembly review**. See [prototype handoff](prototype-handoff.md) and [final electrical assessment](final-electrical-review.md) for exact scopes, assumptions and margins.
 
-## Recorded native checks
+Factory stackup/CAM acceptance, exact R16 supply, 0201 process, USB shell and THT handling, placement preview, actual mating harness and first-article physical tests remain required. Nominal DSM 0.5 A is not a ±5% terminal guarantee; selected Hobbywing/KST pulse, thermal, contact and command-level conditions are not fully qualified. No 30 A board rating, production qualification or flight release is claimed.
 
-The supplied primary checkpoint was checked with KiCad 10.0.6. Its saved unsuppressed DRC report contains 31 unconnected items and 70 warnings: 28 dangling tracks, 22 dangling vias, 7 tracks not centered on vias, 7 silkscreen edge-clearance warnings, 4 silkscreen-over-copper warnings and 2 silkscreen overlaps. There are zero geometric errors in that recorded run. This is not a clean DRC pass.
-
-The canonical nine-sheet source has zero reported ERC violations. The physical-wire graph audit passes, and the pin-map audit records 29 matching stock Rotorflight target resources. These checks do not demonstrate board connectivity or actual firmware/hardware operation.
-
-## Work remaining
-
-1. Complete the 31 unfinished connections and inspect all dangling copper. Rerun native refill and unsuppressed DRC/ERC on the exact final source and PCB.
-2. Independently verify PCB-to-schematic pin/net/part parity, circuit operation, package mapping and every changed signal/return path.
-3. Recheck power voltage/drop/current, startup, USB isolation, simultaneous loads, ground returns and thermal margins on the final exact copper. Prior scoped calculations are not hardware qualification.
-4. Verify maximum package/connector envelopes, connector mating access, all 21 header pins/tails/solder fillets, USB clearance and fabrication/assembly tolerances. Full connector maximum depth/height evidence remains incomplete.
-5. Regenerate and reconcile Gerbers, drill, procurement BOM and CPL only after the design is fully checked. Proposed LCSC/manufacturer selections are not live stock guarantees or purchase authorization.
-6. Perform first-article electrical, thermal, USB, sensor orientation, receiver, output and failsafe testing with motors disconnected before considering flight evaluation.
-
-The Infineon DPS368XTSA1 substitution and TPS2117/C75 source updates are present in this primary snapshot. Source evidence is included; physical compatibility and behavior still require testing.
-
-The unaccepted experimental layout is not part of this PR and must not be substituted for the primary PCB without separate review.
+Earlier routing/checkpoint records are historical and do not replace this exact-board status. All nine native warnings remain visible with eight operating/local spreading-field dispositions and one retained zero-transport PERIPH tail.

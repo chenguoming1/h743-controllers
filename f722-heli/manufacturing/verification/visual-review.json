@@ -1,0 +1,26 @@
+{
+  "method": "Native SVG exports rendered headlessly with installed Inkscape; inspected layer/drill contact sheet and top paste image; Gerber/Excellon geometry comparison detailed separately",
+  "inspected": [
+    "F.Cu",
+    "B.Cu",
+    "In1.Cu",
+    "F.Mask",
+    "B.Mask",
+    "F.Paste",
+    "B.Paste",
+    "PTH drill map",
+    "NPTH drill map"
+  ],
+  "findings": [
+    "Single rectangular board and expected 21 header-hole grid retained",
+    "USB two contact rows, four shell slots and two NPTH locators align between copper/mask/drill views",
+    "Native top paste has 16 USB contact apertures and no shell/header/locator paste",
+    "Both mask views show intended component openings; tented via mask state retained",
+    "No blank/corrupt representative render observed"
+  ],
+  "limitations": [
+    "Not an independent full Gerber CAM renderer/raster comparison",
+    "Not factory placement-preview, stackup, stencil, process, panel or mechanical acceptance",
+    "Bottom views are unmirrored common board coordinates; use native CPL side data"
+  ]
+}
