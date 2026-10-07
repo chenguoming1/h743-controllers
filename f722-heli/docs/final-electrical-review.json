@@ -1,0 +1,75 @@
+{
+  "board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+  "status": "VERIFIED PROTOTYPE FILES FOR CAM/ASSEMBLY REVIEW",
+  "electrical_analysis_complete": true,
+  "manufacturing_export_verification_complete": true,
+  "classic_scope": {
+    "DSM_A": 0.02,
+    "RP3_H_reserve_mV": 51.884243,
+    "DSM_reserve_mV": 8.269704,
+    "VCAP_copper_mohm": 33.813007,
+    "VCAP_limit_mohm": 35
+  },
+  "nominal_capacity_scope": {
+    "DSM_A": 0.5,
+    "shared_ABC_total_A": 2,
+    "minimum_DSM_pad_V": 3.009775088,
+    "DSM_plus_minus_5_percent_guaranteed": false
+  },
+  "selected_installation": {
+    "ESC": "Hobbywing Platinum HV200A SBEC V4.1",
+    "voltage_V": 7.4,
+    "cyclic": "3 x KST BLS815",
+    "tail": "BLS805X or BLS905X",
+    "feeds": "same BEC, J6 main and J8 auxiliary if SBUS unused",
+    "actual_Hobbywing_plugs_are_Harwin_reference": false
+  },
+  "native_checks": {
+    "sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+    "standard_drc": {
+      "opens": 0,
+      "errors": 0,
+      "warnings": 9
+    },
+    "all_track_drc": {
+      "opens": 0,
+      "errors": 0,
+      "warnings": 9
+    },
+    "erc_violations": 0,
+    "source_components": 156,
+    "source_pad_keys": 506,
+    "physical_pads": 511,
+    "nets": 129,
+    "via_mask_pass_count": 323,
+    "clamp_cases": 18,
+    "clamp_pass_count": 18,
+    "new_reference_deficits": 0,
+    "unchanged_reference_regressions": 0,
+    "cold_refill_byte_identical": true
+  },
+  "numerical_evidence": {
+    "payload_files": 324,
+    "exact_scalar_replays": 4008,
+    "all_replay_numeric_differences": 0,
+    "field_and_barrel_cross_checks_complete": true
+  },
+  "warnings": {
+    "visible_count": 9,
+    "operating_or_local_spreading_field_objects": 8,
+    "obsolete_unloaded_PERIPH_tail": "874efe98"
+  },
+  "paired_complete_evidence": {
+    "filename": "F722-4da0708a-ELECTRICAL-EVIDENCE.tar.gz",
+    "sha256": "6abbea13f1c71c861957e73b03ba16ef4a4c85f0a380b010d2483f9d6dab2481",
+    "bytes": 30971603
+  },
+  "limits": [
+    "Factory CAM/assembly acceptance and first-article qualification remain required",
+    "No production or flight qualification and no30A board rating",
+    "Actual selected Hobbywing contact/harness, pulse duration, thermal rise and KST signal-level qualification remain open",
+    "Conditional board input5\u201312.6V; configured7.4V and tighter6\u20138.4V servo range apply",
+    "105C copper assumption is not an ambient/body-temperature rating; selected X5R bodies remain limited to85C",
+    "Finite-pad idealization omits within-pad neck, pin and solder heating; compact replay does not replace full sparse field reconstruction"
+  ]
+}
