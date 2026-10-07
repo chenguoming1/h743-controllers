@@ -30,7 +30,7 @@
     "manufacturer": "UNI-ROYAL (Uniroyal Elec)",
     "mpn": "0402WGF1002TCE",
     "jlcpcb_lcsc_code": "C25744",
-    "proposed_footprint": "F722_Heli:R_0402_1005Metric",
+    "proposed_footprint": "F722_Heli:R_0402_1005Metric_R5_ClearPin1Silk",
     "evidence_file": "validation/passive-bom-proposals.json",
     "datasheet_url": "",
     "supplier_url": "https://jlcpcb.com/partdetail/26487-0402WGF1002TCE/C25744"
@@ -162,13 +162,13 @@
     "supplier_url": "https://jlcpcb.com/partdetail/25835-0402WGF220JTCE/C25092"
   },
   "R31": {
-    "manufacturer": "UNI-ROYAL (Uniroyal Elec)",
-    "mpn": "0402WGF220JTCE",
-    "jlcpcb_lcsc_code": "C25092",
-    "proposed_footprint": "F722_Heli:R_0402_1005Metric",
-    "evidence_file": "validation/passive-bom-proposals.json",
-    "datasheet_url": "",
-    "supplier_url": "https://jlcpcb.com/partdetail/25835-0402WGF220JTCE/C25092"
+    "manufacturer": "YAGEO",
+    "mpn": "AC0201FR-0722RL",
+    "jlcpcb_lcsc_code": "C144830",
+    "proposed_footprint": "F722_YAGEO:R_0201_0603Metric_YAGEO_AC",
+    "evidence_file": "docs/uart-0201-selection/README.md",
+    "datasheet_url": "https://www.yageogroup.com/component-documentation/download/specsheet/AC0201FR-0722RL",
+    "supplier_url": "https://jlcpcb.com/partdetail/YAGEO-AC0201FR0722RL/C144830"
   },
   "R32": {
     "manufacturer": "UNI-ROYAL (Uniroyal Elec)",
@@ -450,13 +450,29 @@
     "supplier_url": "https://jlcpcb.com/partdetail/YAGEO-RT0402BRD0712K7L/C852509"
   },
   "R16": {
-    "manufacturer": "UNI-ROYAL",
-    "mpn": "0603WAF150LT5E",
-    "jlcpcb_lcsc_code": "C45879",
-    "proposed_footprint": "F722_Heli:R_0603_1608Metric",
-    "evidence_file": "validation/passive-bom-proposals.json",
-    "datasheet_url": "",
-    "supplier_url": "https://jlcpcb.com/partdetail/46882-0603WAF150LT5E/C45879"
+    "manufacturer": "Panasonic",
+    "mpn": "ERJ3RSFR12V",
+    "jlcpcb_lcsc_code": "C4059772",
+    "proposed_footprint": "F722_Heli:R_Panasonic_ERJ3R_0603",
+    "evidence_file": "docs/vcap-r16-correction.json",
+    "datasheet_url": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDN0000/AOA0000C313.pdf",
+    "supplier_url": "https://jlcpcb.com/partdetail/PANASONIC-ERJ-3RSFR12V/C4059772",
+    "supplier_display_mpn": "ERJ-3RSFR12V",
+    "nominal_resistance_ohm": 0.12,
+    "tolerance_percent": 1,
+    "rated_power_W": 0.1,
+    "tcr_ppm_per_K": {
+      "minimum": 0,
+      "maximum": 300,
+      "manufacturer_test_temperature_C": [
+        25,
+        125
+      ]
+    },
+    "assembly_source_status": "Exact catalog identity verified; supply pending confirmation / private-stock route",
+    "jlc_public_assembly_stock_count": null,
+    "immediate_jlc_assembly_orderability_verified": false,
+    "qualification_status": "Prototype candidate; installed-resistance, capacitor-impedance, copper-loop and regulator-stability qualification pending"
   },
   "R20": {
     "manufacturer": "Panasonic",
@@ -1018,12 +1034,12 @@
   },
   "J1": {
     "manufacturer": "GCT",
-    "mpn": "USB4105-GF-A-120",
-    "jlcpcb_lcsc_code": "C5184243",
-    "proposed_footprint": "F722_Heli:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
-    "evidence_file": "validation/active-bom-proposals.json",
-    "datasheet_url": "https://gct.co/files/drawings/usb4105.pdf",
-    "supplier_url": "https://jlcpcb.com/partdetail/5849584-USB4105_GF_A120/C5184243"
+    "mpn": "USB4145-03-0170-C",
+    "jlcpcb_lcsc_code": "C5181332",
+    "proposed_footprint": "F722_Heli:USB_C_Receptacle_GCT_USB4145-03-0170-C_16P_Vertical",
+    "evidence_file": "docs/vertical-usb-evidence.md",
+    "datasheet_url": "https://gct.co/download?name=USB4145.pdf&type=PDFDrawing",
+    "supplier_url": "https://jlcpcb.com/partdetail/5839804-USB4145_03_0170C/C5181332"
   },
   "D3": {
     "manufacturer": "onsemi",
@@ -1110,7 +1126,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
@@ -1119,7 +1135,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
@@ -1128,7 +1144,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
@@ -1137,7 +1153,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
@@ -1146,7 +1162,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
@@ -1155,7 +1171,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
@@ -1164,7 +1180,7 @@
     "manufacturer": "Samtec",
     "mpn": "HTSW-101-08-L-T-RA",
     "jlcpcb_lcsc_code": null,
-    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow",
+    "proposed_footprint": "F722_Heli:Samtec_HTSW-101-08-L-T-RA_TripleRow_OpenEdgeSilk",
     "evidence_file": "validation/active-bom-proposals.json",
     "datasheet_url": "https://suddendocs.samtec.com/prints/htsw-xxx-xx-xxx-x-xx-xx-xx-mkt.pdf",
     "supplier_url": "https://il.farnell.com/samtec/htsw-101-08-l-t-ra/pin-header-r-a-3pos-3row-2-54mm/dp/3685071"
