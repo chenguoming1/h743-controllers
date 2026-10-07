@@ -1,0 +1,16 @@
+{
+  "original_review_board_sha256": "d5fb5b64b0549616c1581b5cc41632f8e1f96e78a9d271fdd6c13ad27e949698",
+  "final95_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+  "original_script_sha256": {
+    "export_native.py": "fab5076023f12ac650b060972a29966ff7f34d4dc12b862e6f2519852a020092",
+    "analyze.py": "15877dffc5efeb2a6ec7dbe96e269fb6f181411a304223188a83a408cd20cc3d"
+  },
+  "adaptations": [
+    "Exporter: use an optional portable board-label argument instead of recording the machine-specific absolute input path.",
+    "Analyzer: remove the machine-specific Shapely dependency path; provide Shapely through the caller environment.",
+    "Plotter: use candidate native export and writable local runtime cache, remove machine-specific dependency paths, and use a neutral fallback color for newly present zone nets outside the audit windows."
+  ],
+  "native_baseline_export_matches_prior_except_source_path_label": true,
+  "vendor_pdf_hashes_rechecked": true,
+  "source_geometry_unchanged": true
+}
