@@ -1,0 +1,83 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-07T23:30:00",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "b-rid.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Track width (rule 'VBUS charger input minimum' min width 0.3000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [/VBUS] on F.Cu, length 1.1500 mm",
+                    "pos": {
+                        "x": 116.25,
+                        "y": 101.65
+                    },
+                    "uuid": "725a39a1-b737-422e-a66b-cbc82b621b93"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'VSYS inner power minimum' min width 0.6000 mm; actual 0.4000 mm)",
+            "items": [
+                {
+                    "description": "Track [/VSYS] on In2.Cu, length 1.0607 mm",
+                    "pos": {
+                        "x": 117.35,
+                        "y": 111.25
+                    },
+                    "uuid": "2060892d-5a16-4ef7-9788-552d7e113b75"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (rule 'VSYS VIN bridge minimum' min width 0.8000 mm; actual 0.6000 mm)",
+            "items": [
+                {
+                    "description": "Track [/VSYS] on In3.Cu, length 0.9192 mm",
+                    "pos": {
+                        "x": 118.7,
+                        "y": 117.55
+                    },
+                    "uuid": "2b5d75d1-8528-4078-8e20-0f6d55f04ecb"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        }
+    ]
+}

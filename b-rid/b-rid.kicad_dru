@@ -2,3 +2,66 @@
 (rule "USB coplanar clearance" (condition "A.Type == 'Track' && A.NetClass == 'USB90' && B.Type == 'Zone' && B.NetName == 'GND'") (constraint clearance (min 0.30mm)))
 
 (rule "GNSS coplanar clearance" (condition "A.Type == 'Track' && A.NetClass == 'RF50' && B.Type == 'Zone' && B.NetName == 'GND'") (constraint clearance (min 0.30mm)))
+
+# CAD width is fixed; this does not set fabrication tolerances.
+(rule "USB pair width" (condition "A.hasNetclass('USB90')") (constraint track_width (min 0.135mm) (opt 0.135mm) (max 0.135mm)))
+# Nominal coupled gap: 0.150 mm, with +/-0.005 mm CAD allowance.
+(rule "USB pair gap" (condition "A.hasNetclass('USB90')") (constraint diff_pair_gap (min 0.145mm) (opt 0.150mm) (max 0.155mm)))
+# Guardrails for each net pair, not a through-component full-path guarantee.
+# Each finite breakout rule below has its own uncoupled budget.
+# Remaining-region baselines: CONN 7.2858 mm; MCU 0.9428 mm.
+# KiCad gates gap errors on the corresponding uncoupled limit; keep budgets scoped.
+(rule "USB connector uncoupled budget"
+  (condition "A.inDiffPair('/USB_D_CONN')")
+  (constraint diff_pair_uncoupled (max 7.5mm)))
+(rule "USB MCU uncoupled budget"
+  (condition "A.inDiffPair('/USB_D')")
+  (constraint diff_pair_uncoupled (max 1.1mm)))
+# Net-total skew: connector 1.2648 mm (branched); MCU 0.1428 mm.
+# Series R3/R4 split these net pairs; see review/USB_DIFFERENTIAL_RULES.md.
+(rule "USB connector pair skew"
+  (condition "A.inDiffPair('/USB_D_CONN')")
+  (constraint skew (max 1.5mm) (within_diff_pairs)))
+(rule "USB MCU pair skew"
+  (condition "A.inDiffPair('/USB_D')")
+  (constraint skew (max 0.25mm) (within_diff_pairs)))
+
+# USB-C contacts/transition: native regional uncoupled baseline 3.3928 mm.
+(rule "USB connector breakout gap"
+  (condition "A.inDiffPair('/USB_D_CONN') && A.Type == 'Track' && A.Layer == 'F.Cu' && A.Origin_X >= 115.6mm && A.End_X >= 115.6mm && A.Origin_X <= 117.9mm && A.End_X <= 117.9mm && A.Origin_Y >= 114.4mm && A.End_Y >= 114.4mm && A.Origin_Y <= 117.0mm && A.End_Y <= 117.0mm")
+  (constraint diff_pair_gap (min 0.145mm) (opt 0.150mm) (max 1.775mm))
+  (constraint diff_pair_uncoupled (max 3.6mm)))
+# R3/R4 upper escape: regional uncoupled baseline 0.3642 mm.
+# Both track endpoints must stay in the local box.
+(rule "USB termination breakout gap"
+  (condition "A.inDiffPair('/USB_D_CONN') && A.Type == 'Track' && A.Layer == 'B.Cu' && A.Origin_X >= 120.5mm && A.End_X >= 120.5mm && A.Origin_X <= 121.7mm && A.End_X <= 121.7mm && A.Origin_Y >= 109.15mm && A.End_Y >= 109.15mm && A.Origin_Y <= 110mm && A.End_Y <= 110mm")
+  (constraint diff_pair_gap (min 0.145mm) (opt 0.150mm) (max 0.675mm))
+  (constraint diff_pair_uncoupled (max 0.5mm)))
+# MCU-side R3/R4/via fanout: regional uncoupled baseline 0.9697 mm.
+(rule "USB MCU via breakout gap"
+  (condition "A.inDiffPair('/USB_D') && A.Type == 'Track' && A.Origin_X >= 120.3mm && A.End_X >= 120.3mm && A.Origin_X <= 121.7mm && A.End_X <= 121.7mm && A.Origin_Y >= 110.3mm && A.End_Y >= 110.3mm && A.Origin_Y <= 111.8mm && A.End_Y <= 111.8mm")
+  (constraint diff_pair_gap (min 0.145mm) (opt 0.150mm) (max 0.575mm))
+  (constraint diff_pair_uncoupled (max 1.1mm)))
+
+# Independent minimum trace clearance is not gated by uncoupled-length allowance.
+(rule "USB pair minimum trace clearance"
+  (condition "A.Type == 'Track' && B.Type == 'Track' && A.hasNetclass('USB90') && AB.isCoupledDiffPair()")
+  (constraint clearance (min 0.145mm)))
+
+# VSYS controls and pour-backed local escapes remain >=0.20 mm.
+(rule "VSYS outer and control minimum"
+  (condition "A.Type == 'Track' && A.NetName == '/VSYS'")
+  (constraint track_width (min 0.20mm)))
+# Inner copper is 15.2 um; source and VINA bridges are deliberately >=0.60 mm.
+(rule "VSYS inner power minimum"
+  (condition "A.Type == 'Track' && A.NetName == '/VSYS' && (A.Layer == 'In2.Cu' || A.Layer == 'In3.Cu')")
+  (constraint track_width (min 0.60mm)))
+# Preserve the wider main converter-input route, scoped by its named PCB group.
+(rule "VSYS VIN bridge minimum"
+  (condition "A.Type == 'Track' && A.NetName == '/VSYS' && A.memberOfGroup('VSYS VIN bridge')")
+  (constraint track_width (min 0.80mm)))
+
+# Full-current charger input feed; narrow indicator/status branches remain permitted.
+(rule "VBUS charger input minimum"
+  (condition "A.Type == 'Track' && A.NetName == '/VBUS' && A.memberOfGroup('VBUS charger input bridge')")
+  (constraint track_width (min 0.30mm)))

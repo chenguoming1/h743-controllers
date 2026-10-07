@@ -1,0 +1,2076 @@
+{
+  "pcb_sha256": "349fbe54c6d95591bcbd5b6ae21f348d2a8d77a581d6df7f8176709179ab2ae4",
+  "routed_nets": 41,
+  "segments": 688,
+  "short_under_0_2_mm": 73,
+  "nets": [
+    {
+      "net": "/3V3",
+      "role": "Plane-backed supply and local control/feedback branches",
+      "decision": "Keep mixed 0.15/0.20/0.25/0.30 mm widths. One In2 plane connects 20 vias. U4.1 is VOUT; U4.10 is FB; U6.1 is SEL. VOUT-to-C6 is 0.30 mm/1.360 mm; C6-to-plane via is 0.30 mm/1.055 mm. GNSS local supply fanout may remain 0.15 mm.",
+      "segments": 91,
+      "short_under_0_2_mm": 9,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 38,
+          "length_mm": 45.96714636803986
+        },
+        {
+          "width_mm": 0.2,
+          "segments": 34,
+          "length_mm": 30.27302862755093
+        },
+        {
+          "width_mm": 0.25,
+          "segments": 10,
+          "length_mm": 26.520992823454904
+        },
+        {
+          "width_mm": 0.3,
+          "segments": 9,
+          "length_mm": 10.366785954307037
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C10",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C11",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C6",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C7",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C8",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C9",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R11",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R12",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R21",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R25",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R8",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R9",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "TP4",
+          "pin": "1",
+          "pinfunction": "1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "3",
+          "pinfunction": "3V3_3",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U2",
+          "pin": "B1",
+          "pinfunction": "VCC_B1",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U2",
+          "pin": "J4",
+          "pinfunction": "V_IO_J4",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U4",
+          "pin": "1",
+          "pinfunction": "VOUT_1",
+          "pintype": "power_out"
+        },
+        {
+          "ref": "U4",
+          "pin": "10",
+          "pinfunction": "FB_10",
+          "pintype": "input"
+        },
+        {
+          "ref": "U6",
+          "pin": "1",
+          "pinfunction": "SEL_1",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/BAT+",
+      "role": "Battery charge/discharge feed plus high-impedance divider branch",
+      "decision": "Keep 0.45 mm In2 main feed, 0.30 mm connector escape and short 0.20/0.25 mm charger links. The long 0.20 mm branch terminates at R13=1 MOhm and is not a high-current feed. With 15.2 um inner and 35 um outer copper, 0.45 mm inner has similar section to 0.195 mm outer.",
+      "segments": 40,
+      "short_under_0_2_mm": 5,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 30,
+          "length_mm": 34.170887983909566
+        },
+        {
+          "width_mm": 0.25,
+          "segments": 4,
+          "length_mm": 2.2399494936611664
+        },
+        {
+          "width_mm": 0.3,
+          "segments": 1,
+          "length_mm": 1.0
+        },
+        {
+          "width_mm": 0.45,
+          "segments": 5,
+          "length_mm": 13.38111831820431
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C3",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J2",
+          "pin": "1",
+          "pinfunction": "Pin_1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R13",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "2",
+          "pinfunction": "BAT_2",
+          "pintype": "power_out"
+        },
+        {
+          "ref": "U3",
+          "pin": "3",
+          "pinfunction": "BAT_3",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/BATT_NTC",
+      "role": "Thermistor sense",
+      "decision": "Uniform 0.20 mm; low-current temperature sensing.",
+      "segments": 9,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 9,
+          "length_mm": 25.79974746830583
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "J2",
+          "pin": "2",
+          "pinfunction": "Pin_2_2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "1",
+          "pinfunction": "TS_1",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/BAT_DIV",
+      "role": "Divider and reservoir capacitor",
+      "decision": "Uniform 0.15 mm; high-impedance analog branch, not battery power.",
+      "segments": 20,
+      "short_under_0_2_mm": 9,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 20,
+          "length_mm": 11.333197782953512
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C16",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R13",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R14",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U6",
+          "pin": "6",
+          "pinfunction": "S2_6",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/BAT_SENSE",
+      "role": "ADC input",
+      "decision": "Uniform 0.15 mm; retain.",
+      "segments": 27,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 27,
+          "length_mm": 25.985445171422743
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "U1",
+          "pin": "13",
+          "pinfunction": "IO1_13",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "U6",
+          "pin": "5",
+          "pinfunction": "D_5",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/BOOT_IO9",
+      "role": "Boot GPIO/test pad",
+      "decision": "Uniform 0.20 mm; retain.",
+      "segments": 2,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 2,
+          "length_mm": 3.5385164807134504
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "TP3",
+          "pin": "1",
+          "pinfunction": "1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "23",
+          "pinfunction": "IO9_23",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/BUCK_EN",
+      "role": "Converter enable control",
+      "decision": "Uniform 0.20 mm; U4.6 enable and 100k pulldown, not converter supply current.",
+      "segments": 25,
+      "short_under_0_2_mm": 1,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 25,
+          "length_mm": 49.07499815913421
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R10",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "SW1",
+          "pin": "1",
+          "pinfunction": "A_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U4",
+          "pin": "6",
+          "pinfunction": "EN_6",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/CC1",
+      "role": "USB Type-C configuration",
+      "decision": "Uniform 0.20 mm to 5.1k pulldown; not controlled-impedance data.",
+      "segments": 3,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 3,
+          "length_mm": 2.237253967444162
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "J1",
+          "pin": "A5",
+          "pinfunction": "CC1_A5",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "R1",
+          "pin": "1",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/CC2",
+      "role": "USB Type-C configuration",
+      "decision": "Uniform 0.20 mm to 5.1k pulldown; not controlled-impedance data.",
+      "segments": 6,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 6,
+          "length_mm": 6.822570899228531
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "J1",
+          "pin": "B5",
+          "pinfunction": "CC2_B5",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "R2",
+          "pin": "1",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/CHARGE_ACTIVE",
+      "role": "Isolated charger status GPIO",
+      "decision": "0.20 mm local MOSFET/pullup and 0.15 mm GPIO route are intentional low-current branches; no blanket normalization.",
+      "segments": 26,
+      "short_under_0_2_mm": 2,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 21,
+          "length_mm": 24.193606919354142
+        },
+        {
+          "width_mm": 0.2,
+          "segments": 5,
+          "length_mm": 2.6318043192499383
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "Q1",
+          "pin": "3",
+          "pinfunction": "D_3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R8",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "19",
+          "pinfunction": "IO5_19",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/CHG_N",
+      "role": "Charger open-drain status",
+      "decision": "Uniform 0.15 mm status/LED sink and MOSFET gate path.",
+      "segments": 27,
+      "short_under_0_2_mm": 4,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 27,
+          "length_mm": 15.658598086018975
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "D3",
+          "pin": "4",
+          "pinfunction": "K2_4",
+          "pintype": "input"
+        },
+        {
+          "ref": "Q1",
+          "pin": "1",
+          "pinfunction": "G_1",
+          "pintype": "input"
+        },
+        {
+          "ref": "R23",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "9",
+          "pinfunction": "~{CHG}_9",
+          "pintype": "open_collector"
+        }
+      ]
+    },
+    {
+      "net": "/ESP_EN",
+      "role": "MCU enable RC/test pad",
+      "decision": "Uniform 0.20 mm; retain.",
+      "segments": 6,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 6,
+          "length_mm": 5.567631228876138
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C12",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R11",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "TP2",
+          "pin": "1",
+          "pinfunction": "1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "8",
+          "pinfunction": "EN_8",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/GNSS_RX",
+      "role": "GNSS UART receive",
+      "decision": "Uniform 0.15 mm; retain.",
+      "segments": 23,
+      "short_under_0_2_mm": 3,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 23,
+          "length_mm": 26.07982133510725
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "U1",
+          "pin": "31",
+          "pinfunction": "TXD0_31",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "U2",
+          "pin": "H1",
+          "pinfunction": "RX_H1",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/GNSS_TX",
+      "role": "GNSS UART transmit",
+      "decision": "0.15 mm compact receiver route transitions to 0.20 mm main UART route. This is low-current digital signaling, not RF. Do not shrink useful copper merely to match widths.",
+      "segments": 31,
+      "short_under_0_2_mm": 6,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 10,
+          "length_mm": 12.086390853716026
+        },
+        {
+          "width_mm": 0.2,
+          "segments": 21,
+          "length_mm": 19.440374084228395
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "U1",
+          "pin": "30",
+          "pinfunction": "RXD0_30",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "U2",
+          "pin": "G1",
+          "pinfunction": "TX_G1",
+          "pintype": "output"
+        }
+      ]
+    },
+    {
+      "net": "/ILIM",
+      "role": "Charger input-current programming resistor",
+      "decision": "Uniform 0.20 mm programming input, not charging-current conductor.",
+      "segments": 6,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 6,
+          "length_mm": 4.939623758998064
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R6",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "12",
+          "pinfunction": "ILIM_12",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/ISET",
+      "role": "Charger charge-current programming resistor",
+      "decision": "Uniform 0.15 mm programming input, not charging-current conductor.",
+      "segments": 5,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 5,
+          "length_mm": 6.198118474614845
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R5",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "16",
+          "pinfunction": "ISET_16",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/L1",
+      "role": "Converter switching node to inductor",
+      "decision": "Keep 0.23 mm x 0.85 mm QFN escape then 0.50 mm; no layer transition. Preserve compact switching loop and inductor restriction.",
+      "segments": 4,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.23,
+          "segments": 1,
+          "length_mm": 0.85
+        },
+        {
+          "width_mm": 0.5,
+          "segments": 3,
+          "length_mm": 2.9278174593052024
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "L1",
+          "pin": "1",
+          "pinfunction": "1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U4",
+          "pin": "4",
+          "pinfunction": "L1_4",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/L2",
+      "role": "Converter switching node to inductor",
+      "decision": "Keep 0.23 mm x 0.65 mm QFN escape then 0.40 mm; no layer transition. Preserve compact switching loop and inductor restriction.",
+      "segments": 4,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.23,
+          "segments": 1,
+          "length_mm": 0.65
+        },
+        {
+          "width_mm": 0.4,
+          "segments": 3,
+          "length_mm": 3.1278174593052026
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "L1",
+          "pin": "2",
+          "pinfunction": "2_2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U4",
+          "pin": "2",
+          "pinfunction": "L2_2",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/LED_CHG_A",
+      "role": "Current-limited charge indicator anode",
+      "decision": "Uniform 0.15 mm after 3.3k; schematic label approximately 0.9 mA.",
+      "segments": 12,
+      "short_under_0_2_mm": 4,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 12,
+          "length_mm": 9.32716747331242
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "D3",
+          "pin": "3",
+          "pinfunction": "A2_3",
+          "pintype": "input"
+        },
+        {
+          "ref": "R22",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/LED_G",
+      "role": "GNSS indicator GPIO to resistor",
+      "decision": "Uniform 0.20 mm; current-limited indicator.",
+      "segments": 7,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 7,
+          "length_mm": 11.92582371530617
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R19",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "20",
+          "pinfunction": "IO6_20",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/LED_G_A",
+      "role": "Current-limited GNSS indicator anode",
+      "decision": "Uniform 0.15 mm after 1k; schematic label approximately 1.2 mA.",
+      "segments": 14,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 14,
+          "length_mm": 14.071781384695894
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "D1",
+          "pin": "1",
+          "pinfunction": "A1_1",
+          "pintype": "input"
+        },
+        {
+          "ref": "R19",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/LED_R",
+      "role": "RID indicator GPIO to resistor",
+      "decision": "Uniform 0.20 mm; current-limited indicator.",
+      "segments": 9,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 9,
+          "length_mm": 11.91462972494113
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R20",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "21",
+          "pinfunction": "IO7_21",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/LED_R_A",
+      "role": "Current-limited RID indicator anode",
+      "decision": "Uniform 0.15 mm after 1k; schematic label approximately 1.2 mA.",
+      "segments": 8,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 8,
+          "length_mm": 15.846718347203485
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "D2",
+          "pin": "1",
+          "pinfunction": "A1_1",
+          "pintype": "input"
+        },
+        {
+          "ref": "R20",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/LED_S_A",
+      "role": "Current-limited system indicator anode",
+      "decision": "Uniform 0.15 mm after 1k; schematic label approximately 1.2 mA.",
+      "segments": 13,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 13,
+          "length_mm": 10.26344261970637
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "D3",
+          "pin": "1",
+          "pinfunction": "A1_1",
+          "pintype": "input"
+        },
+        {
+          "ref": "R21",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/PGOOD_N",
+      "role": "Charger power-good GPIO",
+      "decision": "Uniform 0.20 mm; open-drain status/pullup.",
+      "segments": 8,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 8,
+          "length_mm": 10.030782104868017
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R9",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "18",
+          "pinfunction": "IO4_18",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "U3",
+          "pin": "7",
+          "pinfunction": "~{PGOOD}_7",
+          "pintype": "open_collector"
+        }
+      ]
+    },
+    {
+      "net": "/RES_F9",
+      "role": "GNSS reserved-pin termination",
+      "decision": "Uniform 0.15 mm; preserve stipulated termination.",
+      "segments": 5,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 5,
+          "length_mm": 3.5393343232722385
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R16",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "F9",
+          "pinfunction": "Reserved_F9",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/RES_PAIR",
+      "role": "GNSS reserved-pin tie",
+      "decision": "Uniform 0.15 mm; preserve stipulated pin tie.",
+      "segments": 1,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 1,
+          "length_mm": 0.5
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "U2",
+          "pin": "D2",
+          "pinfunction": "Reserved_D2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "E2",
+          "pinfunction": "Reserved_E2",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/RF_ANT",
+      "role": "Controlled-impedance GNSS antenna feed",
+      "decision": "Protect all 0.150 mm RF50 feed/tuning traces; no width or geometry change.",
+      "segments": 4,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 4,
+          "length_mm": 3.4585281374238575
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "A1",
+          "pin": "1",
+          "pinfunction": "A_1",
+          "pintype": "input"
+        },
+        {
+          "ref": "C14",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R15",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/RF_IN",
+      "role": "Controlled-impedance GNSS receiver feed",
+      "decision": "Protect all 0.150 mm RF50 feed/tuning traces; no width or geometry change.",
+      "segments": 6,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 6,
+          "length_mm": 2.9113708498984763
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C13",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R15",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "B9",
+          "pinfunction": "RF_IN_B9",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/RTC_UNUSED",
+      "role": "GNSS unused RTC termination",
+      "decision": "Uniform 0.15 mm; preserve termination.",
+      "segments": 3,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 3,
+          "length_mm": 2.712695295834095
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R18",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "A5",
+          "pinfunction": "RTC_O_A5",
+          "pintype": "output"
+        }
+      ]
+    },
+    {
+      "net": "/STRAP_IO2",
+      "role": "Boot-strap GPIO",
+      "decision": "Uniform 0.20 mm; low-current pullup.",
+      "segments": 4,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 4,
+          "length_mm": 7.2213412639701735
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R12",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "5",
+          "pinfunction": "IO2_5",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/STRAP_IO8",
+      "role": "Boot-strap GPIO",
+      "decision": "Uniform 0.15 mm; low-current pullup.",
+      "segments": 1,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 1,
+          "length_mm": 1.48
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R25",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "22",
+          "pinfunction": "IO8_22",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/USB_500_EN",
+      "role": "Charger USB current-mode logic",
+      "decision": "Uniform 0.15 mm; logic, not USB supply current.",
+      "segments": 33,
+      "short_under_0_2_mm": 13,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 33,
+          "length_mm": 18.60038635394476
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R7",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "12",
+          "pinfunction": "IO0_12",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "U3",
+          "pin": "6",
+          "pinfunction": "EN1_6",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/USB_D_CONN_N",
+      "role": "Controlled-impedance connector USB data",
+      "decision": "Protect 0.135 mm USB90 geometry, differential spacing, topology and reference planes.",
+      "segments": 25,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.135,
+          "segments": 25,
+          "length_mm": 30.124894922439207
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "J1",
+          "pin": "A7",
+          "pinfunction": "D-_A7",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "J1",
+          "pin": "B7",
+          "pinfunction": "D-_B7",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "R4",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U5",
+          "pin": "3",
+          "pinfunction": "I/O2_3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U5",
+          "pin": "4",
+          "pinfunction": "I/O2_4",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/USB_D_CONN_P",
+      "role": "Controlled-impedance connector USB data",
+      "decision": "Protect 0.135 mm USB90 geometry, differential spacing, topology and reference planes.",
+      "segments": 26,
+      "short_under_0_2_mm": 1,
+      "width_distribution": [
+        {
+          "width_mm": 0.135,
+          "segments": 26,
+          "length_mm": 31.38973590863345
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "J1",
+          "pin": "A6",
+          "pinfunction": "D+_A6",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "J1",
+          "pin": "B6",
+          "pinfunction": "D+_B6",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "R3",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U5",
+          "pin": "1",
+          "pinfunction": "I/O1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U5",
+          "pin": "6",
+          "pinfunction": "I/O1_6",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/USB_D_N",
+      "role": "Controlled-impedance MCU USB data",
+      "decision": "Protect 0.135 mm USB90 geometry, differential spacing, topology and reference planes.",
+      "segments": 10,
+      "short_under_0_2_mm": 3,
+      "width_distribution": [
+        {
+          "width_mm": 0.135,
+          "segments": 10,
+          "length_mm": 3.4075335469952384
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R4",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "26",
+          "pinfunction": "IO18/USB_D-_26",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/USB_D_P",
+      "role": "Controlled-impedance MCU USB data",
+      "decision": "Protect 0.135 mm USB90 geometry, differential spacing, topology and reference planes.",
+      "segments": 10,
+      "short_under_0_2_mm": 3,
+      "width_distribution": [
+        {
+          "width_mm": 0.135,
+          "segments": 10,
+          "length_mm": 3.2770562748477143
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R3",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "27",
+          "pinfunction": "IO19/USB_D+_27",
+          "pintype": "bidirectional"
+        }
+      ]
+    },
+    {
+      "net": "/USB_SUSPEND",
+      "role": "Charger suspend logic",
+      "decision": "Uniform 0.15 mm; control, not USB power.",
+      "segments": 10,
+      "short_under_0_2_mm": 0,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 10,
+          "length_mm": 15.214050854752788
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "R24",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "6",
+          "pinfunction": "IO3_6",
+          "pintype": "bidirectional"
+        },
+        {
+          "ref": "U3",
+          "pin": "5",
+          "pinfunction": "EN2_5",
+          "pintype": "input"
+        }
+      ]
+    },
+    {
+      "net": "/VBUS",
+      "role": "USB input power, ESD rail and indicator/status branches",
+      "decision": "Only targeted correction: F.Cu (117,100.9)->(116.25,101.65)->(116.25,102.8), total 2.210660 mm, should be 0.30 mm instead of 0.15 mm. This carries U3 IN current. Keep downstream 0.15 mm branches to 3.3k LED/100k status pullup, 0.20 mm IC escape and 0.45 mm In2 trunk.",
+      "segments": 37,
+      "short_under_0_2_mm": 2,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 6,
+          "length_mm": 10.289929896573964
+        },
+        {
+          "width_mm": 0.2,
+          "segments": 11,
+          "length_mm": 4.365702722974772
+        },
+        {
+          "width_mm": 0.25,
+          "segments": 5,
+          "length_mm": 1.7986017305526643
+        },
+        {
+          "width_mm": 0.3,
+          "segments": 7,
+          "length_mm": 5.974873734152917
+        },
+        {
+          "width_mm": 0.45,
+          "segments": 8,
+          "length_mm": 19.464571191342692
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C1",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C15",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "A4",
+          "pinfunction": "VBUS_A4",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "A9",
+          "pinfunction": "VBUS_A9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "B4",
+          "pinfunction": "VBUS_B4",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "B9",
+          "pinfunction": "VBUS_B9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R22",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R23",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "13",
+          "pinfunction": "IN_13",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U5",
+          "pin": "5",
+          "pinfunction": "VBUS_5",
+          "pintype": "passive"
+        }
+      ]
+    },
+    {
+      "net": "/VSYS",
+      "role": "Charger output/system input feed plus controls",
+      "decision": "Preserve rebuilt 0.60 mm source/VINA bridges and 0.80 mm VIN bridge with named-group width rule, backed local pin escapes and 0.20 mm controls.",
+      "segments": 44,
+      "short_under_0_2_mm": 6,
+      "width_distribution": [
+        {
+          "width_mm": 0.2,
+          "segments": 22,
+          "length_mm": 18.92360583315643
+        },
+        {
+          "width_mm": 0.23,
+          "segments": 2,
+          "length_mm": 0.8500000000000001
+        },
+        {
+          "width_mm": 0.25,
+          "segments": 5,
+          "length_mm": 4.3227922061357855
+        },
+        {
+          "width_mm": 0.3,
+          "segments": 1,
+          "length_mm": 1.2525573839150046
+        },
+        {
+          "width_mm": 0.4,
+          "segments": 2,
+          "length_mm": 2.0349242404917502
+        },
+        {
+          "width_mm": 0.6,
+          "segments": 6,
+          "length_mm": 9.570458146424489
+        },
+        {
+          "width_mm": 0.8,
+          "segments": 6,
+          "length_mm": 7.78908729652601
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C17",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C2",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C4",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C5",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "SW1",
+          "pin": "2",
+          "pinfunction": "B_2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "10",
+          "pinfunction": "OUT_10",
+          "pintype": "power_out"
+        },
+        {
+          "ref": "U3",
+          "pin": "11",
+          "pinfunction": "OUT_11",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U4",
+          "pin": "5",
+          "pinfunction": "VIN_5",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U4",
+          "pin": "8",
+          "pinfunction": "VINA_8",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U6",
+          "pin": "2",
+          "pinfunction": "VDD_2",
+          "pintype": "power_in"
+        }
+      ]
+    },
+    {
+      "net": "GND",
+      "role": "Reference planes, power/thermal and signal returns",
+      "decision": "Intentional 0.15 through 0.40 mm local connections. Preserve converter, RF and USB returns, all thermal/return vias and planes.",
+      "segments": 43,
+      "short_under_0_2_mm": 2,
+      "width_distribution": [
+        {
+          "width_mm": 0.15,
+          "segments": 13,
+          "length_mm": 5.7048194100482705
+        },
+        {
+          "width_mm": 0.2,
+          "segments": 24,
+          "length_mm": 22.452138231950972
+        },
+        {
+          "width_mm": 0.25,
+          "segments": 1,
+          "length_mm": 0.9013878188659974
+        },
+        {
+          "width_mm": 0.3,
+          "segments": 2,
+          "length_mm": 1.9
+        },
+        {
+          "width_mm": 0.4,
+          "segments": 3,
+          "length_mm": 5.762440474840668
+        }
+      ],
+      "schematic_nodes": [
+        {
+          "ref": "C1",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C10",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C11",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C12",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C13",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C14",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C15",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C16",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C17",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C2",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C3",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C4",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C5",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C6",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C7",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C8",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C9",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D1",
+          "pin": "2",
+          "pinfunction": "K1_2",
+          "pintype": "input"
+        },
+        {
+          "ref": "D2",
+          "pin": "2",
+          "pinfunction": "K1_2",
+          "pintype": "input"
+        },
+        {
+          "ref": "D3",
+          "pin": "2",
+          "pinfunction": "K1_2",
+          "pintype": "input"
+        },
+        {
+          "ref": "J1",
+          "pin": "A1",
+          "pinfunction": "GND_A1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "A12",
+          "pinfunction": "GND_A12",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "B1",
+          "pinfunction": "GND_B1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "B12",
+          "pinfunction": "GND_B12",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J1",
+          "pin": "SH",
+          "pinfunction": "SHIELD_SH",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J2",
+          "pin": "3",
+          "pinfunction": "Pin_3_3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q1",
+          "pin": "2",
+          "pinfunction": "S_2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R1",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R10",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R14",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R16",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R18",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R2",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R24",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R5",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R6",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R7",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "TP1",
+          "pin": "1",
+          "pinfunction": "1_1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U1",
+          "pin": "1",
+          "pinfunction": "GND_1",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "11",
+          "pinfunction": "GND_11",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "14",
+          "pinfunction": "GND_14",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "2",
+          "pinfunction": "GND_2",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "36",
+          "pinfunction": "GND_36",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "37",
+          "pinfunction": "GND_37",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "38",
+          "pinfunction": "GND_38",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "39",
+          "pinfunction": "GND_39",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "40",
+          "pinfunction": "GND_40",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "41",
+          "pinfunction": "GND_41",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "42",
+          "pinfunction": "GND_42",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "43",
+          "pinfunction": "GND_43",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "44",
+          "pinfunction": "GND_44",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "45",
+          "pinfunction": "GND_45",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "46",
+          "pinfunction": "GND_46",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "47",
+          "pinfunction": "GND_47",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "48",
+          "pinfunction": "GND_48",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "49",
+          "pinfunction": "GND_49",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "50",
+          "pinfunction": "GND_50",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "51",
+          "pinfunction": "GND_51",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "52",
+          "pinfunction": "GND_52",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U1",
+          "pin": "53",
+          "pinfunction": "GND_53",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U2",
+          "pin": "A1",
+          "pinfunction": "GND_A1",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U2",
+          "pin": "A2",
+          "pinfunction": "GND_A2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "A3",
+          "pinfunction": "GND_A3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "A8",
+          "pinfunction": "GND_A8",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "A9",
+          "pinfunction": "GND_A9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "B2",
+          "pinfunction": "GND_B2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "B8",
+          "pinfunction": "GND_B8",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "C3",
+          "pinfunction": "GND_C3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "C9",
+          "pinfunction": "GND_C9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "E3",
+          "pinfunction": "GND_E3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "E4",
+          "pinfunction": "GND_E4",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "E9",
+          "pinfunction": "GND_E9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "F1",
+          "pinfunction": "GND_F1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "F3",
+          "pinfunction": "GND_F3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "F4",
+          "pinfunction": "GND_F4",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "G3",
+          "pinfunction": "GND_G3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "G4",
+          "pinfunction": "GND_G4",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "G5",
+          "pinfunction": "GND_G5",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "G6",
+          "pinfunction": "GND_G6",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "G7",
+          "pinfunction": "Reserved_G7",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "H8",
+          "pinfunction": "GND_H8",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "J8",
+          "pinfunction": "GND_J8",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U2",
+          "pin": "J9",
+          "pinfunction": "GND_J9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "17",
+          "pinfunction": "VSS_17",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U3",
+          "pin": "4",
+          "pinfunction": "~{CE}_4",
+          "pintype": "input"
+        },
+        {
+          "ref": "U3",
+          "pin": "8",
+          "pinfunction": "VSS_8",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U4",
+          "pin": "11",
+          "pinfunction": "PGND_11",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U4",
+          "pin": "3",
+          "pinfunction": "PGND_3",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U4",
+          "pin": "7",
+          "pinfunction": "PS/SYNC_7",
+          "pintype": "input"
+        },
+        {
+          "ref": "U4",
+          "pin": "9",
+          "pinfunction": "GND_9",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U5",
+          "pin": "2",
+          "pinfunction": "GND_2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U6",
+          "pin": "3",
+          "pinfunction": "GND_3",
+          "pintype": "power_in"
+        },
+        {
+          "ref": "U6",
+          "pin": "4",
+          "pinfunction": "S1_4",
+          "pintype": "passive"
+        }
+      ]
+    }
+  ],
+  "width_checks": {
+    "usb_0_135": true,
+    "rf_0_15": true,
+    "vsys_inner_at_least_0_6": true,
+    "vbus_two_feed_tracks_0_3": true
+  }
+}

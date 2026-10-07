@@ -1,0 +1,49 @@
+{
+  "revision": "B-RID routing cleanup and USB safeguards, 2026-10-07",
+  "base_commit": "80352d015b62faf815b66025b5085ac49dc54ce9",
+  "user_tidy_commit": "0da807d0d36e6a6a80a1b6f6cfcd7cff1d226bac",
+  "base_user_pcb_sha256": "138009af7b6d7a78f4254d3c3d8550b5d68e004df00af78430ee579e89096b38",
+  "pcb_sha256": "349fbe54c6d95591bcbd5b6ae21f348d2a8d77a581d6df7f8176709179ab2ae4",
+  "schematic_sha256": "05f4de7b7ed008e723326027f1ecba670f42c9393f092da6f227d43a34177346",
+  "counts": {
+    "routed_nets": 41,
+    "tracks": 688,
+    "vias": 104,
+    "pads": 311,
+    "footprints": 60,
+    "models": 56
+  },
+  "native_checks": {
+    "drc": 0,
+    "opens": 0,
+    "parity": 0,
+    "erc": 0
+  },
+  "negative_tests_passed": [
+    "USB width",
+    "USB maximum gap",
+    "USB minimum gap",
+    "USB skew",
+    "USB uncoupled length",
+    "VSYS source width",
+    "VSYS VIN width",
+    "VBUS input width"
+  ],
+  "source_to_vin_route_lengths_mm": {
+    "source": 6.1547727215,
+    "main_vin": 7.7890872965,
+    "vina": 3.4156854249
+  },
+  "source_to_vin_route_widths_mm": {
+    "source": 0.6,
+    "main_vin": 0.8,
+    "vina": 0.6
+  },
+  "additional_cleanup": {
+    "four_copper_preserving_segment_removals": true,
+    "vbus_width_mm": 0.3,
+    "vbus_length_mm": 2.21066,
+    "remaining_short_segments_under_0_2mm": 73
+  },
+  "release": "Engineering prototype CAD only; no fabrication, battery-connection or product-performance release."
+}
