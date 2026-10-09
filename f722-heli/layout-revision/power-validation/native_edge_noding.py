@@ -1,7 +1,7 @@
 """Canonical noding proved against original integer-nm boundary edges.
 
-No epsilon merging: a non-native vertex must match one unique exact rational
-intersection of original segments. Common native lines are split at the same
+No epsilon merging: a non-native vertex must prove one unique exact rational
+intersection, or a retained subdivision of one straight original source line. Common native lines are split at the same
 rational nodes before their one binary64 conversion. Unknown ancestry refuses.
 """
 from bisect import bisect_left,bisect_right
@@ -89,7 +89,17 @@ def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
     tree=s.STRtree(segments)
     if check_time:check_time()
     originals=sorted({tuple(p)for g in geometries for ring in rings(g)for p in ring})
-    rational={};incidence={};shift_rows=[];float_identities={}
+    neighbors=defaultdict(list)
+    for geometry in geometries:
+        for ring in rings(geometry):
+            for index,p in enumerate(ring):
+                neighbors[tuple(p)].append((tuple(ring[index-1]),tuple(ring[(index+1)%len(ring)])))
+    rational={};incidence={};shift_rows=[];float_identities={};subdivisions={}
+
+    def subdivision_refusal(reason,point,**proof):
+        error=Refused('Single-line subdivision ancestry '+reason)
+        error.geometry_reproduction={'stage':'single_line_subdivision','point':point,**proof}
+        raise error
     for vertex_index,p in enumerate(originals):
         if check_time and vertex_index%256==0:check_time()
         normal_radius=maximum_ulp*math.hypot(*(math.ulp(v)for v in p))
@@ -126,11 +136,45 @@ def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
                   'line_residual_guard_mm':normal_radius,'sine_crossing_angle':sine,
                   'conditioned_distance_bound_mm':bound,'absolute_distance_cap_mm':MAX_REPRESENTATION_SHIFT_MM}
                 if hit not in matches or bound<matches[hit]['conditioned_distance_bound_mm']:matches[hit]=proof
-            if len(matches)!=1:
+            if len(matches)==1:
+                exact=next(iter(matches));admission=matches[exact]
+            elif not matches and candidates and len({lines[i]for i in candidates})==1:
+                # Boolean overlays may retain a point inside one straight
+                # source edge after the intersecting interior edge disappears.
+                # Its longitudinal parameter is a subdivision, not a crossing.
+                # Retain that node, project only onto its unique exact line,
+                # then certify both neighboring boundary edges on that line.
+                i=candidates[0];a,b=edges[i];u=sub(b,a);length2=u[0]*u[0]+u[1]*u[1]
+                parameter=sum(sub(p_nm,a)[k]*u[k]for k in [0,1])/length2
+                exact=tuple(F(a[k])+parameter*u[k]for k in [0,1])
+                residual=float(abs(cross(sub(p_nm,a),u)))/math.sqrt(length2)/NM_PER_MM
+                interior=any(on_segment(exact,*edges[j])and exact not in edges[j]for j in candidates)
+                neighbor_proofs=[]
+                if residual>normal_radius or not interior:
+                    subdivision_refusal('is outside a strict native interval or normal bound',p,source_edges_nm=[edges[j]for j in candidates],normal_residual_mm=residual,normal_bound_mm=normal_radius,strict_interior=interior)
+                for before,after in neighbors[p]:
+                    points=[tuple(F(v)*NM_PER_MM for v in q)for q in [before,after]]
+                    bounds=[maximum_ulp*math.hypot(*(math.ulp(v)for v in q))for q in [before,after]]
+                    errors=[float(abs(cross(sub(q,a),u)))/math.sqrt(length2)/NM_PER_MM for q in points]
+                    parameters=[sum(sub(q,a)[k]*u[k]for k in [0,1])/length2 for q in points]
+                    if any(error>bound for error,bound in zip(errors,bounds))or not min(parameters)<parameter<max(parameters):
+                        subdivision_refusal('is not between collinear boundary neighbors',p,before_mm=before,after_mm=after,line_normal_residuals_mm=errors,line_normal_bounds_mm=bounds)
+                    neighbor_proofs.append({'before_mm':before,'after_mm':after,
+                      'line_normal_residuals_mm':errors,'line_normal_bounds_mm':bounds})
+                converted=tuple(float(v/NM_PER_MM)for v in exact)
+                bound=min(MAX_REPRESENTATION_SHIFT_MM,normal_radius+math.hypot(*(math.ulp(v)for v in converted)))
+                if math.dist(converted,p)>bound:subdivision_refusal('exceeds representation bound',p,projected_mm=converted,allowed_mm=bound)
+                admission={'kind':'retained_single_line_subdivision','source_line':lines[i],
+                  'source_edges_nm':[edges[j]for j in candidates],
+                  'projected_parameter_from_first_edge':str(parameter),
+                  'exact_line_residual_mm':residual,'line_residual_guard_mm':normal_radius,
+                  'conditioned_distance_bound_mm':bound,'absolute_distance_cap_mm':MAX_REPRESENTATION_SHIFT_MM,
+                  'neighbors':neighbor_proofs}
+                subdivisions[p]={'line':lines[i],'proof':admission}
+            else:
                 error=Refused('Missing or ambiguous exact native-edge vertex ancestry')
                 error.geometry_reproduction={'stage':'edge_ancestry','point':p,'candidate_edges':len(candidates),'exact_matches':len(matches)}
                 raise error
-            exact=next(iter(matches));admission=matches[exact]
         incident={lines[i]for i in candidates if on_segment(exact,*edges[i])}
         if not incident:raise Refused('Canonical point has no exact source incidence')
         rational[p]=exact;incidence[exact]=incidence.get(exact,set())|incident
@@ -145,6 +189,19 @@ def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
           'source_edges_nm':[edges[i]for i in candidates if on_segment(exact,*edges[i])],
           'signed_ULP_change':[(converted[k]-p[k])/math.ulp(p[k])for k in [0,1]],
           'admission_certificate':admission})
+    subdivision_certificates=[]
+    for p,record in subdivisions.items():
+        line=record['line'];point=rational[p]
+        k=0 if abs(line[1])>=abs(line[0])else 1
+        for before,after in neighbors[p]:
+            a,b=rational[before],rational[after]
+            if line not in incidence[a]or line not in incidence[b]or not min(a[k],b[k])<point[k]<max(a[k],b[k]):
+                subdivision_refusal('neighbors lack exact common-line coverage/order',p,before_mm=before,after_mm=after)
+        converted=tuple(float(v/NM_PER_MM)for v in point)
+        subdivision_certificates.append({'before_mm':p,'after_mm':converted,
+          'exact_point_nm':[str(v)for v in point],'displacement_mm':math.dist(p,converted),
+          'both_adjacent_edges_on_exact_native_line':True,'node_retained':True,
+          'admission_certificate':record['proof']})
     line_nodes=defaultdict(set)
     for p,ls in incidence.items():
         for line in ls:line_nodes[line].add(p)
@@ -225,5 +282,7 @@ def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
       'maximum_derived_vertex_displacement_mm':max_shift,'line_residual_ulp_guard':maximum_ulp,
       'maximum_representation_shift_mm':MAX_REPRESENTATION_SHIFT_MM,
       'coordinate_changes':shift_rows,'geometry_checks':checks,'native_vertices_changed':0,
+      'retained_single_line_subdivisions':len(subdivision_certificates),
+      'single_line_subdivision_certificates':subdivision_certificates,
       'ring_certificates':ring_certificates,
       'ambiguous_ancestry_allowed':False,'epsilon_vertex_merging':False}

@@ -98,6 +98,65 @@ class NativeNodingTests(unittest.TestCase):
         self.assertEqual(repro['previous_receipt']['native_vertices_changed'],0)
         self.assertEqual(repro['current_receipt']['native_vertices_changed'],1)
 
+    def test_straight_native_subdivision_is_retained_with_exact_area(self):
+        source=Polygon([(0,0),(3,1),(0,2)])
+        derived=Polygon([(0,0),(1,1/3),(3,1),(0,2)])
+        fixed,proof=canonicalize([derived],edges(source))
+        self.assertEqual(proof['retained_single_line_subdivisions'],1)
+        self.assertIn((1.,1/3),set(fixed[0].exterior.coords))
+        row=proof['single_line_subdivision_certificates'][0]
+        self.assertTrue(row['both_adjacent_edges_on_exact_native_line'])
+        self.assertTrue(row['node_retained'])
+        self.assertLessEqual(row['displacement_mm'],row['admission_certificate']['conditioned_distance_bound_mm'])
+        self.assertEqual(proof['native_vertices_changed'],0)
+        self.assertTrue(all(c['rational_area_preserved_exactly']for c in proof['ring_certificates']))
+
+    def test_single_line_path_rejects_nearby_unrelated_edge(self):
+        source=box(0,10,20,20);derived=Polygon([(0,10),(10,10),(20,10),(20,20),(0,20)])
+        unrelated=[(9.999999,9.999999),(19.999998,19.999999)]
+        with self.assertRaisesRegex(Refused,'ancestry'):
+            canonicalize([derived],edges(source)+[unrelated])
+
+    def test_single_line_path_rejects_a_real_bend_and_outside_endpoint(self):
+        source=box(0,10,20,20)
+        bend=Polygon([(0,10),(10,10),(20,10.01),(20,20),(0,20)])
+        with self.assertRaisesRegex(Refused,'ancestry'):
+            canonicalize([bend],edges(source)+[[(20,10.01),(20,20)]])
+        outside=Polygon([(0,10),(20.0000000000001,10),(20,20),(0,20)])
+        with self.assertRaises(Refused):canonicalize([outside],edges(source))
+        fixed,proof=canonicalize([source],edges(source))
+        self.assertEqual(proof['retained_single_line_subdivisions'],0)
+        self.assertEqual(set(fixed[0].exterior.coords),set(source.exterior.coords))
+
+    def test_single_line_rejects_parallel_ambiguity_and_uncovered_interval(self):
+        a=(0.,0.);b=(20.000001,20.);c=(0.,20.)
+        derived=Polygon([a,(10.0000005,10.),b,c])
+        parallel=[(.000001,.000001),(20.000002,20.000001)]
+        with self.assertRaisesRegex(Refused,'ancestry'):
+            canonicalize([derived],[[a,b],[b,c],[c,a],parallel])
+        source=box(0,10,20,20);derived=Polygon([(0,10),(5,10),(20,10),(20,20),(0,20)])
+        boundary=[edge for edge in edges(source)if not(edge[0][1]==10 and edge[1][1]==10)]
+        boundary.extend([[(0,10),(8,10)],[(12,10),(20,10)]])
+        with self.assertRaisesRegex(Refused,'uncovered native interval'):
+            canonicalize([derived],boundary)
+
+    def test_retained_subdivision_keeps_holes_and_mesh_conservation(self):
+        from copper_fem import Mesh
+        source=box(0,0,4,1);domain=Polygon([(0,0),(1/3,0),(4,0),(4,1),(0,1)])
+        contacts={'a':('F.Cu',box(0,0,.3,1)),'b':('F.Cu',box(3.7,0,4,1))}
+        source_edges=edges(source)+[edge for _,shape in contacts.values()for edge in edges(shape)]
+        for grid in [.2,.125]:
+            mesh=Mesh({'F.Cu':domain},contacts,grid,.01,.015,native_edge_provider=lambda layer:source_edges)
+            result=mesh.solve({'a':1.,'b':-1.},'b')
+            self.assertAlmostEqual(result['contact_voltage_V']['a'],.034,10)
+            self.assertLess(result['KCL_max_residual_A'],1e-8)
+            self.assertTrue(any(x==1/3 and y==0 for x,y in mesh.xy))
+        holed=Polygon(list(domain.exterior.coords),[list(box(1,.2,2,.8).exterior.coords)])
+        fixed,proof=canonicalize([holed],edges(source)+edges(box(1,.2,2,.8)))
+        self.assertEqual(len(fixed[0].interiors),1)
+        self.assertAlmostEqual(fixed[0].area,holed.area,14)
+        self.assertTrue(all(r['rational_area_preserved_exactly']for r in proof['ring_certificates']))
+
     def test_holes_islands_and_native_vertices_are_preserved(self):
         ring=box(0,0,3,3).difference(box(1,1,2,2));island=box(4,0,5,1)
         source=MultiPolygon([ring,island]);fixed,r=canonicalize([source],edges(source))

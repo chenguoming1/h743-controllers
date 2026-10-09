@@ -80,7 +80,36 @@ def main():
             result['retained_source_proof_reexecuted_natively'] = False
         result.update(retention_exact_subset_verified=True, excluded_logical_nets=sorted(excluded))
     construction_path = packet / 'construction.json'
-    if construction_path.exists() and json.loads(construction_path.read_text())['kind'] == 'explicit_native_network_construction':
+    if construction_path.exists() and json.loads(construction_path.read_text())['kind'] == 'explicit_native_short_local_construction':
+        construction = json.loads(construction_path.read_text())
+        assert construction['engine_routing_performed'] is False
+        assert report['route_solver_used'] is False
+        assert sha(root / identity['constructor_source_path']) == construction['constructor_sha256']
+        assert construction['model_sha256'] == identity['model_sha256']
+        assert construction['session_sha256'] == identity['session_sha256']
+        projections = json.loads((root / identity['portable_path_projections']).read_text())['files']
+        for filename, historical_key, current_key in [
+            ('original-import-contract.json', 'historical_original_import_contract_sha256', 'original_import_contract_sha256'),
+            ('input-proposal.json', 'historical_input_proposal_sha256', 'input_proposal_sha256'),
+        ]:
+            entry = projections[str((packet / filename).resolve().relative_to(root))]
+            assert entry['historical_file_sha256'] == identity[historical_key]
+            assert entry['portable_file_sha256'] == identity[current_key] == sha(packet / filename)
+        assert construction['proposal_sha256'] == identity['historical_input_proposal_sha256']
+        proposal = json.loads((packet / 'input-proposal.json').read_text())
+        assert proposal['proof_receipt']['sha256'] == construction['proof_sha256']
+        assert proposal['source_identity']['board_sha256'] == identity['board_sha256']
+        original_contract = json.loads((packet / 'original-import-contract.json').read_text())
+        assert all(value == original_contract[k] for k, value in contract.items())
+        assert not contract['mutable_source_ids'] and not contract['regenerable_reference_zones']
+        assert result['mutable_route_segments'] == construction['new_tracks'] == 2
+        assert result['mutable_route_vias'] == construction['new_vias'] == 0
+        assert all(r['logical_net'] == 'ADC_BUS' and r['layer'] == 'F.Cu' for r in session_routes)
+        result.update(explicit_native_short_local_construction_verified=True,
+                      stock_engine_insertion_succeeded=False, portable_paths_and_historical_provenance_verified=True,
+                      original_contract_geometry_fields_preserved=True, existing_source_objects_all_immutable=True,
+                      new_drills_or_reference_refill_requested=False)
+    elif construction_path.exists() and json.loads(construction_path.read_text())['kind'] == 'explicit_native_network_construction':
         construction = json.loads(construction_path.read_text())
         assert construction['engine_routing_performed'] is False
         assert construction['engine_insertion_succeeded'] is False

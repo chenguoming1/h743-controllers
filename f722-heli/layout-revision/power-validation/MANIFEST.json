@@ -1,13 +1,13 @@
 {
   "schema": "f722-public-static-source-allowlist/v1",
-  "status": "67 CONTROLS PASS; SOURCE-BOUND ONE-GRID DIAGNOSTICS ONLY; TWO-GRID NATIVE RESULT PENDING",
-  "file_count": 34,
-  "bytes": 379799,
+  "status": "84 CONTROLS PASS; HISTORICAL LOADED73 DIAGNOSTIC COMPLETED BUT CONDITIONAL VOLTAGE SCREEN FAILED",
+  "file_count": 43,
+  "bytes": 499363,
   "files": [
     {
       "path": "README.md",
-      "sha256": "dffcb87d99e7fb40d0a40f23e0aee89ae0d08c7d2c5a92c4ef291ac56f75d669",
-      "bytes": 9557
+      "sha256": "ef7ce9a77619bbf568f75912468a3a2bfe1935a3872c3412441eb5c2a7c502aa",
+      "bytes": 12913
     },
     {
       "path": "activate_ranked_slices.py",
@@ -23,6 +23,11 @@
       "path": "case-plan.disabled.json",
       "sha256": "b716e2476f9d0e683183e0cd227a428f764add8d8750a5861021dc073b759a85",
       "bytes": 34093
+    },
+    {
+      "path": "compare_power_geometry.py",
+      "sha256": "a5f2a1673471866a0decac3858b42ed055c025b49c916e35302fca21932c29f1",
+      "bytes": 4030
     },
     {
       "path": "compile_power_ledger.py",
@@ -80,6 +85,16 @@
       "bytes": 1185
     },
     {
+      "path": "historical-loaded73-prepared-plan.json",
+      "sha256": "00d59b84c5c4cc24ee21352e6e30db8a13ecfaf2a163e252012b0ac5a9215f58",
+      "bytes": 49603
+    },
+    {
+      "path": "historical-runtime-identity.json",
+      "sha256": "899d73348dffc05d66ce2548d7aaa9701520465e5ab6c8fcb867fd6a083043a8",
+      "bytes": 6903
+    },
+    {
       "path": "ledger.template.json",
       "sha256": "d8a066b59c2037f4cce692385cf61475146bb3c09aed1298c355c10c22ab139f",
       "bytes": 620
@@ -110,14 +125,29 @@
       "bytes": 6821
     },
     {
+      "path": "native-single-line-control.json",
+      "sha256": "efe15fac9c9368290209529bf539302ce488b25a983a02f6bae5341426ce843e",
+      "bytes": 3722
+    },
+    {
       "path": "native_edge_noding.py",
-      "sha256": "c6516c4f3cfdc35daafc6246b94ce82faa456e7016d2af29846fb75eb5953c24",
-      "bytes": 13465
+      "sha256": "8a04084d287eebe570e80fb92c89994bcd6fee029e137899081de4d2965336bf",
+      "bytes": 18013
     },
     {
       "path": "power_case_model.py",
       "sha256": "fdc796278e340e8a8f53fc91a6aa8cfcddf6144a09dd384076b8abbf54bb19cc",
       "bytes": 19186
+    },
+    {
+      "path": "prepare_loaded_pilot.py",
+      "sha256": "8d9c9c8ecb3d7726cac166e21077ad812b2fbf844ff985a244458b5cfcf9bfc5",
+      "bytes": 7393
+    },
+    {
+      "path": "public-v5-test-run.txt",
+      "sha256": "0efbe737afc97aa568e3216cb927f5424846e74d794389e8e725ebb320138e0b",
+      "bytes": 12396
     },
     {
       "path": "requirements.txt",
@@ -131,8 +161,8 @@
     },
     {
       "path": "synthetic-tests.json",
-      "sha256": "0e458d25893d5f1c0c87e8990999b8a259d02c51d5768e73ccbe38e93badb3da",
-      "bytes": 11991
+      "sha256": "fd35d7a1a210c49382aa3990fd5d22eac1ad12da057966988db37013322f95bc",
+      "bytes": 16224
     },
     {
       "path": "terminal-registry.disabled.json",
@@ -155,14 +185,29 @@
       "bytes": 6421
     },
     {
+      "path": "test_loaded_pilot.py",
+      "sha256": "548a24fdf2c6b40345a33fc0d154d86b3564152953e06f28282c87c30c5f1742",
+      "bytes": 2310
+    },
+    {
       "path": "test_mesh_cache.py",
       "sha256": "6a283f322cc5d0e9cd62634a0b27105a0ecf7d2e3818183a12aa78d4b3ecb1d0",
       "bytes": 10653
     },
     {
       "path": "test_native_edge_noding.py",
-      "sha256": "37ce854339377cb49883779c444d2fa845c658973001608d893072ad2ebe52f7",
-      "bytes": 11396
+      "sha256": "5e7a2d19e3f7f212d47d7567ec05d6676f796da0eae1d201c0a6a22a343bd9e0",
+      "bytes": 15085
+    },
+    {
+      "path": "test_power_geometry_comparison.py",
+      "sha256": "541990a994122b0079ccc349ded1e75fa5d79e40e21935fc640b59a03086833b",
+      "bytes": 2295
+    },
+    {
+      "path": "test_result_evidence.py",
+      "sha256": "108139df46936fab126b46b78f3e89a591e82cb154183ab9573d038f92338091",
+      "bytes": 9496
     },
     {
       "path": "test_static_validation.py",
@@ -171,17 +216,22 @@
     },
     {
       "path": "validate_static.py",
-      "sha256": "c7b864e1c196da2dbeb2835631ae8700fdce71352b920cf4da6ac25fc2c821e5",
-      "bytes": 27255
+      "sha256": "2de4567fdd6d661084649ed9ba44b719a2dddbb6329af7195012c2af740e43d3",
+      "bytes": 32845
     }
   ],
+  "predecessor_manifest_sha256": "a21a119bf85471fae3e499625eda54baaab3a5c4847e81d2daeb9fe17cb2678b",
   "excluded": [
     "PCB/full native geometry",
+    "full native numerical results",
     "numeric matrix arrays",
-    "environment and private paths",
+    "environment/private paths",
     "expanded case ledgers",
-    "unreviewed work"
+    "unreviewed solver work"
   ],
   "disabled_templates_preserved": true,
-  "native_loop_acceptance": false
+  "historical_prepared_plan_disabled": true,
+  "current_or_final_board_qualified": false,
+  "native_loaded_screen_accepted": false,
+  "full_native_reproduction_requires_external_archived_inputs": true
 }

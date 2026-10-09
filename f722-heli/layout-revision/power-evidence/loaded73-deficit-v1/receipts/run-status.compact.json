@@ -1,0 +1,161 @@
+{
+  "status": "completed numerical diagnostic; locked conditional screen failed",
+  "board_sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674",
+  "result_sha256": "0780cece1cf4194220a542f9d7f65cc6be3dc457b9bbfaf74bd5a07fa3a1d9ac",
+  "freeze_sha256": "e33f6d1cf2d4134e570ef631149f8acdb89005c89c9f56c3823e3206d1d4d40c",
+  "ledger_sha256": "61c27f88dceb64d27e0cc700a8306de07543d5e268d5a4e2419bb81a44f3a8be",
+  "scope": "power-only",
+  "scope_is_final_board": false,
+  "conditional_static_screen_pass": false,
+  "thermal_or_flight_qualification": false,
+  "material": {
+    "temperature_C": 105,
+    "thickness_mm": 0.015,
+    "conductivity_IACS": 0.95,
+    "plating_mm": 0.015,
+    "resistivity_ohm_mm": 2.4210901105263158e-05,
+    "sheet_ohm": 0.0016140600736842105,
+    "thermal_prediction": false
+  },
+  "convergence_requirements": {
+    "relative_impedance": 0.025,
+    "absolute_impedance_ohm": 0.0001,
+    "absolute_voltage_V": 0.001
+  },
+  "mesh_spacings_mm": [
+    0.2,
+    0.15
+  ],
+  "cases_per_grid": 73,
+  "networks_per_grid": 11,
+  "contacts": 94,
+  "impedance_sensitivity": [
+    {
+      "net": "+3V3_CORE",
+      "max_impedance_change_ohm": 0.001078844190714301,
+      "allowed_ohm": 0.006062928462332981,
+      "pass": true
+    },
+    {
+      "net": "+3V3_DSM",
+      "max_impedance_change_ohm": 1.7606330789773916e-05,
+      "allowed_ohm": 0.0002596769770851103,
+      "pass": true
+    },
+    {
+      "net": "+5V_BEC",
+      "max_impedance_change_ohm": 0.0005677234033071854,
+      "allowed_ohm": 0.008127295237004761,
+      "pass": true
+    },
+    {
+      "net": "+5V_PERIPH",
+      "max_impedance_change_ohm": 0.00037100715424009945,
+      "allowed_ohm": 0.003600416514789267,
+      "pass": true
+    },
+    {
+      "net": "ABC_FB",
+      "max_impedance_change_ohm": 0.00013673798654046873,
+      "allowed_ohm": 0.0005251623939569975,
+      "pass": true
+    },
+    {
+      "net": "CORE_BUCK_IN",
+      "max_impedance_change_ohm": 0.0001776492304694996,
+      "allowed_ohm": 0.0009527781721282449,
+      "pass": true
+    },
+    {
+      "net": "GND",
+      "max_impedance_change_ohm": 0.00014425191400202833,
+      "allowed_ohm": 0.0002660891516064154,
+      "pass": true
+    },
+    {
+      "net": "USB_LIMITED",
+      "max_impedance_change_ohm": 0.00018011445280342875,
+      "allowed_ohm": 0.001276169933471819,
+      "pass": true
+    },
+    {
+      "net": "USB_VBUS_RAW",
+      "max_impedance_change_ohm": 0.000532253924163617,
+      "allowed_ohm": 0.003166658660834487,
+      "pass": true
+    },
+    {
+      "net": "VX_PROTECTED",
+      "max_impedance_change_ohm": 0.0003007130256829013,
+      "allowed_ohm": 0.002789954286254291,
+      "pass": true
+    },
+    {
+      "net": "VX_RAW",
+      "max_impedance_change_ohm": 0.00013370203948930882,
+      "allowed_ohm": 0.0015035632929169549,
+      "pass": true
+    }
+  ],
+  "voltage_checks": {
+    "total": 294,
+    "negative_threshold_margin_count": 146,
+    "grid_change_over_locked_tolerance_count": 205,
+    "failed_combined_checks": 209,
+    "maximum_grid_change_V": 0.001434150509686205,
+    "negative_margin_by_probe": {
+      "J9_receiver_pad": 40,
+      "J10_receiver_pad": 51,
+      "J11_receiver_pad": 51,
+      "J2_servo_board_pad": 1,
+      "J3_servo_board_pad": 1,
+      "J4_servo_board_pad": 1,
+      "J5_servo_board_pad": 1
+    },
+    "over_tolerance_by_probe": {
+      "J9_receiver_pad": 40,
+      "J10_receiver_pad": 51,
+      "U9_operating_input_only": 63,
+      "J11_receiver_pad": 51
+    }
+  },
+  "limitations": [
+    "New explicitly enumerated cases only; no historical result reuse.",
+    "Two-grid sensitivity is not a rigorous discretization or manufacturing error bound.",
+    "Finite lands and annuli omit within-land, pin, solder and contact heating; external contact/harness resistors belong in each ledger.",
+    "Fixed-temperature DC loss/density is not ampacity or thermal prediction; 105 C copper does not override X5R/servo temperature limits.",
+    "No startup, reverse blocking, handover, ESD, switching ripple, VCAP AC stability, KST signal-level, production or flight qualification.",
+    "Voltage sensitivity exceeds the locked 1 mV tolerance; no completed voltage convergence or acceptance is claimed.",
+    "Large peripheral deficits are provisional route diagnostics, not qualified device voltage predictions.",
+    "Modeled harness profiles are illustrative; measured harness remains unset.",
+    "High servo DC illustrations exceed the stated source continuous capability and have no assigned duration.",
+    "USB configuration has external DSM, ABC and servo loads disconnected; input below 4.3 V does not establish receiver regulation.",
+    "This subset omits broader converter efficiency, leakage, effective on-resistance, line/load, 12.6 V and upper-corner reviews.",
+    "Dependent weakest-allocation slices remain disabled pending an accepted source-bound baseline."
+  ],
+  "projection": {
+    "source_path": "static-power-validation/candidate15-loaded73-summary.json",
+    "source_sha256": "6d891980aea0488d1a69b6a2c2606893d4e1c96fe37d914ae9a3b15520684b9c",
+    "selected_top_level_fields": [
+      "status",
+      "board_sha256",
+      "result_sha256",
+      "freeze_sha256",
+      "ledger_sha256",
+      "scope",
+      "scope_is_final_board",
+      "conditional_static_screen_pass",
+      "thermal_or_flight_qualification",
+      "material",
+      "convergence_requirements",
+      "mesh_spacings_mm",
+      "cases_per_grid",
+      "networks_per_grid",
+      "contacts",
+      "impedance_sensitivity",
+      "voltage_checks",
+      "limitations"
+    ],
+    "original_file_included": false
+  }
+}

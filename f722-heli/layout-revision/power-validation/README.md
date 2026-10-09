@@ -1,8 +1,12 @@
 # Prototype static power validation
 
-This bundle preserves tested DC copper/circuit tooling and 67 small analytical, compiler, geometry, cache and solver controls. Native attempts on one provisional power-support source have not produced a converged two-grid VCAP loop result. The latest full attempt passed the three coarse-grid network solves and then refused a receipt serialization comparison before the fine mesh. A tested canonical-JSON correction is included; its native retry remains pending.
+This successor preserves 84 tested analytical, compiler, geometry, cache and solver controls. A historical power-support source passed its five two-grid DC VCAP loop checks. The later candidate15 loaded pilot completed 73 cases on both 0.20/0.15 mm grids but **failed** its conditional voltage screen: a large peripheral copper drop and a 1.434 mV maximum voltage-grid change versus the unchanged 1 mV criterion. No final-board, thermal or flight qualification is claimed. Compact diagnostic/review evidence is published separately from this runtime bundle.
 
-`MANIFEST.json` is the exact public allowlist and SHA-256 inventory. No PCB, full native export, matrix arrays, environment or expanded case ledger is bundled. The two small source-bound geometry regression fixtures total about 40 kB. `native-refusals.json`, `native-linear-diagnostic.json` and `native-receipt-roundtrip.json` preserve compact evidence with source/result hashes. They do not qualify this or any later board.
+`MANIFEST.json` is the exact public allowlist and SHA-256 inventory. No PCB, full native export, full 85 MB result, matrix arrays, environment or expanded case ledger is bundled. The controls and disabled case compiler are self-contained with the pinned dependencies. Replaying an actual board result requires the separately archived, hash-matching external inputs recorded in `historical-runtime-identity.json`; this source bundle alone is not a complete native-result reproduction packet.
+
+`historical-loaded73-prepared-plan.json` is the exact disabled prepared plan, SHA-256 `00d59b84c5c4cc24ee21352e6e30db8a13ecfaf2a163e252012b0ac5a9215f58`. It is an archival source-specific plan, not the default for a new board or permission to run. The runtime identity record preserves the exact released freeze, ledger and result hashes. Five archived runtime modules are byte-identical; the sixth differs only by a documented unit correction in a docstring, with its executable AST checked unchanged. Public tests use relocated fixture paths and are rerun on these actual files.
+
+The two small source-bound geometry fixtures total about 40 kB. `native-refusals.json`, `native-linear-diagnostic.json`, `native-receipt-roundtrip.json` and `native-single-line-control.json` retain historical negative controls and compact repair evidence with original hashes. Their historical pending/refusal statuses do not overwrite the later scoped outcomes. The bulky native single-line contour and full proof remain external; synthetic controls exercise its same retained-subdivision rule and rejection conditions.
 
 ## Reproduce the controls
 
@@ -14,10 +18,11 @@ python3.12 -m venv .venv
 python -m pip install -r requirements.txt
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B -m unittest -v \
   test_static_validation test_case_compiler test_native_edge_noding \
-  test_linear_backend test_mesh_cache
+  test_linear_backend test_mesh_cache test_result_evidence \
+  test_loaded_pilot test_power_geometry_comparison
 ```
 
-Expected: 67 passing tests. `synthetic-tests.json` binds the actual bundled test run to source hashes. No project PCB is loaded. Coverage includes finite/grouped native contacts; drill voids and saved-fill holes; point-touch and disconnected rejection; barrel spans; narrow feeders; coupled return voltage, finite contacts and converter input-power conservation; unequal same-source feeds; reciprocity/convergence; stale-source and compute/thread gates; exact ancestry, seam and area checks; numeric-cache corruption/caps; mixed-precision residuals; and receipt roundtrip/refusal controls.
+Expected: 84 passing tests. `synthetic-tests.json` binds the actual bundled test run to source hashes. No project PCB is loaded. Coverage includes finite/grouped native contacts; drill voids and saved-fill holes; point-touch and disconnected rejection; barrel spans; narrow feeders; coupled return voltage, finite contacts and converter input-power conservation; unequal same-source feeds; reciprocity/convergence; stale-source and compute/thread gates; exact ancestry, seam and area checks; numeric-cache corruption/caps; mixed-precision residuals; canonical receipt roundtrips and size-bounded evidence references; retained single-line native subdivisions and ambiguous/bent/uncovered rejection; exact loaded-case selection; and all-net drill/fill/port source comparisons.
 
 `native-fill-fixture.json` is a synthetic KiCad 10.0.6 polygon set with holes and a disconnected outline. With that version's `pcbnew` Python, regenerate it using `python generate_native_fill_fixture.py --out fresh-native-fill-fixture.json`. The exporter decodes fractured fills by exact reverse integer bridge cancellation. It does not repair geometry or save/refill a PCB.
 
@@ -29,7 +34,7 @@ The project plan separates 0.32 A electronics, classic 20 mA DSM, capacity 0.50 
 
 Compiler outputs contain 170 baseline, 40 upper and 100 bounded servo definitions, combined into a 310-case primary ledger. These are newly enumerated definitions, not executed cases or historical results. Another 178 dependent selectors stay disabled until actual source-bound baseline rankings exist. `activate_ranked_slices.py` preserves separate weakest sampled locations for distinct voltage constraints and rejects invented rankings.
 
-Settings are explicit modeled assumptions: 105 °C, 0.015 mm effective copper/plating, 95% IACS. They are not fabrication measurements. Select and review the resource/material settings deliberately. The larger pilot settings select sparse direct solving, two grids and 900k nodes/1.8M triangles; they do not authorize execution.
+Settings are explicit modeled assumptions: 105 °C, 0.015 mm effective copper/plating, 95% IACS. They are not fabrication measurements. Select and review the resource/material settings deliberately. The larger pilot settings select sparse direct solving, two grids and 900k nodes/1.8M triangles; they do not authorize execution. The completed 73-case pilot took about 12.4 minutes through the last field stage and recorded 1.409 GB peak RSS. Its archived preparation estimate of 4–10 minutes was optimistic; resource limits remain 20 minutes and 4 GiB, not runtime guarantees.
 
 ## Bind and audit the final source
 
@@ -54,14 +59,26 @@ The compiler checks every evidence hash, actual selected parts and pad/net/layer
 
 ## Bounded numerical execution
 
-After allocating the single heavy-job slot, compile again to a new directory with `--allow-numerical`. Review the selected ledger and use its matching freeze. The following shows the interface; the full primary ledger is not implied to fit a short pilot:
+For the bounded loaded scope, compile the new source with reviewed `compiler-settings.pilot.json` settings using the binding command above, then prepare a disabled selection:
 
 ```sh
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python run_bounded_pilot.py \
-  --freeze compiled-released/freeze.json \
-  --ledger compiled-released/ledger-primary.json \
-  --out compiled-released/result.json --mesh-cache private-numerical-cache
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python prepare_loaded_pilot.py \
+  --compiled compiled-preflight --out loaded-prepared
 ```
+
+The selector requires exactly 60 shared-ABC/classic-or-capacity cases at 5 V, two USB configuration cases, and 11 bounded servo/feed illustrations. It excludes incompatible servo loads at 5 V and external loads in USB configuration. It retains actual case hashes, converter conserved power, local returns, finite resistances and separate operating/accuracy screens. It copies immutable runtime files and never meshes during preparation. The full 310-case ledger is not implied to fit this pilot's resource bound.
+
+After explicit allocation of the single heavy-job slot and source adoption, prepare a separate released directory and execute its copied runtime:
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python prepare_loaded_pilot.py \
+  --compiled compiled-preflight --out loaded-released --release
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python loaded-released/solver-source/run_bounded_pilot.py \
+  --freeze loaded-released/freeze.json --ledger loaded-released/ledger.json \
+  --out loaded-released/result.json --mesh-cache private-numerical-cache
+```
+
+A later final board must be freshly compiled from its own gate reports and complete geometry. Never replace an archived hash, retitle a provisional result as final, or reuse a cache through a changed source identity. `compare_power_geometry.py` can record exact modeled-input equivalence, including every physical drill; it explicitly does not transfer a cache or rebind a result.
 
 The wrapper sets one BLAS/OpenMP thread before imports, enforces a 4 GiB address-space cap and 20-minute alarm, and requires external scheduling of one heavy job. No source is edited. Exit 0 means preflight or conditional enumerated-screen success, 1 means a completed screen did not pass, and 2 means refusal. Completed coarse-grid data on a later refusal is retained as explicitly unqualified partial data.
 
@@ -71,7 +88,7 @@ Sparse direct solving checks finite coefficients, symmetry, positive diagonal an
 
 ## Geometry and interpretation
 
-Grid anchors use exact decimal rationals. Derived native-edge intersections require unique exact integer/rational ancestry, covered source intervals and shared seam nodes. Native vertices, holes, contacts and exact rational ring areas are preserved. Represented binary64 area deltas and every derived coordinate correction are recorded. A residual/angle-derived position bound plus a 1 pm absolute cap limits numerical representation correction; this is not a fabrication tolerance. Unknown/ambiguous ancestry, collapsed identities and invalid topology refuse. Canonical JSON comparison keeps cached/fresh certificates content-identical without confusing tuple/list representation.
+Grid anchors use exact decimal rationals. Derived native-edge intersections require unique exact integer/rational ancestry, covered source intervals and shared seam nodes. Native vertices, holes, contacts and exact rational ring areas are preserved. Represented binary64 area deltas and every derived coordinate correction are recorded. A residual/angle-derived position bound plus a 1 pm absolute cap limits numerical representation correction; this is not a fabrication tolerance. Unknown/ambiguous ancestry, collapsed identities and invalid topology refuse. Canonical JSON comparison keeps cached/fresh certificates content-identical without confusing tuple/list representation. A retained subdivision along one native line additionally requires unique line ancestry, adjacent-edge collinearity/order, strict interior placement and continuous finite source coverage. Nearby unrelated edges, real bends, gaps and ambiguous ancestry refuse. No native vertex or positive-area copper is removed to accommodate it.
 
 No positive-area triangle is discarded. The 1e12 element condition guard is numerical rather than a physical error guarantee. Finite-contact membership has a 2e-8 mm roundoff allowance. True drills, intermediate narrow copper, actual copper unions and finite barrel resistance remain in the network. Feed sharing comes from the circuit, never an assumed split. Two-grid sensitivity is not a rigorous discretization/manufacturing bound.
 

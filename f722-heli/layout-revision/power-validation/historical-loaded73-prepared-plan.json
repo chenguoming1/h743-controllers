@@ -1,0 +1,1598 @@
+{
+  "schema": "f722-loaded-pilot-plan/v1",
+  "status": "PREPARED INPUTS; NO BOARD SOLVE",
+  "board_sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674",
+  "freeze_sha256": "0d4178b301a1f90d95140af3151f38b2faab921f085894f66410be71eec83b94",
+  "ledger_sha256": "4ceffff4dbaf2c753dd3ff3437a13692e7ed321cfe617e3c8f5f2b8725fa3096",
+  "numerical_execution_authorized": false,
+  "case_count": 73,
+  "families": {
+    "5V_minimum_electronics_classic_capacity": 60,
+    "4p33V_USB_configuration": 2,
+    "7p4V_same_BEC_illustrations": 11
+  },
+  "nets": 11,
+  "contacts": 94,
+  "mesh_spacings_mm": [
+    0.2,
+    0.15
+  ],
+  "limits": {
+    "max_nodes": 900000,
+    "max_triangles": 1800000,
+    "max_tiles": 400000,
+    "max_seconds": 600,
+    "max_iterations": 20000,
+    "max_terminals": 128,
+    "max_element_condition": 1000000000000.0,
+    "linear_solver": "sparse-direct",
+    "max_factor_nonzeros": 20000000,
+    "max_factor_bytes": 1073741824,
+    "cg_diagnostic_iterations": 0
+  },
+  "resource_bounds": {
+    "overall_wall_seconds": 1200,
+    "address_space_MiB": 4096,
+    "heavy_processes": 1,
+    "BLAS_threads": 1,
+    "OpenMP_threads": 1
+  },
+  "estimated_runtime_minutes": [
+    4,
+    10
+  ],
+  "estimated_peak_memory_GiB": [
+    1.3,
+    2.0
+  ],
+  "estimate_basis": "Measured six-port GND pilot: fine mesh558404 raw nodes/132244 equations/741648 triangles,122.2 s overall,1.22GB recorded RSS. More finite contacts require fresh matrices; runtime/memory estimates are not guarantees.",
+  "reuse": "Build/checkpoint one matrix per exact network/contact/grid identity. Reuse its factor and port matrix across all selected cases; rebuild loaded fields from the same cached identity. No VCAP six-port GND cache is reused for a changed contact set.",
+  "source_contact_assumptions": "All60 5.0V cases disconnect servo loads. USB4.33V cases disconnect external DSM, ABC and servos. Servo11 cases use7.4V and explicit illustrative finite four-conductor profiles; no measured harness is invented.",
+  "servo_pairs": [
+    [
+      "moderate",
+      "equal20m"
+    ],
+    [
+      "moderate",
+      "paired_J8_weak"
+    ],
+    [
+      "moderate",
+      "crossed_J6_positive_strong"
+    ],
+    [
+      "moderate",
+      "J6_feed_lost"
+    ],
+    [
+      "moderate",
+      "J8_feed_lost"
+    ],
+    [
+      "heavy_S1_905X",
+      "equal40m"
+    ],
+    [
+      "heavy_S2_905X",
+      "paired_J8_weak"
+    ],
+    [
+      "heavy_S3_905X",
+      "crossed_J6_positive_strong"
+    ],
+    [
+      "all_cyclic_805X",
+      "equal40m"
+    ],
+    [
+      "all_cyclic_905X",
+      "paired_J8_weak"
+    ],
+    [
+      "all_cyclic_905X",
+      "J6_feed_lost"
+    ]
+  ],
+  "servo_allocation": "mcu_vdd19 is a fixed diagnostic illustration, not a proved weakest servo allocation",
+  "threshold_scope": "Retain conditional classic DSM3.1394..3.465V and ABC4.8V pad floors, U9 operating3..17V, separate4.3V accuracy-condition headroom reports, local positive/return pads and finite contact resistors. Capacity DSM0.50A has no inherited classic accuracy guarantee. CORE sink voltage is reported without inventing a universal component floor.",
+  "not_completed_by_this_subset": [
+    "12.6V and upper-output review",
+    "75/85/95% efficiency and90/120/150mOhm U8 sensitivities",
+    "line/load/leakage allowance sweeps",
+    "all same-BEC/feed/servo/return combinations",
+    "weakest-allocation dependent slices",
+    "measured harness/source/thermal/AC/flight qualification",
+    "final routed-board analysis after later drills/fills"
+  ],
+  "cases": [
+    {
+      "name": "classic_BEC5_AB_mcu_vdd19_baseline",
+      "case_definition_sha256": "ca121efb645b9f682b56f54ec3b0066e4659b066f18d5a52f7bbe094144dccb0",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_mcu_vdd32_baseline",
+      "case_definition_sha256": "e9fe06db553a9bbbe83b7f4f36d82e6e2c6d14b16b623c7d2327de8138fd6de0",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd32",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_mcu_vdd48_baseline",
+      "case_definition_sha256": "5caaaa0855d4e8fcaf2677b3e4c90753d6e01b01c7012499c2b9d6316adf27f1",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd48",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_mcu_vdd64_baseline",
+      "case_definition_sha256": "7e59a2c358abac33a23d5e2e937b1cfbffe5ef444ecdc1b2210ba93b01d0cf36",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd64",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_flash_baseline",
+      "case_definition_sha256": "488ea102b616566e484475ef7899e5f09741182789e9a8b2704074d6f8020e7e",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_barometer_pad2_baseline",
+      "case_definition_sha256": "9ad6391627543f04629cfef9238b9ccee53ceb683d8917766d98903403ed749c",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad2",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_barometer_pad6_baseline",
+      "case_definition_sha256": "0ff9d36035fe2ade80c5d907352010a35b36da408a75f07922a3ccf73401cfc8",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad6",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_barometer_pad8_baseline",
+      "case_definition_sha256": "fed43832bad487c616ee57e2d697234cd548030b2dcb66ecaec77b1398509a80",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad8",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_analog_branch_entry_baseline",
+      "case_definition_sha256": "f8e70427b0b099985b4122999f9cc57af0c60d9780ee00117064f811de378c26",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "analog_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AB_imu_branch_entry_baseline",
+      "case_definition_sha256": "c493739120be98d4d687e32a8ea22261b5fd40746fd8c0da393a945601d42567",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "imu_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_mcu_vdd19_baseline",
+      "case_definition_sha256": "c61e9f2ee703edfd38db8695ba8c4083fcfaeecb80881a17f5f3bac3c4dc94a2",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_mcu_vdd32_baseline",
+      "case_definition_sha256": "ea0325269158e1afdc9cca4b6f17453ec96d6d88b3f02abf470dbc96a649251f",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd32",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_mcu_vdd48_baseline",
+      "case_definition_sha256": "63286205f7fb26d00c4412f70c8a6c862eb4a4d9cf20a2053f3f8182776318fb",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd48",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_mcu_vdd64_baseline",
+      "case_definition_sha256": "11f84f34743f519d2f6e528fd5133b02b17590c463d27871bd093b8c6af4d4b8",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd64",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_flash_baseline",
+      "case_definition_sha256": "5d6f5133844f4cae8534c5e763db3eab8cdb71ce5d63ceb2d60ff442a0cc69eb",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_barometer_pad2_baseline",
+      "case_definition_sha256": "348b64786453f522ada687aa726ccda6c5cee24dcab5fb4b53a714073ed29ea8",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad2",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_barometer_pad6_baseline",
+      "case_definition_sha256": "6fd2568c9f6dcee1a0a63e1e7df573c6e902e0a811682eabfe004d01168d1821",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad6",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_barometer_pad8_baseline",
+      "case_definition_sha256": "5fbd95cc286ea6baa27e92561539ee3694c3c20889ce07858b53b962446a3340",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad8",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_analog_branch_entry_baseline",
+      "case_definition_sha256": "79cea578d131f2d540fee54a4dea0f685af5dc38ef035f6fdad13bb4dfda189f",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "analog_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_AC_imu_branch_entry_baseline",
+      "case_definition_sha256": "ec9e9fb50dd1d046aa3b83d579f26e024a975f4f9462fa3ec873b9ef2607d9f8",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "imu_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_mcu_vdd19_baseline",
+      "case_definition_sha256": "288891134a06be694f371fb7a207732ec10facbe3683094114e8fb67a3526ae6",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_mcu_vdd32_baseline",
+      "case_definition_sha256": "cae03391e44b3d6964c25c4147f02a74d8da10052066717b451f8a87c2740064",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd32",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_mcu_vdd48_baseline",
+      "case_definition_sha256": "d05415c4347f69597d93d5f23dc82725fe12689c8e6542472bbced3294767ccf",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd48",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_mcu_vdd64_baseline",
+      "case_definition_sha256": "b4f05dd904d19ab9bd3958c30b4dadc1fa9d4152241f7d2118221b8dbafd5270",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd64",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_flash_baseline",
+      "case_definition_sha256": "b08ecdd085f20b5770f946d02efb2f28164e7f888fa2a78e66bd1c27f9b1000b",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_barometer_pad2_baseline",
+      "case_definition_sha256": "2e10f614559604a7db3d8e14f6ae224c94138c783604ac4098ee045056370283",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad2",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_barometer_pad6_baseline",
+      "case_definition_sha256": "af43c383a334645a981ff0ddfca879d3f5698f5ce0c8f065ccc2010ece195344",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad6",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_barometer_pad8_baseline",
+      "case_definition_sha256": "90c102246d8d4fa5fe3273001c6afb2aecfec2a3368510cb148b471eeea60359",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "barometer_pad8",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_analog_branch_entry_baseline",
+      "case_definition_sha256": "0736dd0e3551c8bb505c5256d1a021ca5c466fd30e19947a9062fb8b68e7c9d9",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "analog_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "classic_BEC5_BC_imu_branch_entry_baseline",
+      "case_definition_sha256": "b009457b83434658b42d79ccb39530892b6b9a54031996b5ed1383354756cb83",
+      "scope": "classic",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "imu_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_mcu_vdd19_baseline",
+      "case_definition_sha256": "72f1c0ba53560c3e7db2902309495f0efbb3565d496493f604024286a4ae38fe",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_mcu_vdd32_baseline",
+      "case_definition_sha256": "46aea28289868a3c0585f14f573316e657573715ba79c452558df280612ac669",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd32",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_mcu_vdd48_baseline",
+      "case_definition_sha256": "bf672a37c883f72d9b05d8bdfa5616044c28c0966c8ab5c47b2614b932881550",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd48",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_mcu_vdd64_baseline",
+      "case_definition_sha256": "3f17c8bf8b73ef656821a7ab51a6a58d70f633d19f9f3ce5367623c7682a4856",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd64",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_flash_baseline",
+      "case_definition_sha256": "0ea247417d4d023cf46cf050bf3995b4ef9cea86e6b0765c3e09290616c519a8",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_barometer_pad2_baseline",
+      "case_definition_sha256": "64efdce8c8194341646045bddbfb95445cd391242fc7f41c46e39d017c15a3ae",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad2",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_barometer_pad6_baseline",
+      "case_definition_sha256": "1977b47ebfe55be2a008e449adb020c7fe38adb6785890b3fc8f39b4bc3fef4f",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad6",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_barometer_pad8_baseline",
+      "case_definition_sha256": "85d61ccd4ac56f817d781a6f23866c9246d6b7788496123b665f004b228a5ea6",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad8",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_analog_branch_entry_baseline",
+      "case_definition_sha256": "052231f1f752c102d9a05696d1fde9f268f90d2e74fc9c3fe6496103100b3a60",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "analog_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AB_imu_branch_entry_baseline",
+      "case_definition_sha256": "c887d9b8ecaf74f4fb908e770496f3d0c081335527c27068d31c88a80faab464",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J10"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "imu_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_mcu_vdd19_baseline",
+      "case_definition_sha256": "3c2ff0436feb9af38d0874f093dba0dd9618dbb94828d7ade107a36262ff3507",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_mcu_vdd32_baseline",
+      "case_definition_sha256": "45e30fa9eff50107dbd1e6d4c77dbd91f0243ad3c00c4f686be4517a1c081f85",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd32",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_mcu_vdd48_baseline",
+      "case_definition_sha256": "23fdbf702a97faca411bd47a6f8e230355f8213275b9896cf499786d6a43a05d",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd48",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_mcu_vdd64_baseline",
+      "case_definition_sha256": "8650f52c7adba9090d4a2fae39304a07f8829b643203ecad5d5b977314684f4c",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd64",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_flash_baseline",
+      "case_definition_sha256": "69ea7d670e3574ea287b5ec81be04362d84443a0db1ee1cfe6dc4ba57f8c5985",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_barometer_pad2_baseline",
+      "case_definition_sha256": "047f3997024753c3d7a262d6394ba242f269c363978bc164d2c6041c54e9b7cb",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad2",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_barometer_pad6_baseline",
+      "case_definition_sha256": "19a6d7592d3d9b13717f7e7cd897d8786f5ad655c4b3531e533593cfc4de3103",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad6",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_barometer_pad8_baseline",
+      "case_definition_sha256": "d99699b0be3b478ce23c5daee4fcd158f8630880ff8eb7a1b80fea2ebbe40716",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad8",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_analog_branch_entry_baseline",
+      "case_definition_sha256": "2e4b781e04ab5a3286039074a361921743218162d6ea639ef3492fff7d812ea9",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "analog_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_AC_imu_branch_entry_baseline",
+      "case_definition_sha256": "be015e2cc45a1330adf9c5b8e52bc945476c8d9e949d30fb17e3fb569c17b970",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J9",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "imu_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_mcu_vdd19_baseline",
+      "case_definition_sha256": "875d4e9c0e7d861e79824f2e34d9724b0aa1b9ba7d38323f03196197a6828186",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_mcu_vdd32_baseline",
+      "case_definition_sha256": "97e4fb1b30ce189b75e7649e502985aba4fe9215e8199ed0d0d79f88cfc7d792",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd32",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_mcu_vdd48_baseline",
+      "case_definition_sha256": "07799b1dbba2a30a75cd2ce791b1c39b70d5cf647c762e603d653ea5c5c6804b",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd48",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_mcu_vdd64_baseline",
+      "case_definition_sha256": "7bace44f37e6656cca2cb27dcfcc81e097f18f5692a85b755d4bda5f20835fc9",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd64",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_flash_baseline",
+      "case_definition_sha256": "88462a1d5cb5df869625fa99b59a772143ab41b377031f36c2645d5db245e35c",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_barometer_pad2_baseline",
+      "case_definition_sha256": "b607962918b4705e782ce031ae8a7c3e0b269b673ea3764a3715def12a836dd6",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad2",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_barometer_pad6_baseline",
+      "case_definition_sha256": "b7543bddac19d5d7211b82a63553032d0f3d5701622e3aae065562c06e9c1e77",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad6",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_barometer_pad8_baseline",
+      "case_definition_sha256": "273d7c12e3f452f4aa65b097b6097ffb82783fc126f8016772a9fb1f5e50122f",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "barometer_pad8",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_analog_branch_entry_baseline",
+      "case_definition_sha256": "4d8957aa5fbdb221d212525228bfebf37af8f228d48518009ca62ad23c3409f3",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "analog_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "capacity_BEC5_BC_imu_branch_entry_baseline",
+      "case_definition_sha256": "5b25b096e07a0f5df1ad50bd3daa0695e0bc87ae9891ec39c2c278cc7f950f27",
+      "scope": "capacity",
+      "parameters": {
+        "input_at_defined_source_V": 5.0,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "imu_branch_entry",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+      "case_definition_sha256": "11b3f8c625fc49dccb303ca21d59ae4282658fceb92ebc6c47856acbd872c337",
+      "scope": "usb_configuration",
+      "parameters": {
+        "input_at_defined_source_V": 4.33,
+        "ABC_ports": [],
+        "electronics_A": 0.3,
+        "DSM_A": 0,
+        "CORE_aggregate_A": 0.3,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "usb_configuration_USB4.33_NONE_flash_baseline",
+      "case_definition_sha256": "f31039bc051ce8cec4fd8628353202df238473d13d7193325b7aeffce9990416",
+      "scope": "usb_configuration",
+      "parameters": {
+        "input_at_defined_source_V": 4.33,
+        "ABC_ports": [],
+        "electronics_A": 0.3,
+        "DSM_A": 0,
+        "CORE_aggregate_A": 0.3,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      }
+    },
+    {
+      "name": "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+      "case_definition_sha256": "05a31b8f6dc48a5c421463f712b7f9875363d943b9739b4e70714dcbee668555",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "equal20m",
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5
+      }
+    },
+    {
+      "name": "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+      "case_definition_sha256": "0b54b368ccca04717aa93300b7cfc9740dc2e327a271e451e0912196e62e23d9",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "paired_J8_weak",
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5
+      }
+    },
+    {
+      "name": "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+      "case_definition_sha256": "26e77adecd1817be677d6d5ddf5d6b0ba7ccc3aaf833e26142953bc30666a7ee",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "crossed_J6_positive_strong",
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5
+      }
+    },
+    {
+      "name": "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+      "case_definition_sha256": "13616c83978e85bcee9aa630562151521f7fef9c9f72214a1eae935f5cde802a",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "J6_feed_lost",
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5
+      }
+    },
+    {
+      "name": "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+      "case_definition_sha256": "0610bfe076152eaf38813eb13e4ef15df36758241a96892645d371718fdaac42",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.02,
+        "CORE_aggregate_A": 0.34,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "J8_feed_lost",
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5
+      }
+    },
+    {
+      "name": "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+      "case_definition_sha256": "66cc9067902b41fe096d29d9ed4bbb58d1c5fdd8f0b53ec3f1313f666b02f3fa",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "equal40m",
+        "servo_profile": "heavy_S1_905X",
+        "servo_subtotal_A": 8.9
+      }
+    },
+    {
+      "name": "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "case_definition_sha256": "aa9372b29fc6a9c5d9baeaaf865fb8d67e01219a6cbb1ee1d50dfabcdb07d1fb",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "paired_J8_weak",
+        "servo_profile": "heavy_S2_905X",
+        "servo_subtotal_A": 8.9
+      }
+    },
+    {
+      "name": "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+      "case_definition_sha256": "f5a16446b77b87e45d8c3f5563054d8c21f9efa3e787547e51c6a7e13e377e48",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "crossed_J6_positive_strong",
+        "servo_profile": "heavy_S3_905X",
+        "servo_subtotal_A": 8.9
+      }
+    },
+    {
+      "name": "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+      "case_definition_sha256": "efb6e9018c035ea6caa2de0c31b500001b2071915c56fb0c5ab390b72fd83cee",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "equal40m",
+        "servo_profile": "all_cyclic_805X",
+        "servo_subtotal_A": 15.8
+      }
+    },
+    {
+      "name": "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "case_definition_sha256": "06d10163b312b9cce6e6f27a6357ca41ea39f8ab8520c4c895e01c4a7a49fa62",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "paired_J8_weak",
+        "servo_profile": "all_cyclic_905X",
+        "servo_subtotal_A": 15.9
+      }
+    },
+    {
+      "name": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "case_definition_sha256": "3a382397168e7862b724b240384c81b0f537bc0637281c95db26e080961808c7",
+      "scope": "same_BEC_illustrative",
+      "parameters": {
+        "input_at_defined_source_V": 7.4,
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "electronics_A": 0.32,
+        "DSM_A": 0.5,
+        "CORE_aggregate_A": 0.82,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low",
+        "feed_profile": "J6_feed_lost",
+        "servo_profile": "all_cyclic_905X",
+        "servo_subtotal_A": 15.9
+      }
+    }
+  ],
+  "prepare_source_sha256": "8d9c9c8ecb3d7726cac166e21077ad812b2fbf844ff985a244458b5cfcf9bfc5"
+}

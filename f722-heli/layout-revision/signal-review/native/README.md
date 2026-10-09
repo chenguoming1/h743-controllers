@@ -4,7 +4,7 @@ This is a read-only conditional check for the final BARO_SCL/BARO_SDA route plus
 
 ## Current result
 
-The inspected KiCad 10.0.6 unfinished 75-open board is SHA-256 `008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e`.
+The inspected KiCad 10.0.6 unfinished 69-open board is SHA-256 `9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8`.
 
 - SCL contains exactly U1.61, U4.4 and R7.2; SDA contains exactly U1.62, U4.3 and R8.2.
 - Each net has three disconnected pad components, no tracks and no vias. Their zero recorded trace lengths are **not** complete-route results. Final capacitance and RC values are deliberately null.
@@ -17,14 +17,14 @@ The historical `critical-verification-trial15/usb-reference-audit.json` uses boa
 
 ## Expanded physical reference review
 
-`critical-reference.json` is bound to the same 75-open board and adds finite-width and drill-aware inspection. It independently subtracts actual native drill polygons on their finite spans from the saved GND copper. All 118 accepted GND plated ties have positive annular area against both actual saved GND zone fills, excluding their drill holes, and native barrels spanning In1/In4. The USB helper now uses this same criterion: a GND land merely intersecting a union containing itself cannot qualify a tie. The previously reported nearest USB ties still qualify under the corrected criterion and retain their stated distances.
+`critical-reference.json` is bound to the same 69-open board and adds finite-width and drill-aware inspection. It independently subtracts actual native drill polygons on their finite spans from the saved GND copper. All 118 accepted GND plated ties have positive annular area against both actual saved GND zone fills, excluding their drill holes, and native barrels spanning In1/In4. The USB helper now uses this same criterion: a GND land merely intersecting a union containing itself cannot qualify a tie. The previously reported nearest USB ties still qualify under the corrected criterion and retain their stated distances.
 
 All HSE and IMU nets are natively connected. HSE has no missing In4 GND beneath either centerlines or full trace copper. Physical drill subtraction introduces no additional critical-track projection gap on this checkpoint.
 
 | IMU net | Native planar length, mm | Missing centerline projection, mm | Missing trace-width projection, mm² | Nearest verified GND via at its F/B transition, mm |
 |---|---:|---:|---:|---:|
 | CS | 10.306701 | 0.705330 | 0.102067855 | 1.667707 |
-| INT | 7.578768 | 0.706777 | 0.101985606 | 1.490072 |
+| INT | 7.578768 | 0.706778 | 0.101985607 | 1.490072 |
 | MISO | 3.961179 | 0.706091 | 0.112466735 | 2.748596 |
 | MOSI | 3.804632 | 0.708366 | 0.101933670 | 2.309772 |
 | SCK | 7.101470 | 0.708919 | 0.112403248 | 0.986266 |
@@ -32,6 +32,10 @@ All HSE and IMU nets are natively connected. HSE has no missing In4 GND beneath 
 Every IMU missing centerline interval lies in the intersection of an actual saved hole and a bounded same-net via window. This is a location classification, not an electrical pass. The full trace width reveals a **pre-existing IMU_CS sliver of 0.000039505315 mm² outside its own-via windows**. F.Cu track `2c8bdb06-a4fb-4246-a69b-3fe2bfb0bac5`, from (23.159999, 9.125) to (21.959999, 8.975), width 0.127 mm, overlaps the In1 saved hole containing IMU_SCK via `eec68274-8fe5-464d-ad04-2d6f497f6461` at (22.8, 9.5). The sliver bounds are x=22.828047–22.862468 and y=9.147500–9.151803 mm; its centerline remains fully backed by saved GND. This is neither its own antipad nor a new regression, and no arbitrary pass threshold is applied.
 
 `comparison-76-to-75.json` shows that the added FLASH_WP_N through-vias at (30.216310, 24.559960) and (31.500000, 20.985300) remove about 0.785217153 mm² of GND per reference plane but do not change any USB/HSE/IMU projection metric. The nearest critical trace-width distance to newly missing GND is IMU_INT: 7.136058 mm on In1 and 5.194400 mm on In4. All critical copper objects remain byte-identical in the native exports. The earlier 77-to-76 ADC_DIV_MID vias likewise introduced no finite-width crossing; their nearest newly absent-GND distance to IMU_INT is 0.288993 mm on In1 and 0.104486 mm on In4. These distances carry no universal acceptance threshold.
+
+`comparison-75-to-70.json` records the two further ADC_BEC/NRST vias and identical critical signal copper. Saved physical GND decreases by 0.785217154 mm² per reference plane. In1 has zero critical trace-width overlap with that difference; In4 records a 5.84393e-9 mm² overlap under IMU_INT. Its total missing centerline projection changes by 2.62606e-7 mm and missing-width area by 5.52335e-10 mm². All missing IMU_INT centerline/width regions remain in its bounded own-via windows; the separate pre-existing IMU_CS sliver is unchanged. These small represented differences are preserved without inventing an acceptance threshold.
+
+`comparison-70-to-69.json` verifies that the two added outer ADC_BUS tracks preserve every existing copper object, drill, reference-plane object and saved zone fill exactly. Fresh native snapshots and both signal/reference reports are bound to the 69-open board.
 
 Twenty-seven controls pass: the original 18 remain unmodified and 9 focused controls cover false self-land ties, annular contact, finite barrel span, drill-only overlap, tangency, NPTH drilling, full-width defects, bounded merged-hole extension and sloped interval length conservation. No impedance, timing, signal integrity, oscillator, IMU performance or AC qualification follows from this geometry. The board and I2C qualification remain unfinished.
 

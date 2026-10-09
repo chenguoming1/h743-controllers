@@ -1,6 +1,6 @@
 {
   "schema": "f722-native-signal-review/v1",
-  "board_sha256": "008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e",
+  "board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
   "project_sha256": "b6f208f1659aa43b6e96e6e49a0eb396654cb426365a557b5d78ddf74423072c",
   "native_version": "10.0.6",
   "native_build": "10.0.6+dfsg-1",
@@ -10,11 +10,11 @@
     "export_native_copper.py": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a",
     "exact_native_contours.py": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922",
     "check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
-    "native-geometry.json": "391729cc9e09fc91306694bb9166a66b4d0291a0bf4ef0bd8f50dc4bb3889cd8",
-    "native-signals.json": "4c87332ebd27671c2e2cd507f0534567616921edfb40f1f7202b1567f54d76f7",
+    "native-geometry.json": "e95a699a79c5f38bebabda302d971c5a4ff9116a16afb70b26eafa22ab286327",
+    "native-signals.json": "f57656df8a09842e8de975c94e63a03ce0442123cd55f982462299e3db92f652",
     "final-native-i2c-requirements.json": "a377008c847db3791993c3f0447b977952e1a4f57c8b2535c4f06fb5ffe64ebb",
     "stock-i2c-calculations.json": "ff387a816c3b043212227001c501a49d4791e0bcce3e98365a21128e5785f99f",
-    "model_profile": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184"
+    "model_profile": null
   },
   "stackup": {
     "native_block_sha256": "01ab870eb399187fe0d6576e3e762640cf846dc755ff987fa58b09fad56770f6",
@@ -346,31 +346,7 @@
       "capacitance": {
         "status": "refused_pending_inputs_or_route",
         "reasons": [
-          "Document and review the engineering assumptions",
-          "Missing/invalid epsilon_r_max",
-          "Missing/invalid signal_edge_growth_mm",
-          "Missing/invalid foreign_edge_growth_mm",
-          "Missing/invalid relative_layer_registration_mm",
-          "Missing/invalid probe_capacitance_pF",
-          "Missing/invalid additional_model_allowance_pF",
-          "Missing/invalid unmodeled_external_copper_min_distance_mm",
-          "Missing/invalid min/max thickness: F.Cu",
-          "Missing/invalid min/max thickness: dielectric 1",
-          "Missing/invalid min/max thickness: In1.Cu",
-          "Missing/invalid min/max thickness: dielectric 2",
-          "Missing/invalid min/max thickness: In2.Cu",
-          "Missing/invalid min/max thickness: dielectric 3",
-          "Missing/invalid min/max thickness: In3.Cu",
-          "Missing/invalid min/max thickness: dielectric 4",
-          "Missing/invalid min/max thickness: In4.Cu",
-          "Missing/invalid min/max thickness: dielectric 5",
-          "Missing/invalid min/max thickness: B.Cu",
-          "Missing evidence/explicit engineering rationale: dielectric_bound",
-          "Missing evidence/explicit engineering rationale: thickness_bounds",
-          "Missing evidence/explicit engineering rationale: etch_registration",
-          "Missing evidence/explicit engineering rationale: probe",
-          "Missing evidence/explicit engineering rationale: external_copper",
-          "Missing evidence/explicit engineering rationale: assembly_allocation",
+          "No model-input profile supplied",
           "Native net incomplete: no final whole-net capacitance or RC result",
           "Complete supported tree without dangling copper not established"
         ],
@@ -585,31 +561,7 @@
       "capacitance": {
         "status": "refused_pending_inputs_or_route",
         "reasons": [
-          "Document and review the engineering assumptions",
-          "Missing/invalid epsilon_r_max",
-          "Missing/invalid signal_edge_growth_mm",
-          "Missing/invalid foreign_edge_growth_mm",
-          "Missing/invalid relative_layer_registration_mm",
-          "Missing/invalid probe_capacitance_pF",
-          "Missing/invalid additional_model_allowance_pF",
-          "Missing/invalid unmodeled_external_copper_min_distance_mm",
-          "Missing/invalid min/max thickness: F.Cu",
-          "Missing/invalid min/max thickness: dielectric 1",
-          "Missing/invalid min/max thickness: In1.Cu",
-          "Missing/invalid min/max thickness: dielectric 2",
-          "Missing/invalid min/max thickness: In2.Cu",
-          "Missing/invalid min/max thickness: dielectric 3",
-          "Missing/invalid min/max thickness: In3.Cu",
-          "Missing/invalid min/max thickness: dielectric 4",
-          "Missing/invalid min/max thickness: In4.Cu",
-          "Missing/invalid min/max thickness: dielectric 5",
-          "Missing/invalid min/max thickness: B.Cu",
-          "Missing evidence/explicit engineering rationale: dielectric_bound",
-          "Missing evidence/explicit engineering rationale: thickness_bounds",
-          "Missing evidence/explicit engineering rationale: etch_registration",
-          "Missing evidence/explicit engineering rationale: probe",
-          "Missing evidence/explicit engineering rationale: external_copper",
-          "Missing evidence/explicit engineering rationale: assembly_allocation",
+          "No model-input profile supplied",
           "Native net incomplete: no final whole-net capacitance or RC result",
           "Complete supported tree without dangling copper not established"
         ],
@@ -5387,13 +5339,13 @@
           "adjacent_layers": [
             {
               "layer": "In4.Cu",
-              "GND_centerline_missing_mm": 0.35424899803637216,
-              "GND_copper_missing_mm2": 0.05096356041193596,
+              "GND_centerline_missing_mm": 0.3542492606427561,
+              "GND_copper_missing_mm2": 0.05096356096427103,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
-                  "centerline_overlap_mm": 4.747956407472113,
-                  "copper_overlap_mm2": 0.6096849911840603
+                  "centerline_overlap_mm": 4.7479561448657295,
+                  "copper_overlap_mm2": 0.6096849906317234
                 }
               ]
             }
@@ -7577,7 +7529,7 @@
             39.7025,
             15.3525
           ],
-          "area_mm2": 2.138457125163999,
+          "area_mm2": 2.1384571172049984,
           "contained_vias": [
             {
               "uuid": "044eb12e-d160-48e5-a4d9-d0f94a94f9f6",
@@ -7799,7 +7751,7 @@
             39.7025,
             15.3525
           ],
-          "area_mm2": 2.138457125163999,
+          "area_mm2": 2.1384571172049984,
           "contained_vias": [
             {
               "uuid": "044eb12e-d160-48e5-a4d9-d0f94a94f9f6",
@@ -8406,7 +8358,7 @@
   },
   "existing_critical_check": {
     "file": "owner-critical.json",
-    "sha256": "3cc52472a253aaada8eb7fa26f7e27b52c44770ab49e8e7c35c72fd876dbc0a0",
+    "sha256": "b822ea695f84facddcd26d24fdcd9e6a26723bd1fcce73cd8d17fb9b7e6aa70e",
     "exact_board_match": true,
     "reuse_status": "source-matched subset evidence",
     "fullnet_connectivity": [

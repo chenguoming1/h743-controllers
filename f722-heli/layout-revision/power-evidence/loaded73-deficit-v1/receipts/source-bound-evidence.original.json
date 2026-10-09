@@ -1,0 +1,1407 @@
+{
+  "schema": "f722-independent-power-drop-extract/v1",
+  "result_sha256": "0780cece1cf4194220a542f9d7f65cc6be3dc457b9bbfaf74bd5a07fa3a1d9ac",
+  "frozen_inputs_verified": [
+    {
+      "name": "board",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/f722-heli.kicad_pcb",
+      "sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674"
+    },
+    {
+      "name": "geometry",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-native.json",
+      "sha256": "dc1aa86cd3969eb2f0444674adef7f948b46cb50ad07d4d56d1efa3ba083febd"
+    },
+    {
+      "name": "parts",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    {
+      "name": "parity",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-parity.json",
+      "sha256": "cf43c0308a9b299b96a5befadec60dfc3087f353a67db1bee7bce73b4637e13c"
+    },
+    {
+      "name": "process",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-process.json",
+      "sha256": "4de8ae4ecff4a9faa67e8f6598a742471d7383a59c320426c32a29e5c32cd6d7"
+    },
+    {
+      "name": "mechanical",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-mechanical.json",
+      "sha256": "68a7d153c2b42377464c2b2c64f7453ed21764eed4f0be093bc7fc5bfc582c39"
+    },
+    {
+      "name": "critical",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-critical.json",
+      "sha256": "44cfa27d2e89e87b38e45172627ccdeffb550f30c52d5e8ba7cbac7948b73add"
+    },
+    {
+      "name": "power_connectivity",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/power-audit.json",
+      "sha256": "8ce0a283b08cf01177019304b19d2fe075ec9c955c725850e6b9be9f405e41f8"
+    },
+    {
+      "name": "drc_normal",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-drc.json",
+      "sha256": "ac60fe0dfe2f51af2e8642e42d6b2c7ed9ca956be7508c523354fc28e224a772"
+    },
+    {
+      "name": "drc_all_track",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-drc-all.json",
+      "sha256": "14298ed716c78be6883e2a4d81c435ab27e55c6620c1e5cd3893957779795385"
+    },
+    {
+      "name": "ordinary_protection",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-protection.json",
+      "sha256": "9376d1818a32b86fa24ca6faff3bfd7b2b9844d12b79e974288ab6e1781900cc"
+    },
+    {
+      "name": "ordinary_supplemental",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/owner-supplemental.json",
+      "sha256": "d94071283e237a1abb2b5d0dca1075ebec21b0a14fef8a78b291b2fff93bcc47"
+    },
+    {
+      "name": "connectivity",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/connectivity.json",
+      "sha256": "5107144017a402dcbccb2b9436c73a42d245ceccfd932cf28cd96ee323985e69"
+    },
+    {
+      "name": "physical",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/physical.json",
+      "sha256": "80eed95b7339b3225f247e4340640304e6364e71c211828906b43d1791015866"
+    },
+    {
+      "name": "case_plan",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/case-plan.json",
+      "sha256": "b716e2476f9d0e683183e0cd227a428f764add8d8750a5861021dc073b759a85"
+    },
+    {
+      "name": "terminal_registry",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/terminal-registry.json",
+      "sha256": "6b23b84a26c7c375ebed9df46fc07ea9b52cb1f2dc5abcfa2309d23ff8948922"
+    },
+    {
+      "name": "compiler_settings",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/compiler-settings.json",
+      "sha256": "5496f2e108b4169d62cc8a366e3f93a76491c62ed50e89b1e96c9df5cb5bba9a"
+    },
+    {
+      "name": "rebound_terminals",
+      "path": "static-power-validation/activation-candidate15-loaded73/input/rebound-terminals.json",
+      "sha256": "f3866621b98e1575a3f0302cbda24a76d0b193569f999279551060b4c3f8dcc2"
+    },
+    {
+      "name": "pilot_source_copper_fem.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/copper_fem.py",
+      "sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde"
+    },
+    {
+      "name": "pilot_source_dc_circuit.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/dc_circuit.py",
+      "sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d"
+    },
+    {
+      "name": "pilot_source_validate_static.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/validate_static.py",
+      "sha256": "2de4567fdd6d661084649ed9ba44b719a2dddbb6329af7195012c2af740e43d3"
+    },
+    {
+      "name": "pilot_source_audit_native_ports.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/audit_native_ports.py",
+      "sha256": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717"
+    },
+    {
+      "name": "pilot_source_native_edge_noding.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/native_edge_noding.py",
+      "sha256": "8a04084d287eebe570e80fb92c89994bcd6fee029e137899081de4d2965336bf"
+    },
+    {
+      "name": "pilot_source_mesh_cache.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/mesh_cache.py",
+      "sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e"
+    },
+    {
+      "name": "pilot_source_run_bounded_pilot.py",
+      "path": "static-power-validation/pilot-candidate15-loaded73-released/solver-source/run_bounded_pilot.py",
+      "sha256": "22960d1819c98c4156576867ff6a0bda5681df77dfa7d4628f241429103f7e07"
+    }
+  ],
+  "representative_case": "classic_BEC5_AB_mcu_vdd19_baseline",
+  "case_definition_sha256": "ca121efb645b9f682b56f54ec3b0066e4659b066f18d5a52f7bbe094144dccb0",
+  "case_parameters": {
+    "input_at_defined_source_V": 5.0,
+    "ABC_ports": [
+      "J9",
+      "J10"
+    ],
+    "electronics_A": 0.32,
+    "DSM_A": 0.02,
+    "CORE_aggregate_A": 0.34,
+    "allocation_vertex": "mcu_vdd19",
+    "efficiency_total": 0.85,
+    "U8_effective_RON_ohm": 0.09,
+    "U6_IFB_sensitivity_A": 0,
+    "u6_corner": "initial_low"
+  },
+  "terminal_mapping": [
+    {
+      "uuid": "00d45fb6-34ed-404d-a694-dc8de73a4ca6",
+      "key": "J9.3",
+      "net": "+5V_PERIPH",
+      "xy": [
+        18.625,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "0526091c-ee27-42ce-8a71-7e1565c51a6e",
+      "key": "U6.12",
+      "net": "VX_PROTECTED",
+      "xy": [
+        29.35,
+        15.725
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "0ecb6e31-4fc1-4249-b2e7-8d82dd1891b4",
+      "key": "U6.10",
+      "net": "GND",
+      "xy": [
+        30.75,
+        15.9
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "114f0284-6eda-4fd8-b124-92017550a5fb",
+      "key": "J10.1",
+      "net": "PORT_B_RX_EXT",
+      "xy": [
+        29.625,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "18ac321b-1e1e-47da-89fe-7da3067ab3ee",
+      "key": "U6.3",
+      "net": "ABC_VAUX",
+      "xy": [
+        31.0,
+        17.65
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "1904a95f-ded8-4123-a94a-79e3bebb7a86",
+      "key": "J11.1",
+      "net": "PORT_C_RX_EXT",
+      "xy": [
+        33.375,
+        20.1
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "2423231c-5460-4ea2-a821-d3fc9a42760e",
+      "key": "U7.4",
+      "net": "ABC_PG",
+      "xy": [
+        36.95,
+        6.54
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "2556c4c2-1dc8-4ebf-a376-8fc60f8c5d22",
+      "key": "U6.7",
+      "net": "+5V_BEC",
+      "xy": [
+        32.15,
+        16.225
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "27f11bec-0574-477b-8f4f-f5dd4d046252",
+      "key": "J9.MP",
+      "net": "",
+      "xy": [
+        21.725,
+        2.15
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "379dbd62-5efd-4aa8-9512-cdbdc985ced4",
+      "key": "J10.MP",
+      "net": "",
+      "xy": [
+        35.225,
+        2.15
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "3b69a42c-322f-4c75-9d21-9ff1b451eb12",
+      "key": "U6.8",
+      "net": "+5V_BEC",
+      "xy": [
+        32.15,
+        15.725
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "3eced521-2068-4efa-894c-bc8b2a0a2b12",
+      "key": "J10.4",
+      "net": "GND",
+      "xy": [
+        33.375,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "43e3888e-5d4e-4781-b241-838414014171",
+      "key": "U6.15",
+      "net": "GND",
+      "xy": [
+        29.35,
+        17.225
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "468bb194-cbdc-479b-b84b-f63d8a986f4d",
+      "key": "J10.3",
+      "net": "+5V_PERIPH",
+      "xy": [
+        32.125,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "49e039c7-6a12-4621-b60e-b65eb150a836",
+      "key": "U7.3",
+      "net": "+5V_BEC",
+      "xy": [
+        37.45,
+        6.54
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "4c8611df-c28a-42ec-852a-6cd52927a70a",
+      "key": "R55.2",
+      "net": "GND",
+      "xy": [
+        33.81,
+        18.2
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "4eb023f8-b985-41b6-94d0-0f53bbd8cb69",
+      "key": "U6.1",
+      "net": "GND",
+      "xy": [
+        30.0,
+        17.65
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "4f0bf3fd-9b00-42b4-9044-8ce9b59ab94c",
+      "key": "U7.6",
+      "net": "USB_LIMITED",
+      "xy": [
+        37.45,
+        5.06
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "4f1ccf9f-f0da-4233-9277-4ca5e1bb39f3",
+      "key": "J11.2",
+      "net": "PORT_C_TX_EXT",
+      "xy": [
+        32.125,
+        20.1
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "550fa594-eb93-4650-827e-48075ba044bd",
+      "key": "J11.MP",
+      "net": "",
+      "xy": [
+        27.775,
+        23.45
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "65f6648e-d093-4e5d-ae06-59de99d4116f",
+      "key": "U6.6",
+      "net": "GND",
+      "xy": [
+        32.15,
+        16.725
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "729841e0-dde6-438a-ab26-e0d7166ed62d",
+      "key": "J9.4",
+      "net": "GND",
+      "xy": [
+        19.875,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "7ad75869-c09d-494d-a038-a15246c9f272",
+      "key": "J9.MP",
+      "net": "",
+      "xy": [
+        14.275,
+        2.15
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "7b4390b3-f7f9-4e59-ab0e-df95342ec547",
+      "key": "U6.11",
+      "net": "ABC_L1",
+      "xy": [
+        30.25,
+        15.725
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "7b8f2991-ae63-4cd7-a5dc-f3bbc019ac67",
+      "key": "J11.3",
+      "net": "+5V_PERIPH",
+      "xy": [
+        30.875,
+        20.1
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "7ec360c1-260b-4207-bd14-b677495be048",
+      "key": "R54.1",
+      "net": "+5V_BEC",
+      "xy": [
+        32.79,
+        17.1
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "89b24e3e-95ee-4d56-ab3c-4f332be85fdd",
+      "key": "J11.MP",
+      "net": "",
+      "xy": [
+        35.225,
+        23.45
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "8b49432c-d080-46c1-81b0-b0df7d591cb8",
+      "key": "U6.9",
+      "net": "ABC_L2",
+      "xy": [
+        31.25,
+        15.725
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "911208a8-e543-481f-96c3-5b184d5b630d",
+      "key": "J9.1",
+      "net": "PORT_A_RX_EXT",
+      "xy": [
+        16.125,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "95a61321-8af3-4811-8433-b0a4ad6c84a7",
+      "key": "U6.5",
+      "net": "ABC_FB",
+      "xy": [
+        32.15,
+        17.225
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "97228188-d041-470c-917e-732f5f369245",
+      "key": "U7.7",
+      "net": "+5V_PERIPH",
+      "xy": [
+        37.95,
+        5.06
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "a6b483a2-dc5c-495b-a487-16205b55ffb9",
+      "key": "U7.2",
+      "net": "+5V_PERIPH",
+      "xy": [
+        37.95,
+        6.54
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "b8685110-3283-47ac-bc78-dcdb199b5ba6",
+      "key": "J9.2",
+      "net": "PORT_A_TX_EXT",
+      "xy": [
+        17.375,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "c01fa9de-e7b4-4a24-8e9a-1c6ad13cb1ed",
+      "key": "U7.8",
+      "net": "unconnected-(U7-ST-Pad8)",
+      "xy": [
+        38.45,
+        5.06
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "c5b8a8e9-5854-451d-9595-0e25129b9b82",
+      "key": "R55.1",
+      "net": "ABC_FB",
+      "xy": [
+        32.79,
+        18.2
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "d107941e-2013-4bb2-adb1-3b11a38a73f4",
+      "key": "U7.1",
+      "net": "GND",
+      "xy": [
+        38.45,
+        6.54
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "d614e648-8ba8-4ff1-80be-0f038a8ec7e0",
+      "key": "U6.4",
+      "net": "GND",
+      "xy": [
+        31.5,
+        17.65
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "e2c33e27-7857-4b4e-8118-54abcaf79fc2",
+      "key": "U6.14",
+      "net": "ABC_EN",
+      "xy": [
+        29.35,
+        16.725
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "e531483b-2d06-4a6d-bfdc-5bb2f9c9a5ab",
+      "key": "U6.13",
+      "net": "VX_PROTECTED",
+      "xy": [
+        29.35,
+        16.225
+      ],
+      "all_layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "e6d16a64-d358-425e-952f-a36d47627b9b",
+      "key": "R54.2",
+      "net": "ABC_FB",
+      "xy": [
+        33.81,
+        17.1
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    },
+    {
+      "uuid": "e87ce64f-bc8b-4c7b-b47d-6583e39ba853",
+      "key": "J11.4",
+      "net": "GND",
+      "xy": [
+        29.625,
+        20.1
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "eb3a72f0-5404-42c3-aaef-12cc18f5a2b3",
+      "key": "J10.MP",
+      "net": "",
+      "xy": [
+        27.775,
+        2.15
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "ef4a89b6-7e1f-4aab-a903-c0553a58d98c",
+      "key": "J10.2",
+      "net": "PORT_B_TX_EXT",
+      "xy": [
+        30.875,
+        5.5
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "f2fdfe04-b8d4-4198-a4ce-d2b5fecf4e3f",
+      "key": "U6.2",
+      "net": "ABC_PG",
+      "xy": [
+        30.5,
+        17.65
+      ],
+      "all_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ]
+    },
+    {
+      "uuid": "f800a4b1-b425-4a1e-adc1-8708bc9a391d",
+      "key": "U7.5",
+      "net": "+5V_BEC",
+      "xy": [
+        36.95,
+        5.06
+      ],
+      "all_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ]
+    }
+  ],
+  "voltage_V": {
+    "SOURCE_GND": 0.0,
+    "DEV_U7_OUT": 4.361557898871884,
+    "DEV_U8_OUT": 4.725913467999249,
+    "FB1.1": 3.1520194759502718,
+    "FB2.1": 3.1782026835696597,
+    "J1.A1": 0.003358376719796022,
+    "J1.A12": 0.0035726797970153336,
+    "J1.B1": 0.0035184919664506156,
+    "J1.B12": 0.0033687945756684153,
+    "J10.3": 4.293807541328955,
+    "J10.4": 0.005304581952463759,
+    "J11.3": 4.330871461191,
+    "J11.4": 0.003096576057747467,
+    "J12.1": 3.174633690160259,
+    "J12.2": 0.0023331758788406485,
+    "J2.1": 0.001408980880993671,
+    "J2.2": 4.999461228749049,
+    "J3.1": 0.0012941565902385489,
+    "J3.2": 4.999461236130597,
+    "J4.1": 0.0011090029248665624,
+    "J4.2": 4.999461624567689,
+    "J5.1": 0.000830907356638469,
+    "J5.2": 4.999469673239875,
+    "J6.1": 2.051704983417646e-17,
+    "J6.2": 4.9999999999999964,
+    "J8.1": 0.0007659023318654749,
+    "J8.2": 4.999707962275585,
+    "J9.3": 4.261317272101143,
+    "J9.4": 0.005867259496632672,
+    "L2.2": 3.18786099162658,
+    "R40.1": 4.983695045452166,
+    "R41.2": 0.0028654281164541906,
+    "R42.1": 4.330868909624767,
+    "R44.2": 0.0030015077025970904,
+    "R53.1": 4.757196231221492,
+    "R53.2": 0.002870782786699293,
+    "R54.1": 5.031879393094556,
+    "R54.2": 0.795271735609227,
+    "R55.1": 0.7952712312094571,
+    "R55.2": 0.00327694872254498,
+    "R58.1": 4.458288447231338,
+    "R58.2": 0.003608204841797228,
+    "R60.1": 4.751890660293862,
+    "R61.2": 0.003309240985273135,
+    "R68.2": 0.003605888476724247,
+    "R69.2": 0.0033574732899465274,
+    "U1.12": 0.0024507950545380303,
+    "U1.18": 0.0033650112130969457,
+    "U1.19": 3.1506162494770913,
+    "U1.31": 0.003109284539201454,
+    "U1.32": 3.1695985060268552,
+    "U1.47": 0.003158635567070592,
+    "U1.48": 3.1782026835710653,
+    "U1.63": 0.002303117024658321,
+    "U1.64": 3.17784143176031,
+    "U10.5": 0.0035170766406865265,
+    "U11.1": 3.1748414317419273,
+    "U11.4": 3.1778414317419292,
+    "U2.6": 0.0029505188948056975,
+    "U3.4": 0.0032181020812045045,
+    "U3.8": 3.178202542825329,
+    "U4.1": 0.002697219328601694,
+    "U4.2": 3.177983542390035,
+    "U4.5": 0.002911649756574021,
+    "U4.6": 3.178026649773946,
+    "U4.7": 0.0029077255477202454,
+    "U4.8": 3.178031033661566,
+    "U5.5": 4.977889542356106,
+    "U5.6": 4.852656941268819,
+    "U5.8": 0.0021589876476903473,
+    "U6.10": 0.004039692499160613,
+    "U6.4": 0.0032712312094572557,
+    "U6.5": 0.7952712312094572,
+    "U6.OUT_7_8": 5.041222703647206,
+    "U6.VIN_12_13": 4.7255402342635,
+    "U7.1": 0.003594023949678127,
+    "U7.2": 4.361557898871885,
+    "U7.3": 4.427559327068127,
+    "U7.7": 4.361557898871885,
+    "U8.1": 4.7259134679992485,
+    "U8.12": 0.003333360994667516,
+    "U8.7": 4.750241110496822,
+    "U8.8": 4.7259134679992485,
+    "U9.1": 0.0030829065912143247,
+    "U9.2": 4.715911577483494,
+    "U9.4": 0.003360991526670354,
+    "U9.6": 3.1878609915266702
+  },
+  "drop_decomposition": {
+    "U6_to_U7_copper_V": 0.6136633765790789,
+    "U7_switch_V": 0.06600142819624288,
+    "U6_to_feedback_top_V": 0.009343310552649697,
+    "J9": {
+      "downstream_positive_copper_V": 0.10024062677074053,
+      "return_to_source_ground_V": 0.005867259496632672,
+      "local_pad_voltage_V": 4.255450012604511
+    },
+    "J10": {
+      "downstream_positive_copper_V": 0.0677503575429288,
+      "return_to_source_ground_V": 0.005304581952463759,
+      "local_pad_voltage_V": 4.288502959376491
+    }
+  },
+  "converters": [
+    {
+      "name": "U6_total_efficiency",
+      "input_V": 4.721500541764339,
+      "output_V": 5.037183011148045,
+      "input_A": 2.5105384011670235,
+      "output_A": 2.000221579412602,
+      "conversion_loss_W": 1.7780262628814096,
+      "power_balance_error_W": -3.0313174192997394e-10
+    },
+    {
+      "name": "U9_total_efficiency",
+      "input_V": 4.7128286708922795,
+      "output_V": 3.184778085035366,
+      "input_A": 0.2703071388619239,
+      "output_A": 0.34000000000020925,
+      "conversion_loss_W": 0.19108668506264492,
+      "power_balance_error_W": -3.365552281309192e-11
+    }
+  ],
+  "resistors": [
+    {
+      "name": "U11_selected_path",
+      "current_A": 0.0200000000000126,
+      "loss_W": 6.0000000000075604e-05
+    },
+    {
+      "name": "ABC_ADC_divider_lumped",
+      "current_A": 4.3278674019221703e-05,
+      "loss_W": 0.00018730436248620558
+    },
+    {
+      "name": "U5_efuse_path",
+      "current_A": 2.7829466908286014,
+      "loss_W": 0.34851565277972385
+    },
+    {
+      "name": "U7_BEC_selected_path",
+      "current_A": 2.0000432786740268,
+      "loss_W": 0.13200571284678198
+    },
+    {
+      "name": "U8_BEC_selected_path",
+      "current_A": 0.27030713886192126,
+      "loss_W": 0.006575935438774617
+    },
+    {
+      "name": "R53_protected_bleeder",
+      "current_A": 0.001011558606049956,
+      "loss_W": 0.004809278823326531
+    },
+    {
+      "name": "R58_ABC_bleeder",
+      "current_A": 9.478043068913915e-05,
+      "loss_W": 0.0004222165119560794
+    },
+    {
+      "name": "R54_feedback_top",
+      "current_A": 7.912030794759925e-05,
+      "loss_W": 0.0003352017025133963
+    },
+    {
+      "name": "R55_feedback_bottom",
+      "current_A": 7.912030794075047e-05,
+      "loss_W": 6.26628315176782e-05
+    },
+    {
+      "name": "BEC_ADC_divider_lumped",
+      "current_A": 3.984663693868569e-05,
+      "loss_W": 0.00019846930941542888
+    },
+    {
+      "name": "U8_priority_bias_lumped",
+      "current_A": 0.0001695921935467353,
+      "loss_W": 0.0008053223391358131
+    }
+  ],
+  "BEC_port_injections": {
+    "net": "+5V_BEC",
+    "injections_A": {
+      "U7.3": -2.000047678674029,
+      "R54.1": -7.91203079324893e-05,
+      "R58.1": -9.478043062467319e-05,
+      "U6.OUT_7_8": 2.000221579412586
+    }
+  },
+  "BEC_field": {
+    "copper_loss_W": 1.227412000776853,
+    "sheet_loss_W": 1.219609067815483,
+    "layer_sheet_loss_W": {
+      "F.Cu": 0.016605307942719093,
+      "In1.Cu": 7.836496107300066e-26,
+      "In2.Cu": 0.1354798124682638,
+      "In3.Cu": 1.0068327236797505,
+      "In4.Cu": 7.812974309577924e-26,
+      "B.Cu": 0.06069122372474963
+    },
+    "barrels": [
+      {
+        "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717681,
+        "current_A": 0.7434678408524164,
+        "loss_W": 0.00017678017234169067
+      },
+      {
+        "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 0.7434678410165719,
+        "loss_W": 0.00037656306607003394
+      },
+      {
+        "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "resistance_ohm": 0.000560010693399562,
+        "current_A": 0.8650198923055573,
+        "loss_W": 0.000419033273324109
+      },
+      {
+        "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": -0.11745189725907947,
+        "loss_W": 9.397956254754827e-06
+      },
+      {
+        "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717683,
+        "current_A": -0.11745189709599538,
+        "loss_W": 4.4119364648104e-06
+      },
+      {
+        "uuid": "363f76f5-e081-45a9-b94d-b40eed7d365a",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717681,
+        "current_A": 0.7045022381585408,
+        "loss_W": 0.00015873545168024715
+      },
+      {
+        "uuid": "363f76f5-e081-45a9-b94d-b40eed7d365a",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 0.7045022382324333,
+        "loss_W": 0.00033812563690307015
+      },
+      {
+        "uuid": "363f76f5-e081-45a9-b94d-b40eed7d365a",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "resistance_ohm": 0.000560010693399562,
+        "current_A": 0.5513342485440582,
+        "loss_W": 0.00017022614449270138
+      },
+      {
+        "uuid": "363f76f5-e081-45a9-b94d-b40eed7d365a",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 0.07037333834382128,
+        "loss_W": 3.3738801636845137e-06
+      },
+      {
+        "uuid": "363f76f5-e081-45a9-b94d-b40eed7d365a",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717683,
+        "current_A": 0.07037333841678692,
+        "loss_W": 1.583891709086593e-06
+      },
+      {
+        "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717681,
+        "current_A": 5.49735821721893e-12,
+        "loss_W": 9.66534258957519e-27
+      },
+      {
+        "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 9.706047925194832e-12,
+        "loss_W": 6.417977775009394e-26
+      },
+      {
+        "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "resistance_ohm": 0.000560010693399562,
+        "current_A": 1.3012769708131855,
+        "loss_W": 0.0009482782900366054
+      },
+      {
+        "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 1.3012769708284666,
+        "loss_W": 0.0011535935895578627
+      },
+      {
+        "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717683,
+        "current_A": 1.3012769708333318,
+        "loss_W": 0.0005415626014367567
+      },
+      {
+        "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717681,
+        "current_A": -8.757203298464296e-12,
+        "loss_W": 2.452675210901595e-26
+      },
+      {
+        "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 1.0662811453462389e-12,
+        "loss_W": 7.745631039573651e-28
+      },
+      {
+        "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "resistance_ohm": 0.000560010693399562,
+        "current_A": -2.0001424575093014,
+        "loss_W": 0.00224036189587744
+      },
+      {
+        "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": -1.9844576300013307e-11,
+        "loss_W": 2.6828538048863317e-25
+      },
+      {
+        "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717683,
+        "current_A": -1.0048458452659385e-11,
+        "loss_W": 3.2292975278135396e-26
+      },
+      {
+        "uuid": "b1625f39-ed82-4607-9280-2aec512e5bb9",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717681,
+        "current_A": 0.552251458563699,
+        "loss_W": 9.754003810156679e-05
+      },
+      {
+        "uuid": "b1625f39-ed82-4607-9280-2aec512e5bb9",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 0.5522514593959021,
+        "loss_W": 0.00020777203359435164
+      },
+      {
+        "uuid": "b1625f39-ed82-4607-9280-2aec512e5bb9",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "resistance_ohm": 0.000560010693399562,
+        "current_A": 0.5838673974874365,
+        "loss_W": 0.0001909082825873794
+      },
+      {
+        "uuid": "b1625f39-ed82-4607-9280-2aec512e5bb9",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 0.0471576404595995,
+        "loss_W": 1.515016909022501e-06
+      },
+      {
+        "uuid": "b1625f39-ed82-4607-9280-2aec512e5bb9",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717683,
+        "current_A": 0.04715764128996702,
+        "loss_W": 7.112353386721564e-07
+      },
+      {
+        "uuid": "dacf3237-08e6-45b0-8a32-404fbdf6249c",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717681,
+        "current_A": -1.2081892932075999e-11,
+        "loss_W": 4.668519135811448e-26
+      },
+      {
+        "uuid": "dacf3237-08e6-45b0-8a32-404fbdf6249c",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": -8.21988376558485e-12,
+        "loss_W": 4.603039469380737e-26
+      },
+      {
+        "uuid": "dacf3237-08e6-45b0-8a32-404fbdf6249c",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "resistance_ohm": 0.000560010693399562,
+        "current_A": 0.6988654865085041,
+        "loss_W": 0.00027351648500537073
+      },
+      {
+        "uuid": "dacf3237-08e6-45b0-8a32-404fbdf6249c",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ],
+        "resistance_ohm": 0.0006812607150897421,
+        "current_A": 0.6988654865103335,
+        "loss_W": 0.00033273656799910113
+      },
+      {
+        "uuid": "dacf3237-08e6-45b0-8a32-404fbdf6249c",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "resistance_ohm": 0.0003198226207717683,
+        "current_A": 0.6988654865140457,
+        "loss_W": 0.00015620551552159953
+      }
+    ]
+  },
+  "BEC_unit_transfer_ohm": 0.30681037769448927,
+  "representative_servo_illustration": {
+    "name": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+    "probes": [
+      {
+        "name": "J10_receiver_pad",
+        "voltage_V": 4.305942149542554,
+        "pass": false,
+        "minimum_V": 4.8,
+        "purpose": "Conditional RP3-H pad floor:4.5V remote +1A*(0.200Ohm contacts + <=0.100Ohm measured cable)"
+      },
+      {
+        "name": "J11_receiver_pad",
+        "voltage_V": 4.28822599583701,
+        "pass": false,
+        "minimum_V": 4.8,
+        "purpose": "Conditional RP3-H pad floor:4.5V remote +1A*(0.200Ohm contacts + <=0.100Ohm measured cable)"
+      },
+      {
+        "name": "U9_operating_input_only",
+        "voltage_V": 5.569669619982143,
+        "pass": true,
+        "minimum_V": 3,
+        "maximum_V": 17,
+        "purpose": "Recommended input operating range only; not a guarantee of3.3V regulation"
+      },
+      {
+        "name": "J2_servo_board_pad",
+        "voltage_V": 5.864779040275718,
+        "pass": false,
+        "minimum_V": 6.0,
+        "maximum_V": 8.4,
+        "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+      },
+      {
+        "name": "J3_servo_board_pad",
+        "voltage_V": 5.866979853739237,
+        "pass": false,
+        "minimum_V": 6.0,
+        "maximum_V": 8.4,
+        "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+      },
+      {
+        "name": "J4_servo_board_pad",
+        "voltage_V": 5.871674491071164,
+        "pass": false,
+        "minimum_V": 6.0,
+        "maximum_V": 8.4,
+        "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+      },
+      {
+        "name": "J5_servo_board_pad",
+        "voltage_V": 5.879316609952401,
+        "pass": false,
+        "minimum_V": 6.0,
+        "maximum_V": 8.4,
+        "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+      }
+    ],
+    "source_current_A": {
+      "U8_OUT1": -5.33289634674361e-10,
+      "U8_OUT8": 0.551743513692522,
+      "U7_OUT2": 2.0000429505114865,
+      "U7_OUT7": 3.936291694977412e-10,
+      "one_external_BEC": -18.56169129414337,
+      "U6_total_efficiency": -2.0002212526109804,
+      "U9_total_efficiency": -0.8200000000003135
+    },
+    "resistors": [
+      {
+        "name": "U11_selected_path",
+        "current_A": 0.500000000000019,
+        "loss_W": 0.037500000000002844
+      },
+      {
+        "name": "ABC_ADC_divider_lumped",
+        "current_A": 4.2950905204705274e-05,
+        "loss_W": 0.00018447802579035785
+      },
+      {
+        "name": "U5_efuse_path",
+        "current_A": 2.661034330206411,
+        "loss_W": 0.3186496667941687
+      },
+      {
+        "name": "U7_BEC_selected_path",
+        "current_A": 2.0000429509051303,
+        "loss_W": 0.13200566958035498
+      },
+      {
+        "name": "U8_BEC_selected_path",
+        "current_A": 0.5517435131592406,
+        "loss_W": 0.027397881388197102
+      },
+      {
+        "name": "R53_protected_bleeder",
+        "current_A": 0.001202737051617551,
+        "loss_W": 0.0067989091520682925
+      },
+      {
+        "name": "R58_ABC_bleeder",
+        "current_A": 9.478100999689541e-05,
+        "loss_W": 0.00042222167323348466
+      },
+      {
+        "name": "R54_feedback_top",
+        "current_A": 7.912069590793601e-05,
+        "loss_W": 0.00033520498979292283
+      },
+      {
+        "name": "R55_feedback_bottom",
+        "current_A": 7.912069587718971e-05,
+        "loss_W": 6.266344600606835e-05
+      },
+      {
+        "name": "BEC_ADC_divider_lumped",
+        "current_A": 4.696391764291468e-05,
+        "loss_W": 0.0002757011950463091
+      },
+      {
+        "name": "U8_priority_bias_lumped",
+        "current_A": 0.00020150474806935847,
+        "loss_W": 0.0011369165778458775
+      },
+      {
+        "name": "J8_positive_lead_contact",
+        "current_A": 18.56169129414338,
+        "loss_W": 13.781455347963124
+      },
+      {
+        "name": "J8_return_lead_contact",
+        "current_A": 18.56169129412319,
+        "loss_W": 13.781455347933145
+      }
+    ]
+  },
+  "no_new_solver_run": true
+}

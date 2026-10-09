@@ -1,6 +1,6 @@
 # Reproduce the ordinary-routing checkpoint
 
-This is unfinished work. Adopted candidate13 has 75 open connections and zero native DRC errors/warnings, PCB SHA-256 `008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e`. Candidate12’s ADC closure used real engine output with explicit FLASH exclusion and paired metadata correction. Candidate13’s FLASH closure is explicit native construction from simplified located topology; engine insertion did not succeed. Current-source accepted75 zero passes. The final bounded-queue cooperative stop is compiled but not yet proved by a complete route in this package. Historical receipts remain bound to their original sources; every new input requires fresh zero and native gates.
+Adopted69 is unfinished: PCB SHA `9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8`, 69 native opens, zero native DRC errors/warnings, eleven complete ordinary nets. The loaded-power screen identifies an unresolved BEC copper deficit; this is not fabrication-ready. Candidate15’s real broad route stopped at five successes. Candidate16’s two-track ADC_BUS partial connection is explicit native construction. No later routing or power experiments are included. Historical receipts retain their actual source versions.
 
 ## Inputs
 
@@ -143,7 +143,7 @@ The completed focused slow-tree trial on ADC_DIV_MID and FLASH_WP_N routed zero 
 
 Run the target and insertion tests following `tests/TARGET_SHAPE_CONTROL.md` and `tests/INSERTION_GAP_CONTROL.md` only after preparing their named exact external inputs. Their small generated fixtures and compiled classes are excluded. Reports preserve original source/model/class hashes; they do not silently claim that current classes produced historical routes. In particular, the empty-target receipt's loaded maze class predates the recompiled margin18 bytecode.
 
-## Current v5 source and controls
+## Historical v5 source and controls
 
 `checks/current75-source-identity.json`, `current75-zero-parity.json` and `current75-zero-import.json` bind the packaged Java sources to fresh model `4f0ac12384c28bc6431186dde30b035139d9d4acb8d32d3862d1f2d15c0c3354`. The zero import preserves all 46 ordinary objects, 1,513 fixed objects and 223 native contact partitions, reproducing the adopted75 PCB byte hash. No broad-route result is included.
 
@@ -203,12 +203,61 @@ Current `construct_escape_session.py`, `construct_native_network.py`, `retain_se
 
 The historical generators expect the original relative candidate/model directory layout, named in their source. Recover the corresponding exact boards and regenerate their native exports before reuse. `sessions/accepted75/located-topology.json` is the original topology receipt; place an exact copy at the generator's `model-candidate09-cleanup/located-topology.json` input when reproducing it. Native witness files and path-bound construction proposals must be regenerated in a new working copy; machine-specific path changes produce new report hashes. Do not relabel regenerated evidence as the old hash-bound receipt. Replaying the already preserved import session does not need those omitted witness arrays.
 
-## Verify or regenerate the v5 source delta
+## v6 adopted70 and adopted69 replay
 
-The full allowlist includes every staged payload file. `FILES.sha256.json` hashes all except itself; external delta metadata binds its full hash. Validate the corrected immutable v4 manifest `61bfaf6174eb51d0874d40ca579d598e3f263482da38f3925c7ce99fcf0369fb`, apply ZIP `changed/` paths relative to its source root, remove only listed deletions, then verify the full v5 manifest/allowlist.
-
-The helper checks Python syntax without caches, JSON and shell syntax, payload exclusions, unchanged v4 and exact delta reconstruction in a disposable copy. It does not run JVM/native routing.
+`sessions/recovery69/README.md` defines exact source recovery from the proposed published69 paired hardware project. Keep the full paired project, rules, schematics and libraries. All 62 required paired files match across source75, source70 and adopted69; only the PCB requires a delta. Optional parts metadata and local editor preferences are recorded separately. The full69 board hash is authoritative; no remote commit availability is assumed.
 
 ```sh
-python3 -B tools/build_source_delta.py --base /path/to/immutable-public-source-ready-v4 --staging . --out-prefix /path/to/routing-source-v5-delta
+python3 -B sessions/recovery69/rebuild_historical_source.py project --base-project "$ACCEPTED69_PROJECT" --source candidate13 --out "$SOURCE75_PROJECT"
+python3 -B sessions/recovery69/rebuild_historical_source.py project --base-project "$ACCEPTED69_PROJECT" --source candidate15 --out "$SOURCE70_PROJECT"
 ```
+
+Both destinations must be new. Positive file/project reconstruction and wrong-base, payload/target tampering, missing/altered paired inputs and overwrite controls pass. Source70's delta is 439 bytes with two copy ranges and no literal geometry. Source75's delta is 9,893 bytes and restores the historical saved-fill bytes exactly. No geometry is recalculated during source recovery.
+
+To replay the real accepted70 session:
+
+```sh
+python3 -B tests/verify_session_packet.py --packet sessions/accepted70 --out /path/to/accepted70-packet-check.json
+python3 -B prepare_session_replay.py --packet sessions/accepted70 --source-board "$SOURCE75_PROJECT/f722-heli.kicad_pcb" --out "$REPLAY70_INPUTS"
+"$KICAD_PY" import_session.py --model "$REPLAY70_INPUTS/model.json" --session sessions/accepted70/session.ses --engine-report "$REPLAY70_INPUTS/engine-report.json" --out "$REPLAY70_PROJECT/f722-heli.kicad_pcb"
+```
+
+The source75 full model is historical model `4f0ac12384c28bc6431186dde30b035139d9d4acb8d32d3862d1f2d15c0c3354`. Packet geometry, identity, importer projection and wrong-source rejection pass; a new native replay/refill of this 70 session was not run while packaging. Its original native acceptance and final/checkpoint equality remain separately source-bound. The successful broad run stopped at five successes, not at final queue exhaustion.
+
+For accepted69, use the exact source70 project:
+
+```sh
+python3 -B tests/verify_session_packet.py --packet sessions/accepted69 --out /path/to/accepted69-packet-check.json
+python3 -B prepare_session_replay.py --packet sessions/accepted69 --source-board "$SOURCE70_PROJECT/f722-heli.kicad_pcb" --out "$REPLAY69_INPUTS"
+"$KICAD_PY" import_session.py --model "$REPLAY69_INPUTS/model.json" --session sessions/accepted69/session.ses --engine-report "$REPLAY69_INPUTS/engine-report.json" --out "$REPLAY69_PROJECT/f722-heli.kicad_pcb"
+```
+
+The historical original import-contract SHA is `db348feea0bd2f8b45c47c89bc3c1663931020c077fe8ef9972592f968ba2778`. The packaged historical-contract copy has portable paths and a separately recorded digest; the report retains the true original model identity. No new via, inner-layer track or outside-layer copper zone is involved, so its contract requests no refill and requires exact saved zones. It adds two F.Cu tracks to partially join ADC_BUS, not to complete the whole net.
+
+This actual native importer replay was run on a recovered70 paired copy. `checks/accepted69-native-replay-verified.json` confirms geometry equivalence with adopted69 while allowing only the two generated track UUIDs to differ. All 1,580 source objects, prior 67 ordinary UUIDs/nets, zones/fills, footprints, outline and layer setup are exact. No JVM, native DRC or loaded-power solve was rerun for this replay. Each replay output remains disposable until whatever native gates its intended use requires have passed.
+
+## Tiny final-queue controls and portable historical receipts
+
+The final passing cases in `tests/end-queue-stop` cover both the pending-geometry flush and snapshot-reuse branches. Original production/test source and class hashes remain in the result receipt; no duplicate source-used tree or compiled class is bundled. The exact production sources are the packaged `src/` files. Four small model/DSN fixture files are explicitly allowlisted as synthetic test data; they contain no native PCB.
+
+Machine-local paths in the fixture and observed progress/debugger/log files are projected relative to the routing source root. `checks/v6-portable-projections.json` binds each original byte hash to the delivered copy. Artifact links in the projected result receipt use current hashes; its historical fixture/result identity remains separate. The production snapshots still describe the original runtime model. Pure-Python rechecks of both portable recorded cases, exact final/checkpoint SES/geometry, source hashes, missing-guard and shifted-endpoint negatives pass. No JVM was rerun during packaging.
+
+To run a new synthetic control, first run `python3 -B tests/failed-search-state/prepare_fixture.py`, then follow the commands in `tests/end-queue-stop/README.md`. The generator writes fresh runtime paths/model hashes for the current checkout. New result hashes must not be relabelled as the old historical execution. The two synthetic cases prove the final queue trigger; the broad board run independently proves a five-success cooperative stop. Neither replaces full-net or electrical acceptance.
+
+## Short construction and endpoint sources
+
+`construct_short_local.py` is the exact ADC_BUS constructor source. The source-bound generator/helpers and compact proposal are under `tests/short-local-proposals`; the 1.38 MB all-distance witness file is excluded, with its hash/size retained in `checks/accepted69-local-proof-summary.json`. Recreating a proposal requires the named exact source70 native export and logical-role model; a new route input needs new native validation. Replaying the preserved SES does not require that omitted witness file.
+
+`tests/broad-endpoints/audit_native_endpoints.py` is the exact reusable accepted70 endpoint audit source. Its final receipt proves nine pad terminations and five full-width annular strips. A redundant via spur and incidental side overlap are explicitly retained as non-evidence. Nominal entry/gap values are not manufacturing tolerance or loaded electrical qualification.
+
+`checks/accepted69-unchanged-reference-geometry.json` establishes exact saved fills, In1/In4 copper and existing via/drill geometry for the local two-track addition. It is not a loaded-power result. The BEC copper deficit from the loaded screen remains unresolved in this 69 checkpoint; no power fix is included.
+
+## Verify or regenerate the v6 delta
+
+Use immutable corrected v5 manifest `02791deae14ce18c6d8b678cb63e3be43d4f383dbc2bc2b2f820e8468f49a0ac`. The ZIP contains changed paths only; apply `changed/` to that exact base, remove only listed deletions, then verify the complete new manifest and allowlist.
+
+```sh
+python3 -B tools/build_source_delta.py --base /path/to/immutable-public-source-ready-v5 --staging . --out-prefix /path/to/routing-source-v6-delta
+```
+
+The packager validates syntax, exclusions and exact delta reconstruction without native execution. Boards, real models/native exports, large witness arrays, binaries and caches remain excluded. The complete staged package remains unfinished at 69 opens with the unresolved BEC copper deficit.

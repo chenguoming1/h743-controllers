@@ -1,29 +1,25 @@
-# Source and evidence boundaries for v5
+# Source and evidence boundaries for v6
 
-Adopted candidate13 is PCB `008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e`: 75 opens, zero native errors/warnings, ten connected ordinary nets and all 28 support nets connected. Original protection remains 1/18 and supplemental protection 5/7; electrical/reference/assembly qualification and remaining connections are unfinished.
+This immutable checkpoint is adopted69, PCB `9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8`. It has 69 native opens, zero native DRC errors/warnings and eleven complete ordinary nets. All 28 support nets remain geometrically connected, but the loaded-power screen identifies an unresolved BEC copper deficit. Protection remains 1/18 original and 5/7 supplemental. This is unfinished and not fabrication-ready; no power-correction experiment or future routing is included.
 
-## Two different closure paths
+## Actual routing versus explicit construction
 
-Candidate12’s ADC_DIV_MID closure is actual successful engine routing from working source09, captured before a refused fixed-geometry change during the old final cleanup. The retained session explicitly excludes only unaccepted FLASH working/new geometry. The accepted77 object-preservation proof, true source09 import identity, native additive lineage and paired metadata correction are preserved. The adopted76 board differs from its native import output by reviewed informational fields, with exact physical/net identity and strict native schematic parity proven.
+Accepted70 is real engine output from source75, with five successful connections, cooperative exit 0, eleven queued items remaining, and final session/geometry equal to the verified checkpoint. It adds nineteen tracks and two vias. ADC_BEC completes; NRST and BOOT0 remain partially connected. The final-empty-queue trigger was not exercised in that run.
 
-Candidate13’s FLASH_WP_N closure is explicit native construction, using simplified located topology independently proved on adopted76. Engine insertion did not succeed. The proposal has eleven segments and two vias; native import normalizes a collinear segment pair to ten tracks plus two vias. All 1,547 source pad/copper objects and 34 prior ordinary objects remain intact. The B.Cu minimum 0.163 mm gap and endpoint/annular witnesses are nominal geometry only.
+Accepted69 adds only two F.Cu ADC_BUS tracks with no vias, joins R42.2 to R43.1, and leaves two other terminal groups open. This was explicit native construction. All 1,580 source objects, saved zones/fills, In1/In4 copper and existing drill geometry are exact. No reference refill was performed.
 
-## Current and historical source versions
+## Source and control versions
 
-Current Java source contains the failed-search cleanup repair and final bounded-queue cooperative stop. Four synthetic controls verify cleanup for null-maze and null-search-result failures, each on fast/slow trees with retain=false. Retained-database behavior is not independently covered. Negative and repaired receipts preserve exact original source/class hashes.
+The packaged Java adapter is identical to corrected v5, the actual accepted70 run and the tiny final-queue controls. Both synthetic cases naturally exhaust queue 2→1→0 after one success while the threshold remains five. A read-only debugger records the initial false-to-true stop flag change in the production listener for the flush and reuse branches. Fixed geometry, checkpoint/final session equality and corruption negatives pass. These receipts establish the synthetic lifecycle behavior, not a new native full-board or loaded solve.
 
-The successful ADC route used historical candidate10 adapter sources. `sessions/accepted76/adapter-source-provenance.json` resolves their exact bytes from current v5 or corrected immutable v4, without duplicate source trees. Its runtime receipt records class/JAR hashes without binary payloads. The historical route did not use the newly changed LocalRouter completion guard.
+The exact constructor, broad endpoint script, tiny control test/generator sources, portable fixtures and compact reports are included. Machine-local paths are projected relative to the package root with original hashes retained separately. The historical runtime model identity is not silently rewritten to imply that a projected fixture was the original execution input. Large native geometry and distance-witness arrays, classes/JARs, caches and duplicate source trees are excluded.
 
-Current accepted75 zero uses model `4f0ac12384c28bc6431186dde30b035139d9d4acb8d32d3862d1f2d15c0c3354` and matches every packaged Java source hash. It preserves all 46 ordinary objects and 223 native partitions and reproduces the board byte hash. The new final queue stop remains pending a complete-route proof in this package. No later broad routing is claimed.
+## Replay checks
 
-## Replay and evidence scope
+Source recovery reconstructs the exact source75/source70 boards and 62 paired files from the adopted69 project. Positive and negative controls pass. Both packets pass independent SES/report equality, hash-bound ownership projection and wrong-source rejection.
 
-New accepted76/75 compact packets pass pure-Python source/session/report checks, exact route geometry checks and importer projection controls including wrong-source rejection. Compact native replay has not been rerun. Original native acceptance, support, endpoint, additive-integration and metadata identity receipts are preserved separately.
+Accepted69’s portable packet was replayed through the actual KiCad importer on the recovered70 paired copy. Native geometry is equal to adopted69 except the two new route UUIDs; all prior 67 ordinary UUIDs/nets, saved zones/fills, footprints, outline and layers remain exact. No refill, route search, new DRC or loaded-power solve was performed in that replay. Accepted70’s native refill replay was not rerun; its native evidence is the original accepted import.
 
-Recovery75 reconstructs exact source09 and source12 from the adopted75 PCB and paired project. It accounts for source09’s four historical schematic differences; source12 uses the same paired files as adopted75. Full boards, model/native geometry, giant exact-distance witnesses and compiled artifacts are excluded. Historical witness summaries retain exact full-file hashes and generators; generated path-dependent reports must retain their own new hashes.
+Fresh source69 model/zero and subsequent routing are not represented as tested here. Current support connectivity and geometric receipts cannot resolve the identified BEC copper deficit.
 
-Corrected v4 is immutable: full manifest SHA `61bfaf6174eb51d0874d40ca579d598e3f263482da38f3925c7ce99fcf0369fb`, ZIP SHA `33cf786ee1d478f65145c5f9063a3c902a051e7efc85471831336e7f95301fd5`. All inherited historical receipts stay bound to their original source identities; none are retroactively attributed to current source. `EVIDENCE_INDEX.json` and the complete manifest distinguish current source from preserved historical evidence.
-
-## Portable path projections
-
-Machine-local paths in six proposal/contract JSON artifacts are replaced with paths relative to the routing source root. Links between portable proposal files are rebound to their new hashes. `checks/portable-path-projections.json` preserves every original historical hash, each portable hash and each changed linked digest, with unchanged geometry/source identities. The historical construction, route handoff and engine report continue to reference the original inputs accurately. The packet verifier checks this mapping and both identities; no new native execution is claimed for path-projected files.
+Base is corrected immutable v5 manifest `02791deae14ce18c6d8b678cb63e3be43d4f383dbc2bc2b2f820e8468f49a0ac`, ZIP `9d6f368c740fa6ce4df36eb9636f155c79eb5937e13f5d622a749c1eae4e2832`. All inherited evidence retains its historical source identities.

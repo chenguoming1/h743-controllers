@@ -1,0 +1,188 @@
+{
+  "schema": "f722-historical-source-recovery-verification/v1",
+  "base_board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
+  "comparison": {
+    "candidate15": {
+      "operation_count": 2,
+      "literal_bytes": 0,
+      "delta_bytes": 439,
+      "required_files_compared": 63,
+      "changed_required_files": [
+        "f722-heli.kicad_pcb"
+      ]
+    },
+    "candidate13": {
+      "operation_count": 29,
+      "literal_bytes": 8394,
+      "delta_bytes": 9893,
+      "required_files_compared": 63,
+      "changed_required_files": [
+        "f722-heli.kicad_pcb"
+      ]
+    }
+  },
+  "status": "passed",
+  "checked_at_utc": "2026-10-09T10:12:20.026506+00:00",
+  "scope": "Python standard-library source reconstruction only; no KiCad, JVM, native import, solver, DRC or electrical validation run",
+  "positive_control_count": 4,
+  "negative_control_count": 14,
+  "tests": [
+    {
+      "test": "project_exact_byte_comparison",
+      "source": "candidate15",
+      "files_compared": 63,
+      "optional_files_omitted": [
+        "parts.json",
+        "f722-heli.kicad_prl"
+      ],
+      "result": "passed",
+      "reported": {
+        "source": "candidate15",
+        "files": 63,
+        "board_sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674",
+        "board_bytes": 1259072,
+        "status": "Exact historical replay project; not adopted layout"
+      }
+    },
+    {
+      "test": "project_existing_output_rejected",
+      "source": "candidate15",
+      "output_unchanged": true,
+      "rejected": true,
+      "error": "FileExistsError: Output directory must not exist"
+    },
+    {
+      "test": "file_exact_byte_comparison",
+      "source": "candidate15",
+      "result": "passed"
+    },
+    {
+      "test": "file_existing_output_rejected",
+      "source": "candidate15",
+      "output_unchanged": true,
+      "rejected": true,
+      "error": "FileExistsError"
+    },
+    {
+      "test": "project_exact_byte_comparison",
+      "source": "candidate13",
+      "files_compared": 63,
+      "optional_files_omitted": [
+        "parts.json",
+        "f722-heli.kicad_prl"
+      ],
+      "result": "passed",
+      "reported": {
+        "source": "candidate13",
+        "files": 63,
+        "board_sha256": "008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e",
+        "board_bytes": 1249980,
+        "status": "Exact historical replay project; not adopted layout"
+      }
+    },
+    {
+      "test": "project_existing_output_rejected",
+      "source": "candidate13",
+      "output_unchanged": true,
+      "rejected": true,
+      "error": "FileExistsError: Output directory must not exist"
+    },
+    {
+      "test": "file_exact_byte_comparison",
+      "source": "candidate13",
+      "result": "passed"
+    },
+    {
+      "test": "file_existing_output_rejected",
+      "source": "candidate13",
+      "output_unchanged": true,
+      "rejected": true,
+      "error": "FileExistsError"
+    },
+    {
+      "test": "project_wrong_base_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: f722-heli.kicad_pcb SHA-256 mismatch"
+    },
+    {
+      "test": "file_wrong_base_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Base file SHA-256 mismatch"
+    },
+    {
+      "test": "project_altered_paired_file_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: f722-heli.kicad_pro SHA-256 mismatch"
+    },
+    {
+      "test": "file_target_hash_tamper_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Reconstructed target SHA-256 mismatch"
+    },
+    {
+      "test": "file_payload_tamper_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Reconstructed length mismatch"
+    },
+    {
+      "test": "file_out_of_range_copy_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Invalid copy range"
+    },
+    {
+      "test": "file_negative_copy_offset_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Invalid copy range"
+    },
+    {
+      "test": "file_boolean_copy_offset_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Invalid delta operation"
+    },
+    {
+      "test": "file_target_length_tamper_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Reconstructed length exceeds target"
+    },
+    {
+      "test": "project_delta_tamper_rejected",
+      "no_output_created": true,
+      "rejected": true,
+      "error": "ValueError: Delta f722-heli.kicad_pcb SHA-256 mismatch"
+    }
+  ],
+  "source_snapshots_unchanged": true,
+  "temporary_outputs_removed": true,
+  "required_files_per_project": 63,
+  "artifacts": {
+    "README.md": {
+      "sha256": "8dd6d01ec22b64052b3bcbc02612ac16ab7000190b8745f53ef894e8fbb165b5",
+      "bytes": 3856
+    },
+    "candidate13.f722-heli.kicad_pcb.delta.json": {
+      "sha256": "cc84078a378f3a4ce4ee3ad60f602470f3db2957dacea5356b41bea5bc4d40d2",
+      "bytes": 9893
+    },
+    "candidate15.f722-heli.kicad_pcb.delta.json": {
+      "sha256": "a4c3a16c1e5dca8851a244fe13e2e01ddbc7cefbdfc068d880c281f0d5cd083e",
+      "bytes": 439
+    },
+    "paired-files.json": {
+      "sha256": "1c2cd74bb173317e498668072027a621d95413fff1f975591597cd4271484b36",
+      "bytes": 13307
+    },
+    "rebuild_historical_source.py": {
+      "sha256": "65186d03aba6fcebf66ad602cd1e5e198b64289edf7981b380c0ac2538344c50",
+      "bytes": 5364
+    }
+  }
+}

@@ -234,6 +234,97 @@ def remember_geometry_certificate(context, net, layer, receipt):
     certificates[key]=normalized
 
 
+def compact_result_evidence(result):
+    """Replace repeated geometry receipts with verified references for CLI JSON.
+
+    The library result stays unchanged. Numerical arrays/rows and the one
+    top-level certificate store are shared, not copied. Each distinct receipt
+    object is hashed only once, using the same canonical JSON as the exact
+    geometry comparison (tuple/list differences therefore remain harmless).
+    Already compact blocks are checked again instead of trusting their hashes.
+    """
+    certificates=result.get('geometry_certificates',{})
+    if not isinstance(certificates,dict):
+        raise Refused('Result geometry certificate store is not a dictionary')
+    encoder=json.JSONEncoder(sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False)
+    hashes={}
+    def digest(receipt):
+        if not isinstance(receipt,dict):
+            raise Refused('Result geometry certificate is not a dictionary')
+        identity=id(receipt)
+        if identity not in hashes:
+            value=hashlib.sha256()
+            try:
+                for chunk in encoder.iterencode(receipt):value.update(chunk.encode('utf-8'))
+            except (TypeError,ValueError) as exc:
+                raise Refused('Result geometry certificate is not finite canonical JSON') from exc
+            hashes[identity]=(receipt,value.hexdigest())
+        return hashes[identity][1]
+    stored={key:digest(receipt) for key,receipt in certificates.items()}
+    touched=False
+    def compact_block(block,net,where):
+        nonlocal touched
+        raw='native_edge_noding' in block
+        referenced='native_edge_noding_refs' in block
+        if not raw and not referenced:return block
+        if raw and referenced:
+            raise Refused('Result block has both full and referenced geometry evidence: '+where)
+        evidence=block['native_edge_noding' if raw else 'native_edge_noding_refs']
+        if not isinstance(evidence,dict):
+            raise Refused('Result geometry evidence is not a layer dictionary: '+where)
+        refs={}
+        for layer,receipt in evidence.items():
+            if not isinstance(net,str) or not isinstance(layer,str):
+                raise Refused('Result geometry evidence has no exact net/layer identity: '+where)
+            key=net+'/'+layer
+            if key not in stored:
+                raise Refused('Missing top-level geometry certificate '+key+' for '+where)
+            if raw:
+                actual=digest(receipt)
+            else:
+                if not isinstance(receipt,dict) or set(receipt)!={'certificate_key','sha256'} or receipt['certificate_key']!=key:
+                    raise Refused('Invalid result geometry certificate reference: '+where+'/'+layer)
+                actual=receipt['sha256']
+            if actual!=stored[key]:
+                raise Refused('Result geometry certificate hash mismatch: '+where+'/'+layer)
+            refs[layer]={'certificate_key':key,'sha256':stored[key]}
+        compact=dict(block)
+        compact.pop('native_edge_noding',None)
+        compact['native_edge_noding_refs']=refs
+        touched=True
+        return compact
+    def compact_transfer(transfer,where):
+        if 'field' not in transfer:return transfer
+        return {**transfer,'field':compact_block(transfer['field'],transfer.get('net'),where+'/field')}
+    def compact_run(run,where):
+        compact=dict(run)
+        if 'ports' in run:
+            compact['ports']=[compact_block(block,block.get('net'),where+'/ports/'+str(i))
+                              for i,block in enumerate(run['ports'])]
+        if 'unit_transfers' in run:
+            compact['unit_transfers']=[compact_transfer(row,where+'/unit_transfers/'+str(i))
+                                       for i,row in enumerate(run['unit_transfers'])]
+        if 'loops' in run:
+            compact['loops']=[{**loop,'legs':[compact_transfer(leg,where+'/loops/'+str(i)+'/legs/'+str(j))
+                                             for j,leg in enumerate(loop['legs'])]}
+                              for i,loop in enumerate(run['loops'])]
+        if 'cases' in run:
+            compact['cases']=[{**case,'fields':{net:compact_block(field,net,where+'/cases/'+str(i)+'/fields/'+net)
+                                               for net,field in case['fields'].items()}}
+                              if 'fields' in case else case for i,case in enumerate(run['cases'])]
+        return compact
+    compact=dict(result)
+    for category in ['runs','partial_runs_unqualified']:
+        if category in result:
+            compact[category]=[compact_run(run,category+'/'+str(i)) for i,run in enumerate(result[category])]
+    if touched:
+        compact['geometry_certificate_reference_format']={
+          'schema':'f722-native-geometry-certificate-reference/v1',
+          'store':'geometry_certificates','hash':'SHA-256',
+          'canonical_json':{'sort_keys':True,'separators':[',',':'],'ensure_ascii':True,'allow_nan':False,'encoding':'UTF-8'}}
+    return compact
+
+
 def run_screen(context):
     if context['manifest'].get('numerical_execution_authorized') is False:
         raise Refused('Numerical compute slot has not been released for this compiled freeze')
@@ -417,6 +508,16 @@ def main():
         guard_output(args.freeze,args.ledger,args.out)
     except Refused as exc:
         print(json.dumps({'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False}))
+        return 2
+    try:
+        result=compact_result_evidence(result)
+    except (Refused,TypeError,ValueError,KeyError) as exc:
+        # An unverifiable evidence reference must never be published as a pass.
+        # Leave both the full in-memory evidence and any existing output intact.
+        refusal={'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False,
+                 'output_written':False}
+        refusal.update({key:result[key] for key in ['board_sha256','freeze_sha256','ledger_sha256'] if key in result})
+        print(json.dumps(refusal))
         return 2
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
