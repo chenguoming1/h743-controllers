@@ -4,7 +4,7 @@ This is a read-only conditional check for the final BARO_SCL/BARO_SDA route plus
 
 ## Current result
 
-The inspected KiCad 10.0.6 unfinished 69-open board is SHA-256 `9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8`.
+The inspected KiCad 10.0.6 unfinished 62-open board is SHA-256 `fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa`.
 
 - SCL contains exactly U1.61, U4.4 and R7.2; SDA contains exactly U1.62, U4.3 and R8.2.
 - Each net has three disconnected pad components, no tracks and no vias. Their zero recorded trace lengths are **not** complete-route results. Final capacitance and RC values are deliberately null.
@@ -17,7 +17,7 @@ The historical `critical-verification-trial15/usb-reference-audit.json` uses boa
 
 ## Expanded physical reference review
 
-`critical-reference.json` is bound to the same 69-open board and adds finite-width and drill-aware inspection. It independently subtracts actual native drill polygons on their finite spans from the saved GND copper. All 118 accepted GND plated ties have positive annular area against both actual saved GND zone fills, excluding their drill holes, and native barrels spanning In1/In4. The USB helper now uses this same criterion: a GND land merely intersecting a union containing itself cannot qualify a tie. The previously reported nearest USB ties still qualify under the corrected criterion and retain their stated distances.
+`critical-reference.json` is bound to the same 62-open board and adds finite-width and drill-aware inspection. It independently subtracts actual native drill polygons on their finite spans from the saved GND copper. All 118 accepted GND plated ties have positive annular area against both actual saved GND zone fills, excluding their drill holes, and native barrels spanning In1/In4. The USB helper now uses this same criterion: a GND land merely intersecting a union containing itself cannot qualify a tie. The previously reported nearest USB ties still qualify under the corrected criterion and retain their stated distances.
 
 All HSE and IMU nets are natively connected. HSE has no missing In4 GND beneath either centerlines or full trace copper. Physical drill subtraction introduces no additional critical-track projection gap on this checkpoint.
 
@@ -35,7 +35,9 @@ Every IMU missing centerline interval lies in the intersection of an actual save
 
 `comparison-75-to-70.json` records the two further ADC_BEC/NRST vias and identical critical signal copper. Saved physical GND decreases by 0.785217154 mm² per reference plane. In1 has zero critical trace-width overlap with that difference; In4 records a 5.84393e-9 mm² overlap under IMU_INT. Its total missing centerline projection changes by 2.62606e-7 mm and missing-width area by 5.52335e-10 mm². All missing IMU_INT centerline/width regions remain in its bounded own-via windows; the separate pre-existing IMU_CS sliver is unchanged. These small represented differences are preserved without inventing an acceptance threshold.
 
-`comparison-70-to-69.json` verifies that the two added outer ADC_BUS tracks preserve every existing copper object, drill, reference-plane object and saved zone fill exactly. Fresh native snapshots and both signal/reference reports are bound to the 69-open board.
+`comparison-70-to-69.json` verifies that the two added outer ADC_BUS tracks preserve every existing copper object, drill, reference-plane object and saved zone fill exactly. That comparison is historical source69 evidence. Fresh native snapshots and both current signal/reference reports are bound to the 62-open board.
+
+`comparison-69-to-power19.json` retains the coordinated BEC/PERIPH/USB_RAW reroute and actual refilled GND changes. All critical copper and projection metrics remain identical. `comparison-power19-to-62.json` independently confirms the seven subsequent outer signal closures leave all critical objects, saved GND geometry and projection metrics exactly unchanged. The existing IMU_CS sliver and all qualification limits remain visible.
 
 Twenty-seven controls pass: the original 18 remain unmodified and 9 focused controls cover false self-land ties, annular contact, finite barrel span, drill-only overlap, tangency, NPTH drilling, full-width defects, bounded merged-hole extension and sloped interval length conservation. No impedance, timing, signal integrity, oscillator, IMU performance or AC qualification follows from this geometry. The board and I2C qualification remain unfinished.
 

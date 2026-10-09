@@ -1,0 +1,39 @@
+{
+  "schema": "f722-tvs-public-packet-provenance/v1",
+  "legacy_contracts_copied_without_change": [
+    {
+      "packet_path": "contracts/legacy-original18.json",
+      "repository_source": "f722-heli/layout-revision/checks/protection/candidate-contracts.json",
+      "sha256": "976fdad481394716c81a34af7a66249da8490b3b15454fd2d35850bd82bffb1f"
+    },
+    {
+      "packet_path": "contracts/legacy-published18.json",
+      "repository_source": "f722-heli/layout-revision/checks/protection/published-contracts.json",
+      "sha256": "30d5354faa440e90410f33d58912c59a1a804cf28b388918076eebd2a80bfa40"
+    },
+    {
+      "packet_path": "contracts/legacy-supplemental7.json",
+      "repository_source": "f722-heli/layout-revision/checks/protection/supplemental-contracts.json",
+      "sha256": "243168c2ed1715d9a56733714e4269af527b23081a5735632d9a7176013c5095"
+    }
+  ],
+  "generic_native_tools_copied_without_change": [
+    {
+      "packet_path": "tools/check_protection_paths.py",
+      "repository_source": "f722-heli/layout-revision/scripts/check_protection_paths.py",
+      "sha256": "4bf5c8e49c379898ef8ce9da5410c5a47260a072c7ac387a27b07258be90c976"
+    },
+    {
+      "packet_path": "tools/export_native_copper.py",
+      "repository_source": "f722-heli/layout-revision/scripts/export_native_copper.py",
+      "sha256": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a"
+    },
+    {
+      "packet_path": "tools/exact_native_contours.py",
+      "repository_source": "f722-heli/layout-revision/scripts/exact_native_contours.py",
+      "sha256": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922"
+    }
+  ],
+  "receipt_transformation": "Four cut-check result JSON files per source are copied byte-for-byte. Coverage receipts omit local source paths and executed absolute command strings; terminal receipts replace the local board path with a source ID. Public receipt hashes bind these portable copies.",
+  "no_board_or_repository_write_performed": true
+}

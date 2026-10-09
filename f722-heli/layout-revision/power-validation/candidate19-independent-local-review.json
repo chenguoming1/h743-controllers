@@ -1,0 +1,26 @@
+{
+  "scope": "Independent local geometry and saved-element operator review; full run review is separate.",
+  "grid_controls_sha256": "e3b810c9674380ec6fba2c8feaab9d24b7bbc0b6d9b445a18ffa69e2f669db5f",
+  "operator_controls_sha256": "0685f0ee4d024b81fcfd0d6d3c8b6cd48d4c384adff255925e969d9949a0c646",
+  "grid_review_sha256": "4f52809fd72c6c58e049525502d01b0e8ee4bef24bb7fc4627db2924c172f1f3",
+  "operator_review_sha256": "e92c41531b975ccfebd1f487b032339a41bda73f7f2e01c5196ccd32eea40aba",
+  "reviewed_native_source_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "reviewed_runtime_sha256": {
+    "copper_fem.py": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+    "native_edge_noding.py": "63b57015db4e7ef76a317d4b16ef18ab1f7fd8bd44c2bd440f4ca738cca2fc1a",
+    "validate_static.py": "6114df1efcba08e643b8adf879948db10c54a4c7d72143baef6ea411db295c2b",
+    "mesh_cache.py": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e"
+  },
+  "grid_findings": [
+    "Exact unique native-edge/grid crossings inserted before clipping preserve rational areas, holes, original vertices and shared seams.",
+    "Distinct crossings4.99999975e-14mm apart remain separate; exact-distinct crossings that share one float refuse."
+  ],
+  "operator_findings": [
+    "90 rational/permutation/gauge/partial-condensation controls pass.",
+    "Every saved triangle/material record retained; identical reduced node IDs have exactzero field.",
+    "Partially condensed energy uses the singleton gradient; three-node Gram products choose a large dependent gradient, preserving the skinny-triangle small positive response.",
+    "Wide row-sum error falls from1.913e-6S to1.560e-10S; saved operator/field energy discrepancy3.304e-18 relative."
+  ],
+  "saved_port_diagnostic_sha256": "c3e5624a819e394ac3b8ab7d6d626336f06cfee4041921fff9e72aa5246c77a1",
+  "full_native_solve_performed_by_review": false
+}

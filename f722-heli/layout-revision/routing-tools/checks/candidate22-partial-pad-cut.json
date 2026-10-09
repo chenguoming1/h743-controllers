@@ -1,0 +1,114 @@
+{
+  "schema": "f722-physical-protection-checks/v1",
+  "board_sha256": "fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa",
+  "native_version": "10.0.6",
+  "method": "Conservative native actual-pad cut for completed P0/P1 junction; this is a scoped partial-chain check, not completion of connector-to-series-resistor chain.",
+  "numeric_contact_epsilon_mm": 1e-09,
+  "profile": "PORT_B_RX_EXT shared U14.7 junction",
+  "source_unchanged": true,
+  "checks": [
+    {
+      "net": "PORT_B_RX_EXT",
+      "clamp": "U14.7",
+      "source": "J10.1",
+      "target": "U14.4",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "P0 to P1 interface only; P2 to R32.1 remains incomplete.",
+      "before_cut": {
+        "groups": [
+          [
+            "J10.1",
+            "U14.4",
+            "U14.7"
+          ],
+          [
+            "R32.1"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J10.1"
+        ],
+        [
+          "R32.1"
+        ],
+        [
+          "U14.4"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.5516261118010021,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.5516261118010021,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              24.082291863798073,
+              7.211830360599328
+            ],
+            [
+              24.0635,
+              7.763136294791666
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "114f0284-6eda-4fd8-b124-92017550a5fb",
+        "211ef9b5-ad68-421b-ad4b-4b577c262608",
+        "d4e965fd-e7a0-46d6-a602-daae70d8324b",
+        "d9153880-f022-4393-ac64-4e91750d043c"
+      ],
+      "target_objects": [
+        "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+        "cc056412-06ac-4681-9fba-bb4723da0d3d"
+      ]
+    }
+  ],
+  "passed": 1,
+  "total": 1,
+  "all_pass": true,
+  "geometry_sha256": "479f9a58fc740d713edd90340d8a20e791d67266db837fb0bc894740c26bf1ec",
+  "contracts_sha256": "d7e86e50adff547dfb80f20107c440c9296f1daa5324815017be8efd8e63630d"
+}

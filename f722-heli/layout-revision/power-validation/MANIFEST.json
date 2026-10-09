@@ -1,13 +1,16 @@
 {
-  "schema": "f722-public-static-source-allowlist/v1",
-  "status": "84 CONTROLS PASS; HISTORICAL LOADED73 DIAGNOSTIC COMPLETED BUT CONDITIONAL VOLTAGE SCREEN FAILED",
-  "file_count": 43,
-  "bytes": 499363,
+  "schema": "f722-public-source-allowlist/v1",
+  "status": "SEALED PUBLIC V6;107 PORTABLE CONTROLS PASS; CANDIDATE19 CONDITIONAL RESULT AND EXACT CANDIDATE22 APPLICABILITY",
   "files": [
     {
+      "path": "CANDIDATE19-COMBINED-REVIEW.md",
+      "sha256": "411fe08e17323254f94c6b59f62d13fbf16a8498e4479d7524d5164459647175",
+      "bytes": 7382
+    },
+    {
       "path": "README.md",
-      "sha256": "ef7ce9a77619bbf568f75912468a3a2bfe1935a3872c3412441eb5c2a7c502aa",
-      "bytes": 12913
+      "sha256": "acc93764ed4709878fda7afe1b23b4108a5b3743b67adf92473148f5b6ee45b1",
+      "bytes": 10391
     },
     {
       "path": "activate_ranked_slices.py",
@@ -18,6 +21,51 @@
       "path": "audit_native_ports.py",
       "sha256": "c1c33ddd94f5c8c50a91aea3cfb1757302a35e388407c9d35e37a04153b2a4fe",
       "bytes": 10027
+    },
+    {
+      "path": "bind_result_applicability.py",
+      "sha256": "5d98d83ab8bd864879c676fb93ec29290d1327f4a6da959b43ae5a389ef0ef18",
+      "bytes": 5058
+    },
+    {
+      "path": "candidate19-KCL-refusal-compact.json",
+      "sha256": "25687cc63b2a33eaddc9f70b4c0c797301071bd30455e5deb33fa41b726ba7b2",
+      "bytes": 992
+    },
+    {
+      "path": "candidate19-combined-summary.json",
+      "sha256": "929cf664ee9edfea1f8851b9590f49da33ca351bdf66ae89c8bbe876e0afce13",
+      "bytes": 148638
+    },
+    {
+      "path": "candidate19-grid-refusal-compact.json",
+      "sha256": "19b57f875bee55d785320a4720cedc976b63317e077d43cf55474d8bc5087eab",
+      "bytes": 1448
+    },
+    {
+      "path": "candidate19-independent-local-review.json",
+      "sha256": "bf4dc8437f0bc3fb2770bc452acc2854938392b7d1093c561a0301f8c279e9cf",
+      "bytes": 1934
+    },
+    {
+      "path": "candidate19-physical-operator-diagnostic.json",
+      "sha256": "c3e5624a819e394ac3b8ab7d6d626336f06cfee4041921fff9e72aa5246c77a1",
+      "bytes": 34099
+    },
+    {
+      "path": "candidate19-runtime-identity.json",
+      "sha256": "4da12e9315b5e0899c22174256f51feeb1d2f9dc677924d9e7d36d338dd57e0d",
+      "bytes": 8939
+    },
+    {
+      "path": "candidate19-to-candidate22-power-geometry.json",
+      "sha256": "f29023d6e372b6dc7773df893b89d46e93fb8ff96bd273c40b34b9c84ac0e633",
+      "bytes": 4475
+    },
+    {
+      "path": "candidate22-power-result-applicability.json",
+      "sha256": "70b64c8472a352729deb879bb3603ad37b3fb22c42eace509e75bc115ed3acf5",
+      "bytes": 13098
     },
     {
       "path": "case-plan.disabled.json",
@@ -45,14 +93,24 @@
       "bytes": 1205
     },
     {
+      "path": "compiler-settings.refined.json",
+      "sha256": "457a63f25ad7cb6d37918bfc729deb893d34230fbfa77b5e9250e85403657f0f",
+      "bytes": 1226
+    },
+    {
       "path": "copper_fem.py",
-      "sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde",
-      "bytes": 32262
+      "sha256": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+      "bytes": 38138
     },
     {
       "path": "dc_circuit.py",
       "sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
       "bytes": 10137
+    },
+    {
+      "path": "diagnose_cached_element_operator.py",
+      "sha256": "b8d2d81161b81481df9b4531a2dfb9ccdfc94c89faac3134d2d4224541bd01e8",
+      "bytes": 4376
     },
     {
       "path": "exact_native_contours.py",
@@ -75,6 +133,11 @@
       "bytes": 2875
     },
     {
+      "path": "geometry-repro/candidate19-grid-annulus.json",
+      "sha256": "89228255b8d2029214d8434b75da71098a8e07f23d3a6d9f6c1f0224ab064ad2",
+      "bytes": 96146
+    },
+    {
       "path": "geometry-repro/local-edge-arrangement.json",
       "sha256": "2eb30a1d9697bbd20fa206c708dc234421c5e1fb0f6aa884e008baf2eb27f3a8",
       "bytes": 38084
@@ -93,6 +156,16 @@
       "path": "historical-runtime-identity.json",
       "sha256": "899d73348dffc05d66ce2548d7aaa9701520465e5ab6c8fcb867fd6a083043a8",
       "bytes": 6903
+    },
+    {
+      "path": "historical-v5-runtime-identity.json",
+      "sha256": "899d73348dffc05d66ce2548d7aaa9701520465e5ab6c8fcb867fd6a083043a8",
+      "bytes": 6903
+    },
+    {
+      "path": "historical-v5-test-run.txt",
+      "sha256": "0efbe737afc97aa568e3216cb927f5424846e74d794389e8e725ebb320138e0b",
+      "bytes": 12396
     },
     {
       "path": "ledger.template.json",
@@ -131,8 +204,8 @@
     },
     {
       "path": "native_edge_noding.py",
-      "sha256": "8a04084d287eebe570e80fb92c89994bcd6fee029e137899081de4d2965336bf",
-      "bytes": 18013
+      "sha256": "63b57015db4e7ef76a317d4b16ef18ab1f7fd8bd44c2bd440f4ca738cca2fc1a",
+      "bytes": 21005
     },
     {
       "path": "power_case_model.py",
@@ -141,13 +214,18 @@
     },
     {
       "path": "prepare_loaded_pilot.py",
-      "sha256": "8d9c9c8ecb3d7726cac166e21077ad812b2fbf844ff985a244458b5cfcf9bfc5",
-      "bytes": 7393
+      "sha256": "3f98fe242cee6826d6fc82a249718c4b56de453528cf7b918b51bd257c25d655",
+      "bytes": 12023
     },
     {
       "path": "public-v5-test-run.txt",
       "sha256": "0efbe737afc97aa568e3216cb927f5424846e74d794389e8e725ebb320138e0b",
       "bytes": 12396
+    },
+    {
+      "path": "public-v6-test-run.txt",
+      "sha256": "337955efa810966cf28e5a2b80bf57d31dd2eb69952b7110aa75f70797308bdf",
+      "bytes": 16074
     },
     {
       "path": "requirements.txt",
@@ -156,13 +234,23 @@
     },
     {
       "path": "run_bounded_pilot.py",
-      "sha256": "22960d1819c98c4156576867ff6a0bda5681df77dfa7d4628f241429103f7e07",
-      "bytes": 1739
+      "sha256": "4b38019196550923acdb79e00b67659ab04cf731b5299ab871d8a1615eb6abf0",
+      "bytes": 2391
+    },
+    {
+      "path": "summarize_combined_pilot.py",
+      "sha256": "f1aa0ad9d6d663f75abf74aace5b33221d08c08722ecce0e81c783f0d6c733a2",
+      "bytes": 7497
+    },
+    {
+      "path": "summarize_loaded_pilot.py",
+      "sha256": "9088a20450209a8d26418e098e656f6b8e2d86bccf4d599480003fe168e650d4",
+      "bytes": 10885
     },
     {
       "path": "synthetic-tests.json",
-      "sha256": "fd35d7a1a210c49382aa3990fd5d22eac1ad12da057966988db37013322f95bc",
-      "bytes": 16224
+      "sha256": "59c43fc3c2ce261fa0678787c271c60d31a313248ad9a4f4632450c310ce86bb",
+      "bytes": 3811
     },
     {
       "path": "terminal-registry.disabled.json",
@@ -175,9 +263,24 @@
       "bytes": 10135
     },
     {
+      "path": "test_combined_summary.py",
+      "sha256": "92c7638be5b7ff5a4d97d565482b721393143e82e22a91bb35ff5dec18241f8a",
+      "bytes": 2609
+    },
+    {
+      "path": "test_element_operator.py",
+      "sha256": "e53a5f28205623a5e8428b9198cbf507aad626ea7a37ff306d4d74e646383038",
+      "bytes": 4508
+    },
+    {
       "path": "test_exact_native_contours.py",
       "sha256": "5a0b33ce1cbde4e269455a386f1238e59d0062e8df985a32c2cd9cf5a01fd118",
       "bytes": 2158
+    },
+    {
+      "path": "test_grid_edge_noding.py",
+      "sha256": "a1bdff3390fe1c353123bb309225282e319db62c238241c06e772372243dc093",
+      "bytes": 7928
     },
     {
       "path": "test_linear_backend.py",
@@ -205,6 +308,16 @@
       "bytes": 2295
     },
     {
+      "path": "test_refined_pilot.py",
+      "sha256": "dceeb495092f189cf31de612d5632dca90dc73428cc7696a66e6536fa1db12ee",
+      "bytes": 4043
+    },
+    {
+      "path": "test_result_applicability.py",
+      "sha256": "cde1ff0f0d24f1d05cc21e43744d69ecdc4e13da336fe88ffcb1572799c30b90",
+      "bytes": 1102
+    },
+    {
       "path": "test_result_evidence.py",
       "sha256": "108139df46936fab126b46b78f3e89a591e82cb154183ab9573d038f92338091",
       "bytes": 9496
@@ -216,22 +329,28 @@
     },
     {
       "path": "validate_static.py",
-      "sha256": "2de4567fdd6d661084649ed9ba44b719a2dddbb6329af7195012c2af740e43d3",
-      "bytes": 32845
+      "sha256": "6114df1efcba08e643b8adf879948db10c54a4c7d72143baef6ea411db295c2b",
+      "bytes": 34076
     }
   ],
-  "predecessor_manifest_sha256": "a21a119bf85471fae3e499625eda54baaab3a5c4847e81d2daeb9fe17cb2678b",
-  "excluded": [
-    "PCB/full native geometry",
-    "full native numerical results",
-    "numeric matrix arrays",
-    "environment/private paths",
-    "expanded case ledgers",
-    "unreviewed solver work"
-  ],
-  "disabled_templates_preserved": true,
-  "historical_prepared_plan_disabled": true,
-  "current_or_final_board_qualified": false,
-  "native_loaded_screen_accepted": false,
-  "full_native_reproduction_requires_external_archived_inputs": true
+  "file_count": 66,
+  "total_file_bytes": 901565,
+  "original_numerical_board_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "applicable_compared_board_sha256": "fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa",
+  "result_sha256": "28dfe7bcff16f08e3919be7063cf06727ab25678e3585e86f6acfda26e0742f1",
+  "applicability_receipt_sha256": "70b64c8472a352729deb879bb3603ad37b3fb22c42eace509e75bc115ed3acf5",
+  "scope_decisions": {
+    "required_62_conditional_cases": true,
+    "five_VCAP_DC_copper_loops": true,
+    "numerical_acceptance": true,
+    "original_overall_runner_boolean": false,
+    "failed_illustrative_cases": 1,
+    "failed_illustrative_servo_checks": 4
+  },
+  "no_final_board_qualification": true,
+  "full_native_inputs_result_and_numeric_arrays_are_external": true,
+  "measured_harness_values_supplied": false,
+  "controls": 107,
+  "test_receipt_sha256": "59c43fc3c2ce261fa0678787c271c60d31a313248ad9a4f4632450c310ce86bb",
+  "previous_public_payload_names_retained": true
 }

@@ -1,0 +1,177 @@
+{
+  "schema": "f722-public-runtime-identity/v1",
+  "meaning": "Published tested source against the archived completed candidate15 loaded pilot; no source rebind or accepted screen is implied.",
+  "board_sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674",
+  "locked_manifest_sha256": "b91cd3d91ae01a933aba83f6faaabdc59f24e49ba3e5cec8521d82046739e691",
+  "prepared_plan_sha256": "00d59b84c5c4cc24ee21352e6e30db8a13ecfaf2a163e252012b0ac5a9215f58",
+  "released_freeze_sha256": "e33f6d1cf2d4134e570ef631149f8acdb89005c89c9f56c3823e3206d1d4d40c",
+  "released_ledger_sha256": "61c27f88dceb64d27e0cc700a8306de07543d5e268d5a4e2419bb81a44f3a8be",
+  "result_sha256": "0780cece1cf4194220a542f9d7f65cc6be3dc457b9bbfaf74bd5a07fa3a1d9ac",
+  "completed_grids_mm": [
+    0.2,
+    0.15
+  ],
+  "case_count_per_grid": 73,
+  "conditional_static_screen_pass": false,
+  "source_files": {
+    "copper_fem.py": {
+      "archived_sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde",
+      "published_sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde",
+      "byte_identical": true
+    },
+    "dc_circuit.py": {
+      "archived_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "published_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "byte_identical": true
+    },
+    "validate_static.py": {
+      "archived_sha256": "2de4567fdd6d661084649ed9ba44b719a2dddbb6329af7195012c2af740e43d3",
+      "published_sha256": "2de4567fdd6d661084649ed9ba44b719a2dddbb6329af7195012c2af740e43d3",
+      "byte_identical": true
+    },
+    "audit_native_ports.py": {
+      "archived_sha256": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717",
+      "published_sha256": "c1c33ddd94f5c8c50a91aea3cfb1757302a35e388407c9d35e37a04153b2a4fe",
+      "byte_identical": false,
+      "executable_AST_identical_after_documentation_removal": true,
+      "documentation_correction": "2e-8 mm is 0.02 nm; correct the old 20 nm docstring. The numeric contact-membership allowance is unchanged."
+    },
+    "native_edge_noding.py": {
+      "archived_sha256": "8a04084d287eebe570e80fb92c89994bcd6fee029e137899081de4d2965336bf",
+      "published_sha256": "8a04084d287eebe570e80fb92c89994bcd6fee029e137899081de4d2965336bf",
+      "byte_identical": true
+    },
+    "mesh_cache.py": {
+      "archived_sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+      "published_sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+      "byte_identical": true
+    }
+  },
+  "external_archived_files": [
+    {
+      "role": "board",
+      "basename": "f722-heli.kicad_pcb",
+      "sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674"
+    },
+    {
+      "role": "geometry",
+      "basename": "owner-native.json",
+      "sha256": "dc1aa86cd3969eb2f0444674adef7f948b46cb50ad07d4d56d1efa3ba083febd"
+    },
+    {
+      "role": "parts",
+      "basename": "parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    {
+      "role": "parity",
+      "basename": "owner-parity.json",
+      "sha256": "cf43c0308a9b299b96a5befadec60dfc3087f353a67db1bee7bce73b4637e13c"
+    },
+    {
+      "role": "process",
+      "basename": "owner-process.json",
+      "sha256": "4de8ae4ecff4a9faa67e8f6598a742471d7383a59c320426c32a29e5c32cd6d7"
+    },
+    {
+      "role": "mechanical",
+      "basename": "owner-mechanical.json",
+      "sha256": "68a7d153c2b42377464c2b2c64f7453ed21764eed4f0be093bc7fc5bfc582c39"
+    },
+    {
+      "role": "critical",
+      "basename": "owner-critical.json",
+      "sha256": "44cfa27d2e89e87b38e45172627ccdeffb550f30c52d5e8ba7cbac7948b73add"
+    },
+    {
+      "role": "power_connectivity",
+      "basename": "power-audit.json",
+      "sha256": "8ce0a283b08cf01177019304b19d2fe075ec9c955c725850e6b9be9f405e41f8"
+    },
+    {
+      "role": "drc_normal",
+      "basename": "owner-drc.json",
+      "sha256": "ac60fe0dfe2f51af2e8642e42d6b2c7ed9ca956be7508c523354fc28e224a772"
+    },
+    {
+      "role": "drc_all_track",
+      "basename": "owner-drc-all.json",
+      "sha256": "14298ed716c78be6883e2a4d81c435ab27e55c6620c1e5cd3893957779795385"
+    },
+    {
+      "role": "ordinary_protection",
+      "basename": "owner-protection.json",
+      "sha256": "9376d1818a32b86fa24ca6faff3bfd7b2b9844d12b79e974288ab6e1781900cc"
+    },
+    {
+      "role": "ordinary_supplemental",
+      "basename": "owner-supplemental.json",
+      "sha256": "d94071283e237a1abb2b5d0dca1075ebec21b0a14fef8a78b291b2fff93bcc47"
+    },
+    {
+      "role": "connectivity",
+      "basename": "connectivity.json",
+      "sha256": "5107144017a402dcbccb2b9436c73a42d245ceccfd932cf28cd96ee323985e69"
+    },
+    {
+      "role": "physical",
+      "basename": "physical.json",
+      "sha256": "80eed95b7339b3225f247e4340640304e6364e71c211828906b43d1791015866"
+    },
+    {
+      "role": "case_plan",
+      "basename": "case-plan.json",
+      "sha256": "b716e2476f9d0e683183e0cd227a428f764add8d8750a5861021dc073b759a85"
+    },
+    {
+      "role": "terminal_registry",
+      "basename": "terminal-registry.json",
+      "sha256": "6b23b84a26c7c375ebed9df46fc07ea9b52cb1f2dc5abcfa2309d23ff8948922"
+    },
+    {
+      "role": "compiler_settings",
+      "basename": "compiler-settings.json",
+      "sha256": "5496f2e108b4169d62cc8a366e3f93a76491c62ed50e89b1e96c9df5cb5bba9a"
+    },
+    {
+      "role": "rebound_terminals",
+      "basename": "rebound-terminals.json",
+      "sha256": "f3866621b98e1575a3f0302cbda24a76d0b193569f999279551060b4c3f8dcc2"
+    },
+    {
+      "role": "pilot_source_copper_fem.py",
+      "basename": "copper_fem.py",
+      "sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde"
+    },
+    {
+      "role": "pilot_source_dc_circuit.py",
+      "basename": "dc_circuit.py",
+      "sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d"
+    },
+    {
+      "role": "pilot_source_validate_static.py",
+      "basename": "validate_static.py",
+      "sha256": "2de4567fdd6d661084649ed9ba44b719a2dddbb6329af7195012c2af740e43d3"
+    },
+    {
+      "role": "pilot_source_audit_native_ports.py",
+      "basename": "audit_native_ports.py",
+      "sha256": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717"
+    },
+    {
+      "role": "pilot_source_native_edge_noding.py",
+      "basename": "native_edge_noding.py",
+      "sha256": "8a04084d287eebe570e80fb92c89994bcd6fee029e137899081de4d2965336bf"
+    },
+    {
+      "role": "pilot_source_mesh_cache.py",
+      "basename": "mesh_cache.py",
+      "sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e"
+    },
+    {
+      "role": "pilot_source_run_bounded_pilot.py",
+      "basename": "run_bounded_pilot.py",
+      "sha256": "22960d1819c98c4156576867ff6a0bda5681df77dfa7d4628f241429103f7e07"
+    }
+  ]
+}

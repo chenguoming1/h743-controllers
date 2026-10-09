@@ -73,7 +73,8 @@ def native_edges(snapshot,net,layer):
     return result
 
 
-def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
+def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None,
+                 grid_spacing_mm=None,grid_vertex_limit=None):
     if not isinstance(maximum_ulp,int)or not 1<=maximum_ulp<=32:raise Refused('Invalid ancestry ULP guard')
     if any(not g.is_empty and g.geom_type not in ('Polygon','MultiPolygon')for g in geometries):
         raise Refused('Pre-tiling ancestry requires polygonal inputs; mixed boundary constraints cannot be discarded')
@@ -202,6 +203,48 @@ def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
           'exact_point_nm':[str(v)for v in point],'displacement_mm':math.dist(p,converted),
           'both_adjacent_edges_on_exact_native_line':True,'node_retained':True,
           'admission_certificate':record['proof']})
+    # Node each proved boundary interval at its exact decimal-grid crossings
+    # before GEOS clips either copy. Clipping the same native line independently
+    # in a domain and ideal land can otherwise return different binary64 points
+    # and invent a thin sheet face between identical physical boundaries.
+    # These are new subdivisions of the exact line, never moved native points.
+    grid_nodes=set();maximum_grid_rounding_error_mm=0.
+    if grid_spacing_mm is not None:
+        if not math.isfinite(grid_spacing_mm) or grid_spacing_mm<=0:
+            raise Refused('Invalid exact grid spacing')
+        if grid_vertex_limit is not None and (type(grid_vertex_limit)is not int or grid_vertex_limit<1):
+            raise Refused('Invalid exact grid vertex cap')
+        step=F(str(grid_spacing_mm))*NM_PER_MM
+        intervals=set()
+        for geometry in geometries:
+            for ring in rings(geometry):
+                for a,b in zip(ring,ring[1:]+ring[:1]):
+                    p,q=rational[tuple(a)],rational[tuple(b)]
+                    common=incidence[p]&incidence[q]
+                    if len(common)!=1:raise Refused('Grid interval lacks unique exact native-line ancestry')
+                    intervals.add((next(iter(common)),*sorted((p,q))))
+        for interval_index,(line,p,q)in enumerate(sorted(intervals)):
+            if check_time and interval_index%256==0:check_time()
+            for axis in [0,1]:
+                if p[axis]==q[axis]:continue
+                low,high=sorted((p[axis],q[axis]))
+                first=low//step+1
+                last=-((-high)//step)-1
+                for index in range(first,last+1):
+                    if check_time and len(grid_nodes)%256==0:check_time()
+                    value=index*step
+                    t=(value-p[axis])/(q[axis]-p[axis])
+                    hit=tuple(p[k]+t*(q[k]-p[k])for k in [0,1])
+                    converted=tuple(float(F(v,NM_PER_MM))for v in hit)
+                    maximum_grid_rounding_error_mm=max(maximum_grid_rounding_error_mm,
+                      math.hypot(*(float(F(converted[k])-hit[k]/NM_PER_MM)for k in [0,1])))
+                    if converted in float_identities and float_identities[converted]!=hit:
+                        raise Refused('Distinct exact grid intersections collapse to one binary64 point')
+                    float_identities[converted]=hit
+                    if hit not in incidence:grid_nodes.add(hit)
+                    incidence.setdefault(hit,set()).add(line)
+                    if grid_vertex_limit is not None and len(grid_nodes)>grid_vertex_limit:
+                        raise Refused('Exact grid intersection cap exceeded')
     line_nodes=defaultdict(set)
     for p,ls in incidence.items():
         for line in ls:line_nodes[line].add(p)
@@ -280,6 +323,9 @@ def canonicalize(geometries,source_edges,maximum_ulp=16,check_time=None):
     return outputs,{'status':'EXACT NATIVE-EDGE ANCESTRY NODING','source_edges':len(edges),
       'input_unique_vertices':len(originals),'inserted_seam_vertices':inserted,'changed_derived_vertices':len(shift_rows),
       'maximum_derived_vertex_displacement_mm':max_shift,'line_residual_ulp_guard':maximum_ulp,
+      'grid_spacing_mm':grid_spacing_mm,'inserted_exact_grid_vertices':len(grid_nodes),
+      'maximum_grid_intersection_rounding_error_mm':maximum_grid_rounding_error_mm,
+      'grid_crossings_inserted_before_overlay':grid_spacing_mm is not None,
       'maximum_representation_shift_mm':MAX_REPRESENTATION_SHIFT_MM,
       'coordinate_changes':shift_rows,'geometry_checks':checks,'native_vertices_changed':0,
       'retained_single_line_subdivisions':len(subdivision_certificates),

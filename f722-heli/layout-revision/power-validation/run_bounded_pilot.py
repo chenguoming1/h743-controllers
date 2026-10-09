@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
-"""One explicitly released pilot process, <=20 min and <=4 GiB address space."""
+"""One explicitly released pilot process, <=25 min and <=4 GiB address space."""
 import argparse
 import json
 import os
 import resource
 import signal
 import sys
+
+
+def validate_budget(wall_seconds,memory_mib,freeze):
+    if not 1<=wall_seconds<=1500 or not 512<=memory_mib<=4096:
+        raise ValueError('Pilot bounds are 1..1500 seconds and 512..4096 MiB')
+    if freeze.get('numerical_execution_authorized')is not True:
+        raise ValueError('The exact freeze is not released for numerical execution')
+    declared=freeze.get('pilot_resource_limits',{})
+    if wall_seconds>declared.get('overall_wall_seconds',1200)or memory_mib>declared.get('address_space_MiB',4096):
+        raise ValueError('Requested process budget exceeds the exact frozen resource declaration')
 
 
 def main():
@@ -15,8 +25,10 @@ def main():
     p.add_argument('--memory-mib',type=int,default=4096)
     p.add_argument('--mesh-cache',help='Private hash-bound assembled mesh/matrix checkpoint directory')
     a=p.parse_args()
-    if not 1<=a.wall_seconds<=1200 or not 512<=a.memory_mib<=4096:
-        p.error('Pilot bounds are 1..1200 seconds and 512..4096 MiB')
+    try:
+        with open(a.freeze)as f:freeze=json.load(f)
+        validate_budget(a.wall_seconds,a.memory_mib,freeze)
+    except (OSError,ValueError)as exc:p.error(str(exc))
     # Set before importing NumPy/SciPy. These are per-process settings only.
     for key in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS','BLIS_NUM_THREADS','VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS']:
         os.environ[key]='1'
