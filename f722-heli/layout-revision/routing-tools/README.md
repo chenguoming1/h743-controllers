@@ -1,3 +1,60 @@
+# F722 ordinary routing: V9 checkpoint55
+
+Owner-adopted candidate28 is an unfinished geometric checkpoint: 55 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2`. Power/VCAP numerical applicability remains false. Routing, numerical revalidation and final electrical/physical qualification are incomplete; this is not fabrication-ready.
+
+Candidate27 is the validated intermediate from exact candidate26. The actual `model-candidate26-ready/filtered02.successes/final` SES/report pair adds six NRST tracks and one through-via, reducing 57 to 56 opens. R1.2 reaches the existing U1.7/C10.1 group; TP5.1 remains open. Full-width pad, new-annulus and preserved-existing-via entry receipts pass. Saved GND reference fills changed, so older numerical power/VCAP passes cannot be inherited.
+
+Candidate28 explicitly constructs three F.Cu PORT_B_RX_EXT::P2 tracks after a real stock insertion refusal against USER_FIXED P1. The source26 proposal is retained along with its additive-current-native recheck on27 and exact prepared-on27 construction packet. This is not an engine insertion success. It adds no further via or refill and preserves 27's saved power/fill/drill geometry, whose numerical status was already stale.
+
+PORT_B_RX_EXT is physically complete. The actual bonded U14.4 cut J10.1→R32.1 passes with 0.3275132250445282mm outside-pad gap and zero overlap. Actual bonded I/O coverage is 7/22; 14/51 ordinary physical nets are fully connected. Shared-pad departure is explicitly audited in addition to degree-one endpoint checks. The owner comparison preserves critical copper and reports zero lost-GND overlap beneath critical trace widths; this is geometry evidence, not signal-integrity or numerical power qualification.
+
+Candidate28's owner adoption covers the cumulative26→28 change. Candidate27 has no separate owner-adoption receipt. Original handoffs keep their historical pending statuses; later owner receipts are bound separately. `checks/v9-historical-receipt-status.json` records any overwritten receipt identity without claiming unavailable bytes.
+
+Fresh source28 zero import is byte-identical. Five immutable explicit IDs protect the two previous in-pad extensions and three new P2 segments. The unfinished source28 filtered03 routing run and all later candidates are excluded. The small shared-pad predicate risk review is a bounded negative finding: relaxing only two checks could expose a downstream mutation of a fixed trace. No live Java source changed, and no unsafe predicate implementation is included.
+
+## Package and verification scope
+
+V9 is a changed-files-only delta from immutable V8, manifest SHA-256 `13f0fa03eaf62d3ae16635109877499976843e7289f97372cb4e2143cdd180e6`; the V8 delta ZIP is `5566e05ad8e58e9bdaad815bcf066db6883a33f685066a6af4aed4eff298e96b`. All historical recovery controls remain present. Two compact new packets preserve the real 27 engine history and separate 28 native construction. Exact byte-copy deltas recover27 and28 from pinned 26, itself recovered with V8 from the 62-file candidate22 paired source.
+
+Portable checks verify complete manifests, exact paired recovery, SES/report parser agreement, importer projection rebinding, historical receipt hashes, selected insertion/refusal provenance, immutable explicit IDs, and negative controls. Packaging executes no JVM, native import, DRC, endpoint geometry audit, refill, numerical solve or route search. No full PCB, full native export, full routing model, binary or unrelated failed-search dump is bundled. See `REPRODUCE.md`.
+
+## Inherited V8 documentation (historical only)
+
+Everything below describes earlier checkpoints and remains for compatibility. Current status is the V9 section above; older acceptance and numerical statements do not qualify28.
+
+# F722 ordinary routing: V8 checkpoint57
+
+Adopted candidate26 is the V8 geometric checkpoint: 57 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `697555207280b8d67714a0011a51ec355321f21f551d6a1486a786c38a671949`. Routing and electrical/physical qualification remain incomplete; this is not fabrication-ready.
+
+Candidate26 adds six tracks and one through-via to candidate25, retaining all 1,688 source objects. The ESC_MCU::P0 branch reaches bonded clamp U13.3, while ESC_MCU::P1 to U1.58 remains open. Native refill changes the two inner GND fills. **Previous power/VCAP numerical acceptance is stale for candidate26.** Source24 is the last fully job-bound numerical checkpoint; source25 preserves its exact power domains/fills/drills/circuit but has no new complete numerical compilation. Candidate26 requires new power/VCAP validation.
+
+The critical-reference comparison reports unchanged critical copper and projection metrics, with zero lost-GND overlap under critical trace widths. Nearest measured lost-GND distances are 5.629 mm for USB_P/In1.Cu and 3.570 mm for HSE_IN/In4.Cu. These geometric findings do not replace a loaded numerical or signal-integrity qualification.
+
+## Separate route histories
+
+- Candidate23 contains the stock engine's two successful connections from source22: 14 tracks, no vias. Its endpoint audit refuses two narrow entries, Q1.2/RPM_LV and R26.2/SBUS_HV. That raw refusal remains included.
+- Candidate24 explicitly adds two in-pad entry tracks to candidate23, retains all engine copper, passes all four full-width entries, and reaches 60 opens. These completions are not engine insertions. Both are fixed in the subsequent source24 and source26 model controls.
+- Candidate25 imports only `filtered01.successes/second`: ten outer tracks, no vias, all four endpoint entries pass, 58 opens. SBUS_LV and PORT_A_RX_MCU become fully connected, taking ordinary fully connected physical nets to 13.
+- Candidate26 separately uses `filtered01.successes/final`, the third successful connection. The actual source24 session is rebound to exact additive candidate25 without a new engine run. It adds six tracks and one via, passes two full-width pad entries and two actual annular strips, and reaches 57 opens. One redundant via-centered spur is retained as original engine geometry and excluded from endpoint evidence.
+
+`checks/candidate25-owner-adoption.json` and `checks/candidate26-owner-adoption.json` are later owner decisions. Historical handoffs retain their original pending statuses. `checks/v8-historical-receipt-status.json` identifies three candidate25 DRC receipts whose earlier bytes were overwritten by owner reruns; original hashes remain in the handoff and fresh owner receipts are separately bound. This package does not claim those overwritten bytes are available.
+
+## Portable coverage
+
+Three compact session packets preserve distinct selected histories: `sessions/engine60-refused23`, `sessions/accepted58` and `sessions/accepted57`. Their full original report/model hashes are retained beside compact importer projections. Real boards, full native exports, routing models, fixed guard arrays, binaries and every unsuccessful search are excluded. Unfinished filtered02 and later routing work are outside V8.
+
+`tests/verify_v8_evidence.py` passes five exact recoveries (candidates22–26, 62 functional paired files each), three SES/report parser and importer-projection checks, and 15 wrong-source/tamper/recovery rejection controls. Historical projection values were compared with the original inputs. No JVM, native import replay, new endpoint geometry audit, refill, DRC or numerical solve was executed by V8 packaging. Historical native acceptance evidence is retained and source-bound; byte recovery is not a new native replay.
+
+The mechanical target is the exact trial27 pose receipt, SHA-256 `9c84633da6de3d501d7ca258bcf4a8051b965af728929f8cd7587e20f73e2bae`. Candidate25's initial generic obsolete-pose failure remains recorded; its corrected worker result and fresh owner result both pass against this target. Fresh source26 zero import is byte-identical and zero parity reports no errors.
+
+Historical protection counts remain 2/18 routing-pad cuts, 5/7 supplemental cuts and 6/22 actual bonded I/O cuts; these do not establish complete protected ports. Fifty-seven opens, full protected-path contracts, loaded power revalidation and final board review remain outstanding.
+
+The changed-files-only archive applies to the complete immutable V7 source package with manifest SHA-256 `c1c30c9e18658abef883d0b201b8233f135d7643574536637523cb633e1052d0`. See `REPRODUCE.md` for exact recovery, controls and optional native replay commands.
+
+## Inherited V7 documentation (historical only)
+
+Everything below documents the earlier V7 checkpoint and compatibility workflows. Its numerical applicability does not qualify candidate26.
+
 # F722 ordinary-routing reconstruction
 
 Local-only adapter for the new F722 placement. This is a planning/import pipeline, not a fabrication-ready PCB. The parent coordinates the single heavy-process slot and the fixed power/critical support handoff. Never run nonzero passes on the bare placement model.

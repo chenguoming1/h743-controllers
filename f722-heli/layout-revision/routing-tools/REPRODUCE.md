@@ -1,3 +1,104 @@
+# Reproduce V9 checkpoint55 provenance
+
+This source-only delta requires the complete, unchanged V8 source tree, not the V8 delta ZIP alone. Verify the separately supplied V9 ZIP SHA-256. The base manifest is `13f0fa03eaf62d3ae16635109877499976843e7289f97372cb4e2143cdd180e6`. `tools/apply_source_delta_v9.py` validates every base file, safe archive paths, changed bytes and complete result before creating a new output tree:
+
+```sh
+python -B tools/apply_source_delta_v9.py --base /path/to/immutable-v8 --delta /path/to/routing-source-v9-delta.zip --zip-sha256 VERIFIED_V9_ZIP_SHA256 --out /path/to/new-v9
+```
+
+The apply helper is in the delta's changed/tools directory; it can be read there before applying. Use the SHA supplied alongside the archive, not an untrusted checksum from its contents.
+
+From the reconstructed V9 root, portable verification uses Python's standard library only:
+
+```sh
+python -B tests/verify_v9_evidence.py --base-project /path/to/pinned-candidate22 --out /tmp/v9-verified.json
+```
+
+The required external project is the same 62 functional paired files pinned by V8 `sessions/recovery57/paired-files.json`. A different PCB or modified schematic/project/library file is rejected. The optional `--historical-workspace /path/to/ordinary-routing` verifies full original receipt/model/source hashes; absence of that workspace does not block portable verification. The output path should be outside the sealed source tree.
+
+For exact paired recovery in two steps:
+
+```sh
+python -B sessions/recovery57/rebuild_historical_source.py project --base-project /path/to/pinned-candidate22 --source candidate26 --out /tmp/recovered26
+python -B sessions/recovery55/rebuild_historical_source.py project --base-project /tmp/recovered26 --source candidate27 --out /tmp/recovered27
+python -B sessions/recovery55/rebuild_historical_source.py project --base-project /tmp/recovered26 --source candidate28 --out /tmp/recovered28
+```
+
+All output directories must be new. Recovery preserves exact historical PCB UUIDs/serialization and all paired functional files. It does not reexecute native import or renew any qualification.
+
+The real 27 packet is `sessions/engine56`; the explicit 28 packet is `sessions/accepted55`. `prepare_session_replay.py` can bind each packet to its exact recovered source board using `--packet`, `--source-board` and `--out`. It verifies SES/report/contract hashes and only prepares an importer projection. Native replay, if separately run, must use frozen `import_session_v8.py`;27 requires its original reference-refill behavior and28 requires `--preserve-unaffected-fills`. A new import can generate new UUIDs and is separate from exact byte recovery. It requires the native environment and coordinated resources; none was run by V9 packaging.
+
+The exact source26 PORT_B_RX_EXT::P2 refusal and proposals are under `tests/located-portb-rx26`; `sessions/accepted55/native-construction.json` and `original-import-contract.json` preserve the prepared-on27 packet. Historical source paths are relative provenance locators, not promises that every full model/native export is bundled. Original dependency hashes are preserved beside portable projection hashes. The source script `prepare_located_branch_continuation.py` adds only additive-current-native rechecking; all Java sources remain identical to V8.
+
+The shared-pad risk review/control is retained as a historical bounded finding. Its original README run command describes the isolated historical workspace; full copied baselines, compiler/JARs and generated classes are intentionally excluded from V9. The risk control was not rerun here.
+
+## Inherited V8 reproduction instructions (historical only)
+
+# Reproduce V8 portable controls
+
+The V8 delta base is the complete, immutable V7 source package, manifest SHA-256 `c1c30c9e18658abef883d0b201b8233f135d7643574536637523cb633e1052d0`. Verify every V7 file against its manifest before applying `changed/`; remove only `DELTA.json`'s explicit deleted paths. Then verify the complete new allowlist and manifest. The delta is not a standalone full package.
+
+## Exact paired source recovery and pure controls
+
+An external hash-pinned candidate22/accepted62 paired project is required. Its PCB SHA-256 is `fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa`; all 62 functional file hashes are enumerated in `sessions/recovery57/paired-files.json`. The optional `library/README.md` is not needed. Recovery retains exact historical UUIDs and serialized bytes.
+
+```sh
+python3 -B tests/verify_v8_evidence.py --base-project /path/to/accepted62
+```
+
+The recorded verification also compared compact projections to their full historical originals:
+
+```sh
+python3 -B tests/verify_v8_evidence.py --base-project /path/to/accepted62 --historical-workspace /path/to/ordinary-routing
+```
+
+The second command needs the declared original files, including full original models/reports, owner receipts, integrated trial27 pose receipt, static power applicability receipt, and checkpoint57 comparison. These large inputs and surrounding historical workspace are not bundled. The first command verifies portable identity/recovery and controls without those extra originals. Running the verifier writes new `checks/*-v8-packet-verified.json` and `checks/v8-evidence-verified.json`; rebuild the source manifest afterward if those recorded receipts differ.
+
+Recover a particular exact source without routing or KiCad:
+
+```sh
+python3 -B sessions/recovery57/rebuild_historical_source.py project --base-project /path/to/accepted62 --source candidate24 --out /tmp/exact24
+python3 -B sessions/recovery57/rebuild_historical_source.py project --base-project /path/to/accepted62 --source candidate25 --out /tmp/exact25
+```
+
+Candidates22,23,24,25,26 are supported. Output directories must not already exist; all inputs are checked before outputs are written. Recovery contains compact copy/literal deltas, not full boards.
+
+## Optional native replay, not executed during V8 packaging
+
+Use the appropriate KiCad Python and the dependency/bootstrap guidance inherited below. The root `import_session.py` remains byte-identical to V7 for old receipts. Candidate23's frozen importer is `import_session_candidate23.py`; candidates25/26 use `import_session_v8.py`. `route_geometry.py` and native exporter sources remain identical.
+
+Candidate25 uses only the second-success pair, against exact recovered24:
+
+```sh
+python3 -B prepare_session_replay.py --packet sessions/accepted58 --source-board /tmp/exact24/f722-heli.kicad_pcb --out /tmp/replay25-contract
+/path/to/kicad-python -B import_session_v8.py --model /tmp/replay25-contract/model.json --session sessions/accepted58/session.ses --engine-report /tmp/replay25-contract/engine-report.json --preserve-unaffected-fills --out /tmp/replay25/f722-heli.kicad_pcb
+```
+
+Candidate26's final third-success session is rebound to exact25; its packet already retains the historical additive rebind. It requires native reference refill, so no preserve-fills option is passed:
+
+```sh
+python3 -B prepare_session_replay.py --packet sessions/accepted57 --source-board /tmp/exact25/f722-heli.kicad_pcb --out /tmp/replay26-contract
+/path/to/kicad-python -B import_session_v8.py --model /tmp/replay26-contract/model.json --session sessions/accepted57/session.ses --engine-report /tmp/replay26-contract/engine-report.json --out /tmp/replay26/f722-heli.kicad_pcb
+```
+
+The importer copies the paired `.kicad_pro` and `.kicad_dru` for refill. A fresh output generates new route UUIDs, and native serialization/refill can differ across KiCad versions; do not expect its board byte hash to equal the historical board. Independently compare geometry and reexecute the required native endpoint, DRC, parity, process, mechanical and reference gates before any new adoption. Candidate26 power/VCAP results require new numerical validation regardless of this replay.
+
+Candidate23's packet is replayable by the analogous source22/importer-candidate23 path with `--preserve-unaffected-fills`, but its failed endpoint disposition must remain. `complete_native_pad_entries.py` retains the explicit candidate24 constructor; it expects the exact candidate23 board/native/map/audit inputs. V8 does not claim a new constructor or confinement audit execution. The historical `audit_pad_completion.historical.py` is preserved for source identity and uses its original workspace layout; it is not a portable command without adapting that layout.
+
+`prepare_engine_continuation_import.py` is the exact candidate26 rebind generator. It requires full original source24 model/native/board and candidate25 native/import/map inputs, whose original hashes remain in `sessions/accepted57/session-rebind.json`. The already projected packet avoids needing those full planning inputs for importer replay. Rebinding is not a new engine run.
+
+## Rebuild the bounded V8 delta
+
+```sh
+python3 -B tools/build_source_delta.py --base /path/to/immutable-public-source-ready-v7 --staging . --out-prefix /path/to/routing-source-v8-delta
+```
+
+The builder checks source exclusions, syntax, the full immutable base, every changed ZIP entry, and exact reconstruction of complete staging. It performs no native work. Prior published versions stay untouched.
+
+## Inherited reproduction instructions (historical V7 and earlier)
+
+The following applies to earlier packets and checkpoints. It does not expand the V8 verification or numerical claim.
+
 # Reproduce the ordinary-routing checkpoint
 
 Adopted candidate22 is unfinished at 62 opens and zero native DRC errors/warnings, PCB `fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa`. The separate power v6 supplies 62 passing required conditional cases, five passing VCAP DC loops and passing numerical gates. Its overall boolean stays false for the outside-envelope 18.56 A single-feed illustration. It is not fabrication-ready. `checks/current62-adoption.json` and the exact power applicability receipt bind this status; inherited pending handoffs remain historical.

@@ -1,0 +1,1287 @@
+{
+  "schema": "portable-reference-usb-cases/v1",
+  "meaning": "Only the two archived USB configuration definitions and contact-name registry; not the original 73-case field ledger.",
+  "cases": [
+    {
+      "name": "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+      "scope": "usb_configuration",
+      "supply": "USB",
+      "parameters": {
+        "input_at_defined_source_V": 4.33,
+        "ABC_ports": [],
+        "electronics_A": 0.3,
+        "DSM_A": 0,
+        "CORE_aggregate_A": 0.3,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      },
+      "reference_node": "SOURCE_GND",
+      "sources": [
+        {
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "n": "U8.1",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "n": "U8.8",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "n": "U7.2",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "n": "U7.7",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_at_ideal_contact_common",
+          "p": "USB_SOURCE",
+          "n": "SOURCE_GND",
+          "voltage_V": 4.33
+        },
+        {
+          "name": "USB_VBUS_A4",
+          "p": "USB_SOURCE",
+          "n": "J1.A4",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_VBUS_A9",
+          "p": "USB_SOURCE",
+          "n": "J1.A9",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_VBUS_B4",
+          "p": "USB_SOURCE",
+          "n": "J1.B4",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_VBUS_B9",
+          "p": "USB_SOURCE",
+          "n": "J1.B9",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_A1",
+          "p": "J1.A1",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_A12",
+          "p": "J1.A12",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_B1",
+          "p": "J1.B1",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_B12",
+          "p": "J1.B12",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        }
+      ],
+      "resistors": [
+        {
+          "name": "U11_selected_path",
+          "p": "U11.4",
+          "n": "U11.1",
+          "ohm": 0.15,
+          "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+        },
+        {
+          "name": "ABC_ADC_divider_lumped",
+          "p": "R42.1",
+          "n": "R44.2",
+          "ohm": 100000,
+          "condition": "Native68k+16k+16k; internal divider copper and ADC input currents omitted"
+        },
+        {
+          "name": "U10_USB_limiter_path",
+          "p": "U10.4",
+          "n": "U10.1",
+          "ohm": 0.15
+        },
+        {
+          "name": "U7_USB_selected_path",
+          "p": "U7.6",
+          "n": "DEV_U7_OUT",
+          "ohm": 0.033
+        },
+        {
+          "name": "U8_USB_selected_path",
+          "p": "U8.2",
+          "n": "DEV_U8_OUT",
+          "ohm": 0.09
+        },
+        {
+          "name": "R68_limited_bleeder",
+          "p": "R68.1",
+          "n": "R68.2",
+          "ohm": 1000
+        },
+        {
+          "name": "R69_raw_bleeder",
+          "p": "R69.1",
+          "n": "R69.2",
+          "ohm": 10000
+        }
+      ],
+      "loads": [
+        {
+          "name": "U8_IQ_screen",
+          "p": "U8.2",
+          "n": "U8.12",
+          "current_A": 0.0004
+        },
+        {
+          "name": "U7_IQ_table_screen",
+          "p": "U7.6",
+          "n": "U7.1",
+          "current_A": 4.5e-06
+        },
+        {
+          "name": "U10_IQ_table_screen",
+          "p": "U10.4",
+          "n": "U10.5",
+          "current_A": 0.00014
+        },
+        {
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.2",
+          "n": "U8.12",
+          "current_A": 0.0005
+        },
+        {
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19",
+          "n": "U1.18",
+          "current_A": 0.3
+        }
+      ],
+      "converters": [
+        {
+          "name": "U9_total_efficiency",
+          "in_p": "U9.2",
+          "in_n": "U9.1",
+          "out_p": "L2.2",
+          "out_n": "U9.1",
+          "sense_p": "U9.6",
+          "sense_n": "U9.4",
+          "voltage_V": 3.1845,
+          "efficiency": 0.85,
+          "quiescent_A": 0,
+          "minimum_input_V": 3,
+          "maximum_input_V": 17,
+          "maximum_output_A": 1,
+          "control_meaning": "Inject at real inductor output L2.2; U9.6 is a sense terminal only. Conversion loss includes the inductor; no DCR is double-counted."
+        }
+      ],
+      "probes": [
+        {
+          "name": "U9_operating_input_only",
+          "p": "U9.2",
+          "n": "U9.1",
+          "minimum_V": 3,
+          "maximum_V": 17,
+          "purpose": "Recommended input operating range only; not a guarantee of3.3V regulation"
+        }
+      ],
+      "report_only_probes": [
+        {
+          "name": "DSM_pad_voltage_no_accuracy_claim",
+          "p": "J12.1",
+          "n": "J12.2",
+          "reason": "0.50A capacity has no inherited classic +/-5% voltage guarantee; USB has no external DSM load"
+        },
+        {
+          "name": "U9_input_accuracy_window_headroom",
+          "p": "U9.2",
+          "n": "U9.1",
+          "comparison_floor_V": 4.3,
+          "reason": "PWM accuracy row condition VIN>=VOUT+1V for nominal3.3V; crossing it ends that assurance, not necessarily chip operation"
+        },
+        {
+          "name": "U9_input_relative_to_quiet_AGND",
+          "p": "U9.2",
+          "n": "U9.4",
+          "comparison_floor_V": 4.3,
+          "reason": "Report both power-ground and quiet-AGND references; internal package ground behavior remains an explicit idealization"
+        },
+        {
+          "name": "CORE_actual_adversarial_sink",
+          "p": "U1.19",
+          "n": "U1.18",
+          "reason": "Electronics operating-voltage acceptance depends on selected device/mode; do not substitute the classic DSM floor"
+        }
+      ],
+      "assumptions": [
+        "New adversarial electronics-current allocation, not a recovered historical load split.",
+        "All CORE-powered logic/bias/quiescent demand is included once in the aggregate electronics allowance.",
+        "Converter eta_total is an engineering assumption including converter operating loss; additive IQ=0 avoids double counting and does not mean zero physical IQ.",
+        "Finite native sheet/barrel paths and actual load returns are required; no nominal-width shortcut.",
+        "Mux selection is prescribed; no startup, hysteresis, switching or backfeed result is implied.",
+        "U8 RON row is specified at VINx>=5V, |IOUT|=200mA. Effective RON outside those tests is a sensitivity assumption.",
+        "U9 setpoint uses the conservative initial PFM low factor; line/load/ripple and input headroom remain separate guards.",
+        "Configuration only: all external ABC, DSM and servo loads are disconnected.",
+        "USB source is prescribed at ideal common connector contacts; this does not invent cable/contact tolerances.",
+        "4.33/5.0/5.25V are declared source sensitivity points from project discussion, not proof of USB compliance or pre-enumeration current behavior."
+      ],
+      "nets": [
+        "USB_VBUS_RAW",
+        "USB_LIMITED",
+        "+5V_PERIPH",
+        "CORE_BUCK_IN",
+        "+3V3_CORE",
+        "+3V3_DSM",
+        "GND"
+      ],
+      "current_budget_checks": {
+        "electronics_sum_A": 0.3,
+        "DSM_external_A": 0,
+        "CORE_output_external_budget_A": 0.3,
+        "ABC_external_sum_A": 0,
+        "USB_limiter_reference_min_A": 0.3512,
+        "note": "CORE includes its known bias/quiescent allowance once; separate upstream bias is outside this CORE total."
+      },
+      "auxiliary_current_scope": {
+        "device_table_reference_A": {
+          "U5": 0,
+          "U7": 4.5e-06,
+          "U8": 0.0004,
+          "U10": 0.00014
+        },
+        "added_engineering_current_A": 0,
+        "inactive_U8_leakage_reserve_A": 0.0005,
+        "BEC_priority_coupling_reserve_A": 0,
+        "not_counted_again": [
+          "U6/U9 operating consumption is already within eta_total; additive converter IQ stays zero.",
+          "U11 and CORE-powered bias remain inside the aggregate 0.32/0.30 A electronics allowance."
+        ],
+        "limits": [
+          "U5 610 uA is a maximum at 12 V, open OUT, specified control settings; use at other inputs/load states is a modeled screen.",
+          "U7 4.4/4.5 uA are selected-input maximum rows through 105 C under their input-priority conditions.",
+          "U10 140 uA is the 6.5 V, open OUT, 20 kOhm ILIM row; actual voltage and resistor differ, so application is modeled.",
+          "U8 400 uA uses its open-output maximum row. The additional 500 uA covers the published wide-differential inactive-input leakage magnitude as a conservative selected-input demand.",
+          "The U8 leakage reserve omits detailed inactive-rail current direction and return distribution; it cannot establish backfeed behavior.",
+          "The 20 uA BEC priority reserve bounds the magnitude through 330 kOhm for declared PR1/ST voltages within 0 to 6 V, beyond the 28 kOhm divider already counted. CORE bias is not added again.",
+          "The added sensitivity is 2 mA at each of three external device input/return pairs, 6 mA total beyond explicit terms; it is an engineering comparison envelope, not a manufacturer guarantee."
+        ]
+      },
+      "regulation_scope": {
+        "initial_device_accuracy_terms_separate": true,
+        "additional_output_error_fraction": 0,
+        "classification": "Additional 0/1/2% static setpoint error is an engineering sensitivity, not a guaranteed line/load/ripple bound.",
+        "required_report": "Report initial-spec-only margins and each added-error result separately; report remaining allowable additional static output error before a receiver floor or headroom boundary."
+      },
+      "definition_review_notes": [
+        "Source unfinished and unbound",
+        "Grouped U6 contacts require fresh source verification",
+        "Engineering assumptions/headroom require reviewed materialization"
+      ],
+      "case_definition_sha256": "11b3f8c625fc49dccb303ca21d59ae4282658fceb92ebc6c47856acbd872c337"
+    },
+    {
+      "name": "usb_configuration_USB4.33_NONE_flash_baseline",
+      "scope": "usb_configuration",
+      "supply": "USB",
+      "parameters": {
+        "input_at_defined_source_V": 4.33,
+        "ABC_ports": [],
+        "electronics_A": 0.3,
+        "DSM_A": 0,
+        "CORE_aggregate_A": 0.3,
+        "allocation_vertex": "flash",
+        "efficiency_total": 0.85,
+        "U8_effective_RON_ohm": 0.09,
+        "U6_IFB_sensitivity_A": 0,
+        "u6_corner": "initial_low"
+      },
+      "reference_node": "SOURCE_GND",
+      "sources": [
+        {
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "n": "U8.1",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "n": "U8.8",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "n": "U7.2",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "n": "U7.7",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_at_ideal_contact_common",
+          "p": "USB_SOURCE",
+          "n": "SOURCE_GND",
+          "voltage_V": 4.33
+        },
+        {
+          "name": "USB_VBUS_A4",
+          "p": "USB_SOURCE",
+          "n": "J1.A4",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_VBUS_A9",
+          "p": "USB_SOURCE",
+          "n": "J1.A9",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_VBUS_B4",
+          "p": "USB_SOURCE",
+          "n": "J1.B4",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_VBUS_B9",
+          "p": "USB_SOURCE",
+          "n": "J1.B9",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_A1",
+          "p": "J1.A1",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_A12",
+          "p": "J1.A12",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_B1",
+          "p": "J1.B1",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        },
+        {
+          "name": "USB_GND_B12",
+          "p": "J1.B12",
+          "n": "SOURCE_GND",
+          "voltage_V": 0,
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded"
+        }
+      ],
+      "resistors": [
+        {
+          "name": "U11_selected_path",
+          "p": "U11.4",
+          "n": "U11.1",
+          "ohm": 0.15,
+          "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+        },
+        {
+          "name": "ABC_ADC_divider_lumped",
+          "p": "R42.1",
+          "n": "R44.2",
+          "ohm": 100000,
+          "condition": "Native68k+16k+16k; internal divider copper and ADC input currents omitted"
+        },
+        {
+          "name": "U10_USB_limiter_path",
+          "p": "U10.4",
+          "n": "U10.1",
+          "ohm": 0.15
+        },
+        {
+          "name": "U7_USB_selected_path",
+          "p": "U7.6",
+          "n": "DEV_U7_OUT",
+          "ohm": 0.033
+        },
+        {
+          "name": "U8_USB_selected_path",
+          "p": "U8.2",
+          "n": "DEV_U8_OUT",
+          "ohm": 0.09
+        },
+        {
+          "name": "R68_limited_bleeder",
+          "p": "R68.1",
+          "n": "R68.2",
+          "ohm": 1000
+        },
+        {
+          "name": "R69_raw_bleeder",
+          "p": "R69.1",
+          "n": "R69.2",
+          "ohm": 10000
+        }
+      ],
+      "loads": [
+        {
+          "name": "U8_IQ_screen",
+          "p": "U8.2",
+          "n": "U8.12",
+          "current_A": 0.0004
+        },
+        {
+          "name": "U7_IQ_table_screen",
+          "p": "U7.6",
+          "n": "U7.1",
+          "current_A": 4.5e-06
+        },
+        {
+          "name": "U10_IQ_table_screen",
+          "p": "U10.4",
+          "n": "U10.5",
+          "current_A": 0.00014
+        },
+        {
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.2",
+          "n": "U8.12",
+          "current_A": 0.0005
+        },
+        {
+          "name": "aggregate_electronics_adversarial",
+          "p": "U3.8",
+          "n": "U3.4",
+          "current_A": 0.3
+        }
+      ],
+      "converters": [
+        {
+          "name": "U9_total_efficiency",
+          "in_p": "U9.2",
+          "in_n": "U9.1",
+          "out_p": "L2.2",
+          "out_n": "U9.1",
+          "sense_p": "U9.6",
+          "sense_n": "U9.4",
+          "voltage_V": 3.1845,
+          "efficiency": 0.85,
+          "quiescent_A": 0,
+          "minimum_input_V": 3,
+          "maximum_input_V": 17,
+          "maximum_output_A": 1,
+          "control_meaning": "Inject at real inductor output L2.2; U9.6 is a sense terminal only. Conversion loss includes the inductor; no DCR is double-counted."
+        }
+      ],
+      "probes": [
+        {
+          "name": "U9_operating_input_only",
+          "p": "U9.2",
+          "n": "U9.1",
+          "minimum_V": 3,
+          "maximum_V": 17,
+          "purpose": "Recommended input operating range only; not a guarantee of3.3V regulation"
+        }
+      ],
+      "report_only_probes": [
+        {
+          "name": "DSM_pad_voltage_no_accuracy_claim",
+          "p": "J12.1",
+          "n": "J12.2",
+          "reason": "0.50A capacity has no inherited classic +/-5% voltage guarantee; USB has no external DSM load"
+        },
+        {
+          "name": "U9_input_accuracy_window_headroom",
+          "p": "U9.2",
+          "n": "U9.1",
+          "comparison_floor_V": 4.3,
+          "reason": "PWM accuracy row condition VIN>=VOUT+1V for nominal3.3V; crossing it ends that assurance, not necessarily chip operation"
+        },
+        {
+          "name": "U9_input_relative_to_quiet_AGND",
+          "p": "U9.2",
+          "n": "U9.4",
+          "comparison_floor_V": 4.3,
+          "reason": "Report both power-ground and quiet-AGND references; internal package ground behavior remains an explicit idealization"
+        },
+        {
+          "name": "CORE_actual_adversarial_sink",
+          "p": "U3.8",
+          "n": "U3.4",
+          "reason": "Electronics operating-voltage acceptance depends on selected device/mode; do not substitute the classic DSM floor"
+        }
+      ],
+      "assumptions": [
+        "New adversarial electronics-current allocation, not a recovered historical load split.",
+        "All CORE-powered logic/bias/quiescent demand is included once in the aggregate electronics allowance.",
+        "Converter eta_total is an engineering assumption including converter operating loss; additive IQ=0 avoids double counting and does not mean zero physical IQ.",
+        "Finite native sheet/barrel paths and actual load returns are required; no nominal-width shortcut.",
+        "Mux selection is prescribed; no startup, hysteresis, switching or backfeed result is implied.",
+        "U8 RON row is specified at VINx>=5V, |IOUT|=200mA. Effective RON outside those tests is a sensitivity assumption.",
+        "U9 setpoint uses the conservative initial PFM low factor; line/load/ripple and input headroom remain separate guards.",
+        "Configuration only: all external ABC, DSM and servo loads are disconnected.",
+        "USB source is prescribed at ideal common connector contacts; this does not invent cable/contact tolerances.",
+        "4.33/5.0/5.25V are declared source sensitivity points from project discussion, not proof of USB compliance or pre-enumeration current behavior."
+      ],
+      "nets": [
+        "USB_VBUS_RAW",
+        "USB_LIMITED",
+        "+5V_PERIPH",
+        "CORE_BUCK_IN",
+        "+3V3_CORE",
+        "+3V3_DSM",
+        "GND"
+      ],
+      "current_budget_checks": {
+        "electronics_sum_A": 0.3,
+        "DSM_external_A": 0,
+        "CORE_output_external_budget_A": 0.3,
+        "ABC_external_sum_A": 0,
+        "USB_limiter_reference_min_A": 0.3512,
+        "note": "CORE includes its known bias/quiescent allowance once; separate upstream bias is outside this CORE total."
+      },
+      "auxiliary_current_scope": {
+        "device_table_reference_A": {
+          "U5": 0,
+          "U7": 4.5e-06,
+          "U8": 0.0004,
+          "U10": 0.00014
+        },
+        "added_engineering_current_A": 0,
+        "inactive_U8_leakage_reserve_A": 0.0005,
+        "BEC_priority_coupling_reserve_A": 0,
+        "not_counted_again": [
+          "U6/U9 operating consumption is already within eta_total; additive converter IQ stays zero.",
+          "U11 and CORE-powered bias remain inside the aggregate 0.32/0.30 A electronics allowance."
+        ],
+        "limits": [
+          "U5 610 uA is a maximum at 12 V, open OUT, specified control settings; use at other inputs/load states is a modeled screen.",
+          "U7 4.4/4.5 uA are selected-input maximum rows through 105 C under their input-priority conditions.",
+          "U10 140 uA is the 6.5 V, open OUT, 20 kOhm ILIM row; actual voltage and resistor differ, so application is modeled.",
+          "U8 400 uA uses its open-output maximum row. The additional 500 uA covers the published wide-differential inactive-input leakage magnitude as a conservative selected-input demand.",
+          "The U8 leakage reserve omits detailed inactive-rail current direction and return distribution; it cannot establish backfeed behavior.",
+          "The 20 uA BEC priority reserve bounds the magnitude through 330 kOhm for declared PR1/ST voltages within 0 to 6 V, beyond the 28 kOhm divider already counted. CORE bias is not added again.",
+          "The added sensitivity is 2 mA at each of three external device input/return pairs, 6 mA total beyond explicit terms; it is an engineering comparison envelope, not a manufacturer guarantee."
+        ]
+      },
+      "regulation_scope": {
+        "initial_device_accuracy_terms_separate": true,
+        "additional_output_error_fraction": 0,
+        "classification": "Additional 0/1/2% static setpoint error is an engineering sensitivity, not a guaranteed line/load/ripple bound.",
+        "required_report": "Report initial-spec-only margins and each added-error result separately; report remaining allowable additional static output error before a receiver floor or headroom boundary."
+      },
+      "definition_review_notes": [
+        "Source unfinished and unbound",
+        "Grouped U6 contacts require fresh source verification",
+        "Engineering assumptions/headroom require reviewed materialization"
+      ],
+      "case_definition_sha256": "f31039bc051ce8cec4fd8628353202df238473d13d7193325b7aeffce9990416"
+    }
+  ],
+  "networks": [
+    {
+      "net": "+3V3_CORE",
+      "contacts": {
+        "U9.6": {
+          "pads": [
+            "U9.6"
+          ],
+          "layer": "B.Cu"
+        },
+        "L2.2": {
+          "pads": [
+            "L2.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "U11.4": {
+          "pads": [
+            "U11.4"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.19": {
+          "pads": [
+            "U1.19"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.32": {
+          "pads": [
+            "U1.32"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.48": {
+          "pads": [
+            "U1.48"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.64": {
+          "pads": [
+            "U1.64"
+          ],
+          "layer": "B.Cu"
+        },
+        "U3.8": {
+          "pads": [
+            "U3.8"
+          ],
+          "layer": "B.Cu"
+        },
+        "U4.2": {
+          "pads": [
+            "U4.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "U4.6": {
+          "pads": [
+            "U4.6"
+          ],
+          "layer": "F.Cu"
+        },
+        "U4.8": {
+          "pads": [
+            "U4.8"
+          ],
+          "layer": "F.Cu"
+        },
+        "FB1.1": {
+          "pads": [
+            "FB1.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "FB2.1": {
+          "pads": [
+            "FB2.1"
+          ],
+          "layer": "F.Cu"
+        }
+      }
+    },
+    {
+      "net": "+3V3_DSM",
+      "contacts": {
+        "J12.1": {
+          "pads": [
+            "J12.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "U11.1": {
+          "pads": [
+            "U11.1"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "+5V_BEC",
+      "contacts": {
+        "U7.3": {
+          "pads": [
+            "U7.3"
+          ],
+          "layer": "B.Cu"
+        },
+        "R54.1": {
+          "pads": [
+            "R54.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "R58.1": {
+          "pads": [
+            "R58.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "U6.OUT_7_8": {
+          "pads": [
+            "U6.7",
+            "U6.8"
+          ],
+          "layer": "F.Cu"
+        }
+      }
+    },
+    {
+      "net": "+5V_PERIPH",
+      "contacts": {
+        "J9.3": {
+          "pads": [
+            "J9.3"
+          ],
+          "layer": "F.Cu"
+        },
+        "J10.3": {
+          "pads": [
+            "J10.3"
+          ],
+          "layer": "F.Cu"
+        },
+        "J11.3": {
+          "pads": [
+            "J11.3"
+          ],
+          "layer": "F.Cu"
+        },
+        "U7.2": {
+          "pads": [
+            "U7.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "U7.7": {
+          "pads": [
+            "U7.7"
+          ],
+          "layer": "B.Cu"
+        },
+        "R42.1": {
+          "pads": [
+            "R42.1"
+          ],
+          "layer": "F.Cu"
+        }
+      }
+    },
+    {
+      "net": "ABC_FB",
+      "contacts": {
+        "U6.5": {
+          "pads": [
+            "U6.5"
+          ],
+          "layer": "F.Cu"
+        },
+        "R54.2": {
+          "pads": [
+            "R54.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "R55.1": {
+          "pads": [
+            "R55.1"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "CORE_BUCK_IN",
+      "contacts": {
+        "U8.1": {
+          "pads": [
+            "U8.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "U8.8": {
+          "pads": [
+            "U8.8"
+          ],
+          "layer": "B.Cu"
+        },
+        "U9.2": {
+          "pads": [
+            "U9.2"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "GND",
+      "contacts": {
+        "J2.1": {
+          "pads": [
+            "J2.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J3.1": {
+          "pads": [
+            "J3.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J4.1": {
+          "pads": [
+            "J4.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J5.1": {
+          "pads": [
+            "J5.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J6.1": {
+          "pads": [
+            "J6.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J8.1": {
+          "pads": [
+            "J8.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J9.4": {
+          "pads": [
+            "J9.4"
+          ],
+          "layer": "F.Cu"
+        },
+        "J10.4": {
+          "pads": [
+            "J10.4"
+          ],
+          "layer": "F.Cu"
+        },
+        "J11.4": {
+          "pads": [
+            "J11.4"
+          ],
+          "layer": "F.Cu"
+        },
+        "J12.2": {
+          "pads": [
+            "J12.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.A1": {
+          "pads": [
+            "J1.A1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.A12": {
+          "pads": [
+            "J1.A12"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.B1": {
+          "pads": [
+            "J1.B1"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.B12": {
+          "pads": [
+            "J1.B12"
+          ],
+          "layer": "F.Cu"
+        },
+        "U5.8": {
+          "pads": [
+            "U5.8"
+          ],
+          "layer": "F.Cu"
+        },
+        "U6.4": {
+          "pads": [
+            "U6.4"
+          ],
+          "layer": "F.Cu"
+        },
+        "U6.10": {
+          "pads": [
+            "U6.10"
+          ],
+          "layer": "F.Cu"
+        },
+        "U7.1": {
+          "pads": [
+            "U7.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "U8.12": {
+          "pads": [
+            "U8.12"
+          ],
+          "layer": "B.Cu"
+        },
+        "U9.1": {
+          "pads": [
+            "U9.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "U9.4": {
+          "pads": [
+            "U9.4"
+          ],
+          "layer": "B.Cu"
+        },
+        "U10.5": {
+          "pads": [
+            "U10.5"
+          ],
+          "layer": "B.Cu"
+        },
+        "R41.2": {
+          "pads": [
+            "R41.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "R44.2": {
+          "pads": [
+            "R44.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "R53.2": {
+          "pads": [
+            "R53.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "R55.2": {
+          "pads": [
+            "R55.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "R58.2": {
+          "pads": [
+            "R58.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "R61.2": {
+          "pads": [
+            "R61.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "R68.2": {
+          "pads": [
+            "R68.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "R69.2": {
+          "pads": [
+            "R69.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.18": {
+          "pads": [
+            "U1.18"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.31": {
+          "pads": [
+            "U1.31"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.47": {
+          "pads": [
+            "U1.47"
+          ],
+          "layer": "B.Cu"
+        },
+        "U1.63": {
+          "pads": [
+            "U1.63"
+          ],
+          "layer": "B.Cu"
+        },
+        "U3.4": {
+          "pads": [
+            "U3.4"
+          ],
+          "layer": "B.Cu"
+        },
+        "U4.1": {
+          "pads": [
+            "U4.1"
+          ],
+          "layer": "F.Cu"
+        },
+        "U4.5": {
+          "pads": [
+            "U4.5"
+          ],
+          "layer": "F.Cu"
+        },
+        "U4.7": {
+          "pads": [
+            "U4.7"
+          ],
+          "layer": "F.Cu"
+        },
+        "U1.12": {
+          "pads": [
+            "U1.12"
+          ],
+          "layer": "B.Cu"
+        },
+        "U2.6": {
+          "pads": [
+            "U2.6"
+          ],
+          "layer": "F.Cu"
+        },
+        "C7.2": {
+          "pads": [
+            "C7.2"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "USB_LIMITED",
+      "contacts": {
+        "U7.6": {
+          "pads": [
+            "U7.6"
+          ],
+          "layer": "B.Cu"
+        },
+        "U8.2": {
+          "pads": [
+            "U8.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "U10.1": {
+          "pads": [
+            "U10.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "R68.1": {
+          "pads": [
+            "R68.1"
+          ],
+          "layer": "F.Cu"
+        }
+      }
+    },
+    {
+      "net": "USB_VBUS_RAW",
+      "contacts": {
+        "J1.A4": {
+          "pads": [
+            "J1.A4"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.A9": {
+          "pads": [
+            "J1.A9"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.B4": {
+          "pads": [
+            "J1.B4"
+          ],
+          "layer": "F.Cu"
+        },
+        "J1.B9": {
+          "pads": [
+            "J1.B9"
+          ],
+          "layer": "F.Cu"
+        },
+        "U10.4": {
+          "pads": [
+            "U10.4"
+          ],
+          "layer": "B.Cu"
+        },
+        "R69.1": {
+          "pads": [
+            "R69.1"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "VCAP",
+      "contacts": {
+        "U1.30": {
+          "pads": [
+            "U1.30"
+          ],
+          "layer": "B.Cu"
+        },
+        "R16.1": {
+          "pads": [
+            "R16.1"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "VCAP_CAP",
+      "contacts": {
+        "R16.2": {
+          "pads": [
+            "R16.2"
+          ],
+          "layer": "B.Cu"
+        },
+        "C7.1": {
+          "pads": [
+            "C7.1"
+          ],
+          "layer": "B.Cu"
+        }
+      }
+    },
+    {
+      "net": "VX_PROTECTED",
+      "contacts": {
+        "U5.6": {
+          "pads": [
+            "U5.6"
+          ],
+          "layer": "F.Cu"
+        },
+        "U8.7": {
+          "pads": [
+            "U8.7"
+          ],
+          "layer": "B.Cu"
+        },
+        "R53.1": {
+          "pads": [
+            "R53.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "R60.1": {
+          "pads": [
+            "R60.1"
+          ],
+          "layer": "B.Cu"
+        },
+        "U6.VIN_12_13": {
+          "pads": [
+            "U6.12",
+            "U6.13"
+          ],
+          "layer": "F.Cu"
+        }
+      }
+    },
+    {
+      "net": "VX_RAW",
+      "contacts": {
+        "J2.2": {
+          "pads": [
+            "J2.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "J3.2": {
+          "pads": [
+            "J3.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "J4.2": {
+          "pads": [
+            "J4.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "J5.2": {
+          "pads": [
+            "J5.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "J6.2": {
+          "pads": [
+            "J6.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "J8.2": {
+          "pads": [
+            "J8.2"
+          ],
+          "layer": "F.Cu"
+        },
+        "U5.5": {
+          "pads": [
+            "U5.5"
+          ],
+          "layer": "F.Cu"
+        },
+        "R40.1": {
+          "pads": [
+            "R40.1"
+          ],
+          "layer": "F.Cu"
+        }
+      }
+    }
+  ]
+}

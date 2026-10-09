@@ -1,0 +1,75 @@
+{
+  "schema": "f722-switch-resistance-source-scope/v1",
+  "reviewed_UTC_date": "2026-10-09",
+  "selected_BOM_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+  "U7": {
+    "MPN": "TPS2117DRLR",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/tps2117.pdf#page=6",
+    "revision": "SLVSGZ5A, August 2023",
+    "row": {
+      "VIN_V": 5,
+      "IOUT_A": 0.2,
+      "temperature_kind": "TA, ambient",
+      "typical_25C_ohm": 0.0185,
+      "max_25C_ohm": 0.025,
+      "max_minus40_to85C_ohm": 0.031,
+      "max_minus40_to105C_ohm": 0.033
+    },
+    "meaning": "33 mOhm is the table maximum under its tests; modeled ~2 A use is extrapolated. 50/60 mOhm are engineering stresses, not sourced maxima. No actual U7 TA/TJ is established by the copper-temperature model."
+  },
+  "U8": {
+    "MPN": "TPS2121RUXR",
+    "datasheet": "https://www.ti.com/lit/ds/symlink/tps2121.pdf#page=7",
+    "revision": "SLVSEA3F, August 2020",
+    "row": {
+      "VIN_min_V": 5,
+      "absolute_IOUT_A": 0.2,
+      "priority": "VPRI > VREF",
+      "temperature_kind": "TJ, junction",
+      "typical_25C_ohm": 0.056,
+      "max_25C_ohm": 0.07,
+      "max_minus40_to85C_ohm": 0.085,
+      "max_minus40_to105C_ohm": 0.09,
+      "max_minus40_to125C_ohm": 0.1
+    },
+    "meaning": "90/120/150 mOhm are effective-resistance scenarios at actual modeled conditions; 120/150 mOhm are not table maxima. Below 5 V or at a different current, the 90 mOhm test row is not a full-condition guarantee."
+  },
+  "modeled_condition_ranges": {
+    "loaded_BEC": {
+      "U7_selected_input_relative_ground_V": {
+        "min": 4.9726821210690515,
+        "max": 5.137753371343131
+      },
+      "U7_selected_path_A": {
+        "min": 2.0000481346014474,
+        "max": 2.0000505618588025
+      },
+      "U8_selected_input_relative_power_ground_V": {
+        "min": 4.655701493890863,
+        "max": 12.514712733320243
+      },
+      "U8_selected_path_A": {
+        "min": 0.09117464718916403,
+        "max": 0.7718059929804374
+      }
+    },
+    "USB": {
+      "U7_selected_input_relative_ground_V": {
+        "min": 4.2729503326295415,
+        "max": 4.285223536420053
+      },
+      "U7_selected_path_A": {
+        "min": 4.2728235656723385e-05,
+        "max": 4.2851445758777004e-05
+      },
+      "U8_selected_input_relative_power_ground_V": {
+        "min": 4.259225908253364,
+        "max": 4.274544584576478
+      },
+      "U8_selected_path_A": {
+        "min": 0.23693429257168022,
+        "max": 0.30310668322265144
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "schema": "f722-portable-source-identities/v1",
+  "original_solver": {
+    "file": "dc_circuit.py",
+    "sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+    "byte_identical": true
+  },
+  "original_case_factory": {
+    "file": "power_case_model.py",
+    "sha256": "fdc796278e340e8a8f53fc91a6aa8cfcddf6144a09dd384076b8abbf54bb19cc",
+    "byte_identical": true
+  },
+  "extracted_function_sources": {
+    "compile_power_ledger.py": {
+      "sha256": "4b334a52f0c73a9e3e32e347e1aba4674e9d6c3ad03cc0a429d12a0c2f578b2e",
+      "extracted_symbols": [
+        "save",
+        "stamp_cases",
+        "materialize",
+        "check_cases"
+      ]
+    },
+    "summarize_loaded_pilot.py": {
+      "sha256": "9088a20450209a8d26418e098e656f6b8e2d86bccf4d599480003fe168e650d4",
+      "extracted_symbols": [
+        "canonical"
+      ]
+    },
+    "extend_port_corners.py": {
+      "sha256": "30df1f4e54eb77af37f4455c6ef162a0faed83baafa08ffd58c2b1f40a4aa8e6",
+      "extracted_symbols": [
+        "endpoint_cases",
+        "solve_pair",
+        "replay_archive",
+        "extrema",
+        "resource_guard"
+      ]
+    },
+    "screen_port_sensitivities.py": {
+      "sha256": "4a2cc03d400583b6aae935adba36203450c17e349decc69a196661f34eabd6af",
+      "extracted_symbols": [
+        "LIMITS",
+        "read",
+        "ensure_generator_unchanged",
+        "scenario",
+        "profiles",
+        "apply_profile",
+        "bases",
+        "compact_pair",
+        "profile_summary",
+        "budget_margin",
+        "budget_profile",
+        "allowance",
+        "finite_result"
+      ]
+    }
+  },
+  "compatibility_shim": {
+    "file": "copper_fem.py",
+    "meaning": "Only Refused(RuntimeError), matching the exception used by the original solver. Not the original field module.",
+    "omitted_field_module_sha256": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f"
+  },
+  "original_tests": {
+    "test_port_corners.py": "590c078db2b9df01526faed52dd10b240c4724933944f5afa0d7b9c019817526",
+    "test_port_sensitivities.py": "0b62f83604c6cc24f5b6c55901c93e32f2cb750a4a2e6e556901e4f967d52ad9"
+  },
+  "omitted_raw_evidence": {
+    "pilot-candidate19-operator-refined-released/result.json": {
+      "sha256": "28dfe7bcff16f08e3919be7063cf06727ab25678e3585e86f6acfda26e0742f1",
+      "bytes": 115021510
+    },
+    "pilot-candidate19-operator-refined-released/ledger.json": {
+      "sha256": "f811c4d93dd074e5d74fb000db2d1218d10199ceb7c0562173be437fda572951",
+      "bytes": 997594
+    },
+    "pilot-candidate19-operator-refined-released/freeze.json": {
+      "sha256": "1e0296e48e779f1a3531a7f0fa901c25ab978da97687e20826a395e58bb727b5",
+      "bytes": 11017
+    },
+    "corner-extension-candidate19-endpoints/endpoint-result.json": {
+      "sha256": "11866a5a77bd085a0dca5588b9c715cad47c70bf851afab8c8503bb99b6daf13",
+      "bytes": 4860390
+    },
+    "corner-extension-candidate19-endpoints/endpoint-ledger.json": {
+      "sha256": "f85dde5e48449487337b5b44a573bd2317e39a882c4576723a5a69bcce6340cd",
+      "bytes": 1819861
+    },
+    "corner-extension-candidate19-endpoints/archive-replay.json": {
+      "sha256": "4925f993c0a890badd847cf644afbf7b584e573eadf298f07f6bc6cf8067676a",
+      "bytes": 181
+    },
+    "corner-sensitivity-candidate19-complete/sensitivity-result.json": {
+      "sha256": "8e2ce6ad32329fe89caa966a7b4ae60318d52e8b3e389841836a98b20afbec77",
+      "bytes": 104706519
+    },
+    "corner-sensitivity-candidate19-complete/sensitivity-ledger.json": {
+      "sha256": "ff602679ff7549f5bef772c2ef0503f435fe68b25e838c0f7f05253a5be9dab7",
+      "bytes": 79832432
+    },
+    "corner-allowance-candidate19-initial-v2/allowance-result.json": {
+      "sha256": "c54de81d49df2f360fbf4a00942207e940edec408d14bdfa8c69bb1ceb707c0b",
+      "bytes": 1203421
+    },
+    "corner-loss-diagnostic-candidate19/voltage-loss-diagnostic.json": {
+      "sha256": "eea11654506591eec7a2e48e46d7c8a576a4021dd142a2805a3d4257dcbaa250",
+      "bytes": 262357
+    },
+    "corner-allowance-candidate19-combined-joint_error/allowance-result.json": {
+      "sha256": "aafa2a126daa0b2cb632b48898d6076569bdbd5911de90610f00fed9669644ab",
+      "bytes": 579359
+    },
+    "corner-allowance-candidate19-combined-u6_error/allowance-result.json": {
+      "sha256": "3c252da25fc9ccb05e58ac172d090147368ab9ace3fe22c521e499b2105435f0",
+      "bytes": 534037
+    },
+    "corner-allowance-candidate19-combined-u7/allowance-result.json": {
+      "sha256": "7ea14e3bf35f91b8804dffb158a31c238dd806f7bed77b9a28fc1d7e1b95f74a",
+      "bytes": 532901
+    },
+    "corner-allowance-candidate19-combined-u8_accuracy/allowance-result.json": {
+      "sha256": "ea43b6acfdfae4a0fc147a2cbc09849f25b798d40ed32c0862271a5aca9a9dc7",
+      "bytes": 622172
+    },
+    "corner-allowance-candidate19-combined-u8_operating/allowance-result.json": {
+      "sha256": "efe042ec8d6af8411ab4a5b0fab827e1890c3aeee473b12036bc3e2fe47aa2c7",
+      "bytes": 892374
+    },
+    "corner-allowance-candidate19-combined-u9_error/allowance-result.json": {
+      "sha256": "3c4dacd32d8f94910552434efd0509073186a23435fed7ae486b027a6a0b386f",
+      "bytes": 533341
+    },
+    "corner-allowance-candidate19-combined-u9_upper_error/allowance-result.json": {
+      "sha256": "66b2993066fd122cb504ab5953a84dedff84972e3e99aaf85868df95a9e05904",
+      "bytes": 402946
+    }
+  },
+  "archived_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0",
+    "shapely": "2.2.0"
+  },
+  "portable_runtime": {
+    "python": "3.12",
+    "numpy": "2.2.6",
+    "platform": "POSIX for resource/signal limits",
+    "scipy_required": false,
+    "shapely_required": false
+  },
+  "trust_boundary": "Packet replay starts from the sealed two-grid impedance export. It cannot independently check native geometry/contact extraction, original FEM assembly, mesh convergence or loaded fields without the omitted original source/archive. Candidate24 applicability is a preserved receipt, not re-created here."
+}

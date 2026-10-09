@@ -1,0 +1,83 @@
+{
+  "schema": "f722-native-route-handoff/v1",
+  "status": "frozen_native_verified_58_open_candidate_pending_owner_power_binding_and_adoption",
+  "board_sha256": "79219c2beaf2a5cd9f827cf3292387c5606eae35b478386204dba91c123cf26d",
+  "integration_source_sha256": "e59f97f0dface234bdd7186a73677f5df73d988bc5d67e9732b267d0dbcd5d2f",
+  "power_baseline_board_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "drc": {
+    "unconnected": 58,
+    "errors": 0,
+    "warnings": 0,
+    "strict_schematic_parity": 0
+  },
+  "engine_successful_connections": 2,
+  "new_tracks": 10,
+  "new_vias": 0,
+  "source_objects_removed": 0,
+  "source24_objects_retained_exact": 1678,
+  "reference_refill_performed": false,
+  "exact_power_domains_fills_drills_and_paired_circuit": true,
+  "full_width_endpoint_passed": true,
+  "endpoint_summary": {
+    "pad_terminations_verified": 4,
+    "minimum_positive_pad_depth_mm": 0.06353999999999971,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.04718682538289798,
+    "full_width_actual_annular_strip_count": 0,
+    "minimum_full_width_annular_strip_length_mm": null,
+    "minimum_annular_section_boundary_reserve_mm": null,
+    "redundant_via_spurs_retained_as_non_evidence": 0,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "completed_pair_connections": [
+    "SBUS_LV: R45.1 to Q2.2/R37.2 group",
+    "PORT_A_RX_MCU: R30.2 to U1.14"
+  ],
+  "new_fully_connected_physical_nets": [
+    "SBUS_LV",
+    "PORT_A_RX_MCU"
+  ],
+  "ordinary_fully_connected_physical_nets": 13,
+  "historical_routing_pad_cuts": {
+    "passed": 2,
+    "total": 18,
+    "limitation": "Includes NC routing-pad dependency; not actual bonded protection coverage"
+  },
+  "supplemental_pad_cuts": {
+    "passed": 5,
+    "total": 7
+  },
+  "actual_bonded_io_cuts": {
+    "passed": 6,
+    "total": 22,
+    "full_contracts_complete": false
+  },
+  "power_scope": "Exact source19 conductive-domain applicability proved; complete numerical job/contact/material/load binding remains an owner-reviewed receipt. No new solve is claimed.",
+  "required_continuation_map": "f722-heli.logical-route-map.json",
+  "mechanical": "worker-mechanical.json uses exact current trial27 poses, matching source24 accepted pose hash; generic runner initial obsolete-pose mismatch is retained and explained in worker-summary.json.",
+  "files": {
+    "f722-heli.kicad_pcb": "79219c2beaf2a5cd9f827cf3292387c5606eae35b478386204dba91c123cf26d",
+    "f722-heli.native.json": "c9d4a2db149a3ca90045700a43e46f6b4401d8ea29553cfb9e35f0fd1ff67cf2",
+    "f722-heli.logical-route-map.json": "376a9b48176c2fdb3937a1ad6d9780177443dfdc1cf5da9635cbef4b62b1367f",
+    "f722-heli.import.json": "5ba616f512b5d30fb0c16ef97c4aa1cf4de4bb215de658bf84358551d5325f69",
+    "engine-lineage.json": "3ecfbc80297af7a16a67e1d6f3ac7accf82af4261feae29509dd16ab9c4bc74f",
+    "endpoint-audit.json": "7312d6be77680d8de47df0adba032a4d9b28c81489a240e8e09d93b1116191ee",
+    "owner-drc.json": "44f8ce0cc2d4533eb9b884abfd9a29706b24f492bfd95f24c5fd3ed4d5da9661",
+    "owner-drc-all.json": "6892f60af83193f25e4940280af0f8f120d64f7c6b1613fc94d4ec46d376f0e2",
+    "owner-drc-parity.json": "9d6a852fd6667cc68bd68716a988a5f488ea37f9d47bbcc160f1e3bb2c7a223d",
+    "owner-process.json": "c1a00fa7b33ddbe6e86c2aa1335656e1b36ac9d3161ccbaae55ab93892a23bcc",
+    "worker-mechanical.json": "0a39d9fe9154ca7efa779c8110331fefad1dd8145005e9d7552a2394042654ee",
+    "worker-summary.json": "610d3a6c88d0aaa17a1bd0054799cf256d8d37d4011edc7ebbf50b6b3aac9141",
+    "owner-critical.json": "c1730bbcd9bb242e4443089853151003c4170116cdb45cfacb90c6e9f5343c3d",
+    "owner-parity.json": "348429072a59f0c42eea96087c2e37c6327957cc8738b723b3f4d80c6d908fc7",
+    "owner-firmware.json": "fa8c39a7b3ea678a215329fca09fc41034f55bc4dae9789193214639dd90f8b3",
+    "power-audit.json": "13782c87878048ec1442bb3de04ebd1491364040ff8c017980d25dc9919b256b",
+    "unchanged-power-reference.json": "e54e6f4fa43933d84d87b663d59e586b11af1646922ba9eb943f684a39a3bd34",
+    "route-analysis.json": "ac8873e4904981d6693a9af2d756765ef127c45700206c35fc465beba27f53d6",
+    "owner-protection.json": "a5020af22a92a4570c836144f18fb5c2b09430309198d872970ba6e6c52c7eec",
+    "owner-supplemental.json": "470f72bbdece330414dc50fb0fd0258fb7557b1f47a5c1b46f225d6538105b06",
+    "protection-actual-io.json": "fb069a034de791338522d04585f7df3148bfb54c6e8db257359d71cf3736c765",
+    "audit_unchanged_power.used.py": "ee159bf44b0a33ae7d2978308445d6de0a8ca79df721e610f25ca045c572b5ef",
+    "audit_support_connectivity.used.py": "a48add965bb500d0811dbf10efdf8080e9e61945eb5beb4d347f8ddab6b98b5b",
+    "audit_native_endpoints.used.py": "6243af36ea083108ac96a8c04dfd5d76d5e4c59d6f7e8777af999462819965c8"
+  }
+}

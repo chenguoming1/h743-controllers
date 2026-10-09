@@ -1,0 +1,868 @@
+{
+  "schema": "f722-static-case-plan-disabled/v1",
+  "status": "REVIEW ONLY; NO BOARD SOLVE",
+  "execution_enabled": false,
+  "freeze_manifest_sha256": null,
+  "purpose": "Compact requirements and proposed new prototype sensitivity design. This is not an executable ledger or proof of a completed case.",
+  "required_before_execution": [
+    "Freeze the final routed/refilled board and re-resolve every pad, part and saved fill against that source.",
+    "Bind fresh native all-pad connectivity, physical/process checks, parity, standard/all-track DRC and exact file hashes.",
+    "Every tested power/return net must be complete; a power-only screen may separately identify unrelated ordinary opens.",
+    "Compile explicit circuit cases with finite contacts and actual return geometry. Preserve grouped native pad unions.",
+    "Select numerical grids and convergence margins within an explicitly allocated compute budget.",
+    "Recheck all later ordinary drills/antipads before final numerical work. No prior geometry receipt survives a source change."
+  ],
+  "load_budgets_A": {
+    "normal_electronics": 0.32,
+    "classic_DSM": 0.02,
+    "classic_CORE_total": 0.34,
+    "capacity_DSM": 0.5,
+    "capacity_CORE_total": 0.82,
+    "USB_configuration_electronics": 0.3,
+    "ABC_total": 2.0,
+    "ABC_each_loaded_port": 1.0
+  },
+  "load_scope": [
+    "Capacity DSM does not inherit the classic receiver accuracy promise.",
+    "USB configuration disconnects external ABC, DSM and servo loads.",
+    "CORE aggregate includes CORE-powered bias/control and U11 consumption once."
+  ],
+  "proposed_case_dimensions": {
+    "BEC_input_at_ideal_J6_pads_V": [
+      5.0,
+      12.6
+    ],
+    "ABC_port_pairs": [
+      "AB",
+      "AC",
+      "BC"
+    ],
+    "electronics_allocation_vertices": {
+      "mcu_vdd19": {
+        "p": "U1.19",
+        "n": "U1.18",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "mcu_vdd32": {
+        "p": "U1.32",
+        "n": "U1.31",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "mcu_vdd48": {
+        "p": "U1.48",
+        "n": "U1.47",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "mcu_vdd64": {
+        "p": "U1.64",
+        "n": "U1.63",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "flash": {
+        "p": "U3.8",
+        "n": "U3.4",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "barometer_pad2": {
+        "p": "U4.2",
+        "n": "U4.1",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "barometer_pad6": {
+        "p": "U4.6",
+        "n": "U4.5",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "barometer_pad8": {
+        "p": "U4.8",
+        "n": "U4.7",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "Adversarial copper allocation; does not assert that this device consumes the aggregate current"
+      },
+      "analog_branch_entry": {
+        "p": "FB1.1",
+        "n": "U1.12",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "CORE branch-entry copper only; ferrite/downstream rail not qualified"
+      },
+      "imu_branch_entry": {
+        "p": "FB2.1",
+        "n": "U2.6",
+        "distribution": "100% of the stated aggregate electronics allowance at this one native supply/return pair",
+        "scope_limit": "CORE branch-entry copper only; ferrite/downstream rail not qualified"
+      }
+    },
+    "allocation_meaning": "New adversarial allocation of the entire electronics allowance at one actual supply/return pair; not measured demand or a historical split.",
+    "USB_source_sensitivity_V": [
+      4.33,
+      5.0,
+      5.25
+    ],
+    "upper_receiver": "Unloaded DSM, initial high output factors, ABC disconnected or AB/AC/BC at 12.6 V.",
+    "dependent_selection": "Select weakest relevant baseline allocation, then expand if source/load/sensitivity changes its ranking; no universal cross-product claim."
+  },
+  "terminal_roles": {
+    "BEC_entry_positive": "J6.2",
+    "BEC_entry_return": "J6.1",
+    "same_BEC_aux_positive": "J8.2",
+    "same_BEC_aux_return": "J8.1",
+    "U6_input": {
+      "pads": [
+        "U6.12",
+        "U6.13"
+      ],
+      "layer": "F.Cu"
+    },
+    "U6_output": {
+      "pads": [
+        "U6.7",
+        "U6.8"
+      ],
+      "layer": "F.Cu"
+    },
+    "U6_power_return": "U6.10",
+    "U6_feedback": "U6.5",
+    "U6_quiet_return": "U6.4",
+    "U9_input": "U9.2",
+    "U9_power_return": "U9.1",
+    "U9_output_injection": "L2.2",
+    "U9_output_sense": "U9.6",
+    "U9_quiet_return": "U9.4",
+    "ABC": {
+      "A": [
+        "J9.3",
+        "J9.4"
+      ],
+      "B": [
+        "J10.3",
+        "J10.4"
+      ],
+      "C": [
+        "J11.3",
+        "J11.4"
+      ]
+    },
+    "DSM": [
+      "J12.1",
+      "J12.2"
+    ],
+    "servo": {
+      "S1": [
+        "J2.2",
+        "J2.1"
+      ],
+      "S2": [
+        "J3.2",
+        "J3.1"
+      ],
+      "S3": [
+        "J4.2",
+        "J4.1"
+      ],
+      "TAIL": [
+        "J5.2",
+        "J5.1"
+      ]
+    }
+  },
+  "current_selected_parts": {
+    "U5": "TPS259472ARPWR",
+    "U6": "TPS63070RNMR",
+    "U7": "TPS2117DRLR",
+    "U8": "TPS2121RUXR",
+    "U9": "TPS62162DSGR",
+    "U10": "TPS2553DRVR",
+    "U11": "TPS2553DRVR",
+    "R54_ohm": 53600,
+    "R55_ohm": 10000,
+    "R16_ohm": 0.12
+  },
+  "parts_note": "Resolve the final native parts/BOM again before activation. U9 is the buck; U7 is a mux.",
+  "voltage_screens": {
+    "ABC_loaded_board_pad_minimum_V": 4.8,
+    "ABC_conditional_harness": "4.5 V remote minimum, 1 A, 0.200 ohm contact loop plus measured cable loop <=0.100 ohm.",
+    "classic_DSM_board_pad_minimum_V": 3.1394,
+    "classic_DSM_board_pad_maximum_V": 3.465,
+    "classic_DSM_conditional_harness": "3.135 V remote minimum at 20 mA, 0.120 ohm contact loop plus measured cable loop <=0.100 ohm.",
+    "U9_operating_input_V": [
+      3.0,
+      17.0
+    ],
+    "U9_separate_nominal_accuracy_window_minimum_V": 4.3,
+    "U9_note": "VIN>=VOUT+1 V conditions the nominal 3.3 V PWM accuracy row. Initial accuracy excludes line/load. Staying above 3 V does not establish regulation.",
+    "servo_board_pad_window_V": [
+      6.0,
+      8.4
+    ],
+    "servo_note": "Board-pad screening only. Actual output harness loss, physical temperatures and waveform behavior remain unqualified."
+  },
+  "U6_corners": {
+    "initial_low": {
+      "feedback_reference_V": 0.792,
+      "R54_ohm": 53546.4,
+      "R55_ohm": 10009.999999999998,
+      "resistor_body_temperature_C": 25,
+      "classification": "Specified initial tolerance and forced-PWM feedback limits; no line/load allowance"
+    },
+    "initial_high": {
+      "feedback_reference_V": 0.808,
+      "R54_ohm": 53653.59999999999,
+      "R55_ohm": 9990.0,
+      "resistor_body_temperature_C": 25,
+      "classification": "Specified initial tolerance and forced-PWM feedback limits; no line/load allowance"
+    },
+    "body105_low": {
+      "feedback_reference_V": 0.792,
+      "R54_ohm": 53439.3072,
+      "R55_ohm": 10030.019999999999,
+      "resistor_body_temperature_C": 105,
+      "classification": "Engineering body-temperature sensitivity; independent adverse 25 ppm/K drift, no ratio tracking"
+    }
+  },
+  "engineering_sensitivity_profiles": {
+    "baseline": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low"
+    },
+    "eta75": {
+      "efficiency_total": 0.75,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low"
+    },
+    "eta95": {
+      "efficiency_total": 0.95,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low"
+    },
+    "u8_120m": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.12,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low"
+    },
+    "u8_150m": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.15,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low"
+    },
+    "ifb_negative100n": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": -1e-07,
+      "u6_corner": "initial_low"
+    },
+    "ifb_positive100n": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 1e-07,
+      "u6_corner": "initial_low"
+    },
+    "resistor_body105": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "body105_low"
+    },
+    "coupled_adverse": {
+      "efficiency_total": 0.75,
+      "U8_effective_RON_ohm": 0.15,
+      "U6_IFB_sensitivity_A": -1e-07,
+      "u6_corner": "body105_low"
+    },
+    "auxiliary_added": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low"
+    },
+    "regulation_1pct": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low",
+      "additional_output_error_fraction": -0.01
+    },
+    "regulation_2pct": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 0,
+      "u6_corner": "initial_low",
+      "additional_output_error_fraction": -0.02
+    },
+    "upper_initial": {
+      "efficiency_total": 0.85,
+      "U8_effective_RON_ohm": 0.09,
+      "U6_IFB_sensitivity_A": 1e-07,
+      "u6_corner": "initial_high"
+    }
+  },
+  "converter_model": "Conserve output power using actual local input voltage and eta_total=75/85/95%; 85% modeled baseline. Total loss includes operating consumption; additive converter IQ=0 prevents double counting. No efficiency guarantee.",
+  "U8_RON_scope": "90 mOhm maximum through 105 C applies only to stated VINx>=5 V and 200 mA tests; other voltages/load currents use explicit 90/120/150 mOhm sensitivities. Report actual conditions and conditional allowable RON.",
+  "additional_regulation_scope": "Separate 0/1/2% static output-error sensitivities from manufacturer initial terms. Neither typical line/load rows nor selected sensitivity factors establish guaranteed ripple/regulation bounds.",
+  "auxiliary_current_model": {
+    "device_table_reference_A": {
+      "U5": 0.00061,
+      "U7": 4.4e-06,
+      "U8": 0.0004,
+      "U10": 0
+    },
+    "added_engineering_current_A": 0,
+    "inactive_U8_leakage_reserve_A": 0.0005,
+    "BEC_priority_coupling_reserve_A": 2e-05,
+    "not_counted_again": [
+      "U6/U9 operating consumption is already within eta_total; additive converter IQ stays zero.",
+      "U11 and CORE-powered bias remain inside the aggregate 0.32/0.30 A electronics allowance."
+    ],
+    "limits": [
+      "U5 610 uA is a maximum at 12 V, open OUT, specified control settings; use at other inputs/load states is a modeled screen.",
+      "U7 4.4/4.5 uA are selected-input maximum rows through 105 C under their input-priority conditions.",
+      "U10 140 uA is the 6.5 V, open OUT, 20 kOhm ILIM row; actual voltage and resistor differ, so application is modeled.",
+      "U8 400 uA uses its open-output maximum row. The additional 500 uA covers the published wide-differential inactive-input leakage magnitude as a conservative selected-input demand.",
+      "The U8 leakage reserve omits detailed inactive-rail current direction and return distribution; it cannot establish backfeed behavior.",
+      "The 20 uA BEC priority reserve bounds the magnitude through 330 kOhm for declared PR1/ST voltages within 0 to 6 V, beyond the 28 kOhm divider already counted. CORE bias is not added again.",
+      "The added sensitivity is 2 mA at each of three external device input/return pairs, 6 mA total beyond explicit terms; it is an engineering comparison envelope, not a manufacturer guarantee."
+    ]
+  },
+  "auxiliary_USB_table_terms_A": {
+    "U7_selected_input": 4.5e-06,
+    "U10": 0.00014,
+    "U8": 0.0004
+  },
+  "added_auxiliary_slice": "Add 2 mA at each of three external device input/return pairs, 6 mA total beyond explicit terms. BEC: U5.5/U5.8, U7.3/U7.1, U8.7/U8.12; USB: U10.4/U10.5, U7.6/U7.1, U8.2/U8.12. Engineering envelope only.",
+  "same_BEC_measured_harness": {
+    "J6_positive_ohm": null,
+    "J6_return_ohm": null,
+    "J8_positive_ohm": null,
+    "J8_return_ohm": null,
+    "source_voltage_bounds_V": null,
+    "servo_output_harness_bounds_ohm": null,
+    "servo_waveform_duration_s": null
+  },
+  "same_BEC_illustrative_source_V": 7.4,
+  "same_BEC_illustrative_feed_profiles": {
+    "equal20m": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.02,
+          "return": 0.02
+        },
+        "J8": {
+          "positive": 0.02,
+          "return": 0.02
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "equal40m": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.04,
+          "return": 0.04
+        },
+        "J8": {
+          "positive": 0.04,
+          "return": 0.04
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "equal50m": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.05,
+          "return": 0.05
+        },
+        "J8": {
+          "positive": 0.05,
+          "return": 0.05
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "equal80m": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.08,
+          "return": 0.08
+        },
+        "J8": {
+          "positive": 0.08,
+          "return": 0.08
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "paired_J8_weak": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.02,
+          "return": 0.02
+        },
+        "J8": {
+          "positive": 0.08,
+          "return": 0.08
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "paired_J6_weak": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.08,
+          "return": 0.08
+        },
+        "J8": {
+          "positive": 0.02,
+          "return": 0.02
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "crossed_J6_positive_strong": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.02,
+          "return": 0.08
+        },
+        "J8": {
+          "positive": 0.08,
+          "return": 0.02
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "crossed_J8_positive_strong": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.08,
+          "return": 0.02
+        },
+        "J8": {
+          "positive": 0.02,
+          "return": 0.08
+        }
+      },
+      "inactive_feeds": [],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "J8_feed_lost": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J6": {
+          "positive": 0.04,
+          "return": 0.04
+        }
+      },
+      "inactive_feeds": [
+        "J8"
+      ],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    },
+    "J6_feed_lost": {
+      "measured": false,
+      "factory_bound": false,
+      "source": "final-electrical-review.md: illustrative 20/40/50/80 mOhm per-conductor examples; newly selected combinations",
+      "per_conductor_ohm": {
+        "J8": {
+          "positive": 0.04,
+          "return": 0.04
+        }
+      },
+      "inactive_feeds": [
+        "J6"
+      ],
+      "loss_meaning": "Both positive and return disconnected for an inactive feed; single-conductor faults are a separate unmodeled fault class"
+    }
+  },
+  "servo_comparison_profiles": {
+    "moderate": {
+      "connector_currents_A": {
+        "J2": 1.0,
+        "J3": 1.0,
+        "J4": 1.0,
+        "J5": 0.5
+      },
+      "subtotal_A": 3.5,
+      "source": "kst-hobbywing-setup.md: Concrete current cases at 7.4 V",
+      "classification": "Approximate manufacturer-plot comparison currents; constant-current DC illustration, not a guaranteed load envelope",
+      "assigned_duration_s": null,
+      "guaranteed_startup_or_stall_bound": false,
+      "servo_subtotal_already_above_BEC_10A_continuous": false,
+      "note": "Add newly solved electronics input demand at the same 7.4 V source. No inherited electronics maximum is added. No thermal or pulse duration is inferred."
+    },
+    "heavy_S1_905X": {
+      "connector_currents_A": {
+        "J2": 4.5,
+        "J3": 1.0,
+        "J4": 1.0,
+        "J5": 2.4
+      },
+      "subtotal_A": 8.9,
+      "source": "kst-hobbywing-setup.md: Concrete current cases at 7.4 V",
+      "classification": "Approximate manufacturer-plot comparison currents; constant-current DC illustration, not a guaranteed load envelope",
+      "assigned_duration_s": null,
+      "guaranteed_startup_or_stall_bound": false,
+      "servo_subtotal_already_above_BEC_10A_continuous": false,
+      "note": "Add newly solved electronics input demand at the same 7.4 V source. No inherited electronics maximum is added. No thermal or pulse duration is inferred."
+    },
+    "heavy_S2_905X": {
+      "connector_currents_A": {
+        "J2": 1.0,
+        "J3": 4.5,
+        "J4": 1.0,
+        "J5": 2.4
+      },
+      "subtotal_A": 8.9,
+      "source": "kst-hobbywing-setup.md: Concrete current cases at 7.4 V",
+      "classification": "Approximate manufacturer-plot comparison currents; constant-current DC illustration, not a guaranteed load envelope",
+      "assigned_duration_s": null,
+      "guaranteed_startup_or_stall_bound": false,
+      "servo_subtotal_already_above_BEC_10A_continuous": false,
+      "note": "Add newly solved electronics input demand at the same 7.4 V source. No inherited electronics maximum is added. No thermal or pulse duration is inferred."
+    },
+    "heavy_S3_905X": {
+      "connector_currents_A": {
+        "J2": 1.0,
+        "J3": 1.0,
+        "J4": 4.5,
+        "J5": 2.4
+      },
+      "subtotal_A": 8.9,
+      "source": "kst-hobbywing-setup.md: Concrete current cases at 7.4 V",
+      "classification": "Approximate manufacturer-plot comparison currents; constant-current DC illustration, not a guaranteed load envelope",
+      "assigned_duration_s": null,
+      "guaranteed_startup_or_stall_bound": false,
+      "servo_subtotal_already_above_BEC_10A_continuous": false,
+      "note": "Add newly solved electronics input demand at the same 7.4 V source. No inherited electronics maximum is added. No thermal or pulse duration is inferred."
+    },
+    "all_cyclic_805X": {
+      "connector_currents_A": {
+        "J2": 4.5,
+        "J3": 4.5,
+        "J4": 4.5,
+        "J5": 2.3
+      },
+      "subtotal_A": 15.8,
+      "source": "kst-hobbywing-setup.md: Concrete current cases at 7.4 V",
+      "classification": "Approximate manufacturer-plot comparison currents; constant-current DC illustration, not a guaranteed load envelope",
+      "assigned_duration_s": null,
+      "guaranteed_startup_or_stall_bound": false,
+      "servo_subtotal_already_above_BEC_10A_continuous": true,
+      "note": "Add newly solved electronics input demand at the same 7.4 V source. No inherited electronics maximum is added. No thermal or pulse duration is inferred."
+    },
+    "all_cyclic_905X": {
+      "connector_currents_A": {
+        "J2": 4.5,
+        "J3": 4.5,
+        "J4": 4.5,
+        "J5": 2.4
+      },
+      "subtotal_A": 15.9,
+      "source": "kst-hobbywing-setup.md: Concrete current cases at 7.4 V",
+      "classification": "Approximate manufacturer-plot comparison currents; constant-current DC illustration, not a guaranteed load envelope",
+      "assigned_duration_s": null,
+      "guaranteed_startup_or_stall_bound": false,
+      "servo_subtotal_already_above_BEC_10A_continuous": true,
+      "note": "Add newly solved electronics input demand at the same 7.4 V source. No inherited electronics maximum is added. No thermal or pulse duration is inferred."
+    }
+  },
+  "same_BEC_case_selection": "Moderate profile across ten illustrative feeds; each high-load profile with equal40m, paired/crossed mismatch in both directions and either whole feed lost. Capacity CORE for these high-load screens; equal40m classic-DSM slices retain the receiver-floor question. Representative B=C=1 A, expand if return ranking changes.",
+  "same_BEC_limits": [
+    "One external BEC source; solve positive and return sharing independently.",
+    "Illustrative resistances are not measured factory bounds.",
+    "J8 requires unused SBUS and empty signal cavity, with verified polarity/fit.",
+    "15.8/15.9 A servo subtotals already exceed 10 A continuous BEC capability. Add newly solved same-state electronics demand for every total-current comparison.",
+    "30 A peak has no supplied duration. Approximate plotted current endpoints do not qualify startup, stall, reversal or an operating envelope."
+  ],
+  "VCAP_copper_loops": [
+    {
+      "name": "VCAP_copper_to_U1.12",
+      "maximum_ohm": 0.035,
+      "legs": [
+        {
+          "net": "VCAP",
+          "source": "U1.30",
+          "sink": "R16.1"
+        },
+        {
+          "net": "VCAP_CAP",
+          "source": "R16.2",
+          "sink": "C7.1"
+        },
+        {
+          "net": "GND",
+          "source": "C7.2",
+          "sink": "U1.12"
+        }
+      ],
+      "scope": "Individual actual-ground endpoint envelope; no assumed equal MCU-ground sharing. R16 and C7 ESR are outside the copper-only budget."
+    },
+    {
+      "name": "VCAP_copper_to_U1.18",
+      "maximum_ohm": 0.035,
+      "legs": [
+        {
+          "net": "VCAP",
+          "source": "U1.30",
+          "sink": "R16.1"
+        },
+        {
+          "net": "VCAP_CAP",
+          "source": "R16.2",
+          "sink": "C7.1"
+        },
+        {
+          "net": "GND",
+          "source": "C7.2",
+          "sink": "U1.18"
+        }
+      ],
+      "scope": "Individual actual-ground endpoint envelope; no assumed equal MCU-ground sharing. R16 and C7 ESR are outside the copper-only budget."
+    },
+    {
+      "name": "VCAP_copper_to_U1.31",
+      "maximum_ohm": 0.035,
+      "legs": [
+        {
+          "net": "VCAP",
+          "source": "U1.30",
+          "sink": "R16.1"
+        },
+        {
+          "net": "VCAP_CAP",
+          "source": "R16.2",
+          "sink": "C7.1"
+        },
+        {
+          "net": "GND",
+          "source": "C7.2",
+          "sink": "U1.31"
+        }
+      ],
+      "scope": "Individual actual-ground endpoint envelope; no assumed equal MCU-ground sharing. R16 and C7 ESR are outside the copper-only budget."
+    },
+    {
+      "name": "VCAP_copper_to_U1.47",
+      "maximum_ohm": 0.035,
+      "legs": [
+        {
+          "net": "VCAP",
+          "source": "U1.30",
+          "sink": "R16.1"
+        },
+        {
+          "net": "VCAP_CAP",
+          "source": "R16.2",
+          "sink": "C7.1"
+        },
+        {
+          "net": "GND",
+          "source": "C7.2",
+          "sink": "U1.47"
+        }
+      ],
+      "scope": "Individual actual-ground endpoint envelope; no assumed equal MCU-ground sharing. R16 and C7 ESR are outside the copper-only budget."
+    },
+    {
+      "name": "VCAP_copper_to_U1.63",
+      "maximum_ohm": 0.035,
+      "legs": [
+        {
+          "net": "VCAP",
+          "source": "U1.30",
+          "sink": "R16.1"
+        },
+        {
+          "net": "VCAP_CAP",
+          "source": "R16.2",
+          "sink": "C7.1"
+        },
+        {
+          "net": "GND",
+          "source": "C7.2",
+          "sink": "U1.63"
+        }
+      ],
+      "scope": "Individual actual-ground endpoint envelope; no assumed equal MCU-ground sharing. R16 and C7 ESR are outside the copper-only budget."
+    }
+  ],
+  "RON_allowance_plan": {
+    "status": "Prepared method only; no numerical allowance without frozen copper",
+    "variable": "U8 effective selected-path RON",
+    "engineering_points_ohm": [
+      0.09,
+      0.12,
+      0.15
+    ],
+    "report": [
+      "Actual local U8 input voltage/current and whether datasheet test conditions apply.",
+      "Supremum sampled/bisected RON meeting the declared receiver floors while the constant-regulation model stays within its declared input/headroom domain.",
+      "Separate3.0V operating-input-only allowance and4.3V nominal3.3V PWM-accuracy-window allowance.",
+      "If an input/headroom boundary occurs first, report that boundary rather than claiming a receiver-voltage RON guarantee.",
+      "At each RON solve all copper/returns and constant-power input currents again; do not infer a fixed-current series-drop allowance."
+    ],
+    "pending": "Native model, declared line/load allowances, operating mode/headroom decision and validated contact union support"
+  },
+  "model_and_bench_limits": [
+    {
+      "id": "u6_line_load",
+      "issue": "0.07%/V line and0.2%/A load terms are typical only; no guaranteed additive allowance or clear reference-point corner recovered",
+      "action": "Run separate 0/1/2% added static output-error sensitivities and report remaining allowable error. These are engineering envelopes, not guaranteed line/load/ripple limits"
+    },
+    {
+      "id": "u6_fb_sign",
+      "issue": "Only+100nA MAX is printed; no guaranteed negative sign bound",
+      "action": "Retain-100/0/+100nA only as labeled engineering sensitivity; equivalent-reference method omits the tiny100nA copper field"
+    },
+    {
+      "id": "u6_resistor_temperature",
+      "issue": "Copper105C does not establish divider body105C",
+      "action": "Keep initial-tolerance baseline separate from body105C independent-TCR sensitivity; measure body temperatures"
+    },
+    {
+      "id": "u8_applicability",
+      "issue": "90mOhm through105C is specified atVINx>=5V and200mA; low-BEC/USB or higher-current behavior lacks that guarantee",
+      "action": "Use90/120/150mOhm sensitivity and derive conditional allowance when possible; characterize actual hot low-voltage path"
+    },
+    {
+      "id": "u9_regulation_domain",
+      "issue": "3V operating minimum does not guarantee3.3V regulation; PWM accuracy conditionVIN>=VOUT+1V and line/load exclusions matter",
+      "action": "Report3V operating-only and4.3V accuracy-window headroom separately; do not extend ideal regulation into dropout"
+    },
+    {
+      "id": "bias_boundary",
+      "issue": "Device-table terms and explicit leakage/coupling/added-current sensitivities now bound the declared prototype model; exact inactive-rail current directions and installed hot consumption remain unmeasured",
+      "action": "Run baseline and added-auxiliary slices; report the modeled envelope and bench-check it. Keep CORE and converter-loss consumption counted once"
+    },
+    {
+      "id": "joined_ports",
+      "issue": "U6 native12/13 and7/8 halves overlap; two independent finite ports would be duplicate/equivalent, while one half would bias the contact",
+      "action": "The isolated adapter now supports connected native unions and rejects disconnected/point-touch sets. Recheck both unions against the frozen source before enabling"
+    },
+    {
+      "id": "package_ground",
+      "issue": "Internal PGND/AGND/EP conduction, package lead/solder and within-land heating are idealized",
+      "action": "Retain actual named PGND and quiet sense grounds; review package/internal tie assumptions, do not replace all GND with ideal reference"
+    },
+    {
+      "id": "downstream_sensors",
+      "issue": "Analog/IMU allocation vertices are at upstream ferrite entries",
+      "action": "No claim for downstream ferrite/IMU/analogue rail regulation; add actual ferrite DCR and downstream terminals if that scope is required"
+    },
+    {
+      "id": "receiver_harness",
+      "issue": "Classic contact/cable loops are conditional installation assumptions, not measured arbitrary harness bounds",
+      "action": "Validate actual cable/contact conditions; keep0.50A capacity separate from classic20mA accuracy"
+    },
+    {
+      "id": "same_BEC_harness",
+      "issue": "Actual J6/J8 positive/return lead/contact bounds and servo load/pulse envelope are absent",
+      "action": "Leave those numeric values unset; do not reuse old illustrative resistances as factory tolerances"
+    }
+  ],
+  "manufacturer_sources": [
+    {
+      "part": "TPS63070RNMR",
+      "document": "TI SLVSC58B",
+      "section": "7.5 pp6-7;9.2.2.1 p17",
+      "url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf"
+    },
+    {
+      "part": "TPS2121RUXR",
+      "document": "TI SLVSEA3F",
+      "section": "7.5 p7",
+      "url": "https://www.ti.com/lit/ds/symlink/tps2121.pdf"
+    },
+    {
+      "part": "TPS62162DSGR",
+      "document": "TI SLVSAM2E",
+      "section": "7.3 p5;7.5 p6",
+      "url": "https://www.ti.com/lit/ds/symlink/tps62160.pdf"
+    },
+    {
+      "part": "TPS259472ARPWR",
+      "document": "TI SLVSFC9C",
+      "section": "6.5 pp8-9, IQ ON maximum and default test conditions",
+      "url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf"
+    },
+    {
+      "part": "TPS2117DRLR",
+      "document": "TI SLVSGZ5A",
+      "section": "6.5 p5, selected-input IQ maximum rows",
+      "url": "https://www.ti.com/lit/ds/symlink/tps2117.pdf"
+    },
+    {
+      "part": "TPS2553DRVR",
+      "document": "TI SLVS841F",
+      "section": "7.5 p7, supply-current rows",
+      "url": "https://www.ti.com/lit/ds/symlink/tps2553.pdf"
+    }
+  ],
+  "project_requirements": [
+    {
+      "document": "docs/final-electrical-review.md",
+      "sha256": "7ae550030285ce00f0d9fd32356bff3538e030e6056e6aa4729a9a891cd76aa2"
+    },
+    {
+      "document": "docs/final-electrical-review.json",
+      "sha256": "1dfed6c96406e6ddb16bda36adaf26b2678d3c2e3d962162ebb9c4fc64b65fd3"
+    },
+    {
+      "document": "docs/passive-bom-evidence.md",
+      "sha256": "1eacf27b8b4820e74b146a24d9a2582f8d1cb5bb7db62be4ae66a71a279383cf"
+    },
+    {
+      "document": "docs/power-evidence.md",
+      "sha256": "45d47e088e734133dac61e26e6d1235568b08f518d7361339661f8a60db119d9"
+    },
+    {
+      "document": "docs/kst-hobbywing-setup.md",
+      "sha256": "9a73fd968a4de089d9ccead86a7574fb5adee13badbe5f78c40e07ec89da280c"
+    }
+  ]
+}

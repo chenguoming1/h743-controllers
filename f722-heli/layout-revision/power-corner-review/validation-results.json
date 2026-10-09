@@ -1,0 +1,117 @@
+{
+  "schema": "f722-portable-validation-results/v1",
+  "controls_passed": 14,
+  "portable_model_sha256": "67948df9f60ef8558b450942868cf20ce429554a360bfa78900e656c0fb1709c",
+  "circuit_solver_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+  "final_runner_sha256": "c896c4df033423328bb329144bc53ce2dfeaa619f64fbe24611c44e018075a44",
+  "sampled_replay": {
+    "case_definition_count": 5532,
+    "sampled_case_count": 14,
+    "paired_circuit_solves": 28,
+    "all_sample_comparisons_pass": true,
+    "comparison_tolerance_V": 1e-10,
+    "checks": [
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_eta_u6_85_u9_85",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_eta_u6_75_u9_95",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_eta_u6_95_u9_75",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AB_mcu_vdd19_baseline__sensitivity_u7_60m",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_ifb_positive100n",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_ifb_negative100n_assumed",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_body85",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_interval_minus40_to85",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_body105_sensitivity",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_combined_interval_eta95_95",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC12.6_AB_mcu_vdd19_baseline__sensitivity_combined_interval_u7_60m_eta95_95",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC5_AB_mcu_vdd32_upper_initial__sensitivity_upper_body105_sensitivity",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "classic_BEC5_AB_mcu_vdd32_upper_initial__sensitivity_upper_combined_interval",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      },
+      {
+        "case": "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline__sensitivity_usb_combined",
+        "maximum_numeric_difference_V": 0.0,
+        "exact_original_result_hash_match": true
+      }
+    ]
+  },
+  "endpoint_replay": {
+    "case_count": 140,
+    "paired_circuit_solves": 280,
+    "all_port_voltage_checks_pass": true,
+    "all_acceptance_and_report_grid_checks_pass": true,
+    "maximum_extremum_replay_difference_V": 0.0,
+    "exact_original_result_hash_match": true
+  },
+  "combined_U7_bracket_replay": {
+    "environment": "combined",
+    "target": "u7",
+    "complete_safe_contexts": 1080,
+    "saved_safe_value": 0.05358559799194335,
+    "saved_failed_value": 0.05358565378189087,
+    "safe_contexts_pass": true,
+    "failed_bracket_reproduced": true,
+    "boundary_reason": "J9_receiver_pad",
+    "physical_boundary_resolved": true
+  },
+  "wall_seconds": {
+    "sample": 2.0753940680006053,
+    "endpoints": 1.5433910179999657,
+    "combined_U7_bracket": 10.629996903000574
+  },
+  "full5532_case_definition_hash_matched": true,
+  "full5532_portable_numerical_sweep_rerun": false,
+  "remaining_inverse_targets_portably_rerun": false,
+  "evidence_note": "The original full sensitivity/allowance runs are summarized and hash-bound. This portable check repeated the complete definition recipe,14 numerical samples,140 endpoints and the1080-context combined-U7 safe bracket plus its failed boundary. The later runner edit only adds the full-sweep total failed-case count assertion; sample/endpoints were repeated afterward.",
+  "new_meshes": 0,
+  "new_loaded_fields": 0,
+  "independent_archive_or_FEM_verification": false
+}

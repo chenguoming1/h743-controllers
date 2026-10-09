@@ -1,0 +1,372 @@
+{
+  "schema": "f722-source19-corner-review/v1",
+  "operator_board_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "reference_loaded_result_sha256": "28dfe7bcff16f08e3919be7063cf06727ab25678e3585e86f6acfda26e0742f1",
+  "preserved_original_decisions": {
+    "required_scope_acceptance": true,
+    "required_case_count": 62,
+    "required_voltage_convergence": true,
+    "VCAP_acceptance": true,
+    "VCAP_loop_count": 5,
+    "VCAP_meaning": "DC copper and barrel leg sum only; excludes R16 resistance, capacitor ESR and all AC/stability effects.",
+    "numerical_acceptance": true,
+    "numerical_meaning": "Completed runner residual/KCL/energy guards, all network impedance sensitivities and all declared voltage-grid sensitivities; not a rigorous discretization bound.",
+    "illustrative_observations_complete": true,
+    "illustrative_case_count": 11,
+    "illustrative_threshold_and_margin_pass": false,
+    "illustrative_meaning": "7.4 V same-BEC finite-lead illustrations include lost-feed/high-load cases beyond stated continuous capability, without assigned duration; not required operating envelopes.",
+    "runner_overall_boolean": false,
+    "runner_boolean_meaning": "Original unchanged conjunction of every selected case, loop and runner guard, including the illustrations."
+  },
+  "metrics": {
+    "endpoint_case_count": 140,
+    "sensitivity_case_count": 5532,
+    "failed_sensitivity_case_count": 642,
+    "failed_profiles": [
+      "combined_interval_u7_60m",
+      "combined_interval_u7_60m_eta75_85",
+      "combined_interval_u7_60m_eta75_95",
+      "combined_interval_u7_60m_eta85_75",
+      "combined_interval_u7_60m_eta85_85",
+      "combined_interval_u7_60m_eta85_95",
+      "combined_interval_u7_60m_eta95_75",
+      "combined_interval_u7_60m_eta95_85",
+      "combined_interval_u7_60m_eta95_95"
+    ],
+    "all_acceptance_and_report_grid_checks_pass": true,
+    "maximum_voltage_grid_delta_V": 0.0006781425739186275,
+    "maximum_equation_residual": 2.0676793610618915e-11,
+    "maximum_whole_circuit_power_error_W": 2.9159169523396145e-10,
+    "maximum_converter_power_error_W": 1.0886960222222797e-09,
+    "minimum_USB_reference_current_headroom_A": 0.04287160100605919,
+    "maximum_U5_selected_path_A": 3.660380267882187,
+    "maximum_U6_output_A": 2.000245507116657,
+    "maximum_U9_output_A": 0.8200000000002083
+  },
+  "initial_allowances": {
+    "u7": {
+      "target": "u7",
+      "safe_value": 0.06316188669204713,
+      "failed_value": 0.06316194248199464,
+      "unit": "ohm",
+      "complete_contexts": 120,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AB_mcu_vdd19_baseline",
+      "boundary_reason": "J9_receiver_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "initial"
+      },
+      "evaluations": 383
+    },
+    "u8_accuracy": {
+      "target": "u8_accuracy",
+      "safe_value": 0.5123864272768008,
+      "failed_value": 0.5123865087363677,
+      "unit": "ohm",
+      "complete_contexts": 120,
+      "safe_checks_pass": true,
+      "boundary_case": "capacity_BEC5_BC_mcu_vdd32_baseline",
+      "boundary_reason": "U9_input_relative_to_quiet_AGND",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "initial"
+      },
+      "evaluations": 534
+    },
+    "u8_operating": {
+      "target": "u8_operating",
+      "safe_value": 1.3161655037679552,
+      "failed_value": 1.3161655768531886,
+      "unit": "ohm",
+      "complete_contexts": 120,
+      "safe_checks_pass": true,
+      "boundary_case": "capacity_BEC5_BC_flash_baseline",
+      "boundary_reason": "voltage_grid_convergence",
+      "physical_boundary_resolved": false,
+      "held_profile": {
+        "name": "initial"
+      },
+      "evaluations": 1412
+    },
+    "u6_error": {
+      "target": "u6_error",
+      "safe_value": 0.01199493408203125,
+      "failed_value": 0.011995029449462891,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 120,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AB_mcu_vdd19_baseline",
+      "boundary_reason": "J9_receiver_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "initial"
+      },
+      "evaluations": 381
+    },
+    "u9_error": {
+      "target": "u9_error",
+      "safe_value": 0.005542373657226563,
+      "failed_value": 0.005542469024658204,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 120,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AC_mcu_vdd64_baseline",
+      "boundary_reason": "classic_DSM_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "initial"
+      },
+      "evaluations": 381
+    },
+    "joint_error": {
+      "target": "joint_error",
+      "safe_value": 0.005541886691935361,
+      "failed_value": 0.005541961424751208,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 120,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AC_mcu_vdd64_baseline",
+      "boundary_reason": "classic_DSM_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "initial"
+      },
+      "evaluations": 520
+    },
+    "u9_upper_error": {
+      "target": "u9_upper_error",
+      "safe_value": 0.011525726318359377,
+      "failed_value": 0.011525821685791018,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 80,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC5_AB_mcu_vdd32_upper_initial",
+      "boundary_reason": "unloaded_classic_DSM_upper",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "upper_initial",
+        "high": true,
+        "ifb": 1e-07
+      },
+      "evaluations": 261
+    }
+  },
+  "combined_allowances": {
+    "u7": {
+      "target": "u7",
+      "safe_value": 0.05358559799194335,
+      "failed_value": 0.05358565378189087,
+      "unit": "ohm",
+      "complete_contexts": 1080,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AB_mcu_vdd19_baseline__sensitivity_held_eta95_95",
+      "boundary_reason": "J9_receiver_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "combined_interval_all_9_eta_pairs",
+        "delta_temperature": 65,
+        "ron8": 0.15,
+        "ifb": -1e-07
+      },
+      "evaluations": 3263
+    },
+    "u8_accuracy": {
+      "target": "u8_accuracy",
+      "safe_value": 0.3954237974257149,
+      "failed_value": 0.39542385597306023,
+      "unit": "ohm",
+      "complete_contexts": 1080,
+      "safe_checks_pass": true,
+      "boundary_case": "capacity_BEC5_BC_mcu_vdd32_baseline__sensitivity_held_eta75_75",
+      "boundary_reason": "U9_input_relative_to_quiet_AGND",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "combined_interval_all_9_eta_pairs",
+        "delta_temperature": 65,
+        "ron8": 0.15,
+        "ifb": -1e-07
+      },
+      "evaluations": 5478
+    },
+    "u8_operating": {
+      "target": "u8_operating",
+      "safe_value": 0.9891842012124964,
+      "failed_value": 0.9891842512317905,
+      "unit": "ohm",
+      "complete_contexts": 1080,
+      "safe_checks_pass": true,
+      "boundary_case": "capacity_BEC5_BC_flash_baseline__sensitivity_held_eta75_75",
+      "boundary_reason": "voltage_grid_convergence",
+      "physical_boundary_resolved": false,
+      "held_profile": {
+        "name": "combined_interval_all_9_eta_pairs",
+        "delta_temperature": 65,
+        "ron8": 0.15,
+        "ifb": -1e-07
+      },
+      "evaluations": 12117
+    },
+    "u6_error": {
+      "target": "u6_error",
+      "safe_value": 0.008217906951904299,
+      "failed_value": 0.00821800231933594,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 1080,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AB_mcu_vdd19_baseline__sensitivity_held_eta95_95",
+      "boundary_reason": "J9_receiver_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "combined_interval_all_9_eta_pairs",
+        "delta_temperature": 65,
+        "ron8": 0.15,
+        "ifb": -1e-07
+      },
+      "evaluations": 3261
+    },
+    "u9_error": {
+      "target": "u9_error",
+      "safe_value": 0.005528926849365234,
+      "failed_value": 0.005529022216796875,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 1080,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_held_eta95_95",
+      "boundary_reason": "classic_DSM_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "combined_interval_all_9_eta_pairs",
+        "delta_temperature": 65,
+        "ron8": 0.15,
+        "ifb": -1e-07
+      },
+      "evaluations": 3261
+    },
+    "joint_error": {
+      "target": "joint_error",
+      "safe_value": 0.005528429828700611,
+      "failed_value": 0.0055284925270825645,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 1080,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC12.6_AC_mcu_vdd64_baseline__sensitivity_held_eta95_95",
+      "boundary_reason": "classic_DSM_pad",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "combined_interval_all_9_eta_pairs",
+        "delta_temperature": 65,
+        "ron8": 0.15,
+        "ifb": -1e-07
+      },
+      "evaluations": 4360
+    },
+    "u9_upper_error": {
+      "target": "u9_upper_error",
+      "safe_value": 0.011479568481445311,
+      "failed_value": 0.011479663848876952,
+      "unit": "fraction of modeled setpoint",
+      "complete_contexts": 720,
+      "safe_checks_pass": true,
+      "boundary_case": "classic_BEC5_AB_mcu_vdd32_upper_initial__sensitivity_held_upper_eta75_75",
+      "boundary_reason": "unloaded_classic_DSM_upper",
+      "physical_boundary_resolved": true,
+      "held_profile": {
+        "name": "upper_combined_interval_all_9_eta_pairs",
+        "high": true,
+        "delta_temperature": 65,
+        "ifb": 1e-07,
+        "ron8": 0.15
+      },
+      "evaluations": 2181
+    }
+  },
+  "source_scope": {
+    "schema": "f722-switch-resistance-source-scope/v1",
+    "reviewed_UTC_date": "2026-10-09",
+    "selected_BOM_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+    "U7": {
+      "MPN": "TPS2117DRLR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps2117.pdf#page=6",
+      "revision": "SLVSGZ5A, August 2023",
+      "row": {
+        "VIN_V": 5,
+        "IOUT_A": 0.2,
+        "temperature_kind": "TA, ambient",
+        "typical_25C_ohm": 0.0185,
+        "max_25C_ohm": 0.025,
+        "max_minus40_to85C_ohm": 0.031,
+        "max_minus40_to105C_ohm": 0.033
+      },
+      "meaning": "33 mOhm is the table maximum under its tests; modeled ~2 A use is extrapolated. 50/60 mOhm are engineering stresses, not sourced maxima. No actual U7 TA/TJ is established by the copper-temperature model."
+    },
+    "U8": {
+      "MPN": "TPS2121RUXR",
+      "datasheet": "https://www.ti.com/lit/ds/symlink/tps2121.pdf#page=7",
+      "revision": "SLVSEA3F, August 2020",
+      "row": {
+        "VIN_min_V": 5,
+        "absolute_IOUT_A": 0.2,
+        "priority": "VPRI > VREF",
+        "temperature_kind": "TJ, junction",
+        "typical_25C_ohm": 0.056,
+        "max_25C_ohm": 0.07,
+        "max_minus40_to85C_ohm": 0.085,
+        "max_minus40_to105C_ohm": 0.09,
+        "max_minus40_to125C_ohm": 0.1
+      },
+      "meaning": "90/120/150 mOhm are effective-resistance scenarios at actual modeled conditions; 120/150 mOhm are not table maxima. Below 5 V or at a different current, the 90 mOhm test row is not a full-condition guarantee."
+    },
+    "modeled_condition_ranges": {
+      "loaded_BEC": {
+        "U7_selected_input_relative_ground_V": {
+          "min": 4.9726821210690515,
+          "max": 5.137753371343131
+        },
+        "U7_selected_path_A": {
+          "min": 2.0000481346014474,
+          "max": 2.0000505618588025
+        },
+        "U8_selected_input_relative_power_ground_V": {
+          "min": 4.655701493890863,
+          "max": 12.514712733320243
+        },
+        "U8_selected_path_A": {
+          "min": 0.09117464718916403,
+          "max": 0.7718059929804374
+        }
+      },
+      "USB": {
+        "U7_selected_input_relative_ground_V": {
+          "min": 4.2729503326295415,
+          "max": 4.285223536420053
+        },
+        "U7_selected_path_A": {
+          "min": 4.2728235656723385e-05,
+          "max": 4.2851445758777004e-05
+        },
+        "U8_selected_input_relative_power_ground_V": {
+          "min": 4.259225908253364,
+          "max": 4.274544584576478
+        },
+        "U8_selected_path_A": {
+          "min": 0.23693429257168022,
+          "max": 0.30310668322265144
+        }
+      }
+    }
+  },
+  "new_meshes": 0,
+  "new_loaded_fields": 0,
+  "new_loaded_field_acceptance": null,
+  "applicability": "Historical source19 operator guidance. Existing candidate22/candidate24 receipts are separate; any later board with changed copper, drills, antipads or fills, including candidate26, is outside these results until a new source-bound solve.",
+  "qualifications": [
+    "Circuit voltages and currents on archived finite-contact two-grid port impedances only; no new loaded-field KCL, energy or current-density certificate.",
+    "Original 62 required cases, five VCAP loops, numerical gates and failed overloaded illustration are unchanged; this does not extend their full-field acceptance.",
+    "All efficiencies and effective resistances away from device test conditions are engineering assumptions, not manufacturer guarantees.",
+    "TPS63070 PWM +/-1% reference bound already includes the stated IC-temperature/input table range; no additional arbitrary IC-temperature factor.",
+    "Positive 100 nA leakage uses its stated VFB=0.8 V endpoint condition; negative 100 nA is an engineering sensitivity, not a signed TI guarantee.",
+    "Divider TCR signs are independent with no assumed tracking. Resistor bodies at 105 C are a sensitivity; X5R capacitor bodies remain limited to 85 C.",
+    "No continuous-input interpolation proof, transient, ripple, thermal, lifetime, assembly or flight qualification. Capacity DSM has no classic voltage-accuracy promise."
+  ]
+}

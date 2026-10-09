@@ -1,3 +1,41 @@
+# V9 evidence boundary
+
+Current checkpoint is owner-adopted28/55;27/56 is its validated intermediate. See README.md and checks/v9-source-identity.json for exact source choices, checks/v9-portable-projections.json for original versus portable byte identities, and checks/v9-evidence-verified.json for checks actually rerun during packaging. Older sections below remain historical.
+
+The actual27 engine pair belongs to source26 filtered02 final, with one routed connection. Native28 uses the independently prepared explicit P2 construction after stock refusal. The refusal, proposal on26, unchanged proposed path rechecked on27, native construction contract, importer receipt, degree-one endpoint audit, existing-via entry and shared-pad departure are bound separately. The owner28 actual-I/O cut is 7/22 and the complete PORT_B_RX_EXT path passes.
+
+Exact native recovery retains 62 functional paired files. Numerical applicability remains false after NRST via/fill changes; no historical power pass is inherited. Fresh28 zero controls are historical native receipts, byte-bound but not rerun by packaging. Source28 filtered03 and future trials are excluded. The negative shared-pad predicate review did not modify live Java sources.
+
+## Inherited V8 evidence
+
+# V8 source and evidence boundaries
+
+Adopted candidate26 is the V8 geometric checkpoint: 57 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `697555207280b8d67714a0011a51ec355321f21f551d6a1486a786c38a671949`. Routing and electrical/physical qualification remain incomplete; this is not fabrication-ready.
+
+Candidate26 adds six tracks and one through-via to candidate25, retaining all 1,688 source objects. The ESC_MCU::P0 branch reaches bonded clamp U13.3, while ESC_MCU::P1 to U1.58 remains open. Native refill changes the two inner GND fills. **Previous power/VCAP numerical acceptance is stale for candidate26.** Source24 is the last fully job-bound numerical checkpoint; source25 preserves its exact power domains/fills/drills/circuit but has no new complete numerical compilation. Candidate26 requires new power/VCAP validation.
+
+The critical-reference comparison reports unchanged critical copper and projection metrics, with zero lost-GND overlap under critical trace widths. Nearest measured lost-GND distances are 5.629 mm for USB_P/In1.Cu and 3.570 mm for HSE_IN/In4.Cu. These geometric findings do not replace a loaded numerical or signal-integrity qualification.
+
+## Provenance retained
+
+`checks/v8-portable-projections.json` records original path, full byte SHA-256/size and projected byte SHA-256 for every transformed receipt. Candidate23's report drops fixed guard areas only; all routes, contact partitions and metadata remain. Candidate25's selected second report and candidate26's original final and rebound reports preserve all their JSON data except path projection/normalization (their area arrays are already empty). Neither normalized report hash is silently substituted for the original receipt hash.
+
+The compact import contracts retain the exact importer-consumed ownership/layer/reference-zone fields from their original model or rebound model. They are not fresh routing models. The three frozen packet identities bind original model SHA-256, selected session, projected report, contract, exact source/result board and actual importer source. Candidate26 additionally binds original final report/session, source24 origin model, exact25 intermediate additions and the73d39f… historical rebind model; the third-success route is never attributed to candidate25.
+
+`checks/candidate23-endpoint-audit.json` keeps both failures, including centerline overlap that was insufficient for full-width entry. Candidate24's completion/confinement receipts keep the two explicit short tracks, native polygon residuals and exact round-endcap argument. The successful four-entry audit is a later independent native fact. Source24 and26 controls keep these two additions fixed.
+
+`checks/candidate25-worker-summary.json` retains the generic runner's obsolete-pose failure and corrected rerun. `checks/current-pose-targets.json` is a projection of exact trial27 poses. Owner mechanical results for24–26 bind the same original pose hash. Historical pending handoffs remain unchanged apart from declared path projection; current owner adoption is separate. The three earlier candidate25 DRC receipt byte hashes survive only in the handoff after owner reruns, and `checks/v8-historical-receipt-status.json` discloses their missing original bytes.
+
+## Verification scope
+
+V8 packaging executed five exact board/paired-file recoveries, three pure importer parser and projection checks and15 rejection controls. It compared projected receipts/contracts with full historical originals and verified the selected second/final session identities. No heavy JVM, native replay, native DRC, endpoint geometry audit, refill or power solve ran. The package preserves native results already produced and owner-reviewed; the verifier checks identities and relationships, not those native algorithms.
+
+Fresh source26 zero import/zero parity are retained as historical executed controls: the imported board is byte-identical to adopted26, with zero geometry/logical parity errors. This does not qualify later filtered02 or other unselected routes, which are excluded.
+
+Only source24 has the separately fully bound numerical applicability retained here. Its numerical sources/full results stay in the power-owned package. Source25 exact unchanged conductive domains are proved separately. Candidate26 has a new drill and changed GND fills; `checks/candidate26-power-revalidation-required.json` explicitly sets numerical applicability false. Its native support/reference pass and unchanged critical projections cannot be read as loaded power or VCAP acceptance.
+
+## Inherited V7 source evidence (historical only)
+
 # Source and evidence boundaries for v7
 
 Adopted candidate22 has 62 open connections and zero native DRC errors/warnings, PCB SHA-256 `fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa`. It is unfinished and not fabrication-ready. The owner adopted candidate19–22 after the exact modeled power/contact/job applicability check passed. The 62 required conditional voltage cases, five VCAP DC copper-loop checks and numerical gates pass; the unchanged overall runner boolean remains false because an outside-envelope 18.56 A single-feed illustration fails four servo floors. This is conditional fixed-temperature DC evidence, not thermal, startup, switching, protection, production or flight qualification. Broader source/circuit corners and final routed-board review remain incomplete.
