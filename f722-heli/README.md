@@ -1,5 +1,7 @@
 # F722 Nexus-style controller prototype
 
+A [replacement layout is in progress](layout-revision/README.md). Its paired native checkpoint is unrouted and is not a manufacturing release. The files described below remain the previous published prototype.
+
 The board is fully routed at nominal **47.5 × 25.4 mm overall**, including the direct right-angle servo contacts. It retains the Nexus firmware pinout, STM32F722RET6, ICM42688P with the reviewed CW90 mapping, W25N01GV flash and approved DPS368. USB-C opens upward; J10 and J11 have the requested consistent outward housing orientation.
 
 **Current status: verified prototype files for CAM/assembly review.** The frozen PCB is `4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f`. Fresh KiCad 10.0.6 checks report **0 unfinished connections, 0 geometric errors, 9 unsuppressed power/ground warnings and 0 ERC violations**. All 18 scoped protection-path checks pass. Of the nine visible warnings, eight have operating-current or local copper-spreading fields in the reviewed cases; PERIPH track `874efe98` is an unloaded retained obsolete tail. Final exact-board electrical analysis and manufacturing-export verification are complete. Factory CAM/assembly acceptance and first-article qualification remain; this is not a production or flight qualification.
