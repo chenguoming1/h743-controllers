@@ -2,7 +2,7 @@
   "bundle": "stock-nexus-i2c-source-review",
   "intended_destination": "layout-revision/signal-review",
   "review_date_utc": "2026-10-09",
-  "state": "Pinned stock firmware/device review with historical158 bus inventory and source-bound80 native geometry screen; final route loading and bench qualification pending.",
+  "state": "Pinned stock firmware/device review with historical158 bus inventory and source-bound69 native I2C/HSE/USB/IMU geometry screens; final route loading and bench qualification pending.",
   "exclusions": [
     "PDFs",
     "screenshots",
@@ -20,11 +20,19 @@
     "native-bus-inventory.json",
     "native/FILES.sha256.json",
     "native/README.md",
+    "native/check_critical_reference.py",
     "native/check_signal_geometry.py",
+    "native/compare_reference_geometry.py",
+    "native/comparison-70-to-69.json",
+    "native/comparison-75-to-70.json",
+    "native/comparison-76-to-75.json",
+    "native/comparison-77-to-76.json",
     "native/controls.json",
+    "native/critical-reference.json",
     "native/current-review.json",
     "native/export_signal_snapshot.py",
     "native/model-inputs.template.json",
+    "native/test_critical_reference.py",
     "native/test_signal_geometry.py",
     "reproduce_stock_timing.py",
     "stock-ba6c7e3/LICENSE",
@@ -71,38 +79,78 @@
     },
     {
       "path": "native/FILES.sha256.json",
-      "size_bytes": 1638,
-      "sha256": "5af4b18b755e938246cad39decdacec4abf7c07ec14da6f6fd18018de2383b3d"
+      "size_bytes": 3040,
+      "sha256": "3315c4ccc3c4f167d73dd4769266a0f3419aaeb05f8d700e62c213aad81c292f"
     },
     {
       "path": "native/README.md",
-      "size_bytes": 13439,
-      "sha256": "a7c8a39bd4456d7b94a8566ceafd06eb69c1d044df601dae1a0e6419e91c04b9"
+      "size_bytes": 18296,
+      "sha256": "193034177f1fb1d5a583e689c882b359dc0cb0fbb07e7a97406a62527b355310"
+    },
+    {
+      "path": "native/check_critical_reference.py",
+      "size_bytes": 15457,
+      "sha256": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750"
     },
     {
       "path": "native/check_signal_geometry.py",
-      "size_bytes": 38079,
-      "sha256": "26be3f949ff5791dc81dd3a168962059f4219b7304840261eeaf6d44f28a86f4"
+      "size_bytes": 39061,
+      "sha256": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca"
+    },
+    {
+      "path": "native/compare_reference_geometry.py",
+      "size_bytes": 3902,
+      "sha256": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e"
+    },
+    {
+      "path": "native/comparison-70-to-69.json",
+      "size_bytes": 1236,
+      "sha256": "54e98f190dfa15c1ca8a06a0ecbb1e261c08a3064766b63a6b352ca61fbbeaa9"
+    },
+    {
+      "path": "native/comparison-75-to-70.json",
+      "size_bytes": 16908,
+      "sha256": "2fb8d0a97bf0545ea9104befa3dbd7f218c70756f8004bfc3e70b509b7d5afbe"
+    },
+    {
+      "path": "native/comparison-76-to-75.json",
+      "size_bytes": 14446,
+      "sha256": "3a09bfc8b458f6ba27ebc5a60dbd7f41d0d96203494fbc1439deabd1fdafa320"
+    },
+    {
+      "path": "native/comparison-77-to-76.json",
+      "size_bytes": 14935,
+      "sha256": "dafd3502950d620480f0320216574965fc89fde23217dc2f06cb40d07e027134"
     },
     {
       "path": "native/controls.json",
-      "size_bytes": 2434,
-      "sha256": "01078036f284cd9dd3a84387a2aee70cbece5cc4d12c70f6e6ccbdc2dbc18165"
+      "size_bytes": 3766,
+      "sha256": "3d0c406df597730dd34fa1a68f5f8a37f4c928678b22ad53fa92afa48605e745"
+    },
+    {
+      "path": "native/critical-reference.json",
+      "size_bytes": 494441,
+      "sha256": "d14f17f4f73335882e120cdf9a437a064560f0cc85553a430d1e9b64894f97a9"
     },
     {
       "path": "native/current-review.json",
-      "size_bytes": 149114,
-      "sha256": "37d87e02c7888e043dd4cd3b3ed3ec3552d1061855501d84f2049dffa1d06454"
+      "size_bytes": 243302,
+      "sha256": "4117b3e6bfd3e547e85379e0c10d5419afa9c00febe4076861349bbda4bfe77b"
     },
     {
       "path": "native/export_signal_snapshot.py",
-      "size_bytes": 7564,
-      "sha256": "9660f39e4ca30169b2545c437b26ae1e40c0e847eee74815e4eec0a43df5b3a3"
+      "size_bytes": 7632,
+      "sha256": "51c66696c9b1d8a4bd5caae0b265cb6e2cfaabc6459abb6b95b2a720aa063bbf"
     },
     {
       "path": "native/model-inputs.template.json",
       "size_bytes": 2777,
       "sha256": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184"
+    },
+    {
+      "path": "native/test_critical_reference.py",
+      "size_bytes": 5856,
+      "sha256": "be83ac047b097a68b97570dd1b75fcc9e9c1c12d06669c9ef977f9650ab10c70"
     },
     {
       "path": "native/test_signal_geometry.py",

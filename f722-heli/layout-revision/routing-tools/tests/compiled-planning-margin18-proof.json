@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "planning_margin_engine_units": 18,
+  "classpath_order": [
+    "build",
+    "vendor/freerouting-2.1.0.jar"
+  ],
+  "engine_class_sha256": "b14a445deaad3bbf794865d89b4ca6d7704b8f6137218dd8bc98b459fdcd8fad",
+  "call_sites": [
+    {
+      "class": "LocateFoundConnectionAlgo45Degree",
+      "source_line": 126,
+      "source_sha256": "85095c92b8caf66ed7bb485b543c1611c4f83d87049cac004ea4b1ad922a71ec",
+      "class_sha256": "e6f3dfef5c52e33dede3924151f1dc39d90e2033f2e0852db255268f03a3b0e0",
+      "compiled_evidence": [
+        {
+          "method": "calculate_next_trace_corners",
+          "descriptor": "()Ljava/util/Collection;",
+          "bytecode_offset": 74,
+          "opcode_hex": "0x10",
+          "numeric_constant": 18
+        }
+      ]
+    },
+    {
+      "class": "LocateFoundConnectionAlgoAnyAngle",
+      "source_line": 78,
+      "source_sha256": "5f9e0e9f354d10da8f6da0409e6a8e066d46c6a732babeb4b0d00abaeeb36112",
+      "class_sha256": "f30943704d4a99abf2bc152b4047eb9723791b92696bf31a86abb51af52ce567",
+      "compiled_evidence": [
+        {
+          "method": "calculate_next_trace_corners",
+          "descriptor": "()Ljava/util/Collection;",
+          "bytecode_offset": 83,
+          "opcode_hex": "0x14",
+          "numeric_constant": 18.0
+        }
+      ]
+    },
+    {
+      "class": "ExpansionDoor",
+      "source_line": 138,
+      "source_sha256": "d19243f770d8cbf3d87edc921edb63e5addb9db680ee2bce5973f0265344642b",
+      "class_sha256": "99a2e5bbff487acb35cbb431c8d69e14160b0f5565db7aa616969047912aad75",
+      "compiled_evidence": [
+        {
+          "method": "get_section_segments",
+          "descriptor": "(D)[Lapp/freerouting/geometry/planar/FloatLine;",
+          "bytecode_offset": 1,
+          "opcode_hex": "0x14",
+          "numeric_constant": 18.0
+        }
+      ]
+    },
+    {
+      "class": "MazeSearchAlgo",
+      "source_line": 321,
+      "source_sha256": "020bcdefc33082ea9e3a7e7466e104fb4d657dfb997dd371a7bb748379abc90a",
+      "class_sha256": "07472e65c063f35e2bbb39ca2fc829050e34fcb2ac4801e6f48aa6747ed3a728",
+      "compiled_evidence": [
+        {
+          "method": "expand_to_room_doors",
+          "descriptor": "(Lapp/freerouting/autoroute/MazeListElement;)Z",
+          "bytecode_offset": 83,
+          "opcode_hex": "0x14",
+          "numeric_constant": 18.0
+        }
+      ]
+    },
+    {
+      "class": "MazeSearchAlgo",
+      "source_line": 1290,
+      "source_sha256": "020bcdefc33082ea9e3a7e7466e104fb4d657dfb997dd371a7bb748379abc90a",
+      "class_sha256": "07472e65c063f35e2bbb39ca2fc829050e34fcb2ac4801e6f48aa6747ed3a728",
+      "compiled_evidence": [
+        {
+          "method": "enter_through_small_door",
+          "descriptor": "(Lapp/freerouting/autoroute/MazeListElement;Lapp/freerouting/board/Item;)Z",
+          "bytecode_offset": 131,
+          "opcode_hex": "0x10",
+          "numeric_constant": 18
+        }
+      ]
+    }
+  ],
+  "insertion_fixture_proof": {
+    "report_sha256": "5d4747679d0c66406bd9475eb10f3ee677308da333b0fbb4a13ee9b5d5dadf95",
+    "source_board_sha256": "221ee94c9a936be959dc89b7c7050a20b5f795af6a86921fb44c01a2e9dbecc3",
+    "fixture_sha256": "006ecf6f4658a130e755a14209d0691c0dfcbfc1fa7ce70057389628a06b9d43",
+    "planned_x_engine": 4116570,
+    "planned_x_mm": 41.1657,
+    "outward_shift_engine_units": 16,
+    "full_insertion": true,
+    "spring_over_unchanged": true,
+    "shove_checks_passed": true,
+    "original_segment_still_rejected": true,
+    "nominal_clearance_engine_units": 12700,
+    "insertion_clearance_with_safety_engine_units": 12716,
+    "guard_geometry_unchanged": true
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "source_board_sha256": "008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e",
+  "board_sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674",
+  "source_open_connections": 75,
+  "output_open_connections": 70,
+  "source_connected_nets": 10,
+  "output_connected_nets": 11,
+  "changes": [
+    {
+      "kind": "physical_nets",
+      "net": "ADC_BEC",
+      "before": [
+        [
+          "R40.2"
+        ],
+        [
+          "R41.1"
+        ],
+        [
+          "U1.9"
+        ],
+        [
+          "C30.1"
+        ]
+      ],
+      "after": [
+        [
+          "R40.2",
+          "R41.1",
+          "U1.9",
+          "C30.1"
+        ]
+      ]
+    },
+    {
+      "kind": "physical_nets",
+      "net": "BOOT0",
+      "before": [
+        [
+          "SW1.2"
+        ],
+        [
+          "SW1.2"
+        ],
+        [
+          "U1.60"
+        ],
+        [
+          "R2.1"
+        ]
+      ],
+      "after": [
+        [
+          "SW1.2",
+          "SW1.2"
+        ],
+        [
+          "U1.60"
+        ],
+        [
+          "R2.1"
+        ]
+      ]
+    },
+    {
+      "kind": "physical_nets",
+      "net": "NRST",
+      "before": [
+        [
+          "U1.7"
+        ],
+        [
+          "TP5.1"
+        ],
+        [
+          "C10.1"
+        ],
+        [
+          "R1.2"
+        ]
+      ],
+      "after": [
+        [
+          "U1.7",
+          "C10.1"
+        ],
+        [
+          "TP5.1"
+        ],
+        [
+          "R1.2"
+        ]
+      ]
+    },
+    {
+      "kind": "logical_nets",
+      "logical_net": "ADC_BEC",
+      "before": [
+        [
+          "R40.2"
+        ],
+        [
+          "R41.1"
+        ],
+        [
+          "U1.9"
+        ],
+        [
+          "C30.1"
+        ]
+      ],
+      "after": [
+        [
+          "R40.2",
+          "R41.1",
+          "U1.9",
+          "C30.1"
+        ]
+      ]
+    },
+    {
+      "kind": "logical_nets",
+      "logical_net": "BOOT0",
+      "before": [
+        [
+          "SW1.2"
+        ],
+        [
+          "SW1.2"
+        ],
+        [
+          "U1.60"
+        ],
+        [
+          "R2.1"
+        ]
+      ],
+      "after": [
+        [
+          "SW1.2",
+          "SW1.2"
+        ],
+        [
+          "U1.60"
+        ],
+        [
+          "R2.1"
+        ]
+      ]
+    },
+    {
+      "kind": "logical_nets",
+      "logical_net": "NRST",
+      "before": [
+        [
+          "U1.7"
+        ],
+        [
+          "TP5.1"
+        ],
+        [
+          "C10.1"
+        ],
+        [
+          "R1.2"
+        ]
+      ],
+      "after": [
+        [
+          "U1.7",
+          "C10.1"
+        ],
+        [
+          "TP5.1"
+        ],
+        [
+          "R1.2"
+        ]
+      ]
+    }
+  ],
+  "all_previous_physical_and_logical_pad_groups_retained": true,
+  "notes": [
+    "ADC_BEC now connects all four pads.",
+    "NRST joins U1.7 and C10.1; TP5.1 and R1.2 remain separate.",
+    "BOOT0 joins only the two distinct SW1.2 physical pads; U1.60 and R2.1 remain separate."
+  ]
+}

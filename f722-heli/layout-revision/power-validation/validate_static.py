@@ -218,6 +218,113 @@ def summarize_transfer(mesh, test):
     return {'resistance_ohm': resistance, 'field': result}
 
 
+def remember_geometry_certificate(context, net, layer, receipt):
+    # JSON is the declared cache/result schema. Tuple/list differences from an
+    # in-memory producer cannot change its exact serialized geometry evidence.
+    canonical=lambda value:json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False)
+    encoded=canonical(receipt);normalized=json.loads(encoded)
+    certificates=context.setdefault('geometry_certificates',{});key=net+'/'+layer
+    if key in certificates and canonical(certificates[key])!=encoded:
+        previous=canonical(certificates[key]);failure=Refused('Native geometry certificate changed between meshes: '+key)
+        failure.geometry_reproduction={'stage':'geometry_certificate_comparison','net':net,'layer':layer,
+          'previous_sha256':hashlib.sha256(previous.encode()).hexdigest(),
+          'current_sha256':hashlib.sha256(encoded.encode()).hexdigest(),
+          'previous_receipt':certificates[key],'current_receipt':normalized}
+        raise failure
+    certificates[key]=normalized
+
+
+def compact_result_evidence(result):
+    """Replace repeated geometry receipts with verified references for CLI JSON.
+
+    The library result stays unchanged. Numerical arrays/rows and the one
+    top-level certificate store are shared, not copied. Each distinct receipt
+    object is hashed only once, using the same canonical JSON as the exact
+    geometry comparison (tuple/list differences therefore remain harmless).
+    Already compact blocks are checked again instead of trusting their hashes.
+    """
+    certificates=result.get('geometry_certificates',{})
+    if not isinstance(certificates,dict):
+        raise Refused('Result geometry certificate store is not a dictionary')
+    encoder=json.JSONEncoder(sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False)
+    hashes={}
+    def digest(receipt):
+        if not isinstance(receipt,dict):
+            raise Refused('Result geometry certificate is not a dictionary')
+        identity=id(receipt)
+        if identity not in hashes:
+            value=hashlib.sha256()
+            try:
+                for chunk in encoder.iterencode(receipt):value.update(chunk.encode('utf-8'))
+            except (TypeError,ValueError) as exc:
+                raise Refused('Result geometry certificate is not finite canonical JSON') from exc
+            hashes[identity]=(receipt,value.hexdigest())
+        return hashes[identity][1]
+    stored={key:digest(receipt) for key,receipt in certificates.items()}
+    touched=False
+    def compact_block(block,net,where):
+        nonlocal touched
+        raw='native_edge_noding' in block
+        referenced='native_edge_noding_refs' in block
+        if not raw and not referenced:return block
+        if raw and referenced:
+            raise Refused('Result block has both full and referenced geometry evidence: '+where)
+        evidence=block['native_edge_noding' if raw else 'native_edge_noding_refs']
+        if not isinstance(evidence,dict):
+            raise Refused('Result geometry evidence is not a layer dictionary: '+where)
+        refs={}
+        for layer,receipt in evidence.items():
+            if not isinstance(net,str) or not isinstance(layer,str):
+                raise Refused('Result geometry evidence has no exact net/layer identity: '+where)
+            key=net+'/'+layer
+            if key not in stored:
+                raise Refused('Missing top-level geometry certificate '+key+' for '+where)
+            if raw:
+                actual=digest(receipt)
+            else:
+                if not isinstance(receipt,dict) or set(receipt)!={'certificate_key','sha256'} or receipt['certificate_key']!=key:
+                    raise Refused('Invalid result geometry certificate reference: '+where+'/'+layer)
+                actual=receipt['sha256']
+            if actual!=stored[key]:
+                raise Refused('Result geometry certificate hash mismatch: '+where+'/'+layer)
+            refs[layer]={'certificate_key':key,'sha256':stored[key]}
+        compact=dict(block)
+        compact.pop('native_edge_noding',None)
+        compact['native_edge_noding_refs']=refs
+        touched=True
+        return compact
+    def compact_transfer(transfer,where):
+        if 'field' not in transfer:return transfer
+        return {**transfer,'field':compact_block(transfer['field'],transfer.get('net'),where+'/field')}
+    def compact_run(run,where):
+        compact=dict(run)
+        if 'ports' in run:
+            compact['ports']=[compact_block(block,block.get('net'),where+'/ports/'+str(i))
+                              for i,block in enumerate(run['ports'])]
+        if 'unit_transfers' in run:
+            compact['unit_transfers']=[compact_transfer(row,where+'/unit_transfers/'+str(i))
+                                       for i,row in enumerate(run['unit_transfers'])]
+        if 'loops' in run:
+            compact['loops']=[{**loop,'legs':[compact_transfer(leg,where+'/loops/'+str(i)+'/legs/'+str(j))
+                                             for j,leg in enumerate(loop['legs'])]}
+                              for i,loop in enumerate(run['loops'])]
+        if 'cases' in run:
+            compact['cases']=[{**case,'fields':{net:compact_block(field,net,where+'/cases/'+str(i)+'/fields/'+net)
+                                               for net,field in case['fields'].items()}}
+                              if 'fields' in case else case for i,case in enumerate(run['cases'])]
+        return compact
+    compact=dict(result)
+    for category in ['runs','partial_runs_unqualified']:
+        if category in result:
+            compact[category]=[compact_run(run,category+'/'+str(i)) for i,run in enumerate(result[category])]
+    if touched:
+        compact['geometry_certificate_reference_format']={
+          'schema':'f722-native-geometry-certificate-reference/v1',
+          'store':'geometry_certificates','hash':'SHA-256',
+          'canonical_json':{'sort_keys':True,'separators':[',',':'],'ensure_ascii':True,'allow_nan':False,'encoding':'UTF-8'}}
+    return compact
+
+
 def run_screen(context):
     if context['manifest'].get('numerical_execution_authorized') is False:
         raise Refused('Numerical compute slot has not been released for this compiled freeze')
@@ -226,17 +333,38 @@ def run_screen(context):
     ledger = context['ledger']; geometry = context['geometry']; material = context['material']
     limits = Limits(**ledger.get('limits', {}))
     runs = []
+    context['partial_runs']=runs  # Retain completed grids on a later refusal.
     started=time.monotonic()
     def progress(stage,**extra):
         callback=context.get('progress')
         if callback:callback({'stage':stage,'elapsed_seconds':time.monotonic()-started,**extra})
+    context.setdefault('geometry_certificates',{})
+    context.setdefault('mesh_cache_receipts',[])
+    def remember_geometry(net,layer,receipt):
+        remember_geometry_certificate(context,net,layer,receipt)
     def make_mesh(network, spacing):
         progress('mesh_start',net=network['net'],spacing_mm=spacing)
+        net=network['net'];mesh=None;binding=None;cache_dir=context.get('mesh_cache_dir')
+        if cache_dir is not None:
+            from mesh_cache import mesh_binding,load_mesh,save_mesh
+            binding=mesh_binding(context,network,spacing);mesh=load_mesh(cache_dir,binding,limits)
+        if mesh is not None:
+            for layer,receipt in mesh.native_edge_noding.items():remember_geometry(net,layer,receipt)
+            context['mesh_cache_receipts'].append(mesh.mesh_cache_info)
+            progress('mesh_cache_loaded',net=net,spacing_mm=spacing,raw_nodes=len(mesh.xyz),equations=mesh.n,triangles=len(mesh.triangles))
+            return mesh
         domains, pads, barrels = native_geometry(geometry, network['net'])
         contacts = {node: (spec['layer'], contact_spec_geometry(pads,spec))
                     for node,spec in network['contacts'].items()}
         mesh=Mesh(domains, contacts, spacing, material['sheet_ohm'], material['thickness_mm'],
-                  barrels, context['stackup']['layer_z_mm'], material['plating_mm'], limits)
+                  barrels, context['stackup']['layer_z_mm'], material['plating_mm'], limits,
+                  native_edge_provider=(lambda layer:__import__('native_edge_noding').native_edges(geometry,net,layer))
+                    if 'native_edge_noding.py'in context['manifest'].get('analysis_source_sha256',{})else None,
+                  geometry_progress=lambda row:progress(row.pop('stage'),net=net,spacing_mm=spacing,**row),
+                  geometry_certificate=lambda layer,receipt:remember_geometry(net,layer,receipt))
+        if cache_dir is not None:
+            receipt=save_mesh(mesh,cache_dir,binding);context['mesh_cache_receipts'].append(receipt)
+            progress('mesh_checkpoint_saved',net=net,spacing_mm=spacing,cache_receipt=receipt)
         progress('mesh_ready',net=network['net'],spacing_mm=spacing,raw_nodes=len(mesh.xyz),
                  equations=mesh.n,triangles=len(mesh.triangles),contacts=len(mesh.contact_nodes),element_geometry=mesh.element_geometry)
         return mesh
@@ -337,6 +465,7 @@ def run_screen(context):
             'impedance_sensitivity':sensitivity,'voltage_margin_checks':margins,'resistance_margin_checks':resistance_margins,
             'runs':runs,'software':{'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'shapely':shapely.__version__,
               'source_sha256':{name:sha256(Path(__file__).parent/name) for name in ['copper_fem.py','dc_circuit.py','validate_static.py']}},
+            'geometry_certificates':context['geometry_certificates'],'mesh_cache_receipts':context['mesh_cache_receipts'],
             'limitations':['New explicitly enumerated cases only; no historical result reuse.',
               'Two-grid sensitivity is not a rigorous discretization or manufacturing error bound.',
               'Finite lands and annuli omit within-land, pin, solder and contact heating; external contact/harness resistors belong in each ledger.',
@@ -349,6 +478,7 @@ def main():
     parser.add_argument('--freeze',type=Path,required=True); parser.add_argument('--ledger',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--run',action='store_true',help='Run only after the power owner grants the compute slot; otherwise preflight only')
+    parser.add_argument('--mesh-cache',type=Path,help='Private source-bound numerical checkpoints; never a substitute for source checks')
     args=parser.parse_args()
     try:
         guard_output(args.freeze,args.ledger,args.out)
@@ -358,19 +488,36 @@ def main():
     context=None
     try:
         context=preflight(args.freeze,args.ledger)
+        context['mesh_cache_dir']=args.mesh_cache
         if args.run:
             context['progress']=lambda row:print(json.dumps({'progress':row}),file=sys.stderr,flush=True)
         result=run_screen(context) if args.run else {'status':'PREFLIGHT ONLY; NO BOARD MESH RUN','board_sha256':context['board_sha256'],'scope':context['manifest']['scope'],'drc':context['drc']}
         code=0 if not args.run or result['conditional_static_screen_pass'] else 1
-    except (Refused,KeyError,TypeError,ValueError,shapely.errors.GEOSException) as exc:
-        result={'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False}; code=2
+    except (Refused,KeyError,TypeError,ValueError,MemoryError,shapely.errors.GEOSException) as exc:
+        result={'status':'REFUSED','reason':str(exc)or type(exc).__name__,'conditional_static_screen_pass':False}; code=2
         if context is not None:result.update(board_sha256=context['board_sha256'],freeze_sha256=context['freeze_sha256'],ledger_sha256=context['ledger_sha256'])
         if hasattr(exc,'geometry_reproduction'):result['geometry_reproduction']=exc.geometry_reproduction
+        if hasattr(exc,'linear_solver_diagnostics'):result['linear_solver_diagnostics']=exc.linear_solver_diagnostics
+        if context is not None:
+            result['geometry_certificates']=context.get('geometry_certificates',{})
+            result['mesh_cache_receipts']=context.get('mesh_cache_receipts',[])
+            result['partial_runs_unqualified']=context.get('partial_runs',[])
+            result['partial_runs_are_converged']=False
     # Repeat after a potentially long run in case a destination symlink changed.
     try:
         guard_output(args.freeze,args.ledger,args.out)
     except Refused as exc:
         print(json.dumps({'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False}))
+        return 2
+    try:
+        result=compact_result_evidence(result)
+    except (Refused,TypeError,ValueError,KeyError) as exc:
+        # An unverifiable evidence reference must never be published as a pass.
+        # Leave both the full in-memory evidence and any existing output intact.
+        refusal={'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False,
+                 'output_written':False}
+        refusal.update({key:result[key] for key in ['board_sha256','freeze_sha256','ledger_sha256'] if key in result})
+        print(json.dumps(refusal))
         return 2
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')

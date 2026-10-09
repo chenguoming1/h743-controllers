@@ -1,0 +1,163 @@
+{
+  "schema": "synthetic-end-queue-stop/v1",
+  "synthetic_only": true,
+  "dsn_sha256": "ef1210a4b95c039b5b703a2959f133ac8dd5a000398fe96965f053a269fc3060",
+  "contacts": [
+    {
+      "uuid": "SYNTHETIC_A",
+      "key": "SYNTHETIC_A",
+      "layer": "F.Cu",
+      "net": "TEST",
+      "owners": [
+        "TEST"
+      ],
+      "plated": false,
+      "native_group": "SYNTHETIC_A",
+      "native_group_multi": false,
+      "convex": [
+        [
+          [
+            1,
+            5
+          ],
+          [
+            1.25,
+            5
+          ],
+          [
+            1.25,
+            5.25
+          ],
+          [
+            1,
+            5.25
+          ]
+        ]
+      ]
+    },
+    {
+      "uuid": "SYNTHETIC_B",
+      "key": "SYNTHETIC_B",
+      "layer": "F.Cu",
+      "net": "TEST",
+      "owners": [
+        "TEST"
+      ],
+      "plated": false,
+      "native_group": "SYNTHETIC_B",
+      "native_group_multi": false,
+      "convex": [
+        [
+          [
+            8,
+            5
+          ],
+          [
+            8.25,
+            5
+          ],
+          [
+            8.25,
+            5.25
+          ],
+          [
+            8,
+            5.25
+          ]
+        ]
+      ]
+    }
+  ],
+  "guards": [
+    {
+      "label": "SYNTHETIC_A:copper",
+      "layer": "F.Cu",
+      "kind": "foreign",
+      "owners": [
+        "TEST"
+      ],
+      "clearance": 0.127,
+      "convex": [
+        [
+          [
+            1,
+            5
+          ],
+          [
+            1.25,
+            5
+          ],
+          [
+            1.25,
+            5.25
+          ],
+          [
+            1,
+            5.25
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "SYNTHETIC_B:copper",
+      "layer": "F.Cu",
+      "kind": "foreign",
+      "owners": [
+        "TEST"
+      ],
+      "clearance": 0.127,
+      "convex": [
+        [
+          [
+            8,
+            5
+          ],
+          [
+            8.25,
+            5
+          ],
+          [
+            8.25,
+            5.25
+          ],
+          [
+            8,
+            5.25
+          ]
+        ]
+      ]
+    }
+  ],
+  "purpose": "One successful connection followed by natural queue exhaustion; fixed trace, via, contacts and guards must survive.",
+  "seed_model": "tests/failed-search-state/fixture/model.json",
+  "seed_model_sha256": "d8ec9da09732cf3a804c7be951d97bbd34f1c7f20d8a5f00ee67e20f3640a520",
+  "physical_board": "tests/end-queue-stop/fixture/synthetic-board-identity.txt",
+  "board_sha256": "1a319e6bfcefde899333b382fb9e6714edc95b8163998ddb4cb530e5b97fcc34",
+  "physical_native": "tests/end-queue-stop/fixture/synthetic-native-identity.txt",
+  "native_sha256": "afa6b5e487a7973e6e156ccb3b19324582009c3eec69f34e54d834636bffe3c4",
+  "ordinary_nets": [
+    "TEST"
+  ],
+  "aliases": {
+    "TEST": "TEST",
+    "FIXED_OTHER": "FIXED_OTHER"
+  },
+  "support_ready": true,
+  "adapter_sources": {
+    "src/LocalRouter.java": "2e8fcec59f2e89b28be8670b71bdff61627874e57c08a6ffabd4949a99d182df",
+    "src/NativeContactRegression.java": "5147318bf446197fa1d79bcbacc87a018b79883cd88e59ddb465516f1747de04",
+    "src/PhysicalOwnerInsertionControl.java": "7f06ba87d966eee60225629bf15c68d138e4465ffa66d0389675f6eec527ab21",
+    "src/ReferencePlaneViaRegression.java": "0a8aee93d613d33e00bbbcb6a3c63dbad5f54ba564b732c9909de5a584499be9",
+    "src/SharedPadSeamControl.java": "f44efd6ec7d478484f6640d481c61eb5e80ac2ca2b774372e6c6f7c8ad88aef4",
+    "src/app/freerouting/autoroute/AutorouteEngine.java": "0ce99b13821a3929eb85f127ad0332e76984295d701622b3578d2e95a66d5d73",
+    "src/app/freerouting/autoroute/BatchAutorouter.java": "0fb10dd577de3843422dac66cc918102e0a65c4a2eaf975524140169e0201a54",
+    "src/app/freerouting/autoroute/ExpansionDoor.java": "d19243f770d8cbf3d87edc921edb63e5addb9db680ee2bce5973f0265344642b",
+    "src/app/freerouting/autoroute/InsertFoundConnectionAlgo.java": "6d3cfe7524625cd2bbba9f1172bd8aa8aedc66ac06a4cbfb994e12e4ad86464b",
+    "src/app/freerouting/autoroute/LocateFoundConnectionAlgo45Degree.java": "85095c92b8caf66ed7bb485b543c1611c4f83d87049cac004ea4b1ad922a71ec",
+    "src/app/freerouting/autoroute/LocateFoundConnectionAlgoAnyAngle.java": "5f9e0e9f354d10da8f6da0409e6a8e066d46c6a732babeb4b0d00abaeeb36112",
+    "src/app/freerouting/autoroute/MazeSearchAlgo.java": "020bcdefc33082ea9e3a7e7466e104fb4d657dfb997dd371a7bb748379abc90a",
+    "src/app/freerouting/board/NativeGuardFactory.java": "882f19095ff8373d57dba1ee125fca9a54583d97a7f4b14b0e65d44f053b82d2",
+    "src/app/freerouting/board/NativePadContactArea.java": "55d1bcd918e58178edfab29f77dfc4569d4e5d5d29c8339e982b301afaa4b92b",
+    "src/app/freerouting/board/Trace.java": "9ccde2f6611078abdb2e7b74e76a84223ac754c0e05d353e60f330d93d3dedeb"
+  }
+}

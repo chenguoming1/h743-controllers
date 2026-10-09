@@ -17,7 +17,8 @@ from shapely.geometry import GeometryCollection, LineString, Point, Polygon
 from shapely.ops import unary_union
 
 I2C = {"BARO_SCL": ["U1.61", "U4.4", "R7.2"], "BARO_SDA": ["U1.62", "U4.3", "R8.2"]}
-CRITICAL = ["USB_P", "USB_N", "HSE_IN", "HSE_OUT", "HSE_XTAL_OUT"]
+CRITICAL = ["USB_P", "USB_N", "HSE_IN", "HSE_OUT", "HSE_XTAL_OUT",
+            "IMU_CS", "IMU_INT", "IMU_MISO", "IMU_MOSI", "IMU_SCK"]
 EPS = 0.000001  # 1 nm endpoint key/roundoff; not a copper gap closure.
 
 
@@ -248,12 +249,22 @@ def usb_reference_intervals(g, meta, entries):
     planes = {l: unary_union([e["shape"] for e in entries if e["layer"] == l and e["net"] == "GND"]) for l in plane_layers}
     zone_planes = {l: unary_union([e["shape"] for e in entries if e["layer"] == l and e["net"] == "GND" and e["kind"] == "zone"]) for l in plane_layers}
     holes = {l: [Polygon(ring) for p in pieces(zone_planes[l], "Polygon") for ring in p.interiors] for l in plane_layers}
+    # A land in the GND union intersects itself even if it misses the zone.
+    # Require positive annular overlap with actual SAVED ZONE fill, after
+    # drill subtraction, and a plated barrel spanning both reference planes.
+    cuts = {l: unary_union([poly(o["drill"]["outside"]) for o in g["objects"]
+                           if o.get("drill") and (o.get("npth") or l in o.get("barrel_layers", []))])
+            for l in plane_layers}
     ties = []
     for o in g["objects"]:
-        if o["net"] != "GND" or not o.get("plated"):
+        if o["net"] != "GND" or not o.get("plated") or not o.get("drill"):
             continue
-        if all(l in o["copper"] and poly(o["copper"][l]).intersects(planes[l]) for l in plane_layers):
-            ties.append({"uuid": o["uuid"], "kind": o["kind"], "label": o.get("key"), "xy_mm": o.get("xy", o.get("start"))})
+        contact = {l: poly(o["copper"].get(l, [])).difference(cuts[l]).intersection(zone_planes[l].difference(cuts[l])).area
+                   for l in plane_layers}
+        if all(l in o.get("barrel_layers", []) and contact[l] > 1e-10 for l in plane_layers):
+            ties.append({"uuid": o["uuid"], "kind": o["kind"], "label": o.get("key"),
+                         "xy_mm": o.get("xy", o.get("start")), "barrel_layers": o["barrel_layers"],
+                         "positive_saved_zone_contact_area_mm2": contact})
     all_vias = [o for o in g["objects"] if o["kind"] == "via"]
     windows, transitions = {}, []
     for v in all_vias:
@@ -324,7 +335,7 @@ def usb_reference_intervals(g, meta, entries):
             raise ValueError("USB interval classification failed length conservation")
     return {"totals_mm": totals, "intervals": intervals, "transitions": transitions,
             "unsupported_tracks": unsupported_tracks,
-            "method": "Each missing interval is split by the intersection of its actual containing native zone hole and a small own-via window (land radius + max native via/zone clearance + twice native polygon error). Merged-hole extensions receive no blanket exemption. Ground ties geometrically contact both saved GND planes.",
+            "method": "Each missing interval is split by the intersection of its actual containing native zone hole and a small own-via window (land radius + max native via/zone clearance + twice native polygon error). Merged-hole extensions receive no blanket exemption. Ground ties have finite barrels spanning both reference planes and positive annular-area contact with both saved GND zone fills after drill subtraction; self-land contact is excluded.",
             "limits": "Local antipad classification explains the gap; it does not prove adequate return inductance, impedance or USB compliance. Distances are geometric, with no asserted universal maximum."}
 
 
@@ -589,7 +600,7 @@ def main():
               "limits": ["Whole-net length sums every native track once, including pull-up branches, pad overlap, stubs and any duplicated geometry. It is not a shortest route length.",
                          "Reference projection uses actual saved exact copper; it reports gaps and other copper, not impedance or return-current performance. No broad own-via antipad exemption is applied.",
                          "Arc projection is chorded at 10 nm sagitta; exact native lengths remain authoritative. Arc topology/loading is explicitly unsupported.",
-                         "USB/clock connectivity and saved-plane projections do not establish USB impedance, eye compliance, oscillator startup or drive level.",
+                         "USB/clock/IMU connectivity and saved-plane projections do not establish impedance, timing, IMU performance, USB eye compliance, oscillator startup or drive level.",
                          "Stock firmware and 2.2k 1% R7/R8 remain untouched. Device guarantees and bench requirements remain open."]}
     if sha(args.board) != meta["board_sha256"]:
         raise ValueError("Board changed while checking; re-export")

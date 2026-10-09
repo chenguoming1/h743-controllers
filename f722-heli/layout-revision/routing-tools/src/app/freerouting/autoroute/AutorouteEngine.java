@@ -20,7 +20,9 @@ public class AutorouteEngine
 {
 
   public final Map<String,Double> stageSeconds=new LinkedHashMap<>();
-  static final int TRACE_WIDTH_TOLERANCE = 2;
+  // Planning reserves stock insertion safety (16 units) plus the original
+  // 2-unit locator rounding allowance. Physical rules remain unchanged.
+  static final int TRACE_WIDTH_TOLERANCE = 18;
   /**
    * The current search tree used in autorouting. It depends on the trac clearance class used in the
    * autoroute algorithm.
@@ -147,6 +149,7 @@ public class AutorouteEngine
     stageSeconds.put("maze_setup_seconds",(System.nanoTime()-stageStart)/1e9);stageStart=System.nanoTime();
     if (maze_search_algo == null)
     {
+      cleanup_failed_search();
       return new AutorouteAttemptResult(AutorouteAttemptState.FAILED, "Failed to route connection between " + sourceItems + " and " + targetItems + ", because the maze search algorithm could not be created.");
     }
 
@@ -165,6 +168,7 @@ public class AutorouteEngine
     stageSeconds.put("maze_search_seconds",(System.nanoTime()-stageStart)/1e9);stageStart=System.nanoTime();
     if (search_result == null)
     {
+      cleanup_failed_search();
       return new AutorouteAttemptResult(AutorouteAttemptState.FAILED, "Failed to route connection between " + sourceItems + " and " + targetItems + ", because no connection was found between their nets.");
     }
 
@@ -254,6 +258,25 @@ public class AutorouteEngine
     }
 
     return new AutorouteAttemptResult(AutorouteAttemptState.ROUTED);
+  }
+
+  /** Failed searches must release the same temporary state as located searches.
+   * With maintain_database=false, the next connection replaces this engine but
+   * reuses its search tree. Leaving completed rooms there makes them orphaned
+   * obstacles and can prevent the reverse connection from even initializing.
+   */
+  private void cleanup_failed_search()
+  {
+    long started = System.nanoTime();
+    if (!this.maintain_database)
+    {
+      this.clear();
+    }
+    else
+    {
+      this.reset_all_doors();
+    }
+    stageSeconds.put("failure_cleanup_seconds", (System.nanoTime() - started) / 1e9);
   }
 
   /**

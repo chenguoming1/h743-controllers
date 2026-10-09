@@ -1,0 +1,554 @@
+{
+  "board_sha256": "221ee94c9a936be959dc89b7c7050a20b5f795af6a86921fb44c01a2e9dbecc3",
+  "native_sha256": "0aa8406895d155cf98710452ee9c7c8b0f49decf9ba676a09639777b062afb1a",
+  "native_polygon_max_error_mm": 1e-05,
+  "shapely_version": "2.2.0",
+  "rules_mm": {
+    "trace_width": 0.127,
+    "via_diameter": 0.45,
+    "via_drill": 0.2,
+    "copper_gap": 0.127,
+    "drill_mask_gap": 0.2,
+    "drill_drill_gap": 0.25,
+    "edge_npth_copper_gap": 0.254
+  },
+  "scope": "Full native board free-space diagnostic only. No geometry repair, route search, board/model edits or engine acceptance claim. All six layers retain native copper; only In1/In4 regenerable GND fills excluded. SMT mask and drill obstacles have no same-net exception.",
+  "results": [
+    {
+      "net": "ADC_DIV_MID",
+      "layer": "F.Cu",
+      "excluded_regenerable_gnd_zone_ids": [
+        "c956a476-e320-4f09-9832-420df749bd95",
+        "ee652b71-6147-4d53-abc1-8530e0b19eaf"
+      ],
+      "trace_obstacle_count": 717,
+      "via_obstacle_count": 2214,
+      "via_obstacle_category_counts": {
+        "foreign_copper_all_layers": 1486,
+        "all_smt_masks_both_faces": 492,
+        "all_drills_no_net_exception": 231,
+        "npth_copper": 2,
+        "rule_copper_via": 3
+      },
+      "optimistic_native": {
+        "R43.2": {
+          "target_area_mm2": 0.20747692410299276,
+          "legal_target_area_mm2": 0.20747692410299276,
+          "trace_component_area_mm2": 322.60035850388874,
+          "legal_via_region_area_mm2": 77.61899029575764,
+          "legal_via_region_component_count": 54,
+          "via_center_exists": true,
+          "witness_mm": [
+            1.013935044130637,
+            12.562784396795612
+          ],
+          "witness_minimum_extra_clearance_mm": 0.5342985778790447,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.5342985778790447,
+              "object": "458e40e6-111c-4953-8b30-2fb4a292cba4",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.5349350441306367,
+              "object": "board-outline-including-npth",
+              "category": "edge_npth_copper"
+            },
+            {
+              "extra_clearance_mm": 1.7940649558693629,
+              "object": "J5.1",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 2.148149481455508,
+              "object": "J5.1",
+              "category": "all_drills_no_net_exception"
+            },
+            {
+              "extra_clearance_mm": 2.803085808796936,
+              "object": "J4.1",
+              "category": "foreign_copper_all_layers"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              21.84262402771829,
+              15.659087537305037
+            ],
+            "target_box_extension_mm": 2.0,
+            "minimum_extra_clearance_mm": 0.22555800622864397
+          }
+        },
+        "R44.1": {
+          "target_area_mm2": 0.20747692410299262,
+          "legal_target_area_mm2": 0.20747692410299265,
+          "trace_component_area_mm2": 2.876750264880822,
+          "legal_via_region_area_mm2": 0.11615236484002264,
+          "legal_via_region_component_count": 3,
+          "via_center_exists": true,
+          "witness_mm": [
+            25.380586234777287,
+            14.575530908556619
+          ],
+          "witness_minimum_extra_clearance_mm": 0.05614652134149822,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.05614652134149822,
+              "object": "C13.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.057413765222712576,
+              "object": "C11.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.10814652134149816,
+              "object": "C13.2",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.10941376522271251,
+              "object": "C11.2",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.12741276522271183,
+              "object": "U1.42",
+              "category": "foreign_copper_all_layers"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              25.37731636298612,
+              14.601946475008862
+            ],
+            "target_box_extension_mm": 2.0,
+            "minimum_extra_clearance_mm": 0.05873409457869461
+          },
+          "legal_via_regions": [
+            {
+              "area_mm2": 0.02617084519278474,
+              "bounds_mm": [
+                24.280841857342615,
+                13.2784,
+                24.59234647220929,
+                13.373462884650888
+              ],
+              "distance_to_target_mm": 3.1201520177120847
+            },
+            {
+              "area_mm2": 0.007543221106606406,
+              "bounds_mm": [
+                24.570093316479483,
+                15.027000000000001,
+                24.71982924716786,
+                15.139350881669094
+              ],
+              "distance_to_target_mm": 1.5003369199624765
+            },
+            {
+              "area_mm2": 0.08243829854063149,
+              "bounds_mm": [
+                25.194614752272958,
+                14.250777875621203,
+                25.51174358316851,
+                14.90160171771929
+              ],
+              "distance_to_target_mm": 1.4125884192934428
+            }
+          ]
+        }
+      },
+      "conservative_native": {
+        "R43.2": {
+          "target_area_mm2": 0.20747692410299276,
+          "legal_target_area_mm2": 0.20747692410299276,
+          "trace_component_area_mm2": 322.5892396003227,
+          "legal_via_region_area_mm2": 77.61004979126999,
+          "legal_via_region_component_count": 54,
+          "via_center_exists": true,
+          "witness_mm": [
+            1.0139398427183606,
+            12.562783013339358
+          ],
+          "witness_minimum_extra_clearance_mm": 0.5342938524672158,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.5342938524672158,
+              "object": "458e40e6-111c-4953-8b30-2fb4a292cba4",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.5349398427183606,
+              "object": "board-outline-including-npth",
+              "category": "edge_npth_copper"
+            },
+            {
+              "extra_clearance_mm": 1.7940601572816397,
+              "object": "J5.1",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 2.1481446361983685,
+              "object": "J5.1",
+              "category": "all_drills_no_net_exception"
+            },
+            {
+              "extra_clearance_mm": 2.8030815307156134,
+              "object": "J4.1",
+              "category": "foreign_copper_all_layers"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              21.842607371270507,
+              15.659060850957403
+            ],
+            "target_box_extension_mm": 2.0,
+            "minimum_extra_clearance_mm": 0.22556223763532368
+          }
+        },
+        "R44.1": {
+          "target_area_mm2": 0.20747692410299262,
+          "legal_target_area_mm2": 0.20747692410299265,
+          "trace_component_area_mm2": 2.876418828541364,
+          "legal_via_region_area_mm2": 0.11607529315782633,
+          "legal_via_region_component_count": 3,
+          "via_center_exists": true,
+          "witness_mm": [
+            25.380585892793903,
+            14.575537109701365
+          ],
+          "witness_minimum_extra_clearance_mm": 0.05614741261742301,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.05614741261742301,
+              "object": "C13.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.057414107206096354,
+              "object": "C11.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.10814741261742294,
+              "object": "C13.2",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.10941410720609629,
+              "object": "C11.2",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.12741310720609567,
+              "object": "U1.42",
+              "category": "foreign_copper_all_layers"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              25.37731585997316,
+              14.601953981364206
+            ],
+            "target_box_extension_mm": 2.0,
+            "minimum_extra_clearance_mm": 0.05873541297398138
+          },
+          "legal_via_regions": [
+            {
+              "area_mm2": 0.026152052805108853,
+              "bounds_mm": [
+                24.280873540592452,
+                13.278418943361997,
+                24.592300291645724,
+                13.37343318984337
+              ],
+              "distance_to_target_mm": 3.120184102338628
+            },
+            {
+              "area_mm2": 0.0075312331766558245,
+              "bounds_mm": [
+                24.57015933858364,
+                15.027028506948547,
+                24.719766337289478,
+                15.139284834621648
+              ],
+              "distance_to_target_mm": 1.5003876058481873
+            },
+            {
+              "area_mm2": 0.08239200717606165,
+              "bounds_mm": [
+                25.194674248128354,
+                14.250859021877059,
+                25.511698422918663,
+                14.901570249376276
+              ],
+              "distance_to_target_mm": 1.4126193900623951
+            }
+          ]
+        }
+      },
+      "seconds": 2.879657932997361
+    },
+    {
+      "net": "FLASH_WP_N",
+      "layer": "B.Cu",
+      "excluded_regenerable_gnd_zone_ids": [
+        "c956a476-e320-4f09-9832-420df749bd95",
+        "ee652b71-6147-4d53-abc1-8530e0b19eaf"
+      ],
+      "trace_obstacle_count": 837,
+      "via_obstacle_count": 2214,
+      "via_obstacle_category_counts": {
+        "foreign_copper_all_layers": 1486,
+        "all_smt_masks_both_faces": 492,
+        "all_drills_no_net_exception": 231,
+        "npth_copper": 2,
+        "rule_copper_via": 3
+      },
+      "optimistic_native": {
+        "R5.2": {
+          "target_area_mm2": 0.2074769241029928,
+          "legal_target_area_mm2": 0.2074769241029925,
+          "trace_component_area_mm2": 47.59659143375106,
+          "legal_via_region_area_mm2": 12.938442974491378,
+          "legal_via_region_component_count": 11,
+          "via_center_exists": true,
+          "witness_mm": [
+            38.658781001017665,
+            19.35112360612392
+          ],
+          "witness_minimum_extra_clearance_mm": 0.1419379035725143,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.1419379035725143,
+              "object": "U3.5",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.18753319228014886,
+              "object": "D1.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.19393790357251423,
+              "object": "U3.5",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.2395331922801488,
+              "object": "D1.2",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.8473989840549211,
+              "object": "c2ea82b7-f002-4f14-8056-82ab912f9b6b",
+              "category": "foreign_copper_all_layers"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              30.724249999999998,
+              24.596536
+            ],
+            "target_box_extension_mm": 4.0,
+            "minimum_extra_clearance_mm": 0.09011263420083426
+          }
+        },
+        "U3.3": {
+          "target_area_mm2": 0.19182907739757388,
+          "legal_target_area_mm2": 0.19182907739757388,
+          "trace_component_area_mm2": 2.775664141776123,
+          "legal_via_region_area_mm2": 0.013041042113989418,
+          "legal_via_region_component_count": 2,
+          "via_center_exists": true,
+          "witness_mm": [
+            32.077913871932836,
+            18.824090788308965
+          ],
+          "witness_minimum_extra_clearance_mm": 0.040522934806761834,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.040522934806761834,
+              "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.04562023993430009,
+              "object": "50395a14-6c4d-433d-91b4-8d2840dd56bd",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.0607391884992296,
+              "object": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.07390921169103526,
+              "object": "J11.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.1259092116910352,
+              "object": "J11.2",
+              "category": "all_smt_masks_both_faces"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              31.508586478402155,
+              21.001655124372192
+            ],
+            "target_box_extension_mm": 1.0,
+            "minimum_extra_clearance_mm": 0.005563596155175765
+          },
+          "legal_via_regions": [
+            {
+              "area_mm2": 0.012205596187349548,
+              "bounds_mm": [
+                32.00173875446402,
+                18.746659243200334,
+                32.132333485961354,
+                18.898
+              ],
+              "distance_to_target_mm": 2.453201831983326
+            },
+            {
+              "area_mm2": 0.00083544592663987,
+              "bounds_mm": [
+                31.491084649301857,
+                20.962403674119685,
+                31.531298048968782,
+                21.042992934377754
+              ],
+              "distance_to_target_mm": 0.36349046287918524
+            }
+          ]
+        }
+      },
+      "conservative_native": {
+        "R5.2": {
+          "target_area_mm2": 0.2074769241029928,
+          "legal_target_area_mm2": 0.2074769241029925,
+          "trace_component_area_mm2": 47.59381024760465,
+          "legal_via_region_area_mm2": 12.936841138049314,
+          "legal_via_region_component_count": 11,
+          "via_center_exists": true,
+          "witness_mm": [
+            38.65877295225702,
+            19.351105284964394
+          ],
+          "witness_minimum_extra_clearance_mm": 0.14195612161013726,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.14195612161013726,
+              "object": "U3.5",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.18754448796038004,
+              "object": "D1.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.1939561216101372,
+              "object": "U3.5",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.23954448796037997,
+              "object": "D1.2",
+              "category": "all_smt_masks_both_faces"
+            },
+            {
+              "extra_clearance_mm": 0.8474145368275411,
+              "object": "c2ea82b7-f002-4f14-8056-82ab912f9b6b",
+              "category": "foreign_copper_all_layers"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              30.724264253474274,
+              24.596550253474273
+            ],
+            "target_box_extension_mm": 4.0,
+            "minimum_extra_clearance_mm": 0.09012624814465847
+          }
+        },
+        "U3.3": {
+          "target_area_mm2": 0.19182907739757388,
+          "legal_target_area_mm2": 0.19182907739757388,
+          "trace_component_area_mm2": 2.7754965900411843,
+          "legal_via_region_area_mm2": 0.013022337354485014,
+          "legal_via_region_component_count": 2,
+          "via_center_exists": true,
+          "witness_mm": [
+            32.07791397172196,
+            18.824083361624332
+          ],
+          "witness_minimum_extra_clearance_mm": 0.040526344465044606,
+          "witness_nearest_constraints": [
+            {
+              "extra_clearance_mm": 0.040526344465044606,
+              "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.04562042781983766,
+              "object": "50395a14-6c4d-433d-91b4-8d2840dd56bd",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.06073193860121734,
+              "object": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.07391663837566792,
+              "object": "J11.2",
+              "category": "foreign_copper_all_layers"
+            },
+            {
+              "extra_clearance_mm": 0.12591663837566786,
+              "object": "J11.2",
+              "category": "all_smt_masks_both_faces"
+            }
+          ],
+          "local_witness": {
+            "xy_mm": [
+              31.508578034578655,
+              21.0016413335019
+            ],
+            "target_box_extension_mm": 1.0,
+            "minimum_extra_clearance_mm": 0.005564224298146181
+          },
+          "legal_via_regions": [
+            {
+              "area_mm2": 0.012191781744081644,
+              "bounds_mm": [
+                32.00178953093769,
+                18.74670177082002,
+                32.13229688304898,
+                18.897971493051454
+              ],
+              "distance_to_target_mm": 2.453235600099548
+            },
+            {
+              "area_mm2": 0.0008305556104033708,
+              "bounds_mm": [
+                31.491115288773162,
+                20.962493372739573,
+                31.531265505191435,
+                21.04293772497404
+              ],
+              "distance_to_target_mm": 0.36351505204471873
+            }
+          ]
+        }
+      },
+      "seconds": 3.149989834000735
+    }
+  ]
+}

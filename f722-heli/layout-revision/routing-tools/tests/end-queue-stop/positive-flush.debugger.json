@@ -1,0 +1,163 @@
+{
+  "child_exit_code": 0,
+  "deadline_seconds": 20,
+  "child_max_heap_mib": 256,
+  "observer_max_heap_mib": 64,
+  "requested_passes": 1,
+  "configured_stop_after_routed": "5",
+  "stop_invocations": [
+    {
+      "stack": [
+        {
+          "class": "app.freerouting.core.StoppableThread",
+          "method": "request_stop_auto_router",
+          "line": 46
+        },
+        {
+          "class": "LocalRouter",
+          "method": "lambda$0",
+          "line": 86
+        },
+        {
+          "class": "LocalRouter$$Lambda/0x00007fe29c0962c0",
+          "method": "onBoardUpdatedEvent",
+          "line": -1
+        },
+        {
+          "class": "app.freerouting.autoroute.NamedAlgorithm",
+          "method": "fireBoardUpdatedEvent",
+          "line": 97
+        },
+        {
+          "class": "app.freerouting.autoroute.BatchAutorouter",
+          "method": "autoroute_pass",
+          "line": 369
+        },
+        {
+          "class": "app.freerouting.autoroute.BatchAutorouter",
+          "method": "runBatchLoop",
+          "line": 454
+        },
+        {
+          "class": "LocalRouter",
+          "method": "main",
+          "line": 89
+        }
+      ],
+      "thread_object_id": 2608,
+      "stop_flag_before": false,
+      "published_progress": {
+        "geometry_snapshot_reused": false,
+        "pending_route_geometry": false,
+        "checkpoint_every_routed": 3,
+        "checkpoint_seconds": 0.005095183,
+        "attempt": {
+          "net": "TEST",
+          "item_id": 6,
+          "item_class": "app.freerouting.board.NativePadContactArea",
+          "native_uuid": "SYNTHETIC_A",
+          "native_group": "SYNTHETIC_A",
+          "contact_label": "SYNTHETIC_A",
+          "search_tree_mode": "stock_fast_45_degree",
+          "geometry_unchanged_early_return": true,
+          "route_seconds": 2.2558E-4,
+          "result": "NO_UNCONNECTED_NETS",
+          "details": "",
+          "statistics_reused_for_proven_noop": true,
+          "statistics_seconds": 5.629E-6
+        },
+        "checkpoint": "tests/end-queue-stop/positive-flush.checkpoints/latest-0",
+        "sequence": 3,
+        "board_sha256": "1a319e6bfcefde899333b382fb9e6714edc95b8163998ddb4cb530e5b97fcc34",
+        "model_sha256": "794913f2d1b2ea713b1895f5b035d601d7e3fdeef65f179769c4ccd5a3cc5258",
+        "report_sha256": "1005dac3b8e2202e9ae75bc29b88a0e83c239fc825f19cf4f8d1ca51938c0639",
+        "session_sha256": "bf39ccc7759f40199df0714180aa76980b3cb8d37ec540ba1b127d988b2e6ebb",
+        "fixed_geometry_sha256": "7162a2d896c0cdd1a85e0570a9d26ab983e5c0fd5288f3be014a685031a73326",
+        "ses_save_read_only_verified": true,
+        "elapsed_seconds": 0.520426812,
+        "route_counters": {
+          "pass_count": 1,
+          "queued_to_be_routed_count": 0,
+          "routed_count": 1,
+          "skipped_count": 1,
+          "ripped_count": 0,
+          "failed_to_be_routed_count": 0,
+          "incomplete_count": 0
+        }
+      },
+      "stop_file_present": false
+    },
+    {
+      "stack": [
+        {
+          "class": "app.freerouting.core.StoppableThread",
+          "method": "request_stop_auto_router",
+          "line": 46
+        },
+        {
+          "class": "app.freerouting.autoroute.BatchAutorouter",
+          "method": "runBatchLoop",
+          "line": 444
+        },
+        {
+          "class": "LocalRouter",
+          "method": "main",
+          "line": 89
+        }
+      ],
+      "thread_object_id": 2608,
+      "stop_flag_before": true,
+      "published_progress": {
+        "geometry_snapshot_reused": false,
+        "pending_route_geometry": false,
+        "checkpoint_every_routed": 3,
+        "checkpoint_seconds": 0.005095183,
+        "attempt": {
+          "net": "TEST",
+          "item_id": 6,
+          "item_class": "app.freerouting.board.NativePadContactArea",
+          "native_uuid": "SYNTHETIC_A",
+          "native_group": "SYNTHETIC_A",
+          "contact_label": "SYNTHETIC_A",
+          "search_tree_mode": "stock_fast_45_degree",
+          "geometry_unchanged_early_return": true,
+          "route_seconds": 2.2558E-4,
+          "result": "NO_UNCONNECTED_NETS",
+          "details": "",
+          "statistics_reused_for_proven_noop": true,
+          "statistics_seconds": 5.629E-6
+        },
+        "checkpoint": "tests/end-queue-stop/positive-flush.checkpoints/latest-0",
+        "sequence": 3,
+        "board_sha256": "1a319e6bfcefde899333b382fb9e6714edc95b8163998ddb4cb530e5b97fcc34",
+        "model_sha256": "794913f2d1b2ea713b1895f5b035d601d7e3fdeef65f179769c4ccd5a3cc5258",
+        "report_sha256": "1005dac3b8e2202e9ae75bc29b88a0e83c239fc825f19cf4f8d1ca51938c0639",
+        "session_sha256": "bf39ccc7759f40199df0714180aa76980b3cb8d37ec540ba1b127d988b2e6ebb",
+        "fixed_geometry_sha256": "7162a2d896c0cdd1a85e0570a9d26ab983e5c0fd5288f3be014a685031a73326",
+        "ses_save_read_only_verified": true,
+        "elapsed_seconds": 0.520426812,
+        "route_counters": {
+          "pass_count": 1,
+          "queued_to_be_routed_count": 0,
+          "routed_count": 1,
+          "skipped_count": 1,
+          "ripped_count": 0,
+          "failed_to_be_routed_count": 0,
+          "incomplete_count": 0
+        }
+      },
+      "stop_file_present": false
+    }
+  ],
+  "stop_returns": [
+    {
+      "thread_object_id": 2608,
+      "stop_flag_after": true
+    },
+    {
+      "thread_object_id": 2608,
+      "stop_flag_after": true
+    }
+  ],
+  "final_queue_stop_branch_observed": true
+}

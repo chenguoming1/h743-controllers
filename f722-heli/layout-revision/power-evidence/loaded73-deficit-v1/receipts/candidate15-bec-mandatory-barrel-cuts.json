@@ -1,0 +1,157 @@
+{
+  "schema": "f722-native-finite-component-barrel-cuts/v1",
+  "board_sha256": "23232e7bc1903c06c1809d569c91e4cb161281be9225f3776076386593e55674",
+  "native_sha256": "dc1aa86cd3969eb2f0444674adef7f948b46cb50ad07d4d56d1efa3ba083febd",
+  "ledger_sha256": "61c27f88dceb64d27e0cc700a8306de07543d5e268d5a4e2419bb81a44f3a8be",
+  "script_sha256": "cbfee59e42bd41a86679bd966cf82259e5bf1a927585e9d6a109570f75e40408",
+  "net": "+5V_BEC",
+  "source": "U6.OUT_7_8",
+  "target": "U7.3",
+  "finite_component_count_by_layer": {
+    "F.Cu": 4,
+    "In1.Cu": 6,
+    "In2.Cu": 2,
+    "In3.Cu": 3,
+    "In4.Cu": 6,
+    "B.Cu": 3
+  },
+  "terminals": {
+    "U7.3": "B.Cu:1",
+    "R54.1": "B.Cu:2",
+    "R58.1": "B.Cu:1",
+    "U6.OUT_7_8": "F.Cu:1"
+  },
+  "barrel_spans": 30,
+  "one_topological_path": [
+    {
+      "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+      "xy_mm": [
+        34.3,
+        14.9
+      ],
+      "layers": [
+        "F.Cu",
+        "In1.Cu"
+      ],
+      "nodes": [
+        "F.Cu:1",
+        "In1.Cu:5"
+      ]
+    },
+    {
+      "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+      "xy_mm": [
+        34.3,
+        14.9
+      ],
+      "layers": [
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "nodes": [
+        "In1.Cu:5",
+        "In2.Cu:1"
+      ]
+    },
+    {
+      "uuid": "129ed33a-7b3c-414c-b98f-2485c4a745bc",
+      "xy_mm": [
+        34.3,
+        14.9
+      ],
+      "layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "nodes": [
+        "In2.Cu:1",
+        "In3.Cu:0"
+      ]
+    },
+    {
+      "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+      "xy_mm": [
+        26.16565,
+        0.640417
+      ],
+      "layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "nodes": [
+        "In2.Cu:0",
+        "In3.Cu:0"
+      ]
+    },
+    {
+      "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+      "xy_mm": [
+        36.825,
+        2.6
+      ],
+      "layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "nodes": [
+        "In2.Cu:0",
+        "In3.Cu:1"
+      ]
+    },
+    {
+      "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+      "xy_mm": [
+        36.825,
+        2.6
+      ],
+      "layers": [
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "nodes": [
+        "In3.Cu:1",
+        "In4.Cu:1"
+      ]
+    },
+    {
+      "uuid": "46bd31bb-554e-4a8c-890c-c043c4b4f311",
+      "xy_mm": [
+        36.825,
+        2.6
+      ],
+      "layers": [
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "nodes": [
+        "In4.Cu:1",
+        "B.Cu:1"
+      ]
+    }
+  ],
+  "mandatory_barrel_spans": [
+    {
+      "uuid": "617e9ee9-299c-492c-8be7-e03b48679c67",
+      "xy_mm": [
+        26.16565,
+        0.640417
+      ],
+      "layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "nodes": [
+        "In2.Cu:0",
+        "In3.Cu:0"
+      ]
+    }
+  ],
+  "method": "Union actual same-net polygons and saved fills, subtract every physical drill on its span, clip to native outline. Each positive-area connected polygon is one topology node. Consecutive actual barrel spans connect finite annuli; a span is mandatory only if removing its graph edge disconnects the actual source and load contacts.",
+  "no_geometry_written": true,
+  "no_mesh_or_electrical_solve": true,
+  "limitations": [
+    "A component/barrel topology proof establishes connectivity and series cuts, not within-component resistance.",
+    "Same-net overlap is one conductor; track proposal names are not independent feeds.",
+    "Uses the saved native polygon export precision and strict positive-area land intersection, without tolerance merging or geometry repair."
+  ]
+}

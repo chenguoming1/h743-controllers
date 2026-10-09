@@ -1,0 +1,115 @@
+{
+  "status": "PASS",
+  "scope": "Copy-only verified correction; original candidate08, frozen candidate09, and canonical repo remain unchanged.",
+  "results": [
+    {
+      "status": "PASS",
+      "source_board_sha256": "1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf",
+      "destination_board_sha256": "27809aabe52f74b0a6d0a10f73f2684bab263c458681e960751ec6c15c59e0c9",
+      "script_sha256": "747aecf908d0503d7ef28a9f046fcaf3630d9cb196af1caf0f0bc35029c8c5dc",
+      "manifest_sha256": "558795a55b15573d424978e8484bc15b67fa07ced4073bc219ca9989e9c1d9f5",
+      "board_metadata_change_count": 666,
+      "schematic_metadata_change_count": 5,
+      "board_non_target_semantic_sha256_before": "d0452904338acc7a58f9ba5ae7d528839eb78124dfedcb89aa12c3419ccd2b34",
+      "board_non_target_semantic_sha256_after": "d0452904338acc7a58f9ba5ae7d528839eb78124dfedcb89aa12c3419ccd2b34",
+      "strict_native_schematic_parity_issues": 0,
+      "drc_unconnected_items": 77,
+      "drc_other_violations": [],
+      "source_files_unchanged": true,
+      "copy": "candidate08-verified",
+      "report": "ordinary-routing/tests/mpn-parity/candidate08-verified/metadata-verification.json",
+      "report_sha256": "a43617105b0f074fc2f9be8a7785cc27cd8f5fbfb174640ed97014ac0ca0d44f",
+      "native_physical_net_identity_sha256": "39462b9935ea29ff07222f8de2d9fe5b7be3e145c3aa717594e7469adacf06bf",
+      "native_schematic_pin_net_identity_sha256": "f8bcb50afd41877516c6a9e11ead1b9c9a142c4548f471ea884af621cac29d09",
+      "schematic_hashes": {
+        "f722-heli.kicad_sch": {
+          "before": "c8e759d0aedebc8bd51226cf6fe47e953a0b0a3a5f326428473d039921fc5457",
+          "after": "d2fc1dc92f8fe8373deeb2e90e069439125af187208057efcc774c92b1c6d905"
+        },
+        "io-ports.kicad_sch": {
+          "before": "9d2bf6086beeb8257373fadad13527d80d65f87aba792a498c13fb6b4efd3552",
+          "after": "3e387daa0ed91b24a555cb7863335d4693ef57c30ce884aba59617167949c7f7"
+        },
+        "power-bec.kicad_sch": {
+          "before": "422acba8acdea6fd7342f12db922983fecbd534fd2c1a84c20918b1420d12b81",
+          "after": "5768d27cea9730d67024a0ae866075f656c34b1b99537a7fdf49755bf725d11e"
+        },
+        "usb-clock.kicad_sch": {
+          "before": "3782c0ba730a41575fadd22ebefaaf441fe85ebb145f3d4d7242ee44268fcdad",
+          "after": "2075ebeed373c32bc01b9249f3c2125758f45ec7bd8dc4b86ffc0b8203cce37a"
+        }
+      }
+    },
+    {
+      "status": "PASS",
+      "source_board_sha256": "544491a48469d418ed47cf5da12b6b9406db282d60a3cda77b154f6ed11a869d",
+      "destination_board_sha256": "d60f257bed4d0a7efc2d7ce1df2d7daf3bd71e0d0a52ae446028a3b73dfd3299",
+      "script_sha256": "747aecf908d0503d7ef28a9f046fcaf3630d9cb196af1caf0f0bc35029c8c5dc",
+      "manifest_sha256": "558795a55b15573d424978e8484bc15b67fa07ced4073bc219ca9989e9c1d9f5",
+      "board_metadata_change_count": 666,
+      "schematic_metadata_change_count": 5,
+      "board_non_target_semantic_sha256_before": "6da53be5b315ea4aa4494c4a6b86a9d3c190e75926ec35dd1bb1720412b02f16",
+      "board_non_target_semantic_sha256_after": "6da53be5b315ea4aa4494c4a6b86a9d3c190e75926ec35dd1bb1720412b02f16",
+      "strict_native_schematic_parity_issues": 0,
+      "drc_unconnected_items": 77,
+      "drc_other_violations": [
+        {
+          "description": "Via is not connected or connected on only one layer",
+          "items": [
+            {
+              "description": "Via [ADC_DIV_MID] on F.Cu - B.Cu",
+              "pos": {
+                "x": 25.38059,
+                "y": 14.57554
+              },
+              "uuid": "fb245259-36d5-4582-86df-2566ee2a7e0c"
+            }
+          ],
+          "severity": "warning",
+          "type": "via_dangling"
+        },
+        {
+          "description": "Via is not connected or connected on only one layer",
+          "items": [
+            {
+              "description": "Via [FLASH_WP_N] on F.Cu - B.Cu",
+              "pos": {
+                "x": 31.5,
+                "y": 20.9853
+              },
+              "uuid": "d41c1d0a-2833-4d09-b76c-706923526c40"
+            }
+          ],
+          "severity": "warning",
+          "type": "via_dangling"
+        }
+      ],
+      "source_files_unchanged": true,
+      "copy": "candidate09-verified",
+      "report": "ordinary-routing/tests/mpn-parity/candidate09-verified/metadata-verification.json",
+      "report_sha256": "c3c2e439594034ff4b5c7b8e3c9efce66776972fa641347cf751feda2c68fde8",
+      "native_physical_net_identity_sha256": "b943eab71d08fc612bbffc23412c298a05987204634c682dd32deb49792d5b09",
+      "native_schematic_pin_net_identity_sha256": "f8bcb50afd41877516c6a9e11ead1b9c9a142c4548f471ea884af621cac29d09",
+      "schematic_hashes": {
+        "f722-heli.kicad_sch": {
+          "before": "c8e759d0aedebc8bd51226cf6fe47e953a0b0a3a5f326428473d039921fc5457",
+          "after": "d2fc1dc92f8fe8373deeb2e90e069439125af187208057efcc774c92b1c6d905"
+        },
+        "io-ports.kicad_sch": {
+          "before": "9d2bf6086beeb8257373fadad13527d80d65f87aba792a498c13fb6b4efd3552",
+          "after": "3e387daa0ed91b24a555cb7863335d4693ef57c30ce884aba59617167949c7f7"
+        },
+        "power-bec.kicad_sch": {
+          "before": "422acba8acdea6fd7342f12db922983fecbd534fd2c1a84c20918b1420d12b81",
+          "after": "5768d27cea9730d67024a0ae866075f656c34b1b99537a7fdf49755bf725d11e"
+        },
+        "usb-clock.kicad_sch": {
+          "before": "3782c0ba730a41575fadd22ebefaaf441fe85ebb145f3d4d7242ee44268fcdad",
+          "after": "2075ebeed373c32bc01b9249f3c2125758f45ec7bd8dc4b86ffc0b8203cce37a"
+        }
+      }
+    }
+  ],
+  "deterministic_board_bytes_verified": true,
+  "determinism_note": "Independent candidate08 copy runs produced identical board bytes. Report timestamps and netlist source paths are not part of board byte determinism."
+}

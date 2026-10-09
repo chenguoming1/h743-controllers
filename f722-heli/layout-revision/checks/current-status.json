@@ -1,13 +1,13 @@
 {
   "status": "WIP \u2014 PARTIALLY ROUTED \u2014 NOT FOR MANUFACTURE",
-  "board_sha256": "e38e71c1960fc52881ee699117aa48c7e43483562ea22ec276ec0dc1d2138883",
+  "board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
   "source_commit": "8419807bb87479b650736f70be52ec61e246740c",
   "source_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
   "component_count": 156,
   "target_pose_count": 156,
   "changed_poses_from_published": 109,
   "copper_layers": 6,
-  "unfinished_connections": 80,
+  "unfinished_connections": 69,
   "drc_errors": 0,
   "drc_warnings": 0,
   "erc_violations": 0,
@@ -33,6 +33,8 @@
   "supplemental_protection_total": 7,
   "critical_nets_connected": 16,
   "ground_pad_groups": 1,
-  "checkpoint_progress": "Four additional ordinary connections complete: SERVO1_EXT, SERVO2_EXT, RPM_EXT and SBUS_EXT. Native full-width annular entries, process and all retained critical/power connectivity pass. False SERVO3 engine closure excluded; ordinary routing and loaded electrical review remain unfinished.",
-  "warning_scope": "See placement-drc.json for exact unfinished-interface warnings."
+  "checkpoint_progress": "A 1.02142 mm native ADC_BUS connection joins R42.2 to R43.1 through two F.Cu tracks. ADC_BUS remains incomplete elsewhere. Both endpoints have full-width entry; no vias or prior copper, drills, zone designs or saved fills changed. All source-bound native, strict parity, process, mechanical, firmware, critical and power-connectivity gates pass.",
+  "warning_scope": "Native normal and all-track DRC report zero geometric warnings; 69 unfinished connections remain explicitly reported.",
+  "native_strict_schematic_parity_issues": 0,
+  "loaded_power_diagnostic": "Unaccepted two-grid source70 run exposes excessive BEC copper drop, independently confirmed by a native-topology resistance lower bound. Relevant power geometry is exact on source69. Correction and new source-bound validation required."
 }

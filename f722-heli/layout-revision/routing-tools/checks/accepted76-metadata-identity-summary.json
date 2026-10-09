@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "kicad_version": "10.0.6",
+  "script_sha256": "747aecf908d0503d7ef28a9f046fcaf3630d9cb196af1caf0f0bc35029c8c5dc",
+  "manifest_sha256": "558795a55b15573d424978e8484bc15b67fa07ced4073bc219ca9989e9c1d9f5",
+  "source_board_sha256": "f31522c2650db49334c645d65611fb5986e229baabcebd3750573a6de580fea1",
+  "destination_board_sha256": "508b5a36ed12795c4a2486b699f321f0f9867e29717175455e8fd7fc6f1f525a",
+  "board_metadata_change_count": 666,
+  "schematic_metadata_change_count": 5,
+  "board_non_target_semantic_sha256_before": "0cf3aa7fe762e3526fc3ad570218480362f4aa92789036a4a1388417a7fda502",
+  "board_non_target_semantic_sha256_after": "0cf3aa7fe762e3526fc3ad570218480362f4aa92789036a4a1388417a7fda502",
+  "strict_native_schematic_parity_issues": 0,
+  "drc_unconnected_items": 76,
+  "drc_other_violations": [],
+  "source_files_unchanged": true,
+  "parts_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+  "schematic_evidence": [
+    {
+      "filename": "f722-heli.kicad_sch",
+      "before_sha256": "c8e759d0aedebc8bd51226cf6fe47e953a0b0a3a5f326428473d039921fc5457",
+      "after_sha256": "d2fc1dc92f8fe8373deeb2e90e069439125af187208057efcc774c92b1c6d905",
+      "non_target_semantic_sha256": "cffa8742a38d45881c3d2c3d5429e28f1ab4fcce93b1dfd9d6a9b543b6ec10e6",
+      "changes": [
+        {
+          "ref": "R16",
+          "symbol_uuid": "8a2081ad-67f6-5547-96ca-2425a1f2d155",
+          "symbol_path": "/45867fd9-7fae-53a8-81ae-e34933dcce1e/8a2081ad-67f6-5547-96ca-2425a1f2d155",
+          "schematic_filename": "f722-heli.kicad_sch",
+          "field": "Datasheet",
+          "old_property_present": false,
+          "old_explicit_value": null,
+          "old_native_value": "",
+          "new_value": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDN0000/AOA0000C313.pdf",
+          "authority": {
+            "file": "repo/f722-heli/layout-revision/hardware/parts.json",
+            "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+            "json_pointer": "/R16/datasheet_url"
+          },
+          "reason": "Fill absent schematic datasheet from authoritative parts record; preserve existing matching board datasheet where present."
+        },
+        {
+          "ref": "R16",
+          "symbol_uuid": "8a2081ad-67f6-5547-96ca-2425a1f2d155",
+          "symbol_path": "/45867fd9-7fae-53a8-81ae-e34933dcce1e/8a2081ad-67f6-5547-96ca-2425a1f2d155",
+          "schematic_filename": "f722-heli.kicad_sch",
+          "field": "Description",
+          "old_property_present": false,
+          "old_explicit_value": null,
+          "old_native_value": "",
+          "new_value": "Panasonic ERJ3RSFR12V; 0.120 ohm 1% 0.1 W; C4059772; prototype qualification and assembly supply pending",
+          "authority": {
+            "file": "ordinary-routing/candidate08/f722-heli.kicad_pcb",
+            "sha256": "1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf",
+            "footprint_uuid": "ec2f4e55-3515-48fc-af41-9b340b6c2e26",
+            "field": "Description"
+          },
+          "reason": "Preserve existing useful board description in the paired schematic instead of erasing it."
+        }
+      ]
+    },
+    {
+      "filename": "io-ports.kicad_sch",
+      "before_sha256": "9d2bf6086beeb8257373fadad13527d80d65f87aba792a498c13fb6b4efd3552",
+      "after_sha256": "3e387daa0ed91b24a555cb7863335d4693ef57c30ce884aba59617167949c7f7",
+      "non_target_semantic_sha256": "a0687d3b6c9bfa920154a09cbaee7bf5975e42ce47d2ea60a75cb3c2aebbbf8b",
+      "changes": [
+        {
+          "ref": "R31",
+          "symbol_uuid": "915ad408-b88a-5597-98e8-f080fad8471f",
+          "symbol_path": "/45867fd9-7fae-53a8-81ae-e34933dcce1e/9f919924-8aaf-5aa6-8d16-45344d05c747/915ad408-b88a-5597-98e8-f080fad8471f",
+          "schematic_filename": "io-ports.kicad_sch",
+          "field": "Datasheet",
+          "old_property_present": false,
+          "old_explicit_value": null,
+          "old_native_value": "",
+          "new_value": "https://www.yageogroup.com/component-documentation/download/specsheet/AC0201FR-0722RL",
+          "authority": {
+            "file": "repo/f722-heli/layout-revision/hardware/parts.json",
+            "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+            "json_pointer": "/R31/datasheet_url"
+          },
+          "reason": "Fill absent schematic datasheet from authoritative parts record; preserve existing matching board datasheet where present."
+        }
+      ]
+    },
+    {
+      "filename": "power-bec.kicad_sch",
+      "before_sha256": "422acba8acdea6fd7342f12db922983fecbd534fd2c1a84c20918b1420d12b81",
+      "after_sha256": "5768d27cea9730d67024a0ae866075f656c34b1b99537a7fdf49755bf725d11e",
+      "non_target_semantic_sha256": "f568a0f565d9c570dcaf4e930942c1ed21ab27af15e43d58dc118f8718f65192",
+      "changes": [
+        {
+          "ref": "R53",
+          "symbol_uuid": "3081a7ab-4ce4-5ff2-929e-41dca17da42c",
+          "symbol_path": "/45867fd9-7fae-53a8-81ae-e34933dcce1e/a562c882-36b2-5bea-80c5-a3a132020486/3081a7ab-4ce4-5ff2-929e-41dca17da42c",
+          "schematic_filename": "power-bec.kicad_sch",
+          "field": "Datasheet",
+          "old_property_present": false,
+          "old_explicit_value": null,
+          "old_native_value": "",
+          "new_value": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDO0000/AOA0000C331.pdf",
+          "authority": {
+            "file": "repo/f722-heli/layout-revision/hardware/parts.json",
+            "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+            "json_pointer": "/R53/datasheet_url"
+          },
+          "reason": "Fill absent schematic datasheet from authoritative parts record; preserve existing matching board datasheet where present."
+        }
+      ]
+    },
+    {
+      "filename": "usb-clock.kicad_sch",
+      "before_sha256": "3782c0ba730a41575fadd22ebefaaf441fe85ebb145f3d4d7242ee44268fcdad",
+      "after_sha256": "2075ebeed373c32bc01b9249f3c2125758f45ec7bd8dc4b86ffc0b8203cce37a",
+      "non_target_semantic_sha256": "eb21ae4751d1795326d53a430ecc57252a1c1035b972bcd2de852a6a4374d484",
+      "changes": [
+        {
+          "ref": "J1",
+          "symbol_uuid": "8d784a6d-27db-57f7-8fb6-263251e47897",
+          "symbol_path": "/45867fd9-7fae-53a8-81ae-e34933dcce1e/39e7cbc2-d7f6-5208-9b77-1bc1a380f159/8d784a6d-27db-57f7-8fb6-263251e47897",
+          "schematic_filename": "usb-clock.kicad_sch",
+          "field": "Description",
+          "old_property_present": false,
+          "old_explicit_value": null,
+          "old_native_value": "",
+          "new_value": "Vertical USB-C; H=7.46 mm; shell stakes S=1.70 mm",
+          "authority": {
+            "file": "ordinary-routing/candidate08/f722-heli.kicad_pcb",
+            "sha256": "1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf",
+            "footprint_uuid": "b536a828-c7d5-40a2-8819-912352182928",
+            "field": "Description"
+          },
+          "reason": "Preserve existing useful board description in the paired schematic instead of erasing it."
+        }
+      ]
+    }
+  ],
+  "native_physical_net_identity_before": {
+    "sha256": "bb5186bd4572b7272dfbb16c95bc74ed2ebe95d2ff614467238e51731a94dff2",
+    "component_count": 156,
+    "physical_pad_count": 558,
+    "track_and_via_count": 989
+  },
+  "native_physical_net_identity_after": {
+    "sha256": "bb5186bd4572b7272dfbb16c95bc74ed2ebe95d2ff614467238e51731a94dff2",
+    "component_count": 156,
+    "physical_pad_count": 558,
+    "track_and_via_count": 989
+  },
+  "native_schematic_pin_net_identity_before": {
+    "sha256": "f8bcb50afd41877516c6a9e11ead1b9c9a142c4548f471ea884af621cac29d09"
+  },
+  "native_schematic_pin_net_identity_after": {
+    "sha256": "f8bcb50afd41877516c6a9e11ead1b9c9a142c4548f471ea884af621cac29d09"
+  },
+  "full_historical_receipt_sha256": "8dda0b93603f42f143652a1588ed5207cb266e29b360bb88291beff5a1195071",
+  "full_historical_receipt_bytes": 2176407,
+  "projection_only": true,
+  "full_native_identity_arrays_excluded": true,
+  "matching_native_identity_data_verified_during_projection": true,
+  "native_checks_reexecuted_for_package": false
+}

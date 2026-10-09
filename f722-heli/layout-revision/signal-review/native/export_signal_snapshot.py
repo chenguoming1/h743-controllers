@@ -16,7 +16,8 @@ import pcbnew as p
 
 I2C = {"BARO_SCL": ["U1.61", "U4.4", "R7.2"],
        "BARO_SDA": ["U1.62", "U4.3", "R8.2"]}
-CRITICAL = ["USB_P", "USB_N", "HSE_IN", "HSE_OUT", "HSE_XTAL_OUT"]
+CRITICAL = ["USB_P", "USB_N", "HSE_IN", "HSE_OUT", "HSE_XTAL_OUT",
+            "IMU_CS", "IMU_INT", "IMU_MISO", "IMU_MOSI", "IMU_SCK"]
 
 
 def sha(path):

@@ -191,7 +191,7 @@ def compile_inputs(source,plan_path,registry_path,settings_path,out,allow_numeri
        'qualification':'Provisional source-bound power review; final ordinary routing requires fresh source/check binding',
        'excluded_ordinary_protection_checks':excluded,
        'compiler_source_sha256':{n:sha256(Path(__file__).parent/n)for n in ['compile_power_ledger.py','power_case_model.py']}}
-    manifest['analysis_source_sha256']={n:sha256(Path(__file__).parent/n)for n in ['copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py']}
+    manifest['analysis_source_sha256']={n:sha256(Path(__file__).parent/n)for n in ['copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py','native_edge_noding.py','mesh_cache.py']}
     save(out/'freeze.json',manifest)
     common={'schema':'f722-static-ledger/v1','status':'ready','freeze_manifest_sha256':sha256(out/'freeze.json'),
        'source_stage':settings['source_stage'],'material':settings['material'],'mesh_spacings_mm':settings['mesh_spacings_mm'],

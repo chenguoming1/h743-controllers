@@ -1,0 +1,1741 @@
+{
+  "native_sha256": "31736dc14695523979239a7b4277b5c984fb04926d586f0f7a87d68b565bf8cd",
+  "board_sha256": "08c2daf1df7db0a7c922632aa483cc13022b0c6a4066e87493e9dcee9fba7724",
+  "native_polygon_max_error_mm": 1e-05,
+  "shapely_version": "2.2.0",
+  "scope": "All extant native foreign-net copper, actual filled zones on tested layers, track/copper keepouts, board edge and NPTH; no route generation, no geometry repair, no model or board changes.",
+  "trace_halfwidth_mm": 0.0635,
+  "foreign_clearance_mm": 0.127,
+  "foreign_centerline_reserve_mm": 0.1905,
+  "edge_npth_centerline_reserve_mm": 0.3175,
+  "buffer_quad_segments": 64,
+  "conservative_radius_factor": 1.0000753038310954,
+  "results": [
+    {
+      "net": "ADC_DIV_MID",
+      "layer": "F.Cu",
+      "window_mm": [
+        20.74,
+        14.24,
+        28.12,
+        19.92
+      ],
+      "obstacle_count": 69,
+      "optimistic_native_polygon_bound": {
+        "component_count": 10,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R43.2": {
+            "target_area_mm2": 0.20747692410299276,
+            "legal_target_area_mm2": 0.20747692410299276,
+            "free_component_ids": [
+              0
+            ],
+            "components": [
+              {
+                "id": 0,
+                "area_mm2": 11.158473038904761,
+                "bounds_mm": [
+                  20.74,
+                  14.24,
+                  25.058238471584716,
+                  19.92
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "GND": 6,
+                  "ADC_BUS": 2,
+                  "+3V3_IMU": 2,
+                  "ADC_BEC": 2,
+                  "+3V3_CORE": 4,
+                  "PORT_C_RX_EXT": 1,
+                  "unconnected-(U15-NC10-Pad10)": 1,
+                  "+5V_PERIPH": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "IMU_INT": 1
+                },
+                "boundary_mutable_count": 0
+              }
+            ]
+          },
+          "R44.1": {
+            "target_area_mm2": 0.20747692410299262,
+            "legal_target_area_mm2": 0.20747692410299265,
+            "free_component_ids": [
+              3
+            ],
+            "components": [
+              {
+                "id": 3,
+                "area_mm2": 1.8361508867327636,
+                "bounds_mm": [
+                  23.621563650939578,
+                  14.24,
+                  26.311438873139178,
+                  16.742277587581956
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "+3V3_IMU": 7,
+                  "GND": 5
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "C13.1",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5606d00a-ba32-4a8b-900a-e38cdc1dfb47",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "58875d78-33e0-43fb-879b-22554b70173c",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C13.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "R44.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "8074ddce-ca09-4994-8805-3fe327acfc96",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "9901811b-b56a-42a6-bf80-f917710178a5",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "991d0e93-c7b2-44e7-8624-30e7e498d446",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "a7116edf-7f47-4bb1-824f-eff8212fed00",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "FB2.2",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C11.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "e6cfad7e-3585-4ac5-b26e-a6d5ffdf4863",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "conservative_native_polygon_bound": {
+        "component_count": 10,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R43.2": {
+            "target_area_mm2": 0.20747692410299276,
+            "legal_target_area_mm2": 0.20747692410299276,
+            "free_component_ids": [
+              0
+            ],
+            "components": [
+              {
+                "id": 0,
+                "area_mm2": 11.158115412176397,
+                "bounds_mm": [
+                  20.74,
+                  14.24,
+                  25.058219005776635,
+                  19.92
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "GND": 6,
+                  "ADC_BUS": 2,
+                  "+3V3_IMU": 2,
+                  "ADC_BEC": 2,
+                  "+3V3_CORE": 4,
+                  "PORT_C_RX_EXT": 1,
+                  "unconnected-(U15-NC10-Pad10)": 1,
+                  "+5V_PERIPH": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "IMU_INT": 1
+                },
+                "boundary_mutable_count": 0
+              }
+            ]
+          },
+          "R44.1": {
+            "target_area_mm2": 0.20747692410299262,
+            "legal_target_area_mm2": 0.20747692410299265,
+            "free_component_ids": [
+              3
+            ],
+            "components": [
+              {
+                "id": 3,
+                "area_mm2": 1.8359766347085968,
+                "bounds_mm": [
+                  23.6215787165302,
+                  14.24,
+                  26.3114224210976,
+                  16.74226288553803
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "+3V3_IMU": 7,
+                  "GND": 5
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "C13.1",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5606d00a-ba32-4a8b-900a-e38cdc1dfb47",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "58875d78-33e0-43fb-879b-22554b70173c",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C13.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "R44.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "8074ddce-ca09-4994-8805-3fe327acfc96",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "9901811b-b56a-42a6-bf80-f917710178a5",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "991d0e93-c7b2-44e7-8624-30e7e498d446",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "a7116edf-7f47-4bb1-824f-eff8212fed00",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "FB2.2",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C11.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "e6cfad7e-3585-4ac5-b26e-a6d5ffdf4863",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "nearest_foreign_to_targets": {
+        "R43.2": [
+          {
+            "object": "R41.2",
+            "net": "GND",
+            "distance_from_target_mm": 0.47350000000000136
+          },
+          {
+            "object": "R43.1",
+            "net": "ADC_BUS",
+            "distance_from_target_mm": 0.5434999999999981
+          },
+          {
+            "object": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+            "net": "GND",
+            "distance_from_target_mm": 0.6105410277549718
+          },
+          {
+            "object": "9d2d7f0a-7e0b-46fd-b3d2-73bdac13428a",
+            "net": "GND",
+            "distance_from_target_mm": 0.6275520326332098
+          },
+          {
+            "object": "R41.1",
+            "net": "ADC_BEC",
+            "distance_from_target_mm": 0.6680834414639784
+          },
+          {
+            "object": "U15.10",
+            "net": "unconnected-(U15-NC10-Pad10)",
+            "distance_from_target_mm": 0.6834999999999987
+          },
+          {
+            "object": "U15.1",
+            "net": "PORT_C_RX_EXT",
+            "distance_from_target_mm": 0.7773973807999802
+          },
+          {
+            "object": "1fbfda30-a51a-4502-95ff-cccb63776536",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 1.1478867475808936
+          }
+        ],
+        "R44.1": [
+          {
+            "object": "a7116edf-7f47-4bb1-824f-eff8212fed00",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.19461188803692447
+          },
+          {
+            "object": "8074ddce-ca09-4994-8805-3fe327acfc96",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.19473514535540903
+          },
+          {
+            "object": "58875d78-33e0-43fb-879b-22554b70173c",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.19780666543074713
+          },
+          {
+            "object": "991d0e93-c7b2-44e7-8624-30e7e498d446",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.2399909825577589
+          },
+          {
+            "object": "R44.2",
+            "net": "GND",
+            "distance_from_target_mm": 0.5434999999999999
+          },
+          {
+            "object": "U15.6",
+            "net": "unconnected-(U15-NC6-Pad6)",
+            "distance_from_target_mm": 0.5835000000000008
+          },
+          {
+            "object": "U15.7",
+            "net": "unconnected-(U15-NC7-Pad7)",
+            "distance_from_target_mm": 0.5864900748453016
+          },
+          {
+            "object": "8616ea55-a9cf-4bcb-8e6b-3a74c20b83c1",
+            "net": "GND",
+            "distance_from_target_mm": 0.6884949999999996
+          }
+        ]
+      },
+      "seconds": 0.5974240149989782
+    },
+    {
+      "net": "FLASH_WP_N",
+      "layer": "B.Cu",
+      "window_mm": [
+        24.965,
+        19.115,
+        33.275,
+        25.4
+      ],
+      "obstacle_count": 61,
+      "optimistic_native_polygon_bound": {
+        "component_count": 16,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R5.2": {
+            "target_area_mm2": 0.2074769241029928,
+            "legal_target_area_mm2": 0.2074769241029925,
+            "free_component_ids": [
+              0
+            ],
+            "components": [
+              {
+                "id": 0,
+                "area_mm2": 15.031523489542908,
+                "bounds_mm": [
+                  25.16232948173388,
+                  20.303110431736176,
+                  33.275,
+                  25.0825
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "PORT_C_TX_MCU": 1,
+                  "+3V3_CORE": 11,
+                  "GND": 6,
+                  "FLASH_CS": 1,
+                  "+5V_PERIPH": 2,
+                  "DSM_RX_EXT": 1,
+                  "DSM_RX_MCU": 1,
+                  "FLASH_HOLD_N": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "FLASH_MISO": 1
+                },
+                "boundary_mutable_count": 0
+              }
+            ]
+          },
+          "U3.3": {
+            "target_area_mm2": 0.19182907739757388,
+            "legal_target_area_mm2": 0.19182907739757388,
+            "free_component_ids": [
+              2
+            ],
+            "components": [
+              {
+                "id": 2,
+                "area_mm2": 2.481738291257807,
+                "bounds_mm": [
+                  30.40695693118444,
+                  19.115,
+                  32.73788627704536,
+                  21.683688666849218
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "ABC_VAUX": 2,
+                  "GND": 3,
+                  "ABC_FB": 1,
+                  "+3V3_CORE": 3
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3a658e16-7d30-4a10-9cb4-af5fbd17047d",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "50395a14-6c4d-433d-91b4-8d2840dd56bd",
+                    "net": "ABC_FB",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5fddccf2-7925-4bc6-a534-89d1b502a1d5",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U3.4",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "855778a5-68e4-455a-9447-8ac1afbea18e",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "ff489f0b-2608-455c-b1f2-70a635a8a1fc",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "conservative_native_polygon_bound": {
+        "component_count": 16,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R5.2": {
+            "target_area_mm2": 0.2074769241029928,
+            "legal_target_area_mm2": 0.2074769241029925,
+            "free_component_ids": [
+              0
+            ],
+            "components": [
+              {
+                "id": 0,
+                "area_mm2": 15.0307279566469,
+                "bounds_mm": [
+                  25.162405106063666,
+                  20.303164085555316,
+                  33.275,
+                  25.082476091033627
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "PORT_C_TX_MCU": 1,
+                  "+3V3_CORE": 11,
+                  "GND": 6,
+                  "FLASH_CS": 1,
+                  "+5V_PERIPH": 2,
+                  "DSM_RX_EXT": 1,
+                  "DSM_RX_MCU": 1,
+                  "FLASH_HOLD_N": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "FLASH_MISO": 1
+                },
+                "boundary_mutable_count": 0
+              }
+            ]
+          },
+          "U3.3": {
+            "target_area_mm2": 0.19182907739757388,
+            "legal_target_area_mm2": 0.19182907739757388,
+            "free_component_ids": [
+              2
+            ],
+            "components": [
+              {
+                "id": 2,
+                "area_mm2": 2.481627769026752,
+                "bounds_mm": [
+                  30.406977614057162,
+                  19.115,
+                  32.73785880722696,
+                  21.68367304687935
+                ],
+                "reaches_window_boundary": true,
+                "boundary_net_counts": {
+                  "ABC_VAUX": 2,
+                  "GND": 3,
+                  "ABC_FB": 1,
+                  "+3V3_CORE": 3
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3a658e16-7d30-4a10-9cb4-af5fbd17047d",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "50395a14-6c4d-433d-91b4-8d2840dd56bd",
+                    "net": "ABC_FB",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5fddccf2-7925-4bc6-a534-89d1b502a1d5",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U3.4",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "855778a5-68e4-455a-9447-8ac1afbea18e",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "ff489f0b-2608-455c-b1f2-70a635a8a1fc",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "nearest_foreign_to_targets": {
+        "R5.2": [
+          {
+            "object": "a9754953-cd11-4b6a-95ea-15bf491aa98c",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.5154250656176895
+          },
+          {
+            "object": "6bf881c2-734b-4dd2-80a8-8e412994c36f",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.5165322297577932
+          },
+          {
+            "object": "85e7c6af-a5c6-4757-a750-0cc5aebf01f2",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.5165353882938285
+          },
+          {
+            "object": "R5.1",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.543499999999998
+          },
+          {
+            "object": "R38.1",
+            "net": "DSM_RX_EXT",
+            "distance_from_target_mm": 0.7483375057848564
+          },
+          {
+            "object": "R6.1",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.8535000000000003
+          },
+          {
+            "object": "df946d22-f4d7-429e-98ec-9b49188086d2",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 1.0234960000000015
+          },
+          {
+            "object": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 1.0717912872334034
+          }
+        ],
+        "U3.3": [
+          {
+            "object": "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.2336712193863015
+          },
+          {
+            "object": "ff489f0b-2608-455c-b1f2-70a635a8a1fc",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.39374243635021605
+          },
+          {
+            "object": "855778a5-68e4-455a-9447-8ac1afbea18e",
+            "net": "ABC_VAUX",
+            "distance_from_target_mm": 0.43021399702924074
+          },
+          {
+            "object": "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+            "net": "ABC_VAUX",
+            "distance_from_target_mm": 0.4493240000000007
+          },
+          {
+            "object": "R34.1",
+            "net": "PORT_C_RX_EXT",
+            "distance_from_target_mm": 0.764876751881586
+          },
+          {
+            "object": "U3.4",
+            "net": "GND",
+            "distance_from_target_mm": 0.8335000000000008
+          },
+          {
+            "object": "U3.2",
+            "net": "FLASH_MISO",
+            "distance_from_target_mm": 0.8335000000000043
+          },
+          {
+            "object": "3a658e16-7d30-4a10-9cb4-af5fbd17047d",
+            "net": "GND",
+            "distance_from_target_mm": 0.9584909999999986
+          }
+        ]
+      },
+      "seconds": 0.6410998589999508
+    },
+    {
+      "net": "ADC_DIV_MID",
+      "layer": "F.Cu",
+      "window_mm": [
+        0,
+        0,
+        41.66,
+        25.4
+      ],
+      "obstacle_count": 714,
+      "optimistic_native_polygon_bound": {
+        "component_count": 77,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R43.2": {
+            "target_area_mm2": 0.20747692410299276,
+            "legal_target_area_mm2": 0.20747692410299276,
+            "free_component_ids": [
+              1
+            ],
+            "components": [
+              {
+                "id": 1,
+                "area_mm2": 322.6003585038888,
+                "bounds_mm": [
+                  0.31749999999999995,
+                  0.3175,
+                  32.28951002514314,
+                  25.0825
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 86,
+                  "+5V_PERIPH": 7,
+                  "SERVO3_MCU": 2,
+                  "ESC_EXT": 2,
+                  "+3V3_CORE": 41,
+                  "VX_RAW": 5,
+                  "IMU_MISO": 3,
+                  "CORE_BUCK_IN": 6,
+                  "PORT_B_RX_EXT": 4,
+                  "SERVO2_MCU": 2,
+                  "SBUS_EXT": 4,
+                  "DSM_RX_EXT": 1,
+                  "USB_LIMITED": 1,
+                  "unconnected-(U2-RESV3-Pad3)": 1,
+                  "SERVO2_EXT": 3,
+                  "": 5,
+                  "VX_PROTECTED": 12,
+                  "ADC_BUS": 2,
+                  "IMU_CS": 11,
+                  "PORT_B_RX_MCU": 1,
+                  "RPM_LV": 2,
+                  "+3V3_IMU": 14,
+                  "ABC_EN": 3,
+                  "+3V3_DSM": 4,
+                  "+3V3_ANALOG": 3,
+                  "CORE_REF": 5,
+                  "PORT_A_TX_EXT": 2,
+                  "ADC_BEC": 3,
+                  "EFUSE_OVC": 3,
+                  "USB_VBUS_RAW": 2,
+                  "RPM_HV": 3,
+                  "unconnected-(U2-RESV2-Pad2)": 1,
+                  "+5V_BEC": 1,
+                  "ABC_L2": 3,
+                  "BARO_SDA": 1,
+                  "RPM_EXT": 4,
+                  "SERVO3_EXT": 4,
+                  "BARO_SCL": 1,
+                  "PORT_A_RX_EXT": 3,
+                  "unconnected-(U5-ITIMER-Pad10)": 1,
+                  "CORE_PRIORITY": 1,
+                  "SERVO1_EXT": 4,
+                  "SBUS_HV": 3,
+                  "PORT_C_RX_EXT": 1,
+                  "TAIL_MCU": 2,
+                  "IMU_INT": 3,
+                  "unconnected-(U15-NC10-Pad10)": 1,
+                  "SERVO1_MCU": 1,
+                  "PORT_B_TX_EXT": 2,
+                  "ABC_L1": 3,
+                  "unconnected-(U5-PG-Pad3)": 1,
+                  "SBUS_LV": 3,
+                  "TAIL_EXT": 1,
+                  "SBUS_MCU": 1,
+                  "unconnected-(U15-NC6-Pad6)": 1,
+                  "EFUSE_ILM": 3,
+                  "CORE_MUX_ST": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "NRST": 2,
+                  "unconnected-(U15-IO4-Pad5)": 1,
+                  "ESC_MCU": 1,
+                  "BOOT0": 1
+                },
+                "boundary_mutable_count": 9
+              }
+            ]
+          },
+          "R44.1": {
+            "target_area_mm2": 0.20747692410299262,
+            "legal_target_area_mm2": 0.20747692410299265,
+            "free_component_ids": [
+              6
+            ],
+            "components": [
+              {
+                "id": 6,
+                "area_mm2": 2.876750264880822,
+                "bounds_mm": [
+                  23.577614504613262,
+                  12.16129650323541,
+                  26.311438873139178,
+                  16.742277587581956
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 13,
+                  "+3V3_IMU": 10
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "09046fd8-1c6e-4da5-9bef-840de552ae28",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C13.1",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "33383260-eb77-4f88-a36d-46171e550cd7",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3a66a0d8-a4b0-4282-9936-fdae79b412fc",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3d128062-54a3-4fd3-ab3d-818e4ec84e57",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U2.8",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5606d00a-ba32-4a8b-900a-e38cdc1dfb47",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "58875d78-33e0-43fb-879b-22554b70173c",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C13.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C12.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "R44.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "6e4facda-8a4c-4ac9-97af-92e3c0d9bd0a",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "8074ddce-ca09-4994-8805-3fe327acfc96",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "9901811b-b56a-42a6-bf80-f917710178a5",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "991d0e93-c7b2-44e7-8624-30e7e498d446",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "a7116edf-7f47-4bb1-824f-eff8212fed00",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U2.7",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "FB2.2",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "d574d4ee-502e-4fdc-998e-679f88314698",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C11.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "d9731330-cda6-44f0-811a-9cdea7ea0676",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "e3f33672-6cac-4860-8ade-be242dc7bc28",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "e6cfad7e-3585-4ac5-b26e-a6d5ffdf4863",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "conservative_native_polygon_bound": {
+        "component_count": 77,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R43.2": {
+            "target_area_mm2": 0.20747692410299276,
+            "legal_target_area_mm2": 0.20747692410299276,
+            "free_component_ids": [
+              1
+            ],
+            "components": [
+              {
+                "id": 1,
+                "area_mm2": 322.5905144216761,
+                "bounds_mm": [
+                  0.3175239089663727,
+                  0.3175239089663728,
+                  32.289486813831004,
+                  25.082476091033627
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 86,
+                  "+5V_PERIPH": 7,
+                  "SERVO3_MCU": 2,
+                  "ESC_EXT": 2,
+                  "+3V3_CORE": 41,
+                  "VX_RAW": 5,
+                  "IMU_MISO": 3,
+                  "CORE_BUCK_IN": 6,
+                  "PORT_B_RX_EXT": 4,
+                  "SERVO2_MCU": 2,
+                  "SBUS_EXT": 4,
+                  "DSM_RX_EXT": 1,
+                  "USB_LIMITED": 1,
+                  "unconnected-(U2-RESV3-Pad3)": 1,
+                  "SERVO2_EXT": 3,
+                  "": 5,
+                  "VX_PROTECTED": 12,
+                  "ADC_BUS": 2,
+                  "IMU_CS": 11,
+                  "PORT_B_RX_MCU": 1,
+                  "RPM_LV": 2,
+                  "+3V3_IMU": 14,
+                  "ABC_EN": 3,
+                  "+3V3_DSM": 4,
+                  "+3V3_ANALOG": 3,
+                  "CORE_REF": 5,
+                  "PORT_A_TX_EXT": 2,
+                  "ADC_BEC": 3,
+                  "EFUSE_OVC": 3,
+                  "USB_VBUS_RAW": 2,
+                  "RPM_HV": 3,
+                  "unconnected-(U2-RESV2-Pad2)": 1,
+                  "+5V_BEC": 1,
+                  "ABC_L2": 3,
+                  "BARO_SDA": 1,
+                  "RPM_EXT": 4,
+                  "SERVO3_EXT": 4,
+                  "BARO_SCL": 1,
+                  "PORT_A_RX_EXT": 3,
+                  "unconnected-(U5-ITIMER-Pad10)": 1,
+                  "CORE_PRIORITY": 1,
+                  "SERVO1_EXT": 4,
+                  "SBUS_HV": 3,
+                  "PORT_C_RX_EXT": 1,
+                  "TAIL_MCU": 2,
+                  "IMU_INT": 3,
+                  "unconnected-(U15-NC10-Pad10)": 1,
+                  "SERVO1_MCU": 1,
+                  "PORT_B_TX_EXT": 2,
+                  "ABC_L1": 3,
+                  "unconnected-(U5-PG-Pad3)": 1,
+                  "SBUS_LV": 3,
+                  "TAIL_EXT": 1,
+                  "SBUS_MCU": 1,
+                  "unconnected-(U15-NC6-Pad6)": 1,
+                  "EFUSE_ILM": 3,
+                  "CORE_MUX_ST": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "NRST": 2,
+                  "unconnected-(U15-IO4-Pad5)": 1,
+                  "ESC_MCU": 1,
+                  "BOOT0": 1
+                },
+                "boundary_mutable_count": 9
+              }
+            ]
+          },
+          "R44.1": {
+            "target_area_mm2": 0.20747692410299262,
+            "legal_target_area_mm2": 0.20747692410299265,
+            "free_component_ids": [
+              6
+            ],
+            "components": [
+              {
+                "id": 6,
+                "area_mm2": 2.8764593822971825,
+                "bounds_mm": [
+                  23.577643902471205,
+                  12.161332658595173,
+                  26.3114224210976,
+                  16.742262885538025
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 13,
+                  "+3V3_IMU": 10
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "09046fd8-1c6e-4da5-9bef-840de552ae28",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C13.1",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "33383260-eb77-4f88-a36d-46171e550cd7",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3a66a0d8-a4b0-4282-9936-fdae79b412fc",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3d128062-54a3-4fd3-ab3d-818e4ec84e57",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U2.8",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5606d00a-ba32-4a8b-900a-e38cdc1dfb47",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "58875d78-33e0-43fb-879b-22554b70173c",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C13.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C12.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "R44.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "6e4facda-8a4c-4ac9-97af-92e3c0d9bd0a",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "8074ddce-ca09-4994-8805-3fe327acfc96",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "9901811b-b56a-42a6-bf80-f917710178a5",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "991d0e93-c7b2-44e7-8624-30e7e498d446",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "a7116edf-7f47-4bb1-824f-eff8212fed00",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U2.7",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "FB2.2",
+                    "net": "+3V3_IMU",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "d574d4ee-502e-4fdc-998e-679f88314698",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "C11.2",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "d9731330-cda6-44f0-811a-9cdea7ea0676",
+                    "net": "+3V3_IMU",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "e3f33672-6cac-4860-8ade-be242dc7bc28",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "e6cfad7e-3585-4ac5-b26e-a6d5ffdf4863",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "nearest_foreign_to_targets": {
+        "R43.2": [
+          {
+            "object": "R41.2",
+            "net": "GND",
+            "distance_from_target_mm": 0.47350000000000136
+          },
+          {
+            "object": "R43.1",
+            "net": "ADC_BUS",
+            "distance_from_target_mm": 0.5434999999999981
+          },
+          {
+            "object": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+            "net": "GND",
+            "distance_from_target_mm": 0.6105410277549718
+          },
+          {
+            "object": "9d2d7f0a-7e0b-46fd-b3d2-73bdac13428a",
+            "net": "GND",
+            "distance_from_target_mm": 0.6275520326332098
+          },
+          {
+            "object": "R41.1",
+            "net": "ADC_BEC",
+            "distance_from_target_mm": 0.6680834414639784
+          },
+          {
+            "object": "U15.10",
+            "net": "unconnected-(U15-NC10-Pad10)",
+            "distance_from_target_mm": 0.6834999999999987
+          },
+          {
+            "object": "U15.1",
+            "net": "PORT_C_RX_EXT",
+            "distance_from_target_mm": 0.7773973807999802
+          },
+          {
+            "object": "1fbfda30-a51a-4502-95ff-cccb63776536",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 1.1478867475808936
+          }
+        ],
+        "R44.1": [
+          {
+            "object": "a7116edf-7f47-4bb1-824f-eff8212fed00",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.19461188803692447
+          },
+          {
+            "object": "8074ddce-ca09-4994-8805-3fe327acfc96",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.19473514535540903
+          },
+          {
+            "object": "58875d78-33e0-43fb-879b-22554b70173c",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.19780666543074713
+          },
+          {
+            "object": "991d0e93-c7b2-44e7-8624-30e7e498d446",
+            "net": "+3V3_IMU",
+            "distance_from_target_mm": 0.2399909825577589
+          },
+          {
+            "object": "R44.2",
+            "net": "GND",
+            "distance_from_target_mm": 0.5434999999999999
+          },
+          {
+            "object": "U15.6",
+            "net": "unconnected-(U15-NC6-Pad6)",
+            "distance_from_target_mm": 0.5835000000000008
+          },
+          {
+            "object": "U15.7",
+            "net": "unconnected-(U15-NC7-Pad7)",
+            "distance_from_target_mm": 0.5864900748453016
+          },
+          {
+            "object": "8616ea55-a9cf-4bcb-8e6b-3a74c20b83c1",
+            "net": "GND",
+            "distance_from_target_mm": 0.6884949999999996
+          }
+        ]
+      },
+      "seconds": 55.98182520299815
+    },
+    {
+      "net": "FLASH_WP_N",
+      "layer": "B.Cu",
+      "window_mm": [
+        0,
+        0,
+        41.66,
+        25.4
+      ],
+      "obstacle_count": 837,
+      "optimistic_native_polygon_bound": {
+        "component_count": 135,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R5.2": {
+            "target_area_mm2": 0.2074769241029928,
+            "legal_target_area_mm2": 0.2074769241029925,
+            "free_component_ids": [
+              9
+            ],
+            "components": [
+              {
+                "id": 9,
+                "area_mm2": 47.59659143375095,
+                "bounds_mm": [
+                  25.162329481733877,
+                  13.237437863671241,
+                  41.342499999999994,
+                  25.0825
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 24,
+                  "PORT_C_TX_MCU": 1,
+                  "+3V3_CORE": 23,
+                  "ABC_FB": 2,
+                  "USB_N": 3,
+                  "USB_LIMITED": 3,
+                  "USB_VBUS_RAW": 9,
+                  "FLASH_CS": 1,
+                  "null": 1,
+                  "DSM_RX_MCU": 2,
+                  "FLASH_SCK": 1,
+                  "+5V_PERIPH": 2,
+                  "FLASH_HOLD_N": 2,
+                  "DSM_RX_EXT": 1,
+                  "FLASH_MOSI": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "FLASH_MISO": 1
+                },
+                "boundary_mutable_count": 0
+              }
+            ]
+          },
+          "U3.3": {
+            "target_area_mm2": 0.19182907739757388,
+            "legal_target_area_mm2": 0.19182907739757388,
+            "free_component_ids": [
+              93
+            ],
+            "components": [
+              {
+                "id": 93,
+                "area_mm2": 2.775664141776123,
+                "bounds_mm": [
+                  30.406956931184435,
+                  18.36714735640089,
+                  32.73788627704536,
+                  21.683688666849218
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 4,
+                  "ABC_VAUX": 3,
+                  "ABC_FB": 2,
+                  "+3V3_CORE": 3
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "1f9d5625-05f2-43d6-a725-b5320297e455",
+                    "net": "ABC_VAUX",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3a658e16-7d30-4a10-9cb4-af5fbd17047d",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "50395a14-6c4d-433d-91b4-8d2840dd56bd",
+                    "net": "ABC_FB",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5fddccf2-7925-4bc6-a534-89d1b502a1d5",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U3.4",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "855778a5-68e4-455a-9447-8ac1afbea18e",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "R55.1",
+                    "net": "ABC_FB",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "ff489f0b-2608-455c-b1f2-70a635a8a1fc",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "conservative_native_polygon_bound": {
+        "component_count": 135,
+        "same_component": false,
+        "common_component_ids": [],
+        "targets": {
+          "R5.2": {
+            "target_area_mm2": 0.2074769241029928,
+            "legal_target_area_mm2": 0.2074769241029925,
+            "free_component_ids": [
+              9
+            ],
+            "components": [
+              {
+                "id": 9,
+                "area_mm2": 47.594120645163215,
+                "bounds_mm": [
+                  25.162405106063666,
+                  13.23748908388223,
+                  41.342476091033625,
+                  25.082476091033627
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 24,
+                  "PORT_C_TX_MCU": 1,
+                  "+3V3_CORE": 23,
+                  "ABC_FB": 2,
+                  "USB_N": 3,
+                  "USB_LIMITED": 3,
+                  "USB_VBUS_RAW": 9,
+                  "FLASH_CS": 1,
+                  "null": 1,
+                  "DSM_RX_MCU": 2,
+                  "FLASH_SCK": 1,
+                  "+5V_PERIPH": 2,
+                  "FLASH_HOLD_N": 2,
+                  "DSM_RX_EXT": 1,
+                  "FLASH_MOSI": 1,
+                  "PORT_C_TX_EXT": 1,
+                  "FLASH_MISO": 1
+                },
+                "boundary_mutable_count": 0
+              }
+            ]
+          },
+          "U3.3": {
+            "target_area_mm2": 0.19182907739757388,
+            "legal_target_area_mm2": 0.19182907739757388,
+            "free_component_ids": [
+              93
+            ],
+            "components": [
+              {
+                "id": 93,
+                "area_mm2": 2.7755170910718667,
+                "bounds_mm": [
+                  30.406977614057162,
+                  18.367216085366035,
+                  32.73785880722696,
+                  21.68367304687935
+                ],
+                "reaches_window_boundary": false,
+                "boundary_net_counts": {
+                  "GND": 4,
+                  "ABC_VAUX": 3,
+                  "ABC_FB": 2,
+                  "+3V3_CORE": 3
+                },
+                "boundary_mutable_count": 0,
+                "boundary_objects": [
+                  {
+                    "object": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "1f9d5625-05f2-43d6-a725-b5320297e455",
+                    "net": "ABC_VAUX",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "3a658e16-7d30-4a10-9cb4-af5fbd17047d",
+                    "net": "GND",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "50395a14-6c4d-433d-91b4-8d2840dd56bd",
+                    "net": "ABC_FB",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "5fddccf2-7925-4bc6-a534-89d1b502a1d5",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "U3.4",
+                    "net": "GND",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "855778a5-68e4-455a-9447-8ac1afbea18e",
+                    "net": "ABC_VAUX",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "R55.1",
+                    "net": "ABC_FB",
+                    "kind": "pad",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+                    "net": "GND",
+                    "kind": "via",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  },
+                  {
+                    "object": "ff489f0b-2608-455c-b1f2-70a635a8a1fc",
+                    "net": "+3V3_CORE",
+                    "kind": "track",
+                    "mutable_source": false
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "nearest_foreign_to_targets": {
+        "R5.2": [
+          {
+            "object": "a9754953-cd11-4b6a-95ea-15bf491aa98c",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.5154250656176895
+          },
+          {
+            "object": "6bf881c2-734b-4dd2-80a8-8e412994c36f",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.5165322297577932
+          },
+          {
+            "object": "85e7c6af-a5c6-4757-a750-0cc5aebf01f2",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.5165353882938285
+          },
+          {
+            "object": "R5.1",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.543499999999998
+          },
+          {
+            "object": "R38.1",
+            "net": "DSM_RX_EXT",
+            "distance_from_target_mm": 0.7483375057848564
+          },
+          {
+            "object": "R6.1",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.8535000000000003
+          },
+          {
+            "object": "df946d22-f4d7-429e-98ec-9b49188086d2",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 1.0234960000000015
+          },
+          {
+            "object": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 1.0717912872334034
+          }
+        ],
+        "U3.3": [
+          {
+            "object": "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.2336712193863015
+          },
+          {
+            "object": "ff489f0b-2608-455c-b1f2-70a635a8a1fc",
+            "net": "+3V3_CORE",
+            "distance_from_target_mm": 0.39374243635021605
+          },
+          {
+            "object": "855778a5-68e4-455a-9447-8ac1afbea18e",
+            "net": "ABC_VAUX",
+            "distance_from_target_mm": 0.43021399702924074
+          },
+          {
+            "object": "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+            "net": "ABC_VAUX",
+            "distance_from_target_mm": 0.4493240000000007
+          },
+          {
+            "object": "R34.1",
+            "net": "PORT_C_RX_EXT",
+            "distance_from_target_mm": 0.764876751881586
+          },
+          {
+            "object": "U3.4",
+            "net": "GND",
+            "distance_from_target_mm": 0.8335000000000008
+          },
+          {
+            "object": "U3.2",
+            "net": "FLASH_MISO",
+            "distance_from_target_mm": 0.8335000000000043
+          },
+          {
+            "object": "3a658e16-7d30-4a10-9cb4-af5fbd17047d",
+            "net": "GND",
+            "distance_from_target_mm": 0.9584909999999986
+          }
+        ]
+      },
+      "seconds": 22.073583878001955
+    }
+  ]
+}

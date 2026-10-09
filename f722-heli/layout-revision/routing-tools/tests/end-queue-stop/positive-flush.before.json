@@ -1,0 +1,170 @@
+{
+  "areas": [
+    {
+      "nets": [
+        "TEST"
+      ],
+      "fixed": "SYSTEM_FIXED",
+      "label": "SYNTHETIC_B",
+      "layer": "F.Cu",
+      "kind": "contact",
+      "clearance_class": 1,
+      "outer": [
+        [
+          8.0,
+          5.25
+        ],
+        [
+          8.25,
+          5.25
+        ],
+        [
+          8.25,
+          5.0
+        ],
+        [
+          8.0,
+          5.0
+        ]
+      ],
+      "uuid": "SYNTHETIC_B",
+      "plated": false,
+      "native_group": "SYNTHETIC_B"
+    },
+    {
+      "nets": [
+        "TEST"
+      ],
+      "fixed": "SYSTEM_FIXED",
+      "label": "SYNTHETIC_A",
+      "layer": "F.Cu",
+      "kind": "contact",
+      "clearance_class": 1,
+      "outer": [
+        [
+          1.0,
+          5.25
+        ],
+        [
+          1.25,
+          5.25
+        ],
+        [
+          1.25,
+          5.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ],
+      "uuid": "SYNTHETIC_A",
+      "plated": false,
+      "native_group": "SYNTHETIC_A"
+    },
+    {
+      "nets": [
+        "TEST"
+      ],
+      "fixed": "SYSTEM_FIXED",
+      "label": "SYNTHETIC_B:copper",
+      "layer": "F.Cu",
+      "kind": "foreign_guard",
+      "clearance_class": 1,
+      "outer": [
+        [
+          8.0,
+          5.25
+        ],
+        [
+          8.25,
+          5.25
+        ],
+        [
+          8.25,
+          5.0
+        ],
+        [
+          8.0,
+          5.0
+        ]
+      ]
+    },
+    {
+      "nets": [
+        "TEST"
+      ],
+      "fixed": "SYSTEM_FIXED",
+      "label": "SYNTHETIC_A:copper",
+      "layer": "F.Cu",
+      "kind": "foreign_guard",
+      "clearance_class": 1,
+      "outer": [
+        [
+          1.0,
+          5.25
+        ],
+        [
+          1.25,
+          5.25
+        ],
+        [
+          1.25,
+          5.0
+        ],
+        [
+          1.0,
+          5.0
+        ]
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "nets": [
+        "FIXED_OTHER"
+      ],
+      "fixed": "SYSTEM_FIXED",
+      "kind": "via",
+      "xy": [
+        3.0,
+        2.0
+      ],
+      "diameter": 0.45,
+      "drill": 0.2
+    },
+    {
+      "nets": [
+        "FIXED_OTHER"
+      ],
+      "fixed": "SYSTEM_FIXED",
+      "kind": "track",
+      "layer": "F.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          2.0,
+          2.0
+        ],
+        [
+          3.0,
+          2.0
+        ]
+      ]
+    }
+  ],
+  "contact_partitions": [
+    {
+      "net": "TEST",
+      "contacts": [
+        "SYNTHETIC_B:F.Cu"
+      ]
+    },
+    {
+      "net": "TEST",
+      "contacts": [
+        "SYNTHETIC_A:F.Cu"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+(pcb "failed-search-state-control"
+(parser (string_quote ") (space_in_quoted_tokens on) (host_cad "KiCad") (host_version "10.0.6"))
+(resolution mm 100000) (unit mm)
+(structure
+(layer F.Cu (type signal) (property (index 0)))
+(layer B.Cu (type signal) (property (index 1)))
+(boundary (rect pcb 0 -10 10 0))
+(via "VIA_450_200") (rule (width 0.127) (clearance 0.127)))
+(placement)
+(library (padstack "VIA_450_200" (shape (circle F.Cu 0.45)) (shape (circle B.Cu 0.45)) (attach off)))
+(network (net "TEST" (pins))
+(class "ordinary" "TEST" (circuit (use_via "VIA_450_200")) (rule (width 0.127) (clearance 0.127))))
+(wiring))

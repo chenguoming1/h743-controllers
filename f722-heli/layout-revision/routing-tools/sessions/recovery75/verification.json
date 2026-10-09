@@ -1,0 +1,155 @@
+{
+  "schema": "f722-historical-recovery-verification/v1",
+  "base_board_sha256": "008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e",
+  "base_git_commit": null,
+  "base_authority": "SHA-256 only; no publication commit claimed",
+  "helper_sha256": "5538aeadbe18d0352d465140e6ff94df8fa0a09077c9e0304f67a48922fe6581",
+  "paired_manifest": {
+    "file": "paired-files.json",
+    "bytes": 14211,
+    "sha256": "bdfaf31f843b62fe472fda956bda83d0faa4d2785c9cf09286cb69dd847cbc38"
+  },
+  "delta_controls": [
+    {
+      "file": "candidate09.f722-heli.kicad_pcb.delta.json",
+      "bytes": 13592,
+      "sha256": "c58e982b8e896bf4f4f01b9714fa41e7566bd7c4fa6f653eea30e77b8588c6ef",
+      "source": "candidate09",
+      "target_path": "f722-heli.kicad_pcb",
+      "target_bytes": 1105860,
+      "target_sha256": "544491a48469d418ed47cf5da12b6b9406db282d60a3cda77b154f6ed11a869d",
+      "operations": 905,
+      "exact_bytes_verified": true,
+      "rejected_controls": [
+        "wrong_base",
+        "tampered_target_hash",
+        "tampered_literal",
+        "out_of_bounds_copy"
+      ]
+    },
+    {
+      "file": "candidate09.f722-heli.kicad_sch.delta.json",
+      "bytes": 330,
+      "sha256": "2775b8ca2c0e4fbd567da6d9aec5bb1a2bd9647a2cccb471aec34089e909bee6",
+      "source": "candidate09",
+      "target_path": "f722-heli.kicad_sch",
+      "target_bytes": 87038,
+      "target_sha256": "c8e759d0aedebc8bd51226cf6fe47e953a0b0a3a5f326428473d039921fc5457",
+      "operations": 5,
+      "exact_bytes_verified": true,
+      "rejected_controls": [
+        "wrong_base",
+        "tampered_target_hash",
+        "tampered_literal",
+        "out_of_bounds_copy"
+      ]
+    },
+    {
+      "file": "candidate09.io-ports.kicad_sch.delta.json",
+      "bytes": 302,
+      "sha256": "e3bf6c6886a86b1f5da694f77e327aea0f8938df65a9b0be38ec24308ced55ea",
+      "source": "candidate09",
+      "target_path": "io-ports.kicad_sch",
+      "target_bytes": 99810,
+      "target_sha256": "9d2bf6086beeb8257373fadad13527d80d65f87aba792a498c13fb6b4efd3552",
+      "operations": 2,
+      "exact_bytes_verified": true,
+      "rejected_controls": [
+        "wrong_base",
+        "tampered_target_hash",
+        "tampered_literal",
+        "out_of_bounds_copy"
+      ]
+    },
+    {
+      "file": "candidate09.power-bec.kicad_sch.delta.json",
+      "bytes": 315,
+      "sha256": "f480fe9768aaf52400cac0538ae48e035c0dd28211438c08e08e147c43fa2027",
+      "source": "candidate09",
+      "target_path": "power-bec.kicad_sch",
+      "target_bytes": 78986,
+      "target_sha256": "422acba8acdea6fd7342f12db922983fecbd534fd2c1a84c20918b1420d12b81",
+      "operations": 3,
+      "exact_bytes_verified": true,
+      "rejected_controls": [
+        "wrong_base",
+        "tampered_target_hash",
+        "tampered_literal",
+        "out_of_bounds_copy"
+      ]
+    },
+    {
+      "file": "candidate09.usb-clock.kicad_sch.delta.json",
+      "bytes": 315,
+      "sha256": "80ce29d33842491125c47258b2fd48209d5890d94c6d0f2556d49c1973f6dd32",
+      "source": "candidate09",
+      "target_path": "usb-clock.kicad_sch",
+      "target_bytes": 65321,
+      "target_sha256": "3782c0ba730a41575fadd22ebefaaf441fe85ebb145f3d4d7242ee44268fcdad",
+      "operations": 3,
+      "exact_bytes_verified": true,
+      "rejected_controls": [
+        "wrong_base",
+        "tampered_target_hash",
+        "tampered_literal",
+        "out_of_bounds_copy"
+      ]
+    },
+    {
+      "file": "candidate12.f722-heli.kicad_pcb.delta.json",
+      "bytes": 8320,
+      "sha256": "f2e43eafa42563d09bd6f2200dc1e01da38236239a18001f736c6a1a1edbd24d",
+      "source": "candidate12",
+      "target_path": "f722-heli.kicad_pcb",
+      "target_bytes": 1218002,
+      "target_sha256": "508b5a36ed12795c4a2486b699f321f0f9867e29717175455e8fd7fc6f1f525a",
+      "operations": 546,
+      "exact_bytes_verified": true,
+      "rejected_controls": [
+        "wrong_base",
+        "tampered_target_hash",
+        "tampered_literal",
+        "out_of_bounds_copy"
+      ]
+    }
+  ],
+  "project_controls": [
+    {
+      "source": "candidate09",
+      "exact_required_files": 63,
+      "board_sha256": "544491a48469d418ed47cf5da12b6b9406db282d60a3cda77b154f6ed11a869d",
+      "existing_output_rejected": true,
+      "result": {
+        "source": "candidate09",
+        "files": 63,
+        "board_sha256": "544491a48469d418ed47cf5da12b6b9406db282d60a3cda77b154f6ed11a869d",
+        "board_bytes": 1105860,
+        "status": "Exact historical replay project; not adopted layout"
+      }
+    },
+    {
+      "source": "candidate12",
+      "exact_required_files": 63,
+      "board_sha256": "508b5a36ed12795c4a2486b699f321f0f9867e29717175455e8fd7fc6f1f525a",
+      "existing_output_rejected": true,
+      "result": {
+        "source": "candidate12",
+        "files": 63,
+        "board_sha256": "508b5a36ed12795c4a2486b699f321f0f9867e29717175455e8fd7fc6f1f525a",
+        "board_bytes": 1218002,
+        "status": "Exact historical replay project; not adopted layout"
+      }
+    }
+  ],
+  "wrong_project_rejected_before_output": true,
+  "paired_required_count_excluding_board": 62,
+  "candidate09_unchanged_paired_count": 58,
+  "candidate12_unchanged_paired_count": 62,
+  "unresolved_required_dependencies": [],
+  "scope": "Exact file reconstruction controls only. No KiCad/JVM/native routing or DRC run was performed.",
+  "tampered_paired_project_rejected_before_output": true,
+  "missing_paired_file_rejected_before_output": true,
+  "tampered_delta_file_rejected": true,
+  "tampered_transform_hash_rejected": true,
+  "single_file_cli_exact_bytes_verified": true
+}
