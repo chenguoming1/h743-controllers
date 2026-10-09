@@ -60,27 +60,48 @@ def main():
  b=p.LoadBoard(str(source));before=export(source);source_by_uuid={t.m_Uuid.AsString():t for t in b.GetTracks()};mutable=set(m.get('mutable_source_ids',[]));source_routes={o['uuid']:o for o in before['objects']if o['kind']!='pad'};old={}
  for uid in mutable:
   o=source_routes[uid];q=dict(o);q['logical_net']=m['source_logical_nets'][uid];q['layer']=next(iter(o['copper']));q['drill']=o['drill']['width']if o['drill']else None;old[uid]=q
- kept,new_routes=reconcile(ses,old);seen=set(kept);added=[];route_map={uid:old[uid]['logical_net']for uid in kept}
+ kept,new_routes=reconcile(ses,old);seen=set(kept);added=[];held=[];route_map={uid:old[uid]['logical_net']for uid in kept}
  for r in new_routes:
   if r['kind']=='track':
    assert r['layer']in m['routable_layers'];assert nm(r['width'])==127000;t=p.PCB_TRACK(b);t.SetStart(p.VECTOR2I(*map(nm,r['start'])));t.SetEnd(p.VECTOR2I(*map(nm,r['end'])));t.SetWidth(nm(r['width']));t.SetLayer(b.GetLayerID(r['layer']))
   else:
    t=p.PCB_VIA(b);t.SetPosition(p.VECTOR2I(*map(nm,r['xy'])));t.SetWidth(450000);t.SetDrill(200000);t.SetViaType(p.VIATYPE_THROUGH);t.SetLayerPair(p.F_Cu,p.B_Cu);t.SetFrontTentingMode(p.TENTING_MODE_TENTED);t.SetBackTentingMode(p.TENTING_MODE_TENTED)
-  t.SetNet(b.FindNet(aliases[r['logical_net']]));b.Add(t);added.append(t.m_Uuid.AsString());route_map[t.m_Uuid.AsString()]=r['logical_net']
+  t.SetNet(b.FindNet(aliases[r['logical_net']]));b.Add(t);held.append(t);added.append(t.m_Uuid.AsString());route_map[t.m_Uuid.AsString()]=r['logical_net']
  removed=sorted(mutable-seen)
  for uid in removed:b.Remove(source_by_uuid[uid])
+ def verify_intended_route_nets(board):
+  current={t.m_Uuid.AsString():t.GetNetname() for t in board.GetTracks()}
+  assert all(current.get(uid)==aliases[logical] for uid,logical in route_map.items()),'Native connectivity reassigned an intended route net'
+ verify_intended_route_nets(b)
  a.out.parent.mkdir(parents=True,exist_ok=True)
  for ext in ['.kicad_pro','.kicad_dru']:
   config=source.with_suffix(ext)
   if config.exists():shutil.copyfile(config,a.out.with_suffix(ext))
+ regenerated=set(m.get('regenerable_reference_zones',[]))
+ refill=bool(regenerated and (added or removed))
+ if refill:
+  project=a.out.with_suffix('.kicad_pro').resolve();assert project.exists(),'Native refill requires the paired source project'
+  # KiCad's settings manager needs the actual destination board/project pair.
+  # Reopen our newly saved copy before attaching that project's settings.
+  p.SaveBoard(str(a.out.resolve()),b);b=p.LoadBoard(str(a.out.resolve()));verify_intended_route_nets(b)
+  sm=p.GetSettingsManager();assert sm.LoadProject(str(project)),'Native project load failed';b.SetProject(sm.GetProject(str(project)));b.SynchronizeNetsAndNetClasses(False);b.BuildConnectivity();assert p.ZONE_FILLER(b).Fill(b.Zones()),'Native reference plane refill failed'
+  verify_intended_route_nets(b)
  p.SaveBoard(str(a.out),b);after=export(a.out);after_by_uuid={o['uuid']:o for o in after['objects']};fixed=[o for o in before['objects']if o['uuid']not in mutable]
  assert all(after_by_uuid.get(o['uuid'])==o for o in fixed),'Fixed native object identity/geometry changed'
- assert before['footprints']==after['footprints'] and before['zones']==after['zones'] and before['edge_cuts']==after['edge_cuts'] and before['copper_layers']==after['copper_layers'],'Native non-route geometry changed'
+ def source_zone_contract(z):
+  return {k:v for k,v in z.items() if not(refill and z['uuid']in regenerated and k in {'filled','fill_representation'})}
+ assert before['footprints']==after['footprints'] and list(map(source_zone_contract,before['zones']))==list(map(source_zone_contract,after['zones'])) and before['edge_cuts']==after['edge_cuts'] and before['copper_layers']==after['copper_layers'],'Native non-route geometry changed'
+ if refill:
+  assert all(z['net']=='GND' and set(z['layers'])<={'In1.Cu','In4.Cu'} and all(z['filled'].get(l) for l in z['layers']) for z in after['zones'] if z['uuid']in regenerated),'Reference refill removed a plane or changed its ownership'
  if not ses and not mutable:assert before['objects']==after['objects'],'Zero import changed native copper'
  actual=[]
  for uid,logical in route_map.items():
-  o=after_by_uuid[uid];q=dict(o);q['logical_net']=logical;q['layer']=next(iter(o['copper']));q['drill']=o['drill']['width']if o['drill']else None;actual.append(q)
+  o=after_by_uuid[uid];assert o['net']==aliases[logical],'Native refill/connectivity reassigned an intended route net';q=dict(o);q['logical_net']=logical;q['layer']=next(iter(o['copper']));q['drill']=o['drill']['width']if o['drill']else None;actual.append(q)
  assert route_union(actual)==route_union(ses),'Imported copper differs from independent SES union'
  result={'passed':True,'source_sha256':m['board_sha256'],'output_sha256':sha(a.out),'session_sha256':sha(a.session),'model_sha256':sha(a.model),'fixed_objects_preserved':len(fixed),'unchanged_routes_preserved':len(kept),'routes_added':len(added),'routes_removed':len(removed),'footprints_preserved':len(before['footprints']),'exact_native_geometry_preserved':True,'ses_engine_native_geometry_equal':True,'logical_route_map':route_map}
+ handoff_map={uid:logical for uid,logical in m['source_logical_nets'].items() if uid in after_by_uuid and aliases[logical] in allowed};handoff_map.update(route_map)
+ logical_handoff={'schema':'f722-logical-route-map/v1','board_sha256':result['output_sha256'],'source_sha256':m['board_sha256'],'model_sha256':sha(a.model),'logical_route_map':handoff_map}
+ map_path=a.out.with_suffix('.logical-route-map.json');map_path.write_text(json.dumps(logical_handoff,indent=2)+'\n')
+ result.update({'logical_route_map':handoff_map,'logical_route_map_artifact':map_path.name,'synthetic_import_fixture':report.get('synthetic_import_fixture',False),'exact_native_geometry_preserved':not refill,'exact_fixed_native_objects_preserved':True,'zone_identity_outline_and_rules_preserved':True,'reference_plane_refill_performed':refill,'regenerable_reference_zones':sorted(regenerated),'post_refill_reference_validation_required':refill})
  a.out.with_suffix('.import.json').write_text(json.dumps(result,indent=2)+'\n');a.out.with_suffix('.native.json').write_text(json.dumps(after,separators=(',',':'))+'\n');print(json.dumps({k:v for k,v in result.items()if k!='logical_route_map'}))
 if __name__=='__main__':main()

@@ -11,6 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 import pcbnew as p
+from exact_native_contours import native_filled_polygons
 
 ERROR_IU = 10  # 0.00001 mm at KiCad's 1 nm integer resolution.
 
@@ -123,11 +124,12 @@ def export(board_path):
              "layers": [b.GetLayerName(l) for l in z.GetLayerSet().Seq()], "outline": polygons(z.Outline()),
              "forbid": {kind: getattr(z, method)() for kind, method in [
                  ("tracks", "GetDoNotAllowTracks"), ("vias", "GetDoNotAllowVias"), ("pads", "GetDoNotAllowPads"),
-                 ("footprints", "GetDoNotAllowFootprints"), ("copper", "GetDoNotAllowZoneFills")]}, "filled": {}}
+             ("footprints", "GetDoNotAllowFootprints"), ("copper", "GetDoNotAllowZoneFills")]}, "filled": {}, "fill_representation": {}}
         if not q["rule"]:
             for l in layers:
                 if z.IsOnLayer(l) and z.HasFilledPolysForLayer(l):
-                    q["filled"][b.GetLayerName(l)] = polygons(z.GetFilledPolysList(l))
+                    name = b.GetLayerName(l)
+                    q["filled"][name], q["fill_representation"][name] = native_filled_polygons(z.GetFilledPolysList(l))
         zone_data.append(q)
     outline = p.SHAPE_POLY_SET()
     native_outline_error = b.GetDesignSettings().m_MaxError / 1e6

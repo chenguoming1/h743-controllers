@@ -1,6 +1,10 @@
 {
-  "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86",
+  "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84",
   "commands": [
+    [
+      "owner-drc-all",
+      0
+    ],
     [
       "owner-drc",
       0
@@ -26,8 +30,8 @@
       0
     ],
     [
-      "owner-mechanical",
-      0
+      "owner-mechanical_initial_pose_schema",
+      1
     ],
     [
       "owner-protection",
@@ -36,37 +40,47 @@
     [
       "owner-supplemental",
       1
+    ],
+    [
+      "owner-mechanical_normalized_pose_manifest",
+      0
     ]
   ],
   "drc": {
-    "unconnected": 158,
+    "unconnected": 123,
     "errors": 0,
-    "warnings": 17
+    "warnings": 9
+  },
+  "drc-all": {
+    "unconnected": 123,
+    "errors": 0,
+    "warnings": 9
   },
   "process": {
     "passed": true,
-    "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86"
+    "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84"
   },
   "mechanical": {
     "passed": true,
-    "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86"
+    "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84"
   },
   "parity": {
     "passed": true,
-    "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86"
+    "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84"
   },
   "firmware": {
     "passed": true,
-    "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86"
+    "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84"
   },
   "protection": {
     "passed": 1,
     "total": 18,
-    "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86"
+    "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84"
   },
   "supplemental": {
     "passed": 5,
     "total": 7,
-    "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86"
-  }
+    "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84"
+  },
+  "pose_manifest_note": "Worker keyed pose records were normalized to the checker list schema; only approved C52 180-degree in-place rotation differs from usb-u5-05 targets."
 }

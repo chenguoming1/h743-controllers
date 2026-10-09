@@ -2,6 +2,7 @@
 import argparse,hashlib,json,math
 from pathlib import Path
 import pcbnew as p
+from exact_native_contours import native_filled_polygons
 ap=argparse.ArgumentParser();ap.add_argument('board',type=Path);ap.add_argument('out',type=Path);a=ap.parse_args();a.board=a.board.resolve();b=p.LoadBoard(str(a.board));sm=p.GetSettingsManager();sm.LoadProject(str(a.board.with_suffix('.kicad_pro')));b.SetProject(sm.GetProject(str(a.board.with_suffix('.kicad_pro'))));b.SynchronizeNetsAndNetClasses(False);tracks=list(b.GetTracks());vias=[t for t in tracks if isinstance(t,p.PCB_VIA)];pads=list(b.GetPads());holes=[];mask=[];faults=[]
 def uid(x):return x.m_Uuid.AsString()
 def label(x):return x.GetParentFootprint().GetReference()+'.'+x.GetNumber()
@@ -34,6 +35,6 @@ planes=[]
 for z in b.Zones():
  if z.GetIsRuleArea():continue
  for l in z.GetLayerSet().Seq():
-  q=z.GetFilledPolysList(l);planes.append(dict(uuid=uid(z),net=z.GetNetname(),layer=b.GetLayerName(l),outlines=q.OutlineCount(),holes=sum(q.HoleCount(i)for i in range(q.OutlineCount()))))
+  q=z.GetFilledPolysList(l);filled,receipts=native_filled_polygons(q);planes.append(dict(uuid=uid(z),net=z.GetNetname(),layer=b.GetLayerName(l),outlines=len(filled),holes=sum(len(v['holes']) for v in filled),native_storage_outlines=q.OutlineCount(),native_storage_holes=sum(q.HoleCount(i)for i in range(q.OutlineCount())),contour_receipts=receipts))
 report=dict(board_sha256=hashlib.sha256(a.board.read_bytes()).hexdigest(),layers=[b.GetLayerName(l)for l in b.GetEnabledLayers().CuStack()],tracks=len(tracks)-len(vias),vias=len(vias),mask_openings=len(mask),faults=faults,fullnet_connectivity=connect,critical_ground_returns=ground,ground_planes=planes,limits='Subset copper audit only. Global power/protection routes and physical system validation remain separate.')
-a.out.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(dict(faults=len(faults),incomplete_nets=[r['net']for r in connect if not r['complete']],missing_ground=[r['pad']for r in ground if not r['connected_to_ground_plane']],planes=planes),indent=2));raise SystemExit(bool(faults))
+a.out.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(dict(faults=len(faults),incomplete_nets=[r['net']for r in connect if not r['complete']],missing_ground=[r['pad']for r in ground if not r['connected_to_ground_plane']],planes=planes),indent=2));raise SystemExit(bool(faults or any(not r['complete'] for r in connect) or any(not r['connected_to_ground_plane'] for r in ground)))

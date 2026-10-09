@@ -11,6 +11,7 @@ ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'native-tools' if (ROOT/'native-tools').exists() else ROOT.parent/'protection-checks'))
 from check_protection_paths import make_graph
 LAYERS=['F.Cu','In1.Cu','In2.Cu','In3.Cu','In4.Cu','B.Cu']
+REFERENCE_LAYERS={'In1.Cu','In4.Cu'}
 POWER=set('EFUSE_DVDT GND VX_RAW VX_PROTECTED +5V_BEC +5V_PERIPH CORE_BUCK_IN +3V3_CORE +3V3_DSM USB_VBUS_RAW USB_LIMITED ABC_L1 ABC_L2 CORE_SW ABC_FB ABC_VAUX'.split())
 CRITICAL=set('HSE_IN HSE_OUT HSE_XTAL_OUT VCAP VCAP_CAP IMU_CS IMU_INT IMU_MISO IMU_MOSI IMU_SCK USB_N USB_P USB_CC1 USB_CC2 +3V3_ANALOG +3V3_IMU'.split())
 POWER_REFS={f'U{i}'for i in range(5,12)}|{'L1','L2','D8','C20'}|{f'C{i}'for i in range(53,76)}|{f'R{i}'for i in range(49,72)}
@@ -83,7 +84,9 @@ def main():
    for o in os:contact_aliases[o['uuid']]=[net]
  fixed_ids=set(json.loads(a.fixed_ids.read_text()))if a.fixed_ids else set()
  route_map=json.loads(a.logical_route_map.read_text())if a.logical_route_map else {}
- if 'logical_route_map'in route_map:route_map=route_map['logical_route_map']
+ if 'logical_route_map'in route_map:
+  if 'board_sha256'in route_map:assert route_map['board_sha256']==n['board_sha256'],'Logical route map belongs to a different native board'
+  route_map=route_map['logical_route_map']
  fixed=[];mutable=[];source_logical={}
  for o in objs:
   if o['kind']=='pad':continue
@@ -92,6 +95,7 @@ def main():
   assert aliases.get(logical)==o['net'];source_logical[o['uuid']]=logical
   (mutable if o['net']in ordinary and o['uuid']not in fixed_ids else fixed).append(o)
  fixed_zones=[]
+ regenerable_reference_zones=[z['uuid'] for z in n['zones'] if not z['rule'] and z['net']=='GND' and z['layers'] and set(z['layers'])<=REFERENCE_LAYERS]
  for z in n['zones']:
   if not z['rule']and z['filled']:
    assert z['net']not in ordinary,'Ordinary signal fills require explicit role/model review'
@@ -129,7 +133,7 @@ def main():
    for l in z['layers']:
     if z['forbid']['tracks'] or z['forbid']['copper']:guard(z['uuid']+':rule',l,z['outline'],'foreign',(),0)
     elif z['forbid']['vias']:guard(z['uuid']+':rule',l,z['outline'],'via',(),0)
-  else:
+  elif z['uuid'] not in regenerable_reference_zones:
    for l,ps in z['filled'].items():guard(z['uuid']+':fill',l,ps,owners=[a for a,p in aliases.items()if p==z['net']])
  # Explicit board-edge reserve outside the physical outline, including NPTH holes.
  region=geom(n['outline_with_npth']['polygons']);ext=box(*[region.bounds[0]-1,region.bounds[1]-1,region.bounds[2]+1,region.bounds[3]+1])
@@ -140,6 +144,8 @@ def main():
   if o['kind']=='via':
    for l in LAYERS:guard(o['uuid']+':drill',l,polys(outward(geom(o['drill']['outside']),.125)),'via',(),0)
  model={'schema':'f722-ordinary-model/v1','board_sha256':n['board_sha256'],'native_sha256':sha(a.native),'proof_source_sha256':sha(proof),'adapter_sources':{str(p.relative_to(ROOT)):sha(p)for p in sorted((ROOT/'src').rglob('*.java'))},'layers':LAYERS,'routable_layers':['F.Cu','In2.Cu','In3.Cu','B.Cu'],'ordinary_nets':ordinary,'aliases':aliases,'roles':roles,'contacts':contacts,'guards':guards,'fixed_objects':fixed,'fixed_zones':fixed_zones,'mutable_source_ids':[o['uuid']for o in mutable],'source_logical_nets':source_logical,'rules':{'track_width':.127,'clearance':.127,'via_diameter':.45,'via_drill':.20,'drill_mask_gap':.20,'drill_drill_gap':.25,'edge_npth_gap':.254,'max_new_vias':None,'max_net_length':None},'planning_geometry':{'engine_grid_mm':.00001,'guard_pad_buffer_mm':.00002,'contact_inset_mm':.00002,'native_model_unchanged':True},'support_ready':a.support_ready,'physical_native':str(a.native.resolve()),'physical_board':str(a.board.resolve())}
+ model['regenerable_reference_zones']=regenerable_reference_zones
+ model['reference_plane_policy']={'planning_fill_obstacle':False,'layers':sorted(REFERENCE_LAYERS),'net':'GND','zone_identity_outline_and_rules_preserved':True,'refill_after_route_import':True,'post_refill_reference_validation_required':True}
  # DSN supplies topology/rules and exact fixed native tracks. Areas come from the hashed native model.
  q=lambda s:json.dumps(s)
  s=['(pcb "f722-local" (parser (string_quote ") (space_in_quoted_tokens on) (host_cad "KiCad") (host_version "10.0.6")) (resolution mm 100000) (unit mm)','(structure']
