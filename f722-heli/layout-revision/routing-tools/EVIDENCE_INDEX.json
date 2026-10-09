@@ -1,9 +1,9 @@
 {
-  "checkpoint": "V10 owner-adopted candidate33,49 opens,0 errors,0 warnings; unfinished; numerical applicability false",
+  "checkpoint": "V11 owner-adopted candidate37,45 opens,0 errors,0 warnings; unfinished; numerical applicability false",
   "immutable_v5_manifest_sha256": "02791deae14ce18c6d8b678cb63e3be43d4f383dbc2bc2b2f820e8468f49a0ac",
   "immutable_v5_zip_sha256": "9d6f368c740fa6ce4df36eb9636f155c79eb5937e13f5d622a749c1eae4e2832",
   "previous_evidence_index_sha256": "010e51680d034dd0069fd99691c32220f6ddb461623076f533bf9a5ae2d4308d",
-  "interpretation": "Latest scope is V10. Older embedded descriptions and hashes remain historical. Actual engine sessions, refused raw outputs, explicit native construction, diagnostics and portable checks are distinct evidence classes.",
+  "interpretation": "Latest scope is V11. Historical descriptions remain historical. Raw36 is refused;37 is explicit subset cleanup and not direct engine output.",
   "current_java_source_sha256": {
     "src/LocalRouter.java": "2e8fcec59f2e89b28be8670b71bdff61627874e57c08a6ffabd4949a99d182df",
     "src/NativeContactRegression.java": "5147318bf446197fa1d79bcbacc87a018b79883cd88e59ddb465516f1747de04",
@@ -261,7 +261,7 @@
     "tests/failed-search-state/fixture/routing.dsn": "720931210554d513997eefb4fb47145566e84df75978f9b6a1f54dbc363f3f3a",
     "tests/short-local-proposals/candidate15-short-local-proposals.json": "08f12ec519386a4e5bf1a9b135953e1cdea610cac59e7d3bfaf3678840a668a6"
   },
-  "inherited_checkpoint_description": "V9: owner-adopted candidate28,55 opens,0 native errors/warnings; numerical power/VCAP false; unfinished",
+  "inherited_checkpoint_description": "V10 owner-adopted candidate33,49 opens,0 errors,0 warnings; unfinished; numerical applicability false",
   "v8": {
     "immutable_v7_manifest_sha256": "c1c30c9e18658abef883d0b201b8233f135d7643574536637523cb633e1052d0",
     "selection": "checks/v8-source-identity.json",
@@ -307,5 +307,19 @@
     "java_baseline": "src/",
     "promoted_diagnostics_overlay": "tests/complete-path-diagnostics/InsertFoundConnectionAlgo.java",
     "full_native_or_numerical_replay": false
+  },
+  "v11": {
+    "base_manifest_sha256": "749c4e20e4dbdb2bbb0bbb91e517a71c14817ffee2adda310cc28c2c26c3e024",
+    "source_selection": "checks/v11-source-identity.json",
+    "recovery": "sessions/recovery45/paired-files.json",
+    "session_packets": [
+      "sessions/engine48",
+      "sessions/engine47",
+      "sessions/raw45-refused36"
+    ],
+    "verification": "checks/v11-evidence-verified.json",
+    "latest_candidate": 37,
+    "native_open_connections": 45,
+    "numerical_applicability": false
   }
 }

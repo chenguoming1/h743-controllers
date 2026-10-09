@@ -1,3 +1,17 @@
+# V11 evidence boundary
+
+Latest adopted checkpoint: candidate37,45 opens/0 native errors/0 warnings. Routing and qualification are unfinished. Numerical power/VCAP applicability is false; last fully job-bound numerical source24 is historical only.
+
+- Exact sealed handoffs:34 SHA `de40925b2432c2c378accd22ec6ec01a626958b5251159e8ad2981f2998b5efa`;35 SHA `27a1f374b4946857b88e9f48dbee8af300b859e9db021410476a4b5e6a312064`;37 SHA `be1aee520044dd420b87582e0ce4a15a6bc30ca5b72ab2b318d490ad0f44beaa`.
+- Exact recovery: all 34–37 PCBs and unchanged paired 62-file projects. Raw36 stays refused. Current maps and import wrappers, the original refusal/recipe, subset repair receipt and owner adoptions are included byte-exact.
+- Native history: actual filtered07/08/09 sessions retain successful count receipts and the selected final checkpoint. Full reports are hashed and compacted only by removing fixed guard arrays; route data remain complete. Candidate37 is explicit subset cleanup of native raw36, with no new route geometry, no refill and no equality claim to the raw SES.
+- Owner adoption: included summaries, additive integration receipts, fresh reference comparisons and actual 22-case results are hash-bound to each adopted checkpoint. Original handoff pending statuses remain historical and are not rewritten to imply owner adoption.
+- Portable verification: four new exact recoveries, three packet parser/projection checks, exact34→35 saved zones, exact36→37 one-track subset, owner/reference/zero bindings, source selection, and 25 new evidence rejection controls. Five additional delta rejection controls run from a clean extracted tree.
+- Inherited verification: V10 portable receipt is retained by hash. V10 itself remains immutable. Earlier native/JVM/constructor tests are not repeated for this bounded increment.
+- Fresh37 zero is historical source-bound provenance only. Full native/model exports, binaries, fixed guard arrays and unaccepted continuations/trials are excluded. Referenced hashes for large omitted exports remain provenance, not a claim that those exports are bundled or reexecuted.
+
+## Inherited V10 evidence (historical only)
+
 # V10 evidence boundary
 
 Current package candidate33/49 is owner-adopted but geometrically unfinished. `checks/v10-portable-projections.json` binds original byte identities to path-normalized or explicitly reduced copies. `checks/v10-source-identity.json` pins exact copied sources and adoption receipts. `checks/v10-historical-receipt-status.json` records any unavailable overwritten historical bytes without replacing their original hash claims.

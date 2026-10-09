@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "verifier_source_sha256": "3506d3de76d0ecd2f2eb5dc975e32e895f606628ca65216b6565bae8962ae267",
+  "scope": "Incremental V11 source bindings, exact paired recovery, SES/report parsing, owner/reference/zero receipt bindings, and exact parsed native subset checks. Historical V10 controls retained by hash; no native qualification reexecuted.",
+  "base_manifest_sha256": "749c4e20e4dbdb2bbb0bbb91e517a71c14817ffee2adda310cc28c2c26c3e024",
+  "recovered_projects": [
+    {
+      "candidate": 34,
+      "board_sha256": "49f5d0c7139202b51ad753906b63042449bb8cc15bdb0e688ea6253ed14385c3",
+      "functional_paired_files": 62,
+      "adopted": true
+    },
+    {
+      "candidate": 35,
+      "board_sha256": "a76a523b70a39f1096de40da9e91037bbdf8030f7fcd17e5d92fb20d45690a6a",
+      "functional_paired_files": 62,
+      "adopted": true
+    },
+    {
+      "candidate": 36,
+      "board_sha256": "9c8e03d1cde2e309f223aab44554ced81986437828a81602d42b271f5c3b6ba4",
+      "functional_paired_files": 62,
+      "adopted": false
+    },
+    {
+      "candidate": 37,
+      "board_sha256": "2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115",
+      "functional_paired_files": 62,
+      "adopted": true
+    }
+  ],
+  "packets": [
+    {
+      "packet": "engine48",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "actual_engine_session": true,
+      "adopted_geometry": true,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "engine47",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "actual_engine_session": true,
+      "adopted_geometry": true,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "raw45-refused36",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "actual_engine_session": true,
+      "adopted_geometry": false,
+      "native_replay_executed": false
+    }
+  ],
+  "negative_controls_passed": 25,
+  "negative_controls": [
+    "engine48:wrong source board",
+    "engine48:tampered session.ses",
+    "engine48:tampered engine-report.json",
+    "engine48:tampered import-contract.json",
+    "engine47:wrong source board",
+    "engine47:tampered session.ses",
+    "engine47:tampered engine-report.json",
+    "engine47:tampered import-contract.json",
+    "raw45-refused36:wrong source board",
+    "raw45-refused36:tampered session.ses",
+    "raw45-refused36:tampered engine-report.json",
+    "raw45-refused36:tampered import-contract.json",
+    "undeclared tail removal",
+    "accepted source object removal",
+    "retained native object mutation",
+    "wrong recovery source",
+    "wrong target hash",
+    "out-of-range copy",
+    "invalid operation",
+    "unsupported transform",
+    "tampered paired project",
+    "unsafe recovery path:../escape",
+    "unsafe recovery path:/absolute",
+    "unsafe recovery path:safe/../escape",
+    "unsafe recovery path:windows\\escape"
+  ],
+  "original_source_hash_checks_performed": true,
+  "exact_candidate35_saved_zones_reverified": true,
+  "exact_raw36_to37_subset_reverified": true,
+  "sealed_handoffs_byte_exact": true,
+  "owner_adoptions_and_reference_comparisons_bound": true,
+  "source37_zero_import_historical_binding_verified": true,
+  "historical_v10_verification_retained_by_hash": true,
+  "native_replay_reexecuted": false,
+  "native_DRC_reexecuted": false,
+  "endpoint_geometry_reexecuted": false,
+  "JVM_router_refill_or_power_solve_executed": false,
+  "numerical_power_and_VCAP_applicability": false,
+  "native_open_connections": 45,
+  "native_errors": 0,
+  "native_warnings": 0
+}

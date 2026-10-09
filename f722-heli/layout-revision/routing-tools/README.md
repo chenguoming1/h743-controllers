@@ -1,3 +1,28 @@
+# F722 ordinary routing: V11 checkpoint45
+
+Owner-adopted candidate37 is an unfinished geometric checkpoint: 45 open connections, zero native DRC errors/warnings, and strict schematic parity zero. PCB SHA-256: `2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115`. Numerical power/VCAP applicability remains false; candidate24 is the last fully job-bound numerical checkpoint. This is not fabrication-ready.
+
+V11 adds only the accepted progression33→34→35→37 and the refused raw36 needed to reproduce its cleanup:
+
+- Candidate34 imports the actual filtered07 final session from source33: 11 tracks and two vias complete ESC_MCU::P1, reaching 48 opens. The actual U13.3 bonded cut passes, bringing actual I/O to 9/22 cases across 7/20 channels.
+- Candidate35 imports the actual filtered08 final session from source34 with `--preserve-unaffected-fills`: three RPM_HV::P1 outer tracks, no via or refill, 47 opens. All saved source zones, drills, masks and source objects remain exact. Earlier numerical staleness persists.
+- Raw candidate36 imports source35 filtered09, routing DSM_RX_EXT and ESC_EXT. Its45/0/1 native result and failed finite-entry audit refuse one unused DSM tail. The original board, map, import receipt, refusal and repair recipe remain exactly recoverable or included.
+- Adopted candidate37 removes only that new unused track. It preserves all 1,793 source35 native objects and every other raw36 native record, with nine added tracks and one via relative to 35. ESC_EXT is complete; DSM joins D7.1 to J12.3, while R38.1 and the actual D7 cut remain unfinished. Its current import wrapper explicitly says direct engine output=false and SES/engine/native geometry equality=false; raw36 alone has the equality claim.
+
+Actual bonded I/O remains 9/22 cases, 7/20 channels; 19/51 ordinary physical nets are complete. Final owner adoption and fresh reference comparison are included. Critical objects and represented reference metrics remain unchanged. Each inner GND plane loses 0.3926085766365002mm² versus35, with zero lost-GND overlap beneath critical widths. These are geometric observations and do not qualify numerical power, VCAP, signal integrity, fabrication or flight behavior.
+
+The sealed34/35/37 handoffs, current maps/import wrappers and owner-adoption receipts are byte-exact. All four boards recover byte-exactly as 62-file paired projects. Three compact real session packets retain all route geometry and importer fields; fixed guard arrays and full native/model exports are omitted. The final checkpoint receipt may describe a later FAILED attempt that reused the last successful geometry. Separate count receipts retain the actual ROUTED attempts; the package makes no success claim from that terminal attempt.
+
+Fresh source37 zero provenance is bound to model SHA `326a5176556b8994d70ff07ff61a9fc300134865091559e5129aae5c5e5ef599`. V10's original default Java source is preserved; the same explicit diagnostics overlay is required for these later models. No predicate change is introduced.
+
+V11 is a compact changed-files delta against immutable V10 manifest `749c4e20e4dbdb2bbb0bbb91e517a71c14817ffee2adda310cc28c2c26c3e024` and ZIP `e9953844bbb38196b26fb08d8c13b866dbfc79fcbfcb50d51923c7ce4c3adbbe`. The incremental standard-library verifier checks the new recoveries, packets, exact subset, owner/reference/zero bindings and rejection controls. V10's previous verification is retained by hash; unrelated historical gates are not rerun. Packaging runs no JVM, KiCad, import/refill, DRC, field solve or route search.
+
+Candidate38 or later, source37 filtered10 and the isolated servo/RPM/I2C trials are excluded. See `REPRODUCE.md` for the portable commands.
+
+## Inherited V10 documentation (historical only)
+
+The material below retains older workflows and evidence. V11 scope, status and exclusions are stated above.
+
 # F722 ordinary routing: V10 checkpoint49
 
 Owner-adopted candidate33 is unfinished: 49 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6`. Seventeen of 51 ordinary physical nets are complete. Actual bonded I/O coverage is 8/22 cases across 6/20 channels. This is not fabrication-ready.

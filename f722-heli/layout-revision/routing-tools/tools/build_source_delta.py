@@ -10,7 +10,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-BASE_MANIFEST_SHA256 = 'd7fc5052b8f672f13d4fa031d23953f05916d01460b1da25fdb2e29d6da0f9d2'
+BASE_MANIFEST_SHA256 = '749c4e20e4dbdb2bbb0bbb91e517a71c14817ffee2adda310cc28c2c26c3e024'
 FORBIDDEN_SUFFIXES = {'.pyc', '.pyo', '.class', '.jar', '.kicad_pcb', '.brd', '.dsn', '.so', '.dll', '.zip'}
 FORBIDDEN_PARTS = {'__pycache__', '.git', 'build', 'node_modules', 'dream_notes', 'agent_notes', 'private-notes'}
 SYNTHETIC_FIXTURES = {
@@ -90,9 +90,9 @@ def main():
     current = files(stage)
     all_names = sorted(set(current) | {'FILES.sha256.json', 'PUBLIC_SOURCE_ALLOWLIST.json'})
     write(stage / 'PUBLIC_SOURCE_ALLOWLIST.json', {
-        'status': 'unfinished_source_and_native_constructed_routing_checkpoint_v10',
+        'status': 'unfinished_actual_engine_and_subset_cleanup_checkpoint_v11',
         'base_manifest_sha256': BASE_MANIFEST_SHA256,
-        'native_open_connections': 49,
+        'native_open_connections': 45,
         'files': all_names,
     })
     current = files(stage)
@@ -108,15 +108,15 @@ def main():
         'base_allowlist_sha256': sha(base / 'PUBLIC_SOURCE_ALLOWLIST.json'),
         'new_allowlist_sha256': sha(stage / 'PUBLIC_SOURCE_ALLOWLIST.json'),
         'payload_directory': 'changed',
-        'application': 'Verify the complete immutable v9 base, apply changed/ relative to its root, remove only listed deleted_files, then verify the complete new manifest and allowlist.',
+        'application': 'Verify the complete immutable v10 base, apply changed/ relative to its root, remove only listed deleted_files, then verify the complete new manifest and allowlist.',
         'changed_files_sha256': changed,
         'deleted_files': deleted,
         'unchanged_file_count': len(current) - len(changed),
         'full_file_count': len(current),
         'unfinished': True,
-        'checkpoint': 'owner-adopted candidate33,49 native opens,0 errors,0 warnings',
-        'base_delta_zip_sha256': '985475c549cec9c51a4d0ba425eb318ad4c6b9ea02868b50c19d2b9cfdc8d9a8',
-        'candidate_board_sha256': '1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6',
+        'checkpoint': 'owner-adopted candidate37,45 native opens,0 errors,0 warnings',
+        'base_delta_zip_sha256': 'e9953844bbb38196b26fb08d8c13b866dbfc79fcbfcb50d51923c7ce4c3adbbe',
+        'candidate_board_sha256': '2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115',
         'numerical_power_and_VCAP_applicability': False,
         'heavy_or_native_execution_performed': False,
         'later_native_candidates_included': False,
@@ -134,7 +134,7 @@ def main():
         put('DELTA.json', meta_path.read_bytes())
         for name in changed:
             put('changed/' + name, (stage / name).read_bytes())
-    with tempfile.TemporaryDirectory(prefix='v10-delta-check-', dir=args.out_prefix.parent) as temp:
+    with tempfile.TemporaryDirectory(prefix='v11-delta-check-', dir=args.out_prefix.parent) as temp:
         rebuilt = Path(temp) / 'rebuilt'
         shutil.copytree(base, rebuilt)
         with zipfile.ZipFile(zip_path) as archive:

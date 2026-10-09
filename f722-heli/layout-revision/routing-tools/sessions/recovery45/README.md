@@ -1,0 +1,1 @@
+Exact source recovery for candidates34–37 from pinned33, using the unchanged62-file paired project contract. Raw36 is refused. The delta copies checked byte spans and literals; it executes no routing or native geometry tools. See ../../REPRODUCE.md.

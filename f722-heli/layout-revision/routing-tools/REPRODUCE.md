@@ -1,3 +1,40 @@
+# Reproduce V11 checkpoint45 provenance
+
+Inputs: a complete immutable V10 source tree, the V11 delta archive and its separately supplied SHA-256, and the hash-pinned candidate22/accepted62 project (62 functional files). No historical workspace or native/JVM installation is needed for the portable checks. Use Python3 with `-B` to avoid writing caches inside sealed source trees.
+
+Apply the delta with the V11 apply script supplied in `changed/tools/apply_source_delta_v11.py` (extract only that script to a working directory first), providing the independently published ZIP hash:
+
+```sh
+python3 -B apply_source_delta_v11.py --base /path/to/v10 --delta /path/to/routing-source-v11-delta.zip --zip-sha256 PUBLISHED_ZIP_SHA256 --out /path/to/v11
+python3 -B /path/to/v11/tests/verify_v11_delta.py --base /path/to/v10 --delta /path/to/routing-source-v11-delta.zip --zip-sha256 PUBLISHED_ZIP_SHA256 --base-project /path/to/candidate22 --out /path/to/v11-portable-verification.json
+```
+
+The apply tool refuses a wrong ZIP, wrong complete base manifest, missing/extra files, unsafe paths, symlinks or changed payload hash. It verifies the whole resulting manifest and allowlist before writing a new output directory. The portable test applies into a clean temporary location, runs the incremental verifier without the historical workspace, and checks five malformed-delta controls.
+
+To run only the new evidence/recovery checks:
+
+```sh
+python3 -B /path/to/v11/tests/verify_v11_evidence.py --base-project /path/to/candidate22 --out /path/to/evidence.json
+```
+
+This recovers the prerequisite26,28,33 through unchanged V8/V9/V10 recovery scripts, then exact34–37 using `sessions/recovery45`. Only the prerequisites needed for V11 are recovered; the complete old test suites are retained without rerunning. Each new project has 62 exact functional files. To retain a particular recovered project, first recover33 following the inherited chain below, then run:
+
+```sh
+python3 -B /path/to/v11/sessions/recovery45/rebuild_historical_source.py project --base-project /path/to/candidate33 --source candidate37 --out /path/to/recovered37
+```
+
+Current maps and import wrappers are exact files under `checks/candidateNN-f722-heli.logical-route-map.json` and `checks/candidateNN-f722-heli.import.json`. Copy them beside the selected recovered PCB, removing only the `candidateNN-` prefix. They are outside the 62 functional-file project manifest and verified separately. The34/35/37 `route-handoff.json`, owner-adoption receipts and raw36 refusal/recipe are likewise included under their explicit candidate prefixes. `checks/v11-source-identity.json` maps every included original source/receipt and its hash; `checks/v11-portable-projections.json` documents the three compact engine-report projections.
+
+Real session packets are `sessions/engine48` (33→34), `sessions/engine47` (34→35), and `sessions/raw45-refused36` (35→refused36). `verify_session_packet.py` executes the importer's pure parser and compares SES/report route multisets. `prepare_session_replay.py` validates the source board and packet hashes and rebinds a sufficient importer model; it does not run KiCad. Candidate35 requires the recorded `--preserve-unaffected-fills` import argument.
+
+There is deliberately no candidate37 engine-session packet. Its exact recovery is bound to raw36 plus the one-track removal recipe. The portable verifier checks all parsed PCB records equal after that removal, preserves accepted35 records, and verifies the current map excludes only the removed ID. Native replay, if separately requested, must import the raw36 session, use the unchanged `repair_new_route_tails.py` with the retained recipe, then run fresh native gates; never describe37 as direct engine output. Those native operations were not rerun during packaging.
+
+The V10 diagnostics baseline and overlay activation/restore tool remain unchanged. The default source alone is not the later34/35/37 model-producing source: activate `tools/activate_diagnostics_overlay.py` under the inherited instructions before any separately authorized engine build. All model adapter hashes are checked against that declared source selection.
+
+The verifier rechecks saved native receipts and byte/record relationships. It does not renew endpoint geometry, DRC, numerical power/VCAP or electrical qualification. Numerical applicability stays false. No solver output, full model/native export, unrelated failed-route dump, isolated trial or candidate38+ is included.
+
+## Inherited V10 reproduction (historical only)
+
 # Reproduce V10 checkpoint49 provenance
 
 Apply against the complete immutable V9 source tree, not just its delta ZIP. Use the separately supplied V10 ZIP digest. All base/payload/result hashes and safe paths are checked before any output is created. Read the apply helper from `changed/tools/apply_source_delta_v10.py` in the archive first if needed.
