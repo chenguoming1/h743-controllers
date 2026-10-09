@@ -18,7 +18,7 @@ def solve_circuit(case, port_networks=(), max_iterations=150):
         if not math.isfinite(value):
             raise Refused(f'Nonfinite {label}')
         return value
-    for category in ['resistors','loads','sources','converters','probes']:
+    for category in ['resistors','loads','sources','converters','probes','report_only_probes']:
         entries=case.get(category,[])
         identifiers=[x['name'] for x in entries]
         if len(set(identifiers)) != len(identifiers):
@@ -40,7 +40,7 @@ def solve_circuit(case, port_networks=(), max_iterations=150):
     n=len(names)
     if not n or n>1500:
         raise Refused('Empty circuit or circuit node cap exceeded')
-    for probe in case.get('probes',[]):
+    for probe in case.get('probes',[])+case.get('report_only_probes',[]):
         if set([probe['p'],probe['n']]) - (keys|{ground}):
             raise Refused('Probe references an unmodeled node')
     sources=list(case.get('sources',[]))
@@ -135,6 +135,12 @@ def solve_circuit(case, port_networks=(), max_iterations=150):
     for probe in case.get('probes',[]):
         value=volts(probe['p'])-volts(probe['n'])
         measured.append({'name':probe['name'],'voltage_V':value,'pass':probe.get('minimum_V',-np.inf)<=value<=probe.get('maximum_V',np.inf),**{k:v for k,v in probe.items() if k in ['minimum_V','maximum_V','purpose']}})
+    report_only=[]
+    for probe in case.get('report_only_probes',[]):
+        value=volts(probe['p'])-volts(probe['n'])
+        report_only.append({'name':probe['name'],'voltage_V':value,'acceptance_limit':False,
+                            **{k:v for k,v in probe.items()if k in ['comparison_floor_V','reason']},
+                            **({'margin_to_comparison_floor_V':value-probe['comparison_floor_V']}if 'comparison_floor_V'in probe else {})})
     port_currents=[]
     copper_loss=0.0
     for block in port_networks:
@@ -158,8 +164,9 @@ def solve_circuit(case, port_networks=(), max_iterations=150):
     if abs(power_error)>max(1e-8,abs(source_power)*1e-8):
         raise Refused('Whole-circuit power balance failed')
     return {'case':case['name'],'voltage_V':{p:volts(p) for p in [ground]+names},
+            'case_definition_sha256':case.get('case_definition_sha256'),
             'source_current_A':{s['name']:float(solution[n+i]) for i,s in enumerate(sources)},
-            'converters':converter_rows,'probes':measured,'port_injections':port_currents,
+            'converters':converter_rows,'probes':measured,'report_only_probes':report_only,'port_injections':port_currents,
             'resistors':resistor_rows,
             'power_W':{'source_delivery':source_power,'load_absorption':load_power,
                        'conversion_loss':conversion_loss,'resistor_loss':resistive_loss,

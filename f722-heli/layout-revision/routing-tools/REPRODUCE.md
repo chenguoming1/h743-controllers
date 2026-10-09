@@ -1,6 +1,6 @@
 # Reproduce the ordinary-routing checkpoint
 
-This is unfinished work. No real ordinary route has run, and fixed-support integration is still incomplete. The historical checks establish the bare-placement adapter only. They are not approval to route another board.
+This is unfinished work. The retained real sessions reduced the accepted native board from 85 to 80 open connections with zero native DRC errors/warnings. Historical placement and trial03 checks remain labelled by their source hashes. Every new source requires fresh zero controls and native validation.
 
 ## Inputs
 
@@ -33,7 +33,7 @@ The output name `zero-parity.json` inside the current model directory is mandato
 The owner chooses `PASSES` as a computational budget and releases the heavy slot. It is not a via or electrical-length limit.
 
 ```sh
-./run_local.sh "$MODEL" "$MODEL/route" "$PASSES"
+F722_CONNECTION_BUDGET_MS=10000 F722_CHECKPOINT_AFTER_ROUTED=5 F722_CHECKPOINT_EVERY_ROUTED=3 ./run_local.sh "$MODEL" "$MODEL/route" "$PASSES"
 "$KICAD_PY" import_session.py --model "$MODEL/model.json" --session "$MODEL/route.ses" --engine-report "$MODEL/route.after.json" --out "$MODEL/routed-candidate.kicad_pcb"
 python3 native-tools/check_protection_paths.py --geometry "$MODEL/routed-candidate.native.json" --contracts config/candidate-contracts.json --out "$MODEL/protection-original18.json"
 python3 native-tools/check_protection_paths.py --geometry "$MODEL/routed-candidate.native.json" --contracts config/supplemental-contracts.json --out "$MODEL/protection-supplemental7.json"
@@ -44,8 +44,10 @@ Each physical checker returns nonzero when any case fails and still writes its f
 ## Small adapter controls
 
 ```sh
-java -cp build:vendor/freerouting-2.1.0.jar NativeContactRegression "$MODEL"
-java -cp build:vendor/freerouting-2.1.0.jar SharedPadSeamControl "$MODEL"
+python3 prepare_contact_control.py --model "$MODEL/model.json" --out "$MODEL/contact-fixture"
+java -Xmx256m -cp build:vendor/freerouting-2.1.0.jar NativeContactRegression "$MODEL/contact-fixture"
+java -Xmx256m -cp build:vendor/freerouting-2.1.0.jar SharedPadSeamControl "$MODEL/contact-fixture"
+java -Xmx256m -cp build:vendor/freerouting-2.1.0.jar PhysicalOwnerInsertionControl "$MODEL/contact-fixture" "$MODEL/physical-owner-insertion.json"
 python3 route_geometry.py
 ```
 
@@ -76,3 +78,38 @@ After importing real engine output, retain the PCB, its paired project/rules, th
 ```
 
 Set these variables to the exact imported PCB and its standalone map. Repeat the zero control for this new model before routing. Preserve any intentionally immutable ordinary UUIDs through `--fixed-ids` as well. Never reuse an empty-map/no-existing-copper assumption from the first support board.
+
+## Full-board serialization and copied contact identity
+
+Compile the separate test programs with the pinned compiler, then run the copy check under the heavy-process allocation. This check is necessary because a zero route run does not exercise BoardHistory serialization. The peer-mutation check is a small synthetic in-memory control.
+
+```sh
+java -Xmx256m -jar vendor/ecj-3.41.0.jar -21 -nowarn -cp build:vendor/freerouting-2.1.0.jar -d build tests/FullNativeCopyControl.java tests/app/freerouting/board/NativePeerMutationControl.java
+java -Xmx3g -Djava.awt.headless=true -cp build:vendor/freerouting-2.1.0.jar FullNativeCopyControl "$MODEL" "$MODEL/full-copy-control.json"
+java -Xmx256m -Djava.awt.headless=true -cp build:vendor/freerouting-2.1.0.jar app.freerouting.board.NativePeerMutationControl "$MODEL/contact-fixture"
+```
+
+## Progress, graceful stop and recoverable snapshots
+
+The runner emits a cheap per-attempt net/contact label, status, timings and counters. Full snapshots default to every three successful connections or 60 seconds. A pending-geometry flag distinguishes newer live counters from the last verified session. The latest two geometry slots remain bounded and are replaced atomically; the progress pointer is published after both report and session. A failed attempt with identical geometry reuses the previous files. Create `OUTPUT_PREFIX.stop` to request a cooperative stop; full checked output is retained at that stop and at final completion. A forced termination can recover only the last complete snapshot.
+
+To import a running checkpoint, read the exact `checkpoint`, `report_sha256` and `session_sha256` from the progress JSON, verify both referenced files still match, and use that paired `.after.json` and `.ses` with the exact originating model. Never pair a session with a report from another checkpoint or reconstruct logical ownership from physical net names alone. Use a complete disposable project copy, including all matching schematics and local footprint libraries, with a matching PCB/project basename for native DRC and refill.
+
+`F722_ONLY_NETS=SWCLK` or another comma-separated physical ordinary-net list provides a focused search. It changes the search queue only; all native fixed geometry and physical clearance guards remain installed. The first accepted short route and the corrected adapter's identical session are retained as hash-bound receipts. Successful SWCLK endpoint overlap is nominal geometry, not manufacturing margin.
+
+After native import, `analyze_candidate.py` reports physical/logical connectivity and I2C geometry. `endpoint_witness.py` can record the pad-interior and full-width endpoint intersection of a routed two-terminal net. Full I2C loading/edge, reference continuity and loaded power qualification remain separate completion requirements.
+
+## Compact actual-session replay
+
+The two `sessions/` packets contain the actual SWCLK and accepted80 sessions, import-only ownership contracts, report geometry, exact original model/native/adapter/runtime identities, and explicit postprocessing provenance. These are not complete routing models. Verify `FILES.sha256.json` before use. Supply the exact frozen source board named by the packet identity and its full paired project, schematic and local libraries. Then:
+
+```sh
+python3 prepare_session_replay.py --packet sessions/accepted80 --source-board "$SOURCE_BOARD" --out "$REPLAY_INPUTS"
+"$KICAD_PY" import_session.py --model "$REPLAY_INPUTS/model.json" --session sessions/accepted80/session.ses --engine-report "$REPLAY_INPUTS/engine-report.json" --out "$REPLAY_PROJECT/f722-heli.kicad_pcb"
+```
+
+This helper verifies source/session/report/contract hashes, preserves the original model identity, and explicitly rebinds an importer-only projection. New native UUIDs are expected; `checks/accepted80-replay-verified.json` establishes exact copper geometry, zones and footprint equivalence, 80 opens, zero native DRC violations and passing process checks. The original SWCLK sources are identified by hash; replaying their retained SES does not require bundling another entire old adapter tree.
+
+The accepted80 session explicitly excludes only newly added SERVO3_EXT and extends RPM_EXT collinearly inside J7.3. See `retention.json` and `endpoint-completion.json`. The unfiltered engine SES is retained to audit the optimistic ROUTED result. The Java target-shape defect remains present in this historical tested source and must be repaired and separately controlled before a broad new run. Native contact partitions and physical endpoint checks remain acceptance gates.
+
+The reusable endpoint audit subtracts conservative native drill polygons from native inside pad copper. For through-hole pads it requires a positive centerline interval inside the annulus eroded by half trace width plus 1 nm. It never treats an endpoint over the drill as evidence of copper contact. Its four accepted entries exactly match the independent owner witness; the historical SERVO3 gap and RPM narrow entry both fail.

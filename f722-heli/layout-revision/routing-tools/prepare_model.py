@@ -143,6 +143,17 @@ def main():
   for l,ps in o['copper'].items():guard(o['uuid']+':fixed',l,ps,owners=[source_logical[o['uuid']]])
   if o['kind']=='via':
    for l in LAYERS:guard(o['uuid']+':drill',l,polys(outward(geom(o['drill']['outside']),.125)),'via',(),0)
+ # Contact-only polygons may be nonblocking in stock insertion only because this
+ # independent owner-aware guard covers their full physical native copper.
+ pad_guards={}
+ for g in guards:
+  if g['label'].endswith(':copper'):pad_guards.setdefault((g['label'],g['layer']),[]).append(g)
+ for c in contacts:
+  gs=pad_guards.get((c['uuid']+':copper',c['layer']),[])
+  assert len(gs)==1,'Contact needs exactly one physical copper guard'
+  g=gs[0];assert g['kind']=='foreign' and set(g['owners'])==set(c['owners']) and c['net'] in g['owners'] and g['clearance']>=.127
+  outer=geom(g['engine_polygons'])
+  for ps in (c['engine_polygons'],c['polygons'],g['polygons']):assert outer.covers(geom(ps)),'Contact/native copper is outside physical guard'
  model={'schema':'f722-ordinary-model/v1','board_sha256':n['board_sha256'],'native_sha256':sha(a.native),'proof_source_sha256':sha(proof),'adapter_sources':{str(p.relative_to(ROOT)):sha(p)for p in sorted((ROOT/'src').rglob('*.java'))},'layers':LAYERS,'routable_layers':['F.Cu','In2.Cu','In3.Cu','B.Cu'],'ordinary_nets':ordinary,'aliases':aliases,'roles':roles,'contacts':contacts,'guards':guards,'fixed_objects':fixed,'fixed_zones':fixed_zones,'mutable_source_ids':[o['uuid']for o in mutable],'source_logical_nets':source_logical,'rules':{'track_width':.127,'clearance':.127,'via_diameter':.45,'via_drill':.20,'drill_mask_gap':.20,'drill_drill_gap':.25,'edge_npth_gap':.254,'max_new_vias':None,'max_net_length':None},'planning_geometry':{'engine_grid_mm':.00001,'guard_pad_buffer_mm':.00002,'contact_inset_mm':.00002,'native_model_unchanged':True},'support_ready':a.support_ready,'physical_native':str(a.native.resolve()),'physical_board':str(a.board.resolve())}
  model['regenerable_reference_zones']=regenerable_reference_zones
  model['reference_plane_policy']={'planning_fill_obstacle':False,'layers':sorted(REFERENCE_LAYERS),'net':'GND','zone_identity_outline_and_rules_preserved':True,'refill_after_route_import':True,'post_refill_reference_validation_required':True}

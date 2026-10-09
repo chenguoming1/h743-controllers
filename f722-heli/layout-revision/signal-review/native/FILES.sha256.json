@@ -1,0 +1,50 @@
+{
+  "source_board_sha256": "e38e71c1960fc52881ee699117aa48c7e43483562ea22ec276ec0dc1d2138883",
+  "files": [
+    {
+      "source": "README.md",
+      "sha256": "a7c8a39bd4456d7b94a8566ceafd06eb69c1d044df601dae1a0e6419e91c04b9",
+      "bytes": 13439
+    },
+    {
+      "source": "export_signal_snapshot.py",
+      "sha256": "9660f39e4ca30169b2545c437b26ae1e40c0e847eee74815e4eec0a43df5b3a3",
+      "bytes": 7564
+    },
+    {
+      "source": "check_signal_geometry.py",
+      "sha256": "26be3f949ff5791dc81dd3a168962059f4219b7304840261eeaf6d44f28a86f4",
+      "bytes": 38079
+    },
+    {
+      "source": "test_signal_geometry.py",
+      "sha256": "ff4b3e5aef6445ca2721a836f121bf68403f01dda9984c62dff454bd2c3e8121",
+      "bytes": 10334
+    },
+    {
+      "source": "model-inputs.template.json",
+      "sha256": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184",
+      "bytes": 2777
+    },
+    {
+      "source": "current-review.json",
+      "sha256": "37d87e02c7888e043dd4cd3b3ed3ec3552d1061855501d84f2049dffa1d06454",
+      "bytes": 149114
+    },
+    {
+      "source": "controls.json",
+      "sha256": "01078036f284cd9dd3a84387a2aee70cbece5cc4d12c70f6e6ccbdc2dbc18165",
+      "bytes": 2434
+    }
+  ],
+  "owner_synthetic_tests": {
+    "passed": 18,
+    "elapsed_s": 0.02
+  },
+  "scope": "Conditional native signal screen; current incomplete I2C routes refuse final estimate.",
+  "owner_native_recheck": {
+    "board_sha256": "e38e71c1960fc52881ee699117aa48c7e43483562ea22ec276ec0dc1d2138883",
+    "exit_code": 2,
+    "reason": "Both I2C nets still incomplete, zero track length; conditional model inputs remain unset."
+  }
+}

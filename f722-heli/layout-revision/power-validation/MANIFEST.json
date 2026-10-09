@@ -1,54 +1,51 @@
 {
-  "schema": "f722-static-public-source/v1",
-  "status": "SYNTHETIC-ONLY SOURCE BUNDLE; EXACT SAVED-FILL CONTOURS",
-  "created_utc": "2026-10-09T05:08:59.512165+00:00",
-  "publication_allowlist": [
-    "README.md",
-    "requirements.txt",
-    "copper_fem.py",
-    "dc_circuit.py",
-    "validate_static.py",
-    "export_native_copper.py",
-    "exact_native_contours.py",
-    "test_exact_native_contours.py",
-    "generate_native_fill_fixture.py",
-    "native-fill-fixture.json",
-    "test_static_validation.py",
-    "freeze.template.json",
-    "ledger.template.json",
-    "synthetic-tests.json",
-    "MANIFEST.json"
-  ],
+  "schema": "f722-public-static-source-allowlist/v1",
+  "status": "35 SYNTHETIC/COMPILER CONTROLS PASS; THREE NATIVE PILOTS REFUSED; NO NUMERICAL BOARD ACCEPTANCE",
   "files": [
     {
       "path": "README.md",
-      "bytes": 12579,
-      "sha256": "1c93509be17e74f392707c89cec53ac54ea9c6f13be4b1a5979b040af92f25d3"
+      "bytes": 8542,
+      "sha256": "eed9aa4bc896caedebeb6cc3507ac7f8dcdb3cdd50dda08de0988db31c3544c5"
     },
     {
-      "path": "requirements.txt",
-      "bytes": 58,
-      "sha256": "0efb9fd8d955a4218440e73ffc9bc5efd8038221bef1a0e77a3c4b4a8ecff5f8"
+      "path": "activate_ranked_slices.py",
+      "bytes": 8739,
+      "sha256": "910208fc7a275754e768b3c1dc7857ef77685554e3a6a40a3dc099bc63abbcf1"
+    },
+    {
+      "path": "audit_native_ports.py",
+      "bytes": 10027,
+      "sha256": "c1c33ddd94f5c8c50a91aea3cfb1757302a35e388407c9d35e37a04153b2a4fe"
+    },
+    {
+      "path": "case-plan.disabled.json",
+      "bytes": 34093,
+      "sha256": "b716e2476f9d0e683183e0cd227a428f764add8d8750a5861021dc073b759a85"
+    },
+    {
+      "path": "compile_power_ledger.py",
+      "bytes": 16896,
+      "sha256": "fbf613305718aa9a4599e022ca4cd45dbd025375668bc3326aa581ba6f22724a"
+    },
+    {
+      "path": "compiler-settings.json",
+      "bytes": 1075,
+      "sha256": "c4c6244119a4e190e14d2e28e955f253206703ebba64d04df7a153b62f63d1c0"
+    },
+    {
+      "path": "compiler-settings.pilot.json",
+      "bytes": 1076,
+      "sha256": "f0c34cfc39b0796f81e43ee7e0e8faef7dc31c0f56b4c3c6d33fb44a36baf907"
     },
     {
       "path": "copper_fem.py",
-      "bytes": 18475,
-      "sha256": "fedc677785b72a8ea53eed9f6c3e8769e9483d69a393b933ca5ddd94760fd256"
+      "bytes": 23980,
+      "sha256": "5c950e039c6510680f3e52748fd8fcfead2a1352d96509a50d816594c675073a"
     },
     {
       "path": "dc_circuit.py",
-      "bytes": 9521,
-      "sha256": "d5d1a36781e8ab712e1d4400d48c709d5bb290f43bf591762a11cb4af97fb394"
-    },
-    {
-      "path": "validate_static.py",
-      "bytes": 20976,
-      "sha256": "a9ec49c509fc1e7190952c8939c27d05989c1cb5d0a603741a2027452facefa6"
-    },
-    {
-      "path": "export_native_copper.py",
-      "bytes": 8931,
-      "sha256": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a"
+      "bytes": 10137,
+      "sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d"
     },
     {
       "path": "exact_native_contours.py",
@@ -56,24 +53,9 @@
       "sha256": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922"
     },
     {
-      "path": "test_exact_native_contours.py",
-      "bytes": 2158,
-      "sha256": "5a0b33ce1cbde4e269455a386f1238e59d0062e8df985a32c2cd9cf5a01fd118"
-    },
-    {
-      "path": "generate_native_fill_fixture.py",
-      "bytes": 2875,
-      "sha256": "f07f4f4c063d3576467ea4f25020166840554b45245fdecb0f2f2bcdc034adb9"
-    },
-    {
-      "path": "native-fill-fixture.json",
-      "bytes": 7155,
-      "sha256": "0bd8877a41e2fc1afb0cfda54520d2355b428b235154ff6a46c6797fec50becb"
-    },
-    {
-      "path": "test_static_validation.py",
-      "bytes": 16849,
-      "sha256": "c17c40b51a66084e3613dbe86214af323d6b156aac8108cd482a584880a2b5a8"
+      "path": "export_native_copper.py",
+      "bytes": 8931,
+      "sha256": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a"
     },
     {
       "path": "freeze.template.json",
@@ -81,37 +63,79 @@
       "sha256": "bfbaa304219bff00d72c7d85a5eb8b84d36a5e65b349684f75bf52be2fe6b3a0"
     },
     {
+      "path": "generate_native_fill_fixture.py",
+      "bytes": 2875,
+      "sha256": "f07f4f4c063d3576467ea4f25020166840554b45245fdecb0f2f2bcdc034adb9"
+    },
+    {
       "path": "ledger.template.json",
       "bytes": 620,
       "sha256": "d8a066b59c2037f4cce692385cf61475146bb3c09aed1298c355c10c22ab139f"
     },
     {
+      "path": "native-fill-fixture.json",
+      "bytes": 7155,
+      "sha256": "0bd8877a41e2fc1afb0cfda54520d2355b428b235154ff6a46c6797fec50becb"
+    },
+    {
+      "path": "native-refusals.json",
+      "bytes": 4552,
+      "sha256": "ef08174c1e1915a877f62c744fd1fd7dc7aa6742905c56bc3f02efb3107e394f"
+    },
+    {
+      "path": "power_case_model.py",
+      "bytes": 19186,
+      "sha256": "fdc796278e340e8a8f53fc91a6aa8cfcddf6144a09dd384076b8abbf54bb19cc"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 62,
+      "sha256": "e49829b6fac829e03de9e0251c5ad78c227362afde1d37c33ffc3be61b1b4c3e"
+    },
+    {
+      "path": "run_bounded_pilot.py",
+      "bytes": 1575,
+      "sha256": "1e1888d1f530507c2c11e0b2305aa4cbcb591a05f7ff8464ab934e5ff3cc6300"
+    },
+    {
       "path": "synthetic-tests.json",
-      "bytes": 3693,
-      "sha256": "e7367cf822abc1412f474e2a1f619415f486fa7e6a2f145f5a1776784f9bb648"
+      "bytes": 6659,
+      "sha256": "5b9260031dee3a50a2c8156fc59422cad4a99ec9f689254b091d281e628f36d0"
+    },
+    {
+      "path": "terminal-registry.disabled.json",
+      "bytes": 21379,
+      "sha256": "6b23b84a26c7c375ebed9df46fc07ea9b52cb1f2dc5abcfa2309d23ff8948922"
+    },
+    {
+      "path": "test_case_compiler.py",
+      "bytes": 10135,
+      "sha256": "6565c0f81537ba8a44d4d6ddbb2c96f0dde843f5778c29fad5d84e08ea956534"
+    },
+    {
+      "path": "test_exact_native_contours.py",
+      "bytes": 2158,
+      "sha256": "5a0b33ce1cbde4e269455a386f1238e59d0062e8df985a32c2cd9cf5a01fd118"
+    },
+    {
+      "path": "test_static_validation.py",
+      "bytes": 21068,
+      "sha256": "4000ff0469b0570f97528eb838a611a18706fdf90bddfa504f68c0a2f895eaa3"
+    },
+    {
+      "path": "validate_static.py",
+      "bytes": 23804,
+      "sha256": "682f06f154d0cbba87d299f23d530e61967ba4f3309bb5822e4e2852ec4fb38b"
     }
   ],
-  "tested_runtime": {
-    "python": "3.12.14",
-    "numpy": "2.2.6",
-    "scipy": "1.17.0",
-    "shapely": "2.2.0",
-    "sexpdata": "1.0.2"
-  },
-  "native_synthetic_fixture_version": "10.0.6",
-  "synthetic_tests": {
-    "passed": true,
-    "count": 19,
-    "receipt": "synthetic-tests.json"
-  },
-  "native_board_mesh_runs": 0,
-  "input_templates_enabled": false,
-  "manifest_self_hash": "Reported separately; this manifest does not hash itself.",
-  "exclude": [
-    "__pycache__",
-    ".venv",
-    "temporary fixtures",
-    "unlisted files",
-    "future native board or case artifacts"
-  ]
+  "bytes_total": 249639,
+  "disabled_inputs": [
+    "freeze.template.json",
+    "ledger.template.json",
+    "case-plan.disabled.json",
+    "terminal-registry.disabled.json"
+  ],
+  "native_geometry_or_board_included": false,
+  "unfinished_rational_noding_included": false,
+  "numerical_execution_authorized": false
 }

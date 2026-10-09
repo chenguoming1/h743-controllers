@@ -1,29 +1,35 @@
 {
-  "status": "SYNTHETIC TESTS ONLY; NO PROJECT BOARD MESH EXECUTED",
+  "status": "SYNTHETIC AND COMPILER CONTROLS ONLY; NO COMPLETED NATIVE MESH OR NUMERICAL BOARD RESULT",
   "passed": true,
-  "test_count": 19,
+  "test_count": 35,
   "failures": 0,
   "errors": 0,
-  "elapsed_seconds": 0.42591794800136995,
-  "executed_utc": "2026-10-09T05:08:01.192067+00:00",
-  "versions": {
-    "python": "3.12.14",
+  "elapsed_seconds": 0.7927087969983404,
+  "executed_utc": "2026-10-09T07:31:14.668959+00:00",
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B -m unittest -v test_static_validation test_case_compiler",
+  "python": "3.12.14",
+  "dependencies": {
     "numpy": "2.2.6",
     "scipy": "1.17.0",
     "shapely": "2.2.0",
+    "GEOS": "3.14.1",
     "sexpdata": "1.0.2"
   },
-  "native_synthetic_fixture_version": "10.0.6",
   "source_sha256": {
-    "copper_fem.py": "fedc677785b72a8ea53eed9f6c3e8769e9483d69a393b933ca5ddd94760fd256",
-    "dc_circuit.py": "d5d1a36781e8ab712e1d4400d48c709d5bb290f43bf591762a11cb4af97fb394",
-    "validate_static.py": "a9ec49c509fc1e7190952c8939c27d05989c1cb5d0a603741a2027452facefa6",
-    "test_static_validation.py": "c17c40b51a66084e3613dbe86214af323d6b156aac8108cd482a584880a2b5a8",
-    "export_native_copper.py": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a",
+    "activate_ranked_slices.py": "910208fc7a275754e768b3c1dc7857ef77685554e3a6a40a3dc099bc63abbcf1",
+    "audit_native_ports.py": "c1c33ddd94f5c8c50a91aea3cfb1757302a35e388407c9d35e37a04153b2a4fe",
+    "compile_power_ledger.py": "fbf613305718aa9a4599e022ca4cd45dbd025375668bc3326aa581ba6f22724a",
+    "copper_fem.py": "5c950e039c6510680f3e52748fd8fcfead2a1352d96509a50d816594c675073a",
+    "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
     "exact_native_contours.py": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922",
-    "test_exact_native_contours.py": "5a0b33ce1cbde4e269455a386f1238e59d0062e8df985a32c2cd9cf5a01fd118",
+    "export_native_copper.py": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a",
     "generate_native_fill_fixture.py": "f07f4f4c063d3576467ea4f25020166840554b45245fdecb0f2f2bcdc034adb9",
-    "native-fill-fixture.json": "0bd8877a41e2fc1afb0cfda54520d2355b428b235154ff6a46c6797fec50becb"
+    "power_case_model.py": "fdc796278e340e8a8f53fc91a6aa8cfcddf6144a09dd384076b8abbf54bb19cc",
+    "run_bounded_pilot.py": "1e1888d1f530507c2c11e0b2305aa4cbcb591a05f7ff8464ab934e5ff3cc6300",
+    "test_case_compiler.py": "6565c0f81537ba8a44d4d6ddbb2c96f0dde843f5778c29fad5d84e08ea956534",
+    "test_exact_native_contours.py": "5a0b33ce1cbde4e269455a386f1238e59d0062e8df985a32c2cd9cf5a01fd118",
+    "test_static_validation.py": "4000ff0469b0570f97528eb838a611a18706fdf90bddfa504f68c0a2f895eaa3",
+    "validate_static.py": "682f06f154d0cbba87d299f23d530e61967ba4f3309bb5822e4e2852ec4fb38b"
   },
-  "test_output": "test_bad_models (test_static_validation.CircuitTests.test_bad_models) ... ok\ntest_converter_and_contacts (test_static_validation.CircuitTests.test_converter_and_contacts) ... ok\ntest_return_floor_power (test_static_validation.CircuitTests.test_return_floor_power) ... ok\ntest_same_bec_feed_sharing (test_static_validation.CircuitTests.test_same_bec_feed_sharing) ... ok\ntest_actual_all_net_drill_voids_and_saved_fills (test_static_validation.CopperTests.test_actual_all_net_drill_voids_and_saved_fills) ... ok\ntest_analytical_finite_contacts (test_static_validation.CopperTests.test_analytical_finite_contacts) ... ok\ntest_bad_contacts_and_numbers (test_static_validation.CopperTests.test_bad_contacts_and_numbers) ... ok\ntest_barrel_and_unflashed_layer_span (test_static_validation.CopperTests.test_barrel_and_unflashed_layer_span) ... ok\ntest_caps (test_static_validation.CopperTests.test_caps) ... ok\ntest_exact_fractured_bridge_controls (test_static_validation.CopperTests.test_exact_fractured_bridge_controls) ... ok\ntest_float_point_touch_and_disconnected_contact (test_static_validation.CopperTests.test_float_point_touch_and_disconnected_contact) ... ok\ntest_irregular_mesh_conformity_convergence_reciprocity (test_static_validation.CopperTests.test_irregular_mesh_conformity_convergence_reciprocity) ... ok\ntest_narrow_feeder_before_wide_trunk_is_retained (test_static_validation.CopperTests.test_narrow_feeder_before_wide_trunk_is_retained) ... ok\ntest_native_saved_fill_fixture_preserves_holes_and_islands (test_static_validation.CopperTests.test_native_saved_fill_fixture_preserves_holes_and_islands) ... ok\ntest_bad_ledger_rejected_before_mesh (test_static_validation.SourceTests.test_bad_ledger_rejected_before_mesh) ... ok\ntest_coupled_screen_and_marginal_floor (test_static_validation.SourceTests.test_coupled_screen_and_marginal_floor) ... ok\ntest_output_cannot_overwrite_sources (test_static_validation.SourceTests.test_output_cannot_overwrite_sources) ... ok\ntest_preflight_synthetic_screen_and_stale (test_static_validation.SourceTests.test_preflight_synthetic_screen_and_stale) ... ok\ntest_unfinished_and_draft_refuse (test_static_validation.SourceTests.test_unfinished_and_draft_refuse) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.426s\n\nOK\n"
+  "test_output": "test_bad_models (test_static_validation.CircuitTests.test_bad_models) ... ok\ntest_converter_and_contacts (test_static_validation.CircuitTests.test_converter_and_contacts) ... ok\ntest_return_floor_power (test_static_validation.CircuitTests.test_return_floor_power) ... ok\ntest_same_bec_feed_sharing (test_static_validation.CircuitTests.test_same_bec_feed_sharing) ... ok\ntest_actual_all_net_drill_voids_and_saved_fills (test_static_validation.CopperTests.test_actual_all_net_drill_voids_and_saved_fills) ... ok\ntest_analytical_finite_contacts (test_static_validation.CopperTests.test_analytical_finite_contacts) ... ok\ntest_bad_contacts_and_numbers (test_static_validation.CopperTests.test_bad_contacts_and_numbers) ... ok\ntest_barrel_and_unflashed_layer_span (test_static_validation.CopperTests.test_barrel_and_unflashed_layer_span) ... ok\ntest_caps (test_static_validation.CopperTests.test_caps) ... ok\ntest_exact_fractured_bridge_controls (test_static_validation.CopperTests.test_exact_fractured_bridge_controls) ... ok\ntest_float_point_touch_and_disconnected_contact (test_static_validation.CopperTests.test_float_point_touch_and_disconnected_contact) ... ok\ntest_grouped_native_contact_union (test_static_validation.CopperTests.test_grouped_native_contact_union) ... ok\ntest_irregular_mesh_conformity_convergence_reciprocity (test_static_validation.CopperTests.test_irregular_mesh_conformity_convergence_reciprocity) ... ok\ntest_narrow_feeder_before_wide_trunk_is_retained (test_static_validation.CopperTests.test_narrow_feeder_before_wide_trunk_is_retained) ... ok\ntest_native_saved_fill_fixture_preserves_holes_and_islands (test_static_validation.CopperTests.test_native_saved_fill_fixture_preserves_holes_and_islands) ... ok\ntest_bad_ledger_rejected_before_mesh (test_static_validation.SourceTests.test_bad_ledger_rejected_before_mesh) ... ok\ntest_coupled_screen_and_marginal_floor (test_static_validation.SourceTests.test_coupled_screen_and_marginal_floor) ... ok\ntest_geometry_only_audit_and_foreign_drill_split (test_static_validation.SourceTests.test_geometry_only_audit_and_foreign_drill_split) ... ok\ntest_grouped_contact_preflight_and_run (test_static_validation.SourceTests.test_grouped_contact_preflight_and_run) ... ok\ntest_output_cannot_overwrite_sources (test_static_validation.SourceTests.test_output_cannot_overwrite_sources) ... ok\ntest_preflight_synthetic_screen_and_stale (test_static_validation.SourceTests.test_preflight_synthetic_screen_and_stale) ... ok\ntest_unfinished_and_draft_refuse (test_static_validation.SourceTests.test_unfinished_and_draft_refuse) ... ok\ntest_additional_evidence_is_hash_checked (test_case_compiler.CompilerTests.test_additional_evidence_is_hash_checked) ... ok\ntest_boundary_line_is_retained_to_node_contact_seam (test_case_compiler.CompilerTests.test_boundary_line_is_retained_to_node_contact_seam) ... ok\ntest_canonical_decimal_grid_removes_floating_seam_without_snapping_native (test_case_compiler.CompilerTests.test_canonical_decimal_grid_removes_floating_seam_without_snapping_native) ... ok\ntest_complete_case_budgets_and_no_unset_endpoints (test_case_compiler.CompilerTests.test_complete_case_budgets_and_no_unset_endpoints) ... ok\ntest_compute_release_guard_runs_before_mesh (test_case_compiler.CompilerTests.test_compute_release_guard_runs_before_mesh) ... ok\ntest_empty_mixed_dimension_overlay_preserves_area_and_holes (test_case_compiler.CompilerTests.test_empty_mixed_dimension_overlay_preserves_area_and_holes) ... ok\ntest_exact_strip_clipping_preserves_holes (test_case_compiler.CompilerTests.test_exact_strip_clipping_preserves_holes) ... ok\ntest_rankings_retain_distinct_voltage_constraints (test_case_compiler.CompilerTests.test_rankings_retain_distinct_voltage_constraints) ... ok\ntest_report_only_headroom_does_not_masquerade_as_acceptance (test_case_compiler.CompilerTests.test_report_only_headroom_does_not_masquerade_as_acceptance) ... ok\ntest_resolved_case_hash_changes_with_a_load (test_case_compiler.CompilerTests.test_resolved_case_hash_changes_with_a_load) ... ok\ntest_same_layer_ideal_annulus_merger_is_detected (test_case_compiler.CompilerTests.test_same_layer_ideal_annulus_merger_is_detected) ... ok\ntest_triangle_condition_guard_retains_geometry_and_refuses_unresolved_elements (test_case_compiler.CompilerTests.test_triangle_condition_guard_retains_geometry_and_refuses_unresolved_elements) ... ok\ntest_unresolved_measured_and_ideal_return_shortcuts_refuse (test_case_compiler.CompilerTests.test_unresolved_measured_and_ideal_return_shortcuts_refuse) ... ok\n\n----------------------------------------------------------------------\nRan 35 tests in 0.609s\n\nOK\n"
 }

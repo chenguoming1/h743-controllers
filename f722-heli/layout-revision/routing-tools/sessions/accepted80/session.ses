@@ -1,0 +1,113 @@
+(session "f722-local"
+  (base_design "f722-local")
+  (placement
+    (resolution mm 100000)
+  )
+  (was_is
+  )
+  (routes 
+    (resolution mm 100000)
+    (parser
+      (host_cad KiCad)
+      (host_version 10.0.6)
+    )
+    (library_out 
+      (padstack VIA_450_200
+        (shape
+          (circle F.Cu 45000 0 0)
+        )
+        (shape
+          (circle In1.Cu 45000 0 0)
+        )
+        (shape
+          (circle In2.Cu 45000 0 0)
+        )
+        (shape
+          (circle In3.Cu 45000 0 0)
+        )
+        (shape
+          (circle In4.Cu 45000 0 0)
+        )
+        (shape
+          (circle B.Cu 45000 0 0)
+        )
+        (attach off)
+      )
+      (padstack VIA_450_200
+        (shape
+          (circle F.Cu 45000 0 0)
+        )
+        (shape
+          (circle In1.Cu 45000 0 0)
+        )
+        (shape
+          (circle In2.Cu 45000 0 0)
+        )
+        (shape
+          (circle In3.Cu 45000 0 0)
+        )
+        (shape
+          (circle In4.Cu 45000 0 0)
+        )
+        (shape
+          (circle B.Cu 45000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net RPM_EXT
+        (wire
+          (path F.Cu 12700
+            1110157 -1914843
+            1078833 -1946167
+            914000 -1946167
+          )
+        )
+      )
+      (net SBUS_EXT
+        (wire
+          (path F.Cu 12700
+            936475 -2295646
+            1010646 -2295646
+            1106352 -2391352
+          )
+        )
+      )
+      (net SERVO1_EXT
+        (wire
+          (path F.Cu 12700
+            984648 -292525
+            1107475 -292525
+            1111352 -288648
+          )
+        )
+      )
+      (net SERVO2_EXT
+        (wire
+          (path F.Cu 12700
+            984648 -647473
+            1071352 -647473
+          )
+        )
+      )
+      
+      (net SWCLK
+        (wire
+          (path B.Cu 12700
+            2522797 -1955361
+            2538853 -1971417
+          )
+          (type protect)
+        )
+        (wire
+          (path B.Cu 12700
+            2484487 -1955361
+            2522797 -1955361
+          )
+          (type protect)
+        )
+      )
+    )
+  )
+)

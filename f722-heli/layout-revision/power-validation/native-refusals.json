@@ -1,0 +1,88 @@
+{
+  "status": "THREE PRESERVED REFUSALS; NO NATIVE NUMERICAL ACCEPTANCE",
+  "retained_traceback_or_result_hashes_only": true,
+  "native_board_and_large_geometry_not_bundled": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "source_scope": "provisional complete power-support source with 85 ordinary opens",
+      "freeze_sha256": "23b22ccae7057c557a60982a025bc0b057da1dada55114a11a726918b0b45572",
+      "ledger_sha256": "651d20c895b2ac86518d454b2ea86bad2af908f31b4c2ab5e8c5c3540250b5ae",
+      "analysis_source_sha256": {
+        "copper_fem.py": "eb84c9e18dd346ad0df597c132ad12559590cf08445a3d376b7da9ab6c21bc96",
+        "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+        "validate_static.py": "3c4097936460263d3ef2b9ee34f125e4d9fa3f787ddf4f1a3a86b96ec2b18e5f",
+        "audit_native_ports.py": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717"
+      },
+      "run_log_sha256": "fb6ad43530f084f1cc0bbca5fa5c11c1b2dc8b05fa2d8622f6c37e94e6c0057d",
+      "completed_native_mesh": false,
+      "completed_numerical_result": false,
+      "conditional_static_screen_pass": false,
+      "last_stage": "GND mesh construction at 0.20 mm",
+      "reason": "GEOS mixed GeometryCollection intersection with empty Polygon assertion"
+    },
+    {
+      "attempt": 2,
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "source_scope": "provisional complete power-support source with 85 ordinary opens",
+      "freeze_sha256": "69cd3fee3590026ce677b24f92172ab4232179a8426b459b8c26bfefa591cb29",
+      "ledger_sha256": "873199028f5ba4b00ee325ee7c2d9f6209e500dfae532ad7b948cd41174d0ae5",
+      "analysis_source_sha256": {
+        "copper_fem.py": "ceaf3f04ad90f29fac06bde4d385c6cbf74a331d74b054792b60fd3625cf5586",
+        "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+        "validate_static.py": "bd2b0d1ac79d5eaf40a2203e0d208cfd65f1072faf01c0abc577646313afe2c7",
+        "audit_native_ports.py": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717"
+      },
+      "run_log_sha256": "849491d4a420db4b6d13e88cc52f3014dca59ca42fdcf97c3cf1bc9a57686636",
+      "completed_native_mesh": false,
+      "completed_numerical_result": false,
+      "conditional_static_screen_pass": false,
+      "last_stage": "GND mesh construction at 0.20 mm",
+      "reason": "Degenerate triangle after coordinate quantization",
+      "result_sha256": "11def7e3df31eb044362c47a06e53b1f3bca69581ff413389bbdf42d6278b3fc"
+    },
+    {
+      "attempt": 3,
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "source_scope": "provisional complete power-support source with 85 ordinary opens",
+      "freeze_sha256": "1f0184be0bee60e4ef2ad0d3b724122a32bad08acce4d4b32f0755157f4014d6",
+      "ledger_sha256": "bfafa7c6429df2260af04cf65a7f9c419d9ec56be7a4ff5796f54551097023dc",
+      "analysis_source_sha256": {
+        "copper_fem.py": "5c950e039c6510680f3e52748fd8fcfead2a1352d96509a50d816594c675073a",
+        "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+        "validate_static.py": "682f06f154d0cbba87d299f23d530e61967ba4f3309bb5822e4e2852ec4fb38b",
+        "audit_native_ports.py": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717"
+      },
+      "run_log_sha256": "67289d6c1a2526b99f71063f40782091267de7415e20310472e8662b534828ef",
+      "completed_native_mesh": false,
+      "completed_numerical_result": false,
+      "conditional_static_screen_pass": false,
+      "last_stage": "GND mesh construction at 0.20 mm",
+      "reason": "Unresolved triangle area/conditioning with unchanged overlay coordinates",
+      "result_sha256": "dfc22d63365816f067dc918e37924ac5782c8689cf3360e08d97dcf8e00984ff",
+      "triangle_diagnostic": {
+        "stage": "triangle_geometry",
+        "index": 2918,
+        "coordinates": [
+          [
+            14.358372,
+            9.696331
+          ],
+          [
+            14.354581,
+            9.694505
+          ],
+          [
+            14.354591053009024,
+            9.694509842203766
+          ]
+        ],
+        "twice_area_mm2": -1.6254562257810024e-18,
+        "condition_bound": 21728135342668.23,
+        "maximum_condition_bound": 1000000000000.0
+      }
+    }
+  ],
+  "next_issue": "Exact native-edge intersection normalization is under development and excluded from this bundle."
+}

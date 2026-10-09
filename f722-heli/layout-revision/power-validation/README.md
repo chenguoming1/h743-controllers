@@ -1,104 +1,76 @@
-# Scoped static copper validation
+# Prototype static power validation
 
-This is prototype analysis software. Its retained evidence is **synthetic tests only**. This source bundle contains no F722 board mesh, completed case ledger, real-board electrical acceptance, thermal rating or flight qualification. Both input templates are disabled and contain no board paths, load allocations or material defaults to adopt accidentally.
+This bundle preserves completed analysis tooling and **35 passing synthetic/compiler controls**. Three bounded attempts on one provisional power-support board refused before the first native mesh completed. There is no native resistance, current, voltage, loop-compliance, thermal or flight result. The unfinished rational-intersection correction is excluded.
 
-## Reproduce the synthetic tests
+`MANIFEST.json` is the publication allowlist and SHA-256 inventory. Copy only its listed files and the manifest. No board, large WKB geometry, cache, environment, expanded case ledger or private path is included. `native-refusals.json` retains compact source/code/result hashes and the exact last triangle diagnostic; it is evidence of refusal, not electrical acceptance. Reproducing those board attempts additionally requires the exact board and independent reports identified by their hashes.
 
-Tested with Python 3.12.14 and the exact dependency versions in `requirements.txt`. KiCad is not needed for these tests.
+## Reproduce the controls
+
+Tested with Python 3.12.14. Install the exact dependency versions in `requirements.txt`:
 
 ```sh
 python3.12 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements.txt
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m unittest -v test_static_validation.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+  python -B -m unittest -v test_static_validation test_case_compiler
 ```
 
-The expected result is 19 passing tests. `synthetic-tests.json` records the checked source hashes, actual versions and execution result. Tests create only small analytical fixtures in temporary directories. They do not load a project PCB.
+Expected: 35 passing tests. `synthetic-tests.json` binds the actual test result to this bundle's sources. KiCad is unnecessary for these small analytical fixtures. Coverage includes finite and grouped contacts, real drill voids, saved-fill holes, point-touch/disconnected rejection, barrel spans, narrow feeders, current/power conservation, real return voltage, converter power, same-source unequal feeds, three-grid conformity, reciprocity, convergence, stale/unfinished-source refusal, hash-bound cases, compute/thread gates, report-only headroom, exact empty-overlay handling, canonical decimal grid anchors and triangle conditioning refusal. Tiny well-shaped elements are retained; unresolved elements refuse.
 
-Coverage includes finite-contact analytical resistance at four spacings; irregular/holed mesh conformity and convergence; disconnected islands and point-touch rejection; saved fills and all-net drill voids; exact fractured-bridge decoding and a KiCad-generated multiple-hole/disconnected-outline fixture; round/slotted barrel resistance and unflashed layers; finite positive and return voltages; converter and whole-circuit power conservation; unequal same-source positive/return feed sharing; a narrow feeder before a wider trunk; resource limits; stale and unfinished input refusal; invalid/duplicate ledgers; protected-output aliases; and numerical guards around marginal voltage floors.
+`native-fill-fixture.json` is a synthetic KiCad 10.0.6 polygon set with holes and a disconnected outline. With that version's `pcbnew` Python runtime, regenerate independently using `python generate_native_fill_fixture.py --out fresh-native-fill-fixture.json`. The fill exporter decodes fractured storage using exact reversed integer bridge cancellation, preserving surviving edges, vertices and signed area. No contour repair is used.
 
-## Source allowlist
+## What is disabled
 
-`MANIFEST.json` is the complete publication allowlist and SHA-256 inventory. Copy only its listed files plus the manifest. Do not include caches, temporary fixtures, virtual environments or future board data merely because they are in the same directory. The manifest's own hash is provided separately by the packaging owner.
+`case-plan.disabled.json` contains requirements, assumptions and sensitivity dimensions, with false execution and null freeze binding. `terminal-registry.disabled.json` contains terminal intent only, with no adopted board hash or pad UUIDs. The generic freeze/ledger templates are also disabled and have no source paths or material/load defaults. None is directly executable.
 
-## What the programs do
+The explicit compiler settings are reviewable modeled inputs, not measured fabrication or harness values. They use 105 °C, 0.015 mm effective copper and plating, and 95% IACS. `compiler-settings.json` has smaller resource caps; `compiler-settings.pilot.json` has explicit 900k-node/1.8M-triangle limits. Select settings deliberately. Their power-only scope permits unrelated ordinary opens and never qualifies the completed board.
 
-- `export_native_copper.py` reads a KiCad PCB without refilling or saving it. It exports native pads, tracks, arcs, vias, saved zone fills, drilled capsules, layers and source hash. The supported exporter runtime is KiCad 10.0.6 with its `pcbnew` Python module; use that runtime separately from the analysis virtual environment.
-- `exact_native_contours.py` decodes native fractured saved-fill rings by cancelling only exact reversed integer bridge edges. It preserves every surviving directed boundary edge, exact signed integer area and all surviving coordinates. Ambiguous topology refuses. There is no geometric repair, snapping, buffering or tolerance relaxation. Filled-zone exports include per-contour representation receipts; raw native zero-hole storage must not be interpreted as an absence of physical antipads.
-- `copper_fem.py` builds bounded triangular sheet meshes, subtracts actual drills, keeps exact finite contact boundaries and explicit plated spans, and solves DC fields/finite-port impedances. It reports resistance, KCL, energy, barrel currents/losses, per-layer sheet loss and peak element density/location. Density is never an ampacity rating.
-- `dc_circuit.py` couples those finite copper ports with explicit sources, fixed-current loads, device/contact/harness resistances and conserved-power converters. It retains actual local return potential and checks differential voltage probes.
-- `validate_static.py` binds a new ledger to immutable source/check files, checks scoped completion, compares at least two grids, checks voltage/resistance margins and cross-checks coupled cases against direct fields. It retains one network mesh at a time; compact matrices couple the networks.
+The plan separates 0.32 A electronics, classic 20 mA DSM, capacity 0.50 A DSM and USB 0.30 A configuration with external loads disconnected. It retains AB/AC/BC shared 2 A cases, real power/return ports, converter total-efficiency sensitivities, conditional voltage floors and explicit auxiliary-current accounting. Ten full-load allocation vertices are adversarial spatial samples, not historical current shares. Same-BEC measured four-conductor resistances remain null and are excluded. Published 20/40/50/80 mΩ examples are illustrative, including mismatches and feed loss. KST high-load DC endpoints retain their stated overload, unknown-duration and unqualified-envelope limitations.
 
-## Reproduce the native synthetic fill fixture
+## Bind a new frozen source
 
-`native-fill-fixture.json` was produced with KiCad 10.0.6. It contains only a synthetic polygon set with two holes and another disconnected outline. The generator checks explicit-hole export, a cloned native Fracture() representation, exact area/edge preservation and unchanged input objects. The ordinary analysis suite independently checks valid exported polygons and equal copper geometry. It does not repair the output.
-
-With KiCad 10.0.6's Python runtime, independently regenerate to a new file:
+First use the board workflow to finish the intended scope, refill/save it, and independently check the exact immutable copy. This bundle never refills or saves a PCB. Export saved native geometry with KiCad 10.0.6:
 
 ```sh
-python generate_native_fill_fixture.py --out fresh-native-fill-fixture.json
+python export_native_copper.py --board board.kicad_pcb --out owner-native.json
 ```
 
-No project PCB is loaded or saved. `test_exact_native_contours.py` additionally checks handcrafted exact bridges and rejection of ambiguous touching cycles without requiring KiCad. The fixture and generator do not establish any project-board electrical result.
+The project adapter `compile_power_ledger.py` requires a source directory containing these fresh reports:
 
-## Prepare a real input separately
+- `f722-heli.kicad_pcb`, `owner-native.json`, current `parts.json`
+- `owner-parity.json`, `owner-process.json`, `owner-mechanical.json`, `owner-critical.json`
+- `power-audit.json`, `owner-drc.json`, `owner-drc-all.json`
+- `owner-protection.json`, `owner-supplemental.json`
 
-Real-board analysis is a later activity requiring a completed scope, reviewed assumptions and an allocated compute budget. No ready real-board inputs are supplied here.
-
-1. Freeze an immutable PCB copy after its intended copper and return paths are complete. Refill, save and verify saved fills using the board workflow. The exporter itself never performs these operations.
-2. Using KiCad's Python runtime, export that copy:
-
-   ```sh
-   python export_native_copper.py --board input/board.kicad_pcb --out input/geometry.json
-   ```
-
-3. Run native standard and all-track DRC, native physical pad-group connectivity, schematic/native parity, and the applicable drill/mask/clearance/layer/keepout checks on exactly that frozen copy. Preserve visible warnings. Keep current parts metadata with these inputs. This bundle does not generate or replace those project-specific check reports.
-4. Copy `freeze.template.json`, fill relative paths and SHA-256 hashes for every required file, select `power-only` or `final-board`, identify all tested nets, and record the actual saved-fill/check evidence. Only then set its status to `frozen-for-scoped-static-screen`. The two evidence booleans are receipts for performed checks, not substitutes for them.
-5. Copy `ledger.template.json`. Enter all four material assumptions, at least two strictly decreasing positive mesh spacings, convergence limits, real contact mappings, required unit/loop/loaded cases and their limits. Bind it to the SHA-256 of the completed freeze manifest. Set its status to `ready` only when all assumptions and endpoints are reviewed.
-
-Source/check contracts:
-
-- Geometry: the supplied exporter's `kicad-native-copper/v1` schema, unchanged source, millimetre units, valid native outline and matching board hash.
-- Connectivity: `board_sha256`, and `nets[net]` containing `pad_group_count` and `groups[].pad_uuids`. Every tested net must have exactly one native connected pad group containing every assigned native pad UUID on that net.
-- Parity and physical check receipts: matching `board_sha256` and `passed: true`. Preserve their underlying evidence and scope descriptions in the frozen input set.
-- Both DRC files: complete native JSON with `violations` and `unconnected_items`. Geometric/parity errors or ignored checks refuse. `power-only` allows unrelated ordinary opens; opens touching a tested net refuse. `final-board` additionally requires zero ordinary opens.
-- All listed files: exact SHA-256 entries in the manifest. Native DRC JSON lacks an intrinsic PCB hash, so the freeze owner is responsible for running and binding those reports to the correct copy. This catches accidental stale reuse; it does not prove that an external check was performed correctly.
-
-Run preflight before allocating numerical work:
+These are board-workflow inputs; this bundle does not manufacture their acceptance receipts. Set `SOURCE_FOR_REBIND` to their actual directory, then compile into a new output directory:
 
 ```sh
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python validate_static.py \
-  --freeze input/freeze.json --ledger input/ledger.json --out preflight.json
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python compile_power_ledger.py \
+  --source "$SOURCE_FOR_REBIND" --plan case-plan.disabled.json \
+  --registry terminal-registry.disabled.json --settings compiler-settings.pilot.json \
+  --out compiled-preflight
 ```
 
-Preflight does not mesh. It refuses disabled templates, stale files and incomplete tested scopes. When the scope and compute budget are approved, append `--run` and use a separate result filename. Exit code 0 means preflight passed or the enumerated conditional static screen passed; 1 means the enumerated static limits/sensitivity did not pass; 2 means input or numerical refusal. Outputs may not alias source files, including when writing a refusal.
+The compiler checks source hashes, actual selected part identities and finite native pad/net/layer bindings, copies evidence, stamps every resolved case, audits 106 contact intents and five loop definitions, and leaves numerical execution false. Power-only scope preserves failed unrelated protection rows as excluded evidence; a failure involving a tested power net refuses. No mesh or circuit runs during compilation.
 
-Resource defaults are 160,000 nodes, 320,000 triangles, 300,000 tiles, 128 contacts and 120 seconds per network construction/solve stage. Caps refuse rather than silently coarsening. Run single-threaded. Mesh spacing is numerical sampling, not copper thickness. Choose it according to the actual geometry and resolve inadequate convergence within the allocated budget.
+It prepares 170 baseline definitions, 40 upper-receiver checks and 100 bounded same-BEC illustrations, combined in a 310-case primary ledger. These are new definitions, not executed cases or recovered historical results. The 178 weakest-allocation sensitivity selectors remain deferred until source-bound numerical rankings exist. `activate_ranked_slices.py` requires actual converged baseline evidence and chooses weakest sampled locations separately for each voltage constraint; it refuses guessed rankings.
 
-## Ledger fields
+For the final routed board, copy the selected settings to a new file, set `scope` to `final-board`, describe the actual final source stage, and rerun the same compiler command against fresh final reports. Final mode requires zero opens and passing protection checks. Any later track, drill, fill, part or solver change invalidates the binding. A provisional source result cannot stand in for the final board.
 
-Each `networks` item has a native `net` and a `contacts` mapping from unique circuit-node names to `{ "pad": "REF.NUMBER", "layer": "B.Cu" }`. The indicated pad must belong to that net. Contacts use finite actual copper on that physical layer, not a pad anchor point. Distinct/equivalent ports cannot be silently shorted: overlapping contacts or a contact spanning disconnected copper refuse. Use one port and a reviewed circuit-node alias for an actually joined native land. Every loaded path retains its intervening narrow conductors and plated spans; a net label or nominal trunk width creates no shortcut.
+## Numerical execution and refusal
 
-All material fields are explicit: `temperature_C`, `thickness_mm`, `conductivity_IACS`, `plating_mm`. The actual native stackup sets layer-center distances; effective sheet thickness and plating are separate resistance assumptions. Barrel area is drilled-capsule perimeter times plating thickness. No fabrication tolerance is inferred from the nominal CAD stackup.
+Allocate one heavy job before using the compiler's `--allow-numerical` flag in a new output directory. The locked output must not be edited in place. Bound a selected, reviewed numerical ledger with the supplied wrapper:
 
-`unit_transfers` contain `name`, `net`, `source`, `sink`, optionally `maximum_ohm`. `loops` contain a unique `name`, a nonempty `legs` list of net/source/sink objects, optionally `maximum_ohm`. The sum describes the specifically named DC unit legs. A missing limit is descriptive, not an invented pass threshold.
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python run_bounded_pilot.py \
+  --freeze compiled-released/freeze.json \
+  --ledger compiled-released/ledger-primary.json \
+  --out compiled-released/result.json
+```
 
-Loaded `cases` contain a unique `name`, `reference_node`, explicit `assumptions`, optional `nets` subset, and these entries:
+This is an execution recipe, not a recommendation to run the full case set as a short pilot. The wrapper enforces one process, one native numerical thread, a 4 GiB address-space cap and a 20-minute overall alarm. Mesh/resource/conditioning failures stop honestly. Exit 0 is preflight success or conditional enumerated-screen success; 1 means limits/convergence did not pass; 2 means refusal. The package's current native-board attempt remains refused because a near-collinear intersection requires further robust common-edge noding.
 
-- `sources`: name, p, n, voltage_V; optional sense_p/sense_n. Source current is positive from p to n into the source; delivery generally has negative current.
-- `resistors`: name, p, n, ohm. Model source leads, contacts, harnesses and device on-resistance explicitly. Zero resistance refuses; a deliberately ideal internal tie can use a named zero-volt source.
-- `loads`: name, p, n, current_A. Use actual positive and local ground contacts; idealizing every return at the global reference would bypass real return loss.
-- `converters`: name, in_p/in_n, out_p/out_n, voltage_V, efficiency; optional quiescent_A, sense_p/sense_n, minimum_input_V, maximum_input_V, maximum_output_A. Input demand is output power divided by efficiency and actual local input voltage, plus quiescent current.
-- `probes`: name, p, n, minimum_V and/or maximum_V; optional purpose. Every loaded case needs bounded differential voltage probes.
+Grid coordinates come from exact decimal rationals with one binary64 conversion. Native vertices and generated intersections are not rounded to merge nodes. The 1e12 element Jacobian-condition bound is a numerical refusal threshold, not an error guarantee. Finite-contact membership uses a 2e-8 mm (0.02 nm) roundoff tolerance. KCL, energy, reciprocity, two-grid sensitivity and margin checks remain required. Different positive/return branches, intermediate narrow traces, actual drill antipads, overlapping copper unions and finite barrel resistance remain in the network; no equal feed split is assumed.
 
-Use one external source and separate positive/return lead/contact resistances when two feeds come from the same supply. Their current sharing is solved, never assumed equal. Include actual GND copper in loaded physical-board cases. Sense pins must not substitute for real power injection terminals. State component and harness assumptions in the ledger; copper resistance does not supply them automatically.
-
-The final two grids must meet explicit impedance sensitivity limits. A voltage/resistance margin must clear the observed grid change and the selected absolute guard. A tiny positive scalar margin can therefore remain unresolved. These guards are sensitivity checks, not rigorous discretization or manufacturing error bounds.
-
-## Interpretation limits
-
-Only the cases explicitly enumerated in a future ledger are assessed. The supplied synthetic receipt does not assert native-board continuity, loaded voltage, current capacity or loop compliance. A `power-only` result does not qualify a subsequently completed board after signal routing/drilling changes.
-
-Fixed-temperature DC loss and current density are not thermal rise, ampacity, a contact rating or a guaranteed pulse/fault envelope. Equipotential lands/annuli omit within-land, pin, solder and contact heating. Polygon approximation and grid convergence do not establish a strict manufacturing bound. Material temperature assumptions do not alter component body-temperature ratings.
-
-This model does not establish startup/inrush, handover/backfeed, regulator dropout or switching dynamics, ripple, magnetic behavior, AC loop stability, ESD/EMC, sensor noise, signal-level compatibility, CAM/assembly acceptance or flight qualification. Native/project checks and first-article measurements remain separate.
+Fixed-temperature DC loss and density are not temperature rise, ampacity or a pulse rating. Ideal lands omit internal pin/solder/land heating. Efficiency, off-condition switch resistance and additional regulation allowances remain modeled sensitivities. U9's 4.3 V accuracy-condition comparison is separate from its 3 V operating minimum. Startup, handover/backfeed, converter dynamics, ripple, VCAP AC stability, EMI/ESD, production variation, assembly and flight qualification require separate evidence and measurements.

@@ -3,11 +3,12 @@ import copy,json,math,tempfile,unittest
 from pathlib import Path
 import numpy as np
 from shapely.geometry import box,Point,Polygon,MultiPolygon
-from copper_fem import Mesh,Refused,Limits,barrel_resistance,native_geometry,polygon_set
+from copper_fem import Mesh,Refused,Limits,barrel_resistance,native_geometry,polygon_set,contact_spec_geometry
 from exact_native_contours import decode_fractured_contour
 from test_exact_native_contours import check_fixture
 from dc_circuit import solve_circuit
 from validate_static import preflight,run_screen,sha256,guard_output
+from audit_native_ports import audit_ports
 
 def records(p):return [{'outer':list(p.exterior.coords),'holes':[list(h.coords)for h in p.interiors]}]
 def strip(h=.5,extra=None):
@@ -16,6 +17,21 @@ def strip(h=.5,extra=None):
 def value(m):return m.solve({'a':1,'b':-1},'b')
 
 class CopperTests(unittest.TestCase):
+    def test_grouped_native_contact_union(self):
+        pads={name:[{'copper':{'F.Cu':records(poly)}}]for name,poly in [
+            ('U.1',box(0,0,.2,1)),('U.2',box(.1,0,.3,1)),('U.3',box(1,0,1.2,1)),
+            ('U.4',box(.2,1,.4,2))]}
+        grouped=contact_spec_geometry(pads,{'pads':['U.1','U.2'],'layer':'F.Cu'})
+        self.assertTrue(grouped.equals(box(0,0,.3,1)))
+        m=Mesh({'F.Cu':box(0,0,4,1)}, {'a':('F.Cu',grouped),'b':('F.Cu',box(3.7,0,4,1))},.25,.01,.015)
+        self.assertAlmostEqual(value(m)['contact_voltage_V']['a'],.034,10)
+        for keys in [['U.1','U.3'],['U.1','U.4']]:
+            with self.assertRaisesRegex(Refused,'one connected finite'):
+                contact_spec_geometry(pads,{'pads':keys,'layer':'F.Cu'})
+        for spec in [{'pads':[]},{'pads':['U.1','U.1']},{'pad':'U.1','pads':['U.2']},{'pads':'U.1'}]:
+            with self.assertRaises(Refused):contact_spec_geometry(pads,{**spec,'layer':'F.Cu'})
+        with self.assertRaisesRegex(Refused,'No finite native copper'):
+            contact_spec_geometry(pads,{'pads':['U.1','U.2'],'layer':'B.Cu'})
     def test_exact_fractured_bridge_controls(self):
         self.assertTrue(check_fixture()['passed'])
     def test_native_saved_fill_fixture_preserves_holes_and_islands(self):
@@ -136,6 +152,46 @@ class SourceTests(unittest.TestCase):
             r=run_screen(c);self.assertTrue(r['conditional_static_screen_pass']);self.assertFalse(r['scope_is_final_board'])
             (d/'toy-board.txt').write_text('changed')
             with self.assertRaisesRegex(Refused,'changed'):preflight(d/'freeze.json',d/'ledger.json')
+    def test_grouped_contact_preflight_and_run(self):
+        with tempfile.TemporaryDirectory()as tmp:
+            d,f,l=self.fixture(tmp)
+            g=json.loads((d/'geometry.json').read_text())
+            g['objects'][0]['copper']['F.Cu']=records(box(0,0,.2,1))
+            g['objects'].append({'uuid':'a2','kind':'pad','net':'P','number':'2','key':'a2',
+                'copper':{'F.Cu':records(box(.1,0,.3,1))},'drill':None,'plated':False})
+            (d/'geometry.json').write_text(json.dumps(g));f['files']['geometry']['sha256']=sha256(d/'geometry.json')
+            c=json.loads((d/'connectivity.json').read_text());c['nets']['P']['groups'][0]['pad_uuids'].append('a2')
+            (d/'connectivity.json').write_text(json.dumps(c));f['files']['connectivity']['sha256']=sha256(d/'connectivity.json')
+            (d/'freeze.json').write_text(json.dumps(f));l['freeze_manifest_sha256']=sha256(d/'freeze.json')
+            l['networks'][0]['contacts']['a']={'pads':['a','a2'],'layer':'F.Cu'}
+            (d/'ledger.json').write_text(json.dumps(l))
+            r=run_screen(preflight(d/'freeze.json',d/'ledger.json'))
+            self.assertTrue(r['conditional_static_screen_pass'])
+            l['networks'][0]['contacts']['a']['pads']=['a','b']
+            (d/'ledger.json').write_text(json.dumps(l))
+            with self.assertRaisesRegex(Refused,'one connected finite'):
+                preflight(d/'freeze.json',d/'ledger.json')
+    def test_geometry_only_audit_and_foreign_drill_split(self):
+        with tempfile.TemporaryDirectory()as tmp:
+            d,_,l=self.fixture(tmp)
+            l['loops']=[{'name':'toy_loop','maximum_ohm':.04,'legs':[{'net':'P','source':'a','sink':'b'}]}]
+            (d/'ledger.json').write_text(json.dumps(l))
+            args=[d/'toy-board.txt',d/'geometry.json',d/'ledger.json',d/'connectivity.json']
+            receipt=audit_ports(*args)
+            self.assertTrue(receipt['passed']);self.assertEqual(receipt['contact_count'],2)
+            self.assertFalse(receipt['source_acceptance_or_final_board_qualification'])
+            self.assertFalse(receipt['loops'][0]['resistance_solved'])
+            l['networks'][0]['contacts']['duplicate_a']={'pad':'a','layer':'F.Cu'}
+            (d/'ledger.json').write_text(json.dumps(l))
+            with self.assertRaisesRegex(Refused,'touches/overlaps contact'):audit_ports(*args)
+            del l['networks'][0]['contacts']['duplicate_a'];(d/'ledger.json').write_text(json.dumps(l))
+            g=json.loads((d/'geometry.json').read_text())
+            g['objects'].append({'uuid':'foreign-drill','kind':'pad','net':'OTHER','number':'1','key':'hole',
+                'copper':{},'plated':False,'drill':{'outside':records(box(.1,-.1,.2,1.1))}})
+            (d/'geometry.json').write_text(json.dumps(g))
+            with self.assertRaisesRegex(Refused,'after actual drill'):audit_ports(*args)
+            g['board_sha256']='stale';(d/'geometry.json').write_text(json.dumps(g))
+            with self.assertRaisesRegex(Refused,'does not belong'):audit_ports(*args)
     def test_unfinished_and_draft_refuse(self):
         for change,pattern in [('final','ordinary unfinished'),('draft','unfinished'),('groups','unfinished'),('tested-open','opens on tested')]:
             with self.subTest(change=change),tempfile.TemporaryDirectory()as tmp:
