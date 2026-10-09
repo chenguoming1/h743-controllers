@@ -1,0 +1,84 @@
+{
+  "schema": "f722-native-route-handoff/v1",
+  "status": "frozen_native_verified_57_open_geometric_WIP_pending_owner_adoption_and_power_revalidation",
+  "board_sha256": "697555207280b8d67714a0011a51ec355321f21f551d6a1486a786c38a671949",
+  "integration_source_sha256": "79219c2beaf2a5cd9f827cf3292387c5606eae35b478386204dba91c123cf26d",
+  "origin_routing_source_sha256": "e59f97f0dface234bdd7186a73677f5df73d988bc5d67e9732b267d0dbcd5d2f",
+  "drc": {
+    "unconnected": 57,
+    "errors": 0,
+    "warnings": 0,
+    "strict_schematic_parity": 0
+  },
+  "engine_successful_connections": 1,
+  "new_tracks": 6,
+  "new_vias": 1,
+  "source_objects_removed": 0,
+  "source25_objects_retained_exact": 1688,
+  "reference_refill_performed": true,
+  "full_width_endpoint_passed": true,
+  "endpoint_summary": {
+    "pad_terminations_verified": 2,
+    "minimum_positive_pad_depth_mm": 0.06353999999999971,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.015301577488923357,
+    "full_width_actual_annular_strip_count": 2,
+    "minimum_full_width_annular_strip_length_mm": 0.01,
+    "minimum_annular_section_boundary_reserve_mm": 0.05052806561169866,
+    "redundant_via_spurs_retained_as_non_evidence": 1,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "completed_pair_connections": [
+    "ESC_MCU::P0: R24.2 to actual bonded clamp U13.3"
+  ],
+  "remaining_net_branches": [
+    "ESC_MCU::P1: U13.3 to U1.58 remains open"
+  ],
+  "new_fully_connected_physical_nets": [],
+  "ordinary_fully_connected_physical_nets": 13,
+  "historical_routing_pad_cuts": {
+    "passed": 2,
+    "total": 18,
+    "limitation": "Includes NC routing-pad dependency; not actual bonded protection coverage"
+  },
+  "supplemental_pad_cuts": {
+    "passed": 5,
+    "total": 7
+  },
+  "actual_bonded_io_cuts": {
+    "passed": 6,
+    "total": 22
+  },
+  "power_scope": "No source19/24 numerical pass is inherited onto changed26 geometry. Native DRC/process/critical/reference and support connectivity pass separately.",
+  "required_continuation_map": "f722-heli.logical-route-map.json",
+  "fixed_pad_entry_ids": "model-candidate24-ready/fixed-pad-entry-ids.json",
+  "retained_redundant_spur": "One short via-centered spur retained as original engine geometry and explicitly excluded as annular or pad-entry evidence.",
+  "files": {
+    "f722-heli.kicad_pcb": "697555207280b8d67714a0011a51ec355321f21f551d6a1486a786c38a671949",
+    "f722-heli.native.json": "9a8a84a38e11d42097d0760cdb046065a81d189be1efd47d88bd76795cbb2f58",
+    "f722-heli.logical-route-map.json": "a4752f985411b4e9ddc27505005eae2f19f6eeb2d7eeca228220b3336d5be2ed",
+    "f722-heli.import.json": "d1cfbbb996d6e3dc0dd1369ecf4dcb46ef9bf65d948908db1a8f639de803a002",
+    "engine-lineage.json": "482825cf15d432eefb7cd32964ac4cc5f6e56cbcad71b58ff58717d47a001e37",
+    "session-rebind.json": "cae11c2172b36331035a7f50f082d74be151e3fa8f8490ce9949873ae4c7907f",
+    "endpoint-audit.json": "82fba815de21d2330ce52f19b8cb28a12f2766284ed6cdbd628def84de97294b",
+    "owner-drc.json": "473f2f229f99837b8de05000564bcb59f4fd65f9d327eefbd95f52828b2dc69e",
+    "owner-drc-all.json": "dc887f89bda0f6a7aafa850bad0712070031ce034c2fff5d7571afb8cd3e567f",
+    "owner-drc-parity.json": "fe324de29729dfb2158729fa71ed3354ffb9f424767bcb1d901083d6b44bf906",
+    "owner-process.json": "afd6c89901aa06d158bbc25097a4df150ccfe75c0d21e765ed77e8bb44dcc920",
+    "owner-mechanical.json": "bfe450cc528c33764257b0265f2c883e8bef305e9c1a161981bde7ef2e47683c",
+    "owner-summary.json": "4ea452bda80d066caefe898f60710f0234a2e9ad5c1529aaf3d7570392e43c06",
+    "owner-critical.json": "83ac7de50430a21e6a0da751ac056c064de460184327ee69307e4a3bb51a711a",
+    "owner-parity.json": "2ff68b8fcbaf698dfbf3bfecc3d6b1bf63551f29f69a29925c0447f8a120d448",
+    "owner-firmware.json": "48a4dbc56027258fa28603b5826d620cbe4d8e7532c5237c858bdff6c5a6fa62",
+    "power-audit.json": "4754daede192b2c987ba1b6d59a0c8d63766705c2d17e8f38061a995bd4058f7",
+    "power-revalidation-required.json": "2eff0a2f3a68bdb7b5fbca6ed5bc98b0c4305b34c8a18ec650ee637a3d20c6a3",
+    "route-analysis.json": "3a26618fdb2a1c79132e60c62525bc3a32c1c147774da699134899743b8919d0",
+    "owner-protection.json": "6c332cf11b9b436121baed4d1e448f17246c391cd8286cc33e83966283b1f655",
+    "owner-supplemental.json": "6a06e632614991ae8d20ae51db09d3c172bf4d01a8323a20e336d4f0695fa0be",
+    "protection-actual-io.json": "1866a1917491128fa8da2e1c678730d906c01951795ac4c74afd6a94e57e293b",
+    "import_session.used.py": "4f057a22a3434a618129dd5a11dad4ef29ed2f08a2b561ea818b8438cd87e292",
+    "route_geometry.used.py": "898e4f5d683bcf46a0feff38231ca398f979ea3f60dc08a06b80b91d9c92bfe2",
+    "prepare_engine_continuation_import.used.py": "fa9ff1a5f278bcb8e90612182b269e02791b3a8f9d2d3a47bec8d512cd60c313",
+    "audit_support_connectivity.used.py": "a48add965bb500d0811dbf10efdf8080e9e61945eb5beb4d347f8ddab6b98b5b",
+    "audit_native_endpoints.used.py": "6243af36ea083108ac96a8c04dfd5d76d5e4c59d6f7e8777af999462819965c8"
+  }
+}

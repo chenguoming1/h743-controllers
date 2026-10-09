@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "source_board_sha256": "2c43b04a2dcf551e3fde9472a27ec6234a937cf18d6af8364087a5b40208c063",
+  "board_sha256": "e59f97f0dface234bdd7186a73677f5df73d988bc5d67e9732b267d0dbcd5d2f",
+  "audit_source_sha256": "0bc515b8d253075570aaa738cec253e8d36df9caf27c3803163bf08df1eb27ef",
+  "rows": [
+    {
+      "track_uuid": "e770d1de-a512-46cc-89a6-26fe43d6a1f1",
+      "pad": "Q1.2",
+      "native_polygon_difference_area_mm2": 2.011707797944443e-08,
+      "maximum_outside_pad_forward_projection_mm": -0.02861555414108619,
+      "exact_shared_round_endcap_covers_actual_outside_pad_copper": true,
+      "full_width_interior_interval_mm": 0.2378998038781215,
+      "source_track_uuid": "c916c16d-43e4-4d6c-88c0-1cfa373577c8",
+      "outside_pad_new_copper_contained_in_previous_track": true
+    },
+    {
+      "track_uuid": "24af4ff1-59b1-43d4-8282-48cf7056a156",
+      "pad": "R26.2",
+      "native_polygon_difference_area_mm2": 1.295857793864466e-07,
+      "maximum_outside_pad_forward_projection_mm": -0.012374096001886402,
+      "exact_shared_round_endcap_covers_actual_outside_pad_copper": true,
+      "full_width_interior_interval_mm": 0.21152897862934655,
+      "source_track_uuid": "4deb196b-8a4a-4837-97d6-ddceb3751d97",
+      "outside_pad_new_copper_contained_in_previous_track": true
+    }
+  ],
+  "claim": "The entire new native outside-pad polygon lies strictly behind the stub start. Any actual copper there belongs to its round endcap, which is the identical existing endpoint circle on the prior same-width track. This proves no new physical copper outside the actual native inside-pad region. Nonzero polygon-only differences are retained as export tessellation evidence, not ignored by an area tolerance."
+}

@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "verifier_source_sha256": "8e6c0dd61941098b9f015d34659011b18d264c372222eab7e0548a03e423415b",
+  "scope": "Portable identity, historical receipt binding, exact paired byte recovery, actual engine and explicit construction packet parsing; no fresh native qualification.",
+  "base_manifest_sha256": "13f0fa03eaf62d3ae16635109877499976843e7289f97372cb4e2143cdd180e6",
+  "recovered_projects": [
+    {
+      "candidate": 26,
+      "board_sha256": "697555207280b8d67714a0011a51ec355321f21f551d6a1486a786c38a671949",
+      "functional_paired_files": 62
+    },
+    {
+      "candidate": 27,
+      "board_sha256": "940c9443957e2d059c0f46bb64dfb6833104c5c62abbdc75c30a48d763b0993f",
+      "functional_paired_files": 62
+    },
+    {
+      "candidate": 28,
+      "board_sha256": "3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2",
+      "functional_paired_files": 62
+    }
+  ],
+  "packets": [
+    {
+      "packet": "sessions/engine56",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "exact_paired_source_recovered": true,
+      "new_tracks": 6,
+      "new_vias": 1,
+      "engine_insertion_succeeded": true,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "sessions/accepted55",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "exact_paired_source_recovered": true,
+      "new_tracks": 3,
+      "new_vias": 0,
+      "engine_insertion_succeeded": false,
+      "native_replay_executed": false
+    }
+  ],
+  "negative_controls_passed": 18,
+  "negative_controls": [
+    "candidate27:wrong source board",
+    "candidate27:tampered session.ses",
+    "candidate27:tampered engine-report.json",
+    "candidate27:tampered import-contract.json",
+    "candidate28:wrong source board",
+    "candidate28:tampered session.ses",
+    "candidate28:tampered engine-report.json",
+    "candidate28:tampered import-contract.json",
+    "wrong recovery board",
+    "wrong target hash",
+    "out-of-range copy",
+    "invalid operation",
+    "unsupported transform",
+    "tampered paired project file",
+    "unsafe recovery path:../escape",
+    "unsafe recovery path:/absolute",
+    "unsafe recovery path:safe/../escape",
+    "unsafe recovery path:windows\\escape"
+  ],
+  "original_source_hash_checks_performed": true,
+  "native_replay_reexecuted": false,
+  "native_DRC_reexecuted": false,
+  "endpoint_geometry_reexecuted": false,
+  "JVM_router_refill_or_power_solve_executed": false,
+  "numerical_power_and_VCAP_applicability": false,
+  "native_open_connections": 55,
+  "native_errors": 0,
+  "native_warnings": 0
+}

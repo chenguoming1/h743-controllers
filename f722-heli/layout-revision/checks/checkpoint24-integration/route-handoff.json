@@ -1,0 +1,82 @@
+{
+  "schema": "f722-native-route-handoff/v1",
+  "status": "frozen_native_verified_60_open_candidate_pending_owner_power_binding_and_adoption",
+  "board_sha256": "e59f97f0dface234bdd7186a73677f5df73d988bc5d67e9732b267d0dbcd5d2f",
+  "integration_source_sha256": "fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa",
+  "immediate_construction_source_sha256": "2c43b04a2dcf551e3fde9472a27ec6234a937cf18d6af8364087a5b40208c063",
+  "power_baseline_board_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "drc": {
+    "unconnected": 60,
+    "errors": 0,
+    "warnings": 0,
+    "strict_schematic_parity": 0
+  },
+  "engine_successful_connections": 2,
+  "engine_new_segments": 14,
+  "explicit_pad_entry_segments": 2,
+  "new_tracks": 16,
+  "new_vias": 0,
+  "source_objects_removed": 0,
+  "source22_objects_retained_exact": 1662,
+  "reference_refill_performed": false,
+  "exact_power_domains_fills_drills_and_paired_circuit": true,
+  "full_width_endpoint_passed": true,
+  "endpoint_summary": {
+    "pad_terminations_verified": 4,
+    "minimum_positive_pad_depth_mm": 0.06353999999999971,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.026357715539623877,
+    "full_width_actual_annular_strip_count": 0,
+    "minimum_full_width_annular_strip_length_mm": null,
+    "minimum_annular_section_boundary_reserve_mm": null,
+    "redundant_via_spurs_retained_as_non_evidence": 0,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "completed_pair_connections": [
+    "SBUS_HV::P0: R26.2 to U16.2",
+    "RPM_LV: Q1.2 to R36.2"
+  ],
+  "remaining_net_branches": [
+    "SBUS_HV::P1: U16.2 to Q2.3 remains open",
+    "RPM_LV: R39.1 remains open"
+  ],
+  "new_fully_connected_physical_nets": [],
+  "ordinary_fully_connected_physical_nets": 11,
+  "historical_routing_pad_cuts": {
+    "passed": 2,
+    "total": 18,
+    "limitation": "Includes NC routing-pad dependency; not actual bonded protection coverage"
+  },
+  "supplemental_pad_cuts": {
+    "passed": 5,
+    "total": 7
+  },
+  "actual_bonded_io_cuts": {
+    "passed": 6,
+    "total": 22,
+    "full_contracts_complete": false
+  },
+  "power_scope": "Exact source19 conductive-domain applicability proved; complete numerical job/contact/material/load binding is owner-reviewed separately. No new solve is claimed.",
+  "required_continuation_map": "f722-heli.logical-route-map.json",
+  "files": {
+    "f722-heli.kicad_pcb": "e59f97f0dface234bdd7186a73677f5df73d988bc5d67e9732b267d0dbcd5d2f",
+    "f722-heli.native.json": "ec0ac619f3cbefc1cdbaa06fdaf45b5e1dd0f129baff811ad72b08658b9c6123",
+    "f722-heli.logical-route-map.json": "5dab671c65db679e0712d3410710115572ee8022abc80692830de84152ed7049",
+    "engine-lineage.json": "82412bf672f88d31d22c816e433dd70e417527852ced161c1ccfd976cc0a5667",
+    "pad-entry-completion.json": "dd36701244deae60c4f333ed4845a64883a109518b988462ba7ea9b9f1e48b12",
+    "pad-entry-confinement.json": "52334f54a4d8d9ca8864c4dccc77efe70f24541bbbd785fac27f36be70211652",
+    "endpoint-audit.json": "00f384055e73e9e893dcfc949f7e3c7a93dbc9546300959b327f926967eacee4",
+    "drc-all.json": "bb4575101fa64c373f6afc6edebe306e4d265f464dd8879a30a01d9d5efaae54",
+    "power-audit.json": "ebfe6172c40443f43dc6ea7d8e4fe44b9822dfcf345bde662e3e70bcfce9292a",
+    "unchanged-power-reference.json": "f0b8d49c3560c9e92e6383d53e5d7586bf7226b3a0eb1815b416397a06c25e4e",
+    "process.json": "690c19ddecf911550456bb505b1600ba3cf77a9b08fdf23512557bfbf85b793d",
+    "critical.json": "273b1ec1030489a28a2b5328a89b0d883ee84b022c354b88914e3ab4efa9bc27",
+    "route-analysis.json": "69089eebdd47bea722f301a840d92cbcc6a7d859b349c75214f69b4f730d0081",
+    "protection-original.json": "b594ca3e121ebd0a8d1927f8ab76c4a235122b616b36dba70cfa7e51c1ce71f0",
+    "protection-supplemental.json": "8f2f946b6e2424e2598672a67925280595a9e30f99e20aef23103182a8c5833e",
+    "protection-actual-io.json": "c049124364d61b825f6678e74ac5e3def0df0899ef2f7e29996d07ccf128ca9b",
+    "complete_native_pad_entries.used.py": "68f399cca6280255c4ae7bc3b72cd821456b872451fa803a11354471581170d5",
+    "audit_unchanged_power.used.py": "ee159bf44b0a33ae7d2978308445d6de0a8ca79df721e610f25ca045c572b5ef",
+    "audit_native_endpoints.used.py": "6243af36ea083108ac96a8c04dfd5d76d5e4c59d6f7e8777af999462819965c8",
+    "audit_pad_completion.used.py": "0bc515b8d253075570aaa738cec253e8d36df9caf27c3803163bf08df1eb27ef"
+  }
+}
