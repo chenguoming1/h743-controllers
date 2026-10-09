@@ -276,7 +276,8 @@ class Mesh:
                 if domains[layer].is_empty:continue
                 try:
                     noded,receipt=canonicalize([domains[layer],region_union[layer]],
-                      native_edge_provider(layer),check_time=self.check_time)
+                      native_edge_provider(layer),check_time=self.check_time,
+                      grid_spacing_mm=spacing_mm,grid_vertex_limit=self.limits.max_nodes)
                 except Refused as failure:
                     failure.geometry_reproduction={'layer':layer,'stage':'pretiling_native_edge_noding',
                       **getattr(failure,'geometry_reproduction',{})}
@@ -427,6 +428,89 @@ class Mesh:
         if time.monotonic()-self.start_time>self.limits.max_seconds:
             raise Refused('Wall-time cap reached')
 
+    def physical_operator(self):
+        """Reduced element energy in wide arithmetic; cached double K is the LU preconditioner.
+
+        Equality means identical ideal-land node IDs, never close coordinates,
+        voltages or small areas. Every triangle remains in the geometric record.
+        """
+        if hasattr(self,'_physical_operator'):return self._physical_operator
+        wide=np.longdouble
+        if np.finfo(wide).eps>=np.finfo(float).eps:
+            raise Refused('Physical element accumulation requires wider-than-float64 arithmetic')
+        mapped=self.mapping[self.triangles]
+        same=(mapped[:,0]==mapped[:,1])&(mapped[:,0]==mapped[:,2])
+        distinct=(mapped[:,0]!=mapped[:,1])&(mapped[:,0]!=mapped[:,2])&(mapped[:,1]!=mapped[:,2])
+        rr=[];cc=[];dd=[]
+        dependent=np.argmax(np.sum(self.grad*self.grad,axis=2),axis=1)
+        for reference in range(3):
+            selected=distinct&(dependent==reference)
+            if not np.any(selected):continue
+            g=self.grad[selected].astype(wide)
+            others=[k for k in range(3)if k!=reference]
+            # The largest gradient is the dependent one: its reconstruction
+            # cannot subtract two large opposite vectors to create a tiny
+            # gradient. Form vectors before their Gram products, never subtract
+            # nearly equal large scalar energies to recover a small diagonal.
+            g[:,reference]=-g[:,others[0]]-g[:,others[1]]
+            weight=self.areas[selected].astype(wide)/wide(self.sheet)
+            local=np.einsum('tik,tjk,t->tij',g,g,weight)
+            nodes=mapped[selected]
+            rr.append(np.repeat(nodes,3,axis=1).ravel());cc.append(np.tile(nodes,(1,3)).ravel());dd.append(local.ravel())
+            del g,weight,local,nodes
+        for singleton in range(3):
+            others=[k for k in range(3)if k!=singleton]
+            selected=(mapped[:,others[0]]==mapped[:,others[1]])&~same
+            if not np.any(selected):continue
+            # grad(Ngroup)=-grad(Nsingleton) exactly after identification.
+            # Use the singleton directly rather than canceling two gradients.
+            g=self.grad[selected,singleton].astype(wide)
+            conductance=np.sum(g*g,axis=1)*self.areas[selected].astype(wide)/wide(self.sheet)
+            a=mapped[selected,singleton];b=mapped[selected,others[0]]
+            rr.append(np.column_stack([a,a,b,b]).ravel());cc.append(np.column_stack([a,b,a,b]).ravel())
+            dd.append(np.column_stack([conductance,-conductance,-conductance,conductance]).ravel())
+        if self.barrels:
+            br=[];bc=[];bd=[]
+            for a,b,resistance,*_ in self.barrels:
+                conductance=wide(1)/wide(resistance)
+                br.extend([a,a,b,b]);bc.extend([a,b,a,b]);bd.extend([conductance,-conductance,-conductance,conductance])
+            rr.append(np.asarray(br));cc.append(np.asarray(bc));dd.append(np.asarray(bd,dtype=wide))
+        if dd:
+            operator=coo_matrix((np.concatenate(dd),(np.concatenate(rr),np.concatenate(cc))),shape=(self.n,self.n)).tocsr()
+            operator.eliminate_zeros()
+        else:operator=coo_matrix((self.n,self.n),dtype=wide).tocsr()
+        if not np.all(np.isfinite(operator.data)):raise Refused('Nonfinite reduced physical element operator')
+        row_sums=np.asarray(operator.sum(axis=1)).ravel()
+        delta=operator-self.K.astype(wide)
+        self.physical_operator_diagnostics={'arithmetic_mantissa_bits':int(np.finfo(wide).nmant),
+          'all_equal_ideal_node_zero_energy_triangles':int(sum(same)),
+          'two_reduced_nodes_triangles':int(sum(~same&~distinct)),
+          'three_reduced_nodes_triangles':int(sum(distinct)),
+          'triangles_retained':len(mapped),'positive_area_elements_discarded':0,
+          'maximum_row_sum_S':float(max(abs(row_sums),default=0.)),
+          'maximum_difference_from_double_preconditioner_S':float(max(abs(delta.data),default=0.)),
+          'stored_bytes':operator.data.nbytes+operator.indices.nbytes+operator.indptr.nbytes,
+          'double_matrix_role':'factorization preconditioner only; refinement and KCL use the reduced physical element operator'}
+        self._physical_operator=operator
+        self.check_time();return operator
+
+    def physical_field(self,v):
+        """Same condensed element energy as physical_operator, with gauge-invariant differences."""
+        mapped=self.mapping[self.triangles]
+        same=(mapped[:,0]==mapped[:,1])&(mapped[:,0]==mapped[:,2])
+        distinct=(mapped[:,0]!=mapped[:,1])&(mapped[:,0]!=mapped[:,2])&(mapped[:,1]!=mapped[:,2])
+        field=np.zeros((len(mapped),2),dtype=np.result_type(v,np.longdouble))
+        dependent=np.argmax(np.sum(self.grad*self.grad,axis=2),axis=1)
+        for reference in range(3):
+            selected=distinct&(dependent==reference);nodes=mapped[selected]
+            others=[k for k in range(3)if k!=reference]
+            field[selected]=sum((v[nodes[:,k]]-v[nodes[:,reference]])[:,None]*self.grad[selected,k]for k in others)
+        for singleton in range(3):
+            others=[k for k in range(3)if k!=singleton]
+            selected=(mapped[:,others[0]]==mapped[:,others[1]])&~same
+            field[selected]=(v[mapped[selected,singleton]]-v[mapped[selected,others[0]]])[:,None]*self.grad[selected,singleton]
+        return field
+
     def linear_system(self):
         if hasattr(self,'_linear_system'):return self._linear_system
         if self.limits.linear_solver not in ('cg','sparse-direct'):raise Refused('Unknown linear solver')
@@ -462,7 +546,7 @@ class Mesh:
         return value,info,{'iterations':iterations[0],'info':int(info),'trend':trend,'residual_history':history,
                            'final_residual_norm_A':final,'diagnostic_only':False}
 
-    def direct_solution(self,A,rhs,diag):
+    def direct_solution(self,A,rhs,diag,residual_matrix=None):
         if not hasattr(self,'_direct_factor'):
             if self.limits.cg_diagnostic_iterations:
                 _,_,diagnostic=self.iterative_solution(A,rhs,diag,self.limits.cg_diagnostic_iterations)
@@ -484,13 +568,15 @@ class Mesh:
             self._direct_factor=factor;self._direct_scale=scale;self.check_time()
         factor=self._direct_factor;scale=self._direct_scale
         # Thin exact geometric elements can create large canceling row terms.
-        # Retain the original assembled coefficients and double LU, while
-        # accumulating both solution and residual in wider arithmetic. This
-        # changes no matrix coefficient, geometry or acceptance threshold.
+        # Retain the double LU as a preconditioner. Refine against the explicitly
+        # supplied reduced physical operator in wider arithmetic; geometry and
+        # acceptance thresholds remain unchanged. Standalone matrix controls
+        # without element data use the supplied A itself as the operator.
         wide=np.longdouble
         if np.finfo(wide).eps>=np.finfo(float).eps:
             raise Refused('Sparse direct refinement requires wider-than-float64 arithmetic')
-        if not hasattr(self,'_direct_matrix_wide'):self._direct_matrix_wide=A.astype(wide)
+        if not hasattr(self,'_direct_matrix_wide'):
+            self._direct_matrix_wide=A.astype(wide)if residual_matrix is None else residual_matrix
         matrix=self._direct_matrix_wide;right=rhs.astype(wide)
         value=(scale*factor.solve(scale*rhs)).astype(wide)
         target=max(1e-13,1e-10*float(np.linalg.norm(rhs)));history=[];double_history=[]
@@ -532,17 +618,21 @@ class Mesh:
                 v[free],info,diagnostic=self.iterative_solution(A,b[free],diag,self.limits.max_iterations)
                 self.linear_diagnostics['cg']=diagnostic;iterations=diagnostic['iterations']
                 if info!=0:raise Refused(f'CG did not converge ({info}); no result qualifies')
-            else:v[free],iterations=self.direct_solution(A,b[free],diag)
+            else:
+                operator=self.physical_operator()
+                if not hasattr(self,'_physical_free'):
+                    self._physical_free=operator[free][:,free].tocsr()
+                self.linear_diagnostics['physical_element_operator']=self.physical_operator_diagnostics
+                v[free],iterations=self.direct_solution(A,b[free],diag,self._physical_free)
         except Refused as failure:
             failure.linear_solver_diagnostics=self.linear_diagnostics
             raise
-        residual=self.K@v-b
+        residual=self.physical_operator()@v-b
         max_residual=float(np.max(abs(residual[self.active])))
         if max_residual>max(1e-8,max(abs(x) for x in injections.values())*1e-7):
             raise Refused(f'KCL residual too large: {max_residual} A')
         v[self.active]-=v[ref]
-        node_v=v[self.mapping]
-        field=np.einsum('ti,tij->tj',node_v[self.triangles],self.grad)
+        field=self.physical_field(v)
         density=np.linalg.norm(field,axis=1)/(self.sheet*self.thickness)
         sheet_loss=float(np.sum(self.areas*np.sum(field*field,axis=1))/self.sheet)
         element_loss=self.areas*np.sum(field*field,axis=1)/self.sheet

@@ -1,0 +1,546 @@
+{
+  "source_identity": {
+    "f722-heli": {
+      "path": "candidate21/f722-heli.kicad_pcb",
+      "sha256": "868b957a5dad28110216e6a59b05497150c2bf0d3b2ae02db6a38cede79e8181"
+    },
+    "f722-heli.native": {
+      "path": "candidate21/f722-heli.native.json",
+      "sha256": "3dc7a99be790430ae6b74e42fe5f2100703523715cb9b4418a162a5fb9a07ce3"
+    },
+    "model": {
+      "path": "model-candidate21-ready/model.json",
+      "sha256": "46a7890fc89f428b0b36956d23250f067cc985760a60ae8a5e6efa3fea2f4d75"
+    },
+    "f722-heli.logical-route-map": {
+      "path": "candidate21/f722-heli.logical-route-map.json",
+      "sha256": "88b583abeb6e98a2f2fb066dcdcf813e249c4e7b35bd74547e533ab6429e416b"
+    },
+    "screen": {
+      "path": "tests/local-closures20/prepare_port_b_native.py",
+      "sha256": "68d8926392fa11eeaef6b9e9cfc949de5af8ded5701326b121d5ba2667019f17"
+    }
+  },
+  "board_sha256": "868b957a5dad28110216e6a59b05497150c2bf0d3b2ae02db6a38cede79e8181",
+  "source_unchanged": true,
+  "proposal_mutual_conflicts": [],
+  "proposals": [
+    {
+      "net": "PORT_B_RX_EXT",
+      "logical_net": "PORT_B_RX_EXT::P0",
+      "layer": "F.Cu",
+      "terminals": [
+        "J10.1",
+        "U14.7"
+      ],
+      "terminal_uuids": [
+        "114f0284-6eda-4fd8-b124-92017550a5fb",
+        "e846813a-f390-4cbc-8353-23b4b91006f3"
+      ],
+      "different_native_components_before": true,
+      "points_mm": [
+        [
+          29.625,
+          5.5
+        ],
+        [
+          27.77755,
+          6.69044
+        ],
+        [
+          24.03646,
+          6.95312
+        ],
+        [
+          24.0,
+          7.4825
+        ]
+      ],
+      "width_mm": 0.127,
+      "vias": [],
+      "length_mm": 6.478710644721602,
+      "minimum_extra_clearance_mm": 0.013082262425972241,
+      "pad_entry": [
+        {
+          "pad": "J10.1",
+          "uuid": "114f0284-6eda-4fd8-b124-92017550a5fb",
+          "point_mm": [
+            29.625,
+            5.5
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.23650000000000065
+        },
+        {
+          "pad": "U14.7",
+          "uuid": "e846813a-f390-4cbc-8353-23b4b91006f3",
+          "point_mm": [
+            24.0,
+            7.4825
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.03650000000000142
+        }
+      ],
+      "logical_role": {
+        "kind": "protected_chain",
+        "sequence": [
+          "J10.1",
+          "U14.7",
+          "U14.4",
+          "R32.1"
+        ],
+        "branches": [
+          {
+            "logical_net": "PORT_B_RX_EXT::P0",
+            "terminals": [
+              "J10.1",
+              "U14.7"
+            ]
+          },
+          {
+            "logical_net": "PORT_B_RX_EXT::P1",
+            "terminals": [
+              "U14.7",
+              "U14.4"
+            ]
+          },
+          {
+            "logical_net": "PORT_B_RX_EXT::P2",
+            "terminals": [
+              "U14.4",
+              "R32.1"
+            ]
+          }
+        ]
+      },
+      "native_drc_performed": false,
+      "acceptance_claimed": false
+    }
+  ],
+  "engine_provenance": {
+    "status": "located by engine, rejected during insertion, no engine success claimed",
+    "raw_receipt_sha256": "3c30d0e47170ed81b493e6d9d0edbb4aeb10d0d4ebe6b796e12dc441f8e76885",
+    "raw_points": [
+      [
+        29.42539,
+        6.24702
+      ],
+      [
+        28.39622,
+        6.24702
+      ],
+      [
+        28.14436,
+        6.49888
+      ],
+      [
+        28.11322,
+        6.49888
+      ],
+      [
+        27.99929,
+        6.61281
+      ],
+      [
+        27.9776,
+        6.6345
+      ],
+      [
+        27.83349,
+        6.6345
+      ],
+      [
+        27.77755,
+        6.69044
+      ],
+      [
+        27.4093,
+        6.69044
+      ],
+      [
+        27.34274,
+        6.757
+      ],
+      [
+        26.7393,
+        6.757
+      ],
+      [
+        26.19824,
+        7.29806
+      ],
+      [
+        26.10831,
+        7.38799
+      ],
+      [
+        25.61249,
+        7.38799
+      ],
+      [
+        25.2338,
+        7.0093
+      ],
+      [
+        25.00478,
+        6.78028
+      ],
+      [
+        24.5793,
+        6.78028
+      ],
+      [
+        24.2093,
+        6.78028
+      ],
+      [
+        24.03646,
+        6.95312
+      ],
+      [
+        24.03646,
+        7.26354
+      ]
+    ],
+    "pad_center_completion_points": [
+      [
+        29.625,
+        5.5
+      ],
+      [
+        24.0,
+        7.4825
+      ]
+    ]
+  },
+  "raw_combined_checks": [
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "ade35bcb-caf6-49e6-97e0-9c5a545f1c0c",
+      "key": null,
+      "net": "GND",
+      "gap_mm": 0.12832346009696965,
+      "required_mm": 0.127,
+      "extra_mm": 0.001323460096969653
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "188fd78a-9426-4132-9b89-99701fb724f8",
+      "key": null,
+      "net": "USB_LIMITED",
+      "gap_mm": 0.16403433432606573,
+      "required_mm": 0.127,
+      "extra_mm": 0.03703433432606573
+    },
+    {
+      "kind": "drill",
+      "uuid": "ade35bcb-caf6-49e6-97e0-9c5a545f1c0c",
+      "gap_mm": 0.2533142511346372,
+      "required_mm": 0.2,
+      "extra_mm": 0.05331425113463717
+    },
+    {
+      "kind": "drill",
+      "uuid": "188fd78a-9426-4132-9b89-99701fb724f8",
+      "gap_mm": 0.2890254020875657,
+      "required_mm": 0.2,
+      "extra_mm": 0.08902540208756571
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "932acee8-5a27-4e9e-a6f0-fe9aa6068e82",
+      "key": "U14.8",
+      "net": "GND",
+      "gap_mm": 0.23700000016639045,
+      "required_mm": 0.127,
+      "extra_mm": 0.11000000016639044
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "888d442c-78b7-43e2-bd06-fba233f0c75d",
+      "key": "U14.6",
+      "net": "PORT_B_TX_EXT",
+      "gap_mm": 0.3000399999999968,
+      "required_mm": 0.127,
+      "extra_mm": 0.1730399999999968
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "e644a691-bace-401a-bc9c-a23ef31225a3",
+      "key": null,
+      "net": "PORT_B_TX_EXT",
+      "gap_mm": 0.36620383331279066,
+      "required_mm": 0.127,
+      "extra_mm": 0.23920383331279066
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "fea0c04a-4f76-4951-9931-f88a55e8cb16",
+      "key": "U14.3",
+      "net": "GND",
+      "gap_mm": 0.442510222325597,
+      "required_mm": 0.127,
+      "extra_mm": 0.315510222325597
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "7f1673d7-7e18-4570-b87f-c5e5f204dff0",
+      "key": null,
+      "net": "GND",
+      "gap_mm": 0.47779094810508316,
+      "required_mm": 0.127,
+      "extra_mm": 0.35079094810508316
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "cc056412-06ac-4681-9fba-bb4723da0d3d",
+      "key": "U14.4",
+      "net": "PORT_B_RX_EXT",
+      "gap_mm": 0.4890000000000001,
+      "required_mm": 0.127,
+      "extra_mm": 0.3620000000000001
+    },
+    {
+      "kind": "other_branch_outside_shared_pad",
+      "uuid": "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+      "gap_mm": 0.5162092943953758,
+      "required_mm": 0.127,
+      "extra_mm": 0.38920929439537577
+    },
+    {
+      "kind": "drill",
+      "uuid": "7f1673d7-7e18-4570-b87f-c5e5f204dff0",
+      "gap_mm": 0.6027911635628985,
+      "required_mm": 0.2,
+      "extra_mm": 0.4027911635628985
+    }
+  ],
+  "simplified_checks": [
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "188fd78a-9426-4132-9b89-99701fb724f8",
+      "key": null,
+      "net": "USB_LIMITED",
+      "gap_mm": 0.14008226242597224,
+      "required_mm": 0.127,
+      "extra_mm": 0.013082262425972241
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "ade35bcb-caf6-49e6-97e0-9c5a545f1c0c",
+      "key": null,
+      "net": "GND",
+      "gap_mm": 0.185581896901399,
+      "required_mm": 0.127,
+      "extra_mm": 0.058581896901399005
+    },
+    {
+      "kind": "drill",
+      "uuid": "188fd78a-9426-4132-9b89-99701fb724f8",
+      "gap_mm": 0.2650827231277173,
+      "required_mm": 0.2,
+      "extra_mm": 0.06508272312771729
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "7f1673d7-7e18-4570-b87f-c5e5f204dff0",
+      "key": null,
+      "net": "GND",
+      "gap_mm": 0.2088289064179329,
+      "required_mm": 0.127,
+      "extra_mm": 0.08182890641793289
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "888d442c-78b7-43e2-bd06-fba233f0c75d",
+      "key": "U14.6",
+      "net": "PORT_B_TX_EXT",
+      "gap_mm": 0.211607120682975,
+      "required_mm": 0.127,
+      "extra_mm": 0.08460712068297499
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "932acee8-5a27-4e9e-a6f0-fe9aa6068e82",
+      "key": "U14.8",
+      "net": "GND",
+      "gap_mm": 0.23700000016639045,
+      "required_mm": 0.127,
+      "extra_mm": 0.11000000016639044
+    },
+    {
+      "kind": "drill",
+      "uuid": "ade35bcb-caf6-49e6-97e0-9c5a545f1c0c",
+      "gap_mm": 0.3105823576031439,
+      "required_mm": 0.2,
+      "extra_mm": 0.11058235760314389
+    },
+    {
+      "kind": "drill",
+      "uuid": "7f1673d7-7e18-4570-b87f-c5e5f204dff0",
+      "gap_mm": 0.3338264448051146,
+      "required_mm": 0.2,
+      "extra_mm": 0.13382644480511457
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "e644a691-bace-401a-bc9c-a23ef31225a3",
+      "key": null,
+      "net": "PORT_B_TX_EXT",
+      "gap_mm": 0.37181781055897706,
+      "required_mm": 0.127,
+      "extra_mm": 0.24481781055897706
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "fea0c04a-4f76-4951-9931-f88a55e8cb16",
+      "key": "U14.3",
+      "net": "GND",
+      "gap_mm": 0.442510222325597,
+      "required_mm": 0.127,
+      "extra_mm": 0.315510222325597
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "cc056412-06ac-4681-9fba-bb4723da0d3d",
+      "key": "U14.4",
+      "net": "PORT_B_RX_EXT",
+      "gap_mm": 0.4890000000000001,
+      "required_mm": 0.127,
+      "extra_mm": 0.3620000000000001
+    },
+    {
+      "kind": "other_branch_outside_shared_pad",
+      "uuid": "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+      "gap_mm": 0.5516258155593554,
+      "required_mm": 0.127,
+      "extra_mm": 0.4246258155593554
+    }
+  ],
+  "negative_outside_shared_pad_control": {
+    "points": [
+      [
+        24,
+        6.95
+      ],
+      [
+        24,
+        8.0
+      ]
+    ],
+    "accepted": false,
+    "checks": [
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "cc056412-06ac-4681-9fba-bb4723da0d3d",
+        "key": "U14.4",
+        "net": "PORT_B_RX_EXT",
+        "gap_mm": -0.02849999999999986,
+        "required_mm": 0.127,
+        "extra_mm": -0.15549999999999986
+      },
+      {
+        "kind": "other_branch_outside_shared_pad",
+        "uuid": "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+        "gap_mm": 0.0,
+        "required_mm": 0.127,
+        "extra_mm": -0.127
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "932acee8-5a27-4e9e-a6f0-fe9aa6068e82",
+        "key": "U14.8",
+        "net": "GND",
+        "gap_mm": 0.2364900000000011,
+        "required_mm": 0.127,
+        "extra_mm": 0.10949000000000109
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "fea0c04a-4f76-4951-9931-f88a55e8cb16",
+        "key": "U14.3",
+        "net": "GND",
+        "gap_mm": 0.2364900000000011,
+        "required_mm": 0.127,
+        "extra_mm": 0.10949000000000109
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "888d442c-78b7-43e2-bd06-fba233f0c75d",
+        "key": "U14.6",
+        "net": "PORT_B_TX_EXT",
+        "gap_mm": 0.3364999999999986,
+        "required_mm": 0.127,
+        "extra_mm": 0.20949999999999858
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "d80c5f95-1b6b-4931-b318-cc2ddff230b7",
+        "key": "U14.5",
+        "net": "PORT_B_TX_EXT",
+        "gap_mm": 0.3444472342742374,
+        "required_mm": 0.127,
+        "extra_mm": 0.2174472342742374
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "e644a691-bace-401a-bc9c-a23ef31225a3",
+        "key": null,
+        "net": "PORT_B_TX_EXT",
+        "gap_mm": 0.3729999999999988,
+        "required_mm": 0.127,
+        "extra_mm": 0.24599999999999878
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "b7ac044c-7ede-49e5-9061-cf1335e63ca0",
+        "key": null,
+        "net": "GND",
+        "gap_mm": 0.403789682458314,
+        "required_mm": 0.127,
+        "extra_mm": 0.276789682458314
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "46bd7920-e16c-43d4-b92d-a06aa0f0c338",
+        "key": "U14.9",
+        "net": "PORT_A_TX_EXT",
+        "gap_mm": 0.8364999999999986,
+        "required_mm": 0.127,
+        "extra_mm": 0.7094999999999986
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "80d0cc7b-537d-4ef7-9e94-865d56e93f27",
+        "key": "U14.2",
+        "net": "PORT_A_TX_EXT",
+        "gap_mm": 0.8402919507784948,
+        "required_mm": 0.127,
+        "extra_mm": 0.7132919507784948
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "9f826ebf-8e2b-485e-a412-abb3d6d5c389",
+        "key": null,
+        "net": "PORT_A_TX_EXT",
+        "gap_mm": 0.8729999999999988,
+        "required_mm": 0.127,
+        "extra_mm": 0.7459999999999988
+      },
+      {
+        "kind": "foreign_or_other_branch_copper",
+        "uuid": "a281fbc5-6d3f-4717-80f7-b95b6e408591",
+        "key": null,
+        "net": "GND",
+        "gap_mm": 1.0626089249748398,
+        "required_mm": 0.127,
+        "extra_mm": 0.9356089249748398
+      }
+    ]
+  },
+  "limitations": [
+    "Geometric path only; native DRC, intended branch connectivity/protection and exact-source power/fill/drill applicability must pass after isolated import.",
+    "Nominal minimum clearance reserve is reported exactly; no manufacturing margin claimed."
+  ]
+}

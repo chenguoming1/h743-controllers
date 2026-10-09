@@ -1,0 +1,156 @@
+{
+  "assumptions": {
+    "ambient_temperature_requirement": null,
+    "board_geometry_or_copper_losses_included": false,
+    "feedback_V": {
+      "max": "0.808",
+      "min": "0.792"
+    },
+    "feedback_scope": "TI PWM accuracy row, PS/SYNC=GND; VIN=2..16 V, TJ=-40..125 C; no load-current test point stated",
+    "formula": "V=VFB*(1+R54/R55); R=Rnom*(1 +/- tolerance)*(1 +/- TCR*abs(Tbody-25)); leakage shift=IFB*R54",
+    "independent_resistor_TCR_per_C": "0.000025",
+    "initial_resistor_tolerance_fraction": "0.001",
+    "line_load": "No additive guaranteed line/load term manufactured from typical-only 0.07%/V and 0.2%/A rows",
+    "minimum_signed_leakage_guarantee": null,
+    "resistor_reference_temperature_C": 25,
+    "ripple_startup_transients_aging_assembly_drift_included": false,
+    "temperature_model": "Independent opposing TCR magnitude applied multiplicatively to the initial tolerance; no assumed ratio tracking"
+  },
+  "bom_source_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+  "classification": "Conditional source/divider arithmetic; no board-rail, thermal, lifetime or flight qualification",
+  "nominal_divider_current_A": "0.000080000000",
+  "nominal_resistor_dissipation_W": {
+    "R54": "0.000343040000",
+    "R55": "0.000064000000"
+  },
+  "nominal_setpoint_V": "5.088000000000",
+  "scenarios": [
+    {
+      "R54_ohm": {
+        "max": "53653.600000000000",
+        "min": "53546.400000000000"
+      },
+      "R55_ohm": {
+        "max": "10010.000000000000",
+        "min": "9990.000000000000"
+      },
+      "independent_tcr_fraction_per_resistor": "0.000000000000",
+      "maximum_absolute_delta_from_25C": "0.000000000000",
+      "no_leakage_reference_divider_V": {
+        "max": "5.147550430430",
+        "min": "5.028638241758"
+      },
+      "positive_100nA_endpoint": {
+        "classification": "Conditional application of the printed +100 nA maximum, tested at VFB=0.8 V; not a complete rail guarantee",
+        "upper_setpoint_V": "5.152915790430",
+        "upper_shift_V": "0.005365360000"
+      },
+      "resistor_body_temperature_interval_C": [
+        25,
+        25
+      ],
+      "scenario": "resistor_bodies_25C",
+      "signed_100nA_engineering_sensitivity_V": {
+        "classification": "The negative leakage endpoint is assumed, not explicitly guaranteed by TI",
+        "max": "5.152915790430",
+        "min": "5.023283601758"
+      }
+    },
+    {
+      "R54_ohm": {
+        "max": "53734.080400000000",
+        "min": "53466.080400000000"
+      },
+      "R55_ohm": {
+        "max": "10025.015000000000",
+        "min": "9975.015000000000"
+      },
+      "independent_tcr_fraction_per_resistor": "0.001500000000",
+      "maximum_absolute_delta_from_25C": "60.000000000000",
+      "no_leakage_reference_divider_V": {
+        "max": "5.160588639035",
+        "min": "5.015947363351"
+      },
+      "positive_100nA_endpoint": {
+        "classification": "Conditional application of the printed +100 nA maximum, tested at VFB=0.8 V; not a complete rail guarantee",
+        "upper_setpoint_V": "5.165962047075",
+        "upper_shift_V": "0.005373408040"
+      },
+      "resistor_body_temperature_interval_C": [
+        85,
+        85
+      ],
+      "scenario": "resistor_bodies_85C",
+      "signed_100nA_engineering_sensitivity_V": {
+        "classification": "The negative leakage endpoint is assumed, not explicitly guaranteed by TI",
+        "max": "5.165962047075",
+        "min": "5.010600755311"
+      }
+    },
+    {
+      "R54_ohm": {
+        "max": "53760.907200000000",
+        "min": "53439.307200000000"
+      },
+      "R55_ohm": {
+        "max": "10030.020000000000",
+        "min": "9970.020000000000"
+      },
+      "independent_tcr_fraction_per_resistor": "0.002000000000",
+      "maximum_absolute_delta_from_25C": "80.000000000000",
+      "no_leakage_reference_divider_V": {
+        "max": "5.164943418128",
+        "min": "5.011725514246"
+      },
+      "positive_100nA_endpoint": {
+        "classification": "Conditional application of the printed +100 nA maximum, tested at VFB=0.8 V; not a complete rail guarantee",
+        "upper_setpoint_V": "5.170319508848",
+        "upper_shift_V": "0.005376090720"
+      },
+      "resistor_body_temperature_interval_C": [
+        105,
+        105
+      ],
+      "scenario": "resistor_bodies_105C_sensitivity",
+      "signed_100nA_engineering_sensitivity_V": {
+        "classification": "The negative leakage endpoint is assumed, not explicitly guaranteed by TI",
+        "max": "5.170319508848",
+        "min": "5.006381583526"
+      }
+    },
+    {
+      "R54_ohm": {
+        "max": "53740.787100000000",
+        "min": "53459.387100000000"
+      },
+      "R55_ohm": {
+        "max": "10026.266250000000",
+        "min": "9973.766250000000"
+      },
+      "independent_tcr_fraction_per_resistor": "0.001625000000",
+      "maximum_absolute_delta_from_25C": "65.000000000000",
+      "no_leakage_reference_divider_V": {
+        "max": "5.161676924883",
+        "min": "5.014891505918"
+      },
+      "positive_100nA_endpoint": {
+        "classification": "Conditional application of the printed +100 nA maximum, tested at VFB=0.8 V; not a complete rail guarantee",
+        "upper_setpoint_V": "5.167051003593",
+        "upper_shift_V": "0.005374078710"
+      },
+      "resistor_body_temperature_interval_C": [
+        -40,
+        85
+      ],
+      "scenario": "conditional_resistor_body_interval_minus40_to85C",
+      "signed_100nA_engineering_sensitivity_V": {
+        "classification": "The negative leakage endpoint is assumed, not explicitly guaranteed by TI",
+        "max": "5.167051003593",
+        "min": "5.009545567208"
+      }
+    }
+  ],
+  "schema": "f722-bec-reference-divider-bounds/v1",
+  "selected_bom_file_sha256": "10088e8166751a67ece40110f4b30c33497b7c17483f38bfb69db872cdb85c8a",
+  "sources_file_sha256": "e280694613bb7775861c630bb2abc2473d695773b11f63565e97dbb8fd69af84"
+}

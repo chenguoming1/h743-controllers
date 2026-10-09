@@ -1,0 +1,883 @@
+{
+  "status": "ALL SAVED-MESH PORT CONTROLS PASS; NO TWO-GRID CASE/LOOP ACCEPTANCE",
+  "qualified_two_grid_result": false,
+  "board_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "native_geometry_sha256": "3694b37bbe4f9b71b88472e8b3f075365cf6319bd26f28d06f0d254dc0d45868",
+  "freeze_sha256": "eff1c6884de83d87763c2e3f65069184b31b42b86b8addf527eb791d5f6bc551",
+  "ledger_sha256": "996dd00cba5bc1ecf79423267c05bf3bd102a87cc3393ce0d79e7bcdf9885f83",
+  "cache_metadata_sha256": "79863e94027b1e39e5c535da33207cdc60aa68352e9f5683a3f046f1213a9123",
+  "cache_arrays_sha256": "51d4f463375588ec9e10fb79a515c9a004653d592035c7abab3d43929f6496a0",
+  "runtime_sha256": {
+    "copper_fem.py": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+    "mesh_cache.py": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+    "native_edge_noding.py": "63b57015db4e7ef76a317d4b16ef18ab1f7fd8bd44c2bd440f4ca738cca2fc1a",
+    "diagnose_cached_element_operator.py": "b8d2d81161b81481df9b4531a2dfb9ccdfc94c89faac3134d2d4224541bd01e8"
+  },
+  "network": "+3V3_CORE",
+  "spacing_mm": 0.12,
+  "resource_limits": {
+    "wall_seconds": 180,
+    "address_space_GiB": 4,
+    "numerical_threads": 1
+  },
+  "geometry_rebuilt": false,
+  "results": [
+    {
+      "injection": "L2.2",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557733137,
+        "U11.4": 0.05782973557734325,
+        "U1.19": 0.057829735577540606,
+        "U1.32": 0.057829735577431964,
+        "U1.48": 0.05782973557735683,
+        "U1.64": 0.057829735577351035,
+        "U3.8": 0.057829735577476865,
+        "U4.2": 0.057829735577347705,
+        "U4.6": 0.057829735577349314,
+        "U4.8": 0.05782973557734873,
+        "FB1.1": 0.05782973557745743,
+        "FB2.1": 0.057829735577353325
+      },
+      "copper_loss_W": 0.057829735577405415,
+      "port_power_W": 0.05782973557733137,
+      "KCL_max_residual_A": 3.952093426823344e-12,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            8.820530203416416e-08,
+            4.9798688993491725e-12
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            1.2182450439430548e-08,
+            9.093954734184624e-08
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U11.4",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557793887,
+        "U11.4": 0.1257951600917219,
+        "U1.19": 0.0849723775968841,
+        "U1.32": 0.08497237759651811,
+        "U1.48": 0.10751425513898734,
+        "U1.64": 0.125795160091752,
+        "U3.8": 0.10752149553320119,
+        "U4.2": 0.11858344138227893,
+        "U4.6": 0.11641617317017114,
+        "U4.8": 0.11619549275710536,
+        "FB1.1": 0.08497237759675108,
+        "FB2.1": 0.10751425513898129
+      },
+      "copper_loss_W": 0.12579516009293173,
+      "port_power_W": 0.1257951600917219,
+      "KCL_max_residual_A": 1.1779383458226933e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.308225629735651e-07,
+            7.338835722290069e-12
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            1.3004068217681605e-08,
+            1.1737200221956666e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U1.19",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557852627,
+        "U11.4": 0.08497237759720676,
+        "U1.19": 0.17278622049333803,
+        "U1.32": 0.1133735376529845,
+        "U1.48": 0.08497237759720302,
+        "U1.64": 0.08497237759722177,
+        "U3.8": 0.08497237759732511,
+        "U4.2": 0.08497237759720667,
+        "U4.6": 0.0849723775972065,
+        "U4.8": 0.08497237759720619,
+        "FB1.1": 0.16839530713034567,
+        "FB2.1": 0.08497237759718977
+      },
+      "copper_loss_W": 0.17278622049711778,
+      "port_power_W": 0.17278622049333803,
+      "KCL_max_residual_A": 2.1925878105309715e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            2.4472713716806906e-07,
+            1.6839876551523135e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            1.6412279472974513e-07,
+            2.876907750141967e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U1.32",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557441286,
+        "U11.4": 0.08497237759088824,
+        "U1.19": 0.11337353764255231,
+        "U1.32": 0.11337353764511976,
+        "U1.48": 0.08497237759100144,
+        "U1.64": 0.08497237759088024,
+        "U3.8": 0.0849723775911057,
+        "U4.2": 0.08497237759092625,
+        "U4.6": 0.08497237759093915,
+        "U4.8": 0.08497237759093659,
+        "FB1.1": 0.11337353764257888,
+        "FB2.1": 0.0849723775909912
+      },
+      "copper_loss_W": 0.11337353763975391,
+      "port_power_W": 0.11337353764511976,
+      "KCL_max_residual_A": 4.9187889438612187e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.6493177347314703e-07,
+            4.1773777666531266e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            4.907841127218196e-08,
+            2.8686690230254335e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U1.48",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.057829735574662186,
+        "U11.4": 0.10751425513392752,
+        "U1.19": 0.08497237758782257,
+        "U1.32": 0.08497237759033381,
+        "U1.48": 0.11247241870917676,
+        "U1.64": 0.10751425513393169,
+        "U3.8": 0.10857521033558114,
+        "U4.2": 0.10751427906952021,
+        "U4.6": 0.10751428739461687,
+        "U4.8": 0.10751428513705065,
+        "FB1.1": 0.08497237758788796,
+        "FB2.1": 0.11247241870916379
+      },
+      "copper_loss_W": 0.11247241870530153,
+      "port_power_W": 0.11247241870917676,
+      "KCL_max_residual_A": 4.4869368691444894e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.3476424266404895e-07,
+            3.8972890469235234e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            5.22577451370242e-08,
+            1.3561579748700987e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U1.64",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.057829735576763575,
+        "U11.4": 0.12579516008956107,
+        "U1.19": 0.08497237759434739,
+        "U1.32": 0.08497237759453458,
+        "U1.48": 0.10751425513700265,
+        "U1.64": 0.16448400733145088,
+        "U3.8": 0.10752149553131674,
+        "U4.2": 0.11858344138017728,
+        "U4.6": 0.1164161731680899,
+        "U4.8": 0.11619549275502035,
+        "FB1.1": 0.08497237759428647,
+        "FB2.1": 0.10751425513699432
+      },
+      "copper_loss_W": 0.16448400733050977,
+      "port_power_W": 0.16448400733145088,
+      "KCL_max_residual_A": 2.2918408490446573e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.3057377181719206e-07,
+            2.3340874707052685e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            1.7373933203083255e-08,
+            1.0655961765138486e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U3.8",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557513597,
+        "U11.4": 0.10752149552884868,
+        "U1.19": 0.0849723775885822,
+        "U1.32": 0.08497237759104469,
+        "U1.48": 0.10857521033616105,
+        "U1.64": 0.10752149552880759,
+        "U3.8": 0.24287970395099365,
+        "U4.2": 0.10752166632897144,
+        "U4.6": 0.10752172573537819,
+        "U4.8": 0.10752170962578668,
+        "FB1.1": 0.08497237758867583,
+        "FB2.1": 0.10857521033614191
+      },
+      "copper_loss_W": 0.24287970394865932,
+      "port_power_W": 0.24287970395099365,
+      "KCL_max_residual_A": 3.6682762838587124e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.3435356607423294e-07,
+            2.5875145954083897e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            6.707494094936192e-08,
+            1.426646075168245e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U4.2",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557777757,
+        "U11.4": 0.11858344138181615,
+        "U1.19": 0.08497237759705181,
+        "U1.32": 0.08497237759641646,
+        "U1.48": 0.10751427907414944,
+        "U1.64": 0.11858344138182432,
+        "U3.8": 0.10752166633283507,
+        "U4.2": 0.12740391669461038,
+        "U4.6": 0.12220861197458086,
+        "U4.8": 0.11883432402986896,
+        "FB1.1": 0.08497237759689306,
+        "FB2.1": 0.10751427907412847
+      },
+      "copper_loss_W": 0.12740391669533566,
+      "port_power_W": 0.12740391669461038,
+      "KCL_max_residual_A": 8.995091672382716e-12,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.2522766636140232e-07,
+            8.568436309258133e-12
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            5.134514659329384e-08,
+            1.433848905866682e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U4.6",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557926899,
+        "U11.4": 0.11641617317218796,
+        "U1.19": 0.08497237760080201,
+        "U1.32": 0.08497237759910099,
+        "U1.48": 0.10751428740162595,
+        "U1.64": 0.11641617317222265,
+        "U3.8": 0.1075217257417118,
+        "U4.2": 0.12220861197701943,
+        "U4.6": 0.12422326483880833,
+        "U4.8": 0.11975221334576977,
+        "FB1.1": 0.0849723776005802,
+        "FB2.1": 0.1075142874016188
+      },
+      "copper_loss_W": 0.12422326484196322,
+      "port_power_W": 0.12422326483880833,
+      "KCL_max_residual_A": 3.477634488973508e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.2726639420114758e-07,
+            2.4301236083405276e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            1.5883545741001296e-08,
+            1.7025238256915309e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "U4.8",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.057829735577838895,
+        "U11.4": 0.11619549275693719,
+        "U1.19": 0.08497237759674477,
+        "U1.32": 0.08497237759638435,
+        "U1.48": 0.10751428514188635,
+        "U1.64": 0.11619549275695781,
+        "U3.8": 0.10752170962961095,
+        "U4.2": 0.11883432403012907,
+        "U4.6": 0.11975221334359129,
+        "U4.8": 0.13190956987986685,
+        "FB1.1": 0.0849723775965869,
+        "FB2.1": 0.10751428514187278
+      },
+      "copper_loss_W": 0.13190956988084535,
+      "port_power_W": 0.13190956987986685,
+      "KCL_max_residual_A": 1.544503760997351e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.366625636059148e-07,
+            1.9437595221911285e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            3.9124430738563236e-08,
+            1.3997979450698258e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "FB1.1",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.057829735575990776,
+        "U11.4": 0.08497237759348138,
+        "U1.19": 0.1683953071230857,
+        "U1.32": 0.1133735376480128,
+        "U1.48": 0.08497237759347555,
+        "U1.64": 0.08497237759345602,
+        "U3.8": 0.08497237759349531,
+        "U4.2": 0.08497237759348131,
+        "U4.6": 0.08497237759348088,
+        "U4.8": 0.08497237759348128,
+        "FB1.1": 0.23156659589324627,
+        "FB2.1": 0.08497237759347238
+      },
+      "copper_loss_W": 0.23156659588931822,
+      "port_power_W": 0.23156659589324627,
+      "KCL_max_residual_A": 3.02941317864569e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            2.4048263321141854e-07,
+            3.071358605927291e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            6.268828754000657e-08,
+            4.163343458409225e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    },
+    {
+      "injection": "FB2.1",
+      "reference": "U9.6",
+      "contact_voltage_V": {
+        "U9.6": 0.0,
+        "L2.2": 0.05782973557786876,
+        "U11.4": 0.10751425513875439,
+        "U1.19": 0.08497237759708823,
+        "U1.32": 0.08497237759652385,
+        "U1.48": 0.1124724187139661,
+        "U1.64": 0.10751425513878965,
+        "U3.8": 0.10857521034046626,
+        "U4.2": 0.1075142790743331,
+        "U4.6": 0.10751428739942528,
+        "U4.8": 0.10751428514185937,
+        "FB1.1": 0.0849723775969195,
+        "FB2.1": 0.1342306848365829
+      },
+      "copper_loss_W": 0.13423068483747905,
+      "port_power_W": 0.1342306848365829,
+      "KCL_max_residual_A": 2.618997727021899e-11,
+      "linear_solver_diagnostics": {
+        "backend": "sparse-direct",
+        "active_equations": 24896,
+        "anchored_equations": 24895,
+        "anchored_connected_components": 1,
+        "finite_matrix": true,
+        "minimum_active_diagonal": 1114.230165677215,
+        "maximum_active_diagonal": 917122163.6813703,
+        "maximum_asymmetry": 7.450580596923828e-09,
+        "fixed_reference_node": 20089,
+        "matrix_nonzeros": 125417,
+        "matrix_storage_bytes": 1604588,
+        "physical_element_operator": {
+          "arithmetic_mantissa_bits": 63,
+          "all_equal_ideal_node_zero_energy_triangles": 89125,
+          "two_reduced_nodes_triangles": 6572,
+          "three_reduced_nodes_triangles": 28658,
+          "triangles_retained": 124355,
+          "positive_area_elements_discarded": 0,
+          "maximum_row_sum_S": 1.560414020218559e-10,
+          "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+          "stored_bytes": 2613108,
+          "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+        },
+        "factorization": {
+          "ordering": "MMD_AT_PLUS_A",
+          "diagonal_scaling": true,
+          "seconds": 0.02503054100088775,
+          "factor_nonzeros": 216970,
+          "factor_stored_array_bytes": 3001968,
+          "factor_memory_excludes_native_workspace": true,
+          "process_peak_RSS_bytes": 148209664
+        },
+        "last_direct_solve": {
+          "refinement_steps": 1,
+          "residual_norm_history_A": [
+            1.25648743508281e-07,
+            2.6929840912501287e-11
+          ],
+          "required_residual_norm_A": 1e-10,
+          "float64_projection_residual_norm_history_A": [
+            4.943109947096047e-08,
+            1.2605229201483882e-07
+          ],
+          "residual_and_solution_mantissa_bits": 63,
+          "converged": true
+        }
+      }
+    }
+  ],
+  "physical_operator": {
+    "arithmetic_mantissa_bits": 63,
+    "all_equal_ideal_node_zero_energy_triangles": 89125,
+    "two_reduced_nodes_triangles": 6572,
+    "three_reduced_nodes_triangles": 28658,
+    "triangles_retained": 124355,
+    "positive_area_elements_discarded": 0,
+    "maximum_row_sum_S": 1.560414020218559e-10,
+    "maximum_difference_from_double_preconditioner_S": 1.926266122609377e-06,
+    "stored_bytes": 2613108,
+    "double_matrix_role": "factorization preconditioner only; refinement and KCL use the reduced physical element operator"
+  },
+  "double_preconditioner_maximum_row_sum_S": 1.9131532553728903e-06,
+  "maximum_reciprocity_error_ohm": 1.0432182895314668e-11,
+  "passed": true,
+  "elapsed_seconds": 1.113985784999386,
+  "peak_RSS_bytes": 157237248
+}

@@ -1,0 +1,101 @@
+{
+  "schema": "f722-physical-protection-checks/v1",
+  "board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
+  "native_version": "10.0.6",
+  "method": "Native KiCad copper polygons: tracks/vias/pads ERROR_OUTSIDE, actual clamp pad ERROR_INSIDE, maximum polygon error 0.00001 mm. Subtract only actual clamp pad copper from every copper object on the actual clamp pad layer(s), split resulting polygon pieces, rebuild physical contact graph including existing plated through connections. No component-internal conductive paths are assumed. Signal nets have no zones. Conservative overestimate of surviving copper and underestimate of pad removal.",
+  "numeric_contact_epsilon_mm": 1e-09,
+  "profile": "actual-io-gap-1",
+  "source_unchanged": true,
+  "checks": [
+    {
+      "id": "actual-io-gap-01",
+      "net": "DSM_RX_EXT",
+      "clamp": "D7.1",
+      "source": "J12.3",
+      "target": "R38.1",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "coverage_origin": "new_D7_signal_IO_review",
+      "before_cut": {
+        "groups": [
+          [
+            "D7.1"
+          ],
+          [
+            "J12.3"
+          ],
+          [
+            "R38.1"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "J12.3"
+        ],
+        [
+          "R38.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "16655551-ebce-43e4-b159-dd08539e44ec"
+      ],
+      "target_objects": [
+        "7c18f691-25a4-435e-a236-e074e113b363"
+      ]
+    }
+  ],
+  "passed": 0,
+  "total": 1,
+  "all_pass": false,
+  "geometry_sha256": "e95a699a79c5f38bebabda302d971c5a4ff9116a16afb70b26eafa22ab286327",
+  "contracts_sha256": "32c6bf0887736980949ebaf8ec7d6a43ded5894cab673f0cb7bfe50d47b3fd97"
+}

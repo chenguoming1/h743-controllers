@@ -1,0 +1,76 @@
+{
+  "screen_sha256": "e4fa715d64ea89f567ee46be6b2037ec0506e76e474fb63221c5e8ecfb33e813",
+  "control_sha256": "14f3d18ba68555dcacae6397a639be1ca648dd2ef33a057b20e4fbd8825f907f",
+  "regression": "Buffering a zero-width bounding Polygon produces a triangle and silently excludes a valid vertical path. Expand all four bounds numerically before creating the Polygon.",
+  "cases": [
+    {
+      "name": "SBUS_LV_vertical_native_pad_centers",
+      "centers": [
+        [
+          20.5,
+          9.7875
+        ],
+        [
+          20.5,
+          11.24
+        ]
+      ],
+      "path": [
+        [
+          20.5,
+          10.45
+        ],
+        [
+          20.5,
+          11.045
+        ]
+      ],
+      "legacy_buffer_covers_path": false,
+      "legacy_buffer_bounds": [
+        19.25,
+        9.7875,
+        21.75,
+        11.24
+      ],
+      "legacy_buffer_area": 1.8156250000000007,
+      "explicit_bounds_covers_path": true,
+      "explicit_bounds_area": 9.881250000000001,
+      "passed": true
+    },
+    {
+      "name": "horizontal_transpose_control",
+      "centers": [
+        [
+          9.7875,
+          20.5
+        ],
+        [
+          11.24,
+          20.5
+        ]
+      ],
+      "path": [
+        [
+          10.45,
+          20.5
+        ],
+        [
+          11.045,
+          20.5
+        ]
+      ],
+      "legacy_buffer_covers_path": false,
+      "legacy_buffer_bounds": [
+        9.7875,
+        19.25,
+        11.24,
+        21.75
+      ],
+      "legacy_buffer_area": 1.8156250000000007,
+      "explicit_bounds_covers_path": true,
+      "explicit_bounds_area": 9.881250000000001,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

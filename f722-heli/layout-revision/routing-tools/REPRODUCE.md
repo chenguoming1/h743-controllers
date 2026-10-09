@@ -1,6 +1,41 @@
 # Reproduce the ordinary-routing checkpoint
 
-Adopted69 is unfinished: PCB SHA `9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8`, 69 native opens, zero native DRC errors/warnings, eleven complete ordinary nets. The loaded-power screen identifies an unresolved BEC copper deficit; this is not fabrication-ready. Candidate15’s real broad route stopped at five successes. Candidate16’s two-track ADC_BUS partial connection is explicit native construction. No later routing or power experiments are included. Historical receipts retain their actual source versions.
+Adopted candidate22 is unfinished at 62 opens and zero native DRC errors/warnings, PCB `fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa`. The separate power v6 supplies 62 passing required conditional cases, five passing VCAP DC loops and passing numerical gates. Its overall boolean stays false for the outside-envelope 18.56 A single-feed illustration. It is not fabrication-ready. `checks/current62-adoption.json` and the exact power applicability receipt bind this status; inherited pending handoffs remain historical.
+
+## Current v7 replay from the accepted62 paired project
+
+Set `ACCEPTED62` to the full paired hardware directory and use new empty destinations. Run from the package root. Recover each exact source with `sessions/recovery62/rebuild_historical_source.py`; no complete historical board is bundled.
+
+```sh
+python3 -B sessions/recovery62/rebuild_historical_source.py project --base-project "$ACCEPTED62" --source candidate21 --out "$RECOVERED63"
+python3 -B tests/verify_session_packet.py --packet sessions/accepted62 --out "$PACKET_CHECK"
+python3 -B prepare_session_replay.py --packet sessions/accepted62 --source-board "$RECOVERED63/f722-heli.kicad_pcb" --out "$REPLAY_INPUTS"
+"$KICAD_PY" -B import_session.py --model "$REPLAY_INPUTS/model.json" --session sessions/accepted62/session.ses --engine-report "$REPLAY_INPUTS/engine-report.json" --out "$REPLAY_PROJECT/f722-heli.kicad_pcb"
+```
+
+Prepare `REPLAY_PROJECT` as a separate complete copy of the recovered paired project before native import. For accepted65 use source candidate19; for accepted63 use source candidate20. All three actual imports were rerun during packaging; geometry equals the historical candidate except newly generated route UUIDs, with exact saved fills/fixed objects and no refill. Historical owner/native acceptance remains separate from replay geometry equivalence.
+
+For the complete recorded controls, `tests/verify_v7_replay.py --base-project "$ACCEPTED62" --historical-workspace "$HISTORICAL_INPUTS" --kicad-python "$KICAD_PY"` also compares against independent candidate20/21/22 native exports. Those exports are external large verification inputs, not bundled. Omit `--kicad-python` for packet/projection/negative controls only; the historical workspace then is not read. Temporary products are discarded. Recovery rejects altered source, paired files and delta data. See recovery62/README for the exact file contract and the chain back through old69.
+
+## Reconstruct the coordinated power transaction
+
+Recover candidate16 from accepted62, then copy `checks/accepted69-logical-route-map.json` to `f722-heli.logical-route-map.json` beside its recovered board. The map is board-bound. The constructor uses the included compact proposal with every operational transaction argument preserved:
+
+```sh
+"$KICAD_PY" -B tests/power-feed-reconstruction/construct_power_candidate.py --source "$OLD69/f722-heli.kicad_pcb" --proposal sessions/power19/input-proposal.json --out "$NEW_POWER_PROJECT"
+```
+
+This creates new native UUIDs and performs reference refill. It was not rerun during v7 packaging; original constructor/audit/endpoint/owner receipts remain source-bound evidence. Recreated geometry needs its own native/refill and numerical applicability checks. Do not expect the historical PCB byte hash or silently reuse loaded results. The retained exact power constructor consumes only the transaction fields preserved in the compact input. Diagnostic provenance hashes identify omitted large witnesses.
+
+## Located-path preparation and bounded execution
+
+`prepare_located_branch.py` accepts explicit board/native/map/model/captured-log inputs and preserves foreign/other-branch clearance outside the legitimate shared pad. See `tests/shared-pad-alias21/REPRODUCE.md`; the exact full historical source21 model is an external input if reexecuting its historical controls. Compact replay does not require it. The generic preparation is separately tested; actual candidate22 was produced by the source-bound specialized preparer and screened importer, both retained.
+
+`run_bounded_local.py --model "$MODEL" --prefix "$PREFIX" --seconds 100 --successes 2 --nets "$NETS"` requests the runner's existing cooperative stop and never kills the JVM. Complete the fresh zero gate and obtain the normal heavy-process allocation first. Source21's tested request took 129.086 seconds including in-flight work. Source22 and all later live trials are outside this packet.
+
+## Historical v1–v6 reproduction instructions
+
+The following sections describe inherited controls and packets under their original hashes and statuses. References to current77/current75/source69 identify those historical epochs, not the adopted62 checkpoint above.
 
 ## Inputs
 

@@ -1,0 +1,81 @@
+{
+  "schema": "f722-scoped-power-handoff/v1",
+  "status": "native_verified_isolated_candidate_pending_loaded_power_and_owner_adoption",
+  "source_board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
+  "board_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+  "files": {
+    "f722-heli.kicad_pcb": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+    "f722-heli.native.json": "3694b37bbe4f9b71b88472e8b3f075365cf6319bd26f28d06f0d254dc0d45868",
+    "f722-heli.logical-route-map.json": "218f46636405c11337d401ea6fc3718f80ea8102d6370fe2a4381edd6add001f",
+    "power-proposal.json": "ccccc96554fc0b473727cb9b3e3a9baff4f7e78be5fb89df37bd6ae809f42878",
+    "power-construction.json": "16602686ad71829e460c1eb561a2abb214a14bbf69785389196ab5e50256f383",
+    "power-audit.json": "591e0ef0e3630eee4282a97fa9aec5cb1db0327b7909a3fb14c66f716527946e",
+    "power-endpoints.json": "d6341c9d7148d5c73ade288ba3de5c81d75012c0df75aa86f40f57821cebf439",
+    "process.json": "3b08282459745258e40c7689914aad08105388281a66ea36b1d335ee2e4162e0",
+    "drc-all.json": "ad541140ec69a1e7866984e355813a37eba31c28db39d8b97d29340f7627e286",
+    "construct_power_candidate.used.py": "43ab9425edb825352d753b24a911abf500510d2fa4bbae272a69ad4170e2280a",
+    "audit_power_transaction.used.py": "f48abd0bab51197d57a5db654bac2192663da46592b3b1dce421a3415bb87156",
+    "audit_endpoints.used.py": "24a7dc5bb08b631e70acc399156ff606b6c1239bdd1e0b863e068e1a0ca960fe",
+    "bec-geometry-proposal.json": "8a4d03b69b37e97815a7e2d6dd2fdd37035e6f10f6abfcb4c98d41480a6858a1",
+    "combined-geometry-screen.json": "d89bd817bbd4d9457f3e974d07340a44e4978561a1c477a0efc999ee3a75a3a2",
+    "c59-pose-screen.json": "9808662a2dafbd107d395cc1fa172feea63f8cf381b82dd287cbf2e214db5b02",
+    "peripheral-margin-receipt.json": "01d38591a971bc0dd75df01cb85f5279b735a044fc6ce30d992ed00bbd92731d"
+  },
+  "native_drc": {
+    "unconnected": 69,
+    "errors": 0,
+    "warnings": 0,
+    "strict_schematic_parity": 0
+  },
+  "transaction": {
+    "removed": {
+      "+5V_PERIPH:track": 21,
+      "USB_VBUS_RAW:via": 1,
+      "USB_VBUS_RAW:track": 1
+    },
+    "added": {
+      "+5V_BEC:track": 24,
+      "USB_VBUS_RAW:track": 1,
+      "+5V_PERIPH:track": 68,
+      "+5V_BEC:via": 1
+    },
+    "retained_source_objects": 1559,
+    "all_156_footprints_exact": true,
+    "all_prior_ordinary_logical_ownership_exact": true,
+    "zone_designs_exact": true,
+    "reference_fills_regenerated": true
+  },
+  "connectivity": {
+    "all28_support_pad_groups_exact": true,
+    "USB_VBUS_RAW_all_duplicate_connector_pads_connected": true
+  },
+  "endpoint_contact_rows": 14,
+  "old_BEC_transport": "All original BEC tracks and vias retained, including the former 113.529 mm inner transport; fresh loaded solve must include this parallel copper and every support/feedback/capacitor port.",
+  "BEC_new_path_estimate": {
+    "model": "centerline squares plus one F-to-In2 and one In2-to-B barrel; no finite-element solve, no pad spreading/contact benefit assumed",
+    "rho_ohm_mm": 2.4210901105263158e-05,
+    "sheet_ohm": 0.0016140600736842105,
+    "temperature_C": 105,
+    "IACS": 0.95,
+    "all_trace_thickness_mm": 0.015,
+    "plating_mm": 0.015,
+    "length_mm": 13.533708831085157,
+    "track_squares": 14.797806366947144,
+    "tracks_ohm": 0.023884548434999386,
+    "barrel_total_span_mm": 0.9974000000000002,
+    "barrels_ohm": 0.002562177365122583,
+    "total_ohm": 0.02644672580012197,
+    "drop_at_2A_V": 0.05289345160024394
+  },
+  "bypass_review": "C59 remains at its original position and connected through original copper. Its pad-center separations are 3.184 mm to VIN1 and 3.140 mm to U7 GND. Bounded C59-only pose screen found no simple improvement; this is not a manufacturer layout-guidance pass or transient qualification.",
+  "diagnostics": [
+    "candidate17 retains the local pin-tie clearance and redundant USB via findings.",
+    "candidate18 retains the corrected clearances plus one redundant USB via warning.",
+    "candidate19 removes only that redundant USB via, whose two F tracks join at the same exact center."
+  ],
+  "remaining_gates": [
+    "Owner critical/reference/native review",
+    "Fresh loaded BEC and PERIPH result with unchanged stress assumptions",
+    "Explicit adoption by owner; canonical69 stays fixed until then"
+  ]
+}

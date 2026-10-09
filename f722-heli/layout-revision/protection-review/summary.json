@@ -1,0 +1,84 @@
+{
+  "schema": "f722-actual-tvs-coverage-review/v1",
+  "conclusion": "Existing scopes omit D7.1 DSM_RX_EXT. The separate additive packet covers all 20 populated signal I/O clamps with 22 endpoint cases. Both sources remain unfinished at 6/22 cases, or 4/20 distinct channels. NC routing results are separate.",
+  "source_reports": {
+    "source69": {
+      "board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
+      "historical_original": {
+        "passed": 1,
+        "total": 18
+      },
+      "historical_actual_clamp": {
+        "passed": 1,
+        "total": 14
+      },
+      "historical_nc_routing_pad": {
+        "passed": 0,
+        "total": 4
+      },
+      "historical_supplemental": {
+        "passed": 5,
+        "total": 7
+      },
+      "actual_clamp_cases": {
+        "passed": 6,
+        "total": 22
+      },
+      "actual_clamp_channels": {
+        "passed": 4,
+        "total": 20
+      },
+      "new_gap_cases": {
+        "passed": 0,
+        "total": 1
+      },
+      "physical_protection_complete": false
+    },
+    "source62": {
+      "board_sha256": "fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa",
+      "historical_original": {
+        "passed": 2,
+        "total": 18
+      },
+      "historical_actual_clamp": {
+        "passed": 1,
+        "total": 14
+      },
+      "historical_nc_routing_pad": {
+        "passed": 1,
+        "total": 4
+      },
+      "historical_supplemental": {
+        "passed": 5,
+        "total": 7
+      },
+      "actual_clamp_cases": {
+        "passed": 6,
+        "total": 22
+      },
+      "actual_clamp_channels": {
+        "passed": 4,
+        "total": 20
+      },
+      "new_gap_cases": {
+        "passed": 0,
+        "total": 1
+      },
+      "physical_protection_complete": false
+    }
+  },
+  "authority_note": "Preserved protection/pinout is the user goal. NC-first is a retained historical engineering convention, not claimed user authority or an internal bond. Existing NC contracts remain unchanged and are reported separately.",
+  "existing_contracts_and_tests_unchanged": true,
+  "native_board_mutation_performed": false,
+  "coverage_gap": {
+    "clamp": "D7.1",
+    "net": "DSM_RX_EXT",
+    "source": "J12.3",
+    "target": "R38.1"
+  },
+  "source_receipts": [
+    "receipts/source69/source.json",
+    "receipts/source62/source.json"
+  ],
+  "scope": "20 used bonded signal-I/O channels; 22 endpoint cases. D8/D9 power-rail TVS, return-path qualification, unused channels and downstream series-resistor nets are explicitly excluded."
+}

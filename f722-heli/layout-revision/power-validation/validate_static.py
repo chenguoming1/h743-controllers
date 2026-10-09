@@ -218,12 +218,24 @@ def summarize_transfer(mesh, test):
     return {'resistance_ohm': resistance, 'field': result}
 
 
+def geometry_certificate_key(net,layer,receipt,spacing=None):
+    key=net+'/'+layer
+    grid=receipt.get('grid_spacing_mm')
+    if grid is not None:
+        if isinstance(grid,bool) or not isinstance(grid,(int,float)) or not math.isfinite(grid) or grid<=0:
+            raise Refused('Invalid grid-bound geometry certificate spacing')
+        if spacing is not None and grid!=spacing:
+            raise Refused('Geometry certificate belongs to another mesh grid')
+        key+='/grid='+str(float(grid))
+    return key
+
+
 def remember_geometry_certificate(context, net, layer, receipt):
     # JSON is the declared cache/result schema. Tuple/list differences from an
     # in-memory producer cannot change its exact serialized geometry evidence.
     canonical=lambda value:json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False)
     encoded=canonical(receipt);normalized=json.loads(encoded)
-    certificates=context.setdefault('geometry_certificates',{});key=net+'/'+layer
+    certificates=context.setdefault('geometry_certificates',{});key=geometry_certificate_key(net,layer,receipt)
     if key in certificates and canonical(certificates[key])!=encoded:
         previous=canonical(certificates[key]);failure=Refused('Native geometry certificate changed between meshes: '+key)
         failure.geometry_reproduction={'stage':'geometry_certificate_comparison','net':net,'layer':layer,
@@ -262,7 +274,7 @@ def compact_result_evidence(result):
         return hashes[identity][1]
     stored={key:digest(receipt) for key,receipt in certificates.items()}
     touched=False
-    def compact_block(block,net,where):
+    def compact_block(block,net,where,spacing):
         nonlocal touched
         raw='native_edge_noding' in block
         referenced='native_edge_noding_refs' in block
@@ -276,7 +288,15 @@ def compact_result_evidence(result):
         for layer,receipt in evidence.items():
             if not isinstance(net,str) or not isinstance(layer,str):
                 raise Refused('Result geometry evidence has no exact net/layer identity: '+where)
-            key=net+'/'+layer
+            if not isinstance(receipt,dict):raise Refused('Invalid geometry receipt/reference: '+where)
+            if raw:
+                key=geometry_certificate_key(net,layer,receipt,spacing)
+            else:
+                key=receipt.get('certificate_key')
+                if not isinstance(key,str) or key not in certificates:
+                    raise Refused('Missing top-level geometry certificate reference: '+where)
+                if key!=geometry_certificate_key(net,layer,certificates[key],spacing):
+                    raise Refused('Invalid result geometry certificate reference: '+where+'/'+layer)
             if key not in stored:
                 raise Refused('Missing top-level geometry certificate '+key+' for '+where)
             if raw:
@@ -293,23 +313,24 @@ def compact_result_evidence(result):
         compact['native_edge_noding_refs']=refs
         touched=True
         return compact
-    def compact_transfer(transfer,where):
+    def compact_transfer(transfer,where,spacing):
         if 'field' not in transfer:return transfer
-        return {**transfer,'field':compact_block(transfer['field'],transfer.get('net'),where+'/field')}
+        return {**transfer,'field':compact_block(transfer['field'],transfer.get('net'),where+'/field',spacing)}
     def compact_run(run,where):
         compact=dict(run)
+        spacing=run.get('spacing_mm')
         if 'ports' in run:
-            compact['ports']=[compact_block(block,block.get('net'),where+'/ports/'+str(i))
+            compact['ports']=[compact_block(block,block.get('net'),where+'/ports/'+str(i),spacing)
                               for i,block in enumerate(run['ports'])]
         if 'unit_transfers' in run:
-            compact['unit_transfers']=[compact_transfer(row,where+'/unit_transfers/'+str(i))
+            compact['unit_transfers']=[compact_transfer(row,where+'/unit_transfers/'+str(i),spacing)
                                        for i,row in enumerate(run['unit_transfers'])]
         if 'loops' in run:
-            compact['loops']=[{**loop,'legs':[compact_transfer(leg,where+'/loops/'+str(i)+'/legs/'+str(j))
+            compact['loops']=[{**loop,'legs':[compact_transfer(leg,where+'/loops/'+str(i)+'/legs/'+str(j),spacing)
                                              for j,leg in enumerate(loop['legs'])]}
                               for i,loop in enumerate(run['loops'])]
         if 'cases' in run:
-            compact['cases']=[{**case,'fields':{net:compact_block(field,net,where+'/cases/'+str(i)+'/fields/'+net)
+            compact['cases']=[{**case,'fields':{net:compact_block(field,net,where+'/cases/'+str(i)+'/fields/'+net,spacing)
                                                for net,field in case['fields'].items()}}
                               if 'fields' in case else case for i,case in enumerate(run['cases'])]
         return compact

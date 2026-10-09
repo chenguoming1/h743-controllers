@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "source_board_sha256": "868b957a5dad28110216e6a59b05497150c2bf0d3b2ae02db6a38cede79e8181",
+  "board_unchanged": true,
+  "preparer_sha256": "4b69b8d493c1293f5eb28a6fb19af65827f9492bbba0dec3e4c67e2449cd989c",
+  "test_source_sha256": "f95f20cde69e738621a335a53ef562c2e6f79390ba310ab8f50cae485367d0a7",
+  "controls": [
+    {
+      "name": "control-positive",
+      "exit_code": 0,
+      "accepted": true,
+      "output_sha256": "ab8f80b7d0d980cd1c6521e5382348cfcab045a3609395e18bf3322271d797dd"
+    },
+    {
+      "name": "control-wrong-source",
+      "exit_code": 1,
+      "accepted": false,
+      "output_sha256": null
+    },
+    {
+      "name": "control-wrong-alias",
+      "exit_code": 1,
+      "accepted": false,
+      "output_sha256": null
+    },
+    {
+      "name": "control-outside-pad",
+      "exit_code": 1,
+      "accepted": false,
+      "output_sha256": null
+    }
+  ],
+  "native_construction_result": "Generic preparation reproduces the exact three segments already native-verified in frozen candidate22. Candidate22 adoption/loaded power remain separately pending.",
+  "synthetic_negative": "Outside-pad diagnostic input/log are deliberately generated fixtures; no actual router result is claimed."
+}

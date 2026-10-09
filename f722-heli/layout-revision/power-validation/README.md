@@ -1,16 +1,14 @@
 # Prototype static power validation
 
-This successor preserves 84 tested analytical, compiler, geometry, cache and solver controls. A historical power-support source passed its five two-grid DC VCAP loop checks. The later candidate15 loaded pilot completed 73 cases on both 0.20/0.15 mm grids but **failed** its conditional voltage screen: a large peripheral copper drop and a 1.434 mV maximum voltage-grid change versus the unchanged 1 mV criterion. No final-board, thermal or flight qualification is claimed. Compact diagnostic/review evidence is published separately from this runtime bundle.
+This bundle preserves 107 portable controls and the runtime used for the corrected candidate19 conditional screen. Its 62 required conditional voltage cases, five DC VCAP copper loops and numerical gates pass on 0.12/0.09 mm grids. The original overall runner boolean remains **false** because one of 11 separate high-load/lost-feed illustrations fails four servo floors. Those approximate DC endpoints exceed the stated continuous source envelope and have no assigned duration. This is not final-board, thermal, AC or flight qualification.
 
-`MANIFEST.json` is the exact public allowlist and SHA-256 inventory. No PCB, full native export, full 85 MB result, matrix arrays, environment or expanded case ledger is bundled. The controls and disabled case compiler are self-contained with the pinned dependencies. Replaying an actual board result requires the separately archived, hash-matching external inputs recorded in `historical-runtime-identity.json`; this source bundle alone is not a complete native-result reproduction packet.
+See [CANDIDATE19-COMBINED-REVIEW.md](CANDIDATE19-COMBINED-REVIEW.md), `candidate19-combined-summary.json` and `candidate19-runtime-identity.json` for results, conditions and hashes. `candidate22-power-result-applicability.json` proves exact modeled-input applicability to a later source while preserving candidate19 as the numerical source.
 
-`historical-loaded73-prepared-plan.json` is the exact disabled prepared plan, SHA-256 `00d59b84c5c4cc24ee21352e6e30db8a13ecfaf2a163e252012b0ac5a9215f58`. It is an archival source-specific plan, not the default for a new board or permission to run. The runtime identity record preserves the exact released freeze, ledger and result hashes. Five archived runtime modules are byte-identical; the sixth differs only by a documented unit correction in a docstring, with its executable AST checked unchanged. Public tests use relocated fixture paths and are rerun on these actual files.
-
-The two small source-bound geometry fixtures total about 40 kB. `native-refusals.json`, `native-linear-diagnostic.json`, `native-receipt-roundtrip.json` and `native-single-line-control.json` retain historical negative controls and compact repair evidence with original hashes. Their historical pending/refusal statuses do not overwrite the later scoped outcomes. The bulky native single-line contour and full proof remain external; synthetic controls exercise its same retained-subdivision rule and rejection conditions.
+`MANIFEST.json` is the exact allowlist. No PCB, complete native export, expanded executable ledger, full 115 MB result, numeric arrays or environment is included. Tests and disabled compiler inputs are self-contained with pinned dependencies. Actual native-result reproduction additionally requires the external archived inputs listed by hash. Five runtime modules match the run byte for byte; the sixth corrects only a unit typo in a docstring, with executable AST equality verified.
 
 ## Reproduce the controls
 
-Tested with Python 3.12.14, the exact dependency pins in `requirements.txt`, and Shapely's GEOS 3.14.1 runtime. Use one native numerical thread:
+Tested with Python 3.12.14 and the exact pins in `requirements.txt`: NumPy 2.2.6, SciPy 1.17.0, Shapely 2.2.0 / GEOS 3.14.1 and sexpdata 1.0.2.
 
 ```sh
 python3.12 -m venv .venv
@@ -19,77 +17,76 @@ python -m pip install -r requirements.txt
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -B -m unittest -v \
   test_static_validation test_case_compiler test_native_edge_noding \
   test_linear_backend test_mesh_cache test_result_evidence \
-  test_loaded_pilot test_power_geometry_comparison
+  test_loaded_pilot test_power_geometry_comparison test_refined_pilot \
+  test_grid_edge_noding test_element_operator test_combined_summary \
+  test_result_applicability
 ```
 
-Expected: 84 passing tests. `synthetic-tests.json` binds the actual bundled test run to source hashes. No project PCB is loaded. Coverage includes finite/grouped native contacts; drill voids and saved-fill holes; point-touch and disconnected rejection; barrel spans; narrow feeders; coupled return voltage, finite contacts and converter input-power conservation; unequal same-source feeds; reciprocity/convergence; stale-source and compute/thread gates; exact ancestry, seam and area checks; numeric-cache corruption/caps; mixed-precision residuals; canonical receipt roundtrips and size-bounded evidence references; retained single-line native subdivisions and ambiguous/bent/uncovered rejection; exact loaded-case selection; and all-net drill/fill/port source comparisons.
+Expected: 107 passing controls. `synthetic-tests.json` records the actual bundled run and source hashes. No project PCB is loaded. Tests cover finite/grouped contacts and aliases, real drill/fill holes, narrow feeders, barrel spans, conserved source/return power, finite contacts, stale-source/compute gates, exact ancestry/seams, numeric-cache corruption/caps, mixed precision, physical condensation and scope classification.
 
-`native-fill-fixture.json` is a synthetic KiCad 10.0.6 polygon set with holes and a disconnected outline. With that version's `pcbnew` Python, regenerate it using `python generate_native_fill_fixture.py --out fresh-native-fill-fixture.json`. The exporter decodes fractured fills by exact reverse integer bridge cancellation. It does not repair geometry or save/refill a PCB.
+The synthetic native-fill fixture can be regenerated with KiCad 10.0.6's `pcbnew` Python: `python generate_native_fill_fixture.py --out fresh-native-fill-fixture.json`. Export decodes fractured contours by exact reversed integer bridge cancellation; it never repairs, saves or refills a PCB.
 
-## Disabled requirements and cases
+## Bind and audit a new source
 
-`case-plan.disabled.json` has false execution and null freeze binding. `terminal-registry.disabled.json` retains terminal intent without an adopted board hash or pad UUIDs. Generic freeze/ledger templates are disabled, without source paths or load/material defaults. Measured four-conductor harness resistances remain unset and are excluded by the compiler.
+The case plan and terminal registry remain disabled/unbound. Generic freeze/ledger templates have false execution flags, no source paths and no load/material defaults. Measured four-conductor harness resistances remain unset and excluded. The plan distinguishes 0.32 A electronics, classic 20 mA DSM, capacity 0.50 A DSM and USB 0.30 A with external loads disconnected. Load allocations are adversarial vertices, not measured shares. Same-BEC 20/40/50/80 mΩ profiles are illustrative; capacity DSM does not inherit classic receiver accuracy.
 
-The project plan separates 0.32 A electronics, classic 20 mA DSM, capacity 0.50 A DSM, and USB 0.30 A configuration with external loads disconnected. It includes shared AB/AC/BC 2 A loading, actual positive/return pad intent, conserved converter power, auxiliary-current accounting and conditional voltage floors. Ten aggregate-load vertices are adversarial allocations rather than measured shares. Same-BEC 20/40/50/80 mΩ profiles are explicitly illustrative, with mismatch and feed-loss boundaries. KST high-load DC endpoints retain their approximate-current, unknown-duration and overload limitations. The capacity DSM case does not inherit the classic receiver guarantee.
+The generator enumerates 310 primary definitions and 178 dependent selectors, not executed or historical cases. Dependent weakest-allocation slices stay disabled until validated rankings exist. The completed run executed only its selected 73 cases on two grids.
 
-Compiler outputs contain 170 baseline, 40 upper and 100 bounded servo definitions, combined into a 310-case primary ledger. These are newly enumerated definitions, not executed cases or historical results. Another 178 dependent selectors stay disabled until actual source-bound baseline rankings exist. `activate_ranked_slices.py` preserves separate weakest sampled locations for distinct voltage constraints and rejects invented rankings.
-
-Settings are explicit modeled assumptions: 105 °C, 0.015 mm effective copper/plating, 95% IACS. They are not fabrication measurements. Select and review the resource/material settings deliberately. The larger pilot settings select sparse direct solving, two grids and 900k nodes/1.8M triangles; they do not authorize execution. The completed 73-case pilot took about 12.4 minutes through the last field stage and recorded 1.409 GB peak RSS. Its archived preparation estimate of 4–10 minutes was optimistic; resource limits remain 20 minutes and 4 GiB, not runtime guarantees.
-
-## Bind and audit the final source
-
-Finish the intended board scope, refill/save it, and independently check one immutable copy. Export saved native geometry with KiCad 10.0.6:
+Finish and independently gate an immutable source copy. With KiCad 10.0.6, export saved geometry:
 
 ```sh
 python export_native_copper.py --board board.kicad_pcb --out owner-native.json
 ```
 
-The project compiler requires a source directory containing `f722-heli.kicad_pcb`, `owner-native.json`, current `parts.json`, `owner-parity.json`, `owner-process.json`, `owner-mechanical.json`, `owner-critical.json`, `power-audit.json`, `owner-drc.json`, `owner-drc-all.json`, `owner-protection.json`, and `owner-supplemental.json`. Those acceptance reports come from the board workflow, not this bundle.
-
-Set `SOURCE_FOR_REBIND` to that actual directory. For final validation, copy the selected settings to `settings.final.json`, set `scope` to `final-board`, and describe the actual source stage. Compile to a new directory:
+The source directory must contain `f722-heli.kicad_pcb`, `owner-native.json`, current `parts.json`, `owner-parity.json`, `owner-process.json`, `owner-mechanical.json`, `owner-critical.json`, `power-audit.json`, `owner-drc.json`, `owner-drc-all.json`, `owner-protection.json` and `owner-supplemental.json`. Those independent board reports are external inputs. Set `SOURCE_FOR_REBIND` to the directory actually checked:
 
 ```sh
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python compile_power_ledger.py \
   --source "$SOURCE_FOR_REBIND" --plan case-plan.disabled.json \
-  --registry terminal-registry.disabled.json --settings settings.final.json \
+  --registry terminal-registry.disabled.json --settings compiler-settings.refined.json \
   --out compiled-preflight
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python prepare_loaded_pilot.py \
+  --compiled compiled-preflight --out combined-prepared --refined-combined
 ```
 
-The compiler checks every evidence hash, actual selected parts and pad/net/layer identities, finite contact unions and ideal-land aliases. It copies the inputs, stamps every case and audits five loop definitions without meshing. Final mode requires zero opens and passing protection checks. Power-only settings permit explicitly excluded unrelated ordinary opens and cannot qualify a completed board. Every later track, drill antipad, fill or part change requires fresh evidence and rebinding.
+Compilation verifies hashes, actual parts and pad/net/layer identities, finite contact unions and ideal-land aliases, without meshing. The refined selector requires 60 shared-ABC/classic-or-capacity cases at 5 V, two USB cases, 11 servo/feed illustrations and five VCAP loops: 13 networks / 99 contacts with 41 GND contacts. Repeated `--evidence receipt.json` arguments preserve additional passed source-bound reports.
 
-## Bounded numerical execution
+Refined settings explicitly model 105 °C copper, 15 µm effective copper/plating and 95% IACS. These are assumptions, not fabrication measurements or execution permission. Final-board mode additionally requires zero opens and passing protection checks. Power-only mode may exclude unrelated ordinary opens and cannot qualify a completed board. Every later drill, fill, contact, part or modeled copper change requires fresh binding.
 
-For the bounded loaded scope, compile the new source with reviewed `compiler-settings.pilot.json` settings using the binding command above, then prepare a disabled selection:
+## Execute after compute release
+
+After source acceptance and allocation of the single heavy-process slot, prepare a separate released copy:
 
 ```sh
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python prepare_loaded_pilot.py \
-  --compiled compiled-preflight --out loaded-prepared
+  --compiled compiled-preflight --out combined-released --refined-combined --release
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python combined-released/solver-source/run_bounded_pilot.py \
+  --freeze combined-released/freeze.json --ledger combined-released/ledger.json \
+  --wall-seconds 1500 --memory-mib 4096 \
+  --out combined-released/result.json --mesh-cache private-numerical-cache
+python summarize_combined_pilot.py --result combined-released/result.json \
+  --freeze combined-released/freeze.json --ledger combined-released/ledger.json \
+  --out combined-summary.json
 ```
 
-The selector requires exactly 60 shared-ABC/classic-or-capacity cases at 5 V, two USB configuration cases, and 11 bounded servo/feed illustrations. It excludes incompatible servo loads at 5 V and external loads in USB configuration. It retains actual case hashes, converter conserved power, local returns, finite resistances and separate operating/accuracy screens. It copies immutable runtime files and never meshes during preparation. The full 310-case ledger is not implied to fit this pilot's resource bound.
+The wrapper sets one native numerical thread before imports and enforces the exact frozen budget: 25 minutes / 4 GiB for this refined scope; the legacy default remains 20 minutes. Candidate19 reached its last field stage in 873.09 seconds and recorded 1.75 GiB peak RSS. Neither runtime nor convergence is guaranteed for another board. The full 310-case ledger is not implied to fit the pilot budget.
 
-After explicit allocation of the single heavy-job slot and source adoption, prepare a separate released directory and execute its copied runtime:
+Exit 0 means preflight or success of the complete selected screen; 1 means a completed screen failed at least one selected case/loop/guard; 2 means refusal. Preserve the runner boolean. The summarizer reports required voltage, VCAP, numerical and illustrative scopes separately. Partial grids on a later refusal remain unqualified.
 
-```sh
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python prepare_loaded_pilot.py \
-  --compiled compiled-preflight --out loaded-released --release
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python loaded-released/solver-source/run_bounded_pilot.py \
-  --freeze loaded-released/freeze.json --ledger loaded-released/ledger.json \
-  --out loaded-released/result.json --mesh-cache private-numerical-cache
-```
+For a different source with exactly equal modeled inputs, compile/prepare that source first and use `bind_result_applicability.py --help`. The read-only comparison checks the complete electrical job, actual copper/fills/all drills/stackup/ports, parts and runtime/compiler identities. It preserves the original result, never transfers a cache and cannot convert a scoped result into final-board qualification.
 
-A later final board must be freshly compiled from its own gate reports and complete geometry. Never replace an archived hash, retitle a provisional result as final, or reuse a cache through a changed source identity. `compare_power_geometry.py` can record exact modeled-input equivalence, including every physical drill; it explicitly does not transfer a cache or rebind a result.
+## Geometry and numerical interpretation
 
-The wrapper sets one BLAS/OpenMP thread before imports, enforces a 4 GiB address-space cap and 20-minute alarm, and requires external scheduling of one heavy job. No source is edited. Exit 0 means preflight or conditional enumerated-screen success, 1 means a completed screen did not pass, and 2 means refusal. Completed coarse-grid data on a later refusal is retained as explicitly unqualified partial data.
+Native integer-nm vertices, holes and contacts remain authoritative. Derived intersections require unique exact ancestry, finite source coverage and rational area/orientation certificates. Exact grid-edge crossings are inserted before clipping; distinct intersections remain separate or refuse if binary64 collapses them. Grid-specific certificates retain exact hashes. Represented area deltas and rounding are recorded. No geometry repair, blanket snapping, native-vertex removal or positive-area deletion is allowed.
 
-The optional cache stores numeric-only NPZ arrays and integrity-checked JSON. It binds board/native geometry, contact order, material, stackup, spacing, dependencies and geometry-builder source. Solver-only changes may reuse identical geometry, with original provenance retained. Corrupt, stale or resource-ineligible cache entries cannot silently qualify. Save matrices before solving and keep them out of published source bundles.
+The 1e12 element-condition limit is numerical. Contact-membership allowance is 2e-8 mm, or 0.02 nm. Actual drill voids, narrow intermediate paths and finite barrel resistances remain in the network. Feed sharing comes from the circuit.
 
-Sparse direct solving checks finite coefficients, symmetry, positive diagonal and anchored connectivity. It uses diagonal scaling, a bounded reusable double LU with `MMD_AT_PLUS_A` ordering, and longdouble solution/residual refinement. Platforms without wider-than-float64 arithmetic refuse this backend. The saved-matrix diagnostic reduced approximately 1e-9 A residuals below 7.1e-13 A with unchanged coefficients and acceptance thresholds. That one-grid diagnostic is separate from loop compliance. Linear, full KCL, energy, reciprocity, mesh sensitivity and margin gates remain mandatory; failed histories are preserved.
+The cache holds checked geometry/material arrays and a double matrix used only as the LU preconditioner. Its identity includes source, contacts, stackup, material, grid, dependencies and geometry-builder code. The accurate longdouble physical operator is rebuilt from unchanged elements. Identical ideal node IDs have exactly zero energy while retaining every triangle record; partial condensation uses the singleton gradient; three-node elements use stable gradient-vector Gram products. Wide refinement, KCL and matching voltage-difference field/loss recovery survive cache reload. No voltage basis is serialized. All residual, energy, reciprocity and grid-margin gates remain unchanged. Platforms without wider-than-float64 arithmetic refuse this backend.
 
-## Geometry and interpretation
+## Evidence and limits
 
-Grid anchors use exact decimal rationals. Derived native-edge intersections require unique exact integer/rational ancestry, covered source intervals and shared seam nodes. Native vertices, holes, contacts and exact rational ring areas are preserved. Represented binary64 area deltas and every derived coordinate correction are recorded. A residual/angle-derived position bound plus a 1 pm absolute cap limits numerical representation correction; this is not a fabrication tolerance. Unknown/ambiguous ancestry, collapsed identities and invalid topology refuse. Canonical JSON comparison keeps cached/fresh certificates content-identical without confusing tuple/list representation. A retained subdivision along one native line additionally requires unique line ancestry, adjacent-edge collinearity/order, strict interior placement and continuous finite source coverage. Nearby unrelated edges, real bends, gaps and ambiguous ancestry refuse. No native vertex or positive-area copper is removed to accommodate it.
+The two compact candidate19 refusal receipts preserve the earlier grid and double-assembly failures. A small native annulus fixture, independent local-review identities and separate saved-mesh diagnostic preserve their controlled corrections. Previous native negative controls remain. Files named `historical-v5-*` and the old prepared73-case plan describe the previous archive, not this successor's defaults or runtime. Its failed peripheral/grid screen remains historical evidence.
 
-No positive-area triangle is discarded. The 1e12 element condition guard is numerical rather than a physical error guarantee. Finite-contact membership has a 2e-8 mm roundoff allowance. True drills, intermediate narrow copper, actual copper unions and finite barrel resistance remain in the network. Feed sharing comes from the circuit, never an assumed split. Two-grid sensitivity is not a rigorous discretization/manufacturing bound.
+Two-grid sensitivity is not a rigorous discretization/manufacturing bound. Fixed-temperature loss/density is not temperature rise, ampacity or pulse capability. Ideal lands omit within-land/pin/solder heating. Efficiency, off-condition switch resistance and extra regulation allowances are explicit modeled inputs. U9's 4.3 V accuracy-condition screen is separate from its 3 V operating minimum. Remaining upper / 12.6 V, efficiency/leakage/resistor-temperature/line-load cases, measured harnesses, local bypass dynamics, startup/handover, VCAP AC stability, EMI/ESD, production and flight qualification need separate evidence.
 
-Fixed-temperature DC loss/density is not temperature rise, ampacity or pulse capability. Ideal lands omit within-land, pin and solder heating. Efficiency, off-condition switch resistance and extra regulation allowances are modeled sensitivities; U9's 4.3 V accuracy screen is distinct from its 3 V operating minimum. Startup, handover/backfeed, converter dynamics, VCAP AC stability, ripple, EMI/ESD, assembly, production and flight qualification require separate evidence and measurement. A provisional result never substitutes for the later fully routed board.
+The unchanged legacy names `historical-runtime-identity.json` and `public-v5-test-run.txt` are also retained for overlay compatibility. Like their explicitly named historical copies, they describe the previous v5 archive and do not identify the current runtime.

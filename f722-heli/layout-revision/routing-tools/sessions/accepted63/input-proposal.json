@@ -1,0 +1,389 @@
+{
+  "source_identity": {
+    "f722-heli": {
+      "path": "candidate20/f722-heli.kicad_pcb",
+      "sha256": "759dc5fae8d446057f9aa8e11292c02075d127e2268d0541349f7a8038ab07d5"
+    },
+    "f722-heli.native": {
+      "path": "candidate20/f722-heli.native.json",
+      "sha256": "c4ba2f616a5a04fd6f16a5b05628f821c79ca0773a2c50b907bcde67ec7a68a6"
+    },
+    "model": {
+      "path": "model-candidate19-ports/model.json",
+      "sha256": "cd7572f3a446799b042d475c70ef94898f8b864e1c5680ec2cfa97dcd1c54d65"
+    },
+    "f722-heli.logical-route-map": {
+      "path": "candidate20/f722-heli.logical-route-map.json",
+      "sha256": "0006f2bcbd56993fe5c9d4284d65de6e821479f8a6811ef87839675fc4a3cc9d"
+    },
+    "drc-all": {
+      "path": "candidate20/drc-all.json",
+      "sha256": "1924986dd526e300cd936da1ef4b684cdb31df2941f8201864751b41472712e4"
+    },
+    "screen": {
+      "path": "tests/local-closures20/screen.py",
+      "sha256": "e4fa715d64ea89f567ee46be6b2037ec0506e76e474fb63221c5e8ecfb33e813"
+    }
+  },
+  "board_sha256": "759dc5fae8d446057f9aa8e11292c02075d127e2268d0541349f7a8038ab07d5",
+  "scope": "Read-only bounded pad-to-pad simple closure screen of remaining ordinary and protected-chain nets. Direct, one-corner orthogonal/45-degree, and two-corner midpoint or 0.25mm exterior doglegs. No grid, solver, board mutation, or native DRC. Other branches on same physical net are foreign copper except this branch terminal pads. Each candidate independently checked against every native obstacle after bounded local screening.",
+  "rules_mm": {
+    "width": 0.127,
+    "foreign_copper": 0.127,
+    "foreign_drill": 0.2,
+    "edge_npth": 0.254,
+    "native_polygon_error": 1e-05
+  },
+  "candidate_count": 50,
+  "proposals": [
+    {
+      "net": "SBUS_LV",
+      "logical_net": "SBUS_LV",
+      "layer": "F.Cu",
+      "terminals": [
+        "Q2.2",
+        "R37.2"
+      ],
+      "terminal_uuids": [
+        "99f142b6-92be-4414-9a5b-462d30a54ad4",
+        "a3f92786-d62d-4d36-8f9b-e31ce5d35998"
+      ],
+      "tested_paths": 252,
+      "passed_paths": 227,
+      "different_native_components_before": true,
+      "best_points_mm": [
+        [
+          20.5,
+          10.45
+        ],
+        [
+          20.5,
+          11.045
+        ]
+      ],
+      "length_mm": 0.5950000000000006,
+      "minimum_extra_clearance_mm": 0.33491149108294316,
+      "nearest_constraints": [
+        {
+          "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+          "object": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+          "kind": "via",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.46191149108294316,
+          "extra_clearance_mm": 0.33491149108294316,
+          "centerline_witness_mm": [
+            20.5,
+            10.45
+          ],
+          "obstacle_witness_mm": [
+            21.025079,
+            10.431311
+          ]
+        },
+        {
+          "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+          "object": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+          "kind": "via",
+          "category": "foreign_drill",
+          "required_gap_mm": 0.2,
+          "required_center_distance_mm": 0.2635,
+          "physical_gap_mm": 0.5869114506141494,
+          "extra_clearance_mm": 0.3869114506141494,
+          "centerline_witness_mm": [
+            20.5,
+            10.45
+          ],
+          "obstacle_witness_mm": [
+            21.150079,
+            10.429207
+          ]
+        },
+        {
+          "uuid": "914fe3b1-3b8b-40ce-9188-3b1c713ceb65",
+          "object": "914fe3b1-3b8b-40ce-9188-3b1c713ceb65",
+          "kind": "track",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.6234167203048285,
+          "extra_clearance_mm": 0.49641672030482853,
+          "centerline_witness_mm": [
+            20.5,
+            10.45
+          ],
+          "obstacle_witness_mm": [
+            21.186558943473532,
+            10.427832506437369
+          ]
+        },
+        {
+          "uuid": "0917fb41-027d-417b-9fae-2182edb74d9e",
+          "object": "0917fb41-027d-417b-9fae-2182edb74d9e",
+          "kind": "track",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.773000000000001,
+          "extra_clearance_mm": 0.646000000000001,
+          "centerline_witness_mm": [
+            20.5,
+            10.851084
+          ],
+          "obstacle_witness_mm": [
+            21.3365,
+            10.851084
+          ]
+        },
+        {
+          "uuid": "542e1c37-5403-4cde-b95c-be62108ea3ff",
+          "object": "R37.1",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.8815000000000002,
+          "extra_clearance_mm": 0.7545000000000002,
+          "centerline_witness_mm": [
+            20.5,
+            11.045
+          ],
+          "obstacle_witness_mm": [
+            20.5,
+            11.99
+          ]
+        }
+      ],
+      "points_mm": [
+        [
+          20.5,
+          10.45
+        ],
+        [
+          20.5,
+          11.045
+        ]
+      ],
+      "width_mm": 0.127,
+      "vias": [],
+      "net_code": 25,
+      "logical_role": {
+        "kind": "ordinary",
+        "terminals": [
+          "99f142b6-92be-4414-9a5b-462d30a54ad4",
+          "9f20c47c-718d-4e80-ae6f-742ed462cf64",
+          "a3f92786-d62d-4d36-8f9b-e31ce5d35998"
+        ]
+      },
+      "pad_entry": [
+        {
+          "pad": "Q2.2",
+          "uuid": "99f142b6-92be-4414-9a5b-462d30a54ad4",
+          "point_mm": [
+            20.5,
+            10.45
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.011500000000001065
+        },
+        {
+          "pad": "R37.2",
+          "uuid": "a3f92786-d62d-4d36-8f9b-e31ce5d35998",
+          "point_mm": [
+            20.5,
+            11.045
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.011499999999999289
+        }
+      ],
+      "native_drc_performed": false,
+      "acceptance_claimed": false
+    },
+    {
+      "net": "RPM_MCU",
+      "logical_net": "RPM_MCU::P0",
+      "layer": "B.Cu",
+      "terminals": [
+        "R39.2",
+        "U13.6"
+      ],
+      "terminal_uuids": [
+        "7d47c72c-798d-4421-aa08-44b547da2576",
+        "82c6fb7b-0893-4166-b46d-20362e8bda13"
+      ],
+      "tested_paths": 325,
+      "passed_paths": 196,
+      "different_native_components_before": true,
+      "best_points_mm": [
+        [
+          12.285,
+          23.68
+        ],
+        [
+          13.1,
+          22.35
+        ]
+      ],
+      "length_mm": 1.559847748980648,
+      "minimum_extra_clearance_mm": 0.462998140916257,
+      "nearest_constraints": [
+        {
+          "uuid": "ff5a00f4-7d77-4608-93ab-5b166456fc91",
+          "object": "U13.5",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.589998140916257,
+          "extra_clearance_mm": 0.462998140916257,
+          "centerline_witness_mm": [
+            13.1,
+            22.35
+          ],
+          "obstacle_witness_mm": [
+            13.161159,
+            21.69937
+          ]
+        },
+        {
+          "uuid": "0d85c6f6-93a6-4670-8791-b6ea61b2274e",
+          "object": "R39.1",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.6885219525213354,
+          "extra_clearance_mm": 0.5615219525213354,
+          "centerline_witness_mm": [
+            12.285,
+            23.68
+          ],
+          "obstacle_witness_mm": [
+            11.534707,
+            23.730965
+          ]
+        },
+        {
+          "uuid": "2bf1b232-8d68-4b6e-97d4-aa3ec840df01",
+          "object": "U13.1",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.7099792839804049,
+          "extra_clearance_mm": 0.5829792839804049,
+          "centerline_witness_mm": [
+            12.71204603718469,
+            22.983102785944002
+          ],
+          "obstacle_witness_mm": [
+            12.052541,
+            22.57897
+          ]
+        },
+        {
+          "uuid": "45a72927-1b3b-40d0-91ed-f1c0929fd7e8",
+          "object": "C31.1",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.8607613780365069,
+          "extra_clearance_mm": 0.7337613780365069,
+          "centerline_witness_mm": [
+            12.472313014682765,
+            23.374323546591317
+          ],
+          "obstacle_witness_mm": [
+            13.260382,
+            23.857238
+          ]
+        },
+        {
+          "uuid": "f8b4cdb1-c906-4d2a-bc00-3ec66e57cfef",
+          "object": "f8b4cdb1-c906-4d2a-bc00-3ec66e57cfef",
+          "kind": "track",
+          "category": "foreign_copper",
+          "required_gap_mm": 0.127,
+          "required_center_distance_mm": 0.1905,
+          "physical_gap_mm": 0.9534831519007584,
+          "extra_clearance_mm": 0.8264831519007584,
+          "centerline_witness_mm": [
+            13.1,
+            22.35
+          ],
+          "obstacle_witness_mm": [
+            13.633935,
+            21.484455
+          ]
+        }
+      ],
+      "points_mm": [
+        [
+          12.285,
+          23.68
+        ],
+        [
+          13.1,
+          22.35
+        ]
+      ],
+      "width_mm": 0.127,
+      "vias": [],
+      "net_code": 115,
+      "logical_role": {
+        "kind": "protected_chain",
+        "sequence": [
+          "R39.2",
+          "U13.6",
+          "U1.16"
+        ],
+        "branches": [
+          {
+            "logical_net": "RPM_MCU::P0",
+            "terminals": [
+              "R39.2",
+              "U13.6"
+            ]
+          },
+          {
+            "logical_net": "RPM_MCU::P1",
+            "terminals": [
+              "U13.6",
+              "U1.16"
+            ]
+          }
+        ]
+      },
+      "pad_entry": [
+        {
+          "pad": "R39.2",
+          "uuid": "7d47c72c-798d-4421-aa08-44b547da2576",
+          "point_mm": [
+            12.285,
+            23.68
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.011499999999999289
+        },
+        {
+          "pad": "U13.6",
+          "uuid": "82c6fb7b-0893-4166-b46d-20362e8bda13",
+          "point_mm": [
+            13.1,
+            22.35
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.011499999999999289
+        }
+      ],
+      "native_drc_performed": false,
+      "acceptance_claimed": false
+    }
+  ],
+  "proposal_mutual_conflicts": [],
+  "source_unchanged": true,
+  "elapsed_seconds": 27.869602460999886
+}

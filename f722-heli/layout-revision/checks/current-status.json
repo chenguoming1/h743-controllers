@@ -1,13 +1,13 @@
 {
   "status": "WIP \u2014 PARTIALLY ROUTED \u2014 NOT FOR MANUFACTURE",
-  "board_sha256": "9cf04c88ebd31d7e2c12bdb8a9f80e01b615a7bdb94a73fc2234208a2e0a14c8",
+  "board_sha256": "fd8fd21062c61992ec992481d394e19a6a99cfe8ec58405ed1e391c5e3836bfa",
   "source_commit": "8419807bb87479b650736f70be52ec61e246740c",
   "source_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
   "component_count": 156,
   "target_pose_count": 156,
   "changed_poses_from_published": 109,
   "copper_layers": 6,
-  "unfinished_connections": 69,
+  "unfinished_connections": 62,
   "drc_errors": 0,
   "drc_warnings": 0,
   "erc_violations": 0,
@@ -27,14 +27,28 @@
   "mechanical_margin_limits": "Some courtyard gaps are very small (inherited U1\u2013C4 0.001 mm; new R66 neighbors 0.005 mm). Physical-body/solder reserves pass the bounded screen, but this is not manufacturing or assembly qualification.",
   "reproducible_placement_build": true,
   "routed_native_source": "hardware/f722-heli.kicad_pcb",
-  "protection_paths_passed": 1,
+  "protection_paths_passed": 2,
   "protection_paths_total": 18,
   "supplemental_protection_passed": 5,
   "supplemental_protection_total": 7,
   "critical_nets_connected": 16,
   "ground_pad_groups": 1,
-  "checkpoint_progress": "A 1.02142 mm native ADC_BUS connection joins R42.2 to R43.1 through two F.Cu tracks. ADC_BUS remains incomplete elsewhere. Both endpoints have full-width entry; no vias or prior copper, drills, zone designs or saved fills changed. All source-bound native, strict parity, process, mechanical, firmware, critical and power-connectivity gates pass.",
-  "warning_scope": "Native normal and all-track DRC report zero geometric warnings; 69 unfinished connections remain explicitly reported.",
+  "checkpoint_progress": "Added PORT_B_RX_EXT connector branch through U14.7 NC routing pad. Actual U14.4 to R32.1 remains unfinished. Exact modeled power geometry/job applies from corrected source19; conditional required and VCAP/numerical scopes pass, original overall result false for high-load lost-feed illustration.",
+  "warning_scope": "Native normal and all-track DRC report zero geometric warnings; 62 unfinished connections remain explicitly reported.",
   "native_strict_schematic_parity_issues": 0,
-  "loaded_power_diagnostic": "Unaccepted two-grid source70 run exposes excessive BEC copper drop, independently confirmed by a native-topology resistance lower bound. Relevant power geometry is exact on source69. Correction and new source-bound validation required."
+  "loaded_power_diagnostic": "Corrected feed passes the 62 enumerated conditional cases, five VCAP DC copper loops and numerical gates; exact result applicability receipt binds this source. Original overall result is false for the overloaded lost-feed illustration. Broader corners, final routed geometry and hardware qualification remain incomplete.",
+  "actual_signal_clamp_channels": {
+    "complete": 4,
+    "total": 20,
+    "endpoint_cases_complete": 6,
+    "endpoint_cases_total": 22,
+    "legacy_original_actual": {
+      "passed": 1,
+      "total": 14
+    },
+    "legacy_original_nc": {
+      "passed": 1,
+      "total": 4
+    }
+  }
 }
