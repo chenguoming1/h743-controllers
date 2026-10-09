@@ -1,0 +1,71 @@
+{
+  "profile": "supplemental-7",
+  "source_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+  "method": "Native KiCad copper polygons: tracks/vias/pads ERROR_OUTSIDE, actual clamp pad ERROR_INSIDE, maximum polygon error 0.00001 mm. Subtract only actual clamp pad copper from every copper object on the actual clamp pad layer(s), split resulting polygon pieces, rebuild physical contact graph including existing plated through connections. No component-internal conductive paths are assumed. Signal nets have no zones. Conservative overestimate of surviving copper and underestimate of pad removal.",
+  "checks": [
+    {
+      "id": "supplemental-01",
+      "net": "USB_CC2",
+      "clamp": "D6.1",
+      "source": "J1.B5",
+      "target": "R15.1",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "additional_cc_hv_review"
+    },
+    {
+      "id": "supplemental-02",
+      "net": "USB_P",
+      "clamp": "D3.1",
+      "source": "J1.A6",
+      "target": "U1.45",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "supplemental_usb_data_review"
+    },
+    {
+      "id": "supplemental-03",
+      "net": "USB_P",
+      "clamp": "D3.1",
+      "source": "J1.B6",
+      "target": "U1.45",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "supplemental_usb_data_review"
+    },
+    {
+      "id": "supplemental-04",
+      "net": "USB_N",
+      "clamp": "D4.1",
+      "source": "J1.A7",
+      "target": "U1.44",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "supplemental_usb_data_review"
+    },
+    {
+      "id": "supplemental-05",
+      "net": "USB_N",
+      "clamp": "D4.1",
+      "source": "J1.B7",
+      "target": "U1.44",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "supplemental_usb_data_review"
+    },
+    {
+      "id": "supplemental-06",
+      "net": "RPM_HV",
+      "clamp": "U16.1",
+      "source": "R25.2",
+      "target": "Q1.3",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "additional_cc_hv_review"
+    },
+    {
+      "id": "supplemental-07",
+      "net": "SBUS_HV",
+      "clamp": "U16.2",
+      "source": "R26.2",
+      "target": "Q2.3",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "additional_cc_hv_review"
+    }
+  ],
+  "basis": "Additional checks derived from native schematic pad net membership. Not part of the published 18-case qualification; failures must not be hidden or described as regressions to that published scope."
+}

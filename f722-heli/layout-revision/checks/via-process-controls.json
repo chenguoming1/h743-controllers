@@ -1,0 +1,41 @@
+{
+  "source_sha256": "f400b279ac5d2c63251d2401c788c485400a5c8fecbb1d646e4104fd3c22c1f1",
+  "passed": true,
+  "native_controls": [
+    {
+      "case": "valid",
+      "native_sha256": "dfa21af1212c2d0b41fdfb3a5ebc613103ddb80ee47d0e576c16964395e343ab",
+      "expected_violation": null,
+      "actual_violation_types": [],
+      "expected_outcome_observed": true
+    },
+    {
+      "case": "same_net_SMT_mask",
+      "native_sha256": "22c76dd8a30111931388b14411c5facff371fe60622d693ead2bf426f514f971",
+      "expected_violation": "drill_to_SMT_mask",
+      "actual_violation_types": [
+        "drill_to_SMT_mask"
+      ],
+      "expected_outcome_observed": true
+    },
+    {
+      "case": "close_drills",
+      "native_sha256": "4779686498ff5071df249589696203c90ec4a5a1a2d4e8e80cd4d9b687d708d2",
+      "expected_violation": "drill_to_drill",
+      "actual_violation_types": [
+        "drill_to_drill"
+      ],
+      "expected_outcome_observed": true
+    },
+    {
+      "case": "untented_front",
+      "native_sha256": "0af1ad8eec7ea8d519aa6a8c3f183593b527048f0f7a737b59bbe6d99169067c",
+      "expected_violation": "via_not_tented_both_faces",
+      "actual_violation_types": [
+        "via_not_tented_both_faces"
+      ],
+      "expected_outcome_observed": true
+    }
+  ],
+  "scope": "Four disposable native fixtures exercise valid ordinary geometry, same-net drill-to-mask rejection, actual drill-spacing rejection and explicit front-tenting rejection. Not routing or fabrication qualification."
+}

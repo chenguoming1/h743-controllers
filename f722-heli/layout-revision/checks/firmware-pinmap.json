@@ -1,11 +1,14 @@
 {
-  "board_sha256": "f400b279ac5d2c63251d2401c788c485400a5c8fecbb1d646e4104fd3c22c1f1",
-  "source": "Published firmware/validation pin map, checked against reconstructed U1 native pad assignments",
+  "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86",
+  "contract_sha256": "f09f99efa565075e1676e9be9d9d27f27c0b5b6e15275533b478a626d96b9826",
+  "pinned_target": "1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3/configs/RDMS-NEXUS_F7.config",
+  "scope": "Native MCU pad assignments only; no firmware runtime, routed timing or physical qualification",
   "passed": true,
   "checks": [
     {
       "resource": "MOTOR",
       "index": 1,
+      "gpio": "PB6",
       "pin": "58",
       "expected": "ESC_MCU",
       "actual": "ESC_MCU",
@@ -14,6 +17,7 @@
     {
       "resource": "SERVO",
       "index": 1,
+      "gpio": "PB4",
       "pin": "56",
       "expected": "SERVO1_MCU",
       "actual": "SERVO1_MCU",
@@ -22,6 +26,7 @@
     {
       "resource": "SERVO",
       "index": 2,
+      "gpio": "PB5",
       "pin": "57",
       "expected": "SERVO2_MCU",
       "actual": "SERVO2_MCU",
@@ -30,6 +35,7 @@
     {
       "resource": "SERVO",
       "index": 3,
+      "gpio": "PB0",
       "pin": "25",
       "expected": "SERVO3_MCU",
       "actual": "SERVO3_MCU",
@@ -38,6 +44,7 @@
     {
       "resource": "SERVO",
       "index": 4,
+      "gpio": "PB3",
       "pin": "55",
       "expected": "TAIL_MCU",
       "actual": "TAIL_MCU",
@@ -46,6 +53,7 @@
     {
       "resource": "SERIAL_TX",
       "index": 3,
+      "gpio": "PB11",
       "pin": "29",
       "expected": "PORT_C_TX_MCU",
       "actual": "PORT_C_TX_MCU",
@@ -54,6 +62,7 @@
     {
       "resource": "SERIAL_TX",
       "index": 4,
+      "gpio": "PA1",
       "pin": "15",
       "expected": "PORT_A_TX_MCU",
       "actual": "PORT_A_TX_MCU",
@@ -62,6 +71,7 @@
     {
       "resource": "SERIAL_TX",
       "index": 6,
+      "gpio": "PC7",
       "pin": "38",
       "expected": "PORT_B_TX_MCU",
       "actual": "PORT_B_TX_MCU",
@@ -70,6 +80,7 @@
     {
       "resource": "SERIAL_RX",
       "index": 1,
+      "gpio": "PA10",
       "pin": "43",
       "expected": "DSM_RX_MCU",
       "actual": "DSM_RX_MCU",
@@ -78,6 +89,7 @@
     {
       "resource": "SERIAL_RX",
       "index": 2,
+      "gpio": "PA3",
       "pin": "17",
       "expected": "SBUS_MCU",
       "actual": "SBUS_MCU",
@@ -86,6 +98,7 @@
     {
       "resource": "SERIAL_RX",
       "index": 3,
+      "gpio": "PB10",
       "pin": "28",
       "expected": "PORT_C_RX_MCU",
       "actual": "PORT_C_RX_MCU",
@@ -94,6 +107,7 @@
     {
       "resource": "SERIAL_RX",
       "index": 4,
+      "gpio": "PA0",
       "pin": "14",
       "expected": "PORT_A_RX_MCU",
       "actual": "PORT_A_RX_MCU",
@@ -102,6 +116,7 @@
     {
       "resource": "SERIAL_RX",
       "index": 6,
+      "gpio": "PC6",
       "pin": "37",
       "expected": "PORT_B_RX_MCU",
       "actual": "PORT_B_RX_MCU",
@@ -110,6 +125,7 @@
     {
       "resource": "I2C_SCL",
       "index": 1,
+      "gpio": "PB8",
       "pin": "61",
       "expected": "BARO_SCL",
       "actual": "BARO_SCL",
@@ -118,6 +134,7 @@
     {
       "resource": "I2C_SDA",
       "index": 1,
+      "gpio": "PB9",
       "pin": "62",
       "expected": "BARO_SDA",
       "actual": "BARO_SDA",
@@ -126,6 +143,7 @@
     {
       "resource": "LED",
       "index": 1,
+      "gpio": "PC14",
       "pin": "3",
       "expected": "LED_GREEN_K",
       "actual": "LED_GREEN_K",
@@ -134,6 +152,7 @@
     {
       "resource": "LED",
       "index": 2,
+      "gpio": "PC15",
       "pin": "4",
       "expected": "LED_RED_K",
       "actual": "LED_RED_K",
@@ -142,6 +161,7 @@
     {
       "resource": "SPI_SCK",
       "index": 1,
+      "gpio": "PA5",
       "pin": "21",
       "expected": "IMU_SCK",
       "actual": "IMU_SCK",
@@ -150,6 +170,7 @@
     {
       "resource": "SPI_SCK",
       "index": 2,
+      "gpio": "PB13",
       "pin": "34",
       "expected": "FLASH_SCK",
       "actual": "FLASH_SCK",
@@ -158,6 +179,7 @@
     {
       "resource": "SPI_MISO",
       "index": 1,
+      "gpio": "PA6",
       "pin": "22",
       "expected": "IMU_MISO",
       "actual": "IMU_MISO",
@@ -166,6 +188,7 @@
     {
       "resource": "SPI_MISO",
       "index": 2,
+      "gpio": "PB14",
       "pin": "35",
       "expected": "FLASH_MISO",
       "actual": "FLASH_MISO",
@@ -174,6 +197,7 @@
     {
       "resource": "SPI_MOSI",
       "index": 1,
+      "gpio": "PA7",
       "pin": "23",
       "expected": "IMU_MOSI",
       "actual": "IMU_MOSI",
@@ -182,6 +206,7 @@
     {
       "resource": "SPI_MOSI",
       "index": 2,
+      "gpio": "PB15",
       "pin": "36",
       "expected": "FLASH_MOSI",
       "actual": "FLASH_MOSI",
@@ -190,6 +215,7 @@
     {
       "resource": "ADC_BEC",
       "index": 1,
+      "gpio": "PC1",
       "pin": "9",
       "expected": "ADC_BEC",
       "actual": "ADC_BEC",
@@ -198,6 +224,7 @@
     {
       "resource": "ADC_BUS",
       "index": 1,
+      "gpio": "PC2",
       "pin": "10",
       "expected": "ADC_BUS",
       "actual": "ADC_BUS",
@@ -206,6 +233,7 @@
     {
       "resource": "FLASH_CS",
       "index": 1,
+      "gpio": "PB12",
       "pin": "33",
       "expected": "FLASH_CS",
       "actual": "FLASH_CS",
@@ -214,6 +242,7 @@
     {
       "resource": "GYRO_EXTI",
       "index": 1,
+      "gpio": "PA15",
       "pin": "50",
       "expected": "IMU_INT",
       "actual": "IMU_INT",
@@ -222,6 +251,7 @@
     {
       "resource": "GYRO_CS",
       "index": 1,
+      "gpio": "PA4",
       "pin": "20",
       "expected": "IMU_CS",
       "actual": "IMU_CS",
@@ -230,6 +260,7 @@
     {
       "resource": "FREQ",
       "index": 1,
+      "gpio": "PA2",
       "pin": "16",
       "expected": "RPM_MCU",
       "actual": "RPM_MCU",
