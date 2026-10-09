@@ -1,0 +1,22 @@
+{
+  "schema": "critical-native-gate-controls/v1",
+  "source_board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84",
+  "validator_sha256": "2fa469e084504d806e5782d932449a1769f8b0d37c3b91f8f426543611857c87",
+  "positive": {
+    "exit_code": 0,
+    "complete_nets": 16,
+    "missing_critical_ground_returns": 0,
+    "process_faults": 0
+  },
+  "negative": {
+    "board_sha256": "f6c6a476d83e39b10cf8bb34f4ce4d7fefc05373ae211a2fd26171e3c2e5953c",
+    "mutation": "Remove all HSE_IN tracks/vias from an isolated copy; preserve component poses and nets",
+    "removed_items": 3,
+    "exit_code": 1,
+    "incomplete_nets": [
+      "HSE_IN"
+    ],
+    "process_faults": 0
+  },
+  "scope": "Checks return-code gating for lost critical connectivity independently of geometric process faults. This is a validator control, not current-source qualification."
+}

@@ -1,0 +1,20 @@
+{
+  "failed_attempts": [
+    {
+      "exit_code": 139,
+      "diagnostic": "./common/project.cpp(168): assert \"m_project_name.IsAbsolute()\" failed in setProjectFullName().",
+      "stage": "Relative project path; no destination PCB saved"
+    },
+    {
+      "exit_code": 139,
+      "diagnostic_emitted": false,
+      "stage": "Absolute project path but destination PCB not yet created/loaded"
+    },
+    {
+      "kind": "invalid_isolated_signal_fixture",
+      "observation": "KiCad reassigned a via lacking a signal trace from FLASH_CS to GND; Python and CLI refills correctly kept existing GND copper. This was not a zone-filler failure."
+    }
+  ],
+  "resolution": "Created a matching destination PCB/project pair before load, attached a signal trace, and checked intended nets before/after refill and loaded native output.",
+  "source_unchanged": true
+}

@@ -1,15 +1,15 @@
 {
   "status": "WIP \u2014 PARTIALLY ROUTED \u2014 NOT FOR MANUFACTURE",
-  "board_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86",
+  "board_sha256": "3807667ec5b55b807d0d12227854de31d8cf989c522d5ba6950eee05f46bce84",
   "source_commit": "8419807bb87479b650736f70be52ec61e246740c",
   "source_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
   "component_count": 156,
   "target_pose_count": 156,
-  "changed_poses_from_published": 108,
+  "changed_poses_from_published": 109,
   "copper_layers": 6,
-  "unfinished_connections": 158,
+  "unfinished_connections": 123,
   "drc_errors": 0,
-  "drc_warnings": 17,
+  "drc_warnings": 9,
   "erc_violations": 0,
   "native_schematic_parity_passed": true,
   "firmware_pin_checks_passed": 29,
@@ -33,6 +33,6 @@
   "supplemental_protection_total": 7,
   "critical_nets_connected": 16,
   "ground_pad_groups": 1,
-  "checkpoint_progress": "Critical clock/IMU/VCAP/USB routes and all ground pad connections added. Loaded power trunks and ordinary protected signals remain incomplete.",
-  "warning_scope": "16 dangling vias and one dangling track at unfinished route interfaces."
+  "checkpoint_progress": "Added explicit input, protected supply and converter support routes while retaining all 16 critical nets and the ground pad network. CORE distribution, three power support connections and ordinary protected signals remain unfinished. C52 was rotated 180 degrees in place to restore its local protected-input loop.",
+  "warning_scope": "See placement-drc.json for exact unfinished-interface warnings."
 }
