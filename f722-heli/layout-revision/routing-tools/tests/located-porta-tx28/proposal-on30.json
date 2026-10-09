@@ -1,0 +1,531 @@
+{
+  "source_identity": {
+    "f722-heli": {
+      "path": "candidate30/f722-heli.kicad_pcb",
+      "sha256": "a38795cf06c9b8e531b1253abbf34ef4029b80d930ed8c982aff9f2b5076f1d6"
+    },
+    "f722-heli.native": {
+      "path": "candidate30/f722-heli.native.json",
+      "sha256": "90ed70b57632e78acd09b72044bf85b5c3aa5ee17b004557b8a9ce7543c103f0"
+    },
+    "model": {
+      "path": "model-candidate28-ready/model.json",
+      "sha256": "7cf373fbb152f87f2642d711b0d812226b62b12cb69f83f514c55e6f9d8a9e12"
+    },
+    "f722-heli.logical-route-map": {
+      "path": "candidate30/f722-heli.logical-route-map.json",
+      "sha256": "87022f2b004fa103979192250eee82ef02e0e097ca9f13c427a5b89217ad8ae6"
+    },
+    "screen": {
+      "path": "prepare_located_branch_continuation.py",
+      "sha256": "a69d058e5cbd8dc28045df780b3fae137ac1e62b0f1a3d55692576aed7c89824"
+    },
+    "located_receipt": {
+      "path": "tests/located-porta-tx28/located-receipt.json",
+      "sha256": "bd4da2c6f2e81fdce6450b7270f7073f405c8ca70a479b2b37c6e0771766e1d9"
+    },
+    "engine_log": {
+      "path": "tests/located-porta-tx28/captured-engine.log",
+      "sha256": "ab87bf19e43b88c17c15b009756bcf5231ddc5df8e19fb873e7e44e07bfa4253"
+    },
+    "origin_board": {
+      "path": "candidate28/f722-heli.kicad_pcb",
+      "sha256": "3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2"
+    },
+    "origin_native": {
+      "path": "candidate28/f722-heli.native.json",
+      "sha256": "eedf07f43cde53e256e997ced85565773f067f1dc787ad7acf31aa1848fc90e3"
+    },
+    "origin_logical_map": {
+      "path": "candidate28/f722-heli.logical-route-map.json",
+      "sha256": "699172fcb74033026cc19b7d0c93b9fe705cda8c113a9ae77a8ac9d92b4c833f"
+    }
+  },
+  "board_sha256": "a38795cf06c9b8e531b1253abbf34ef4029b80d930ed8c982aff9f2b5076f1d6",
+  "source_unchanged": true,
+  "proposal_mutual_conflicts": [],
+  "proposals": [
+    {
+      "net": "PORT_A_TX_EXT",
+      "logical_net": "PORT_A_TX_EXT::P0",
+      "layer": "F.Cu",
+      "terminals": [
+        "J9.2",
+        "U14.9"
+      ],
+      "terminal_uuids": [
+        "b8685110-3283-47ac-bc78-dcdb199b5ba6",
+        "46bd7920-e16c-43d4-b92d-a06aa0f0c338"
+      ],
+      "different_native_components_before": true,
+      "points_mm": [
+        [
+          17.375,
+          5.5
+        ],
+        [
+          18.25506,
+          7.98136
+        ],
+        [
+          19.15924,
+          7.07718
+        ],
+        [
+          19.21854,
+          6.925
+        ],
+        [
+          22.85807,
+          6.9811
+        ],
+        [
+          23.0,
+          7.4825
+        ]
+      ],
+      "width_mm": 0.127,
+      "vias": [],
+      "length_mm": 8.235895638292067,
+      "minimum_extra_clearance_mm": 0.004959163562367863,
+      "pad_entry": [
+        {
+          "pad": "J9.2",
+          "uuid": "b8685110-3283-47ac-bc78-dcdb199b5ba6",
+          "point_mm": [
+            17.375,
+            5.5
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.23650000000000065
+        },
+        {
+          "pad": "U14.9",
+          "uuid": "46bd7920-e16c-43d4-b92d-a06aa0f0c338",
+          "point_mm": [
+            23.0,
+            7.4825
+          ],
+          "full_round_cap_inside_native_pad": true,
+          "extra_containment_mm": 0.03650000000000142
+        }
+      ],
+      "logical_role": {
+        "kind": "protected_chain",
+        "sequence": [
+          "J9.2",
+          "U14.9",
+          "U14.2",
+          "R31.1"
+        ],
+        "branches": [
+          {
+            "logical_net": "PORT_A_TX_EXT::P0",
+            "terminals": [
+              "J9.2",
+              "U14.9"
+            ]
+          },
+          {
+            "logical_net": "PORT_A_TX_EXT::P1",
+            "terminals": [
+              "U14.9",
+              "U14.2"
+            ]
+          },
+          {
+            "logical_net": "PORT_A_TX_EXT::P2",
+            "terminals": [
+              "U14.2",
+              "R31.1"
+            ]
+          }
+        ]
+      },
+      "native_drc_performed": false,
+      "acceptance_claimed": false
+    }
+  ],
+  "engine_provenance": {
+    "status": "Actual engine located path; insertion failed; explicit native alternative only.",
+    "raw_points": [
+      [
+        17.57936,
+        6.25436
+      ],
+      [
+        17.66008,
+        6.25436
+      ],
+      [
+        17.69224,
+        6.28652
+      ],
+      [
+        17.69249,
+        6.28652
+      ],
+      [
+        17.69267,
+        6.28634
+      ],
+      [
+        17.69267,
+        6.41352
+      ],
+      [
+        17.69289,
+        6.41352
+      ],
+      [
+        17.89135,
+        6.61198
+      ],
+      [
+        17.89135,
+        6.73916
+      ],
+      [
+        17.9388,
+        6.78661
+      ],
+      [
+        17.9388,
+        7.76459
+      ],
+      [
+        17.97502,
+        7.80081
+      ],
+      [
+        17.97503,
+        7.80081
+      ],
+      [
+        18.06778,
+        7.80081
+      ],
+      [
+        18.1584,
+        7.89143
+      ],
+      [
+        18.24833,
+        7.98136
+      ],
+      [
+        18.25506,
+        7.98136
+      ],
+      [
+        19.15924,
+        7.07718
+      ],
+      [
+        19.15924,
+        6.9843
+      ],
+      [
+        19.21854,
+        6.925
+      ],
+      [
+        19.78184,
+        6.925
+      ],
+      [
+        20.10541,
+        6.60143
+      ],
+      [
+        20.48236,
+        6.60143
+      ],
+      [
+        20.53916,
+        6.65823
+      ],
+      [
+        21.3474,
+        6.65823
+      ],
+      [
+        21.69847,
+        6.65823
+      ],
+      [
+        21.90863,
+        6.44807
+      ],
+      [
+        21.90864,
+        6.44807
+      ],
+      [
+        22.02691,
+        6.3298
+      ],
+      [
+        22.11684,
+        6.23987
+      ],
+      [
+        22.85807,
+        6.9811
+      ],
+      [
+        22.85807,
+        7.16095
+      ],
+      [
+        22.948,
+        7.07102
+      ],
+      [
+        22.96354,
+        7.08656
+      ],
+      [
+        22.96354,
+        7.26354
+      ]
+    ],
+    "endpoint_completion": "Pad centers with full-width containment reserve",
+    "simplification": "Coordinate-preserving line of sight, checked against actual native copper and permitted shared-pad regions",
+    "origin_source": {
+      "board_path": "candidate28/f722-heli.kicad_pcb",
+      "board_sha256": "3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2",
+      "native_path": "candidate28/f722-heli.native.json",
+      "native_sha256": "eedf07f43cde53e256e997ced85565773f067f1dc787ad7acf31aa1848fc90e3",
+      "logical_map_path": "candidate28/f722-heli.logical-route-map.json",
+      "logical_map_sha256": "699172fcb74033026cc19b7d0c93b9fe705cda8c113a9ae77a8ac9d92b4c833f"
+    },
+    "additional_native_copper_and_drills_rechecked": true,
+    "source_model_is_topology_template_only": true
+  },
+  "shared_pad_obstacle_cuts": [
+    {
+      "uuid": "9f826ebf-8e2b-485e-a412-abb3d6d5c389",
+      "logical_net": "PORT_A_TX_EXT::P1",
+      "shared_pad_keys": [
+        "U14.9"
+      ]
+    }
+  ],
+  "raw_checks": [
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "bba10168-20e4-49d3-b3ee-20be39deafbb",
+      "key": null,
+      "net": "GND",
+      "gap_mm": 0.13195916356236786,
+      "required_mm": 0.127,
+      "extra_mm": 0.004959163562367863
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "8c43cebe-be4f-4fad-a3cf-6c91c9e1c0c1",
+      "key": "Q2.3",
+      "net": "SBUS_HV",
+      "gap_mm": 0.13196835595052145,
+      "required_mm": 0.127,
+      "extra_mm": 0.004968355950521447
+    },
+    {
+      "kind": "drill",
+      "uuid": "bba10168-20e4-49d3-b3ee-20be39deafbb",
+      "gap_mm": 0.2569593790201799,
+      "required_mm": 0.2,
+      "extra_mm": 0.05695937902017989
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "729841e0-dde6-438a-ab26-e0d7166ed62d",
+      "key": "J9.4",
+      "net": "GND",
+      "gap_mm": 0.195903637222905,
+      "required_mm": 0.127,
+      "extra_mm": 0.06890363722290499
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "6a4eb8e5-5d6e-4fe4-8602-db408c4647e3",
+      "key": "U14.10",
+      "net": "PORT_A_RX_EXT",
+      "gap_mm": 0.20717936802423842,
+      "required_mm": 0.127,
+      "extra_mm": 0.08017936802423842
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "932acee8-5a27-4e9e-a6f0-fe9aa6068e82",
+      "key": "U14.8",
+      "net": "GND",
+      "gap_mm": 0.23700000016639045,
+      "required_mm": 0.127,
+      "extra_mm": 0.11000000016639044
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "c6508226-0292-4f3a-952b-8199e2920c13",
+      "key": null,
+      "net": "PORT_A_RX_EXT",
+      "gap_mm": 0.35424811798977723,
+      "required_mm": 0.127,
+      "extra_mm": 0.22724811798977723
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "f2c03228-c15a-4ba4-b782-92443bbc8b09",
+      "key": null,
+      "net": "NRST",
+      "gap_mm": 0.41806081888895374,
+      "required_mm": 0.127,
+      "extra_mm": 0.29106081888895374
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "fea0c04a-4f76-4951-9931-f88a55e8cb16",
+      "key": "U14.3",
+      "net": "GND",
+      "gap_mm": 0.442510222325597,
+      "required_mm": 0.127,
+      "extra_mm": 0.315510222325597
+    },
+    {
+      "kind": "drill",
+      "uuid": "f2c03228-c15a-4ba4-b782-92443bbc8b09",
+      "gap_mm": 0.5430688110276564,
+      "required_mm": 0.2,
+      "extra_mm": 0.34306881102765635
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "80d0cc7b-537d-4ef7-9e94-865d56e93f27",
+      "key": "U14.2",
+      "net": "PORT_A_TX_EXT",
+      "gap_mm": 0.4890000000000001,
+      "required_mm": 0.127,
+      "extra_mm": 0.3620000000000001
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "00d45fb6-34ed-404d-a694-dc8de73a4ca6",
+      "key": "J9.3",
+      "net": "+5V_PERIPH",
+      "gap_mm": 0.5009027862378074,
+      "required_mm": 0.127,
+      "extra_mm": 0.37390278623780737
+    }
+  ],
+  "simplified_checks": [
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "bba10168-20e4-49d3-b3ee-20be39deafbb",
+      "key": null,
+      "net": "GND",
+      "gap_mm": 0.13195916356236786,
+      "required_mm": 0.127,
+      "extra_mm": 0.004959163562367863
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "8c43cebe-be4f-4fad-a3cf-6c91c9e1c0c1",
+      "key": "Q2.3",
+      "net": "SBUS_HV",
+      "gap_mm": 0.13196835595052145,
+      "required_mm": 0.127,
+      "extra_mm": 0.004968355950521447
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "6a4eb8e5-5d6e-4fe4-8602-db408c4647e3",
+      "key": "U14.10",
+      "net": "PORT_A_RX_EXT",
+      "gap_mm": 0.16010876960491938,
+      "required_mm": 0.127,
+      "extra_mm": 0.033108769604919375
+    },
+    {
+      "kind": "drill",
+      "uuid": "bba10168-20e4-49d3-b3ee-20be39deafbb",
+      "gap_mm": 0.2569593790201799,
+      "required_mm": 0.2,
+      "extra_mm": 0.05695937902017989
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "932acee8-5a27-4e9e-a6f0-fe9aa6068e82",
+      "key": "U14.8",
+      "net": "GND",
+      "gap_mm": 0.23700000016639045,
+      "required_mm": 0.127,
+      "extra_mm": 0.11000000016639044
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "c6508226-0292-4f3a-952b-8199e2920c13",
+      "key": null,
+      "net": "PORT_A_RX_EXT",
+      "gap_mm": 0.35409496634059984,
+      "required_mm": 0.127,
+      "extra_mm": 0.22709496634059984
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "f2c03228-c15a-4ba4-b782-92443bbc8b09",
+      "key": null,
+      "net": "NRST",
+      "gap_mm": 0.3912063874163425,
+      "required_mm": 0.127,
+      "extra_mm": 0.2642063874163425
+    },
+    {
+      "kind": "other_branch_outside_shared_pad",
+      "uuid": "9f826ebf-8e2b-485e-a412-abb3d6d5c389",
+      "gap_mm": 0.40242531189532166,
+      "required_mm": 0.127,
+      "extra_mm": 0.27542531189532166
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "fea0c04a-4f76-4951-9931-f88a55e8cb16",
+      "key": "U14.3",
+      "net": "GND",
+      "gap_mm": 0.442510222325597,
+      "required_mm": 0.127,
+      "extra_mm": 0.315510222325597
+    },
+    {
+      "kind": "drill",
+      "uuid": "f2c03228-c15a-4ba4-b782-92443bbc8b09",
+      "gap_mm": 0.5162084892203109,
+      "required_mm": 0.2,
+      "extra_mm": 0.3162084892203109
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "80d0cc7b-537d-4ef7-9e94-865d56e93f27",
+      "key": "U14.2",
+      "net": "PORT_A_TX_EXT",
+      "gap_mm": 0.4890000000000001,
+      "required_mm": 0.127,
+      "extra_mm": 0.3620000000000001
+    },
+    {
+      "kind": "foreign_or_other_branch_copper",
+      "uuid": "729841e0-dde6-438a-ab26-e0d7166ed62d",
+      "key": "J9.4",
+      "net": "GND",
+      "gap_mm": 0.5192139837544893,
+      "required_mm": 0.127,
+      "extra_mm": 0.39221398375448935
+    }
+  ],
+  "mandatory_native_gates": [
+    "Native DRC/process/strict parity and intended logical ownership",
+    "Actual shared-pad cut with outside-pad clearance",
+    "Source geometry and exact power/fill/drill applicability",
+    "Owner adoption; no engine-success or numerical-power claim"
+  ]
+}

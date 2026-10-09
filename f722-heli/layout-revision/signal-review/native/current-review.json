@@ -1,6 +1,6 @@
 {
   "schema": "f722-native-signal-review/v1",
-  "board_sha256": "3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2",
+  "board_sha256": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
   "project_sha256": "b6f208f1659aa43b6e96e6e49a0eb396654cb426365a557b5d78ddf74423072c",
   "native_version": "10.0.6",
   "native_build": "10.0.6+dfsg-1",
@@ -10,8 +10,8 @@
     "export_native_copper.py": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a",
     "exact_native_contours.py": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922",
     "check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
-    "native-geometry.json": "eedf07f43cde53e256e997ced85565773f067f1dc787ad7acf31aa1848fc90e3",
-    "native-signals.json": "9e60d51c3c145e5ab9f52faa8a3d9a2ce3bdca15009132ef3c817b65d84c5a87",
+    "native-geometry.json": "b30079f24c3a7fad2f467e07d7eacfe2691bc88eb28117eb838208dfb060a821",
+    "native-signals.json": "5cfaf0bd69d5c07fa8df565ae93f6ac4f0cac6eb0d26d78232994dd4217ac7b6",
     "final-native-i2c-requirements.json": "a377008c847db3791993c3f0447b977952e1a4f57c8b2535c4f06fb5ffe64ebb",
     "stock-i2c-calculations.json": "ff387a816c3b043212227001c501a49d4791e0bcce3e98365a21128e5785f99f",
     "model_profile": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184"
@@ -2225,12 +2225,12 @@
             {
               "layer": "In1.Cu",
               "GND_centerline_missing_mm": 0.35249999999999915,
-              "GND_copper_missing_mm2": 0.05489780686238058,
+              "GND_copper_missing_mm2": 0.05489780617852112,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
                   "centerline_overlap_mm": 0.29749999999999943,
-                  "copper_overlap_mm2": 0.04768504158161952
+                  "copper_overlap_mm2": 0.04768504226547897
                 }
               ]
             }
@@ -5464,20 +5464,20 @@
               "edge_gap_mm": 0.2614909999999995
             },
             {
+              "uuid": "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e",
+              "kind": "via",
+              "net": "SERVO2_MCU",
+              "label": null,
+              "layer": "F.Cu",
+              "edge_gap_mm": 0.26235489249188465
+            },
+            {
               "uuid": "3300d8dd-3c68-4596-8791-c63fa4e94d22",
               "kind": "pad",
               "net": "+3V3_IMU",
               "label": "C13.1",
               "layer": "F.Cu",
               "edge_gap_mm": 0.39899099999999876
-            },
-            {
-              "uuid": "8045bcc3-ba41-4482-816d-cbaab30a0dcf",
-              "kind": "track",
-              "net": "+3V3_IMU",
-              "label": null,
-              "layer": "F.Cu",
-              "edge_gap_mm": 0.4152414368191987
             }
           ]
         },
@@ -5900,12 +5900,12 @@
             {
               "layer": "In1.Cu",
               "GND_centerline_missing_mm": 0.35356133913909876,
-              "GND_copper_missing_mm2": 0.05097505482058391,
+              "GND_copper_missing_mm2": 0.050975060995001195,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
                   "centerline_overlap_mm": 0.09713257029389842,
-                  "copper_overlap_mm2": 0.018932003753416502
+                  "copper_overlap_mm2": 0.018931997578998893
                 }
               ]
             }
@@ -7577,7 +7577,7 @@
             39.7025,
             15.3525
           ],
-          "area_mm2": 2.1384571172049984,
+          "area_mm2": 2.1384571123899994,
           "contained_vias": [
             {
               "uuid": "044eb12e-d160-48e5-a4d9-d0f94a94f9f6",
@@ -7799,7 +7799,7 @@
             39.7025,
             15.3525
           ],
-          "area_mm2": 2.1384571172049984,
+          "area_mm2": 2.1384571123899994,
           "contained_vias": [
             {
               "uuid": "044eb12e-d160-48e5-a4d9-d0f94a94f9f6",
@@ -8406,7 +8406,7 @@
   },
   "existing_critical_check": {
     "file": "owner-critical.json",
-    "sha256": "121b0058c23dc83ccea4528991e3f83e9f3e275e57dd0db3b18da0a2d575fcd9",
+    "sha256": "4de447c61e29b245eec27e38ee89b3750c8e72ae545885cd2c0b3e9d99bd73af",
     "exact_board_match": true,
     "reuse_status": "source-matched subset evidence",
     "fullnet_connectivity": [

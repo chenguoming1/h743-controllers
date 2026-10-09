@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "passed": true,
+  "source_hashes": {
+    "ordinary-routing/candidate30/f722-heli.kicad_pcb": "a38795cf06c9b8e531b1253abbf34ef4029b80d930ed8c982aff9f2b5076f1d6",
+    "ordinary-routing/candidate30/f722-heli.native.json": "90ed70b57632e78acd09b72044bf85b5c3aa5ee17b004557b8a9ce7543c103f0",
+    "ordinary-routing/candidate31/f722-heli.kicad_pcb": "a650e7df94cea3a171cf7dc16d0b951f6f8b069c2bb587100310ef22ffe40c28",
+    "ordinary-routing/candidate31/f722-heli.native.json": "859e3f4fb017e2476c53a76bee1ec9bd8ef764b1b8016132ac66e235805ea4e4"
+  },
+  "source_board_sha256": "a38795cf06c9b8e531b1253abbf34ef4029b80d930ed8c982aff9f2b5076f1d6",
+  "candidate_board_sha256": "a650e7df94cea3a171cf7dc16d0b951f6f8b069c2bb587100310ef22ffe40c28",
+  "audit_script_sha256": "6243af36ea083108ac96a8c04dfd5d76d5e4c59d6f7e8777af999462819965c8",
+  "method": "SMD checks follow endpoint_witness: native ERROR_INSIDE interior and complete transverse endpoint section. Vias are evaluated separately on actual annulus: conservative native outer polygon contracted by export error, minus native ERROR_OUTSIDE drill void. A finite full-width strip on each contacted layer proves annular entry; a point in the drill or endcap-only sliver does not. Buried redundant spurs are not counted as contact evidence.",
+  "source_object_count": 1721,
+  "candidate_object_count": 1726,
+  "existing_object_records_unchanged": true,
+  "changed_existing_object_uuids": [],
+  "removed_object_uuids": [],
+  "added_objects": [
+    {
+      "uuid": "03842ce5-fa9c-467f-9f23-e64fca150879",
+      "kind": "track",
+      "net": "PORT_A_TX_EXT"
+    },
+    {
+      "uuid": "1476981a-299d-4a1c-9fe9-831dba983348",
+      "kind": "track",
+      "net": "PORT_A_TX_EXT"
+    },
+    {
+      "uuid": "3988b63f-673f-481b-865c-1902ca109821",
+      "kind": "track",
+      "net": "PORT_A_TX_EXT"
+    },
+    {
+      "uuid": "6516f232-b917-40dd-9151-330b9ff36194",
+      "kind": "track",
+      "net": "PORT_A_TX_EXT"
+    },
+    {
+      "uuid": "6967dffc-563a-4147-9275-f44d0fba38e2",
+      "kind": "track",
+      "net": "PORT_A_TX_EXT"
+    }
+  ],
+  "per_net": {
+    "PORT_A_TX_EXT": {
+      "added_tracks": 5,
+      "added_vias": 0,
+      "total_native_tracks": 6,
+      "new_pad_termination_count": 1,
+      "scope": "Added-route endpoints only; not a full-net completion claim"
+    }
+  },
+  "pad_terminations": [
+    {
+      "net": "PORT_A_TX_EXT",
+      "track_uuid": "1476981a-299d-4a1c-9fe9-831dba983348",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy_mm": [
+        17.375,
+        5.5
+      ],
+      "other_end_mm": [
+        18.25506,
+        7.98136
+      ],
+      "pad": "J9.2",
+      "pad_uuid": "b8685110-3283-47ac-bc78-dcdb199b5ba6",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.30000000000000066,
+      "actual_copper_section_mm": [
+        [
+          17.434847373275442,
+          5.478774027418518
+        ],
+        [
+          17.315152626724558,
+          5.521225972581482
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.12699999999999903,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.10996213286330511,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.7184419106577722,
+      "full_width_transverse_entry_wkt": "LINESTRING (17.375 5.5, 17.615151626724558 6.177115924470204)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    }
+  ],
+  "via_endpoints_classified_separately": [],
+  "via_annular_contacts": [],
+  "redundant_via_spurs": [],
+  "incidental_via_side_overlaps_not_used_as_entry_evidence": [],
+  "summary": {
+    "pad_terminations_verified": 1,
+    "minimum_positive_pad_depth_mm": 0.30000000000000066,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.7184419106577722,
+    "full_width_actual_annular_strip_count": 0,
+    "minimum_full_width_annular_strip_length_mm": null,
+    "minimum_annular_section_boundary_reserve_mm": null,
+    "redundant_via_spurs_retained_as_non_evidence": 0,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "pad_failures": [],
+  "via_failures": [],
+  "unresolved_contacts": [],
+  "source_recheck_unchanged": true,
+  "limits": [
+    "This checks only newly added route endpoints and contacts, not full routing completion.",
+    "Saved GND fills may change in the parent refill; fixed native object UUIDs and records are compared here.",
+    "Nominal geometry only; native DRC/process/connectivity remain separate owner gates."
+  ]
+}

@@ -1,0 +1,98 @@
+--- a/src/app/freerouting/autoroute/InsertFoundConnectionAlgo.java
++++ b/src/app/freerouting/autoroute/InsertFoundConnectionAlgo.java
+@@ -74,6 +74,87 @@
+   }
+ 
+ 
++  /** Snapshot only: a located path is neither inserted copper nor a native validation result. */
++  private Object diagnosticEndpoint(Item item, int layer, Point point)
++  {
++    java.util.Map<String,Object> endpoint = new java.util.LinkedHashMap<>();
++    endpoint.put("layer_index",layer);
++    endpoint.put("layer",board.layer_structure.arr[layer].name);
++    endpoint.put("point_mm",diagnosticPoint(point));
++    if (item != null)
++    {
++      endpoint.put("engine_id",item.get_id_no());
++      endpoint.put("class",item.getClass().getName());
++      endpoint.put("fixed",item.get_fixed_state().name());
++      if (item instanceof ObstacleArea area) endpoint.put("label",area.name);
++      if (item instanceof NativePadContactArea contact)
++      {
++        endpoint.put("native_uuid",contact.nativeId);
++        endpoint.put("native_group",contact.nativeGroup);
++        endpoint.put("contact_label",contact.name);
++      }
++    }
++    return endpoint;
++  }
++
++  private Object diagnosticViaTransition(int before_trace_index, Point point, int from_layer, int to_layer)
++  {
++    java.util.Map<String,Object> transition = new java.util.LinkedHashMap<>();
++    transition.put("before_trace_index",before_trace_index);
++    transition.put("point_mm",diagnosticPoint(point));
++    transition.put("from_layer_index",from_layer);
++    transition.put("from_layer",board.layer_structure.arr[from_layer].name);
++    transition.put("to_layer_index",to_layer);
++    transition.put("to_layer",board.layer_structure.arr[to_layer].name);
++    return transition;
++  }
++
++  /** Dump the whole target-to-start connection before any forced insertion can refuse. */
++  private void diagnosticLocatedConnection(LocateFoundConnectionAlgo connection)
++  {
++    if (!"1".equals(System.getenv("F722_INSERT_DIAGNOSTICS"))) return;
++    java.util.Map<String,Object> record = new java.util.LinkedHashMap<>();
++    record.put("stage","located_connection");
++    record.put("status","located_only");
++    record.put("net",board.rules.nets.get(ctrl.net_no).name);
++    record.put("net_no",ctrl.net_no);
++    record.put("traversal","target_to_start");
++    java.util.List<Object> traces = new java.util.ArrayList<>();
++    java.util.List<Object> transitions = new java.util.ArrayList<>();
++    Point target_point = null;
++    Point start_point = null;
++    int previous_layer = connection.target_layer;
++    int trace_index = 0;
++    for (LocateFoundConnectionAlgoAnyAngle.ResultItem trace : connection.connection_items)
++    {
++      Point first = trace.corners.length == 0 ? null : trace.corners[0];
++      Point last = trace.corners.length == 0 ? null : trace.corners[trace.corners.length - 1];
++      if (trace_index == 0) target_point = first;
++      java.util.Map<String,Object> polyline = new java.util.LinkedHashMap<>();
++      polyline.put("trace_index",trace_index);
++      polyline.put("layer_index",trace.layer);
++      polyline.put("layer",board.layer_structure.arr[trace.layer].name);
++      polyline.put("half_width_mm",ctrl.trace_half_width[trace.layer] / 100000.0);
++      java.util.List<Object> corners = new java.util.ArrayList<>();
++      for (Point point : trace.corners) corners.add(diagnosticPoint(point));
++      polyline.put("requested_corners_mm",corners);
++      traces.add(polyline);
++      if (previous_layer != trace.layer)
++        transitions.add(diagnosticViaTransition(trace_index,first,previous_layer,trace.layer));
++      previous_layer = trace.layer;
++      start_point = last;
++      ++trace_index;
++    }
++    if (previous_layer != connection.start_layer)
++      transitions.add(diagnosticViaTransition(trace_index,start_point,previous_layer,connection.start_layer));
++    record.put("target_endpoint",diagnosticEndpoint(connection.target_item,connection.target_layer,target_point));
++    record.put("start_endpoint",diagnosticEndpoint(connection.start_item,connection.start_layer,start_point));
++    record.put("traces",traces);
++    record.put("via_transitions",transitions);
++    System.out.println("INSERT_DIAGNOSTIC " + new com.google.gson.Gson().toJson(record));
++    System.out.flush();
++  }
++
+   /**
+    * Creates a new instance of InsertFoundConnectionAlgo
+    */
+@@ -95,6 +176,7 @@
+     }
+     int curr_layer = p_connection.target_layer;
+     InsertFoundConnectionAlgo new_instance = new InsertFoundConnectionAlgo(p_board, p_ctrl);
++    new_instance.diagnosticLocatedConnection(p_connection);
+     for (LocateFoundConnectionAlgoAnyAngle.ResultItem curr_new_item : p_connection.connection_items)
+     {
+       new_instance.diagnostic("located_trace",curr_new_item.layer,curr_new_item.corners,null);

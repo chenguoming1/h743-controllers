@@ -1,3 +1,74 @@
+# Reproduce V10 checkpoint49 provenance
+
+Apply against the complete immutable V9 source tree, not just its delta ZIP. Use the separately supplied V10 ZIP digest. All base/payload/result hashes and safe paths are checked before any output is created. Read the apply helper from `changed/tools/apply_source_delta_v10.py` in the archive first if needed.
+
+```sh
+python -B tools/apply_source_delta_v10.py --base /path/to/immutable-v9 --delta /path/to/routing-source-v10-delta.zip --zip-sha256 VERIFIED_V10_ZIP_SHA256 --out /path/to/new-v10
+python -B tests/verify_v10_evidence.py --base-project /path/to/pinned-candidate22 --out /tmp/v10-evidence.json
+python -B tests/verify_v10_delta.py --base /path/to/immutable-v9 --delta /path/to/routing-source-v10-delta.zip --zip-sha256 VERIFIED_V10_ZIP_SHA256 --base-project /path/to/pinned-candidate22 --out /tmp/v10-portable.json
+```
+
+Portable checks require Python's standard library and exactly the 62 paired candidate22 project files pinned in `sessions/recovery57/paired-files.json`. They need no historical workspace, native exporter, KiCad, JVM or field solver. `--historical-workspace /path/to/ordinary-routing` optionally checks original evidence bytes. Keep outputs outside the sealed source tree.
+
+## Exact paired recovery
+
+```sh
+python -B sessions/recovery57/rebuild_historical_source.py project --base-project /path/to/pinned-candidate22 --source candidate26 --out /tmp/recovered26
+python -B sessions/recovery55/rebuild_historical_source.py project --base-project /tmp/recovered26 --source candidate28 --out /tmp/recovered28
+python -B sessions/recovery49/rebuild_historical_source.py project --base-project /tmp/recovered28 --source candidate33 --out /tmp/recovered33
+```
+
+The final command also supports29,30,31 and32; each destination must be new. Candidate29 is refused geometry, never an adopted output. Byte-copy recovery does no geometry calculations.
+
+## Session and construction recipes
+
+The five packets are `raw53` (source28→refused29), `native52` (source30→31), `engine50` (source31→32), `servo2-origin-count2` (unadopted historical source31 intermediate), and `coordinated49` (source32→33). Each has exact SES, route-complete report, original model/report identities and a sufficient importer contract. Reports omit only guard-area arrays. Use the exact recovered source named in `source-identity.json`:
+
+```sh
+python -B tests/verify_session_packet.py --packet sessions/coordinated49 --out /tmp/packet49.json
+python -B prepare_session_replay.py --packet sessions/coordinated49 --source-board /tmp/recovered32/f722-heli.kicad_pcb --out /tmp/replay49-inputs
+```
+
+The importer is exact `import_session_v8.py`; native replay requires a full paired writable project and KiCad Python, then fresh validation. Candidate31 alone uses `--preserve-unaffected-fills`. Candidate33 removes six explicitly allowed source tracks and changes one logical via ownership; never use an add-only acceptance assumption. Such native replay/refill is not part of portable packaging verification.
+
+Candidate30 uses exact `repair_new_route_tails.py` with `--accepted-source` pointing to recovered28 plus its native export, `--raw-source` to refused29 plus its native export/map, `--recipe checks/candidate30-tail-repair-recipe.json`, and a fresh `--out` directory. The two endpoint trims must be collinear subsets, the third spur removed, and all adopted source copper retained. Recheck native gates afterward; the preserved historical33 verifier also checks the actual29→30 parsed-record changes without KiCad.
+
+`construct_servo2_joint.py` is the unchanged full constructor. `tests/servo2-joint32/construction.json` is its exact historical recipe. The verifier contains a complete portable reproduction using recovered32, the included32 logical map, `tests/servo2-joint32/inputs/source-native-projection.json`, `role-projection.json`, and `sessions/servo2-origin-count2/engine-report.json`. It places these at the constructor's named inputs in a new temporary root and executes the unchanged helper. These are sufficient input projections, not full native exports or fresh planning models. The resulting SES must match historical33 byte-for-byte; generated evidence carries its own model/native hashes and must not be relabelled as old native evidence.
+
+`servo2-local-review/` preserves the bounded planning review and helper sources. Full local-screen regeneration requires original native exports and source31/32 models at the paths named by the helpers; run from the parent of the `ordinary-routing` directory. It is optional planning evidence, superseded by the independently checked native33 gates.
+
+## Diagnostics overlay activation and recovery
+
+The default `src/` is historical V9 baseline, including the source used for engine32. To recreate the promoted diagnostic source in a separate writable source copy:
+
+```sh
+python -B tools/activate_diagnostics_overlay.py --root /path/to/writable-source-copy
+```
+
+The helper verifies all15 Java baseline sources before changing exactly one file. It refuses the sealed package root and unexpected baselines. In the selected writable copy, run its `compile.sh` only when an actual runtime is needed; no compilation is done here. Source33's fresh zero receipts require this overlay and exact historical33 adapter sources. Baseline alone does not reproduce that model identity. Model paths and regenerated binaries may create new hashes; never relabel them as old execution receipts.
+
+To restore exact baseline source, then rebuild if desired:
+
+```sh
+python -B tools/activate_diagnostics_overlay.py --root /path/to/writable-source-copy --restore-baseline
+```
+
+The original baseline runtime class SHA and the promoted class SHA remain receipts; binaries are intentionally excluded. Historical06 zero passed but did not exercise the method. The small07 runtime excerpt/receipt and success checkpoint establish successful logger execution; they do not supply native route acceptance or prove logging-disabled timing equivalence. No unsafe shared-pad predicate/cutout implementation is bundled.
+
+## Reference-window classification
+
+`tests/routing-checkpoint49/review_reference_window_change.py` accepts `--before-snapshot`, `--after-snapshot`, `--before-board`, `--after-board`, `--comparison`, and `--out`. Its three local dependencies are included. Native signal snapshots must be generated/bound separately with the signal-review pipeline; those large snapshots are not in this source ZIP. The historical output's exact source hash and unchanged nonzero values are checked portably. Packaging does not rerun geometric classification or numerical power.
+
+## Rebuild this delta
+
+```sh
+python -B tools/build_source_delta.py --base /path/to/immutable-v9 --staging . --out-prefix /path/to/routing-source-v10-delta
+```
+
+The base manifest is `d7fc5052b8f672f13d4fa031d23953f05916d01460b1da25fdb2e29d6da0f9d2`. Preserve all old refusals and historical source identities. Rebuilding verifies syntax, exclusions and exact delta reconstruction; sealed receipts must match the final verifier/source bytes.
+
+## Inherited V9 reproduction instructions (historical only)
+
 # Reproduce V9 checkpoint55 provenance
 
 This source-only delta requires the complete, unchanged V8 source tree, not the V8 delta ZIP alone. Verify the separately supplied V9 ZIP SHA-256. The base manifest is `13f0fa03eaf62d3ae16635109877499976843e7289f97372cb4e2143cdd180e6`. `tools/apply_source_delta_v9.py` validates every base file, safe archive paths, changed bytes and complete result before creating a new output tree:

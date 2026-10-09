@@ -1,3 +1,37 @@
+# F722 ordinary routing: V10 checkpoint49
+
+Owner-adopted candidate33 is unfinished: 49 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6`. Seventeen of 51 ordinary physical nets are complete. Actual bonded I/O coverage is 8/22 cases across 6/20 channels. This is not fabrication-ready.
+
+Power/VCAP numerical applicability is false, stale since candidate26. Candidate24, SHA-256 `8373a599fe81a58571422fc4a1f4fe3afb65acad2fd7b3528eef43d575edce11`, is the last fully bound numerical checkpoint. New drills and changed saved GND fills require new source-bound numerical validation. Support connectivity and critical-reference geometry checks do not replace it.
+
+## Distinct route histories
+
+- Candidate29: the actual source28 filtered03 final session reached 53 opens, but its native geometry was refused for two dangling FLASH_HOLD_N ends and a TAIL_EXT off-center via endpoint. All refusal evidence remains intact.
+- Candidate30: explicit cleanup trims two unaccepted new track ends to exact via centers and removes one unused new stub, adding no copper and preserving source28. It passes native gates at 53 opens. This cleanup is not a new engine success.
+- Candidate31: explicit native PORT_A_TX_EXT P0 construction after actual engine insertion refusal at the shared U14.9 pad. It reaches 52 opens; P2 remains open. No engine insertion success is claimed.
+- Candidate32: the actual final source31 filtered05 session, with no manual geometry changes, reaches 50 opens. Three historical engine successes yield a net reduction of two. The intermediate SERVO2 P1 branch was removed by the engine during P0 routing; the count2 snapshot is preserved separately, never unioned into32.
+- Candidate33: explicit coordinated SERVO2 construction uses that independently retained P1 corridor and reviewed disjoint approaches. Six source P0 tracks are removed under a 15-route allowance; the existing via `2b07387c-0e51-4096-a791-30766feb86b6` keeps its physical record and physical net while its logical owner changes exclusively P0→P1. It adds 24 tracks and two vias. Native full-width/annular entry and actual U12.3 cut pass: 0.132 mm outside-pad gap, zero overlap. SERVO2_MCU becomes fully connected. This is native construction, not a successful engine insertion.
+
+The exact33 owner receipt binds the coordinated integration, actual I/O and reference comparison. Critical copper and missing centerlines remain unchanged; trace-width differences outside unchanged own-via windows are equal. The nonzero represented missing-width changes are retained: IMU_MISO +6.17441728301138e-9 mm² and USB_N −6.838594690528055e-10 mm². They lie entirely within the existing local own-via windows and actual before/after saved holes. No snapping, contour repair, epsilon or value zeroing was used. These scoped reference findings do not qualify power or signal integrity.
+
+## Source and diagnostics boundary
+
+The original endpoint/support sources and all earlier refusals remain unchanged. Separately named audit sources permit only the declared ordinary rewrite; five rejection controls cover wrong-net allowances, undeclared removal, stale source, in-place via edits and new copper on another net. Original pending handoff status is historical; owner adoption is separately retained exactly.
+
+The default `src/` retains the V9 baseline that generated engine32. The approved diagnostics-only inserter is an explicit overlay under `tests/complete-path-diagnostics/`, with baseline/source/class hashes, static checks and activation/restore instructions. Exactly one source/class changed during promotion. Source33 zero was generated with the promoted inserter, not baseline `src/` alone. Its model SHA is `1e26454313ed16a325e7925707dbdf88589dec8d9d9564f2a91f59bf4e51e051`; byte-identical zero import and logical parity pass.
+
+Located06 found no path and did not exercise the new method. A small later filtered07 record establishes that `located_connection` executed and matched three per-trace records, two intended via transitions and native endpoints. Its engine attempt was ROUTED. The excerpt includes the intermediate forced-trace refusal too. This is logging consistency evidence only, not proof that the recorded located path equals final inserted geometry, a timing-equivalence claim or native acceptance. Candidate34 and all later native candidates are excluded. The rejected shared-pad cutout patch remains excluded; no live routing predicates were changed.
+
+## Portable package
+
+V10 is a modest changed-files-only delta against immutable V9 manifest `d7fc5052b8f672f13d4fa031d23953f05916d01460b1da25fdb2e29d6da0f9d2`; V9 delta ZIP SHA-256 is `985475c549cec9c51a4d0ba425eb318ad4c6b9ea02868b50c19d2b9cfdc8d9a8`. It recovers exact paired29–33 geometry from pinned candidate28, chained from the 62-file candidate22 project. Five compact SES/report packets separate actual sessions, refused raw geometry, intermediate origin geometry and explicit construction.
+
+The standard-library verifier checks identities, all five exact paired recoveries, parser/projection agreement, source rewrite controls against parsed exact PCB records, diagnostics activation/restore and runtime-record consistency, and reproduces the exact33 SES with the unchanged constructor using disclosed sufficient projections. The source33 full native model/export and all fixed guard areas are omitted. No JVM, native import/refill, DRC, field solve, endpoint geometry run or route search is performed during packaging. See `REPRODUCE.md` and the verification receipts for precise scope.
+
+## Inherited V9 documentation (historical only)
+
+Everything below describes earlier packages. Current scope and numerical status are stated above; historical exclusions or acceptance statements do not describe V10.
+
 # F722 ordinary routing: V9 checkpoint55
 
 Owner-adopted candidate28 is an unfinished geometric checkpoint: 55 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2`. Power/VCAP numerical applicability remains false. Routing, numerical revalidation and final electrical/physical qualification are incomplete; this is not fabrication-ready.

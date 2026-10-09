@@ -1,0 +1,3 @@
+# Exact candidates29–33 paired recovery
+
+Supply the exact candidate28 project recovered through recovery57 then recovery55, anchored to the 62 functional candidate22 paired files. The required base manifest pins every project, schematic, library and board byte. Candidate29 is explicitly refused;30/31/32/33 are later geometric checkpoints. The new board hashes are in paired-files.json. Pure copy/literal deltas restore exact historical bytes, including saved fills; they do not regenerate geometry or qualify numerical power. Every output directory must be new. No original candidate directory is changed.

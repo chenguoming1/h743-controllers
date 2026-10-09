@@ -1,0 +1,109 @@
+{
+  "schema": "f722-owner-existing-via-window-refill-review/v1",
+  "before_board_sha256": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+  "board_sha256": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
+  "comparison_sha256": "1579c6ebeeac33c12d30d53479202769cbb086e0309911ad309acfe6429d0e13",
+  "passed": true,
+  "critical_copper_identical": true,
+  "all_missing_centerline_geometries_equal": true,
+  "all_missing_width_geometry_outside_existing_own_via_windows_equal": true,
+  "changed_regions": [
+    {
+      "track_uuid": "12c1022d-bd88-4a57-8918-95d1a93569a4",
+      "net": "USB_N",
+      "reference_layer": "In1.Cu",
+      "changed_width_region_mm2": 6.83859451783081e-10,
+      "bounds_mm": [
+        39.69676801012816,
+        13.396408,
+        39.7025,
+        13.4178
+      ],
+      "entirely_inside_unchanged_own_via_windows_and_before_or_after_actual_holes": true,
+      "original_window_via_uuids": [
+        "340b873f-5ee2-4502-9e8e-ae0f3e4ca123"
+      ]
+    },
+    {
+      "track_uuid": "914fe3b1-3b8b-40ce-9188-3b1c713ceb65",
+      "net": "IMU_MISO",
+      "reference_layer": "In1.Cu",
+      "changed_width_region_mm2": 6.174417533367214e-09,
+      "bounds_mm": [
+        21.38606,
+        10.730833729261997,
+        21.42528054872994,
+        10.753478
+      ],
+      "entirely_inside_unchanged_own_via_windows_and_before_or_after_actual_holes": true,
+      "original_window_via_uuids": [
+        "7e8612c2-cc4c-4346-a00f-69e4734445fb"
+      ]
+    }
+  ],
+  "numeric_differences_retained": {
+    "BARO_SCL": {
+      "native_planar_length_mm": 0,
+      "physical_GND_centerline_missing_mm": 0,
+      "physical_GND_trace_width_missing_mm2": 0
+    },
+    "BARO_SDA": {
+      "native_planar_length_mm": 0,
+      "physical_GND_centerline_missing_mm": 0,
+      "physical_GND_trace_width_missing_mm2": 0
+    },
+    "USB_P": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "USB_N": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": -6.838594690528055e-10
+    },
+    "HSE_IN": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_XTAL_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_CS": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_INT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_MISO": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 6.17441728301138e-09
+    },
+    "IMU_MOSI": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_SCK": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    }
+  },
+  "method": "Exact source-bound saved geometry, no snapping, epsilon, contour repair or value zeroing. Entire changed trace-width regions are confined to unchanged local same-net via windows intersected with actual saved holes from the before/after states.",
+  "limits": "Scoped reference classification only. Real fill changes remain and require new source-bound power/VCAP validation; no impedance, fabrication, timing or flight qualification.",
+  "script_sha256": "7e607fdecd64937bc3e01e9f958ee016c940e9363241f2724f635110e7381dc7"
+}

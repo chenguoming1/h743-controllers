@@ -1,0 +1,68 @@
+--- tests/broad-endpoints/audit_native_endpoints.py
++++ tests/broad-endpoints/audit_rewritten_native_endpoints.py
+@@ -90,6 +90,7 @@
+     ap.add_argument('--source', type=Path, required=True)
+     ap.add_argument('--candidate', type=Path, required=True)
+     ap.add_argument('--out', type=Path, required=True)
++    ap.add_argument('--rewrite-receipt', type=Path, required=True)
+     args = ap.parse_args()
+     source, candidate = args.source.resolve(), args.candidate.resolve()
+     paths = [d / name for d in [source, candidate]
+@@ -105,7 +106,10 @@
+     changed = [uid for uid in prior if uid in current and prior[uid] != current[uid]]
+     removed = sorted(set(prior) - set(current))
+     error = after['maximum_polygon_error_mm']
+-    assert not changed and not removed
++    import sys
++    sys.path.insert(0, str(ROOT))
++    from validate_ordinary_rewrite import validate
++    allowed, rewrite = validate(before, after, args.rewrite_receipt, sha(source / 'f722-heli.native.json'))
+     nets = sorted({o['net'] for o in added})
+     pad_results, via_results, unresolved, classified_via_endpoints, redundant, incidental = [], [], [], [], [], []
+     per_net = {}
+@@ -114,8 +118,8 @@
+         tracks = [o for o in objects if o['kind'] == 'track']
+         pads = [o for o in objects if o['kind'] == 'pad']
+         vias = [o for o in objects if o['kind'] == 'via']
+-        new_tracks = [o for o in tracks if o['uuid'] not in prior]
+-        new_vias = [o for o in vias if o['uuid'] not in prior]
++        new_tracks = [o for o in tracks if o['uuid'] not in prior or o['uuid'] in allowed]
++        new_vias = [o for o in vias if o['uuid'] not in prior or o['uuid'] in allowed]
+         degree = collections.Counter((layer, tuple(track[key])) for track in tracks
+                                      for layer in track['copper'] for key in ['start', 'end'])
+         pad_geometries = {(pad['uuid'], layer): geom(polygons)
+@@ -246,14 +250,14 @@
+                                 'drill_void_subtracted': True, 'outer_polygon_inward_reserve_mm': error,
+                                 'contact_layers': layers, 'verified_contact_layers': verified_layers,
+                                 'physical_layer_transfer_passed': passed})
+-        per_net[net] = {'added_tracks': len(new_tracks), 'added_vias': len(new_vias),
++        per_net[net] = {'reviewed_tracks': len(new_tracks), 'reviewed_vias': len(new_vias),
+                         'total_native_tracks': len(tracks),
+                         'new_pad_termination_count': sum(r['net'] == net for r in pad_results),
+-                        'scope': 'No additions to audit' if not new_tracks and not new_vias else 'Added-route endpoints only; not a full-net completion claim'}
++                        'scope': 'No additions to audit' if not new_tracks and not new_vias else 'New and explicitly rewritten-net source entries; full net connectivity remains separate'}
+     failures = [r for r in pad_results if not r['physical_entry_passed']]
+     via_failures = [r for r in via_results if not r['physical_layer_transfer_passed']]
+     assert all(sha(Path(p)) == expected for p, expected in hashes.items())
+-    passed = not (failures or via_failures or unresolved or changed or removed)
++    passed = not (failures or via_failures or unresolved or changed)
+     report = {'status': 'PASS_WITH_REDUNDANT_VIA_SPUR' if passed and redundant else 'PASS' if passed else 'FAIL',
+               'passed': passed, 'source_hashes': {str(Path(p).relative_to(ROOT.parent)): h for p, h in hashes.items()},
+               'source_board_sha256': before['board_sha256'], 'candidate_board_sha256': after['board_sha256'],
+@@ -261,6 +265,7 @@
+               'method': 'SMD checks follow endpoint_witness: native ERROR_INSIDE interior and complete transverse endpoint section. Vias are evaluated separately on actual annulus: conservative native outer polygon contracted by export error, minus native ERROR_OUTSIDE drill void. A finite full-width strip on each contacted layer proves annular entry; a point in the drill or endcap-only sliver does not. Buried redundant spurs are not counted as contact evidence.',
+               'source_object_count': len(prior), 'candidate_object_count': len(current),
+               'existing_object_records_unchanged': not changed and not removed,
++              'ordinary_rewrite': rewrite,
+               'changed_existing_object_uuids': changed, 'removed_object_uuids': removed,
+               'added_objects': [{'uuid': o['uuid'], 'kind': o['kind'], 'net': o['net']} for o in added],
+               'per_net': per_net, 'pad_terminations': pad_results,
+@@ -279,7 +284,7 @@
+               },
+               'pad_failures': failures, 'via_failures': via_failures, 'unresolved_contacts': unresolved,
+               'source_recheck_unchanged': True,
+-              'limits': ['This checks only newly added route endpoints and contacts, not full routing completion.',
++              'limits': ['This checks new and explicitly permitted rewritten-net source endpoints and contacts, not full routing completion.',
+                          'Saved GND fills may change in the parent refill; fixed native object UUIDs and records are compared here.',
+                          'Nominal geometry only; native DRC/process/connectivity remain separate owner gates.']}
+     args.out.parent.mkdir(parents=True, exist_ok=True)
