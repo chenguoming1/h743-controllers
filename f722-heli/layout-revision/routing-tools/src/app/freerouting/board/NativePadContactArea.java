@@ -3,13 +3,17 @@ import app.freerouting.geometry.planar.*;
 import java.util.*;
 /** Native pad-only planning contact; recomputes contact from current round trace capsules. */
 public final class NativePadContactArea extends ConductionArea {
+ private List<NativePadContactArea> nativePeers=List.of();
+ void setNativePeers(List<NativePadContactArea> peers){for(var c:peers)if(c.board!=board||!c.nativeGroup.equals(nativeGroup)||!c.shares_net(this))throw new IllegalArgumentException("Invalid native peer index");nativePeers=peers;}
  public final String nativeId,label,nativeGroup; public final boolean groupMulti; public final boolean plated; public final int[] physicalOwners;
- NativePadContactArea(Area area,int layer,int net,int[] owners,String uuid,String key,boolean p,String ng,boolean gm,BasicBoard b){
-  super(area,layer,app.freerouting.geometry.planar.Vector.ZERO,0,false,new int[]{net},1,0,0,key,true,FixedState.SYSTEM_FIXED,b);
+ NativePadContactArea(Area area,int layer,int net,int[] owners,String uuid,String key,boolean p,String ng,boolean gm,BasicBoard b){this(area,layer,net,owners,uuid,key,p,ng,gm,0,b);}
+ NativePadContactArea(Area area,int layer,int net,int[] owners,String uuid,String key,boolean p,String ng,boolean gm,int id,BasicBoard b){
+  super(area,layer,app.freerouting.geometry.planar.Vector.ZERO,0,false,new int[]{net},1,id,0,key,false,FixedState.SYSTEM_FIXED,b);
   nativeId=uuid;label=key;plated=p;nativeGroup=ng;groupMulti=gm;physicalOwners=owners;
  }
- @Override public Item copy(int id){return new NativePadContactArea(get_relative_area(),get_layer(),get_net_no(0),physicalOwners,nativeId,label,plated,nativeGroup,groupMulti,board);}
+ @Override public Item copy(int id){var c=new NativePadContactArea(get_relative_area(),get_layer(),get_net_no(0),physicalOwners,nativeId,label,plated,nativeGroup,groupMulti,id,board);c.nativePeers=nativePeers;return c;}
  private boolean owns(int net){for(int n:physicalOwners)if(n==net)return true;return false;}
+ @Override public boolean is_obstacle(int net){return !owns(net);}
  @Override public boolean is_trace_obstacle(int net){return !owns(net);}
  @Override public boolean is_drillable(int net){return false;}
  @Override public boolean is_obstacle(Item other){if(other instanceof Trace||other instanceof Via){for(int i=0;i<other.net_count();i++)if(owns(other.get_net_no(i)))return false;return true;}return false;}
@@ -35,7 +39,11 @@ public final class NativePadContactArea extends ConductionArea {
    else if(item instanceof DrillItem d&&get_area().contains(d.get_center()))result.add(d);
    else if(item instanceof NativePadContactArea c&&c.nativeId.equals(nativeId))result.add(c);
   }
-  if(groupMulti)for(Item item:board.get_items())if(item instanceof NativePadContactArea c&&c!=this&&c.nativeGroup.equals(nativeGroup)&&c.shares_net(this))result.add(c);
+  if(groupMulti)for(NativePadContactArea saved:nativePeers){
+   if(saved.get_id_no()==get_id_no())continue;
+   Item current=saved.board==board&&saved.is_on_the_board()?saved:board.get_item(saved.get_id_no());
+   if(current instanceof NativePadContactArea c&&c.board==board&&c.is_on_the_board()&&c.nativeGroup.equals(nativeGroup)&&c.shares_net(this))result.add(c);
+  }
   return result;
  }
 

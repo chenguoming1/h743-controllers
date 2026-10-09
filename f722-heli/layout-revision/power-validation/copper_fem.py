@@ -6,11 +6,13 @@ All lengths are mm; material resistivity is ohm.mm. Finite terminal lands are
 equipotential on each layer. Barrel resistance is retained between layer lands.
 """
 from dataclasses import dataclass
+from fractions import Fraction
 import math
 import time
 import numpy as np
 import shapely as s
 from shapely.geometry import Polygon, GeometryCollection, box
+from shapely.errors import GEOSException
 from scipy.sparse import coo_matrix
 from scipy.sparse.csgraph import connected_components
 from scipy.sparse.linalg import cg, LinearOperator
@@ -47,6 +49,7 @@ class Limits:
     max_seconds: float = 120.0
     max_iterations: int = 10000
     max_terminals: int = 128
+    max_element_condition: float = 1e12
 
 
 def polygon_set(records):
@@ -60,6 +63,69 @@ def parts(geom):
     if geom.geom_type == 'Polygon':
         return [geom]
     return [p for g in getattr(geom, 'geoms', []) for p in parts(g)]
+
+
+def polygonal_area(geom):
+    """Keep the unchanged 2D pieces of a clipping result; boundaries carry no area."""
+    if geom.geom_type in ('Polygon','MultiPolygon'):
+        return geom
+    polygons=parts(geom)
+    result=polygons[0]if len(polygons)==1 else s.union_all(polygons)if polygons else Polygon()
+    if not result.is_valid or result.area!=geom.area:
+        raise Refused('Polygon-only decomposition changed area or produced invalid geometry')
+    return result
+
+
+def area_overlay(a,b,operation,where=None):
+    """Exact overlay, retaining seam constraints and explicitly handling empties.
+
+    Zero-area lines/points may still node a shared polygon boundary. Retain them
+    through partitioning; ``parts`` excludes them only at triangulation. Removing
+    them earlier can create hanging mesh nodes despite identical covered area.
+    """
+    if operation not in ('intersection','difference'):
+        raise Refused('Unsupported area overlay operation')
+    if a.is_empty:return Polygon()
+    if b.is_empty:return a if operation=='difference'else Polygon()
+    try:
+        result=a.intersection(b)if operation=='intersection'else a.difference(b)
+    except GEOSException as exc:
+        refusal=Refused('Native area overlay failed without repair: '+str(exc))
+        refusal.geometry_reproduction={'operation':operation,'where':where,
+          'left_wkb_hex':a.wkb_hex,'right_wkb_hex':b.wkb_hex,
+          'left_valid':a.is_valid,'right_valid':b.is_valid}
+        raise refusal from exc
+    return result
+
+
+def grid_coordinate(index,spacing_mm):
+    """One rounded conversion of an exact decimal grid coordinate to binary64."""
+    spacing=Fraction(str(spacing_mm))
+    return float(index*spacing)
+
+
+def triangle_geometry(xy,max_condition=1e12):
+    """Unchanged vertices, local determinant and conservative Jacobian bound.
+
+    ||J||_F^2 / |det J| = cond_2(J) + 1/cond_2(J). Reject an unresolved
+    element instead of deleting it, merging its vertices or changing its area.
+    This is a numerical refusal guard, not a rigorous FEM error estimate.
+    """
+    positive_finite(max_condition,'Maximum element condition')
+    u=xy[:,1]-xy[:,0];v=xy[:,2]-xy[:,0]
+    twice_area=u[:,0]*v[:,1]-v[:,0]*u[:,1]
+    with np.errstate(divide='ignore',invalid='ignore',over='ignore'):
+        condition_bound=(np.sum(u*u,axis=1)+np.sum(v*v,axis=1))/abs(twice_area)
+    bad=np.flatnonzero((~np.isfinite(twice_area))|(~np.isfinite(condition_bound))|
+                       (twice_area==0)|(condition_bound>max_condition))
+    if len(bad):
+        index=int(bad[0]);failure=Refused('Unresolved triangle area/conditioning with unchanged overlay coordinates')
+        failure.geometry_reproduction={'stage':'triangle_geometry','index':index,
+          'coordinates':xy[index].tolist(),'twice_area_mm2':float(twice_area[index]),
+          'condition_bound':float(condition_bound[index])if math.isfinite(condition_bound[index])else None,
+          'maximum_condition_bound':max_condition}
+        raise failure
+    return twice_area,condition_bound
 
 
 def native_geometry(snapshot, net):
@@ -106,6 +172,27 @@ def contact_geometry(pads, key, layer):
     geom = s.union_all(records)
     if geom.is_empty:
         raise Refused(f'No finite native copper for {key}/{layer}')
+    return geom
+
+
+def contact_keys(spec):
+    """Accept one native key or an explicit, nonempty list of distinct keys."""
+    if ('pad' in spec) == ('pads' in spec):
+        raise Refused('Contact must provide exactly one of pad or pads')
+    keys = [spec['pad']] if 'pad' in spec else spec['pads']
+    if not isinstance(keys, list) or not keys or any(not isinstance(k, str) or not k for k in keys):
+        raise Refused('Contact pad keys must be a nonempty string list')
+    if len(set(keys)) != len(keys):
+        raise Refused('Contact contains duplicate native pad keys')
+    return keys
+
+
+def contact_spec_geometry(pads, spec):
+    """Finite union of actual pad lands; never bridge separated or point-touch pads."""
+    keys = contact_keys(spec)
+    geom = s.union_all([contact_geometry(pads, key, spec['layer']) for key in keys])
+    if geom.is_empty or not geom.is_valid or geom.geom_type != 'Polygon' or geom.area <= 0:
+        raise Refused('Contact union must be one connected finite native polygon')
     return geom
 
 
@@ -175,6 +262,8 @@ class Mesh:
         area_sum = 0.0
         domain_area = sum(g.area for g in domains.values())
         components = [(layer, poly) for layer, geom in domains.items() for poly in parts(geom)]
+        grid_step=Fraction(str(spacing_mm))
+        anchor=lambda index:float(index*grid_step)
         for component_id, (layer, geom) in enumerate(components):
             if geom.is_empty:
                 continue
@@ -188,19 +277,31 @@ class Mesh:
                 raise Refused(f'Tile cap exceeded before triangulation: {tile_count}')
             for ix in range(ix0,ix1):
                 self.check_time()
+                # Exact spatial clipping: intersect the large native polygon
+                # and ideal-land set once with this aligned strip. Local cells
+                # then see only strip geometry. No boundary simplification,
+                # hole filling, snapping, or geometric repair is performed.
+                strip_box=box(anchor(ix),anchor(iy0),anchor(ix+1),anchor(iy1))
+                where={'layer':layer,'component':component_id,'ix':ix,'spacing_mm':spacing_mm}
+                strip=area_overlay(geom,strip_box,'intersection',{**where,'stage':'native_strip'})
+                if strip.is_empty:
+                    continue
+                ideal_strip=area_overlay(region_union[layer],strip_box,'intersection',{**where,'stage':'ideal_strip'})
                 for iy in range(iy0,iy1):
-                    cut = geom.intersection(box(ix*spacing_mm,iy*spacing_mm,(ix+1)*spacing_mm,(iy+1)*spacing_mm))
-                    contact_cut = cut.intersection(region_union[layer])
-                    outside_cut = cut.difference(region_union[layer])
+                    if iy%32==0:self.check_time()
+                    location={**where,'iy':iy}
+                    cut=area_overlay(strip,box(anchor(ix),anchor(iy),anchor(ix+1),anchor(iy+1)),'intersection',{**location,'stage':'native_cell'})
+                    contact_cut=area_overlay(cut,ideal_strip,'intersection',{**location,'stage':'contact_partition'})
+                    outside_cut=area_overlay(cut,ideal_strip,'difference',{**location,'stage':'sheet_partition'})
                     for poly in parts(contact_cut) + parts(outside_cut):
                         for tri in s.constrained_delaunay_triangles(poly).geoms:
-                            if tri.area < 1e-16:
+                            if tri.area == 0:
                                 continue
                             indices = []
                             for x,y in list(tri.exterior.coords)[:3]:
                                 # Distinct polygons touching at a single point
                                 # must not become a fictitious conductive neck.
-                                key = (component_id,round(x,9),round(y,9))
+                                key = (component_id,x,y)
                                 if key not in ids:
                                     ids[key] = len(self.xyz)
                                     self.xyz.append((layer, key[1], key[2]))
@@ -263,10 +364,12 @@ class Mesh:
             raise Refused('Overlapping/equivalent contacts: use one port with explicit circuit aliases')
         self.n = len(unique)
         xy = self.xy[self.triangles]
-        twice_area = (xy[:,1,0]-xy[:,0,0])*(xy[:,2,1]-xy[:,0,1])-(xy[:,2,0]-xy[:,0,0])*(xy[:,1,1]-xy[:,0,1])
+        twice_area,condition_bound=triangle_geometry(xy,self.limits.max_element_condition)
         self.areas = abs(twice_area)/2
-        if np.any(self.areas<1e-18):
-            raise Refused('Degenerate triangle after coordinate quantization')
+        self.element_geometry={'minimum_area_mm2':float(np.min(self.areas)),
+          'maximum_condition_bound':float(np.max(condition_bound)),
+          'condition_refusal_limit':self.limits.max_element_condition,
+          'coordinates_quantized':False,'positive_area_elements_discarded':0}
         self.grad = np.empty((len(xy),3,2))
         self.grad[:,:,0] = np.stack((xy[:,1,1]-xy[:,2,1],xy[:,2,1]-xy[:,0,1],xy[:,0,1]-xy[:,1,1]),axis=1)/twice_area[:,None]
         self.grad[:,:,1] = np.stack((xy[:,2,0]-xy[:,1,0],xy[:,0,0]-xy[:,2,0],xy[:,1,0]-xy[:,0,0]),axis=1)/twice_area[:,None]
@@ -353,6 +456,7 @@ class Mesh:
                 'density_is_ampacity_rating':False,'barrels':barrel,
                 'nodes':self.n,'triangles':len(self.triangles),'floating_unloaded_nodes':self.floating_nodes,
                 'mesh_spacing_mm':self.spacing,'area_error_mm2':self.area_error_mm2,
+                'element_geometry':self.element_geometry,
                 'density_limitations':'Piecewise-linear DC field; ideal lands/annuli omit pin/solder/within-land heating. Peak singularities require mesh sensitivity. No thermal rating.'}
 
     def impedance(self,names=None):
@@ -365,4 +469,5 @@ class Mesh:
         error=float(np.max(abs(z-z.T))) if z.size else 0.0
         if error>1e-7:
             raise Refused('Transfer matrix reciprocity failure')
-        return {'contacts':names,'reference':ref,'impedance_ohm':z.tolist(),'reciprocity_error_ohm':error}
+        return {'contacts':names,'reference':ref,'impedance_ohm':z.tolist(),'reciprocity_error_ohm':error,
+                'element_geometry':self.element_geometry}

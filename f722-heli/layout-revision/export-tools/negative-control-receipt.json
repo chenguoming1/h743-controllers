@@ -1,0 +1,34 @@
+{
+  "schema": "f722-export-negative-controls-v1",
+  "scope": "Historical and incomplete-source rejection controls only; later checkpoints require fresh checks",
+  "cases": [
+    {
+      "name": "Incomplete checkpoint rejected before manufacturing output",
+      "source_pcb_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86",
+      "source_parts_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+      "source_tree_sha256": "f729fc586a022c45aae078c8618c91b037e02f09d6bc1e56498ffb74dba4ba3e",
+      "fresh_native_opens": 158,
+      "fresh_native_geometric_errors": 0,
+      "result": "blocked",
+      "manufacturing_files_created": false,
+      "exporter_sha256": "610c8706a3e2c2d937c853fbfbd815d48d2097ca53d171358ff79f7d07a47963",
+      "tooling_revision_note": "Earlier rejection control retained; no current layout status asserted."
+    },
+    {
+      "name": "Clean historical board in candidate mode rejected without current review receipts",
+      "source_pcb_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+      "source_parts_sha256": "3dc37171d45add434f693219ea37f9f9ff2c9bc58830d2215f0c34760b2409d9",
+      "source_tree_sha256": "aecf791b1436816df41addaf7ea27d609da1e6886de7b0b8f76934b8a3f2568a",
+      "fresh_native_opens": 0,
+      "fresh_native_geometric_errors": 0,
+      "fresh_native_erc_violations": 0,
+      "reason": "Candidate exports require a validation receipt index; historical evidence cannot authorize a new board.",
+      "result": "blocked",
+      "manufacturing_files_created": false,
+      "source_unchanged": true,
+      "exporter_sha256": "d571a9763c3134d1995bf8a192cfdddcb4991dc637f9a20bfd7119877a6ecdfa",
+      "explicit_cli_without_runtime_manifest": true
+    }
+  ],
+  "production_or_flight_qualification": false
+}

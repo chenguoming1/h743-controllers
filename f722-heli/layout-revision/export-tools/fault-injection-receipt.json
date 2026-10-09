@@ -1,0 +1,29 @@
+{
+  "schema": "f722-export-fault-injection-receipt-v1",
+  "source_pcb_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+  "exporter_sha256": "d571a9763c3134d1995bf8a192cfdddcb4991dc637f9a20bfd7119877a6ecdfa",
+  "test_script_sha256": "47b956369d283e188fb27843c855c4dca923d908d011164357dc5bf6eda50e8b",
+  "tests_passed": 16,
+  "tests": [
+    "test_changed_evidence_rejected",
+    "test_changed_receipt_rejected",
+    "test_changed_slot_size_rejected",
+    "test_complete_receipt_fixture_accepted",
+    "test_existing_output_rejected_without_claiming_ownership",
+    "test_missing_receipts_rejected",
+    "test_missing_scope_rejected",
+    "test_output_inside_hardware_rejected",
+    "test_parts_footprint_mismatch_rejected",
+    "test_position_rotation_change_rejected",
+    "test_shifted_paste_flash_rejected",
+    "test_silent_manual_header_drop_rejected",
+    "test_stale_source_rejected",
+    "test_unreviewed_warning_rejected",
+    "test_wrong_cli_version_rejected",
+    "test_wrong_pcbnew_version_rejected"
+  ],
+  "fixture_scope": "Synthetic receipt fixtures plus mutated local copies of historical outputs; no current-board validation or source modification",
+  "test_log_sha256": "2c6f17c79fd75e0c064d4807a2c5d641750d6c3d720c478c87581ccae2d7b2c4",
+  "installation_layout": "repo/f722-heli/layout-revision/export-tools/",
+  "explicit_hardware_and_control_arguments": true
+}

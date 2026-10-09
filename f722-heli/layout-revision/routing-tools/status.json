@@ -1,17 +1,21 @@
 {
-  "checkpoint": "integrated-zero-and-reference-control-source-only-v2",
-  "baseline_source_sha256": "f400b279ac5d2c63251d2401c788c485400a5c8fecbb1d646e4104fd3c22c1f1",
-  "integrated_control_source_sha256": "0ab556b406d336cb94fe54060048bf3e78f8a14dfcc3086d83b7e0232ccb8c86",
-  "native_zero_gate": "checks/integrated-zero-parity.json",
-  "import_gate": "checks/integrated-zero-import.json",
-  "support_ready": false,
-  "actual_routing_performed": false,
-  "controls_only": true,
-  "heavy_process_running": false,
+  "checkpoint": "accepted80-tested-routing-source-v3",
+  "status": "unfinished",
+  "actual_routing_performed": true,
+  "support_integration_complete": true,
+  "accepted_board_sha256": "e38e71c1960fc52881ee699117aa48c7e43483562ea22ec276ec0dc1d2138883",
+  "native_open_connections": 80,
+  "native_errors": 0,
+  "native_warnings": 0,
+  "ordinary_nets_complete": 5,
+  "ordinary_nets_total": 51,
+  "current_adapter_model_sha256": "742cdf7cb8b5b022d8b415cbcf12b6764b52ae9f47e25aa1a24726f6c7e25ce7",
+  "adapter_sources_verified_exact": true,
+  "target_shape_repair_included": false,
   "known_limitations": [
-    "Support routing remains incomplete.",
-    "Shared-pad branch overlap remains conservatively rejected.",
-    "No actual ordinary route feasibility or quality is established."
-  ],
-  "next_gate": "Fresh final-support native/model export and passing zero parity before any nonzero route run."
+    "Clearance-expanded engine target shapes may produce false ROUTED results; every result requires native full-width entry verification.",
+    "Accepted80 explicitly excludes the false SERVO3_EXT route and completes RPM_EXT inside its own native pad.",
+    "Protected downstream paths, remaining ordinary routes, signal loading/edges and loaded power/reference qualification remain unfinished.",
+    "Shared-pad alias trace overlap remains conservatively rejected."
+  ]
 }

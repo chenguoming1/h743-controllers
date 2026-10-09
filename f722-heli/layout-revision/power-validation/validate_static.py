@@ -4,13 +4,16 @@ import argparse
 import hashlib
 import json
 import math
+import os
+import sys
+import time
 from pathlib import Path
 import platform
 import numpy as np
 import scipy
 import shapely
 import sexpdata
-from copper_fem import Mesh, Limits, Refused, copper_material, native_geometry, contact_geometry
+from copper_fem import Mesh, Limits, Refused, copper_material, native_geometry, contact_keys, contact_spec_geometry
 from dc_circuit import solve_circuit
 
 SCHEMA = 'f722-scoped-static-freeze/v1'
@@ -86,11 +89,16 @@ def preflight(freeze_path, ledger_path):
         raise Refused('Ledger is not bound to this freeze manifest')
     if manifest.get('scope') not in ('power-only', 'final-board'):
         raise Refused('Unknown frozen scope')
+    for name,expected in manifest.get('analysis_source_sha256',{}).items():
+        if Path(name).name!=name or sha256(Path(__file__).parent/name)!=expected:
+            raise Refused('Analysis source changed after compilation: '+name)
     if not manifest.get('saved_fill_verified') or not manifest.get('checks_run_on_frozen_board'):
         raise Refused('Fresh saved-fill/check evidence is missing')
     required = ['board', 'geometry', 'connectivity', 'parts', 'parity', 'physical', 'drc_normal', 'drc_all_track']
     files = {}
-    for name in required:
+    if not set(required)<=set(manifest.get('files',{})):
+        raise Refused('Frozen manifest lacks required evidence files')
+    for name in manifest['files']:
         spec = manifest.get('files', {}).get(name, {})
         if not spec.get('path') or not spec.get('sha256'):
             raise Refused(f'Missing frozen file {name}')
@@ -123,10 +131,14 @@ def preflight(freeze_path, ledger_path):
     for network in networks:
         if len(network['contacts']) < 2:
             raise Refused('Each network needs at least two finite ports')
-        native_pads = {x['key']: x for x in geometry['objects'] if x['kind']=='pad' and x.get('net')==network['net']}
+        native_pads = {}
+        for obj in geometry['objects']:
+            if obj['kind']=='pad' and obj.get('net')==network['net']:
+                native_pads.setdefault(obj['key'], []).append(obj)
         for spec in network['contacts'].values():
-            if spec['pad'] not in native_pads or spec['layer'] not in geometry['copper_layers']:
+            if any(key not in native_pads for key in contact_keys(spec)) or spec['layer'] not in geometry['copper_layers']:
                 raise Refused('Contact refers to an absent pad/net/layer')
+            contact_spec_geometry(native_pads, spec)
     for category in ['unit_transfers','loops','cases']:
         names = [x['name'] for x in ledger.get(category, [])]
         if len(names) != len(set(names)):
@@ -175,6 +187,11 @@ def preflight(freeze_path, ledger_path):
     if not ledger.get('unit_transfers') and not ledger.get('loops') and not ledger.get('cases'):
         raise Refused('Empty validation request')
     for case in ledger.get('cases', []):
+        if 'case_definition_sha256'in case:
+            definition={k:v for k,v in case.items()if k!='case_definition_sha256'}
+            actual=hashlib.sha256(json.dumps(definition,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+            if case['case_definition_sha256']!=actual:
+                raise Refused('Resolved case definition changed: '+case['name'])
         if not set(case.get('nets',nets)) <= set(nets) or not case.get('nets',nets):
             raise Refused('Case uses absent or empty copper network selection')
         if not case.get('probes') or any('minimum_V' not in p and 'maximum_V' not in p for p in case['probes']):
@@ -202,15 +219,27 @@ def summarize_transfer(mesh, test):
 
 
 def run_screen(context):
+    if context['manifest'].get('numerical_execution_authorized') is False:
+        raise Refused('Numerical compute slot has not been released for this compiled freeze')
+    if context['manifest'].get('numerical_execution_authorized')is True and any(os.environ.get(key)!='1'for key in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS']):
+        raise Refused('Released numerical runs require per-process OPENBLAS_NUM_THREADS=1 and OMP_NUM_THREADS=1')
     ledger = context['ledger']; geometry = context['geometry']; material = context['material']
     limits = Limits(**ledger.get('limits', {}))
     runs = []
+    started=time.monotonic()
+    def progress(stage,**extra):
+        callback=context.get('progress')
+        if callback:callback({'stage':stage,'elapsed_seconds':time.monotonic()-started,**extra})
     def make_mesh(network, spacing):
+        progress('mesh_start',net=network['net'],spacing_mm=spacing)
         domains, pads, barrels = native_geometry(geometry, network['net'])
-        contacts = {node: (spec['layer'], contact_geometry(pads,spec['pad'],spec['layer']))
+        contacts = {node: (spec['layer'], contact_spec_geometry(pads,spec))
                     for node,spec in network['contacts'].items()}
-        return Mesh(domains, contacts, spacing, material['sheet_ohm'], material['thickness_mm'],
-                    barrels, context['stackup']['layer_z_mm'], material['plating_mm'], limits)
+        mesh=Mesh(domains, contacts, spacing, material['sheet_ohm'], material['thickness_mm'],
+                  barrels, context['stackup']['layer_z_mm'], material['plating_mm'], limits)
+        progress('mesh_ready',net=network['net'],spacing_mm=spacing,raw_nodes=len(mesh.xyz),
+                 equations=mesh.n,triangles=len(mesh.triangles),contacts=len(mesh.contact_nodes),element_geometry=mesh.element_geometry)
+        return mesh
     # One network mesh is alive at a time. The compact port matrices are kept;
     # reconstruct only for direct loaded-field checks after circuit coupling.
     for spacing in ledger['mesh_spacings_mm']:
@@ -218,6 +247,7 @@ def run_screen(context):
         for network in ledger['networks']:
             net = network['net']; mesh = make_mesh(network,spacing)
             block = mesh.impedance(); block['net'] = net; blocks.append(block)
+            progress('ports_solved',net=net,spacing_mm=spacing)
             for transfer in ledger.get('unit_transfers', []):
                 if transfer['net'] == net:
                     unit_by_name[transfer['name']] = summarize_transfer(mesh,transfer)
@@ -248,6 +278,7 @@ def run_screen(context):
             selected = set(case.get('nets',[b['net'] for b in blocks]))
             result = solve_circuit(case, [b for b in blocks if b['net'] in selected])
             result['fields'] = {}; cases.append(result)
+        progress('circuits_solved',spacing_mm=spacing,cases=len(cases))
         if cases:
             for network in ledger['networks']:
                 relevant = [r for r in cases if any(p['net']==network['net'] for p in r['port_injections'])]
@@ -258,6 +289,7 @@ def run_screen(context):
                     port = next(p for p in result['port_injections'] if p['net'] == network['net'])
                     result['fields'][network['net']] = mesh.solve(port['injections_A'])
                 del mesh
+                progress('loaded_fields_solved',net=network['net'],spacing_mm=spacing,cases=len(relevant))
         for result in cases:
             loss = sum(x['copper_loss_W'] for x in result['fields'].values())
             if abs(loss-result['power_W']['copper_loss']) > max(1e-8,abs(loss)*1e-6):
@@ -294,6 +326,9 @@ def run_screen(context):
             raise Refused(f'{name} changed during analysis; no result qualifies')
     if sha256(context['freeze_path']) != context['freeze_sha256'] or sha256(context['ledger_path']) != context['ledger_sha256']:
         raise Refused('Freeze or case ledger changed during analysis; no result qualifies')
+    for name,expected in context['manifest'].get('analysis_source_sha256',{}).items():
+        if sha256(Path(__file__).parent/name)!=expected:
+            raise Refused('Analysis source changed during the run: '+name)
     return {'schema':'f722-scoped-static-result/v1','board_sha256':context['board_sha256'],
             'freeze_sha256':context['freeze_sha256'],'ledger_sha256':context['ledger_sha256'],
             'scope':context['manifest']['scope'],'conditional_static_screen_pass':bool(passed),
@@ -320,12 +355,17 @@ def main():
     except Refused as exc:
         print(json.dumps({'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False}))
         return 2
+    context=None
     try:
         context=preflight(args.freeze,args.ledger)
+        if args.run:
+            context['progress']=lambda row:print(json.dumps({'progress':row}),file=sys.stderr,flush=True)
         result=run_screen(context) if args.run else {'status':'PREFLIGHT ONLY; NO BOARD MESH RUN','board_sha256':context['board_sha256'],'scope':context['manifest']['scope'],'drc':context['drc']}
         code=0 if not args.run or result['conditional_static_screen_pass'] else 1
-    except (Refused,KeyError,TypeError,ValueError) as exc:
+    except (Refused,KeyError,TypeError,ValueError,shapely.errors.GEOSException) as exc:
         result={'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False}; code=2
+        if context is not None:result.update(board_sha256=context['board_sha256'],freeze_sha256=context['freeze_sha256'],ledger_sha256=context['ledger_sha256'])
+        if hasattr(exc,'geometry_reproduction'):result['geometry_reproduction']=exc.geometry_reproduction
     # Repeat after a potentially long run in case a destination symlink changed.
     try:
         guard_output(args.freeze,args.ledger,args.out)

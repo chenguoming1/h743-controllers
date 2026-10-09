@@ -1,0 +1,36 @@
+{
+  "schema": "f722-case-compiler-settings/v1",
+  "scope": "power-only",
+  "source_stage": "explicit provisional power-only preparation; final routed source requires fresh binding",
+  "material": {
+    "temperature_C": 105,
+    "thickness_mm": 0.015,
+    "conductivity_IACS": 0.95,
+    "plating_mm": 0.015
+  },
+  "mesh_spacings_mm": [
+    0.2,
+    0.15
+  ],
+  "convergence": {
+    "relative_impedance": 0.025,
+    "absolute_impedance_ohm": 0.0001,
+    "absolute_voltage_V": 0.001
+  },
+  "limits": {
+    "max_nodes": 900000,
+    "max_triangles": 1800000,
+    "max_tiles": 400000,
+    "max_seconds": 600,
+    "max_iterations": 20000,
+    "max_terminals": 128,
+    "max_element_condition": 1000000000000.0
+  },
+  "servo_sample_allocations": [
+    "mcu_vdd19",
+    "flash"
+  ],
+  "servo_sample_meaning": "Two declared spatial illustrations, not weakest-location selections. Actual servo return currents can change rankings; expand to other vertices when needed.",
+  "include_7p4V_electronics_baseline": true,
+  "preserve_failed_ordinary_protection_checks_as_out_of_scope": true
+}
