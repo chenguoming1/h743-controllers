@@ -1,5 +1,5 @@
 {
-  "status": "THREE PRESERVED REFUSALS; NO NATIVE NUMERICAL ACCEPTANCE",
+  "status": "NATIVE PILOTS REFUSED; ONE-GRID SOLVER DIAGNOSTICS ONLY; NO CONVERGED BOARD RESULT",
   "retained_traceback_or_result_hashes_only": true,
   "native_board_and_large_geometry_not_bundled": true,
   "attempts": [
@@ -82,7 +82,43 @@
         "condition_bound": 21728135342668.23,
         "maximum_condition_bound": 1000000000000.0
       }
+    },
+    {
+      "attempt": "exact-edge-noding",
+      "result_sha256": "96d2bf37f7d9a7e140855f3a2a4df52fcd93bf0dbd0d5185c97715313206d9ac",
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "freeze_sha256": "d51edf8726c5d0eea0cdfd16698cf1854e02a595f6fad5111bcf1f4b5135f3df",
+      "ledger_sha256": "e22b30b54ef6ffb46e2b87a7aab8a43517e91304ed66b522343d60befacd092a",
+      "reason": "Missing or ambiguous exact native-edge vertex ancestry",
+      "qualified_electrical_result": false
+    },
+    {
+      "attempt": "conditioned-ancestry-v2",
+      "result_sha256": "21958bba0764f3e5722cc2f0607e926a632828b5badd4c18ca0fe654cf792cc4",
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "freeze_sha256": "2598427455635eeec617a8fd2ee7dd06edb03d9fb7f964434968729a08c32884",
+      "ledger_sha256": "23f38fa71c61942d40493b5a525479c8dfb2eecfc6a2a9ff1964df461bc86f4d",
+      "reason": "CG did not converge (20000); no result qualifies",
+      "qualified_electrical_result": false
+    },
+    {
+      "attempt": "direct",
+      "result_sha256": "7bd6b12cdd744a6e757bdd1e6e84a758d00f255af923d36fb57130a77dd529e3",
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "freeze_sha256": "0351056921a64571a5482a921ef03ebc31c72f17e1f15e98373f6183cd234465",
+      "ledger_sha256": "9e6e168a5774cee91d0d61b549a6f71fffd981372f9cfd3198d692b2abddd50b",
+      "reason": "Sparse direct residual did not meet the unchanged linear tolerance",
+      "qualified_electrical_result": false
+    },
+    {
+      "attempt": "mixed",
+      "result_sha256": "67248dece7e015ae18857fa1d885fda7430283bb19e7306ec264cfe51e4babf9",
+      "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+      "freeze_sha256": "e673c036942bd73d4b93851a97f3f295a47204ffc36099b01584f20f7abd6b8a",
+      "ledger_sha256": "24567b3c55d4b929662120b25fb14e7e07c5aba204c23564a477cdd2153dec6a",
+      "reason": "Native geometry certificate changed between meshes: GND/F.Cu",
+      "qualified_electrical_result": false
     }
   ],
-  "next_issue": "Exact native-edge intersection normalization is under development and excluded from this bundle."
+  "current_status": "Mixed precision resolves the saved matrix residual floor. The last full pilot stopped on tuple/list certificate comparison at the second grid; canonical JSON correction is tested but its next native retry is pending."
 }

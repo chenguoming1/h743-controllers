@@ -1,6 +1,6 @@
 # Reproduce the ordinary-routing checkpoint
 
-This is unfinished work. The retained real sessions reduced the accepted native board from 85 to 80 open connections with zero native DRC errors/warnings. Historical placement and trial03 checks remain labelled by their source hashes. Every new source requires fresh zero controls and native validation.
+This is unfinished work. The accepted candidate08 checkpoint has 77 open connections and zero native DRC errors/warnings, board SHA-256 1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf. Its last D2_A closure was explicit native construction from a path located during failed stock insertion, with a documented 0.025 mm outward detour; it was not successful engine insertion. Current-source zero parity passes. The current margin18/slow-tree focused trial failed all four attempts and added no geometry. Historical receipts are bound to their original sources; every new source still requires fresh zero controls and native validation.
 
 ## Inputs
 
@@ -99,9 +99,10 @@ To import a running checkpoint, read the exact `checkpoint`, `report_sha256` and
 
 After native import, `analyze_candidate.py` reports physical/logical connectivity and I2C geometry. `endpoint_witness.py` can record the pad-interior and full-width endpoint intersection of a routed two-terminal net. Full I2C loading/edge, reference continuity and loaded power qualification remain separate completion requirements.
 
-## Compact actual-session replay
+## Compact historical-session replay
 
-The two `sessions/` packets contain the actual SWCLK and accepted80 sessions, import-only ownership contracts, report geometry, exact original model/native/adapter/runtime identities, and explicit postprocessing provenance. These are not complete routing models. Verify `FILES.sha256.json` before use. Supply the exact frozen source board named by the packet identity and its full paired project, schematic and local libraries. Then:
+
+The historical `sessions/swclk` and `sessions/accepted80` packets contain the actual SWCLK and accepted80 sessions, import-only ownership contracts, report geometry, exact original model/native/adapter/runtime identities, and explicit postprocessing provenance. These are not complete routing models. Verify `FILES.sha256.json` before use. Supply the exact frozen source board named by the packet identity and its full paired project, schematic and local libraries. Then:
 
 ```sh
 python3 prepare_session_replay.py --packet sessions/accepted80 --source-board "$SOURCE_BOARD" --out "$REPLAY_INPUTS"
@@ -110,6 +111,44 @@ python3 prepare_session_replay.py --packet sessions/accepted80 --source-board "$
 
 This helper verifies source/session/report/contract hashes, preserves the original model identity, and explicitly rebinds an importer-only projection. New native UUIDs are expected; `checks/accepted80-replay-verified.json` establishes exact copper geometry, zones and footprint equivalence, 80 opens, zero native DRC violations and passing process checks. The original SWCLK sources are identified by hash; replaying their retained SES does not require bundling another entire old adapter tree.
 
-The accepted80 session explicitly excludes only newly added SERVO3_EXT and extends RPM_EXT collinearly inside J7.3. See `retention.json` and `endpoint-completion.json`. The unfiltered engine SES is retained to audit the optimistic ROUTED result. The Java target-shape defect remains present in this historical tested source and must be repaired and separately controlled before a broad new run. Native contact partitions and physical endpoint checks remain acceptance gates.
+The accepted80 session explicitly excludes only newly added SERVO3_EXT and extends RPM_EXT collinearly inside J7.3. See `retention.json` and `endpoint-completion.json`. The unfiltered engine SES is retained to audit the optimistic ROUTED result. The Java target-shape defect was present in the historical v3 source that produced these receipts. The current source contains the controlled target repair; these old routes must not be attributed to the current adapter. Native contact partitions and physical endpoint checks remain acceptance gates.
 
 The reusable endpoint audit subtracts conservative native drill polygons from native inside pad copper. For through-hole pads it requires a positive centerline interval inside the annulus eroded by half trace width plus 1 nm. It never treats an endpoint over the drill as evidence of copper contact. Its four accepted entries exactly match the independent owner witness; the historical SERVO3 gap and RPM narrow entry both fail.
+
+## Recover the exact historical inputs
+
+See `sessions/recovery/README.md` and its manifest for byte-exact historical85/84 reconstruction from the pinned PR11 published80 board. The helper checks complete base and target hashes. Keep the paired project, rule, schematic and library files. No historical PCB is bundled here.
+
+## Replay the accepted77 constructed session
+
+`sessions/accepted77/source-identity.json` requires the exact candidate06 source board SHA-256 `221ee94c9a936be959dc89b7c7050a20b5f795af6a86921fb44c01a2e9dbecc3`, its paired project/rules and libraries. This source board is an external prerequisite; the historical85/84 recovery helpers do not reconstruct candidate06. The original full model SHA is `7b560e734499d0a01fb5614781dac0a9bbe1ec2e5b0b5535ba7d2a796342aa81`.
+
+```sh
+python3 -B tests/verify_session_packet.py --packet sessions/accepted77 --out /path/to/packet-check.json
+python3 -B prepare_session_replay.py --packet sessions/accepted77 --source-board "$SOURCE_BOARD" --out "$REPLAY_INPUTS"
+"$KICAD_PY" import_session.py --model "$REPLAY_INPUTS/model.json" --session sessions/accepted77/session.ses --engine-report "$REPLAY_INPUTS/engine-report.json" --out "$REPLAY_PROJECT/f722-heli.kicad_pcb"
+```
+
+The first two pure-Python checks passed during packaging, including the wrong-source rejection. The native import command has not been rerun for this compact packet. Its historical native acceptance is recorded in `checks/accepted77-import.json`, `accepted77-handoff.json` and `accepted77-owner-summary.json`. Native UUIDs of newly created objects may differ; compare native geometry, logical ownership, preserved fixed objects, endpoint entry, native DRC, process and reference results independently. The packet is an importer projection, never a complete routing model.
+
+`construction.json` binds the original failed-insertion diagnostic, base session/report, exact constructor source and waypoint adjustment. `construct_located_session.used.py` is the exact historical source hash; the top-level constructor is the current source and has a distinct hash. The original 122 MB base report and complete native/model geometry are deliberately excluded. Reexecuting construction itself requires those exact external inputs. The retained compact constructed report preserves the actual route geometry required by the importer.
+
+## Current controls and experimental settings
+
+`checks/current77-source-identity.json`, `current77-zero-parity.json` and `current77-zero-import.json` bind the fresh passing zero to the current packaged source and model `c21ddb61a4e940988f1dbe59733a6fcd15930099d7459e48bed290d1539151eb`. All 1,513 fixed objects and 20 ordinary segments are preserved; the imported board is byte-identical to accepted77. This proves this zero control, not successful routing.
+
+The current `TRACE_WIDTH_TOLERANCE=18` is a planning reserve, with the four inlined consumers compiled. `tests/compiled-planning-margin18-proof.json` and `tests/insertion-gap-result-margin18.json` establish the compiled constants and isolated D2 straight-segment control. Physical track width and clearance remain 0.127 mm. `F722_FORCE_SLOW_TREE=1` selects the stock slow tree; the route angle constraint remains 45 degrees. `F722_INSERT_DIAGNOSTICS=1` logs actual located paths and insertion failures.
+
+The completed focused slow-tree trial on ADC_DIV_MID and FLASH_WP_N routed zero of four attempts; its output SES is byte-identical to its zero SES. See `checks/current77-slow-search.json` and the attempt summary. These switches and the planning-margin change remain experimental for full-route qualification. A failed search does not prove physical unroutability. The four historical legal via sites in `tests/clearance-audit` are existence witnesses, not complete routes.
+
+Run the target and insertion tests following `tests/TARGET_SHAPE_CONTROL.md` and `tests/INSERTION_GAP_CONTROL.md` only after preparing their named exact external inputs. Their small generated fixtures and compiled classes are excluded. Reports preserve original source/model/class hashes; they do not silently claim that current classes produced historical routes. In particular, the empty-target receipt's loaded maze class predates the recompiled margin18 bytecode.
+
+## Verify or regenerate a source delta
+
+The complete staging allowlist includes every delivered file. `FILES.sha256.json` hashes each file except itself; the external delta metadata binds the full manifest hash. Verify the v3 base before applying the ZIP's `changed/` contents relative to the routing source root, remove only any metadata-listed deletions, and then verify the complete v4 manifest and allowlist.
+
+The packaging helper recompiles Python syntax in memory, parses JSON, runs shell syntax checks, rejects caches/boards/models/binaries, and applies the delta to a temporary v3 copy to prove exact reconstruction. It does not compile Java, run native KiCad, or start route search.
+
+```sh
+python3 -B tools/build_source_delta.py --base /path/to/immutable-public-source-ready-v3 --staging . --out-prefix /path/to/routing-source-v4-delta
+```

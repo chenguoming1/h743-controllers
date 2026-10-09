@@ -16,6 +16,21 @@ public final class NativePadContactArea extends ConductionArea {
  @Override public boolean is_obstacle(int net){return !owns(net);}
  @Override public boolean is_trace_obstacle(int net){return !owns(net);}
  @Override public boolean is_drillable(int net){return false;}
+ /** Search-tree sections may be clearance-expanded octagons, so they cannot be
+  * electrical targets. Keep the full trace section inside real native copper.
+  * A contact is one convex piece; section indices are NOT native tile indices.
+  */
+ @Override public TileShape get_trace_connection_shape(ShapeSearchTree tree,int index){
+  if(index<0||index>=tree_shape_count(tree))throw new IllegalArgumentException("Invalid contact search section");
+  if(tile_shape_count()!=1)throw new IllegalStateException("Native contact must be one convex tile");
+  int halfWidth=board.rules.get_trace_half_width(get_net_no(0),get_layer());
+  // Through-hole entries need useful nominal annular overlap beyond tangency.
+  // Native drill-subtracted validation remains mandatory for every routed entry.
+  int entryDepth=plated?10000:0; // 0.10 mm; no foreign-clearance changes.
+  TileShape interior=(TileShape)get_tile_shape(0).offset(-halfWidth-2-entryDepth);
+  return interior.intersection(get_tree_shape(tree,index)).simplify();
+ }
+
  @Override public boolean is_obstacle(Item other){if(other instanceof Trace||other instanceof Via){for(int i=0;i<other.net_count();i++)if(owns(other.get_net_no(i)))return false;return true;}return false;}
  private static double pointSegment(FloatPoint p,FloatPoint a,FloatPoint b){double dx=b.x-a.x,dy=b.y-a.y;double dd=dx*dx+dy*dy;double t=dd==0?0:Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/dd));return Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy);}
  private static double orient(FloatPoint a,FloatPoint b,FloatPoint c){return (b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);}

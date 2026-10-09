@@ -20,7 +20,9 @@ public class AutorouteEngine
 {
 
   public final Map<String,Double> stageSeconds=new LinkedHashMap<>();
-  static final int TRACE_WIDTH_TOLERANCE = 2;
+  // Planning reserves stock insertion safety (16 units) plus the original
+  // 2-unit locator rounding allowance. Physical rules remain unchanged.
+  static final int TRACE_WIDTH_TOLERANCE = 18;
   /**
    * The current search tree used in autorouting. It depends on the trac clearance class used in the
    * autoroute algorithm.

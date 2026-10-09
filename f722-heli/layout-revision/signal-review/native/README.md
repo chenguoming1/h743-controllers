@@ -4,7 +4,7 @@ This is a read-only, narrow check for the final BARO_SCL/BARO_SDA route. It does
 
 ## Current result
 
-The inspected KiCad 10.0.6 board is SHA-256 `e38e71c1960fc52881ee699117aa48c7e43483562ea22ec276ec0dc1d2138883`.
+The inspected KiCad 10.0.6 board is SHA-256 `1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf`.
 
 - SCL contains exactly U1.61, U4.4 and R7.2; SDA contains exactly U1.62, U4.3 and R8.2.
 - Each net has three disconnected pad components, no tracks and no vias. Their zero recorded trace lengths are **not** complete-route results. Final capacitance and RC values are deliberately null.

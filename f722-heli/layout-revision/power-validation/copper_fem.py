@@ -6,16 +6,18 @@ All lengths are mm; material resistivity is ohm.mm. Finite terminal lands are
 equipotential on each layer. Barrel resistance is retained between layer lands.
 """
 from dataclasses import dataclass
+from copy import deepcopy
 from fractions import Fraction
 import math
 import time
+import resource
 import numpy as np
 import shapely as s
 from shapely.geometry import Polygon, GeometryCollection, box
 from shapely.errors import GEOSException
-from scipy.sparse import coo_matrix
+from scipy.sparse import coo_matrix,diags
 from scipy.sparse.csgraph import connected_components
-from scipy.sparse.linalg import cg, LinearOperator
+from scipy.sparse.linalg import cg, LinearOperator,splu
 
 
 class Refused(RuntimeError):
@@ -50,6 +52,10 @@ class Limits:
     max_iterations: int = 10000
     max_terminals: int = 128
     max_element_condition: float = 1e12
+    linear_solver: str = 'cg'
+    max_factor_nonzeros: int = 20000000
+    max_factor_bytes: int = 1073741824
+    cg_diagnostic_iterations: int = 0
 
 
 def polygon_set(records):
@@ -229,7 +235,8 @@ class DSU:
 
 class Mesh:
     def __init__(self, domains, contacts, spacing_mm, sheet_ohm, thickness_mm,
-                 barrels=(), layer_z_mm=None, plating_mm=0.015, limits=None):
+                 barrels=(), layer_z_mm=None, plating_mm=0.015, limits=None,
+                 native_edge_provider=None,geometry_progress=None,geometry_certificate=None):
         self.limits = limits or Limits()
         self.start_time = time.monotonic()
         self.sheet = sheet_ohm
@@ -258,6 +265,29 @@ class Mesh:
         # Respect finite terminal boundaries exactly, instead of snapping their
         # extent to the sampling grid. Annuli remain equipotential ideal lands.
         region_union = {layer: s.union_all(value) for layer, value in regions.items()}
+        self.native_edge_noding={}
+        if native_edge_provider is not None:
+            # Keep one layer's spatial index alive at a time. Native polygon
+            # objects are immutable; only the proved derived representation is
+            # shared by the local domain and ideal-land partition copies.
+            from native_edge_noding import canonicalize
+            domains=dict(domains)
+            for layer in domains:
+                if domains[layer].is_empty:continue
+                try:
+                    noded,receipt=canonicalize([domains[layer],region_union[layer]],
+                      native_edge_provider(layer),check_time=self.check_time)
+                except Refused as failure:
+                    failure.geometry_reproduction={'layer':layer,'stage':'pretiling_native_edge_noding',
+                      **getattr(failure,'geometry_reproduction',{})}
+                    raise
+                domains[layer],region_union[layer]=noded
+                self.native_edge_noding[layer]=receipt
+                if geometry_certificate:geometry_certificate(layer,receipt)
+                if geometry_progress:
+                    geometry_progress({'stage':'native_edge_noding_ready','layer':layer,
+                      **{k:receipt[k]for k in ['source_edges','input_unique_vertices','inserted_seam_vertices',
+                        'changed_derived_vertices','maximum_derived_vertex_displacement_mm']}})
         tile_count = 0
         area_sum = 0.0
         domain_area = sum(g.area for g in domains.values())
@@ -397,6 +427,89 @@ class Mesh:
         if time.monotonic()-self.start_time>self.limits.max_seconds:
             raise Refused('Wall-time cap reached')
 
+    def linear_system(self):
+        if hasattr(self,'_linear_system'):return self._linear_system
+        if self.limits.linear_solver not in ('cg','sparse-direct'):raise Refused('Unknown linear solver')
+        if not np.all(np.isfinite(self.K.data)):raise Refused('Nonfinite FEM matrix')
+        active=self.K[self.active][:,self.active]
+        if connected_components(active,directed=False,return_labels=False)!=1:
+            raise Refused('Anchored FEM component is disconnected')
+        diagonal=active.diagonal()
+        if np.any(~np.isfinite(diagonal))or np.any(diagonal<=0):raise Refused('Nonpositive FEM diagonal')
+        difference=active-active.T
+        asymmetry=float(max(abs(difference.data),default=0.))
+        if asymmetry>max(diagonal)*1e-12:raise Refused('FEM matrix is not numerically symmetric')
+        anchor=next(iter(self.contact_nodes.values()))
+        free=self.active[self.active!=anchor];A=self.K[free][:,free].tocsr();diag=A.diagonal()
+        self.linear_diagnostics={'backend':self.limits.linear_solver,'active_equations':len(self.active),
+          'anchored_equations':len(free),'anchored_connected_components':1,'finite_matrix':True,
+          'minimum_active_diagonal':float(min(diagonal)),'maximum_active_diagonal':float(max(diagonal)),
+          'maximum_asymmetry':asymmetry,'fixed_reference_node':int(anchor),'matrix_nonzeros':int(A.nnz),
+          'matrix_storage_bytes':A.data.nbytes+A.indices.nbytes+A.indptr.nbytes}
+        self._linear_system=(free,A,diag)
+        self.check_time();return self._linear_system
+
+    def iterative_solution(self,A,rhs,diag,max_iterations):
+        history=[{'iteration':0,'residual_norm_A':float(np.linalg.norm(rhs))}];iterations=[0]
+        def tick(value):
+            iterations[0]+=1;self.check_time()
+            if iterations[0]%100==0:history.append({'iteration':iterations[0],'residual_norm_A':float(np.linalg.norm(A@value-rhs))})
+        pre=LinearOperator(A.shape,matvec=lambda x:x/diag)
+        value,info=cg(A,rhs,rtol=1e-10,atol=1e-13,M=pre,maxiter=max_iterations,callback=tick)
+        final=float(np.linalg.norm(A@value-rhs));history.append({'iteration':iterations[0],'residual_norm_A':final})
+        initial=history[0]['residual_norm_A']
+        trend='converged'if info==0 else 'nonfinite'if not math.isfinite(final)else 'residual_growth'if final>10*initial else 'iteration_limit'
+        return value,info,{'iterations':iterations[0],'info':int(info),'trend':trend,'residual_history':history,
+                           'final_residual_norm_A':final,'diagnostic_only':False}
+
+    def direct_solution(self,A,rhs,diag):
+        if not hasattr(self,'_direct_factor'):
+            if self.limits.cg_diagnostic_iterations:
+                _,_,diagnostic=self.iterative_solution(A,rhs,diag,self.limits.cg_diagnostic_iterations)
+                diagnostic['diagnostic_only']=True;self.linear_diagnostics['cg_diagnostic']=diagnostic
+            self.check_time();scale=1/np.sqrt(diag);scaled=(diags(scale)@A@diags(scale)).tocsc()
+            if scaled.nnz>self.limits.max_factor_nonzeros:raise Refused('Matrix already exceeds sparse-factor nonzero budget')
+            started=time.monotonic()
+            try:factor=splu(scaled,permc_spec='MMD_AT_PLUS_A',diag_pivot_thresh=0.,options={'SymmetricMode':True,'Equil':False})
+            except RuntimeError as exc:raise Refused('Sparse direct factorization failed: '+str(exc))from exc
+            lower,upper=factor.L,factor.U
+            nonzeros=lower.nnz+upper.nnz
+            memory=sum(a.nbytes for matrix in [lower,upper]for a in [matrix.data,matrix.indices,matrix.indptr])+factor.perm_r.nbytes+factor.perm_c.nbytes
+            self.linear_diagnostics['factorization']={'ordering':'MMD_AT_PLUS_A','diagonal_scaling':True,
+              'seconds':time.monotonic()-started,'factor_nonzeros':int(nonzeros),'factor_stored_array_bytes':int(memory),
+              'factor_memory_excludes_native_workspace':True,'process_peak_RSS_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024}
+            del lower,upper
+            if nonzeros>self.limits.max_factor_nonzeros or memory>self.limits.max_factor_bytes:
+                raise Refused('Sparse factor storage cap exceeded')
+            self._direct_factor=factor;self._direct_scale=scale;self.check_time()
+        factor=self._direct_factor;scale=self._direct_scale
+        # Thin exact geometric elements can create large canceling row terms.
+        # Retain the original assembled coefficients and double LU, while
+        # accumulating both solution and residual in wider arithmetic. This
+        # changes no matrix coefficient, geometry or acceptance threshold.
+        wide=np.longdouble
+        if np.finfo(wide).eps>=np.finfo(float).eps:
+            raise Refused('Sparse direct refinement requires wider-than-float64 arithmetic')
+        if not hasattr(self,'_direct_matrix_wide'):self._direct_matrix_wide=A.astype(wide)
+        matrix=self._direct_matrix_wide;right=rhs.astype(wide)
+        value=(scale*factor.solve(scale*rhs)).astype(wide)
+        target=max(1e-13,1e-10*float(np.linalg.norm(rhs)));history=[];double_history=[]
+        for step in range(5):
+            residual=right-matrix@value;norm=float(np.linalg.norm(residual));history.append(norm)
+            double_history.append(float(np.linalg.norm(rhs-A@np.asarray(value,dtype=float))))
+            # Preserve failed histories too; a refusal is not a usable result.
+            self.linear_diagnostics['last_direct_solve']={'refinement_steps':len(history)-1,
+              'residual_norm_history_A':list(history),'required_residual_norm_A':target,
+              'float64_projection_residual_norm_history_A':list(double_history),
+              'residual_and_solution_mantissa_bits':int(np.finfo(wide).nmant),
+              'converged':bool(math.isfinite(norm)and norm<=target)}
+            if math.isfinite(norm)and norm<=target:break
+            if step==4 or not math.isfinite(norm):
+                raise Refused('Sparse direct residual did not meet the unchanged linear tolerance')
+            correction=scale*factor.solve(scale*np.asarray(residual,dtype=float))
+            value+=correction.astype(wide);self.check_time()
+        return value,len(history)
+
     def solve(self,injections,reference=None):
         self.check_time()
         if not injections or not all(math.isfinite(x) for x in injections.values()):
@@ -412,24 +525,22 @@ class Mesh:
         b=np.zeros(self.n)
         for name,current in injections.items():
             b[self.contact_nodes[name]]+=current
-        free=self.active[self.active!=ref]
-        A=self.K[free][:,free]
-        diag=A.diagonal()
-        if np.any(diag<=0):
-            raise Refused('Nonpositive FEM diagonal')
-        pre=LinearOperator(A.shape,matvec=lambda x:x/diag)
-        v=np.zeros(self.n)
-        iterations=[0]
-        def tick(_):
-            iterations[0]+=1
-            self.check_time()
-        v[free],info=cg(A,b[free],rtol=1e-10,atol=1e-13,M=pre,maxiter=self.limits.max_iterations,callback=tick)
-        if info!=0:
-            raise Refused(f'CG did not converge ({info}); no result qualifies')
+        free,A,diag=self.linear_system()
+        v=np.zeros(self.n,dtype=np.longdouble if self.limits.linear_solver=='sparse-direct'else float)
+        try:
+            if self.limits.linear_solver=='cg':
+                v[free],info,diagnostic=self.iterative_solution(A,b[free],diag,self.limits.max_iterations)
+                self.linear_diagnostics['cg']=diagnostic;iterations=diagnostic['iterations']
+                if info!=0:raise Refused(f'CG did not converge ({info}); no result qualifies')
+            else:v[free],iterations=self.direct_solution(A,b[free],diag)
+        except Refused as failure:
+            failure.linear_solver_diagnostics=self.linear_diagnostics
+            raise
         residual=self.K@v-b
         max_residual=float(np.max(abs(residual[self.active])))
         if max_residual>max(1e-8,max(abs(x) for x in injections.values())*1e-7):
             raise Refused(f'KCL residual too large: {max_residual} A')
+        v[self.active]-=v[ref]
         node_v=v[self.mapping]
         field=np.einsum('ti,tij->tj',node_v[self.triangles],self.grad)
         density=np.linalg.norm(field,axis=1)/(self.sheet*self.thickness)
@@ -448,7 +559,7 @@ class Mesh:
         self.check_time()
         return {'contact_voltage_V':{name:float(v[node]) for name,node in self.contact_nodes.items()},
                 'copper_loss_W':loss,'sheet_loss_W':sheet_loss,'port_power_W':port_power,
-                'KCL_max_residual_A':max_residual,'iterations':iterations[0],
+                'KCL_max_residual_A':max_residual,'iterations':iterations,'linear_solver_diagnostics':deepcopy(self.linear_diagnostics),
                 'peak_element_density_A_per_mm2':float(max(density)),
                 'peak_element_location':{'layer':self.layers[int(element_layers[peak])],
                                          'centroid_mm':self.xy[self.triangles[peak]].mean(axis=0).tolist()},
@@ -457,6 +568,7 @@ class Mesh:
                 'nodes':self.n,'triangles':len(self.triangles),'floating_unloaded_nodes':self.floating_nodes,
                 'mesh_spacing_mm':self.spacing,'area_error_mm2':self.area_error_mm2,
                 'element_geometry':self.element_geometry,
+                'native_edge_noding':self.native_edge_noding,
                 'density_limitations':'Piecewise-linear DC field; ideal lands/annuli omit pin/solder/within-land heating. Peak singularities require mesh sensitivity. No thermal rating.'}
 
     def impedance(self,names=None):
@@ -470,4 +582,4 @@ class Mesh:
         if error>1e-7:
             raise Refused('Transfer matrix reciprocity failure')
         return {'contacts':names,'reference':ref,'impedance_ohm':z.tolist(),'reciprocity_error_ohm':error,
-                'element_geometry':self.element_geometry}
+                'element_geometry':self.element_geometry,'native_edge_noding':self.native_edge_noding}

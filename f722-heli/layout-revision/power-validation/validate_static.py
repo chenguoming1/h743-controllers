@@ -218,6 +218,22 @@ def summarize_transfer(mesh, test):
     return {'resistance_ohm': resistance, 'field': result}
 
 
+def remember_geometry_certificate(context, net, layer, receipt):
+    # JSON is the declared cache/result schema. Tuple/list differences from an
+    # in-memory producer cannot change its exact serialized geometry evidence.
+    canonical=lambda value:json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False)
+    encoded=canonical(receipt);normalized=json.loads(encoded)
+    certificates=context.setdefault('geometry_certificates',{});key=net+'/'+layer
+    if key in certificates and canonical(certificates[key])!=encoded:
+        previous=canonical(certificates[key]);failure=Refused('Native geometry certificate changed between meshes: '+key)
+        failure.geometry_reproduction={'stage':'geometry_certificate_comparison','net':net,'layer':layer,
+          'previous_sha256':hashlib.sha256(previous.encode()).hexdigest(),
+          'current_sha256':hashlib.sha256(encoded.encode()).hexdigest(),
+          'previous_receipt':certificates[key],'current_receipt':normalized}
+        raise failure
+    certificates[key]=normalized
+
+
 def run_screen(context):
     if context['manifest'].get('numerical_execution_authorized') is False:
         raise Refused('Numerical compute slot has not been released for this compiled freeze')
@@ -226,17 +242,38 @@ def run_screen(context):
     ledger = context['ledger']; geometry = context['geometry']; material = context['material']
     limits = Limits(**ledger.get('limits', {}))
     runs = []
+    context['partial_runs']=runs  # Retain completed grids on a later refusal.
     started=time.monotonic()
     def progress(stage,**extra):
         callback=context.get('progress')
         if callback:callback({'stage':stage,'elapsed_seconds':time.monotonic()-started,**extra})
+    context.setdefault('geometry_certificates',{})
+    context.setdefault('mesh_cache_receipts',[])
+    def remember_geometry(net,layer,receipt):
+        remember_geometry_certificate(context,net,layer,receipt)
     def make_mesh(network, spacing):
         progress('mesh_start',net=network['net'],spacing_mm=spacing)
+        net=network['net'];mesh=None;binding=None;cache_dir=context.get('mesh_cache_dir')
+        if cache_dir is not None:
+            from mesh_cache import mesh_binding,load_mesh,save_mesh
+            binding=mesh_binding(context,network,spacing);mesh=load_mesh(cache_dir,binding,limits)
+        if mesh is not None:
+            for layer,receipt in mesh.native_edge_noding.items():remember_geometry(net,layer,receipt)
+            context['mesh_cache_receipts'].append(mesh.mesh_cache_info)
+            progress('mesh_cache_loaded',net=net,spacing_mm=spacing,raw_nodes=len(mesh.xyz),equations=mesh.n,triangles=len(mesh.triangles))
+            return mesh
         domains, pads, barrels = native_geometry(geometry, network['net'])
         contacts = {node: (spec['layer'], contact_spec_geometry(pads,spec))
                     for node,spec in network['contacts'].items()}
         mesh=Mesh(domains, contacts, spacing, material['sheet_ohm'], material['thickness_mm'],
-                  barrels, context['stackup']['layer_z_mm'], material['plating_mm'], limits)
+                  barrels, context['stackup']['layer_z_mm'], material['plating_mm'], limits,
+                  native_edge_provider=(lambda layer:__import__('native_edge_noding').native_edges(geometry,net,layer))
+                    if 'native_edge_noding.py'in context['manifest'].get('analysis_source_sha256',{})else None,
+                  geometry_progress=lambda row:progress(row.pop('stage'),net=net,spacing_mm=spacing,**row),
+                  geometry_certificate=lambda layer,receipt:remember_geometry(net,layer,receipt))
+        if cache_dir is not None:
+            receipt=save_mesh(mesh,cache_dir,binding);context['mesh_cache_receipts'].append(receipt)
+            progress('mesh_checkpoint_saved',net=net,spacing_mm=spacing,cache_receipt=receipt)
         progress('mesh_ready',net=network['net'],spacing_mm=spacing,raw_nodes=len(mesh.xyz),
                  equations=mesh.n,triangles=len(mesh.triangles),contacts=len(mesh.contact_nodes),element_geometry=mesh.element_geometry)
         return mesh
@@ -337,6 +374,7 @@ def run_screen(context):
             'impedance_sensitivity':sensitivity,'voltage_margin_checks':margins,'resistance_margin_checks':resistance_margins,
             'runs':runs,'software':{'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'shapely':shapely.__version__,
               'source_sha256':{name:sha256(Path(__file__).parent/name) for name in ['copper_fem.py','dc_circuit.py','validate_static.py']}},
+            'geometry_certificates':context['geometry_certificates'],'mesh_cache_receipts':context['mesh_cache_receipts'],
             'limitations':['New explicitly enumerated cases only; no historical result reuse.',
               'Two-grid sensitivity is not a rigorous discretization or manufacturing error bound.',
               'Finite lands and annuli omit within-land, pin, solder and contact heating; external contact/harness resistors belong in each ledger.',
@@ -349,6 +387,7 @@ def main():
     parser.add_argument('--freeze',type=Path,required=True); parser.add_argument('--ledger',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--run',action='store_true',help='Run only after the power owner grants the compute slot; otherwise preflight only')
+    parser.add_argument('--mesh-cache',type=Path,help='Private source-bound numerical checkpoints; never a substitute for source checks')
     args=parser.parse_args()
     try:
         guard_output(args.freeze,args.ledger,args.out)
@@ -358,14 +397,21 @@ def main():
     context=None
     try:
         context=preflight(args.freeze,args.ledger)
+        context['mesh_cache_dir']=args.mesh_cache
         if args.run:
             context['progress']=lambda row:print(json.dumps({'progress':row}),file=sys.stderr,flush=True)
         result=run_screen(context) if args.run else {'status':'PREFLIGHT ONLY; NO BOARD MESH RUN','board_sha256':context['board_sha256'],'scope':context['manifest']['scope'],'drc':context['drc']}
         code=0 if not args.run or result['conditional_static_screen_pass'] else 1
-    except (Refused,KeyError,TypeError,ValueError,shapely.errors.GEOSException) as exc:
-        result={'status':'REFUSED','reason':str(exc),'conditional_static_screen_pass':False}; code=2
+    except (Refused,KeyError,TypeError,ValueError,MemoryError,shapely.errors.GEOSException) as exc:
+        result={'status':'REFUSED','reason':str(exc)or type(exc).__name__,'conditional_static_screen_pass':False}; code=2
         if context is not None:result.update(board_sha256=context['board_sha256'],freeze_sha256=context['freeze_sha256'],ledger_sha256=context['ledger_sha256'])
         if hasattr(exc,'geometry_reproduction'):result['geometry_reproduction']=exc.geometry_reproduction
+        if hasattr(exc,'linear_solver_diagnostics'):result['linear_solver_diagnostics']=exc.linear_solver_diagnostics
+        if context is not None:
+            result['geometry_certificates']=context.get('geometry_certificates',{})
+            result['mesh_cache_receipts']=context.get('mesh_cache_receipts',[])
+            result['partial_runs_unqualified']=context.get('partial_runs',[])
+            result['partial_runs_are_converged']=False
     # Repeat after a potentially long run in case a destination symlink changed.
     try:
         guard_output(args.freeze,args.ledger,args.out)

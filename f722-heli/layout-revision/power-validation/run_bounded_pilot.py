@@ -13,6 +13,7 @@ def main():
     for name in ['freeze','ledger','out']:p.add_argument('--'+name,required=True)
     p.add_argument('--wall-seconds',type=int,default=1200)
     p.add_argument('--memory-mib',type=int,default=4096)
+    p.add_argument('--mesh-cache',help='Private hash-bound assembled mesh/matrix checkpoint directory')
     a=p.parse_args()
     if not 1<=a.wall_seconds<=1200 or not 512<=a.memory_mib<=4096:
         p.error('Pilot bounds are 1..1200 seconds and 512..4096 MiB')
@@ -27,6 +28,7 @@ def main():
     signal.signal(signal.SIGALRM,signal.SIG_DFL);signal.alarm(a.wall_seconds)
     from validate_static import main as validate_main
     sys.argv=[sys.argv[0],'--freeze',a.freeze,'--ledger',a.ledger,'--out',a.out,'--run']
+    if a.mesh_cache:sys.argv+=['--mesh-cache',a.mesh_cache]
     try:return validate_main()
     finally:signal.alarm(0)
 

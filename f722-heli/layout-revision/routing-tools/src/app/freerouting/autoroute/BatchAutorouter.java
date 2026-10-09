@@ -295,7 +295,7 @@ public class BatchAutorouter extends NamedAlgorithm
       routerCounters.rippedCount = ripped_item_count;
       routerCounters.failedToBeRoutedCount = not_routed;
       routerCounters.routedCount = routed;
-      routerCounters.incompleteCount = new RatsNest(board).incomplete_count();
+      routerCounters.incompleteCount = stats.connections.incompleteCount;
 
       this.fireBoardUpdatedEvent(stats, routerCounters, this.board);
 
@@ -331,7 +331,8 @@ public class BatchAutorouter extends NamedAlgorithm
 
           lastAttempt.clear();lastAttempt.put("net",board.rules.nets.get(curr_item.get_net_no(i)).name);lastAttempt.put("item_id",curr_item.get_id_no());lastAttempt.put("item_class",curr_item.getClass().getName());if(curr_item instanceof NativePadContactArea c){lastAttempt.put("native_uuid",c.nativeId);lastAttempt.put("native_group",c.nativeGroup);lastAttempt.put("contact_label",c.name);}
           long attemptStart=System.nanoTime();System.out.println("ROUTE_ATTEMPT_START "+lastAttempt);System.out.flush();
-          boolean useSlowAlgorithm = p_pass_no % 4 == 0;
+          boolean useSlowAlgorithm = p_pass_no % 4 == 0 || "1".equals(System.getenv("F722_FORCE_SLOW_TREE"));
+          lastAttempt.put("search_tree_mode",useSlowAlgorithm?"stock_slow":"stock_fast_45_degree");
           var autorouterResult = autoroute_item(curr_item, curr_item.get_net_no(i), ripped_item_list, p_pass_no, useSlowAlgorithm);
           lastAttempt.put("route_seconds",(System.nanoTime()-attemptStart)/1e9);lastAttempt.put("result",autorouterResult.state.toString());lastAttempt.put("details",autorouterResult.details);long statsStart=System.nanoTime();
           if (autorouterResult.state == AutorouteAttemptState.ROUTED)
@@ -352,14 +353,18 @@ public class BatchAutorouter extends NamedAlgorithm
           --items_to_go_count;
           ripped_item_count += ripped_item_list.size();
 
-          BoardStatistics boardStatistics = board.get_statistics();
+          // Only the two audited pre-engine returns are geometry-preserving.
+          boolean unchangedEarlyReturn = Boolean.TRUE.equals(lastAttempt.get("geometry_unchanged_early_return"));
+          BoardStatistics boardStatistics = unchangedEarlyReturn ? stats : board.get_statistics();
+          stats = boardStatistics;
           routerCounters.passCount = p_pass_no;
           routerCounters.queuedToBeRoutedCount = items_to_go_count;
           routerCounters.skippedCount = skipped;
           routerCounters.rippedCount = ripped_item_count;
           routerCounters.failedToBeRoutedCount = not_routed;
           routerCounters.routedCount = routed;
-          routerCounters.incompleteCount = new RatsNest(board).incomplete_count();
+          if (!unchangedEarlyReturn) routerCounters.incompleteCount = stats.connections.incompleteCount;
+          lastAttempt.put("statistics_reused_for_proven_noop",unchangedEarlyReturn);
           lastAttempt.put("statistics_seconds",(System.nanoTime()-statsStart)/1e9);
           this.fireBoardUpdatedEvent(boardStatistics, routerCounters, this.board);
         }
@@ -442,7 +447,6 @@ public class BatchAutorouter extends NamedAlgorithm
 
       this.fireTaskStateChangedEvent(new TaskStateChangedEvent(this, TaskState.RUNNING, curr_pass_no, current_board_hash));
 
-      float boardScoreBefore = new BoardStatistics(this.board).getNormalizedScore(job.routerSettings.scoring);
       bh.add(this.board);
 
       FRLogger.traceEntry("BatchAutorouter.autoroute_pass #" + curr_pass_no + " on board '" + current_board_hash + "'");
@@ -572,6 +576,7 @@ public class BatchAutorouter extends NamedAlgorithm
       Set<Item> unconnected_set = p_item.get_unconnected_set(p_route_net_no);
       if (unconnected_set.isEmpty())
       {
+        lastAttempt.put("geometry_unchanged_early_return",true);
         return new AutorouteAttemptResult(AutorouteAttemptState.NO_UNCONNECTED_NETS);
       }
 
@@ -584,6 +589,7 @@ public class BatchAutorouter extends NamedAlgorithm
         {
           if (curr_item instanceof ConductionArea)
           {
+            lastAttempt.put("geometry_unchanged_early_return",true);
             return new AutorouteAttemptResult(AutorouteAttemptState.CONNECTED_TO_PLANE);
           }
         }

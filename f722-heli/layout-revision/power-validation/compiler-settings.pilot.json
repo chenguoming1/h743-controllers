@@ -1,7 +1,7 @@
 {
   "schema": "f722-case-compiler-settings/v1",
   "scope": "power-only",
-  "source_stage": "explicit provisional power-only preparation; final routed source requires fresh binding",
+  "source_stage": "unbound prototype pilot settings; review against the new frozen source",
   "material": {
     "temperature_C": 105,
     "thickness_mm": 0.015,
@@ -24,7 +24,11 @@
     "max_seconds": 600,
     "max_iterations": 20000,
     "max_terminals": 128,
-    "max_element_condition": 1000000000000.0
+    "max_element_condition": 1000000000000.0,
+    "linear_solver": "sparse-direct",
+    "max_factor_nonzeros": 20000000,
+    "max_factor_bytes": 1073741824,
+    "cg_diagnostic_iterations": 0
   },
   "servo_sample_allocations": [
     "mcu_vdd19",
