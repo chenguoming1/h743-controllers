@@ -1,0 +1,86 @@
+{
+  "schema": "f722-independent-vcap-result-review/v1",
+  "status": "PASS: internally consistent source-bound provisional copper screen",
+  "reviewed_utc": "2026-10-09T08:58:01.406640+00:00",
+  "read_only_result_audit": true,
+  "numerical_resolve_performed": false,
+  "native_matrix_loaded": false,
+  "review_scope": "Hash verification, native endpoint metadata, exclusions, scalar/5x5-matrix arithmetic and recorded diagnostics; no field/mesh regeneration.",
+  "result": {
+    "path": "pilot-trial27-serialized-released/vcap/result.json",
+    "sha256": "dc3a680f7912351e849d02d63e940e21730a84f8ae6c223c5608020df3ad78bd"
+  },
+  "summary_receipt": {
+    "path": "vcap-trial27-two-grid-receipt.json",
+    "sha256": "bfe3f47bf06a9c03f0601e9f02569787156557acb7db724507d506d0fe1e391f"
+  },
+  "board_sha256": "1069f4ce2d92088271a4ec3154ff0ed35e88adc4100705f75c4aaa4a884717bd",
+  "freeze_sha256": "1431380a78f68de28354d75e1e675f084f82809691c66631fa92f4b6d1137dd9",
+  "ledger_sha256": "ceb2e0dfb645fdb501bae9581d37ab215ef6a9a37fec806d3a0b44e47fa13abb",
+  "locked_source_manifest_sha256": "494ead842577c34c3eacacad14041b2082ea615fadc9e0d57d603b0b23ac7958",
+  "frozen_file_hashes_verified": 25,
+  "analysis_runtime_source_hashes_verified": 6,
+  "checks_passed": 315,
+  "grids_mm": [
+    0.2,
+    0.15
+  ],
+  "fine_grid_endpoint_loops": [
+    {
+      "endpoint": "U1.12",
+      "resistance_ohm": 0.018862367307145418,
+      "budget_ohm": 0.035
+    },
+    {
+      "endpoint": "U1.18",
+      "resistance_ohm": 0.018399492513753325,
+      "budget_ohm": 0.035
+    },
+    {
+      "endpoint": "U1.31",
+      "resistance_ohm": 0.023437142422054316,
+      "budget_ohm": 0.035
+    },
+    {
+      "endpoint": "U1.47",
+      "resistance_ohm": 0.025858455070461497,
+      "budget_ohm": 0.035
+    },
+    {
+      "endpoint": "U1.63",
+      "resistance_ohm": 0.02478946920643894,
+      "budget_ohm": 0.035
+    }
+  ],
+  "minimum_raw_budget_margin_ohm": 0.009141544929538507,
+  "minimum_guarded_budget_margin_ohm": 0.009041544929538507,
+  "maximum_direct_leg_vs_port_matrix_difference_ohm": 3.545757437661834e-13,
+  "recorded_diagnostics_recomputed": {
+    "maximum_KCL_residual_A": 4.042843377780048e-09,
+    "maximum_energy_error_W": 1.4199155740080016e-11,
+    "maximum_relative_energy_error": 2.2884363484412713e-09,
+    "maximum_final_linear_residual_norm_A": 8.912245780474465e-11,
+    "maximum_refinement_steps": 1,
+    "maximum_reciprocity_error_ohm": 1.8240617349896127e-15,
+    "maximum_factor_stored_bytes": 52105424,
+    "maximum_factor_nonzeros": 4165794,
+    "recorded_process_peak_RSS_bytes": 1217339392
+  },
+  "diagnostic_summary_population": {
+    "retained_leg_fields": 30,
+    "port_matrices": 6
+  },
+  "geometry_certificate_sha256": "d51889abd9f814d613dcaf29fa48dd411566150c1bdb8928440dc32b2b81919a",
+  "excluded_ordinary_protection_checks": 19,
+  "ordinary_opens_outside_scope": 85,
+  "loaded_cases_run": 0,
+  "final_board_qualified": false,
+  "interpretation_limits": [
+    "Five separate 1 A unit endpoint loops cover all five actual native U1 GND pads; they do not establish actual simultaneous return-current sharing.",
+    "The 35 mOhm budget includes the three stated copper legs only. Fitted R16 0.120 Ohm, capacitor ESR, pin/solder/contact effects and AC stability remain separate.",
+    "Two-grid sensitivity and guarded margins are a conditional discretization screen, not a rigorous manufacturing or thermal error bound.",
+    "Only the bound provisional board is covered. Later ordinary tracks, drills or fills require fresh final-source analysis.",
+    "Source hashes and runtime logs were checked. This independent review did not rerun native DRC, field solves, geometry proofs, or production/flight qualification."
+  ],
+  "blockers": []
+}

@@ -1,7 +1,16 @@
 {
   "status": "pass",
-  "tests_run": 18,
+  "tests_run": 27,
   "passed_tests": [
+    "test_critical_reference.CriticalReferenceControls.test_contact_only_inside_drill_rejected",
+    "test_critical_reference.CriticalReferenceControls.test_drill_respects_finite_barrel_span",
+    "test_critical_reference.CriticalReferenceControls.test_merged_hole_keeps_extension_and_width_only_gap",
+    "test_critical_reference.CriticalReferenceControls.test_npth_removes_all_layer_copper",
+    "test_critical_reference.CriticalReferenceControls.test_self_land_contact_cannot_replace_missing_zone",
+    "test_critical_reference.CriticalReferenceControls.test_short_barrel_cannot_tie_planes",
+    "test_critical_reference.CriticalReferenceControls.test_sloped_interval_partition_conserves_length",
+    "test_critical_reference.CriticalReferenceControls.test_valid_annular_contact_accepted",
+    "test_critical_reference.CriticalReferenceControls.test_zero_area_tangent_rejected",
     "test_signal_geometry.CapacitanceControls.test_close_foreign_copper_increases_or_refuses",
     "test_signal_geometry.CapacitanceControls.test_complete_conditional_ledger_never_claims_qualification",
     "test_signal_geometry.CapacitanceControls.test_exact_concentric_sphere_and_distant_limit",
@@ -21,10 +30,14 @@
     "test_signal_geometry.TopologyControls.test_native_mismatch_rejected",
     "test_signal_geometry.TopologyControls.test_offcenter_copper_junction_refused"
   ],
+  "original_18_controls_preserved": true,
   "failures": [],
   "source_sha256": {
-    "export_signal_snapshot.py": "9660f39e4ca30169b2545c437b26ae1e40c0e847eee74815e4eec0a43df5b3a3",
-    "check_signal_geometry.py": "26be3f949ff5791dc81dd3a168962059f4219b7304840261eeaf6d44f28a86f4",
+    "check_critical_reference.py": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750",
+    "check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
+    "compare_reference_geometry.py": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e",
+    "export_signal_snapshot.py": "51c66696c9b1d8a4bd5caae0b265cb6e2cfaabc6459abb6b95b2a720aa063bbf",
+    "test_critical_reference.py": "be83ac047b097a68b97570dd1b75fcc9e9c1c12d06669c9ef977f9650ab10c70",
     "test_signal_geometry.py": "ff4b3e5aef6445ca2721a836f121bf68403f01dda9984c62dff454bd2c3e8121"
   },
   "analytic_controls": {
@@ -34,5 +47,5 @@
     "parallel_plate_h0p1_er4p1_infinite_pF_per_mm2": 0.36302170032479997,
     "plate_cover_square0p06_pF_per_mm2": 9.33797846607615
   },
-  "limits": "Analytic scaling/limit controls and explicit boundary/cover derivation; not a numerical field-solver validation or tested board load."
+  "limits": "Analytic scaling/limit controls and explicit boundary/cover derivation; not a numerical field-solver validation or tested board load. New reference controls are geometric regression controls, not AC or return-current qualification."
 }

@@ -2,7 +2,7 @@
   "bundle": "stock-nexus-i2c-source-review",
   "intended_destination": "layout-revision/signal-review",
   "review_date_utc": "2026-10-09",
-  "state": "Pinned stock firmware/device review with historical158 bus inventory and source-bound77 native geometry screen; final route loading and bench qualification pending.",
+  "state": "Pinned stock firmware/device review with historical158 bus inventory and source-bound75 native I2C/HSE/USB/IMU geometry screens; final route loading and bench qualification pending.",
   "exclusions": [
     "PDFs",
     "screenshots",
@@ -20,11 +20,17 @@
     "native-bus-inventory.json",
     "native/FILES.sha256.json",
     "native/README.md",
+    "native/check_critical_reference.py",
     "native/check_signal_geometry.py",
+    "native/compare_reference_geometry.py",
+    "native/comparison-76-to-75.json",
+    "native/comparison-77-to-76.json",
     "native/controls.json",
+    "native/critical-reference.json",
     "native/current-review.json",
     "native/export_signal_snapshot.py",
     "native/model-inputs.template.json",
+    "native/test_critical_reference.py",
     "native/test_signal_geometry.py",
     "reproduce_stock_timing.py",
     "stock-ba6c7e3/LICENSE",
@@ -71,38 +77,68 @@
     },
     {
       "path": "native/FILES.sha256.json",
-      "size_bytes": 1638,
-      "sha256": "4b85d5c28bb575a1674fcfb40bc88ec8fb34c15cd4dc996286d1ba323845c4a4"
+      "size_bytes": 2717,
+      "sha256": "1c112d26c7ec99c940b6ef9c0034915c90efe7540360e2dc9cd7d522075acb2b"
     },
     {
       "path": "native/README.md",
-      "size_bytes": 13439,
-      "sha256": "1176a0d06e9223e6497878ed20d6356c368bbc7f5df2fa3009901090530fe67f"
+      "size_bytes": 17397,
+      "sha256": "13b133e3d307ca7951ea45ba9b6e0d839e768fdbcaf20cfe80e3d3bffeeef1ec"
+    },
+    {
+      "path": "native/check_critical_reference.py",
+      "size_bytes": 15457,
+      "sha256": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750"
     },
     {
       "path": "native/check_signal_geometry.py",
-      "size_bytes": 38079,
-      "sha256": "26be3f949ff5791dc81dd3a168962059f4219b7304840261eeaf6d44f28a86f4"
+      "size_bytes": 39061,
+      "sha256": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca"
+    },
+    {
+      "path": "native/compare_reference_geometry.py",
+      "size_bytes": 3902,
+      "sha256": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e"
+    },
+    {
+      "path": "native/comparison-76-to-75.json",
+      "size_bytes": 14446,
+      "sha256": "3a09bfc8b458f6ba27ebc5a60dbd7f41d0d96203494fbc1439deabd1fdafa320"
+    },
+    {
+      "path": "native/comparison-77-to-76.json",
+      "size_bytes": 14935,
+      "sha256": "dafd3502950d620480f0320216574965fc89fde23217dc2f06cb40d07e027134"
     },
     {
       "path": "native/controls.json",
-      "size_bytes": 2434,
-      "sha256": "01078036f284cd9dd3a84387a2aee70cbece5cc4d12c70f6e6ccbdc2dbc18165"
+      "size_bytes": 3766,
+      "sha256": "3d0c406df597730dd34fa1a68f5f8a37f4c928678b22ad53fa92afa48605e745"
+    },
+    {
+      "path": "native/critical-reference.json",
+      "size_bytes": 492574,
+      "sha256": "5a2c2545247f13a29d679db172a5063046554d8ecc42f3e4c573fa3204b68cb1"
     },
     {
       "path": "native/current-review.json",
-      "size_bytes": 149114,
-      "sha256": "83d70f97330e8fb76298ee92076f4ca662597858f3d9ec31d16ea722eb5a9ec5"
+      "size_bytes": 246360,
+      "sha256": "b6a82738f36cca2b7fb9fd9ef2cbfdb6b5c0881ca2b815a5888c9516480a3dd4"
     },
     {
       "path": "native/export_signal_snapshot.py",
-      "size_bytes": 7564,
-      "sha256": "9660f39e4ca30169b2545c437b26ae1e40c0e847eee74815e4eec0a43df5b3a3"
+      "size_bytes": 7632,
+      "sha256": "51c66696c9b1d8a4bd5caae0b265cb6e2cfaabc6459abb6b95b2a720aa063bbf"
     },
     {
       "path": "native/model-inputs.template.json",
       "size_bytes": 2777,
       "sha256": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184"
+    },
+    {
+      "path": "native/test_critical_reference.py",
+      "size_bytes": 5856,
+      "sha256": "be83ac047b097a68b97570dd1b75fcc9e9c1c12d06669c9ef977f9650ab10c70"
     },
     {
       "path": "native/test_signal_geometry.py",

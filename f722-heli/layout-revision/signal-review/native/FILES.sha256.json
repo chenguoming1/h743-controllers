@@ -1,25 +1,55 @@
 {
-  "source_board_sha256": "1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf",
+  "source_board_sha256": "008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e",
   "files": [
     {
       "source": "README.md",
-      "sha256": "1176a0d06e9223e6497878ed20d6356c368bbc7f5df2fa3009901090530fe67f",
-      "bytes": 13439
+      "sha256": "13b133e3d307ca7951ea45ba9b6e0d839e768fdbcaf20cfe80e3d3bffeeef1ec",
+      "bytes": 17397
     },
     {
-      "source": "export_signal_snapshot.py",
-      "sha256": "9660f39e4ca30169b2545c437b26ae1e40c0e847eee74815e4eec0a43df5b3a3",
-      "bytes": 7564
+      "source": "check_critical_reference.py",
+      "sha256": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750",
+      "bytes": 15457
     },
     {
       "source": "check_signal_geometry.py",
-      "sha256": "26be3f949ff5791dc81dd3a168962059f4219b7304840261eeaf6d44f28a86f4",
-      "bytes": 38079
+      "sha256": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
+      "bytes": 39061
     },
     {
-      "source": "test_signal_geometry.py",
-      "sha256": "ff4b3e5aef6445ca2721a836f121bf68403f01dda9984c62dff454bd2c3e8121",
-      "bytes": 10334
+      "source": "compare_reference_geometry.py",
+      "sha256": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e",
+      "bytes": 3902
+    },
+    {
+      "source": "comparison-76-to-75.json",
+      "sha256": "3a09bfc8b458f6ba27ebc5a60dbd7f41d0d96203494fbc1439deabd1fdafa320",
+      "bytes": 14446
+    },
+    {
+      "source": "comparison-77-to-76.json",
+      "sha256": "dafd3502950d620480f0320216574965fc89fde23217dc2f06cb40d07e027134",
+      "bytes": 14935
+    },
+    {
+      "source": "controls.json",
+      "sha256": "3d0c406df597730dd34fa1a68f5f8a37f4c928678b22ad53fa92afa48605e745",
+      "bytes": 3766
+    },
+    {
+      "source": "critical-reference.json",
+      "sha256": "5a2c2545247f13a29d679db172a5063046554d8ecc42f3e4c573fa3204b68cb1",
+      "bytes": 492574
+    },
+    {
+      "source": "current-review.json",
+      "sha256": "b6a82738f36cca2b7fb9fd9ef2cbfdb6b5c0881ca2b815a5888c9516480a3dd4",
+      "bytes": 246360
+    },
+    {
+      "source": "export_signal_snapshot.py",
+      "sha256": "51c66696c9b1d8a4bd5caae0b265cb6e2cfaabc6459abb6b95b2a720aa063bbf",
+      "bytes": 7632
     },
     {
       "source": "model-inputs.template.json",
@@ -27,24 +57,25 @@
       "bytes": 2777
     },
     {
-      "source": "current-review.json",
-      "sha256": "83d70f97330e8fb76298ee92076f4ca662597858f3d9ec31d16ea722eb5a9ec5",
-      "bytes": 149114
+      "source": "test_critical_reference.py",
+      "sha256": "be83ac047b097a68b97570dd1b75fcc9e9c1c12d06669c9ef977f9650ab10c70",
+      "bytes": 5856
     },
     {
-      "source": "controls.json",
-      "sha256": "01078036f284cd9dd3a84387a2aee70cbece5cc4d12c70f6e6ccbdc2dbc18165",
-      "bytes": 2434
+      "source": "test_signal_geometry.py",
+      "sha256": "ff4b3e5aef6445ca2721a836f121bf68403f01dda9984c62dff454bd2c3e8121",
+      "bytes": 10334
     }
   ],
-  "owner_synthetic_tests": {
-    "passed": 18,
-    "elapsed_s": 0.02
+  "synthetic_tests": {
+    "passed": 27,
+    "original_18_preserved": true,
+    "additional_focused_controls": 9
   },
-  "scope": "Conditional native signal screen; current incomplete I2C routes refuse final estimate.",
-  "owner_native_recheck": {
-    "board_sha256": "1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf",
-    "exit_code": 2,
-    "reason": "Both I2C nets still incomplete, zero track length; conditional model inputs remain unset."
-  }
+  "native_recheck": {
+    "board_sha256": "008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e",
+    "I2C_checker_exit_code": 2,
+    "reason": "Both I2C nets remain unrouted; final capacitance/model result correctly refused."
+  },
+  "scope": "Source-bound native connectivity and drill-aware saved-reference geometry only. No board changes, refill, impedance, timing or AC qualification."
 }

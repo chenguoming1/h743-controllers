@@ -10,7 +10,7 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-BASE_MANIFEST_SHA256 = '26609ee1487baa1ef61367309f8e8833f687412f3d1f2eaa99a445d743712e3e'
+BASE_MANIFEST_SHA256 = '61bfaf6174eb51d0874d40ca579d598e3f263482da38f3925c7ce99fcf0369fb'
 FORBIDDEN_SUFFIXES = {'.pyc', '.pyo', '.class', '.jar', '.kicad_pcb', '.brd', '.dsn', '.so', '.dll', '.zip'}
 FORBIDDEN_PARTS = {'__pycache__', '.git', 'build', 'node_modules', 'dream_notes', 'agent_notes', 'private-notes'}
 
@@ -77,9 +77,9 @@ def main():
     current = files(stage)
     all_names = sorted(set(current) | {'FILES.sha256.json', 'PUBLIC_SOURCE_ALLOWLIST.json'})
     write(stage / 'PUBLIC_SOURCE_ALLOWLIST.json', {
-        'status': 'unfinished_source_and_native_constructed_routing_checkpoint_v4',
+        'status': 'unfinished_source_and_native_constructed_routing_checkpoint_v5',
         'base_manifest_sha256': BASE_MANIFEST_SHA256,
-        'native_open_connections': 77,
+        'native_open_connections': 75,
         'files': all_names,
     })
     current = files(stage)
@@ -95,7 +95,7 @@ def main():
         'base_allowlist_sha256': sha(base / 'PUBLIC_SOURCE_ALLOWLIST.json'),
         'new_allowlist_sha256': sha(stage / 'PUBLIC_SOURCE_ALLOWLIST.json'),
         'payload_directory': 'changed',
-        'application': 'Verify the complete immutable v3 base, apply changed/ relative to its root, remove only listed deleted_files, then verify the complete new manifest and allowlist.',
+        'application': 'Verify the complete corrected immutable v4 base, apply changed/ relative to its root, remove only listed deleted_files, then verify the complete new manifest and allowlist.',
         'changed_files_sha256': changed,
         'deleted_files': deleted,
         'unchanged_file_count': len(current) - len(changed),
@@ -115,7 +115,7 @@ def main():
         put('DELTA.json', meta_path.read_bytes())
         for name in changed:
             put('changed/' + name, (stage / name).read_bytes())
-    with tempfile.TemporaryDirectory(prefix='v4-delta-check-', dir=args.out_prefix.parent) as temp:
+    with tempfile.TemporaryDirectory(prefix='v5-delta-check-', dir=args.out_prefix.parent) as temp:
         rebuilt = Path(temp) / 'rebuilt'
         shutil.copytree(base, rebuilt)
         with zipfile.ZipFile(zip_path) as archive:

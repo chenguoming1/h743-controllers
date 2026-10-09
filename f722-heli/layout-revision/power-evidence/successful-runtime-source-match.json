@@ -1,0 +1,47 @@
+{
+  "status": "FIVE NUMERICAL MODULES BYTE-IDENTICAL TO PUBLIC V4; SIXTH HAS DOCSTRING-ONLY CORRECTION",
+  "public_v4_manifest_sha256": "a21a119bf85471fae3e499625eda54baaab3a5c4847e81d2daeb9fe17cb2678b",
+  "successful_freeze_sha256": "1431380a78f68de28354d75e1e675f084f82809691c66631fa92f4b6d1137dd9",
+  "analysis_sources": [
+    {
+      "path": "copper_fem.py",
+      "successful_runtime_sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde",
+      "public_v4_sha256": "242ded2c1a69ec68df24e2b3c6d558de84dfc32a35248dcda69100645d785bde",
+      "byte_identical": true
+    },
+    {
+      "path": "dc_circuit.py",
+      "successful_runtime_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "public_v4_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "byte_identical": true
+    },
+    {
+      "path": "validate_static.py",
+      "successful_runtime_sha256": "c7b864e1c196da2dbeb2835631ae8700fdce71352b920cf4da6ac25fc2c821e5",
+      "public_v4_sha256": "c7b864e1c196da2dbeb2835631ae8700fdce71352b920cf4da6ac25fc2c821e5",
+      "byte_identical": true
+    },
+    {
+      "path": "audit_native_ports.py",
+      "successful_runtime_sha256": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717",
+      "public_v4_sha256": "c1c33ddd94f5c8c50a91aea3cfb1757302a35e388407c9d35e37a04153b2a4fe",
+      "byte_identical": false,
+      "implementation_AST_identical_excluding_docstrings": true,
+      "difference": "Only docstring units: public v4 correctly says 0.02 nm for 2e-8 mm; the archived runtime mislabeled this 20 nm. The executable buffer value is unchanged."
+    },
+    {
+      "path": "native_edge_noding.py",
+      "successful_runtime_sha256": "c6516c4f3cfdc35daafc6246b94ce82faa456e7016d2af29846fb75eb5953c24",
+      "public_v4_sha256": "c6516c4f3cfdc35daafc6246b94ce82faa456e7016d2af29846fb75eb5953c24",
+      "byte_identical": true
+    },
+    {
+      "path": "mesh_cache.py",
+      "successful_runtime_sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+      "public_v4_sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+      "byte_identical": true
+    }
+  ],
+  "no_new_solver_edits_included": true,
+  "archived_preflight_module_included_for_exact_hash_reconstruction": true
+}

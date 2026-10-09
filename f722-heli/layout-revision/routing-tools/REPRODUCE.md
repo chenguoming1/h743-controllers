@@ -1,6 +1,6 @@
 # Reproduce the ordinary-routing checkpoint
 
-This is unfinished work. The accepted candidate08 checkpoint has 77 open connections and zero native DRC errors/warnings, board SHA-256 1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf. Its last D2_A closure was explicit native construction from a path located during failed stock insertion, with a documented 0.025 mm outward detour; it was not successful engine insertion. Current-source zero parity passes. The current margin18/slow-tree focused trial failed all four attempts and added no geometry. Historical receipts are bound to their original sources; every new source still requires fresh zero controls and native validation.
+This is unfinished work. Adopted candidate13 has 75 open connections and zero native DRC errors/warnings, PCB SHA-256 `008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e`. Candidate12’s ADC closure used real engine output with explicit FLASH exclusion and paired metadata correction. Candidate13’s FLASH closure is explicit native construction from simplified located topology; engine insertion did not succeed. Current-source accepted75 zero passes. The final bounded-queue cooperative stop is compiled but not yet proved by a complete route in this package. Historical receipts remain bound to their original sources; every new input requires fresh zero and native gates.
 
 ## Inputs
 
@@ -133,22 +133,82 @@ The first two pure-Python checks passed during packaging, including the wrong-so
 
 `construction.json` binds the original failed-insertion diagnostic, base session/report, exact constructor source and waypoint adjustment. `construct_located_session.used.py` is the exact historical source hash; the top-level constructor is the current source and has a distinct hash. The original 122 MB base report and complete native/model geometry are deliberately excluded. Reexecuting construction itself requires those exact external inputs. The retained compact constructed report preserves the actual route geometry required by the importer.
 
-## Current controls and experimental settings
+## Historical v4 controls and experimental settings
 
-`checks/current77-source-identity.json`, `current77-zero-parity.json` and `current77-zero-import.json` bind the fresh passing zero to the current packaged source and model `c21ddb61a4e940988f1dbe59733a6fcd15930099d7459e48bed290d1539151eb`. All 1,513 fixed objects and 20 ordinary segments are preserved; the imported board is byte-identical to accepted77. This proves this zero control, not successful routing.
+`checks/current77-source-identity.json`, `current77-zero-parity.json` and `current77-zero-import.json` bind the fresh passing zero to the v4 packaged source and model `c21ddb61a4e940988f1dbe59733a6fcd15930099d7459e48bed290d1539151eb`. All 1,513 fixed objects and 20 ordinary segments are preserved; the imported board is byte-identical to accepted77. This proves this zero control, not successful routing.
 
-The current `TRACE_WIDTH_TOLERANCE=18` is a planning reserve, with the four inlined consumers compiled. `tests/compiled-planning-margin18-proof.json` and `tests/insertion-gap-result-margin18.json` establish the compiled constants and isolated D2 straight-segment control. Physical track width and clearance remain 0.127 mm. `F722_FORCE_SLOW_TREE=1` selects the stock slow tree; the route angle constraint remains 45 degrees. `F722_INSERT_DIAGNOSTICS=1` logs actual located paths and insertion failures.
+The v4 `TRACE_WIDTH_TOLERANCE=18` is a planning reserve, with the four inlined consumers compiled. `tests/compiled-planning-margin18-proof.json` and `tests/insertion-gap-result-margin18.json` establish the compiled constants and isolated D2 straight-segment control. Physical track width and clearance remain 0.127 mm. `F722_FORCE_SLOW_TREE=1` selects the stock slow tree; the route angle constraint remains 45 degrees. `F722_INSERT_DIAGNOSTICS=1` logs actual located paths and insertion failures.
 
-The completed focused slow-tree trial on ADC_DIV_MID and FLASH_WP_N routed zero of four attempts; its output SES is byte-identical to its zero SES. See `checks/current77-slow-search.json` and the attempt summary. These switches and the planning-margin change remain experimental for full-route qualification. A failed search does not prove physical unroutability. The four historical legal via sites in `tests/clearance-audit` are existence witnesses, not complete routes.
+The completed focused slow-tree trial on ADC_DIV_MID and FLASH_WP_N routed zero of four attempts; its output SES is byte-identical to its zero SES. See `checks/current77-slow-search.json` and the attempt summary. These were experimental full-route controls at v4. The later accepted76 ADC route supplies separate source-bound success evidence; the current runner completion fix still needs its own full-route proof. A failed search does not prove physical unroutability. The four historical legal via sites in `tests/clearance-audit` are existence witnesses, not complete routes.
 
 Run the target and insertion tests following `tests/TARGET_SHAPE_CONTROL.md` and `tests/INSERTION_GAP_CONTROL.md` only after preparing their named exact external inputs. Their small generated fixtures and compiled classes are excluded. Reports preserve original source/model/class hashes; they do not silently claim that current classes produced historical routes. In particular, the empty-target receipt's loaded maze class predates the recompiled margin18 bytecode.
 
-## Verify or regenerate a source delta
+## Current v5 source and controls
 
-The complete staging allowlist includes every delivered file. `FILES.sha256.json` hashes each file except itself; the external delta metadata binds the full manifest hash. Verify the v3 base before applying the ZIP's `changed/` contents relative to the routing source root, remove only any metadata-listed deletions, and then verify the complete v4 manifest and allowlist.
+`checks/current75-source-identity.json`, `current75-zero-parity.json` and `current75-zero-import.json` bind the packaged Java sources to fresh model `4f0ac12384c28bc6431186dde30b035139d9d4acb8d32d3862d1f2d15c0c3354`. The zero import preserves all 46 ordinary objects, 1,513 fixed objects and 223 native contact partitions, reproducing the adopted75 PCB byte hash. No broad-route result is included.
 
-The packaging helper recompiles Python syntax in memory, parses JSON, runs shell syntax checks, rejects caches/boards/models/binaries, and applies the delta to a temporary v3 copy to prove exact reconstruction. It does not compile Java, run native KiCad, or start route search.
+`tests/failed-search-state/README.md` gives the two-pad fixture commands. Repaired and unrepaired reports preserve actual source and loaded-class hashes; the four repaired cases cover two early failures on fast/slow trees with retain=false. Current `AutorouteEngine` matches the repaired source. The small fixture does not exercise retained-database mode or complete board routing.
+
+The accepted ADC checkpoint used the previous `LocalRouter` before the bounded-queue completion fix. `sessions/accepted76/adapter-source-provenance.json` selects each exact historical source from current v5 or immutable v4 and records all hashes. Runtime binary hashes are retained, but binaries and duplicate historical trees are not. A failure during the old final cleanup did not authorize its altered geometry; only the verified earlier session was accepted.
+
+## Recover source09 and source12 for the new packets
+
+Use `sessions/recovery75/README.md`, its manifest and helper. Supply the exact adopted75 PCB and its complete paired hardware project. The authority is PCB SHA `008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e`; no Git commit is assumed. Recovery must restore the exact source09 board and four historical schematic files for ADC replay, or the source12 board with unchanged accepted75 paired files for FLASH replay. Keep these projects separate. The older `sessions/recovery` mechanism remains only for historical85/84 inputs.
 
 ```sh
-python3 -B tools/build_source_delta.py --base /path/to/immutable-public-source-ready-v3 --staging . --out-prefix /path/to/routing-source-v4-delta
+python3 -B sessions/recovery75/rebuild_historical_source.py project --base-project "$ACCEPTED75_PROJECT" --source candidate09 --out "$SOURCE09_PROJECT"
+python3 -B sessions/recovery75/rebuild_historical_source.py project --base-project "$ACCEPTED75_PROJECT" --source candidate12 --out "$SOURCE12_PROJECT"
+```
+
+Both destinations must be new directories. Each recovery verifies the PCB and all 62 required paired files. The six textual deltas total 23,174 bytes; exact rebuild and wrong-base, tampered-target/delta, missing/altered-pair, range and overwrite controls pass. `parts.json` is optional for native replay but required as authority when running the metadata patcher.
+
+
+## Replay the actual ADC closure and metadata correction
+
+With `SOURCE09_BOARD` pointing to the recovered source09 PCB in its exact paired project:
+
+```sh
+python3 -B tests/verify_session_packet.py --packet sessions/accepted76 --out /path/to/accepted76-packet-check.json
+python3 -B prepare_session_replay.py --packet sessions/accepted76 --source-board "$SOURCE09_BOARD" --out "$ADC_REPLAY_INPUTS"
+"$KICAD_PY" import_session.py --model "$ADC_REPLAY_INPUTS/model.json" --session sessions/accepted76/session.ses --engine-report "$ADC_REPLAY_INPUTS/engine-report.json" --out "$ADC_REPLAY_PROJECT/f722-heli.kicad_pcb"
+```
+
+`retention.json` explicitly discards the three unaccepted FLASH seed source UUIDs as well as new FLASH partial geometry. Its accepted77 proof establishes that no accepted route copper is removed. The retained SES is verified as the exact non-FLASH subset of the original session/report. The source contract is genuinely candidate09 (`544491a4…`), and the historical native import output before metadata is `f31522c2…`. It must not be renamed in provenance to accepted77 or adopted76.
+
+The adopted candidate12 PCB (`508b5a36…`) additionally includes a paired informational metadata correction: 666 board-field edits and five schematic-field edits across four schematic files. `tests/mpn-parity/apply_metadata_copy.py` is the exact copy-only patcher, with `expected-updates.json` and compact independent native identity receipts. Supply the accepted75 project's unchanged authoritative `parts.json` (SHA `99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858`) and a fresh output directory. Use the actual replayed output-board SHA for `--expected-board-sha256`; newly generated route UUIDs need not repeat, so the historical output byte hash is not promised for a new import. Native semantic/geometry and strict parity checks remain mandatory.
+
+```sh
+"$KICAD_PY" tests/mpn-parity/apply_metadata_copy.py --source "$ADC_REPLAY_PROJECT" --out "$ADC_METADATA_PROJECT" --authority "$ACCEPTED75_PROJECT" --manifest tests/mpn-parity/expected-updates.json --expected-board-sha256 "$ADC_REPLAY_BOARD_SHA256" --cli "$KICAD_CLI"
+```
+
+The patcher refuses source/output overlap, refuses output reuse and retains board geometry/net identities without a native save/refill. It changes only reviewed informational fields. `checks/accepted76-metadata-identity-summary.json` preserves the full historical proof hash and before/after native identity digests; its full 2.17 MB identity arrays are excluded.
+
+## Replay explicit FLASH construction
+
+With `SOURCE12_BOARD` pointing to the recovered exact candidate12 source PCB:
+
+```sh
+python3 -B tests/verify_session_packet.py --packet sessions/accepted75 --out /path/to/accepted75-packet-check.json
+python3 -B prepare_session_replay.py --packet sessions/accepted75 --source-board "$SOURCE12_BOARD" --out "$FLASH_REPLAY_INPUTS"
+"$KICAD_PY" import_session.py --model "$FLASH_REPLAY_INPUTS/model.json" --session sessions/accepted75/session.ses --engine-report "$FLASH_REPLAY_INPUTS/engine-report.json" --out "$FLASH_REPLAY_PROJECT/f722-heli.kicad_pcb"
+```
+
+The original import-only model has SHA `fd9d1bc80e65864982ffe51e70885d713d94a96a016b3fba7411fd2694c5ef6d`. It is not a complete routing model. The historical original contract identity remains that SHA; its packaged copy relocates machine-local paths and therefore has a distinct portable hash. `checks/portable-path-projections.json` binds both identities, and `source-identity.json` separates them. The historical engine report/model hash remains unchanged. The minimal importer projection contains the same ownership and geometry contract and binds the supplied exact source board at replay time. All existing source objects are fixed; only FLASH geometry is added. The SES has eleven proposed segments and two vias; the historical native importer yields ten track objects plus two vias after exact collinear union. Packet checks compare the original SES/report geometry before union.
+
+Both new packet identity/projection checks, including wrong-board rejection, pass. Neither new compact native replay was rerun while packaging. Native import/refill, endpoint entry, DRC, process, saved GND connectivity and support gates must be rerun for a newly imported board. Historical acceptance is documented separately in `checks/accepted76-*` and `checks/accepted75-*`.
+
+## Construction proof sources and limits
+
+Current `construct_escape_session.py`, `construct_native_network.py`, `retain_session.py`, `endpoint_witness.py` and `audit_support_connectivity.py` are included. Packaged proposal/contract paths are relative to the routing source root. Linked hashes among the portable proposals are updated; the portability receipt separately retains their original historical byte hashes. Construction/native acceptance receipts remain unchanged and identify the original inputs, rather than falsely attributing native execution to the relocated copies. The exact historical generator sources and compact proposals are under `tests/escape-stubs`. The large exact-distance witness arrays (including the 15 MB source12 proof) are omitted; `checks/native-construction-proof-projections.json` binds their exact hashes, sizes, compact proposal facts and generator versions. These summaries do not substitute for rerunning the native proof if construction inputs change.
+
+The historical generators expect the original relative candidate/model directory layout, named in their source. Recover the corresponding exact boards and regenerate their native exports before reuse. `sessions/accepted75/located-topology.json` is the original topology receipt; place an exact copy at the generator's `model-candidate09-cleanup/located-topology.json` input when reproducing it. Native witness files and path-bound construction proposals must be regenerated in a new working copy; machine-specific path changes produce new report hashes. Do not relabel regenerated evidence as the old hash-bound receipt. Replaying the already preserved import session does not need those omitted witness arrays.
+
+## Verify or regenerate the v5 source delta
+
+The full allowlist includes every staged payload file. `FILES.sha256.json` hashes all except itself; external delta metadata binds its full hash. Validate the corrected immutable v4 manifest `61bfaf6174eb51d0874d40ca579d598e3f263482da38f3925c7ce99fcf0369fb`, apply ZIP `changed/` paths relative to its source root, remove only listed deletions, then verify the full v5 manifest/allowlist.
+
+The helper checks Python syntax without caches, JSON and shell syntax, payload exclusions, unchanged v4 and exact delta reconstruction in a disposable copy. It does not run JVM/native routing.
+
+```sh
+python3 -B tools/build_source_delta.py --base /path/to/immutable-public-source-ready-v4 --staging . --out-prefix /path/to/routing-source-v5-delta
 ```

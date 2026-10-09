@@ -1,10 +1,10 @@
-# Native I2C route and reference screen
+# Native I2C and critical-signal reference screen
 
-This is a read-only, narrow check for the final BARO_SCL/BARO_SDA route. It does not change stock firmware, the PCB, the project or R7/R8. The current evidence is an **unfinished-board checkpoint**, not a final signal qualification.
+This is a read-only conditional check for the final BARO_SCL/BARO_SDA route plus saved-reference geometry for USB, HSE and all five IMU nets. It does not change stock firmware, the PCB, the project or R7/R8. The current evidence is an **unfinished-board checkpoint**, not a final signal qualification.
 
 ## Current result
 
-The inspected KiCad 10.0.6 board is SHA-256 `1ff8ee645bd5fea7bbbc30cd4e5269aab76a2032efe3e2c4e77a0becd85e9edf`.
+The inspected KiCad 10.0.6 unfinished 75-open board is SHA-256 `008d0b11df400284d12750c7f5c877b43a7ea28ffddbf4a4b799c3ae7ec4917e`.
 
 - SCL contains exactly U1.61, U4.4 and R7.2; SDA contains exactly U1.62, U4.3 and R8.2.
 - Each net has three disconnected pad components, no tracks and no vias. Their zero recorded trace lengths are **not** complete-route results. Final capacitance and RC values are deliberately null.
@@ -14,6 +14,38 @@ The inspected KiCad 10.0.6 board is SHA-256 `1ff8ee645bd5fea7bbbc30cd4e5269aab76
 - USB_P/USB_N complete native planar lengths are 18.101786 / 18.712550 mm. Missing adjacent-GND centerline projection totals are 0.705014 / 2.478245 mm, including via antipads. All of these missing intervals lie in actual saved holes within the local own-via windows; the length outside those windows is zero. Nine exact track/layer/coordinate intervals are in `USB_reference_interval_review` in the JSON report. Local windows have radius 0.362 mm = 0.225 mm land radius + 0.127 mm native clearance + 0.010 mm polygon-classification allowance. Merged-hole extensions are not exempted. The nearest GND vias geometrically tying In1/In4 are 0.603515 mm from the P transition and 1.466640 / 1.429490 / 1.100000 mm from the N transitions at (34.27,12.65), (36.5,12.95), (39.35,13.35). These are geometry facts, not impedance or return-current passes. The intentionally narrow centerline-tree model refuses existing off-center USB contacts; native connectivity is independently complete. Do not infer a USB disconnection from that modeling limitation.
 
 The historical `critical-verification-trial15/usb-reference-audit.json` uses board hash `e9a61776…` and cannot qualify this board. Its geometric findings are context only. The new report retains exact track IDs, lengths and layer projections rather than copying the historical pass.
+
+## Expanded physical reference review
+
+`critical-reference.json` is bound to the same 75-open board and adds finite-width and drill-aware inspection. It independently subtracts actual native drill polygons on their finite spans from the saved GND copper. All 118 accepted GND plated ties have positive annular area against both actual saved GND zone fills, excluding their drill holes, and native barrels spanning In1/In4. The USB helper now uses this same criterion: a GND land merely intersecting a union containing itself cannot qualify a tie. The previously reported nearest USB ties still qualify under the corrected criterion and retain their stated distances.
+
+All HSE and IMU nets are natively connected. HSE has no missing In4 GND beneath either centerlines or full trace copper. Physical drill subtraction introduces no additional critical-track projection gap on this checkpoint.
+
+| IMU net | Native planar length, mm | Missing centerline projection, mm | Missing trace-width projection, mm² | Nearest verified GND via at its F/B transition, mm |
+|---|---:|---:|---:|---:|
+| CS | 10.306701 | 0.705330 | 0.102067855 | 1.667707 |
+| INT | 7.578768 | 0.706777 | 0.101985606 | 1.490072 |
+| MISO | 3.961179 | 0.706091 | 0.112466735 | 2.748596 |
+| MOSI | 3.804632 | 0.708366 | 0.101933670 | 2.309772 |
+| SCK | 7.101470 | 0.708919 | 0.112403248 | 0.986266 |
+
+Every IMU missing centerline interval lies in the intersection of an actual saved hole and a bounded same-net via window. This is a location classification, not an electrical pass. The full trace width reveals a **pre-existing IMU_CS sliver of 0.000039505315 mm² outside its own-via windows**. F.Cu track `2c8bdb06-a4fb-4246-a69b-3fe2bfb0bac5`, from (23.159999, 9.125) to (21.959999, 8.975), width 0.127 mm, overlaps the In1 saved hole containing IMU_SCK via `eec68274-8fe5-464d-ad04-2d6f497f6461` at (22.8, 9.5). The sliver bounds are x=22.828047–22.862468 and y=9.147500–9.151803 mm; its centerline remains fully backed by saved GND. This is neither its own antipad nor a new regression, and no arbitrary pass threshold is applied.
+
+`comparison-76-to-75.json` shows that the added FLASH_WP_N through-vias at (30.216310, 24.559960) and (31.500000, 20.985300) remove about 0.785217153 mm² of GND per reference plane but do not change any USB/HSE/IMU projection metric. The nearest critical trace-width distance to newly missing GND is IMU_INT: 7.136058 mm on In1 and 5.194400 mm on In4. All critical copper objects remain byte-identical in the native exports. The earlier 77-to-76 ADC_DIV_MID vias likewise introduced no finite-width crossing; their nearest newly absent-GND distance to IMU_INT is 0.288993 mm on In1 and 0.104486 mm on In4. These distances carry no universal acceptance threshold.
+
+Twenty-seven controls pass: the original 18 remain unmodified and 9 focused controls cover false self-land ties, annular contact, finite barrel span, drill-only overlap, tangency, NPTH drilling, full-width defects, bounded merged-hole extension and sloped interval length conservation. No impedance, timing, signal integrity, oscillator, IMU performance or AC qualification follows from this geometry. The board and I2C qualification remain unfinished.
+
+Run the additional screen against the same freshly exported snapshot:
+
+```sh
+python signal-review/native/check_critical_reference.py \
+  --board hardware/f722-heli.kicad_pcb --snapshot /tmp/f722-signal-snapshot \
+  --out /tmp/f722-critical-reference.json
+
+python -m unittest discover -s signal-review/native -p 'test_*.py' -v
+```
+
+`compare_reference_geometry.py --help` gives the read-only snapshot/report comparison interface. Historical snapshots must be bound to their original board bytes, not a later canonical board. The large native snapshots stay disposable; compact report source hashes identify their exact bytes.
 
 ## Reproduce after routing
 
@@ -81,6 +113,6 @@ The resulting ledger adds the provisional device/pad allowances, the covered rou
 
 ## Controls and remaining qualification
 
-Eighteen synthetic tests cover mid-segment branching, full pull-up inclusion, stubs, floating copper, loops, native/topology disagreement, off-center contacts, arc refusal, incomplete-route refusal, exact concentric-sphere capacitance, the distant-conductor limit, dielectric/geometry monotonicity, wire-over-plane and parallel-plate analytical scaling comparisons, close foreign-copper sensitivity/refusal, stale/tampered source refusal, and a merged-antipad control that preserves the distant void as a real interval. The latter two analytical comparisons are limiting sanity checks, not a precision validation against a finite-board field solution. The derivation and admissible boundary/cover conditions carry the conservative claim; these small tests guard its implementation. A complete synthetic ledger still reports `qualification_pass=false`.
+The original eighteen synthetic tests cover mid-segment branching, full pull-up inclusion, stubs, floating copper, loops, native/topology disagreement, off-center contacts, arc refusal, incomplete-route refusal, exact concentric-sphere capacitance, the distant-conductor limit, dielectric/geometry monotonicity, wire-over-plane and parallel-plate analytical scaling comparisons, close foreign-copper sensitivity/refusal, stale/tampered source refusal, and a merged-antipad control that preserves the distant void as a real interval. The latter two analytical comparisons are limiting sanity checks, not a precision validation against a finite-board field solution. The derivation and admissible boundary/cover conditions carry the conservative claim; these small tests guard its implementation. A complete synthetic ledger still reports `qualification_pass=false`.
 
 Missing DPS368 pin-capacitance maxima, ordinary 800 kHz compatibility and 3.3 V output-low guarantees remain unresolved. Actual installed stock firmware/settings/registers, rail extremes, MCU- and DPS-driven waveforms and first-article error behavior still need the checks specified by the existing stock-I2C review. No hardware, part or firmware change is proposed here.
