@@ -1,13 +1,10 @@
-# V21 evidence map
+# V23 evidence map
 
-- tests/checkpoint54/raw-evidence.json: original path/digest/byte count, lossless blobs, explicit exclusions and recovered paired sources.
-- sessions/recovery-v21/paired-files.json: four exact61-file native projects using candidate52 as hash-pinned base.
-- checks/v21-source-identity.json: original166/148/146-file seals, frozen helpers, aliases and immutability baseline.
-- HistoricalSERVO15: original construction, finite support, signal/return conditional evidence, ST IBIS model with license/Readme and original firmware headers.
-- HistoricalRPM14: additive source proof,38 finite endpoints, original loading/return reviews and real width wedge. No separate acceptance is claimed.
-- Accepted54: source-bound local-ground reconstruction,14 finite new endpoints,21 completed signal groups,28 support groups,117 plane ties and unchanged1,259 signal projections versusRPM14. Cumulative52 integration is separately explicit.
-- Failed candidate05: raw native two-error clearance summary and rejected R52 move; no adoption.
-- checkpoint14-ground-owner-review: final independent cumulative review and conditional acceptance. Earlier15/RPM14 reviews retain their historical held scope.
-- checkpoint14-ground-placement-reproduction and placement-preview: final source54 identity, full pose/pad equality and front/back images.
-
-Stored finite/refill/reference/native findings are not new executions. Portable checks verify provenance, exact recovery, syntax-tree changes, support/adoption adapters and explicitly assumed track arithmetic only. Local quiet-return/ADC/ILM/ESD limitations, source43 power staleness and all nonzero reference residuals remain visible.
+- tests/checkpoint56/raw-evidence.json: every selected path, hash and byte count; lossless payloads, explicit omissions and recovered paired projects. Duplicate content is stored once.
+- sessions/recovery-v23/paired-files.json: exact candidate55/sealed56/candidate56 projects,61 files each, with a single candidate56 board delta over source55.
+- checks/v23-source-identity.json: original133-file seal, frozen helpers, adapter/original hashes and immutability baseline.
+- Original construction proposal/provenance plus four bound receipts preserve the exact R4 move, C15 contact, full-width CORE bridge and complete pull-up branch.
+- checkpoint12-owner-review: independent source-bound integration, owner assessment including strict I2C trees, all1445 retained-track reference records, changed CORE/CS reference and sequential review provenance.
+- ordinary-routing/tests/native13-access/electrical-review02/README.md: exact source-bound conditional active-CS and CORE topology/startup review, with primary-source links and remaining limitations. Existing pinned SPI sources are included; predecessor V22 retains supporting component models and earlier signal evidence.
+- checkpoint12-R4-placement-reproduction and checkpoint12-R4-placement-preview:156 poses,558 pads and front/back images bound to accepted56.
+- checks/v23-incremental-verification.json: three exact recoveries, all current evidence/source hashes, complete syntax-tree transaction, adapters, two terminal paths, added-net lengths and refusal controls. Native results are not replayed.

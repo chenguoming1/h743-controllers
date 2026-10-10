@@ -1,0 +1,57 @@
+{
+  "review_date_utc": "2026-10-09",
+  "state": "Requirements only; final routing and bench checks pending",
+  "scope": "BARO_SCL and BARO_SDA; stock Nexus setting and existing parts retained",
+  "required_terminals": {
+    "BARO_SCL": [
+      "U1.61",
+      "U4.4",
+      "R7.2"
+    ],
+    "BARO_SDA": [
+      "U1.62",
+      "U4.3",
+      "R8.2"
+    ]
+  },
+  "firmware_review_commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+  "nominal_kernel_clock_Hz": 54000000,
+  "nominal_timing_register": "0x00800D26",
+  "provisional_total_capacitance_target_pF_each_line": 50,
+  "capacitance_is_measured_or_extracted": false,
+  "illustrative_engineering_allocation_pF": {
+    "STM32_pin": 10,
+    "DPS368_pin": 10,
+    "pads_pullup_and_assembly": 5,
+    "remaining_for_route_vias_model_uncertainty_and_probe_if_present": 25
+  },
+  "engineering_allocations_are_manufacturer_maxima": false,
+  "edge_targets_ns": {
+    "rise_30_to_70_percent_max": 100,
+    "fall_70_to_30_percent_max": 100
+  },
+  "required_native_report": [
+    "Exact PCB hash and KiCad version",
+    "Complete connectivity and three-terminal inventory for each line",
+    "Track length by layer including pull-up branches",
+    "Actual width, pad geometry and nearby copper/reference-plane geometry",
+    "Via count, drill and span",
+    "Per-line capacitance ledger, method and model uncertainty",
+    "RC calculation at external pull-up maximum without uncertain internal-pull-up credit"
+  ],
+  "remaining_qualification_gaps": [
+    "No DPS368 3.3 V VOL/IOL maximum guarantee located",
+    "No explicit DPS368 ordinary 800 kHz Fast-mode Plus qualification located",
+    "STM32 5 pF pin capacitance is typical, not maximum; DPS368 pin capacitance not individually bounded",
+    "3.432 V TPS62162 corner is initial accuracy only; actual maximum rail/ripple/transient must be verified",
+    "Actual stock binary, saved settings, I2C register and clock readback pending",
+    "First-article MCU and DPS-driven waveform and error-rate checks pending"
+  ],
+  "inventory_context": {
+    "file": "native-bus-inventory.json",
+    "checkpoint": "historical-158-unconnected-checkpoint",
+    "later_canonical_checkpoint_unconnected_count": 123,
+    "fitted_bus_topology_unchanged": true,
+    "final_route_measurements_pending": true
+  }
+}

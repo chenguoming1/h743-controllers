@@ -1,6 +1,6 @@
 # F722 Nexus-style controller prototype
 
-A [replacement layout is in progress](layout-revision/README.md). Its paired native checkpoint has 13 unfinished connections and is not a manufacturing release. The files described below remain the previous published prototype.
+A [replacement layout is in progress](layout-revision/README.md). Its paired native checkpoint has 12 unfinished connections and is not a manufacturing release. The files described below remain the previous published prototype.
 
 **Electrical-model correction:** the older USB and DSM path-specific modeled margins are invalid because the source model used the enable terminal instead of the supply input. The [corrected source-bound review](layout-revision/power-evidence/corrected-v3-source43/REPORT.md) applies only to its identified revised-layout board. It does not qualify the older prototype below or the newest routing checkpoint. Historical raw reports are retained for provenance.
 
