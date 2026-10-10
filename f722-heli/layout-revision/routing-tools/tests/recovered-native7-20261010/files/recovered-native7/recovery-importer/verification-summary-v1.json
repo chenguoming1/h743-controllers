@@ -1,0 +1,90 @@
+{
+  "schema": "f722-native7-incremental-importer-verification/v1",
+  "date_utc": "2026-10-10",
+  "host_tests_passed": 20,
+  "native_smokes_terminal": true,
+  "native_lane_released": true,
+  "construction_only": true,
+  "acceptance_claimed": false,
+  "files": {
+    "import_native7_incremental_v1.py": "cf783fd61fd229927f89aa2741d88500d598a445f306ab1031fca9ef49232653",
+    "native7-incremental-routing-plan-v1.schema.json": "f70ef61db96ecfa43dbc658fb526793838ba0bb5f2cf7ba8a254a21f06883152",
+    "empty-plan-v1.json": "ee38aad25ea903b132b8929998e86820eca0aefe0eb45c9d8b8219c7bbd21278",
+    "identity-replacement-plan-v1.json": "91ce7b1e5e6d00ad7b2d865d5e34f61c15aa6204aa737712d89757c03b2d0f1b",
+    "test_import_native7_incremental_v1.py": "6a1b3a038166456b53268602f2431c85a595c5054a154b5bfd00f064c9878d67",
+    "verify_native7_smoke_v1.py": "5105f0fd2f76212e5ff7d85b0d1a5a277fd4dff24ac545cf2052e9aa9e846406",
+    "README.md": "fd9e7d8652e2c179f4aa3b5a85378b263d790bf310a36cb1d941dd5dffbc8e2f"
+  },
+  "smoke_proofs": {
+    "smoke-empty-v1": {
+      "schema": "f722-native7-importer-smoke-proof/v1",
+      "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+      "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+      "plan_sha256": "ee38aad25ea903b132b8929998e86820eca0aefe0eb45c9d8b8219c7bbd21278",
+      "all_copper_native_geometry_and_nets_identical_ignoring_declared_UUID_replacements": true,
+      "retained_logical_roles_identical": true,
+      "paired_non_board_hardware_byte_identical": true,
+      "declared_removed_UUIDs": [],
+      "declared_new_UUIDs": [],
+      "changed_zone_fills": [],
+      "existing_DRC_ERC_warnings_and_open_connections_not_evaluated": true,
+      "acceptance_claimed": false
+    },
+    "smoke-identity-replacement-v1": {
+      "schema": "f722-native7-importer-smoke-proof/v1",
+      "board_sha256": "55e26a886741e206121f4d0707fe326c0c16ee5aa2cfca0eec9698cb647f0b52",
+      "native_sha256": "8bf00da9f81c9ea0f84be73612d9d0c2cc695911185c8b5367f7444d09dc86a3",
+      "plan_sha256": "91ce7b1e5e6d00ad7b2d865d5e34f61c15aa6204aa737712d89757c03b2d0f1b",
+      "all_copper_native_geometry_and_nets_identical_ignoring_declared_UUID_replacements": true,
+      "retained_logical_roles_identical": true,
+      "paired_non_board_hardware_byte_identical": true,
+      "declared_removed_UUIDs": [
+        "07be6b31-b06e-5ae4-b984-9116d43ddd57",
+        "0d906840-c379-5c7d-8ecb-9bdda737908b"
+      ],
+      "declared_new_UUIDs": [
+        "5bda80a4-d053-552e-943c-645e9a23c19a",
+        "72d1584d-a755-5881-b3b2-0e40453dfe56"
+      ],
+      "changed_zone_fills": [],
+      "existing_DRC_ERC_warnings_and_open_connections_not_evaluated": true,
+      "acceptance_claimed": false
+    }
+  },
+  "source": {
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "manifest_sha256": "b9ec58e295f6e6d566973a9c3e5d21a05bf5ac4e7e15200e79b7d38048076d9d",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0"
+  },
+  "published_helper_bindings": {
+    "recovered-native7/ordinary-routing/native-tools/export_native_copper.py": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a",
+    "recovered-native7/ordinary-routing/native-tools/exact_native_contours.py": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922",
+    "repo/f722-heli/layout-revision/scripts/patch_metadata.py": "e8ef0b33dcbb6c056564f3f78e0d5d8502208c52439fa66b2b1485cd3d60c636"
+  },
+  "pinned_runtime_files": {
+    "python": "904e7f6fbcab80a18ce3faba2375d47d5850879056dbdb7b5fb63655d53c60f9",
+    "runtime-env.sh": "1ab1e4472be591b4126ff812b08cd715692ef4d95a57e7f730184bfbe29f0699",
+    "compat/sitecustomize.py": "d6bed2f234e7474975bf2b5f4287b06492d0c8f8d65da8bf1646f1a5c6886666",
+    "root/usr/lib/python3/dist-packages/pcbnew.py": "dedb7b3535b71aa381c7ced85cd9ec6a2043f11494351ef658301894e106f4db",
+    "root/usr/bin/_pcbnew.kiface": "ed2771d60973c5338004c64c4b470424be466db39fc0ccc94156577fe6a2e5f9"
+  },
+  "native_version": "10.0.6",
+  "native_build": "10.0.6+dfsg-1",
+  "qualification_limits": [
+    "Two already completed owner-leased smoke jobs only; no new native jobs or tests were run to prepare this publication.",
+    "Empty smoke reproduces source bytes; identity smoke replaces one existing LED_GREEN_K track and through-via without changing copper geometry or logical roles.",
+    "No changed route topology was evaluated. DRC, ERC, parity, connectivity, physical/electrical performance, manufacturing and adoption remain unclaimed.",
+    "Existing warnings and open connections were neither cleared nor reclassified.",
+    "Each future native execution requires a new owner-issued job lease and serialized lane. The included inactive template grants no permission."
+  ],
+  "publication_plan_storage": {
+    "identity-replacement-plan-v1.json": {
+      "stored_as": "identity-replacement-plan-v1.json.gz",
+      "compression": "gzip, level 9, mtime 0",
+      "uncompressed_bytes": 253283,
+      "uncompressed_sha256": "91ce7b1e5e6d00ad7b2d865d5e34f61c15aa6204aa737712d89757c03b2d0f1b",
+      "restore_exact_bytes_before_use": true
+    }
+  }
+}
