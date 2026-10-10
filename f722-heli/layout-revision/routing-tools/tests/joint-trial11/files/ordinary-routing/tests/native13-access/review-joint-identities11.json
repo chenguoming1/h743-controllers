@@ -1,0 +1,132 @@
+{
+  "schema": "f722-joint-identity-source-review11/v1",
+  "review_scope": "Bounded source-code and JSON identity review of the isolated complete BOOT/C/TX/WP joint model; no geometry or native execution.",
+  "reviewed_snapshot_utc": "2026-10-10T10:07:49Z",
+  "recorded_utc": "2026-10-10T10:09:16Z",
+  "accepted_board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
+  "accepted_board_open_count_unchanged": 11,
+  "reviewed_hashes_are_snapshot_values_not_current_revalidation": true,
+  "reviewed_files": [
+    {
+      "path": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py",
+      "sha256": "00a0abb88f7a9eea534ebb7bac142da838fe577650c1563ed4ba828876b1d3d6"
+    },
+    {
+      "path": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py",
+      "sha256": "679b0bcd1b5bfa8c809f8edfceec1b9e43a5786cf28d4e3cc58419ff25804e48"
+    },
+    {
+      "path": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_CS.py",
+      "sha256": "65b235841e5ca1d9a2bc8bb8577c8c3faf7b6f022f9c6e9d3641cff4d23042e1"
+    },
+    {
+      "path": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py",
+      "sha256": "cccb7cd8e06ee9e64266ebdc9abd229069a4f6f33f48545acf634d6bb4ab63f8"
+    },
+    {
+      "path": "ordinary-routing/tests/portc51/inspect_C_remaining_cuts11.py",
+      "sha256": "b2b84490771d53c99f3fb242a29f6ef8fe1a2f817e3408cb068b35499234fc3a"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/graph_native11.py",
+      "sha256": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/route_native11.py",
+      "sha256": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/BOOT-complete-current-peer-sealed11.json",
+      "sha256": "4be84ab02082ad22279ba4349e62f8daed63e45699cc409b19e0d20defaf0221"
+    }
+  ],
+  "findings": [
+    {
+      "id": "historical_constructor_scope",
+      "classification": "Reuse guard required; historical pre-BOOT diagnostic is valid within its recorded scope.",
+      "path": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py",
+      "lines": [6, 10],
+      "evidence": "The constructor imports composite_native11_C_TX_WP and copies that earlier BASE. It predates the completed BOOT overlay. The newer inspect_C_remaining_cuts11.py imports composite_native11_complete_BOOT.",
+      "impact": "Reusing the historical constructor as a current complete-BOOT constructor could overstate available routing space or construct copper conflicting with the now-held BOOT paths.",
+      "recommendation": "Preserve the old constructor and receipt. Create a new versioned constructor bound to the current complete model and give it a new output receipt."
+    },
+    {
+      "id": "uuid_only_blocker_provenance",
+      "classification": "Reporting error in reviewed snapshot; does not change geometry.",
+      "path": "ordinary-routing/tests/portc51/inspect_C_remaining_cuts11.py",
+      "lines": [52],
+      "evidence": "The provenance label uses UUID membership in g.by. Transformed U15, C13, C11, R42 and C31 pads retain native UUIDs despite changed physical records.",
+      "impact": "Conditional moved-pad obstacles can be mislabeled as retained accepted native11 copper, confusing which source or peer transaction owns a blocker.",
+      "recommendation": "Compare current physical records against the native record with net_code excluded, or use an explicit transformed-pad UUID set. Record the corrected classifier in a new or explicitly revised diagnostic.",
+      "parent_notified": true,
+      "correction_status_at_review": "Parent reported that a worker would correct attribution after the running diagnostic; correction was not revalidated by this review."
+    },
+    {
+      "id": "released_divider_accessor",
+      "classification": "Latent accessor hazard; no active affected consumer found in the bounded review.",
+      "path": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_CS.py",
+      "lines": [12, 19],
+      "evidence": "The overlay removes all R43/R44 pads from BASE while one_pad falls back to inherited accessors that still return their prior front-layer divider records.",
+      "current_consumers": "Current divider constructors use explicit newly transformed p43/p44 records. Legacy one_pad('R43.1') consumers import composite_native11_divider_joint, in which those pads still exist.",
+      "impact": "A future terminal query through the inherited accessor could target copper absent from the selected joint model.",
+      "recommendation": "Add a new versioned BASE-derived accessor wrapper. Resolve all physical records for a key from the selected object list, reject absent keys and reject duplicate keys in one_pad. Permit an explicit trial-object list for newly placed pads. Do not mutate archived composites or receipts."
+    },
+    {
+      "id": "imported_semantics_not_bound",
+      "classification": "Source-binding completeness gap.",
+      "path": "ordinary-routing/tests/native13-access/native11_context.py",
+      "lines": [67, 68, 69, 70, 71, 72, 73, 74],
+      "evidence": "Binding records native/context/geometry-helper hashes and overlays add receipt hashes. It does not bind imported composite branch_objects, graph_native11 or route_native11 implementation hashes. The constructor records its own script hash but not those imported implementations.",
+      "impact": "Source equality alone cannot distinguish a diagnostic produced before versus after the foreign-channel alias correction, or other imported semantic changes.",
+      "recommendation": "Include imported model/helper hashes in new diagnostic receipts or a versioned source manifest. Preserve historical binding objects and mark their historical scope explicitly."
+    }
+  ],
+  "passed_obligations": {
+    "method": "Pure JSON record reconstruction following the declared pad replacement sequence; no geometry imports or contact calculations.",
+    "native_pad_count": 558,
+    "modeled_pad_count": 554,
+    "missing_pad_keys": ["R43.1", "R43.2", "R44.1", "R44.2"],
+    "missing_pads_exactly_match_explicit_divider_release": true,
+    "surviving_uuid_to_key_changes": [],
+    "only_pad_net_changes": [
+      {
+        "key": "U15.9",
+        "before": "unconnected-(U15-NC9-Pad9)",
+        "after": "PORT_C_TX_EXT",
+        "bonded_obligation": "U15.2"
+      },
+      {
+        "key": "U15.10",
+        "before": "unconnected-(U15-NC10-Pad10)",
+        "after": "PORT_C_RX_EXT",
+        "bonded_obligation": "U15.1"
+      }
+    ],
+    "NC_land_handling": "Declared NC lands are upstream copper. They do not replace the actual bonded U15.1/U15.2 obligations or imply a component-internal conductive connection.",
+    "all_physical_SW1_pads_retained": [
+      {"key": "SW1.2", "uuid": "71879c1a-bce2-432a-9e2b-f79c37d5bd6e"},
+      {"key": "SW1.2", "uuid": "90254f63-9d66-47a7-88b7-7a5b7307189b"},
+      {"key": "SW1.1", "uuid": "ee48a04c-7121-4cff-b957-8f5b3e7c864f"},
+      {"key": "SW1.1", "uuid": "ff2783b7-753c-4616-8e23-4924a4e6a528"}
+    ],
+    "BOOT_duplicate_pad_check": {
+      "path": "ordinary-routing/tests/native13-access/seal_complete_BOOT11.py",
+      "lines": [24, 25, 26, 27, 28, 29],
+      "includes_every_physical_SW1_2_pad": true,
+      "saved_actual_terminal_groups": {"U1.60": [2], "R2.1": [2], "SW1.2": [2, 2]},
+      "saved_complete_actual_BOOT_tree": true,
+      "saved_all_finite_pass": true,
+      "status": "Existing source and receipt inspected; seal not rerun."
+    },
+    "known_foreign_channel_alias_bug": "Already corrected in the reviewed composite_native11_C_TX_WP helper; not reported as a new finding.",
+    "further_demonstrated_conductive_identity_errors": []
+  },
+  "limitations": [
+    "No geometry graphs, routing, native export, refill, DRC, schematic parity, finite-entry or electrical checks were executed.",
+    "No canonical board, archived composite, or historical receipt was edited by this review.",
+    "Reviewed hashes identify the snapshot read during the review; concurrent later worker changes are not certified by this artifact.",
+    "Passed identity obligations do not prove current routability, final actual-I/O topology, full-width pad entry, saved-plane reference coverage or electrical qualification.",
+    "The source-model release of R43/R44 remains conditional on explicit replacement placement and complete divider reconstruction.",
+    "No change to the accepted board or its 11-open status is claimed."
+  ]
+}

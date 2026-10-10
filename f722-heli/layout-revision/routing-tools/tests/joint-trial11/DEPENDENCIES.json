@@ -1,0 +1,743 @@
+{
+  "absolute_paths_in_historical_receipts": "Preserved as original provenance strings; source runtime paths are restored below the new workspace root, and no receipt bytes are rewritten.",
+  "classified_noninputs": [
+    {
+      "disposition": "Unselected CLI default. Reproduce the retained divider/census receipts with explicit R42-C31-full-supply12757-corrected.json argument.",
+      "literal": "R42-C31-B-supply12757.json",
+      "source": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py"
+    },
+    {
+      "disposition": "Unselected CLI default. Reproduce the retained divider/census receipts with explicit R42-C31-full-supply12757-corrected.json argument.",
+      "literal": "R42-C31-B-supply12757.json",
+      "source": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py"
+    },
+    {
+      "disposition": "Optional failed-search output; omitted.",
+      "literal": "CS-caps-right-IMU-ground-reachable-components11.json",
+      "source": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py"
+    },
+    {
+      "disposition": "Output of an unselected historical graph diagnostic; omitted.",
+      "literal": "C-remaining-exact-cuts11.json",
+      "source": "ordinary-routing/tests/portc51/inspect_C_remaining_cuts11.py"
+    }
+  ],
+  "external_python_modules": [
+    "argparse",
+    "ast",
+    "collections",
+    "copy",
+    "datetime",
+    "hashlib",
+    "heapq",
+    "importlib",
+    "itertools",
+    "json",
+    "math",
+    "numpy",
+    "pathlib",
+    "shapely",
+    "signal",
+    "sys",
+    "time"
+  ],
+  "fixed_receipt_generator_hashes_available": [
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/boot56/B-divider-independent-C-TX-WP-exact57.json",
+      "sha256": "f8fa4396060a6a03eb762fbdc2d04593bf2538f16611d99651088430897811dd",
+      "source": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/boot56/R42-C31-domain-cluster57.json",
+      "sha256": "d9953885d6ac9fc39205891a52a008ac8e21f91c8adf33076d517347261411b4",
+      "source": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/boot56/R42-C31-full-supply12757-corrected.json",
+      "sha256": "ad5cc4426a8d43d293fc9b1f8e42100cd8aa2685a0062edd790c081c009f0eb9",
+      "source": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/boot56/R42-C31-full-supply12757.json",
+      "sha256": "8744e44827e5d28fc80aee65b9c5e91c7dc8867e6eec7e78831bd8e91d45bdeb",
+      "source": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/boot56/R43-six-MID-domains57.json",
+      "sha256": "bd4677ec7b9d4b04f63997b2f0a257714ccd6e336959fa2743df6963aa52f202",
+      "source": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/BOOT-complete-current-peer-sealed11.json",
+      "sha256": "3782a3b8394406e54984d01d87ae260670d03b667c30394ed89a7c7c484d4432",
+      "source": "ordinary-routing/tests/native13-access/seal_complete_BOOT11.py"
+    },
+    {
+      "field": "overlay_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/BOOT-complete-current-peer-sealed11.json",
+      "sha256": "00a0abb88f7a9eea534ebb7bac142da838fe577650c1563ed4ba828876b1d3d6",
+      "source": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/CS-IMU-ground-return-options11.json",
+      "sha256": "cb88c77fe882b8e8a4fd82bcc3fa2c16490025ec5fa530085461f62ea0f7598e",
+      "source": "ordinary-routing/tests/native13-access/compare_CS_IMU_ground_returns11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/CS-caps-right-IMU-ground-exchange11.json",
+      "sha256": "ba2ae8a806c2c3db6f05ba8ef29fb9f6c146d3b037112d53458d6268b6c4d7a9",
+      "source": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/CS-native-SBUS-cluster-rebind11.json",
+      "sha256": "15141ff444c319a2ba8a4d71525ab9fc8322d4a4a240029b98a199601f20e98d",
+      "source": "ordinary-routing/tests/native13-access/check_CS_native_SBUS_cluster11.py"
+    },
+    {
+      "field": "overlay_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/CS-native-SBUS-cluster-rebind11.json",
+      "sha256": "22f80e6dee9db96a572e5676a1cf8beaa34f9a4f708af6ed525a58e95f62a089",
+      "source": "ordinary-routing/tests/native13-access/composite_native11_CS_native_SBUS.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/dedicated-IMU-DSM-CS-complete11.json",
+      "sha256": "5342ce984921337ecf71b5ecd6f0be9a379ee55de9db753e89ca589bfe654df6",
+      "source": "ordinary-routing/tests/native13-access/construct_dedicated_IMU_DSM_CS11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/dedicated-IMU-DSM-CS-finite11.json",
+      "sha256": "b8b91e2dc996fc9d49aa91dc214d5e13d0968dd0fae0e7e4dd6b20abcbe100d6",
+      "source": "ordinary-routing/tests/native13-access/screen_dedicated_IMU_DSM_CS11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/joint-BOOT-current-peer-plane-feasibility11.json",
+      "sha256": "92b9ed51ce6597d10f26c3d3c9a5f627212a7637d69b9ace4c0bb5fcaaa15f58",
+      "source": "ordinary-routing/tests/native13-access/assess_BOOT_current_peer_plane11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/portc51/U15-TX-WP-declared-width-audit11.json",
+      "sha256": "1623c540d09b9c6ddbdbd4d805bf9d511592e88e0db393c83c6eb85ebf103586",
+      "source": "ordinary-routing/tests/portc51/audit_U15_TX_WP_declared_widths11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/portc51/U15-TX-WP-full-graph11.json",
+      "sha256": "b8151355f05ad3de8a91cfe6954dfddd7d0974702917b4f31f54b1619fe10544",
+      "source": "ordinary-routing/tests/portc51/construct_U15_TX_WP_full_graph11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/portc51/U15-remaining-complete-branches11.json",
+      "sha256": "cccb7cd8e06ee9e64266ebdc9abd229069a4f6f33f48545acf634d6bb4ab63f8",
+      "source": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py"
+    },
+    {
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/portc51/WP-obsolete-objects-ownership11.json",
+      "sha256": "ca9be15e638ad9816f20dcc1477cb7fb3e74ee9c851a34a9852c19326aa262bb",
+      "source": "ordinary-routing/tests/portc51/prove_WP_obsolete_ownership11.py"
+    },
+    {
+      "field": "exporter_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/dedicated-joint-recorded-transaction11.json",
+      "sha256": "41487854eaedae68920f54613a45468401aa39fae17e2dd66485a8feabd18114",
+      "source": "ordinary-routing/tests/native13-access/export_joint_transaction11.py"
+    }
+  ],
+  "historical_generator_sources_omitted": [
+    {
+      "disposition": "Generator of a stored upstream input omitted; this package restores that input exactly and does not claim full historical sweep regeneration.",
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/boot56/joint57-adc-first.json",
+      "sha256": "83c4e901401fc7f039f3639ed9afac0896de5de5230e10eeb99c55c123599ab3"
+    },
+    {
+      "disposition": "Generator of a stored upstream input omitted; this package restores that input exactly and does not claim full historical sweep regeneration.",
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/C13-C11-right-preserve-INT11.json",
+      "sha256": "aeedf3f6843e158c4fe21f846d8d3772be1bf5a5342e4f8471e3f5e97131497b"
+    },
+    {
+      "disposition": "Generator of a stored upstream input omitted; this package restores that input exactly and does not claim full historical sweep regeneration.",
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/GREEN-reserve-MID11.json",
+      "sha256": "dd285fe9aa0333e2c0155eda1df6246e5c03da2d63c541c223e02191a69761fc"
+    },
+    {
+      "disposition": "Generator of a stored upstream input omitted; this package restores that input exactly and does not claim full historical sweep regeneration.",
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/divider-ground-domain-native11.json",
+      "sha256": "9463ecc533f353bfab8d17abb15812f6a88a365c035282f3ee6e98a8df78cc46"
+    },
+    {
+      "disposition": "Generator of a stored upstream input omitted; this package restores that input exactly and does not claim full historical sweep regeneration.",
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/native13-access/joint-divider-SERVO1-restore11.json",
+      "sha256": "45e74b34a07a73961d8f5b4b61e1814fc213924bbca2979122f82f7bec652c46"
+    },
+    {
+      "disposition": "Generator of a stored upstream input omitted; this package restores that input exactly and does not claim full historical sweep regeneration.",
+      "field": "script_sha256",
+      "receipt": "ordinary-routing/tests/portc51/U15-rotated-original-channels-feed11.json",
+      "sha256": "a9ad84624abb647729d2f30355a643d9040cafab9c39a604289358331f487b02"
+    }
+  ],
+  "local_import_edges": [
+    {
+      "from": "ordinary-routing/tests/boot56/composite_cluster57.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_dedicated_IMU_CS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/assess_BOOT_current_peer_plane11.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/check_CS_native_SBUS_cluster11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_CS_native_SBUS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/compare_CS_IMU_ground_returns11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_caps_right.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/compare_CS_IMU_ground_returns11.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_CSGREEN_C_RED_CAP.py",
+      "to": "ordinary-routing/tests/native13-access/native11_context.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_CS_caps_return.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_caps_right.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_CS_native_SBUS.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_CS_caps_return.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_caps_right.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_divider_green_mid.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_dedicated_IMU_CS.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_divider_green_mid.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_CSGREEN_C_RED_CAP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_caps_right.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_dedicated_IMU_DSM_CS11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_dedicated_IMU_DSM_CS11.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/graph_native11.py",
+      "to": "ordinary-routing/tests/native13-access/native11_context.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/graph_native11.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/native11_context.py",
+      "to": "ordinary-routing/tests/flash-candidate43-structural/native44_geometry.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/route_native11.py",
+      "to": "ordinary-routing/tests/native13-access/native11_context.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/screen_dedicated_IMU_DSM_CS11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_CS_caps_return.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_complete_BOOT11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_complete_BOOT11_failed_single_switch_pad.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/audit_U15_TX_WP_declared_widths11.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS_native_SBUS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS_native_SBUS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_CS.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_CS_caps_return.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_CS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS_native_SBUS.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_TX_WP_full_graph11.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_TX_WP_full_graph11.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_TX_WP_full_graph11.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py",
+      "to": "ordinary-routing/tests/native13-access/route_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/inspect_C_remaining_cuts11.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/inspect_C_remaining_cuts11.py",
+      "to": "ordinary-routing/tests/native13-access/graph_native11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/inspect_C_remaining_cuts11.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/prove_WP_obsolete_ownership11.py",
+      "to": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/export_joint_transaction11.py",
+      "to": "ordinary-routing/tests/native13-access/native11_context.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/export_joint_transaction11.py",
+      "kind": "Explicit selected dynamic module argument",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_dedicated_IMU_CS.py"
+    }
+  ],
+  "method": "AST imports and existing file constants inspected; special CLI defaults/output-only paths explicitly classified. No recipe imported or executed.",
+  "runtime_file_edges": [
+    {
+      "from": "ordinary-routing/tests/boot56/composite_cluster57.py",
+      "literal": "R42-C31-full-supply12757-corrected.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-full-supply12757-corrected.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py",
+      "literal": "B-divider-independent-C-TX-WP-exact57.json",
+      "to": "ordinary-routing/tests/boot56/B-divider-independent-C-TX-WP-exact57.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py",
+      "literal": "construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_B_divider_independent_C_TX_WP57.py",
+      "literal": "obsolete_R42_supply_contacts11.json",
+      "to": "ordinary-routing/tests/native13-access/obsolete_R42_supply_contacts11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py",
+      "literal": "R42-C31-domain-cluster57.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-domain-cluster57.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py",
+      "literal": "joint-divider-SERVO1-restore11.json",
+      "to": "ordinary-routing/tests/native13-access/joint-divider-SERVO1-restore11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "literal": "R42-C31-domain-cluster57.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-domain-cluster57.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "literal": "R42-C31-full-supply12757-corrected.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-full-supply12757-corrected.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "literal": "construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757.py",
+      "literal": "joint-divider-SERVO1-restore11.json",
+      "to": "ordinary-routing/tests/native13-access/joint-divider-SERVO1-restore11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "literal": "R42-C31-domain-cluster57.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-domain-cluster57.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "literal": "R42-C31-full-supply12757.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-full-supply12757.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "literal": "construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/construct_cluster_full_supply12757_failed_Fprefix.py",
+      "literal": "joint-divider-SERVO1-restore11.json",
+      "to": "ordinary-routing/tests/native13-access/joint-divider-SERVO1-restore11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "literal": "B-divider-independent-C-TX-WP-exact57.json",
+      "to": "ordinary-routing/tests/boot56/B-divider-independent-C-TX-WP-exact57.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "literal": "R43-six-MID-domains57.json",
+      "to": "ordinary-routing/tests/boot56/R43-six-MID-domains57.json"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "literal": "construct_R42_C31_domain57.py",
+      "to": "ordinary-routing/tests/boot56/construct_R42_C31_domain57.py"
+    },
+    {
+      "from": "ordinary-routing/tests/boot56/inspect_R43_six_MID_domains57.py",
+      "literal": "obsolete_R42_supply_contacts11.json",
+      "to": "ordinary-routing/tests/native13-access/obsolete_R42_supply_contacts11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/flash-candidate43-structural/native44_geometry.py",
+      "literal": "candidate44/f722-heli.kicad_pcb",
+      "to": "ordinary-routing/candidate44/f722-heli.kicad_pcb"
+    },
+    {
+      "from": "ordinary-routing/tests/flash-candidate43-structural/native44_geometry.py",
+      "literal": "candidate44/f722-heli.native.json",
+      "to": "ordinary-routing/candidate44/f722-heli.native.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/assess_BOOT_current_peer_plane11.py",
+      "literal": "boot56/joint57-adc-first.json",
+      "to": "ordinary-routing/tests/boot56/joint57-adc-first.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/assess_BOOT_current_peer_plane11.py",
+      "literal": "joint-BOOT-current-peer-plane-feasibility11.json",
+      "to": "ordinary-routing/tests/native13-access/joint-BOOT-current-peer-plane-feasibility11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/assess_BOOT_current_peer_plane11.py",
+      "literal": "joint-divider-SERVO1-restore11.json",
+      "to": "ordinary-routing/tests/native13-access/joint-divider-SERVO1-restore11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/check_CS_native_SBUS_cluster11.py",
+      "literal": "tests/boot56/R42-C31-full-supply12757-corrected.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-full-supply12757-corrected.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/check_CS_native_SBUS_cluster11.py",
+      "literal": "CS-native-SBUS-cluster-rebind11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-native-SBUS-cluster-rebind11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/compare_CS_IMU_ground_returns11.py",
+      "literal": "CS-IMU-ground-return-options11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-IMU-ground-return-options11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/compare_CS_IMU_ground_returns11.py",
+      "literal": "tests/native13-access/MCU-bank-native12-finite-rebind.json",
+      "to": "ordinary-routing/tests/native13-access/MCU-bank-native12-finite-rebind.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/compare_CS_IMU_ground_returns11.py",
+      "literal": "MCU-bank-native12-finite-rebind.json",
+      "to": "ordinary-routing/tests/native13-access/MCU-bank-native12-finite-rebind.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_CSGREEN_C_RED_CAP.py",
+      "literal": "CSGREEN-C-RED-CAP-complete-geometry-native11.json",
+      "to": "ordinary-routing/tests/native13-access/CSGREEN-C-RED-CAP-complete-geometry-native11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_CS_caps_return.py",
+      "literal": "CS-caps-right-IMU-ground-exchange11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-caps-right-IMU-ground-exchange11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_caps_right.py",
+      "literal": "C13-C11-right-preserve-INT11.json",
+      "to": "ordinary-routing/tests/native13-access/C13-C11-right-preserve-INT11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_complete_BOOT.py",
+      "literal": "joint-BOOT-current-peer-plane-feasibility11.json",
+      "to": "ordinary-routing/tests/native13-access/joint-BOOT-current-peer-plane-feasibility11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_dedicated_IMU_CS.py",
+      "literal": "dedicated-IMU-DSM-CS-complete11.json",
+      "to": "ordinary-routing/tests/native13-access/dedicated-IMU-DSM-CS-complete11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_divider_green_mid.py",
+      "literal": "GREEN-reserve-MID11.json",
+      "to": "ordinary-routing/tests/native13-access/GREEN-reserve-MID11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py",
+      "literal": "divider-ground-domain-native11.json",
+      "to": "ordinary-routing/tests/native13-access/divider-ground-domain-native11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/composite_native11_divider_joint.py",
+      "literal": "divider-ground-finite-margin11.json",
+      "to": "ordinary-routing/tests/native13-access/divider-ground-finite-margin11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py",
+      "literal": "CS-caps-right-IMU-ground-exchange11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-caps-right-IMU-ground-exchange11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_CS_caps_right_ground11.py",
+      "literal": "MCU-bank-native12-finite-rebind.json",
+      "to": "ordinary-routing/tests/native13-access/MCU-bank-native12-finite-rebind.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_dedicated_IMU_DSM_CS11.py",
+      "literal": "dedicated-IMU-DSM-CS-complete11.json",
+      "to": "ordinary-routing/tests/native13-access/dedicated-IMU-DSM-CS-complete11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/construct_dedicated_IMU_DSM_CS11.py",
+      "literal": "dedicated-IMU-DSM-CS-finite11.json",
+      "to": "ordinary-routing/tests/native13-access/dedicated-IMU-DSM-CS-finite11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/native11_context.py",
+      "literal": "f722-heli.kicad_pcb",
+      "to": "ordinary-routing/tests/boot56/candidate01/f722-heli.kicad_pcb"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/native11_context.py",
+      "literal": "boot56/candidate01/f722-heli.native.json",
+      "to": "ordinary-routing/tests/boot56/candidate01/f722-heli.native.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/screen_dedicated_IMU_DSM_CS11.py",
+      "literal": "dedicated-IMU-DSM-CS-finite11.json",
+      "to": "ordinary-routing/tests/native13-access/dedicated-IMU-DSM-CS-finite11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "C13-C11-right-preserve-INT11.json",
+      "to": "ordinary-routing/tests/native13-access/C13-C11-right-preserve-INT11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "CS-IMU-ground-return-options11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-IMU-ground-return-options11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "tests/native13-access/CS-IMU-ground-return-options11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-IMU-ground-return-options11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "CS-caps-return-sealed11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-caps-return-sealed11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "CS-caps-right-IMU-ground-exchange11.json",
+      "to": "ordinary-routing/tests/native13-access/CS-caps-right-IMU-ground-exchange11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "composite_native11_CS_caps_return.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_CS_caps_return.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "composite_native11_caps_right.py",
+      "to": "ordinary-routing/tests/native13-access/composite_native11_caps_right.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py",
+      "literal": "seal_CS_caps_return11.py",
+      "to": "ordinary-routing/tests/native13-access/seal_CS_caps_return11.py"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_complete_BOOT11.py",
+      "literal": "BOOT-complete-current-peer-sealed11.json",
+      "to": "ordinary-routing/tests/native13-access/BOOT-complete-current-peer-sealed11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/native13-access/seal_complete_BOOT11_failed_single_switch_pad.py",
+      "literal": "BOOT-complete-current-peer-sealed11.json",
+      "to": "ordinary-routing/tests/native13-access/BOOT-complete-current-peer-sealed11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/audit_U15_TX_WP_declared_widths11.py",
+      "literal": "U15-TX-WP-complete-copper11-transaction-v2.json",
+      "to": "ordinary-routing/tests/portc51/U15-TX-WP-complete-copper11-transaction-v2.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/audit_U15_TX_WP_declared_widths11.py",
+      "literal": "U15-TX-WP-complete-copper11-transaction.json",
+      "to": "ordinary-routing/tests/portc51/U15-TX-WP-complete-copper11-transaction.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/audit_U15_TX_WP_declared_widths11.py",
+      "literal": "U15-TX-WP-declared-width-audit11.json",
+      "to": "ordinary-routing/tests/portc51/U15-TX-WP-declared-width-audit11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_C_TX_WP.py",
+      "literal": "U15-TX-WP-complete-copper11-transaction-v2.json",
+      "to": "ordinary-routing/tests/portc51/U15-TX-WP-complete-copper11-transaction-v2.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_CS.py",
+      "literal": "U15-rotated-original-channels-feed11.json",
+      "to": "ordinary-routing/tests/portc51/U15-rotated-original-channels-feed11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/composite_native11_rotated_U15_cluster_CS.py",
+      "literal": "boot56/R42-C31-full-supply12757-corrected.json",
+      "to": "ordinary-routing/tests/boot56/R42-C31-full-supply12757-corrected.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_TX_WP_full_graph11.py",
+      "literal": "U15-TX-WP-full-graph11.json",
+      "to": "ordinary-routing/tests/portc51/U15-TX-WP-full-graph11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/construct_U15_remaining_branches11.py",
+      "literal": "U15-remaining-complete-branches11.json",
+      "to": "ordinary-routing/tests/portc51/U15-remaining-complete-branches11.json"
+    },
+    {
+      "from": "ordinary-routing/tests/portc51/prove_WP_obsolete_ownership11.py",
+      "literal": "WP-obsolete-objects-ownership11.json",
+      "to": "ordinary-routing/tests/portc51/WP-obsolete-objects-ownership11.json"
+    }
+  ],
+  "schema": "f722-static-joint-source-dependencies/v1"
+}
