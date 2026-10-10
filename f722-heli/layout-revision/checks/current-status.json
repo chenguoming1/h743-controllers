@@ -1,13 +1,13 @@
 {
   "status": "WIP \u2014 PARTIALLY ROUTED \u2014 NOT FOR MANUFACTURE",
-  "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
+  "board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
   "source_commit": "8419807bb87479b650736f70be52ec61e246740c",
   "source_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
   "component_count": 156,
   "target_pose_count": 156,
   "changed_poses_from_published": 114,
   "copper_layers": 6,
-  "unfinished_connections": 13,
+  "unfinished_connections": 11,
   "drc_errors": 0,
   "drc_warnings": 0,
   "erc_violations": 0,
@@ -33,10 +33,10 @@
   "supplemental_protection_total": 7,
   "critical_nets_connected": 16,
   "ground_pad_groups": 1,
-  "checkpoint_progress": "GREEN completed with coordinated DSM, ADC and static flash pull-up routing; 13 unfinished. Geometric WIP only, source-bound reference limitations and fresh power/VCAP pending.",
-  "warning_scope": "Native normal/all-track DRC: zero geometric warnings,13 unfinished connections.",
+  "checkpoint_progress": "Checkpoint57 closes the BOOT0 pull-down/switch branch by moving R2 beside the USB-side switch; 11 unfinished connections remain. Fresh numerical power/VCAP and hardware qualification pending.",
+  "warning_scope": "Native normal/all-track DRC: zero geometric warnings,11 unfinished connections.",
   "native_strict_schematic_parity_issues": 0,
-  "loaded_power_diagnostic": "Historical source19/source60 USB/DSM path-specific results are invalid because supply current used EN4 rather than IN6. Fresh corrected source43/37 independently passes294 required conditional cases,10 actual supply-pad windows,5VCAP loops and numerical guards; overallfalse retains the18.56A single-feed illustration. Current13 changes BEC copper and GND antipads; source43 does not qualify this geometry.",
+  "loaded_power_diagnostic": "Historical source19/source60 USB/DSM path-specific results are invalid because supply current used EN4 rather than IN6. Fresh corrected source43/37 independently passes294 required conditional cases,10 actual supply-pad windows,5VCAP loops and numerical guards; overallfalse retains the18.56A single-feed illustration. Current11 changes BEC copper and GND antipads; source43 does not qualify this geometry.",
   "actual_signal_clamp_channels": {
     "complete": 18,
     "total": 20,
@@ -51,8 +51,8 @@
       "total": 4
     }
   },
-  "current_numerical_power_status": "NOT RUN on current13. Corrected source43 model and numerical run are complete and independently reviewed, but later BEC and CORE feed/via changes alter the domain. Fresh current-source binding and solve remain pending. Historical USB/DSM path-specific conclusions are invalid.",
-  "placement_recipe_current_evidence": "placement13-reproduction.json",
+  "current_numerical_power_status": "NOT RUN on current11. Corrected source43 model and numerical run are complete and independently reviewed, but later BEC and CORE feed/via changes alter the domain. Fresh current-source binding and solve remain pending. Historical USB/DSM path-specific conclusions are invalid.",
+  "placement_recipe_current_evidence": "placement11-reproduction.json",
   "i2c_routing": {
     "complete_nets": [
       "BARO_SCL",
@@ -60,7 +60,7 @@
     ],
     "strict_tree_topology_passed": true,
     "electrical_qualified": false,
-    "source_board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
+    "source_board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
     "receipt": "../signal-review/native/current-review.json"
   },
   "last_corrected_power_evidence": {
@@ -77,8 +77,8 @@
     "source_board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
     "applicable_to_current_board": false
   },
-  "placement_transform_current_evidence": "transform-placement13.json",
-  "placement_recipe_original_reproduction": "placement13-reproduction.json",
+  "placement_transform_current_evidence": "transform-placement11.json",
+  "placement_recipe_original_reproduction": "placement11-reproduction.json",
   "historical_reference_window_classification": {
     "before_board_sha256": "f7d5731bb0bf1ad314aca6d507da004993671bce413fbdeba545083168e28161",
     "source_board_sha256": "dcdd0e5655d098ceaffa7f40b6a21f1ca101429ac8eb142c50fa96df86697e68",
@@ -173,6 +173,21 @@
     "scope": "Current ADC_BUS and MID rerouted; prior physical branch lengths and reference equality statements are historical. Effective C31, acquisition settings and ADC noise remain conditional."
   },
   "reference_preservation": {
+    "board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
+    "receipt": "checkpoint57-integration/exact-ground-and-retained-reference.json",
+    "retained_GND_fill_and_drill_geometry_exact": true,
+    "new_BOOT_projection_receipt": "checkpoint57-integration/BOOT-reference.json",
+    "AC_or_impedance_qualification": false,
+    "limits": "Inherited source13 boundary-predicate ambiguities remain unresolved. Source12 CS width-edge wedge remains inherited."
+  },
+  "changed_signal_review": {
+    "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
+    "receipt": "checkpoint55-integration/conditional-signal-review/README.md",
+    "DSM_main_receive_path_mm": 136.672265,
+    "GREEN_total_planar_mm": 71.87564991794923,
+    "electrical_qualification": false
+  },
+  "source13_reference_preservation": {
     "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
     "receipt": "checkpoint55-integration/reference-window-classification.json",
     "classification_sha256": "1de2945d48752bb36cbdd60dd217dbb4c268673f46fb26ad90a8d9ba8b53c73f",
@@ -186,11 +201,34 @@
     "all_routed_nets_receipt": "checkpoint55-integration/all-net-reference-summary.json",
     "AC_or_impedance_qualification": false
   },
-  "changed_signal_review": {
-    "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
-    "receipt": "checkpoint55-integration/conditional-signal-review/README.md",
-    "DSM_main_receive_path_mm": 136.672265,
-    "GREEN_total_planar_mm": 71.87564991794923,
-    "electrical_qualification": false
+  "flash_CS_pullup_revision": {
+    "board_sha256": "9d9f2f39c2b200f2c928dd3123f098797eb86ba56cb943d7f6e3fe89bf264a7e",
+    "receipt": "checkpoint56-integration/conditional-signal-review/README.md",
+    "R4_pose": [
+      40.55,
+      19,
+      180,
+      "B.Cu"
+    ],
+    "U3_to_R4_complete": true,
+    "actual_MCU_connection_complete": false,
+    "CS_existing_planar_mm": 13.999707,
+    "new_CORE_spur_mm": 4.335,
+    "restored_CORE_junction_bridge_mm": 1.835756,
+    "electrical_qualified": false
+  },
+  "BOOT_pull_down_revision": {
+    "board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
+    "receipt": "checkpoint57-integration/owner-adoption-assessment.json",
+    "R2_pose": [
+      40.2,
+      6.2,
+      270,
+      "F.Cu"
+    ],
+    "R2_value_ohm": 2200,
+    "switch_to_resistor_complete": true,
+    "actual_MCU_connection_complete": false,
+    "electrical_qualified": false
   }
 }

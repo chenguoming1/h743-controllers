@@ -1,0 +1,92 @@
+{
+  "schema": "f722-signal-model-inputs/v1",
+  "native_stackup_sha256": "01ab870eb399187fe0d6576e3e762640cf846dc755ff987fa58b09fad56770f6",
+  "production_stackup_confirmed": false,
+  "reviewed_engineering_assumptions": false,
+  "epsilon_r_status": "not_established; native values are nominal, not material maxima",
+  "epsilon_r_max": null,
+  "epsilon_r_sensitivity": [
+    4.1,
+    4.6,
+    5.5
+  ],
+  "signal_edge_growth_mm": null,
+  "foreign_edge_growth_mm": null,
+  "relative_layer_registration_mm": null,
+  "probe_capacitance_pF": null,
+  "additional_model_allowance_pF": null,
+  "unmodeled_external_copper_min_distance_mm": null,
+  "thickness_bounds_mm": {
+    "F.Cu": {
+      "min": null,
+      "native_nominal": 0.035,
+      "max": null
+    },
+    "dielectric 1": {
+      "min": null,
+      "native_nominal": 0.0994,
+      "max": null
+    },
+    "In1.Cu": {
+      "min": null,
+      "native_nominal": 0.0152,
+      "max": null
+    },
+    "dielectric 2": {
+      "min": null,
+      "native_nominal": 0.25,
+      "max": null
+    },
+    "In2.Cu": {
+      "min": null,
+      "native_nominal": 0.0152,
+      "max": null
+    },
+    "dielectric 3": {
+      "min": null,
+      "native_nominal": 0.2028,
+      "max": null
+    },
+    "In3.Cu": {
+      "min": null,
+      "native_nominal": 0.0152,
+      "max": null
+    },
+    "dielectric 4": {
+      "min": null,
+      "native_nominal": 0.25,
+      "max": null
+    },
+    "In4.Cu": {
+      "min": null,
+      "native_nominal": 0.0152,
+      "max": null
+    },
+    "dielectric 5": {
+      "min": null,
+      "native_nominal": 0.0994,
+      "max": null
+    },
+    "B.Cu": {
+      "min": null,
+      "native_nominal": 0.035,
+      "max": null
+    }
+  },
+  "evidence": {
+    "dielectric_bound": "",
+    "thickness_bounds": "",
+    "etch_registration": "",
+    "probe": "",
+    "external_copper": "",
+    "assembly_allocation": ""
+  },
+  "notes": [
+    "Template only. Null values deliberately block estimates. Do not substitute total-board +/-10% for individual dielectric/copper tolerances.",
+    "epsilon_r_sensitivity values are illustrative parameters; 5.5 is not an NP-155F manufacturer guarantee.",
+    "Document whether each bound is a supplier guarantee or a reviewed engineering assumption, its frequency/temperature/moisture range, and its source.",
+    "External copper includes package/fixture/enclosure/metallization absent from native copper. If no finite lower distance can be justified, do not run this model.",
+    "The 10/10/5 pF pin/pad/assembly values remain unverified engineering allocations.",
+    "The rigorous energy comparison requires a pointwise permittivity ceiling, including glass/resin and any anisotropy; bulk effective Dk instead needs a stated homogenization assumption at the feature scale."
+  ]
+}
