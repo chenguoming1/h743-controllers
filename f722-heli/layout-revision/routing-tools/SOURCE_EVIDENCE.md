@@ -1,10 +1,9 @@
-# V23 evidence map
+# V24 evidence map
 
-- tests/checkpoint56/raw-evidence.json: every selected path, hash and byte count; lossless payloads, explicit omissions and recovered paired projects. Duplicate content is stored once.
-- sessions/recovery-v23/paired-files.json: exact candidate55/sealed56/candidate56 projects,61 files each, with a single candidate56 board delta over source55.
-- checks/v23-source-identity.json: original133-file seal, frozen helpers, adapter/original hashes and immutability baseline.
-- Original construction proposal/provenance plus four bound receipts preserve the exact R4 move, C15 contact, full-width CORE bridge and complete pull-up branch.
-- checkpoint12-owner-review: independent source-bound integration, owner assessment including strict I2C trees, all1445 retained-track reference records, changed CORE/CS reference and sequential review provenance.
-- ordinary-routing/tests/native13-access/electrical-review02/README.md: exact source-bound conditional active-CS and CORE topology/startup review, with primary-source links and remaining limitations. Existing pinned SPI sources are included; predecessor V22 retains supporting component models and earlier signal evidence.
-- checkpoint12-R4-placement-reproduction and checkpoint12-R4-placement-preview:156 poses,558 pads and front/back images bound to accepted56.
-- checks/v23-incremental-verification.json: three exact recoveries, all current evidence/source hashes, complete syntax-tree transaction, adapters, two terminal paths, added-net lengths and refusal controls. Native results are not replayed.
+- tests/checkpoint57/raw-evidence.json: all selected paths, original hashes/lengths, lossless compressed payloads, recovered projects and omitted raw inputs. Duplicate content is stored once.
+- sessions/recovery-v24/paired-files.json: source56, original sealed57 and accepted57,61 exact project files each, with a single57 board delta over56.
+- checks/v24-source-identity.json: original129-file seal, frozen helper paths, original/adapted support hashes and initial immutability identity.
+- Construction proposal/provenance, source-bound entry/support audit and coordinated transaction preserve the exact R2 move, replaced exclusive ground leaf, retained C31 return and completed switch branch.
+- checkpoint11-owner-review: independent integration, exact saved-ground/drill/retained-object binding, current BOOT0 reference, owner assessment and original execution/adapter/refresh recipes.
+- checkpoint11-placement-reproduction and checkpoint11-placement-preview:156 poses,558 pads and source-bound front/back images.
+- checks/v24-incremental-verification.json: three exact recoveries; all selected source/evidence hashes; complete copper/footprint transaction; two exact complete ground-zone syntax trees; support/adoption adapters; both track lengths and refusal controls. No native or power replay.

@@ -1,0 +1,196 @@
+{
+  "review_date_utc": "2026-10-09",
+  "nominal_i2c_kernel_clock_Hz": 54000000,
+  "timing_register_hex": "0x00800D26",
+  "fields": {
+    "PRESC": 0,
+    "SCLDEL": 8,
+    "SDADEL": 0,
+    "SCLH": 13,
+    "SCLL": 38
+  },
+  "tclk_ns": 18.51851851851852,
+  "programmed_counter_ns": {
+    "scl_high": 259.25925925925924,
+    "scl_low": 722.2222222222223,
+    "scldel": 166.66666666666669,
+    "sdadel_counter": 0
+  },
+  "stock_algorithm_assumption": {
+    "rise_ns": 100,
+    "fall_ns": 10,
+    "analog_filter_ns": 50,
+    "synchronizer_cycles_each": 2,
+    "resulting_period_ns": 1265.5555555555557,
+    "resulting_frequency_kHz": 790.1668129938543
+  },
+  "timing_inequality_limits_at_nominal_clock_ns": {
+    "rise_from_setup": 116.66666666666669,
+    "fall_from_hold_minimum": 105.55555555555556,
+    "rise_from_unstretched_data_valid_maximum": 115.92592592592592
+  },
+  "provisional_design_targets": {
+    "rise_30_70_max_ns": 100,
+    "fall_70_30_max_ns": 100,
+    "bus_C_per_line_max_pF": 50,
+    "measured_total_C": false,
+    "capacitance_allocation_status": "Engineering allocation, not component pin maximum or extracted final load"
+  },
+  "illustrative_unstretched_period_envelope": {
+    "description": "Nominal 54 MHz; edges independently 0..100 ns; analog delay 50..260 ns each; sync 2..3 cycles each. No clock stretching/software stalls. Not a guaranteed on-board frequency.",
+    "period_min_ns": 1155.5555555555557,
+    "period_max_ns": 1812.5925925925926,
+    "frequency_min_kHz": 551.6959542296689,
+    "frequency_max_kHz": 865.3846153846154
+  },
+  "pullup_cases": [
+    {
+      "name": "Initial tolerance at25C",
+      "delta_t_C": 0,
+      "r_external_min_ohm": 2178.0,
+      "r_external_max_ohm": 2222.0,
+      "r_if_DPS_bus_pullup_present_min_ohm": 2101.7079996140114,
+      "r_if_DPS_bus_pullup_present_max_ohm": 2194.905115737946,
+      "rise_50pF_external_only_ns": 94.13503000000001,
+      "cmax_at_100ns_external_only_pF": 53.11518995638499,
+      "cmax_at_120ns_external_only_pF": 63.73822794766199,
+      "current_mA": [
+        {
+          "rail_V": 3.3,
+          "at_Vol0_external": 1.5151515151515151,
+          "at_Vol0_external_plus_conditional_DPS": 1.570151515151515,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.680151515151515,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.3798301193755738
+        },
+        {
+          "rail_V": 3.432,
+          "at_Vol0_external": 1.5757575757575757,
+          "at_Vol0_external_plus_conditional_DPS": 1.6329575757575756,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.7473575757575754,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.4426361799816345
+        },
+        {
+          "rail_V": 3.6,
+          "at_Vol0_external": 1.6528925619834711,
+          "at_Vol0_external_plus_conditional_DPS": 1.712892561983471,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.8328925619834708,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.5225711662075299
+        }
+      ]
+    },
+    {
+      "name": "Resistor temperature -40..85C",
+      "delta_t_C": 65,
+      "r_external_min_ohm": 2163.8430000000003,
+      "r_external_max_ohm": 2236.4429999999998,
+      "r_if_DPS_bus_pullup_present_min_ohm": 2088.5224229139117,
+      "r_if_DPS_bus_pullup_present_max_ohm": 2208.9969128732387,
+      "rise_50pF_external_only_ns": 94.746907695,
+      "cmax_at_100ns_external_only_pF": 52.772170845886734,
+      "cmax_at_120ns_external_only_pF": 63.32660501506408,
+      "current_mA": [
+        {
+          "rail_V": 3.3,
+          "at_Vol0_external": 1.5250644339723352,
+          "at_Vol0_external_plus_conditional_DPS": 1.5800644339723353,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.6900644339723352,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.3885414722787188
+        },
+        {
+          "rail_V": 3.432,
+          "at_Vol0_external": 1.5860670113312285,
+          "at_Vol0_external_plus_conditional_DPS": 1.6432670113312287,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.7576670113312285,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.4517440496376122
+        },
+        {
+          "rail_V": 3.6,
+          "at_Vol0_external": 1.6637066552425475,
+          "at_Vol0_external_plus_conditional_DPS": 1.7237066552425475,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.8437066552425474,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.5321836935489312
+        }
+      ]
+    },
+    {
+      "name": "Resistor temperature -55..125C; manufacturer TCR test endpoints",
+      "delta_t_C": 100,
+      "r_external_min_ohm": 2156.22,
+      "r_external_max_ohm": 2244.22,
+      "r_if_DPS_bus_pullup_present_min_ohm": 2081.420009131829,
+      "r_if_DPS_bus_pullup_present_max_ohm": 2216.583878490083,
+      "rise_50pF_external_only_ns": 95.0763803,
+      "cmax_at_100ns_external_only_pF": 52.5892969865198,
+      "cmax_at_120ns_external_only_pF": 63.10715638382376,
+      "current_mA": [
+        {
+          "rail_V": 3.3,
+          "at_Vol0_external": 1.5304560759106214,
+          "at_Vol0_external_plus_conditional_DPS": 1.5854560759106215,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.6954560759106212,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.3932795818608492
+        },
+        {
+          "rail_V": 3.432,
+          "at_Vol0_external": 1.5916743189470461,
+          "at_Vol0_external_plus_conditional_DPS": 1.6488743189470465,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.7632743189470463,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.4566978248972742
+        },
+        {
+          "rail_V": 3.6,
+          "at_Vol0_external": 1.6695884464479507,
+          "at_Vol0_external_plus_conditional_DPS": 1.7295884464479512,
+          "at_Vol0_external_plus_conditional_DPS_and_MCU": 1.8495884464479508,
+          "at_Vol0p4_external_plus_conditional_DPS": 1.5374119523981788
+        }
+      ]
+    }
+  ],
+  "supply_note": "3.432 V is +4% initial PFM accuracy only. 3.6 V is an operating-ceiling design screen, not a proven regulator transient bound.",
+  "internal_pullup_note": "DPS368 Rpull=60..180k is not positively assigned to SDA/SCL in reviewed datasheet; conditional parallel cases only. Stock MCU internal pullup default false; 30k conditional case covers an unexpected enabled MCU pullup.",
+  "sources": [
+    {
+      "filename": "DPS368-v1.1.pdf",
+      "sha256": "16d3f60378b9554c2ae6406f709a03624977fd29afc005c9a423e0dee36c281a",
+      "url": "https://www.infineon.com/assets/row/public/documents/30/49/infineon-dps368-datasheet-en.pdf",
+      "version": "DPS368 v1.1,2019-07-03",
+      "included_in_bundle": false
+    },
+    {
+      "filename": "NXP-UM10204.pdf",
+      "sha256": "dc91f00f65584e06ef36e26c93bf9d91a95fb3c8a1830a9223e53caf678b36af",
+      "url": "https://www.nxp.com/docs/en/user-guide/UM10204.pdf",
+      "version": "UM10204 Rev7.0,2021-10-01",
+      "included_in_bundle": false
+    },
+    {
+      "filename": "STM32F722-DS11853-Rev9.pdf",
+      "sha256": "0b5686b8f9a62d894e13a1feb75bdad3d7a822c2f8881fc83455d2b78d049fb5",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f722re.pdf",
+      "version": "DS11853 Rev9,July2022",
+      "included_in_bundle": false
+    },
+    {
+      "filename": "STM32F722-RM0431-Rev4.pdf",
+      "sha256": "bf651adfb3bde07a73dd777248ad74e4d0ae6951aa43c5e85f97f718e01581a7",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0431-stm32f72xxx-and-stm32f73xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "version": "RM0431 Rev4,February2025",
+      "included_in_bundle": false
+    },
+    {
+      "filename": "TPS62160-SLVSAM2E.pdf",
+      "sha256": "abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72",
+      "url": "https://www.ti.com/lit/ds/symlink/tps62160.pdf",
+      "version": "SLVSAM2E,May2017",
+      "included_in_bundle": false
+    },
+    {
+      "filename": "UNI-ROYAL-ThickFilm-v10.pdf",
+      "sha256": "ffeb8a25d4c2ffa490a28e0e00f70107f2cb94575d7e03365efc252d911ecf0c",
+      "url": "https://www.uni-royal.cn/en/images/userfile/file/1753752986c56505e6d9ab55c7.pdf",
+      "version": "Thick Film Chip Resistors v10,2025-07-28",
+      "included_in_bundle": false
+    }
+  ]
+}

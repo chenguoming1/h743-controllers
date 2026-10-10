@@ -1,0 +1,52 @@
+{
+  "core_hz": 216000000,
+  "apb1_hz": 54000000.0,
+  "apb2_hz": 108000000.0,
+  "rows": [
+    {
+      "name": "imu_detection",
+      "spi": 1,
+      "request_hz": 1000000,
+      "software_divisor": 128,
+      "hardware_prescaler": 128,
+      "br_bits": 6,
+      "peripheral_clock_hz": 108000000,
+      "actual_nominal_sck_hz": 843750.0,
+      "helper_spiCalculateClock_hz": 843750.0
+    },
+    {
+      "name": "imu_initialized",
+      "spi": 1,
+      "request_hz": 24000000,
+      "software_divisor": 8,
+      "hardware_prescaler": 8,
+      "br_bits": 2,
+      "peripheral_clock_hz": 108000000,
+      "actual_nominal_sck_hz": 13500000.0,
+      "helper_spiCalculateClock_hz": 13500000.0
+    },
+    {
+      "name": "flash_detection",
+      "spi": 2,
+      "request_hz": 5000000,
+      "software_divisor": 32,
+      "hardware_prescaler": 16,
+      "br_bits": 3,
+      "peripheral_clock_hz": 54000000,
+      "actual_nominal_sck_hz": 3375000.0,
+      "helper_spiCalculateClock_hz": 3375000.0
+    },
+    {
+      "name": "flash_initialized",
+      "spi": 2,
+      "request_hz": 104000000,
+      "software_divisor": 2,
+      "hardware_prescaler": 2,
+      "br_bits": 0,
+      "peripheral_clock_hz": 54000000,
+      "actual_nominal_sck_hz": 27000000.0,
+      "helper_spiCalculateClock_hz": 54000000.0
+    }
+  ],
+  "caveat": "Default unoverclocked clocks only. Read back installed firmware/settings/registers and measure actual SCK. The helper alone overstates SPI2 frequency at software divisor 2."
+}
