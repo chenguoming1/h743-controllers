@@ -1,0 +1,95 @@
+{
+  "schema": "f722-joint-geometric-WIP-disposition/v1",
+  "source_board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
+  "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+  "evidence_sha256": {
+    "finite-native-compact.json": "85af030e81cdcb84d31e31dcb62b4bca54f4ed919de52ed7dfec7f59936ed3ea",
+    "finite-contact-supplement.json": "04833e79fe07561b5bc90a3f0273ac11e425e1321868a86fc6e17aca0854a77a",
+    "source11-narrow-reference-comparison.json": "06cfb3a5dcfad01dba7b802f34604229146ca0dd6aa1ddd7edf213393c717260",
+    "reference-disposition-scope.json": "da2caf19e2681d3dbdf3ad3fa523995aa7e2754d57a461feec5c156fc770f347",
+    "RED-antipad-location-review.json": "c60d0fec0a38dd3c36e4fd6e97997e8f525b29760974bb5df8b62a7634f06950"
+  },
+  "recommendation": "Candidate02 is supported as an explicitly conditional seven-open geometric WIP. No completed-function finite-contact failure is demonstrated after exact scoped supplements. This does not grant global reference, electrical, manufacturing or flight acceptance; canonical selection and paired-metadata integration remain owner actions.",
+  "categories": {
+    "intended_unfinished_connections": {
+      "native_missing_connections": 7,
+      "nets": [
+        "PORT_C_RX_EXT (three groups/two missing connections)",
+        "PORT_C_RX_MCU",
+        "PORT_C_TX_MCU",
+        "FLASH_MISO",
+        "FLASH_MOSI",
+        "FLASH_SCK"
+      ],
+      "finite_unresolved_open_ends": [
+        {
+          "track_uuid": "0704cc1e-3f63-51e7-b36b-26e4c9a347e5",
+          "net": "PORT_C_RX_EXT",
+          "xy": [
+            24.65,
+            16.1
+          ]
+        },
+        {
+          "track_uuid": "6e64820c-b464-5142-a228-ebb74be4b044",
+          "net": "PORT_C_RX_EXT",
+          "xy": [
+            26.35,
+            16.6
+          ]
+        }
+      ],
+      "full_connectivity_pass": false
+    },
+    "unsupported_or_overstrong_predicates_resolved_only_by_named_supplements": [
+      {
+        "raw": "U15.3 original convex-pad entry predicate unsupported on the actual nonconvex custom pad.",
+        "track_uuid": "ac132cca-ea4d-53a6-8376-a7cab37beb2b",
+        "scoped_result": "Exact native nonconvex polygon contains full .25mm-wide connected strip at actual join, length .037785054060786034mm, .03224586394760637mm boundary reserve. Holes retained. No convex hull or epsilon relaxation."
+      },
+      {
+        "raw": "J11 .4mm F/.8mm In3 full-track-width annular-strip predicates fail at .45mm-land/.20mm-drill via.",
+        "via_uuid": "04cface4-f592-56dc-8ed6-e1376bfedb6a",
+        "track_uuids": [
+          "6887b46b-d0fb-5f60-9e34-1b8f3d53a2b4",
+          "efc2520e-6103-5c8a-9fb3-062c7d556faf"
+        ],
+        "scoped_result": "Exact finite track-to-annulus sectors through .3mm proven on both layers, independently of whole-ring track coverage. Common inner-ring thickness .09997970830145839/.12498056578944965mm. Track/barrel bottleneck belongs in fresh current validation; no .4/.8mm-through-annulus claim."
+      }
+    ],
+    "inherited_reference_features": {
+      "CORE": "All10 nonlocal centerline track UUIDs/coordinates/classes are exactly inherited from accepted11; two raw width changes +1.850203878994705e-10 and -1.4163031858416275e-11mm2 remain unrounded. Current capacity is not inferred from reference projection.",
+      "SBUS_LV": "Both nonlocal centerline track UUIDs/coordinates/classes are exactly inherited. Serial-edge/return qualification is not thereby established.",
+      "unchanged_raw_historical_limits": [
+        "reference-boundary predicate ambiguities",
+        "historical USB/DSM input/model invalidity",
+        "source37 conditional/high-load failures",
+        "inherited .20mm drill vendor-guidance departure"
+      ]
+    },
+    "new_reference_geometry_conditional": {
+      "IMU": "CS/MOSI/SCK paths and IMU feed/return were intentionally changed. MOSI/SCK own-window missing-width totals increase .014124863530035572/.01276125523246717mm2. All critical terminal groups stay complete; no unchanged-reference or timing/AC equivalence claim.",
+      "SBUS_LV": "Retained track9b12ce1c-bc9e-5d8b-b935-5362a6ffb5c8 gains6.0735585856642266e-5mm2 outside-own-window width-only deficit, requiring explicit waveform/reference disposition.",
+      "LED_RED": "Wholly new20-track42.32400883659983mm/3-via connection. Nonlocal centerline sum1.3377756547513623mm is spatially inside the existing .362mm edge-via window, whose intersection with saved interior holes is empty. Raw classes remain; nominal land+clearance is .352mm, so exact antipad attribution and continuous return detour are not silently assumed. Two remote width-only wedges4.640632291141664e-5/5.8131486422869055e-5mm2 remain. Nearest verified both-plane tie to edge transition is3.861273661984863mm away, a geometric distance only. LED indication is not a serial timing path, but GPIO edge/EMI behavior still needs qualification.",
+      "ADC_and_power": "ADC/MID, CORE/PERIPH/ABC/VX and ground fill changes have fresh geometric inspection. Source37 power/VCAP results are stale. ADC values/nominal arithmetic do not guarantee C31 effective capacitance, real acquisition settings, settling or noise."
+    }
+  },
+  "passed_scoped_geometry": [
+    "exact final native pads, immutable retained objects, footprint/paired source identities",
+    "native mechanical/process/firmware and all16 critical/all28 support connectivity",
+    "all21 completed actual bonded-I/O cases; only C_RX incomplete",
+    "five changed GND recipe local connections and both-plane annular/declared-width corridor witnesses",
+    "all reviewed new/moved-pad completed-function finite contacts have original or exact named supplemental witnesses"
+  ],
+  "remaining_limits": [
+    "No complete-board pass while seven ordinary opens remain.",
+    "No blanket unchanged-reference equality: all changed/refilled projections retain raw values.",
+    "Five selected return-corridor witnesses do not establish global plane impedance or every retained neck; sharing and old ambiguities stay explicit.",
+    "Continuous LED return detour and exact edge-antipad attribution are pending additional scoped geometry review.",
+    "Complete-route tree/cycle evidence beyond selected ADC-loop deletion is not proved by contact graphs.",
+    "Current numerical power/VCAP, ADC installed-firmware/noise, AC/ESD/transients, fabrication and flight remain unqualified."
+  ],
+  "overall_full_board_acceptance": false,
+  "overall_electrical_acceptance": false,
+  "canonical_adoption_performed": false
+}

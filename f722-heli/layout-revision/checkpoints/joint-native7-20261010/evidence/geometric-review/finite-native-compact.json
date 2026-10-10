@@ -1,0 +1,570 @@
+{
+  "schema": "f722-joint-finite-native-compact/v1",
+  "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+  "source_file": "finite-native.json",
+  "source_file_sha256": "5cb06c8a4567725f723d56a7a8dd195b7aadbfb529db4e7a95adadb90edb80a3",
+  "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+  "script_sha256": "ebac4f048241160af6c4088047d36522623476bfb638edceb8076eeff32ca42e",
+  "helper_sha256": {
+    "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/dsm40-audits/audit_dsm40_entries_return.py": "4192b7c1cbe5280de5015c7e77f7427506c5e971d996dbf90aff5c1870b72ab6",
+    "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/servo23-audits/audit_rewritten_entries.py": "0204d88d8264fd7dae31c7603f11a164a2f9735ccaf8fe71fb57c0bdece0b4dc",
+    "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/native-tools/check_protection_paths.py": "4bf5c8e49c379898ef8ce9da5410c5a47260a072c7ac387a27b07258be90c976"
+  },
+  "case_counts": {
+    "endpoints": 402,
+    "strict_pad_entries": 47,
+    "exact_track_joins": 170,
+    "finite_annular_entries": 65,
+    "unresolved_endpoint_cases": 2,
+    "changed_ground_recipe_returns": 5
+  },
+  "all_raw_failed_endpoint_rows": [
+    {
+      "track_uuid": "0704cc1e-3f63-51e7-b36b-26e4c9a347e5",
+      "net": "PORT_C_RX_EXT",
+      "layer": "F.Cu",
+      "endpoint": "end",
+      "xy": [
+        24.65,
+        16.1
+      ],
+      "witnesses": [],
+      "finite_witness_found": false
+    },
+    {
+      "track_uuid": "6887b46b-d0fb-5f60-9e34-1b8f3d53a2b4",
+      "net": "+5V_PERIPH",
+      "layer": "F.Cu",
+      "endpoint": "end",
+      "xy": [
+        30.217197,
+        21.297221
+      ],
+      "witnesses": [
+        {
+          "kind": "via",
+          "uuid": "04cface4-f592-56dc-8ed6-e1376bfedb6a",
+          "passed": false
+        }
+      ],
+      "finite_witness_found": false
+    },
+    {
+      "track_uuid": "6e64820c-b464-5142-a228-ebb74be4b044",
+      "net": "PORT_C_RX_EXT",
+      "layer": "F.Cu",
+      "endpoint": "end",
+      "xy": [
+        26.35,
+        16.6
+      ],
+      "witnesses": [],
+      "finite_witness_found": false
+    },
+    {
+      "track_uuid": "ac132cca-ea4d-53a6-8376-a7cab37beb2b",
+      "net": "GND",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy": [
+        25.0825,
+        17.6
+      ],
+      "witnesses": [
+        {
+          "kind": "pad",
+          "uuid": "ef45fa73-d7c1-46b1-b97b-5758fa665b65",
+          "passed": false
+        }
+      ],
+      "finite_witness_found": false
+    },
+    {
+      "track_uuid": "efc2520e-6103-5c8a-9fb3-062c7d556faf",
+      "net": "+5V_PERIPH",
+      "layer": "In3.Cu",
+      "endpoint": "end",
+      "xy": [
+        30.217197,
+        21.297221
+      ],
+      "witnesses": [
+        {
+          "kind": "via",
+          "uuid": "04cface4-f592-56dc-8ed6-e1376bfedb6a",
+          "passed": false
+        }
+      ],
+      "finite_witness_found": false
+    }
+  ],
+  "all_raw_failed_strict_pad_rows": [
+    {
+      "passed": false,
+      "track_uuid": "ac132cca-ea4d-53a6-8376-a7cab37beb2b",
+      "pad_uuid": "ef45fa73-d7c1-46b1-b97b-5758fa665b65",
+      "pad": "U15.3",
+      "endpoint": "start",
+      "reason": "Existing strict predicate does not support this drilled/nonconvex pad"
+    }
+  ],
+  "all_raw_failed_join_rows": [],
+  "all_raw_failed_annular_rows": [
+    {
+      "track_uuid": "6887b46b-d0fb-5f60-9e34-1b8f3d53a2b4",
+      "via_uuid": "04cface4-f592-56dc-8ed6-e1376bfedb6a",
+      "layer": "F.Cu",
+      "passed": false,
+      "finite_full_width_annular_strips": [],
+      "actual_annular_centerline_length_mm": 0.12499054953428043
+    },
+    {
+      "track_uuid": "efc2520e-6103-5c8a-9fb3-062c7d556faf",
+      "via_uuid": "04cface4-f592-56dc-8ed6-e1376bfedb6a",
+      "layer": "In3.Cu",
+      "passed": false,
+      "finite_full_width_annular_strips": [],
+      "actual_annular_centerline_length_mm": 0.12499109940686245
+    }
+  ],
+  "all_raw_unresolved_endpoint_rows": [
+    {
+      "track_uuid": "0704cc1e-3f63-51e7-b36b-26e4c9a347e5",
+      "net": "PORT_C_RX_EXT",
+      "endpoint": "end",
+      "contacting_objects": [],
+      "reason": "No exact endpoint/inside-pad/centered-via witness; off-center contact or unfinished end requires explicit review"
+    },
+    {
+      "track_uuid": "6e64820c-b464-5142-a228-ebb74be4b044",
+      "net": "PORT_C_RX_EXT",
+      "endpoint": "end",
+      "contacting_objects": [],
+      "reason": "No exact endpoint/inside-pad/centered-via witness; off-center contact or unfinished end requires explicit review"
+    }
+  ],
+  "changed_ground_recipe_returns": [
+    {
+      "recipe": "rotated-U15-original-ground-return",
+      "width_mm": 0.25,
+      "length_mm": 2.573993726854674,
+      "pad_UUIDs": [
+        "ef45fa73-d7c1-46b1-b97b-5758fa665b65"
+      ],
+      "pad_keys": [
+        "U15.3"
+      ],
+      "via_UUIDs": [
+        "97282ff5-d6b5-415f-a3c4-0390df70f0ea"
+      ],
+      "saved_planes": [
+        {
+          "via_uuid": "97282ff5-d6b5-415f-a3c4-0390df70f0ea",
+          "layer": "In1.Cu",
+          "annulus_area_mm2": 0.12761573956853614,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.25,
+            "centerline_mm": [
+              [
+                25.436999999999998,
+                19.1104
+              ],
+              [
+                26.037,
+                19.1104
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 788.8554088146251
+          },
+          "passed": true
+        },
+        {
+          "via_uuid": "97282ff5-d6b5-415f-a3c4-0390df70f0ea",
+          "layer": "In4.Cu",
+          "annulus_area_mm2": 0.12761573956853614,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.25,
+            "centerline_mm": [
+              [
+                25.436999999999998,
+                19.1104
+              ],
+              [
+                26.037,
+                19.1104
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 788.8554088146251
+          },
+          "passed": true
+        }
+      ],
+      "other_surface_GND_contacts": [
+        {
+          "uuid": "97282ff5-d6b5-415f-a3c4-0390df70f0ea",
+          "kind": "via",
+          "pad": null,
+          "overlap_mm2": 0.07775103838256808
+        },
+        {
+          "uuid": "ef45fa73-d7c1-46b1-b97b-5758fa665b65",
+          "kind": "pad",
+          "pad": "U15.3",
+          "overlap_mm2": 0.08827626619011478
+        }
+      ],
+      "local_pad_recipe_via_component": true
+    },
+    {
+      "recipe": "cluster-C31-dedicated-GND-lead",
+      "width_mm": 0.25,
+      "length_mm": 2.9035977426771775,
+      "pad_UUIDs": [
+        "d5a31144-c52a-41d3-ad43-e99bb4cdd90f"
+      ],
+      "pad_keys": [
+        "C31.2"
+      ],
+      "via_UUIDs": [
+        "0b0f5451-1712-57da-b622-9f92fc6b1a0b"
+      ],
+      "saved_planes": [
+        {
+          "via_uuid": "0b0f5451-1712-57da-b622-9f92fc6b1a0b",
+          "layer": "In1.Cu",
+          "annulus_area_mm2": 0.1276157395685361,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.25,
+            "centerline_mm": [
+              [
+                12.598864,
+                3.105028
+              ],
+              [
+                13.198864,
+                3.105028
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 788.8554088146251
+          },
+          "passed": true
+        },
+        {
+          "via_uuid": "0b0f5451-1712-57da-b622-9f92fc6b1a0b",
+          "layer": "In4.Cu",
+          "annulus_area_mm2": 0.1276157395685361,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.25,
+            "centerline_mm": [
+              [
+                12.598864,
+                3.105028
+              ],
+              [
+                13.198864,
+                3.105028
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 788.8554088146251
+          },
+          "passed": true
+        }
+      ],
+      "other_surface_GND_contacts": [
+        {
+          "uuid": "0b0f5451-1712-57da-b622-9f92fc6b1a0b",
+          "kind": "via",
+          "pad": null,
+          "overlap_mm2": 0.07775079261619863
+        },
+        {
+          "uuid": "d5a31144-c52a-41d3-ad43-e99bb4cdd90f",
+          "kind": "pad",
+          "pad": "C31.2",
+          "overlap_mm2": 0.10301512625130965
+        }
+      ],
+      "local_pad_recipe_via_component": true
+    },
+    {
+      "recipe": "dedicated-U2-7-outward-return",
+      "width_mm": 0.254,
+      "length_mm": 0.8477082013608197,
+      "pad_UUIDs": [
+        "b6f8e7e5-ab86-4007-a33c-be6c62aecd9f"
+      ],
+      "pad_keys": [
+        "U2.7"
+      ],
+      "via_UUIDs": [
+        "6854f5bd-7b7d-5f17-992c-de1e87b1ece3"
+      ],
+      "saved_planes": [
+        {
+          "via_uuid": "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+          "layer": "In1.Cu",
+          "annulus_area_mm2": 0.12761573956853603,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.254,
+            "centerline_mm": [
+              [
+                23.786036465452657,
+                13.482872806643348
+              ],
+              [
+                24.130182327263284,
+                13.974364033216743
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 787.1871556543433
+          },
+          "passed": true
+        },
+        {
+          "via_uuid": "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+          "layer": "In4.Cu",
+          "annulus_area_mm2": 0.12761573956853603,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.254,
+            "centerline_mm": [
+              [
+                23.786036465452657,
+                13.482872806643348
+              ],
+              [
+                24.130182327263284,
+                13.974364033216743
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 787.1871556543433
+          },
+          "passed": true
+        }
+      ],
+      "other_surface_GND_contacts": [
+        {
+          "uuid": "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+          "kind": "via",
+          "pad": null,
+          "overlap_mm2": 0.07928846268971629
+        },
+        {
+          "uuid": "b6f8e7e5-ab86-4007-a33c-be6c62aecd9f",
+          "kind": "pad",
+          "pad": "U2.7",
+          "overlap_mm2": 0.10446955744827477
+        }
+      ],
+      "local_pad_recipe_via_component": true
+    },
+    {
+      "recipe": "original-C13-complete-ground-return",
+      "width_mm": 0.254,
+      "length_mm": 1.8739835066386976,
+      "pad_UUIDs": [
+        "5c5a9d43-4e10-4377-8738-d6525fffd529"
+      ],
+      "pad_keys": [
+        "C13.2"
+      ],
+      "via_UUIDs": [
+        "3a66a0d8-a4b0-4282-9936-fdae79b412fc"
+      ],
+      "saved_planes": [
+        {
+          "via_uuid": "3a66a0d8-a4b0-4282-9936-fdae79b412fc",
+          "layer": "In1.Cu",
+          "annulus_area_mm2": 0.12761573956853609,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.254,
+            "centerline_mm": [
+              [
+                25.525,
+                12.9
+              ],
+              [
+                26.125,
+                12.9
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 787.1871556543433
+          },
+          "passed": true
+        },
+        {
+          "via_uuid": "3a66a0d8-a4b0-4282-9936-fdae79b412fc",
+          "layer": "In4.Cu",
+          "annulus_area_mm2": 0.12761573956853609,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.254,
+            "centerline_mm": [
+              [
+                25.525,
+                12.9
+              ],
+              [
+                26.125,
+                12.9
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 787.1871556543433
+          },
+          "passed": true
+        }
+      ],
+      "other_surface_GND_contacts": [
+        {
+          "uuid": "3a66a0d8-a4b0-4282-9936-fdae79b412fc",
+          "kind": "via",
+          "pad": null,
+          "overlap_mm2": 0.07928853652528328
+        },
+        {
+          "uuid": "3d128062-54a3-4fd3-ab3d-818e4ec84e57",
+          "kind": "track",
+          "pad": null,
+          "overlap_mm2": 0.0382718438128253
+        },
+        {
+          "uuid": "5c5a9d43-4e10-4377-8738-d6525fffd529",
+          "kind": "pad",
+          "pad": "C13.2",
+          "overlap_mm2": 0.1485931697734849
+        },
+        {
+          "uuid": "d574d4ee-502e-4fdc-998e-679f88314698",
+          "kind": "track",
+          "pad": null,
+          "overlap_mm2": 0.14278527955952794
+        },
+        {
+          "uuid": "e6cfad7e-3585-4ac5-b26e-a6d5ffdf4863",
+          "kind": "track",
+          "pad": null,
+          "overlap_mm2": 0.004522166288148418
+        }
+      ],
+      "local_pad_recipe_via_component": true
+    },
+    {
+      "recipe": "split-R44-GND-centered",
+      "width_mm": 0.127,
+      "length_mm": 2.5078817348201667,
+      "pad_UUIDs": [
+        "69dd15ed-318d-4e07-93df-53253587847d"
+      ],
+      "pad_keys": [
+        "R44.2"
+      ],
+      "via_UUIDs": [
+        "ad154105-53cb-568d-9fd0-4b2dd0470ceb"
+      ],
+      "saved_planes": [
+        {
+          "via_uuid": "ad154105-53cb-568d-9fd0-4b2dd0470ceb",
+          "layer": "In1.Cu",
+          "annulus_area_mm2": 0.12761573956853614,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.127,
+            "centerline_mm": [
+              [
+                16.35674,
+                2.951307
+              ],
+              [
+                16.95674,
+                2.951307
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 839.1880894081926
+          },
+          "passed": true
+        },
+        {
+          "via_uuid": "ad154105-53cb-568d-9fd0-4b2dd0470ceb",
+          "layer": "In4.Cu",
+          "annulus_area_mm2": 0.12761573956853614,
+          "annulus_area_outside_saved_actual_plane_mm2": 0.0,
+          "finite_declared_width_corridor": {
+            "width_mm": 0.127,
+            "centerline_mm": [
+              [
+                16.35674,
+                2.951307
+              ],
+              [
+                16.95674,
+                2.951307
+              ]
+            ],
+            "annular_section_missing_mm": 0.0,
+            "strip_area_outside_saved_actual_copper_mm2": 0.0,
+            "dominant_eroded_component_area_mm2": 839.1880894081926
+          },
+          "passed": true
+        }
+      ],
+      "other_surface_GND_contacts": [
+        {
+          "uuid": "69dd15ed-318d-4e07-93df-53253587847d",
+          "kind": "pad",
+          "pad": "R44.2",
+          "overlap_mm2": 0.043608519432541015
+        },
+        {
+          "uuid": "ad154105-53cb-568d-9fd0-4b2dd0470ceb",
+          "kind": "via",
+          "pad": null,
+          "overlap_mm2": 0.03452599404969779
+        }
+      ],
+      "local_pad_recipe_via_component": true
+    }
+  ],
+  "raw_booleans": {
+    "all_selected_endpoints_have_finite_witness": false,
+    "all_strict_pad_predicates_pass": false,
+    "all_changed_ground_recipe_plane_witnesses_pass": true
+  },
+  "supplement": {
+    "file": "finite-contact-supplement.json",
+    "sha256": "04833e79fe07561b5bc90a3f0273ac11e425e1321868a86fc6e17aca0854a77a",
+    "original_failures_are_not_modified": true,
+    "scope": "Actual nonconvex U15.3 full-width connected strip and J11 finite track-to-via sectors; no full overwide annular width/current qualification."
+  },
+  "limits": [
+    "Raw strict-predicate failures are preserved, including boundary ambiguity; no epsilon waiver or contour repair.",
+    "Bounded72-direction straight plane corridor failure is unresolved, not proof that no wider/global path exists.",
+    "Other-ground contact inventory is not a proof of independent discharge paths; shared returns need owner disposition.",
+    "Retained U2.6/U2.9/C11/C12 local-return geometry, full-plane neck topology, tree/cycle proof and AC/current/ESD remain separate gates.",
+    "Unfinished C/FLASH endpoint failures stay explicit and do not by themselves forbid labeled geometric WIP."
+  ],
+  "overall_acceptance_claimed": false
+}
