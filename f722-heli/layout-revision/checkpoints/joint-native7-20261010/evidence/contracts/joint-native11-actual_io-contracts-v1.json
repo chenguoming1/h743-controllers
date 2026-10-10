@@ -1,0 +1,266 @@
+{
+  "profile": "actual-bonded-signal-io-22-u15-original-io-nc9-nc10-56-v1-joint-import-v1",
+  "method": "Native KiCad copper polygons: tracks/vias/pads ERROR_OUTSIDE, actual clamp pad ERROR_INSIDE, maximum polygon error 0.00001 mm. Subtract only actual clamp pad copper from every copper object on the actual clamp pad layer(s), split resulting polygon pieces, rebuild physical contact graph including existing plated through connections. No component-internal conductive paths are assumed. Signal nets have no zones. Conservative overestimate of surviving copper and underestimate of pad removal.",
+  "basis": "Separate complete inventory of 20 populated signal-clamp channels, represented by 22 source-to-target cases because USB P/N each have two connector contacts. It retains every historical actual-I/O endpoint and threshold and adds D7; it neither replaces historical reports nor includes NC cuts in actual_clamp counts.",
+  "excluded_scope": "D8/D9 power-rail TVS, ground-return and bias-plane qualification, downstream sides of series resistors, unused bonded channels, ESD transient stress/inductance and manufacturing qualification.",
+  "checks": [
+    {
+      "net": "USB_CC1",
+      "clamp": "D5.1",
+      "source": "J1.A5",
+      "target": "R14.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-01",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "SERVO1_MCU",
+      "clamp": "U12.1",
+      "source": "R20.2",
+      "target": "U1.56",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-02",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "clamp": "U12.3",
+      "source": "R21.2",
+      "target": "U1.57",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-03",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "RPM_MCU",
+      "clamp": "U13.6",
+      "source": "R39.2",
+      "target": "U1.16",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-04",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "SBUS_MCU",
+      "clamp": "U13.1",
+      "source": "R45.2",
+      "target": "U1.17",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-05",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "PORT_C_RX_EXT",
+      "clamp": "U15.1",
+      "source": "J11.1",
+      "target": "R34.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-06",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "PORT_C_TX_EXT",
+      "clamp": "U15.2",
+      "source": "J11.2",
+      "target": "R35.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-07",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "TAIL_MCU",
+      "clamp": "U12.6",
+      "source": "R23.2",
+      "target": "U1.55",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-08",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "ESC_MCU",
+      "clamp": "U13.3",
+      "source": "R24.2",
+      "target": "U1.58",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-09",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "PORT_B_RX_EXT",
+      "clamp": "U14.4",
+      "source": "J10.1",
+      "target": "R32.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-10",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "PORT_B_TX_EXT",
+      "clamp": "U14.5",
+      "source": "J10.2",
+      "target": "R33.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-11",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "SERVO3_MCU",
+      "clamp": "U12.4",
+      "source": "R22.2",
+      "target": "U1.25",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-12",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "PORT_A_TX_EXT",
+      "clamp": "U14.2",
+      "source": "J9.2",
+      "target": "R31.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-13",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "net": "PORT_A_RX_EXT",
+      "clamp": "U14.1",
+      "source": "J9.1",
+      "target": "R30.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-14",
+      "scope": "actual_clamp",
+      "historical_scope": "actual_clamp",
+      "coverage_origin": "reconstructed-18"
+    },
+    {
+      "id": "supplemental-01",
+      "net": "USB_CC2",
+      "clamp": "D6.1",
+      "source": "J1.B5",
+      "target": "R15.1",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "additional_cc_hv_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "supplemental-02",
+      "net": "USB_P",
+      "clamp": "D3.1",
+      "source": "J1.A6",
+      "target": "U1.45",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "supplemental_usb_data_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "supplemental-03",
+      "net": "USB_P",
+      "clamp": "D3.1",
+      "source": "J1.B6",
+      "target": "U1.45",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "supplemental_usb_data_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "supplemental-04",
+      "net": "USB_N",
+      "clamp": "D4.1",
+      "source": "J1.A7",
+      "target": "U1.44",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "supplemental_usb_data_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "supplemental-05",
+      "net": "USB_N",
+      "clamp": "D4.1",
+      "source": "J1.B7",
+      "target": "U1.44",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "supplemental_usb_data_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "supplemental-06",
+      "net": "RPM_HV",
+      "clamp": "U16.1",
+      "source": "R25.2",
+      "target": "Q1.3",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "additional_cc_hv_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "supplemental-07",
+      "net": "SBUS_HV",
+      "clamp": "U16.2",
+      "source": "R26.2",
+      "target": "Q2.3",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "historical_scope": "additional_cc_hv_review",
+      "coverage_origin": "supplemental-7"
+    },
+    {
+      "id": "actual-io-gap-01",
+      "net": "DSM_RX_EXT",
+      "clamp": "D7.1",
+      "source": "J12.3",
+      "target": "R38.1",
+      "minimum_gap_required_mm": 0.127,
+      "scope": "actual_clamp",
+      "coverage_origin": "new_D7_signal_IO_review"
+    }
+  ],
+  "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+  "source_board_sha256": "454b7bb2454695b49c039f3d97e5edefb1946912363bab00ef5ced6ba2b0ea16",
+  "source_contract": {
+    "path": "repo/f722-heli/layout-revision/protection-review/contracts/actual-io22.json",
+    "sha256": "504a916f925e549864ae7b0a78db56fdd07aeb5edf87daefb2459aedc3a122e1",
+    "profile": "actual-bonded-signal-io-22",
+    "source_board_sha256_if_present": null
+  },
+  "U15_routing_land_assignments": {
+    "U15.9": "PORT_C_TX_EXT",
+    "U15.10": "PORT_C_RX_EXT"
+  },
+  "U15_actual_clamps": {
+    "PORT_C_RX_EXT": "U15.1",
+    "PORT_C_TX_EXT": "U15.2"
+  },
+  "package_internal_NC_conduction": false
+}

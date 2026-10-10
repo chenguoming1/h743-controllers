@@ -1,0 +1,3 @@
+#!/bin/sh
+. "$(dirname -- "$0")/runtime-env.sh"
+exec "$runtime_loader" --library-path "$runtime_lib" "$runtime_dir/root/usr/bin/kicad-cli" "$@"

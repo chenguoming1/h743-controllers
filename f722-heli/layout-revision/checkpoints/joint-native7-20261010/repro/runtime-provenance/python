@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname -- "$0")/runtime-env.sh"
+export PYTHONHOME="$runtime_dir/root/usr"
+export PYTHONPATH="$runtime_dir/compat:$runtime_dir/root/usr/lib/python3/dist-packages${PYTHONPATH:+:$PYTHONPATH}"
+exec "$runtime_loader" --library-path "$runtime_lib" "$runtime_dir/root/usr/bin/python3.14" "$@"
