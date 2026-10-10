@@ -1,0 +1,18 @@
+{
+  "status": "CORRECTION REQUIRED; no current electrical qualification",
+  "current_board_sha256": "539d9547eb8c4d5984481293ae10cee34355ee838dff11ab43b00cca270ceae2",
+  "historical_result_sha256": "28dfe7bcff16f08e3919be7063cf06727ab25678e3585e86f6acfda26e0742f1",
+  "invalid_path_specific_conclusions": [
+    "U10 USB TPS2553 selected supply path",
+    "U11 DSM TPS2553 selected supply path"
+  ],
+  "finding": "TPS2553DRVR IN is pin6; EN is pin4. Shared net connectivity does not make finite copper terminals interchangeable. Historical models used pin4 for supply current.",
+  "official_source": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+  "source_revision": "SLVS841F, DRV pinout page5",
+  "board_change_to_fit_model": false,
+  "correction_and_fresh_solve_pending": true,
+  "scope": "Retain historical artifacts. BEC copper-improvement evidence has a separate scope; no overall historical power pass is inherited.",
+  "source_review": "../core-voltage-review/REPORT.md",
+  "source_review_manifest_sha256": "c8954ee111024aaf015f51dcca410cd7bb5f91088adba153029b4379db4a7d5c",
+  "candidate41_pin_identity_correlations": 82
+}

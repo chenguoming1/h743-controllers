@@ -1,0 +1,31 @@
+{
+  "board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+  "scope": "Nominal CAD clearances, not fabrication or assembly tolerance allowances.",
+  "source_local_screen_sha256": "690e8c2c8299971bc10b6a9f0d54d03c81a04f2395cbb66ad114088f8be8b17a",
+  "poses_and_vias_exact_to_source42": true,
+  "rules": [
+    {
+      "objects": [
+        "SCL_sensor_via_ecee0449-3181-5049-8e1a-0df4c3ce26e1",
+        "C69.2"
+      ],
+      "rule": "different-net copper-to-copper clearance",
+      "required_mm": 0.127,
+      "nominal_actual_mm": 0.1285,
+      "nominal_excess_mm": 0.0015
+    },
+    {
+      "objects": [
+        "C69.1",
+        "GND_via_ae56f326-719f-4298-954b-54bb06b5a21e"
+      ],
+      "rule": "different-net copper-to-copper clearance",
+      "required_mm": 0.127,
+      "nominal_actual_mm": 0.1277866640068527,
+      "nominal_excess_mm": 0.0007866640068527053
+    }
+  ],
+  "mask_and_drill_checks_separate": "owner-process.json and owner-drc-all.json",
+  "manufacturing_tolerance_allowance_claimed": false,
+  "final_source_specific_manufacturing_assembly_review_pending": true
+}

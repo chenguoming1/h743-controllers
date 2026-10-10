@@ -1,0 +1,2801 @@
+{
+  "schema": "f722-complete-RPM-layer-transition-proposal/v3",
+  "source_board_sha256": "755545e8198e9a3649c0e07533c23e67010d91ab6a8b09556d7463e064ac89eb",
+  "source_native_sha256": "aba75fd40d1f4b08780b2b6790bb2cbf4bdf42bce2243aec284e8ca4734a0143",
+  "script_sha256": "6f196e38faf5b517c409213b54069fc134145dd138d6d03005e9d5fe3396a20f",
+  "source_native_directory": "ordinary-routing/tests/servo48/candidate04",
+  "vias": [
+    {
+      "name": "RPM-MCU",
+      "net": "RPM_MCU",
+      "xy": [
+        15.079367,
+        9.594711
+      ]
+    },
+    {
+      "name": "RPM-clamp-target",
+      "net": "RPM_MCU",
+      "xy": [
+        13.21,
+        23.02
+      ]
+    },
+    {
+      "name": "RPM-In2-In3-bridge",
+      "net": "RPM_MCU",
+      "xy": [
+        9.013184,
+        20.66732
+      ]
+    },
+    {
+      "name": "RPM-extra-transition-0",
+      "net": "RPM_MCU",
+      "xy": [
+        4.844794,
+        17.894794
+      ]
+    },
+    {
+      "name": "RPM-extra-transition-1",
+      "net": "RPM_MCU",
+      "xy": [
+        14.906568,
+        6.34672
+      ]
+    }
+  ],
+  "reserved_peer_portals": [
+    [
+      "LED_GREEN_K",
+      [
+        17.0375,
+        14.145
+      ]
+    ],
+    [
+      "FLASH_CS",
+      [
+        23.90716,
+        9.90146
+      ]
+    ],
+    [
+      "LED_GREEN_K",
+      [
+        37.8,
+        21.0375
+      ]
+    ],
+    [
+      "FLASH_MISO",
+      [
+        25.40268,
+        10.82928
+      ]
+    ],
+    [
+      "FLASH_MOSI",
+      [
+        39.15,
+        19.9
+      ]
+    ],
+    [
+      "FLASH_SCK",
+      [
+        19.57724,
+        10.43289
+      ]
+    ],
+    [
+      "FLASH_SCK",
+      [
+        39.45646,
+        21.39858
+      ]
+    ],
+    [
+      "FLASH_CS",
+      [
+        30.95,
+        24.525
+      ]
+    ],
+    [
+      "DSM_RX_MCU",
+      [
+        37.3,
+        19.3
+      ]
+    ],
+    [
+      "FLASH_MOSI",
+      [
+        21.27,
+        11.59
+      ]
+    ],
+    [
+      "FLASH_MISO",
+      [
+        31.64,
+        22.52
+      ]
+    ],
+    [
+      "LED_RED_K",
+      [
+        10.403366359155068,
+        16.552526285113835
+      ]
+    ]
+  ],
+  "native_outline_bounds": [
+    0.0,
+    0.0,
+    41.66,
+    25.4
+  ],
+  "search_domain": "full native outline; every endpoint and prefix anchor verified inside",
+  "removed_source_ids": [],
+  "routes": [
+    {
+      "name": "MCU-B",
+      "net": "RPM_MCU",
+      "layer": "B.Cu",
+      "points": [
+        [
+          15.284999,
+          10.05
+        ],
+        [
+          15.079367,
+          9.594711
+        ]
+      ],
+      "width": 0.127,
+      "passed": true,
+      "length_mm": 0.49957241011188785,
+      "nearest": [
+        {
+          "object": "U1.15",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.15949999999999964
+        },
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.1663206765449557
+        },
+        {
+          "object": "def5537d-d0ab-4331-bb4d-8c021ba48232",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.2180246571077445
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "B.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          13.6875,
+          22.35
+        ],
+        [
+          14.425,
+          22.35
+        ],
+        [
+          14.551913,
+          22.821972
+        ],
+        [
+          13.21,
+          23.02
+        ]
+      ],
+      "length_mm": 2.5826835776225274,
+      "nearest": [
+        {
+          "object": "610224d9-e06f-4611-80c7-32887be0f9cc",
+          "category": "source_branch_clamp_bypass_guard",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.15116646082375462
+        },
+        {
+          "object": "f8b4cdb1-c906-4d2a-bc00-3ec66e57cfef",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.16398075736424272
+        },
+        {
+          "object": "d03338ff-d78f-47fe-8a5b-1821d3c40d0f",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.17392022327521772
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 1203,
+      "name": "clamp-target-B"
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "In2.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          13.21,
+          23.02
+        ],
+        [
+          8.960223,
+          20.866535
+        ],
+        [
+          9.013184,
+          20.66732
+        ]
+      ],
+      "length_mm": 4.97037811780935,
+      "nearest": [
+        {
+          "object": "0fd972ba-65d2-446c-82f9-92241bfd8aad",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "extra_clearance_mm": 0.0011066355343757883
+        },
+        {
+          "object": "0fd972ba-65d2-446c-82f9-92241bfd8aad",
+          "category": "foreign_drill_to_track_copper",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.05310221126698289
+        },
+        {
+          "object": "J8.3",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "extra_clearance_mm": 0.06230607921041692
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 4198,
+      "name": "RPM-clamp-to-bridge-In2"
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "In3.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          9.013184,
+          20.66732
+        ],
+        [
+          7.809959,
+          19.395948
+        ],
+        [
+          7.293669,
+          17.366997
+        ],
+        [
+          4.844794,
+          17.894794
+        ]
+      ],
+      "length_mm": 6.349182903345009,
+      "nearest": [
+        {
+          "object": "J7.2",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.021430945186839828
+        },
+        {
+          "object": "J7.3",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.04456997836865492
+        },
+        {
+          "object": "J7.1",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.16470599999999902
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 5258,
+      "name": "RPM-extra-leg-0"
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "B.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          4.844794,
+          17.894794
+        ],
+        [
+          2.085672,
+          17.259901
+        ],
+        [
+          1.744825,
+          1.188721
+        ],
+        [
+          5.146958,
+          0.498478
+        ],
+        [
+          12.65831,
+          0.748296
+        ],
+        [
+          12.120148,
+          1.826632
+        ],
+        [
+          12.980018,
+          2.377067
+        ],
+        [
+          14.906568,
+          6.34672
+        ]
+      ],
+      "length_mm": 36.531550171966,
+      "nearest": [
+        {
+          "object": "D9.1",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.0005416045290666527
+        },
+        {
+          "object": "1b5a118a-60bb-47c4-bb90-5cf6bdea16d2",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.0022577364563365343
+        },
+        {
+          "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.003069549476191924
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 13122,
+      "name": "RPM-extra-leg-1"
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "In3.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          14.906568,
+          6.34672
+        ],
+        [
+          15.336486,
+          7.938185
+        ],
+        [
+          15.130631,
+          11.415217
+        ],
+        [
+          15.079367,
+          9.594711
+        ]
+      ],
+      "length_mm": 6.952859597240037,
+      "nearest": [
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.0038302784376876287
+        },
+        {
+          "object": "9f933703-b014-53c3-81c7-f47178c971e2",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.006444103266805251
+        },
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_drill_to_track_copper",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.05583180150971612
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 4518,
+      "name": "RPM-extra-leg-2"
+    }
+  ],
+  "attempts": [
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "In3.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          9.013184,
+          20.66732
+        ],
+        [
+          7.809959,
+          19.395948
+        ],
+        [
+          7.293669,
+          17.366997
+        ],
+        [
+          4.844794,
+          17.894794
+        ]
+      ],
+      "length_mm": 6.349182903345009,
+      "nearest": [
+        {
+          "object": "J7.2",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.021430945186839828
+        },
+        {
+          "object": "J7.3",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.04456997836865492
+        },
+        {
+          "object": "J7.1",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.16470599999999902
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 5258,
+      "name": "RPM-extra-leg-0"
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "B.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          4.844794,
+          17.894794
+        ],
+        [
+          2.085672,
+          17.259901
+        ],
+        [
+          1.744825,
+          1.188721
+        ],
+        [
+          5.146958,
+          0.498478
+        ],
+        [
+          12.65831,
+          0.748296
+        ],
+        [
+          12.120148,
+          1.826632
+        ],
+        [
+          12.980018,
+          2.377067
+        ],
+        [
+          14.906568,
+          6.34672
+        ]
+      ],
+      "length_mm": 36.531550171966,
+      "nearest": [
+        {
+          "object": "D9.1",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.0005416045290666527
+        },
+        {
+          "object": "1b5a118a-60bb-47c4-bb90-5cf6bdea16d2",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.0022577364563365343
+        },
+        {
+          "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.003069549476191924
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 13122,
+      "name": "RPM-extra-leg-1"
+    },
+    {
+      "passed": true,
+      "net": "RPM_MCU",
+      "layer": "In3.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          14.906568,
+          6.34672
+        ],
+        [
+          15.336486,
+          7.938185
+        ],
+        [
+          15.130631,
+          11.415217
+        ],
+        [
+          15.079367,
+          9.594711
+        ]
+      ],
+      "length_mm": 6.952859597240037,
+      "nearest": [
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.0038302784376876287
+        },
+        {
+          "object": "9f933703-b014-53c3-81c7-f47178c971e2",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "extra_clearance_mm": 0.006444103266805251
+        },
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_drill_to_track_copper",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.05583180150971612
+        }
+      ],
+      "reference_width_outside_own_windows_mm2": 0.0,
+      "triangles": 4518,
+      "name": "RPM-extra-leg-2"
+    }
+  ],
+  "complete": true,
+  "source_R39_branch_and_actual_clamp_retained": true,
+  "elapsed_seconds": 7.610726170998532,
+  "historical_endpoint_source_board_sha256": "71d33748909bb960c5829973642272460607d8521831a6212975f7de6790d660",
+  "context_sha256": "5194138f8d0991a40c9c98df5a8c5453c1cfabf93093909f19a52eca75fa4bf3",
+  "bridge_study_sha256": "9e6d6d5aeb05782d3c7a63cc64aa45ec3ed80c6da90394266ce8bfe55936ae68",
+  "future_flash_additions_only_reservations": {
+    "fixed_objects": 58,
+    "total_objects": 60,
+    "fixed_file_sha256": "1bd0096a0fa4d929f63027b7edb01e58f77235b9869bd4b0e4a2da759e0ec82f",
+    "red_reservation_sha256": "502e501ca09977324de21f6d9d1b63030b8b23e7449d92259c4222133f2a17ad",
+    "private_removals_applied": false
+  },
+  "target_via_correction": {
+    "before": [
+      13.170688,
+      23.010102
+    ],
+    "after": [
+      13.21,
+      23.02
+    ],
+    "reason": "Preserve full0.127mm separation from the retained upstream same-net branch outside actual U13.6 copper."
+  },
+  "bridge_preflight": {
+    "xy": [
+      9.013184,
+      20.66732
+    ],
+    "passed": true,
+    "nearest": [
+      {
+        "object": "J7.3",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "extra_clearance_mm": 0.27060978497126487
+      },
+      {
+        "object": "J7.3",
+        "category": "foreign_copper",
+        "layers": [
+          "In1.Cu"
+        ],
+        "extra_clearance_mm": 0.27060978497126487
+      },
+      {
+        "object": "J7.3",
+        "category": "foreign_copper",
+        "layers": [
+          "In2.Cu"
+        ],
+        "extra_clearance_mm": 0.27060978497126487
+      }
+    ]
+  },
+  "rebound_surface_checks": [
+    {
+      "name": "MCU-B",
+      "passed": true,
+      "nearest": [
+        {
+          "object": "U1.15",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.15949999999999964
+        },
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.1663206765449557
+        },
+        {
+          "object": "def5537d-d0ab-4331-bb4d-8c021ba48232",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.2180246571077445
+        }
+      ],
+      "reference_missing_mm2": 0.0
+    },
+    {
+      "name": "clamp-target-B",
+      "passed": true,
+      "nearest": [
+        {
+          "object": "f8b4cdb1-c906-4d2a-bc00-3ec66e57cfef",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.16398075736424272
+        },
+        {
+          "object": "d03338ff-d78f-47fe-8a5b-1821d3c40d0f",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.17392022327521772
+        },
+        {
+          "object": "610224d9-e06f-4611-80c7-32887be0f9cc",
+          "category": "source_branch_clamp_bypass_guard",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.1898573076631609
+        }
+      ],
+      "reference_missing_mm2": 0.0
+    }
+  ],
+  "rebound_via_checks": [
+    {
+      "name": "RPM-MCU",
+      "passed": true,
+      "nearest": [
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "extra_clearance_mm": 0.004820676544955715
+        },
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "In1.Cu"
+          ],
+          "extra_clearance_mm": 0.004820676544955715
+        },
+        {
+          "object": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "extra_clearance_mm": 0.004820676544955715
+        }
+      ]
+    },
+    {
+      "name": "RPM-clamp-target",
+      "passed": true,
+      "nearest": [
+        {
+          "object": "610224d9-e06f-4611-80c7-32887be0f9cc",
+          "category": "retained_source_clamp_bypass_guard",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.028357307663160913
+        },
+        {
+          "object": "U13.6",
+          "category": "all_smt_masks_no_net_exception",
+          "layers": [
+            "B.Mask"
+          ],
+          "extra_clearance_mm": 0.07000000000000095
+        },
+        {
+          "object": "d03338ff-d78f-47fe-8a5b-1821d3c40d0f",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "extra_clearance_mm": 0.07574705024015543
+        }
+      ]
+    },
+    {
+      "name": "RPM-In2-In3-bridge",
+      "passed": true,
+      "nearest": [
+        {
+          "object": "J7.3",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "extra_clearance_mm": 0.27060978497126487
+        },
+        {
+          "object": "J7.3",
+          "category": "foreign_copper",
+          "layers": [
+            "In1.Cu"
+          ],
+          "extra_clearance_mm": 0.27060978497126487
+        },
+        {
+          "object": "J7.3",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "extra_clearance_mm": 0.27060978497126487
+        }
+      ]
+    }
+  ],
+  "layer_graph": {
+    "nodes": [
+      {
+        "xy": [
+          9.013184,
+          20.66732
+        ],
+        "components": {
+          "F.Cu": 24,
+          "B.Cu": 43,
+          "In2.Cu": 21,
+          "In3.Cu": 19
+        }
+      },
+      {
+        "xy": [
+          15.079367,
+          9.594711
+        ],
+        "components": {
+          "F.Cu": 31,
+          "B.Cu": 41,
+          "In2.Cu": 25,
+          "In3.Cu": 14
+        }
+      },
+      {
+        "xy": [
+          41.092509,
+          24.689437
+        ],
+        "components": {
+          "F.Cu": 0,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.025442126048791768,
+        "nearest": [
+          {
+            "object": "2cb4c4ae-074d-438c-8742-20709ca1442f",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003193968891647081
+          },
+          {
+            "object": "2cb4c4ae-074d-438c-8742-20709ca1442f",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003193968891647081
+          },
+          {
+            "object": "2cb4c4ae-074d-438c-8742-20709ca1442f",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003193968891647081
+          }
+        ]
+      },
+      {
+        "xy": [
+          41.17012,
+          23.333286
+        ],
+        "components": {
+          "F.Cu": 1,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.00020831955396959572,
+        "nearest": [
+          {
+            "object": "a31c2226-97c3-48f7-b672-1e3a574d1b51",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003205838278894091
+          },
+          {
+            "object": "74d396ae-843f-4133-abae-43ad099641bf",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032060000000025957
+          },
+          {
+            "object": "c7deabfb-357c-421a-bdad-0197e6bab349",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003694558046648422
+          }
+        ]
+      },
+      {
+        "xy": [
+          36.592071,
+          17.627688
+        ],
+        "components": {
+          "F.Cu": 2,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 5.993554360369431,
+        "nearest": [
+          {
+            "object": "b6739243-9b02-44a8-ba92-9415c62228d4",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003194031387068641
+          },
+          {
+            "object": "b6739243-9b02-44a8-ba92-9415c62228d4",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003194031387068641
+          },
+          {
+            "object": "b6739243-9b02-44a8-ba92-9415c62228d4",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003194031387068641
+          }
+        ]
+      },
+      {
+        "xy": [
+          37.166778,
+          0.526585
+        ],
+        "components": {
+          "F.Cu": 2,
+          "B.Cu": 1,
+          "In2.Cu": 1,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 2.414079779128805,
+        "nearest": [
+          {
+            "object": "R58.1",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.0031922454798248845
+          },
+          {
+            "object": "55973e39-41e4-4b14-8fbd-d4c0aef0b729",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003206385246835197
+          },
+          {
+            "object": "55973e39-41e4-4b14-8fbd-d4c0aef0b729",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003206385246835197
+          }
+        ]
+      },
+      {
+        "xy": [
+          23.090159,
+          0.911023
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 1
+        },
+        "via_region_area_mm2": 0.9882135145538642,
+        "nearest": [
+          {
+            "object": "5a1377a9-7de6-414f-abc0-fca918f36057",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031932718689930972
+          },
+          {
+            "object": "5a1377a9-7de6-414f-abc0-fca918f36057",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031932718689930972
+          },
+          {
+            "object": "5a1377a9-7de6-414f-abc0-fca918f36057",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031932718689930972
+          }
+        ]
+      },
+      {
+        "xy": [
+          20.556726,
+          0.4821
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 2
+        },
+        "via_region_area_mm2": 0.028948522259583585,
+        "nearest": [
+          {
+            "object": "board-outline-including-npth",
+            "category": "edge_npth_copper",
+            "layers": [],
+            "extra_clearance_mm": 0.0030999999999999917
+          },
+          {
+            "object": "555f68c5-c57f-4871-be21-a77d84ea26d2",
+            "category": "foreign_copper",
+            "layers": [
+              "In3.Cu"
+            ],
+            "extra_clearance_mm": 0.003206044528196006
+          },
+          {
+            "object": "TP3.1",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.05647256444470927
+          }
+        ]
+      },
+      {
+        "xy": [
+          5.640735,
+          24.9179
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 3
+        },
+        "via_region_area_mm2": 17.281171571385205,
+        "nearest": [
+          {
+            "object": "board-outline-including-npth",
+            "category": "edge_npth_copper",
+            "layers": [],
+            "extra_clearance_mm": 0.003099999999999048
+          },
+          {
+            "object": "04bb37e2-c666-5190-9482-3c5ec29696ed",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032060678991678304
+          },
+          {
+            "object": "5c83ffa7-7a4d-4c3d-82cf-1a3acb26863b",
+            "category": "foreign_copper",
+            "layers": [
+              "In3.Cu"
+            ],
+            "extra_clearance_mm": 0.16772635342680065
+          }
+        ]
+      },
+      {
+        "xy": [
+          14.389159,
+          24.728406
+        ],
+        "components": {
+          "F.Cu": 5,
+          "B.Cu": 6,
+          "In2.Cu": 5,
+          "In3.Cu": 3
+        },
+        "via_region_area_mm2": 0.06847344664181412,
+        "nearest": [
+          {
+            "object": "9b660358-a7a2-5064-8559-75271187b03e",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031979995467312783
+          },
+          {
+            "object": "9b660358-a7a2-5064-8559-75271187b03e",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031979995467312783
+          },
+          {
+            "object": "9b660358-a7a2-5064-8559-75271187b03e",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031979995467312783
+          }
+        ]
+      },
+      {
+        "xy": [
+          34.37424,
+          24.9179
+        ],
+        "components": {
+          "F.Cu": 11,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.0030746800235292803,
+        "nearest": [
+          {
+            "object": "board-outline-including-npth",
+            "category": "edge_npth_copper",
+            "layers": [],
+            "extra_clearance_mm": 0.003099999999999048
+          },
+          {
+            "object": "07d2b049-6dc7-52ce-9413-86c5c24bc4e5",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205899140906021
+          },
+          {
+            "object": "J11.MP",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.07768235300510246
+          }
+        ]
+      },
+      {
+        "xy": [
+          36.755206,
+          22.580177
+        ],
+        "components": {
+          "F.Cu": 11,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 2.160482694914533,
+        "nearest": [
+          {
+            "object": "176c581e-267f-437c-bf7e-e32d1b1329c0",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031905456695016654
+          },
+          {
+            "object": "176c581e-267f-437c-bf7e-e32d1b1329c0",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031905456695016654
+          },
+          {
+            "object": "176c581e-267f-437c-bf7e-e32d1b1329c0",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031905456695016654
+          }
+        ]
+      },
+      {
+        "xy": [
+          24.442063,
+          5.649794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 21,
+          "In2.Cu": 18,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.0028870944982643774,
+        "nearest": [
+          {
+            "object": "R16.1",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003206333403326045
+          },
+          {
+            "object": "98d37d56-908f-41d5-8f66-cedb0929dd45",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032064913169447817
+          },
+          {
+            "object": "59353b9a-0bb7-4df0-b3c4-fa610c4921b0",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.02973504529188864
+          }
+        ]
+      },
+      {
+        "xy": [
+          14.906568,
+          6.34672
+        ],
+        "components": {
+          "F.Cu": 35,
+          "B.Cu": 6,
+          "In2.Cu": 32,
+          "In3.Cu": 14
+        },
+        "via_region_area_mm2": 0.652312654280242,
+        "nearest": [
+          {
+            "object": "304a4b52-117f-5633-814b-6d27291d71b7",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058548781023766
+          },
+          {
+            "object": "965e1dc8-67dc-5479-95aa-f348d7e5f5e5",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205994819106439
+          },
+          {
+            "object": "965e1dc8-67dc-5479-95aa-f348d7e5f5e5",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205994819106439
+          }
+        ]
+      },
+      {
+        "xy": [
+          12.153328,
+          3.394001
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.013225997698090828,
+        "nearest": [
+          {
+            "object": "7095a5b3-1f0b-593d-99de-5b7cd3dd5674",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205727480787901
+          },
+          {
+            "object": "b8dc2085-075b-5c02-8edc-b82b4babcd00",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003206418276006151
+          },
+          {
+            "object": "51a00229-0eae-5f2a-86a6-4d80063b9d06",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0313330761635372
+          }
+        ]
+      },
+      {
+        "xy": [
+          12.956763,
+          2.683753
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.00895352943772734,
+        "nearest": [
+          {
+            "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031962265143028468
+          },
+          {
+            "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031962265143028468
+          },
+          {
+            "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031962265143028468
+          }
+        ]
+      },
+      {
+        "xy": [
+          12.844795,
+          2.12776
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.34444420774151496,
+        "nearest": [
+          {
+            "object": "D9.2",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003205961926166234
+          },
+          {
+            "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032063088568782816
+          },
+          {
+            "object": "8168f949-ccb1-500a-90ac-8945f4c527a6",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032063088568782816
+          }
+        ]
+      },
+      {
+        "xy": [
+          9.367156,
+          20.384487
+        ],
+        "components": {
+          "F.Cu": 24,
+          "B.Cu": 43,
+          "In2.Cu": 21,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.24598007197175142,
+        "nearest": [
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032027968991809597
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032027968991809597
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032027968991809597
+          }
+        ]
+      },
+      {
+        "xy": [
+          8.711079,
+          20.329653
+        ],
+        "components": {
+          "F.Cu": 24,
+          "B.Cu": 43,
+          "In2.Cu": 21,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.2655587242848359,
+        "nearest": [
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059581240301838
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059581240301838
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059581240301838
+          }
+        ]
+      },
+      {
+        "xy": [
+          10.369299,
+          18.896281
+        ],
+        "components": {
+          "F.Cu": 37,
+          "B.Cu": 43,
+          "In2.Cu": 21,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.005921508350836214,
+        "nearest": [
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058762129038576
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058762129038576
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058762129038576
+          }
+        ]
+      },
+      {
+        "xy": [
+          9.589741,
+          11.278129
+        ],
+        "components": {
+          "F.Cu": 55,
+          "B.Cu": 51,
+          "In2.Cu": 30,
+          "In3.Cu": 20
+        },
+        "via_region_area_mm2": 0.7258248079291293,
+        "nearest": [
+          {
+            "object": "2b07387c-0e51-4096-a791-30766feb86b6",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003190610371389291
+          },
+          {
+            "object": "2b07387c-0e51-4096-a791-30766feb86b6",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003190610371389291
+          },
+          {
+            "object": "2b07387c-0e51-4096-a791-30766feb86b6",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003190610371389291
+          }
+        ]
+      },
+      {
+        "xy": [
+          4.844794,
+          20.66732
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 33,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.8827135041013483,
+        "nearest": [
+          {
+            "object": "08c918f4-5b2f-415a-87bb-6d027ea763ee",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "1539daf2-8bcd-4b93-897e-61112abf6f2d",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "c6e4f49d-9a30-4060-8400-3afb3eb17b1a",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          }
+        ]
+      },
+      {
+        "xy": [
+          4.844794,
+          17.894794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 34,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.8827135041013483,
+        "nearest": [
+          {
+            "object": "J7.1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "J7.1",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "J7.1",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          }
+        ]
+      },
+      {
+        "xy": [
+          8.1663,
+          23.042118
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 21,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.0008383658322194032,
+        "nearest": [
+          {
+            "object": "08c918f4-5b2f-415a-87bb-6d027ea763ee",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205564190299548
+          },
+          {
+            "object": "1539daf2-8bcd-4b93-897e-61112abf6f2d",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205564190299548
+          },
+          {
+            "object": "c6e4f49d-9a30-4060-8400-3afb3eb17b1a",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003205564190299548
+          }
+        ]
+      },
+      {
+        "xy": [
+          8.837471,
+          17.931797
+        ],
+        "components": {
+          "F.Cu": 37,
+          "B.Cu": 43,
+          "In2.Cu": 37,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.12527922319423254,
+        "nearest": [
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059288421965593
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059288421965593
+          },
+          {
+            "object": "J7.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059288421965593
+          }
+        ]
+      },
+      {
+        "xy": [
+          1.948085,
+          4.320558
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 5,
+          "In3.Cu": 3
+        },
+        "via_region_area_mm2": 0.21093113072270772,
+        "nearest": [
+          {
+            "object": "458e40e6-111c-4953-8b30-2fb4a292cba4",
+            "category": "foreign_copper",
+            "layers": [
+              "In3.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058635459393803
+          },
+          {
+            "object": "2d8a30bf-fec2-5c0a-96f3-712000a0c39b",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032062844076958807
+          },
+          {
+            "object": "12b1effa-6957-576a-b4f7-a167ab3e7cfc",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.5864149999999999
+          }
+        ]
+      },
+      {
+        "xy": [
+          4.844794,
+          4.994794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 39,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.8827135041013496,
+        "nearest": [
+          {
+            "object": "08c918f4-5b2f-415a-87bb-6d027ea763ee",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "1539daf2-8bcd-4b93-897e-61112abf6f2d",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "J3.1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          }
+        ]
+      },
+      {
+        "xy": [
+          8.617229,
+          4.291163
+        ],
+        "components": {
+          "F.Cu": 46,
+          "B.Cu": 6,
+          "In2.Cu": 42,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.02871953966396913,
+        "nearest": [
+          {
+            "object": "J2.3",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205640022256706
+          },
+          {
+            "object": "J2.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205640022256706
+          },
+          {
+            "object": "J2.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205640022256706
+          }
+        ]
+      },
+      {
+        "xy": [
+          4.844794,
+          8.094794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 45,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.11557564107708863,
+        "nearest": [
+          {
+            "object": "J4.1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "J4.1",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "J4.1",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          }
+        ]
+      },
+      {
+        "xy": [
+          9.382082,
+          8.118356
+        ],
+        "components": {
+          "F.Cu": 54,
+          "B.Cu": 45,
+          "In2.Cu": 44,
+          "In3.Cu": 22
+        },
+        "via_region_area_mm2": 0.2232850415053738,
+        "nearest": [
+          {
+            "object": "J4.3",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032057519613115093
+          },
+          {
+            "object": "J4.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032057519613115093
+          },
+          {
+            "object": "J4.3",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032057519613115093
+          }
+        ]
+      },
+      {
+        "xy": [
+          4.844794,
+          11.194794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 46,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.8827135041013483,
+        "nearest": [
+          {
+            "object": "08c918f4-5b2f-415a-87bb-6d027ea763ee",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "1539daf2-8bcd-4b93-897e-61112abf6f2d",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "c6e4f49d-9a30-4060-8400-3afb3eb17b1a",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          }
+        ]
+      },
+      {
+        "xy": [
+          4.844794,
+          14.794794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 35,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 1.623757426215606,
+        "nearest": [
+          {
+            "object": "08c918f4-5b2f-415a-87bb-6d027ea763ee",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "1539daf2-8bcd-4b93-897e-61112abf6f2d",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          },
+          {
+            "object": "c6e4f49d-9a30-4060-8400-3afb3eb17b1a",
+            "category": "foreign_copper",
+            "layers": [
+              "B.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999931
+          }
+        ]
+      },
+      {
+        "xy": [
+          15.469794,
+          5.079098
+        ],
+        "components": {
+          "F.Cu": 35,
+          "B.Cu": 6,
+          "In2.Cu": 27,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 1.0533265118870752,
+        "nearest": [
+          {
+            "object": "J9.1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "105705ec-e64b-5d4b-b3cf-21c6623bd1ec",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032061116208199625
+          },
+          {
+            "object": "J9.1",
+            "category": "all_smt_masks_no_net_exception",
+            "layers": [
+              "F.Mask"
+            ],
+            "extra_clearance_mm": 0.05520599999999898
+          }
+        ]
+      },
+      {
+        "xy": [
+          15.130206,
+          3.219645
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 27,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 1.393540416189254,
+        "nearest": [
+          {
+            "object": "8e7c01c8-4d6d-5b92-bf38-7c81bac08c22",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058482343744754
+          },
+          {
+            "object": "J9.MP",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032060354471377672
+          },
+          {
+            "object": "J9.MP",
+            "category": "all_smt_masks_no_net_exception",
+            "layers": [
+              "F.Mask"
+            ],
+            "extra_clearance_mm": 0.0552060354471377
+          }
+        ]
+      },
+      {
+        "xy": [
+          13.458232,
+          3.51224
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 27,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.01581091200938961,
+        "nearest": [
+          {
+            "object": "J9.MP",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031953780118759156
+          },
+          {
+            "object": "8e7c01c8-4d6d-5b92-bf38-7c81bac08c22",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059622848220615
+          },
+          {
+            "object": "J9.MP",
+            "category": "all_smt_masks_no_net_exception",
+            "layers": [
+              "F.Mask"
+            ],
+            "extra_clearance_mm": 0.05519537801187585
+          }
+        ]
+      },
+      {
+        "xy": [
+          22.580206,
+          2.161963
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.0001798171214401113,
+        "nearest": [
+          {
+            "object": "8ca5f3c3-8b43-41cc-8d3a-1cfb37052224",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003195652260834403
+          },
+          {
+            "object": "8ca5f3c3-8b43-41cc-8d3a-1cfb37052224",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003195652260834403
+          },
+          {
+            "object": "8ca5f3c3-8b43-41cc-8d3a-1cfb37052224",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003195652260834403
+          }
+        ]
+      },
+      {
+        "xy": [
+          19.269363,
+          1.911631
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 4,
+          "In3.Cu": 18
+        },
+        "via_region_area_mm2": 0.08867571189031016,
+        "nearest": [
+          {
+            "object": "99d2103d-0042-45f4-9145-326bc2c3e50d",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031950803220661683
+          },
+          {
+            "object": "99d2103d-0042-45f4-9145-326bc2c3e50d",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031950803220661683
+          },
+          {
+            "object": "99d2103d-0042-45f4-9145-326bc2c3e50d",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031950803220661683
+          }
+        ]
+      },
+      {
+        "xy": [
+          32.48928,
+          24.581294
+        ],
+        "components": {
+          "F.Cu": 128,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.09204878934722623,
+        "nearest": [
+          {
+            "object": "a62a178b-6633-4b2b-8157-3e21430ee77e",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031907134202681098
+          },
+          {
+            "object": "a62a178b-6633-4b2b-8157-3e21430ee77e",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031907134202681098
+          },
+          {
+            "object": "a62a178b-6633-4b2b-8157-3e21430ee77e",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031907134202681098
+          }
+        ]
+      },
+      {
+        "xy": [
+          28.955206,
+          20.764447
+        ],
+        "components": {
+          "F.Cu": 127,
+          "B.Cu": 163,
+          "In2.Cu": 14,
+          "In3.Cu": 46
+        },
+        "via_region_area_mm2": 0.0008013916291055832,
+        "nearest": [
+          {
+            "object": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003194775200875799
+          },
+          {
+            "object": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003194775200875799
+          },
+          {
+            "object": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003194775200875799
+          }
+        ]
+      },
+      {
+        "xy": [
+          32.615164,
+          23.506249
+        ],
+        "components": {
+          "F.Cu": 128,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.0013849552968282523,
+        "nearest": [
+          {
+            "object": "7de01830-ec0f-4724-b5fd-794b0745e92c",
+            "category": "foreign_copper",
+            "layers": [
+              "In3.Cu"
+            ],
+            "extra_clearance_mm": 0.0032055755055163115
+          },
+          {
+            "object": "a62a178b-6633-4b2b-8157-3e21430ee77e",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003206087503408339
+          },
+          {
+            "object": "a62a178b-6633-4b2b-8157-3e21430ee77e",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003206087503408339
+          }
+        ]
+      },
+      {
+        "xy": [
+          32.007404,
+          18.776735
+        ],
+        "components": {
+          "F.Cu": 129,
+          "B.Cu": 125,
+          "In2.Cu": 83,
+          "In3.Cu": 46
+        },
+        "via_region_area_mm2": 0.012105906831851507,
+        "nearest": [
+          {
+            "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031905685135831807
+          },
+          {
+            "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0031905685135831807
+          },
+          {
+            "object": "c78ad752-78c1-4cd8-825a-7c222b1bdf46",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0031905685135831807
+          }
+        ]
+      },
+      {
+        "xy": [
+          32.574566,
+          21.206809
+        ],
+        "components": {
+          "F.Cu": 128,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 46
+        },
+        "via_region_area_mm2": 0.001168655225499247,
+        "nearest": [
+          {
+            "object": "J11.2",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205967072729632
+          },
+          {
+            "object": "93e61633-8452-4a72-b4c8-d3bd8f2ee48b",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032059999999954902
+          },
+          {
+            "object": "7de01830-ec0f-4724-b5fd-794b0745e92c",
+            "category": "foreign_copper",
+            "layers": [
+              "In3.Cu"
+            ],
+            "extra_clearance_mm": 0.018828303925620626
+          }
+        ]
+      },
+      {
+        "xy": [
+          38.286024,
+          16.196179
+        ],
+        "components": {
+          "F.Cu": 2,
+          "B.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.5563729930483398,
+        "nearest": [
+          {
+            "object": "J1.A1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031723646583415865
+          },
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032051131670261523
+          },
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032051131670261523
+          }
+        ]
+      },
+      {
+        "xy": [
+          40.605206,
+          7.861907
+        ],
+        "components": {
+          "F.Cu": 2,
+          "B.Cu": 1,
+          "In2.Cu": 93,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.015190736785895219,
+        "nearest": [
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032020171916271045
+          },
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032020171916271045
+          },
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032020171916271045
+          }
+        ]
+      },
+      {
+        "xy": [
+          38.977041,
+          4.789342
+        ],
+        "components": {
+          "F.Cu": 2,
+          "B.Cu": 1,
+          "In2.Cu": 88,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.018804099308417532,
+        "nearest": [
+          {
+            "object": "c270f4b0-ac5d-43c6-b6d5-4a362481302a",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032008182479321134
+          },
+          {
+            "object": "7ebce637-24e1-4f56-9dca-e1be742f642a",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205890404677725
+          },
+          {
+            "object": "7ebce637-24e1-4f56-9dca-e1be742f642a",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205890404677725
+          }
+        ]
+      },
+      {
+        "xy": [
+          38.286024,
+          9.803821
+        ],
+        "components": {
+          "F.Cu": 2,
+          "B.Cu": 1,
+          "In2.Cu": 87,
+          "In3.Cu": 0
+        },
+        "via_region_area_mm2": 0.07015551709484824,
+        "nearest": [
+          {
+            "object": "J1.A12",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0031723646583415865
+          },
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.0032051131670261523
+          },
+          {
+            "object": "J1.S1",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.0032051131670261523
+          }
+        ]
+      }
+    ],
+    "component_counts": {
+      "F.Cu": 192,
+      "B.Cu": 223,
+      "In2.Cu": 96,
+      "In3.Cu": 70
+    },
+    "connected": true,
+    "selected_legs": [
+      {
+        "layer": "In3.Cu",
+        "start": [
+          9.013184,
+          20.66732
+        ],
+        "end": [
+          4.844794,
+          17.894794
+        ]
+      },
+      {
+        "layer": "B.Cu",
+        "start": [
+          4.844794,
+          17.894794
+        ],
+        "end": [
+          14.906568,
+          6.34672
+        ]
+      },
+      {
+        "layer": "In3.Cu",
+        "start": [
+          14.906568,
+          6.34672
+        ],
+        "end": [
+          15.079367,
+          9.594711
+        ]
+      }
+    ],
+    "new_transition_vias": [
+      {
+        "xy": [
+          4.844794,
+          17.894794
+        ],
+        "components": {
+          "F.Cu": 4,
+          "B.Cu": 6,
+          "In2.Cu": 34,
+          "In3.Cu": 19
+        },
+        "via_region_area_mm2": 0.8827135041013483,
+        "nearest": [
+          {
+            "object": "J7.1",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "J7.1",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          },
+          {
+            "object": "J7.1",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.003205999999999043
+          }
+        ]
+      },
+      {
+        "xy": [
+          14.906568,
+          6.34672
+        ],
+        "components": {
+          "F.Cu": 35,
+          "B.Cu": 6,
+          "In2.Cu": 32,
+          "In3.Cu": 14
+        },
+        "via_region_area_mm2": 0.652312654280242,
+        "nearest": [
+          {
+            "object": "304a4b52-117f-5633-814b-6d27291d71b7",
+            "category": "foreign_copper",
+            "layers": [
+              "In2.Cu"
+            ],
+            "extra_clearance_mm": 0.0032058548781023766
+          },
+          {
+            "object": "965e1dc8-67dc-5479-95aa-f348d7e5f5e5",
+            "category": "foreign_copper",
+            "layers": [
+              "F.Cu"
+            ],
+            "extra_clearance_mm": 0.003205994819106439
+          },
+          {
+            "object": "965e1dc8-67dc-5479-95aa-f348d7e5f5e5",
+            "category": "foreign_copper",
+            "layers": [
+              "In1.Cu"
+            ],
+            "extra_clearance_mm": 0.003205994819106439
+          }
+        ]
+      }
+    ]
+  },
+  "pair_drill_gaps": [
+    {
+      "a": "RPM-MCU",
+      "b": "RPM-clamp-target",
+      "gap_mm": 13.35481160747762,
+      "passed": true
+    },
+    {
+      "a": "RPM-MCU",
+      "b": "RPM-In2-In3-bridge",
+      "gap_mm": 12.425420636809294,
+      "passed": true
+    },
+    {
+      "a": "RPM-MCU",
+      "b": "RPM-extra-transition-0",
+      "gap_mm": 12.977172014480876,
+      "passed": true
+    },
+    {
+      "a": "RPM-MCU",
+      "b": "RPM-extra-transition-1",
+      "gap_mm": 3.0525843617778765,
+      "passed": true
+    },
+    {
+      "a": "RPM-clamp-target",
+      "b": "RPM-In2-In3-bridge",
+      "gap_mm": 4.611275061795573,
+      "passed": true
+    },
+    {
+      "a": "RPM-clamp-target",
+      "b": "RPM-extra-transition-0",
+      "gap_mm": 9.610423434534924,
+      "passed": true
+    },
+    {
+      "a": "RPM-clamp-target",
+      "b": "RPM-extra-transition-1",
+      "gap_mm": 16.55937376327123,
+      "passed": true
+    },
+    {
+      "a": "RPM-In2-In3-bridge",
+      "b": "RPM-extra-transition-0",
+      "gap_mm": 4.806233675406692,
+      "passed": true
+    },
+    {
+      "a": "RPM-In2-In3-bridge",
+      "b": "RPM-extra-transition-1",
+      "gap_mm": 15.285850294105778,
+      "passed": true
+    },
+    {
+      "a": "RPM-extra-transition-0",
+      "b": "RPM-extra-transition-1",
+      "gap_mm": 15.11656975750615,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,2553 @@
+{
+  "schema": "f722-servo23-partial-stage-extended-reference-classification/v1",
+  "before_board_sha256": "95bb984bf046fef2d96c6e59d9e00696f504d35f89e3340fdf076cd7c9249c9f",
+  "after_board_sha256": "e93f1a1814f8b2bfd6341be9522a053a71db2706d7d81ee2984f6bd82a6c8aa5",
+  "source_hashes": {
+    "ordinary-routing/candidate38/f722-heli.kicad_pcb": "95bb984bf046fef2d96c6e59d9e00696f504d35f89e3340fdf076cd7c9249c9f",
+    "ordinary-routing/servo23-native-stage38/f722-heli.kicad_pcb": "e93f1a1814f8b2bfd6341be9522a053a71db2706d7d81ee2984f6bd82a6c8aa5",
+    "ordinary-routing/servo23-native-stage38/reference-comparison-to38.json": "96c66996d351cebe780d209b5200f52f4b0717da172055201c75313a2ae2da67",
+    "ordinary-routing/servo23-reference-review/classify_reference_delta.py": "e9a9fd6876b2973886b40e8fd712934e0d4f23e77226a03092c13ee2e942f80a",
+    "checkpoint44-review/snapshot/native-geometry.json": "4acfc65f6090f155a5a7a4365374d78bb7ad074a82fff319d1c0fd05d725daff",
+    "checkpoint44-review/snapshot/native-signals.json": "62b884cd21458aded090ca1ec06aa28b47a9b507cc7ea6fac1cf45d4bf1cc247",
+    "checkpoint44-review/snapshot/critical-reference.json": "0a6defc8baf7feee80d3f1bc24a706e29803304ae17f217326bd8f31bf4aac11",
+    "ordinary-routing/servo23-native-stage38/reference-snapshot/native-geometry.json": "48dbb11a929a4913056a7a948e7ae498a4995e53f01e98164f240522cfeee638",
+    "ordinary-routing/servo23-native-stage38/reference-snapshot/native-signals.json": "b8c27c4e3cafccb1605877d95d9c645f7c8a5f126dd3abb7af41cadcf424267e",
+    "ordinary-routing/servo23-native-stage38/reference-snapshot/critical-reference.json": "a8f9175180a709d67675ad1d59cb8d2224cc373460296fdd3a91465440e7b609",
+    "repo/f722-heli/layout-revision/signal-review/native/check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
+    "repo/f722-heli/layout-revision/signal-review/native/check_critical_reference.py": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750",
+    "repo/f722-heli/layout-revision/signal-review/native/compare_reference_geometry.py": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e",
+    "repo/f722-heli/layout-revision/signal-review/native/review_reference_window_change.py": "7e607fdecd64937bc3e01e9f958ee016c940e9363241f2724f635110e7381dc7",
+    "checkpoint49-review/reference-change-review.json": "3ae6fca0f9a6bb4dd495cc7ab75e7331a2e9b14a2f644013c8fcdfdc340f7b8d"
+  },
+  "shapely_version": "2.2.0",
+  "geos_version": "3.14.1",
+  "source_binding_verified": true,
+  "critical_copper_identical": true,
+  "unchanged_critical_own_via_windows_verified": true,
+  "critical_reference_tracks_examined": 72,
+  "missing_centerline_geometries_exactly_equal": false,
+  "all_changed_critical_projection_geometry_inside_unchanged_own_windows": true,
+  "all_changed_critical_projection_geometry_inside_actual_hole_window_intersections": false,
+  "all_changed_critical_projection_residuals_outside_unchanged_own_windows_empty": true,
+  "all_changed_critical_projection_residuals_outside_actual_hole_window_intersections_empty": true,
+  "exact_containment_predicate_disagreement_count": 4,
+  "classification_status": "UNRESOLVED_ACTUAL_HOLE_BOUNDARY_PREDICATES",
+  "final_adoption": false,
+  "old_receipt_reusable_as_is": false,
+  "changed_critical_regions": [
+    {
+      "track_uuid": "6447ecc7-f06e-400b-9d6f-5f4db0815aa1",
+      "net": "IMU_MOSI",
+      "signal_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "kind": "centerline",
+      "source_track_start_mm": [
+        22.709999,
+        10.6875
+      ],
+      "source_track_end_mm": [
+        21.509999,
+        9.8
+      ],
+      "source_track_width_mm": 0.127,
+      "before_missing_measure": 0.35477054222037796,
+      "after_missing_measure": 0.35477102207754796,
+      "report_total_delta": 4.798571699993204e-07,
+      "missing_geometries_exactly_equal": false,
+      "physical_plane_change_projection": {
+        "added_missing": {
+          "geometry_type": "LineString",
+          "empty": false,
+          "length_mm": 4.798571699784025e-07,
+          "area_mm2": 0.0,
+          "bounds_mm": [
+            21.795235244635585,
+            10.010955972595067,
+            21.795235630441734,
+            10.010956257930866
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    21.795235630441734,
+                    10.010956257930866
+                  ],
+                  [
+                    21.795235244635585,
+                    10.010955972595067
+                  ]
+                ]
+              },
+              "length_mm": 4.798571699784025e-07,
+              "area_mm2": 0.0,
+              "bounds_mm": [
+                21.795235244635585,
+                10.010955972595067,
+                21.795235630441734,
+                10.010956257930866
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": false,
+          "exact_containment_predicates_agree": false,
+          "actual_hole_window_mask_relation": "102F01102",
+          "outside_unchanged_windows": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "via_xy_mm": [
+                  21.509999,
+                  9.8
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.0,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 4.798571699784025e-07,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 4.798571699784025e-07,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "LineString",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "direct_missing_geometry_overlay": {
+        "added_missing": {
+          "geometry_type": "LineString",
+          "empty": false,
+          "length_mm": 0.35477102207754796,
+          "area_mm2": 0.0,
+          "bounds_mm": [
+            21.509999,
+            9.8,
+            21.795235630441734,
+            10.010956257930866
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    21.795235630441734,
+                    10.010956257930866
+                  ],
+                  [
+                    21.509999,
+                    9.8
+                  ]
+                ]
+              },
+              "length_mm": 0.35477102207754796,
+              "area_mm2": 0.0,
+              "bounds_mm": [
+                21.509999,
+                9.8,
+                21.795235630441734,
+                10.010956257930866
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": false,
+          "exact_containment_predicates_agree": false,
+          "actual_hole_window_mask_relation": "102F01102",
+          "outside_unchanged_windows": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "via_xy_mm": [
+                  21.509999,
+                  9.8
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.35477054222037796,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 4.798571699784025e-07,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.35477102207754796,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [
+              {
+                "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "net": "IMU_MOSI",
+                "kind": "via",
+                "drill_width_mm": 0.2,
+                "intersection": {
+                  "geometry_type": "LineString",
+                  "empty": false,
+                  "length_mm": 0.10000383183725457,
+                  "area_mm2": 0.0,
+                  "bounds_mm": [
+                    21.509999,
+                    9.8,
+                    21.590402286202686,
+                    9.859464930420737
+                  ],
+                  "pieces": [
+                    {
+                      "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                          [
+                            21.590402286202686,
+                            9.859464930420737
+                          ],
+                          [
+                            21.509999,
+                            9.8
+                          ]
+                        ]
+                      },
+                      "length_mm": 0.10000383183725457,
+                      "area_mm2": 0.0,
+                      "bounds_mm": [
+                        21.509999,
+                        9.8,
+                        21.590402286202686,
+                        9.859464930420737
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "after": [
+              {
+                "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "net": "IMU_MOSI",
+                "kind": "via",
+                "drill_width_mm": 0.2,
+                "intersection": {
+                  "geometry_type": "LineString",
+                  "empty": false,
+                  "length_mm": 0.10000383183725457,
+                  "area_mm2": 0.0,
+                  "bounds_mm": [
+                    21.509999,
+                    9.8,
+                    21.590402286202686,
+                    9.859464930420737
+                  ],
+                  "pieces": [
+                    {
+                      "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                          [
+                            21.590402286202686,
+                            9.859464930420737
+                          ],
+                          [
+                            21.509999,
+                            9.8
+                          ]
+                        ]
+                      },
+                      "length_mm": 0.10000383183725457,
+                      "area_mm2": 0.0,
+                      "bounds_mm": [
+                        21.509999,
+                        9.8,
+                        21.590402286202686,
+                        9.859464930420737
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "LineString",
+          "empty": false,
+          "length_mm": 0.35477054222037796,
+          "area_mm2": 0.0,
+          "bounds_mm": [
+            21.509999,
+            9.8,
+            21.795235244635585,
+            10.010955972595067
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    21.795235244635585,
+                    10.010955972595067
+                  ],
+                  [
+                    21.509999,
+                    9.8
+                  ]
+                ]
+              },
+              "length_mm": 0.35477054222037796,
+              "area_mm2": 0.0,
+              "bounds_mm": [
+                21.509999,
+                9.8,
+                21.795235244635585,
+                10.010955972595067
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": "102FF1FF2",
+          "outside_unchanged_windows": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "LineString",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "via_xy_mm": [
+                  21.509999,
+                  9.8
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.35477054222037796,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.35477054222037796,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [
+              {
+                "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "net": "IMU_MOSI",
+                "kind": "via",
+                "drill_width_mm": 0.2,
+                "intersection": {
+                  "geometry_type": "LineString",
+                  "empty": false,
+                  "length_mm": 0.10000383183725457,
+                  "area_mm2": 0.0,
+                  "bounds_mm": [
+                    21.509999,
+                    9.8,
+                    21.590402286202686,
+                    9.859464930420737
+                  ],
+                  "pieces": [
+                    {
+                      "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                          [
+                            21.590402286202686,
+                            9.859464930420737
+                          ],
+                          [
+                            21.509999,
+                            9.8
+                          ]
+                        ]
+                      },
+                      "length_mm": 0.10000383183725457,
+                      "area_mm2": 0.0,
+                      "bounds_mm": [
+                        21.509999,
+                        9.8,
+                        21.590402286202686,
+                        9.859464930420737
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "after": [
+              {
+                "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "net": "IMU_MOSI",
+                "kind": "via",
+                "drill_width_mm": 0.2,
+                "intersection": {
+                  "geometry_type": "LineString",
+                  "empty": false,
+                  "length_mm": 0.10000383183725457,
+                  "area_mm2": 0.0,
+                  "bounds_mm": [
+                    21.509999,
+                    9.8,
+                    21.590402286202686,
+                    9.859464930420737
+                  ],
+                  "pieces": [
+                    {
+                      "geometry": {
+                        "type": "LineString",
+                        "coordinates": [
+                          [
+                            21.590402286202686,
+                            9.859464930420737
+                          ],
+                          [
+                            21.509999,
+                            9.8
+                          ]
+                        ]
+                      },
+                      "length_mm": 0.10000383183725457,
+                      "area_mm2": 0.0,
+                      "bounds_mm": [
+                        21.509999,
+                        9.8,
+                        21.590402286202686,
+                        9.859464930420737
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "physical_projection_signed_measure": 4.798571699784025e-07,
+      "direct_overlay_signed_measure": 4.798571699993204e-07
+    },
+    {
+      "track_uuid": "6447ecc7-f06e-400b-9d6f-5f4db0815aa1",
+      "net": "IMU_MOSI",
+      "signal_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "kind": "trace_width",
+      "source_track_start_mm": [
+        22.709999,
+        10.6875
+      ],
+      "source_track_end_mm": [
+        21.509999,
+        9.8
+      ],
+      "source_track_width_mm": 0.127,
+      "before_missing_measure": 0.050959363248810716,
+      "after_missing_measure": 0.050959381824011114,
+      "report_total_delta": 1.8575200398662783e-08,
+      "missing_geometries_exactly_equal": false,
+      "physical_plane_change_projection": {
+        "added_missing": {
+          "geometry_type": "Polygon",
+          "empty": false,
+          "length_mm": 0.1404830497420196,
+          "area_mm2": 1.8575200425979192e-08,
+          "bounds_mm": [
+            21.792069,
+            9.955609266984256,
+            21.827190125129786,
+            10.01644
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      21.827190083077813,
+                      9.955609266984256
+                    ],
+                    [
+                      21.792069,
+                      10.01644
+                    ],
+                    [
+                      21.794909,
+                      10.011522
+                    ],
+                    [
+                      21.827190125129786,
+                      9.9556092980852
+                    ],
+                    [
+                      21.827190083077813,
+                      9.955609266984256
+                    ]
+                  ]
+                ]
+              },
+              "length_mm": 0.1404830497420196,
+              "area_mm2": 1.8575200425979192e-08,
+              "bounds_mm": [
+                21.792069,
+                9.955609266984256,
+                21.827190125129786,
+                10.01644
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": false,
+          "exact_containment_predicates_agree": false,
+          "actual_hole_window_mask_relation": "212111212",
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "via_xy_mm": [
+                  21.509999,
+                  9.8
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.07024150166241598,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.14048304974201958,
+                  "outside_hole_area_mm2": 1.8575200425984678e-08
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.14048304974201958,
+                  "intersection_area_mm2": 1.8575200425984678e-08,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "Polygon",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "direct_missing_geometry_overlay": {
+        "added_missing": {
+          "geometry_type": "Polygon",
+          "empty": false,
+          "length_mm": 0.1404830497420165,
+          "area_mm2": 1.8575200423355488e-08,
+          "bounds_mm": [
+            21.792069,
+            9.955609266984258,
+            21.827190125129786,
+            10.01644
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      21.794909,
+                      10.011522
+                    ],
+                    [
+                      21.827190125129786,
+                      9.955609298085202
+                    ],
+                    [
+                      21.827190083077813,
+                      9.955609266984258
+                    ],
+                    [
+                      21.792069,
+                      10.01644
+                    ],
+                    [
+                      21.794909,
+                      10.011522
+                    ]
+                  ]
+                ]
+              },
+              "length_mm": 0.1404830497420165,
+              "area_mm2": 1.8575200423355488e-08,
+              "bounds_mm": [
+                21.792069,
+                9.955609266984258,
+                21.827190125129786,
+                10.01644
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": false,
+          "exact_containment_predicates_agree": false,
+          "actual_hole_window_mask_relation": "212111212",
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                "via_xy_mm": [
+                  21.509999,
+                  9.8
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.07024150166241444,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.1404830497420165,
+                  "outside_hole_area_mm2": 1.8575200423382593e-08
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.1404830497420165,
+                  "intersection_area_mm2": 1.8575200423382593e-08,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "Polygon",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "physical_projection_signed_measure": 1.8575200425979192e-08,
+      "direct_overlay_signed_measure": 1.8575200423355488e-08
+    },
+    {
+      "track_uuid": "914fe3b1-3b8b-40ce-9188-3b1c713ceb65",
+      "net": "IMU_MISO",
+      "signal_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "kind": "trace_width",
+      "source_track_start_mm": [
+        21.4,
+        10.85
+      ],
+      "source_track_end_mm": [
+        21.25,
+        10.425
+      ],
+      "source_track_width_mm": 0.127,
+      "before_missing_measure": 0.050975060995001195,
+      "after_missing_measure": 0.05097505482058391,
+      "report_total_delta": -6.17441728301138e-09,
+      "missing_geometries_exactly_equal": false,
+      "physical_plane_change_projection": {
+        "added_missing": {
+          "geometry_type": "Polygon",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "Polygon",
+          "empty": false,
+          "length_mm": 0.09057626541048437,
+          "area_mm2": 6.174417533380787e-09,
+          "bounds_mm": [
+            21.38606,
+            10.730833729261997,
+            21.42528054872994,
+            10.753478
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      21.425280532708168,
+                      10.730833729261997
+                    ],
+                    [
+                      21.38606,
+                      10.753478
+                    ],
+                    [
+                      21.398306,
+                      10.746408
+                    ],
+                    [
+                      21.4179,
+                      10.735095
+                    ],
+                    [
+                      21.42528054872994,
+                      10.730833774656846
+                    ],
+                    [
+                      21.425280532708168,
+                      10.730833729261997
+                    ]
+                  ]
+                ]
+              },
+              "length_mm": 0.09057626541048437,
+              "area_mm2": 6.174417533380787e-09,
+              "bounds_mm": [
+                21.38606,
+                10.730833729261997,
+                21.42528054872994,
+                10.753478
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": "212F11FF2",
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                "via_xy_mm": [
+                  21.25,
+                  10.425
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.09057626541048436,
+                  "intersection_area_mm2": 6.174417533353661e-09,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.0,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.09057626541048436,
+                  "outside_hole_area_mm2": 6.174417533353661e-09
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "direct_missing_geometry_overlay": {
+        "added_missing": {
+          "geometry_type": "Polygon",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "Polygon",
+          "empty": false,
+          "length_mm": 0.09057626541048436,
+          "area_mm2": 6.174417533367214e-09,
+          "bounds_mm": [
+            21.38606,
+            10.730833729261997,
+            21.42528054872994,
+            10.753478
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      21.398306,
+                      10.746408
+                    ],
+                    [
+                      21.4179,
+                      10.735095
+                    ],
+                    [
+                      21.42528054872994,
+                      10.730833774656846
+                    ],
+                    [
+                      21.425280532708168,
+                      10.730833729261997
+                    ],
+                    [
+                      21.38606,
+                      10.753478
+                    ],
+                    [
+                      21.398306,
+                      10.746408
+                    ]
+                  ]
+                ]
+              },
+              "length_mm": 0.09057626541048436,
+              "area_mm2": 6.174417533367214e-09,
+              "bounds_mm": [
+                21.38606,
+                10.730833729261997,
+                21.42528054872994,
+                10.753478
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": "212F11FF2",
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                "via_xy_mm": [
+                  21.25,
+                  10.425
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 29,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610831950005,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1b41d35ca54758653fc19a7d767b8ef0a4b59ac46baa973aee5e8b559c023f88",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.09057626541048437,
+                  "intersection_area_mm2": 6.174417533380766e-09,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 28,
+                  "bounds_mm": [
+                    20.8975,
+                    9.4475,
+                    21.862499,
+                    10.7775
+                  ],
+                  "area_mm2": 0.7867610939510006,
+                  "extends_beyond_local_window": true,
+                  "contained_vias": [
+                    {
+                      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+                      "net": "IMU_MOSI",
+                      "xy_mm": [
+                        21.509999,
+                        9.8
+                      ]
+                    },
+                    {
+                      "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+                      "net": "IMU_MISO",
+                      "xy_mm": [
+                        21.25,
+                        10.425
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "61ba868c07124769b0e9bf42039729b03d91f06d78e8a65745f404766c1beacb",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.0,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.09057626541048437,
+                  "outside_hole_area_mm2": 6.174417533380766e-09
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "physical_projection_signed_measure": -6.174417533380787e-09,
+      "direct_overlay_signed_measure": -6.174417533367214e-09
+    }
+  ],
+  "numeric_differences_retained": {
+    "BARO_SCL": {
+      "native_planar_length_mm": 0,
+      "physical_GND_centerline_missing_mm": 0,
+      "physical_GND_trace_width_missing_mm2": 0
+    },
+    "BARO_SDA": {
+      "native_planar_length_mm": 0,
+      "physical_GND_centerline_missing_mm": 0,
+      "physical_GND_trace_width_missing_mm2": 0
+    },
+    "USB_P": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "USB_N": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_IN": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_XTAL_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_CS": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_INT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_MISO": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": -6.17441728301138e-09
+    },
+    "IMU_MOSI": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 4.798571699993204e-07,
+      "physical_GND_trace_width_missing_mm2": 1.8575200405601677e-08
+    },
+    "IMU_SCK": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    }
+  },
+  "whole_plane_changes": {
+    "In1.Cu": {
+      "physical_GND_lost_mm2": 1.2504320071327655,
+      "physical_GND_gained_mm2": 0.08155309495376467,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.2504319883544175,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.08155308693141657,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    },
+    "In4.Cu": {
+      "physical_GND_lost_mm2": 1.2504320071327655,
+      "physical_GND_gained_mm2": 0.08155309495376467,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.2504319883544175,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.08155308693141657,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    }
+  },
+  "actual_saved_hole_geometry": {
+    "before:In1.Cu:29": {
+      "facts": {
+        "hole_index": 29,
+        "bounds_mm": [
+          20.8975,
+          9.4475,
+          21.862499,
+          10.7775
+        ],
+        "area_mm2": 0.7867610831950005,
+        "extends_beyond_local_window": true,
+        "contained_vias": [
+          {
+            "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+            "net": "IMU_MOSI",
+            "xy_mm": [
+              21.509999,
+              9.8
+            ]
+          },
+          {
+            "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+            "net": "IMU_MISO",
+            "xy_mm": [
+              21.25,
+              10.425
+            ]
+          }
+        ]
+      },
+      "geometry": {
+        "geometry_type": "Polygon",
+        "empty": false,
+        "length_mm": 3.8115233031223696,
+        "area_mm2": 0.7867610831950005,
+        "bounds_mm": [
+          20.8975,
+          9.4475,
+          21.862499,
+          10.7775
+        ],
+        "pieces": [
+          {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    20.8975,
+                    10.378593
+                  ],
+                  [
+                    20.8975,
+                    10.471406
+                  ],
+                  [
+                    20.897501,
+                    10.471414
+                  ],
+                  [
+                    20.921521,
+                    10.561059
+                  ],
+                  [
+                    20.921522,
+                    10.561062
+                  ],
+                  [
+                    20.967929,
+                    10.641439
+                  ],
+                  [
+                    20.967934,
+                    10.641445
+                  ],
+                  [
+                    21.033554,
+                    10.707065
+                  ],
+                  [
+                    21.03356,
+                    10.70707
+                  ],
+                  [
+                    21.113937,
+                    10.753477
+                  ],
+                  [
+                    21.11394,
+                    10.753478
+                  ],
+                  [
+                    21.203592,
+                    10.7775
+                  ],
+                  [
+                    21.203593,
+                    10.7775
+                  ],
+                  [
+                    21.296407,
+                    10.7775
+                  ],
+                  [
+                    21.296408,
+                    10.7775
+                  ],
+                  [
+                    21.38606,
+                    10.753478
+                  ],
+                  [
+                    21.398306,
+                    10.746408
+                  ],
+                  [
+                    21.4179,
+                    10.735095
+                  ],
+                  [
+                    21.46644,
+                    10.70707
+                  ],
+                  [
+                    21.53207,
+                    10.64144
+                  ],
+                  [
+                    21.578478,
+                    10.56106
+                  ],
+                  [
+                    21.6025,
+                    10.471408
+                  ],
+                  [
+                    21.6025,
+                    10.378592
+                  ],
+                  [
+                    21.578478,
+                    10.28894
+                  ],
+                  [
+                    21.578477,
+                    10.288937
+                  ],
+                  [
+                    21.548027,
+                    10.236198
+                  ],
+                  [
+                    21.541782,
+                    10.188772
+                  ],
+                  [
+                    21.570902,
+                    10.150821
+                  ],
+                  [
+                    21.585977,
+                    10.144577
+                  ],
+                  [
+                    21.638893,
+                    10.130398
+                  ],
+                  [
+                    21.646059,
+                    10.128478
+                  ],
+                  [
+                    21.726439,
+                    10.08207
+                  ],
+                  [
+                    21.754916,
+                    10.053593
+                  ],
+                  [
+                    21.792069,
+                    10.01644
+                  ],
+                  [
+                    21.838477,
+                    9.93606
+                  ],
+                  [
+                    21.862499,
+                    9.846408
+                  ],
+                  [
+                    21.862499,
+                    9.753592
+                  ],
+                  [
+                    21.838477,
+                    9.66394
+                  ],
+                  [
+                    21.838476,
+                    9.663937
+                  ],
+                  [
+                    21.792069,
+                    9.58356
+                  ],
+                  [
+                    21.792064,
+                    9.583554
+                  ],
+                  [
+                    21.726444,
+                    9.517934
+                  ],
+                  [
+                    21.726435,
+                    9.517927
+                  ],
+                  [
+                    21.701658,
+                    9.503622
+                  ],
+                  [
+                    21.701657,
+                    9.503622
+                  ],
+                  [
+                    21.646061,
+                    9.471522
+                  ],
+                  [
+                    21.646058,
+                    9.471521
+                  ],
+                  [
+                    21.579149,
+                    9.453593
+                  ],
+                  [
+                    21.556413,
+                    9.447501
+                  ],
+                  [
+                    21.556408,
+                    9.4475
+                  ],
+                  [
+                    21.556407,
+                    9.4475
+                  ],
+                  [
+                    21.463591,
+                    9.4475
+                  ],
+                  [
+                    21.46359,
+                    9.4475
+                  ],
+                  [
+                    21.463584,
+                    9.447501
+                  ],
+                  [
+                    21.373939,
+                    9.471521
+                  ],
+                  [
+                    21.373936,
+                    9.471522
+                  ],
+                  [
+                    21.293559,
+                    9.517929
+                  ],
+                  [
+                    21.293553,
+                    9.517934
+                  ],
+                  [
+                    21.227933,
+                    9.583554
+                  ],
+                  [
+                    21.227928,
+                    9.58356
+                  ],
+                  [
+                    21.181521,
+                    9.663937
+                  ],
+                  [
+                    21.18152,
+                    9.66394
+                  ],
+                  [
+                    21.1575,
+                    9.753585
+                  ],
+                  [
+                    21.157499,
+                    9.753593
+                  ],
+                  [
+                    21.157499,
+                    9.846406
+                  ],
+                  [
+                    21.1575,
+                    9.846414
+                  ],
+                  [
+                    21.18152,
+                    9.936059
+                  ],
+                  [
+                    21.181523,
+                    9.936065
+                  ],
+                  [
+                    21.211971,
+                    9.988802
+                  ],
+                  [
+                    21.218215,
+                    10.036228
+                  ],
+                  [
+                    21.189095,
+                    10.074178
+                  ],
+                  [
+                    21.174022,
+                    10.080422
+                  ],
+                  [
+                    21.113939,
+                    10.096522
+                  ],
+                  [
+                    21.113937,
+                    10.096522
+                  ],
+                  [
+                    21.03356,
+                    10.142929
+                  ],
+                  [
+                    21.033554,
+                    10.142934
+                  ],
+                  [
+                    20.967934,
+                    10.208554
+                  ],
+                  [
+                    20.967929,
+                    10.20856
+                  ],
+                  [
+                    20.921522,
+                    10.288937
+                  ],
+                  [
+                    20.921521,
+                    10.28894
+                  ],
+                  [
+                    20.897501,
+                    10.378585
+                  ],
+                  [
+                    20.8975,
+                    10.378593
+                  ]
+                ]
+              ]
+            },
+            "length_mm": 3.8115233031223696,
+            "area_mm2": 0.7867610831950005,
+            "bounds_mm": [
+              20.8975,
+              9.4475,
+              21.862499,
+              10.7775
+            ]
+          }
+        ]
+      }
+    },
+    "after:In1.Cu:28": {
+      "facts": {
+        "hole_index": 28,
+        "bounds_mm": [
+          20.8975,
+          9.4475,
+          21.862499,
+          10.7775
+        ],
+        "area_mm2": 0.7867610939510006,
+        "extends_beyond_local_window": true,
+        "contained_vias": [
+          {
+            "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+            "net": "IMU_MOSI",
+            "xy_mm": [
+              21.509999,
+              9.8
+            ]
+          },
+          {
+            "uuid": "7e8612c2-cc4c-4346-a00f-69e4734445fb",
+            "net": "IMU_MISO",
+            "xy_mm": [
+              21.25,
+              10.425
+            ]
+          }
+        ]
+      },
+      "geometry": {
+        "geometry_type": "Polygon",
+        "empty": false,
+        "length_mm": 3.8115233039651746,
+        "area_mm2": 0.7867610939510006,
+        "bounds_mm": [
+          20.8975,
+          9.4475,
+          21.862499,
+          10.7775
+        ],
+        "pieces": [
+          {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    20.8975,
+                    10.378593
+                  ],
+                  [
+                    20.8975,
+                    10.471406
+                  ],
+                  [
+                    20.897501,
+                    10.471414
+                  ],
+                  [
+                    20.921521,
+                    10.561059
+                  ],
+                  [
+                    20.921522,
+                    10.561062
+                  ],
+                  [
+                    20.967929,
+                    10.641439
+                  ],
+                  [
+                    20.967934,
+                    10.641445
+                  ],
+                  [
+                    21.033554,
+                    10.707065
+                  ],
+                  [
+                    21.03356,
+                    10.70707
+                  ],
+                  [
+                    21.113937,
+                    10.753477
+                  ],
+                  [
+                    21.11394,
+                    10.753478
+                  ],
+                  [
+                    21.203592,
+                    10.7775
+                  ],
+                  [
+                    21.203593,
+                    10.7775
+                  ],
+                  [
+                    21.296407,
+                    10.7775
+                  ],
+                  [
+                    21.296408,
+                    10.7775
+                  ],
+                  [
+                    21.38606,
+                    10.753478
+                  ],
+                  [
+                    21.46644,
+                    10.70707
+                  ],
+                  [
+                    21.53207,
+                    10.64144
+                  ],
+                  [
+                    21.578478,
+                    10.56106
+                  ],
+                  [
+                    21.6025,
+                    10.471408
+                  ],
+                  [
+                    21.6025,
+                    10.378592
+                  ],
+                  [
+                    21.578478,
+                    10.28894
+                  ],
+                  [
+                    21.578477,
+                    10.288937
+                  ],
+                  [
+                    21.548027,
+                    10.236198
+                  ],
+                  [
+                    21.541782,
+                    10.188772
+                  ],
+                  [
+                    21.570902,
+                    10.150821
+                  ],
+                  [
+                    21.585977,
+                    10.144577
+                  ],
+                  [
+                    21.638893,
+                    10.130398
+                  ],
+                  [
+                    21.646059,
+                    10.128478
+                  ],
+                  [
+                    21.726439,
+                    10.08207
+                  ],
+                  [
+                    21.754916,
+                    10.053593
+                  ],
+                  [
+                    21.792069,
+                    10.01644
+                  ],
+                  [
+                    21.794909,
+                    10.011522
+                  ],
+                  [
+                    21.838474,
+                    9.936065
+                  ],
+                  [
+                    21.838477,
+                    9.93606
+                  ],
+                  [
+                    21.862499,
+                    9.846408
+                  ],
+                  [
+                    21.862499,
+                    9.753592
+                  ],
+                  [
+                    21.838477,
+                    9.66394
+                  ],
+                  [
+                    21.838476,
+                    9.663937
+                  ],
+                  [
+                    21.792069,
+                    9.58356
+                  ],
+                  [
+                    21.792064,
+                    9.583554
+                  ],
+                  [
+                    21.726444,
+                    9.517934
+                  ],
+                  [
+                    21.726435,
+                    9.517927
+                  ],
+                  [
+                    21.701658,
+                    9.503622
+                  ],
+                  [
+                    21.701657,
+                    9.503622
+                  ],
+                  [
+                    21.646061,
+                    9.471522
+                  ],
+                  [
+                    21.646058,
+                    9.471521
+                  ],
+                  [
+                    21.579149,
+                    9.453593
+                  ],
+                  [
+                    21.556413,
+                    9.447501
+                  ],
+                  [
+                    21.556408,
+                    9.4475
+                  ],
+                  [
+                    21.556407,
+                    9.4475
+                  ],
+                  [
+                    21.463591,
+                    9.4475
+                  ],
+                  [
+                    21.46359,
+                    9.4475
+                  ],
+                  [
+                    21.463584,
+                    9.447501
+                  ],
+                  [
+                    21.373939,
+                    9.471521
+                  ],
+                  [
+                    21.373936,
+                    9.471522
+                  ],
+                  [
+                    21.293559,
+                    9.517929
+                  ],
+                  [
+                    21.293553,
+                    9.517934
+                  ],
+                  [
+                    21.227933,
+                    9.583554
+                  ],
+                  [
+                    21.227928,
+                    9.58356
+                  ],
+                  [
+                    21.181521,
+                    9.663937
+                  ],
+                  [
+                    21.18152,
+                    9.66394
+                  ],
+                  [
+                    21.1575,
+                    9.753585
+                  ],
+                  [
+                    21.157499,
+                    9.753593
+                  ],
+                  [
+                    21.157499,
+                    9.846406
+                  ],
+                  [
+                    21.1575,
+                    9.846414
+                  ],
+                  [
+                    21.18152,
+                    9.936059
+                  ],
+                  [
+                    21.181523,
+                    9.936065
+                  ],
+                  [
+                    21.211971,
+                    9.988802
+                  ],
+                  [
+                    21.218215,
+                    10.036228
+                  ],
+                  [
+                    21.189095,
+                    10.074178
+                  ],
+                  [
+                    21.174022,
+                    10.080422
+                  ],
+                  [
+                    21.113939,
+                    10.096522
+                  ],
+                  [
+                    21.113937,
+                    10.096522
+                  ],
+                  [
+                    21.03356,
+                    10.142929
+                  ],
+                  [
+                    21.033554,
+                    10.142934
+                  ],
+                  [
+                    20.967934,
+                    10.208554
+                  ],
+                  [
+                    20.967929,
+                    10.20856
+                  ],
+                  [
+                    20.921522,
+                    10.288937
+                  ],
+                  [
+                    20.921521,
+                    10.28894
+                  ],
+                  [
+                    20.897501,
+                    10.378585
+                  ],
+                  [
+                    20.8975,
+                    10.378593
+                  ]
+                ]
+              ]
+            },
+            "length_mm": 3.8115233039651746,
+            "area_mm2": 0.7867610939510006,
+            "bounds_mm": [
+              20.8975,
+              9.4475,
+              21.862499,
+              10.7775
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rejection_controls": [
+    {
+      "control": "wrong expected source hash",
+      "rejected": true,
+      "reason": "Board/source hash mismatch"
+    },
+    {
+      "control": "cross-bound snapshot geometry",
+      "rejected": true,
+      "reason": "Native source binding mismatch"
+    },
+    {
+      "control": "expanded own-via window",
+      "rejected": true,
+      "reason": "Own-via window changed"
+    },
+    {
+      "control": "merged-hole outside-own-window centerline",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "merged-hole outside-own-window width",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "window area without actual saved hole",
+      "rejected": true,
+      "reason": "Changed geometry outside actual hole mask"
+    },
+    {
+      "control": "empty residual cannot override conflicting exact covers predicate",
+      "rejected": true,
+      "reason": "Exact actual-hole containment unresolved"
+    }
+  ],
+  "method": [
+    "Verify exact declared board, snapshot, report, comparison and helper hashes before and after this read-only run.",
+    "Rebuild saved physical GND from actual zone/land/track polygons minus native outside-drill polygons on their actual layer spans.",
+    "Primary changed projection is original source centerline or trace copper intersected with before-minus-after or after-minus-before physical GND.",
+    "Also preserve direct subtraction of independently clipped missing geometries. Non-collinear floating-point line representations may produce entire before/after intervals; those results are retained and classified separately.",
+    "Both methods must leave empty residual geometry outside unchanged same-net windows and before-or-after actual saved-hole intersections. Entire merged holes receive no exemption.",
+    "Containment also checks the exact covers predicate. Empty difference does not override a conflicting covers result; predicate disagreement remains unresolved.",
+    "Every nonempty geometry is retained. No epsilon, rounding, snapping, polygon repair, filtering, or normalization to zero is introduced."
+  ],
+  "limits": [
+    "This is location classification for an isolated incomplete stage, not final adoption, functional signoff, or exact centerline equality.",
+    "The existing helper and checkpoint49 receipt require exact centerline equality and cannot be reused as-is.",
+    "Floating-point overlay lengths/areas and subtraction of totals differ by retained nonzero amounts; no equality claim is made between those alternative computations.",
+    "The MOSI added centerline and width results have empty difference from the actual-hole masks but false covers results. This strict boundary-containment disagreement is unresolved, not accepted.",
+    "Whole-plane changes outside critical own-via windows remain real and need separate source-bound power/VCAP and functional assessment.",
+    "The final complete successor must repeat the source-bound comparison and classification on its own board hash.",
+    "No KiCad refill, native board mutation, FEM, impedance, return-current, timing, fabrication or flight qualification was performed."
+  ]
+}

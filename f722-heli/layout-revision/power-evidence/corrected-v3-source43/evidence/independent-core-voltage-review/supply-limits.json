@@ -1,0 +1,195 @@
+{
+  "schema": "independent-core-supply-review/v1",
+  "acceptance_status": "unqualified; requirements and proposed screens only",
+  "universal_functional_floor_V": null,
+  "conservative_onboard_ic_supply_screen_V": [
+    3.0,
+    3.6
+  ],
+  "screen_caveat": "At actual supply pins only; does not close signal,analog tracking,filter-current,source/transient or external DSM obligations.",
+  "rows": [
+    {
+      "pads": [
+        "U1.19",
+        "U1.32",
+        "U1.48",
+        "U1.64"
+      ],
+      "role": "VDD",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U1.18",
+        "U1.31",
+        "U1.47",
+        "U1.63"
+      ],
+      "minimum_V": 2.7,
+      "maximum_V": 3.6,
+      "condition": "Pinned stock 216 MHz scale1/overdrive/FLASH_LATENCY_7; full USB electrical operation requires3.0V minimum.",
+      "usb_minimum_V": 3.0,
+      "source": "S1"
+    },
+    {
+      "pads": [
+        "U1.1"
+      ],
+      "role": "VBAT",
+      "net": "+3V3_CORE",
+      "minimum_V": 1.65,
+      "maximum_V": 3.6,
+      "condition": "Backup supply only; not main electronics power entry.",
+      "source": "S1"
+    },
+    {
+      "pads": [
+        "U1.13"
+      ],
+      "role": "VDDA",
+      "net": "+3V3_ANALOG",
+      "local_ground_pads": [
+        "U1.12"
+      ],
+      "minimum_V": null,
+      "maximum_V": 3.6,
+      "general_internal_reset_on_minimum_V": 1.8,
+      "optional_engineering_screen_minimum_V": 3.0,
+      "stock_adc_MHz": 13.5,
+      "condition": "No independent low-VDDA stock corner accepted. Must maintain required relationship to VDD; 300mV power-up/down allowance is not a steady-state tolerance. Stock13.5MHz ADC does not by itself require2.4V high-rate condition.",
+      "source": "S1,S8"
+    },
+    {
+      "pads": [
+        "U2.5",
+        "U2.8"
+      ],
+      "role": "VDDIO,VDD",
+      "net": "+3V3_IMU",
+      "local_ground_pads": [
+        "U2.6"
+      ],
+      "minimum_V": 1.71,
+      "maximum_V": 3.6,
+      "condition": "Supplies only; both pins share one20mA engineering branch budget and need independent voltage reports.",
+      "source": "S2"
+    },
+    {
+      "pads": [
+        "U3.8"
+      ],
+      "role": "VCC",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U3.4"
+      ],
+      "minimum_V": 2.7,
+      "maximum_V": 3.6,
+      "condition": "W25N01GVZEIG exact industrial grade.",
+      "source": "S3,S3b"
+    },
+    {
+      "pads": [
+        "U4.6"
+      ],
+      "role": "VDDIO",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U4.1",
+        "U4.7"
+      ],
+      "minimum_V": 1.2,
+      "maximum_V": 3.6,
+      "condition": "Does not qualify800kHz I2C or3.3V VOL.",
+      "source": "S4"
+    },
+    {
+      "pads": [
+        "U4.8"
+      ],
+      "role": "VDD",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U4.1",
+        "U4.7"
+      ],
+      "minimum_V": 1.7,
+      "maximum_V": 3.6,
+      "condition": "Does not qualify800kHz I2C or3.3V VOL.",
+      "source": "S4"
+    },
+    {
+      "pads": [
+        "U4.2"
+      ],
+      "role": "CSB",
+      "net": "+3V3_CORE",
+      "minimum_V": null,
+      "condition": "I2C-mode high strap:VIH >=0.7*localVDDIO; not a supply load.",
+      "source": "S4"
+    },
+    {
+      "pads": [
+        "U11.6"
+      ],
+      "role": "IN",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U11.5"
+      ],
+      "minimum_V": 2.5,
+      "maximum_V": 6.5,
+      "system_operating_ceiling_V": 3.6,
+      "condition": "Actual TPS2553DRVR supply entry. Exposed-ground-pad sharing unquantified.",
+      "source": "S5"
+    },
+    {
+      "pads": [
+        "U11.4"
+      ],
+      "role": "EN",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U11.5"
+      ],
+      "logic_high_minimum_V": 1.1,
+      "maximum_V": 6.5,
+      "condition": "Control only; do not inject DSM supply current here.",
+      "source": "S5"
+    },
+    {
+      "pads": [
+        "U12.5",
+        "U13.5"
+      ],
+      "role": "VBUS protection bias",
+      "net": "+3V3_CORE",
+      "local_ground_pads": [
+        "U12.2",
+        "U13.2"
+      ],
+      "minimum_V": null,
+      "condition": "No active functional supply minimum specified. ESD table test voltages are not supply floors.",
+      "source": "S6"
+    },
+    {
+      "pads": [
+        "Q1.1",
+        "Q2.1"
+      ],
+      "role": "G",
+      "net": "+3V3_CORE",
+      "minimum_V": null,
+      "condition": "Gate-source/load-dependent behavior; no standalone rail functional floor.",
+      "source": "S7"
+    },
+    {
+      "pads": [
+        "U9.6"
+      ],
+      "role": "VOS sense",
+      "net": "+3V3_CORE",
+      "minimum_V": null,
+      "condition": "Feedback sense only; real CORE output injection L2.2.",
+      "source": "P9"
+    }
+  ]
+}

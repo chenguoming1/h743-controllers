@@ -1,0 +1,186 @@
+{
+  "schema": "f722-corrected-implementation-review/v3",
+  "status": "IMPLEMENTED; OWNER REVIEW AND FRESH SOURCE STAGE/RELEASE REMAIN REQUIRED",
+  "heavy_execution_enabled": false,
+  "real_board_compilation_or_staging_performed": false,
+  "real_board_numerical_run_performed": false,
+  "model_contract_sha256": "5272b273ec74e5f88fc9b3ffa548355d7c573eaf0fafd7d50e25bd35e29ae345",
+  "model_counts": {
+    "required": 294,
+    "illustrative": 11,
+    "loops": 5,
+    "networks": 15,
+    "contacts": 107,
+    "ground_contacts": 41
+  },
+  "runtime_source_sha256": {
+    "compile_power_ledger.py": "a798f8131ae6017c66bcc2a568131f3eccc1a9d52e1068bd2821a7205289da31",
+    "power_case_model.py": "034eb82d0be8ba17f3215bad1103b1eaa9d7213f99739159a7a07eae4ed2a3fa",
+    "model_contract.py": "f4777d76d1b0f4dca00bbf30f30ccae8ae96a6e28360e7009c1583312196617e",
+    "prepare_loaded_pilot.py": "4604ca6bfec5f46662abb799e5d296a1136f7f83fa05d3ce8f71670a04be7db8",
+    "run_bounded_pilot.py": "4b38019196550923acdb79e00b67659ab04cf731b5299ab871d8a1615eb6abf0",
+    "copper_fem.py": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+    "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+    "validate_static.py": "d94e735c3ff113ccaa4fd726e834ebdcd1651df3a0eacec265184d9e9c1ad006",
+    "audit_native_ports.py": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717",
+    "native_edge_noding.py": "63b57015db4e7ef76a317d4b16ef18ab1f7fd8bd44c2bd440f4ca738cca2fc1a",
+    "mesh_cache.py": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+    "summarize_loaded_pilot.py": "55544aad22290759c4441c8289460ad5eda45b278dc05230f51300dfdfcaafd3",
+    "summarize_combined_pilot.py": "aa24044b0ab89b55185ca42385db3880e42f329148ea8cc4195de53641069a94",
+    "report_actual_sinks.py": "afcdbd435ac9edde1e7b8adc71b4a6a7dc12c7c555e9313d42c54abffd7ca087",
+    "support_receipt.py": "d35fb7d52d7b34ad299019a14d6cf3fa7ccaa401b4a2f31a5779e18de696a971",
+    "owner_support_contract.py": "44cd13087033ef5ab0b591dee064f02f64efe4d4810f9c73d93834192bd4a3c9"
+  },
+  "launcher_sha256": "2caea898b8c0e820209c0758d5bdd1ba7cd2a5dde3327c6a0ed2a03259c53b9d",
+  "model_inputs_sha256": {
+    "case-plan.corrected.disabled.json": "82254008fb3af2556951fe33ab5b527b7cd1e54bb22f7928f38be8d35bce98a0",
+    "terminal-registry.corrected.disabled.json": "2a83fbca7bb171843da6ddac189626f6bf3c375c8b91404f25794597a4693507",
+    "compiler-settings.json": "b973d5d7b6ddc85d13ab0a2cfc92b80686a8b375ba1563c4929d4895a7d75915"
+  },
+  "historical_ledger_sha256": "f811c4d93dd074e5d74fb000db2d1218d10199ceb7c0562173be437fda572951",
+  "evidence_sha256": {
+    "independent-core-voltage-review/REPORT.md": "0eacf3775b58fa2265343ab806251cbed80362334626eaca92a9186817040034",
+    "independent-core-voltage-review/power-path-subcheck/audit.json": "2c50c8fe26fffcf88cde108f367e6b1cf0d4c6daea9e7f215dae6b16f9cc7751",
+    "independent-core-voltage-review/supply-limits.json": "eaf886dd6afb90977bc2fbc86c708d1058bc620c8bece6f06397d13f18dd8a24",
+    "repo/f722-heli/docs/passive-bom-evidence.md": "1eacf27b8b4820e74b146a24d9a2582f8d1cb5bb7db62be4ae66a71a279383cf",
+    "integrated-routing/verify_support_adoption.py": "44cd13087033ef5ab0b591dee064f02f64efe4d4810f9c73d93834192bd4a3c9"
+  },
+  "owner_support_contract_origin": {
+    "path": "integrated-routing/verify_support_adoption.py",
+    "sha256": "44cd13087033ef5ab0b591dee064f02f64efe4d4810f9c73d93834192bd4a3c9"
+  },
+  "context_equivalence": {
+    "classic/J9,J10": {
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline"
+      ],
+      "non_allocation_context_sha256": "c7db1f719a78aa82ec00ae82e300b67307bd2e3ba0443174aefc50085d1b7607"
+    },
+    "classic/J9,J11": {
+      "cases": [
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline"
+      ],
+      "non_allocation_context_sha256": "5dbc65aead954f8a86b698d2ef0b1a84d78b95c0791ac55c384135d919e49046"
+    },
+    "classic/J10,J11": {
+      "cases": [
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline"
+      ],
+      "non_allocation_context_sha256": "139eca9b1965210056c520fe1cc9d0e6211261ebbdae4b40afca06895daaf8f4"
+    },
+    "capacity/J9,J10": {
+      "cases": [
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline"
+      ],
+      "non_allocation_context_sha256": "c293e157f5062c31714caf1f3e465794dd44a2b95dbed8eb948b6f4442ddf9fc"
+    },
+    "capacity/J9,J11": {
+      "cases": [
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline"
+      ],
+      "non_allocation_context_sha256": "a0eb5924e3c0bd6fd4d499a39b579bf7e6987082a5377f5c9ec5bae4a1890cc2"
+    },
+    "capacity/J10,J11": {
+      "cases": [
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline"
+      ],
+      "non_allocation_context_sha256": "ff6c7575283ea9571b0c5ee2f812d1d841d0f350f9f2ad6050ef368a621ebd41"
+    },
+    "USB": {
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ],
+      "non_allocation_context_sha256": "17bb0aac63f3c2714a2565b7069ae1602a92881a7082177d359709aab906c2ac"
+    }
+  },
+  "unchanged_runtime_files": [
+    "run_bounded_pilot.py",
+    "copper_fem.py",
+    "dc_circuit.py",
+    "audit_native_ports.py",
+    "native_edge_noding.py",
+    "mesh_cache.py"
+  ],
+  "changed_runtime_files": [
+    "compile_power_ledger.py",
+    "power_case_model.py",
+    "model_contract.py",
+    "prepare_loaded_pilot.py",
+    "validate_static.py",
+    "summarize_loaded_pilot.py",
+    "summarize_combined_pilot.py",
+    "report_actual_sinks.py",
+    "support_receipt.py",
+    "owner_support_contract.py",
+    "plan_power_revalidation.py"
+  ],
+  "implementation_diff_sha256": "853ee2c8de9069e9dc231216d4fbd81dd82a004008d4c0c50de6eda5ab4aef55",
+  "sealed_v2_model_review_sha256": "3d946abc0f592c9a6534d5a1f7a091c4b7b2c5ae666f1e735d4a867f22bc3ca5",
+  "v2_v3_runtime_changes": [
+    "compile_power_ledger.py",
+    "support_receipt.py",
+    "owner_support_contract.py",
+    "plan_power_revalidation.py"
+  ],
+  "v2_v3_diff_sha256": "27bd4789d870b4d025f762c16d128cbcb319a70defa21d7aa76232d9f4b72b2e",
+  "source_adapter_scope": "Typed legacy/DSM/I2C support chains, exact current native UUID groups, separately derived connectivity counts, and mechanically bound source-local pose selection. Physical model unchanged from v2.",
+  "scope": "294 required and11 illustrative enumerated conditional prototype cases; not nonlinear interior-extrema, thermal or flight qualification",
+  "postprocessing": "Historical146/140/5532 replay deliberately disabled",
+  "owner_review_gate": "Planning requires this exact reviewed SHA as --owner-reviewed-model-sha; it does not release numerical execution.",
+  "heavy_release_gate": "Separate explicit accepted-board SHA and shared exclusive heavy lock after fresh source-bound stage/preflight."
+}

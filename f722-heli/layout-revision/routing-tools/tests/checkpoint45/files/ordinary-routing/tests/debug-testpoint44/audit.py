@@ -1,0 +1,41 @@
+import pathlib,sys,json,hashlib,copy,math
+HERE=pathlib.Path(__file__).resolve().parent;ROOT=HERE.parents[2];S=ROOT/'ordinary-routing/candidate44';D=HERE/'candidate01'
+sys.path[:0]=[str(ROOT/'ordinary-routing/dsm40-audits'),str(ROOT/'ordinary-routing/dsm41-audits'),str(ROOT/'integrated-routing')]
+from audit_dsm40_entries_return import pad_entry,join_entry,groups,geom
+from audit_dsm41_entries_return import via_entry
+from verify_support_adoption import verify
+import screen
+from shapely.geometry import Point
+from shapely.ops import unary_union
+read=lambda f:json.loads(pathlib.Path(f).read_text());sha=lambda f:hashlib.sha256(pathlib.Path(f).read_bytes()).hexdigest();write=lambda f,r:pathlib.Path(f).write_text(json.dumps(r,indent=2)+'\n')
+before=read(S/'f722-heli.native.json');after=read(D/'f722-heli.native.json');prov=read(D/'construction-provenance.json');h=sha(D/'f722-heli.kicad_pcb');oldh=sha(S/'f722-heli.kicad_pcb');assert h==after['board_sha256']==prov['board_sha256'];assert oldh==before['board_sha256']==prov['source_board_sha256']=='02d2090ad7220a64a8f4a1a259d522f7b0bca3e15214b73107491d17626bd51f'
+old={o['uuid']:o for o in before['objects']};new={o['uuid']:o for o in after['objects']};added=prov['added_records'];assert len(added)==2 and all(o['net']=='NRST' and o['width']==.127 and list(o['copper'])==['B.Cu']for o in added);t0,t1=added;pad=next(o for o in new.values()if o.get('key')=='TP5.1');via=new['f2c03228-c15a-4ba4-b782-92443bbc8b09'];physical=lambda o:{k:v for k,v in o.items()if k!='net_code'};assert via['xy']==[17.12882,6.83933] and physical(via)==physical(old[via['uuid']])
+entries=[pad_entry(t0,pad,'B.Cu','start'),pad_entry(t0,pad,'B.Cu','end'),pad_entry(t1,pad,'B.Cu','start')];join=join_entry(t0,t1,'B.Cu',.127);annular=via_entry(t1,via,'B.Cu',after);assert all(x['passed']for x in entries) and join['passed'] and annular['passed']
+nrst_before=groups(before,'NRST');nrst_after=groups(after,'NRST');assert len(nrst_before)==2 and len(nrst_after)==1;assert nrst_after[0]['pads']==['C10.1','R1.2','TP5.1','U1.7']
+screen.init('TP5','B.Cu');q=pad['xy'];assert q==[16.9,6.0] and not screen.pose(q,True);assert screen.route([t0['start'],t0['end'],t1['end']]);center=Point(q);land=geom(pad['copper']['B.Cu']);mask=geom(pad['mask']['B.Mask']['polygons'])
+body=[];courts=[];headers=[]
+for r,b,l,c,rs in screen.mech:
+ if not b.is_empty:body.append({'ref':r,'center_to_body_mm':center.distance(b),'probe_radius_mm':.7,'radial_probe_margin_mm':center.distance(b)-.7})
+ if not c.is_empty:courts.append({'ref':r,'center_to_courtyard_mm':center.distance(c)})
+ if r in ['J'+str(i)for i in range(2,9)]:
+  both_lands=unary_union([screen.poly(p['polygons'].get(side,[]))for p in screen.m[r]['pads']for side in ['F.Cu','B.Cu']]);projected=unary_union([screen.fab(screen.m[r],'F.Cu'),screen.fab(screen.m[r],'B.Cu'),both_lands]).convex_hull
+  headers.append({'ref':r,'center_to_body_mm':center.distance(b)if not b.is_empty else None,'pad_to_header_land_mm':land.distance(l),'probe_to_header_land_access_mm':center.distance(l)-.7-.3,'probe_to_complete_projected_header_body_and_lead_span_mm':center.distance(projected)-.7-.3})
+drills=sorted([{'uuid':o['uuid'],'net':o['net'],'key':o.get('key'),'gap_mm':mask.distance(g)}for o,g in screen.holes],key=lambda x:x['gap_mm']);foreign=sorted([{'uuid':o['uuid'],'key':o.get('key'),'net':o['net'],'gap_mm':land.distance(g)}for o,g in screen.copper],key=lambda x:x['gap_mm']);body.sort(key=lambda x:x['radial_probe_margin_mm']);assert drills[0]['gap_mm']>=.2 and foreign[0]['gap_mm']>=.127 and body[0]['radial_probe_margin_mm']>0 and all(r['probe_to_header_land_access_mm']>0 and r['probe_to_complete_projected_header_body_and_lead_span_mm']>0 for r in headers)
+probe={'passed':True,'pad':pad['key'],'xy_mm':q,'side':'B.Cu','native_pad_diameter_mm':1,'analytic_probe_clear_disk_diameter_mm':1.4,'nearest_bodies':body[:8],'nearest_courtyards':sorted(courts,key=lambda x:x['center_to_courtyard_mm'])[:8],'nearest_drill_to_new_mask':drills[:8],'nearest_foreign_copper_to_new_pad':foreign[:8],'through_hole_header_lead_access':headers,'limits':'A bare testpoint remains open on its own board face. The1.4mm analytic probe disk must clear all native Fab bodies and header lead-access bands. This bounded2D screen does not establish a specific fixture needle/body size, assembled harness access, or3D height qualification.'}
+controls=[]
+bad=copy.deepcopy(t0);bad['width']=1.2;controls.append({'name':'oversized_full_width_pad_entry','rejected':not pad_entry(bad,pad,'B.Cu','start')['passed']})
+bad=copy.deepcopy(t1);bad['start']=[bad['start'][0]+.01,bad['start'][1]];controls.append({'name':'broken_exact_track_join','rejected':not join_entry(t0,bad,'B.Cu',.127)['passed']})
+bad=copy.deepcopy(t1);bad['width']=.6;controls.append({'name':'oversized_full_width_annular_entry','rejected':not via_entry(bad,via,'B.Cu',after)['passed']})
+bad=copy.deepcopy(after);bad['objects']=[o for o in bad['objects']if o['uuid']not in {t0['uuid'],t1['uuid']}];controls.append({'name':'remove_testpoint_branch_reopens_NRST','rejected':len(groups(bad,'NRST'))!=1})
+controls.append({'name':'occupied_probe_site_under_C3','rejected':not screen.pose([28.4,16.5])});assert all(x['rejected']for x in controls)
+base=read(S/'power-audit.json');nets={}
+for net in base['nets']:
+ current=groups(after,net);previous=groups(before,net);assert current==previous and len(current)==1
+ nets[net]={'pad_group_count':len(current),'complete':True,'groups':current,'source_groups_exactly_preserved':True}
+assert len(nets)==28
+gates={'all_four_NRST_terminals_connected':len(nrst_after)==1,'finite_full_width_pad_entries':all(x['passed']for x in entries),'finite_full_width_join':join['passed'],'finite_full_width_annular_entry':annular['passed'],'all_four_new_track_endpoints_accounted':True,'testpoint_probe_access':probe['passed'],'all28_support_groups_exact':True,'all_source_GND_copper_exact':all(old[o['uuid']]==o for o in after['objects']if o['net']=='GND'),'negative_controls':all(x['rejected']for x in controls)}
+audit={'schema':'f722-debug-testpoint-entry-support/v1','passed':all(gates.values()),'gates':gates,'source_board_sha256':oldh,'board_sha256':h,'source_native_sha256':sha(S/'f722-heli.native.json'),'native_sha256':sha(D/'f722-heli.native.json'),'audit_source_sha256':sha(__file__),'strict_pad_entries':entries,'full_width_joins':[join],'finite_actual_annular_entries':[annular],'new_track_endpoints_checked':4,'NRST_source_groups':nrst_before,'NRST_current_groups':nrst_after,'probe_access':probe,'negative_controls':controls,'nets':nets,'numerical_power_VCAP_applicable':False}
+assert audit['passed'];write(D/'entry-support-audit.json',audit);binding={'board_sha256':h,'source_board_sha256':oldh,'native_sha256':sha(D/'f722-heli.native.json'),'source_native_sha256':sha(S/'f722-heli.native.json'),'audit':'entry-support-audit.json','audit_sha256':sha(D/'entry-support-audit.json')}
+write(D/'endpoint-audit.json',{'schema':'f722-native-endpoint-audit-binding/v1','passed':True,**binding,'new_track_endpoints_checked':4,'direct_pad_entries':3,'full_width_joins':1,'existing_signal_via_annular_entries':1,'strict_pad_entries_all_pass':True,'negative_controls':len(controls),'scope':'Both added0.127mm track segments, moved pad entrances and retained NRST via actual annulus have finite full-width connections.'})
+support={'schema':'f722-native-support-audit/v1','passed':True,**binding,'source_audit_sha256':sha(S/'power-audit.json'),'audit_source_sha256':sha(__file__),'nets':nets,'ground_native_pad_groups_exactly_preserved':True,'numerical_power_VCAP_applicable':False,'method':'Recomputed all28 native copper/barrel/fill support graphs and compared their exact current pad partitions against source44.'};write(D/'power-audit.json',support);compat=verify(support,base,oldh,h,D);write(D/'support-wrapper-compatibility.json',{'board_sha256':h,'support_wrapper_sha256':sha(D/'power-audit.json'),'verifier_sha256':sha(ROOT/'integrated-routing/verify_support_adoption.py'),**compat})
+print(json.dumps({'passed':audit['passed'],'board_sha256':h,'NRST_groups':nrst_after,'probe_radial_margin_mm':body[0]['radial_probe_margin_mm'],'drill_to_mask_mm':drills[0]['gap_mm'],'pad_copper_clearance_mm':foreign[0]['gap_mm'],'support_nets':len(nets)}))

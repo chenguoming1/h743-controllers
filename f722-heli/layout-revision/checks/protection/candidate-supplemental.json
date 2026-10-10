@@ -1,6 +1,6 @@
 {
   "schema": "f722-physical-protection-checks/v1",
-  "board_sha256": "2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115",
+  "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
   "native_version": "10.0.6",
   "method": "Native KiCad copper polygons: tracks/vias/pads ERROR_OUTSIDE, actual clamp pad ERROR_INSIDE, maximum polygon error 0.00001 mm. Subtract only actual clamp pad copper from every copper object on the actual clamp pad layer(s), split resulting polygon pieces, rebuild physical contact graph including existing plated through connections. No component-internal conductive paths are assumed. Signal nets have no zones. Conservative overestimate of surviving copper and underestimate of pad removal.",
   "numeric_contact_epsilon_mm": 1e-09,
@@ -648,14 +648,12 @@
         "groups": [
           [
             "Q1.3",
+            "R25.2",
             "U16.1"
-          ],
-          [
-            "R25.2"
           ]
         ],
-        "source_target_connected": false,
-        "source_reaches_clamp": false,
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
         "target_reaches_clamp": true
       },
       "after_cut_pad_groups": [
@@ -667,21 +665,21 @@
         ]
       ],
       "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
-      "source_group_reaches_actual_pad_boundary": false,
+      "source_group_reaches_actual_pad_boundary": true,
       "target_group_reaches_actual_pad_boundary": true,
-      "all_connections_require_actual_pad_region": false,
+      "all_connections_require_actual_pad_region": true,
       "gap_requirement_passes": true,
-      "minimum_gap_measured_mm": 5.037743717998864,
-      "complete_clamp_first_path_passes": false,
+      "minimum_gap_measured_mm": 0.5775051678605436,
+      "complete_clamp_first_path_passes": true,
       "layer_gaps": [
         {
           "layer": "F.Cu",
-          "gap_outside_actual_pad_mm": 5.037743717998864,
+          "gap_outside_actual_pad_mm": 0.5775051678605436,
           "overlap_outside_actual_pad_mm2": 0.0,
           "closest_points_mm": [
             [
-              12.493761,
-              18.775794
+              16.5,
+              16.77857665908721
             ],
             [
               16.93611,
@@ -721,7 +719,16 @@
         }
       ],
       "source_objects": [
-        "efacbe03-6b34-4f36-acba-21807b3cfe75"
+        "24f2c5f3-7a9b-58ae-a555-cb86f1d25209",
+        "3f88f5fb-c6c6-5d3d-9ec0-af17d2543c64",
+        "444a5c65-89f7-5840-ac3f-b13e580ec871",
+        "5f759305-0a48-5bfc-ba52-c3afe837a39c",
+        "620337bc-0672-5ec3-86d9-a3cca52f38ca",
+        "6bfeb61b-6b37-57b2-9d02-fae940104d43",
+        "7158869d-648e-510a-9f2c-b5f418ef0549",
+        "90633f7e-0a18-5786-bfca-275062efaee6",
+        "efacbe03-6b34-4f36-acba-21807b3cfe75",
+        "f52fd3cf-c00c-5b8f-a6c7-15a840c6c477"
       ],
       "target_objects": [
         "0efd45b8-258f-4f36-880a-f1d032371ed7",
@@ -741,16 +748,14 @@
       "before_cut": {
         "groups": [
           [
-            "Q2.3"
-          ],
-          [
+            "Q2.3",
             "R26.2",
             "U16.2"
           ]
         ],
-        "source_target_connected": false,
+        "source_target_connected": true,
         "source_reaches_clamp": true,
-        "target_reaches_clamp": false
+        "target_reaches_clamp": true
       },
       "after_cut_pad_groups": [
         [
@@ -762,24 +767,24 @@
       ],
       "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
       "source_group_reaches_actual_pad_boundary": true,
-      "target_group_reaches_actual_pad_boundary": false,
-      "all_connections_require_actual_pad_region": false,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
       "gap_requirement_passes": true,
-      "minimum_gap_measured_mm": 9.234882348799125,
-      "complete_clamp_first_path_passes": false,
+      "minimum_gap_measured_mm": 0.42079999999999984,
+      "complete_clamp_first_path_passes": true,
       "layer_gaps": [
         {
           "layer": "F.Cu",
-          "gap_outside_actual_pad_mm": 9.234882348799125,
+          "gap_outside_actual_pad_mm": 0.42079999999999984,
           "overlap_outside_actual_pad_mm2": 0.0,
           "closest_points_mm": [
             [
-              18.44986,
-              17.836665367993817
+              19.547896,
+              18.7458
             ],
             [
-              19.386159,
-              8.64937
+              19.547896,
+              18.325
             ]
           ]
         },
@@ -815,26 +820,45 @@
         }
       ],
       "source_objects": [
+        "21854c6b-0200-5a57-b927-933d581c27e7",
         "24af4ff1-59b1-43d4-8282-48cf7056a156",
-        "4deb196b-8a4a-4837-97d6-ddceb3751d97",
         "4e822ce0-de92-493e-a701-8f4d796963a1",
         "55ded505-7ea1-4fb9-adbe-406cbb0dad74",
         "75e6cfd7-e6ab-4b7c-8922-d53d1f5527d6",
+        "796ef4ee-f70e-54f4-96ed-7118926e6b3c",
         "807e8b8e-2e55-4683-b890-c392fbfa9188",
         "8d042e6a-9fcd-424c-a429-05c3658bc800",
         "a6b2551f-da4e-4c73-97c3-13db055b8165",
         "adb9a6dc-4534-4dcf-b57a-5bea728e82fa",
         "ba723236-9e41-4526-8f25-7bfbbde14b83",
+        "c757d812-b2ab-5312-b48b-a9c5f876313e",
+        "ce36cd11-cc41-5154-96ef-49f420924f29",
         "f417346f-13ed-4dd5-9fe9-b5f68a76f9ed"
       ],
       "target_objects": [
-        "8c43cebe-be4f-4fad-a3cf-6c91c9e1c0c1"
+        "20b162f4-2eaa-59b6-b216-f98e08380e88",
+        "2ae9b03d-59f2-5aab-aee3-eafa7a99831f",
+        "33f2f20e-7443-5c6d-aec0-0f3d0fddf238",
+        "42f584dc-c55e-5e3e-b0d1-76b578c6a63e",
+        "515123e1-e804-5fe5-a5f1-c0eeed69cacf",
+        "5808e4f7-1046-524b-9d8c-93ce726f4216",
+        "87903f24-752f-5e21-a07e-29fe5036dd74",
+        "88ac82ac-a10e-53e4-aa80-c8a787cb9fe3",
+        "8c43cebe-be4f-4fad-a3cf-6c91c9e1c0c1",
+        "ad46ffd3-a7c9-55fc-8989-1df897b6cd34",
+        "b102f019-0d4e-5e91-a980-4736e31ac6d9",
+        "b2901335-d90f-594a-98c6-ec779035bea1",
+        "cb68d33d-6a08-5af7-88b5-25ecbe71116a",
+        "d1bbd271-4e95-5260-913c-f2ea23bb1cea",
+        "e91afd86-fb05-59fd-bf3b-813fde5f06ae",
+        "f39c67b2-eb10-5af8-81b8-07f3add6abb9",
+        "f803a16e-2b09-539c-a41c-f0cb04b0cf45"
       ]
     }
   ],
-  "passed": 5,
+  "passed": 7,
   "total": 7,
-  "all_pass": false,
-  "geometry_sha256": "7c8386f8aee7b1b01fd14265b0dc778d600a6e6d3aeeba6ac12a13c740859f24",
+  "all_pass": true,
+  "geometry_sha256": "694974b065fedf387f1b66c004f440cc138b0075549fd6383e18e595c139cc53",
   "contracts_sha256": "243168c2ed1715d9a56733714e4269af527b23081a5735632d9a7176013c5095"
 }

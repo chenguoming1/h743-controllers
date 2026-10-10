@@ -1,0 +1,29 @@
+"""Exact local-return and all-signal projection binding for candidate06."""
+import pathlib,json,hashlib,sys,math,shutil
+from shapely.ops import unary_union
+from shapely.geometry import LineString
+H=pathlib.Path(__file__).resolve().parent;R=H.parents[2];D=H/'candidate06';S=H.parent/'rpm17/candidate01';ORIGIN=H.parent/'sbus-nrst49/candidate02';sys.path.insert(0,str(R/'repo/f722-heli/layout-revision/signal-review/native'))
+from check_signal_geometry import copper_entries,poly
+from check_critical_reference import ground_geometry,REFERENCE,ground_ties
+read=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();write=lambda p,v:p.write_text(json.dumps(v,indent=2)+'\n');b=read(S/'f722-heli.native.json');a=read(D/'f722-heli.native.json');audit=read(D/'entry-support-audit.json');assert audit['passed'];h=sha(D/'f722-heli.kicad_pcb');sh=sha(S/'f722-heli.kicad_pcb');assert h==a['board_sha256']==audit['board_sha256']and sh==b['board_sha256']
+_,_,bg,_=ground_geometry(b,copper_entries(b));_,_,ag,_=ground_geometry(a,copper_entries(a));changes={};rows=[]
+for l in bg:
+ lost=bg[l].difference(ag[l]);gained=ag[l].difference(bg[l]);changes[l]=dict(lost_mm2=lost.area,gained_mm2=gained.area,lost_bounds_mm=list(lost.bounds),lost_polygons=[dict(outer=list(x.exterior.coords),holes=[list(r.coords)for r in x.interiors])for x in ([lost]if lost.geom_type=='Polygon'else lost.geoms)if x.geom_type=='Polygon'])
+ for o in a['objects']:
+  if o['net']=='GND'or o['kind']not in ['track','arc']:continue
+  for layer,ps in o['copper'].items():
+   if REFERENCE.get(layer)!=l:continue
+   g=poly(ps);li=g.intersection(lost);gi=g.intersection(gained);assert li.is_empty and gi.is_empty,(o['uuid'],layer,li.area,gi.area)
+   rows.append(dict(uuid=o['uuid'],net=o['net'],layer=layer,reference_layer=l,changed_projection_empty=True,distance_to_lost_ground_mm=g.distance(lost)))
+# All non-ground copper identity plus no projection touches any changed plane region.
+non=lambda x:{o['uuid']:{k:v for k,v in o.items()if k!='net_code'}for o in x['objects']if o['net']!='GND'};assert non(a)==non(b)
+report=dict(schema='f722-all-signal-reference-ground-only-change/v1',passed=True,source_board_sha256=sh,board_sha256=h,source_native_sha256=sha(S/'f722-heli.native.json'),native_sha256=sha(D/'f722-heli.native.json'),all_non_GND_native_objects_exact=True,track_projection_count=len(rows),all_changed_projection_intersections_exactly_empty=True,plane_changes=changes,tracks=rows,raw_critical_deltas=read(D/'reference-comparison14.json')['net_numeric_deltas_after_minus_before'],method='Exact saved native GND with actual drill subtraction, source14 versus candidate06. Every unchanged non-ground track/arc width is intersected with both lost and gained reference-plane regions; all intersections are empty. No snapping, tolerance-based area suppression, or polygon normalization.',limits='Saved physical reference projection is unchanged. This is not an AC return impedance, crosstalk, ESD, or ADC transient guarantee.')
+write(D/'all-signal-reference-ground-delta.json',report)
+# Exact direct-source and cumulative source52 transaction, including original R50 move.
+c=read(ORIGIN/'f722-heli.native.json');by={o['uuid']:o for o in a['objects']};old={o['uuid']:o for o in c['objects']};stable=lambda o:{k:v for k,v in o.items()if k!='net_code'};changed=[dict(before=old[u],after=by[u])for u in old.keys()&by.keys()if stable(old[u])!=stable(by[u])];removed=[old[u]for u in old.keys()-by.keys()];added=[by[u]for u in by.keys()-old.keys()];assert {r['before']['key']for r in changed}=={'R50.1','R50.2'}
+manifest=read(H/'candidate04/declared-footprint-transforms.json');manifest['board_sha256']=h;write(D/'cumulative-source52-footprint-transforms.json',manifest)
+write(D/'cumulative-source52-transaction.json',dict(schema='f722-cumulative-native-transaction/v1',source_board_sha256=c['board_sha256'],board_sha256=h,direct_source_board_sha256=sh,removed_source_records=removed,added_records=added,changed_pad_records=changed,changed_nets=sorted({o['net']for o in removed+added}|{p['before']['net']for p in changed}),footprint_transforms='cumulative-source52-footprint-transforms.json',intermediate_SERVO15_board_sha256='755545e8198e9a3649c0e07533c23e67010d91ab6a8b09556d7463e064ac89eb',all24_RPM_additive_objects_exact=True,only_R50_moved_since_source52=True,only_GND_changed_from_direct_source14=True,numerical_power_VCAP_applicable=False))
+sd=D/'conditional-support-review';sd.mkdir(exist_ok=True);write(sd/'native-binding.json',dict(schema='f722-separated-U12-quiet-return-binding/v1',passed=True,board_sha256=h,source_board_sha256=sh,audit_sha256=sha(D/'entry-support-audit.json'),outer_layer_contacts_to_first_vias=audit['outer_layer_contacts_to_first_vias'],previous_outer_layer_contacts_to_first_vias=audit['previous_outer_layer_contacts_to_first_vias'],saved_plane_ties=audit['saved_plane_ties'],new_via_process_margins=audit['new_via_process_margins'],all156_full_footprints_exact=True,all_non_GND_objects_exact=True,both_original_Y1_returns_exact=True,U5_control_pins_and_decoupling_exact=True,U12_local_discharge_sharing_removed=True,R51_local_return_separate=True,R52_and_C30_share_only_C30_local_lead_and_via=True,conditional_only=True,ESD_AC_ADC_noise_qualified=False,numerical_power_VCAP_applicable=False))
+for f in ['quiet-return-alternatives14.json','quiet-return-alternatives14.log','separated-returns14-proposal.json','independent-returns-screen.json','r52-dedicated-tie-screen.json']:
+ shutil.copy2(H/'dedicated-u12-ground15'/f,sd/f)
+print(json.dumps(dict(board_sha256=h,all_signal_track_projections_unchanged=len(rows),new_ground_drill_projected_area_mm2=changes['In1.Cu']['lost_mm2'],cumulative_removed=len(removed),cumulative_added=len(added),cumulative_changed_pads=len(changed))))

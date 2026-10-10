@@ -1,0 +1,1036 @@
+{
+  "source_identity": {
+    "board": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/candidate37/f722-heli.kicad_pcb",
+      "sha256": "2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115"
+    },
+    "native": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/candidate37/f722-heli.native.json",
+      "sha256": "7c8386f8aee7b1b01fd14265b0dc778d600a6e6d3aeeba6ac12a13c740859f24"
+    },
+    "model": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/model-candidate37-ready/model.json",
+      "sha256": "326a5176556b8994d70ff07ff61a9fc300134865091559e5129aae5c5e5ef599"
+    },
+    "logical_map": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/candidate37/f722-heli.logical-route-map.json",
+      "sha256": "e5d3b86b638fa7774cfa0e2698ff9eacbcb4cbe2622bd829886463f02735a9ba"
+    },
+    "engine_log": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/model-candidate37-ready/filtered10.log",
+      "sha256": "9d7da22488858eb8ff58352a01362bf61981a5f2b4829030dbf0a45f9af3cdfa"
+    },
+    "bounded_run": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/model-candidate37-ready/filtered10.bounded-run.json",
+      "sha256": "fda8ffb7990185af148bd5404d4e89e632abafe8d5fa43b9873393fa7ac0bcbf"
+    },
+    "geometry_helper": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/i2c-candidate35/native_geometry37.py",
+      "sha256": "72b10085c3b0bc171b950af1757c2941766ba6bfbbe2083ea146dcbc96f41e2f"
+    },
+    "screen_helper": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/rpm-located37/screen.py",
+      "sha256": "9041a5e1d8bb282e2915e029ebfaaa9707d3ada7db85b346028351f92b7d35e7"
+    }
+  },
+  "refine_helper_sha256": "dcc0b96385b16d2e4bc7217d3e979d564ff77da021787eaa1e62964def38e990",
+  "scope": "Two fixed raw-path windows only; shortest exact-source-clearing replacement among monotone shortcuts, orthogonal/45-degree endpoint bends, and at most 0.20 mm displaced two-corner doglegs, all contained in original window bbox expanded 0.001 mm. No grid/maze search or foreign geometry edits.",
+  "repairs": [
+    {
+      "name": "SBUS_HV_clearance",
+      "raw_index_window": [
+        16,
+        23
+      ],
+      "raw_points_mm": [
+        [
+          19.4407,
+          23.67141
+        ],
+        [
+          19.68479,
+          23.42732
+        ],
+        [
+          19.68479,
+          23.3781
+        ],
+        [
+          19.77859,
+          23.2843
+        ],
+        [
+          19.79614,
+          23.2843
+        ],
+        [
+          19.89424,
+          23.1862
+        ],
+        [
+          19.98417,
+          23.09627
+        ],
+        [
+          20.1677,
+          23.09627
+        ]
+      ],
+      "revised_points_mm": [
+        [
+          19.4407,
+          23.67141
+        ],
+        [
+          19.68479,
+          23.42732
+        ],
+        [
+          19.68479,
+          23.3781
+        ],
+        [
+          19.68479,
+          23.3831
+        ],
+        [
+          20.1677,
+          23.10127
+        ],
+        [
+          20.1677,
+          23.09627
+        ]
+      ],
+      "passed": true,
+      "passed_alternatives": 108,
+      "selection": {
+        "type": "bounded_existing_corner_replacement",
+        "replaced_raw_index_range": [
+          18,
+          23
+        ]
+      },
+      "minimum_extra_mm": 0.0004871094131742304,
+      "bounded_roi_mm": [
+        19.4397,
+        23.09527,
+        20.1687,
+        23.672410000000003
+      ]
+    },
+    {
+      "name": "R43_2_clearance",
+      "raw_index_window": [
+        41,
+        47
+      ],
+      "raw_points_mm": [
+        [
+          23.4707,
+          17.69854
+        ],
+        [
+          23.59,
+          17.57924
+        ],
+        [
+          23.67993,
+          17.48931
+        ],
+        [
+          23.53643,
+          17.48931
+        ],
+        [
+          23.12818,
+          17.08106
+        ],
+        [
+          22.87648,
+          17.08106
+        ],
+        [
+          22.7493,
+          17.08106
+        ]
+      ],
+      "revised_points_mm": [
+        [
+          23.4707,
+          17.69854
+        ],
+        [
+          23.4707,
+          17.08106
+        ],
+        [
+          22.7493,
+          17.08106
+        ]
+      ],
+      "passed": true,
+      "passed_alternatives": 6,
+      "selection": {
+        "type": "bounded_existing_corner_replacement",
+        "replaced_raw_index_range": [
+          41,
+          47
+        ]
+      },
+      "minimum_extra_mm": 0.00019999999999961715,
+      "bounded_roi_mm": [
+        22.7483,
+        17.08006,
+        23.68093,
+        17.699540000000002
+      ]
+    }
+  ],
+  "repaired_f_points_mm": [
+    [
+      15.42167,
+      24.77301
+    ],
+    [
+      15.42167,
+      24.76152
+    ],
+    [
+      15.42167,
+      24.76134
+    ],
+    [
+      15.58012,
+      24.76134
+    ],
+    [
+      15.7073,
+      24.88852
+    ],
+    [
+      15.7073,
+      25.0157
+    ],
+    [
+      16.86423,
+      25.0157
+    ],
+    [
+      16.86578,
+      25.01725
+    ],
+    [
+      17.16352,
+      25.01725
+    ],
+    [
+      17.2907,
+      25.01725
+    ],
+    [
+      17.7657,
+      24.54225
+    ],
+    [
+      18.54078,
+      24.54225
+    ],
+    [
+      18.63071,
+      24.63218
+    ],
+    [
+      19.48638,
+      23.77651
+    ],
+    [
+      19.48638,
+      23.75336
+    ],
+    [
+      19.4407,
+      23.70768
+    ],
+    [
+      19.4407,
+      23.67141
+    ],
+    [
+      19.68479,
+      23.42732
+    ],
+    [
+      19.68479,
+      23.3781
+    ],
+    [
+      19.68479,
+      23.3831
+    ],
+    [
+      20.1677,
+      23.10127
+    ],
+    [
+      20.1677,
+      23.09627
+    ],
+    [
+      20.29488,
+      23.09627
+    ],
+    [
+      20.45209,
+      22.93906
+    ],
+    [
+      20.45209,
+      22.20451
+    ],
+    [
+      20.36216,
+      22.11458
+    ],
+    [
+      20.36216,
+      22.05765
+    ],
+    [
+      20.82224,
+      21.59757
+    ],
+    [
+      20.8907,
+      21.59757
+    ],
+    [
+      20.97282,
+      21.51545
+    ],
+    [
+      20.97282,
+      21.28712
+    ],
+    [
+      21.01142,
+      21.24852
+    ],
+    [
+      20.91081,
+      21.14791
+    ],
+    [
+      20.91081,
+      20.8843
+    ],
+    [
+      21.05711,
+      20.738
+    ],
+    [
+      21.05711,
+      20.3335
+    ],
+    [
+      23.0576,
+      18.33301
+    ],
+    [
+      23.37404,
+      18.33301
+    ],
+    [
+      23.4707,
+      18.33301
+    ],
+    [
+      23.4707,
+      17.69854
+    ],
+    [
+      23.4707,
+      17.08106
+    ],
+    [
+      22.7493,
+      17.08106
+    ],
+    [
+      22.7,
+      17.03176
+    ],
+    [
+      22.7,
+      16.32689
+    ],
+    [
+      22.7,
+      16.27939
+    ],
+    [
+      22.71428,
+      16.26511
+    ],
+    [
+      22.71428,
+      16.0393
+    ],
+    [
+      21.6568,
+      14.98182
+    ],
+    [
+      21.6568,
+      14.88619
+    ],
+    [
+      21.09815,
+      14.32754
+    ],
+    [
+      21.09815,
+      14.0493
+    ],
+    [
+      20.85284,
+      14.0493
+    ],
+    [
+      20.5,
+      13.69646
+    ]
+  ],
+  "repaired_f_check": {
+    "layer": "F.Cu",
+    "width_mm": 0.127,
+    "points_mm": [
+      [
+        15.42167,
+        24.77301
+      ],
+      [
+        15.42167,
+        24.76152
+      ],
+      [
+        15.42167,
+        24.76134
+      ],
+      [
+        15.58012,
+        24.76134
+      ],
+      [
+        15.7073,
+        24.88852
+      ],
+      [
+        15.7073,
+        25.0157
+      ],
+      [
+        16.86423,
+        25.0157
+      ],
+      [
+        16.86578,
+        25.01725
+      ],
+      [
+        17.16352,
+        25.01725
+      ],
+      [
+        17.2907,
+        25.01725
+      ],
+      [
+        17.7657,
+        24.54225
+      ],
+      [
+        18.54078,
+        24.54225
+      ],
+      [
+        18.63071,
+        24.63218
+      ],
+      [
+        19.48638,
+        23.77651
+      ],
+      [
+        19.48638,
+        23.75336
+      ],
+      [
+        19.4407,
+        23.70768
+      ],
+      [
+        19.4407,
+        23.67141
+      ],
+      [
+        19.68479,
+        23.42732
+      ],
+      [
+        19.68479,
+        23.3781
+      ],
+      [
+        19.68479,
+        23.3831
+      ],
+      [
+        20.1677,
+        23.10127
+      ],
+      [
+        20.1677,
+        23.09627
+      ],
+      [
+        20.29488,
+        23.09627
+      ],
+      [
+        20.45209,
+        22.93906
+      ],
+      [
+        20.45209,
+        22.20451
+      ],
+      [
+        20.36216,
+        22.11458
+      ],
+      [
+        20.36216,
+        22.05765
+      ],
+      [
+        20.82224,
+        21.59757
+      ],
+      [
+        20.8907,
+        21.59757
+      ],
+      [
+        20.97282,
+        21.51545
+      ],
+      [
+        20.97282,
+        21.28712
+      ],
+      [
+        21.01142,
+        21.24852
+      ],
+      [
+        20.91081,
+        21.14791
+      ],
+      [
+        20.91081,
+        20.8843
+      ],
+      [
+        21.05711,
+        20.738
+      ],
+      [
+        21.05711,
+        20.3335
+      ],
+      [
+        23.0576,
+        18.33301
+      ],
+      [
+        23.37404,
+        18.33301
+      ],
+      [
+        23.4707,
+        18.33301
+      ],
+      [
+        23.4707,
+        17.69854
+      ],
+      [
+        23.4707,
+        17.08106
+      ],
+      [
+        22.7493,
+        17.08106
+      ],
+      [
+        22.7,
+        17.03176
+      ],
+      [
+        22.7,
+        16.32689
+      ],
+      [
+        22.7,
+        16.27939
+      ],
+      [
+        22.71428,
+        16.26511
+      ],
+      [
+        22.71428,
+        16.0393
+      ],
+      [
+        21.6568,
+        14.98182
+      ],
+      [
+        21.6568,
+        14.88619
+      ],
+      [
+        21.09815,
+        14.32754
+      ],
+      [
+        21.09815,
+        14.0493
+      ],
+      [
+        20.85284,
+        14.0493
+      ],
+      [
+        20.5,
+        13.69646
+      ]
+    ],
+    "length_mm": 19.023900927540215,
+    "obstacle_count": 1093,
+    "inside_board": true,
+    "minimum_extra_clearance_mm": 0.00019999999999961715,
+    "all_checks_pass_nominal": true,
+    "all_checks_pass_with_polygon_error_reserve": true,
+    "nearest_constraints": [
+      {
+        "object": "R43.2",
+        "uuid": "772a5cc1-ef5a-429c-8196-2a8a0817f303",
+        "net": "ADC_DIV_MID",
+        "kind": "pad",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.19069999999999962,
+        "physical_gap_mm": 0.12719999999999962,
+        "extra_clearance_mm": 0.00019999999999961715,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          23.4707,
+          17.786072
+        ],
+        "witness_on_native_obstacle_mm": [
+          23.28,
+          17.786072
+        ]
+      },
+      {
+        "object": "4c4a4e4b-4d3a-4b90-8e5a-85f800b56adb",
+        "uuid": "4c4a4e4b-4d3a-4b90-8e5a-85f800b56adb",
+        "net": "+3V3_DSM",
+        "kind": "via",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.19070033492498034,
+        "physical_gap_mm": 0.12720033492498034,
+        "extra_clearance_mm": 0.00020033492498033878,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          19.3174575,
+          23.945432500000003
+        ],
+        "witness_on_native_obstacle_mm": [
+          19.182612,
+          23.810587
+        ]
+      },
+      {
+        "object": "1ccdbe27-301c-4bf5-ae86-ac3a5c3688d7",
+        "uuid": "1ccdbe27-301c-4bf5-ae86-ac3a5c3688d7",
+        "net": "GND",
+        "kind": "via",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.19083110208244272,
+        "physical_gap_mm": 0.12733110208244272,
+        "extra_clearance_mm": 0.0003311020824427191,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          16.86423,
+          25.0157
+        ],
+        "witness_on_native_obstacle_mm": [
+          16.868689,
+          24.824921
+        ]
+      },
+      {
+        "object": "4e822ce0-de92-493e-a701-8f4d796963a1",
+        "uuid": "4e822ce0-de92-493e-a701-8f4d796963a1",
+        "net": "SBUS_HV",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.19098710941317423,
+        "physical_gap_mm": 0.12748710941317423,
+        "extra_clearance_mm": 0.0004871094131742304,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          19.68479,
+          23.3781
+        ],
+        "witness_on_native_obstacle_mm": [
+          19.598261,
+          23.207839
+        ]
+      },
+      {
+        "object": "ba723236-9e41-4526-8f25-7bfbbde14b83",
+        "uuid": "ba723236-9e41-4526-8f25-7bfbbde14b83",
+        "net": "SBUS_HV",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.19098710941317423,
+        "physical_gap_mm": 0.12748710941317423,
+        "extra_clearance_mm": 0.0004871094131742304,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          19.68479,
+          23.3781
+        ],
+        "witness_on_native_obstacle_mm": [
+          19.598261,
+          23.207839
+        ]
+      },
+      {
+        "object": "f516371d-d200-41b0-97b3-ec6c55ab4703",
+        "uuid": "f516371d-d200-41b0-97b3-ec6c55ab4703",
+        "net": "GND",
+        "kind": "via",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.19178633530898523,
+        "physical_gap_mm": 0.12828633530898523,
+        "extra_clearance_mm": 0.0012863353089852259,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          19.68479,
+          23.42732
+        ],
+        "witness_on_native_obstacle_mm": [
+          19.830144114457404,
+          23.552436664843473
+        ]
+      },
+      {
+        "object": "R41.2",
+        "uuid": "37a0e339-0b9d-4d52-8218-2aa8a2455247",
+        "net": "GND",
+        "kind": "pad",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.2110599999999998,
+        "physical_gap_mm": 0.1475599999999998,
+        "extra_clearance_mm": 0.0205599999999998,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          23.346072,
+          17.08106
+        ],
+        "witness_on_native_obstacle_mm": [
+          23.346072,
+          16.87
+        ]
+      },
+      {
+        "object": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+        "uuid": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+        "net": "GND",
+        "kind": "via",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.21680385435158103,
+        "physical_gap_mm": 0.15330385435158103,
+        "extra_clearance_mm": 0.02630385435158103,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          23.4707,
+          17.08106
+        ],
+        "witness_on_native_obstacle_mm": [
+          23.63763279367697,
+          16.9427221756102
+        ]
+      },
+      {
+        "object": "J12.MP",
+        "uuid": "2110399a-55db-40a1-bb24-dfd6a2c60a00",
+        "net": "",
+        "kind": "pad",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.2296463250565976,
+        "physical_gap_mm": 0.1661463250565976,
+        "extra_clearance_mm": 0.0391463250565976,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          20.8907,
+          21.59757
+        ],
+        "witness_on_native_obstacle_mm": [
+          20.967126,
+          21.814126
+        ]
+      },
+      {
+        "object": "cd14f005-74cd-45e4-b332-902e0cae6596",
+        "uuid": "cd14f005-74cd-45e4-b332-902e0cae6596",
+        "net": "GND",
+        "kind": "via",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.23094885291011918,
+        "physical_gap_mm": 0.16744885291011918,
+        "extra_clearance_mm": 0.04044885291011918,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          20.7959175,
+          21.6238925
+        ],
+        "witness_on_native_obstacle_mm": [
+          20.632612,
+          21.460587
+        ]
+      },
+      {
+        "object": "R36.1",
+        "uuid": "bcdc1120-1c1a-4b21-ad66-ddce92cdb51d",
+        "net": "+3V3_CORE",
+        "kind": "pad",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.23139537365297494,
+        "physical_gap_mm": 0.16789537365297494,
+        "extra_clearance_mm": 0.04089537365297494,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          20.85284,
+          14.0493
+        ],
+        "witness_on_native_obstacle_mm": [
+          20.747462,
+          14.255308
+        ]
+      },
+      {
+        "object": "R41.1",
+        "uuid": "5fe0d530-d0bb-4022-8511-d8e6b3f73bea",
+        "net": "ADC_BEC",
+        "kind": "pad",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.23999999999999844,
+        "physical_gap_mm": 0.17649999999999844,
+        "extra_clearance_mm": 0.049499999999998434,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          22.7,
+          16.363928
+        ],
+        "witness_on_native_obstacle_mm": [
+          22.46,
+          16.363928
+        ]
+      },
+      {
+        "object": "4c4a4e4b-4d3a-4b90-8e5a-85f800b56adb",
+        "uuid": "4c4a4e4b-4d3a-4b90-8e5a-85f800b56adb",
+        "net": "+3V3_DSM",
+        "kind": "via",
+        "category": "foreign_drill_to_track_copper",
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "required_physical_gap_mm": 0.2,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.2635,
+        "center_distance_mm": 0.3157005503827931,
+        "physical_gap_mm": 0.2522005503827931,
+        "extra_clearance_mm": 0.05220055038279309,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          19.319937,
+          23.942953
+        ],
+        "witness_on_native_obstacle_mm": [
+          19.096703,
+          23.719719
+        ]
+      },
+      {
+        "object": "1ccdbe27-301c-4bf5-ae86-ac3a5c3688d7",
+        "uuid": "1ccdbe27-301c-4bf5-ae86-ac3a5c3688d7",
+        "net": "GND",
+        "kind": "via",
+        "category": "foreign_drill_to_track_copper",
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "required_physical_gap_mm": 0.2,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.2635,
+        "center_distance_mm": 0.31583857847151364,
+        "physical_gap_mm": 0.25233857847151364,
+        "extra_clearance_mm": 0.05233857847151363,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          16.86423,
+          25.0157
+        ],
+        "witness_on_native_obstacle_mm": [
+          16.87312491823656,
+          24.699986699550887
+        ]
+      },
+      {
+        "object": "f516371d-d200-41b0-97b3-ec6c55ab4703",
+        "uuid": "f516371d-d200-41b0-97b3-ec6c55ab4703",
+        "net": "GND",
+        "kind": "via",
+        "category": "foreign_drill_to_track_copper",
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "required_physical_gap_mm": 0.2,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.2635,
+        "center_distance_mm": 0.316777596748885,
+        "physical_gap_mm": 0.253277596748885,
+        "extra_clearance_mm": 0.05327759674888499,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          19.68479,
+          23.42732
+        ],
+        "witness_on_native_obstacle_mm": [
+          19.924501,
+          23.634411
+        ]
+      }
+    ],
+    "violations": []
+  }
+}

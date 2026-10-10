@@ -1,0 +1,2669 @@
+{
+  "status": "complete_nominal_geometry_hypothesis_requires_native_refill_reference_and_fresh_power",
+  "all_selected_checks_pass": true,
+  "source40": {
+    "board_sha256": "ea6c41fef86c1f66dbf6e2ce24b58858313c5c83f2a518e53385d48aad734ed5",
+    "native_sha256": "02e51d8bc3a8934ad9aa9bb0ee1b8cfb13b22f62c99bd8aec8cc8d73b410daf6",
+    "mechanical_sha256": "8d70e211d5c1cf69cde5def0f2cb15c380cabe6e3a5f687f7378ca6e6791dcc7"
+  },
+  "method": "Source40 exact native copper/masks/drills, positive-area copper contacts only, finite drill subtracted and physical barrels linked; no chip internal conduction, gap snapping or same-net drill-mask exception. Conservative outward track buffers by 0.3 nm; native error 10 nm. No source mutation or solver. GND graph excludes stale plane fills and compares unchanged pad partitions; final ground continuity/refill remains required.",
+  "poses": {
+    "R38": [
+      17.6,
+      23.46,
+      0,
+      "B.Cu"
+    ],
+    "R70": [
+      17.3,
+      22.52,
+      180,
+      "B.Cu"
+    ],
+    "C70": [
+      18.45,
+      24.66,
+      180,
+      "B.Cu"
+    ]
+  },
+  "remove_source_tracks": [
+    {
+      "uuid": "021879e2-963d-5f8c-9894-8e9bd725f061",
+      "net": "DSM_RX_EXT",
+      "start": [
+        16.26,
+        23.59
+      ],
+      "end": [
+        17.18,
+        23.59
+      ],
+      "width": 0.127,
+      "length_mm": 0.9199999999999982
+    },
+    {
+      "uuid": "260176e7-2d4d-4020-850f-398625eda69c",
+      "net": "GND",
+      "start": [
+        16.79,
+        22.8
+      ],
+      "end": [
+        16.19,
+        23.1
+      ],
+      "width": 0.2,
+      "length_mm": 0.6708203932499353
+    },
+    {
+      "uuid": "30154a77-e29e-465a-aa6f-a2ea55289eb9",
+      "net": "DSM_ILIM",
+      "start": [
+        19.025,
+        22.5
+      ],
+      "end": [
+        17.81,
+        22.8
+      ],
+      "width": 0.2,
+      "length_mm": 1.2514891130169692
+    },
+    {
+      "uuid": "564d43f4-fb99-4ccd-80b4-4580af7617f8",
+      "net": "+3V3_CORE",
+      "start": [
+        17.241613,
+        22.160802
+      ],
+      "end": [
+        16.375525,
+        21.252534
+      ],
+      "width": 0.3,
+      "length_mm": 1.2550136188775012
+    },
+    {
+      "uuid": "b6cf7bc9-8a4c-4cb5-b764-038d677651c3",
+      "net": "+3V3_CORE",
+      "start": [
+        18.36917,
+        21.505923
+      ],
+      "end": [
+        17.241613,
+        22.160802
+      ],
+      "width": 0.3,
+      "length_mm": 1.3039368439038757
+    }
+  ],
+  "paths": {
+    "CORE": {
+      "net": "+3V3_CORE",
+      "layer": "B.Cu",
+      "width": 0.25,
+      "points": [
+        [
+          16.375525,
+          21.252534
+        ],
+        [
+          16.85,
+          21.841
+        ],
+        [
+          17.298,
+          22.064
+        ],
+        [
+          17.78,
+          21.8588
+        ],
+        [
+          18.36917,
+          21.505923
+        ]
+      ],
+      "length_mm": 2.466979964180315
+    },
+    "DSM": {
+      "net": "DSM_RX_EXT",
+      "layer": "B.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          16.26,
+          23.59
+        ],
+        [
+          16.7,
+          23.59
+        ],
+        [
+          16.83,
+          23.46
+        ],
+        [
+          17.09,
+          23.46
+        ]
+      ],
+      "length_mm": 0.8838477631085002
+    },
+    "R70_GND": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width": 0.2,
+      "points": [
+        [
+          16.79,
+          22.52
+        ],
+        [
+          16.19,
+          23.1
+        ]
+      ],
+      "length_mm": 0.8345058418010024
+    },
+    "R70_ILIM": {
+      "net": "DSM_ILIM",
+      "layer": "B.Cu",
+      "width": 0.2,
+      "points": [
+        [
+          19.025,
+          22.5
+        ],
+        [
+          17.81,
+          22.52
+        ]
+      ],
+      "length_mm": 1.215164597904333
+    }
+  },
+  "track_checks": {
+    "CORE": {
+      "violations": [],
+      "nearest": [
+        {
+          "object": "R70.1",
+          "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+          "net": "DSM_ILIM",
+          "category": "foreign_copper",
+          "extra_mm": 0.0100097620894814,
+          "witness_center": [
+            17.518810082011132,
+            21.9699953758741
+          ],
+          "witness_obstacle": [
+            17.621441,
+            22.211068
+          ]
+        },
+        {
+          "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+          "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.010033175140883366,
+          "witness_center": [
+            17.518888089032494,
+            21.969962166245917
+          ],
+          "witness_obstacle": [
+            17.416248,
+            21.728868
+          ]
+        },
+        {
+          "object": "R70.2",
+          "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.02181155977372845,
+          "witness_center": [
+            17.106543336956392,
+            21.96869902710106
+          ],
+          "witness_obstacle": [
+            16.984529,
+            22.213822
+          ]
+        },
+        {
+          "object": "C4.2",
+          "uuid": "9d9275d5-0bcc-4ba5-949f-58889a4c2154",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.19470331264321172,
+          "witness_center": [
+            18.17228996941271,
+            21.623842165187554
+          ],
+          "witness_obstacle": [
+            17.942762,
+            21.240618
+          ]
+        },
+        {
+          "object": "U11.3",
+          "uuid": "ad38ab56-3acc-4ece-bd0f-d73eecb267ae",
+          "net": "unconnected-(U11-~{FAULT}-Pad3)",
+          "category": "foreign_copper",
+          "extra_mm": 0.23722231255943438,
+          "witness_center": [
+            18.36917,
+            21.505923
+          ],
+          "witness_obstacle": [
+            18.805305,
+            21.727564
+          ]
+        }
+      ],
+      "centerline_inside_board": true
+    },
+    "DSM": {
+      "violations": [],
+      "nearest": [
+        {
+          "object": "b8751f17-c9f2-4080-b847-169a385d7918",
+          "uuid": "b8751f17-c9f2-4080-b847-169a385d7918",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.07946499720704686,
+          "witness_center": [
+            16.26,
+            23.59
+          ],
+          "witness_obstacle": [
+            16.221454,
+            23.322801
+          ]
+        },
+        {
+          "object": "proposal:R70_GND",
+          "uuid": "proposal:R70_GND",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.20447447661231322,
+          "witness_center": [
+            16.26,
+            23.59
+          ],
+          "witness_obstacle": [
+            16.204210423742044,
+            23.19898547296024
+          ]
+        },
+        {
+          "object": "D7.2",
+          "uuid": "11880e3d-e064-47bd-b6c5-c583daadc96c",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.29449999999999943,
+          "witness_center": [
+            16.338058,
+            23.59
+          ],
+          "witness_obstacle": [
+            16.338058,
+            24.075
+          ]
+        },
+        {
+          "object": "cb627826-150e-52d6-ae40-02c68444e946",
+          "uuid": "cb627826-150e-52d6-ae40-02c68444e946",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.29580079973715717,
+          "witness_center": [
+            16.26,
+            23.59
+          ],
+          "witness_obstacle": [
+            16.227912,
+            24.075241
+          ]
+        },
+        {
+          "object": "3726824e-4add-56f5-b20d-caf541e6706b",
+          "uuid": "3726824e-4add-56f5-b20d-caf541e6706b",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.3173435668608984,
+          "witness_center": [
+            16.26,
+            23.59
+          ],
+          "witness_obstacle": [
+            16.211071,
+            24.095481
+          ]
+        }
+      ],
+      "centerline_inside_board": true
+    },
+    "R70_GND": {
+      "violations": [],
+      "nearest": [
+        {
+          "object": "d39aa068-c3bd-5fac-ba14-ed4eb6e864b0",
+          "uuid": "d39aa068-c3bd-5fac-ba14-ed4eb6e864b0",
+          "net": "DSM_RX_EXT",
+          "category": "foreign_copper",
+          "extra_mm": 0.20447055695725047,
+          "witness_center": [
+            16.19,
+            23.1
+          ],
+          "witness_obstacle": [
+            16.25028,
+            23.527239
+          ]
+        },
+        {
+          "object": "proposal:DSM",
+          "uuid": "proposal:DSM",
+          "net": "DSM_RX_EXT",
+          "category": "foreign_copper",
+          "extra_mm": 0.20447446847181772,
+          "witness_center": [
+            16.19,
+            23.1
+          ],
+          "witness_obstacle": [
+            16.251068159604895,
+            23.52713100663088
+          ]
+        },
+        {
+          "object": "proposal:CORE",
+          "uuid": "proposal:CORE",
+          "net": "+3V3_CORE",
+          "category": "foreign_copper",
+          "extra_mm": 0.28259437876138593,
+          "witness_center": [
+            16.79,
+            22.52
+          ],
+          "witness_obstacle": [
+            17.017082524538615,
+            22.06379833635291
+          ]
+        },
+        {
+          "object": "R38.1",
+          "uuid": "7c18f691-25a4-435e-a236-e074e113b363",
+          "net": "DSM_RX_EXT",
+          "category": "foreign_copper",
+          "extra_mm": 0.2955062763598709,
+          "witness_center": [
+            16.497549592188395,
+            22.802702060884553
+          ],
+          "witness_obstacle": [
+            16.860703,
+            23.178378000000002
+          ]
+        },
+        {
+          "object": "d91a80d5-51c1-4a7d-97b0-b51e3b549e63",
+          "uuid": "d91a80d5-51c1-4a7d-97b0-b51e3b549e63",
+          "net": "DSM_RX_EXT",
+          "category": "foreign_copper",
+          "extra_mm": 0.3907494792243854,
+          "witness_center": [
+            16.19,
+            23.1
+          ],
+          "witness_obstacle": [
+            15.722031,
+            23.503261
+          ]
+        }
+      ],
+      "centerline_inside_board": true
+    },
+    "R70_ILIM": {
+      "violations": [],
+      "nearest": [
+        {
+          "object": "U11.7",
+          "uuid": "c523ab99-279e-4513-b062-491ecb92d0a3",
+          "net": "GND",
+          "category": "foreign_copper",
+          "extra_mm": 0.24800000000000144,
+          "witness_center": [
+            19.025,
+            22.5
+          ],
+          "witness_obstacle": [
+            19.5,
+            22.5
+          ]
+        },
+        {
+          "object": "proposal:CORE",
+          "uuid": "proposal:CORE",
+          "net": "+3V3_CORE",
+          "category": "foreign_copper",
+          "extra_mm": 0.26811455875943724,
+          "witness_center": [
+            17.81,
+            22.52
+          ],
+          "witness_obstacle": [
+            17.616060425879166,
+            22.064449928234687
+          ]
+        },
+        {
+          "object": "U11.1",
+          "uuid": "bd755cd3-37cc-4cdc-a7f3-e235b0072b07",
+          "net": "+3V3_DSM",
+          "category": "foreign_copper",
+          "extra_mm": 0.27003741455406427,
+          "witness_center": [
+            18.840568422399052,
+            22.5030359107424
+          ],
+          "witness_obstacle": [
+            18.848749,
+            23.000006
+          ]
+        },
+        {
+          "object": "475d63bb-6fc3-4bd9-8d5d-5012ed082346",
+          "uuid": "475d63bb-6fc3-4bd9-8d5d-5012ed082346",
+          "net": "+3V3_DSM",
+          "category": "foreign_copper",
+          "extra_mm": 0.27290553629330316,
+          "witness_center": [
+            19.01526921691357,
+            22.500160177499364
+          ],
+          "witness_obstacle": [
+            19.023497,
+            22.999998
+          ]
+        },
+        {
+          "object": "U11.3",
+          "uuid": "ad38ab56-3acc-4ece-bd0f-d73eecb267ae",
+          "net": "unconnected-(U11-~{FAULT}-Pad3)",
+          "category": "foreign_copper",
+          "extra_mm": 0.273,
+          "witness_center": [
+            19.025,
+            22.5
+          ],
+          "witness_obstacle": [
+            19.025,
+            22.0
+          ]
+        }
+      ],
+      "centerline_inside_board": true
+    }
+  },
+  "moved_pad_checks": [
+    {
+      "pad": "R70.2",
+      "before_xy": [
+        16.79,
+        22.72
+      ],
+      "after_xy": [
+        16.79,
+        22.52
+      ],
+      "violations": [],
+      "nearest": [
+        {
+          "object": "proposal:CORE",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.021811259773728664
+        },
+        {
+          "object": "R38.1",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.1737883363941694
+        },
+        {
+          "object": "b8751f17-c9f2-4080-b847-169a385d7918",
+          "category": "all_drills_to_smt_mask_no_net_exception",
+          "layer": "B.Mask",
+          "extra_mm": 0.17511108231695965
+        }
+      ]
+    },
+    {
+      "pad": "R38.1",
+      "before_xy": [
+        17.18,
+        23.59
+      ],
+      "after_xy": [
+        17.09,
+        23.46
+      ],
+      "violations": [],
+      "nearest": [
+        {
+          "object": "R70.2",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.1737883363941694
+        },
+        {
+          "object": "proposal:R70_GND",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.2955059763598723
+        },
+        {
+          "object": "b8751f17-c9f2-4080-b847-169a385d7918",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.2977597299518765
+        }
+      ]
+    },
+    {
+      "pad": "R38.2",
+      "before_xy": [
+        18.2,
+        23.59
+      ],
+      "after_xy": [
+        18.11,
+        23.46
+      ],
+      "violations": [],
+      "nearest": [
+        {
+          "object": "R70.1",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.17378833639416935
+        },
+        {
+          "object": "C70.2",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.28165940175281406
+        },
+        {
+          "object": "4c4a4e4b-4d3a-4b90-8e5a-85f800b56adb",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.29300396066704115
+        }
+      ]
+    },
+    {
+      "pad": "C70.2",
+      "before_xy": [
+        17.675,
+        24.6
+      ],
+      "after_xy": [
+        17.675,
+        24.66
+      ],
+      "violations": [],
+      "nearest": [
+        {
+          "object": "board_edge",
+          "category": "copper_edge",
+          "layer": "B.Cu",
+          "extra_mm": 0.011000000000000565
+        },
+        {
+          "object": "1ccdbe27-301c-4bf5-ae86-ac3a5c3688d7",
+          "category": "all_drills_to_smt_mask_no_net_exception",
+          "layer": "B.Mask",
+          "extra_mm": 0.04999999999999999
+        },
+        {
+          "object": "R38.2",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.28165940175281406
+        }
+      ]
+    },
+    {
+      "pad": "R70.1",
+      "before_xy": [
+        17.81,
+        22.72
+      ],
+      "after_xy": [
+        17.81,
+        22.52
+      ],
+      "violations": [],
+      "nearest": [
+        {
+          "object": "proposal:CORE",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.010009462089481058
+        },
+        {
+          "object": "R38.2",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.17378833639416935
+        },
+        {
+          "object": "R38.1",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.3292159687209544
+        }
+      ]
+    },
+    {
+      "pad": "C70.1",
+      "before_xy": [
+        19.225,
+        24.6
+      ],
+      "after_xy": [
+        19.225,
+        24.66
+      ],
+      "violations": [],
+      "nearest": [
+        {
+          "object": "board_edge",
+          "category": "copper_edge",
+          "layer": "B.Cu",
+          "extra_mm": 0.011000000000000565
+        },
+        {
+          "object": "4c4a4e4b-4d3a-4b90-8e5a-85f800b56adb",
+          "category": "all_drills_to_smt_mask_no_net_exception",
+          "layer": "B.Mask",
+          "extra_mm": 0.2349999999999987
+        },
+        {
+          "object": "f516371d-d200-41b0-97b3-ec6c55ab4703",
+          "category": "foreign_copper",
+          "layer": "B.Cu",
+          "extra_mm": 0.3210954608707863
+        }
+      ]
+    }
+  ],
+  "assembly": [
+    {
+      "ref": "R38",
+      "court_bounds": [
+        16.675,
+        22.995,
+        18.525,
+        23.925
+      ],
+      "near_pairs": [
+        {
+          "other": "U11",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.030000000000001137,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.22040633329803752
+        },
+        {
+          "other": "D7",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.129999999999999,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.39216483787170486
+        },
+        {
+          "other": "C70",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.009999999999998009,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.20500000000023633
+        },
+        {
+          "other": "R70",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.010000000000001563,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.10000000000000497
+        }
+      ],
+      "reserve_outside_board_mm2": 0.0,
+      "reserve_board_gap_mm": 1.5199999999999998
+    },
+    {
+      "ref": "R70",
+      "court_bounds": [
+        16.375,
+        22.055,
+        18.225,
+        22.985
+      ],
+      "near_pairs": [
+        {
+          "other": "R38",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.010000000000001563,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.10000000000000497
+        }
+      ],
+      "reserve_outside_board_mm2": 0.0,
+      "reserve_board_gap_mm": 2.460000000000001
+    },
+    {
+      "ref": "C70",
+      "court_bounds": [
+        16.975,
+        23.935,
+        19.925,
+        25.384999999999998
+      ],
+      "near_pairs": [
+        {
+          "other": "U11",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.1899999999999977,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.43500000000023675
+        },
+        {
+          "other": "R38",
+          "courtyard_overlap_mm2": 0.0,
+          "courtyard_gap_mm": 0.009999999999998009,
+          "body_overlap_mm2": 0.0,
+          "reserve_overlap_mm2": 0.0,
+          "reserve_gap_mm": 0.20500000000023633
+        }
+      ],
+      "reserve_outside_board_mm2": 0.0,
+      "reserve_board_gap_mm": 0.16500000000023718
+    }
+  ],
+  "entries": [
+    {
+      "pad": "R70.2",
+      "track": "proposal:R70_GND",
+      "endpoint": [
+        16.79,
+        22.52
+      ],
+      "width_mm": 0.2,
+      "full_cap_extra_mm": 0.16999999999999957
+    },
+    {
+      "pad": "R38.1",
+      "track": "proposal:DSM",
+      "endpoint": [
+        17.09,
+        23.46
+      ],
+      "width_mm": 0.127,
+      "full_cap_extra_mm": 0.20649999999999963
+    },
+    {
+      "pad": "C70.2",
+      "track": "fc56f459-cc2f-4bdb-86dc-69e20d3ab646",
+      "endpoint": [
+        17.675,
+        24.6
+      ],
+      "width_mm": 0.4,
+      "full_cap_extra_mm": 0.2150000000000027
+    },
+    {
+      "pad": "R70.1",
+      "track": "proposal:R70_ILIM",
+      "endpoint": [
+        17.81,
+        22.52
+      ],
+      "width_mm": 0.2,
+      "full_cap_extra_mm": 0.16999999999999957
+    },
+    {
+      "pad": "C70.1",
+      "track": "475d63bb-6fc3-4bd9-8d5d-5012ed082346",
+      "endpoint": [
+        19.225,
+        24.6
+      ],
+      "width_mm": 0.3,
+      "full_cap_extra_mm": 0.2650000000000027
+    }
+  ],
+  "full_width_feed_transitions": [
+    {
+      "xy": [
+        16.375525,
+        21.252534
+      ],
+      "retained_tracks": [
+        {
+          "uuid": "6bc9a569-77ea-47fa-9ba3-c76e3092efd2",
+          "width_mm": 0.3
+        },
+        {
+          "uuid": "cb2b3843-8225-4298-9b5d-bf5e651260e9",
+          "width_mm": 0.3
+        }
+      ],
+      "full_0p25_cap_outside_retained_copper_mm2": 0.0,
+      "full_cap_extra_mm": 0.02499990470848809,
+      "overlap_area_mm2": 0.049087543826817785
+    },
+    {
+      "xy": [
+        18.36917,
+        21.505923
+      ],
+      "retained_tracks": [
+        {
+          "uuid": "8d56ea3a-8559-46fa-9c69-6e937a0a28f2",
+          "width_mm": 0.3
+        }
+      ],
+      "full_0p25_cap_outside_retained_copper_mm2": 0.0,
+      "full_cap_extra_mm": 0.024999438039968125,
+      "overlap_area_mm2": 0.049087543826817785
+    }
+  ],
+  "topology": {
+    "+3V3_CORE": {
+      "before_pad_groups": [
+        [
+          "C1.1",
+          "C14.1",
+          "C15.1",
+          "C16.1",
+          "C17.1",
+          "C2.1",
+          "C3.1",
+          "C4.1",
+          "C5.1",
+          "C6.1",
+          "C67.1",
+          "C69.1",
+          "FB1.1",
+          "FB2.1",
+          "L2.2",
+          "Q1.1",
+          "Q2.1",
+          "R1.1",
+          "R10.1",
+          "R11.1",
+          "R36.1",
+          "R37.1",
+          "R4.1",
+          "R5.1",
+          "R6.1",
+          "R62.1",
+          "R64.1",
+          "R7.1",
+          "R71.1",
+          "R8.1",
+          "SW1.1",
+          "TP3.1",
+          "U1.1",
+          "U1.19",
+          "U1.32",
+          "U1.48",
+          "U1.64",
+          "U11.4",
+          "U11.6",
+          "U12.5",
+          "U13.5",
+          "U3.8",
+          "U4.2",
+          "U4.6",
+          "U4.8",
+          "U9.6"
+        ]
+      ],
+      "after_pad_groups": [
+        [
+          "C1.1",
+          "C14.1",
+          "C15.1",
+          "C16.1",
+          "C17.1",
+          "C2.1",
+          "C3.1",
+          "C4.1",
+          "C5.1",
+          "C6.1",
+          "C67.1",
+          "C69.1",
+          "FB1.1",
+          "FB2.1",
+          "L2.2",
+          "Q1.1",
+          "Q2.1",
+          "R1.1",
+          "R10.1",
+          "R11.1",
+          "R36.1",
+          "R37.1",
+          "R4.1",
+          "R5.1",
+          "R6.1",
+          "R62.1",
+          "R64.1",
+          "R7.1",
+          "R71.1",
+          "R8.1",
+          "SW1.1",
+          "TP3.1",
+          "U1.1",
+          "U1.19",
+          "U1.32",
+          "U1.48",
+          "U1.64",
+          "U11.4",
+          "U11.6",
+          "U12.5",
+          "U13.5",
+          "U3.8",
+          "U4.2",
+          "U4.6",
+          "U4.8",
+          "U9.6"
+        ]
+      ],
+      "before_component_count": 1,
+      "after_component_count": 1,
+      "same_pad_partition": true
+    },
+    "+3V3_DSM": {
+      "before_pad_groups": [
+        [
+          "C70.1",
+          "J12.1",
+          "U11.1"
+        ]
+      ],
+      "after_pad_groups": [
+        [
+          "C70.1",
+          "J12.1",
+          "U11.1"
+        ]
+      ],
+      "before_component_count": 1,
+      "after_component_count": 1,
+      "same_pad_partition": true
+    },
+    "DSM_ILIM": {
+      "before_pad_groups": [
+        [
+          "R70.1",
+          "U11.2"
+        ]
+      ],
+      "after_pad_groups": [
+        [
+          "R70.1",
+          "U11.2"
+        ]
+      ],
+      "before_component_count": 1,
+      "after_component_count": 1,
+      "same_pad_partition": true
+    },
+    "DSM_RX_EXT": {
+      "before_pad_groups": [
+        [
+          "D7.1",
+          "J12.3",
+          "R38.1"
+        ]
+      ],
+      "after_pad_groups": [
+        [
+          "D7.1",
+          "J12.3",
+          "R38.1"
+        ]
+      ],
+      "before_component_count": 1,
+      "after_component_count": 1,
+      "same_pad_partition": true
+    },
+    "DSM_RX_MCU": {
+      "before_pad_groups": [
+        [
+          "R38.2"
+        ],
+        [
+          "R71.2"
+        ],
+        [
+          "U1.43"
+        ]
+      ],
+      "after_pad_groups": [
+        [
+          "R38.2"
+        ],
+        [
+          "R71.2"
+        ],
+        [
+          "U1.43"
+        ]
+      ],
+      "before_component_count": 3,
+      "after_component_count": 3,
+      "same_pad_partition": true
+    },
+    "GND": {
+      "before_pad_groups": [
+        [
+          "C1.2"
+        ],
+        [
+          "C10.2"
+        ],
+        [
+          "C11.2",
+          "C12.2",
+          "C13.2"
+        ],
+        [
+          "C14.2"
+        ],
+        [
+          "C15.2"
+        ],
+        [
+          "C16.2"
+        ],
+        [
+          "C17.2"
+        ],
+        [
+          "C18.2"
+        ],
+        [
+          "C19.2",
+          "C9.2"
+        ],
+        [
+          "C2.2"
+        ],
+        [
+          "C20.2",
+          "D4.2",
+          "R67.2"
+        ],
+        [
+          "C3.2",
+          "C58.2",
+          "C72.2",
+          "U1.47",
+          "U6.15",
+          "U6.4"
+        ],
+        [
+          "C30.2"
+        ],
+        [
+          "C31.2"
+        ],
+        [
+          "C4.2",
+          "U1.63"
+        ],
+        [
+          "C5.2"
+        ],
+        [
+          "C50.2"
+        ],
+        [
+          "C51.2"
+        ],
+        [
+          "C52.2"
+        ],
+        [
+          "C53.2",
+          "C54.2",
+          "C62.2",
+          "R66.2"
+        ],
+        [
+          "C55.2"
+        ],
+        [
+          "C56.2",
+          "U6.10"
+        ],
+        [
+          "C57.2"
+        ],
+        [
+          "C59.2"
+        ],
+        [
+          "C6.2"
+        ],
+        [
+          "C60.2"
+        ],
+        [
+          "C61.2"
+        ],
+        [
+          "C63.2"
+        ],
+        [
+          "C64.2"
+        ],
+        [
+          "C65.2"
+        ],
+        [
+          "C66.2"
+        ],
+        [
+          "C67.2"
+        ],
+        [
+          "C68.2"
+        ],
+        [
+          "C69.2"
+        ],
+        [
+          "C7.2"
+        ],
+        [
+          "C70.2"
+        ],
+        [
+          "C71.2",
+          "C74.2"
+        ],
+        [
+          "C73.2",
+          "U6.6"
+        ],
+        [
+          "C75.2"
+        ],
+        [
+          "C8.2"
+        ],
+        [
+          "D3.2"
+        ],
+        [
+          "D5.2"
+        ],
+        [
+          "D6.2"
+        ],
+        [
+          "D7.2"
+        ],
+        [
+          "D8.2"
+        ],
+        [
+          "D9.2"
+        ],
+        [
+          "J1.A1",
+          "J1.S1"
+        ],
+        [
+          "J1.A12",
+          "J1.S1"
+        ],
+        [
+          "J1.B1"
+        ],
+        [
+          "J1.B12",
+          "J1.S1"
+        ],
+        [
+          "J1.S1"
+        ],
+        [
+          "J10.4"
+        ],
+        [
+          "J11.4"
+        ],
+        [
+          "J12.2"
+        ],
+        [
+          "J2.1"
+        ],
+        [
+          "J3.1"
+        ],
+        [
+          "J4.1"
+        ],
+        [
+          "J5.1"
+        ],
+        [
+          "J6.1"
+        ],
+        [
+          "J7.1"
+        ],
+        [
+          "J8.1"
+        ],
+        [
+          "J9.4"
+        ],
+        [
+          "R14.2"
+        ],
+        [
+          "R15.2"
+        ],
+        [
+          "R2.2"
+        ],
+        [
+          "R41.2"
+        ],
+        [
+          "R44.2"
+        ],
+        [
+          "R51.2",
+          "R52.2"
+        ],
+        [
+          "R53.2"
+        ],
+        [
+          "R55.2"
+        ],
+        [
+          "R58.2"
+        ],
+        [
+          "R61.2"
+        ],
+        [
+          "R63.2"
+        ],
+        [
+          "R68.2"
+        ],
+        [
+          "R69.2"
+        ],
+        [
+          "R70.2"
+        ],
+        [
+          "TP4.1"
+        ],
+        [
+          "U1.12"
+        ],
+        [
+          "U1.18"
+        ],
+        [
+          "U1.31"
+        ],
+        [
+          "U10.5",
+          "U10.7"
+        ],
+        [
+          "U11.5",
+          "U11.7"
+        ],
+        [
+          "U12.2"
+        ],
+        [
+          "U13.2"
+        ],
+        [
+          "U14.3",
+          "U14.8"
+        ],
+        [
+          "U15.3",
+          "U15.8"
+        ],
+        [
+          "U16.3"
+        ],
+        [
+          "U2.6"
+        ],
+        [
+          "U2.7"
+        ],
+        [
+          "U2.9"
+        ],
+        [
+          "U3.4"
+        ],
+        [
+          "U3.9"
+        ],
+        [
+          "U4.1"
+        ],
+        [
+          "U4.5"
+        ],
+        [
+          "U4.7"
+        ],
+        [
+          "U5.4"
+        ],
+        [
+          "U5.8"
+        ],
+        [
+          "U6.1"
+        ],
+        [
+          "U7.1"
+        ],
+        [
+          "U8.12"
+        ],
+        [
+          "U8.4"
+        ],
+        [
+          "U8.5"
+        ],
+        [
+          "U9.1"
+        ],
+        [
+          "U9.4",
+          "U9.5",
+          "U9.9"
+        ],
+        [
+          "Y1.2"
+        ],
+        [
+          "Y1.4"
+        ]
+      ],
+      "after_pad_groups": [
+        [
+          "C1.2"
+        ],
+        [
+          "C10.2"
+        ],
+        [
+          "C11.2",
+          "C12.2",
+          "C13.2"
+        ],
+        [
+          "C14.2"
+        ],
+        [
+          "C15.2"
+        ],
+        [
+          "C16.2"
+        ],
+        [
+          "C17.2"
+        ],
+        [
+          "C18.2"
+        ],
+        [
+          "C19.2",
+          "C9.2"
+        ],
+        [
+          "C2.2"
+        ],
+        [
+          "C20.2",
+          "D4.2",
+          "R67.2"
+        ],
+        [
+          "C3.2",
+          "C58.2",
+          "C72.2",
+          "U1.47",
+          "U6.15",
+          "U6.4"
+        ],
+        [
+          "C30.2"
+        ],
+        [
+          "C31.2"
+        ],
+        [
+          "C4.2",
+          "U1.63"
+        ],
+        [
+          "C5.2"
+        ],
+        [
+          "C50.2"
+        ],
+        [
+          "C51.2"
+        ],
+        [
+          "C52.2"
+        ],
+        [
+          "C53.2",
+          "C54.2",
+          "C62.2",
+          "R66.2"
+        ],
+        [
+          "C55.2"
+        ],
+        [
+          "C56.2",
+          "U6.10"
+        ],
+        [
+          "C57.2"
+        ],
+        [
+          "C59.2"
+        ],
+        [
+          "C6.2"
+        ],
+        [
+          "C60.2"
+        ],
+        [
+          "C61.2"
+        ],
+        [
+          "C63.2"
+        ],
+        [
+          "C64.2"
+        ],
+        [
+          "C65.2"
+        ],
+        [
+          "C66.2"
+        ],
+        [
+          "C67.2"
+        ],
+        [
+          "C68.2"
+        ],
+        [
+          "C69.2"
+        ],
+        [
+          "C7.2"
+        ],
+        [
+          "C70.2"
+        ],
+        [
+          "C71.2",
+          "C74.2"
+        ],
+        [
+          "C73.2",
+          "U6.6"
+        ],
+        [
+          "C75.2"
+        ],
+        [
+          "C8.2"
+        ],
+        [
+          "D3.2"
+        ],
+        [
+          "D5.2"
+        ],
+        [
+          "D6.2"
+        ],
+        [
+          "D7.2"
+        ],
+        [
+          "D8.2"
+        ],
+        [
+          "D9.2"
+        ],
+        [
+          "J1.A1",
+          "J1.S1"
+        ],
+        [
+          "J1.A12",
+          "J1.S1"
+        ],
+        [
+          "J1.B1"
+        ],
+        [
+          "J1.B12",
+          "J1.S1"
+        ],
+        [
+          "J1.S1"
+        ],
+        [
+          "J10.4"
+        ],
+        [
+          "J11.4"
+        ],
+        [
+          "J12.2"
+        ],
+        [
+          "J2.1"
+        ],
+        [
+          "J3.1"
+        ],
+        [
+          "J4.1"
+        ],
+        [
+          "J5.1"
+        ],
+        [
+          "J6.1"
+        ],
+        [
+          "J7.1"
+        ],
+        [
+          "J8.1"
+        ],
+        [
+          "J9.4"
+        ],
+        [
+          "R14.2"
+        ],
+        [
+          "R15.2"
+        ],
+        [
+          "R2.2"
+        ],
+        [
+          "R41.2"
+        ],
+        [
+          "R44.2"
+        ],
+        [
+          "R51.2",
+          "R52.2"
+        ],
+        [
+          "R53.2"
+        ],
+        [
+          "R55.2"
+        ],
+        [
+          "R58.2"
+        ],
+        [
+          "R61.2"
+        ],
+        [
+          "R63.2"
+        ],
+        [
+          "R68.2"
+        ],
+        [
+          "R69.2"
+        ],
+        [
+          "R70.2"
+        ],
+        [
+          "TP4.1"
+        ],
+        [
+          "U1.12"
+        ],
+        [
+          "U1.18"
+        ],
+        [
+          "U1.31"
+        ],
+        [
+          "U10.5",
+          "U10.7"
+        ],
+        [
+          "U11.5",
+          "U11.7"
+        ],
+        [
+          "U12.2"
+        ],
+        [
+          "U13.2"
+        ],
+        [
+          "U14.3",
+          "U14.8"
+        ],
+        [
+          "U15.3",
+          "U15.8"
+        ],
+        [
+          "U16.3"
+        ],
+        [
+          "U2.6"
+        ],
+        [
+          "U2.7"
+        ],
+        [
+          "U2.9"
+        ],
+        [
+          "U3.4"
+        ],
+        [
+          "U3.9"
+        ],
+        [
+          "U4.1"
+        ],
+        [
+          "U4.5"
+        ],
+        [
+          "U4.7"
+        ],
+        [
+          "U5.4"
+        ],
+        [
+          "U5.8"
+        ],
+        [
+          "U6.1"
+        ],
+        [
+          "U7.1"
+        ],
+        [
+          "U8.12"
+        ],
+        [
+          "U8.4"
+        ],
+        [
+          "U8.5"
+        ],
+        [
+          "U9.1"
+        ],
+        [
+          "U9.4",
+          "U9.5",
+          "U9.9"
+        ],
+        [
+          "Y1.2"
+        ],
+        [
+          "Y1.4"
+        ]
+      ],
+      "before_component_count": 106,
+      "after_component_count": 106,
+      "same_pad_partition": true
+    }
+  },
+  "CORE_components_without_old_feed": [
+    {
+      "pads": [
+        "C1.1",
+        "C14.1",
+        "C15.1",
+        "C16.1",
+        "C17.1",
+        "C2.1",
+        "C3.1",
+        "C5.1",
+        "C67.1",
+        "C69.1",
+        "FB1.1",
+        "FB2.1",
+        "L2.2",
+        "Q1.1",
+        "Q2.1",
+        "R1.1",
+        "R10.1",
+        "R11.1",
+        "R36.1",
+        "R37.1",
+        "R4.1",
+        "R5.1",
+        "R6.1",
+        "R62.1",
+        "R64.1",
+        "R7.1",
+        "R71.1",
+        "R8.1",
+        "SW1.1",
+        "TP3.1",
+        "U1.19",
+        "U1.32",
+        "U1.48",
+        "U11.4",
+        "U11.6",
+        "U12.5",
+        "U3.8",
+        "U4.2",
+        "U4.6",
+        "U4.8",
+        "U9.6"
+      ],
+      "uuids": [
+        "01ba9d2c-f798-4eb9-a5c2-82e912a52c8a",
+        "01c40919-d621-4b72-b461-004a0ca732ca",
+        "02bf6cce-b2bf-42a7-b7ba-a98b990f730f",
+        "04c11e3f-2fa2-4844-a935-13ff01bc11e1",
+        "0692c3f1-6488-4fcf-8901-212399ef3c1d",
+        "09e6506e-90df-4fc4-b631-1dc07edf78e8",
+        "0a6b984f-fc3e-4849-b2cd-5b862e5dfbf3",
+        "0c9f8a23-4497-4708-a692-c64d2e644c29",
+        "0e6f0faf-8c32-4664-a3bc-ae37381c0f90",
+        "0fb444d1-50c1-476d-aaa9-8067c4c41c4e",
+        "0fdb32bd-5ff5-42d0-9f74-e7595100ae54",
+        "110885b9-95c2-4783-abf6-01a7d0c6a2df",
+        "13742b73-4aff-447b-be1b-b262e2b1c9e3",
+        "13d0a90e-8b60-4876-a529-4ab667aff131",
+        "14b8828d-9e89-47f5-ac96-e95b362e96de",
+        "17836828-ab0a-44f8-a060-ce9215ac121a",
+        "181818b6-09df-4d2c-8d0d-53d1a4d1317e",
+        "18a1add5-6c53-4a95-80c9-5d3c184890c1",
+        "18aaad27-d43b-4840-8637-ba8b4845e52f",
+        "1b384b6c-4fed-4c37-a9eb-cfd617ec94dd",
+        "1f9a7f32-88bf-4e42-82a9-f3e39907864a",
+        "1fbfda30-a51a-4502-95ff-cccb63776536",
+        "218b783e-8741-4260-b865-dcee286564d5",
+        "23dddf5f-c919-46c4-99bf-c788dcea985b",
+        "2693b810-86f1-4589-8ad8-3c1875fa9fa5",
+        "2722cb92-c969-4b0f-81ce-62c93f482fc3",
+        "294c941a-1107-4fda-8580-cb1b6badc3eb",
+        "2992352b-c3d7-4645-b0db-6bf054cc8154",
+        "2ba7da8b-fdd1-4fcf-bfb5-f6cc3720f7c0",
+        "2bd5ca87-d9dd-429b-b661-920552c758f7",
+        "2cb4c4ae-074d-438c-8742-20709ca1442f",
+        "2f11d7ab-d65f-49a0-8782-5e7d29abe4e9",
+        "30cbc353-b645-4ef8-92a6-9d6ddf01dcba",
+        "31b79d6e-0f53-43f3-a737-4da4a2be06ae",
+        "32a60777-4a4e-4817-807a-d3eb36962dd8",
+        "32ac292e-aef9-451d-8b18-be33b8183cad",
+        "33b6490c-9237-4104-9df3-6ff540df0f66",
+        "340c1236-85bc-4060-a9bc-166304004984",
+        "3413f8ef-c004-41b3-9dcc-3e63b3ffec61",
+        "35542b6b-b632-4817-a512-33e989df9c80",
+        "3572d141-4dd7-44c6-ba45-6ae7245e9176",
+        "35a3d56c-c549-404c-b192-21ef366d50e3",
+        "36c95934-afb4-4b16-b2a2-f951714c1da3",
+        "38adc49e-590e-4178-8ea7-cfe52032c593",
+        "398a530c-86eb-4bc6-b7b4-0ab96314235b",
+        "3b28d178-0749-4993-8f18-8d3e90a03f67",
+        "3d12236d-7c39-4c5a-88c8-29d2a6d946bf",
+        "3e501fe2-993a-417e-99c3-f03305a38ca3",
+        "3ea642db-226c-4143-bee6-51f0b81f253e",
+        "3f6e4a22-e558-4d87-9fc0-8cf2c202fb97",
+        "3f7340f2-99d8-4619-af8f-780e5c14549b",
+        "3f8450b5-8a0d-4201-95c5-96ed0efaa74f",
+        "4139e70e-cb54-4ad1-9c3d-3fa226c21bcc",
+        "424102e3-6742-4b90-a79e-7440d0230e3b",
+        "427841cf-a0b9-4366-a081-ba310623d4ab",
+        "43855c18-5c85-46fe-802f-c6773cdc2bea",
+        "43cd1e15-1494-48ba-97f7-c5dea6e6410e",
+        "440032e8-01af-45a3-94c0-a0df93120afe",
+        "47f240a4-5a2c-428a-85ea-ebba3be0194d",
+        "4ac2092d-48da-4042-9f80-6d638e3072d9",
+        "4ad29ac9-7a83-4065-bc2d-c2800fc7b5d7",
+        "4c08b337-8a52-4b54-91f6-5521720e8561",
+        "4c2c2f8b-e5e0-459c-b38f-88a380cfb97a",
+        "4d92c569-21f9-4a2f-a9fa-75ceb96db10b",
+        "51ecba5f-2692-471e-bb93-db43a36b19c4",
+        "51ffe588-5959-4744-9b00-d5535a46073e",
+        "52554bfb-d8c9-426e-90f8-3dde493f85f3",
+        "5276f9c1-d8bd-4036-8a01-6fd90cdb5685",
+        "542e1c37-5403-4cde-b95c-be62108ea3ff",
+        "54f0ae3e-4922-4a43-9c47-827de2513e7e",
+        "55713ada-0b4e-4acd-8158-f1c8d93f6003",
+        "55893957-2c2f-4859-bdd1-babb4673823a",
+        "55973e39-41e4-4b14-8fbd-d4c0aef0b729",
+        "56043fae-c6cb-4926-acdc-83615d6846b7",
+        "566aab80-8266-4dc2-a656-e69298c3cd74",
+        "57a5016e-0843-4d70-929a-ba6377d143a5",
+        "5c35705e-9083-4d15-a590-fad27f436f88",
+        "5ce0b832-4a1c-43c2-8dce-0048c1cac18b",
+        "5d68bd9f-5185-414f-ad81-d35f2c0b5850",
+        "5d83aea4-2107-46ca-8cf7-389367f5a1e9",
+        "5d96395f-965c-4e4f-b802-3a50544aba22",
+        "5ec99489-3817-4cca-9400-149ec9962293",
+        "5fddccf2-7925-4bc6-a534-89d1b502a1d5",
+        "6063ba56-abc8-4837-b089-1e8f43754d6e",
+        "60b503d3-b7c2-4f74-b6a0-ea19af81f078",
+        "61a38faa-6301-4cea-a9d7-ecad8ce939e7",
+        "61bdd795-8477-45fe-9f61-222fc1ee0f4b",
+        "62a6cad9-50c9-46e8-b488-df1015a24506",
+        "650b4893-47c8-426f-bace-dd227de8e974",
+        "65dcb6f8-4251-410a-b5f9-f11c162121c7",
+        "67052a9e-ff4d-4a87-8067-0c396c99e7c5",
+        "67856219-231b-4315-8f77-7fbc9f59b3c7",
+        "6844e4bb-c6eb-444e-8051-5ccd5db3d991",
+        "68dc1e47-24e7-413d-8fdf-cff15d95ce23",
+        "6a8a5b8f-ff5a-4178-bdd4-c769be11a87e",
+        "6bf881c2-734b-4dd2-80a8-8e412994c36f",
+        "6ccc5f7d-061e-4779-998a-54689832d020",
+        "7132d506-8290-4d18-832a-cd2ff98dfad4",
+        "74a8e643-08f1-4abf-bfda-30cbac6cc41a",
+        "76da72c8-41ae-421b-b91a-00589f0cabd6",
+        "789a42f2-5a4d-44ee-84d4-23d3c4e276e4",
+        "79747c60-97e1-4e93-a76b-bc62b000bb04",
+        "7aad0750-6ef4-4bd9-aafe-ec27b6f1bc3b",
+        "80dfbb3f-af26-458d-a8a8-abd2d8b5a0d1",
+        "85e7c6af-a5c6-4757-a750-0cc5aebf01f2",
+        "88e962da-54d3-433e-acd6-1d544309b356",
+        "8b46e0a7-fe62-4b86-adc6-40477ecbfbb3",
+        "8b65c553-02cf-47d3-aecd-f8a9f2f2f968",
+        "8c53bd0d-8217-4306-8b0d-a0143b3e71ff",
+        "8c905b09-33bf-4d52-99c1-6ba338e95cfe",
+        "8ca5f3c3-8b43-41cc-8d3a-1cfb37052224",
+        "8d4ceb99-70aa-4630-b1f2-6524498da70f",
+        "8d56ea3a-8559-46fa-9c69-6e937a0a28f2",
+        "8e2df21b-6ef6-4680-b6db-6e451c01a795",
+        "8e5041bf-d9b8-4c0c-8bed-6b3c796a0d05",
+        "8edbca98-46d1-4f5c-88e4-1db14fa4c130",
+        "8efe437d-cf8f-4aab-8135-d899b5d93bfe",
+        "91ab06fa-2a67-4873-b76c-655eba6c2cd3",
+        "957b1ea8-ae82-449f-bddf-867211042039",
+        "96c9e755-fe58-4179-a0d5-83b8cd982fba",
+        "98225008-e928-4072-8c1d-596d79f74bde",
+        "9a60357d-7762-4543-9da6-60c83e3bbe59",
+        "9be3ae6f-69c2-46f8-8ed1-6bb3d53b0da3",
+        "9c65e539-a7c8-44e3-ae31-90314fc47c90",
+        "a064fa7a-0305-42b1-8081-94c601667c0b",
+        "a09510bf-2f9a-47ca-8c2f-c5f15ef20ee5",
+        "a09fe0c2-e7b7-46e2-8cdc-81eae12fa56b",
+        "a1cb32ad-cc4e-497c-8859-022d2d36f705",
+        "a31c2226-97c3-48f7-b672-1e3a574d1b51",
+        "a45270e4-55bc-434e-ba88-0e34b63d4d63",
+        "a53ae213-d094-4ff6-9d79-fc319bad9c1a",
+        "a57444f5-df71-45b7-8bc9-d277ecd56b75",
+        "a58c74cb-f749-4b0a-85be-0ff6cb88df3c",
+        "a63a25ed-eeeb-4504-97a0-1aa5ddf97c86",
+        "a6e63fcb-26f0-4713-a3cd-bfa57b7b25d0",
+        "a76d2360-2c32-4d46-9646-c885e9978ca9",
+        "a89f096a-57cc-43b1-87a2-b96e405f2181",
+        "a967fc16-2b37-44cd-9c29-d7d9e9fffbf1",
+        "a9754953-cd11-4b6a-95ea-15bf491aa98c",
+        "a9ad559a-4104-4108-b52b-a3e6630239ea",
+        "acaa9b57-8259-4ea7-a451-efe49352986e",
+        "ae5b776a-92e0-49e6-b99a-674d155b61a9",
+        "b17ccac9-8091-4cda-9cd0-49590c083617",
+        "b199d6ef-97a6-467c-823f-cc4102115571",
+        "b1f99426-bb75-40a8-8a38-bc790c9ce2b4",
+        "b29a983c-8ddd-4e3d-9fef-5e3e8a1617da",
+        "b450d2ef-4487-4ff9-8910-708b18ff15b2",
+        "b7873525-22ed-4bb6-bfaa-752f85627b12",
+        "b78df967-0ff0-47e7-b3b4-c37fe463731f",
+        "b87527fb-29b5-4b5d-85e3-d8d7d2d08c5d",
+        "b90836b6-179a-46a7-922b-1106e36ada49",
+        "b924008f-4ab1-4a7f-9be6-9cd5fdaa6204",
+        "b98749cb-7c45-41be-984f-7b608a538491",
+        "b98e3e19-5c8a-4c5f-a342-5c2ce80f0791",
+        "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "bc640bf0-3ae6-4f18-9bee-754e2e650b77",
+        "bcdc1120-1c1a-4b21-ad66-ddce92cdb51d",
+        "be4e76a5-519f-4a86-9c44-68615d82d126",
+        "c006cb50-39d5-4045-93df-766836540643",
+        "c06d24f3-d422-4a96-a832-bb0e3fc1bab8",
+        "c1cf9204-0c74-41f6-9edf-ef676229a244",
+        "c2eb5b85-bc46-4a7d-be15-bb7624c150a6",
+        "c477ee11-9aee-40c0-9e1c-1ce9e0d7e1e8",
+        "c576aed4-293d-4b24-97aa-76ebda29841f",
+        "c5cfc084-7b53-417c-a3dd-b65956b9015f",
+        "c7f98f45-e3b9-4506-85a5-fb36a23c2d08",
+        "ca5a5f41-ce69-48fc-9a56-15429a3117a0",
+        "cd8fe061-12a9-4c37-948c-ba598aa584e6",
+        "cd9a6ff8-e3b7-4763-b298-fe12c5015e1c",
+        "cdff63cf-8c85-42b5-9f1f-e78af3d7430f",
+        "cfbc38d5-a6bd-4e69-ac55-c654582d58ca",
+        "cffd65d9-d4a9-44f4-8500-f60a81d7b3c9",
+        "d3f5416e-da49-4cf3-83d1-b4637fb9bc3d",
+        "d69bfef1-df8e-44c2-a0c6-252af1ae150a",
+        "d70589b8-32c3-44ed-bad8-346532d0aaf3",
+        "d9387488-0657-45b9-8d1f-13e6e07a1b4d",
+        "da98e12b-88dd-4bd7-b39b-8f28b4e5996e",
+        "dc74fbbe-29ec-42d2-8a35-df5dbb0953ff",
+        "dc9f25d8-aaf1-4541-ab6a-e14c410003aa",
+        "dcdba71c-3ee6-4104-86ba-18bc7e593b45",
+        "dd03bcd9-4bb6-4048-af15-8b027d519505",
+        "de48e3fd-f1cb-459e-8eb1-f70c132d607f",
+        "defd4845-d3e5-4ee1-9d43-546c9405f9f1",
+        "df946d22-f4d7-429e-98ec-9b49188086d2",
+        "e152f407-6aef-4593-88ca-57c1ae95fd25",
+        "e2451865-c32e-415a-b455-a749d7d2a6a6",
+        "e362c903-51cf-4fc9-ab67-243199b6baca",
+        "e712d11a-7e0e-4cb8-9a2a-275159c4142c",
+        "e7910f65-a453-4002-8ab3-69053ee75fa9",
+        "e7e7dd59-a145-43bc-9790-d7aa38bba3a8",
+        "e865f07f-59b2-4e4e-80f7-86d0be5b6c69",
+        "e8f13242-2552-4765-a31a-f18b4f5e4b58",
+        "e9236d87-7713-466e-b9e8-520b8015bfae",
+        "ea4d64da-52eb-4bd8-9515-1e4ebd405db6",
+        "edabb095-c78d-44d1-8587-260c30053ca9",
+        "ee48a04c-7121-4cff-b957-8f5b3e7c864f",
+        "ee99c075-d3b6-4715-89f5-1e7b14e7de95",
+        "f2c73131-a9ba-4645-bc43-4a5d46e79ed4",
+        "f5edab61-d103-4bea-a0a0-5988f69d5528",
+        "f6852445-7177-41f2-91a2-391988626a8a",
+        "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "fd735a11-41df-4646-b669-11264ba0a294",
+        "fdfa8a16-9b69-41fe-b6f6-8ca79ddc510d",
+        "fe690ed4-4224-4446-986a-143404beea9e",
+        "ff2783b7-753c-4616-8e23-4924a4e6a528",
+        "ff489f0b-2608-455c-b1f2-70a635a8a1fc"
+      ],
+      "model_contacts": [
+        "FB1.1",
+        "FB2.1",
+        "L2.2",
+        "U1.19",
+        "U1.32",
+        "U1.48",
+        "U11.4",
+        "U3.8",
+        "U4.2",
+        "U4.6",
+        "U4.8",
+        "U9.6"
+      ]
+    },
+    {
+      "pads": [
+        "C4.1",
+        "C6.1",
+        "U1.1",
+        "U1.64",
+        "U13.5"
+      ],
+      "uuids": [
+        "3530c94f-f200-4e77-9c6a-28c14af48319",
+        "3a07ff80-14b1-4df9-aac1-34cea3766df1",
+        "5612cc20-6eed-4208-bc79-0b56e995f3aa",
+        "6607893c-1987-4e0a-90ab-2fd4ba91bc96",
+        "6bc9a569-77ea-47fa-9ba3-c76e3092efd2",
+        "80062ceb-4334-4b58-a700-1234ba33328c",
+        "a4cb037c-b9be-4e5d-a156-1dc5ee218eec",
+        "cb2b3843-8225-4298-9b5d-bf5e651260e9",
+        "f8b4cdb1-c906-4d2a-bc00-3ec66e57cfef",
+        "fe9e56d8-858c-4a93-8b05-eb1c4d6e0790",
+        "ff5a00f4-7d77-4608-93ab-5b166456fc91"
+      ],
+      "model_contacts": [
+        "U1.64"
+      ]
+    }
+  ],
+  "D7_cut": {
+    "actual_native_inside_pad_subtracted": true,
+    "after_cut_pad_groups": [
+      [
+        "J12.3"
+      ],
+      [
+        "R38.1"
+      ]
+    ],
+    "after_cut_component_count": 2,
+    "outside_pad_gap_mm": 0.14813676113645813,
+    "minimum_mm": 0.127,
+    "preserved_J12_branch_uuids": [
+      "16655551-ebce-43e4-b159-dd08539e44ec",
+      "5621756c-04c4-4446-885c-16e2ffe55e98",
+      "6d6f4fbe-e156-4a7b-adb0-8a402f5182ed",
+      "743ed88b-ad5c-4f7b-868b-9f8dd193bcef",
+      "b5893fce-831a-43a5-9ad8-48a7a3452310",
+      "d35bc9c2-6be1-43f8-982b-78887f5daf8d",
+      "d91a80d5-51c1-4a7d-97b0-b51e3b549e63"
+    ]
+  },
+  "power_screen": {
+    "model_ledger": "static-power-validation/pilot-candidate19-operator-refined-released/ledger.json",
+    "model_ledger_sha256": "f811c4d93dd074e5d74fb000db2d1218d10199ceb7c0562173be437fda572951",
+    "material": {
+      "temperature_C": 105,
+      "thickness_mm": 0.015,
+      "conductivity_IACS": 0.95,
+      "plating_mm": 0.015
+    },
+    "rho_ohm_mm": 2.4210901105263158e-05,
+    "old_length_mm": 2.558950462781377,
+    "old_width_mm": 0.3,
+    "new_length_mm": 2.466979964180315,
+    "new_width_mm": 0.25,
+    "old_L_over_W": 8.529834875937924,
+    "new_L_over_W": 9.86791985672126,
+    "L_over_W_ratio": 1.1568711470087165,
+    "old_rectangular_strip_ohm": 0.013767665908370513,
+    "new_rectangular_strip_ohm": 0.0159274154510494,
+    "incremental_strip_ohm": 0.002159749542678887,
+    "current_screens": [
+      {
+        "current_A": 0.32,
+        "new_strip_drop_V": 0.005096772944335808,
+        "incremental_drop_V": 0.0006911198536572439,
+        "new_strip_loss_W": 0.0016309673421874586
+      },
+      {
+        "current_A": 0.82,
+        "new_strip_drop_V": 0.013060480669860507,
+        "incremental_drop_V": 0.0017709946249966871,
+        "new_strip_loss_W": 0.010709594149285614
+      }
+    ],
+    "scope": "Conservative fixed-temperature project material assumptions and nominal rectangular-strip estimate only. Does not model current crowding, spreading, return drop, transient decoupling, thermal rise or manufacturing tolerance. Fresh source-bound sheet/barrel solve required. No inherited numerical result. The copper bridge isolates C4.1/C6.1/U1.1/U1.64/U13.5; U11.4 and DSM path are on the source side. 0.32 A is the full electronics allocation bound, 0.82 A additionally bounds all modeled CORE demand even though DSM does not traverse this branch. No universal CORE sink floor exists in the current model; do not apply the classic DSM floor to MCU pads."
+  },
+  "preserved_failed_bounded_alternatives": [
+    {
+      "name": "fixed_Case_A_original_feed_0p30",
+      "width_mm": 0.3,
+      "points": [
+        [
+          16.375525,
+          21.252534
+        ],
+        [
+          17.241613,
+          22.160802
+        ],
+        [
+          18.36917,
+          21.505923
+        ]
+      ],
+      "check": {
+        "violations": [
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.0626500687884109,
+            "witness_center": [
+              17.176749546341544,
+              22.092779582731247
+            ],
+            "witness_obstacle": [
+              17.021622,
+              22.240703
+            ]
+          },
+          {
+            "object": "R70.1",
+            "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+            "net": "DSM_ILIM",
+            "category": "foreign_copper",
+            "extra_mm": -0.04371381247938355,
+            "witness_center": [
+              17.489620177295276,
+              22.01676077435912
+            ],
+            "witness_obstacle": [
+              17.606784,
+              22.218491
+            ]
+          }
+        ],
+        "nearest": [
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.0626500687884109,
+            "witness_center": [
+              17.176749546341544,
+              22.092779582731247
+            ],
+            "witness_obstacle": [
+              17.021622,
+              22.240703
+            ]
+          },
+          {
+            "object": "R70.1",
+            "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+            "net": "DSM_ILIM",
+            "category": "foreign_copper",
+            "extra_mm": -0.04371381247938355,
+            "witness_center": [
+              17.489620177295276,
+              22.01676077435912
+            ],
+            "witness_obstacle": [
+              17.606784,
+              22.218491
+            ]
+          },
+          {
+            "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.0016329514645161136,
+            "witness_center": [
+              16.963044081820527,
+              21.868666288412918
+            ],
+            "witness_obstacle": [
+              17.164694,
+              21.676381
+            ]
+          },
+          {
+            "object": "C4.2",
+            "uuid": "9d9275d5-0bcc-4ba5-949f-58889a4c2154",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.16654566853057973,
+            "witness_center": [
+              18.162646893172035,
+              21.62587050214525
+            ],
+            "witness_obstacle": [
+              17.939884,
+              21.242322
+            ]
+          },
+          {
+            "object": "proposal:R70_GND",
+            "uuid": "proposal:R70_GND",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.19772074861937816,
+            "witness_center": [
+              17.20588510365695,
+              22.123334092632952
+            ],
+            "witness_obstacle": [
+              16.862324158642924,
+              22.450940054469445
+            ]
+          }
+        ],
+        "centerline_inside_board": true
+      }
+    },
+    {
+      "name": "Case_A_final_tangent_path_0p30",
+      "width_mm": 0.3,
+      "points": [
+        [
+          16.375525,
+          21.252534
+        ],
+        [
+          16.85,
+          21.841
+        ],
+        [
+          17.298,
+          22.064
+        ],
+        [
+          17.78,
+          21.8588
+        ],
+        [
+          18.36917,
+          21.505923
+        ]
+      ],
+      "check": {
+        "violations": [
+          {
+            "object": "R70.1",
+            "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+            "net": "DSM_ILIM",
+            "category": "foreign_copper",
+            "extra_mm": -0.014990237910518595,
+            "witness_center": [
+              17.518810082011132,
+              21.9699953758741
+            ],
+            "witness_obstacle": [
+              17.621441,
+              22.211068
+            ]
+          },
+          {
+            "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.014966824859116629,
+            "witness_center": [
+              17.518888089032494,
+              21.969962166245917
+            ],
+            "witness_obstacle": [
+              17.416248,
+              21.728868
+            ]
+          },
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.003188440226271544,
+            "witness_center": [
+              17.106543336956392,
+              21.96869902710106
+            ],
+            "witness_obstacle": [
+              16.984529,
+              22.213822
+            ]
+          }
+        ],
+        "nearest": [
+          {
+            "object": "R70.1",
+            "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+            "net": "DSM_ILIM",
+            "category": "foreign_copper",
+            "extra_mm": -0.014990237910518595,
+            "witness_center": [
+              17.518810082011132,
+              21.9699953758741
+            ],
+            "witness_obstacle": [
+              17.621441,
+              22.211068
+            ]
+          },
+          {
+            "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.014966824859116629,
+            "witness_center": [
+              17.518888089032494,
+              21.969962166245917
+            ],
+            "witness_obstacle": [
+              17.416248,
+              21.728868
+            ]
+          },
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.003188440226271544,
+            "witness_center": [
+              17.106543336956392,
+              21.96869902710106
+            ],
+            "witness_obstacle": [
+              16.984529,
+              22.213822
+            ]
+          },
+          {
+            "object": "C4.2",
+            "uuid": "9d9275d5-0bcc-4ba5-949f-58889a4c2154",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.1697033126432117,
+            "witness_center": [
+              18.17228996941271,
+              21.623842165187554
+            ],
+            "witness_obstacle": [
+              17.942762,
+              21.240618
+            ]
+          },
+          {
+            "object": "U11.3",
+            "uuid": "ad38ab56-3acc-4ece-bd0f-d73eecb267ae",
+            "net": "unconnected-(U11-~{FAULT}-Pad3)",
+            "category": "foreign_copper",
+            "extra_mm": 0.21222231255943436,
+            "witness_center": [
+              18.36917,
+              21.505923
+            ],
+            "witness_obstacle": [
+              18.805305,
+              21.727564
+            ]
+          }
+        ],
+        "centerline_inside_board": true
+      }
+    },
+    {
+      "name": "Case_A_first_0p25_bend",
+      "width_mm": 0.25,
+      "points": [
+        [
+          16.375525,
+          21.252534
+        ],
+        [
+          17.22,
+          22.0972
+        ],
+        [
+          17.78,
+          21.8588
+        ],
+        [
+          18.36917,
+          21.505923
+        ]
+      ],
+      "check": {
+        "violations": [
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.010249240486967098,
+            "witness_center": [
+              17.192584929802027,
+              22.069778729170384
+            ],
+            "witness_obstacle": [
+              17.021622,
+              22.240703
+            ]
+          }
+        ],
+        "nearest": [
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.010249240486967098,
+            "witness_center": [
+              17.192584929802027,
+              22.069778729170384
+            ],
+            "witness_obstacle": [
+              17.021622,
+              22.240703
+            ]
+          },
+          {
+            "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.006339929866724936,
+            "witness_center": [
+              16.984918429013618,
+              21.862065259197983
+            ],
+            "witness_obstacle": [
+              17.167613,
+              21.679412
+            ]
+          },
+          {
+            "object": "R70.1",
+            "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+            "net": "DSM_ILIM",
+            "category": "foreign_copper",
+            "extra_mm": 0.010012611149437134,
+            "witness_center": [
+              17.518811385546748,
+              21.96999172443867
+            ],
+            "witness_obstacle": [
+              17.621441,
+              22.211068
+            ]
+          },
+          {
+            "object": "C4.2",
+            "uuid": "9d9275d5-0bcc-4ba5-949f-58889a4c2154",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.19470331264321172,
+            "witness_center": [
+              18.17228996941271,
+              21.623842165187554
+            ],
+            "witness_obstacle": [
+              17.942762,
+              21.240618
+            ]
+          },
+          {
+            "object": "U11.3",
+            "uuid": "ad38ab56-3acc-4ece-bd0f-d73eecb267ae",
+            "net": "unconnected-(U11-~{FAULT}-Pad3)",
+            "category": "foreign_copper",
+            "extra_mm": 0.23722231255943438,
+            "witness_center": [
+              18.36917,
+              21.505923
+            ],
+            "witness_obstacle": [
+              18.805305,
+              21.727564
+            ]
+          }
+        ],
+        "centerline_inside_board": true
+      }
+    },
+    {
+      "name": "Case_A_second_0p25_bend",
+      "width_mm": 0.25,
+      "points": [
+        [
+          16.375525,
+          21.252534
+        ],
+        [
+          17.25,
+          22.0844
+        ],
+        [
+          17.78,
+          21.8588
+        ],
+        [
+          18.36917,
+          21.505923
+        ]
+      ],
+      "check": {
+        "violations": [
+          {
+            "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.015485645368650713,
+            "witness_center": [
+              17.01060508029184,
+              21.856669654046197
+            ],
+            "witness_obstacle": [
+              17.173619,
+              21.685306
+            ]
+          }
+        ],
+        "nearest": [
+          {
+            "object": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "uuid": "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": -0.015485645368650713,
+            "witness_center": [
+              17.01060508029184,
+              21.856669654046197
+            ],
+            "witness_obstacle": [
+              17.173619,
+              21.685306
+            ]
+          },
+          {
+            "object": "R70.1",
+            "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+            "net": "DSM_ILIM",
+            "category": "foreign_copper",
+            "extra_mm": 0.01002556628303286,
+            "witness_center": [
+              17.518817314009453,
+              21.96997512067824
+            ],
+            "witness_obstacle": [
+              17.621441,
+              22.211068
+            ]
+          },
+          {
+            "object": "R70.2",
+            "uuid": "6cfaafb2-199e-458e-ad26-17ea6100f6d5",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.018569995127805827,
+            "witness_center": [
+              17.203402251669374,
+              22.040072737913828
+            ],
+            "witness_obstacle": [
+              17.016916,
+              22.236111
+            ]
+          },
+          {
+            "object": "C4.2",
+            "uuid": "9d9275d5-0bcc-4ba5-949f-58889a4c2154",
+            "net": "GND",
+            "category": "foreign_copper",
+            "extra_mm": 0.19470331264321172,
+            "witness_center": [
+              18.17228996941271,
+              21.623842165187554
+            ],
+            "witness_obstacle": [
+              17.942762,
+              21.240618
+            ]
+          },
+          {
+            "object": "U11.3",
+            "uuid": "ad38ab56-3acc-4ece-bd0f-d73eecb267ae",
+            "net": "unconnected-(U11-~{FAULT}-Pad3)",
+            "category": "foreign_copper",
+            "extra_mm": 0.23722231255943438,
+            "witness_center": [
+              18.36917,
+              21.505923
+            ],
+            "witness_obstacle": [
+              18.805305,
+              21.727564
+            ]
+          }
+        ],
+        "centerline_inside_board": true
+      }
+    }
+  ],
+  "corridor": {
+    "foreign_objects": [
+      "3bdf9d5b-0ff4-4ef3-96c4-515517c5f18b",
+      "R70.1"
+    ],
+    "physical_gap_mm": 0.5240429440885573,
+    "maximum_track_width_at_minimum_gap_mm": 0.27004294408855734,
+    "width_0p30_deficit_mm": 0.02995705591144271,
+    "width_0p25_residual_mm": 0.020042944088557335
+  },
+  "source_unchanged": true,
+  "prior_evidence_unchanged": true
+}

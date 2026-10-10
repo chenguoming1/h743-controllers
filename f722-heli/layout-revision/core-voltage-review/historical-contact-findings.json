@@ -1,0 +1,4666 @@
+{
+  "ledger": "static-power-validation/pilot-candidate19-operator-refined-released/ledger.json",
+  "ledger_sha256": "f811c4d93dd074e5d74fb000db2d1218d10199ceb7c0562173be437fda572951",
+  "historical_result_sha256": "28dfe7bcff16f08e3919be7063cf06727ab25678e3585e86f6acfda26e0742f1",
+  "historical_scope": "0.32 A electronics over ten adversarial upstream vertices. Report-only CORE probe has no voltage acceptance floor.",
+  "injection_vertices": [
+    {
+      "p": "FB1.1",
+      "n": "U1.12",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "~",
+        "electrical_type": "passive",
+        "schematic": "ordinary-routing/candidate39/f722-heli.kicad_sch",
+        "symbol": "F722_Heli:FerriteBead"
+      }
+    },
+    {
+      "p": "FB2.1",
+      "n": "U2.6",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "~",
+        "electrical_type": "passive",
+        "schematic": "ordinary-routing/candidate39/sensors.kicad_sch",
+        "symbol": "F722_Heli:FerriteBead"
+      }
+    },
+    {
+      "p": "U1.19",
+      "n": "U1.18",
+      "current_A_values": [
+        0.3,
+        0.32
+      ],
+      "role": {
+        "pin_name": "VDD",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/f722-heli.kicad_sch",
+        "symbol": "F722_Heli:STM32F722RET6"
+      }
+    },
+    {
+      "p": "U1.32",
+      "n": "U1.31",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "VDD",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/f722-heli.kicad_sch",
+        "symbol": "F722_Heli:STM32F722RET6"
+      }
+    },
+    {
+      "p": "U1.48",
+      "n": "U1.47",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "VDD",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/f722-heli.kicad_sch",
+        "symbol": "F722_Heli:STM32F722RET6"
+      }
+    },
+    {
+      "p": "U1.64",
+      "n": "U1.63",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "VDD",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/f722-heli.kicad_sch",
+        "symbol": "F722_Heli:STM32F722RET6"
+      }
+    },
+    {
+      "p": "U3.8",
+      "n": "U3.4",
+      "current_A_values": [
+        0.3,
+        0.32
+      ],
+      "role": {
+        "pin_name": "VCC",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/sensors.kicad_sch",
+        "symbol": "F722_Heli:W25N01GVZEIG"
+      }
+    },
+    {
+      "p": "U4.2",
+      "n": "U4.1",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "CSB",
+        "electrical_type": "input",
+        "schematic": "ordinary-routing/candidate39/sensors.kicad_sch",
+        "symbol": "F722_Heli:DPS368XTSA1"
+      }
+    },
+    {
+      "p": "U4.6",
+      "n": "U4.5",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "VDDIO",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/sensors.kicad_sch",
+        "symbol": "F722_Heli:DPS368XTSA1"
+      }
+    },
+    {
+      "p": "U4.8",
+      "n": "U4.7",
+      "current_A_values": [
+        0.32
+      ],
+      "role": {
+        "pin_name": "VDD",
+        "electrical_type": "power_in",
+        "schematic": "ordinary-routing/candidate39/sensors.kicad_sch",
+        "symbol": "F722_Heli:DPS368XTSA1"
+      }
+    }
+  ],
+  "incorrect_supply_injections": [
+    {
+      "case": "classic_BEC5_AB_mcu_vdd19_baseline",
+      "json_pointer": "/cases/0/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_mcu_vdd32_baseline",
+      "json_pointer": "/cases/1/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_mcu_vdd48_baseline",
+      "json_pointer": "/cases/2/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_mcu_vdd64_baseline",
+      "json_pointer": "/cases/3/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_flash_baseline",
+      "json_pointer": "/cases/4/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_barometer_pad2_baseline",
+      "json_pointer": "/cases/5/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_barometer_pad6_baseline",
+      "json_pointer": "/cases/6/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_barometer_pad8_baseline",
+      "json_pointer": "/cases/7/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_analog_branch_entry_baseline",
+      "json_pointer": "/cases/8/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AB_imu_branch_entry_baseline",
+      "json_pointer": "/cases/9/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_mcu_vdd19_baseline",
+      "json_pointer": "/cases/10/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_mcu_vdd32_baseline",
+      "json_pointer": "/cases/11/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_mcu_vdd48_baseline",
+      "json_pointer": "/cases/12/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_mcu_vdd64_baseline",
+      "json_pointer": "/cases/13/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_flash_baseline",
+      "json_pointer": "/cases/14/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_barometer_pad2_baseline",
+      "json_pointer": "/cases/15/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_barometer_pad6_baseline",
+      "json_pointer": "/cases/16/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_barometer_pad8_baseline",
+      "json_pointer": "/cases/17/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_analog_branch_entry_baseline",
+      "json_pointer": "/cases/18/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_AC_imu_branch_entry_baseline",
+      "json_pointer": "/cases/19/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_mcu_vdd19_baseline",
+      "json_pointer": "/cases/20/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_mcu_vdd32_baseline",
+      "json_pointer": "/cases/21/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_mcu_vdd48_baseline",
+      "json_pointer": "/cases/22/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_mcu_vdd64_baseline",
+      "json_pointer": "/cases/23/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_flash_baseline",
+      "json_pointer": "/cases/24/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_barometer_pad2_baseline",
+      "json_pointer": "/cases/25/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_barometer_pad6_baseline",
+      "json_pointer": "/cases/26/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_barometer_pad8_baseline",
+      "json_pointer": "/cases/27/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_analog_branch_entry_baseline",
+      "json_pointer": "/cases/28/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "classic_BEC5_BC_imu_branch_entry_baseline",
+      "json_pointer": "/cases/29/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_mcu_vdd19_baseline",
+      "json_pointer": "/cases/30/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_mcu_vdd32_baseline",
+      "json_pointer": "/cases/31/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_mcu_vdd48_baseline",
+      "json_pointer": "/cases/32/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_mcu_vdd64_baseline",
+      "json_pointer": "/cases/33/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_flash_baseline",
+      "json_pointer": "/cases/34/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_barometer_pad2_baseline",
+      "json_pointer": "/cases/35/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_barometer_pad6_baseline",
+      "json_pointer": "/cases/36/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_barometer_pad8_baseline",
+      "json_pointer": "/cases/37/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_analog_branch_entry_baseline",
+      "json_pointer": "/cases/38/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AB_imu_branch_entry_baseline",
+      "json_pointer": "/cases/39/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_mcu_vdd19_baseline",
+      "json_pointer": "/cases/40/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_mcu_vdd32_baseline",
+      "json_pointer": "/cases/41/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_mcu_vdd48_baseline",
+      "json_pointer": "/cases/42/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_mcu_vdd64_baseline",
+      "json_pointer": "/cases/43/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_flash_baseline",
+      "json_pointer": "/cases/44/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_barometer_pad2_baseline",
+      "json_pointer": "/cases/45/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_barometer_pad6_baseline",
+      "json_pointer": "/cases/46/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_barometer_pad8_baseline",
+      "json_pointer": "/cases/47/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_analog_branch_entry_baseline",
+      "json_pointer": "/cases/48/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_AC_imu_branch_entry_baseline",
+      "json_pointer": "/cases/49/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_mcu_vdd19_baseline",
+      "json_pointer": "/cases/50/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_mcu_vdd32_baseline",
+      "json_pointer": "/cases/51/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_mcu_vdd48_baseline",
+      "json_pointer": "/cases/52/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_mcu_vdd64_baseline",
+      "json_pointer": "/cases/53/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_flash_baseline",
+      "json_pointer": "/cases/54/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_barometer_pad2_baseline",
+      "json_pointer": "/cases/55/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_barometer_pad6_baseline",
+      "json_pointer": "/cases/56/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_barometer_pad8_baseline",
+      "json_pointer": "/cases/57/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_analog_branch_entry_baseline",
+      "json_pointer": "/cases/58/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "capacity_BEC5_BC_imu_branch_entry_baseline",
+      "json_pointer": "/cases/59/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+      "json_pointer": "/cases/60/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+      "json_pointer": "/cases/60/resistors/2",
+      "element": {
+        "name": "U10_USB_limiter_path",
+        "p": "U10.4",
+        "n": "U10.1",
+        "ohm": 0.15
+      },
+      "native_pads": [
+        {
+          "key": "U10.4",
+          "ref": "U10",
+          "number": "4",
+          "uuid": "07a60c76-2a6a-4d28-81a9-eb601942ac32",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            11.3
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U10.6",
+          "ref": "U10",
+          "number": "6",
+          "uuid": "a81d617f-131f-45da-be9b-a7c452897140",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            12.6
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+      "json_pointer": "/cases/60/loads/2",
+      "element": {
+        "name": "U10_IQ_table_screen",
+        "p": "U10.4",
+        "n": "U10.5",
+        "current_A": 0.00014
+      },
+      "native_pads": [
+        {
+          "key": "U10.4",
+          "ref": "U10",
+          "number": "4",
+          "uuid": "07a60c76-2a6a-4d28-81a9-eb601942ac32",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            11.3
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U10.6",
+          "ref": "U10",
+          "number": "6",
+          "uuid": "a81d617f-131f-45da-be9b-a7c452897140",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            12.6
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "usb_configuration_USB4.33_NONE_flash_baseline",
+      "json_pointer": "/cases/61/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "usb_configuration_USB4.33_NONE_flash_baseline",
+      "json_pointer": "/cases/61/resistors/2",
+      "element": {
+        "name": "U10_USB_limiter_path",
+        "p": "U10.4",
+        "n": "U10.1",
+        "ohm": 0.15
+      },
+      "native_pads": [
+        {
+          "key": "U10.4",
+          "ref": "U10",
+          "number": "4",
+          "uuid": "07a60c76-2a6a-4d28-81a9-eb601942ac32",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            11.3
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U10.6",
+          "ref": "U10",
+          "number": "6",
+          "uuid": "a81d617f-131f-45da-be9b-a7c452897140",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            12.6
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "usb_configuration_USB4.33_NONE_flash_baseline",
+      "json_pointer": "/cases/61/loads/2",
+      "element": {
+        "name": "U10_IQ_table_screen",
+        "p": "U10.4",
+        "n": "U10.5",
+        "current_A": 0.00014
+      },
+      "native_pads": [
+        {
+          "key": "U10.4",
+          "ref": "U10",
+          "number": "4",
+          "uuid": "07a60c76-2a6a-4d28-81a9-eb601942ac32",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            11.3
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U10.6",
+          "ref": "U10",
+          "number": "6",
+          "uuid": "a81d617f-131f-45da-be9b-a7c452897140",
+          "net": "USB_VBUS_RAW",
+          "xy": [
+            40.075,
+            12.6
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+      "json_pointer": "/cases/62/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+      "json_pointer": "/cases/63/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+      "json_pointer": "/cases/64/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+      "json_pointer": "/cases/65/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+      "json_pointer": "/cases/66/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+      "json_pointer": "/cases/67/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "json_pointer": "/cases/68/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+      "json_pointer": "/cases/69/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+      "json_pointer": "/cases/70/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "json_pointer": "/cases/71/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "json_pointer": "/cases/72/resistors/0",
+      "element": {
+        "name": "U11_selected_path",
+        "p": "U11.4",
+        "n": "U11.1",
+        "ohm": 0.15,
+        "condition": "150mOhm engineering screen; current limiter dynamics excluded"
+      },
+      "native_pads": [
+        {
+          "key": "U11.4",
+          "ref": "U11",
+          "number": "4",
+          "uuid": "a064fa7a-0305-42b1-8081-94c601667c0b",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            21.85
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "EN",
+          "electrical_type": "input",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ],
+      "actual_supply_pads": [
+        {
+          "key": "U11.6",
+          "ref": "U11",
+          "number": "6",
+          "uuid": "294c941a-1107-4fda-8580-cb1b6badc3eb",
+          "net": "+3V3_CORE",
+          "xy": [
+            20.975,
+            23.15
+          ],
+          "all_layers": [
+            "B.Cu",
+            "B.Mask",
+            "B.Paste"
+          ],
+          "pin_name": "IN",
+          "electrical_type": "power_in",
+          "schematic": "ordinary-routing/candidate39/power-usb-dsm.kicad_sch",
+          "symbol": "F722_Heli:TPS2553DRV",
+          "mpn": "TPS2553DRVR"
+        }
+      ]
+    }
+  ],
+  "network_contacts": {
+    "+3V3_CORE": {
+      "U9.6": {
+        "pads": [
+          "U9.6"
+        ],
+        "layer": "B.Cu"
+      },
+      "L2.2": {
+        "pads": [
+          "L2.2"
+        ],
+        "layer": "B.Cu"
+      },
+      "U11.4": {
+        "pads": [
+          "U11.4"
+        ],
+        "layer": "B.Cu"
+      },
+      "U1.19": {
+        "pads": [
+          "U1.19"
+        ],
+        "layer": "B.Cu"
+      },
+      "U1.32": {
+        "pads": [
+          "U1.32"
+        ],
+        "layer": "B.Cu"
+      },
+      "U1.48": {
+        "pads": [
+          "U1.48"
+        ],
+        "layer": "B.Cu"
+      },
+      "U1.64": {
+        "pads": [
+          "U1.64"
+        ],
+        "layer": "B.Cu"
+      },
+      "U3.8": {
+        "pads": [
+          "U3.8"
+        ],
+        "layer": "B.Cu"
+      },
+      "U4.2": {
+        "pads": [
+          "U4.2"
+        ],
+        "layer": "F.Cu"
+      },
+      "U4.6": {
+        "pads": [
+          "U4.6"
+        ],
+        "layer": "F.Cu"
+      },
+      "U4.8": {
+        "pads": [
+          "U4.8"
+        ],
+        "layer": "F.Cu"
+      },
+      "FB1.1": {
+        "pads": [
+          "FB1.1"
+        ],
+        "layer": "B.Cu"
+      },
+      "FB2.1": {
+        "pads": [
+          "FB2.1"
+        ],
+        "layer": "F.Cu"
+      }
+    },
+    "+3V3_DSM": {
+      "J12.1": {
+        "pads": [
+          "J12.1"
+        ],
+        "layer": "F.Cu"
+      },
+      "U11.1": {
+        "pads": [
+          "U11.1"
+        ],
+        "layer": "B.Cu"
+      }
+    },
+    "USB_VBUS_RAW": {
+      "J1.A4": {
+        "pads": [
+          "J1.A4"
+        ],
+        "layer": "F.Cu"
+      },
+      "J1.A9": {
+        "pads": [
+          "J1.A9"
+        ],
+        "layer": "F.Cu"
+      },
+      "J1.B4": {
+        "pads": [
+          "J1.B4"
+        ],
+        "layer": "F.Cu"
+      },
+      "J1.B9": {
+        "pads": [
+          "J1.B9"
+        ],
+        "layer": "F.Cu"
+      },
+      "U10.4": {
+        "pads": [
+          "U10.4"
+        ],
+        "layer": "B.Cu"
+      },
+      "R69.1": {
+        "pads": [
+          "R69.1"
+        ],
+        "layer": "B.Cu"
+      }
+    }
+  },
+  "filtered_domains_absent_from_numerical_networks": [
+    "+3V3_ANALOG",
+    "+3V3_IMU"
+  ],
+  "changes_made_to_model": false
+}

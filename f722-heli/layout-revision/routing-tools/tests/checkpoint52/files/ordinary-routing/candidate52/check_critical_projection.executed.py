@@ -1,0 +1,18 @@
+"""Preserve nonzero numerical deltas and test actual critical-reference geometry."""
+import json,hashlib,sys
+from pathlib import Path
+from shapely.geometry import Point,mapping
+from shapely.ops import unary_union
+H=Path(__file__).resolve().parent;R=H.parents[2];D=H/'candidate02';S=H.parent/'port-a48/candidate05';T=R/'repo/f722-heli/layout-revision/signal-review/native';sys.path.insert(0,str(T))
+from check_signal_geometry import CRITICAL,I2C,poly,centerline,copper_entries
+from check_critical_reference import ground_geometry,REFERENCE
+read=lambda p:json.loads(Path(p).read_text());sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest();bn=read(D/'source-reference-snapshot/native-geometry.json');an=read(D/'reference-snapshot/native-geometry.json');q=read(D/'reference-comparison-A03.json');assert sha(S/'f722-heli.kicad_pcb')==bn['board_sha256']==q['before_board_sha256'];assert sha(D/'f722-heli.kicad_pcb')==an['board_sha256']==q['after_board_sha256'];assert q['critical_object_geometry_identical'];_,_,bp,_=ground_geometry(bn,copper_entries(bn));_,_,ap,_=ground_geometry(an,copper_entries(an));wanted=set(CRITICAL)|set(I2C);before={o['uuid']:o for o in bn['objects']if o['net']in wanted};after={o['uuid']:o for o in an['objects']if o['net']in wanted};assert before==after
+rows=[]
+for o in before.values():
+ if o['kind']!='track':continue
+ layer=next(iter(o['copper']));ref=REFERENCE[layer];windows=unary_union([Point(v['xy']).buffer(v['width']/2+.127+.01,quad_segs=96)for v in before.values()if v['kind']=='via'and v['net']==o['net']]);geoms={'centerline':centerline(o),'width':poly(o['copper'][layer])}
+ for kind,copper in geoms.items():
+  mb=copper.difference(bp[ref]);ma=copper.difference(ap[ref]);added=ma.difference(mb);removed=mb.difference(ma);lost=bp[ref].difference(ap[ref]).intersection(copper);gained=ap[ref].difference(bp[ref]).intersection(copper)
+  rows.append(dict(uuid=o['uuid'],net=o['net'],kind=kind,reference_layer=ref,missing_geometry_equals=mb.equals(ma),outside_own_windows_geometry_equals=mb.difference(windows).equals(ma.difference(windows)),added_missing_geometry=mapping(added),removed_missing_geometry=mapping(removed),added_missing_area_mm2=added.area,added_missing_length_mm=added.length,physical_ground_loss_geometry=mapping(lost),physical_ground_loss_area_mm2=lost.area,physical_ground_loss_length_mm=lost.length,physical_ground_gain_geometry=mapping(gained),physical_ground_gain_area_mm2=gained.area,changed_geometry_outside_own_windows_empty=added.difference(windows).is_empty and removed.difference(windows).is_empty))
+out=dict(schema='f722-SBUS-critical-reference-direct-projection/v1',source_board_sha256=bn['board_sha256'],board_sha256=an['board_sha256'],raw_comparison_sha256=sha(D/'reference-comparison-A03.json'),critical_objects_exact=True,numeric_deltas_retained=q['net_numeric_deltas_after_minus_before'],all_missing_centerline_geometries_equal=all(r['missing_geometry_equals']for r in rows if r['kind']=='centerline'),all_outside_own_windows_geometries_equal=all(r['outside_own_windows_geometry_equals']for r in rows),all_changed_geometry_confined_to_own_windows=all(r['changed_geometry_outside_own_windows_empty']for r in rows),maximum_actual_lost_ground_width_area_mm2=max(r['physical_ground_loss_area_mm2']for r in rows if r['kind']=='width'),rows=rows,scope='Exact source-bound saved-plane projection, retaining every nonempty overlay and numeric delta. No tolerance threshold, whole-plane equality, AC-return or electrical qualification claim.')
+(D/'critical-projection-preservation.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({k:v for k,v in out.items()if k not in ['rows','numeric_deltas_retained']}))

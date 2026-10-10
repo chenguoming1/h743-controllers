@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "basis": "stage38",
+  "board_sha256": "e93f1a1814f8b2bfd6341be9522a053a71db2706d7d81ee2984f6bd82a6c8aa5",
+  "positive_controls": [
+    "in_memory_exact_ordinary_addition",
+    "file_bound_empty_addition_manifest"
+  ],
+  "negative_controls": [
+    {
+      "control": "successor_moved_fixed_ground_via",
+      "rejected": true,
+      "reason": "Successor changed stage object"
+    },
+    {
+      "control": "successor_removed_fixed_ground",
+      "rejected": true,
+      "reason": "Successor changed stage object"
+    },
+    {
+      "control": "successor_changed_existing_owner",
+      "rejected": true,
+      "reason": "Successor changed source owner"
+    },
+    {
+      "control": "successor_wrong_manifest_owner",
+      "rejected": true,
+      "reason": "Successor changed source owner"
+    },
+    {
+      "control": "successor_undeclared_new_object",
+      "rejected": true,
+      "reason": "Undeclared successor object"
+    },
+    {
+      "control": "successor_manifest_geometry_mismatch",
+      "rejected": true,
+      "reason": "Successor differs from exact manifest"
+    },
+    {
+      "control": "successor_declared_nonordinary_USB_P",
+      "rejected": true,
+      "reason": "Nonordinary or invalid logical owner"
+    },
+    {
+      "control": "successor_declared_nonordinary_GND",
+      "rejected": true,
+      "reason": "Nonordinary or invalid logical owner"
+    },
+    {
+      "control": "successor_wrong_manifest_digest",
+      "rejected": true,
+      "reason": "Wrong sealed input: /tmp/servo23-manifest-controls-18nopcyu/manifest.json"
+    },
+    {
+      "control": "successor_wrong_stage_source",
+      "rejected": true
+    }
+  ],
+  "source_boards_written": false,
+  "qualification_claimed_for_synthetic_geometry": false,
+  "validator_sha256": "c8f9fee461b59f3effa84bb185c5901d6dad3f78d6c8b43cdc070ea1dd39e517",
+  "audit_script_sha256": "f4dcb95bd85507b3152df5a8efb7457f76546458650c3d2d808dbce983a923e5"
+}

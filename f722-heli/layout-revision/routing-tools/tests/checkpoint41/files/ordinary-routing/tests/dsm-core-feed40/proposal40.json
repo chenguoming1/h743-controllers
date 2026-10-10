@@ -1,0 +1,164 @@
+{
+  "schema": "f722-constructor-geometry-proposal/v1",
+  "status": "complete_nominal_geometry_hypothesis_requires_native_refill_reference_and_fresh_power",
+  "source_board": "ordinary-routing/candidate40/f722-heli.kicad_pcb",
+  "source_board_sha256": "ea6c41fef86c1f66dbf6e2ce24b58858313c5c83f2a518e53385d48aad734ed5",
+  "source_native_sha256": "02e51d8bc3a8934ad9aa9bb0ee1b8cfb13b22f62c99bd8aec8cc8d73b410daf6",
+  "source_mechanical_sha256": "8d70e211d5c1cf69cde5def0f2cb15c380cabe6e3a5f687f7378ca6e6791dcc7",
+  "move_footprints": [
+    {
+      "ref": "R38",
+      "before_pose": [
+        17.69,
+        23.59,
+        0.0,
+        "B.Cu"
+      ],
+      "after_pose": [
+        17.6,
+        23.46,
+        0,
+        "B.Cu"
+      ],
+      "preserve_identity_nets_values_and_side": true
+    },
+    {
+      "ref": "R70",
+      "before_pose": [
+        17.3,
+        22.72,
+        180.0,
+        "B.Cu"
+      ],
+      "after_pose": [
+        17.3,
+        22.52,
+        180,
+        "B.Cu"
+      ],
+      "preserve_identity_nets_values_and_side": true
+    },
+    {
+      "ref": "C70",
+      "before_pose": [
+        18.45,
+        24.6,
+        180.0,
+        "B.Cu"
+      ],
+      "after_pose": [
+        18.45,
+        24.66,
+        180,
+        "B.Cu"
+      ],
+      "preserve_identity_nets_values_and_side": true
+    }
+  ],
+  "remove_track_uuids": [
+    "021879e2-963d-5f8c-9894-8e9bd725f061",
+    "260176e7-2d4d-4020-850f-398625eda69c",
+    "30154a77-e29e-465a-aa6f-a2ea55289eb9",
+    "564d43f4-fb99-4ccd-80b4-4580af7617f8",
+    "b6cf7bc9-8a4c-4cb5-b764-038d677651c3"
+  ],
+  "add_paths": {
+    "CORE": {
+      "net": "+3V3_CORE",
+      "layer": "B.Cu",
+      "width": 0.25,
+      "points": [
+        [
+          16.375525,
+          21.252534
+        ],
+        [
+          16.85,
+          21.841
+        ],
+        [
+          17.298,
+          22.064
+        ],
+        [
+          17.78,
+          21.8588
+        ],
+        [
+          18.36917,
+          21.505923
+        ]
+      ],
+      "length_mm": 2.466979964180315
+    },
+    "DSM": {
+      "net": "DSM_RX_EXT",
+      "layer": "B.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          16.26,
+          23.59
+        ],
+        [
+          16.7,
+          23.59
+        ],
+        [
+          16.83,
+          23.46
+        ],
+        [
+          17.09,
+          23.46
+        ]
+      ],
+      "length_mm": 0.8838477631085002
+    },
+    "R70_GND": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width": 0.2,
+      "points": [
+        [
+          16.79,
+          22.52
+        ],
+        [
+          16.19,
+          23.1
+        ]
+      ],
+      "length_mm": 0.8345058418010024
+    },
+    "R70_ILIM": {
+      "net": "DSM_ILIM",
+      "layer": "B.Cu",
+      "width": 0.2,
+      "points": [
+        [
+          19.025,
+          22.5
+        ],
+        [
+          17.81,
+          22.52
+        ]
+      ],
+      "length_mm": 1.215164597904333
+    }
+  },
+  "add_vias": [],
+  "retained": "Everything else from source40, including dedicated D7 ground via (16.2,24.64), its 0.25 mm return, SBUS/RPM repairs and accepted J12 branch. C70 both existing supply/GND tracks retained with full-cap entries. All other CORE source feed remains original width.",
+  "entry_and_geometry_receipt": "result.json",
+  "required_acceptance": [
+    "Exact-source native construction and complete fill/DRC, including all courtyards with no exception",
+    "Footprint pad identities, orthogonal poses, body/reserve/edge/header/socket access and complete pad entries",
+    "Net/schematic/firmware parity, positive-area connection and full actual D7-pad cut with branch gap >=0.127 mm",
+    "Both-face drill-to-every-SMT-mask >=0.20 mm, drill gaps >=0.25 mm, same-net no exception; through via tenting/process preserved",
+    "Reference-plane classification and explicit changed power/decoupling/return support review",
+    "Fresh current-source numerical sheet/barrel power and VCAP analysis with existing conservative material/current assumptions; no inherited numerical acceptance",
+    "Rebind to accepted source39 before adoption; source40 remains isolated and is not canonical"
+  ],
+  "no_adoption_or_power_qualification": true
+}

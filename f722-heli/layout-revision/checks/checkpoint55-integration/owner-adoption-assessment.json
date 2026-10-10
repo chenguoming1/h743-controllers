@@ -1,0 +1,45 @@
+{
+  "schema": "f722-owner-adoption-assessment/v1",
+  "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
+  "previous_board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+  "geometric_wip_adoption_eligible": true,
+  "qualification": false,
+  "native": {
+    "unfinished": 13,
+    "errors": 0,
+    "warnings": 0,
+    "erc": 0
+  },
+  "reference_classification": {
+    "classification_sha256": "1de2945d48752bb36cbdd60dd217dbb4c268673f46fb26ad90a8d9ba8b53c73f",
+    "source_binding_verified": true,
+    "changed_critical_geometry_within_unchanged_own_via_windows": true,
+    "missing_centerline_geometries_exactly_equal": false,
+    "actual_hole_containment": false,
+    "actual_hole_predicate_disagreements": 8,
+    "classification_status": "UNRESOLVED_ACTUAL_HOLE_BOUNDARY_PREDICATES",
+    "scope": "Geometric WIP review only. All numerical differences and actual-hole predicate limitations retained. No impedance, timing, power or physical qualification."
+  },
+  "review_sha256": {
+    "owner-review-run.json": "6403ec16be599dff2615f47860e140d59bf9b79a4e680b99f29f3533df0a43c4",
+    "owner-coordinated-integration.json": "10870cbe972122cbf8b44762b2f55dc87875d5fc17661651f1fc0c17c165c0e1",
+    "all-net-reference-summary.json": "094c116b44ee73cfb44382fd17470717b9f6a239abaf7c12ed80e62643be63b4",
+    "reference-region/owner/reference-classification.json": "1de2945d48752bb36cbdd60dd217dbb4c268673f46fb26ad90a8d9ba8b53c73f"
+  },
+  "signal_review_sha256": "71a023ed8b791711f715b948e9b780210c52c6c026d83b9c3bfce7927baf46e9",
+  "placement_review": {
+    "reproduced_poses": 156,
+    "reproduced_complete_pad_records": 558,
+    "front_back_pixels_inspected": true,
+    "only_change": "R44 rotates 180 degrees in place; original flash placement retained."
+  },
+  "limitations": [
+    "Eight exact actual-hole containment predicate conflicts remain unresolved; strict prior classifier refusal retained. No epsilon, snapping or copper contour repair used.",
+    "All 86 routed-net projections reviewed; changed nets have no centerline gap outside own via windows, but finite width wedges and exact small deltas remain in evidence.",
+    "Two connected GND polygons and 117 plated ties establish geometric connectivity only, not AC return impedance or current capacity.",
+    "DSM main receive path is 136.672265 mm; external receiver loading and edge behavior need validation.",
+    "GREEN route is 71.8756499 mm; total PC14 load below 30 pF is unproven. Existing 2.2k LED resistors unchanged.",
+    "ADC effective capacitance, acquisition settings, noise and static flash pull-up startup/coupling behavior remain conditional.",
+    "Fresh current-board numerical power/VCAP has not run; corrected source43 evidence remains historical."
+  ]
+}

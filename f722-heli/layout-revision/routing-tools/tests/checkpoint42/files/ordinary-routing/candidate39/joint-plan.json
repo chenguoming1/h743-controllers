@@ -1,0 +1,1016 @@
+{
+  "schema": "f722-servo23-coordinated-route-plan/v1",
+  "status": "construction_basis_only_SERVO3_P1_long_range_continuation_required",
+  "source_hashes": {
+    "ordinary-routing/candidate37/f722-heli.kicad_pcb": "2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115",
+    "ordinary-routing/candidate37/f722-heli.native.json": "7c8386f8aee7b1b01fd14265b0dc778d600a6e6d3aeeba6ac12a13c740859f24",
+    "ordinary-routing/candidate37/f722-heli.logical-route-map.json": "e5d3b86b638fa7774cfa0e2698ff9eacbcb4cbe2622bd829886463f02735a9ba",
+    "ordinary-routing/model-candidate37-ready/model.json": "326a5176556b8994d70ff07ff61a9fc300134865091559e5129aae5c5e5ef599"
+  },
+  "construction_complete": false,
+  "source_geometry_untouched": true,
+  "native_acceptance_claimed": false,
+  "changed_footprint_poses": [],
+  "minimal_complete_conflict_group": [
+    "SERVO2_MCU::P0 selected F.Cu/In3.Cu tail and via",
+    "SERVO2_MCU::P1 first two In2.Cu tracks",
+    "U12.2 dedicated GND return: two F.Cu tracks plus one through-via",
+    "SERVO3_MCU::P0 full branch and SERVO3_MCU::P1 clamp escape jointly"
+  ],
+  "remove_exact_objects": [
+    {
+      "uuid": "039a63ec-d4b3-4367-a89e-61ffdd1dd9ef",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.7,
+        10.7
+      ],
+      "end": [
+        11.01,
+        11.01
+      ],
+      "width": 0.127,
+      "layers": [
+        "F.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "099a20ee-ccb7-487c-aa08-047b49e9d92b",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        11.10242,
+        11.17593
+      ],
+      "end": [
+        12.88099,
+        12.9545
+      ],
+      "width": 0.127,
+      "layers": [
+        "In2.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P1",
+      "replace_by": [
+        "S2P1-inner-replacement"
+      ]
+    },
+    {
+      "uuid": "25c69f42-1efb-412a-bb87-f081745cab23",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        11.01,
+        11.01
+      ],
+      "end": [
+        11.01,
+        12.505
+      ],
+      "width": 0.127,
+      "layers": [
+        "F.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "4bdbc594-f503-4ac4-887a-602087e810a5",
+      "kind": "track",
+      "net": "GND",
+      "start": [
+        12.5,
+        11.8875
+      ],
+      "end": [
+        12.5,
+        10.7915
+      ],
+      "width": 0.25,
+      "layers": [
+        "F.Cu"
+      ],
+      "logical_owner": null,
+      "replace_by": [
+        "U12.2-return",
+        "U12.2-return-via"
+      ]
+    },
+    {
+      "uuid": "651dd4bb-367c-4146-91ab-c7b2cafdcd9c",
+      "kind": "track",
+      "net": "GND",
+      "start": [
+        12.5,
+        10.7915
+      ],
+      "end": [
+        11.404,
+        10.7915
+      ],
+      "width": 0.25,
+      "layers": [
+        "F.Cu"
+      ],
+      "logical_owner": null,
+      "replace_by": [
+        "U12.2-return",
+        "U12.2-return-via"
+      ]
+    },
+    {
+      "uuid": "734de095-936a-4d15-b30d-c37b0f7663bb",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.16087,
+        10.03687
+      ],
+      "end": [
+        10.16087,
+        10.3
+      ],
+      "width": 0.127,
+      "layers": [
+        "In3.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "7aa57d39-de74-4e59-ae7e-b321426a2b13",
+      "kind": "via",
+      "net": "GND",
+      "start": [
+        11.404,
+        10.7915
+      ],
+      "end": [
+        11.404,
+        10.7915
+      ],
+      "xy": [
+        11.404,
+        10.7915
+      ],
+      "width": 0.45,
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "logical_owner": null,
+      "replace_by": [
+        "U12.2-return",
+        "U12.2-return-via"
+      ]
+    },
+    {
+      "uuid": "7af3595c-7d69-471b-9895-586d3b074e8b",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.16087,
+        11.17593
+      ],
+      "end": [
+        11.10242,
+        11.17593
+      ],
+      "width": 0.127,
+      "layers": [
+        "In2.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P1",
+      "replace_by": [
+        "S2P1-inner-replacement"
+      ]
+    },
+    {
+      "uuid": "8113afab-5370-4609-8346-a5e532efa35b",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.56087,
+        10.7
+      ],
+      "end": [
+        10.7,
+        10.7
+      ],
+      "width": 0.127,
+      "layers": [
+        "In3.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "9edf22b5-bde9-45f0-86ea-6aefaf3051b5",
+      "kind": "via",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.7,
+        10.7
+      ],
+      "end": [
+        10.7,
+        10.7
+      ],
+      "xy": [
+        10.7,
+        10.7
+      ],
+      "width": 0.45,
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "c284754f-ab23-4ce9-ae72-2662dc7fce81",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.16087,
+        10.03687
+      ],
+      "end": [
+        11.77,
+        8.42774
+      ],
+      "width": 0.127,
+      "layers": [
+        "In3.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "e3d66729-7dcf-4a0e-a0c5-5720860b1f0a",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        10.16087,
+        10.3
+      ],
+      "end": [
+        10.56087,
+        10.7
+      ],
+      "width": 0.127,
+      "layers": [
+        "In3.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    },
+    {
+      "uuid": "f0ab58ba-6fac-49f0-aa28-85653a9eb251",
+      "kind": "track",
+      "net": "SERVO2_MCU",
+      "start": [
+        11.77,
+        5.49
+      ],
+      "end": [
+        11.77,
+        8.42774
+      ],
+      "width": 0.127,
+      "layers": [
+        "In3.Cu"
+      ],
+      "logical_owner": "SERVO2_MCU::P0",
+      "replace_by": [
+        "S2P0-front-replacement",
+        "S2P0-inner-replacement",
+        "S2P0-replacement-via"
+      ]
+    }
+  ],
+  "preserve_every_other_source_object": true,
+  "preserve_exact_C10_2_ground_via": "def5537d-d0ab-4331-bb4d-8c021ba48232",
+  "replacement_and_new_routes": [
+    {
+      "name": "S2P0-front-replacement",
+      "kind": "track",
+      "logical_net": "SERVO2_MCU::P0",
+      "physical_net": "SERVO2_MCU",
+      "layer": "F.Cu",
+      "points_mm": [
+        [
+          10.7,
+          10.78
+        ],
+        [
+          10.7,
+          11.15
+        ],
+        [
+          11.01,
+          11.46
+        ],
+        [
+          11.01,
+          12.505
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "S2P0-inner-replacement",
+      "kind": "track",
+      "logical_net": "SERVO2_MCU::P0",
+      "physical_net": "SERVO2_MCU",
+      "layer": "In3.Cu",
+      "points_mm": [
+        [
+          11.77,
+          5.49
+        ],
+        [
+          11.6,
+          5.66
+        ],
+        [
+          11.6,
+          8.59774
+        ],
+        [
+          10.45,
+          9.74774
+        ],
+        [
+          10.45,
+          10.53
+        ],
+        [
+          10.7,
+          10.78
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "S2P0-replacement-via",
+      "kind": "via",
+      "logical_net": "SERVO2_MCU::P0",
+      "physical_net": "SERVO2_MCU",
+      "xy_mm": [
+        10.7,
+        10.78
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    {
+      "name": "S2P1-inner-replacement",
+      "kind": "track",
+      "logical_net": "SERVO2_MCU::P1",
+      "physical_net": "SERVO2_MCU",
+      "layer": "In2.Cu",
+      "points_mm": [
+        [
+          10.16087,
+          11.17593
+        ],
+        [
+          10.244,
+          11.17593
+        ],
+        [
+          10.69,
+          11.62193
+        ],
+        [
+          11.54842,
+          11.62193
+        ],
+        [
+          12.88099,
+          12.9545
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "U12.2-return",
+      "kind": "track",
+      "logical_net": "GND",
+      "physical_net": "GND",
+      "layer": "F.Cu",
+      "points_mm": [
+        [
+          12.5,
+          11.8875
+        ],
+        [
+          12.5,
+          10.89
+        ],
+        [
+          11.27,
+          10.89
+        ]
+      ],
+      "width_mm": 0.25
+    },
+    {
+      "name": "U12.2-return-via",
+      "kind": "via",
+      "logical_net": "GND",
+      "physical_net": "GND",
+      "xy_mm": [
+        11.27,
+        10.89
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    {
+      "name": "S3P0-clamp-front",
+      "kind": "track",
+      "logical_net": "SERVO3_MCU::P0",
+      "physical_net": "SERVO3_MCU",
+      "layer": "F.Cu",
+      "points_mm": [
+        [
+          13.45,
+          9.6125
+        ],
+        [
+          13.45,
+          10.47
+        ],
+        [
+          10.98,
+          10.47
+        ],
+        [
+          10.85,
+          10.34
+        ],
+        [
+          10.02,
+          10.34
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "S3P0-clamp-via",
+      "kind": "via",
+      "logical_net": "SERVO3_MCU::P0",
+      "physical_net": "SERVO3_MCU",
+      "xy_mm": [
+        10.02,
+        10.34
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    {
+      "name": "S3P0-inner",
+      "kind": "track",
+      "logical_net": "SERVO3_MCU::P0",
+      "physical_net": "SERVO3_MCU",
+      "layer": "In2.Cu",
+      "points_mm": [
+        [
+          10.02,
+          10.34
+        ],
+        [
+          10.25,
+          10.11
+        ],
+        [
+          10.25,
+          9.948
+        ],
+        [
+          10.898,
+          9.3
+        ],
+        [
+          11.1,
+          9.3
+        ],
+        [
+          12.05,
+          8.35
+        ],
+        [
+          12.05,
+          6.85
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "S3P0-resistor-via",
+      "kind": "via",
+      "logical_net": "SERVO3_MCU::P0",
+      "physical_net": "SERVO3_MCU",
+      "xy_mm": [
+        12.05,
+        6.85
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    {
+      "name": "S3P0-resistor-front",
+      "kind": "track",
+      "logical_net": "SERVO3_MCU::P0",
+      "physical_net": "SERVO3_MCU",
+      "layer": "F.Cu",
+      "points_mm": [
+        [
+          12.3,
+          7.8
+        ],
+        [
+          12.3,
+          8.25
+        ],
+        [
+          13.85,
+          8.25
+        ],
+        [
+          13.85,
+          7.45
+        ],
+        [
+          13.25,
+          6.85
+        ],
+        [
+          12.05,
+          6.85
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "S3P1-clamp-front",
+      "kind": "track",
+      "logical_net": "SERVO3_MCU::P1",
+      "physical_net": "SERVO3_MCU",
+      "layer": "F.Cu",
+      "points_mm": [
+        [
+          13.45,
+          9.6125
+        ],
+        [
+          13.45,
+          9.15
+        ],
+        [
+          13.69,
+          8.91
+        ],
+        [
+          14.7,
+          8.91
+        ],
+        [
+          14.85,
+          9.06
+        ]
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "name": "S3P1-clamp-via",
+      "kind": "via",
+      "logical_net": "SERVO3_MCU::P1",
+      "physical_net": "SERVO3_MCU",
+      "xy_mm": [
+        14.85,
+        9.06
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    {
+      "name": "S3P1-inner-exit-only",
+      "kind": "track",
+      "logical_net": "SERVO3_MCU::P1",
+      "physical_net": "SERVO3_MCU",
+      "layer": "In2.Cu",
+      "points_mm": [
+        [
+          14.85,
+          9.06
+        ],
+        [
+          16.5,
+          9.06
+        ]
+      ],
+      "width_mm": 0.127
+    }
+  ],
+  "retained_SERVO2_routes": [
+    {
+      "uuid": "099fd78e-675d-4482-a8f3-cd999d78d37c",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "10e08b5a-b276-499f-889f-a207bbf5254f",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "11eb0a22-5c41-412c-9eba-75881952d650",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "13d2a6cd-d389-4883-8d1b-73db60d1cb77",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "via",
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "1db687cf-ca51-4ce8-80d8-131c798bc455",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "2b07387c-0e51-4096-a791-30766feb86b6",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "via",
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "318aa7f7-a04b-475e-8507-72763503a948",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "In2.Cu"
+      ]
+    },
+    {
+      "uuid": "4f93666a-7915-4e87-9d7d-050f3c81393a",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "50cbe89b-33f3-49f4-be25-d58d71016ad4",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "In2.Cu"
+      ]
+    },
+    {
+      "uuid": "59a0b526-0f98-4636-bb50-748718ff44d2",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "5ccfaeae-7628-42e4-9d9d-47049c11b086",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "uuid": "5e8c9153-f5f1-4ec4-ac62-cadb69d146c2",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "7d5156e4-241a-4b78-be96-beb1b68cc0a1",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "807e0074-3d23-4204-acf5-1c5e1cf6cb65",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "885f072e-40d7-4335-a279-324f2d550147",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "8ac58f33-fbfe-46f6-866b-ec6fe6d0d24a",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "936b102a-268e-4bde-b88d-f5d6667efe9b",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "9c5012f3-1e04-4343-8956-7ca48b73cbba",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "In2.Cu"
+      ]
+    },
+    {
+      "uuid": "a05cae65-6216-4ace-acca-635d5923a6c3",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "via",
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "c5da0d1f-ce1b-4083-926b-245bf13f1cc3",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "cc42e771-b693-4990-98df-169a8187d1d6",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "cf3ef1c8-4027-456f-8883-f9f671f876e8",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "cf426146-3de2-40f4-8a27-11b4120f6103",
+      "logical_owner": "SERVO2_MCU::P0",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "uuid": "f20a3830-f6b8-4d74-bb31-d84e60dd50c4",
+      "logical_owner": "SERVO2_MCU::P1",
+      "kind": "track",
+      "layers": [
+        "F.Cu"
+      ]
+    }
+  ],
+  "full_branch_construction": [
+    "R21.2 retained approach/via (11.77,5.49) \u2192 replacement In3 \u2192 new P0 via (10.7,10.78) \u2192 replacement F.Cu to (11.01,12.505) \u2192 exact retained tail into U12.3",
+    "U12.3 exact retained P1 F.Cu/via (10.16087,11.17593) \u2192 replacement first In2 corridor to (12.88099,12.9545) \u2192 retained full In2/via/B.Cu route to U1.57",
+    "R22.2 new front loop \u2192 via (12.05,6.85) \u2192 new In2 path \u2192 via (10.02,10.34) \u2192 new F.Cu southwest entry into U12.4"
+  ],
+  "remaining_heavy_router": {
+    "logical_net": "SERVO3_MCU::P1",
+    "start_existing_new_via_mm": [
+      14.85,
+      9.06
+    ],
+    "screened_In2_exit_mm": [
+      16.5,
+      9.06
+    ],
+    "target_pad": "U1.25",
+    "target_center_B_Cu_mm": [
+      21.209999,
+      8.125
+    ],
+    "task": "Complete In2/In3 continuation, choose a process/guard-compliant MCU approach via, and terminate full-width on actual U1.25. Keep all supplied complete branch geometry unless an explicitly re-screened coordinated revision is required.",
+    "near_target_naive_vias_rejected": true,
+    "avoid_front_only_stub_adoption": true
+  },
+  "ground_return": {
+    "pad": "U12.2",
+    "before": {
+      "width_mm": 0.25,
+      "points_mm": [
+        [
+          12.5,
+          11.8875
+        ],
+        [
+          12.5,
+          10.7915
+        ],
+        [
+          11.404,
+          10.7915
+        ]
+      ],
+      "centerline_length_mm": 2.192,
+      "via_count": 1,
+      "via_xy_mm": [
+        11.404,
+        10.7915
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2
+    },
+    "after": {
+      "width_mm": 0.25,
+      "points_mm": [
+        [
+          12.5,
+          11.8875
+        ],
+        [
+          12.5,
+          10.89
+        ],
+        [
+          11.27,
+          10.89
+        ]
+      ],
+      "centerline_length_mm": 2.227499999999999,
+      "via_count": 1,
+      "via_xy_mm": [
+        11.27,
+        10.89
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    "length_change_mm": 0.03549999999999898,
+    "narrow_shared_return_neck_introduced": false,
+    "narrow_shared_return_neck_basis": "Dedicated two-segment .25 mm branch from actual U12.2 to one GND through-via; no extra serial shared copper segment proposed. Saved filled-plane neck topology must still be recomputed.",
+    "saved_ground_connection": "The replacement GND through-via must connect to the same saved GND network and regenerated In1/In4 GND reference zones. This is not yet verified because no board was imported or refilled.",
+    "native_continuity_is_not_transient_qualification": true
+  },
+  "constraints": {
+    "track_width_min_mm": 0.127,
+    "clearance_min_mm": 0.127,
+    "via_diameter_mm": 0.45,
+    "via_drill_mm": 0.2,
+    "drill_to_every_smt_mask_min_mm": 0.2,
+    "drill_gap_min_mm": 0.25,
+    "signal_layers": [
+      "F.Cu",
+      "In2.Cu",
+      "In3.Cu",
+      "B.Cu"
+    ],
+    "ground_only_layers": [
+      "In1.Cu",
+      "In4.Cu"
+    ],
+    "critical_analog_hse_power_geometry_unchanged": true
+  },
+  "bounded_comparison": {
+    "ground_only": "Previously screened return-only moves cannot pass the southwest gap while clearing existing SERVO2 tracks/via. The new return moves west enough only with the declared coupled changes.",
+    "ordinary_only": "Ripup of SERVO2 alone leaves the original U12.2 return via blocking the southwest exit.",
+    "combined": "10 selected SERVO2 objects + 3 return objects suffice for this nominally screened plan; all other source objects remain exact. No claim of globally minimal count.",
+    "placement_alternative": "Not explored: bounded stock-pose construction now closes SERVO3 P0 and preserves complete SERVO2; moving R21/R22 would expand placement/connected external-route validation without addressing the remaining U1.25 approach."
+  },
+  "mandatory_before_adoption": [
+    "Finish SERVO3 P1 to U1.25; never adopt this partial plan as complete.",
+    "Import under an explicit new change contract listing exactly these ordinary and dedicated GND removals/replacements. Existing --coordinated helper is SERVO2-specific and cannot be silently generalized.",
+    "Native finite full-width pad and annular entries; complete actual U12.3/U12.4 cuts and outside-pad separation, complete physical actual-IO topology and all other clamp topology.",
+    "Native DRC/all-copper/strict parity/process/tenting/both-mask drill clearance/all-drill gap/placement/mechanical/reference and saved-GND connectivity checks.",
+    "Fresh native reference-plane refill and critical reference/antipad comparison; all model37 via guards passing is not proof of the refilled reference geometry.",
+    "Source-bound exact invariance for C10.2, all analog/HSE/power and other nonallowed copper; full power/reference revalidation for authorized U12.2 return relocation.",
+    "Check actual U12.2 pad-to-via return width/length/via count and absence of narrow shared neck in the saved/refilled board; native connectivity is not transient qualification."
+  ],
+  "screen_result": "screen.json"
+}

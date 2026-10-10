@@ -1,0 +1,777 @@
+{
+  "schema": "f722-PORT-B-conditional-power-path-review/v1",
+  "board_sha256": "fb8eb611cfb14b221bb3b0da208ef32a64fb378e886a8281e846872537bfb8d3",
+  "source_board_sha256": "cbb9a1f0b43dc612718baf1277302c9ac0767474cc7fa13f5d8c0a2428f2b787",
+  "native_sha256": "8ca761e86d74a4ee05ccadfb27c7e4b1ef886a0fface2c9a7fbed9a3caebd699",
+  "source_native_sha256": "9d6eee1c9c6a0ee381214cf0dce82f65631cdb6aa2e768ca8adc5d100e009898",
+  "script_sha256": "6eaecebc97df336a4b0002d61395ce1c66c78598205f6a2b4feb17629b22459b",
+  "support_audit_sha256": "bfc2128124d3d2ffa05d728c0bac1c5b0da43d048786487650de6fc8a7ec20a2",
+  "unchanged_full_power_pad_records": {
+    "C58": true,
+    "U6": true,
+    "C74": true,
+    "U8": true,
+    "U9": true,
+    "C66": true
+  },
+  "C58": {
+    "source50": {
+      "positive": {
+        "found": true,
+        "planar_track_length_mm": 9.55257340648327,
+        "track_uuids": [
+          "04d8217f-5887-4a9a-b958-aee4eeb57b9b",
+          "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+          "2211b2e8-62bf-4d4d-a919-222dc35a4c24",
+          "7328a697-89df-4895-aa06-65f44169c5b3",
+          "855778a5-68e4-455a-9447-8ac1afbea18e",
+          "aea57a8b-11f4-4c8d-a31a-637a4f49c5a0",
+          "e999e1d0-3716-4be3-8320-cfbef7c90c1d"
+        ],
+        "track_widths_mm": [
+          0.15
+        ],
+        "via_uuids": [
+          "1f9d5625-05f2-43d6-a725-b5320297e455"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "capacitor_ground_lead": {
+        "found": true,
+        "planar_track_length_mm": 2.7012883614159118,
+        "track_uuids": [
+          "2fb71541-b8de-48f2-8e82-e593b7c5b66c",
+          "ae3c42fd-56fa-4ffc-8d5b-6666f16a561e",
+          "c05da993-6060-49e3-aff5-560ca75c4fea"
+        ],
+        "track_widths_mm": [
+          0.2
+        ],
+        "via_uuids": [
+          "05b65697-c2ea-4e3a-9c91-ffe217bc975d"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "IC_control_ground_lead": {
+        "found": true,
+        "planar_track_length_mm": 0.5099019513592787,
+        "track_uuids": [
+          "5848b117-d6df-46a2-ac20-2a11e25c5c68"
+        ],
+        "track_widths_mm": [
+          0.2
+        ],
+        "via_uuids": [
+          "5fcbcdfd-4888-47d4-87de-4474dc82d6a5"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "explicit_plane_witness": {
+        "source_via": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+        "target_via": "5fcbcdfd-4888-47d4-87de-4474dc82d6a5",
+        "source_xy": [
+          31.949344,
+          18.199444
+        ],
+        "target_xy": [
+          32.0,
+          17.75
+        ],
+        "via_center_distance_mm": 0.45228966323806225,
+        "witness_center_path_length_mm": 0.45228966323806225,
+        "finite_strip_centerline_mm": [
+          [
+            31.96614385331878,
+            18.050387752467508
+          ],
+          [
+            31.98320014668122,
+            17.899056247532492
+          ]
+        ],
+        "straight_strip_trial": {
+          "In1.Cu": {
+            "missing_mm2": 0.0,
+            "actual_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": []
+            }
+          },
+          "In4.Cu": {
+            "missing_mm2": 0.0,
+            "actual_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": []
+            }
+          }
+        },
+        "planes": [
+          {
+            "layer": "In1.Cu",
+            "full_width_mm": 0.2,
+            "finite_strip_missing_mm2": 0.0,
+            "finite_strip_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": []
+            },
+            "finite_strip_fully_inside_saved_physical_ground": true,
+            "annular_entries": [
+              {
+                "via_uuid": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        32.06573868305135,
+                        18.059600238046325
+                      ],
+                      [
+                        31.86699701967471,
+                        18.037200433621155
+                      ],
+                      [
+                        31.866549023586206,
+                        18.04117526688869
+                      ],
+                      [
+                        32.06529068696285,
+                        18.06357507131386
+                      ],
+                      [
+                        32.06573868305135,
+                        18.059600238046325
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199964
+              },
+              {
+                "via_uuid": "5fcbcdfd-4888-47d4-87de-4474dc82d6a5",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        32.082794976413794,
+                        17.90826873311131
+                      ],
+                      [
+                        31.88405331303715,
+                        17.88586892868614
+                      ],
+                      [
+                        31.883605316948646,
+                        17.889843761953674
+                      ],
+                      [
+                        32.08234698032529,
+                        17.912243566378844
+                      ],
+                      [
+                        32.082794976413794,
+                        17.90826873311131
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199986
+              }
+            ]
+          },
+          {
+            "layer": "In4.Cu",
+            "full_width_mm": 0.2,
+            "finite_strip_missing_mm2": 0.0,
+            "finite_strip_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": []
+            },
+            "finite_strip_fully_inside_saved_physical_ground": true,
+            "annular_entries": [
+              {
+                "via_uuid": "05b65697-c2ea-4e3a-9c91-ffe217bc975d",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        32.06573868305135,
+                        18.059600238046325
+                      ],
+                      [
+                        31.86699701967471,
+                        18.037200433621155
+                      ],
+                      [
+                        31.866549023586206,
+                        18.04117526688869
+                      ],
+                      [
+                        32.06529068696285,
+                        18.06357507131386
+                      ],
+                      [
+                        32.06573868305135,
+                        18.059600238046325
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199964
+              },
+              {
+                "via_uuid": "5fcbcdfd-4888-47d4-87de-4474dc82d6a5",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        32.082794976413794,
+                        17.90826873311131
+                      ],
+                      [
+                        31.88405331303715,
+                        17.88586892868614
+                      ],
+                      [
+                        31.883605316948646,
+                        17.889843761953674
+                      ],
+                      [
+                        32.08234698032529,
+                        17.912243566378844
+                      ],
+                      [
+                        32.082794976413794,
+                        17.90826873311131
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199986
+              }
+            ]
+          }
+        ],
+        "qualified_current_path": false
+      },
+      "planar_ground_witness_center_length_mm": 3.6634799760132526,
+      "complete_external_planar_loop_witness_length_mm": 13.216053382496524
+    },
+    "candidate22": {
+      "positive": {
+        "found": true,
+        "planar_track_length_mm": 9.55257340648327,
+        "track_uuids": [
+          "04d8217f-5887-4a9a-b958-aee4eeb57b9b",
+          "1dde6833-c9e7-4b1f-a8b1-7f9940efc9d2",
+          "2211b2e8-62bf-4d4d-a919-222dc35a4c24",
+          "7328a697-89df-4895-aa06-65f44169c5b3",
+          "855778a5-68e4-455a-9447-8ac1afbea18e",
+          "aea57a8b-11f4-4c8d-a31a-637a4f49c5a0",
+          "e999e1d0-3716-4be3-8320-cfbef7c90c1d"
+        ],
+        "track_widths_mm": [
+          0.15
+        ],
+        "via_uuids": [
+          "1f9d5625-05f2-43d6-a725-b5320297e455"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "capacitor_ground_lead": {
+        "found": true,
+        "planar_track_length_mm": 1.6327269726311973,
+        "track_uuids": [
+          "1dbbfcce-81b6-5f9b-acdd-d735ddf4add3",
+          "bae4d794-0ce6-5e99-aded-db6e2dbc8bfe"
+        ],
+        "track_widths_mm": [
+          0.25
+        ],
+        "via_uuids": [
+          "07d7ae57-1856-4035-91d7-ae96a26f2ddd"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "IC_control_ground_lead": {
+        "found": true,
+        "planar_track_length_mm": 0.5099019513592787,
+        "track_uuids": [
+          "5848b117-d6df-46a2-ac20-2a11e25c5c68"
+        ],
+        "track_widths_mm": [
+          0.2
+        ],
+        "via_uuids": [
+          "5fcbcdfd-4888-47d4-87de-4474dc82d6a5"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "explicit_plane_witness": {
+        "source_via": "07d7ae57-1856-4035-91d7-ae96a26f2ddd",
+        "target_via": "5fcbcdfd-4888-47d4-87de-4474dc82d6a5",
+        "source_xy": [
+          29.325,
+          17.95
+        ],
+        "target_xy": [
+          32.0,
+          17.75
+        ],
+        "via_center_distance_mm": 2.6824662160034753,
+        "witness_center_path_length_mm": 2.684389143920089,
+        "finite_strip_centerline_mm": [
+          [
+            29.474047945247243,
+            17.93312664770786
+          ],
+          [
+            30.65,
+            17.8
+          ],
+          [
+            31.850102774934985,
+            17.75555174907648
+          ]
+        ],
+        "straight_strip_trial": {
+          "In1.Cu": {
+            "missing_mm2": 0.0002619871689997876,
+            "actual_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    30.69967060800171,
+                    17.9475
+                  ],
+                  [
+                    30.628592,
+                    17.9475
+                  ],
+                  [
+                    30.628591,
+                    17.9475
+                  ],
+                  [
+                    30.628585,
+                    17.947501
+                  ],
+                  [
+                    30.601077869529338,
+                    17.954871419698872
+                  ],
+                  [
+                    30.69967060800171,
+                    17.9475
+                  ]
+                ]
+              ]
+            }
+          },
+          "In4.Cu": {
+            "missing_mm2": 0.0002619871689997876,
+            "actual_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    30.69967060800171,
+                    17.9475
+                  ],
+                  [
+                    30.628592,
+                    17.9475
+                  ],
+                  [
+                    30.628591,
+                    17.9475
+                  ],
+                  [
+                    30.628585,
+                    17.947501
+                  ],
+                  [
+                    30.601077869529338,
+                    17.954871419698872
+                  ],
+                  [
+                    30.69967060800171,
+                    17.9475
+                  ]
+                ]
+              ]
+            }
+          }
+        },
+        "planes": [
+          {
+            "layer": "In1.Cu",
+            "full_width_mm": 0.2,
+            "finite_strip_missing_mm2": 0.0,
+            "finite_strip_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": []
+            },
+            "finite_strip_fully_inside_saved_physical_ground": true,
+            "annular_entries": [
+              {
+                "via_uuid": "07d7ae57-1856-4035-91d7-ae96a26f2ddd",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        29.487284152711997,
+                        18.03226696650879
+                      ],
+                      [
+                        29.46478634965575,
+                        17.833536372845803
+                      ],
+                      [
+                        29.46081173778249,
+                        17.833986328906928
+                      ],
+                      [
+                        29.483309540838736,
+                        18.032716922569914
+                      ],
+                      [
+                        29.487284152711997,
+                        18.03226696650879
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199983
+              },
+              {
+                "via_uuid": "5fcbcdfd-4888-47d4-87de-4474dc82d6a5",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        31.85580257065349,
+                        17.85540920913214
+                      ],
+                      [
+                        31.848400238551545,
+                        17.655546242378783
+                      ],
+                      [
+                        31.84440297921648,
+                        17.655694289020822
+                      ],
+                      [
+                        31.851805311318426,
+                        17.85555725577418
+                      ],
+                      [
+                        31.85580257065349,
+                        17.85540920913214
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199986
+              }
+            ]
+          },
+          {
+            "layer": "In4.Cu",
+            "full_width_mm": 0.2,
+            "finite_strip_missing_mm2": 0.0,
+            "finite_strip_missing_geometry": {
+              "type": "Polygon",
+              "coordinates": []
+            },
+            "finite_strip_fully_inside_saved_physical_ground": true,
+            "annular_entries": [
+              {
+                "via_uuid": "07d7ae57-1856-4035-91d7-ae96a26f2ddd",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        29.487284152711997,
+                        18.03226696650879
+                      ],
+                      [
+                        29.46478634965575,
+                        17.833536372845803
+                      ],
+                      [
+                        29.46081173778249,
+                        17.833986328906928
+                      ],
+                      [
+                        29.483309540838736,
+                        18.032716922569914
+                      ],
+                      [
+                        29.487284152711997,
+                        18.03226696650879
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199983
+              },
+              {
+                "via_uuid": "5fcbcdfd-4888-47d4-87de-4474dc82d6a5",
+                "finite_annular_window_mm": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        31.85580257065349,
+                        17.85540920913214
+                      ],
+                      [
+                        31.848400238551545,
+                        17.655546242378783
+                      ],
+                      [
+                        31.84440297921648,
+                        17.655694289020822
+                      ],
+                      [
+                        31.851805311318426,
+                        17.85555725577418
+                      ],
+                      [
+                        31.85580257065349,
+                        17.85540920913214
+                      ]
+                    ]
+                  ]
+                },
+                "window_outside_actual_annulus_mm2": 0.0,
+                "positive_saved_zone_contact_mm2": 0.12762987684199986
+              }
+            ]
+          }
+        ],
+        "qualified_current_path": false
+      },
+      "planar_ground_witness_center_length_mm": 4.827018067910565,
+      "complete_external_planar_loop_witness_length_mm": 14.379591474393836
+    },
+    "ABC_VAUX_all_physical_records_identical": true,
+    "function": "100nF VAUX internal-regulator bypass for TPS63070 U6, pin3. No external VAUX load is introduced. U6.4 control ground and all U6 power/input/output/inductor/feedback components remain unchanged.",
+    "assessment": "The local capacitor B ground lead is shorter and wider, but the explicit control-ground plane witness is longer. This is a topological/finite-copper observation only and does not establish equal or improved loop inductance or regulator stability. Fresh current-source power, startup/transient and regulator-loop review remains required.",
+    "datasheet_source": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+    "datasheet_sections": [
+      "Pin Functions: VAUX pin3 and GND pin4",
+      "11.1 Layout Guidelines"
+    ],
+    "datasheet_layout_intent": "Keep supply loops short and wide; preserve separate local control/power ground routing and join near the IC ground. No stability approval is inferred from DC connectivity."
+  },
+  "C74": {
+    "source50": {
+      "feed_via_to_positive_pad": {
+        "found": true,
+        "planar_track_length_mm": 3.4999999999999982,
+        "track_uuids": [
+          "28501ac6-6b98-4b89-bd8e-708a03c76136",
+          "46fe3d71-01bc-4720-b51b-2d72b585910e",
+          "6ede3a5b-ed86-4a4d-87bf-25c8cd7776bb"
+        ],
+        "track_widths_mm": [
+          0.4
+        ],
+        "via_uuids": [
+          "cb46fb53-49b2-4ac5-9b9f-56e4082763af"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "mux_output_to_positive_pad": {
+        "found": true,
+        "planar_track_length_mm": 5.771954445729287,
+        "track_uuids": [
+          "158db863-e63c-46ac-89be-a942f00a3369",
+          "28501ac6-6b98-4b89-bd8e-708a03c76136",
+          "46fe3d71-01bc-4720-b51b-2d72b585910e",
+          "6ede3a5b-ed86-4a4d-87bf-25c8cd7776bb",
+          "dda79b3d-ec83-427d-9e63-d3717e71426a"
+        ],
+        "track_widths_mm": [
+          0.25,
+          0.4
+        ],
+        "via_uuids": [
+          "cb46fb53-49b2-4ac5-9b9f-56e4082763af"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "ground_pad_to_existing_via": {
+        "found": true,
+        "planar_track_length_mm": 0.8000000000000007,
+        "track_uuids": [
+          "bda745f7-49e0-4bd1-be3f-06a961d8c5f1"
+        ],
+        "track_widths_mm": [
+          0.3
+        ],
+        "via_uuids": [
+          "d141f729-8234-4c3c-89d1-d3341d392e2b"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      }
+    },
+    "candidate22": {
+      "feed_via_to_positive_pad": {
+        "found": true,
+        "planar_track_length_mm": 1.63783393541592,
+        "track_uuids": [
+          "ca9bb96a-1e55-5a9c-8a97-3c61bef5470b"
+        ],
+        "track_widths_mm": [
+          0.4
+        ],
+        "via_uuids": [
+          "cb46fb53-49b2-4ac5-9b9f-56e4082763af"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "mux_output_to_positive_pad": {
+        "found": true,
+        "planar_track_length_mm": 3.9097883811452094,
+        "track_uuids": [
+          "158db863-e63c-46ac-89be-a942f00a3369",
+          "ca9bb96a-1e55-5a9c-8a97-3c61bef5470b",
+          "dda79b3d-ec83-427d-9e63-d3717e71426a"
+        ],
+        "track_widths_mm": [
+          0.25,
+          0.4
+        ],
+        "via_uuids": [
+          "cb46fb53-49b2-4ac5-9b9f-56e4082763af"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      },
+      "ground_pad_to_existing_via": {
+        "found": true,
+        "planar_track_length_mm": 0.8000000000000007,
+        "track_uuids": [
+          "bda745f7-49e0-4bd1-be3f-06a961d8c5f1"
+        ],
+        "track_widths_mm": [
+          0.3
+        ],
+        "via_uuids": [
+          "d141f729-8234-4c3c-89d1-d3341d392e2b"
+        ],
+        "centerline_path_excludes_component_and_barrel_internal_lengths": true
+      }
+    },
+    "function": "1uF bypass on TPS2121 U8 mux-output/TPS62162 U9 buck-input rail. U8 is the mux; U9 is the fixed3.3V buck. Local22uF C66 remains unchanged.",
+    "positive_feed_width_mm": 0.4,
+    "ground_lead_width_mm": 0.3,
+    "existing_feed_via_and_ground_via_physical_records_exact": true,
+    "capacitor_value_and_pose_preserved": true,
+    "ground_lead_physical_record_exact": true,
+    "full_input_rail_and_GND_native_pad_partitions_preserved": true,
+    "finite_new_pad_and_annular_entries": "entry-support-audit.json",
+    "fresh_power_model_required": true
+  },
+  "CORE": {
+    "removed_tracks": [
+      {
+        "uuid": "a09510bf-2f9a-47ca-8c2f-c5f15ef20ee5",
+        "layer": "B.Cu",
+        "start": [
+          24.709999,
+          8.125
+        ],
+        "end": [
+          25.223549,
+          10.346135
+        ],
+        "width_mm": 0.3
+      },
+      {
+        "uuid": "a45270e4-55bc-434e-ba88-0e34b63d4d63",
+        "layer": "B.Cu",
+        "start": [
+          25.223549,
+          10.346135
+        ],
+        "end": [
+          19.622698,
+          12.867203
+        ],
+        "width_mm": 0.3
+      }
+    ],
+    "replacement_tracks": [
+      {
+        "uuid": "34638d66-fc64-5982-a3c5-e2e7295b67b3",
+        "layer": "In2.Cu",
+        "start": [
+          28.19712,
+          9.342299
+        ],
+        "end": [
+          22.337044,
+          6.500118
+        ],
+        "width_mm": 0.3
+      },
+      {
+        "uuid": "3d652577-ab1e-51ec-a66e-0c9dbfe5c099",
+        "layer": "In2.Cu",
+        "start": [
+          22.337044,
+          6.500118
+        ],
+        "end": [
+          21.510632,
+          4.935546
+        ],
+        "width_mm": 0.3
+      },
+      {
+        "uuid": "17f127e3-7c4d-5b7c-a147-583d553c7942",
+        "layer": "In2.Cu",
+        "start": [
+          21.510632,
+          4.935546
+        ],
+        "end": [
+          22.909959,
+          2.639351
+        ],
+        "width_mm": 0.3
+      }
+    ],
+    "removed_track_length_mm": 8.421824950555072,
+    "replacement_track_length_mm": 10.971348642896471,
+    "all_widths_preserved_at_mm": 0.3,
+    "source_complete_pad_partition_restored": true,
+    "retained_ADC_and_SBUS_regression": "declared-transaction50-screen.json",
+    "numerical_drop_ampacity_or_ripple_qualification": false
+  },
+  "all28_native_support_groups_exactly_preserved": true,
+  "numerical_power_and_VCAP_applicable": false,
+  "regulator_stability_or_transient_qualification": false,
+  "limits": [
+    "Explicit plane strips show a possible finite-copper geometric connection, not the actual frequency-dependent current distribution.",
+    "Reported lengths are planar track/plane-witness lengths; package-internal and vertical barrel lengths are not included.",
+    "Original source50 power numerical evidence is stale and does not qualify this changed copper or ground domain."
+  ]
+}

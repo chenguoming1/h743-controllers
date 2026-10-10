@@ -1,0 +1,5019 @@
+{
+  "schema": "f722-independent-power-pin-subcheck/v1",
+  "scope": "U5/U6/U7/U8/U9/U10 only; U11 explicitly excluded for separate audit",
+  "review_date": "2026-10-09",
+  "status": "ONE_PROVEN_MODEL_PIN_ERROR; GROUND_PACKAGE_IDEALIZATIONS_REMAIN_EXPLICIT",
+  "checks": {
+    "freeze_file_count": 28,
+    "all_frozen_hashes_match": true,
+    "ledger_freeze_hash_matches": true,
+    "candidate39_board_matches_native": true,
+    "netlist_hash_matches_candidate39_parity": true,
+    "selected_parts_unchanged_from_candidate19": true,
+    "all_selected_pad_records_unchanged_from_candidate19": true,
+    "all_schematic_nets_match_native": true,
+    "all_device_pin_functions_match_ti": true,
+    "all_schematic_symbol_functions_match_ti": true,
+    "all_declared_U6_power_unions_connected": true,
+    "numerical_solver_run": false,
+    "canonical_inputs_modified": false
+  },
+  "source_hashes": [
+    {
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/ledger.json",
+      "sha256": "f811c4d93dd074e5d74fb000db2d1218d10199ceb7c0562173be437fda572951"
+    },
+    {
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/freeze.json",
+      "sha256": "1e0296e48e779f1a3531a7f0fa901c25ab978da97687e20826a395e58bb727b5"
+    },
+    {
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/port-audit.json",
+      "sha256": "70aa42a9c769d15bb58cff1f8a04ac8035ea7c06d15ee7ac11412c39e96ef6b4"
+    },
+    {
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/rebound-terminals.json",
+      "sha256": "f2c681666917332c1facababbf5589cd2a812dee565f8f79d6de3b978837edc5"
+    },
+    {
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/terminal-registry.json",
+      "sha256": "6b23b84a26c7c375ebed9df46fc07ea9b52cb1f2dc5abcfa2309d23ff8948922"
+    },
+    {
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-native.json",
+      "sha256": "3694b37bbe4f9b71b88472e8b3f075365cf6319bd26f28d06f0d254dc0d45868"
+    },
+    {
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    {
+      "path": "ordinary-routing/candidate39/owner-native.json",
+      "sha256": "e99bb7888b98c5dd44e44a04b51789ac9dcc47b3fd6b07d1446295acf5b2c577"
+    },
+    {
+      "path": "ordinary-routing/candidate39/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    {
+      "path": "ordinary-routing/candidate39/f722-heli.kicad_pcb",
+      "sha256": "246e3aa5d177377badb90aa248faedaaf832bc99303109d002980aad260fe0b7"
+    },
+    {
+      "path": "ordinary-routing/candidate39/owner-parity.json",
+      "sha256": "d945e4c1bc54544cfd1a0d14541053302b3ddf3c6f8474321b53fc1531df4b53"
+    },
+    {
+      "path": "repo/f722-heli/layout-revision/checks/reconstructed.net",
+      "sha256": "4243bd2401f97591002798145ebb9e064a4efb5b9abc6b87ed6532f3640230ec"
+    },
+    {
+      "path": "independent-power-drop-review/REPORT.md",
+      "sha256": "09f79b29ba80277d081bd8001b49b5449a764c0f932316870bcb21d6de5b2643"
+    },
+    {
+      "path": "independent-power-drop-review/source-bound-evidence.json",
+      "sha256": "44984dfcb2d20565565845539892b54ce9505d90366598cb8fe096f97b40b472"
+    },
+    {
+      "path": "bec-voltage-source-packet/REPORT.md",
+      "sha256": "ce78a418c11d429beb4cc51a4751870c9bd3ce951cad37708121395510b39c78"
+    },
+    {
+      "path": "bec-voltage-source-packet/sources.json",
+      "sha256": "e280694613bb7775861c630bb2abc2473d695773b11f63565e97dbb8fd69af84"
+    },
+    {
+      "path": "repo/f722-heli/layout-revision/hardware/power-bec.kicad_sch",
+      "sha256": "5768d27cea9730d67024a0ae866075f656c34b1b99537a7fdf49755bf725d11e"
+    },
+    {
+      "path": "repo/f722-heli/layout-revision/hardware/power-core.kicad_sch",
+      "sha256": "ed50b5e00e5810f4ecd545e906d130779d8ed9e710ed384b7498836116971219"
+    },
+    {
+      "path": "repo/f722-heli/layout-revision/hardware/power-usb-dsm.kicad_sch",
+      "sha256": "1ba55e7014d401b3a0ec918784eff8098a5f40e4b3e4d67affdaa72bde37af93"
+    }
+  ],
+  "frozen_source_checks": [
+    {
+      "name": "board",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/f722-heli.kicad_pcb",
+      "expected_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+      "actual_sha256": "e26da349b5585db16d2586ed05e3d649e2f1f8df4932c09d78aca8ce880469c4",
+      "matches": true
+    },
+    {
+      "name": "geometry",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-native.json",
+      "expected_sha256": "3694b37bbe4f9b71b88472e8b3f075365cf6319bd26f28d06f0d254dc0d45868",
+      "actual_sha256": "3694b37bbe4f9b71b88472e8b3f075365cf6319bd26f28d06f0d254dc0d45868",
+      "matches": true
+    },
+    {
+      "name": "parts",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/parts.json",
+      "expected_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+      "actual_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+      "matches": true
+    },
+    {
+      "name": "parity",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-parity.json",
+      "expected_sha256": "ee87127a3d2bee2e3da8bb26378f59a7695200bfb3868d1f04ff56f86d27c4e2",
+      "actual_sha256": "ee87127a3d2bee2e3da8bb26378f59a7695200bfb3868d1f04ff56f86d27c4e2",
+      "matches": true
+    },
+    {
+      "name": "process",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-process.json",
+      "expected_sha256": "3b08282459745258e40c7689914aad08105388281a66ea36b1d335ee2e4162e0",
+      "actual_sha256": "3b08282459745258e40c7689914aad08105388281a66ea36b1d335ee2e4162e0",
+      "matches": true
+    },
+    {
+      "name": "mechanical",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-mechanical.json",
+      "expected_sha256": "b698b5a0937588dd7e45b13fc66224da51af3da9b4a18ad116303ed099d44bd0",
+      "actual_sha256": "b698b5a0937588dd7e45b13fc66224da51af3da9b4a18ad116303ed099d44bd0",
+      "matches": true
+    },
+    {
+      "name": "critical",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-critical.json",
+      "expected_sha256": "34211fa56a94c834055dda1de51aff95d0fe022d4f69b5f610071efafcc060fd",
+      "actual_sha256": "34211fa56a94c834055dda1de51aff95d0fe022d4f69b5f610071efafcc060fd",
+      "matches": true
+    },
+    {
+      "name": "power_connectivity",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/power-audit.json",
+      "expected_sha256": "591e0ef0e3630eee4282a97fa9aec5cb1db0327b7909a3fb14c66f716527946e",
+      "actual_sha256": "591e0ef0e3630eee4282a97fa9aec5cb1db0327b7909a3fb14c66f716527946e",
+      "matches": true
+    },
+    {
+      "name": "drc_normal",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-drc.json",
+      "expected_sha256": "4481542b7b0dd79d3609906e8d22be04ffdcfafa76214a2d3e921ab54c409019",
+      "actual_sha256": "4481542b7b0dd79d3609906e8d22be04ffdcfafa76214a2d3e921ab54c409019",
+      "matches": true
+    },
+    {
+      "name": "drc_all_track",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-drc-all.json",
+      "expected_sha256": "aa2cecbc5ceeac850165c53c8793c647a224a400505b60ec3583426c45e60ce8",
+      "actual_sha256": "aa2cecbc5ceeac850165c53c8793c647a224a400505b60ec3583426c45e60ce8",
+      "matches": true
+    },
+    {
+      "name": "ordinary_protection",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-protection.json",
+      "expected_sha256": "f9b6b1bd592ce626e02198c6d442e7d8cf59b82834b1d763b907211dc005895b",
+      "actual_sha256": "f9b6b1bd592ce626e02198c6d442e7d8cf59b82834b1d763b907211dc005895b",
+      "matches": true
+    },
+    {
+      "name": "ordinary_supplemental",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/owner-supplemental.json",
+      "expected_sha256": "886e0fd77f8394e3c32005303ffbf5d9ef4692ed4b8a83bd1052eb09c5e146c3",
+      "actual_sha256": "886e0fd77f8394e3c32005303ffbf5d9ef4692ed4b8a83bd1052eb09c5e146c3",
+      "matches": true
+    },
+    {
+      "name": "connectivity",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/connectivity.json",
+      "expected_sha256": "43a31725ce63748b5e678c2b94e398594b9572c5f87d08c70d81fa32dfbaf678",
+      "actual_sha256": "43a31725ce63748b5e678c2b94e398594b9572c5f87d08c70d81fa32dfbaf678",
+      "matches": true
+    },
+    {
+      "name": "physical",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/physical.json",
+      "expected_sha256": "c6aa397171e92d31712edb17a1821167e7ef2e8d7f709b390b84b708c10164c8",
+      "actual_sha256": "c6aa397171e92d31712edb17a1821167e7ef2e8d7f709b390b84b708c10164c8",
+      "matches": true
+    },
+    {
+      "name": "case_plan",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/case-plan.json",
+      "expected_sha256": "b716e2476f9d0e683183e0cd227a428f764add8d8750a5861021dc073b759a85",
+      "actual_sha256": "b716e2476f9d0e683183e0cd227a428f764add8d8750a5861021dc073b759a85",
+      "matches": true
+    },
+    {
+      "name": "terminal_registry",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/terminal-registry.json",
+      "expected_sha256": "6b23b84a26c7c375ebed9df46fc07ea9b52cb1f2dc5abcfa2309d23ff8948922",
+      "actual_sha256": "6b23b84a26c7c375ebed9df46fc07ea9b52cb1f2dc5abcfa2309d23ff8948922",
+      "matches": true
+    },
+    {
+      "name": "compiler_settings",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/compiler-settings.json",
+      "expected_sha256": "a8752308f707bd2ed2744f945828c6f254434c5596445dd38a426e219178889c",
+      "actual_sha256": "a8752308f707bd2ed2744f945828c6f254434c5596445dd38a426e219178889c",
+      "matches": true
+    },
+    {
+      "name": "rebound_terminals",
+      "path": "static-power-validation/activation-candidate19-operator-refined/input/rebound-terminals.json",
+      "expected_sha256": "f2c681666917332c1facababbf5589cd2a812dee565f8f79d6de3b978837edc5",
+      "actual_sha256": "f2c681666917332c1facababbf5589cd2a812dee565f8f79d6de3b978837edc5",
+      "matches": true
+    },
+    {
+      "name": "source_evidence_power-construction.json",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/source-evidence/power-construction.json",
+      "expected_sha256": "16602686ad71829e460c1eb561a2abb214a14bbf69785389196ab5e50256f383",
+      "actual_sha256": "16602686ad71829e460c1eb561a2abb214a14bbf69785389196ab5e50256f383",
+      "matches": true
+    },
+    {
+      "name": "source_evidence_power-endpoints.json",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/source-evidence/power-endpoints.json",
+      "expected_sha256": "d6341c9d7148d5c73ade288ba3de5c81d75012c0df75aa86f40f57821cebf439",
+      "actual_sha256": "d6341c9d7148d5c73ade288ba3de5c81d75012c0df75aa86f40f57821cebf439",
+      "matches": true
+    },
+    {
+      "name": "source_evidence_route-handoff.json",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/source-evidence/route-handoff.json",
+      "expected_sha256": "15d35cb50c8366461f7f1dcf8c6fc3cb3d376814b1cb873956a331ae22c7de26",
+      "actual_sha256": "15d35cb50c8366461f7f1dcf8c6fc3cb3d376814b1cb873956a331ae22c7de26",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_copper_fem.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/copper_fem.py",
+      "expected_sha256": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+      "actual_sha256": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_dc_circuit.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/dc_circuit.py",
+      "expected_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "actual_sha256": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_validate_static.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/validate_static.py",
+      "expected_sha256": "6114df1efcba08e643b8adf879948db10c54a4c7d72143baef6ea411db295c2b",
+      "actual_sha256": "6114df1efcba08e643b8adf879948db10c54a4c7d72143baef6ea411db295c2b",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_audit_native_ports.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/audit_native_ports.py",
+      "expected_sha256": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717",
+      "actual_sha256": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_native_edge_noding.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/native_edge_noding.py",
+      "expected_sha256": "63b57015db4e7ef76a317d4b16ef18ab1f7fd8bd44c2bd440f4ca738cca2fc1a",
+      "actual_sha256": "63b57015db4e7ef76a317d4b16ef18ab1f7fd8bd44c2bd440f4ca738cca2fc1a",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_mesh_cache.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/mesh_cache.py",
+      "expected_sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+      "actual_sha256": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+      "matches": true
+    },
+    {
+      "name": "pilot_source_run_bounded_pilot.py",
+      "path": "static-power-validation/pilot-candidate19-operator-refined-released/solver-source/run_bounded_pilot.py",
+      "expected_sha256": "4b38019196550923acdb79e00b67659ab04cf731b5299ab871d8a1615eb6abf0",
+      "actual_sha256": "4b38019196550923acdb79e00b67659ab04cf731b5299ab871d8a1615eb6abf0",
+      "matches": true
+    }
+  ],
+  "manufacturer_sources": {
+    "U5": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+      "revision": "SLVSFC9C, May 2026",
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "package": "RPW, 10-pin QFN"
+    },
+    "U6": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+      "revision": "SLVSC58B, March 2019",
+      "pages": [
+        3
+      ],
+      "package": "RNM, 15-pin QFN"
+    },
+    "U7": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps2117.pdf",
+      "revision": "SLVSGZ5A, August 2023",
+      "pages": [
+        3
+      ],
+      "package": "DRL, 8-pin SOT"
+    },
+    "U8": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps2121.pdf",
+      "revision": "SLVSEA3F, August 2020",
+      "pages": [
+        4,
+        5
+      ],
+      "package": "RUX, 12-pin VQFN-HR"
+    },
+    "U9": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps62160.pdf",
+      "revision": "SLVSAM2E, May 2017",
+      "pages": [
+        4
+      ],
+      "package": "DSG, 8-pin WSON plus exposed pad"
+    },
+    "U10": {
+      "url": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+      "revision": "SLVS841F, August 2016",
+      "pages": [
+        5
+      ],
+      "package": "DRV, 6-pin WSON plus PowerPAD"
+    }
+  },
+  "selected_parts": {
+    "U5": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS259472ARPWR",
+      "jlcpcb_lcsc_code": "C3662789",
+      "proposed_footprint": "F722_Heli:Texas_RPW0010A_TPS259472_2x2mm",
+      "evidence_file": "validation/active-bom-proposals.json",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+      "supplier_url": "https://jlcpcb.com/partdetail/C3662789"
+    },
+    "U6": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS63070RNMR",
+      "jlcpcb_lcsc_code": "C109322",
+      "proposed_footprint": "F722_Heli:Texas_RNM0015A_TPS63070_2.5x3mm",
+      "evidence_file": "validation/active-bom-proposals.json",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+      "supplier_url": "https://jlcpcb.com/partdetail/C109322"
+    },
+    "U7": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS2117DRLR",
+      "jlcpcb_lcsc_code": "C22399676",
+      "proposed_footprint": "F722_Heli:SOT-583-8",
+      "evidence_file": "validation/active-bom-proposals.json",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps2117.pdf",
+      "supplier_url": "https://jlcpcb.com/partdetail/C22399676"
+    },
+    "U8": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS2121RUXR",
+      "jlcpcb_lcsc_code": "C485916",
+      "proposed_footprint": "F722_Heli:Texas_RUX0012A_TPS2121_2x2.5mm",
+      "evidence_file": "validation/active-bom-proposals.json",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps2121.pdf",
+      "supplier_url": "https://jlcpcb.com/partdetail/C485916"
+    },
+    "U9": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS62162DSGR",
+      "jlcpcb_lcsc_code": "C40256",
+      "proposed_footprint": "F722_Heli:Texas_DSG0008A_TPS62162_2x2mm_EP0.9x1.6mm",
+      "evidence_file": "validation/active-bom-proposals.json",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps62160.pdf",
+      "supplier_url": "https://jlcpcb.com/partdetail/C40256"
+    },
+    "U10": {
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS2553DRVR",
+      "jlcpcb_lcsc_code": "C138719",
+      "proposed_footprint": "F722_Heli:Texas_DRV0006A_TPS2553_2x2mm_EP1x1.6mm",
+      "evidence_file": "validation/active-bom-proposals.json",
+      "datasheet_url": "https://www.ti.com/lit/ds/symlink/tps2553.pdf",
+      "supplier_url": "https://jlcpcb.com/partdetail/C138719"
+    }
+  },
+  "pin_maps_note": "U9.9 and U10.7 are KiCad numbering for manufacturer unnumbered exposed pads, not extra numbered lead pins. PDF data was inspected through official TI web access; raw PDF bytes are not archived or hash-certified here.",
+  "schematic_symbol_definitions": {
+    "U5": {
+      "file": "repo/f722-heli/layout-revision/hardware/power-bec.kicad_sch",
+      "lib_id": "F722_Heli:TPS259472A",
+      "pin_functions": {
+        "1": "EN_UVLO",
+        "2": "OVCSEL",
+        "3": "PG",
+        "4": "PGTH",
+        "5": "IN",
+        "6": "OUT",
+        "7": "DVDT",
+        "8": "GND",
+        "9": "ILM",
+        "10": "ITIMER"
+      },
+      "matches_manufacturer": true
+    },
+    "U6": {
+      "file": "repo/f722-heli/layout-revision/hardware/power-bec.kicad_sch",
+      "lib_id": "F722_Heli:TPS63070RNM",
+      "pin_functions": {
+        "1": "PS_SYNC",
+        "2": "PG",
+        "3": "VAUX",
+        "4": "GND",
+        "5": "FB",
+        "6": "FB2",
+        "7": "VOUT",
+        "8": "VOUT",
+        "9": "L2",
+        "10": "PGND",
+        "11": "L1",
+        "12": "VIN",
+        "13": "VIN",
+        "14": "EN",
+        "15": "VSEL"
+      },
+      "matches_manufacturer": true
+    },
+    "U7": {
+      "file": "repo/f722-heli/layout-revision/hardware/power-bec.kicad_sch",
+      "lib_id": "F722_Heli:TPS2117DRL",
+      "pin_functions": {
+        "7": "VOUT",
+        "3": "VIN1",
+        "4": "PR1",
+        "5": "MODE",
+        "6": "VIN2",
+        "1": "GND",
+        "2": "VOUT",
+        "8": "ST"
+      },
+      "matches_manufacturer": true
+    },
+    "U8": {
+      "file": "repo/f722-heli/layout-revision/hardware/power-core.kicad_sch",
+      "lib_id": "F722_Heli:TPS2121RUX",
+      "pin_functions": {
+        "1": "OUT",
+        "2": "IN2",
+        "3": "CP2",
+        "4": "OV2",
+        "5": "OV1",
+        "6": "PR1",
+        "7": "IN1",
+        "8": "OUT",
+        "9": "ST",
+        "10": "ILIM",
+        "11": "SS",
+        "12": "GND"
+      },
+      "matches_manufacturer": true
+    },
+    "U9": {
+      "file": "repo/f722-heli/layout-revision/hardware/power-core.kicad_sch",
+      "lib_id": "F722_Heli:TPS62162DSG",
+      "pin_functions": {
+        "2": "VIN",
+        "3": "EN",
+        "8": "PG",
+        "9": "PAD",
+        "1": "PGND",
+        "4": "AGND",
+        "7": "SW",
+        "6": "VOS",
+        "5": "FB"
+      },
+      "matches_manufacturer": true
+    },
+    "U10": {
+      "file": "repo/f722-heli/layout-revision/hardware/power-usb-dsm.kicad_sch",
+      "lib_id": "F722_Heli:TPS2553DRV",
+      "pin_functions": {
+        "1": "OUT",
+        "2": "ILIM",
+        "3": "~{FAULT}",
+        "4": "EN",
+        "5": "GND",
+        "6": "IN",
+        "7": "EP_GND"
+      },
+      "matches_manufacturer": true
+    }
+  },
+  "pad_comparisons": [
+    {
+      "key": "L2.1",
+      "manufacturer_function": null,
+      "schematic": {
+        "net": "CORE_SW",
+        "ref": "L2",
+        "pin": "1",
+        "pinfunction": "1_1",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": null,
+      "native_uuid": "1578bb83-3cfb-4db4-bd85-5064a215f8e4",
+      "native_net": "CORE_SW",
+      "native_xy_mm": [
+        31.66,
+        2.5
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 2.519999999999996,
+      "native_land_bounds_mm": [
+        31.21,
+        1.1,
+        32.11,
+        3.9
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "3b89d954449dd8ae5eb6d2fa830ef94e4950754d73b53a9e192ed68d3ae7c434",
+      "candidate39_pad_sha256_canonical": "3b89d954449dd8ae5eb6d2fa830ef94e4950754d73b53a9e192ed68d3ae7c434"
+    },
+    {
+      "key": "L2.2",
+      "manufacturer_function": null,
+      "schematic": {
+        "net": "+3V3_CORE",
+        "ref": "L2",
+        "pin": "2",
+        "pinfunction": "2_2",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": null,
+      "native_uuid": "54f0ae3e-4922-4a43-9c47-827de2513e7e",
+      "native_net": "+3V3_CORE",
+      "native_xy_mm": [
+        34.46,
+        2.5
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 2.519999999999996,
+      "native_land_bounds_mm": [
+        34.01,
+        1.1,
+        34.91,
+        3.9
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "ccd0fc5e76bc3137445faa4329ce53033f440b0efff665d92ed6e2cad985a0b0",
+      "candidate39_pad_sha256_canonical": "ccd0fc5e76bc3137445faa4329ce53033f440b0efff665d92ed6e2cad985a0b0"
+    },
+    {
+      "key": "U10.1",
+      "manufacturer_function": "OUT",
+      "schematic": {
+        "net": "USB_LIMITED",
+        "ref": "U10",
+        "pin": "1",
+        "pinfunction": "OUT_1",
+        "pintype": "power_out"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "17a1a012-29cd-46f9-a7ce-d5c2ca3c83d4",
+      "native_net": "USB_LIMITED",
+      "native_xy_mm": [
+        38.125,
+        12.6
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.13285505468800102,
+      "native_land_bounds_mm": [
+        37.9,
+        12.45,
+        38.35,
+        12.75
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "32a5a817958d7b179bd99f0bd3eb4472bf28e736faa1823a655e79c646aef561",
+      "candidate39_pad_sha256_canonical": "32a5a817958d7b179bd99f0bd3eb4472bf28e736faa1823a655e79c646aef561"
+    },
+    {
+      "key": "U10.2",
+      "manufacturer_function": "ILIM",
+      "schematic": {
+        "net": "USB_ILIM",
+        "ref": "U10",
+        "pin": "2",
+        "pinfunction": "ILIM_2",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "01b302c0-b34d-4edc-86b2-bdf7c5f5a431",
+      "native_net": "USB_ILIM",
+      "native_xy_mm": [
+        38.125,
+        11.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.13285505468800038,
+      "native_land_bounds_mm": [
+        37.9,
+        11.8,
+        38.35,
+        12.1
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "7498ecc6a0e1911510ee97435d4ab04982b1d57588d89208221303cd8a7f9841",
+      "candidate39_pad_sha256_canonical": "7498ecc6a0e1911510ee97435d4ab04982b1d57588d89208221303cd8a7f9841"
+    },
+    {
+      "key": "U10.3",
+      "manufacturer_function": "~{FAULT}",
+      "schematic": {
+        "net": "unconnected-(U10-~{FAULT}-Pad3)",
+        "ref": "U10",
+        "pin": "3",
+        "pinfunction": "~{FAULT}_3",
+        "pintype": "open_collector+no_connect"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "a875546d-50a1-49d8-8ce0-10b2a958569e",
+      "native_net": "unconnected-(U10-~{FAULT}-Pad3)",
+      "native_xy_mm": [
+        38.125,
+        11.3
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.13285505468800035,
+      "native_land_bounds_mm": [
+        37.9,
+        11.15,
+        38.35,
+        11.45
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "2ec1869daf5592ac49480b5993da3df04a1c451a197e972f168c57800a81633c",
+      "candidate39_pad_sha256_canonical": "2ec1869daf5592ac49480b5993da3df04a1c451a197e972f168c57800a81633c"
+    },
+    {
+      "key": "U10.4",
+      "manufacturer_function": "EN",
+      "schematic": {
+        "net": "USB_VBUS_RAW",
+        "ref": "U10",
+        "pin": "4",
+        "pinfunction": "EN_4",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "07a60c76-2a6a-4d28-81a9-eb601942ac32",
+      "native_net": "USB_VBUS_RAW",
+      "native_xy_mm": [
+        40.075,
+        11.3
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.13285505468799874,
+      "native_land_bounds_mm": [
+        39.85,
+        11.15,
+        40.3,
+        11.45
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "5c69792c684875b2b7c608faa655bb18b24a794c1ab77c4cdb9c61bb182ef3b4",
+      "candidate39_pad_sha256_canonical": "5c69792c684875b2b7c608faa655bb18b24a794c1ab77c4cdb9c61bb182ef3b4"
+    },
+    {
+      "key": "U10.5",
+      "manufacturer_function": "GND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U10",
+        "pin": "5",
+        "pinfunction": "GND_5",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "663178d8-c282-49b0-b9f9-8b45503c957d",
+      "native_net": "GND",
+      "native_xy_mm": [
+        40.075,
+        11.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.13285505468799877,
+      "native_land_bounds_mm": [
+        39.85,
+        11.8,
+        40.3,
+        12.1
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "3c052d66442f913e3859cd288720b654813b0d1d076b0a98bdce80e2bd487b7e",
+      "candidate39_pad_sha256_canonical": "3c052d66442f913e3859cd288720b654813b0d1d076b0a98bdce80e2bd487b7e"
+    },
+    {
+      "key": "U10.6",
+      "manufacturer_function": "IN",
+      "schematic": {
+        "net": "USB_VBUS_RAW",
+        "ref": "U10",
+        "pin": "6",
+        "pinfunction": "IN_6",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "a81d617f-131f-45da-be9b-a7c452897140",
+      "native_net": "USB_VBUS_RAW",
+      "native_xy_mm": [
+        40.075,
+        12.6
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.13285505468799944,
+      "native_land_bounds_mm": [
+        39.85,
+        12.45,
+        40.3,
+        12.75
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "a2a82d0be0b040389febb2890977fef6fbc3912fb2cb500e92115243f0f5e114",
+      "candidate39_pad_sha256_canonical": "a2a82d0be0b040389febb2890977fef6fbc3912fb2cb500e92115243f0f5e114"
+    },
+    {
+      "key": "U10.7",
+      "manufacturer_function": "EP_GND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U10",
+        "pin": "7",
+        "pinfunction": "EP_GND_7",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "54dceb2a-fc9c-4e3f-87dd-af6c41117620",
+      "native_net": "GND",
+      "native_xy_mm": [
+        39.1,
+        11.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 1.5978550546879986,
+      "native_land_bounds_mm": [
+        38.6,
+        11.15,
+        39.6,
+        12.75
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "ef18ce20ae2ad3c1fe7da7703684365e7988c3f070022d9a566622c632464255",
+      "candidate39_pad_sha256_canonical": "ef18ce20ae2ad3c1fe7da7703684365e7988c3f070022d9a566622c632464255"
+    },
+    {
+      "key": "U5.1",
+      "manufacturer_function": "EN_UVLO",
+      "schematic": {
+        "net": "EFUSE_EN",
+        "ref": "U5",
+        "pin": "1",
+        "pinfunction": "EN_UVLO_1",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "ba5cd720-dadc-4e20-9a2a-4fe4893eaba4",
+      "native_net": "EFUSE_EN",
+      "native_xy_mm": [
+        11.16,
+        15.8
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.2647784567750008,
+      "native_land_bounds_mm": [
+        10.85999,
+        15.29999,
+        11.46001,
+        15.95001
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "f2e4eec96603623ab1591ee5fc2040d2b1d97d1ed79de25867d67b3e2290cc06",
+      "candidate39_pad_sha256_canonical": "f2e4eec96603623ab1591ee5fc2040d2b1d97d1ed79de25867d67b3e2290cc06"
+    },
+    {
+      "key": "U5.10",
+      "manufacturer_function": "ITIMER",
+      "schematic": {
+        "net": "unconnected-(U5-ITIMER-Pad10)",
+        "ref": "U5",
+        "pin": "10",
+        "pinfunction": "ITIMER_10",
+        "pintype": "passive+no_connect"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "6aa9e418-5cfe-47fc-b996-3b96ce924c47",
+      "native_net": "unconnected-(U5-ITIMER-Pad10)",
+      "native_xy_mm": [
+        12.96,
+        15.8
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.26477845677499967,
+      "native_land_bounds_mm": [
+        12.65999,
+        15.29999,
+        13.26001,
+        15.95001
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "04003c646d8c837ecfaedf88b841f0b121b65efa687b4a44efd1f70450f339a3",
+      "candidate39_pad_sha256_canonical": "04003c646d8c837ecfaedf88b841f0b121b65efa687b4a44efd1f70450f339a3"
+    },
+    {
+      "key": "U5.2",
+      "manufacturer_function": "OVCSEL",
+      "schematic": {
+        "net": "EFUSE_OVC",
+        "ref": "U5",
+        "pin": "2",
+        "pinfunction": "OVCSEL_2",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "524eb500-61c2-4585-b87d-4fc7035b602c",
+      "native_net": "EFUSE_OVC",
+      "native_xy_mm": [
+        11.16,
+        16.275
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468800028,
+      "native_land_bounds_mm": [
+        10.86,
+        16.15,
+        11.46,
+        16.4
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "4edb24c1501c0dcfb2662ad44ad483d433462c9ddabccdcc49c44d60b39ce0e2",
+      "candidate39_pad_sha256_canonical": "4edb24c1501c0dcfb2662ad44ad483d433462c9ddabccdcc49c44d60b39ce0e2"
+    },
+    {
+      "key": "U5.3",
+      "manufacturer_function": "PG",
+      "schematic": {
+        "net": "unconnected-(U5-PG-Pad3)",
+        "ref": "U5",
+        "pin": "3",
+        "pinfunction": "PG_3",
+        "pintype": "open_collector+no_connect"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "8be5f39f-351d-4d04-af7f-cc532ea2a268",
+      "native_net": "unconnected-(U5-PG-Pad3)",
+      "native_xy_mm": [
+        11.16,
+        16.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468800023,
+      "native_land_bounds_mm": [
+        10.86,
+        16.6,
+        11.46,
+        16.85
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "a91534400c59b1f39da7dd52a3a01d4cfc09676fe03ac456c7cc9765a46e86fe",
+      "candidate39_pad_sha256_canonical": "a91534400c59b1f39da7dd52a3a01d4cfc09676fe03ac456c7cc9765a46e86fe"
+    },
+    {
+      "key": "U5.4",
+      "manufacturer_function": "PGTH",
+      "schematic": {
+        "net": "GND",
+        "ref": "U5",
+        "pin": "4",
+        "pinfunction": "PGTH_4",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "381f5e1c-40d4-4079-a5ed-de25bbd23e96",
+      "native_net": "GND",
+      "native_xy_mm": [
+        11.16,
+        17.2
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.26477845677500006,
+      "native_land_bounds_mm": [
+        10.85999,
+        17.04999,
+        11.46001,
+        17.70001
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "b3d47b76200f32bc23ce13e1014dabe2fae0b197586dd019cb8f758acb557a0c",
+      "candidate39_pad_sha256_canonical": "b3d47b76200f32bc23ce13e1014dabe2fae0b197586dd019cb8f758acb557a0c"
+    },
+    {
+      "key": "U5.5",
+      "manufacturer_function": "IN",
+      "schematic": {
+        "net": "VX_RAW",
+        "ref": "U5",
+        "pin": "5",
+        "pinfunction": "IN_5",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "85e6caf7-e9d6-48fc-be04-1cbfbfff3020",
+      "native_net": "VX_RAW",
+      "native_xy_mm": [
+        11.81,
+        16.5
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.7178550546880011,
+      "native_land_bounds_mm": [
+        11.66,
+        15.3,
+        11.96,
+        17.7
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "6acc8088557b291d7752d7f1ddc3e1b62575781f10090b841afdd7c84e070a00",
+      "candidate39_pad_sha256_canonical": "6acc8088557b291d7752d7f1ddc3e1b62575781f10090b841afdd7c84e070a00"
+    },
+    {
+      "key": "U5.6",
+      "manufacturer_function": "OUT",
+      "schematic": {
+        "net": "VX_PROTECTED",
+        "ref": "U5",
+        "pin": "6",
+        "pinfunction": "OUT_6",
+        "pintype": "power_out"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "fae78596-f5d0-4dbe-95ff-acb9c7ee3a2c",
+      "native_net": "VX_PROTECTED",
+      "native_xy_mm": [
+        12.31,
+        16.5
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.7178550546880011,
+      "native_land_bounds_mm": [
+        12.16,
+        15.3,
+        12.46,
+        17.7
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "b2c435f27313b7b2f9b14043c16d506eba70228ad1cf2556f69e52d98b85d521",
+      "candidate39_pad_sha256_canonical": "b2c435f27313b7b2f9b14043c16d506eba70228ad1cf2556f69e52d98b85d521"
+    },
+    {
+      "key": "U5.7",
+      "manufacturer_function": "DVDT",
+      "schematic": {
+        "net": "EFUSE_DVDT",
+        "ref": "U5",
+        "pin": "7",
+        "pinfunction": "DVDT_7",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "528b5d88-291c-4ee7-96a8-19306126771e",
+      "native_net": "EFUSE_DVDT",
+      "native_xy_mm": [
+        12.96,
+        17.2
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.26477845677499906,
+      "native_land_bounds_mm": [
+        12.65999,
+        17.04999,
+        13.26001,
+        17.70001
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "1a34e8fadcdba8519883a16b4fc5b25ad7d40dcd9887b760b8c67386b01c250a",
+      "candidate39_pad_sha256_canonical": "1a34e8fadcdba8519883a16b4fc5b25ad7d40dcd9887b760b8c67386b01c250a"
+    },
+    {
+      "key": "U5.8",
+      "manufacturer_function": "GND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U5",
+        "pin": "8",
+        "pinfunction": "GND_8",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "4f0016cf-9995-4856-bdc4-785313abd18b",
+      "native_net": "GND",
+      "native_xy_mm": [
+        12.96,
+        16.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468799992,
+      "native_land_bounds_mm": [
+        12.66,
+        16.6,
+        13.26,
+        16.85
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "8bbe57c02ebe7af29c59bfa3af8419242b47b6c87697484dbfce544ecd991186",
+      "candidate39_pad_sha256_canonical": "8bbe57c02ebe7af29c59bfa3af8419242b47b6c87697484dbfce544ecd991186"
+    },
+    {
+      "key": "U5.9",
+      "manufacturer_function": "ILM",
+      "schematic": {
+        "net": "EFUSE_ILM",
+        "ref": "U5",
+        "pin": "9",
+        "pinfunction": "ILM_9",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "c597c7bd-562c-464f-93c7-5cefefd5c72f",
+      "native_net": "EFUSE_ILM",
+      "native_xy_mm": [
+        12.96,
+        16.275
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468799998,
+      "native_land_bounds_mm": [
+        12.66,
+        16.15,
+        13.26,
+        16.4
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "0cb8a2e9ceab587f55d7cf355d6d6ec311ad05bfa20ecae8520d26367c0668d8",
+      "candidate39_pad_sha256_canonical": "0cb8a2e9ceab587f55d7cf355d6d6ec311ad05bfa20ecae8520d26367c0668d8"
+    },
+    {
+      "key": "U6.1",
+      "manufacturer_function": "PS_SYNC",
+      "schematic": {
+        "net": "GND",
+        "ref": "U6",
+        "pin": "1",
+        "pinfunction": "PS_SYNC_1",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "4eb023f8-b985-41b6-94d0-0f53bbd8cb69",
+      "native_net": "GND",
+      "native_xy_mm": [
+        30.0,
+        17.65
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468799964,
+      "native_land_bounds_mm": [
+        29.875,
+        17.35,
+        30.125,
+        17.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "419dd9d3b7519de097ece99d2b10ce5383da85f4f6a8bb9186bdf05ea59d67be",
+      "candidate39_pad_sha256_canonical": "419dd9d3b7519de097ece99d2b10ce5383da85f4f6a8bb9186bdf05ea59d67be"
+    },
+    {
+      "key": "U6.10",
+      "manufacturer_function": "PGND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U6",
+        "pin": "10",
+        "pinfunction": "PGND_10",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "0ecb6e31-4fc1-4249-b2e7-8d82dd1891b4",
+      "native_net": "GND",
+      "native_xy_mm": [
+        30.75,
+        15.9
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.6214162536220009,
+      "native_land_bounds_mm": [
+        30.575,
+        15.0,
+        30.925,
+        16.8
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "fad1f94ca76a3b03e90324d939875e7b82e3a0cbcbfdb589c4719c11cf779b39",
+      "candidate39_pad_sha256_canonical": "fad1f94ca76a3b03e90324d939875e7b82e3a0cbcbfdb589c4719c11cf779b39"
+    },
+    {
+      "key": "U6.11",
+      "manufacturer_function": "L1",
+      "schematic": {
+        "net": "ABC_L1",
+        "ref": "U6",
+        "pin": "11",
+        "pinfunction": "L1_11",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "7b4390b3-f7f9-4e59-ab0e-df95342ec547",
+      "native_net": "ABC_L1",
+      "native_xy_mm": [
+        30.25,
+        15.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.49891660362200035,
+      "native_land_bounds_mm": [
+        30.075,
+        15.0,
+        30.425,
+        16.45
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "686e5ee0155e1077d701b8ffeaba3707a7217856c0095a5a544b64646df06ed7",
+      "candidate39_pad_sha256_canonical": "686e5ee0155e1077d701b8ffeaba3707a7217856c0095a5a544b64646df06ed7"
+    },
+    {
+      "key": "U6.12",
+      "manufacturer_function": "VIN",
+      "schematic": {
+        "net": "VX_PROTECTED",
+        "ref": "U6",
+        "pin": "12",
+        "pinfunction": "VIN_12",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "0526091c-ee27-42ce-8a71-7e1565c51a6e",
+      "native_net": "VX_PROTECTED",
+      "native_xy_mm": [
+        29.35,
+        15.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.28602695677500045,
+      "native_land_bounds_mm": [
+        28.99999,
+        15.54999,
+        29.70001,
+        16.02501
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "ebd0fb65881d2aa076d75608956aa5eef087a04140498f5d33d41d902d49fa42",
+      "candidate39_pad_sha256_canonical": "ebd0fb65881d2aa076d75608956aa5eef087a04140498f5d33d41d902d49fa42"
+    },
+    {
+      "key": "U6.13",
+      "manufacturer_function": "VIN",
+      "schematic": {
+        "net": "VX_PROTECTED",
+        "ref": "U6",
+        "pin": "13",
+        "pinfunction": "VIN_13",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "e531483b-2d06-4a6d-bfdc-5bb2f9c9a5ab",
+      "native_net": "VX_PROTECTED",
+      "native_xy_mm": [
+        29.35,
+        16.225
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.2860269567750005,
+      "native_land_bounds_mm": [
+        28.99999,
+        15.92499,
+        29.70001,
+        16.40001
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "c7cda754d6d2e07391df567ca3bccc87e6e9bfc049d42c713ff47effa9db2a64",
+      "candidate39_pad_sha256_canonical": "c7cda754d6d2e07391df567ca3bccc87e6e9bfc049d42c713ff47effa9db2a64"
+    },
+    {
+      "key": "U6.14",
+      "manufacturer_function": "EN",
+      "schematic": {
+        "net": "ABC_EN",
+        "ref": "U6",
+        "pin": "14",
+        "pinfunction": "EN_14",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "e2c33e27-7857-4b4e-8118-54abcaf79fc2",
+      "native_net": "ABC_EN",
+      "native_xy_mm": [
+        29.35,
+        16.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.1478550546879996,
+      "native_land_bounds_mm": [
+        29.05,
+        16.6,
+        29.65,
+        16.85
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "7463b2510d30dbe56145ec979bcb42b1267493b239aae529e0463d7cad1dff3e",
+      "candidate39_pad_sha256_canonical": "7463b2510d30dbe56145ec979bcb42b1267493b239aae529e0463d7cad1dff3e"
+    },
+    {
+      "key": "U6.15",
+      "manufacturer_function": "VSEL",
+      "schematic": {
+        "net": "GND",
+        "ref": "U6",
+        "pin": "15",
+        "pinfunction": "VSEL_15",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "43e3888e-5d4e-4781-b241-838414014171",
+      "native_net": "GND",
+      "native_xy_mm": [
+        29.35,
+        17.225
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.1478550546879996,
+      "native_land_bounds_mm": [
+        29.05,
+        17.1,
+        29.65,
+        17.35
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "5512af418301c0971212a1ca9e6fe1ae29edc39b74f856686c36f88bd92752ae",
+      "candidate39_pad_sha256_canonical": "5512af418301c0971212a1ca9e6fe1ae29edc39b74f856686c36f88bd92752ae"
+    },
+    {
+      "key": "U6.2",
+      "manufacturer_function": "PG",
+      "schematic": {
+        "net": "ABC_PG",
+        "ref": "U6",
+        "pin": "2",
+        "pinfunction": "PG_2",
+        "pintype": "open_collector"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "f2fdfe04-b8d4-4198-a4ce-d2b5fecf4e3f",
+      "native_net": "ABC_PG",
+      "native_xy_mm": [
+        30.5,
+        17.65
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468799964,
+      "native_land_bounds_mm": [
+        30.375,
+        17.35,
+        30.625,
+        17.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "6036c6bff2ce8a90c99e8aca138bbc41bd5017b787ff92cfddfe3586ef8337f4",
+      "candidate39_pad_sha256_canonical": "6036c6bff2ce8a90c99e8aca138bbc41bd5017b787ff92cfddfe3586ef8337f4"
+    },
+    {
+      "key": "U6.3",
+      "manufacturer_function": "VAUX",
+      "schematic": {
+        "net": "ABC_VAUX",
+        "ref": "U6",
+        "pin": "3",
+        "pinfunction": "VAUX_3",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "18ac321b-1e1e-47da-89fe-7da3067ab3ee",
+      "native_net": "ABC_VAUX",
+      "native_xy_mm": [
+        31.0,
+        17.65
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468799964,
+      "native_land_bounds_mm": [
+        30.875,
+        17.35,
+        31.125,
+        17.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "144fe8022af23de5b0e848351942839e295b8bb04c3cbed18e621dcd08148645",
+      "candidate39_pad_sha256_canonical": "144fe8022af23de5b0e848351942839e295b8bb04c3cbed18e621dcd08148645"
+    },
+    {
+      "key": "U6.4",
+      "manufacturer_function": "GND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U6",
+        "pin": "4",
+        "pinfunction": "GND_4",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "d614e648-8ba8-4ff1-80be-0f038a8ec7e0",
+      "native_net": "GND",
+      "native_xy_mm": [
+        31.5,
+        17.65
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.14785505468799964,
+      "native_land_bounds_mm": [
+        31.375,
+        17.35,
+        31.625,
+        17.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "6ed21c8109f9b9795bcb3fe7d7cd9de498d6fa848ee49f34fec39a78593f3f6c",
+      "candidate39_pad_sha256_canonical": "6ed21c8109f9b9795bcb3fe7d7cd9de498d6fa848ee49f34fec39a78593f3f6c"
+    },
+    {
+      "key": "U6.5",
+      "manufacturer_function": "FB",
+      "schematic": {
+        "net": "ABC_FB",
+        "ref": "U6",
+        "pin": "5",
+        "pinfunction": "FB_5",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "95a61321-8af3-4811-8433-b0a4ad6c84a7",
+      "native_net": "ABC_FB",
+      "native_xy_mm": [
+        32.15,
+        17.225
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.1478550546880002,
+      "native_land_bounds_mm": [
+        31.85,
+        17.1,
+        32.45,
+        17.35
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "80c995adb7cf6ff599a9c2a03cc761f6d1db36cd97fc475d7b99ff5bbaf74b3e",
+      "candidate39_pad_sha256_canonical": "80c995adb7cf6ff599a9c2a03cc761f6d1db36cd97fc475d7b99ff5bbaf74b3e"
+    },
+    {
+      "key": "U6.6",
+      "manufacturer_function": "FB2",
+      "schematic": {
+        "net": "GND",
+        "ref": "U6",
+        "pin": "6",
+        "pinfunction": "FB2_6",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "65f6648e-d093-4e5d-ae06-59de99d4116f",
+      "native_net": "GND",
+      "native_xy_mm": [
+        32.15,
+        16.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.1478550546880002,
+      "native_land_bounds_mm": [
+        31.85,
+        16.6,
+        32.45,
+        16.85
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "a2d3c370ca45e6a9467ab6db0c81bad6041d7c47276b600f9e0670db83d055c9",
+      "candidate39_pad_sha256_canonical": "a2d3c370ca45e6a9467ab6db0c81bad6041d7c47276b600f9e0670db83d055c9"
+    },
+    {
+      "key": "U6.7",
+      "manufacturer_function": "VOUT",
+      "schematic": {
+        "net": "+5V_BEC",
+        "ref": "U6",
+        "pin": "7",
+        "pinfunction": "VOUT_7",
+        "pintype": "power_out"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "2556c4c2-1dc8-4ebf-a376-8fc60f8c5d22",
+      "native_net": "+5V_BEC",
+      "native_xy_mm": [
+        32.15,
+        16.225
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.2860269567750013,
+      "native_land_bounds_mm": [
+        31.79999,
+        15.92499,
+        32.50001,
+        16.40001
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "4f331367f5f4944f329aba5d5fe42296a0f18a90a24ca86ed7d35c5a2357be41",
+      "candidate39_pad_sha256_canonical": "4f331367f5f4944f329aba5d5fe42296a0f18a90a24ca86ed7d35c5a2357be41"
+    },
+    {
+      "key": "U6.8",
+      "manufacturer_function": "VOUT",
+      "schematic": {
+        "net": "+5V_BEC",
+        "ref": "U6",
+        "pin": "8",
+        "pinfunction": "VOUT_8",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "3b69a42c-322f-4c75-9d21-9ff1b451eb12",
+      "native_net": "+5V_BEC",
+      "native_xy_mm": [
+        32.15,
+        15.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.2860269567750013,
+      "native_land_bounds_mm": [
+        31.79999,
+        15.54999,
+        32.50001,
+        16.02501
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "612c002a3ab30a98aa0fb471ddb59c15ecb45cfb50a89079f9e1b41b8514665c",
+      "candidate39_pad_sha256_canonical": "612c002a3ab30a98aa0fb471ddb59c15ecb45cfb50a89079f9e1b41b8514665c"
+    },
+    {
+      "key": "U6.9",
+      "manufacturer_function": "L2",
+      "schematic": {
+        "net": "ABC_L2",
+        "ref": "U6",
+        "pin": "9",
+        "pinfunction": "L2_9",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "8b49432c-d080-46c1-81b0-b0df7d591cb8",
+      "native_net": "ABC_L2",
+      "native_xy_mm": [
+        31.25,
+        15.725
+      ],
+      "native_copper_layers": [
+        "F.Cu"
+      ],
+      "native_land_area_mm2": 0.49891660362200035,
+      "native_land_bounds_mm": [
+        31.075,
+        15.0,
+        31.425,
+        16.45
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "8b3213ef5d45fdb94db81f731e6fb036813fa2da2c62c933f661ce8cd417b96b",
+      "candidate39_pad_sha256_canonical": "8b3213ef5d45fdb94db81f731e6fb036813fa2da2c62c933f661ce8cd417b96b"
+    },
+    {
+      "key": "U7.1",
+      "manufacturer_function": "GND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U7",
+        "pin": "1",
+        "pinfunction": "GND_1",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "d107941e-2013-4bb2-adb1-3b11a38a73f4",
+      "native_net": "GND",
+      "native_xy_mm": [
+        38.45,
+        6.54
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        38.3,
+        6.205,
+        38.6,
+        6.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "3ec168af0d203d1cb15bd0ca6c15bf9d289a55ec80263c627ef423a9dab1fe84",
+      "candidate39_pad_sha256_canonical": "3ec168af0d203d1cb15bd0ca6c15bf9d289a55ec80263c627ef423a9dab1fe84"
+    },
+    {
+      "key": "U7.2",
+      "manufacturer_function": "VOUT",
+      "schematic": {
+        "net": "+5V_PERIPH",
+        "ref": "U7",
+        "pin": "2",
+        "pinfunction": "VOUT_2",
+        "pintype": "power_out"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "a6b483a2-dc5c-495b-a487-16205b55ffb9",
+      "native_net": "+5V_PERIPH",
+      "native_xy_mm": [
+        37.95,
+        6.54
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        37.8,
+        6.205,
+        38.1,
+        6.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "786097deb11ed8cc0082ca708ba53502d3ab5a3c0c5872e90ccac46593eabaf0",
+      "candidate39_pad_sha256_canonical": "786097deb11ed8cc0082ca708ba53502d3ab5a3c0c5872e90ccac46593eabaf0"
+    },
+    {
+      "key": "U7.3",
+      "manufacturer_function": "VIN1",
+      "schematic": {
+        "net": "+5V_BEC",
+        "ref": "U7",
+        "pin": "3",
+        "pinfunction": "VIN1_3",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "49e039c7-6a12-4621-b60e-b65eb150a836",
+      "native_net": "+5V_BEC",
+      "native_xy_mm": [
+        37.45,
+        6.54
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        37.3,
+        6.205,
+        37.6,
+        6.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "abed4b684af6a91b8543df444b8f38013dba5fa3f34994019f396a93df964ec5",
+      "candidate39_pad_sha256_canonical": "abed4b684af6a91b8543df444b8f38013dba5fa3f34994019f396a93df964ec5"
+    },
+    {
+      "key": "U7.4",
+      "manufacturer_function": "PR1",
+      "schematic": {
+        "net": "ABC_PG",
+        "ref": "U7",
+        "pin": "4",
+        "pinfunction": "PR1_4",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "2423231c-5460-4ea2-a821-d3fc9a42760e",
+      "native_net": "ABC_PG",
+      "native_xy_mm": [
+        36.95,
+        6.54
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        36.8,
+        6.205,
+        37.1,
+        6.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "c62929e869f2ef6cfd5b0f5d84ffcaf8458cb7251f3e4bb28098c4d57328cb01",
+      "candidate39_pad_sha256_canonical": "c62929e869f2ef6cfd5b0f5d84ffcaf8458cb7251f3e4bb28098c4d57328cb01"
+    },
+    {
+      "key": "U7.5",
+      "manufacturer_function": "MODE",
+      "schematic": {
+        "net": "+5V_BEC",
+        "ref": "U7",
+        "pin": "5",
+        "pinfunction": "MODE_5",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "f800a4b1-b425-4a1e-adc1-8708bc9a391d",
+      "native_net": "+5V_BEC",
+      "native_xy_mm": [
+        36.95,
+        5.06
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        36.8,
+        4.725,
+        37.1,
+        5.395
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "1031fbcdd0df95946a68634114914194931d980b5ff78a65bcaf20a2f5c57602",
+      "candidate39_pad_sha256_canonical": "1031fbcdd0df95946a68634114914194931d980b5ff78a65bcaf20a2f5c57602"
+    },
+    {
+      "key": "U7.6",
+      "manufacturer_function": "VIN2",
+      "schematic": {
+        "net": "USB_LIMITED",
+        "ref": "U7",
+        "pin": "6",
+        "pinfunction": "VIN2_6",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "4f0bf3fd-9b00-42b4-9044-8ce9b59ab94c",
+      "native_net": "USB_LIMITED",
+      "native_xy_mm": [
+        37.45,
+        5.06
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        37.3,
+        4.725,
+        37.6,
+        5.395
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "f4595d808f3502a7bfa7e2e606120f008ba43a5515f491e9230b4a90c3f2a82b",
+      "candidate39_pad_sha256_canonical": "f4595d808f3502a7bfa7e2e606120f008ba43a5515f491e9230b4a90c3f2a82b"
+    },
+    {
+      "key": "U7.7",
+      "manufacturer_function": "VOUT",
+      "schematic": {
+        "net": "+5V_PERIPH",
+        "ref": "U7",
+        "pin": "7",
+        "pinfunction": "VOUT_7",
+        "pintype": "power_out"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "97228188-d041-470c-917e-732f5f369245",
+      "native_net": "+5V_PERIPH",
+      "native_xy_mm": [
+        37.95,
+        5.06
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        37.8,
+        4.725,
+        38.1,
+        5.395
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "960be2175ff82da65c143496b33d663c6133c417e4d057d8b3759c16477d3a0c",
+      "candidate39_pad_sha256_canonical": "960be2175ff82da65c143496b33d663c6133c417e4d057d8b3759c16477d3a0c"
+    },
+    {
+      "key": "U7.8",
+      "manufacturer_function": "ST",
+      "schematic": {
+        "net": "unconnected-(U7-ST-Pad8)",
+        "ref": "U7",
+        "pin": "8",
+        "pinfunction": "ST_8",
+        "pintype": "open_collector+no_connect"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "c01fa9de-e7b4-4a24-8e9a-1c6ad13cb1ed",
+      "native_net": "unconnected-(U7-ST-Pad8)",
+      "native_xy_mm": [
+        38.45,
+        5.06
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.1988550546880025,
+      "native_land_bounds_mm": [
+        38.3,
+        4.725,
+        38.6,
+        5.395
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "9d06ed4fc4702f958c046c091517a2d82f2de023737f2ec9a5e9feb6837e9075",
+      "candidate39_pad_sha256_canonical": "9d06ed4fc4702f958c046c091517a2d82f2de023737f2ec9a5e9feb6837e9075"
+    },
+    {
+      "key": "U8.1",
+      "manufacturer_function": "OUT",
+      "schematic": {
+        "net": "CORE_BUCK_IN",
+        "ref": "U8",
+        "pin": "1",
+        "pinfunction": "OUT_1",
+        "pintype": "power_out"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "8ddf0cf4-ff63-40c2-af5c-49e5e48d0280",
+      "native_net": "CORE_BUCK_IN",
+      "native_xy_mm": [
+        28.825,
+        6.15
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.41785505468799977,
+      "native_land_bounds_mm": [
+        28.3,
+        5.95,
+        29.35,
+        6.35
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "968b540f13d8c38ef62df70a713106a78db7307282611570b213983434e9e379",
+      "candidate39_pad_sha256_canonical": "968b540f13d8c38ef62df70a713106a78db7307282611570b213983434e9e379"
+    },
+    {
+      "key": "U8.10",
+      "manufacturer_function": "ILIM",
+      "schematic": {
+        "net": "CORE_ILIM",
+        "ref": "U8",
+        "pin": "10",
+        "pinfunction": "ILIM_10",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "44e378c1-5686-4010-9e7f-c91cf2bad636",
+      "native_net": "CORE_ILIM",
+      "native_xy_mm": [
+        29.75,
+        6.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800149,
+      "native_land_bounds_mm": [
+        29.65,
+        6.65,
+        29.85,
+        7.25
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "5381beb86ffe13b63e5e3785598ffbe1f312c2c79c958ae0a30d06f8016d0fbf",
+      "candidate39_pad_sha256_canonical": "5381beb86ffe13b63e5e3785598ffbe1f312c2c79c958ae0a30d06f8016d0fbf"
+    },
+    {
+      "key": "U8.11",
+      "manufacturer_function": "SS",
+      "schematic": {
+        "net": "CORE_SS",
+        "ref": "U8",
+        "pin": "11",
+        "pinfunction": "SS_11",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "867a88d7-4cb0-407c-9bf5-608f7559f0bb",
+      "native_net": "CORE_SS",
+      "native_xy_mm": [
+        29.25,
+        6.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800149,
+      "native_land_bounds_mm": [
+        29.15,
+        6.65,
+        29.35,
+        7.25
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "93f84886fabfbae4fbcffd28e961ce884b26e206cc7895d4380b2defb71018e0",
+      "candidate39_pad_sha256_canonical": "93f84886fabfbae4fbcffd28e961ce884b26e206cc7895d4380b2defb71018e0"
+    },
+    {
+      "key": "U8.12",
+      "manufacturer_function": "GND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U8",
+        "pin": "12",
+        "pinfunction": "GND_12",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "c71cf299-32b7-42bc-bc3e-cb78f838b70e",
+      "native_net": "GND",
+      "native_xy_mm": [
+        28.75,
+        6.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800149,
+      "native_land_bounds_mm": [
+        28.65,
+        6.65,
+        28.85,
+        7.25
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "e2fa31d687a9221b6c1404ecafd05dd503a92e02a3646fbaddf59cbc8f8edb5a",
+      "candidate39_pad_sha256_canonical": "e2fa31d687a9221b6c1404ecafd05dd503a92e02a3646fbaddf59cbc8f8edb5a"
+    },
+    {
+      "key": "U8.2",
+      "manufacturer_function": "IN2",
+      "schematic": {
+        "net": "USB_LIMITED",
+        "ref": "U8",
+        "pin": "2",
+        "pinfunction": "IN2_2",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "ea316c8c-d8d2-4c26-b505-1ba70c8fbe9b",
+      "native_net": "USB_LIMITED",
+      "native_xy_mm": [
+        28.825,
+        5.45
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.4178550546880006,
+      "native_land_bounds_mm": [
+        28.3,
+        5.25,
+        29.35,
+        5.65
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "72f1da1292c55af4ae1417032637dd722baf7df1672ec96802a5c9a96d67017a",
+      "candidate39_pad_sha256_canonical": "72f1da1292c55af4ae1417032637dd722baf7df1672ec96802a5c9a96d67017a"
+    },
+    {
+      "key": "U8.3",
+      "manufacturer_function": "CP2",
+      "schematic": {
+        "net": "CORE_REF",
+        "ref": "U8",
+        "pin": "3",
+        "pinfunction": "CP2_3",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "6d9f4b61-1c54-4991-bb1b-302ce9b47294",
+      "native_net": "CORE_REF",
+      "native_xy_mm": [
+        28.75,
+        4.65
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800155,
+      "native_land_bounds_mm": [
+        28.65,
+        4.35,
+        28.85,
+        4.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "b5f038b8f074bdf7d20a68a31dbdd84242752105c204aed0a4495aa3a9f985bb",
+      "candidate39_pad_sha256_canonical": "b5f038b8f074bdf7d20a68a31dbdd84242752105c204aed0a4495aa3a9f985bb"
+    },
+    {
+      "key": "U8.4",
+      "manufacturer_function": "OV2",
+      "schematic": {
+        "net": "GND",
+        "ref": "U8",
+        "pin": "4",
+        "pinfunction": "OV2_4",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "f5c4e81f-0388-4270-9f0b-2d469603f6de",
+      "native_net": "GND",
+      "native_xy_mm": [
+        29.25,
+        4.65
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800155,
+      "native_land_bounds_mm": [
+        29.15,
+        4.35,
+        29.35,
+        4.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "ba55d91e4fcc0489d49e5025961f93b016cf47af2d2fe0a81a1a464f39169fae",
+      "candidate39_pad_sha256_canonical": "ba55d91e4fcc0489d49e5025961f93b016cf47af2d2fe0a81a1a464f39169fae"
+    },
+    {
+      "key": "U8.5",
+      "manufacturer_function": "OV1",
+      "schematic": {
+        "net": "GND",
+        "ref": "U8",
+        "pin": "5",
+        "pinfunction": "OV1_5",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "c3bd7a10-1145-42a8-b6ac-70d44c6b1d6f",
+      "native_net": "GND",
+      "native_xy_mm": [
+        29.75,
+        4.65
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800155,
+      "native_land_bounds_mm": [
+        29.65,
+        4.35,
+        29.85,
+        4.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "ee3a85d3aceb1caeb8f571b9239ebdd5fcb12e3c10540907614bee8f00efe589",
+      "candidate39_pad_sha256_canonical": "ee3a85d3aceb1caeb8f571b9239ebdd5fcb12e3c10540907614bee8f00efe589"
+    },
+    {
+      "key": "U8.6",
+      "manufacturer_function": "PR1",
+      "schematic": {
+        "net": "CORE_PRIORITY",
+        "ref": "U8",
+        "pin": "6",
+        "pinfunction": "PR1_6",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "0753a080-715e-4edb-8aae-9bd53383ebf7",
+      "native_net": "CORE_PRIORITY",
+      "native_xy_mm": [
+        30.25,
+        4.65
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800155,
+      "native_land_bounds_mm": [
+        30.15,
+        4.35,
+        30.35,
+        4.95
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "28bbdf23023dcab9ff81c2197cdc0674fc8915d14baaaf193f5f4e052692f481",
+      "candidate39_pad_sha256_canonical": "28bbdf23023dcab9ff81c2197cdc0674fc8915d14baaaf193f5f4e052692f481"
+    },
+    {
+      "key": "U8.7",
+      "manufacturer_function": "IN1",
+      "schematic": {
+        "net": "VX_PROTECTED",
+        "ref": "U8",
+        "pin": "7",
+        "pinfunction": "IN1_7",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "68cb1a26-42db-4ea2-9012-095924df7626",
+      "native_net": "VX_PROTECTED",
+      "native_xy_mm": [
+        30.175,
+        5.45
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.41785505468800055,
+      "native_land_bounds_mm": [
+        29.65,
+        5.25,
+        30.7,
+        5.65
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "28aec02b036b972580b33ce34d5efc808f3f1170468db1a20db6d722a2a6da14",
+      "candidate39_pad_sha256_canonical": "28aec02b036b972580b33ce34d5efc808f3f1170468db1a20db6d722a2a6da14"
+    },
+    {
+      "key": "U8.8",
+      "manufacturer_function": "OUT",
+      "schematic": {
+        "net": "CORE_BUCK_IN",
+        "ref": "U8",
+        "pin": "8",
+        "pinfunction": "OUT_8",
+        "pintype": "passive"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "c2dd0d01-bc46-4692-b682-d5314f616ed1",
+      "native_net": "CORE_BUCK_IN",
+      "native_xy_mm": [
+        30.175,
+        6.15
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.4178550546879997,
+      "native_land_bounds_mm": [
+        29.65,
+        5.95,
+        30.7,
+        6.35
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "73ddc7cc97933fb0b3f8fe2bcd170aae06ffc9a36f338ea2a5b712631fccd98d",
+      "candidate39_pad_sha256_canonical": "73ddc7cc97933fb0b3f8fe2bcd170aae06ffc9a36f338ea2a5b712631fccd98d"
+    },
+    {
+      "key": "U8.9",
+      "manufacturer_function": "ST",
+      "schematic": {
+        "net": "CORE_MUX_ST",
+        "ref": "U8",
+        "pin": "9",
+        "pinfunction": "ST_9",
+        "pintype": "open_collector"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "bf27b97b-9d8f-41a3-b72a-a2f88abf3f98",
+      "native_net": "CORE_MUX_ST",
+      "native_xy_mm": [
+        30.25,
+        6.95
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.11785505468800149,
+      "native_land_bounds_mm": [
+        30.15,
+        6.65,
+        30.35,
+        7.25
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "234095c25d65944628811cc8294c25624fc101550d1c105a781414a9ca88da6f",
+      "candidate39_pad_sha256_canonical": "234095c25d65944628811cc8294c25624fc101550d1c105a781414a9ca88da6f"
+    },
+    {
+      "key": "U9.1",
+      "manufacturer_function": "PGND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U9",
+        "pin": "1",
+        "pinfunction": "PGND_1",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "ecc08311-2984-4a23-90d6-5e10cb92cc27",
+      "native_net": "GND",
+      "native_xy_mm": [
+        27.91,
+        3.25
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800008,
+      "native_land_bounds_mm": [
+        27.66,
+        3.125,
+        28.16,
+        3.375
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "3a0d6696d0425a8ba78bb8582e49dbfdc0953c8380b03ce5ea92ea165c3dbeec",
+      "candidate39_pad_sha256_canonical": "3a0d6696d0425a8ba78bb8582e49dbfdc0953c8380b03ce5ea92ea165c3dbeec"
+    },
+    {
+      "key": "U9.2",
+      "manufacturer_function": "VIN",
+      "schematic": {
+        "net": "CORE_BUCK_IN",
+        "ref": "U9",
+        "pin": "2",
+        "pinfunction": "VIN_2",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "25451035-d2c6-4ae2-8346-11213dbb386e",
+      "native_net": "CORE_BUCK_IN",
+      "native_xy_mm": [
+        27.91,
+        2.75
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800008,
+      "native_land_bounds_mm": [
+        27.66,
+        2.625,
+        28.16,
+        2.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "6196e2c25b7c3d3ba6c863882b7a9c8da32fb74577e30a4c35ba96e8e07a36c1",
+      "candidate39_pad_sha256_canonical": "6196e2c25b7c3d3ba6c863882b7a9c8da32fb74577e30a4c35ba96e8e07a36c1"
+    },
+    {
+      "key": "U9.3",
+      "manufacturer_function": "EN",
+      "schematic": {
+        "net": "CORE_BUCK_IN",
+        "ref": "U9",
+        "pin": "3",
+        "pinfunction": "EN_3",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "13f1edf0-1631-4757-892f-09f4b7c353ff",
+      "native_net": "CORE_BUCK_IN",
+      "native_xy_mm": [
+        27.91,
+        2.25
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800008,
+      "native_land_bounds_mm": [
+        27.66,
+        2.125,
+        28.16,
+        2.375
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "c6e715c0a15978d0ae73bf472b5bde087b933344ad4277db55878ed234b61509",
+      "candidate39_pad_sha256_canonical": "c6e715c0a15978d0ae73bf472b5bde087b933344ad4277db55878ed234b61509"
+    },
+    {
+      "key": "U9.4",
+      "manufacturer_function": "AGND",
+      "schematic": {
+        "net": "GND",
+        "ref": "U9",
+        "pin": "4",
+        "pinfunction": "AGND_4",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "cd210699-a66d-4f46-be75-95bfa97122a7",
+      "native_net": "GND",
+      "native_xy_mm": [
+        27.91,
+        1.75
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800005,
+      "native_land_bounds_mm": [
+        27.66,
+        1.625,
+        28.16,
+        1.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "dc12e2fb81e5202a09391f41d2bfc23a197c80f8ecf87d9f8ad6be8cddcab371",
+      "candidate39_pad_sha256_canonical": "dc12e2fb81e5202a09391f41d2bfc23a197c80f8ecf87d9f8ad6be8cddcab371"
+    },
+    {
+      "key": "U9.5",
+      "manufacturer_function": "FB",
+      "schematic": {
+        "net": "GND",
+        "ref": "U9",
+        "pin": "5",
+        "pinfunction": "FB_5",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "5b573d00-179d-4dd9-abd7-aa1048e62b2c",
+      "native_net": "GND",
+      "native_xy_mm": [
+        29.81,
+        1.75
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800005,
+      "native_land_bounds_mm": [
+        29.56,
+        1.625,
+        30.06,
+        1.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "405c767d318bf51815b17bf9cfb0b1341b7adfb7ca9d63cac46ffead38a94041",
+      "candidate39_pad_sha256_canonical": "405c767d318bf51815b17bf9cfb0b1341b7adfb7ca9d63cac46ffead38a94041"
+    },
+    {
+      "key": "U9.6",
+      "manufacturer_function": "VOS",
+      "schematic": {
+        "net": "+3V3_CORE",
+        "ref": "U9",
+        "pin": "6",
+        "pinfunction": "VOS_6",
+        "pintype": "input"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "61bdd795-8477-45fe-9f61-222fc1ee0f4b",
+      "native_net": "+3V3_CORE",
+      "native_xy_mm": [
+        29.81,
+        2.25
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800006,
+      "native_land_bounds_mm": [
+        29.56,
+        2.125,
+        30.06,
+        2.375
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "223d9eba2e261685550f62d48991ff3dbc2159dbf85d279c5b09fb78a70071f4",
+      "candidate39_pad_sha256_canonical": "223d9eba2e261685550f62d48991ff3dbc2159dbf85d279c5b09fb78a70071f4"
+    },
+    {
+      "key": "U9.7",
+      "manufacturer_function": "SW",
+      "schematic": {
+        "net": "CORE_SW",
+        "ref": "U9",
+        "pin": "7",
+        "pinfunction": "SW_7",
+        "pintype": "output"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "2e99d494-d2ea-4ed0-bf00-1c99e1e021aa",
+      "native_net": "CORE_SW",
+      "native_xy_mm": [
+        29.81,
+        2.75
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800006,
+      "native_land_bounds_mm": [
+        29.56,
+        2.625,
+        30.06,
+        2.875
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "20e7aec804c29f0c5057fa8e49f0c6d78191efe778552688cf730a807d51130f",
+      "candidate39_pad_sha256_canonical": "20e7aec804c29f0c5057fa8e49f0c6d78191efe778552688cf730a807d51130f"
+    },
+    {
+      "key": "U9.8",
+      "manufacturer_function": "PG",
+      "schematic": {
+        "net": "unconnected-(U9-PG-Pad8)",
+        "ref": "U9",
+        "pin": "8",
+        "pinfunction": "PG_8",
+        "pintype": "open_collector+no_connect"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "b197c6f2-c9de-4563-ae87-20dde76ca4c0",
+      "native_net": "unconnected-(U9-PG-Pad8)",
+      "native_xy_mm": [
+        29.81,
+        3.25
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 0.12285505468800006,
+      "native_land_bounds_mm": [
+        29.56,
+        3.125,
+        30.06,
+        3.375
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "48f4bdf11d1ac069b93d116704e395723423b783824610820e925fb42d1beac3",
+      "candidate39_pad_sha256_canonical": "48f4bdf11d1ac069b93d116704e395723423b783824610820e925fb42d1beac3"
+    },
+    {
+      "key": "U9.9",
+      "manufacturer_function": "PAD",
+      "schematic": {
+        "net": "GND",
+        "ref": "U9",
+        "pin": "9",
+        "pinfunction": "PAD_9",
+        "pintype": "power_in"
+      },
+      "schematic_function_matches_manufacturer": true,
+      "native_uuid": "f9abd560-05da-41a8-9928-639b37178b2b",
+      "native_net": "GND",
+      "native_xy_mm": [
+        28.86,
+        2.5
+      ],
+      "native_copper_layers": [
+        "B.Cu"
+      ],
+      "native_land_area_mm2": 1.4378550546879976,
+      "native_land_bounds_mm": [
+        28.41,
+        1.7,
+        29.31,
+        3.3
+      ],
+      "schematic_net_matches_native": true,
+      "candidate19_pad_identical": true,
+      "candidate19_pad_sha256_canonical": "5102c897a6d9884189d15be33e279cf8443cd3a7242fd8f68286b8fd758ec04f",
+      "candidate39_pad_sha256_canonical": "5102c897a6d9884189d15be33e279cf8443cd3a7242fd8f68286b8fd758ec04f"
+    }
+  ],
+  "released_contacts": {
+    "U9.6": {
+      "net": "+3V3_CORE",
+      "pads": [
+        "U9.6"
+      ],
+      "layer": "B.Cu"
+    },
+    "L2.2": {
+      "net": "+3V3_CORE",
+      "pads": [
+        "L2.2"
+      ],
+      "layer": "B.Cu"
+    },
+    "U7.3": {
+      "net": "+5V_BEC",
+      "pads": [
+        "U7.3"
+      ],
+      "layer": "B.Cu"
+    },
+    "U6.OUT_7_8": {
+      "net": "+5V_BEC",
+      "pads": [
+        "U6.7",
+        "U6.8"
+      ],
+      "layer": "F.Cu"
+    },
+    "U7.2": {
+      "net": "+5V_PERIPH",
+      "pads": [
+        "U7.2"
+      ],
+      "layer": "B.Cu"
+    },
+    "U7.7": {
+      "net": "+5V_PERIPH",
+      "pads": [
+        "U7.7"
+      ],
+      "layer": "B.Cu"
+    },
+    "U6.5": {
+      "net": "ABC_FB",
+      "pads": [
+        "U6.5"
+      ],
+      "layer": "F.Cu"
+    },
+    "U8.1": {
+      "net": "CORE_BUCK_IN",
+      "pads": [
+        "U8.1"
+      ],
+      "layer": "B.Cu"
+    },
+    "U8.8": {
+      "net": "CORE_BUCK_IN",
+      "pads": [
+        "U8.8"
+      ],
+      "layer": "B.Cu"
+    },
+    "U9.2": {
+      "net": "CORE_BUCK_IN",
+      "pads": [
+        "U9.2"
+      ],
+      "layer": "B.Cu"
+    },
+    "U5.8": {
+      "net": "GND",
+      "pads": [
+        "U5.8"
+      ],
+      "layer": "F.Cu"
+    },
+    "U6.4": {
+      "net": "GND",
+      "pads": [
+        "U6.4"
+      ],
+      "layer": "F.Cu"
+    },
+    "U6.10": {
+      "net": "GND",
+      "pads": [
+        "U6.10"
+      ],
+      "layer": "F.Cu"
+    },
+    "U7.1": {
+      "net": "GND",
+      "pads": [
+        "U7.1"
+      ],
+      "layer": "B.Cu"
+    },
+    "U8.12": {
+      "net": "GND",
+      "pads": [
+        "U8.12"
+      ],
+      "layer": "B.Cu"
+    },
+    "U9.1": {
+      "net": "GND",
+      "pads": [
+        "U9.1"
+      ],
+      "layer": "B.Cu"
+    },
+    "U9.4": {
+      "net": "GND",
+      "pads": [
+        "U9.4"
+      ],
+      "layer": "B.Cu"
+    },
+    "U10.5": {
+      "net": "GND",
+      "pads": [
+        "U10.5"
+      ],
+      "layer": "B.Cu"
+    },
+    "U7.6": {
+      "net": "USB_LIMITED",
+      "pads": [
+        "U7.6"
+      ],
+      "layer": "B.Cu"
+    },
+    "U8.2": {
+      "net": "USB_LIMITED",
+      "pads": [
+        "U8.2"
+      ],
+      "layer": "B.Cu"
+    },
+    "U10.1": {
+      "net": "USB_LIMITED",
+      "pads": [
+        "U10.1"
+      ],
+      "layer": "B.Cu"
+    },
+    "U10.4": {
+      "net": "USB_VBUS_RAW",
+      "pads": [
+        "U10.4"
+      ],
+      "layer": "B.Cu"
+    },
+    "U5.6": {
+      "net": "VX_PROTECTED",
+      "pads": [
+        "U5.6"
+      ],
+      "layer": "F.Cu"
+    },
+    "U8.7": {
+      "net": "VX_PROTECTED",
+      "pads": [
+        "U8.7"
+      ],
+      "layer": "B.Cu"
+    },
+    "U6.VIN_12_13": {
+      "net": "VX_PROTECTED",
+      "pads": [
+        "U6.12",
+        "U6.13"
+      ],
+      "layer": "F.Cu"
+    },
+    "U5.5": {
+      "net": "VX_RAW",
+      "pads": [
+        "U5.5"
+      ],
+      "layer": "F.Cu"
+    }
+  },
+  "released_rebound_contacts": [
+    {
+      "name": "U5.5",
+      "pads": [
+        "U5.5"
+      ],
+      "net": "VX_RAW",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "85e6caf7-e9d6-48fc-be04-1cbfbfff3020"
+      ]
+    },
+    {
+      "name": "U5.6",
+      "pads": [
+        "U5.6"
+      ],
+      "net": "VX_PROTECTED",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "fae78596-f5d0-4dbe-95ff-acb9c7ee3a2c"
+      ]
+    },
+    {
+      "name": "U5.8",
+      "pads": [
+        "U5.8"
+      ],
+      "net": "GND",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "4f0016cf-9995-4856-bdc4-785313abd18b"
+      ]
+    },
+    {
+      "name": "U6.4",
+      "pads": [
+        "U6.4"
+      ],
+      "net": "GND",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "d614e648-8ba8-4ff1-80be-0f038a8ec7e0"
+      ]
+    },
+    {
+      "name": "U6.5",
+      "pads": [
+        "U6.5"
+      ],
+      "net": "ABC_FB",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "95a61321-8af3-4811-8433-b0a4ad6c84a7"
+      ]
+    },
+    {
+      "name": "U6.10",
+      "pads": [
+        "U6.10"
+      ],
+      "net": "GND",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "0ecb6e31-4fc1-4249-b2e7-8d82dd1891b4"
+      ]
+    },
+    {
+      "name": "U7.1",
+      "pads": [
+        "U7.1"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "d107941e-2013-4bb2-adb1-3b11a38a73f4"
+      ]
+    },
+    {
+      "name": "U7.2",
+      "pads": [
+        "U7.2"
+      ],
+      "net": "+5V_PERIPH",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "a6b483a2-dc5c-495b-a487-16205b55ffb9"
+      ]
+    },
+    {
+      "name": "U7.3",
+      "pads": [
+        "U7.3"
+      ],
+      "net": "+5V_BEC",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "49e039c7-6a12-4621-b60e-b65eb150a836"
+      ]
+    },
+    {
+      "name": "U7.6",
+      "pads": [
+        "U7.6"
+      ],
+      "net": "USB_LIMITED",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "4f0bf3fd-9b00-42b4-9044-8ce9b59ab94c"
+      ]
+    },
+    {
+      "name": "U7.7",
+      "pads": [
+        "U7.7"
+      ],
+      "net": "+5V_PERIPH",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "97228188-d041-470c-917e-732f5f369245"
+      ]
+    },
+    {
+      "name": "U8.1",
+      "pads": [
+        "U8.1"
+      ],
+      "net": "CORE_BUCK_IN",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "8ddf0cf4-ff63-40c2-af5c-49e5e48d0280"
+      ]
+    },
+    {
+      "name": "U8.2",
+      "pads": [
+        "U8.2"
+      ],
+      "net": "USB_LIMITED",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "ea316c8c-d8d2-4c26-b505-1ba70c8fbe9b"
+      ]
+    },
+    {
+      "name": "U8.7",
+      "pads": [
+        "U8.7"
+      ],
+      "net": "VX_PROTECTED",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "68cb1a26-42db-4ea2-9012-095924df7626"
+      ]
+    },
+    {
+      "name": "U8.8",
+      "pads": [
+        "U8.8"
+      ],
+      "net": "CORE_BUCK_IN",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "c2dd0d01-bc46-4692-b682-d5314f616ed1"
+      ]
+    },
+    {
+      "name": "U8.12",
+      "pads": [
+        "U8.12"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "c71cf299-32b7-42bc-bc3e-cb78f838b70e"
+      ]
+    },
+    {
+      "name": "U9.1",
+      "pads": [
+        "U9.1"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "ecc08311-2984-4a23-90d6-5e10cb92cc27"
+      ]
+    },
+    {
+      "name": "U9.2",
+      "pads": [
+        "U9.2"
+      ],
+      "net": "CORE_BUCK_IN",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "25451035-d2c6-4ae2-8346-11213dbb386e"
+      ]
+    },
+    {
+      "name": "U9.4",
+      "pads": [
+        "U9.4"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "cd210699-a66d-4f46-be75-95bfa97122a7"
+      ]
+    },
+    {
+      "name": "U9.6",
+      "pads": [
+        "U9.6"
+      ],
+      "net": "+3V3_CORE",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "61bdd795-8477-45fe-9f61-222fc1ee0f4b"
+      ]
+    },
+    {
+      "name": "U9.9",
+      "pads": [
+        "U9.9"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "f9abd560-05da-41a8-9928-639b37178b2b"
+      ]
+    },
+    {
+      "name": "L2.2",
+      "pads": [
+        "L2.2"
+      ],
+      "net": "+3V3_CORE",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "54f0ae3e-4922-4a43-9c47-827de2513e7e"
+      ]
+    },
+    {
+      "name": "U10.1",
+      "pads": [
+        "U10.1"
+      ],
+      "net": "USB_LIMITED",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "17a1a012-29cd-46f9-a7ce-d5c2ca3c83d4"
+      ]
+    },
+    {
+      "name": "U10.4",
+      "pads": [
+        "U10.4"
+      ],
+      "net": "USB_VBUS_RAW",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "07a60c76-2a6a-4d28-81a9-eb601942ac32"
+      ]
+    },
+    {
+      "name": "U10.5",
+      "pads": [
+        "U10.5"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "663178d8-c282-49b0-b9f9-8b45503c957d"
+      ]
+    },
+    {
+      "name": "U10.7",
+      "pads": [
+        "U10.7"
+      ],
+      "net": "GND",
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "54dceb2a-fc9c-4e3f-87dd-af6c41117620"
+      ]
+    },
+    {
+      "name": "U6.VIN_12_13",
+      "pads": [
+        "U6.12",
+        "U6.13"
+      ],
+      "net": "VX_PROTECTED",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "0526091c-ee27-42ce-8a71-7e1565c51a6e",
+        "e531483b-2d06-4a6d-bfdc-5bb2f9c9a5ab"
+      ]
+    },
+    {
+      "name": "U6.OUT_7_8",
+      "pads": [
+        "U6.7",
+        "U6.8"
+      ],
+      "net": "+5V_BEC",
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "2556c4c2-1dc8-4ebf-a376-8fc60f8c5d22",
+        "3b69a42c-322f-4c75-9d21-9ff1b451eb12"
+      ]
+    }
+  ],
+  "released_finite_contact_audit": {
+    "U9.6": {
+      "name": "U9.6",
+      "pads": [
+        "U9.6"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "61bdd795-8477-45fe-9f61-222fc1ee0f4b"
+      ],
+      "raw_land_area_mm2": 0.12285189845199997,
+      "physical_contact_area_mm2": 0.12285189845199997,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        29.56,
+        2.125,
+        30.06,
+        2.375
+      ],
+      "physical_geometry_sha256": "c11bcba5bca9418e4752b0c051350a550d1e832f839c699ba9beda39007b7694",
+      "finite_connected_contact": true
+    },
+    "L2.2": {
+      "name": "L2.2",
+      "pads": [
+        "L2.2"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "54f0ae3e-4922-4a43-9c47-827de2513e7e"
+      ],
+      "raw_land_area_mm2": 2.519999999999996,
+      "physical_contact_area_mm2": 2.519999999999996,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        34.01,
+        1.1,
+        34.91,
+        3.9
+      ],
+      "physical_geometry_sha256": "76c1bea0c5beb4d56fa5277d2ffa05969508894705f690d8be4c812d25501c92",
+      "finite_connected_contact": true
+    },
+    "U7.3": {
+      "name": "U7.3",
+      "pads": [
+        "U7.3"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "49e039c7-6a12-4621-b60e-b65eb150a836"
+      ],
+      "raw_land_area_mm2": 0.19885189845200246,
+      "physical_contact_area_mm2": 0.1988518984520024,
+      "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        37.3,
+        6.205,
+        37.6,
+        6.875
+      ],
+      "physical_geometry_sha256": "85bbc575145ce8ab77be4cded68c112d077585538c695110062ab3ce94c9d409",
+      "finite_connected_contact": true
+    },
+    "U6.OUT_7_8": {
+      "name": "U6.OUT_7_8",
+      "pads": [
+        "U6.7",
+        "U6.8"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "2556c4c2-1dc8-4ebf-a376-8fc60f8c5d22",
+        "3b69a42c-322f-4c75-9d21-9ff1b451eb12"
+      ],
+      "raw_land_area_mm2": 0.5392053518199982,
+      "physical_contact_area_mm2": 0.5392053518199976,
+      "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        31.8,
+        15.55,
+        32.5,
+        16.4
+      ],
+      "physical_geometry_sha256": "0ee7bd42751f38931017468a9504e3bdce76e5210503b5118f469d2c4246f17e",
+      "finite_connected_contact": true
+    },
+    "U7.2": {
+      "name": "U7.2",
+      "pads": [
+        "U7.2"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "a6b483a2-dc5c-495b-a487-16205b55ffb9"
+      ],
+      "raw_land_area_mm2": 0.19885189845200246,
+      "physical_contact_area_mm2": 0.1988518984520024,
+      "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        37.8,
+        6.205,
+        38.1,
+        6.875
+      ],
+      "physical_geometry_sha256": "4c0eb63d9dd1fa8ff73791dfceb9910e2774cfb68536721909cf3e2331c6b928",
+      "finite_connected_contact": true
+    },
+    "U7.7": {
+      "name": "U7.7",
+      "pads": [
+        "U7.7"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "97228188-d041-470c-917e-732f5f369245"
+      ],
+      "raw_land_area_mm2": 0.1988518984520025,
+      "physical_contact_area_mm2": 0.1988518984520024,
+      "area_removed_by_actual_drills_or_outline_mm2": 8.326672684688674e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        37.8,
+        4.725,
+        38.1,
+        5.395
+      ],
+      "physical_geometry_sha256": "4e41fdb3c330453714b8180466cda1ec0fdaca89a4e7a70bc9a8a14a1a3e1a49",
+      "finite_connected_contact": true
+    },
+    "U6.5": {
+      "name": "U6.5",
+      "pads": [
+        "U6.5"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "95a61321-8af3-4811-8433-b0a4ad6c84a7"
+      ],
+      "raw_land_area_mm2": 0.14785189845200028,
+      "physical_contact_area_mm2": 0.14785189845200022,
+      "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        31.85,
+        17.1,
+        32.45,
+        17.35
+      ],
+      "physical_geometry_sha256": "20382d627122b2c6bb8d316498364b52e6b42b876d4b06236b86dbe5c296e838",
+      "finite_connected_contact": true
+    },
+    "U8.1": {
+      "name": "U8.1",
+      "pads": [
+        "U8.1"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "8ddf0cf4-ff63-40c2-af5c-49e5e48d0280"
+      ],
+      "raw_land_area_mm2": 0.41785189845199955,
+      "physical_contact_area_mm2": 0.4178518984519998,
+      "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        28.3,
+        5.95,
+        29.35,
+        6.35
+      ],
+      "physical_geometry_sha256": "b7e9604607f3a7e5dc538e6b3d0478718ac197023fa804de955dc5bedca30459",
+      "finite_connected_contact": true
+    },
+    "U8.8": {
+      "name": "U8.8",
+      "pads": [
+        "U8.8"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "c2dd0d01-bc46-4692-b682-d5314f616ed1"
+      ],
+      "raw_land_area_mm2": 0.41785189845199955,
+      "physical_contact_area_mm2": 0.4178518984519998,
+      "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        29.65,
+        5.95,
+        30.7,
+        6.35
+      ],
+      "physical_geometry_sha256": "19d0cbe67d8a8499a04ef7ea93ba9dacae270c40424281a0d3efb07c5e56d07f",
+      "finite_connected_contact": true
+    },
+    "U9.2": {
+      "name": "U9.2",
+      "pads": [
+        "U9.2"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "25451035-d2c6-4ae2-8346-11213dbb386e"
+      ],
+      "raw_land_area_mm2": 0.12285189845199991,
+      "physical_contact_area_mm2": 0.12285189845199994,
+      "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        27.66,
+        2.625,
+        28.16,
+        2.875
+      ],
+      "physical_geometry_sha256": "5fcee95662452ebea49fcd44e6ed3311483c5005c01af4466200c9b7cadd1968",
+      "finite_connected_contact": true
+    },
+    "U5.8": {
+      "name": "U5.8",
+      "pads": [
+        "U5.8"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "4f0016cf-9995-4856-bdc4-785313abd18b"
+      ],
+      "raw_land_area_mm2": 0.14785189845199997,
+      "physical_contact_area_mm2": 0.14785189845199984,
+      "area_removed_by_actual_drills_or_outline_mm2": 1.3877787807814457e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        12.66,
+        16.6,
+        13.26,
+        16.85
+      ],
+      "physical_geometry_sha256": "07aa58e14db8f23b7d685c0f2e4e70a0ce152badf787f4ff9eb8c69eeb39aa17",
+      "finite_connected_contact": true
+    },
+    "U6.4": {
+      "name": "U6.4",
+      "pads": [
+        "U6.4"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "d614e648-8ba8-4ff1-80be-0f038a8ec7e0"
+      ],
+      "raw_land_area_mm2": 0.1478518984519997,
+      "physical_contact_area_mm2": 0.1478518984519998,
+      "area_removed_by_actual_drills_or_outline_mm2": -1.1102230246251565e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        31.375,
+        17.35,
+        31.625,
+        17.95
+      ],
+      "physical_geometry_sha256": "1938e0616fddce43c729f28444d6798d02ad65edb9064174f826155b49a5ffd7",
+      "finite_connected_contact": true
+    },
+    "U6.10": {
+      "name": "U6.10",
+      "pads": [
+        "U6.10"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "0ecb6e31-4fc1-4249-b2e7-8d82dd1891b4"
+      ],
+      "raw_land_area_mm2": 0.6214117797160021,
+      "physical_contact_area_mm2": 0.6214101045766799,
+      "area_removed_by_actual_drills_or_outline_mm2": 1.675139322254715e-06,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        30.57500000057618,
+        15.0,
+        30.92499999942382,
+        16.799999993925127
+      ],
+      "physical_geometry_sha256": "11b11c4605d8ac9b87c1d26c69f3f50b35427ccaf218ab79e62f8e3f3030be97",
+      "finite_connected_contact": true
+    },
+    "U7.1": {
+      "name": "U7.1",
+      "pads": [
+        "U7.1"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "d107941e-2013-4bb2-adb1-3b11a38a73f4"
+      ],
+      "raw_land_area_mm2": 0.19885189845200246,
+      "physical_contact_area_mm2": 0.19885189845200243,
+      "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        38.3,
+        6.205,
+        38.6,
+        6.875
+      ],
+      "physical_geometry_sha256": "4c0f9370870334dac4926354baf9fbd62a999fc99237e5b8d95321c78357caa3",
+      "finite_connected_contact": true
+    },
+    "U8.12": {
+      "name": "U8.12",
+      "pads": [
+        "U8.12"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "c71cf299-32b7-42bc-bc3e-cb78f838b70e"
+      ],
+      "raw_land_area_mm2": 0.11785189845200136,
+      "physical_contact_area_mm2": 0.1178518984520014,
+      "area_removed_by_actual_drills_or_outline_mm2": -4.163336342344337e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        28.65,
+        6.65,
+        28.85,
+        7.25
+      ],
+      "physical_geometry_sha256": "74a6cc0745fd263d53ca9a4eb51ff437f3b5f78d931d9a4f6a5d76feb3f3c3c0",
+      "finite_connected_contact": true
+    },
+    "U9.1": {
+      "name": "U9.1",
+      "pads": [
+        "U9.1"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "ecc08311-2984-4a23-90d6-5e10cb92cc27"
+      ],
+      "raw_land_area_mm2": 0.12285189845199991,
+      "physical_contact_area_mm2": 0.12285189845199998,
+      "area_removed_by_actual_drills_or_outline_mm2": -6.938893903907228e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        27.66,
+        3.125,
+        28.16,
+        3.375
+      ],
+      "physical_geometry_sha256": "c83420b237871183d0d64b931ceeeca3b6e0ae455e4ba55cf5562e6b5a08ebcf",
+      "finite_connected_contact": true
+    },
+    "U9.4": {
+      "name": "U9.4",
+      "pads": [
+        "U9.4"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "cd210699-a66d-4f46-be75-95bfa97122a7"
+      ],
+      "raw_land_area_mm2": 0.12285189845199995,
+      "physical_contact_area_mm2": 0.12285189845199997,
+      "area_removed_by_actual_drills_or_outline_mm2": -1.3877787807814457e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        27.66,
+        1.625,
+        28.16,
+        1.875
+      ],
+      "physical_geometry_sha256": "9f9d86a5eca6188b00c51eacb29c517bc7d892bc000118b10e6d41898a74c4e9",
+      "finite_connected_contact": true
+    },
+    "U10.5": {
+      "name": "U10.5",
+      "pads": [
+        "U10.5"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "663178d8-c282-49b0-b9f9-8b45503c957d"
+      ],
+      "raw_land_area_mm2": 0.13285189845199888,
+      "physical_contact_area_mm2": 0.13285189845199888,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        39.85,
+        11.8,
+        40.3,
+        12.1
+      ],
+      "physical_geometry_sha256": "a2a470f96a20ff64a78bab4c1addd0e38d24e6e41d7600c40148b625088d5933",
+      "finite_connected_contact": true
+    },
+    "U7.6": {
+      "name": "U7.6",
+      "pads": [
+        "U7.6"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "4f0bf3fd-9b00-42b4-9044-8ce9b59ab94c"
+      ],
+      "raw_land_area_mm2": 0.1988518984520025,
+      "physical_contact_area_mm2": 0.19885189845200238,
+      "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        37.3,
+        4.725,
+        37.6,
+        5.395
+      ],
+      "physical_geometry_sha256": "b2064655f48eb6e4d51e5b7c2657f04ece4a1f750d3e4c0583c4644b3cfd7eab",
+      "finite_connected_contact": true
+    },
+    "U8.2": {
+      "name": "U8.2",
+      "pads": [
+        "U8.2"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "ea316c8c-d8d2-4c26-b505-1ba70c8fbe9b"
+      ],
+      "raw_land_area_mm2": 0.4178518984520005,
+      "physical_contact_area_mm2": 0.4178518984520005,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        28.3,
+        5.25,
+        29.35,
+        5.65
+      ],
+      "physical_geometry_sha256": "8abf52fd0b13fff6eae0c01e8b222aec8fe74ced7322975d13888197c0b6f2e9",
+      "finite_connected_contact": true
+    },
+    "U10.1": {
+      "name": "U10.1",
+      "pads": [
+        "U10.1"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "17a1a012-29cd-46f9-a7ce-d5c2ca3c83d4"
+      ],
+      "raw_land_area_mm2": 0.13285189845200074,
+      "physical_contact_area_mm2": 0.13285189845200074,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        37.9,
+        12.45,
+        38.35,
+        12.75
+      ],
+      "physical_geometry_sha256": "86eef02a25f292d51a66ae5d4cb1c0e5c8c398c0210c2abe6f76418e3a652302",
+      "finite_connected_contact": true
+    },
+    "U10.4": {
+      "name": "U10.4",
+      "pads": [
+        "U10.4"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "07a60c76-2a6a-4d28-81a9-eb601942ac32"
+      ],
+      "raw_land_area_mm2": 0.13285189845199893,
+      "physical_contact_area_mm2": 0.1328518984519989,
+      "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        39.85,
+        11.15,
+        40.3,
+        11.45
+      ],
+      "physical_geometry_sha256": "77d501cf2148d9443e266831e9435104f9eaa5084616f11ff62a71b747e4b256",
+      "finite_connected_contact": true
+    },
+    "U5.6": {
+      "name": "U5.6",
+      "pads": [
+        "U5.6"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "fae78596-f5d0-4dbe-95ff-acb9c7ee3a2c"
+      ],
+      "raw_land_area_mm2": 0.7178518984520014,
+      "physical_contact_area_mm2": 0.7178518984520014,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        12.16,
+        15.3,
+        12.46,
+        17.7
+      ],
+      "physical_geometry_sha256": "341fde0d515b78eed677ceb2507d551f9eaa1ff288785434be0411df9fa1c6e4",
+      "finite_connected_contact": true
+    },
+    "U8.7": {
+      "name": "U8.7",
+      "pads": [
+        "U8.7"
+      ],
+      "layer": "B.Cu",
+      "native_pad_uuids": [
+        "68cb1a26-42db-4ea2-9012-095924df7626"
+      ],
+      "raw_land_area_mm2": 0.4178518984520005,
+      "physical_contact_area_mm2": 0.4178518984520007,
+      "area_removed_by_actual_drills_or_outline_mm2": -2.220446049250313e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        29.65,
+        5.25,
+        30.7,
+        5.65
+      ],
+      "physical_geometry_sha256": "783d93d66ef6eed61c8c59dc2dd91bac60bc879c36bcebd2e7d0eea942d212ca",
+      "finite_connected_contact": true
+    },
+    "U6.VIN_12_13": {
+      "name": "U6.VIN_12_13",
+      "pads": [
+        "U6.12",
+        "U6.13"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "0526091c-ee27-42ce-8a71-7e1565c51a6e",
+        "e531483b-2d06-4a6d-bfdc-5bb2f9c9a5ab"
+      ],
+      "raw_land_area_mm2": 0.5392053518199978,
+      "physical_contact_area_mm2": 0.5392053518199978,
+      "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        29.0,
+        15.55,
+        29.7,
+        16.4
+      ],
+      "physical_geometry_sha256": "173f7d3a49e31ea08af793b07da9945e13c84e8a47db0ab30e1985fe92dcecd7",
+      "finite_connected_contact": true
+    },
+    "U5.5": {
+      "name": "U5.5",
+      "pads": [
+        "U5.5"
+      ],
+      "layer": "F.Cu",
+      "native_pad_uuids": [
+        "85e6caf7-e9d6-48fc-be04-1cbfbfff3020"
+      ],
+      "raw_land_area_mm2": 0.7178518984520014,
+      "physical_contact_area_mm2": 0.7178518984520013,
+      "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-16,
+      "physical_holes": 0,
+      "physical_bounds_mm": [
+        11.66,
+        15.3,
+        11.96,
+        17.7
+      ],
+      "physical_geometry_sha256": "ef22ef5aefd2f9c88721daaac407d61e7aeb47fef3f4beef5b687b12b29d748d",
+      "finite_connected_contact": true
+    }
+  },
+  "distinct_modeled_elements": [
+    {
+      "section": "sources",
+      "name": "U8_OUT1",
+      "p": "DEV_U8_OUT",
+      "n": "U8.1",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "sources",
+      "name": "U8_OUT8",
+      "p": "DEV_U8_OUT",
+      "n": "U8.8",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "sources",
+      "name": "U7_OUT2",
+      "p": "DEV_U7_OUT",
+      "n": "U7.2",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "sources",
+      "name": "U7_OUT7",
+      "p": "DEV_U7_OUT",
+      "n": "U7.7",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "resistors",
+      "name": "U5_efuse_path",
+      "p": "U5.5",
+      "n": "U5.6",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "resistors",
+      "name": "U7_BEC_selected_path",
+      "p": "U7.3",
+      "n": "DEV_U7_OUT",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "resistors",
+      "name": "U8_BEC_selected_path",
+      "p": "U8.7",
+      "n": "DEV_U8_OUT",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U8_IQ_screen",
+      "p": "U8.7",
+      "n": "U8.12",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U5_IQ_table_screen",
+      "p": "U5.5",
+      "n": "U5.8",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U7_IQ_table_screen",
+      "p": "U7.3",
+      "n": "U7.1",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U8_inactive_leakage_reserve",
+      "p": "U8.7",
+      "n": "U8.12",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "converters",
+      "name": "U6_total_efficiency",
+      "in_p": "U6.VIN_12_13",
+      "in_n": "U6.10",
+      "out_p": "U6.OUT_7_8",
+      "out_n": "U6.10",
+      "sense_p": "U6.5",
+      "sense_n": "U6.4",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "converters",
+      "name": "U9_total_efficiency",
+      "in_p": "U9.2",
+      "in_n": "U9.1",
+      "out_p": "L2.2",
+      "out_n": "U9.1",
+      "sense_p": "U9.6",
+      "sense_n": "U9.4",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "probes",
+      "name": "U9_operating_input_only",
+      "p": "U9.2",
+      "n": "U9.1",
+      "cases": [
+        "classic_BEC5_AB_mcu_vdd19_baseline",
+        "classic_BEC5_AB_mcu_vdd32_baseline",
+        "classic_BEC5_AB_mcu_vdd48_baseline",
+        "classic_BEC5_AB_mcu_vdd64_baseline",
+        "classic_BEC5_AB_flash_baseline",
+        "classic_BEC5_AB_barometer_pad2_baseline",
+        "classic_BEC5_AB_barometer_pad6_baseline",
+        "classic_BEC5_AB_barometer_pad8_baseline",
+        "classic_BEC5_AB_analog_branch_entry_baseline",
+        "classic_BEC5_AB_imu_branch_entry_baseline",
+        "classic_BEC5_AC_mcu_vdd19_baseline",
+        "classic_BEC5_AC_mcu_vdd32_baseline",
+        "classic_BEC5_AC_mcu_vdd48_baseline",
+        "classic_BEC5_AC_mcu_vdd64_baseline",
+        "classic_BEC5_AC_flash_baseline",
+        "classic_BEC5_AC_barometer_pad2_baseline",
+        "classic_BEC5_AC_barometer_pad6_baseline",
+        "classic_BEC5_AC_barometer_pad8_baseline",
+        "classic_BEC5_AC_analog_branch_entry_baseline",
+        "classic_BEC5_AC_imu_branch_entry_baseline",
+        "classic_BEC5_BC_mcu_vdd19_baseline",
+        "classic_BEC5_BC_mcu_vdd32_baseline",
+        "classic_BEC5_BC_mcu_vdd48_baseline",
+        "classic_BEC5_BC_mcu_vdd64_baseline",
+        "classic_BEC5_BC_flash_baseline",
+        "classic_BEC5_BC_barometer_pad2_baseline",
+        "classic_BEC5_BC_barometer_pad6_baseline",
+        "classic_BEC5_BC_barometer_pad8_baseline",
+        "classic_BEC5_BC_analog_branch_entry_baseline",
+        "classic_BEC5_BC_imu_branch_entry_baseline",
+        "capacity_BEC5_AB_mcu_vdd19_baseline",
+        "capacity_BEC5_AB_mcu_vdd32_baseline",
+        "capacity_BEC5_AB_mcu_vdd48_baseline",
+        "capacity_BEC5_AB_mcu_vdd64_baseline",
+        "capacity_BEC5_AB_flash_baseline",
+        "capacity_BEC5_AB_barometer_pad2_baseline",
+        "capacity_BEC5_AB_barometer_pad6_baseline",
+        "capacity_BEC5_AB_barometer_pad8_baseline",
+        "capacity_BEC5_AB_analog_branch_entry_baseline",
+        "capacity_BEC5_AB_imu_branch_entry_baseline",
+        "capacity_BEC5_AC_mcu_vdd19_baseline",
+        "capacity_BEC5_AC_mcu_vdd32_baseline",
+        "capacity_BEC5_AC_mcu_vdd48_baseline",
+        "capacity_BEC5_AC_mcu_vdd64_baseline",
+        "capacity_BEC5_AC_flash_baseline",
+        "capacity_BEC5_AC_barometer_pad2_baseline",
+        "capacity_BEC5_AC_barometer_pad6_baseline",
+        "capacity_BEC5_AC_barometer_pad8_baseline",
+        "capacity_BEC5_AC_analog_branch_entry_baseline",
+        "capacity_BEC5_AC_imu_branch_entry_baseline",
+        "capacity_BEC5_BC_mcu_vdd19_baseline",
+        "capacity_BEC5_BC_mcu_vdd32_baseline",
+        "capacity_BEC5_BC_mcu_vdd48_baseline",
+        "capacity_BEC5_BC_mcu_vdd64_baseline",
+        "capacity_BEC5_BC_flash_baseline",
+        "capacity_BEC5_BC_barometer_pad2_baseline",
+        "capacity_BEC5_BC_barometer_pad6_baseline",
+        "capacity_BEC5_BC_barometer_pad8_baseline",
+        "capacity_BEC5_BC_analog_branch_entry_baseline",
+        "capacity_BEC5_BC_imu_branch_entry_baseline",
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline",
+        "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+        "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ]
+    },
+    {
+      "section": "resistors",
+      "name": "U10_USB_limiter_path",
+      "p": "U10.4",
+      "n": "U10.1",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    },
+    {
+      "section": "resistors",
+      "name": "U7_USB_selected_path",
+      "p": "U7.6",
+      "n": "DEV_U7_OUT",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    },
+    {
+      "section": "resistors",
+      "name": "U8_USB_selected_path",
+      "p": "U8.2",
+      "n": "DEV_U8_OUT",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U8_IQ_screen",
+      "p": "U8.2",
+      "n": "U8.12",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U7_IQ_table_screen",
+      "p": "U7.6",
+      "n": "U7.1",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U10_IQ_table_screen",
+      "p": "U10.4",
+      "n": "U10.5",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    },
+    {
+      "section": "loads",
+      "name": "U8_inactive_leakage_reserve",
+      "p": "U8.2",
+      "n": "U8.12",
+      "cases": [
+        "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+        "usb_configuration_USB4.33_NONE_flash_baseline"
+      ]
+    }
+  ],
+  "multilead_contacts": [
+    {
+      "name": "U6.OUT_7_8",
+      "net": "+5V_BEC",
+      "pads": [
+        "U6.7",
+        "U6.8"
+      ],
+      "layer": "F.Cu",
+      "member_functions": [
+        "VOUT",
+        "VOUT"
+      ],
+      "connected_land_union": true,
+      "area_mm2": 0.539242148050002,
+      "bounds_mm": [
+        31.79999,
+        15.54999,
+        32.50001,
+        16.40001
+      ],
+      "released_port_audit": {
+        "name": "U6.OUT_7_8",
+        "pads": [
+          "U6.7",
+          "U6.8"
+        ],
+        "layer": "F.Cu",
+        "native_pad_uuids": [
+          "2556c4c2-1dc8-4ebf-a376-8fc60f8c5d22",
+          "3b69a42c-322f-4c75-9d21-9ff1b451eb12"
+        ],
+        "raw_land_area_mm2": 0.5392053518199982,
+        "physical_contact_area_mm2": 0.5392053518199976,
+        "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-16,
+        "physical_holes": 0,
+        "physical_bounds_mm": [
+          31.8,
+          15.55,
+          32.5,
+          16.4
+        ],
+        "physical_geometry_sha256": "0ee7bd42751f38931017468a9504e3bdce76e5210503b5118f469d2c4246f17e",
+        "finite_connected_contact": true
+      }
+    },
+    {
+      "name": "U6.VIN_12_13",
+      "net": "VX_PROTECTED",
+      "pads": [
+        "U6.12",
+        "U6.13"
+      ],
+      "layer": "F.Cu",
+      "member_functions": [
+        "VIN",
+        "VIN"
+      ],
+      "connected_land_union": true,
+      "area_mm2": 0.5392421480500001,
+      "bounds_mm": [
+        28.99999,
+        15.54999,
+        29.70001,
+        16.40001
+      ],
+      "released_port_audit": {
+        "name": "U6.VIN_12_13",
+        "pads": [
+          "U6.12",
+          "U6.13"
+        ],
+        "layer": "F.Cu",
+        "native_pad_uuids": [
+          "0526091c-ee27-42ce-8a71-7e1565c51a6e",
+          "e531483b-2d06-4a6d-bfdc-5bb2f9c9a5ab"
+        ],
+        "raw_land_area_mm2": 0.5392053518199978,
+        "physical_contact_area_mm2": 0.5392053518199978,
+        "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+        "physical_holes": 0,
+        "physical_bounds_mm": [
+          29.0,
+          15.55,
+          29.7,
+          16.4
+        ],
+        "physical_geometry_sha256": "173f7d3a49e31ea08af793b07da9945e13c84e8a47db0ab30e1985fe92dcecd7",
+        "finite_connected_contact": true
+      }
+    }
+  ],
+  "mismatches": [
+    {
+      "id": "U10_EN_USED_AS_POWER_IN",
+      "severity": "blocking_before_fresh_solve",
+      "device": "U10",
+      "modeled_terminal": "U10.4",
+      "actual_function": "EN",
+      "correct_power_input": "U10.6",
+      "same_native_net": "USB_VBUS_RAW",
+      "replacement_pad_center_distance_mm": 1.3,
+      "affected_elements": [
+        {
+          "section": "resistors",
+          "name": "U10_USB_limiter_path",
+          "p": "U10.4",
+          "n": "U10.1",
+          "cases": [
+            "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+            "usb_configuration_USB4.33_NONE_flash_baseline"
+          ]
+        },
+        {
+          "section": "loads",
+          "name": "U10_IQ_table_screen",
+          "p": "U10.4",
+          "n": "U10.5",
+          "cases": [
+            "usb_configuration_USB4.33_NONE_mcu_vdd19_baseline",
+            "usb_configuration_USB4.33_NONE_flash_baseline"
+          ]
+        }
+      ],
+      "old_contact_is_verified_finite_geometry_but_wrong_device_function": true,
+      "correct_input_contact_absent_from_released_ledger": true,
+      "consequence": "Finite-copper USB limiter current and IQ enter at EN instead of IN; a net-name match is insufficient. Magnitude/sign of voltage bias was not computed. All derived port guards, USB circuit cases and probes must be rebound to the actual input where applicable."
+    }
+  ],
+  "ground_and_package_limits": [
+    {
+      "device": "U10",
+      "note": "GND pin5 is a valid ground contact. TI p.5 explicitly says PowerPAD is internally connected to GND and requires external grounding; candidate39 exposed pad7 is GND, but the ledger only has U10.5. Omitted internal pin5/EP7 current sharing is an additional package-ground idealization. No quantified package resistance/current split is established; do not silently union disconnected finite lands."
+    },
+    {
+      "device": "U9",
+      "note": "PGND1 is valid converter power return, AGND4 valid sense reference. TI p.4 requires exposed pad to AGND; native pad9 is GND, and fixed-output FB5 is also GND. Neither pad9 nor FB5 is used as a separate ledger contact. TI pin table does not justify declaring all ground-named/control pads ideal internal power-return pins; package grounding and thermal behavior remain outside the two-reference model."
+    },
+    {
+      "device": "U6",
+      "note": "Power return10 and quiet/control ground4 are distinct valid roles. Grounded PS/SYNC1, FB2_6, VSEL15 are controls, not extra power grounds. Package ground transfer/sharing remains a circuit idealization."
+    }
+  ],
+  "same_net_pads_not_interchangeable": [
+    {
+      "device": "U5",
+      "pads": [
+        "U5.4",
+        "U5.8"
+      ],
+      "functions": [
+        "PGTH",
+        "GND"
+      ],
+      "net": "GND"
+    },
+    {
+      "device": "U7",
+      "pads": [
+        "U7.3",
+        "U7.5"
+      ],
+      "functions": [
+        "VIN1",
+        "MODE"
+      ],
+      "net": "+5V_BEC"
+    },
+    {
+      "device": "U8",
+      "pads": [
+        "U8.4",
+        "U8.5",
+        "U8.12"
+      ],
+      "functions": [
+        "OV2",
+        "OV1",
+        "GND"
+      ],
+      "net": "GND"
+    },
+    {
+      "device": "U9",
+      "pads": [
+        "U9.2",
+        "U9.3"
+      ],
+      "functions": [
+        "VIN",
+        "EN"
+      ],
+      "net": "CORE_BUCK_IN"
+    },
+    {
+      "device": "U10",
+      "pads": [
+        "U10.4",
+        "U10.6"
+      ],
+      "functions": [
+        "EN",
+        "IN"
+      ],
+      "net": "USB_VBUS_RAW"
+    }
+  ],
+  "limits": [
+    "Pin-function and source binding audit only; no physical footprint dimensional/orientation certification, DC rerun, dynamics, thermal qualification, switch-state validation or final-board acceptance.",
+    "Pad-level equality between candidate19 and candidate39 does not prove equality of all intervening power copper or numerical applicability.",
+    "U7 output2/7 and U8 output1/8 are separate finite contacts joined to ideal device nodes by explicit zero-volt sources, not a single geometric contact union. This includes all documented output leads but omits package/solder resistance.",
+    "U9 L2.2 is the actual external output-inductor terminal on +3V3_CORE; U9.6 is VOS sense only. U9.7 to L2.1 switching path is represented by the averaged total-efficiency converter, not separately solved."
+  ]
+}

@@ -1,0 +1,1895 @@
+{
+  "schema": "f722-physical-protection-checks/v1",
+  "board_sha256": "9881a992b12fed90f17131ed627f12af77680cc2ddf95030adf8c564aaa24eb2",
+  "native_version": "10.0.6",
+  "method": "Native KiCad copper polygons: tracks/vias/pads ERROR_OUTSIDE, actual clamp pad ERROR_INSIDE, maximum polygon error 0.00001 mm. Subtract only actual clamp pad copper from every copper object on the actual clamp pad layer(s), split resulting polygon pieces, rebuild physical contact graph including existing plated through connections. No component-internal conductive paths are assumed. Signal nets have no zones. Conservative overestimate of surviving copper and underestimate of pad removal.",
+  "numeric_contact_epsilon_mm": 1e-09,
+  "profile": "reconstructed-18",
+  "source_unchanged": true,
+  "checks": [
+    {
+      "net": "USB_CC1",
+      "clamp": "D5.1",
+      "source": "J1.A5",
+      "target": "R14.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-01",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "D5.1",
+            "J1.A5",
+            "R14.1"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J1.A5"
+        ],
+        [
+          "R14.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.2545163965500826,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.2545163965500826,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              35.825,
+              16.801065999999995
+            ],
+            [
+              35.575,
+              16.84880064269101
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "22bc5451-2712-4e02-a5d0-0015b0cde8a4",
+        "52320f63-cfec-4f0a-98d1-aed1c1a285af",
+        "a0029725-e8fc-459f-a611-b6804f4dae59",
+        "a8f985e8-b601-4017-89f1-3e968f4095d1",
+        "f21ecb82-19b2-4ca7-a0c6-63037f2f5df4"
+      ],
+      "target_objects": [
+        "5d7eb8e1-d7dc-4e50-87de-16c0065dbb55",
+        "b9fe7747-e798-41c5-9181-af9b4617bad1"
+      ]
+    },
+    {
+      "net": "SERVO1_MCU",
+      "clamp": "U12.1",
+      "source": "R20.2",
+      "target": "U1.56",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-02",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R20.2"
+          ],
+          [
+            "U1.56"
+          ],
+          [
+            "U12.1"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "R20.2"
+        ],
+        [
+          "U1.56"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "85fa6a07-9bf6-4777-a3fa-d8cbad5896e6"
+      ],
+      "target_objects": [
+        "5c2c2105-1a46-431b-b7ca-e637f06d850b"
+      ]
+    },
+    {
+      "net": "SERVO2_MCU",
+      "clamp": "U12.3",
+      "source": "R21.2",
+      "target": "U1.57",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-03",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R21.2",
+            "U1.57",
+            "U12.3"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "R21.2"
+        ],
+        [
+          "U1.57"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.13199999999999967,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.13199999999999967,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              11.248916,
+              12.8085
+            ],
+            [
+              11.248916,
+              12.9405
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": 0.2188938463257902,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              10.517716,
+              10.911917
+            ],
+            [
+              10.341613298295249,
+              11.041926055113812
+            ]
+          ]
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": 0.2188938463257902,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              10.517716,
+              10.911917
+            ],
+            [
+              10.341613298295249,
+              11.041926055113812
+            ]
+          ]
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": 0.2188938463257902,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              10.517716,
+              10.911917
+            ],
+            [
+              10.341613298295249,
+              11.041926055113812
+            ]
+          ]
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": 0.2188938463257902,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              10.517716,
+              10.911917
+            ],
+            [
+              10.341613298295249,
+              11.041926055113812
+            ]
+          ]
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": 0.2188938463257902,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              10.517716,
+              10.911917
+            ],
+            [
+              10.341613298295249,
+              11.041926055113812
+            ]
+          ]
+        }
+      ],
+      "source_objects": [
+        "0469b679-a382-422b-8d3d-2c5f6e46a512",
+        "1165cd8e-8985-4f24-b23e-f160fc21b6c5",
+        "13d2a6cd-d389-4883-8d1b-73db60d1cb77",
+        "158c6342-095a-4efd-b02f-28d13f09c909",
+        "158ffa8e-422f-4ad4-bfb3-44e1bf0c2de7",
+        "1db687cf-ca51-4ce8-80d8-131c798bc455",
+        "3f06d650-d51e-4886-8c9f-de96f2d8f8a1",
+        "45091cba-cbc3-464d-8573-86e6f2aa3bb3",
+        "4f93666a-7915-4e87-9d7d-050f3c81393a",
+        "59a0b526-0f98-4636-bb50-748718ff44d2",
+        "5ccfaeae-7628-42e4-9d9d-47049c11b086",
+        "61bfc5e7-a948-495c-b993-cae089b8c54f",
+        "7d5156e4-241a-4b78-be96-beb1b68cc0a1",
+        "936b102a-268e-4bde-b88d-f5d6667efe9b",
+        "a0a5c927-6ea6-4086-97c2-535530d2d989",
+        "ad93440f-8ff5-4344-a10a-77030af7a8d8",
+        "c5da0d1f-ce1b-4083-926b-245bf13f1cc3",
+        "fbd02204-97c5-405e-8a4f-36759cb742f0"
+      ],
+      "target_objects": [
+        "099fd78e-675d-4482-a8f3-cd999d78d37c",
+        "10e08b5a-b276-499f-889f-a207bbf5254f",
+        "11eb0a22-5c41-412c-9eba-75881952d650",
+        "225d44e7-0a28-4117-bbc6-eba4c330078a",
+        "2a65f437-36a1-4e30-8e60-622244acffb2",
+        "2b07387c-0e51-4096-a791-30766feb86b6",
+        "318aa7f7-a04b-475e-8507-72763503a948",
+        "50cbe89b-33f3-49f4-be25-d58d71016ad4",
+        "5e8c9153-f5f1-4ec4-ac62-cadb69d146c2",
+        "79b9a7fe-6d19-4423-8fef-32fbcbab5930",
+        "807e0074-3d23-4204-acf5-1c5e1cf6cb65",
+        "885f072e-40d7-4335-a279-324f2d550147",
+        "8ac58f33-fbfe-46f6-866b-ec6fe6d0d24a",
+        "9c5012f3-1e04-4343-8956-7ca48b73cbba",
+        "a05cae65-6216-4ace-acca-635d5923a6c3",
+        "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e",
+        "b22de03b-bcf5-4f5e-b652-f7f35ccbd025",
+        "c0c1cefd-b28d-4435-9c73-81bee053da2c",
+        "cc42e771-b693-4990-98df-169a8187d1d6",
+        "cf3ef1c8-4027-456f-8883-f9f671f876e8",
+        "f20a3830-f6b8-4d74-bb31-d84e60dd50c4"
+      ]
+    },
+    {
+      "net": "RPM_MCU",
+      "clamp": "U13.6",
+      "source": "R39.2",
+      "target": "U1.16",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-04",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R39.2",
+            "U13.6"
+          ],
+          [
+            "U1.16"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "R39.2"
+        ],
+        [
+          "U1.16"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 12.249973884356985,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": 12.249973884356985,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.025,
+              22.350858251165253
+            ],
+            [
+              14.575208,
+              10.199368
+            ]
+          ]
+        }
+      ],
+      "source_objects": [
+        "610224d9-e06f-4611-80c7-32887be0f9cc",
+        "7d47c72c-798d-4421-aa08-44b547da2576"
+      ],
+      "target_objects": [
+        "73a693cf-95e4-4384-bd19-1421ff4d73b5"
+      ]
+    },
+    {
+      "net": "SBUS_MCU",
+      "clamp": "U13.1",
+      "source": "R45.2",
+      "target": "U1.17",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-05",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R45.2"
+          ],
+          [
+            "U1.17"
+          ],
+          [
+            "U13.1"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "R45.2"
+        ],
+        [
+          "U1.17"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "ae8e233e-45d9-4e41-9879-a8a6287c86c1"
+      ],
+      "target_objects": [
+        "3c3a4530-20e8-4593-b9c9-1d1971c8ab45"
+      ]
+    },
+    {
+      "net": "PORT_C_RX_EXT",
+      "clamp": "U15.1",
+      "source": "J11.1",
+      "target": "R34.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-06",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "J11.1"
+          ],
+          [
+            "R34.1"
+          ],
+          [
+            "U15.1"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "J11.1"
+        ],
+        [
+          "R34.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "1904a95f-ded8-4123-a94a-79e3bebb7a86"
+      ],
+      "target_objects": [
+        "e1836b38-f5b7-467f-aa6e-2b94f3177ac6"
+      ]
+    },
+    {
+      "net": "PORT_C_TX_EXT",
+      "clamp": "U15.2",
+      "source": "J11.2",
+      "target": "R35.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-07",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "J11.2",
+            "U15.2"
+          ],
+          [
+            "R35.1"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "J11.2"
+        ],
+        [
+          "R35.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 2.623074241816268,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": 2.623074241816268,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              32.12114,
+              23.992167
+            ],
+            [
+              29.519108,
+              23.660583
+            ]
+          ]
+        }
+      ],
+      "source_objects": [
+        "0aa18c92-935c-4057-b8d7-49033d37e4c2",
+        "0f41f236-8e2f-41f6-bc31-748a48d42774",
+        "2f51aaf4-9c78-45f6-93dd-fc2be56e9e48",
+        "3c4b84a6-2226-4d23-8283-7f581391030e",
+        "4f1ccf9f-f0da-4233-9277-4ca5e1bb39f3",
+        "6a9e5e14-fdf0-43c9-bfa1-f9d7993c77f2",
+        "85dd3bf2-980a-49de-8a95-b817095fe139",
+        "8da9a22c-2565-4de6-9aac-3a949beb7f91",
+        "93e61633-8452-4a72-b4c8-d3bd8f2ee48b",
+        "a0065c8a-5f87-41f3-92f2-0ea3e8c0598f",
+        "a62a178b-6633-4b2b-8157-3e21430ee77e",
+        "a9f3979f-51a6-4354-bc71-b28b81bcf83f",
+        "c38392c3-a1eb-4304-9e5c-806f353ce7cc",
+        "c616fb2f-d8cb-46fb-8e28-73e21feba0f3",
+        "d61e1419-f97a-418d-93a5-f013edf6e7f4",
+        "fb81cdf1-cc7b-4228-90b9-9416c3e0cdd5",
+        "fdeef86c-c702-4a15-a273-0602f22a19d1"
+      ],
+      "target_objects": [
+        "c6e1aad0-1aff-43c3-b81c-63547d40595f"
+      ]
+    },
+    {
+      "net": "TAIL_MCU",
+      "clamp": "U12.6",
+      "source": "R23.2",
+      "target": "U1.55",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-08",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R23.2"
+          ],
+          [
+            "U1.55"
+          ],
+          [
+            "U12.6"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "R23.2"
+        ],
+        [
+          "U1.55"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "7cc82799-cc96-46a9-a84f-613f6f79366e"
+      ],
+      "target_objects": [
+        "b5501688-847e-4220-a320-a44d4b3f8b0c"
+      ]
+    },
+    {
+      "net": "ESC_MCU",
+      "clamp": "U13.3",
+      "source": "R24.2",
+      "target": "U1.58",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-09",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R24.2",
+            "U1.58",
+            "U13.3"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "R24.2"
+        ],
+        [
+          "U1.58"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.3076100000000003,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 1.4951169769526331,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.463384342851954,
+              19.76014635061874
+            ],
+            [
+              11.974804,
+              19.620492
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": 1.4951169769526331,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.463384342851954,
+              19.76014635061874
+            ],
+            [
+              11.974804,
+              19.620492
+            ]
+          ]
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": 0.3076100000000003,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.689614,
+              19.555
+            ],
+            [
+              13.689614,
+              19.24739
+            ]
+          ]
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": 1.4951169769526331,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.463384342851954,
+              19.76014635061874
+            ],
+            [
+              11.974804,
+              19.620492
+            ]
+          ]
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": 1.4951169769526331,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.463384342851954,
+              19.76014635061874
+            ],
+            [
+              11.974804,
+              19.620492
+            ]
+          ]
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": 0.4436954459548982,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              12.075,
+              20.58611
+            ],
+            [
+              11.966545844208996,
+              20.15587361746968
+            ]
+          ]
+        }
+      ],
+      "source_objects": [
+        "074d8b8f-3e8f-4dcc-a992-f55ef0de45be",
+        "0a32509b-1812-4a17-b63a-8f20c9578c35",
+        "145e8d08-8141-441e-99b0-597031080369",
+        "1eaf4bdc-7482-46b6-817c-95bc49cd4ab1",
+        "228487f4-170d-425d-950e-2dc7994b46c1",
+        "42487126-373a-47eb-9dfa-d6ad7931b541",
+        "5d32c18c-6eb9-4025-afe1-5c313183fcfb",
+        "ee6ea828-e72d-47e6-8dd4-7201f8ccd817"
+      ],
+      "target_objects": [
+        "01ee871b-b301-4e03-bd13-0911ecb896ea",
+        "1446d876-2cea-4889-93e7-34afb70b3dfa",
+        "1fdc0e22-b059-4cb9-9c1b-0f2c39d8673a",
+        "2886bf6e-18ea-4acb-918a-5242940432d5",
+        "66bc2783-b60d-4c14-9352-347bd5735f28",
+        "709145d9-558e-40d9-9ad8-572bc4b88c76",
+        "8f957ba5-6314-4715-a482-1d8f8162fdc0",
+        "a073cabc-839a-4392-8ead-11d0d094a4dd",
+        "a7188298-6ac1-4bed-846b-883e37dfcb76",
+        "af84c99f-948c-4101-97ba-a94e70c8116b",
+        "b38552e0-63a4-4a07-a988-4036085229dd",
+        "d0959f7c-b013-45cd-aba3-e02a807bb03f",
+        "da39f5fe-345b-4a53-a568-6ab95fdb4cdb",
+        "e137c2e3-3412-4696-b2f1-74e6e127dd22"
+      ]
+    },
+    {
+      "net": "PORT_B_RX_EXT",
+      "clamp": "U14.4",
+      "source": "J10.1",
+      "target": "R32.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-10",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "J10.1",
+            "R32.1",
+            "U14.4",
+            "U14.7"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J10.1",
+          "U14.7"
+        ],
+        [
+          "R32.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.3275132250445282,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.3275132250445282,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              24.0635,
+              8.036863705208333
+            ],
+            [
+              24.1,
+              8.36233668807952
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "114f0284-6eda-4fd8-b124-92017550a5fb",
+        "211ef9b5-ad68-421b-ad4b-4b577c262608",
+        "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+        "d4e965fd-e7a0-46d6-a602-daae70d8324b",
+        "d9153880-f022-4393-ac64-4e91750d043c",
+        "e846813a-f390-4cbc-8353-23b4b91006f3"
+      ],
+      "target_objects": [
+        "25ac444f-5c2d-4489-8f4d-5127b25dddc9",
+        "40c7c02c-061a-4bcb-b778-ceb84ef1d401",
+        "710be05a-3ebd-4bbb-af7d-5b0812157804",
+        "a5fc978a-96c9-45a0-a9f4-5a43505211c7"
+      ]
+    },
+    {
+      "net": "PORT_B_TX_EXT",
+      "clamp": "U14.5",
+      "source": "J10.2",
+      "target": "R33.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-11",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "J10.2"
+          ],
+          [
+            "R33.1"
+          ],
+          [
+            "U14.5",
+            "U14.6"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "J10.2"
+        ],
+        [
+          "R33.1"
+        ],
+        [
+          "U14.6"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "ef4a89b6-7e1f-4aab-a903-c0553a58d98c"
+      ],
+      "target_objects": [
+        "7171a0af-7c33-4521-8ad1-5cd17da36e6e"
+      ]
+    },
+    {
+      "net": "SERVO3_MCU",
+      "clamp": "U12.4",
+      "source": "R22.2",
+      "target": "U1.25",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-12",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "R22.2",
+            "U1.25",
+            "U12.4"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "R22.2"
+        ],
+        [
+          "U1.25"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.5330000000000013,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.5330000000000013,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              13.688916,
+              8.3135
+            ],
+            [
+              13.688916,
+              8.8465
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": 3.1170709300726545,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              12.227224,
+              6.98864
+            ],
+            [
+              14.672776,
+              8.92136
+            ]
+          ]
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": 2.6001003580546667,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              12.111438,
+              8.366088
+            ],
+            [
+              14.632122,
+              9.003798
+            ]
+          ]
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": 3.1170709300726545,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              12.227224,
+              6.98864
+            ],
+            [
+              14.672776,
+              8.92136
+            ]
+          ]
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": 3.1170709300726545,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              12.227224,
+              6.98864
+            ],
+            [
+              14.672776,
+              8.92136
+            ]
+          ]
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": 3.1170709300726545,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              12.227224,
+              6.98864
+            ],
+            [
+              14.672776,
+              8.92136
+            ]
+          ]
+        }
+      ],
+      "source_objects": [
+        "079b71a6-f140-4191-9b14-ce433cdee74b",
+        "3b732701-beb4-444b-9051-5197b34a6379",
+        "4027ef0d-4f3a-4894-b0f1-be74cb6209e0",
+        "5fff357f-bea5-4c17-a25e-77da5ae8d553",
+        "723f5607-5f91-46c7-9717-7b184476f12e",
+        "76ae616e-37d2-4c60-9917-dcfe2c7d10e4",
+        "87f529e8-a22e-45df-b893-0158a7bd3d1e",
+        "891cfd15-585e-4140-91b6-6c9bb7140b68",
+        "9182482c-5562-4009-90ac-8af3200191a2",
+        "93563658-247c-49bd-946d-c31446e28b4f",
+        "ab316d16-0fd4-4ef9-b2eb-1e3f900e5fb3",
+        "bc1f110d-c1c4-4d2f-945f-eececbf2e2c2",
+        "c970d847-d9fe-4fe1-b5f7-6387e198df59",
+        "d51e6265-5c3e-48ca-b322-89b8175d8e9d",
+        "dd333f2b-5999-408c-91da-88faf8bfc09e",
+        "f5caaa64-4e07-4535-ae46-36e583822fa0",
+        "fc2ffc5d-dc34-404f-b203-eb4d022b49ba",
+        "ff1fd4c1-2e48-4e7f-ae02-9ea286bd7307"
+      ],
+      "target_objects": [
+        "019309ff-dfd2-43d5-9da9-317a1626ca36",
+        "1a73c957-ea99-4afd-a890-1de0e1692f42",
+        "76a076de-93b2-4717-b9ed-03fd1260aee8",
+        "7a8b1c59-5e36-4576-b7b4-12f26a8622ce",
+        "7da8025f-c63d-4d73-9045-ce75cdbc0d6f",
+        "82b11656-a6c6-48ed-bfb4-2c9d37d1c690",
+        "9b0a514b-2313-4cbf-8ee0-439b09d4a2df",
+        "b4fcc2a3-9bf4-4570-aa61-38e0f72708cc",
+        "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+        "c045eadd-fdcc-46bf-92bd-ab580996c71b",
+        "cd94c5de-eb1c-4be0-84cd-7fb0b6ecb8f5",
+        "ed5a6e31-bd26-4040-b023-57cf679f0cf3",
+        "f9297a74-38f1-4f15-b27e-b3409b9b8d7f"
+      ]
+    },
+    {
+      "net": "PORT_A_TX_EXT",
+      "clamp": "U14.2",
+      "source": "J9.2",
+      "target": "R31.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-13",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "J9.2",
+            "U14.2",
+            "U14.9"
+          ],
+          [
+            "R31.1"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "J9.2",
+          "U14.9"
+        ],
+        [
+          "R31.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "03842ce5-fa9c-467f-9f23-e64fca150879",
+        "1476981a-299d-4a1c-9fe9-831dba983348",
+        "3988b63f-673f-481b-865c-1902ca109821",
+        "46bd7920-e16c-43d4-b92d-a06aa0f0c338",
+        "6516f232-b917-40dd-9151-330b9ff36194",
+        "6967dffc-563a-4147-9275-f44d0fba38e2",
+        "9f826ebf-8e2b-485e-a412-abb3d6d5c389",
+        "b8685110-3283-47ac-bc78-dcdb199b5ba6"
+      ],
+      "target_objects": [
+        "f7fa311d-0d66-4ff6-8322-a35e18fad6cd"
+      ]
+    },
+    {
+      "net": "PORT_A_RX_EXT",
+      "clamp": "U14.1",
+      "source": "J9.1",
+      "target": "R30.1",
+      "minimum_gap_required_mm": 0.127,
+      "id": "published-14",
+      "scope": "actual_clamp",
+      "before_cut": {
+        "groups": [
+          [
+            "J9.1"
+          ],
+          [
+            "R30.1"
+          ],
+          [
+            "U14.1",
+            "U14.10"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": false
+      },
+      "after_cut_pad_groups": [
+        [
+          "J9.1"
+        ],
+        [
+          "R30.1"
+        ],
+        [
+          "U14.10"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": false,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": false,
+      "minimum_gap_measured_mm": null,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "911208a8-e543-481f-96c3-5b184d5b630d"
+      ],
+      "target_objects": [
+        "41a27f7a-c386-4425-8490-b0d1714f6252"
+      ]
+    },
+    {
+      "net": "PORT_B_RX_EXT",
+      "clamp": "U14.7",
+      "source": "J10.1",
+      "target": "U14.4",
+      "minimum_gap_required_mm": 0,
+      "id": "published-15",
+      "scope": "nc_routing_pad",
+      "before_cut": {
+        "groups": [
+          [
+            "J10.1",
+            "R32.1",
+            "U14.4",
+            "U14.7"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J10.1"
+        ],
+        [
+          "R32.1",
+          "U14.4"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.5516261118010021,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.5516261118010021,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              24.082291863798073,
+              7.211830360599328
+            ],
+            [
+              24.0635,
+              7.763136294791666
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "114f0284-6eda-4fd8-b124-92017550a5fb",
+        "211ef9b5-ad68-421b-ad4b-4b577c262608",
+        "d4e965fd-e7a0-46d6-a602-daae70d8324b",
+        "d9153880-f022-4393-ac64-4e91750d043c"
+      ],
+      "target_objects": [
+        "25ac444f-5c2d-4489-8f4d-5127b25dddc9",
+        "40c7c02c-061a-4bcb-b778-ceb84ef1d401",
+        "710be05a-3ebd-4bbb-af7d-5b0812157804",
+        "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+        "a5fc978a-96c9-45a0-a9f4-5a43505211c7",
+        "cc056412-06ac-4681-9fba-bb4723da0d3d"
+      ]
+    },
+    {
+      "net": "PORT_B_TX_EXT",
+      "clamp": "U14.6",
+      "source": "J10.2",
+      "target": "U14.5",
+      "minimum_gap_required_mm": 0,
+      "id": "published-16",
+      "scope": "nc_routing_pad",
+      "before_cut": {
+        "groups": [
+          [
+            "J10.2"
+          ],
+          [
+            "R33.1"
+          ],
+          [
+            "U14.5",
+            "U14.6"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J10.2"
+        ],
+        [
+          "R33.1"
+        ],
+        [
+          "U14.5"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 6.206680139168152,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 6.206680139168152,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              30.579807,
+              6.237709
+            ],
+            [
+              24.5635,
+              7.763136294791666
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "ef4a89b6-7e1f-4aab-a903-c0553a58d98c"
+      ],
+      "target_objects": [
+        "d80c5f95-1b6b-4931-b318-cc2ddff230b7",
+        "e644a691-bace-401a-bc9c-a23ef31225a3"
+      ]
+    },
+    {
+      "net": "PORT_A_TX_EXT",
+      "clamp": "U14.9",
+      "source": "J9.2",
+      "target": "U14.2",
+      "minimum_gap_required_mm": 0,
+      "id": "published-17",
+      "scope": "nc_routing_pad",
+      "before_cut": {
+        "groups": [
+          [
+            "J9.2",
+            "U14.2",
+            "U14.9"
+          ],
+          [
+            "R31.1"
+          ]
+        ],
+        "source_target_connected": true,
+        "source_reaches_clamp": true,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J9.2"
+        ],
+        [
+          "R31.1"
+        ],
+        [
+          "U14.2"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": true,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": true,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 0.4024252660838603,
+      "complete_clamp_first_path_passes": true,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 0.4024252660838603,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              22.9,
+              7.362369723353047
+            ],
+            [
+              22.9365,
+              7.763136294791666
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "03842ce5-fa9c-467f-9f23-e64fca150879",
+        "1476981a-299d-4a1c-9fe9-831dba983348",
+        "3988b63f-673f-481b-865c-1902ca109821",
+        "6516f232-b917-40dd-9151-330b9ff36194",
+        "6967dffc-563a-4147-9275-f44d0fba38e2",
+        "b8685110-3283-47ac-bc78-dcdb199b5ba6"
+      ],
+      "target_objects": [
+        "80d0cc7b-537d-4ef7-9e94-865d56e93f27",
+        "9f826ebf-8e2b-485e-a412-abb3d6d5c389"
+      ]
+    },
+    {
+      "net": "PORT_A_RX_EXT",
+      "clamp": "U14.10",
+      "source": "J9.1",
+      "target": "U14.1",
+      "minimum_gap_required_mm": 0,
+      "id": "published-18",
+      "scope": "nc_routing_pad",
+      "before_cut": {
+        "groups": [
+          [
+            "J9.1"
+          ],
+          [
+            "R30.1"
+          ],
+          [
+            "U14.1",
+            "U14.10"
+          ]
+        ],
+        "source_target_connected": false,
+        "source_reaches_clamp": false,
+        "target_reaches_clamp": true
+      },
+      "after_cut_pad_groups": [
+        [
+          "J9.1"
+        ],
+        [
+          "R30.1"
+        ],
+        [
+          "U14.1"
+        ]
+      ],
+      "source_target_physically_disconnected_after_removing_actual_pad_copper": true,
+      "source_group_reaches_actual_pad_boundary": false,
+      "target_group_reaches_actual_pad_boundary": true,
+      "all_connections_require_actual_pad_region": false,
+      "gap_requirement_passes": true,
+      "minimum_gap_measured_mm": 6.206680139168152,
+      "complete_clamp_first_path_passes": false,
+      "layer_gaps": [
+        {
+          "layer": "F.Cu",
+          "gap_outside_actual_pad_mm": 6.206680139168152,
+          "overlap_outside_actual_pad_mm2": 0.0,
+          "closest_points_mm": [
+            [
+              16.420193,
+              6.237709
+            ],
+            [
+              22.4365,
+              7.763136294791666
+            ]
+          ]
+        },
+        {
+          "layer": "In1.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In2.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In3.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "In4.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        },
+        {
+          "layer": "B.Cu",
+          "gap_outside_actual_pad_mm": null,
+          "overlap_outside_actual_pad_mm2": 0,
+          "closest_points_mm": null
+        }
+      ],
+      "source_objects": [
+        "911208a8-e543-481f-96c3-5b184d5b630d"
+      ],
+      "target_objects": [
+        "c6508226-0292-4f3a-952b-8199e2920c13",
+        "d4855dda-eb45-4eef-9ca2-4b883f54829a"
+      ]
+    }
+  ],
+  "passed": 7,
+  "total": 18,
+  "all_pass": false,
+  "geometry_sha256": "4d21b36cc99afda8c5877e4a95e42453527ea1482ea9cde5096894dde27fafea",
+  "contracts_sha256": "976fdad481394716c81a34af7a66249da8490b3b15454fd2d35850bd82bffb1f"
+}

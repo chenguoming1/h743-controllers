@@ -1,6 +1,8 @@
 # F722 Nexus-style controller prototype
 
-A [replacement layout is in progress](layout-revision/README.md). Its paired native checkpoint has 45 unfinished connections and is not a manufacturing release. The files described below remain the previous published prototype.
+A [replacement layout is in progress](layout-revision/README.md). Its paired native checkpoint has 13 unfinished connections and is not a manufacturing release. The files described below remain the previous published prototype.
+
+**Electrical-model correction:** the older USB and DSM path-specific modeled margins are invalid because the source model used the enable terminal instead of the supply input. The [corrected source-bound review](layout-revision/power-evidence/corrected-v3-source43/REPORT.md) applies only to its identified revised-layout board. It does not qualify the older prototype below or the newest routing checkpoint. Historical raw reports are retained for provenance.
 
 The board is fully routed at nominal **47.5 × 25.4 mm overall**, including the direct right-angle servo contacts. It retains the Nexus firmware pinout, STM32F722RET6, ICM42688P with the reviewed CW90 mapping, W25N01GV flash and approved DPS368. USB-C opens upward; J10 and J11 have the requested consistent outward housing orientation.
 

@@ -1,0 +1,140 @@
+{
+  "schema": "f722-conditional-SBUS-RC-timing/v1",
+  "bound_route_proposal_sha256": "3a4609ca961e4540423e06acb9c34837e9ae2799652e5b1a4b591881de4e184e",
+  "initial_native_board_sha256": "32d8c163a051a7b6b99690d3a3d33db9228f4c213297448b48bb649c30caa4d6",
+  "firmware_default_baud": 100000,
+  "firmware_optional_fast_baud": 200000,
+  "format": "8 data bits + even parity + 2 stop bits",
+  "receiver_gpio": "PA3 / U1.17 / SERIAL_RX2",
+  "topology": "Non-inverting pass-FET level translation, Q2 gate3V3/sourceLV/drainHV; R37 pull-up4.7k1%, R45 series220ohm1%, externalHV seriesR26=470ohm1%",
+  "component_guarantees": {
+    "R37_ohms_at_nominal_tolerance": [
+      4653,
+      4747
+    ],
+    "R45_ohms_at_nominal_tolerance": [
+      217.8,
+      222.2
+    ],
+    "input_high_fraction_VDD": 0.7,
+    "input_low_fraction_VDD": 0.3,
+    "U13_C_pF_max": 4,
+    "U13_C_condition": "VR1.65V,25C only",
+    "MCU_C_pF_typ": 5,
+    "MCU_C_max_not_specified": true,
+    "Q2_Ciss_pF_max": 50,
+    "Q2_Coss_pF_max": 25,
+    "Q2_C_condition": "VDS25V,VGS0,f1MHz only, not a low-voltage total load guarantee"
+  },
+  "conditional_inputs": {
+    "R_effective_max_ohm": 5000,
+    "R_effective_must_include_temperature_and_trace_resistance": true,
+    "VDD_min_V": 2.7,
+    "VDD_max_V": 3.6,
+    "total_off_state_leakage_max_uA": 10,
+    "relative_transmitter_receiver_baud_mismatch_max_fraction": 0.02,
+    "start_quantization_and_sampling_allowance_bit_fraction": 0.0625,
+    "latest_considered_sample_bits_from_start": 11.5,
+    "external_driver_cable_FET_release_delay_max_us": 0.25,
+    "board_propagation_budget_us": 0.001,
+    "oversampling": 16,
+    "majority_sampling": true,
+    "total_capacitance_must_include_nonlinear_Q2_and_coupled_HV_loading": true
+  },
+  "rise_formula": "t=-R*C*ln(1-VIH/(VDD-R*Ileak)), pessimistically lumping all LV/MCU load behind R37+R45; external release delay is additional",
+  "sample_budget_formula": "Tbit*(0.5 -1/16 -11.5*combined_baud_error); conservative analytical allowance, not a USART validation result",
+  "threshold_exponent": 1.2489964856998905,
+  "cases": [
+    {
+      "baud": 100000,
+      "bit_us": 10.0,
+      "conditional_sample_budget_us": 2.0749999999999997,
+      "external_release_plus_propagation_budget_us": 0.251,
+      "max_total_effective_capacitance_pF": 292.07448073449126,
+      "sensitivity": [
+        {
+          "C_pF": 80,
+          "RC_rise_us": 0.4995985942799562,
+          "total_delay_us": 0.7505985942799562,
+          "margin_us": 1.3244014057200437
+        },
+        {
+          "C_pF": 120,
+          "RC_rise_us": 0.7493978914199343,
+          "total_delay_us": 1.0003978914199343,
+          "margin_us": 1.0746021085800654
+        },
+        {
+          "C_pF": 180,
+          "RC_rise_us": 1.1240968371299014,
+          "total_delay_us": 1.3750968371299015,
+          "margin_us": 0.6999031628700985
+        },
+        {
+          "C_pF": 250,
+          "RC_rise_us": 1.5612456071248633,
+          "total_delay_us": 1.8122456071248632,
+          "margin_us": 0.2627543928751366
+        },
+        {
+          "C_pF": 300,
+          "RC_rise_us": 1.8734947285498358,
+          "total_delay_us": 2.124494728549836,
+          "margin_us": -0.04949472854983594
+        }
+      ]
+    },
+    {
+      "baud": 200000,
+      "bit_us": 5.0,
+      "conditional_sample_budget_us": 1.0374999999999999,
+      "external_release_plus_propagation_budget_us": 0.251,
+      "max_total_effective_capacitance_pF": 125.94110696144593,
+      "sensitivity": [
+        {
+          "C_pF": 80,
+          "RC_rise_us": 0.4995985942799562,
+          "total_delay_us": 0.7505985942799562,
+          "margin_us": 0.2869014057200437
+        },
+        {
+          "C_pF": 120,
+          "RC_rise_us": 0.7493978914199343,
+          "total_delay_us": 1.0003978914199343,
+          "margin_us": 0.037102108580065574
+        },
+        {
+          "C_pF": 180,
+          "RC_rise_us": 1.1240968371299014,
+          "total_delay_us": 1.3750968371299015,
+          "margin_us": -0.3375968371299015
+        },
+        {
+          "C_pF": 250,
+          "RC_rise_us": 1.5612456071248633,
+          "total_delay_us": 1.8122456071248632,
+          "margin_us": -0.7747456071248634
+        },
+        {
+          "C_pF": 300,
+          "RC_rise_us": 1.8734947285498358,
+          "total_delay_us": 2.124494728549836,
+          "margin_us": -1.0869947285498358
+        }
+      ]
+    }
+  ],
+  "electrical_qualification": false,
+  "reason": "Source code and guaranteed component test-condition values are bound. Actual receiver/cable, full-swing Q2/MCU capacitance, resistor temperature bounds, running clock/readback and board waveform are not established; conditional limits do not certify assembled hardware.",
+  "final_native_board_sha256": "71d33748909bb960c5829973642272460607d8521831a6212975f7de6790d660",
+  "final_source_board_sha256": "80eb38da7100fd677862b8d3bc161329b278c410614f3b15460b5a5c863a75e6",
+  "actual_final_net_lengths_mm": {
+    "SBUS_LV": 75.64764023230329,
+    "SBUS_MCU": 50.99069680781216
+  },
+  "final_reference_projection": {
+    "outside_own_via_windows_centerline_mm": 0.0,
+    "outside_own_via_windows_width_mm2": 0.0,
+    "own_via_windows_are_not_solid_reference": true
+  }
+}

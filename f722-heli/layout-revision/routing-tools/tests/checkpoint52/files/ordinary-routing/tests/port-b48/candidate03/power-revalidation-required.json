@@ -1,0 +1,18 @@
+{
+  "board_sha256": "fb8eb611cfb14b221bb3b0da208ef32a64fb378e886a8281e846872537bfb8d3",
+  "source_board_sha256": "cbb9a1f0b43dc612718baf1277302c9ac0767474cc7fa13f5d8c0a2428f2b787",
+  "numerical_power_and_VCAP_applicability": false,
+  "geometric_support_continuity_passed": true,
+  "all28_support_groups_exact": true,
+  "reference_planes_refilled": true,
+  "reason": "The changed +3V3_CORE bridge, C58 control-ground return, C74 CORE_BUCK_IN feed and four new signal-via antipads change the real copper/GND domain. Fresh source-bound loaded power/VCAP and regulator-loop review are required. Historical numerical results do not qualify this geometry.",
+  "conditional_physical_path_review": "conditional-power-path-review.json",
+  "C74_finite_entry_limit": "The .40mm track/.45-.20mm via full-width annular witness is .001mm long with approximately .000491mm boundary reserve in the exact exported geometry. It proves finite connectivity only; it is not manufacturing registration margin, process clearance or current-capacity evidence.",
+  "transient_qualification_claimed": false,
+  "regulator_stability_qualified": false,
+  "current_capacity_qualified": false,
+  "assembly_registration_qualified": false,
+  "I2C_electrical_status": "NOT_QUALIFIED",
+  "PORT_B_waveform_and_ESD_qualification": false,
+  "conditional_physical_path_review_sha256": "f8c95e651533c6f8f94b610ff15815e5838f4016cc66cd7eae5f07b0e1c13563"
+}

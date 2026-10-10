@@ -1,0 +1,15 @@
+import pathlib,subprocess,os,json,hashlib,sys,shutil
+HERE=pathlib.Path(__file__).resolve().parent;ROOT=HERE.parents[2];S=ROOT/'ordinary-routing/candidate47';D=HERE/'candidate01';N=ROOT/'repo/f722-heli/layout-revision';K=ROOT.parent/'kicad10-runtime';T=N/'signal-review/native';E=dict(os.environ,PYTHONPATH=str(ROOT/'python-deps'))
+def run(name,args,codes=(0,)):
+ with (D/(name+'.log')).open('w')as f:r=subprocess.run([str(z)for z in args],env=E,stdout=f,stderr=subprocess.STDOUT)
+ assert r.returncode in codes,(name,r.returncode)
+ print(name,r.returncode,flush=True)
+shutil.copy2(S/'parts.json',D/'parts.json')
+run('native-coordinated',[K/'python',ROOT/'integrated-routing/check_coordinated_integration.py',S/'f722-heli.kicad_pcb',D/'f722-heli.kicad_pcb','--net','ADC_BUS','--net','GND','--net','ADC_DIV_MID','--footprint-transforms',D/'declared-footprint-transforms.json','--out',D/'native-coordinated-integration.json'])
+run('owner-erc',[K/'kicad-cli','sch','erc','--format','json','--output',D/'owner-erc.json',D/'f722-heli.kicad_sch'])
+run('actual-io',[sys.executable,N/'protection-review/tools/check_protection_paths.py','--geometry',D/'f722-heli.native.json','--contracts',N/'protection-review/contracts/actual-io22.json','--out',D/'protection-actual-io.json'],(0,1))
+run('reference-export',[K/'python',T/'export_signal_snapshot.py','--board',D/'f722-heli.kicad_pcb','--native-tools-dir',N/'scripts','--out',D/'reference-snapshot'])
+run('reference-check',[sys.executable,T/'check_critical_reference.py','--board',D/'f722-heli.kicad_pcb','--snapshot',D/'reference-snapshot','--out',D/'reference-snapshot/critical-reference.json'])
+run('reference-comparison',[sys.executable,T/'compare_reference_geometry.py','--before',S/'reference-snapshot','--after',D/'reference-snapshot','--before-board',S/'f722-heli.kicad_pcb','--after-board',D/'f722-heli.kicad_pcb','--out',D/'reference-comparison47.json'],(0,1))
+run('i2c',[sys.executable,T/'check_signal_geometry.py','--board',D/'f722-heli.kicad_pcb','--snapshot',D/'reference-snapshot','--out',D/'i2c-geometry-review.json','--profile',T/'model-inputs.template.json','--critical-check',D/'owner-critical.json','--requirements',N/'signal-review/final-native-i2c-requirements.json','--calculations',N/'signal-review/stock-i2c-calculations.json'],(0,2))
+run('spi',[K/'python',N/'checks/bind_stock_spi_review.py','--board',D/'f722-heli.kicad_pcb','--parts',D/'parts.json','--packet',N/'spi-review','--out',D/'stock-spi-binding.json'])

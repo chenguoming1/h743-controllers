@@ -1,0 +1,62 @@
+{
+  "classification_status": "UNRESOLVED_ACTUAL_HOLE_BOUNDARY_PREDICATES",
+  "missing_centerline_geometries_exactly_equal": false,
+  "all_changed_critical_projection_geometry_inside_unchanged_own_windows": true,
+  "all_changed_critical_projection_geometry_inside_actual_hole_window_intersections": false,
+  "all_changed_critical_projection_residuals_outside_actual_hole_window_intersections_empty": true,
+  "exact_containment_predicate_disagreement_count": 4,
+  "critical_reference_tracks_examined": 72,
+  "whole_plane_changes": {
+    "In1.Cu": {
+      "physical_GND_lost_mm2": 1.632326549368308,
+      "physical_GND_gained_mm2": 0.08155315009880729,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.6263956660071535,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.08155308693141657,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    },
+    "In4.Cu": {
+      "physical_GND_lost_mm2": 1.632326549368308,
+      "physical_GND_gained_mm2": 0.08155315009880729,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.6263956660071535,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.08155308693141657,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    }
+  },
+  "rejection_controls": [
+    {
+      "control": "wrong expected source hash",
+      "rejected": true,
+      "reason": "Board/source hash mismatch"
+    },
+    {
+      "control": "cross-bound snapshot geometry",
+      "rejected": true,
+      "reason": "Native source binding mismatch"
+    },
+    {
+      "control": "expanded own-via window",
+      "rejected": true,
+      "reason": "Own-via window changed"
+    },
+    {
+      "control": "merged-hole outside-own-window centerline",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "merged-hole outside-own-window width",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "window area without actual saved hole",
+      "rejected": true,
+      "reason": "Changed geometry outside actual hole mask"
+    },
+    {
+      "control": "empty residual cannot override conflicting exact covers predicate",
+      "rejected": true,
+      "reason": "Exact actual-hole containment unresolved"
+    }
+  ]
+}

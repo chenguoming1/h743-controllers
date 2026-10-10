@@ -1,0 +1,165 @@
+{
+  "status": "WIP \u2014 PARTIALLY ROUTED \u2014 NOT FOR MANUFACTURE",
+  "board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+  "source_commit": "8419807bb87479b650736f70be52ec61e246740c",
+  "source_board_sha256": "4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f",
+  "component_count": 156,
+  "target_pose_count": 156,
+  "changed_poses_from_published": 114,
+  "copper_layers": 6,
+  "unfinished_connections": 14,
+  "drc_errors": 0,
+  "drc_warnings": 0,
+  "erc_violations": 0,
+  "native_schematic_parity_passed": true,
+  "firmware_pin_checks_passed": 29,
+  "orthogonal_components": true,
+  "reproducible_native_build": false,
+  "not_yet_complete": [
+    "Ordinary protected signal routing",
+    "All remaining protection-path cuts",
+    "Loaded power/ground and signal-reference qualification",
+    "Final manufacturing exports and CAM/assembly checks",
+    "Physical qualification"
+  ],
+  "publication_purpose": "Recoverable work-in-progress checkpoint; later checked milestones will update this same branch.",
+  "fresh_mechanical_audit": "Passed native pose, body/courtyard, bounded process, header access, USB keepout, board edge and mounting-hole screens; see mechanical-report.json and method limits.",
+  "mechanical_margin_limits": "Some courtyard gaps are very small (inherited U1\u2013C4 0.001 mm; new R66 neighbors 0.005 mm). Physical-body/solder reserves pass the bounded screen, but this is not manufacturing or assembly qualification.",
+  "reproducible_placement_build": true,
+  "routed_native_source": "hardware/f722-heli.kicad_pcb",
+  "protection_paths_passed": 16,
+  "protection_paths_total": 18,
+  "supplemental_protection_passed": 7,
+  "supplemental_protection_total": 7,
+  "critical_nets_connected": 16,
+  "ground_pad_groups": 1,
+  "checkpoint_progress": "Accepted14 geometric WIP: SERVO1/RPM complete, U12 local discharge separated from eFuse controls; R52/ADC-filter shared return explicitly conditional. Fresh numerical power/VCAP and physical qualification pending.",
+  "warning_scope": "Native normal/all-track DRC: zero geometric warnings,14 unfinished connections.",
+  "native_strict_schematic_parity_issues": 0,
+  "loaded_power_diagnostic": "Historical source19/source60 USB/DSM path-specific results are invalid because supply current used EN4 rather than IN6. Fresh corrected source43/37 independently passes294 required conditional cases,10 actual supply-pad windows,5VCAP loops and numerical guards; overallfalse retains the18.56A single-feed illustration. Current14 changes BEC copper and GND antipads; source43 does not qualify this geometry.",
+  "actual_signal_clamp_channels": {
+    "complete": 18,
+    "total": 20,
+    "endpoint_cases_complete": 20,
+    "endpoint_cases_total": 22,
+    "legacy_original_actual": {
+      "passed": 12,
+      "total": 14
+    },
+    "legacy_original_nc": {
+      "passed": 4,
+      "total": 4
+    }
+  },
+  "current_numerical_power_status": "NOT RUN on current14. Corrected source43 model and numerical run are complete and independently reviewed, but later BEC and CORE feed/via changes alter the domain. Fresh current-source binding and solve remain pending. Historical USB/DSM path-specific conclusions are invalid.",
+  "placement_recipe_current_evidence": "placement14-reproduction.json",
+  "i2c_routing": {
+    "complete_nets": [
+      "BARO_SCL",
+      "BARO_SDA"
+    ],
+    "strict_tree_topology_passed": true,
+    "electrical_qualified": false,
+    "source_board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+    "receipt": "../signal-review/native/current-review.json"
+  },
+  "last_corrected_power_evidence": {
+    "board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+    "receipt": "corrected-power-source43-status.json",
+    "required_conditional_cases_pass": 294,
+    "VCAP_loops_pass": 5,
+    "overall_boolean": false,
+    "applicable_to_current_board": false
+  },
+  "corrected_power_package": {
+    "path": "power-evidence/corrected-v3-source43",
+    "manifest_sha256": "31433945b32b92fe149961712c28b73b03059908a63b33c6f82bb774b6c0869b",
+    "source_board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+    "applicable_to_current_board": false
+  },
+  "placement_transform_current_evidence": "transform-placement14.json",
+  "adc_bus_review": {
+    "source_board_sha256": "cbb9a1f0b43dc612718baf1277302c9ac0767474cc7fa13f5d8c0a2428f2b787",
+    "complete": true,
+    "conditional_settling_screen_passed": true,
+    "all_centerlines_outside_own_via_windows_covered": true,
+    "full_width_reference_coverage_claimed": false,
+    "uncovered_width_edge_area_mm2": 6.08648e-05,
+    "hardware_noise_or_accuracy_qualified": false,
+    "receipt": "checkpoint49-integration/adc-electrical-screen.json",
+    "capacitor_branch_mm": 4.448361439424413,
+    "capacitor_to_MCU_mm": 6.9633624394244125,
+    "reference_width_fragments_unchanged_from_source48": true,
+    "scope": "Historical source50 projection identity and source49 conditional arithmetic are retained. ADC physical copper remains unchanged in source51; current plane-projection rebind is pending.",
+    "current_reference_rebind_pending": true,
+    "current_reference_receipt": "checkpoint50-integration/ADC_BUS-reference50.json"
+  },
+  "placement_recipe_original_reproduction": "placement14-reproduction.json",
+  "historical_reference_window_classification": {
+    "before_board_sha256": "f7d5731bb0bf1ad314aca6d507da004993671bce413fbdeba545083168e28161",
+    "source_board_sha256": "dcdd0e5655d098ceaffa7f40b6a21f1ca101429ac8eb142c50fa96df86697e68",
+    "changed_critical_geometry_within_unchanged_own_windows": true,
+    "exact_centerline_equality": false,
+    "strict_actual_hole_containment": "UNRESOLVED: two boundary-predicate disagreements retained",
+    "impedance_or_AC_qualification": false,
+    "receipt": "checkpoint48-integration/reference-window-classification.json",
+    "scope": "Historical source48 delta retained; current49 preserves its critical copper and projection metrics exactly."
+  },
+  "reference_preservation": {
+    "source_board_sha256": "71d33748909bb960c5829973642272460607d8521831a6212975f7de6790d660",
+    "board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+    "critical_copper_identical": true,
+    "all_critical_numeric_deltas_zero": false,
+    "raw_USB_N_missing_width_delta_mm2": 2.6376462125554667e-10,
+    "all_missing_centerlines_and_outside_own_window_geometries_equal": true,
+    "no_lost_ground_overlap_with_critical_trace_widths": true,
+    "receipt": "checkpoint54-integration/reference-change-review.json",
+    "whole_planes_identical": false,
+    "AC_or_impedance_qualification": false
+  },
+  "new_UART_return_projection": {
+    "source_board_sha256": "80eb38da7100fd677862b8d3bc161329b278c410614f3b15460b5a5c863a75e6",
+    "receipt": "checkpoint51-integration/combined-signal-reference-review.json",
+    "outside_own_via_windows_centerline_and_width_complete": true,
+    "AC_signal_integrity_qualified": false,
+    "scope": "Historical exact source51 projection of all eight changed interface/NRST nets. Source52 retains their copper; current plane projection not reexecuted."
+  },
+  "tail_review": {
+    "source_board_sha256": "cbb9a1f0b43dc612718baf1277302c9ac0767474cc7fa13f5d8c0a2428f2b787",
+    "complete_actual_clamp_path": true,
+    "MCU_to_clamp_mm": 81.063747,
+    "total_protected_net_mm": 85.676247,
+    "stock_GPIO_speed": "LOW / OSPEEDR00",
+    "conditional_IBIS_screen_only": true,
+    "waveform_or_transient_protection_qualified": false,
+    "AC_return_qualified": false,
+    "reference_width_outside_own_windows_mm2": 0.000224846616,
+    "receipt": "checkpoint50-integration/conditional-signal-review/TAIL-electrical-review.md",
+    "scope": "Geometric prototype checkpoint only; no guaranteed minimum GPIO slew, measured receiver/cable or distributed waveform result."
+  },
+  "sbus_review": {
+    "source_board_sha256": "71d33748909bb960c5829973642272460607d8521831a6212975f7de6790d660",
+    "complete_actual_clamp_path": true,
+    "SBUS_LV_planar_mm": 75.64764023230329,
+    "SBUS_MCU_planar_mm": 50.99069680781216,
+    "stock_default_baud": 100000,
+    "optional_fast_baud": 200000,
+    "conditional_timing_screen_only": true,
+    "waveform_or_transient_protection_qualified": false,
+    "outside_own_via_window_centerline_and_width_gaps_zero": true,
+    "receipt": "checkpoint52-integration/conditional-signal-review/SBUS-electrical-review.md",
+    "scope": "Historical source52 conditional timing and saved projection; current signal copper retained, final source-bound signal/AC qualification remains pending."
+  },
+  "servo_rpm_ground_review": {
+    "board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+    "SERVO1_and_RPM_actual_paths_complete": true,
+    "U12_local_discharge_separated_from_eFuse_control_copper": true,
+    "R52_shares_C30_ADC_BEC_local_return": true,
+    "shared_trace_mm": 1.249986804,
+    "conditional_shared_trace_milliohms": 8.06975,
+    "noise_or_ESD_qualified": false,
+    "numerical_power_VCAP_applicable": false,
+    "receipt": "checkpoint54-integration/conditional-support-review/NATIVE-GROUND-REVIEW.md",
+    "ILM_ADC_review": "checkpoint54-integration/conditional-support-review/REPORT.md"
+  }
+}

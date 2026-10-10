@@ -1,0 +1,57 @@
+{
+  "classification_status": "CONTAINED_REFERENCE_REGION_ONLY",
+  "missing_centerline_geometries_exactly_equal": true,
+  "all_changed_critical_projection_geometry_inside_unchanged_own_windows": true,
+  "all_changed_critical_projection_geometry_inside_actual_hole_window_intersections": true,
+  "all_changed_critical_projection_residuals_outside_actual_hole_window_intersections_empty": true,
+  "exact_containment_predicate_disagreement_count": 0,
+  "critical_reference_tracks_examined": 105,
+  "whole_plane_changes": {
+    "In1.Cu": {
+      "physical_GND_lost_mm2": 2.0007757077823727,
+      "physical_GND_gained_mm2": 0.1016683444478733,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.9951563714281604,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.10166828751832357,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    },
+    "In4.Cu": {
+      "physical_GND_lost_mm2": 2.0007757077823727,
+      "physical_GND_gained_mm2": 0.1016683444478733,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.9951563714281604,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.10166828751832357,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    }
+  },
+  "rejection_controls": [
+    {
+      "control": "wrong expected source hash",
+      "rejected": true,
+      "reason": "Board/source hash mismatch"
+    },
+    {
+      "control": "cross-bound snapshot geometry",
+      "rejected": true,
+      "reason": "Native source binding mismatch"
+    },
+    {
+      "control": "expanded own-via window",
+      "rejected": true,
+      "reason": "Own-via window changed"
+    },
+    {
+      "control": "merged-hole outside-own-window centerline",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "merged-hole outside-own-window width",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "window area without actual saved hole",
+      "rejected": true,
+      "reason": "Changed geometry outside actual hole mask"
+    }
+  ]
+}

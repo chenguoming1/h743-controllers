@@ -1,0 +1,715 @@
+{
+  "excluded_files": {
+    "checkpoint35-review/snapshot/native-geometry.json": {
+      "bytes": 31524502,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "f78bc1279ff3cec6b6267d9086b226636e29a0e4875f1001d2e8427116e8a5f0"
+    },
+    "checkpoint37-review/snapshot/native-geometry.json": {
+      "bytes": 31108803,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "05dc43aad22ced8a7b7b9145a4514cca62854bf888a9ffc7626877eae8a36140"
+    },
+    "ordinary-routing/candidate43/f722-heli.native.json": {
+      "bytes": 31108803,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "05dc43aad22ced8a7b7b9145a4514cca62854bf888a9ffc7626877eae8a36140"
+    },
+    "ordinary-routing/candidate43/reference-snapshot/native-geometry.json": {
+      "bytes": 31108803,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "05dc43aad22ced8a7b7b9145a4514cca62854bf888a9ffc7626877eae8a36140"
+    },
+    "ordinary-routing/candidate44/f722-heli.native.json": {
+      "bytes": 31524502,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "f78bc1279ff3cec6b6267d9086b226636e29a0e4875f1001d2e8427116e8a5f0"
+    },
+    "ordinary-routing/candidate44/owner-mechanical-geometry.json": {
+      "bytes": 2531704,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "461c68b8de0e0dfd5121aff7c27595f20f39f172a220c6da66116391645a6fec"
+    },
+    "ordinary-routing/candidate44/owner-native.json": {
+      "bytes": 31524502,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "f78bc1279ff3cec6b6267d9086b226636e29a0e4875f1001d2e8427116e8a5f0"
+    },
+    "ordinary-routing/candidate44/reference-snapshot/native-geometry.json": {
+      "bytes": 31524502,
+      "reason": "Raw native/mechanical export omitted. Recover the paired board, regenerate with pinned native exporters and matching KiCad, and require this exact hash before original source-bound native audit replay. Regeneration is not performed or promised by the portable verifier.",
+      "sha256": "f78bc1279ff3cec6b6267d9086b226636e29a0e4875f1001d2e8427116e8a5f0"
+    }
+  },
+  "files": {
+    "checkpoint35-review/actual-io22.json": {
+      "bytes": 71863,
+      "file": "files/checkpoint35-review/actual-io22.json",
+      "sha256": "eafe5998b4e929c850175d4d9e3a8fa02379f158c465d9a785ddfaf9c11dad95"
+    },
+    "checkpoint35-review/actual-io22.log": {
+      "bytes": 172,
+      "file": "files/checkpoint35-review/actual-io22.log",
+      "sha256": "2d4e8b8c13b2386d56417ea234c0ae936c1a38e4d371e4c0f1fb6fca9cb1c3e1"
+    },
+    "checkpoint35-review/comparison-37-to-35.json": {
+      "bytes": 21487,
+      "file": "files/checkpoint35-review/comparison-37-to-35.json",
+      "sha256": "e698d7b40c074aeff01874462d9e507c5daef54f875255afda24de9ff6f93341"
+    },
+    "checkpoint35-review/comparison.log": {
+      "bytes": 21487,
+      "file": "files/checkpoint35-review/comparison.log",
+      "sha256": "e698d7b40c074aeff01874462d9e507c5daef54f875255afda24de9ff6f93341"
+    },
+    "checkpoint35-review/coordinated.log": {
+      "bytes": 408,
+      "file": "files/checkpoint35-review/coordinated.log",
+      "sha256": "c9989f91a4573fa283941b7e0f6848063a61b18ef7eaecd7f827b575da74abb7"
+    },
+    "checkpoint35-review/current-review.json": {
+      "bytes": 340541,
+      "file": "files/checkpoint35-review/current-review.json",
+      "sha256": "6aa5839524bc8727bf5e77a2fff5bcc889dc6ae0dd3790a28f0ac84190fce753"
+    },
+    "checkpoint35-review/export.log": {
+      "bytes": 1182,
+      "file": "files/checkpoint35-review/export.log",
+      "sha256": "d452c466238a3dc7d3e16cff886f4ee76f7e0e60ac66cd78e8d4b8e98aaf3b96"
+    },
+    "checkpoint35-review/i2c.log": {
+      "bytes": 459,
+      "file": "files/checkpoint35-review/i2c.log",
+      "sha256": "97f185f8d04aebd1ea7b2d81947f6b4cfcfe8520b6ab696cddfb5dccbc5a8393"
+    },
+    "checkpoint35-review/owner-coordinated-integration.json": {
+      "bytes": 24019,
+      "file": "files/checkpoint35-review/owner-coordinated-integration.json",
+      "sha256": "329a2d05b62bb1a033c653ee6510a2563ad7c83910a0aeaee095ba7a8bad797b"
+    },
+    "checkpoint35-review/owner-review-run.json": {
+      "bytes": 769,
+      "file": "files/checkpoint35-review/owner-review-run.json",
+      "sha256": "bf3d59db21594fcb392e0224fcdf8fe7626a9414dd943f6fd6a0c26a12142352"
+    },
+    "checkpoint35-review/reference-region/owner/classification.log": {
+      "bytes": 2442,
+      "file": "files/checkpoint35-review/reference-region/owner/classification.log",
+      "sha256": "49e2285f634ab3218317ccd43b457f5d7e75c317723d47e4dd212b5ff5bf4c0a"
+    },
+    "checkpoint35-review/reference-region/owner/classify_reference_delta.py": {
+      "bytes": 22150,
+      "file": "files/checkpoint35-review/reference-region/owner/classify_reference_delta.py",
+      "sha256": "479b586f12da782c36cb839e208c71cd334180f173a54f3a700f06e5a2e5e2ce"
+    },
+    "checkpoint35-review/reference-region/owner/reference-classification.json": {
+      "bytes": 185242,
+      "file": "files/checkpoint35-review/reference-region/owner/reference-classification.json",
+      "sha256": "0fc939eaa4534009c688a41f7bbd4ed28f8fd579aa686b2e323aa7ec970b583b"
+    },
+    "checkpoint35-review/reference.log": {
+      "bytes": 11733,
+      "file": "files/checkpoint35-review/reference.log",
+      "sha256": "18d131c839b393b4a97df19e1a714e1745c60b48a134284f913410b83fbadae8"
+    },
+    "checkpoint35-review/snapshot/critical-reference.json": {
+      "bytes": 765275,
+      "file": "files/checkpoint35-review/snapshot/critical-reference.json",
+      "sha256": "6183d7935e253c1f1bb6404e06d808145b4da5abe505e08e88c57047301b959b"
+    },
+    "checkpoint35-review/snapshot/native-signals.json": {
+      "bytes": 31716,
+      "file": "files/checkpoint35-review/snapshot/native-signals.json",
+      "sha256": "8290e7aa2d6056227bbef85851f9958c28ed1dcaad2420913d355ae7186959f1"
+    },
+    "checkpoint35-review/spi.log": {
+      "bytes": 794,
+      "file": "files/checkpoint35-review/spi.log",
+      "sha256": "1021e4e2133a7360118baba403483f6ebd15439397d5297e294bb75c9717ad0e"
+    },
+    "checkpoint35-review/stock-spi-binding.json": {
+      "bytes": 814,
+      "file": "files/checkpoint35-review/stock-spi-binding.json",
+      "sha256": "1c2fe719a50a6421328d7d3b9d02c4d5c4debb5c6db231743a696c3269bbc799"
+    },
+    "checkpoint37-review/snapshot/critical-reference.json": {
+      "bytes": 761902,
+      "file": "files/checkpoint37-review/snapshot/critical-reference.json",
+      "sha256": "aa9716e6862a7d734f06d4d604626afd03b56eca4e80d02a30b8801cdefbe919"
+    },
+    "checkpoint37-review/snapshot/native-signals.json": {
+      "bytes": 31716,
+      "file": "files/checkpoint37-review/snapshot/native-signals.json",
+      "sha256": "afc9e21ed53ff0444d06930f35ef62614de602d8e0ccb08010e0f42cf49e6ced"
+    },
+    "checkpoint49-review/reference-change-review.json": {
+      "bytes": 4050,
+      "file": "files/checkpoint49-review/reference-change-review.json",
+      "sha256": "3ae6fca0f9a6bb4dd495cc7ab75e7331a2e9b14a2f644013c8fcdfdc340f7b8d"
+    },
+    "integrated-routing/adopt_verified.py": {
+      "bytes": 6801,
+      "file": "files/integrated-routing/adopt_verified.py",
+      "sha256": "6f79b599df4c4d792c9394ebe84fda14cba1ae884fe83dba15d443230cdd2c48"
+    },
+    "integrated-routing/check_coordinated_integration.py": {
+      "bytes": 4510,
+      "file": "files/integrated-routing/check_coordinated_integration.py",
+      "sha256": "e64855109f714ab9780856757c090b34784164dcfd7bc0f0c9b02d9a6e6116c4"
+    },
+    "integrated-routing/footprint-transform-controls.json": {
+      "bytes": 1122,
+      "file": "files/integrated-routing/footprint-transform-controls.json",
+      "sha256": "932c1c841c1def297c606f39b2dd836742da90a72fe005a4ec93c2e9e34becd0"
+    },
+    "integrated-routing/intentional-i2c-controls.json": {
+      "bytes": 985,
+      "file": "files/integrated-routing/intentional-i2c-controls.json",
+      "sha256": "1ddf05d233477a44f244b2878e1640e75bb4e13bac358878b619a4e5465c40a6"
+    },
+    "integrated-routing/refresh_accepted_checkpoint.py": {
+      "bytes": 10107,
+      "file": "files/integrated-routing/refresh_accepted_checkpoint.py",
+      "sha256": "36d71e2dcde6d4eb282aa8e88ef9bf58330bd8aa2ba6db6f41e922e8dc78708c"
+    },
+    "integrated-routing/review_ordinary_checkpoint.py": {
+      "bytes": 4801,
+      "file": "files/integrated-routing/review_ordinary_checkpoint.py",
+      "sha256": "fcd0738ce77cf668ce53bf66bacf4f4c0b37955eb4bd9a263ac63fd86803f379"
+    },
+    "integrated-routing/support-i2c-adoption-controls.json": {
+      "bytes": 835,
+      "file": "files/integrated-routing/support-i2c-adoption-controls.json",
+      "sha256": "b0c56a8d21ab5b4d42fe029f371d5886d6360228e56f2ac7f9a39edca84a1326"
+    },
+    "integrated-routing/test_footprint_transforms.py": {
+      "bytes": 2571,
+      "file": "files/integrated-routing/test_footprint_transforms.py",
+      "sha256": "860683d8496ae8597e29258b7303a8c9b87fd266da8814a17fc3257dd652f3ce"
+    },
+    "integrated-routing/test_intentional_i2c_review.py": {
+      "bytes": 2378,
+      "file": "files/integrated-routing/test_intentional_i2c_review.py",
+      "sha256": "7fe46b587b80a17047a24ed14ce61af7cb8e01e5be71482b9d2fe7597ae83ad7"
+    },
+    "integrated-routing/test_support_i2c_adoption.py": {
+      "bytes": 2199,
+      "file": "files/integrated-routing/test_support_i2c_adoption.py",
+      "sha256": "646cc85341595c380359abd78b2e20ee4cac1077fbf3d3f5c6c8869e4232d4d4"
+    },
+    "integrated-routing/verify_footprint_transforms.py": {
+      "bytes": 4664,
+      "file": "files/integrated-routing/verify_footprint_transforms.py",
+      "sha256": "bcb10917d77b74aa3d18250e37de4b208cdc32fe68a3984fa5446ce52b369df8"
+    },
+    "integrated-routing/verify_intentional_i2c_review.py": {
+      "bytes": 4141,
+      "file": "files/integrated-routing/verify_intentional_i2c_review.py",
+      "sha256": "10e39679778a62a57201d648cd563487b95fa32c6e44bddfa4bbe436e360d843"
+    },
+    "integrated-routing/verify_support_adoption.py": {
+      "bytes": 2128,
+      "file": "files/integrated-routing/verify_support_adoption.py",
+      "sha256": "44cd13087033ef5ab0b591dee064f02f64efe4d4810f9c73d93834192bd4a3c9"
+    },
+    "ordinary-routing/candidate41/power-audit.json": {
+      "bytes": 55801,
+      "file": "files/ordinary-routing/candidate41/power-audit.json",
+      "sha256": "82280a5f6ef44543a9f67ef822d829680e5ac6f3d9cf7925ecbd8d58f8a553f1"
+    },
+    "ordinary-routing/candidate43/f722-heli.logical-route-map.json": {
+      "bytes": 19045,
+      "file": "files/ordinary-routing/candidate43/f722-heli.logical-route-map.json",
+      "sha256": "f261668e3400d24111a043759ad7bbe7c1ce972db5704cf6c0c04436e674acd0"
+    },
+    "ordinary-routing/candidate43/fixed-explicit-native-ids.json": {
+      "bytes": 6261,
+      "file": "files/ordinary-routing/candidate43/fixed-explicit-native-ids.json",
+      "sha256": "176a16b74ead2f233a0f724a2a229f169314cd3839f7b66c60d697004814e2be"
+    },
+    "ordinary-routing/candidate43/i2c-entry-support-audit.json": {
+      "bytes": 144217,
+      "file": "files/ordinary-routing/candidate43/i2c-entry-support-audit.json",
+      "sha256": "a80e2558466dcf0e1f8651a6a5ca9792711c68371a18d29b920f3e3e1b8dc340"
+    },
+    "ordinary-routing/candidate43/poses-native.json": {
+      "bytes": 8868,
+      "file": "files/ordinary-routing/candidate43/poses-native.json",
+      "sha256": "f234abbe2f8d458fb2e623499a6f79449f19d07448ba1a51d53141547b73ba41"
+    },
+    "ordinary-routing/candidate43/power-audit.json": {
+      "bytes": 28617,
+      "file": "files/ordinary-routing/candidate43/power-audit.json",
+      "sha256": "845fcaf813106fa5f7ab6c35407ef52579aeaf1be8c7de661366c2cf81bf2dda"
+    },
+    "ordinary-routing/candidate43/project-input-preservation.json": {
+      "bytes": 10185,
+      "file": "files/ordinary-routing/candidate43/project-input-preservation.json",
+      "sha256": "dcf2ca57036b6c5dc6a5faeac775acd2f02f50f6dea5376357d7f91f95dbbb27"
+    },
+    "ordinary-routing/candidate43/reference-snapshot/critical-reference.json": {
+      "bytes": 761902,
+      "file": "files/ordinary-routing/candidate43/reference-snapshot/critical-reference.json",
+      "sha256": "aa9716e6862a7d734f06d4d604626afd03b56eca4e80d02a30b8801cdefbe919"
+    },
+    "ordinary-routing/candidate43/reference-snapshot/native-signals.json": {
+      "bytes": 31716,
+      "file": "files/ordinary-routing/candidate43/reference-snapshot/native-signals.json",
+      "sha256": "afc9e21ed53ff0444d06930f35ef62614de602d8e0ccb08010e0f42cf49e6ced"
+    },
+    "ordinary-routing/candidate44/README.md": {
+      "bytes": 3327,
+      "file": "files/ordinary-routing/candidate44/README.md",
+      "sha256": "21d9705edeb0b85bd0ecfaeea267d6171184db19a8158289d19d5c0770edbccf"
+    },
+    "ordinary-routing/candidate44/audit_dsm44_entries_support.py": {
+      "bytes": 22226,
+      "file": "files/ordinary-routing/candidate44/audit_dsm44_entries_support.py",
+      "sha256": "a801860fcb1571a43dc7686ccdb3ef0f8b84288e16586ecc2112a880552535d1"
+    },
+    "ordinary-routing/candidate44/bec-connected-pad-groups.json": {
+      "bytes": 1488,
+      "file": "files/ordinary-routing/candidate44/bec-connected-pad-groups.json",
+      "sha256": "27291494dda5ea2ffc637468cdcbf1c3b9ed06658cbb66cd73252550f63e995b"
+    },
+    "ordinary-routing/candidate44/candidate44-entry-support.json": {
+      "bytes": 226573,
+      "file": "files/ordinary-routing/candidate44/candidate44-entry-support.json",
+      "sha256": "5716417cd2e92dae08fce1f8fda9b2787d8ccc4341a3d7afc71de71d64255f8d"
+    },
+    "ordinary-routing/candidate44/complete-tree-proposal.json": {
+      "bytes": 77384,
+      "file": "files/ordinary-routing/candidate44/complete-tree-proposal.json",
+      "sha256": "9798bd44a63920ff5e561d7e570b73684050eb5ee330f7e4314b42e2dd13a4ac"
+    },
+    "ordinary-routing/candidate44/construct_dsm_tree44.used.py": {
+      "bytes": 5620,
+      "file": "files/ordinary-routing/candidate44/construct_dsm_tree44.used.py",
+      "sha256": "c5f5cd3097fffa2ec7f7f18bdd841d80c3f06adf8e9a0ec3f5af4615a9deaf09"
+    },
+    "ordinary-routing/candidate44/construction-provenance.json": {
+      "bytes": 1720182,
+      "compressed_file": "blobs/7181f5ee9f2765dffdb53389f5d8028bfc32c8a8f7268a45f7cb51116f796989.json.xz",
+      "compressed_sha256": "ff3fa1e23f2b4ce2cdeb6a3e6b2a2f0d48a3ae02d8c54be299b8f20a58942718",
+      "sha256": "7181f5ee9f2765dffdb53389f5d8028bfc32c8a8f7268a45f7cb51116f796989"
+    },
+    "ordinary-routing/candidate44/coordinated-change-receipt.json": {
+      "bytes": 1718273,
+      "compressed_file": "blobs/929f588155fbda51d3d73b6b0a7ce89925a61bb47e9912fe3535811dc661c35a.json.xz",
+      "compressed_sha256": "881e61e76012f5bbc6fae10d3570b203dd03b4eaa38eafae3ff923b9c878a621",
+      "sha256": "929f588155fbda51d3d73b6b0a7ce89925a61bb47e9912fe3535811dc661c35a"
+    },
+    "ordinary-routing/candidate44/endpoint-audit.json": {
+      "bytes": 928,
+      "file": "files/ordinary-routing/candidate44/endpoint-audit.json",
+      "sha256": "396c1ffcbd1670d31d18a8ed3aa8a3738ebcba347da6e7ef7a9eab578b43f665"
+    },
+    "ordinary-routing/candidate44/f722-heli.import.json": {
+      "bytes": 1449,
+      "file": "files/ordinary-routing/candidate44/f722-heli.import.json",
+      "sha256": "5d71eb855096afebacb4e77ab6a07b0ec421ac64c9c1d74456fa8befb1bb149e"
+    },
+    "ordinary-routing/candidate44/f722-heli.logical-route-map.json": {
+      "bytes": 21017,
+      "file": "files/ordinary-routing/candidate44/f722-heli.logical-route-map.json",
+      "sha256": "29f08b424f72c8cf11a4225706e17c5084956c78e7a396785295631f67555f7f"
+    },
+    "ordinary-routing/candidate44/fixed-explicit-native-ids.json": {
+      "bytes": 7815,
+      "file": "files/ordinary-routing/candidate44/fixed-explicit-native-ids.json",
+      "sha256": "5bccae36ca0268a60b642da3402cd51f081347c5130ae83ed4327448177f4e2f"
+    },
+    "ordinary-routing/candidate44/i2c-geometry-review.json": {
+      "bytes": 340541,
+      "file": "files/ordinary-routing/candidate44/i2c-geometry-review.json",
+      "sha256": "6aa5839524bc8727bf5e77a2fff5bcc889dc6ae0dd3790a28f0ac84190fce753"
+    },
+    "ordinary-routing/candidate44/input-hashes.json": {
+      "bytes": 2341,
+      "file": "files/ordinary-routing/candidate44/input-hashes.json",
+      "sha256": "7364ac3b14bb44f5cb212e23cba3b94943629e18322c50532af20432ac45ccc4"
+    },
+    "ordinary-routing/candidate44/joint-escape-proof.json": {
+      "bytes": 54439,
+      "file": "files/ordinary-routing/candidate44/joint-escape-proof.json",
+      "sha256": "27f2c81539a92809d4f9c6ae0ea593193881780936f8cbd6641da14307d0b4bd"
+    },
+    "ordinary-routing/candidate44/native-coordinated-integration.json": {
+      "bytes": 24019,
+      "file": "files/ordinary-routing/candidate44/native-coordinated-integration.json",
+      "sha256": "329a2d05b62bb1a033c653ee6510a2563ad7c83910a0aeaee095ba7a8bad797b"
+    },
+    "ordinary-routing/candidate44/owner-adoption.json": {
+      "bytes": 1595,
+      "file": "files/ordinary-routing/candidate44/owner-adoption.json",
+      "sha256": "90f9c56e27502fcd4f311de334bf8e1648b473c8294175d24628cdd85bb4dec2"
+    },
+    "ordinary-routing/candidate44/owner-critical.json": {
+      "bytes": 8827,
+      "file": "files/ordinary-routing/candidate44/owner-critical.json",
+      "sha256": "ef7ca4511171ac9b2b762bd74c063c24d7322d6ebe07feae3a6232e84ef0b501"
+    },
+    "ordinary-routing/candidate44/owner-drc-all.json": {
+      "bytes": 28237,
+      "file": "files/ordinary-routing/candidate44/owner-drc-all.json",
+      "sha256": "c868524757b3469830f883d124c5698a33252df5cc74c8792ac90bc55fa342fe"
+    },
+    "ordinary-routing/candidate44/owner-drc-parity.json": {
+      "bytes": 28189,
+      "file": "files/ordinary-routing/candidate44/owner-drc-parity.json",
+      "sha256": "9d85d18769a159507d230d2649e99d45448acfe499d8f0eb36c366891f2ec020"
+    },
+    "ordinary-routing/candidate44/owner-drc-parity.log": {
+      "bytes": 201,
+      "file": "files/ordinary-routing/candidate44/owner-drc-parity.log",
+      "sha256": "d8425dfc49f6d1a4e3b1e7b0fafa6805f11f0ebf3626404f30cfa19c82f71cfd"
+    },
+    "ordinary-routing/candidate44/owner-drc.json": {
+      "bytes": 28169,
+      "file": "files/ordinary-routing/candidate44/owner-drc.json",
+      "sha256": "8aec929bb2afd6274975d413f77d395fc770564e5d4c2e2f117dec8ae04db0e9"
+    },
+    "ordinary-routing/candidate44/owner-drc.log": {
+      "bytes": 162,
+      "file": "files/ordinary-routing/candidate44/owner-drc.log",
+      "sha256": "154c10cc9bf1e9579d4abcf7ae70825175cd486532412b22bb2fabce34adfeb3"
+    },
+    "ordinary-routing/candidate44/owner-firmware.json": {
+      "bytes": 5692,
+      "file": "files/ordinary-routing/candidate44/owner-firmware.json",
+      "sha256": "eee2691a135a5a36b8513c06819289a162c1b063ef25e11033eb2dedc09ed64f"
+    },
+    "ordinary-routing/candidate44/owner-mechanical.json": {
+      "bytes": 9485,
+      "file": "files/ordinary-routing/candidate44/owner-mechanical.json",
+      "sha256": "66d68aac25b232ad0b90d7e8c7c75f99f0b432241713dddacdb3e1ccf7e75f1b"
+    },
+    "ordinary-routing/candidate44/owner-parity.json": {
+      "bytes": 135423,
+      "file": "files/ordinary-routing/candidate44/owner-parity.json",
+      "sha256": "e0fb5f0ce36239d3c286e4aebbc8efc3989bc597fa4c4c1ea8ae0e318271e982"
+    },
+    "ordinary-routing/candidate44/owner-process.json": {
+      "bytes": 68690,
+      "file": "files/ordinary-routing/candidate44/owner-process.json",
+      "sha256": "9b4a3f9c573c8124c7a436bbae256b73c5c82acc5e6bbe0394816671e073400c"
+    },
+    "ordinary-routing/candidate44/owner-protection.json": {
+      "bytes": 53881,
+      "file": "files/ordinary-routing/candidate44/owner-protection.json",
+      "sha256": "8a1c5e82854f91a6195a876015479cd2bcda732537055f5362f973992fdb930b"
+    },
+    "ordinary-routing/candidate44/owner-summary.json": {
+      "bytes": 1817,
+      "file": "files/ordinary-routing/candidate44/owner-summary.json",
+      "sha256": "3c14072a4fb88f624a8c9d13f3015d80070e3d826f54e6ede3e7784da73799ea"
+    },
+    "ordinary-routing/candidate44/owner-supplemental.json": {
+      "bytes": 25041,
+      "file": "files/ordinary-routing/candidate44/owner-supplemental.json",
+      "sha256": "82fd015c7df941613869b1a9b6799484273fccff8e4b17448c5530b8fc6f4f4d"
+    },
+    "ordinary-routing/candidate44/parts.json": {
+      "bytes": 56517,
+      "file": "files/ordinary-routing/candidate44/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    "ordinary-routing/candidate44/poses-native.json": {
+      "bytes": 8868,
+      "file": "files/ordinary-routing/candidate44/poses-native.json",
+      "sha256": "f234abbe2f8d458fb2e623499a6f79449f19d07448ba1a51d53141547b73ba41"
+    },
+    "ordinary-routing/candidate44/power-audit.json": {
+      "bytes": 29288,
+      "file": "files/ordinary-routing/candidate44/power-audit.json",
+      "sha256": "d3d218957a190dc884760835938c312ac3dbd1cae5e9044138722646dea54ef8"
+    },
+    "ordinary-routing/candidate44/power-revalidation-required.json": {
+      "bytes": 564,
+      "file": "files/ordinary-routing/candidate44/power-revalidation-required.json",
+      "sha256": "26d62d1c4e0e6873ad08cdc17dd232339dec741c442ef6a3fa2c0035ad132bef"
+    },
+    "ordinary-routing/candidate44/prepare_candidate44_evidence.used.py": {
+      "bytes": 8710,
+      "file": "files/ordinary-routing/candidate44/prepare_candidate44_evidence.used.py",
+      "sha256": "6cd437e660458d4ac6ee796ca20ec3d49fac7bf94bd23cbb86f2488417548ebf"
+    },
+    "ordinary-routing/candidate44/project-input-preservation.json": {
+      "bytes": 10185,
+      "file": "files/ordinary-routing/candidate44/project-input-preservation.json",
+      "sha256": "76a6cdfb390c9ec7a536534ad9be6a58441abf91786204c247a694c91710ca0d"
+    },
+    "ordinary-routing/candidate44/protection-actual-io.json": {
+      "bytes": 71863,
+      "file": "files/ordinary-routing/candidate44/protection-actual-io.json",
+      "sha256": "eafe5998b4e929c850175d4d9e3a8fa02379f158c465d9a785ddfaf9c11dad95"
+    },
+    "ordinary-routing/candidate44/reference-comparison43-to44.json": {
+      "bytes": 21487,
+      "file": "files/ordinary-routing/candidate44/reference-comparison43-to44.json",
+      "sha256": "e698d7b40c074aeff01874462d9e507c5daef54f875255afda24de9ff6f93341"
+    },
+    "ordinary-routing/candidate44/reference-region-review/classifier-provenance.json": {
+      "bytes": 577,
+      "file": "files/ordinary-routing/candidate44/reference-region-review/classifier-provenance.json",
+      "sha256": "fc28c800fd0079fc46f7dc22d566e66d419153b7fafaa59fd23431b1445f3886"
+    },
+    "ordinary-routing/candidate44/reference-region-review/classify_reference_delta.py": {
+      "bytes": 22150,
+      "file": "files/ordinary-routing/candidate44/reference-region-review/classify_reference_delta.py",
+      "sha256": "479b586f12da782c36cb839e208c71cd334180f173a54f3a700f06e5a2e5e2ce"
+    },
+    "ordinary-routing/candidate44/reference-region-review/reference-classification.json": {
+      "bytes": 185383,
+      "file": "files/ordinary-routing/candidate44/reference-region-review/reference-classification.json",
+      "sha256": "e54007e6f103ed38d65f545350a8944b340f9ad180d6018a760f62f2a5f31f4d"
+    },
+    "ordinary-routing/candidate44/reference-snapshot/critical-reference.json": {
+      "bytes": 765275,
+      "file": "files/ordinary-routing/candidate44/reference-snapshot/critical-reference.json",
+      "sha256": "6183d7935e253c1f1bb6404e06d808145b4da5abe505e08e88c57047301b959b"
+    },
+    "ordinary-routing/candidate44/reference-snapshot/native-signals.json": {
+      "bytes": 31716,
+      "file": "files/ordinary-routing/candidate44/reference-snapshot/native-signals.json",
+      "sha256": "8290e7aa2d6056227bbef85851f9958c28ed1dcaad2420913d355ae7186959f1"
+    },
+    "ordinary-routing/candidate44/route-handoff.json": {
+      "bytes": 6711,
+      "file": "files/ordinary-routing/candidate44/route-handoff.json",
+      "sha256": "28e27d9270ba91f6e3ae68a0cdcfdaa0c7e83b811760e65b35d5fcce3931cfdd"
+    },
+    "ordinary-routing/candidate44/stock-spi-binding.json": {
+      "bytes": 814,
+      "file": "files/ordinary-routing/candidate44/stock-spi-binding.json",
+      "sha256": "1c2fe719a50a6421328d7d3b9d02c4d5c4debb5c6db231743a696c3269bbc799"
+    },
+    "ordinary-routing/candidate44/support-wrapper-compatibility.json": {
+      "bytes": 346,
+      "file": "files/ordinary-routing/candidate44/support-wrapper-compatibility.json",
+      "sha256": "ee976538c372bf79d83bc1a9f43d7501d108c397764e164e8a7fd606f9812960"
+    },
+    "ordinary-routing/construct_dsm_tree44.py": {
+      "bytes": 5620,
+      "file": "files/ordinary-routing/construct_dsm_tree44.py",
+      "sha256": "c5f5cd3097fffa2ec7f7f18bdd841d80c3f06adf8e9a0ec3f5af4615a9deaf09"
+    },
+    "ordinary-routing/dsm40-audits/audit_dsm40_entries_return.py": {
+      "bytes": 34748,
+      "file": "files/ordinary-routing/dsm40-audits/audit_dsm40_entries_return.py",
+      "sha256": "4192b7c1cbe5280de5015c7e77f7427506c5e971d996dbf90aff5c1870b72ab6"
+    },
+    "ordinary-routing/dsm41-audits/audit_dsm41_entries_return.py": {
+      "bytes": 44165,
+      "file": "files/ordinary-routing/dsm41-audits/audit_dsm41_entries_return.py",
+      "sha256": "6ef3216ceb0f2d340ba4d3aa398d22072ee59628f35256c8957f5588da4b8b0e"
+    },
+    "ordinary-routing/dsm41-audits/input-hashes.json": {
+      "bytes": 2870,
+      "file": "files/ordinary-routing/dsm41-audits/input-hashes.json",
+      "sha256": "f05e5def36798218d3a8d5713af849d8eaff4b52a351a79ae8f6bbe165f447e0"
+    },
+    "ordinary-routing/dsm44-audits/audit.log": {
+      "bytes": 1213,
+      "file": "files/ordinary-routing/dsm44-audits/audit.log",
+      "sha256": "41262b36d06fafa9131c1f590fab6f06bab909316ec6a4b4d6698f311684c1be"
+    },
+    "ordinary-routing/dsm44-audits/audit_dsm44_entries_support.py": {
+      "bytes": 22226,
+      "file": "files/ordinary-routing/dsm44-audits/audit_dsm44_entries_support.py",
+      "sha256": "a801860fcb1571a43dc7686ccdb3ef0f8b84288e16586ecc2112a880552535d1"
+    },
+    "ordinary-routing/dsm44-audits/candidate44-entry-support.json": {
+      "bytes": 226573,
+      "file": "files/ordinary-routing/dsm44-audits/candidate44-entry-support.json",
+      "sha256": "5716417cd2e92dae08fce1f8fda9b2787d8ccc4341a3d7afc71de71d64255f8d"
+    },
+    "ordinary-routing/dsm44-audits/input-hashes.json": {
+      "bytes": 2341,
+      "file": "files/ordinary-routing/dsm44-audits/input-hashes.json",
+      "sha256": "7364ac3b14bb44f5cb212e23cba3b94943629e18322c50532af20432ac45ccc4"
+    },
+    "ordinary-routing/native-tools/check_protection_paths.py": {
+      "bytes": 10465,
+      "file": "files/ordinary-routing/native-tools/check_protection_paths.py",
+      "sha256": "4bf5c8e49c379898ef8ce9da5410c5a47260a072c7ac387a27b07258be90c976"
+    },
+    "ordinary-routing/native-tools/exact_native_contours.py": {
+      "bytes": 4334,
+      "file": "files/ordinary-routing/native-tools/exact_native_contours.py",
+      "sha256": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922"
+    },
+    "ordinary-routing/native-tools/export_native_copper.py": {
+      "bytes": 8931,
+      "file": "files/ordinary-routing/native-tools/export_native_copper.py",
+      "sha256": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a"
+    },
+    "ordinary-routing/prepare_candidate44_evidence.py": {
+      "bytes": 8710,
+      "file": "files/ordinary-routing/prepare_candidate44_evidence.py",
+      "sha256": "6cd437e660458d4ac6ee796ca20ec3d49fac7bf94bd23cbb86f2488417548ebf"
+    },
+    "ordinary-routing/servo23-audits/audit_rewritten_entries.py": {
+      "bytes": 21658,
+      "file": "files/ordinary-routing/servo23-audits/audit_rewritten_entries.py",
+      "sha256": "0204d88d8264fd7dae31c7603f11a164a2f9735ccaf8fe71fb57c0bdece0b4dc"
+    },
+    "ordinary-routing/servo23-reference-review/artifact-manifest.json": {
+      "bytes": 540,
+      "file": "files/ordinary-routing/servo23-reference-review/artifact-manifest.json",
+      "sha256": "715aef48d2e8127cba51525319da5f9433bbe909fb6be5a16738b72bede6a8e3"
+    },
+    "ordinary-routing/servo23-reference-review/classification.log": {
+      "bytes": 2439,
+      "file": "files/ordinary-routing/servo23-reference-review/classification.log",
+      "sha256": "720682374a3ef474e669d52d1914249453c0b87d8e606565b2fce68b72dd3655"
+    },
+    "ordinary-routing/servo23-reference-review/classify_reference_delta.py": {
+      "bytes": 20700,
+      "file": "files/ordinary-routing/servo23-reference-review/classify_reference_delta.py",
+      "sha256": "e9a9fd6876b2973886b40e8fd712934e0d4f23e77226a03092c13ee2e942f80a"
+    },
+    "ordinary-routing/servo23-reference-review/reference-classification.json": {
+      "bytes": 84680,
+      "file": "files/ordinary-routing/servo23-reference-review/reference-classification.json",
+      "sha256": "70aae82cf2d893eb9233a4492747203c60338c37b0ad12d177380c751c59a82e"
+    },
+    "ordinary-routing/servo23-reference-review/review.md": {
+      "bytes": 7980,
+      "file": "files/ordinary-routing/servo23-reference-review/review.md",
+      "sha256": "9bdc8e36321d513d9095e611d0072d58abd22503a471e14c9b48044f6c1b6d65"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/R38-four-layer-branch-proposal.json": {
+      "bytes": 6256,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/R38-four-layer-branch-proposal.json",
+      "sha256": "cfb4538af3c37e63dcedd1d7940eb8b2d5313f50ee191d6e48414cdb886baf38"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/R38-inner-branch-proposal.json": {
+      "bytes": 668,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/R38-inner-branch-proposal.json",
+      "sha256": "7f448bc67eaefa1636ef44f1a462ad567046adc898d11b4a6e95e897e324359e"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/audit_selected_portals.py": {
+      "bytes": 3732,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/audit_selected_portals.py",
+      "sha256": "7b10b9da9bd470ae76e6e36730ba947f051a40a6ec6d1a20eefc883458753db9"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/build_complete_proposal.py": {
+      "bytes": 5293,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/build_complete_proposal.py",
+      "sha256": "ff9b5bcdce01d993b38f051e3f90eb849694e54fcad000da0e20532201cd76ae"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/complete-tree-proposal.json": {
+      "bytes": 77384,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/complete-tree-proposal.json",
+      "sha256": "9798bd44a63920ff5e561d7e570b73684050eb5ee330f7e4314b42e2dd13a4ac"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/export_selected_portals.py": {
+      "bytes": 2733,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/export_selected_portals.py",
+      "sha256": "4531bd9a9fdf0b0b627f75b030bf90d6086f911aab414d0e812aa79e701225a6"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/inner-bridge-guarded-proposal.json": {
+      "bytes": 2643,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/inner-bridge-guarded-proposal.json",
+      "sha256": "187ab1793b6ebea68817cbb25674a00ddd97c79e06c77e52543a48a88d102a8c"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/inner-bridge-proposal.json": {
+      "bytes": 670,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/inner-bridge-proposal.json",
+      "sha256": "9110e7215d64449a8e6da65510fe1df0424d2cc158011cd5dd26299f571a82a1"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/native43_geometry.py": {
+      "bytes": 4543,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/native43_geometry.py",
+      "sha256": "9c6235ab6e4bd7455dbd1989bdff767653dbc3b1a7ba406f8ff5adbe6ac6a64e"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/plan_R38_four_layer_branch.py": {
+      "bytes": 4225,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/plan_R38_four_layer_branch.py",
+      "sha256": "8ea092b6f7ba71dff162342fff0f691226276073e498c08e98003c340e3f4f80"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/plan_inner_bridge_guarded.py": {
+      "bytes": 3722,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/plan_inner_bridge_guarded.py",
+      "sha256": "62e4de3c6b036f820e5d0a94636fff4463391bb4954c2af48b5c5ae39d313373"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/selected-portals-entry-proof.json": {
+      "bytes": 31474,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/selected-portals-entry-proof.json",
+      "sha256": "3803232b8dc75b28cdfe7ad5e7477b9cda921875ed3ed8c5e5c68a8b4b3eaf90"
+    },
+    "ordinary-routing/tests/dsm-mcu-candidate43/selected-portals-native.json": {
+      "bytes": 493213,
+      "file": "files/ordinary-routing/tests/dsm-mcu-candidate43/selected-portals-native.json",
+      "sha256": "6dc5f950ba8089eb87078b98c7cec5b120a2b3d72d7ddc8d340e3f88c103efa8"
+    },
+    "ordinary-routing/tests/dsm-r38-transition43/LOCAL-EXITS.md": {
+      "bytes": 3584,
+      "file": "files/ordinary-routing/tests/dsm-r38-transition43/LOCAL-EXITS.md",
+      "sha256": "cd36ac2946651bdea443ef21e4852200c9a84b1cc486c403e794ce7b594b4c97"
+    },
+    "ordinary-routing/tests/dsm-r38-transition43/RESULT.md": {
+      "bytes": 3239,
+      "file": "files/ordinary-routing/tests/dsm-r38-transition43/RESULT.md",
+      "sha256": "693e967562afd7d4639acea527a9da051cdf27c4cd07d10c5b38f2ed5647525a"
+    },
+    "ordinary-routing/tests/dsm-r38-transition43/bec-connected-pad-groups.json": {
+      "bytes": 1488,
+      "file": "files/ordinary-routing/tests/dsm-r38-transition43/bec-connected-pad-groups.json",
+      "sha256": "27291494dda5ea2ffc637468cdcbf1c3b9ed06658cbb66cd73252550f63e995b"
+    },
+    "ordinary-routing/tests/dsm-r38-transition43/compare_bec_connectivity.py": {
+      "bytes": 2257,
+      "file": "files/ordinary-routing/tests/dsm-r38-transition43/compare_bec_connectivity.py",
+      "sha256": "4be06f3d4c38a68a747d4ae66e40d523f5fdf64186e8fc2fad609fbf7d36d917"
+    },
+    "ordinary-routing/tests/dsm-r38-transition43/joint-escape-proof.json": {
+      "bytes": 54439,
+      "file": "files/ordinary-routing/tests/dsm-r38-transition43/joint-escape-proof.json",
+      "sha256": "27f2c81539a92809d4f9c6ae0ea593193881780936f8cbd6641da14307d0b4bd"
+    },
+    "ordinary-routing/tests/dsm-r38-transition43/verify_joint_escape.py": {
+      "bytes": 5354,
+      "file": "files/ordinary-routing/tests/dsm-r38-transition43/verify_joint_escape.py",
+      "sha256": "9331eef4ed157f2798cad24f360a352a638d7b24de2e60a6bfdbf37997f74986"
+    },
+    "ordinary-routing/tests/mpn-parity/apply_metadata_copy.py": {
+      "bytes": 18724,
+      "file": "files/ordinary-routing/tests/mpn-parity/apply_metadata_copy.py",
+      "sha256": "747aecf908d0503d7ef28a9f046fcaf3630d9cb196af1caf0f0bc35029c8c5dc"
+    },
+    "repo/f722-heli/layout-revision/signal-review/native/check_critical_reference.py": {
+      "bytes": 15457,
+      "file": "files/repo/f722-heli/layout-revision/signal-review/native/check_critical_reference.py",
+      "sha256": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750"
+    },
+    "repo/f722-heli/layout-revision/signal-review/native/check_signal_geometry.py": {
+      "bytes": 39061,
+      "file": "files/repo/f722-heli/layout-revision/signal-review/native/check_signal_geometry.py",
+      "sha256": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca"
+    },
+    "repo/f722-heli/layout-revision/signal-review/native/compare_reference_geometry.py": {
+      "bytes": 3902,
+      "file": "files/repo/f722-heli/layout-revision/signal-review/native/compare_reference_geometry.py",
+      "sha256": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e"
+    },
+    "repo/f722-heli/layout-revision/signal-review/native/review_reference_window_change.py": {
+      "bytes": 4521,
+      "file": "files/repo/f722-heli/layout-revision/signal-review/native/review_reference_window_change.py",
+      "sha256": "7e607fdecd64937bc3e01e9f958ee016c940e9363241f2724f635110e7381dc7"
+    }
+  },
+  "recovered_files": {
+    "ordinary-routing/candidate43/f722-heli.kicad_pcb": {
+      "bytes": 1365826,
+      "sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6"
+    },
+    "ordinary-routing/candidate44/f722-heli.kicad_pcb": {
+      "bytes": 1383482,
+      "sha256": "02d2090ad7220a64a8f4a1a259d522f7b0bca3e15214b73107491d17626bd51f"
+    }
+  },
+  "schema": "f722-selected-evidence/v2",
+  "scope": "Exact selected source43-to-adopted44 construction, full-entry/support audit and controls, established native-support wrapper, source transaction, owner acceptance and fresh independent reference classification. Raw native exports omitted. No portable native audit replay or current numerical qualification claim."
+}

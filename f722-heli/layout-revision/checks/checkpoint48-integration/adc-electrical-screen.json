@@ -1,0 +1,236 @@
+{
+  "schema": "f722-ADC-conditional-electrical-screen/v1",
+  "board_sha256": "dcdd0e5655d098ceaffa7f40b6a21f1ca101429ac8eb142c50fa96df86697e68",
+  "source_board_sha256": "f7d5731bb0bf1ad314aca6d507da004993671bce413fbdeba545083168e28161",
+  "native_sha256": "fcb2e385f54000b494426678c2ddbe4a28e08924ef773722ebbe78f528e1678f",
+  "sources": {
+    "independent-core-voltage-review/sources/adc_stm32f7xx.c": "6f690ce8f4314d467906a09521a965ebdf38f9056daf69670edfa493004e998d",
+    "repo/f722-heli/layout-revision/signal-review/stock-ba6c7e3/src/main/startup/system_stm32f7xx.c": "a98d5ea52cbdd495138fdc698729b7df238fd270a65630c7a500a5a36120f75f",
+    "independent-core-voltage-review/sources/STM32F722-DS11853-Rev9.pdf": "0b5686b8f9a62d894e13a1feb75bdad3d7a822c2f8881fc83455d2b78d049fb5",
+    "independent-core-voltage-review/sources/STM32F722-DS11853-Rev9.txt": "01220ad7c1e4215a537b49eeba588081ee0b0ef63be7312f46a3cc096698d259",
+    "repo/f722-heli/docs/passive-bom-evidence.md": "1eacf27b8b4820e74b146a24d9a2582f8d1cb5bb7db62be4ae66a71a279383cf",
+    "repo/f722-heli/validation/circuit-manifest.json": "2ad33673c52965e287c1cd58e7f0a10544d7a37a3c056a4d8ed53cc06a057d4c"
+  },
+  "source_links": [
+    "https://www.st.com/resource/en/datasheet/stm32f722re.pdf",
+    "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/adc_stm32f7xx.c",
+    "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/startup/system_stm32f7xx.c"
+  ],
+  "topology": {
+    "R42_ohm": 68000,
+    "R43_ohm": 16000,
+    "R44_ohm": 16000,
+    "C31_nominal_F": 2.2e-07,
+    "divider_resistor_tolerance_fraction": 0.001,
+    "C31_initial_tolerance_fraction": 0.1,
+    "C31_initial_tolerance_only_interval_F": [
+      1.98e-07,
+      2.42e-07
+    ],
+    "C31_interval_excludes_DC_bias_temperature_and_aging": true,
+    "RC_initial_resistor_and_cap_tolerance_only_interval_seconds": [
+      0.00430417152,
+      0.00527118592
+    ],
+    "divider_gain": 0.32,
+    "Rth_nominal_ohm": 21760.0,
+    "Rth_resistor_tolerance_upper_ohm": 21781.76,
+    "nominal_RC_seconds": 0.0047872,
+    "nominal_filter_corner_hz": 33.24593563918268,
+    "capacitor_branch_mm": 4.283654981438165,
+    "capacitor_to_U1_pad_path_mm": 6.798655981438165,
+    "new_ground_lead_mm": 1.3792455908938046,
+    "no_vias_between_C31_and_U1_on_B_Cu": true,
+    "no_unterminated_new_branch": true
+  },
+  "stock_adc": {
+    "assumed_stock_HCLK_Hz": 216000000.0,
+    "verified_APB2_divisor": 2,
+    "verified_ADC_PCLK_divisor": 8,
+    "fADC_Hz": 13500000.0,
+    "sample_cycles": 480,
+    "source_locations": {
+      "adc_stm32f7xx.c": "adcInitDevice line100 ClockPrescaler PCLK/8; line102 Resolution12B; adcInit line247 sample480cycles",
+      "system_stm32f7xx.c": "stock-ba6c7e3 startup line204 APB2 HCLK/2;216MHz assumption explicitly conditional",
+      "C31": "passive-bom-evidence.md C30/C31 CL05B224KO5NNNC220nF16VX7R\u00b110percent; R42/R43/R440.1percent circuit values"
+    },
+    "resolution_bits": 12,
+    "sample_seconds": 3.555555555555555e-05,
+    "datasheet_table67_CADC_max_F": 7e-12,
+    "datasheet_table67_RADC_max_ohm": 6000,
+    "datasheet_RAIN_max_ohm": 50000,
+    "quarter_LSB_settle_required_seconds_Rth_plus_RADC_plus_2ohm": 1.88730702111671e-06,
+    "sample_time_to_required_time_ratio": 18.839306566303936,
+    "Rth_plus_screen_traceR_below_50kohm": true,
+    "charge_share_quarter_LSB_requires_Ceff_at_least_F": 1.14688e-07,
+    "guaranteed_C31_effective_capacitance_floor_claimed": false
+  },
+  "trace_sensitivity_assumptions_not_extracted_guarantees": {
+    "total_C31_signal_plus_return_path_mm": 8.177901572331969,
+    "nominal_35um_copper_rho_20C_ohm_m": 1.724e-08,
+    "nominal_signal_dc_R_ohm": 0.026368690465690434,
+    "nominal_ground_dc_R_ohm": 0.0027175078842296228,
+    "screen_total_series_R_ohm": 2,
+    "screen_total_series_L_H": 1.6355803144663938e-08,
+    "screen_added_trace_C_F": 8.177901572331968e-12,
+    "at_filter_corner_inductive_reactance_ohm": 3.4165698413820053e-06,
+    "screen_extra_cap_fraction_of_220nF": 3.7172279874236216e-05
+  },
+  "exact_saved_reference_projection": [
+    {
+      "uuid": "18300449-d729-5e44-a453-07045145a252",
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.0,
+      "missing_width_mm2": 0.0,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "359fea85-1c67-5b51-9281-77f4da6eabda",
+      "layer": "B.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.0,
+      "missing_width_mm2": 0.0,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "4f795255-1af6-574a-b8f1-976dfff1448f",
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.3541819747702081,
+      "missing_width_mm2": 0.050964507872344036,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "5c86548a-0dc5-5a65-84c5-560abde9fe99",
+      "layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "missing_centerline_mm": 0.33015148038438547,
+      "missing_width_mm2": 0.05098130411413848,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "78110aa7-90b8-491f-a07a-f34ae1f5516f",
+      "layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "missing_centerline_mm": 0.141421356237309,
+      "missing_width_mm2": 0.026852243938026564,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "85211987-4dcf-5b08-8e10-7eeddef20113",
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.0,
+      "missing_width_mm2": 0.0,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "a7422c01-e888-44e2-a509-41e23f771179",
+      "layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "missing_centerline_mm": 0.15851100000000073,
+      "missing_width_mm2": 0.025890438533022305,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "b2e16a18-1700-5236-ae79-c687c0604be8",
+      "layer": "B.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.35500794489299986,
+      "missing_width_mm2": 0.05095841917906208,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "bf4a973d-f08a-5bea-b144-3893a5deddf5",
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.35267645999844,
+      "missing_width_mm2": 0.051013471121296526,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "c3b505f8-4dff-5cb7-9e12-cbb012eeb249",
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.0,
+      "missing_width_mm2": 4.7933892409904536e-05,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 4.793389240990453e-05,
+      "outside_centerline_empty": true,
+      "outside_width_empty": false
+    },
+    {
+      "uuid": "d9ae2946-f244-5b16-bad0-43b5cb3cbcc4",
+      "layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "missing_centerline_mm": 0.0224999999999973,
+      "missing_width_mm2": 0.009086850620838683,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "dd874fae-4deb-55e7-ba16-b567c81b939a",
+      "layer": "B.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.35249999999999915,
+      "missing_width_mm2": 0.05102364533818997,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 0.0,
+      "outside_centerline_empty": true,
+      "outside_width_empty": true
+    },
+    {
+      "uuid": "e4c4b7df-2444-515f-b28d-d0b8215346e4",
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "missing_centerline_mm": 0.0,
+      "missing_width_mm2": 1.2930920115704463e-05,
+      "outside_explicit_own_via_windows_centerline_mm": 0.0,
+      "outside_explicit_own_via_windows_width_mm2": 1.2930920115704463e-05,
+      "outside_centerline_empty": true,
+      "outside_width_empty": false
+    }
+  ],
+  "reference_window_radius_formula_mm": "via_land_radius+0.127mm clearance+2*0.005mm native-design polygon allowance; locations are the two actual ADC_BUS via centers",
+  "all_reference_projection_outside_explicit_own_via_windows_empty": false,
+  "functional_qualification": false,
+  "numerical_power_VCAP_applicable": false,
+  "limits": [
+    "The51.35mm and56.09mm placement-preserving alternatives are diagnostic only and are not used.",
+    "The stock ADC acquisition calculation is conditional on valid VDDA/VREF and stock216MHz timing. It is not a total ADC accuracy guarantee.",
+    "Nominal trace resistance is geometry-derived;2ohm,2nH/mm and1pF/mm are conservative sensitivity assumptions, not extracted or manufacturing-guaranteed parasitics.",
+    "Effective C31 capacitance over bias/temperature/aging and exact sampling charge transients are not guaranteed here.",
+    "Bench verification remains required under BEC/USB/DSM source switching, servo load steps, switching noise and temperature, checking raw ADC mean/noise and startup/filter settling.",
+    "Current source-bound power/VCAP, EMC, full-wave coupling and flight/manufacturing qualification remain unperformed."
+  ]
+}

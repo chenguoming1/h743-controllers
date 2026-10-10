@@ -1,0 +1,170 @@
+{
+  "status": "complete_nominal_geometry_hypothesis_requires_native_refill_reference_and_fresh_power",
+  "all_pass": true,
+  "track_minima": {
+    "CORE": {
+      "object": "R70.1",
+      "uuid": "d95d58d3-c100-4822-ba4d-4080cfbfe943",
+      "net": "DSM_ILIM",
+      "category": "foreign_copper",
+      "extra_mm": 0.0100097620894814,
+      "witness_center": [
+        17.518810082011132,
+        21.9699953758741
+      ],
+      "witness_obstacle": [
+        17.621441,
+        22.211068
+      ]
+    },
+    "DSM": {
+      "object": "b8751f17-c9f2-4080-b847-169a385d7918",
+      "uuid": "b8751f17-c9f2-4080-b847-169a385d7918",
+      "net": "GND",
+      "category": "foreign_copper",
+      "extra_mm": 0.07946499720704686,
+      "witness_center": [
+        16.26,
+        23.59
+      ],
+      "witness_obstacle": [
+        16.221454,
+        23.322801
+      ]
+    },
+    "R70_GND": {
+      "object": "d39aa068-c3bd-5fac-ba14-ed4eb6e864b0",
+      "uuid": "d39aa068-c3bd-5fac-ba14-ed4eb6e864b0",
+      "net": "DSM_RX_EXT",
+      "category": "foreign_copper",
+      "extra_mm": 0.20447055695725047,
+      "witness_center": [
+        16.19,
+        23.1
+      ],
+      "witness_obstacle": [
+        16.25028,
+        23.527239
+      ]
+    },
+    "R70_ILIM": {
+      "object": "U11.7",
+      "uuid": "c523ab99-279e-4513-b062-491ecb92d0a3",
+      "net": "GND",
+      "category": "foreign_copper",
+      "extra_mm": 0.24800000000000144,
+      "witness_center": [
+        19.025,
+        22.5
+      ],
+      "witness_obstacle": [
+        19.5,
+        22.5
+      ]
+    }
+  },
+  "pad_failures": [],
+  "transitions": [
+    {
+      "xy": [
+        16.375525,
+        21.252534
+      ],
+      "retained_tracks": [
+        {
+          "uuid": "6bc9a569-77ea-47fa-9ba3-c76e3092efd2",
+          "width_mm": 0.3
+        },
+        {
+          "uuid": "cb2b3843-8225-4298-9b5d-bf5e651260e9",
+          "width_mm": 0.3
+        }
+      ],
+      "full_0p25_cap_outside_retained_copper_mm2": 0.0,
+      "full_cap_extra_mm": 0.02499990470848809,
+      "overlap_area_mm2": 0.049087543826817785
+    },
+    {
+      "xy": [
+        18.36917,
+        21.505923
+      ],
+      "retained_tracks": [
+        {
+          "uuid": "8d56ea3a-8559-46fa-9c69-6e937a0a28f2",
+          "width_mm": 0.3
+        }
+      ],
+      "full_0p25_cap_outside_retained_copper_mm2": 0.0,
+      "full_cap_extra_mm": 0.024999438039968125,
+      "overlap_area_mm2": 0.049087543826817785
+    }
+  ],
+  "D7_cut": {
+    "actual_native_inside_pad_subtracted": true,
+    "after_cut_pad_groups": [
+      [
+        "J12.3"
+      ],
+      [
+        "R38.1"
+      ]
+    ],
+    "after_cut_component_count": 2,
+    "outside_pad_gap_mm": 0.14813676113645813,
+    "minimum_mm": 0.127,
+    "preserved_J12_branch_uuids": [
+      "16655551-ebce-43e4-b159-dd08539e44ec",
+      "5621756c-04c4-4446-885c-16e2ffe55e98",
+      "6d6f4fbe-e156-4a7b-adb0-8a402f5182ed",
+      "743ed88b-ad5c-4f7b-868b-9f8dd193bcef",
+      "b5893fce-831a-43a5-9ad8-48a7a3452310",
+      "d35bc9c2-6be1-43f8-982b-78887f5daf8d",
+      "d91a80d5-51c1-4a7d-97b0-b51e3b549e63"
+    ]
+  },
+  "same_pad_partitions": {
+    "+3V3_CORE": true,
+    "+3V3_DSM": true,
+    "DSM_ILIM": true,
+    "DSM_RX_EXT": true,
+    "DSM_RX_MCU": true,
+    "GND": true
+  },
+  "power": {
+    "model_ledger": "static-power-validation/pilot-candidate19-operator-refined-released/ledger.json",
+    "model_ledger_sha256": "f811c4d93dd074e5d74fb000db2d1218d10199ceb7c0562173be437fda572951",
+    "material": {
+      "temperature_C": 105,
+      "thickness_mm": 0.015,
+      "conductivity_IACS": 0.95,
+      "plating_mm": 0.015
+    },
+    "rho_ohm_mm": 2.4210901105263158e-05,
+    "old_length_mm": 2.558950462781377,
+    "old_width_mm": 0.3,
+    "new_length_mm": 2.466979964180315,
+    "new_width_mm": 0.25,
+    "old_L_over_W": 8.529834875937924,
+    "new_L_over_W": 9.86791985672126,
+    "L_over_W_ratio": 1.1568711470087165,
+    "old_rectangular_strip_ohm": 0.013767665908370513,
+    "new_rectangular_strip_ohm": 0.0159274154510494,
+    "incremental_strip_ohm": 0.002159749542678887,
+    "current_screens": [
+      {
+        "current_A": 0.32,
+        "new_strip_drop_V": 0.005096772944335808,
+        "incremental_drop_V": 0.0006911198536572439,
+        "new_strip_loss_W": 0.0016309673421874586
+      },
+      {
+        "current_A": 0.82,
+        "new_strip_drop_V": 0.013060480669860507,
+        "incremental_drop_V": 0.0017709946249966871,
+        "new_strip_loss_W": 0.010709594149285614
+      }
+    ],
+    "scope": "Conservative fixed-temperature project material assumptions and nominal rectangular-strip estimate only. Does not model current crowding, spreading, return drop, transient decoupling, thermal rise or manufacturing tolerance. Fresh source-bound sheet/barrel solve required. No inherited numerical result. The copper bridge isolates C4.1/C6.1/U1.1/U1.64/U13.5; U11.4 and DSM path are on the source side. 0.32 A is the full electronics allocation bound, 0.82 A additionally bounds all modeled CORE demand even though DSM does not traverse this branch. No universal CORE sink floor exists in the current model; do not apply the classic DSM floor to MCU pads."
+  }
+}

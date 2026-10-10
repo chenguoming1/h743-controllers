@@ -1,0 +1,1068 @@
+{
+  "schema": "f722-declared-pair-exact-source-extended-reference-classification/v1",
+  "before_board_sha256": "71d33748909bb960c5829973642272460607d8521831a6212975f7de6790d660",
+  "after_board_sha256": "755545e8198e9a3649c0e07533c23e67010d91ab6a8b09556d7463e064ac89eb",
+  "source_hashes": {
+    "ordinary-routing/tests/sbus-nrst49/candidate02/f722-heli.kicad_pcb": "71d33748909bb960c5829973642272460607d8521831a6212975f7de6790d660",
+    "ordinary-routing/tests/servo48/candidate04/f722-heli.kicad_pcb": "755545e8198e9a3649c0e07533c23e67010d91ab6a8b09556d7463e064ac89eb",
+    "ordinary-routing/tests/servo48/candidate04/reference-comparison17.json": "858f86f5d9d7036e0c3ebbdce6526e65aedc4ae4946741fb6ddd76d85bf0fa73",
+    "ordinary-routing/tests/servo48/classify_reference_delta.py": "479b586f12da782c36cb839e208c71cd334180f173a54f3a700f06e5a2e5e2ce",
+    "ordinary-routing/tests/sbus-nrst49/candidate02/reference-snapshot/native-geometry.json": "a59f4ab7dc015545c462c42b9a5369edd8a98c0cf99e2906958b5aa3167ba6dd",
+    "ordinary-routing/tests/sbus-nrst49/candidate02/reference-snapshot/native-signals.json": "0fabb5aa9f8847d0a54e2ec178f8485316460fa4d94849a3b12ca24b54f5e49f",
+    "ordinary-routing/tests/sbus-nrst49/candidate02/reference-snapshot/critical-reference.json": "a2a1cd85aa4764e84c93d9bb1bebf6d01fb2be59315ef9fe4b19ebf7ec69a49e",
+    "ordinary-routing/tests/servo48/candidate04/reference-snapshot/native-geometry.json": "aba75fd40d1f4b08780b2b6790bb2cbf4bdf42bce2243aec284e8ca4734a0143",
+    "ordinary-routing/tests/servo48/candidate04/reference-snapshot/native-signals.json": "14d87275b0f497d537b4fd0514b481f9397a15bcd14232dbcc4c4ec202176c67",
+    "ordinary-routing/tests/servo48/candidate04/reference-snapshot/critical-reference.json": "76f32ac64aeedc1f0719d24423d8c20d48f81bc76d6175873a73dbf4c22aa929",
+    "repo/f722-heli/layout-revision/signal-review/native/check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
+    "repo/f722-heli/layout-revision/signal-review/native/check_critical_reference.py": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750",
+    "repo/f722-heli/layout-revision/signal-review/native/compare_reference_geometry.py": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e",
+    "repo/f722-heli/layout-revision/signal-review/native/review_reference_window_change.py": "7e607fdecd64937bc3e01e9f958ee016c940e9363241f2724f635110e7381dc7",
+    "checkpoint49-review/reference-change-review.json": "3ae6fca0f9a6bb4dd495cc7ab75e7331a2e9b14a2f644013c8fcdfdc340f7b8d",
+    "ordinary-routing/servo23-reference-review/artifact-manifest.json": "715aef48d2e8127cba51525319da5f9433bbe909fb6be5a16738b72bede6a8e3",
+    "ordinary-routing/servo23-reference-review/classification.log": "720682374a3ef474e669d52d1914249453c0b87d8e606565b2fce68b72dd3655",
+    "ordinary-routing/servo23-reference-review/classify_reference_delta.py": "e9a9fd6876b2973886b40e8fd712934e0d4f23e77226a03092c13ee2e942f80a",
+    "ordinary-routing/servo23-reference-review/reference-classification.json": "70aae82cf2d893eb9233a4492747203c60338c37b0ad12d177380c751c59a82e",
+    "ordinary-routing/servo23-reference-review/review.md": "9bdc8e36321d513d9095e611d0072d58abd22503a471e14c9b48044f6c1b6d65"
+  },
+  "shapely_version": "2.2.0",
+  "geos_version": "3.14.1",
+  "source_binding_verified": true,
+  "critical_copper_identical": true,
+  "unchanged_critical_own_via_windows_verified": true,
+  "critical_reference_tracks_examined": 105,
+  "missing_centerline_geometries_exactly_equal": true,
+  "all_changed_critical_projection_geometry_inside_unchanged_own_windows": true,
+  "all_changed_critical_projection_geometry_inside_actual_hole_window_intersections": true,
+  "all_changed_critical_projection_residuals_outside_unchanged_own_windows_empty": true,
+  "all_changed_critical_projection_residuals_outside_actual_hole_window_intersections_empty": true,
+  "exact_containment_predicate_disagreement_count": 0,
+  "classification_status": "CONTAINED_REFERENCE_REGION_ONLY",
+  "own_window_location_classification": "VERIFIED",
+  "receipt_scope": "Fresh source-bound reference-region review of the complete declared after board; no overall board adoption or functional signoff.",
+  "final_adoption": false,
+  "old_receipt_reusable_as_is": false,
+  "changed_critical_regions": [
+    {
+      "track_uuid": "b4ebe0cb-7055-4e2e-aeec-1f199af0e98b",
+      "net": "USB_N",
+      "signal_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "kind": "trace_width",
+      "source_track_start_mm": [
+        34.27,
+        12.65
+      ],
+      "source_track_end_mm": [
+        34.65,
+        13.0
+      ],
+      "source_track_width_mm": 0.1356,
+      "before_missing_measure": 0.05488296876946186,
+      "after_missing_measure": 0.05488296903322652,
+      "report_total_delta": 2.637646628889101e-10,
+      "missing_geometries_exactly_equal": false,
+      "physical_plane_change_projection": {
+        "added_missing": {
+          "geometry_type": "Polygon",
+          "empty": false,
+          "length_mm": 0.014579347296651762,
+          "area_mm2": 2.6376491257347183e-10,
+          "bounds_mm": [
+            34.48012696373055,
+            12.93207,
+            34.48644,
+            12.93571484588829
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      34.48012701949809,
+                      12.93571484588829
+                    ],
+                    [
+                      34.48644,
+                      12.93207
+                    ],
+                    [
+                      34.48012696373055,
+                      12.935714794523372
+                    ],
+                    [
+                      34.48012701949809,
+                      12.93571484588829
+                    ]
+                  ]
+                ]
+              },
+              "length_mm": 0.014579347296651762,
+              "area_mm2": 2.6376491257347183e-10,
+              "bounds_mm": [
+                34.48012696373055,
+                12.93207,
+                34.48644,
+                12.93571484588829
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": "212F01FF2",
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+                "via_xy_mm": [
+                  34.27,
+                  12.65
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 108,
+                  "bounds_mm": [
+                    33.9175,
+                    12.2975,
+                    34.6225,
+                    13.0025
+                  ],
+                  "area_mm2": 0.3926085377475003,
+                  "extends_beyond_local_window": false,
+                  "contained_vias": [
+                    {
+                      "uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+                      "net": "USB_N",
+                      "xy_mm": [
+                        34.27,
+                        12.65
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "f659c51340a66728792b116a7c2aa4ae59f5f40b9b7e79201679d4b0f500852d",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.0072896470461227625,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.014579347296651762,
+                  "outside_hole_area_mm2": 2.637649125722001e-10
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 59,
+                  "bounds_mm": [
+                    33.9175,
+                    12.2975,
+                    34.6225,
+                    13.0025
+                  ],
+                  "area_mm2": 0.39260857230050017,
+                  "extends_beyond_local_window": false,
+                  "contained_vias": [
+                    {
+                      "uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+                      "net": "USB_N",
+                      "xy_mm": [
+                        34.27,
+                        12.65
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1189b9bffcd8a0296d83dd89df4b23ac265ec62d7a0d5c722116e207dd236b95",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.014579347296651762,
+                  "intersection_area_mm2": 2.637649125722001e-10,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "Polygon",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "direct_missing_geometry_overlay": {
+        "added_missing": {
+          "geometry_type": "Polygon",
+          "empty": false,
+          "length_mm": 0.014579347296651762,
+          "area_mm2": 2.6376491257347183e-10,
+          "bounds_mm": [
+            34.48012696373055,
+            12.93207,
+            34.48644,
+            12.93571484588829
+          ],
+          "pieces": [
+            {
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      34.48012701949809,
+                      12.93571484588829
+                    ],
+                    [
+                      34.48644,
+                      12.93207
+                    ],
+                    [
+                      34.48012696373055,
+                      12.935714794523372
+                    ],
+                    [
+                      34.48012701949809,
+                      12.93571484588829
+                    ]
+                  ]
+                ]
+              },
+              "length_mm": 0.014579347296651762,
+              "area_mm2": 2.6376491257347183e-10,
+              "bounds_mm": [
+                34.48012696373055,
+                12.93207,
+                34.48644,
+                12.93571484588829
+              ]
+            }
+          ],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": "212F01FF2",
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [
+            {
+              "via_uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+              "reference_layer": "In1.Cu",
+              "window": {
+                "via_uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+                "via_xy_mm": [
+                  34.27,
+                  12.65
+                ],
+                "local_window_radius_mm": 0.362,
+                "nominal_land_radius_mm": 0.225,
+                "via_own_clearance_mm": 0.127,
+                "maximum_ground_zone_clearance_mm": 0.127,
+                "classification_allowance_mm": 0.01
+              },
+              "whole_geometry_inside_window": true,
+              "before_holes": [
+                {
+                  "hole_index": 108,
+                  "bounds_mm": [
+                    33.9175,
+                    12.2975,
+                    34.6225,
+                    13.0025
+                  ],
+                  "area_mm2": 0.3926085377475003,
+                  "extends_beyond_local_window": false,
+                  "contained_vias": [
+                    {
+                      "uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+                      "net": "USB_N",
+                      "xy_mm": [
+                        34.27,
+                        12.65
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "f659c51340a66728792b116a7c2aa4ae59f5f40b9b7e79201679d4b0f500852d",
+                  "whole_geometry_covered_by_hole": false,
+                  "difference_from_hole_empty": false,
+                  "intersection_length_mm": 0.0072896470461227625,
+                  "intersection_area_mm2": 0.0,
+                  "outside_hole_length_mm": 0.014579347296651762,
+                  "outside_hole_area_mm2": 2.637649125722001e-10
+                }
+              ],
+              "after_holes": [
+                {
+                  "hole_index": 59,
+                  "bounds_mm": [
+                    33.9175,
+                    12.2975,
+                    34.6225,
+                    13.0025
+                  ],
+                  "area_mm2": 0.39260857230050017,
+                  "extends_beyond_local_window": false,
+                  "contained_vias": [
+                    {
+                      "uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+                      "net": "USB_N",
+                      "xy_mm": [
+                        34.27,
+                        12.65
+                      ]
+                    }
+                  ],
+                  "geometry_wkb_sha256": "1189b9bffcd8a0296d83dd89df4b23ac265ec62d7a0d5c722116e207dd236b95",
+                  "whole_geometry_covered_by_hole": true,
+                  "difference_from_hole_empty": true,
+                  "intersection_length_mm": 0.014579347296651762,
+                  "intersection_area_mm2": 2.637649125722001e-10,
+                  "outside_hole_length_mm": 0.0,
+                  "outside_hole_area_mm2": 0.0
+                }
+              ]
+            }
+          ],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        },
+        "removed_missing": {
+          "geometry_type": "Polygon",
+          "empty": true,
+          "length_mm": 0.0,
+          "area_mm2": 0.0,
+          "bounds_mm": null,
+          "pieces": [],
+          "difference_from_unchanged_own_windows_empty": true,
+          "difference_from_before_or_after_actual_hole_window_intersections_empty": true,
+          "unchanged_own_windows_cover_geometry": true,
+          "before_or_after_actual_hole_window_intersections_cover_geometry": true,
+          "exact_containment_predicates_agree": true,
+          "actual_hole_window_mask_relation": null,
+          "outside_unchanged_windows": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "outside_actual_hole_window_intersections": {
+            "geometry_type": "Polygon",
+            "empty": true,
+            "length_mm": 0.0,
+            "area_mm2": 0.0,
+            "bounds_mm": null,
+            "pieces": []
+          },
+          "window_and_hole_relationships": [],
+          "actual_drill_intersections": {
+            "before": [],
+            "after": []
+          }
+        }
+      },
+      "physical_projection_signed_measure": 2.6376491257347183e-10,
+      "direct_overlay_signed_measure": 2.6376491257347183e-10
+    }
+  ],
+  "numeric_differences_retained": {
+    "BARO_SCL": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "BARO_SDA": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "USB_P": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "USB_N": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 2.6376462125554667e-10
+    },
+    "HSE_IN": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_XTAL_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_CS": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_INT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_MISO": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_MOSI": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_SCK": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    }
+  },
+  "whole_plane_changes": {
+    "In1.Cu": {
+      "physical_GND_lost_mm2": 2.0007757077823727,
+      "physical_GND_gained_mm2": 0.1016683444478733,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.9951563714281604,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.10166828751832357,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    },
+    "In4.Cu": {
+      "physical_GND_lost_mm2": 2.0007757077823727,
+      "physical_GND_gained_mm2": 0.1016683444478733,
+      "lost_GND_outside_all_unchanged_critical_own_windows_mm2": 1.9951563714281604,
+      "gained_GND_outside_all_unchanged_critical_own_windows_mm2": 0.10166828751832357,
+      "scope": "Whole-plane changes are real and are not approved by critical-projection window classification."
+    }
+  },
+  "actual_saved_hole_geometry": {
+    "before:In1.Cu:108": {
+      "facts": {
+        "hole_index": 108,
+        "bounds_mm": [
+          33.9175,
+          12.2975,
+          34.6225,
+          13.0025
+        ],
+        "area_mm2": 0.3926085377475003,
+        "extends_beyond_local_window": false,
+        "contained_vias": [
+          {
+            "uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+            "net": "USB_N",
+            "xy_mm": [
+              34.27,
+              12.65
+            ]
+          }
+        ]
+      },
+      "geometry": {
+        "geometry_type": "Polygon",
+        "empty": false,
+        "length_mm": 2.2275626170110607,
+        "area_mm2": 0.3926085377475003,
+        "bounds_mm": [
+          33.9175,
+          12.2975,
+          34.6225,
+          13.0025
+        ],
+        "pieces": [
+          {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    33.9175,
+                    12.603591
+                  ],
+                  [
+                    33.9175,
+                    12.696406
+                  ],
+                  [
+                    33.917501,
+                    12.696414
+                  ],
+                  [
+                    33.941521,
+                    12.786059
+                  ],
+                  [
+                    33.941522,
+                    12.786062
+                  ],
+                  [
+                    33.987929,
+                    12.866439
+                  ],
+                  [
+                    33.987934,
+                    12.866445
+                  ],
+                  [
+                    34.053554,
+                    12.932065
+                  ],
+                  [
+                    34.05356,
+                    12.93207
+                  ],
+                  [
+                    34.133937,
+                    12.978477
+                  ],
+                  [
+                    34.13394,
+                    12.978478
+                  ],
+                  [
+                    34.223592,
+                    13.0025
+                  ],
+                  [
+                    34.223593,
+                    13.0025
+                  ],
+                  [
+                    34.316407,
+                    13.0025
+                  ],
+                  [
+                    34.316408,
+                    13.0025
+                  ],
+                  [
+                    34.40606,
+                    12.978478
+                  ],
+                  [
+                    34.409956,
+                    12.976229
+                  ],
+                  [
+                    34.423048,
+                    12.968669
+                  ],
+                  [
+                    34.48644,
+                    12.93207
+                  ],
+                  [
+                    34.514917,
+                    12.903593
+                  ],
+                  [
+                    34.55207,
+                    12.86644
+                  ],
+                  [
+                    34.598478,
+                    12.78606
+                  ],
+                  [
+                    34.6225,
+                    12.696408
+                  ],
+                  [
+                    34.6225,
+                    12.603592
+                  ],
+                  [
+                    34.598478,
+                    12.51394
+                  ],
+                  [
+                    34.598477,
+                    12.513937
+                  ],
+                  [
+                    34.55207,
+                    12.43356
+                  ],
+                  [
+                    34.552065,
+                    12.433554
+                  ],
+                  [
+                    34.486445,
+                    12.367934
+                  ],
+                  [
+                    34.486439,
+                    12.367929
+                  ],
+                  [
+                    34.406062,
+                    12.321522
+                  ],
+                  [
+                    34.406059,
+                    12.321521
+                  ],
+                  [
+                    34.316414,
+                    12.297501
+                  ],
+                  [
+                    34.316409,
+                    12.2975
+                  ],
+                  [
+                    34.316408,
+                    12.2975
+                  ],
+                  [
+                    34.223592,
+                    12.2975
+                  ],
+                  [
+                    34.223591,
+                    12.2975
+                  ],
+                  [
+                    34.223585,
+                    12.297501
+                  ],
+                  [
+                    34.13394,
+                    12.321521
+                  ],
+                  [
+                    34.133937,
+                    12.321522
+                  ],
+                  [
+                    34.05356,
+                    12.367929
+                  ],
+                  [
+                    34.053554,
+                    12.367934
+                  ],
+                  [
+                    33.987934,
+                    12.433554
+                  ],
+                  [
+                    33.987929,
+                    12.43356
+                  ],
+                  [
+                    33.941522,
+                    12.513937
+                  ],
+                  [
+                    33.941521,
+                    12.51394
+                  ],
+                  [
+                    33.917501,
+                    12.603585
+                  ],
+                  [
+                    33.9175,
+                    12.603591
+                  ]
+                ]
+              ]
+            },
+            "length_mm": 2.2275626170110607,
+            "area_mm2": 0.3926085377475003,
+            "bounds_mm": [
+              33.9175,
+              12.2975,
+              34.6225,
+              13.0025
+            ]
+          }
+        ]
+      }
+    },
+    "after:In1.Cu:59": {
+      "facts": {
+        "hole_index": 59,
+        "bounds_mm": [
+          33.9175,
+          12.2975,
+          34.6225,
+          13.0025
+        ],
+        "area_mm2": 0.39260857230050017,
+        "extends_beyond_local_window": false,
+        "contained_vias": [
+          {
+            "uuid": "ef38e67c-e5bf-4e71-87cf-92a1b60594ca",
+            "net": "USB_N",
+            "xy_mm": [
+              34.27,
+              12.65
+            ]
+          }
+        ]
+      },
+      "geometry": {
+        "geometry_type": "Polygon",
+        "empty": false,
+        "length_mm": 2.227562616971508,
+        "area_mm2": 0.39260857230050017,
+        "bounds_mm": [
+          33.9175,
+          12.2975,
+          34.6225,
+          13.0025
+        ],
+        "pieces": [
+          {
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    33.9175,
+                    12.603591
+                  ],
+                  [
+                    33.9175,
+                    12.696406
+                  ],
+                  [
+                    33.917501,
+                    12.696414
+                  ],
+                  [
+                    33.941521,
+                    12.786059
+                  ],
+                  [
+                    33.941522,
+                    12.786062
+                  ],
+                  [
+                    33.987929,
+                    12.866439
+                  ],
+                  [
+                    33.987934,
+                    12.866445
+                  ],
+                  [
+                    34.053554,
+                    12.932065
+                  ],
+                  [
+                    34.05356,
+                    12.93207
+                  ],
+                  [
+                    34.133937,
+                    12.978477
+                  ],
+                  [
+                    34.13394,
+                    12.978478
+                  ],
+                  [
+                    34.223592,
+                    13.0025
+                  ],
+                  [
+                    34.223593,
+                    13.0025
+                  ],
+                  [
+                    34.316407,
+                    13.0025
+                  ],
+                  [
+                    34.316408,
+                    13.0025
+                  ],
+                  [
+                    34.40606,
+                    12.978478
+                  ],
+                  [
+                    34.409956,
+                    12.976229
+                  ],
+                  [
+                    34.43543,
+                    12.961521
+                  ],
+                  [
+                    34.48644,
+                    12.93207
+                  ],
+                  [
+                    34.514917,
+                    12.903593
+                  ],
+                  [
+                    34.55207,
+                    12.86644
+                  ],
+                  [
+                    34.598478,
+                    12.78606
+                  ],
+                  [
+                    34.6225,
+                    12.696408
+                  ],
+                  [
+                    34.6225,
+                    12.603592
+                  ],
+                  [
+                    34.598478,
+                    12.51394
+                  ],
+                  [
+                    34.598477,
+                    12.513937
+                  ],
+                  [
+                    34.55207,
+                    12.43356
+                  ],
+                  [
+                    34.552065,
+                    12.433554
+                  ],
+                  [
+                    34.486445,
+                    12.367934
+                  ],
+                  [
+                    34.486439,
+                    12.367929
+                  ],
+                  [
+                    34.406062,
+                    12.321522
+                  ],
+                  [
+                    34.406059,
+                    12.321521
+                  ],
+                  [
+                    34.316414,
+                    12.297501
+                  ],
+                  [
+                    34.316409,
+                    12.2975
+                  ],
+                  [
+                    34.316408,
+                    12.2975
+                  ],
+                  [
+                    34.223592,
+                    12.2975
+                  ],
+                  [
+                    34.223591,
+                    12.2975
+                  ],
+                  [
+                    34.223585,
+                    12.297501
+                  ],
+                  [
+                    34.13394,
+                    12.321521
+                  ],
+                  [
+                    34.133937,
+                    12.321522
+                  ],
+                  [
+                    34.05356,
+                    12.367929
+                  ],
+                  [
+                    34.053554,
+                    12.367934
+                  ],
+                  [
+                    33.987934,
+                    12.433554
+                  ],
+                  [
+                    33.987929,
+                    12.43356
+                  ],
+                  [
+                    33.941522,
+                    12.513937
+                  ],
+                  [
+                    33.941521,
+                    12.51394
+                  ],
+                  [
+                    33.917501,
+                    12.603585
+                  ],
+                  [
+                    33.9175,
+                    12.603591
+                  ]
+                ]
+              ]
+            },
+            "length_mm": 2.227562616971508,
+            "area_mm2": 0.39260857230050017,
+            "bounds_mm": [
+              33.9175,
+              12.2975,
+              34.6225,
+              13.0025
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rejection_controls": [
+    {
+      "control": "wrong expected source hash",
+      "rejected": true,
+      "reason": "Board/source hash mismatch"
+    },
+    {
+      "control": "cross-bound snapshot geometry",
+      "rejected": true,
+      "reason": "Native source binding mismatch"
+    },
+    {
+      "control": "expanded own-via window",
+      "rejected": true,
+      "reason": "Own-via window changed"
+    },
+    {
+      "control": "merged-hole outside-own-window centerline",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "merged-hole outside-own-window width",
+      "rejected": true,
+      "reason": "Changed geometry outside unchanged own window"
+    },
+    {
+      "control": "window area without actual saved hole",
+      "rejected": true,
+      "reason": "Changed geometry outside actual hole mask"
+    }
+  ],
+  "method": [
+    "Verify exact declared board, snapshot, report, comparison and helper hashes before and after this read-only run.",
+    "Rebuild saved physical GND from actual zone/land/track polygons minus native outside-drill polygons on their actual layer spans.",
+    "Primary changed projection is original source centerline or trace copper intersected with before-minus-after or after-minus-before physical GND.",
+    "Also preserve direct subtraction of independently clipped missing geometries. Non-collinear floating-point line representations may produce entire before/after intervals; those results are retained and classified separately.",
+    "Both methods must leave empty residual geometry outside unchanged same-net windows and before-or-after actual saved-hole intersections. Entire merged holes receive no exemption.",
+    "Containment also checks the exact covers predicate. Empty difference does not override a conflicting covers result; predicate disagreement remains unresolved.",
+    "Every nonempty geometry is retained. No epsilon, rounding, snapping, polygon repair, filtering, or normalization to zero is introduced."
+  ],
+  "limits": [
+    "This is a fresh location classification for the declared before/after sources, not overall board adoption, functional signoff, or exact centerline equality.",
+    "The existing helper and checkpoint49 receipt require exact centerline equality and cannot be reused as-is.",
+    "Floating-point overlay lengths/areas and subtraction of totals differ by retained nonzero amounts; no equality claim is made between those alternative computations.",
+    "Any exact-predicate disagreements listed in this receipt remain unresolved; an empty difference does not override false covers.",
+    "Whole-plane changes outside critical own-via windows remain real and need separate source-bound power/VCAP and functional assessment.",
+    "This receipt binds the declared before/after sources; any later successor or changed board must repeat the source-bound comparison and classification on its own hash.",
+    "No KiCad refill, native board mutation, FEM, impedance, return-current, timing, fabrication or flight qualification was performed."
+  ]
+}
