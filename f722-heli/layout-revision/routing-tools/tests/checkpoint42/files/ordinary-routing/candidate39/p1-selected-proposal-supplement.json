@@ -1,0 +1,63 @@
+{
+  "selected_proposal_sha256": "a0bd9c5a677eef9c06d7f96e7c189f47a6bcb19e6c13f855916bbeadaf373ba1",
+  "selected_proposal_file": "ordinary-routing/servo3-entry-access-review/route-proposal.json",
+  "selected_report_sha256": "ae4a1285be99d1fbcee596ff64fc6004a456810ad3ed32d15018de6e8539860d",
+  "constructor_source_board_sha256": "6616644413f202295d134d67483e525e3f04277947f9620b4baa787cf370ace9",
+  "constructor_source_native_sha256": "5bd6da939a7896b143ea618679bc3a7a1880987a4cb972a0f5232ac0a560d5fd",
+  "geometry_screen_board_sha256": "e93f1a1814f8b2bfd6341be9522a053a71db2706d7d81ee2984f6bd82a6c8aa5",
+  "source_rebind": {
+    "all_original_objects_exact": 1849,
+    "preserved_native_categories": [
+      "zones",
+      "footprints",
+      "edge_cuts",
+      "copper_layers",
+      "outline_with_npth"
+    ],
+    "sole_added_object": {
+      "uuid": "b4fcc2a3-9bf4-4570-aa61-38e0f72708cc",
+      "kind": "track",
+      "logical_net": "SERVO3_MCU::P1",
+      "points_mm": [
+        [
+          14.85,
+          9.06
+        ],
+        [
+          16.5,
+          9.06
+        ]
+      ],
+      "layer": "In2.Cu",
+      "width_mm": 0.127
+    },
+    "same_branch_addition_cannot_add_foreign_copper_guard": true,
+    "seed_has_no_drill_or_SMT_mask": true
+  },
+  "constructor_instruction": "Retain the already present first seed segment. Add only remaining three In2 segments, the one via, and three B.Cu segments from sealed proposal. All seven new objects belong to SERVO3_MCU::P1.",
+  "mutual_checks": {
+    "ordered_chain_endpoints_equal": true,
+    "both_same_layer_trace_chains_simple": true,
+    "one_new_via": true,
+    "no_new_via_pair": true,
+    "all_new_copper_same_physical_and_logical_branch": true,
+    "cross_layer_chain_meets_through_new_via": true,
+    "new_drill_to_all_existing_drills_including_same_branch_checked": true,
+    "new_drill_to_both_face_all_SMT_masks_without_net_exemption_checked": true,
+    "existing_seed_exactly_the_prechecked_same_branch_segment": true,
+    "MCU_endpoint_inside_actual_engine_contact": true
+  },
+  "branch_ownership": {
+    "all_new_objects": "SERVO3_MCU::P1",
+    "source_via_uuid": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+    "source_via_logical_net": "SERVO3_MCU::P1",
+    "seed_uuid": "b4fcc2a3-9bf4-4570-aa61-38e0f72708cc",
+    "seed_logical_net": "SERVO3_MCU::P1",
+    "target_contact_uuid": "76a076de-93b2-4717-b9ed-03fd1260aee8",
+    "target_contact_key": "U1.25",
+    "target_contact_logical_net": "SERVO3_MCU::P1",
+    "aliases_unchanged": true
+  },
+  "full_critical_reference_and_native_gates_pending": true,
+  "no_board_model_java_or_alias_mutation": true
+}

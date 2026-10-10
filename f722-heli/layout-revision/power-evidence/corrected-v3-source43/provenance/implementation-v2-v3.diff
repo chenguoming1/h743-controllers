@@ -1,0 +1,398 @@
+--- sealed-v2/compile_power_ledger.py
++++ corrected-v3/compile_power_ledger.py
+@@ -11,6 +11,7 @@
+ from audit_native_ports import audit_ports
+ from power_case_model import build_cases
+ from model_contract import check_inputs,check_physical_source,REVISION
++from support_receipt import verify_support,verify_files as verify_support_files,compile_connectivity
+ 
+ 
+ def save(path,value):
+@@ -76,8 +77,9 @@
+     if not data['geometry'].get('source_unchanged'):raise Refused('Native exporter did not preserve the source')
+     if data['process'].get('geometry_sha256')!=hashes['geometry']:
+         raise Refused('Process receipt is not bound to the selected geometry export')
+-    if data['power_connectivity'].get('native_sha256')!=hashes['geometry']:
+-        raise Refused('Power connectivity receipt is not bound to the selected geometry export')
++    support=verify_support(source,source/'owner-native.json')
++    if support['board_sha256']!=hashes['board'] or support['native_sha256']!=hashes['geometry']:
++        raise Refused('Verified support receipt is not bound to the selected geometry export')
+     check_physical_source(data['parts'],data['geometry'],plan)
+     networks={}
+     native_pads={p['key']:p for p in data['geometry']['objects']if p['kind']=='pad'and p.get('number')}
+@@ -96,18 +98,7 @@
+     for ref,mpn in {'R54':'RT0402BRD0753K6L','R55':'RT0402BRD0710KL','R16':'ERJ3RSFR12V'}.items():
+         actual=data['parts'].get(ref,{}).get('mpn','')
+         if actual!=mpn:raise Refused('Current-value part identity requires review: '+ref+' '+actual)
+-    critical={row['net']:row for row in data['critical']['fullnet_connectivity']}
+-    connectivity={'board_sha256':hashes['board'],'normalization':'Native UUID groups, supplemented by complete critical pad-key sets resolved against this exact export','nets':{}}
+-    for network in networks:
+-        net=network['net'];objects=[p for p in data['geometry']['objects']if p['kind']=='pad'and p.get('net')==net and p.get('number')]
+-        row=data['power_connectivity']['nets'].get(net)
+-        if row is None:
+-            proof=critical.get(net,{})
+-            if proof.get('complete')is not True or proof.get('unreached')or set(proof.get('pads',[]))!={p['key']for p in objects}:
+-                raise Refused('Missing native connectivity proof: '+net)
+-            row={'pad_group_count':1,'groups':[{'pad_uuids':[p['uuid']for p in objects]}],
+-                 'proof_source':'critical complete native pad-key set; keys mapped to frozen export UUIDs'}
+-        connectivity['nets'][net]=row
++    connectivity=compile_connectivity(data['geometry'],data['critical'],support,networks)
+     excluded=[]
+     for key in ['ordinary_protection','ordinary_supplemental']:
+         for check in data[key]['checks']:
+@@ -125,6 +116,15 @@
+     for key,name in source_files.items():shutil.copyfile(source/name,out/'input'/name)
+     for name,path in [('case-plan.json',plan_path),('terminal-registry.json',registry_path),('compiler-settings.json',settings_path)]:
+         shutil.copyfile(path,out/'input'/name)
++    support_copies={}
++    evidence_dir=out/'input/support-evidence';evidence_dir.mkdir()
++    for index,(original,expected) in enumerate(sorted(support['evidence_files_sha256'].items())):
++        target=evidence_dir/(str(index).zfill(3)+'-'+Path(original).name)
++        shutil.copyfile(original,target)
++        if sha256(target)!=expected:raise Refused('Typed support evidence changed during copying')
++        support_copies[original]={'path':str(target.relative_to(out)),'sha256':expected}
++    save(out/'input/support-verification.json',{**support,'copied_evidence':support_copies})
++    connectivity['support_verification_sha256']=sha256(out/'input/support-verification.json')
+     save(out/'input/connectivity.json',connectivity)
+     save(out/'input/physical.json',{'board_sha256':hashes['board'],'passed':True,
+         'scope':'Process clearances, mechanical checks, critical faults; source reports retained',
+@@ -134,12 +134,14 @@
+     for key,name in [('connectivity','connectivity.json'),('physical','physical.json'),('case_plan','case-plan.json'),
+                      ('terminal_registry','terminal-registry.json'),('compiler_settings','compiler-settings.json'),('rebound_terminals','rebound-terminals.json')]:
+         files[key]={'path':'input/'+name,'sha256':sha256(out/'input'/name)}
++    files['support_verification']={'path':'input/support-verification.json','sha256':sha256(out/'input/support-verification.json')}
++    for index,spec in enumerate(support_copies.values()):files['support_evidence_'+str(index)]=spec
+     manifest={'schema':'f722-scoped-static-freeze/v1','status':'frozen-for-scoped-static-screen','scope':settings['scope'],
+        'source_stage':settings['source_stage'],'saved_fill_verified':True,'checks_run_on_frozen_board':True,
+        'tested_nets':[n['net']for n in networks],'files':files,'numerical_execution_authorized':allow_numerical,
+        'qualification':'Provisional source-bound power review; final ordinary routing requires fresh source/check binding',
+        'excluded_ordinary_protection_checks':excluded,
+-       'compiler_source_sha256':{n:sha256(Path(__file__).parent/n)for n in ['compile_power_ledger.py','power_case_model.py','model_contract.py']}}
++       'compiler_source_sha256':{n:sha256(Path(__file__).parent/n)for n in ['compile_power_ledger.py','power_case_model.py','model_contract.py','support_receipt.py','owner_support_contract.py']}}
+     manifest['analysis_source_sha256']={n:sha256(Path(__file__).parent/n)for n in ['copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py','native_edge_noding.py','mesh_cache.py','power_case_model.py','model_contract.py']}
+     manifest.update(model_revision=REVISION,model_contract=contract,owner_reviewed_model_sha256=review_sha)
+     save(out/'freeze.json',manifest)
+@@ -163,6 +165,7 @@
+                              out/'ledger-primary.json',out/'input/connectivity.json',out/'input'/source_files['critical'])
+     if not port_receipt['passed']:raise Refused('Compiled native port audit failed')
+     save(out/'port-audit.json',port_receipt)
++    verify_support_files(support['evidence_files_sha256'])
+     if hashes!={key:sha256(source/name)for key,name in source_files.items()}:
+         raise Refused('Source evidence changed during compilation')
+     receipt={'status':'COMPILED AND PREFLIGHTED; NO FEM OR CIRCUIT RUN','board_sha256':hashes['board'],
+--- sealed-v2/support_receipt.py
++++ corrected-v3/support_receipt.py
+@@ -0,0 +1,176 @@
++"""Verify typed support audit chains and emit a separate normalized proof.
++
++Original source receipts are read without adding legacy fields. The pinned owner
++adapter checks per-net predecessor UUID/group equality; this layer additionally
++binds actual native bytes, the complete current pad inventory and dependencies.
++"""
++import copy,hashlib,json,sys
++from pathlib import Path
++from power_case_model import require,Refused
++from owner_support_contract import verify as owner_verify
++
++DSM='f722-complete-DSM-support-audit-binding/v1'
++I2C='f722-I2C-complete-support-binding/v1'
++LEGACY=(None,'f722-native-support-audit/v1')
++
++def sha_bytes(value):return hashlib.sha256(value).hexdigest()
++
++def verify_files(records):
++    for name,expected in records.items():
++        require(sha_bytes(Path(name).read_bytes())==expected,'Support dependency changed: '+name)
++
++def verify_support(directory,native_path=None,report_path=None):
++    require(sys.flags.optimize==0,'Support verification requires nonoptimized Python')
++    directory=Path(directory).resolve();archive_root=directory.parent
++    dependencies={};chain=[];active=set()
++
++    def bound_bytes(path):
++        path=Path(path).resolve()
++        require(path.is_relative_to(archive_root),'Support evidence escapes selected archive root')
++        value=path.read_bytes();digest=sha_bytes(value)
++        require(str(path) not in dependencies or dependencies[str(path)]==digest,'Support evidence changed while reading')
++        dependencies[str(path)]=digest
++        return value
++
++    def bound_json(path):
++        try:return json.loads(bound_bytes(path))
++        except (ValueError,OSError) as exc:raise Refused('Missing or invalid support evidence: '+str(path)) from exc
++
++    def lookup_prior(expected_sha,source_board_sha):
++        # Hash identity, not a guessed candidate number. Search only direct
++        # candidate directories in the already selected routing archive.
++        found=[]
++        for p in sorted(archive_root.glob('candidate*/power-audit.json')):
++            if p.parent.resolve()==directory:continue
++            raw=p.read_bytes()
++            if sha_bytes(raw)==expected_sha:
++                row=json.loads(raw)
++                if row.get('board_sha256')==source_board_sha:found.append(p.resolve())
++        require(len(found)==1,'Expected one exact predecessor support receipt by SHA and board identity')
++        return found[0]
++
++    def visit(folder,selected_native=None,selected_report=None):
++        folder=Path(folder).resolve();rp=Path(selected_report) if selected_report else folder/'power-audit.json'
++        require(rp.resolve().parent==folder,'Support report must belong to selected source directory')
++        require(str(rp.resolve()) not in active,'Cyclic support evidence chain')
++        active.add(str(rp.resolve()))
++        report=bound_json(rp);schema=report.get('schema')
++        require(schema in (*LEGACY,DSM,I2C),'Unknown support-proof schema')
++        board=folder/'f722-heli.kicad_pcb';board_sha=sha_bytes(bound_bytes(board))
++        require(report.get('board_sha256')==board_sha and report.get('passed')is True,'Failed or stale support wrapper')
++        np=Path(selected_native) if selected_native else folder/'owner-native.json'
++        if not np.exists():np=folder/'f722-heli.native.json'
++        require(np.resolve().parent==folder,'Native evidence must belong to selected source directory')
++        native=bound_json(np);native_sha=dependencies[str(np.resolve())]
++        require(native.get('board_sha256')==board_sha and native.get('source_unchanged')is True,'Native export is stale or mutating')
++        nets=report.get('nets')
++        require(isinstance(nets,dict) and nets,'Empty support net inventory')
++        native_sets={}
++        for p in native['objects']:
++            if p['kind']=='pad' and p.get('number'):
++                native_sets.setdefault(p.get('net'),[]).append(p['uuid'])
++        prior=None;audit=None;ap=None
++        if schema in LEGACY:
++            require(report.get('native_sha256')==native_sha,'Legacy support/native byte binding differs')
++        else:
++            name=report.get('audit')
++            require(isinstance(name,str) and Path(name).name==name and name not in ['','.','..'],'Unsafe typed audit basename')
++            ap=folder/name;audit=bound_json(ap)
++            require(dependencies[str(ap.resolve())]==report.get('audit_sha256'),'Typed nested audit hash differs')
++            require(audit.get('passed')is True and audit.get('gates') and all(v is True for v in audit['gates'].values()),'Failed or empty typed audit gates')
++            require(audit.get('source_board_sha256')==report.get('source_board_sha256'),'Typed predecessor board binding differs')
++            if 'native_sha256' in report:
++                require(report['native_sha256']==native_sha,'Typed wrapper/native byte binding differs')
++            if schema==DSM:
++                require(audit.get('schema')=='f722-dsm41-entry-return-audit/v1','Unknown nested DSM audit schema')
++                require(audit.get('candidate_board_sha256')==board_sha and audit.get('support_nets')==nets,'DSM nested board/support inventory differs')
++                hashes=audit.get('input_hashes',{})
++                require(hashes.get(folder.name+'/f722-heli.kicad_pcb')==board_sha,'DSM nested candidate board hash differs')
++                require(hashes.get(folder.name+'/f722-heli.native.json')==native_sha,'DSM nested candidate native hash differs')
++                possible=[]
++                for key,expected in hashes.items():
++                    rel=Path(key)
++                    if rel.name!='power-audit.json':continue
++                    require(not rel.is_absolute() and len(rel.parts)==2 and '..' not in rel.parts,'Unsafe DSM predecessor receipt reference')
++                    path=archive_root/rel
++                    candidate=bound_json(path)
++                    require(dependencies[str(path.resolve())]==expected,'DSM predecessor receipt hash differs')
++                    if candidate.get('board_sha256')==report['source_board_sha256']:possible.append(path)
++                require(len(possible)==1,'DSM predecessor receipt is missing or ambiguous')
++                prior_path=possible[0]
++            else:
++                require(audit.get('schema')=='f722-I2C43-entry-support-audit/v1','Unknown nested I2C audit schema')
++                require(audit.get('board_sha256')==board_sha and audit.get('nets')==nets,'I2C nested board/support inventory differs')
++                require(audit.get('numerical_power_VCAP_applicable')is False,'I2C copper proof cannot claim numerical applicability')
++                require(audit.get('candidate_native_sha256')==native_sha,'I2C nested native byte binding differs')
++                expected=audit.get('source_power_audit_sha256')
++                require(isinstance(expected,str) and len(expected)==64,'Missing I2C predecessor receipt hash')
++                prior_path=lookup_prior(expected,report['source_board_sha256'])
++            prior,prior_native,prior_native_sha=visit(prior_path.parent,selected_report=prior_path)
++            if schema==I2C:
++                require(audit.get('source_native_sha256')==prior_native_sha,'I2C predecessor native byte binding differs')
++            else:
++                require(hashes.get(prior_path.parent.name+'/f722-heli.kicad_pcb')==prior['board_sha256'],'DSM predecessor board byte binding differs')
++                require(hashes.get(prior_path.parent.name+'/f722-heli.native.json')==prior_native_sha,'DSM predecessor native byte binding differs')
++            try:owner_verify(report,prior,report['source_board_sha256'],board_sha,folder)
++            except (AssertionError,KeyError,TypeError) as exc:raise Refused('Owner typed support UUID/group contract refused') from exc
++        normalized={}
++        for net,row in nets.items():
++            groups=row.get('groups')
++            require(isinstance(groups,list) and len(groups)==1,'Support net does not have exactly one proven group: '+net)
++            if schema in LEGACY:
++                require(row.get('pad_group_count')==1 and row.get('complete',True)is True,'Legacy support net is incomplete: '+net)
++            else:
++                require(row.get('passed')is True and row.get('source_groups_exactly_preserved')is True,'Typed support group preservation failed: '+net)
++                if 'pad_group_count' in row:require(row['pad_group_count']==len(groups),'Typed group count contradicts actual groups')
++            actual=groups[0].get('pad_uuids',[]);expected=native_sets.get(net,[])
++            require(actual and len(actual)==len(set(actual)) and len(expected)==len(set(expected)) and set(actual)==set(expected),
++                    'Support group differs from complete current native UUID inventory: '+net)
++            normalized[net]={'pad_group_count':len(groups),'groups':copy.deepcopy(groups),
++                             'proof_source':'Verified typed/legacy support evidence; normalized group count derived from checked groups',
++                             'source_report_sha256':dependencies[str(rp.resolve())],'source_report_schema':schema}
++        chain.append({'directory':str(folder),'schema':schema,'board_sha256':board_sha,'native_sha256':native_sha,
++                      'support_report_sha256':dependencies[str(rp.resolve())],
++                      'nested_audit_sha256':dependencies[str(ap.resolve())] if ap else None,'net_count':len(nets)})
++        active.remove(str(rp.resolve()))
++        if folder==directory:result.update(board_sha256=board_sha,native_sha256=native_sha,nets=normalized)
++        return report,native,native_sha
++
++    result={'schema':'f722-verified-support-connectivity/v1','passed':True,
++            'normalization':'New derived connectivity proof; original receipts remain byte-unchanged and retain their real schemas.',
++            'numerical_acceptance_claimed':False}
++    visit(directory,native_path,report_path)
++    verify_files(dependencies)
++    result.update(evidence_files_sha256=dependencies,verified_chain=chain)
++    return result
++
++def select_approved_poses(source,mechanical,explicit=None):
++    source=Path(source).resolve();expected=mechanical.get('input_hashes',{}).get('poses-native.json')
++    require(isinstance(expected,str) and len(expected)==64,'Mechanical receipt lacks a pose digest')
++    path=Path(explicit).resolve() if explicit else source/'poses-native.json'
++    require(path.is_file(),'Source-local approved poses missing; supply an explicit mechanically bound pose file')
++    require(sha_bytes(path.read_bytes())==expected,'Selected poses differ from source mechanical receipt')
++    return path
++
++def compile_connectivity(native,critical,support,networks):
++    """Select checked support rows or exact critical-pad proofs for new rails."""
++    require(native['board_sha256']==support['board_sha256']==critical['board_sha256'],'Connectivity source boards differ')
++    critical_nets={row['net']:row for row in critical['fullnet_connectivity']}
++    result={'board_sha256':native['board_sha256'],
++            'normalization':'Typed support receipts verified with owner UUID/group contract; absent rail nets require exact critical native-pad proof.',
++            'nets':{}}
++    for network in networks:
++        net=network['net']
++        objects=[p for p in native['objects'] if p['kind']=='pad' and p.get('net')==net and p.get('number')]
++        row=support['nets'].get(net)
++        if row is None:
++            proof=critical_nets.get(net,{})
++            require(proof.get('complete')is True and not proof.get('unreached') and set(proof.get('pads',[]))=={p['key'] for p in objects},
++                    'Missing exact critical connectivity proof: '+net)
++            row={'pad_group_count':1,'groups':[{'pad_uuids':[p['uuid'] for p in objects]}],
++                 'proof_source':'Critical complete native pad-key set resolved against the same board/native export'}
++        require(row['pad_group_count']==len(row['groups'])==1,'Normalized connectivity group mismatch: '+net)
++        uuids=[u for group in row['groups'] for u in group['pad_uuids']]
++        require(len(uuids)==len(set(uuids)) and set(uuids)=={p['uuid'] for p in objects},'Normalized native pad UUID mismatch: '+net)
++        result['nets'][net]=copy.deepcopy(row)
++    return result
+--- sealed-v2/owner_support_contract.py
++++ corrected-v3/owner_support_contract.py
+@@ -0,0 +1,39 @@
++"""Typed support-proof adapter; does not infer a pass from missing fields."""
++import hashlib
++import json
++from pathlib import Path
++
++
++def verify(report, prior, source_sha, board_sha, directory):
++    assert report['board_sha256'] == board_sha
++    schema = report.get('schema')
++    typed = schema in ('f722-complete-DSM-support-audit-binding/v1', 'f722-I2C-complete-support-binding/v1')
++    if typed:
++        assert report['passed'] is True and report['source_board_sha256'] == source_sha
++        name = report['audit']
++        assert Path(name).name == name
++        path = Path(directory) / name
++        assert hashlib.sha256(path.read_bytes()).hexdigest() == report['audit_sha256']
++        audit = json.loads(path.read_text())
++        assert audit['passed'] is True and all(v is True for v in audit['gates'].values())
++        assert audit['source_board_sha256'] == source_sha
++        if schema == 'f722-I2C-complete-support-binding/v1':
++            assert audit['board_sha256'] == board_sha and audit['numerical_power_VCAP_applicable'] is False
++            assert audit['nets'] == report['nets']
++        else:
++            assert audit['candidate_board_sha256'] == board_sha
++            assert audit['support_nets'] == report['nets']
++    else:
++        assert report.get('schema') in (None, 'f722-native-support-audit/v1'), 'Unknown support-proof schema'
++    assert set(report['nets']) == set(prior['nets']), 'Power support inventory changed'
++    for net, row in report['nets'].items():
++        groups = row['groups']
++        if typed:
++            assert row['passed'] is True and row['source_groups_exactly_preserved'] is True
++        else:
++            assert row['pad_group_count'] == 1 and row.get('complete', True)
++        assert len(groups) == 1, ('Power support regression', net)
++        actual = groups[0]['pad_uuids']
++        expected = [u for group in prior['nets'][net]['groups'] for u in group['pad_uuids']]
++        assert len(actual) == len(set(actual)) and set(actual) == set(expected), ('Power pad inventory changed', net)
++    return {'passed': True, 'nets': len(report['nets']), 'typed_audit_binding_checked': typed}
+--- sealed-v2/plan_power_revalidation.py
++++ corrected-v3/plan_power_revalidation.py
+@@ -15,6 +15,7 @@
+ import subprocess
+ import sys
+ import time
++from support_receipt import verify_support,verify_files as verify_support_files,select_approved_poses
+ 
+ ROOT=Path(__file__).resolve().parent
+ PROJECT=ROOT.parent
+@@ -25,7 +26,7 @@
+  'power-revalidation-required.json','owner-mechanical-geometry.json','owner-firmware.json']
+ TOOLS=['compile_power_ledger.py','power_case_model.py','model_contract.py','prepare_loaded_pilot.py','run_bounded_pilot.py',
+  'copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py','native_edge_noding.py','mesh_cache.py',
+- 'summarize_loaded_pilot.py','summarize_combined_pilot.py','report_actual_sinks.py']
++ 'summarize_loaded_pilot.py','summarize_combined_pilot.py','report_actual_sinks.py','support_receipt.py','owner_support_contract.py']
+ JOB_KEYS=['cases','networks','loops','material','mesh_spacings_mm','convergence','limits']
+ 
+ class Refused(RuntimeError):pass
+@@ -41,7 +42,7 @@
+     if condition:raise Refused(why)
+ def local_output(p):
+     p=Path(p).resolve()
+-    refuse(not p.is_relative_to(ROOT) or p==ROOT,'Output must be isolated under power-terminal-correction-v2')
++    refuse(not p.is_relative_to(ROOT) or p==ROOT,'Output must be isolated under power-terminal-correction-v3')
+     return p
+ def inventory(directory,names):return {name:sha(Path(directory)/name) for name in names}
+ def verify_inventory(directory,records):
+@@ -87,7 +88,8 @@
+     native=data['owner-native.json'];summary=data['owner-summary.json']
+     refuse(native.get('source_unchanged')is not True,'Native exporter changed source')
+     refuse(data['owner-process.json'].get('geometry_sha256')!=records['owner-native.json'],'Process/native binding differs')
+-    refuse(data['power-audit.json'].get('native_sha256')!=records['owner-native.json'],'Support audit/native binding differs')
++    support=verify_support(source,source/'owner-native.json')
++    refuse(support['board_sha256']!=expected or support['native_sha256']!=records['owner-native.json'],'Verified support/native binding differs')
+     refuse(data['owner-mechanical.json']['input_hashes']['owner-mechanical-geometry.json']!=records['owner-mechanical-geometry.json'],'Mechanical export binding differs')
+     refuse(data['owner-adoption.json']['native_gate_receipt_sha256']!=records['owner-summary.json'],'Adoption/native owner receipt binding differs')
+     refuse(data['owner-critical.json'].get('faults') or summary['critical'].get('missing_ground_returns'),'Critical geometry/return fault')
+@@ -100,6 +102,7 @@
+     refuse(data['owner-adoption.json'].get('native_unfinished_connections')!=summary['drc']['unconnected'],'Adoption does not bind current open count')
+     verify_inventory(source,records)
+     return records,dict(board_sha256=expected,native_sha256=records['owner-native.json'],
++        support_evidence_files_sha256=support['evidence_files_sha256'],support_verified_chain=support['verified_chain'],
+         native_version=native['native_version'],opens=summary['drc']['unconnected'],errors=0,warnings=0,
+         via_count=data['owner-process.json']['via_count'],unique_drill_count=data['owner-process.json']['unique_drill_count'],
+         preserved_incomplete_protection=summary['protection'],preserved_incomplete_supplemental=summary['supplemental'])
+@@ -109,7 +112,7 @@
+     path=Path(path).resolve()
+     refuse(sha(path)!=expected,'Explicit owner-reviewed implementation SHA differs')
+     review=read(path)
+-    refuse(review.get('schema')!='f722-corrected-implementation-review/v2','Unknown corrected implementation review')
++    refuse(review.get('schema')!='f722-corrected-implementation-review/v3','Unknown corrected implementation review')
+     refuse(set(review['runtime_source_sha256'])!=set(TOOLS),'Reviewed runtime inventory is incomplete')
+     refuse(review.get('launcher_sha256')!=sha(__file__),'Reviewed launcher changed')
+     verify_inventory(ROOT,review['runtime_source_sha256'])
+@@ -138,14 +141,15 @@
+         refuse(settings[key]!=old[key],'Preserved physics/numerical policy changed: '+key)
+     settings['source_stage']='Fresh corrected conditional prototype validation of exact board '+args.expected_board_sha+'; no historical numerical result reused'
+     settings['owner_reviewed_model_sha256']=args.owner_reviewed_model_sha
++    mechanical=read(source/'owner-mechanical.json')
++    poses=select_approved_poses(source,mechanical,getattr(args,'poses',None))
+     paths={'case_plan':ROOT/'case-plan.corrected.disabled.json',
+            'registry':ROOT/'terminal-registry.corrected.disabled.json',
+            'model_review':Path(args.model_review).resolve(),
+-           'poses':PROJECT/'integrated-routing/trial27/poses-native.json'}
+-    mechanical=read(source/'owner-mechanical.json')
++           'poses':poses}
+     refuse(mechanical['input_hashes']['poses-native.json']!=sha(paths['poses']),'Approved mechanical pose input changed; review explicit pose selection')
+     counts=model['counts']
+-    plan=dict(schema='f722-corrected-power-revalidation-plan/v2',status='PLANNING ONLY; NO COMPILE OR NUMERICAL RUN',
++    plan=dict(schema='f722-corrected-power-revalidation-plan/v3',status='PLANNING ONLY; NO COMPILE OR NUMERICAL RUN',
+       heavy_execution_enabled=False,source=str(source),accepted_board=str(accepted),job=str(job),scope=scope,
+       source_files_sha256=records,runtime_source_sha256=runtime,wrapper_sha256=sha(__file__),
+       execution_runtime=runtime_identity(),
+@@ -171,10 +175,11 @@
+ 
+ def load_bound_plan(path,expected):
+     refuse(sha(path)!=expected,'Plan hash differs from explicit expected digest')
+-    p=read(path);refuse(p.get('schema')!='f722-corrected-power-revalidation-plan/v2','Unexpected plan schema')
++    p=read(path);refuse(p.get('schema')!='f722-corrected-power-revalidation-plan/v3','Unexpected plan schema')
+     refuse(p['wrapper_sha256']!=sha(__file__),'Launcher changed after planning; re-plan')
+     refuse(p['execution_runtime']!=runtime_identity(),'Interpreter or numerical dependency identity changed; re-plan')
+     verify_inventory(p['source'],p['source_files_sha256']);verify_inventory(ROOT,p['runtime_source_sha256'])
++    verify_support_files(p['scope']['support_evidence_files_sha256'])
+     refuse(Path(p['accepted_board']).resolve()!=ACCEPTED_BOARD.resolve(),'Plan canonical board path changed')
+     refuse(sha(p['accepted_board'])!=p['scope']['board_sha256'],'Accepted canonical board moved; re-plan')
+     for row in p['inputs'].values():refuse(sha(row['path'])!=row['sha256'],'Plan/registry/pose/source-bound input changed')
+@@ -318,6 +323,7 @@
+     p=sub.add_parser('plan');p.add_argument('--source',required=True);p.add_argument('--expected-board-sha',required=True)
+     p.add_argument('--accepted-board',default=str(PROJECT/'repo/f722-heli/layout-revision/hardware/f722-heli.kicad_pcb'))
+     p.add_argument('--job',required=True);p.add_argument('--out',required=True)
++    p.add_argument('--poses',help='Optional explicit approved pose input; must match the selected source mechanical receipt SHA. Default: source-local poses-native.json')
+     p.add_argument('--model-review',default=str(ROOT/'MODEL-REVIEW.json'))
+     p.add_argument('--owner-reviewed-model-sha',required=True,help='Explicit SHA of this implementation after owner review; no historical approval inheritance')
+     for mode in ['stage','launch','post']:

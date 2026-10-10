@@ -1,0 +1,715 @@
+{
+  "schema": "f722-RPM-exact-return-context/v1",
+  "board_sha256": "73dbae05954b8edec4143d91248bf38c40537f83e8f5f3fed51744105169d6c7",
+  "source_board_sha256": "755545e8198e9a3649c0e07533c23e67010d91ab6a8b09556d7463e064ac89eb",
+  "native_sha256": "e6829fafe4e7ada1444ff65d66c55026ad546aa53ce3aa71d2c572ff6a882c2a",
+  "source_native_sha256": "aba75fd40d1f4b08780b2b6790bb2cbf4bdf42bce2243aec284e8ca4734a0143",
+  "raw_reference_review_sha256": "49567350c979feb4a6ea31cfac0ac1df37e624b937566cec1b2caf1a48537cb4",
+  "raw_summary": {
+    "RPM_MCU": {
+      "track_count": 20,
+      "total_track_length_mm": 59.44607452707546,
+      "centerline_missing_mm": 4.263893967283043,
+      "width_missing_mm2": 0.6149041531030611,
+      "outside_own_windows_centerline_mm": 0.0,
+      "outside_own_windows_width_mm2": 2.725130554532544e-05,
+      "all_reference_outside_own_windows_empty": false
+    }
+  },
+  "outside_window_width_residuals": [
+    {
+      "uuid": "d668f229-cdb8-5ebf-a199-7db95d300761",
+      "start": [
+        15.336486,
+        7.938185
+      ],
+      "end": [
+        15.130631,
+        11.415217
+      ],
+      "layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "actual_outside_own_window_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.19544747967095,
+              9.245985358620612
+            ],
+            [
+              15.195108113925798,
+              9.251717481868985
+            ],
+            [
+              15.195728086439743,
+              9.251922293122773
+            ],
+            [
+              15.201321126927983,
+              9.253872048403746
+            ],
+            [
+              15.204500659733977,
+              9.255039132977798
+            ],
+            [
+              15.19544747967095,
+              9.245985358620612
+            ]
+          ]
+        ]
+      },
+      "area_mm2": 2.725130554532544e-05,
+      "bounds_mm": [
+        15.195108113925798,
+        9.245985358620612,
+        15.204500659733977,
+        9.255039132977798
+      ],
+      "component_count": 1,
+      "centerline_outside_own_window_mm": 0.0,
+      "intersection_with_any_drill_mm2": 0.0,
+      "area_already_missing_in_source_plane_mm2": 0.0,
+      "area_newly_lost_from_source_plane_mm2": 2.7251305545325437e-05,
+      "containing_saved_holes": [
+        {
+          "bounds_mm": [
+            14.4975,
+            8.7075,
+            15.431867,
+            9.947211
+          ],
+          "area_mm2": 0.7539823794745004,
+          "contained_vias": [
+            {
+              "uuid": "95c11f5b-8600-5478-b96b-6380952bb90f",
+              "net": "RPM_MCU",
+              "xy": [
+                15.079367,
+                9.594711
+              ]
+            },
+            {
+              "uuid": "ba0d5782-e0b4-481b-ac4d-3d91e9d3dd78",
+              "net": "SERVO3_MCU",
+              "xy": [
+                14.85,
+                9.06
+              ]
+            }
+          ]
+        }
+      ],
+      "minimum_distance_to_centerline_mm": 0.05392757695127322
+    }
+  ],
+  "via_return_context": [
+    {
+      "via_uuid": "791cebc6-e4cb-54ba-a69d-416c1ea77869",
+      "xy_mm": [
+        9.013184,
+        20.66732
+      ],
+      "signal_layers_used": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "adjacent_reference_planes": [
+        "In1.Cu",
+        "In4.Cu"
+      ],
+      "requires_interplane_reference_transfer": true,
+      "nearest_three_both_plane_bonded_GND_ties": [
+        {
+          "uuid": "0fd972ba-65d2-446c-82f9-92241bfd8aad",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            10.3983,
+            21.1282
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              10.3983,
+              21.1282
+            ],
+            "end": [
+              10.3983,
+              21.1282
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199975,
+            "In4.Cu": 0.12762987684199975
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 1.459779677847311
+        },
+        {
+          "uuid": "9a7e8149-6967-4470-a651-f69830c6eee6",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            10.76,
+            18.0
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              10.76,
+              18.0
+            ],
+            "end": [
+              10.76,
+              18.0
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199983,
+            "In4.Cu": 0.12762987684199983
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 3.188410594678169
+        },
+        {
+          "uuid": "f7c1fdb8-69bb-42d3-ab5b-b34c4a0b0c13",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            10.425,
+            17.2
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              10.425,
+              17.2
+            ],
+            "end": [
+              10.425,
+              17.2
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199978,
+            "In4.Cu": 0.12762987684199978
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 3.7437324156857157
+        }
+      ]
+    },
+    {
+      "via_uuid": "8c1f3324-a22f-5241-8398-50cc8aaae6b6",
+      "xy_mm": [
+        14.906568,
+        6.34672
+      ],
+      "signal_layers_used": [
+        "B.Cu",
+        "In3.Cu"
+      ],
+      "adjacent_reference_planes": [
+        "In4.Cu"
+      ],
+      "requires_interplane_reference_transfer": false,
+      "nearest_three_both_plane_bonded_GND_ties": [
+        {
+          "uuid": "39a56392-875d-4879-813e-fb2d9fe74901",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            16.4252,
+            7.0556
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              16.4252,
+              7.0556
+            ],
+            "end": [
+              16.4252,
+              7.0556
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199978,
+            "In4.Cu": 0.12762987684199978
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 1.6759337713119813
+        },
+        {
+          "uuid": "def5537d-d0ab-4331-bb4d-8c021ba48232",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            14.4541,
+            9.4927
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              14.4541,
+              9.4927
+            ],
+            "end": [
+              14.4541,
+              9.4927
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199986,
+            "In4.Cu": 0.12762987684199986
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 3.178351373184531
+        },
+        {
+          "uuid": "bba10168-20e4-49d3-b3ee-20be39deafbb",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            18.7413,
+            6.9005
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              18.7413,
+              6.9005
+            ],
+            "end": [
+              18.7413,
+              6.9005
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684200008,
+            "In4.Cu": 0.12762987684200008
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 3.874511814438561
+        }
+      ]
+    },
+    {
+      "via_uuid": "95c11f5b-8600-5478-b96b-6380952bb90f",
+      "xy_mm": [
+        15.079367,
+        9.594711
+      ],
+      "signal_layers_used": [
+        "B.Cu",
+        "In3.Cu"
+      ],
+      "adjacent_reference_planes": [
+        "In4.Cu"
+      ],
+      "requires_interplane_reference_transfer": false,
+      "nearest_three_both_plane_bonded_GND_ties": [
+        {
+          "uuid": "def5537d-d0ab-4331-bb4d-8c021ba48232",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            14.4541,
+            9.4927
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              14.4541,
+              9.4927
+            ],
+            "end": [
+              14.4541,
+              9.4927
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199986,
+            "In4.Cu": 0.12762987684199986
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 0.6335337918453909
+        },
+        {
+          "uuid": "3c75949c-55fd-4031-9a66-ecdaea0511dd",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            17.71,
+            9.275
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              17.71,
+              9.275
+            ],
+            "end": [
+              17.71,
+              9.275
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684200008,
+            "In4.Cu": 0.12762987684200008
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 2.6499896422835327
+        },
+        {
+          "uuid": "39a56392-875d-4879-813e-fb2d9fe74901",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            16.4252,
+            7.0556
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              16.4252,
+              7.0556
+            ],
+            "end": [
+              16.4252,
+              7.0556
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199978,
+            "In4.Cu": 0.12762987684199978
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 2.8737347014312236
+        }
+      ]
+    },
+    {
+      "via_uuid": "a2b7c2e3-a1e0-5ed2-9cf9-ce536e831b3a",
+      "xy_mm": [
+        4.844794,
+        17.894794
+      ],
+      "signal_layers_used": [
+        "B.Cu",
+        "In3.Cu"
+      ],
+      "adjacent_reference_planes": [
+        "In4.Cu"
+      ],
+      "requires_interplane_reference_transfer": false,
+      "nearest_three_both_plane_bonded_GND_ties": [
+        {
+          "uuid": "f38f95a1-d7f2-462a-af20-22c2b4f20c95",
+          "kind": "pad",
+          "label": "J7.1",
+          "xy_mm": [
+            4.06,
+            19.15
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              4.06,
+              19.15
+            ],
+            "end": [
+              4.06,
+              19.15
+            ],
+            "width": 1.1
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 2.289656359056001,
+            "In4.Cu": 2.289656359056001
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 1.4803525677594493
+        },
+        {
+          "uuid": "af51dd6f-74b4-44f0-9e09-812208bfc448",
+          "kind": "pad",
+          "label": "J6.1",
+          "xy_mm": [
+            4.06,
+            16.05
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              4.06,
+              16.05
+            ],
+            "end": [
+              4.06,
+              16.05
+            ],
+            "width": 1.1
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 2.289656359055998,
+            "In4.Cu": 2.289656359055998
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 2.004785904996342
+        },
+        {
+          "uuid": "db8a6f67-908e-47e0-8c1d-8db72a4f2772",
+          "kind": "pad",
+          "label": "J8.1",
+          "xy_mm": [
+            4.06,
+            22.25
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              4.06,
+              22.25
+            ],
+            "end": [
+              4.06,
+              22.25
+            ],
+            "width": 1.1
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 2.289656359055995,
+            "In4.Cu": 2.289656359055995
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 4.425349808192793
+        }
+      ]
+    },
+    {
+      "via_uuid": "d0322310-9d11-5053-ae92-12beeab6e6c7",
+      "xy_mm": [
+        13.21,
+        23.02
+      ],
+      "signal_layers_used": [
+        "B.Cu",
+        "In2.Cu"
+      ],
+      "adjacent_reference_planes": [
+        "In1.Cu",
+        "In4.Cu"
+      ],
+      "requires_interplane_reference_transfer": true,
+      "nearest_three_both_plane_bonded_GND_ties": [
+        {
+          "uuid": "91134f0a-6bf4-4d46-bb15-eb50b329a5cd",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            14.6995,
+            21.1213
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              14.6995,
+              21.1213
+            ],
+            "end": [
+              14.6995,
+              21.1213
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684200006,
+            "In4.Cu": 0.12762987684200006
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 2.413228530413146
+        },
+        {
+          "uuid": "b8751f17-c9f2-4080-b847-169a385d7918",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            16.19,
+            23.1
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              16.19,
+              23.1
+            ],
+            "end": [
+              16.19,
+              23.1
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684200006,
+            "In4.Cu": 0.12762987684200006
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 2.981073632099684
+        },
+        {
+          "uuid": "0fd972ba-65d2-446c-82f9-92241bfd8aad",
+          "kind": "via",
+          "label": null,
+          "xy_mm": [
+            10.3983,
+            21.1282
+          ],
+          "barrel_layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "drill_mm": {
+            "start": [
+              10.3983,
+              21.1282
+            ],
+            "end": [
+              10.3983,
+              21.1282
+            ],
+            "width": 0.2
+          },
+          "positive_saved_zone_contact_area_mm2": {
+            "In1.Cu": 0.12762987684199975,
+            "In4.Cu": 0.12762987684199975
+          },
+          "barrel_spans_both_reference_planes": true,
+          "center_distance_mm": 3.388888332477186
+        }
+      ]
+    }
+  ],
+  "both_plane_bonded_GND_ties": 116,
+  "unbonded_or_rejected_ties": 0,
+  "normalization_or_tolerance_waiver_used": false,
+  "AC_return_qualified": false,
+  "limits": [
+    "All exact nonempty polygons are retained. Width residues are genuine saved geometry and are not zeroed by an area tolerance.",
+    "Ground tie distances are Euclidean context, not plane-path length, inductance, impedance or an AC current-flow proof.",
+    "Two transitions change reference plane: B-to-In2 at the clamp and In2-to-In3 at the bridge. The other three transitions share In4 but still have own antipad and barrel discontinuities."
+  ]
+}

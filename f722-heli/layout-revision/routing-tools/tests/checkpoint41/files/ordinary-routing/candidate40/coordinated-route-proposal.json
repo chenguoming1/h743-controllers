@@ -1,0 +1,479 @@
+{
+  "schema": "f722-dsm-dedicated-return-geometric-proposal/v1",
+  "status": "nominal_geometry_pass_native_construction_and_explicit_courtyard_review_required",
+  "source_board": "ordinary-routing/candidate39/f722-heli.kicad_pcb",
+  "source_board_sha256": "246e3aa5d177377badb90aa248faedaaf832bc99303109d002980aad260fe0b7",
+  "source_native_sha256": "e99bb7888b98c5dd44e44a04b51789ac9dcc47b3fd6b07d1446295acf5b2c577",
+  "footprint_changes": {
+    "R38": {
+      "before": [
+        28.775,
+        24.5,
+        0,
+        "B.Cu"
+      ],
+      "after": [
+        17.69,
+        23.59,
+        0,
+        "B.Cu"
+      ],
+      "pads": {
+        "1": {
+          "net": "DSM_RX_EXT",
+          "before": [
+            28.265,
+            24.5
+          ],
+          "after": [
+            17.18,
+            23.59
+          ]
+        },
+        "2": {
+          "net": "DSM_RX_MCU",
+          "before": [
+            29.285,
+            24.5
+          ],
+          "after": [
+            18.2,
+            23.59
+          ]
+        }
+      }
+    },
+    "R70": {
+      "before": [
+        17.3,
+        22.8,
+        180,
+        "B.Cu"
+      ],
+      "after": [
+        17.3,
+        22.72,
+        180,
+        "B.Cu"
+      ],
+      "rotation_changed": false,
+      "pads": {
+        "1": {
+          "net": "DSM_ILIM",
+          "before": [
+            17.81,
+            22.8
+          ],
+          "after": [
+            17.81,
+            22.72
+          ]
+        },
+        "2": {
+          "net": "GND",
+          "before": [
+            16.79,
+            22.8
+          ],
+          "after": [
+            16.79,
+            22.72
+          ]
+        }
+      }
+    }
+  },
+  "remove_copper": [
+    {
+      "uuid": "4deb196b-8a4a-4837-97d6-ddceb3751d97",
+      "kind": "track",
+      "net": "SBUS_HV",
+      "native_object_sha256": "dd3e29af8851c84fb6a49d5120643c469e5067124a664308bb73d631b04ed612",
+      "start": [
+        12.36223,
+        24.3097
+      ],
+      "end": [
+        16.51106,
+        24.3097
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "uuid": "5f80b789-cf9e-419e-bd7c-874756bceee6",
+      "kind": "track",
+      "net": "RPM_LV",
+      "native_object_sha256": "07acff4fdd454d0addfe086a155594816627dcb84fd813e5396345549c572183",
+      "start": [
+        15.7073,
+        25.0157
+      ],
+      "end": [
+        17.2907,
+        25.01725
+      ],
+      "width_mm": 0.127
+    },
+    {
+      "uuid": "6e89aa2c-c4f4-472c-91db-0ae977dc2603",
+      "kind": "via",
+      "net": "GND",
+      "native_object_sha256": "a9cd9b0c980f3bd6b3f6c3b5e525a0b35fc042f4c24fd6da3a827e48b096161c",
+      "start": [
+        16.22,
+        23.75
+      ],
+      "end": [
+        16.22,
+        23.75
+      ],
+      "width_mm": 0.45
+    },
+    {
+      "uuid": "cd31252a-805f-4398-b766-efd42c8f65f0",
+      "kind": "track",
+      "net": "GND",
+      "native_object_sha256": "cefb355e2267c43a586905a01c5ed3fa5013f4e43129f3132bbb7ca86036235b",
+      "start": [
+        16.22,
+        24.2
+      ],
+      "end": [
+        16.22,
+        23.75
+      ],
+      "width_mm": 0.25
+    }
+  ],
+  "add_tracks": [
+    {
+      "name": "DSM",
+      "net": "DSM_RX_EXT",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "points_mm": [
+        [
+          15.38,
+          24.23
+        ],
+        [
+          15.62,
+          24.23
+        ],
+        [
+          16.26,
+          23.59
+        ],
+        [
+          17.18,
+          23.59
+        ]
+      ]
+    },
+    {
+      "name": "GND",
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.25,
+      "points_mm": [
+        [
+          16.22,
+          24.2
+        ],
+        [
+          16.2,
+          24.22
+        ],
+        [
+          16.2,
+          24.64
+        ]
+      ]
+    },
+    {
+      "name": "SBUS",
+      "net": "SBUS_HV",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "points_mm": [
+        [
+          12.36223,
+          24.3097
+        ],
+        [
+          15.6,
+          24.3097
+        ],
+        [
+          15.7097,
+          24.2
+        ],
+        [
+          16.40136,
+          24.2
+        ],
+        [
+          16.51106,
+          24.3097
+        ]
+      ]
+    },
+    {
+      "name": "RPM",
+      "net": "RPM_LV",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "points_mm": [
+        [
+          15.7073,
+          25.0157
+        ],
+        [
+          15.7566,
+          25.065
+        ],
+        [
+          17.24295,
+          25.065
+        ],
+        [
+          17.2907,
+          25.01725
+        ]
+      ]
+    }
+  ],
+  "add_via": {
+    "net": "GND",
+    "xy_mm": [
+      16.2,
+      24.64
+    ],
+    "diameter_mm": 0.45,
+    "drill_mm": 0.2,
+    "top": "F.Cu",
+    "bottom": "B.Cu",
+    "tented_both_faces": true
+  },
+  "preserve_original_J12_branch_uuids": [
+    "5621756c-04c4-4446-885c-16e2ffe55e98",
+    "6d6f4fbe-e156-4a7b-adb0-8a402f5182ed",
+    "743ed88b-ad5c-4f7b-868b-9f8dd193bcef",
+    "16655551-ebce-43e4-b159-dd08539e44ec",
+    "b5893fce-831a-43a5-9ad8-48a7a3452310",
+    "d35bc9c2-6be1-43f8-982b-78887f5daf8d",
+    "d91a80d5-51c1-4a7d-97b0-b51e3b549e63"
+  ],
+  "D7_outside_pad_gap_mm": 0.1481365758349033,
+  "topology": {
+    "SBUS_HV": {
+      "before": [
+        [
+          "24af4ff1-59b1-43d4-8282-48cf7056a156",
+          "4deb196b-8a4a-4837-97d6-ddceb3751d97",
+          "4e822ce0-de92-493e-a701-8f4d796963a1",
+          "55ded505-7ea1-4fb9-adbe-406cbb0dad74",
+          "75e6cfd7-e6ab-4b7c-8922-d53d1f5527d6",
+          "807e8b8e-2e55-4683-b890-c392fbfa9188",
+          "R26.2",
+          "U16.2",
+          "a6b2551f-da4e-4c73-97c3-13db055b8165",
+          "adb9a6dc-4534-4dcf-b57a-5bea728e82fa",
+          "ba723236-9e41-4526-8f25-7bfbbde14b83",
+          "f417346f-13ed-4dd5-9fe9-b5f68a76f9ed"
+        ],
+        [
+          "Q2.3"
+        ]
+      ],
+      "after": [
+        [
+          "24af4ff1-59b1-43d4-8282-48cf7056a156",
+          "4e822ce0-de92-493e-a701-8f4d796963a1",
+          "55ded505-7ea1-4fb9-adbe-406cbb0dad74",
+          "75e6cfd7-e6ab-4b7c-8922-d53d1f5527d6",
+          "807e8b8e-2e55-4683-b890-c392fbfa9188",
+          "R26.2",
+          "SBUS",
+          "U16.2",
+          "a6b2551f-da4e-4c73-97c3-13db055b8165",
+          "adb9a6dc-4534-4dcf-b57a-5bea728e82fa",
+          "ba723236-9e41-4526-8f25-7bfbbde14b83",
+          "f417346f-13ed-4dd5-9fe9-b5f68a76f9ed"
+        ],
+        [
+          "Q2.3"
+        ]
+      ]
+    },
+    "RPM_LV": {
+      "before": [
+        [
+          "054d0b0f-86c4-418b-b8d5-e42a2fb550aa",
+          "0f45291e-0e80-4bde-9b75-ff6ac66382ca",
+          "173f3c05-4fd2-4cd8-a550-8415c9d91d2b",
+          "1d0675c4-5364-4de6-93ec-edde6cf2f8d7",
+          "26ed2907-d8d1-4e4d-b636-b22c8fb99e6c",
+          "2a901477-bbb8-4210-bdf0-dbb7d8d6aeaf",
+          "2e9b46fe-b5cc-4e9b-b867-65faa13d41aa",
+          "379f42b3-e8f9-4968-894d-ad216d70a7a9",
+          "43e0489f-5861-4013-b42f-0acdb039a9df",
+          "4f95b173-6bfd-49a7-91ef-ac5e8acf8b5e",
+          "5f80b789-cf9e-419e-bd7c-874756bceee6",
+          "6222d56c-8217-4bf9-a662-c5b479fcd654",
+          "80402d8b-9dab-4fd2-90a9-4008470e25fb",
+          "85f84c33-691d-4b1c-90a0-a1774e42274c",
+          "8e7c8237-f896-4be1-8ecf-c846441bcfb7",
+          "92a0cad1-6948-4fd2-9a91-283ea01629b8",
+          "Q1.2",
+          "R36.2",
+          "R39.1",
+          "b87811cb-6ef0-4bb7-8d0a-38cea9b930d4",
+          "bc747e06-a923-46ec-8653-51b9da633878",
+          "c49385b6-1878-42a1-b72e-a23f3d05fc9d",
+          "c916c16d-43e4-4d6c-88c0-1cfa373577c8",
+          "d03338ff-d78f-47fe-8a5b-1821d3c40d0f",
+          "d5bb1647-a1e5-47eb-ae01-5cd9eb1a5ff2",
+          "e3de51cc-1f0f-4ae1-8632-f933ad0f88a0",
+          "e770d1de-a512-46cc-89a6-26fe43d6a1f1",
+          "ef94c43b-49dd-4bc8-8931-fb8187d91819",
+          "fad02341-b142-4751-8410-22f6be1e60b3",
+          "fd5b1e25-f490-4ec1-9843-5d0bedf7cd77"
+        ]
+      ],
+      "after": [
+        [
+          "054d0b0f-86c4-418b-b8d5-e42a2fb550aa",
+          "0f45291e-0e80-4bde-9b75-ff6ac66382ca",
+          "173f3c05-4fd2-4cd8-a550-8415c9d91d2b",
+          "1d0675c4-5364-4de6-93ec-edde6cf2f8d7",
+          "26ed2907-d8d1-4e4d-b636-b22c8fb99e6c",
+          "2a901477-bbb8-4210-bdf0-dbb7d8d6aeaf",
+          "2e9b46fe-b5cc-4e9b-b867-65faa13d41aa",
+          "379f42b3-e8f9-4968-894d-ad216d70a7a9",
+          "43e0489f-5861-4013-b42f-0acdb039a9df",
+          "4f95b173-6bfd-49a7-91ef-ac5e8acf8b5e",
+          "6222d56c-8217-4bf9-a662-c5b479fcd654",
+          "80402d8b-9dab-4fd2-90a9-4008470e25fb",
+          "85f84c33-691d-4b1c-90a0-a1774e42274c",
+          "8e7c8237-f896-4be1-8ecf-c846441bcfb7",
+          "92a0cad1-6948-4fd2-9a91-283ea01629b8",
+          "Q1.2",
+          "R36.2",
+          "R39.1",
+          "RPM",
+          "b87811cb-6ef0-4bb7-8d0a-38cea9b930d4",
+          "bc747e06-a923-46ec-8653-51b9da633878",
+          "c49385b6-1878-42a1-b72e-a23f3d05fc9d",
+          "c916c16d-43e4-4d6c-88c0-1cfa373577c8",
+          "d03338ff-d78f-47fe-8a5b-1821d3c40d0f",
+          "d5bb1647-a1e5-47eb-ae01-5cd9eb1a5ff2",
+          "e3de51cc-1f0f-4ae1-8632-f933ad0f88a0",
+          "e770d1de-a512-46cc-89a6-26fe43d6a1f1",
+          "ef94c43b-49dd-4bc8-8931-fb8187d91819",
+          "fad02341-b142-4751-8410-22f6be1e60b3",
+          "fd5b1e25-f490-4ec1-9843-5d0bedf7cd77"
+        ]
+      ]
+    },
+    "DSM_RX_EXT": {
+      "after": [
+        [
+          "5621756c-04c4-4446-885c-16e2ffe55e98",
+          "6d6f4fbe-e156-4a7b-adb0-8a402f5182ed",
+          "743ed88b-ad5c-4f7b-868b-9f8dd193bcef",
+          "D7.1",
+          "DSM",
+          "J12.3",
+          "R38.1",
+          "b5893fce-831a-43a5-9ad8-48a7a3452310",
+          "d35bc9c2-6be1-43f8-982b-78887f5daf8d",
+          "d91a80d5-51c1-4a7d-97b0-b51e3b549e63"
+        ]
+      ],
+      "after_D7_pad_cut": [
+        [
+          "5621756c-04c4-4446-885c-16e2ffe55e98",
+          "6d6f4fbe-e156-4a7b-adb0-8a402f5182ed",
+          "743ed88b-ad5c-4f7b-868b-9f8dd193bcef",
+          "J12.3",
+          "b5893fce-831a-43a5-9ad8-48a7a3452310",
+          "d35bc9c2-6be1-43f8-982b-78887f5daf8d",
+          "d91a80d5-51c1-4a7d-97b0-b51e3b549e63"
+        ],
+        [
+          "DSM",
+          "R38.1"
+        ]
+      ]
+    }
+  },
+  "same_net_contact_sets": {
+    "SBUS": {
+      "source_contacts": [
+        "24af4ff1-59b1-43d4-8282-48cf7056a156",
+        "8d042e6a-9fcd-424c-a429-05c3658bc800",
+        "a6b2551f-da4e-4c73-97c3-13db055b8165"
+      ],
+      "replacement_contacts": [
+        "24af4ff1-59b1-43d4-8282-48cf7056a156",
+        "8d042e6a-9fcd-424c-a429-05c3658bc800",
+        "a6b2551f-da4e-4c73-97c3-13db055b8165"
+      ],
+      "same": true
+    },
+    "RPM": {
+      "source_contacts": [
+        "6222d56c-8217-4bf9-a662-c5b479fcd654",
+        "bc747e06-a923-46ec-8653-51b9da633878"
+      ],
+      "replacement_contacts": [
+        "6222d56c-8217-4bf9-a662-c5b479fcd654",
+        "bc747e06-a923-46ec-8653-51b9da633878"
+      ],
+      "same": true
+    }
+  },
+  "mechanical_binding": {
+    "source38_footprints_equal": true,
+    "source38_pads_equal": true,
+    "outline_equal": true,
+    "rule_zones_equal": true,
+    "reviewed_reserves_and_courtyard_exceptions": [
+      {
+        "a": "R38",
+        "b": "C70",
+        "body_gap_mm": 0.33999999999999986,
+        "land_gap_mm": 0.2306291460351107,
+        "reserve_gap_mm": 0.01500000000000057,
+        "reserve_overlap_mm2": 0.0,
+        "courtyard_overlap_mm2": 0.31349999999999667
+      },
+      {
+        "a": "R38",
+        "b": "R70",
+        "body_gap_mm": 0.33000000000000185,
+        "land_gap_mm": 0.2441792811276195,
+        "reserve_gap_mm": 0.030000000000001137,
+        "reserve_overlap_mm2": 0.0,
+        "courtyard_overlap_mm2": 0.10289999999999512
+      },
+      {
+        "a": "R38",
+        "b": "U11",
+        "body_gap_mm": 0.7849999999999966,
+        "land_gap_mm": 0.3528061990512587,
+        "reserve_gap_mm": 0.15281072235804144,
+        "reserve_overlap_mm2": 0.0,
+        "courtyard_overlap_mm2": 0.04410000000000011
+      }
+    ]
+  },
+  "nominal_tight_reserves_mm": {
+    "RPM_new_GND_via": 0.0094997,
+    "RPM_board_edge": 0.0175,
+    "new_GND_drill_to_D7_B_mask": 0.015,
+    "R38_C70_reserved_assembly_gap": 0.015
+  },
+  "required_checks": "See README.md. No native construction/refill/DRC/adoption; no fabrication tolerance or ESD transient qualification. Use a pose-aware coordinated workflow; do not force a footprint-preserving ordinary-route adoption helper."
+}

@@ -1,0 +1,567 @@
+{
+  "schema": "f722-complete-DSM-endpoint-audit-binding/v1",
+  "passed": true,
+  "board_sha256": "539d9547eb8c4d5984481293ae10cee34355ee838dff11ab43b00cca270ceae2",
+  "source_board_sha256": "246e3aa5d177377badb90aa248faedaaf832bc99303109d002980aad260fe0b7",
+  "audit": "candidate41-entry-return.json",
+  "audit_sha256": "90dcd3d6df49d122822a5a6db2b248e0669240bc284a6bae22bb5fa02886a73f",
+  "scope": "Finite full-width entries, explicit R26/R38 junction corridors and actual annular contacts; nominal native geometry only.",
+  "new_track_endpoints_checked": 40,
+  "direct_pad_entry_failures_preserved": [
+    {
+      "passed": false,
+      "pad": "R26.2",
+      "pad_uuid": "8d042e6a-9fcd-424c-a429-05c3658bc800",
+      "net": "SBUS_HV",
+      "track_uuid": "c757d812-b2ab-5312-b48b-a9c5f876313e",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy_mm": [
+        12.36223,
+        24.3097
+      ],
+      "width_mm": 0.127,
+      "center_inside_native_pad": true,
+      "full_width_section_mm": [
+        [
+          12.36223,
+          24.246199999999998
+        ],
+        [
+          12.36223,
+          24.3732
+        ]
+      ],
+      "section_missing_mm": 0.02319999999999922,
+      "transverse_entry_length_mm": 0.0,
+      "transverse_entry_wkt": "LINESTRING EMPTY",
+      "finite_full_width_strips": [],
+      "inward_reserve_mm": 1e-06
+    },
+    {
+      "passed": false,
+      "pad": "R38.1",
+      "pad_uuid": "7c18f691-25a4-435e-a236-e074e113b363",
+      "net": "DSM_RX_EXT",
+      "track_uuid": "eab3f753-c84f-52be-b8d6-98fc84242d63",
+      "layer": "B.Cu",
+      "endpoint": "end",
+      "xy_mm": [
+        16.83,
+        23.46
+      ],
+      "width_mm": 0.127,
+      "center_inside_native_pad": true,
+      "full_width_section_mm": [
+        [
+          16.874901280605343,
+          23.504901280605345
+        ],
+        [
+          16.785098719394654,
+          23.415098719394656
+        ]
+      ],
+      "section_missing_mm": 0.049357864376270204,
+      "transverse_entry_length_mm": 0.0,
+      "transverse_entry_wkt": "LINESTRING EMPTY",
+      "finite_full_width_strips": [],
+      "inward_reserve_mm": 1e-06
+    }
+  ],
+  "separate_finite_corridors": {
+    "R26": {
+      "passed": true,
+      "classification": "exact_source_bound_retained_track_junction_with_separate_verified_pad_entry",
+      "pad": "R26.2",
+      "incoming_track_uuid": "c757d812-b2ab-5312-b48b-a9c5f876313e",
+      "retained_track_uuid": "24af4ff1-59b1-43d4-8282-48cf7056a156",
+      "retained_track_and_pad_exact_source_records": true,
+      "shared_native_endpoint_mm": [
+        12.36223,
+        24.3097
+      ],
+      "incoming_record_sha256": "60856c417c9d262b976739120c854bfb393b3635a404a28bd30931371c8f243c",
+      "retained_record_sha256": "c17c9bb17d675d15a352f07285c5fb1628283423df5d9cede25bf12767115ef0",
+      "actual_pad_record_sha256": "129a2b74a1cebe2bcf19be194904861fcac6be855b19f4e0f4eafb6902f61e53",
+      "replaced_source_record_sha256": "dd3e29af8851c84fb6a49d5120643c469e5067124a664308bb73d631b04ed612",
+      "direct_incoming_transverse_entry_remains_false": true,
+      "source39_replaced_track_had_identical_direct_entry_failure": true,
+      "source39_direct_entry_witness": {
+        "passed": false,
+        "pad": "R26.2",
+        "pad_uuid": "8d042e6a-9fcd-424c-a429-05c3658bc800",
+        "net": "SBUS_HV",
+        "track_uuid": "4deb196b-8a4a-4837-97d6-ddceb3751d97",
+        "layer": "F.Cu",
+        "endpoint": "start",
+        "xy_mm": [
+          12.36223,
+          24.3097
+        ],
+        "width_mm": 0.127,
+        "center_inside_native_pad": true,
+        "full_width_section_mm": [
+          [
+            12.36223,
+            24.246199999999998
+          ],
+          [
+            12.36223,
+            24.3732
+          ]
+        ],
+        "section_missing_mm": 0.02319999999999922,
+        "transverse_entry_length_mm": 0.0,
+        "transverse_entry_wkt": "LINESTRING EMPTY",
+        "finite_full_width_strips": [],
+        "inward_reserve_mm": 1e-06
+      },
+      "retained_track_strict_pad_entries": [
+        {
+          "passed": true,
+          "pad": "R26.2",
+          "pad_uuid": "8d042e6a-9fcd-424c-a429-05c3658bc800",
+          "net": "SBUS_HV",
+          "track_uuid": "24af4ff1-59b1-43d4-8282-48cf7056a156",
+          "layer": "F.Cu",
+          "endpoint": "start",
+          "xy_mm": [
+            12.36223,
+            24.3097
+          ],
+          "width_mm": 0.127,
+          "center_inside_native_pad": true,
+          "full_width_section_mm": [
+            [
+              12.306243881328518,
+              24.339663386258945
+            ],
+            [
+              12.418216118671483,
+              24.279736613741054
+            ]
+          ],
+          "section_missing_mm": 0.0,
+          "transverse_entry_length_mm": 0.23784377835041054,
+          "transverse_entry_wkt": "LINESTRING (12.36223 24.3097, 12.25 24.1)",
+          "finite_full_width_strips": [
+            {
+              "length_mm": 0.11892188917520527,
+              "polygon_mm": [
+                [
+                  12.278186381328519,
+                  24.287238386258945
+                ],
+                [
+                  12.390158618671483,
+                  24.227311613741055
+                ],
+                [
+                  12.334043618671483,
+                  24.122461613741056
+                ],
+                [
+                  12.222071381328519,
+                  24.182388386258946
+                ],
+                [
+                  12.278186381328519,
+                  24.287238386258945
+                ]
+              ],
+              "area_outside_actual_pad_mm2": 0.0,
+              "boundary_reserve_mm": 0.06276161374105627
+            }
+          ],
+          "inward_reserve_mm": 1e-06
+        },
+        {
+          "passed": true,
+          "pad": "R26.2",
+          "pad_uuid": "8d042e6a-9fcd-424c-a429-05c3658bc800",
+          "net": "SBUS_HV",
+          "track_uuid": "24af4ff1-59b1-43d4-8282-48cf7056a156",
+          "layer": "F.Cu",
+          "endpoint": "end",
+          "xy_mm": [
+            12.25,
+            24.1
+          ],
+          "width_mm": 0.127,
+          "center_inside_native_pad": true,
+          "full_width_section_mm": [
+            [
+              12.305986118671482,
+              24.070036613741056
+            ],
+            [
+              12.194013881328518,
+              24.129963386258947
+            ]
+          ],
+          "section_missing_mm": 0.0,
+          "transverse_entry_length_mm": 0.23784377835041054,
+          "transverse_entry_wkt": "LINESTRING (12.25 24.1, 12.36223 24.3097)",
+          "finite_full_width_strips": [
+            {
+              "length_mm": 0.11892188917520527,
+              "polygon_mm": [
+                [
+                  12.334043618671481,
+                  24.122461613741056
+                ],
+                [
+                  12.222071381328517,
+                  24.182388386258946
+                ],
+                [
+                  12.278186381328517,
+                  24.287238386258945
+                ],
+                [
+                  12.390158618671482,
+                  24.227311613741055
+                ],
+                [
+                  12.334043618671481,
+                  24.122461613741056
+                ]
+              ],
+              "area_outside_actual_pad_mm2": 0.0,
+              "boundary_reserve_mm": 0.06276161374105627
+            }
+          ],
+          "inward_reserve_mm": 1e-06
+        }
+      ],
+      "full_width_actual_copper_corridor": {
+        "width_mm": 0.127,
+        "length_mm": 0.2591294327165461,
+        "centerline_mm": [
+          [
+            12.40223,
+            24.3097
+          ],
+          [
+            12.25,
+            24.1
+          ]
+        ],
+        "polygon_mm": [
+          [
+            12.301387254085357,
+            24.062695843159688
+          ],
+          [
+            12.198612745914643,
+            24.137304156840315
+          ],
+          [
+            12.350842745914642,
+            24.347004156840313
+          ],
+          [
+            12.453617254085357,
+            24.272395843159686
+          ],
+          [
+            12.301387254085357,
+            24.062695843159688
+          ]
+        ],
+        "area_outside_actual_copper_mm2": 0.0,
+        "minimum_boundary_reserve_mm": 0.024488237348409943,
+        "start_section_mm": [
+          [
+            12.350842745914642,
+            24.347004156840313
+          ],
+          [
+            12.453617254085357,
+            24.272395843159686
+          ]
+        ],
+        "end_section_mm": [
+          [
+            12.198612745914643,
+            24.137304156840315
+          ],
+          [
+            12.301387254085357,
+            24.062695843159688
+          ]
+        ],
+        "start_section_missing_from_new_track_mm": 0.0,
+        "end_section_missing_from_actual_pad_mm": 0.0,
+        "new_and_retained_track_polygon_inward_reserve_mm": 1e-05,
+        "pad_geometry": "native ERROR_INSIDE"
+      },
+      "scope": "Only this identified R26.2 junction is accepted by the explicit finite full-width corridor. The direct-pad endpoint predicate remains false; no other shared-pad endpoint is exempted."
+    },
+    "R38": {
+      "passed": true,
+      "classification": "exact_new_track_junction_with_finite_full_width_actual_copper_corridor",
+      "pad": "R38.1",
+      "incoming_track_uuid": "eab3f753-c84f-52be-b8d6-98fc84242d63",
+      "continuation_track_uuid": "ace32a9d-722d-57a5-9890-0e87e2a8f1a5",
+      "incoming_record_sha256": "bb7ba5048c9df298e28c827a4412c20779f5ea590b7583b8aceb18f724e34392",
+      "continuation_record_sha256": "cdd0406cc14728c7c5eead75bd8e36b2c0e95725489ef9f5a57918ea40d66d41",
+      "actual_pad_record_sha256": "ba8afe02f0939d758b35fccdcc584fbd733f53f16400144455bddcd19efd62a6",
+      "direct_incoming_transverse_entry_remains_false": true,
+      "direct_entry_witness": {
+        "passed": false,
+        "pad": "R38.1",
+        "pad_uuid": "7c18f691-25a4-435e-a236-e074e113b363",
+        "net": "DSM_RX_EXT",
+        "track_uuid": "eab3f753-c84f-52be-b8d6-98fc84242d63",
+        "layer": "B.Cu",
+        "endpoint": "end",
+        "xy_mm": [
+          16.83,
+          23.46
+        ],
+        "width_mm": 0.127,
+        "center_inside_native_pad": true,
+        "full_width_section_mm": [
+          [
+            16.874901280605343,
+            23.504901280605345
+          ],
+          [
+            16.785098719394654,
+            23.415098719394656
+          ]
+        ],
+        "section_missing_mm": 0.049357864376270204,
+        "transverse_entry_length_mm": 0.0,
+        "transverse_entry_wkt": "LINESTRING EMPTY",
+        "finite_full_width_strips": [],
+        "inward_reserve_mm": 1e-06
+      },
+      "continuation_strict_pad_entries": [
+        {
+          "passed": true,
+          "pad": "R38.1",
+          "pad_uuid": "7c18f691-25a4-435e-a236-e074e113b363",
+          "net": "DSM_RX_EXT",
+          "track_uuid": "ace32a9d-722d-57a5-9890-0e87e2a8f1a5",
+          "layer": "B.Cu",
+          "endpoint": "start",
+          "xy_mm": [
+            16.83,
+            23.46
+          ],
+          "width_mm": 0.127,
+          "center_inside_native_pad": true,
+          "full_width_section_mm": [
+            [
+              16.83,
+              23.3965
+            ],
+            [
+              16.83,
+              23.523500000000002
+            ]
+          ],
+          "section_missing_mm": 0.0,
+          "transverse_entry_length_mm": 0.26000000000000156,
+          "transverse_entry_wkt": "LINESTRING (16.83 23.46, 17.09 23.46)",
+          "finite_full_width_strips": [
+            {
+              "length_mm": 0.129999999999999,
+              "polygon_mm": [
+                [
+                  16.895,
+                  23.3965
+                ],
+                [
+                  16.895,
+                  23.523500000000002
+                ],
+                [
+                  17.025,
+                  23.523500000000002
+                ],
+                [
+                  17.025,
+                  23.3965
+                ],
+                [
+                  16.895,
+                  23.3965
+                ]
+              ],
+              "area_outside_actual_pad_mm2": 0.0,
+              "boundary_reserve_mm": 0.07499999999999929
+            }
+          ],
+          "inward_reserve_mm": 1e-06
+        },
+        {
+          "passed": true,
+          "pad": "R38.1",
+          "pad_uuid": "7c18f691-25a4-435e-a236-e074e113b363",
+          "net": "DSM_RX_EXT",
+          "track_uuid": "ace32a9d-722d-57a5-9890-0e87e2a8f1a5",
+          "layer": "B.Cu",
+          "endpoint": "end",
+          "xy_mm": [
+            17.09,
+            23.46
+          ],
+          "width_mm": 0.127,
+          "center_inside_native_pad": true,
+          "full_width_section_mm": [
+            [
+              17.09,
+              23.523500000000002
+            ],
+            [
+              17.09,
+              23.3965
+            ]
+          ],
+          "section_missing_mm": 0.0,
+          "transverse_entry_length_mm": 0.26000000000000156,
+          "transverse_entry_wkt": "LINESTRING (17.09 23.46, 16.83 23.46)",
+          "finite_full_width_strips": [
+            {
+              "length_mm": 0.129999999999999,
+              "polygon_mm": [
+                [
+                  17.025,
+                  23.523500000000002
+                ],
+                [
+                  17.025,
+                  23.3965
+                ],
+                [
+                  16.895,
+                  23.3965
+                ],
+                [
+                  16.895,
+                  23.523500000000002
+                ],
+                [
+                  17.025,
+                  23.523500000000002
+                ]
+              ],
+              "area_outside_actual_pad_mm2": 0.0,
+              "boundary_reserve_mm": 0.07499999999999929
+            }
+          ],
+          "inward_reserve_mm": 1e-06
+        }
+      ],
+      "full_width_track_join": {
+        "passed": true,
+        "net": "DSM_RX_EXT",
+        "track_uuids": [
+          "ace32a9d-722d-57a5-9890-0e87e2a8f1a5",
+          "eab3f753-c84f-52be-b8d6-98fc84242d63"
+        ],
+        "layer": "B.Cu",
+        "exact_common_native_endpoint_mm": [
+          [
+            16.83,
+            23.46
+          ]
+        ],
+        "required_width_mm": 0.127,
+        "native_widths_mm": [
+          0.127,
+          0.127
+        ],
+        "native_polygon_overlap_mm2": 0.012755469079500006,
+        "analytic_common_disk_diameter_mm": 0.127,
+        "analytic_common_disk_area_mm2": 0.012667686977437444,
+        "proof": "Exact native straight round-ended track primitives; common endpoint plus unchanged minimum width yields a shared disk of full diameter. Native polygons additionally must have positive actual overlap."
+      },
+      "full_width_actual_copper_corridor": {
+        "width_mm": 0.127,
+        "length_mm": 0.2807133769523651,
+        "centerline_mm": [
+          [
+            16.81,
+            23.48
+          ],
+          [
+            17.09,
+            23.46
+          ]
+        ],
+        "polygon_mm": [
+          [
+            16.805475812325767,
+            23.41666137256075
+          ],
+          [
+            16.81452418767423,
+            23.54333862743925
+          ],
+          [
+            17.09452418767423,
+            23.52333862743925
+          ],
+          [
+            17.085475812325768,
+            23.39666137256075
+          ],
+          [
+            16.805475812325767,
+            23.41666137256075
+          ]
+        ],
+        "area_outside_actual_copper_mm2": 0.0,
+        "minimum_boundary_reserve_mm": 0.013693912868153923,
+        "start_section_mm": [
+          [
+            16.805475812325767,
+            23.41666137256075
+          ],
+          [
+            16.81452418767423,
+            23.54333862743925
+          ]
+        ],
+        "end_section_mm": [
+          [
+            17.085475812325768,
+            23.39666137256075
+          ],
+          [
+            17.09452418767423,
+            23.52333862743925
+          ]
+        ],
+        "start_section_missing_from_incoming_track_mm": 0.0,
+        "end_section_missing_from_actual_pad_mm": 0.0,
+        "track_polygon_inward_reserve_mm": 1e-05,
+        "pad_geometry": "native ERROR_INSIDE"
+      },
+      "scope": "Only the named R38.1 incoming end is classified here. Both direct failures remain false. The separate retained R26 source-bound criterion is unchanged."
+    }
+  },
+  "all_geometry_gates": {
+    "exact_composed_source_contract": true,
+    "strict_pad_entries_or_two_explicit_finite_corridors": true,
+    "all_changed_track_junctions_full_required_width": true,
+    "all_changed_via_entries_finite_actual_annular_strips": true,
+    "all_new_endpoints_resolved": true,
+    "all_28_support_groups_preserved": true,
+    "signal_and_ground_topology": true,
+    "C70_retained_supply_ground_entries": true,
+    "changed_CORE_feed_geometry_and_topology": true,
+    "R70_return": true,
+    "dedicated_D7_return": true,
+    "actual_D7_cut": true,
+    "negative_controls": true,
+    "inputs_rechecked_unchanged": true
+  },
+  "negative_control_count": 28,
+  "manufacturing_margin_claimed": false
+}

@@ -1,0 +1,46 @@
+{
+  "status": "fully_polygon_screened_constructed_native_alternative_pending_native_gates",
+  "engine_insertion_succeeded": false,
+  "engine_result": "FAILED",
+  "constructed_native_alternative": true,
+  "source_board_sha256": "2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115",
+  "source_native_sha256": "7c8386f8aee7b1b01fd14265b0dc778d600a6e6d3aeeba6ac12a13c740859f24",
+  "proposal_sha256": "3cb7ea4dbf6ca4795992aebbc6d1836facd2830e8d423e3a9c5b12460097e00c",
+  "helper_sha256": "d05cf7f2856d1732ba3f51c75f7895a410be1b5c0dad53cd8dcdb29c1ca2d57c",
+  "model_sha256": "07070d0850f79a58043041fa5a888ea09a51bbf6b0e588e2ad793c0c6727a999",
+  "session_sha256": "ed28b213945386d58ac79b874cd88b2b46123f3a8e8c6998ede0320493461e1e",
+  "new_track_segments": 20,
+  "new_vias": 1,
+  "source_objects_removal_allowed": false,
+  "native_validation_required": true,
+  "pending_gates": [
+    "native import / exact source preservation",
+    "native DRC and connectivity",
+    "native actual endpoint/annular process checks",
+    "protection and pin/net proof",
+    "GND-only In1/In4 refill and post-refill reference validation"
+  ],
+  "negative_controls": [
+    {
+      "control": "wrong_source",
+      "rejected": true,
+      "reason": "wrong source board"
+    },
+    {
+      "control": "outside_pad",
+      "rejected": true,
+      "reason": "outside pad"
+    },
+    {
+      "control": "invalid_via_process",
+      "rejected": true,
+      "reason": "invalid via process"
+    },
+    {
+      "control": "invalid_track_process",
+      "rejected": true,
+      "reason": "invalid track process"
+    }
+  ],
+  "report_sha256": "149e96ce7226b4816c6018f487d12c51dea558af93307764f65efab1b0f228f8"
+}

@@ -1,0 +1,610 @@
+{
+  "status": "Conditional local R52/C30 review only; microvolt DC calculation does not establish low-noise ILM return or transient qualification.",
+  "inputs": {
+    "board": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/candidate06/f722-heli.kicad_pcb",
+      "sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42"
+    },
+    "native": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/candidate06/f722-heli.native.json",
+      "sha256": "06264e957d9da1c94688449a4153658c7baa56c799695396862cb13a9fd2f8d1"
+    },
+    "proposal": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/candidate06/proposal.json",
+      "sha256": "c3e5326b78e460aa25e8c16f328e47027ebbdeb23be2a1a423f9d41130c2cace"
+    },
+    "source14_proposal": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/dedicated-u12-ground15/separated-returns14-proposal.json",
+      "sha256": "c3e5326b78e460aa25e8c16f328e47027ebbdeb23be2a1a423f9d41130c2cace"
+    },
+    "quiet_alternatives": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/dedicated-u12-ground15/quiet-return-alternatives14.json",
+      "sha256": "c4669bbbf554a8e2662a7df0de874776f373b75351c7673dc891babfbd16f4b7"
+    },
+    "construction_provenance": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/candidate06/construction-provenance.json",
+      "sha256": "ee0a9b0906445019ac5c8ab3128899a0d1bfe191d80960aa17086079b73e95ae"
+    },
+    "native_gate_summary": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/candidate06/owner-summary.json",
+      "sha256": "0492565d23c5befb809838ee70a48da409046230242758a456b621145de6ba46"
+    },
+    "TI_datasheet": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/independent-core-voltage-review/sources/TPS25947.pdf",
+      "sha256": "8f96de389903091650d4f462dcfad3210071c3ae7093623a7978f34baf8a65b4"
+    },
+    "TI_text": {
+      "path": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/independent-core-voltage-review/sources/TPS25947.txt",
+      "sha256": "31fde9b5395eb31ceb0002016b3b8125686bde54a994debd3461d8a70ed254b0"
+    }
+  },
+  "board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+  "source14_board_sha256": "73dbae05954b8edec4143d91248bf38c40537f83e8f5f3fed51744105169d6c7",
+  "source14_proposal_byte_identical": true,
+  "parts": {
+    "C30": {
+      "ref": "C30",
+      "value": "220nF / 16V / X7R",
+      "xy": [
+        15.25,
+        16.0
+      ],
+      "angle": 90.0,
+      "side": "F.Cu",
+      "fpid": "F722_Heli:C_0402_1005Metric"
+    },
+    "R52": {
+      "ref": "R52",
+      "value": "750R / 1%",
+      "xy": [
+        14.1,
+        16.0
+      ],
+      "angle": 90.0,
+      "side": "F.Cu",
+      "fpid": "F722_Heli:R_0402_1005Metric"
+    },
+    "U5": {
+      "ref": "U5",
+      "value": "TPS259472ARPWR",
+      "xy": [
+        12.06,
+        16.5
+      ],
+      "angle": 0.0,
+      "side": "F.Cu",
+      "fpid": "F722_Heli:Texas_RPW0010A_TPS259472_2x2mm"
+    }
+  },
+  "pads": {
+    "R52.1": {
+      "uuid": "d42de94f-a6de-4f2e-b3b7-60b8cab3f884",
+      "kind": "pad",
+      "key": "R52.1",
+      "net": "EFUSE_ILM",
+      "xy": [
+        14.1,
+        16.51
+      ]
+    },
+    "R52.2": {
+      "uuid": "9efddf26-9b4b-44cc-bde1-9aaf7a06f734",
+      "kind": "pad",
+      "key": "R52.2",
+      "net": "GND",
+      "xy": [
+        14.1,
+        15.49
+      ]
+    },
+    "C30.1": {
+      "uuid": "e6a5c7e0-683a-4cf6-9fc7-097b7a2f54f3",
+      "kind": "pad",
+      "key": "C30.1",
+      "net": "ADC_BEC",
+      "xy": [
+        15.25,
+        16.48
+      ]
+    },
+    "C30.2": {
+      "uuid": "d8f421b1-f5b4-4ba1-90d0-a4e4f1649513",
+      "kind": "pad",
+      "key": "C30.2",
+      "net": "GND",
+      "xy": [
+        15.25,
+        15.52
+      ]
+    },
+    "U5.8": {
+      "uuid": "4f0016cf-9995-4856-bdc4-785313abd18b",
+      "kind": "pad",
+      "key": "U5.8",
+      "net": "GND",
+      "xy": [
+        12.96,
+        16.725
+      ]
+    },
+    "U5.9": {
+      "uuid": "c597c7bd-562c-464f-93c7-5cefefd5c72f",
+      "kind": "pad",
+      "key": "U5.9",
+      "net": "EFUSE_ILM",
+      "xy": [
+        12.96,
+        16.275
+      ]
+    }
+  },
+  "paths": {
+    "R52_to_C30": {
+      "uuid": "1bcd528f-ccfa-587e-9940-c40bbcdadd1c",
+      "kind": "track",
+      "net": "GND",
+      "start": [
+        14.1,
+        15.49
+      ],
+      "end": [
+        15.25,
+        15.52
+      ],
+      "width": 0.2,
+      "length_mm": 1.150391237796951
+    },
+    "shared_C30_to_via": {
+      "uuid": "3971ab08-e156-4148-8f93-1a9c4636b51f",
+      "kind": "track",
+      "net": "GND",
+      "start": [
+        15.25,
+        15.52
+      ],
+      "end": [
+        16.4574,
+        15.8435
+      ],
+      "width": 0.25,
+      "length_mm": 1.2499868039303457
+    },
+    "shared_via": {
+      "uuid": "b931d764-eacd-41bd-af16-b2f6764a796a",
+      "kind": "via",
+      "net": "GND",
+      "xy": [
+        16.4574,
+        15.8435
+      ],
+      "start": [
+        16.4574,
+        15.8435
+      ],
+      "end": [
+        16.4574,
+        15.8435
+      ],
+      "width": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    "R52_to_first_plane_trace_centerline_mm": 2.4003780417272966,
+    "U5_actual_GND_pin8_trace_records": [
+      {
+        "uuid": "de2656d9-6b4b-4d85-a9e0-6b4a94bc80d3",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          12.96,
+          16.725
+        ],
+        "end": [
+          13.5,
+          16.9
+        ],
+        "width": 0.15
+      },
+      {
+        "uuid": "804e54e5-1a24-4bf1-99a3-c7f8860e3573",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          13.5,
+          16.9
+        ],
+        "end": [
+          13.65,
+          16.94
+        ],
+        "width": 0.15
+      },
+      {
+        "uuid": "5273dbcd-421f-42fd-a2c1-9c9d539d2d2c",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          13.65,
+          16.94
+        ],
+        "end": [
+          13.85,
+          17.02
+        ],
+        "width": 0.15
+      },
+      {
+        "uuid": "6570cc7d-4117-40de-b942-62e04dce1497",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          13.85,
+          17.02
+        ],
+        "end": [
+          14.15,
+          17.02
+        ],
+        "width": 0.15
+      },
+      {
+        "uuid": "c58df576-e0f7-4e7f-bf3a-40da1b455eb1",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          14.15,
+          17.02
+        ],
+        "end": [
+          14.15,
+          17.23
+        ],
+        "width": 0.15
+      }
+    ],
+    "U5_actual_GND_pin8_trace_centerline_mm": 1.4482969981911682,
+    "U5_actual_GND_pin8_via": {
+      "uuid": "a9f49556-537f-4939-b5d5-d397fabd55ad",
+      "kind": "via",
+      "net": "GND",
+      "xy": [
+        14.15,
+        17.23
+      ],
+      "start": [
+        14.15,
+        17.23
+      ],
+      "end": [
+        14.15,
+        17.23
+      ],
+      "width": 0.45
+    },
+    "unchanged_ILM_signal_trace": {
+      "uuid": "ba8578ee-4584-4db5-ab85-d7cb5a9a6c71",
+      "kind": "track",
+      "net": "EFUSE_ILM",
+      "start": [
+        14.1,
+        16.51
+      ],
+      "end": [
+        12.96,
+        16.275
+      ],
+      "width": 0.2
+    }
+  },
+  "conditional_shared_copper_DC": {
+    "rho20_assumed_ohm_m": 1.724e-08,
+    "alpha_assumed_per_C": 0.00393,
+    "copper_temperature_assumed_C": 105,
+    "rho105_ohm_m": 2.2999022e-08,
+    "thickness_assumed_um": 15,
+    "width_mm": 0.25,
+    "length_mm": 1.2499868039303457,
+    "formula": "rho20 * (1 + alpha*(105-20)) * L/(w*t)",
+    "resistance_ohm": 0.00766625973421432,
+    "rail_normal_current_assumed_A": 2.0,
+    "TI_GIMON_min_max_uA_per_A": [
+      165,
+      200
+    ],
+    "ILM_max_current_A": 0.0004,
+    "shared_drop_V": 3.0665038936857285e-06,
+    "shared_drop_uV": 3.0665038936857285,
+    "fraction_of_nominal_750ohm_ppm": 10.221679645619094,
+    "nominal_R52_voltage_at_this_IMON_V": 0.3,
+    "shared_copper_dissipation_W": 1.2266015574742913e-09,
+    "excluded": [
+      "Via barrel/contact resistance",
+      "Ground-plane and U5.8 return impedance",
+      "Etch, width and copper-thickness manufacturing tolerances",
+      "C30 charging, ADC sampling and injected noise currents",
+      "Transient inductance/coupling",
+      "Overload/current-limit/fault behavior"
+    ],
+    "95_percent_IACS_sensitivity": {
+      "definition": "Scale the stated approximately 100% IACS rho20 by 1/0.95, with the same assumed temperature coefficient.",
+      "rho105_ohm_m": 2.4209496842105265e-08,
+      "resistance_ohm": 0.008069747088646653,
+      "at_total_eFuse_2A_IMON_A": 0.0004,
+      "at_total_eFuse_2A_drop_uV": 3.2278988354586615,
+      "at_datasheet_5p5A_illustration_IMON_A": 0.0011,
+      "at_datasheet_5p5A_illustration_drop_uV": 8.876721797511319,
+      "fraction_of_750ohm_ppm": 10.759662784862204
+    }
+  },
+  "TI_source": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+    "document": "SLVSFC9C Rev. C, May 2026",
+    "gain_location": "Section 6.5, printed p10",
+    "gain_conditions": "At 2 A use the 1\u20135.5 A row with IOUT < ILIM. Table defaults include VIN=12V, RILM=549 ohm, \u221240\u00b0C\u2264TJ\u2264125\u00b0C; calculation is conditional under applicable stated specifications, not a measured 750-ohm circuit guarantee.",
+    "layout_location": "Section 8.4.1, printed pp62\u201363",
+    "pin_location": "Table 5-1, printed p5: actual device GND is pin8; ILM is pin9",
+    "layout_summary": "Short support-component returns to the device GND pin; quiet analog ground, separation from switching/noisy nodes; ILM parasitic capacitance below 50 pF."
+  },
+  "decision": "Small local DC resistive contribution is supported conditionally. ADC_BEC charge/sampling/noise coupling and device-ground potential remain unqualified. The supplied exact fixed-signal 0.20-mm F.Cu domain blocks the quiet R51 and actual U5.8 targets, while C30 is reachable; this is a local structural blocker, not global infeasibility. No fallback routing or broad diagnostic was run.",
+  "existing_native_status_read_only": {
+    "summary": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/ordinary-routing/tests/servo48/candidate06/owner-summary.json",
+    "native_refill_performed": true,
+    "critical_ground_return_faults": [],
+    "DRC": {
+      "unconnected": 14,
+      "errors": 0,
+      "warnings": 0
+    },
+    "protection": {
+      "passed": 16,
+      "total": 18,
+      "board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42"
+    },
+    "note": "Existing gate results only, no checks rerun and no global acceptance inferred."
+  },
+  "all_read_inputs_unchanged": true,
+  "load_scope_correction": "The external 2 A rail load is not a bound on total U5 current. Core/DSM loads can contribute when supplied through U5. The 0.4 mA illustration assumes total U5 IOUT is 2 A. The 5.5 A \u00d7 200 \u00b5A/A = 1.1 mA figure is a datasheet gain illustration only, not this board continuous-current rating or assurance that the selected 750-ohm current-limit setting permits 5.5 A normal operation. GIMON row still requires IOUT < ILIM.",
+  "bounded_quiet_return_receipt": {
+    "schema": "f722-quiet-return-alternatives-fixed-pose/v1",
+    "board_sha256": "73dbae05954b8edec4143d91248bf38c40537f83e8f5f3fed51744105169d6c7",
+    "search_bounds_mm": [
+      10.0,
+      10.7,
+      17.5,
+      19.2
+    ],
+    "width_mm": 0.2,
+    "U12_discharge_reserved_separately": true,
+    "R52_reachable_area_mm2": 5.8115225284258845,
+    "targets": [
+      {
+        "target": "R51_pad",
+        "xy": [
+          12.21,
+          14.55
+        ],
+        "same_complete_F_region": false,
+        "short_path_screen": {
+          "points": [
+            [
+              14.1,
+              15.49
+            ],
+            [
+              13.16,
+              14.55
+            ],
+            [
+              12.21,
+              14.55
+            ]
+          ],
+          "violations": [
+            {
+              "object": "8fc6a4ff-a1b4-5a7d-8b2e-5227f201e446",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            }
+          ],
+          "independent_U12_gap_mm": 0.8269753908802498,
+          "length_mm": 2.279360748630708
+        }
+      },
+      {
+        "target": "R51_new_via",
+        "xy": [
+          12.045672,
+          13.000917
+        ],
+        "same_complete_F_region": false,
+        "short_path_screen": {
+          "points": [
+            [
+              14.1,
+              15.49
+            ],
+            [
+              14.1,
+              13.000917
+            ],
+            [
+              12.045672,
+              13.000917
+            ]
+          ],
+          "violations": [
+            {
+              "object": "C8.1",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            },
+            {
+              "object": "97cad7ea-ec68-4e73-a66f-8377aa35ff50",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            }
+          ],
+          "independent_U12_gap_mm": 0.0,
+          "length_mm": 4.543411000000001
+        }
+      },
+      {
+        "target": "R51_lead_mid",
+        "xy": [
+          11.95,
+          14.15
+        ],
+        "same_complete_F_region": false,
+        "short_path_screen": {
+          "points": [
+            [
+              14.1,
+              15.49
+            ],
+            [
+              11.95,
+              14.15
+            ]
+          ],
+          "violations": [
+            {
+              "object": "8fc6a4ff-a1b4-5a7d-8b2e-5227f201e446",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            }
+          ],
+          "independent_U12_gap_mm": 1.1115072065037035,
+          "length_mm": 2.5333969290263223
+        }
+      },
+      {
+        "target": "U5_8_via",
+        "xy": [
+          14.15,
+          17.23
+        ],
+        "same_complete_F_region": false,
+        "short_path_screen": {
+          "points": [
+            [
+              14.1,
+              15.49
+            ],
+            [
+              14.15,
+              17.23
+            ]
+          ],
+          "violations": [
+            {
+              "object": "ba8578ee-4584-4db5-ab85-d7cb5a9a6c71",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            },
+            {
+              "object": "R52.1",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            }
+          ],
+          "independent_U12_gap_mm": 1.7420776340293127,
+          "length_mm": 1.7407182425654075
+        }
+      },
+      {
+        "target": "U5_8_pad",
+        "xy": [
+          12.96,
+          16.725
+        ],
+        "same_complete_F_region": false,
+        "short_path_screen": {
+          "points": [
+            [
+              14.1,
+              15.49
+            ],
+            [
+              12.96,
+              16.725
+            ]
+          ],
+          "violations": [
+            {
+              "object": "ba8578ee-4584-4db5-ab85-d7cb5a9a6c71",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.227
+            },
+            {
+              "object": "U5.9",
+              "category": "foreign_copper",
+              "layers": [
+                "F.Cu"
+              ],
+              "extra_clearance_mm": -0.20635569722318836
+            }
+          ],
+          "independent_U12_gap_mm": 1.7420771975853513,
+          "length_mm": 1.6807215712306427
+        }
+      },
+      {
+        "target": "C30_2",
+        "xy": [
+          15.25,
+          15.52
+        ],
+        "same_complete_F_region": true,
+        "short_path_screen": {
+          "points": [
+            [
+              14.1,
+              15.49
+            ],
+            [
+              15.25,
+              15.52
+            ]
+          ],
+          "violations": [],
+          "independent_U12_gap_mm": 1.742076609929977,
+          "length_mm": 1.150391237796951
+        }
+      }
+    ],
+    "elapsed_seconds": 1.923445673994138,
+    "limits": [
+      "Bounded exact F.Cu fixed-pose domain with all signal/analog copper preserved. A disconnected domain is a local structural blocker, not global infeasibility.",
+      "20nm source polygon reserve; no snapping or geometry normalization.",
+      "R51 quiet return may be shared, but U12 local copper and first via are reserved at normal copper clearance."
+    ]
+  }
+}

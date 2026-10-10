@@ -1,0 +1,5 @@
+# V16 excluded inputs and replay limits
+
+Large native/mechanical geometry is omitted. Exact paths, byte counts and SHA-256 values are recorded in tests/checkpoint45/raw-evidence.json under excluded_files. This avoids duplicated raw exports while keeping every source binding explicit. Full routed boards and paired projects are recovered through sessions/recovery-v16 rather than included directly. No raw JVM/FEM payloads, binaries, caches, live repository state, Git metadata, or later routing hypotheses are added.
+
+The packet does not independently rerun original native runtime-index physical equality, finite-width/probe connectivity, native orthogonal footprint transforms, native DRC/refill, mechanical or placement reproduction. It does not elevate current numerical power/VCAP applicability or I2C qualification. Original full native replay requires regeneration/restoration and exact digest verification of the omitted exports; this packet does not promise native regeneration will reproduce those bytes. Existing V15 omissions and limitations remain in docs/historical-v15 and its inherited evidence index.

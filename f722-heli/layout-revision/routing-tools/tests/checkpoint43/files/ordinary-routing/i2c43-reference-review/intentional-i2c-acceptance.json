@@ -1,0 +1,334 @@
+{
+  "schema": "f722-intentional-I2C-geometric-WIP-acceptance/v1",
+  "source41_board_sha256": "539d9547eb8c4d5984481293ae10cee34355ee838dff11ab43b00cca270ceae2",
+  "source42_board_sha256": "eac130eb32389c82b2bae274e2c50b73675c79d442cfc8441956369b4cdf3304",
+  "board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+  "scope": "Only these exact source41\u219243 intentional BARO_SCL/BARO_SDA routing changes and associated declared support changes; exact42\u219243 correction is five SDA tracks. This is not a reusable exemption for other boards/nets or an electrical pass.",
+  "eligible_for_geometric_WIP_adoption": true,
+  "electrical_qualified": false,
+  "guards": {
+    "source_bindings_current": true,
+    "all_16_existing_critical_native_objects_identical": true,
+    "all_16_existing_critical_projected_reference_deficits_identical": true,
+    "both_native_complete_three_terminal_nets": true,
+    "both_pass_unchanged_strict_clean_tree_extractor": true,
+    "both_reference_planes_one_component_all118_ties_contact": true,
+    "41_to43_only_exact_declared_object_and_footprint_delta": true,
+    "current_source_bound_entry_support_audit_passed": true,
+    "42_to43_only_exact_declared_five_SDA_tracks_replaced": true,
+    "42_to43_saved_zone_records_and_all_retained_native_objects_identical": true
+  },
+  "I2C_reference_totals": {
+    "BARO_SCL": {
+      "native_complete": true,
+      "all_terminals_connected": true,
+      "native_planar_length_mm": 19.59615360853435,
+      "track_count": 13,
+      "raw_GND_centerline_missing_mm": 2.526403558104753,
+      "raw_GND_trace_width_missing_mm2": 0.3896450564992601,
+      "physical_GND_centerline_missing_mm": 2.526403558104753,
+      "physical_GND_trace_width_missing_mm2": 0.3896450564992601,
+      "drill_polygon_envelope_uncertainty_centerline_mm": 0.0,
+      "drill_polygon_envelope_uncertainty_area_mm2": 0.0,
+      "physical_missing_centerline_mm_by_class": {
+        "local_own_via_window_in_saved_hole": 2.526403558104753,
+        "drill_void_outside_own_window": 0,
+        "saved_void_or_edge_outside_own_window": 0
+      },
+      "physical_missing_trace_width_mm2_by_class": {
+        "local_own_via_window_in_saved_hole": 0.38963486640803335,
+        "drill_void_outside_own_window": 0,
+        "saved_void_or_edge_outside_own_window": 1.0190091226732164e-05
+      }
+    },
+    "BARO_SDA": {
+      "native_complete": true,
+      "all_terminals_connected": true,
+      "native_planar_length_mm": 22.60046865692158,
+      "track_count": 20,
+      "raw_GND_centerline_missing_mm": 2.4695734090251333,
+      "raw_GND_trace_width_missing_mm2": 0.35719604034707164,
+      "physical_GND_centerline_missing_mm": 2.4695734090251333,
+      "physical_GND_trace_width_missing_mm2": 0.35719604034707164,
+      "drill_polygon_envelope_uncertainty_centerline_mm": 0.0,
+      "drill_polygon_envelope_uncertainty_area_mm2": 0.0,
+      "physical_missing_centerline_mm_by_class": {
+        "local_own_via_window_in_saved_hole": 2.4695734090251333,
+        "drill_void_outside_own_window": 0,
+        "saved_void_or_edge_outside_own_window": 0
+      },
+      "physical_missing_trace_width_mm2_by_class": {
+        "local_own_via_window_in_saved_hole": 0.3571960403470712,
+        "drill_void_outside_own_window": 0,
+        "saved_void_or_edge_outside_own_window": 0
+      }
+    }
+  },
+  "explicit_nonzero_outside_own_window_width_components": [
+    {
+      "net": "BARO_SDA",
+      "track_uuid": "5bb71eb6-3093-5afe-b29d-1cae286805c6",
+      "signal_layer": "In3.Cu",
+      "reference_layer": "In4.Cu",
+      "classification": "saved_void_or_edge_outside_own_window",
+      "area_mm2": 7.621748690956714e-18,
+      "bounds_mm": [
+        14.027232124249918,
+        19.55354,
+        14.047949,
+        19.562121326141128
+      ],
+      "projected_along_trace_extent_mm": 0.0062948800450624565,
+      "projected_across_trace_extent_mm": 0.02152214172434813,
+      "signed_across_trace_range_mm": [
+        0.041978020804365856,
+        0.06350016252871399
+      ],
+      "minimum_centerline_distance_mm": 0.04197802080436586,
+      "maximum_trace_halfwidth_mm": 0.0635
+    },
+    {
+      "net": "BARO_SCL",
+      "track_uuid": "dba56718-9e33-5ed4-ad5e-97c432ac62df",
+      "signal_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "classification": "saved_void_or_edge_outside_own_window",
+      "area_mm2": 1.0190091226732164e-05,
+      "bounds_mm": [
+        21.773823578896394,
+        21.1165,
+        21.780842,
+        21.143474
+      ],
+      "projected_along_trace_extent_mm": 0.007018421103605732,
+      "projected_across_trace_extent_mm": 0.026974000000002718,
+      "signed_across_trace_range_mm": [
+        0.036525999999998504,
+        0.06350000000000122
+      ],
+      "minimum_centerline_distance_mm": 0.036525999999998504,
+      "maximum_trace_halfwidth_mm": 0.0635
+    },
+    {
+      "net": "BARO_SDA",
+      "track_uuid": "e52e2d8d-0a7f-5688-a9d5-f24ce8188f3a",
+      "signal_layer": "In2.Cu",
+      "reference_layer": "In1.Cu",
+      "classification": "saved_void_or_edge_outside_own_window",
+      "area_mm2": 1.3611079810052984e-17,
+      "bounds_mm": [
+        14.58207,
+        20.001115286509833,
+        14.590917839060111,
+        20.01644
+      ],
+      "projected_along_trace_extent_mm": 0.004579841830386733,
+      "projected_across_trace_extent_mm": 0.017092575826889472,
+      "signed_across_trace_range_mm": [
+        -0.06349999387616351,
+        -0.046407418049274035
+      ],
+      "minimum_centerline_distance_mm": 0.04640741804927404,
+      "maximum_trace_halfwidth_mm": 0.0635
+    }
+  ],
+  "I2C_lengths_mm": {
+    "BARO_SCL": 19.59615360853435,
+    "BARO_SDA": 22.600468656921585
+  },
+  "source42_to43_numeric_delta": {
+    "BARO_SCL": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "BARO_SDA": {
+      "native_planar_length_mm": 0.08600584059955452,
+      "physical_GND_centerline_missing_mm": 0.0020720262303877135,
+      "physical_GND_trace_width_missing_mm2": -0.00097957113440178
+    },
+    "USB_P": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "USB_N": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_IN": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "HSE_XTAL_OUT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_CS": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_INT": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_MISO": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_MOSI": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    },
+    "IMU_SCK": {
+      "native_planar_length_mm": 0.0,
+      "physical_GND_centerline_missing_mm": 0.0,
+      "physical_GND_trace_width_missing_mm2": 0.0
+    }
+  },
+  "controls": {
+    "actual43_accepted_for_geometry_only": true,
+    "wrong_board_hash_rejected": true,
+    "unrelated_critical_object_change_rejected": true,
+    "wrong_I2C_terminal_inventory_rejected": true,
+    "original42_strict_topology_refusal_rejected": true,
+    "new_critical_reference_loss_rejected": true,
+    "wrong_board_snapshot_binding_rejected": true,
+    "wrong_geometry_snapshot_binding_rejected": true
+  },
+  "RC_screen": {
+    "external_Rmax_ohm": 2244.22,
+    "rise_ns_per_pF": 1.901527606,
+    "provisional_total_target_pF": 50,
+    "rise_ns_at_50pF": 95.0763803,
+    "capacitance_pF_at_100ns": 52.5892969865198,
+    "device_pad_assembly_engineering_allocation_pF": 25,
+    "route_model_probe_budget_to_50pF_pF": 25,
+    "internal_pullup_credit": false,
+    "status": "NO_ACTUAL_CAPACITANCE_OR_RC_ESTIMATE: material/geometric bounds, external-copper distance and probe/assembly inputs remain absent. No invented tolerance or electrical pass."
+  },
+  "remaining_electrical_qualification_gaps": [
+    "No DPS368 3.3 V VOL/IOL maximum guarantee located",
+    "No explicit DPS368 ordinary 800 kHz Fast-mode Plus qualification located",
+    "STM32 5 pF pin capacitance is typical, not maximum; DPS368 pin capacitance not individually bounded",
+    "3.432 V TPS62162 corner is initial accuracy only; actual maximum rail/ripple/transient must be verified",
+    "Actual stock binary, saved settings, I2C register and clock readback pending",
+    "First-article MCU and DPS-driven waveform and error-rate checks pending"
+  ],
+  "capacitance_model_status": {
+    "BARO_SCL": {
+      "status": "refused_pending_inputs_or_route",
+      "reasons": [
+        "Document and review the engineering assumptions",
+        "Missing/invalid epsilon_r_max",
+        "Missing/invalid signal_edge_growth_mm",
+        "Missing/invalid foreign_edge_growth_mm",
+        "Missing/invalid relative_layer_registration_mm",
+        "Missing/invalid probe_capacitance_pF",
+        "Missing/invalid additional_model_allowance_pF",
+        "Missing/invalid unmodeled_external_copper_min_distance_mm",
+        "Missing/invalid min/max thickness: F.Cu",
+        "Missing/invalid min/max thickness: dielectric 1",
+        "Missing/invalid min/max thickness: In1.Cu",
+        "Missing/invalid min/max thickness: dielectric 2",
+        "Missing/invalid min/max thickness: In2.Cu",
+        "Missing/invalid min/max thickness: dielectric 3",
+        "Missing/invalid min/max thickness: In3.Cu",
+        "Missing/invalid min/max thickness: dielectric 4",
+        "Missing/invalid min/max thickness: In4.Cu",
+        "Missing/invalid min/max thickness: dielectric 5",
+        "Missing/invalid min/max thickness: B.Cu",
+        "Missing evidence/explicit engineering rationale: dielectric_bound",
+        "Missing evidence/explicit engineering rationale: thickness_bounds",
+        "Missing evidence/explicit engineering rationale: etch_registration",
+        "Missing evidence/explicit engineering rationale: probe",
+        "Missing evidence/explicit engineering rationale: external_copper",
+        "Missing evidence/explicit engineering rationale: assembly_allocation"
+      ],
+      "estimated_total_pF": null,
+      "estimated_rise_ns": null,
+      "qualification_pass": false
+    },
+    "BARO_SDA": {
+      "status": "refused_pending_inputs_or_route",
+      "reasons": [
+        "Document and review the engineering assumptions",
+        "Missing/invalid epsilon_r_max",
+        "Missing/invalid signal_edge_growth_mm",
+        "Missing/invalid foreign_edge_growth_mm",
+        "Missing/invalid relative_layer_registration_mm",
+        "Missing/invalid probe_capacitance_pF",
+        "Missing/invalid additional_model_allowance_pF",
+        "Missing/invalid unmodeled_external_copper_min_distance_mm",
+        "Missing/invalid min/max thickness: F.Cu",
+        "Missing/invalid min/max thickness: dielectric 1",
+        "Missing/invalid min/max thickness: In1.Cu",
+        "Missing/invalid min/max thickness: dielectric 2",
+        "Missing/invalid min/max thickness: In2.Cu",
+        "Missing/invalid min/max thickness: dielectric 3",
+        "Missing/invalid min/max thickness: In3.Cu",
+        "Missing/invalid min/max thickness: dielectric 4",
+        "Missing/invalid min/max thickness: In4.Cu",
+        "Missing/invalid min/max thickness: dielectric 5",
+        "Missing/invalid min/max thickness: B.Cu",
+        "Missing evidence/explicit engineering rationale: dielectric_bound",
+        "Missing evidence/explicit engineering rationale: thickness_bounds",
+        "Missing evidence/explicit engineering rationale: etch_registration",
+        "Missing evidence/explicit engineering rationale: probe",
+        "Missing evidence/explicit engineering rationale: external_copper",
+        "Missing evidence/explicit engineering rationale: assembly_allocation"
+      ],
+      "estimated_total_pF": null,
+      "estimated_rise_ns": null,
+      "qualification_pass": false
+    }
+  },
+  "fresh_power_VCAP_numerical_revalidation_required": true,
+  "interpretation": "Localized missing I2C reference remains explicitly reviewed geometry; no broad unchanged-reference, zero-area, worst-case-capacitance or full electrical claim. Apply this receipt only after independently required native/process/entry/support/parity guards also pass on the exact hash.",
+  "sources": {
+    "ordinary-routing/i2c43-reference-review/review_exact43.py": "f5556bc00346b71a6758a194f1b3c28197fe2f880f4332a754bedf60e19577c8",
+    "ordinary-routing/candidate41/f722-heli.kicad_pcb": "539d9547eb8c4d5984481293ae10cee34355ee838dff11ab43b00cca270ceae2",
+    "ordinary-routing/candidate43/f722-heli.kicad_pcb": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+    "ordinary-routing/candidate43/i2c-geometry-review.json": "72125d9776985692e2cb9b6c400490ca1098e2cbfab71908a17b6a2125d0a4c7",
+    "ordinary-routing/candidate43/owner-critical.json": "8683bdbbd9b3339622eaed5a5bed5bd4f8a2c82eefd4c9a442b29cac4583c535",
+    "ordinary-routing/candidate43/i2c-entry-support-audit.json": "a80e2558466dcf0e1f8651a6a5ca9792711c68371a18d29b920f3e3e1b8dc340",
+    "signal-review/final-native-i2c-requirements.json": "a6bc1fde839932e472578f2f438a03d1fa61269a853bfcbcebcb0b14555f3e1e",
+    "signal-review/stock-i2c-calculations.json": "4e6cd749830be2d17327d0cdbb7d98f1cff42ed7311dd8baead9b5dc70d4118d",
+    "signal-review/stock-i2c-review.md": "ce411346134a04ca6dcfb3a522c150f962ff4e19d71e77381eb7f1826c996541",
+    "repo/f722-heli/layout-revision/signal-review/native/model-inputs.template.json": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184",
+    "ordinary-routing/candidate41/f722-heli.native.json": "e5bafbcfd37556b38b686d2493d0f0b894c41f714405452b4c6b7177a8f22962",
+    "ordinary-routing/candidate43/f722-heli.native.json": "05dc43aad22ced8a7b7b9145a4514cca62854bf888a9ffc7626877eae8a36140",
+    "ordinary-routing/candidate43/construction-provenance.json": "2c1900b32de8e4ceac984b0443aed3188eadd10e6c52564415d91500f362022d",
+    "ordinary-routing/candidate43/construct_i2c_topology43.py": "8e12de6839f181075e5661fe1145dcda9fcd4396689fec6144d0943c418d105c",
+    "ordinary-routing/candidate42/construction-provenance.json": "c41aba4d0ef4ea83c1770981ff43e6c8eb2b1e8e5e8e457ff920acb83ce386eb",
+    "ordinary-routing/candidate42/i2c-geometry-review.json": "63985256de64f729ac42d95e1b96c9ef57dc2b945b8da4258b1d3f3097877566",
+    "ordinary-routing/candidate42/f722-heli.kicad_pcb": "eac130eb32389c82b2bae274e2c50b73675c79d442cfc8441956369b4cdf3304",
+    "ordinary-routing/candidate41/reference-snapshot/native-geometry.json": "e5bafbcfd37556b38b686d2493d0f0b894c41f714405452b4c6b7177a8f22962",
+    "ordinary-routing/candidate41/reference-snapshot/native-signals.json": "1ed4d9fcefd364c5aa6c6012947a8d2aaa07148ad3075414cebeda68d4179e50",
+    "ordinary-routing/candidate41/reference-snapshot/critical-reference.json": "8652a62dcb31e23b54597a863d710111575cd1541f477d736f9cd57871c146bd",
+    "ordinary-routing/candidate42/reference-snapshot/native-geometry.json": "b55b4df00c23c68d59a75eaec681f4bba483eb09a9ee4ed7371746e1b0bd2b32",
+    "ordinary-routing/candidate42/reference-snapshot/native-signals.json": "7d28687be2ab4e2720683a94aa1da3ff0bbf2f4da33a90f82c8392338efe937d",
+    "ordinary-routing/candidate42/reference-snapshot/critical-reference.json": "3f0dfaff4ec361c4594cfb13a58e653bf86e2d2becde89989f2e69385d8b6d33",
+    "ordinary-routing/candidate43/reference-snapshot/native-geometry.json": "05dc43aad22ced8a7b7b9145a4514cca62854bf888a9ffc7626877eae8a36140",
+    "ordinary-routing/candidate43/reference-snapshot/native-signals.json": "afc9e21ed53ff0444d06930f35ef62614de602d8e0ccb08010e0f42cf49e6ced",
+    "ordinary-routing/candidate43/reference-snapshot/critical-reference.json": "aa9716e6862a7d734f06d4d604626afd03b56eca4e80d02a30b8801cdefbe919",
+    "critical-reference-review/native/check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
+    "critical-reference-review/native/check_critical_reference.py": "13bb66cdf4d74af0fb9ce78d0f61f38b1d912d348d1be6b46c4f2a4437a02750",
+    "critical-reference-review/native/compare_reference_geometry.py": "84c839c7f13ec624938a7c0b3bb96b57b39bcfdb8e0ab532d0c11abd53b4dc5e",
+    "ordinary-routing/i2c43-reference-review/reference-comparison-41-to43.json": "9005ef728cf89966280585bf003db126c1598316f33ae19012a691ebfba1a864",
+    "ordinary-routing/i2c43-reference-review/reference-comparison-42-to43.json": "8c126e849197b3efaa868adb5cdd33a765d8bab79de8bcba40c61b4471dfbc89",
+    "ordinary-routing/i2c43-reference-review/scoped-review.json": "0695b611ac4f04ac85bc55de8177f2d93b6dfc6d33da3883919a806163c3acc8"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "f722-corrected-source43-power-status/v1",
+  "board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+  "source_unfinished_connections": 37,
+  "result_sha256": "1466a094fc40cfbed24fbda76d5445bad9c06d951389e2440ed6b0cd3b13bac9",
+  "summary_sha256": "030fa2ae528c45d9f0207eac4fb9b93c74cc84cf3296035f995d869bf0409550",
+  "freeze_sha256": "2c281f2d6767e0231713e02b5db810a4a0fa5e9ee0831e673b8e0ec1bcf645bd",
+  "ledger_sha256": "f575a6b7185b15ef59ec788c3fa5ffe04b77d0c4ee50588fb2f917825d2fedb1",
+  "model_review_sha256": "e88a13992ef011f71ebe9504e733dbf23c49f17ffaff76b882a12adadb64e9bf",
+  "required_conditional_cases": 294,
+  "required_scope_acceptance": true,
+  "ten_actual_supply_pad_windows_pass": true,
+  "VCAP_loops": 5,
+  "VCAP_acceptance": true,
+  "numerical_acceptance": true,
+  "runner_overall_boolean": false,
+  "illustrative_case_count": 11,
+  "failed_servo_pads_in_18p56A_single_feed_case": {
+    "J2": 5.864616350449205,
+    "J3": 5.866825366623339,
+    "J4": 5.871552140076166,
+    "J5": 5.879248901964891
+  },
+  "servo_pad_floor_V": 6.0,
+  "smallest_required_guarded_margin": {
+    "case": "corrected_classic_BEC5.0_911_mcu_vdd64__analog0m__none",
+    "probe": "classic_DSM_pad",
+    "change_V": 5.5425926237973044e-05,
+    "margin_V": 0.01879131920902699,
+    "numerical_guard_V": 0.001,
+    "pass": true,
+    "margin_after_guard_V": 0.01779131920902699
+  },
+  "wall_seconds": 1377.6908554609981,
+  "peak_RSS_bytes": 2002223104,
+  "independent_result_review_passed": true,
+  "historical_USB_DSM_path_specific_results_valid": false,
+  "scope": "Exact source43 conditional DC evidence. New physical IN6/actual downstream supply/return mapping; finite enumerated cases are not nonlinear interior-extrema proof. VCAP is DC copper only, excluding R16/ESR/AC. Package sharing, branch/hot-DCR bounds, VDDA tracking, thermal, signals, harness, production and flight remain unqualified. Any newer geometry requires a new applicability assessment."
+}

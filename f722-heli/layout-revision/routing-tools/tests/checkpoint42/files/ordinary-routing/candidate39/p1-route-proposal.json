@@ -1,0 +1,158 @@
+{
+  "schema": "f722-readonly-route-proposal/v1",
+  "source_board_sha256": "e93f1a1814f8b2bfd6341be9522a053a71db2706d7d81ee2984f6bd82a6c8aa5",
+  "source_model_sha256": "bd3fb3ccecbed97bf4d08a2b47679dd260ac6f8159709da1eafa77ba8e353732",
+  "logical_net": "SERVO3_MCU::P1",
+  "physical_net": "SERVO3_MCU",
+  "status": "read-only geometry proposal; not adopted or native validated",
+  "existing_via_mm": [
+    14.85,
+    9.06
+  ],
+  "routes": [
+    {
+      "kind": "track",
+      "layer": "In2.Cu",
+      "width_mm": 0.127,
+      "points_mm": [
+        [
+          14.85,
+          9.06
+        ],
+        [
+          16.5,
+          9.06
+        ],
+        [
+          16.96,
+          8.6
+        ],
+        [
+          21.15,
+          8.6
+        ],
+        [
+          22.0,
+          9.45
+        ]
+      ],
+      "seed_note": "First segment already exists only on parent isolated stage38-exit; do not duplicate it when constructing from that stage."
+    },
+    {
+      "kind": "via",
+      "xy_mm": [
+        22.0,
+        9.45
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": {
+        "F.Mask": true,
+        "B.Mask": true
+      }
+    },
+    {
+      "kind": "track",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "points_mm": [
+        [
+          22.0,
+          9.45
+        ],
+        [
+          22.0,
+          9.14
+        ],
+        [
+          21.209999,
+          9.14
+        ],
+        [
+          21.209999,
+          8.125
+        ]
+      ]
+    }
+  ],
+  "minimum_extra_clearance_mm": {
+    "seed_native": 0.170976916,
+    "seed_actual_engine_guards": 0.170959285,
+    "inner_actual_engine_guards": 0.178447105,
+    "MCU_trace_actual_engine_guards": 0.04948,
+    "via_actual_engine_guards": 0.025138986
+  },
+  "via_native_by_category": {
+    "copper": {
+      "object": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+      "net": "IMU_MOSI",
+      "logical_net": null,
+      "category": "copper",
+      "layer": "F.Cu",
+      "radius": 0.225,
+      "gap": 0.127,
+      "extra_clearance_mm": 0.025160321,
+      "physical_gap_mm": 0.152160321
+    },
+    "drill": {
+      "object": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+      "uuid": "743f60f6-99d7-40af-8adc-c8e9b0542c93",
+      "net": "IMU_MOSI",
+      "logical_net": null,
+      "category": "drill",
+      "layer": "all",
+      "radius": 0.1,
+      "gap": 0.25,
+      "extra_clearance_mm": 0.152160404,
+      "physical_gap_mm": 0.402160404
+    },
+    "mask": {
+      "object": "U1.27",
+      "uuid": "831e075c-51ee-43ec-af89-8939eb15abad",
+      "net": "unconnected-(U1-PB2-Pad27)",
+      "logical_net": null,
+      "category": "mask",
+      "layer": "B.Mask",
+      "radius": 0.1,
+      "gap": 0.2,
+      "extra_clearance_mm": 0.264413209,
+      "physical_gap_mm": 0.464413209
+    },
+    "outline": {
+      "object": "board outline",
+      "uuid": null,
+      "net": null,
+      "logical_net": null,
+      "category": "outline",
+      "layer": "all",
+      "radius": 0.225,
+      "gap": 0.254,
+      "extra_clearance_mm": 8.971,
+      "physical_gap_mm": 9.225
+    },
+    "via_keepout": {
+      "object": "1290397c-2e03-5003-96a6-e9d7d7e46769",
+      "uuid": "1290397c-2e03-5003-96a6-e9d7d7e46769",
+      "net": "",
+      "logical_net": null,
+      "category": "via_keepout",
+      "layer": "F.Cu",
+      "radius": 0.225,
+      "gap": 0,
+      "extra_clearance_mm": 0.4716,
+      "physical_gap_mm": 0.4716
+    }
+  },
+  "excluded_refillable_GND_zone_ids": [
+    "c956a476-e320-4f09-9832-420df749bd95",
+    "ee652b71-6147-4d53-abc1-8530e0b19eaf"
+  ],
+  "required_before_adoption": [
+    "Stage only additive P1 geometry with all existing objects, aliases and source poses unchanged.",
+    "Native refill and all DRC including both-face SMT mask drill clearance with no net exemption.",
+    "Refresh source model and verify P1 connectivity and all owner gates.",
+    "Full critical/reference comparison and validation for new through via."
+  ],
+  "bounded_alternatives": "report.json has a slightly larger-margin orthogonal In2 option, 9 passing In2 continuations out of 23, and no passing In3 continuation among 23 checked. No global impossibility claim."
+}

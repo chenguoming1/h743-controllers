@@ -1,0 +1,101 @@
+{
+  "schema": "f722-independent-corrected-result-review/v1",
+  "status": "PASS FOR DECLARED SOURCE-BOUND CONDITIONAL DC EVIDENCE; OVERALL RUNNER FAILURE PRESERVED",
+  "review_completed_date_UTC": "2026-10-09",
+  "persisted_date_UTC": "2026-10-09",
+  "review_source": "Independent result review completed at approximately19:08-19:09UTC; this receipt preserves that completed observation without repeating analysis.",
+  "board_sha256": "1ee7174a578dffe4d5ef3ae8b39d8dc88f28b80395539263a65f23be234c21e6",
+  "candidate": "candidate43",
+  "native_unfinished_connections": 37,
+  "binding": {
+    "implementation_model_review_sha256": "e88a13992ef011f71ebe9504e733dbf23c49f17ffaff76b882a12adadb64e9bf",
+    "implementation_manifest_sha256": "8b09e24ba71f83420b29e348ec16abdbed4f4725aa3b1eb1257eaf22d695b775",
+    "plan_sha256": "a1051215a798f9851003cea94d0c0bbb300419c2ccee77e4ee6ebcee62306b7c",
+    "stage_receipt_sha256": "5778d4c9bea16e6e6e208e27715efc5e4e4683b36f795753900428def898c89d",
+    "freeze_sha256": "2c281f2d6767e0231713e02b5db810a4a0fa5e9ee0831e673b8e0ec1bcf645bd",
+    "ledger_sha256": "f575a6b7185b15ef59ec788c3fa5ffe04b77d0c4ee50588fb2f917825d2fedb1",
+    "result_sha256": "1466a094fc40cfbed24fbda76d5445bad9c06d951389e2440ed6b0cd3b13bac9",
+    "combined_summary_sha256": "030fa2ae528c45d9f0207eac4fb9b93c74cc84cf3296035f995d869bf0409550"
+  },
+  "checked_bindings": [
+    "Current canonical board equaled exact result source at review completion",
+    "Source inventory and recursive typed-support dependencies",
+    "Plan, staged-file inventory and launch receipt",
+    "All40 frozen files and8 analysis-source hashes",
+    "Ledger and exact corrected model contract",
+    "Expected result and combined-summary hashes"
+  ],
+  "counts": {
+    "case_hash_checks": 610,
+    "acceptance_probe_p_minus_n_checks": 9500,
+    "report_only_p_minus_n_checks": 6448,
+    "loaded_field_residual_checks": 6542,
+    "geometry_certificate_reference_checks": 36432,
+    "voltage_grid_guards": 4750,
+    "impedance_grid_guards": 15,
+    "VCAP_grid_guards": 5,
+    "actual_supply_rows": 6100
+  },
+  "scope_decisions": {
+    "required_cases": 294,
+    "required_scope_acceptance": true,
+    "illustrative_cases": 11,
+    "actual_supply_probe_definitions_per_case": 10,
+    "actual_supply_window_failures": 0,
+    "actual_supply_two_grid_failures": 0,
+    "VCAP_loops": 5,
+    "VCAP_acceptance": true,
+    "numerical_acceptance": true,
+    "illustrative_threshold_and_margin_pass": false,
+    "original_runner_exit_code": 1,
+    "runner_overall_boolean": false
+  },
+  "failure_visibility": {
+    "distinct_failed_case_count": 1,
+    "distinct_failed_probe_count": 4,
+    "failed_probe_rows_across_two_grids": 8,
+    "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+    "remaining_J8_positive_feed_current_A": 18.560272018080703,
+    "remaining_J8_return_current_A": 18.56027201807391,
+    "fine_grid_servo_pad_voltages_V": {
+      "J2": 5.864616350449205,
+      "J3": 5.866825366623339,
+      "J4": 5.871552140076166,
+      "J5": 5.879248901964891
+    },
+    "minimum_V": 6.0,
+    "all_failure_rows": "observed-output.json#/failures",
+    "classification": "Illustrative J6-feed-lost high-load scenario; not promoted into the required operating envelope."
+  },
+  "tightest_required_voltage_guard": {
+    "case": "corrected_classic_BEC5.0_911_mcu_vdd64__analog0m__none",
+    "probe": "classic_DSM_pad",
+    "change_V": 5.5425926237973044e-05,
+    "margin_V": 0.01879131920902699,
+    "numerical_guard_V": 0.001,
+    "pass": true
+  },
+  "maximum_required_voltage_grid_change_V": 0.000576050516773563,
+  "artifacts": {
+    "script": "verify_result.py",
+    "script_sha256": "784a730e276f78a0cd8821daf08f068739f267b7e89d859f73e443bf9c8c82ff",
+    "execution": "execution.json",
+    "execution_sha256": "c83817c49a1c3a2e3aa052abadebc4ceba02c7810270c9440c880b973b5cda5b",
+    "observed_output": "observed-output.json",
+    "observed_output_sha256": "88236e75f8d340ce6b2627da1c0fbd5a6d604088187bf2626d1965458b648cf5"
+  },
+  "scope_limits": [
+    "Conditional fixed-input DC model and enumerated current-allocation vertices only.",
+    "Current-polytope coverage does not prove nonlinear interior voltage extrema.",
+    "20mA filtered-branch and1ohm hot-bead conditions require their separate evidence.",
+    "U11 bias spatial allocation and package/exposed-pad current sharing remain unresolved.",
+    "VCAP checks cover DC copper/barrel loops only; exclude R16 resistance, capacitor ESR and AC stability.",
+    "No startup, handover, USB coexistence, ripple, VDDA tracking, signal-level, thermal, production or flight qualification.",
+    "105C is modeled copper temperature, not component or ambient acceptance.",
+    "A later route, via, drill, pad, pose or fill change requires new source applicability review.",
+    "The exact script intentionally requires canonical candidate43 and refuses if canonical advances; do not override that guard to relabel historical results."
+  ],
+  "no_numerical_solver_rerun": true,
+  "no_canonical_or_index_mutation": true,
+  "no_expanded_analysis_during_persistence": true
+}

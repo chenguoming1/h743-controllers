@@ -1,0 +1,1572 @@
+--- historical/compile_power_ledger.py
++++ corrected-v3/compile_power_ledger.py
+@@ -9,7 +9,9 @@
+ from copper_fem import Refused, contact_keys
+ from validate_static import read_json, sha256, preflight
+ from audit_native_ports import audit_ports
+-from power_case_model import case_factory
++from power_case_model import build_cases
++from model_contract import check_inputs,check_physical_source,REVISION
++from support_receipt import verify_support,verify_files as verify_support_files,compile_connectivity
+ 
+ 
+ def save(path,value):
+@@ -20,64 +22,6 @@
+     for case in cases:
+         case.pop('case_definition_sha256',None)
+         case['case_definition_sha256']=hashlib.sha256(json.dumps(case,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
+-
+-
+-def materialize(case, vertices, vertex=None):
+-    case=copy.deepcopy(case)
+-    if vertex is not None:
+-        pair=vertices[vertex]
+-        case['name']+='__sample_'+vertex
+-        case['parameters']['allocation_vertex']=vertex
+-        for row in case['loads']:
+-            if row['name']=='aggregate_electronics_adversarial':
+-                row.update(p=pair['p'],n=pair['n']);row.pop('pending_selection',None)
+-        for row in case['report_only_probes']:
+-            if row['name']=='CORE_actual_adversarial_sink':row.update(p=pair['p'],n=pair['n'])
+-    case.pop('execution_enabled',None)
+-    case['definition_review_notes']=case.pop('activation_blockers',[])
+-    return case
+-
+-
+-def build_cases(plan,settings):
+-    make_case,make_feed_case=case_factory(plan)
+-    vertices=plan['proposed_case_dimensions']['electronics_allocation_vertices']
+-    pairs=plan['proposed_case_dimensions']['ABC_port_pairs']
+-    baseline=[];upper=[];servo=[];deferred=[]
+-    for scope in ['classic','capacity']:
+-        contexts=[(v,pair)for v in plan['proposed_case_dimensions']['BEC_input_at_ideal_J6_pads_V']for pair in pairs]
+-        if settings['include_7p4V_electronics_baseline']:contexts.append((7.4,'BC'))
+-        for vin,pair in contexts:
+-            for vertex in vertices:baseline.append(materialize(make_case(scope,vin,pair,vertex),vertices))
+-            for profile in plan['engineering_sensitivity_profiles']:
+-                if profile not in ['baseline','upper_initial']:
+-                    deferred.append(dict(scope=scope,supply='BEC',vin=vin,pair=pair,profile=profile))
+-    for vin in plan['proposed_case_dimensions']['USB_source_sensitivity_V']:
+-        for vertex in vertices:baseline.append(materialize(make_case('usb_configuration',vin,'NONE',vertex,supply='USB'),vertices))
+-        for profile in ['eta75','eta95','u8_120m','u8_150m','auxiliary_added','regulation_1pct','regulation_2pct','coupled_adverse']:
+-            deferred.append(dict(scope='usb_configuration',supply='USB',vin=vin,pair='NONE',profile=profile))
+-    for pair in ['NONE',*pairs]:
+-        for vertex in vertices:
+-            case=make_case('classic',12.6,pair,vertex,'upper_initial',dsm_override=0)
+-            case['scope']='classic_upper_unloaded_receiver'
+-            case['probes']=[p for p in case['probes']if p['name']!='classic_DSM_pad']+[
+-                dict(name='unloaded_classic_DSM_upper',p='J12.1',n='J12.2',maximum_V=3.465)]
+-            upper.append(materialize(case,vertices))
+-    feeds=plan['same_BEC_illustrative_feed_profiles']
+-    definitions=[('moderate',feed,'classic')for feed in feeds]
+-    representative=['equal40m','paired_J8_weak','paired_J6_weak','crossed_J6_positive_strong',
+-                    'crossed_J8_positive_strong','J8_feed_lost','J6_feed_lost']
+-    for name in plan['servo_comparison_profiles']:
+-        if name!='moderate':
+-            definitions.extend((name,feed,'capacity')for feed in representative)
+-            definitions.append((name,'equal40m','classic'))
+-    for name,feed,scope in definitions:
+-        for vertex in settings['servo_sample_allocations']:
+-            if vertex not in vertices:raise Refused('Unknown fixed servo sample allocation')
+-            case=materialize(make_feed_case(name,feed,scope),vertices,vertex)
+-            case['assumptions'].append(settings['servo_sample_meaning'])
+-            case['allocation_basis']='fixed declared illustration; not selected from a numerical ranking'
+-            servo.append(case)
+-    return {'baseline':baseline,'upper':upper,'servo':servo},deferred
+ 
+ 
+ def check_cases(cases,networks):
+@@ -96,7 +40,7 @@
+                             raise Refused('Case omits a referenced copper net')
+         if any(r.get('ohm')is None or r['ohm']<=0 for r in case['resistors']):raise Refused('Unmeasured or nonpositive resistance')
+         if any(x['current_A']<0 for x in case['loads']):raise Refused('Negative compiled load')
+-        electronics=sum(x['current_A']for x in case['loads']if x['name']=='aggregate_electronics_adversarial')
++        electronics=sum(x['current_A']for x in case['loads']if x['name'].startswith('aggregate_electronics_adversarial'))
+         dsm=sum(x['current_A']for x in case['loads']if x['name']=='DSM_external')
+         if abs(electronics+dsm-case['parameters']['CORE_aggregate_A'])>1e-12:raise Refused('CORE current budget mismatch')
+         if case.get('receiver_scope',case['scope'])=='capacity' and any(p['name']=='classic_DSM_pad'for p in case['probes']):
+@@ -111,11 +55,14 @@
+ 
+ 
+ def compile_inputs(source,plan_path,registry_path,settings_path,out,allow_numerical=False):
++    if allow_numerical:raise Refused('Compiler cannot release numerical execution; use the exact owner-reviewed launcher')
+     source=Path(source);out=Path(out)
+     if out.exists():raise Refused('Compilation destination already exists; use a new isolated directory')
+     plan=read_json(plan_path);registry=read_json(registry_path);settings=read_json(settings_path)
+-    if plan.get('schema')!='f722-static-case-plan-disabled/v1' or plan.get('execution_enabled')is not False:
+-        raise Refused('Expected the disabled review plan')
++    contract=check_inputs(plan,registry,settings)
++    review_sha=settings.get('owner_reviewed_model_sha256','')
++    if not isinstance(review_sha,str) or len(review_sha)!=64 or any(c not in '0123456789abcdef' for c in review_sha):
++        raise Refused('Compiler needs the explicit owner-reviewed corrected implementation SHA')
+     if settings.get('scope')not in ['power-only','final-board']:raise Refused('Unknown compilation scope')
+     source_files={'board':'f722-heli.kicad_pcb','geometry':'owner-native.json','parts':'parts.json',
+       'parity':'owner-parity.json','process':'owner-process.json','mechanical':'owner-mechanical.json',
+@@ -125,11 +72,15 @@
+     data={key:read_json(source/name)for key,name in source_files.items()if key!='board'}
+     for key in ['geometry','parity','process','mechanical','critical','power_connectivity','ordinary_protection','ordinary_supplemental']:
+         if data[key].get('board_sha256')!=hashes['board']:raise Refused('Stale source evidence: '+key)
+-    if any(data[key].get('passed')is not True for key in ['parity','process','mechanical'])or data['critical'].get('faults'):
++    if any(data[key].get('passed')is not True for key in ['parity','process','mechanical','power_connectivity'])or data['critical'].get('faults'):
+         raise Refused('Source physical/parity gates are incomplete or failed')
+     if not data['geometry'].get('source_unchanged'):raise Refused('Native exporter did not preserve the source')
+     if data['process'].get('geometry_sha256')!=hashes['geometry']:
+         raise Refused('Process receipt is not bound to the selected geometry export')
++    support=verify_support(source,source/'owner-native.json')
++    if support['board_sha256']!=hashes['board'] or support['native_sha256']!=hashes['geometry']:
++        raise Refused('Verified support receipt is not bound to the selected geometry export')
++    check_physical_source(data['parts'],data['geometry'],plan)
+     networks={}
+     native_pads={p['key']:p for p in data['geometry']['objects']if p['kind']=='pad'and p.get('number')}
+     rebound=[]
+@@ -147,18 +98,7 @@
+     for ref,mpn in {'R54':'RT0402BRD0753K6L','R55':'RT0402BRD0710KL','R16':'ERJ3RSFR12V'}.items():
+         actual=data['parts'].get(ref,{}).get('mpn','')
+         if actual!=mpn:raise Refused('Current-value part identity requires review: '+ref+' '+actual)
+-    critical={row['net']:row for row in data['critical']['fullnet_connectivity']}
+-    connectivity={'board_sha256':hashes['board'],'normalization':'Native UUID groups, supplemented by complete critical pad-key sets resolved against this exact export','nets':{}}
+-    for network in networks:
+-        net=network['net'];objects=[p for p in data['geometry']['objects']if p['kind']=='pad'and p.get('net')==net and p.get('number')]
+-        row=data['power_connectivity']['nets'].get(net)
+-        if row is None:
+-            proof=critical.get(net,{})
+-            if proof.get('complete')is not True or proof.get('unreached')or set(proof.get('pads',[]))!={p['key']for p in objects}:
+-                raise Refused('Missing native connectivity proof: '+net)
+-            row={'pad_group_count':1,'groups':[{'pad_uuids':[p['uuid']for p in objects]}],
+-                 'proof_source':'critical complete native pad-key set; keys mapped to frozen export UUIDs'}
+-        connectivity['nets'][net]=row
++    connectivity=compile_connectivity(data['geometry'],data['critical'],support,networks)
+     excluded=[]
+     for key in ['ordinary_protection','ordinary_supplemental']:
+         for check in data[key]['checks']:
+@@ -176,6 +116,15 @@
+     for key,name in source_files.items():shutil.copyfile(source/name,out/'input'/name)
+     for name,path in [('case-plan.json',plan_path),('terminal-registry.json',registry_path),('compiler-settings.json',settings_path)]:
+         shutil.copyfile(path,out/'input'/name)
++    support_copies={}
++    evidence_dir=out/'input/support-evidence';evidence_dir.mkdir()
++    for index,(original,expected) in enumerate(sorted(support['evidence_files_sha256'].items())):
++        target=evidence_dir/(str(index).zfill(3)+'-'+Path(original).name)
++        shutil.copyfile(original,target)
++        if sha256(target)!=expected:raise Refused('Typed support evidence changed during copying')
++        support_copies[original]={'path':str(target.relative_to(out)),'sha256':expected}
++    save(out/'input/support-verification.json',{**support,'copied_evidence':support_copies})
++    connectivity['support_verification_sha256']=sha256(out/'input/support-verification.json')
+     save(out/'input/connectivity.json',connectivity)
+     save(out/'input/physical.json',{'board_sha256':hashes['board'],'passed':True,
+         'scope':'Process clearances, mechanical checks, critical faults; source reports retained',
+@@ -185,18 +134,22 @@
+     for key,name in [('connectivity','connectivity.json'),('physical','physical.json'),('case_plan','case-plan.json'),
+                      ('terminal_registry','terminal-registry.json'),('compiler_settings','compiler-settings.json'),('rebound_terminals','rebound-terminals.json')]:
+         files[key]={'path':'input/'+name,'sha256':sha256(out/'input'/name)}
++    files['support_verification']={'path':'input/support-verification.json','sha256':sha256(out/'input/support-verification.json')}
++    for index,spec in enumerate(support_copies.values()):files['support_evidence_'+str(index)]=spec
+     manifest={'schema':'f722-scoped-static-freeze/v1','status':'frozen-for-scoped-static-screen','scope':settings['scope'],
+        'source_stage':settings['source_stage'],'saved_fill_verified':True,'checks_run_on_frozen_board':True,
+        'tested_nets':[n['net']for n in networks],'files':files,'numerical_execution_authorized':allow_numerical,
+        'qualification':'Provisional source-bound power review; final ordinary routing requires fresh source/check binding',
+        'excluded_ordinary_protection_checks':excluded,
+-       'compiler_source_sha256':{n:sha256(Path(__file__).parent/n)for n in ['compile_power_ledger.py','power_case_model.py']}}
+-    manifest['analysis_source_sha256']={n:sha256(Path(__file__).parent/n)for n in ['copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py','native_edge_noding.py','mesh_cache.py']}
++       'compiler_source_sha256':{n:sha256(Path(__file__).parent/n)for n in ['compile_power_ledger.py','power_case_model.py','model_contract.py','support_receipt.py','owner_support_contract.py']}}
++    manifest['analysis_source_sha256']={n:sha256(Path(__file__).parent/n)for n in ['copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py','native_edge_noding.py','mesh_cache.py','power_case_model.py','model_contract.py']}
++    manifest.update(model_revision=REVISION,model_contract=contract,owner_reviewed_model_sha256=review_sha)
+     save(out/'freeze.json',manifest)
+     common={'schema':'f722-static-ledger/v1','status':'ready','freeze_manifest_sha256':sha256(out/'freeze.json'),
+        'source_stage':settings['source_stage'],'material':settings['material'],'mesh_spacings_mm':settings['mesh_spacings_mm'],
+        'convergence':settings['convergence'],'limits':settings['limits'],'networks':networks,'unit_transfers':[],
+        'loops':plan['VCAP_copper_loops'],'assumption_record_sha256':files['case_plan']['sha256']}
++    common.update(model_revision=REVISION,model_contract=contract)
+     common['definition_source_sha256']={'case_plan':files['case_plan']['sha256'],'terminal_registry':files['terminal_registry']['sha256'],
+         'settings':files['compiler_settings']['sha256'],'case_model':manifest['compiler_source_sha256']['power_case_model.py']}
+     receipts={}
+@@ -204,20 +157,22 @@
+         save(out/('ledger-'+name+'.json'),{**common,'case_family':name,'cases':cases})
+         context=preflight(out/'freeze.json',out/('ledger-'+name+'.json'))
+         receipts[name]={'case_count':len(cases),'ledger_sha256':context['ledger_sha256'],'preflight_passed':True}
+-    save(out/'deferred-case-plan.json',{'status':'DEFERRED; NO REAL BASELINE RANKINGS','execution_enabled':False,
++    save(out/'deferred-case-plan.json',{'status':'DISABLED: historical corners and sensitivities require corrected regeneration','execution_enabled':False,
+        'baseline_ledger_sha256':receipts['baseline']['ledger_sha256'],'freeze_sha256':sha256(out/'freeze.json'),
+        'slices':deferred,'upper_additional_errors':[.01,.02],
+-       'rule':'Materialize only from validated, source-bound baseline numerical results. No arbitrary weakest allocation is selected.'})
++       'rule':'No old146/140/5532 postprocessing is supported by this corrected primary implementation.'})
+     port_receipt=audit_ports(out/'input'/source_files['board'],out/'input'/source_files['geometry'],
+                              out/'ledger-primary.json',out/'input/connectivity.json',out/'input'/source_files['critical'])
+     if not port_receipt['passed']:raise Refused('Compiled native port audit failed')
+     save(out/'port-audit.json',port_receipt)
++    verify_support_files(support['evidence_files_sha256'])
+     if hashes!={key:sha256(source/name)for key,name in source_files.items()}:
+         raise Refused('Source evidence changed during compilation')
+     receipt={'status':'COMPILED AND PREFLIGHTED; NO FEM OR CIRCUIT RUN','board_sha256':hashes['board'],
+       'freeze_sha256':sha256(out/'freeze.json'),'numerical_execution_authorized':allow_numerical,
+       'families':receipts,'deferred_slices':len(deferred),'finite_contacts':port_receipt['contact_count'],
+       'deferred_case_plan_sha256':sha256(out/'deferred-case-plan.json'),
++      'model_revision':REVISION,'model_contract':contract,
+       'loops':len(port_receipt['loops']),'measured_harness_templates_included':False,
+       'excluded_ordinary_protection_checks':excluded}
+     save(out/'compile-receipt.json',receipt)
+--- historical/power_case_model.py
++++ corrected-v3/power_case_model.py
+@@ -1,188 +1,292 @@
+ #!/usr/bin/env python3
+-"""Pure case definitions for the disabled plan compiler; no filesystem or solver calls."""
+-
+-def resistor(name,p,n,ohm,**kw):return dict(name=name,p=p,n=n,ohm=ohm,**kw)
+-
+-def tie(name,p,n):return {'name':name,'p':p,'n':n,'voltage_V':0,'meaning':'Explicit ideal internal pin/entry tie; package/contact resistance excluded'}
+-
+-def load(name,p,n,current):return {'name':name,'p':p,'n':n,'current_A':current}
+-
+-
+-def case_factory(plan):
+-    profiles = plan['engineering_sensitivity_profiles']
+-    corners = plan['U6_corners']
+-    vertex_map = plan['proposed_case_dimensions']['electronics_allocation_vertices']
+-    ABC = {'AB':['J9','J10'], 'AC':['J9','J11'], 'BC':['J10','J11']}
+-    feed_examples = {name:{ref:(pair['positive'],pair['return']) for ref,pair in profile['per_conductor_ohm'].items()}
+-                     for name,profile in plan['same_BEC_illustrative_feed_profiles'].items()}
+-    servo_definitions = plan['servo_comparison_profiles']
+-    servo_profiles = {name:profile['connector_currents_A'] for name,profile in servo_definitions.items()}
+-    def make_case(scope,vin,combo,vertex,profile='baseline',supply='BEC',dsm_override=None):
+-        pr=profiles[profile];co=corners[pr['u6_corner']]
+-        electronics=.30 if supply=='USB' else .32
+-        dsm=(0 if supply=='USB' else .50 if scope=='capacity' else .020) if dsm_override is None else dsm_override
+-        name=f'{scope}_{supply}{vin:g}_{combo}_{vertex}_{profile}'
+-        case={'name':name,'execution_enabled':False,'scope':scope,'supply':supply,
+-              'parameters':{'input_at_defined_source_V':vin,'ABC_ports':ABC.get(combo,[]),'electronics_A':electronics,
+-                            'DSM_A':dsm,'CORE_aggregate_A':round(electronics+dsm,9),'allocation_vertex':vertex,**pr},
+-              'reference_node':'SOURCE_GND','sources':[],'resistors':[],'loads':[],'converters':[],'probes':[],
+-              'report_only_probes':[],
+-              'assumptions':['New adversarial electronics-current allocation, not a recovered historical load split.',
+-                             'All CORE-powered logic/bias/quiescent demand is included once in the aggregate electronics allowance.',
+-                             'Converter eta_total is an engineering assumption including converter operating loss; additive IQ=0 avoids double counting and does not mean zero physical IQ.',
+-                             'Finite native sheet/barrel paths and actual load returns are required; no nominal-width shortcut.',
+-                             'Mux selection is prescribed; no startup, hysteresis, switching or backfeed result is implied.',
+-                             'U8 RON row is specified at VINx>=5V, |IOUT|=200mA. Effective RON outside those tests is a sensitivity assumption.',
+-                             ('U9 setpoint uses the initial PFM high factor; line/load/ripple and input headroom remain separate guards.' if profile=='upper_initial' else 'U9 setpoint uses the conservative initial PFM low factor; line/load/ripple and input headroom remain separate guards.')],
+-              'activation_blockers':['Source unfinished and unbound','Grouped U6 contacts require fresh source verification',
+-                                      'Engineering assumptions/headroom require reviewed materialization']}
+-        r=case['resistors'];s=case['sources'];ld=case['loads'];cv=case['converters']
+-        # Native output pins are separately landed but are one internal device OUT.
+-        s += [tie('U8_OUT1','DEV_U8_OUT','U8.1'),tie('U8_OUT8','DEV_U8_OUT','U8.8'),
+-              tie('U7_OUT2','DEV_U7_OUT','U7.2'),tie('U7_OUT7','DEV_U7_OUT','U7.7')]
+-        r += [resistor('U11_selected_path','U11.4','U11.1',.15,condition='150mOhm engineering screen; current limiter dynamics excluded'),
+-              resistor('ABC_ADC_divider_lumped','R42.1','R44.2',100000,condition='Native68k+16k+16k; internal divider copper and ADC input currents omitted')]
+-        if supply=='BEC':
+-            s += [{'name':'BEC_at_J6_pads','p':'J6.2','n':'SOURCE_GND','voltage_V':vin},tie('J6_return_reference','J6.1','SOURCE_GND')]
+-            r += [resistor('U5_efuse_path','U5.5','U5.6',.045,condition='45mOhm maximum row tested at3A; above3A is explicit extrapolation'),
+-                  resistor('U7_BEC_selected_path','U7.3','DEV_U7_OUT',.033,condition='TPS2117 33mOhm tested at200mA through105C;2A is explicit extrapolation'),
+-                  resistor('U8_BEC_selected_path','U8.7','DEV_U8_OUT',pr['U8_effective_RON_ohm']),
+-                  resistor('R53_protected_bleeder','R53.1','R53.2',4700),resistor('R58_ABC_bleeder','R58.1','R58.2',47000),
+-                  resistor('R54_feedback_top','R54.1','R54.2',co['R54_ohm']),resistor('R55_feedback_bottom','R55.1','R55.2',co['R55_ohm']),
+-                  resistor('BEC_ADC_divider_lumped','R40.1','R41.2',125000,condition='Native105k+20k; internal divider copper omitted'),
+-                  resistor('U8_priority_bias_lumped','R60.1','R61.2',28000,condition='Native18k+10k;330k ST coupling must be bounded separately')]
+-            # Signed leakage represented as the equivalent feedback-reference shift.
+-            # This omits only its tiny trace-current field, not the IFB*R54 offset.
+-            parallel=co['R54_ohm']*co['R55_ohm']/(co['R54_ohm']+co['R55_ohm'])
+-            feedback=(co['feedback_reference_V']+pr['U6_IFB_sensitivity_A']*parallel)*(1+pr.get('additional_output_error_fraction',0))
+-            cv += [{'name':'U6_total_efficiency','in_p':'U6.VIN_12_13','in_n':'U6.10','out_p':'U6.OUT_7_8','out_n':'U6.10',
+-                    'sense_p':'U6.5','sense_n':'U6.4','voltage_V':feedback,'efficiency':pr['efficiency_total'],'quiescent_A':0,
+-                    'minimum_input_V':2,'maximum_input_V':16,
+-                    'control_meaning':'Actual R54/R55 and finite ABC_FB copper; regulates FB relative to quiet U6.4, while power enters/returns at real power terminals.',
+-                    'feedback_leakage_model':'Equivalent-reference IFB*(R54||R55); signed sensitivity is not a guaranteed signed leakage range; 100nA feedback-trace field is omitted.'}]
+-            case['nets']=['VX_RAW','VX_PROTECTED','+5V_BEC','+5V_PERIPH','CORE_BUCK_IN','+3V3_CORE','+3V3_DSM','ABC_FB','GND']
+-            ld += [load('U8_IQ_screen','U8.7','U8.12',.0004),
+-                   load('U5_IQ_table_screen','U5.5','U5.8',.000610),
+-                   load('U7_IQ_table_screen','U7.3','U7.1',.0000044),
+-                   load('U8_ST_coupling_reserve','R60.1','R61.2',.000020),
+-                   load('U8_inactive_leakage_reserve','U8.7','U8.12',.000500)]
+-            case['assumptions'] += ['Ideal J6 pad-entry source; no unmeasured BEC lead/contact resistance is assigned.',
+-                                    ('External ABC load is exactly1A on each of the two named ports;2A aggregate, never2A through one GH contact.' if combo in ABC else 'External ABC loads are disconnected in this upper-voltage slice.'),
+-                                    'At5V raw, U6 can operate in mild boost; the2A output row VOUT/VIN<=1 is not unconditionally applicable.']
+-        else:
+-            s += [{'name':'USB_at_ideal_contact_common','p':'USB_SOURCE','n':'SOURCE_GND','voltage_V':vin}]
+-            s += [tie('USB_VBUS_'+pin,'USB_SOURCE','J1.'+pin)for pin in ['A4','A9','B4','B9']]
+-            s += [tie('USB_GND_'+pin,'J1.'+pin,'SOURCE_GND')for pin in ['A1','A12','B1','B12']]
+-            r += [resistor('U10_USB_limiter_path','U10.4','U10.1',.15),
+-                  resistor('U7_USB_selected_path','U7.6','DEV_U7_OUT',.033),
+-                  resistor('U8_USB_selected_path','U8.2','DEV_U8_OUT',pr['U8_effective_RON_ohm']),
+-                  resistor('R68_limited_bleeder','R68.1','R68.2',1000),resistor('R69_raw_bleeder','R69.1','R69.2',10000)]
+-            ld += [load('U8_IQ_screen','U8.2','U8.12',.0004),
+-                   load('U7_IQ_table_screen','U7.6','U7.1',.0000045),
+-                   load('U10_IQ_table_screen','U10.4','U10.5',.000140),
+-                   load('U8_inactive_leakage_reserve','U8.2','U8.12',.000500)]
+-            case['nets']=['USB_VBUS_RAW','USB_LIMITED','+5V_PERIPH','CORE_BUCK_IN','+3V3_CORE','+3V3_DSM','GND']
+-            case['assumptions'] += ['Configuration only: all external ABC, DSM and servo loads are disconnected.',
+-                                   'USB source is prescribed at ideal common connector contacts; this does not invent cable/contact tolerances.',
+-                                   '4.33/5.0/5.25V are declared source sensitivity points from project discussion, not proof of USB compliance or pre-enumeration current behavior.']
+-        core_v=(3.432 if profile=='upper_initial' else 3.1845)*(1+pr.get('additional_output_error_fraction',0))
+-        cv += [{'name':'U9_total_efficiency','in_p':'U9.2','in_n':'U9.1','out_p':'L2.2','out_n':'U9.1',
+-                'sense_p':'U9.6','sense_n':'U9.4','voltage_V':core_v,'efficiency':pr['efficiency_total'],'quiescent_A':0,
+-                'minimum_input_V':3,'maximum_input_V':17,'maximum_output_A':1,
+-                'control_meaning':'Inject at real inductor output L2.2; U9.6 is a sense terminal only. Conversion loss includes the inductor; no DCR is double-counted.'}]
+-        if vertex in vertex_map:
+-            ld += [load('aggregate_electronics_adversarial',vertex_map[vertex]['p'],vertex_map[vertex]['n'],electronics)]
+-        else:
+-            ld += [{'name':'aggregate_electronics_adversarial','p':None,'n':None,'current_A':electronics,
+-                    'pending_selection':'Worst relevant baseline allocation vertex, followed by ranking-sensitivity check'}]
+-        if dsm:ld += [load('DSM_external','J12.1','J12.2',dsm)]
+-        for ref in ABC.get(combo,[]):
+-            if supply=='BEC':
+-                ld += [load(ref+'_external','J9.3'if ref=='J9'else ref+'.3',ref+'.4',1)]
+-                case['probes'].append({'name':ref+'_receiver_pad','p':ref+'.3','n':ref+'.4','minimum_V':4.8,
+-                                       'purpose':'Conditional RP3-H pad floor:4.5V remote +1A*(0.200Ohm contacts + <=0.100Ohm measured cable)'})
+-        if scope=='classic':
+-            case['probes'].append({'name':'classic_DSM_pad','p':'J12.1','n':'J12.2','minimum_V':3.1394,'maximum_V':3.465,
+-                                   'purpose':'Classic20mA remote only; lower floor includes0.120Ohm contacts + <=0.100Ohm measured cable, with no invented dynamic allowance'})
+-        else:
+-            case['report_only_probes'].append({'name':'DSM_pad_voltage_no_accuracy_claim','p':'J12.1','n':'J12.2',
+-                                              'reason':'0.50A capacity has no inherited classic +/-5% voltage guarantee; USB has no external DSM load'})
+-        case['probes'].append({'name':'U9_operating_input_only','p':'U9.2','n':'U9.1','minimum_V':3,'maximum_V':17,
+-                               'purpose':'Recommended input operating range only; not a guarantee of3.3V regulation'})
+-        case['report_only_probes'] += [
+-            {'name':'U9_input_accuracy_window_headroom','p':'U9.2','n':'U9.1','comparison_floor_V':4.3,
+-             'reason':'PWM accuracy row condition VIN>=VOUT+1V for nominal3.3V; crossing it ends that assurance, not necessarily chip operation'},
+-            {'name':'U9_input_relative_to_quiet_AGND','p':'U9.2','n':'U9.4','comparison_floor_V':4.3,
+-             'reason':'Report both power-ground and quiet-AGND references; internal package ground behavior remains an explicit idealization'},
+-            {'name':'CORE_actual_adversarial_sink','p':vertex_map.get(vertex,{}).get('p'),'n':vertex_map.get(vertex,{}).get('n'),
+-             'reason':'Electronics operating-voltage acceptance depends on selected device/mode; do not substitute the classic DSM floor'}]
+-        case['current_budget_checks']={'electronics_sum_A':electronics,'DSM_external_A':dsm,'CORE_output_external_budget_A':round(electronics+dsm,9),
+-                                       'ABC_external_sum_A':2 if supply=='BEC'and combo in ABC else 0,
+-                                       'USB_limiter_reference_min_A':.3512 if supply=='USB'else None,
+-                                       'note':'CORE includes its known bias/quiescent allowance once; separate upstream bias is outside this CORE total.'}
+-        if profile in ['auxiliary_added','coupled_adverse']:
+-            # Explicit added-current envelope at actual external device terminals.
+-            # These increments represent only demand beyond the already-counted
+-            # passive, device-table, CORE and converter-loss budgets.
+-            auxiliary_ports=[('U5.5','U5.8'),('U7.3','U7.1'),('U8.7','U8.12')]if supply=='BEC'else[
+-                            ('U10.4','U10.5'),('U7.6','U7.1'),('U8.2','U8.12')]
+-            for p,n in auxiliary_ports:
+-                ld.append(load('added_auxiliary_'+p,p,n,.002))
+-        case['auxiliary_current_scope']={
+-          'device_table_reference_A':{'U5':.000610 if supply=='BEC'else 0,'U7':.0000044 if supply=='BEC'else .0000045,
+-                                      'U8':.000400,'U10':0 if supply=='BEC'else .000140},
+-          'added_engineering_current_A':sum(x['current_A']for x in ld if x['name'].startswith('added_auxiliary_')),
+-          'inactive_U8_leakage_reserve_A':.000500,'BEC_priority_coupling_reserve_A':.000020 if supply=='BEC'else 0,
+-          'not_counted_again':['U6/U9 operating consumption is already within eta_total; additive converter IQ stays zero.',
+-                               'U11 and CORE-powered bias remain inside the aggregate 0.32/0.30 A electronics allowance.'],
+-          'limits':['U5 610 uA is a maximum at 12 V, open OUT, specified control settings; use at other inputs/load states is a modeled screen.',
+-                    'U7 4.4/4.5 uA are selected-input maximum rows through 105 C under their input-priority conditions.',
+-                    'U10 140 uA is the 6.5 V, open OUT, 20 kOhm ILIM row; actual voltage and resistor differ, so application is modeled.',
+-                    'U8 400 uA uses its open-output maximum row. The additional 500 uA covers the published wide-differential inactive-input leakage magnitude as a conservative selected-input demand.',
+-                    'The U8 leakage reserve omits detailed inactive-rail current direction and return distribution; it cannot establish backfeed behavior.',
+-                    'The 20 uA BEC priority reserve bounds the magnitude through 330 kOhm for declared PR1/ST voltages within 0 to 6 V, beyond the 28 kOhm divider already counted. CORE bias is not added again.',
+-                    'The added sensitivity is 2 mA at each of three external device input/return pairs, 6 mA total beyond explicit terms; it is an engineering comparison envelope, not a manufacturer guarantee.']}
+-        case['regulation_scope']={'initial_device_accuracy_terms_separate':True,
+-           'additional_output_error_fraction':pr.get('additional_output_error_fraction',0),
+-           'classification':'Additional 0/1/2% static setpoint error is an engineering sensitivity, not a guaranteed line/load/ripple bound.',
+-           'required_report':'Report initial-spec-only margins and each added-error result separately; report remaining allowable additional static output error before a receiver floor or headroom boundary.'}
+-        return case
+-
+-    def make_feed_case(servo_name,feed_name,receiver_scope):
+-        case=make_case(receiver_scope,7.4,'BC','SELECT_AFTER_BASELINE')
+-        case['name']='same_BEC_'+servo_name+'_'+feed_name+'_'+receiver_scope
+-        case['scope']='same_BEC_illustrative'
+-        case['receiver_scope']=receiver_scope
+-        case['parameters'].update({'feed_profile':feed_name,'servo_profile':servo_name,
+-                                   'servo_subtotal_A':servo_definitions[servo_name]['subtotal_A']})
+-        case['sources']=[s for s in case['sources']if s['name']not in ['BEC_at_J6_pads','J6_return_reference']]
+-        case['sources'].append({'name':'one_external_BEC','p':'BEC_POS','n':'SOURCE_GND','voltage_V':7.4})
+-        for ref,pair in feed_examples[feed_name].items():
+-            case['resistors'] += [
+-             resistor(ref+'_positive_lead_contact','BEC_POS',ref+'.2',pair[0],classification='Illustrative, unmeasured'),
+-             resistor(ref+'_return_lead_contact',ref+'.1','SOURCE_GND',pair[1],classification='Illustrative, unmeasured')]
+-        for ref,current in servo_profiles[servo_name].items():
+-            case['loads'].append(load(ref+'_servo_illustration',ref+'.2',ref+'.1',current))
+-            case['probes'].append({'name':ref+'_servo_board_pad','p':ref+'.2','n':ref+'.1','minimum_V':6.,'maximum_V':8.4,
+-               'purpose':'PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.'})
+-        case['current_budget_checks']['servo_subtotal_A']=servo_definitions[servo_name]['subtotal_A']
+-        case['current_budget_checks']['source_total_A']=None
+-        case['assumptions']=[a for a in case['assumptions']if not a.startswith('Ideal J6 pad-entry')]
+-        case['assumptions'] += [
+-          'One 7.4 V external BEC drives the actual J6/J8 positive and return pads through four independent finite resistances when both feeds are present.',
+-          'Feed/contact resistance values are illustrative sensitivity inputs, not measured factory bounds. No 50/50 positive or return sharing is imposed.',
+-          'The source voltage is an illustrative ideal external BEC terminal condition; actual regulation, source impedance and current limiting remain unbound.',
+-          'Servo currents are approximate plotted 7.4 V endpoints held constant for the DC comparison. Voltage dependence, startup, reversal and stall are unknown.',
+-          'The 15.8/15.9 A servo-only endpoint examples already exceed 10 A continuous BEC capability. The 8.9 A cases need newly solved electronics demand before comparison.',
+-          'No duration is assigned. The BEC 30 A peak number does not establish an allowable PCB, contact, harness or servo pulse envelope.',
+-          'J8 auxiliary feed requires unused SBUS, an empty signal cavity and verified polarity/fit.',
+-          'B=C=1 A is the selected representative peripheral loading; expand to A/B/C combinations if allocation or return rankings change.']
+-        case['required_reports']=['Actual four positive/return feed currents independently, including signs and sharing.',
+-           'Power loss in each feed/contact resistor and each copper layer/barrel; whole-circuit conservation.',
+-           'Newly solved total BEC current and its difference from 10 A continuous; report 30 A peak only as duration-unspecified context.',
+-           'Each actual servo pad voltage; separately flag absent output-harness terminal qualification.',
+-           'Actual DSM voltage under its declared receiver scope, ABC floors and U9 input/accuracy-window margins.']
+-        case['activation_blockers'] += ['Select or expand electronics allocation after baseline; servo cases can change the limiting return path',
+-           'No installed-system acceptance without measured harness/source bounds and bounded servo waveform/temperature evidence']
+-        return case
+-    return make_case, make_feed_case
++"""Corrected physical case definitions; pure data transformations, no solve."""
++import copy
++import hashlib
++import json
++import math
++SCHEMA='f722-corrected-power-primary-model/v2'
++BRANCH_LIMIT_A = .020
++
++FERRITE_SCREEN_OHM = 1.0
++
++UNFILTERED = {
++    'mcu_vdd19': ('U1.19', 'U1.18'),
++    'mcu_vdd32': ('U1.32', 'U1.31'),
++    'mcu_vdd48': ('U1.48', 'U1.47'),
++    'mcu_vdd64': ('U1.64', 'U1.63'),
++    'flash': ('U3.8', 'U3.4'),
++    'barometer_vddio': ('U4.6', 'U4.1'),
++    'barometer_vdd': ('U4.8', 'U4.7'),
++}
++
++FILTERED = {'analog': ('U1.13', 'U1.12'),
++            'imu_vddio': ('U2.5', 'U2.6'),
++            'imu_vdd': ('U2.8', 'U2.6')}
++
++PARTS = {'U1': 'STM32F722RET6', 'U2': 'ICM-42688-P',
++         'U3': 'W25N01GVZEIG', 'U4': 'DPS368XTSA1',
++         'U10': 'TPS2553DRVR', 'U11': 'TPS2553DRVR',
++         'FB1': 'BLM15AG601SN1D', 'FB2': 'BLM15AG601SN1D'}
++
++REQUIRED_PADS = {
++    **{p: ('+3V3_CORE', 'B.Cu') for p in ['U1.1','U1.19','U1.32','U1.48','U1.64','U3.8','U11.4','U11.6','FB1.1']},
++    **{p: ('GND', 'B.Cu') for p in ['U1.12','U1.18','U1.31','U1.47','U1.63','U3.4','U10.5','U11.5']},
++    **{p: ('+3V3_CORE', 'F.Cu') for p in ['U4.2','U4.6','U4.8','FB2.1']},
++    **{p: ('GND', 'F.Cu') for p in ['U2.6','U4.1','U4.5','U4.7']},
++    'U10.4': ('USB_VBUS_RAW','B.Cu'), 'U10.6': ('USB_VBUS_RAW','B.Cu'),
++    'U10.1': ('USB_LIMITED','B.Cu'), 'U11.1': ('+3V3_DSM','B.Cu'),
++    'FB1.2': ('+3V3_ANALOG','B.Cu'), 'U1.13': ('+3V3_ANALOG','B.Cu'),
++    'FB2.2': ('+3V3_IMU','F.Cu'), 'U2.5': ('+3V3_IMU','F.Cu'), 'U2.8': ('+3V3_IMU','F.Cu'),
++}
++
++ROLE_CORRECTIONS = [
++    {'component':'U10','part':'TPS2553DRVR','category':'resistors','name':'U10_USB_limiter_path','old_p':'U10.4','p':'U10.6','n':'U10.1','role':'IN -> OUT'},
++    {'component':'U11','part':'TPS2553DRVR','category':'resistors','name':'U11_selected_path','old_p':'U11.4','p':'U11.6','n':'U11.1','role':'IN -> OUT'},
++    {'component':'U10','part':'TPS2553DRVR','category':'loads','name':'U10_IQ_table_screen','old_p':'U10.4','p':'U10.6','n':'U10.5','role':'IN -> GND'},
++    {'component':'U10','part':'TPS2553DRVR','category':'loads','name':'added_auxiliary_U10.4','old_p':'U10.4','p':'U10.6','n':'U10.5','role':'IN -> GND'},
++]
++
++FORBIDDEN_SUPPLY_PADS = {'U10.4':'EN', 'U11.4':'EN', 'U4.2':'CSB', 'U4.5':'SDO'}
++
++class Refused(RuntimeError): pass
++
++def require(condition, message):
++    if not condition:
++        raise Refused(message)
++
++def digest(value): return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
++
++def allocation_vertices(total):
++    require(total in [.30,.32], 'Unreviewed aggregate electronics budget')
++    rows=[]
++    for name,(p,n) in UNFILTERED.items():
++        for analog in [0.,BRANCH_LIMIT_A]:
++            for imu in ['none','imu_vddio','imu_vdd']:
++                imu_current=0. if imu=='none' else BRANCH_LIMIT_A
++                currents={key:0. for key in [*UNFILTERED,*FILTERED]}
++                currents[name]=round(total-analog-imu_current,9)
++                currents['analog']=analog
++                if imu!='none': currents[imu]=imu_current
++                rows.append({'name':f'{name}__analog{int(1000*analog)}m__{imu}',
++                             'currents_A':currents})
++    require(len(rows)==42 and len({r['name'] for r in rows})==42,'Wrong vertex set')
++    return rows
++
++def convex_weights(currents,total):
++    """Explicit witness: every feasible allocation is in this 42-vertex hull.
++
++    This proves load-polytope coverage, not global voltage extrema for nonlinear
++    constant-power converters. That separate numerical claim is not made here.
++    """
++    require(set(currents)==set(UNFILTERED)|set(FILTERED),'Incomplete current vector')
++    require(all(isinstance(x,(int,float)) and not isinstance(x,bool) and math.isfinite(x) and x>=0 for x in currents.values()),'Invalid allocation current')
++    require(abs(sum(currents.values())-total)<1e-12,'Aggregate budget differs')
++    a=currents['analog'];i=currents['imu_vddio'];v=currents['imu_vdd']
++    require(a<=BRANCH_LIMIT_A and i+v<=BRANCH_LIMIT_A,'Filtered branch over budget')
++    remainder=total-a-i-v
++    require(remainder>0,'Unfiltered residual must be positive')
++    weights=[]
++    for row in allocation_vertices(total):
++        allocations=row['currents_A']
++        key=next(k for k in UNFILTERED if allocations[k]>0)
++        pa=a/BRANCH_LIMIT_A if allocations['analog'] else 1-a/BRANCH_LIMIT_A
++        pi=i/BRANCH_LIMIT_A if allocations['imu_vddio'] else v/BRANCH_LIMIT_A if allocations['imu_vdd'] else 1-(i+v)/BRANCH_LIMIT_A
++        weights.append(currents[key]/remainder*pa*pi)
++    require(abs(sum(weights)-1)<1e-12 and min(weights)>=-1e-15,'Invalid convex witness')
++    for key,value in currents.items():
++        actual=sum(w*r['currents_A'][key] for w,r in zip(weights,allocation_vertices(total)))
++        require(abs(actual-value)<1e-12,'Convex witness does not reconstruct '+key)
++    return weights
++
++def corrected_paths(case):
++    for rule in ROLE_CORRECTIONS:
++        for row in case.get(rule['category'],[]):
++            if row['name']==rule['name']:
++                require(row['p']==rule['old_p'] and row['n']==rule['n'],'Unexpected historical terminal path: '+rule['name'])
++                row['p']=rule['p']
++                row['terminal_correction']='TPS2553 DRV IN=6; EN=4 is not a supply-current entry'
++    return case
++
++def sink_probes(supply):
++    mode='stock_216MHz_scale1_overdrive_7WS' if supply=='BEC' else 'stock_USB_FS_full_spec'
++    mcu_floor=2.7 if supply=='BEC' else 3.0
++    rows=[]
++    for key,(p,n) in {**UNFILTERED,**FILTERED}.items():
++        floor=mcu_floor if key.startswith('mcu') or key=='analog' else 2.7 if key=='flash' else 1.2 if key=='barometer_vddio' else 1.7 if key=='barometer_vdd' else 1.71
++        rows.append({'name':'actual_rail_'+key,'p':p,'n':n,'minimum_V':floor,'maximum_V':3.6,
++                     'mode':mode,'purpose':('Conditional conservative VDDA design screen; does not establish steady-state VDDA/VDD tracking or ADC accuracy.' if key=='analog' else 'Selected-part recommended operating DC supply window for '+mode+'; excludes signal levels, startup and AC behavior.')})
++    return rows
++
++def check_corrected_case(case):
++    expected_resistors={'U11_selected_path':('U11.6','U11.1')}
++    if case['supply']=='USB':
++        expected_resistors.update(U10_USB_limiter_path=('U10.6','U10.1'),
++                                 U7_USB_selected_path=('U7.6','DEV_U7_OUT'),
++                                 U8_USB_selected_path=('U8.2','DEV_U8_OUT'))
++    else:
++        expected_resistors.update(U5_efuse_path=('U5.5','U5.6'),
++                                 U7_BEC_selected_path=('U7.3','DEV_U7_OUT'),
++                                 U8_BEC_selected_path=('U8.7','DEV_U8_OUT'))
++    by_name={r['name']:r for r in case['resistors']}
++    require(len(by_name)==len(case['resistors']),'Duplicate device/resistor name')
++    for name,pair in expected_resistors.items():
++        require(name in by_name and (by_name[name]['p'],by_name[name]['n'])==pair,
++                'Missing or wrong physical selected path: '+name)
++    for converter in case['converters']:
++        expected={'U9_total_efficiency':('U9.2','U9.1','L2.2','U9.1','U9.6','U9.4'),
++                  'U6_total_efficiency':('U6.VIN_12_13','U6.10','U6.OUT_7_8','U6.10','U6.5','U6.4')}
++        require(converter['name'] in expected and tuple(converter[k] for k in ['in_p','in_n','out_p','out_n','sense_p','sense_n'])==expected[converter['name']],
++                'Converter physical power/sense role differs')
++    require({c['name'] for c in case['converters']}==({'U9_total_efficiency'} if case['supply']=='USB' else {'U9_total_efficiency','U6_total_efficiency'}),'Missing physical converter')
++    for category in ['resistors','loads']:
++        for row in case.get(category,[]):
++            if row['name'] in [r['name'] for r in ROLE_CORRECTIONS]:
++                rule=next(r for r in ROLE_CORRECTIONS if r['name']==row['name'])
++                require((row['p'],row['n'])==(rule['p'],rule['n']),'Control pin used as power terminal: '+row['name'])
++    loads=[r for r in case['loads'] if r['name'].startswith('aggregate_electronics_adversarial')]
++    require(abs(sum(r['current_A'] for r in loads)-case['parameters']['electronics_A'])<1e-12,'Electronics budget mismatch')
++    require(all(r['p'] not in FORBIDDEN_SUPPLY_PADS and r['n'] not in FORBIDDEN_SUPPLY_PADS for r in loads),'Control/strap used as electronics supply or return')
++    require(sum(r['current_A'] for r in loads if r['p']=='U1.13')<=BRANCH_LIMIT_A+1e-12,'Analog branch current over budget')
++    require(sum(r['current_A'] for r in loads if r['p'] in ['U2.5','U2.8'])<=BRANCH_LIMIT_A+1e-12,'Combined IMU branch current over budget')
++    probes={r['name']:r for r in case['probes']}
++    for expected in sink_probes(case['supply']):
++        require(probes.get(expected['name'])==expected,'Missing or altered actual sink/mode window: '+expected['name'])
++    require(case.get('execution_enabled',False)is False,'Case must not carry an independent execution release')
++
++def revise_case(original,vertex=None):
++    case=corrected_paths(copy.deepcopy(original))
++    case.pop('case_definition_sha256',None)
++    case['execution_enabled']=False
++    if vertex is not None:
++        case['name']='corrected_'+original['scope']+'_'+original['supply']+str(original['parameters']['input_at_defined_source_V'])+'_'+''.join(p[1:] for p in original['parameters']['ABC_ports'])+'_'+vertex['name']
++        case['parameters']['allocation_vertex']=vertex['name']
++        case['loads']=[r for r in case['loads'] if r['name']!='aggregate_electronics_adversarial']
++        for key,current in vertex['currents_A'].items():
++            if current:
++                p,n={**UNFILTERED,**FILTERED}[key]
++                case['loads'].append({'name':'aggregate_electronics_adversarial__'+key,'p':p,'n':n,'current_A':current})
++        case['parameters']['bounded_allocation_A']=vertex['currents_A']
++    case['nets']=list(dict.fromkeys([*case['nets'],'+3V3_ANALOG','+3V3_IMU']))
++    case['resistors'] += [
++        {'name':ref+'_conditional_hot_DCR','p':ref+'.1','n':ref+'.2','ohm':FERRITE_SCREEN_OHM,
++         'condition':'1 ohm engineering acceptance screen, conditional on measured hot resistance <=1 ohm and branch current <=20mA; not a Murata guarantee or copper-temperature conversion.'}
++        for ref in ['FB1','FB2']]
++    case['probes'] += sink_probes(case['supply'])
++    case['probes'] += [{'name':'U11_actual_IN_operating','p':'U11.6','n':'U11.5','minimum_V':2.5,'maximum_V':6.5},
++                       {'name':'U11_EN_high_condition','p':'U11.4','n':'U11.5','minimum_V':1.1,'maximum_V':6.5}]
++    if case['supply']=='USB':
++        case['probes'] += [{'name':'U10_actual_IN_operating','p':'U10.6','n':'U10.5','minimum_V':2.5,'maximum_V':6.5},
++                           {'name':'U10_EN_high_condition','p':'U10.4','n':'U10.5','minimum_V':1.1,'maximum_V':6.5}]
++    case['report_only_probes']=[r for r in case['report_only_probes'] if r['name']!='CORE_actual_adversarial_sink']
++    case['report_only_probes'] += [
++        {'name':'VDDA_relative_to_'+key,'p':'U1.13','n':p,
++         'reason':'Steady-state rail tracking difference only; no 300mV steady-state allowance is asserted.'}
++        for key,(p,n) in UNFILTERED.items() if key.startswith('mcu')]
++    case['report_only_probes'] += [{'name':ref+'_actual_bead_drop','p':ref+'.1','n':ref+'.2',
++                                  'reason':'Conditional DCR screen; full branch also includes downstream copper and actual ground return.'} for ref in ['FB1','FB2']]
++    case['report_only_probes'] += [
++        {'name':'VBAT_local_to_VSS18','p':'U1.1','n':'U1.18',
++         'reason':'Backup-domain supply only, recommended1.65..3.6V; VSS18 is the explicit board reference, not an inferred package current split.'},
++        {'name':'CSB_local_to_GND1','p':'U4.2','n':'U4.1',
++         'reason':'Logic strap only; compare to0.7*actual U4.6 VDDIO in the separate role report.'}]
++    case['assumptions'] += [
++        'Corrected physical supply entries: TPS2553 pin6 is IN, pin4 is EN; DPS368 pin2 CSB and pin5 SDO are not power entry/return pins.',
++        'Filtered branches each have a conditional 20mA budget, with combined IMU VDD+VDDIO <=20mA. Their demand is included once within the electronics aggregate.',
++        '42-vertex load-polytope coverage does not by itself prove global voltage extrema for nonlinear constant-power converter equations.',
++        '105C remains modeled copper temperature, not ambient, ferrite body temperature, or permitted X5R body temperature.',
++        'U11 supply/enable consumption and CORE-powered bias are counted once in the aggregate electronics allowance; their individual injection/contact-current distribution is not separately resolved by this allocation model.',
++        'U10 IQ remains the inherited conditional140uA table screen at actual IN6/GND5. Auxiliary2mA sensitivity slices are disabled; any future legacy added_auxiliary_U10.4 label must still map its actual endpoint to IN6 and be renamed before publication.']
++    case['U11_bias_current_accounting']={
++        'included_once_in_electronics_aggregate':True,'separate_IQ_or_EN_load_added':False,
++        'individual_spatial_current_distribution_resolved':False,
++        'reference_only':{'IQ_on_max_A':.000140,'IQ_conditions':'VIN6.5V, OUT open, RILIM20kohm; not a verified actual3.3V/loaded bound',
++                          'EN_absolute_input_current_A':.0000005,'EN_conditions':'VEN0V or6.5V; not a separately verified actual-state bound'},
++        'package_ground_split':'Pin5/exposed-pad current sharing and EN return distribution are not established.',
++        'future_change':'A dedicated physical IQ/EN load needs a reviewed bound deducted from the aggregate, with a new model identity; never double count.'}
++    check_corrected_case(case)
++    case['case_definition_sha256']=digest(case)
++    return case
++
++def allocation_independent_context(case):
++    """Remove only the five reviewed allocation fields, retaining everything else."""
++    value=copy.deepcopy(case)
++    for key in ['name','case_definition_sha256']:value.pop(key,None)
++    value['parameters'].pop('allocation_vertex',None)
++    loads=[r for r in value['loads'] if r['name']=='aggregate_electronics_adversarial']
++    probes=[r for r in value['report_only_probes'] if r['name']=='CORE_actual_adversarial_sink']
++    require(len(loads)==len(probes)==1,'Historical allocation fields missing or duplicated')
++    for row in [*loads,*probes]:
++        row['p']='ALLOCATION_POSITIVE';row['n']='ALLOCATION_RETURN'
++    return value
++
++def equivalent_context(cases,expected_count):
++    require(len(cases)==expected_count,'Historical context case membership changed')
++    expected=allocation_independent_context(cases[0])
++    require(all(allocation_independent_context(c)==expected for c in cases),
++            'Historical cases differ beyond reviewed allocation fields; preserve and review distinct contexts')
++    vertices=[c['parameters']['allocation_vertex'] for c in cases]
++    require(len(set(vertices))==len(vertices),'Duplicate historical context allocation')
++    return digest(expected)
++
++def context_receipt(old):
++    groups={}
++    for c in old['cases']:
++        if c['scope'] in ['classic','capacity']:
++            key=c['scope']+'/'+','.join(c['parameters']['ABC_ports'])
++            groups.setdefault(key,[]).append(c)
++    require(len(groups)==6,'Expected six historical BEC contexts')
++    rows={key:{'cases':[c['name'] for c in cases],
++               'non_allocation_context_sha256':equivalent_context(cases,10)} for key,cases in groups.items()}
++    usb=[c for c in old['cases'] if c['scope']=='usb_configuration']
++    rows['USB']={'cases':[c['name'] for c in usb],
++                 'non_allocation_context_sha256':equivalent_context(usb,2)}
++    return rows
++
++def build_proposal(old):
++    require(len(old['cases'])==73 and len(old['loops'])==5,'Historical selection changed')
++    required=[c for c in old['cases'] if c['scope'] in ['classic','capacity','usb_configuration']]
++    require(len(required)==62,'Historical required count changed')
++    context_receipt(old)
++    result=[]
++    contexts={}
++    for c in old['cases']:
++        if c['scope'] in ['classic','capacity']:
++            key=(c['scope'],tuple(c['parameters']['ABC_ports']))
++            contexts.setdefault(key,c)
++    require(len(contexts)==6,'Expected six BEC contexts')
++    for c in contexts.values():
++        for vertex in allocation_vertices(.32): result.append(revise_case(c,vertex))
++    usb=[c for c in old['cases'] if c['scope']=='usb_configuration']
++    require(len(usb)==2 and all(c['parameters']['electronics_A']==.30 for c in usb),'Historical USB samples changed')
++    for vertex in allocation_vertices(.30): result.append(revise_case(usb[0],vertex))
++    illustrations=[revise_case(c) for c in old['cases'] if c['scope']=='same_BEC_illustrative']
++    result+=illustrations
++    require(len(result)==305 and len(illustrations)==11,'Proposed selection count differs')
++    require(len({c['name'] for c in result})==len(result),'Duplicate corrected case name')
++    proposal=copy.deepcopy(old)
++    proposal.update(schema=SCHEMA,status='DISABLED PROPOSAL; NO VALIDATION RESULT',execution_enabled=False,
++                    freeze_manifest_sha256=None,assumption_record_sha256=None,definition_source_sha256={},
++                    source_stage='Physical terminal correction proposal; source-bound review only',
++                    cases=result,case_family='294-required-and-11-illustrative-corrected-proposal')
++    return proposal
++
++def build_cases(plan,settings):
++    require(plan.get('schema')=='f722-corrected-case-plan-disabled/v2' and plan.get('execution_enabled')is False,
++            'Expected reviewed corrected disabled plan')
++    old=plan['historical_primary']
++    require(digest(old)==plan['historical_primary_definition_sha256'],'Historical context definitions changed')
++    receipt=context_receipt(old)
++    require(receipt==plan['historical_context_equivalence'],'Bound historical context equivalence changed')
++    proposal=build_proposal(old)
++    for key in ['material','mesh_spacings_mm','convergence','limits']:
++        require(settings[key]==old[key],'Preserved physical/numerical settings changed: '+key)
++    require(plan['VCAP_copper_loops']==old['loops'],'Preserved VCAP loops changed')
++    families={'baseline':[],'servo':[]}
++    for case in proposal['cases']:
++        case.pop('case_definition_sha256',None)
++        case.pop('execution_enabled',None)
++        case['model_revision']='f722-physical-terminal-correction/v2'
++        case['qualification']='Conditional prototype DC case only; no nonlinear interior-extrema, component-temperature, package-current-sharing, AC or flight guarantee'
++        case['case_definition_sha256']=digest(case)
++        families['servo' if case['scope']=='same_BEC_illustrative' else 'baseline'].append(case)
++    return families,[]
+--- historical/model_contract.py
++++ corrected-v3/model_contract.py
+@@ -0,0 +1,79 @@
++"""Exact corrected-model identity and refusal guards, independent of FEM."""
++import copy
++from power_case_model import digest,require,Refused,build_cases,check_corrected_case,PARTS,REQUIRED_PADS
++
++REVISION='f722-physical-terminal-correction/v2'
++JOB_KEYS=['cases','networks','loops','material','mesh_spacings_mm','convergence','limits']
++
++def registry_networks(registry):
++    require(registry.get('schema')=='f722-corrected-terminal-registry-disabled/v2' and registry.get('execution_enabled')is False,
++            'Expected corrected disabled terminal registry')
++    networks={}
++    for name,row in registry['contacts'].items():
++        require(row.get('pads') and row.get('layer') in ['F.Cu','B.Cu'],'Invalid physical terminal definition')
++        networks.setdefault(row['net'],{})[name]={'pads':row['pads'],'layer':row['layer']}
++    return [{'net':net,'contacts':contacts} for net,contacts in sorted(networks.items())]
++
++def definition_contract(plan,registry,settings):
++    families,_=build_cases(plan,settings)
++    cases=[c for family in families.values() for c in family]
++    networks=registry_networks(registry)
++    require(len({c['name'] for c in cases})==len(cases),'Duplicate corrected cases')
++    for c in cases:check_corrected_case(c)
++    used={r[k] for c in cases for cat in ['sources','resistors','loads','converters','probes','report_only_probes'] for r in c.get(cat,[]) for k in ['p','n','in_p','in_n','out_p','out_n','sense_p','sense_n'] if k in r}
++    used.update(k for loop in plan['VCAP_copper_loops'] for leg in loop['legs'] for k in [leg['source'],leg['sink']])
++    virtual={'SOURCE_GND','BEC_POS','USB_SOURCE','DEV_U7_OUT','DEV_U8_OUT'}
++    contacts={p for n in networks for p in n['contacts']}
++    require(contacts==used-virtual,'Missing or extraneous corrected physical contact')
++    require(all(len(n['contacts'])>=2 for n in networks),'One-port corrected network')
++    physics={key:copy.deepcopy(settings[key]) for key in ['material','mesh_spacings_mm','convergence','limits']}
++    job={**physics,'cases':cases,'networks':networks,'loops':plan['VCAP_copper_loops']}
++    return {'model_revision':REVISION,
++            'case_definitions':{c['name']:c['case_definition_sha256'] for c in cases},
++            'case_order':[c['name'] for c in cases],
++            'case_scopes':{c['name']:c['scope'] for c in cases},
++            'job_sha256':{key:digest(job[key]) for key in JOB_KEYS},
++            'counts':{'required':len(families['baseline']),'illustrative':len(families['servo']),
++                      'loops':len(job['loops']),'networks':len(networks),'contacts':len(contacts),
++                      'ground_contacts':sum(len(n['contacts']) for n in networks if n['net']=='GND')},
++            'context_equivalence_sha256':digest(plan['historical_context_equivalence']),
++            'scope':'Enumerated conditional prototype DC cases; exact current-polytope coverage is not a nonlinear interior-extrema proof.'}
++
++def check_inputs(plan,registry,settings):
++    actual=definition_contract(plan,registry,settings)
++    require(plan.get('model_contract')==actual,'Corrected definition contract changed')
++    require(registry.get('model_contract_sha256')==digest(actual),'Registry belongs to a different corrected model')
++    return actual
++
++def check_physical_source(parts,native,plan):
++    for ref,spec in plan['selected_part_contract'].items():
++        require(parts.get(ref,{}).get('mpn')==spec['mpn'],'Selected physical part/package changed: '+ref)
++    pads={p['key']:p for p in native['objects'] if p['kind']=='pad' and p.get('number')}
++    for key,spec in plan['physical_pad_contract'].items():
++        actual=pads.get(key,{})
++        require(actual.get('net')==spec['net'] and sorted(actual.get('copper',{}))==spec['layers'],
++                'Power/control/sense physical pad identity changed: '+key)
++    for key,(net,layer) in REQUIRED_PADS.items():
++        require(key in pads and pads[key]['net']==net and layer in pads[key]['copper'],'Actual sink/entry identity changed: '+key)
++
++def check_ledger(ledger,contract,full=False):
++    require(ledger.get('model_revision')==contract.get('model_revision')==REVISION,'Missing corrected model revision')
++    require(ledger.get('model_contract')==contract,'Ledger/manifest model contract differs')
++    cases=ledger['cases'];names=[c['name'] for c in cases]
++    expected=contract['case_order']
++    if not full:
++        family=ledger.get('case_family')
++        if family=='baseline':expected=[n for n in expected if contract['case_scopes'][n]!='same_BEC_illustrative']
++        elif family=='servo':expected=[n for n in expected if contract['case_scopes'][n]=='same_BEC_illustrative']
++        else:require(family in ['primary','corrected-primary-and-VCAP'],'Unknown corrected case family')
++    require(names==expected,'Corrected case membership/order changed')
++    for case in cases:
++        require(case.get('model_revision')==REVISION,'Case model revision differs')
++        check_corrected_case(case)
++        actual=digest({k:v for k,v in case.items() if k!='case_definition_sha256'})
++        require(case.get('case_definition_sha256')==actual==contract['case_definitions'].get(case['name']),
++                'Corrected resolved case identity changed: '+case['name'])
++    for key in JOB_KEYS:
++        if key!='cases' or full:
++            require(digest(ledger[key])==contract['job_sha256'][key],'Corrected operational job changed: '+key)
++    return contract['counts']
+--- historical/prepare_loaded_pilot.py
++++ corrected-v3/prepare_loaded_pilot.py
+@@ -1,52 +1,28 @@
+ #!/usr/bin/env python3
+-"""Prepare a bounded 73-case diagnostic from a newly compiled frozen source; no solve."""
++"""Prepare the corrected primary/VCAP job from compiled evidence; never solve."""
+ import argparse,copy,json,os,shutil
+ from pathlib import Path
+ from copper_fem import Refused
+ from validate_static import preflight,read_json,sha256
+ from compile_power_ledger import check_cases,save
+ from audit_native_ports import audit_ports
++from model_contract import check_ledger,REVISION
++from power_case_model import digest
+ 
+-SERVO_PAIRS=[('moderate','equal20m'),('moderate','paired_J8_weak'),
+- ('moderate','crossed_J6_positive_strong'),('moderate','J6_feed_lost'),('moderate','J8_feed_lost'),
+- ('heavy_S1_905X','equal40m'),('heavy_S2_905X','paired_J8_weak'),('heavy_S3_905X','crossed_J6_positive_strong'),
+- ('all_cyclic_805X','equal40m'),('all_cyclic_905X','paired_J8_weak'),('all_cyclic_905X','J6_feed_lost')]
++def select_cases(primary):
++    check_ledger(primary,primary.get('model_contract',{}),full=True)
++    return copy.deepcopy(primary['cases'])
+ 
+-def select_cases(all_cases):
+-    minimum=[c for c in all_cases if c['scope']in ['classic','capacity']and c['supply']=='BEC'and c['parameters']['input_at_defined_source_V']==5.]
+-    usb=[c for c in all_cases if c['scope']=='usb_configuration'and c['parameters']['input_at_defined_source_V']==4.33 and c['parameters']['allocation_vertex']in ['mcu_vdd19','flash']]
+-    servo=[]
+-    for profile,feed in SERVO_PAIRS:
+-        rows=[c for c in all_cases if c['scope']=='same_BEC_illustrative'and c['parameters']['servo_profile']==profile and c['parameters']['feed_profile']==feed and c['parameters']['allocation_vertex']=='mcu_vdd19'and c['parameters']['DSM_A']==(.02 if profile=='moderate'else .50)]
+-        if len(rows)!=1:raise Refused('Missing or duplicate exact servo diagnostic selector: '+profile+'/'+feed)
+-        servo.extend(rows)
+-    if (len(minimum),len(usb),len(servo))!=(60,2,11):raise Refused('Loaded diagnostic selection changed; review scope explicitly')
+-    if len({c['name']for c in minimum+usb+servo})!=73:raise Refused('Duplicate selected diagnostic case')
+-    for case in minimum:
+-        if any(load['name'].endswith('_servo_illustration')for load in case['loads']):raise Refused('Incompatible servo load in 5 V diagnostic')
+-    for case in usb:
+-        if case['parameters']['DSM_A']or case['parameters']['ABC_ports']or any(load['name'].endswith('_servo_illustration')for load in case['loads']):raise Refused('External load in USB-only diagnostic')
+-    return copy.deepcopy(minimum+usb+servo)
+ 
+ def select_scope(primary,cases,refined_combined=False):
+-    loops=copy.deepcopy(primary.get('loops',[]))if refined_combined else []
+-    if refined_combined:
+-        expected=[{'name':'VCAP_copper_to_'+pad,'maximum_ohm':.035,
+-                   'legs':[{'net':'VCAP','source':'U1.30','sink':'R16.1'},
+-                           {'net':'VCAP_CAP','source':'R16.2','sink':'C7.1'},
+-                           {'net':'GND','source':'C7.2','sink':pad}]}for pad in ['U1.12','U1.18','U1.31','U1.47','U1.63']]
+-        if [{k:loop[k]for k in ['name','maximum_ohm','legs']}for loop in loops]!=expected:
+-            raise Refused('The refined combined scope requires the five exact 35mOhm VCAP copper loops')
+-        if primary['mesh_spacings_mm']!=[.12,.09]:raise Refused('Refined combined scope requires the approved .12/.09 grids')
+-    used={r[k]for case in cases for category in ['sources','resistors','loads','converters','probes','report_only_probes']for r in case.get(category,[])for k in ['p','n','in_p','in_n','out_p','out_n','sense_p','sense_n']if k in r}
+-    used.update(key for loop in loops for leg in loop['legs']for key in [leg['source'],leg['sink']])
+-    networks=[{'net':n['net'],'contacts':{k:v for k,v in n['contacts'].items()if k in used}}for n in primary['networks']]
+-    networks=[n for n in networks if n['contacts']]
+-    if any(len(n['contacts'])<2 for n in networks):raise Refused('One-port loaded network')
+-    if refined_combined and (len(networks),sum(len(n['contacts'])for n in networks),len(next(n['contacts']for n in networks if n['net']=='GND')))!=(13,99,41):
+-        raise Refused('Changed refined network/contact scope requires review')
++    if not refined_combined:raise Refused('Corrected primary requires both reviewed grids and all five VCAP loops')
++    check_ledger(primary,primary.get('model_contract',{}),full=True)
++    if digest(cases)!=primary['model_contract']['job_sha256']['cases']:
++        raise Refused('Corrected selected case definitions changed')
++    networks=copy.deepcopy(primary['networks']);loops=copy.deepcopy(primary['loops'])
+     check_cases(cases,networks)
+     return networks,loops
++
+ 
+ def checked_extra_evidence(paths,board_sha256,native_sha256):
+     rows=[];names=set()
+@@ -60,16 +36,18 @@
+         rows.append({'path':path,'name':name,'sha256':sha256(path)})
+     return rows
+ 
+-def prepare(compiled,out,release=False,refined_combined=False,extra_evidence=()):
++def prepare(compiled,out,release=False,refined_combined=False,extra_evidence=(),owner_released_board_sha=None):
+     compiled=Path(compiled);out=Path(out)
+     if out.exists():raise Refused('Loaded pilot output already exists')
+     context=preflight(compiled/'freeze.json',compiled/'ledger-primary.json');primary=context['ledger']
++    if release and owner_released_board_sha!=context['board_sha256']:
++        raise Refused('Explicit owner release for this exact corrected source is required')
+     extra=checked_extra_evidence(extra_evidence,context['board_sha256'],context['manifest']['files']['geometry']['sha256'])
+-    cases=select_cases(primary['cases'])
++    cases=select_cases(primary)
+     networks,loops=select_scope(primary,cases,refined_combined)
+     out.mkdir(parents=True);runtime=out/'solver-source';runtime.mkdir()
+     freeze=copy.deepcopy(context['manifest']);freeze['tested_nets']=[n['net']for n in networks]
+-    freeze['source_stage']=context['manifest']['source_stage']+('; refined 73-case and five-loop diagnostic'if refined_combined else '; bounded 73-case loaded diagnostic')
++    freeze['source_stage']=context['manifest']['source_stage']+'; corrected primary and five-loop conditional diagnostic'
+     freeze['numerical_execution_authorized']=release
+     freeze['pilot_resource_limits']={'overall_wall_seconds':1500 if refined_combined else 1200,'address_space_MiB':4096,'heavy_processes':1,'BLAS_threads':1,'OpenMP_threads':1}
+     for spec in freeze['files'].values():spec['path']=os.path.relpath((compiled/spec['path']).resolve(),out.resolve())
+@@ -80,44 +58,44 @@
+             if sha256(destination)!=row['sha256']:raise Refused('Additional source evidence changed during copying')
+             freeze['files']['source_evidence_'+row['name']]={'path':'source-evidence/'+row['name'],'sha256':row['sha256']}
+     for name in [*freeze['analysis_source_sha256'],'run_bounded_pilot.py']:
+-        shutil.copyfile(Path(__file__).parent/name,runtime/name);digest=sha256(runtime/name)
+-        if name in freeze['analysis_source_sha256']and digest!=freeze['analysis_source_sha256'][name]:raise Refused('Solver changed after compilation: '+name)
+-        freeze['files']['pilot_source_'+name]={'path':'solver-source/'+name,'sha256':digest}
++        shutil.copyfile(Path(__file__).parent/name,runtime/name);source_digest=sha256(runtime/name)
++        if name in freeze['analysis_source_sha256']and source_digest!=freeze['analysis_source_sha256'][name]:raise Refused('Solver changed after compilation: '+name)
++        freeze['files']['pilot_source_'+name]={'path':'solver-source/'+name,'sha256':source_digest}
+     save(out/'freeze.json',freeze)
+-    ledger={**primary,'freeze_manifest_sha256':sha256(out/'freeze.json'),'case_family':'bounded-loaded-and-VCAP-diagnostic'if refined_combined else 'bounded-loaded-diagnostic','source_stage':freeze['source_stage'],'networks':networks,'cases':cases,'loops':loops,'unit_transfers':[]}
++    ledger={**primary,'freeze_manifest_sha256':sha256(out/'freeze.json'),'case_family':'corrected-primary-and-VCAP','source_stage':freeze['source_stage'],'networks':networks,'cases':cases,'loops':loops,'unit_transfers':[]}
+     save(out/'ledger.json',ledger);preflight(out/'freeze.json',out/'ledger.json')
+     port_audit=audit_ports(context['files']['board'],context['files']['geometry'],out/'ledger.json',context['files']['connectivity'],context['files']['critical'])
+     if not port_audit['passed']:raise Refused('Prepared finite-contact/alias/loop audit failed')
+     save(out/'port-audit.json',port_audit)
+-    plan={'schema':'f722-loaded-pilot-plan/v1','status':'PREPARED INPUTS; NO BOARD SOLVE','board_sha256':context['board_sha256'],
+-      'freeze_sha256':sha256(out/'freeze.json'),'ledger_sha256':sha256(out/'ledger.json'),'numerical_execution_authorized':release,
+-      'case_count':73,'families':{'5V_minimum_electronics_classic_capacity':60,'4p33V_USB_configuration':2,'7p4V_same_BEC_illustrations':11},
+-      'nets':len(networks),'contacts':sum(len(n['contacts'])for n in networks),'mesh_spacings_mm':ledger['mesh_spacings_mm'],
+-      'loops':len(loops),'port_audit_sha256':sha256(out/'port-audit.json'),
++    counts=primary['model_contract']['counts']
++    plan={'schema':'f722-corrected-loaded-plan/v2','status':'PREPARED INPUTS; NO BOARD SOLVE',
++      'board_sha256':context['board_sha256'],'freeze_sha256':sha256(out/'freeze.json'),
++      'ledger_sha256':sha256(out/'ledger.json'),'numerical_execution_authorized':release,
++      'model_revision':REVISION,'model_contract_sha256':digest(primary['model_contract']),
++      'case_count':len(cases),'families':{'required':counts['required'],'illustrative':counts['illustrative']},
++      'nets':counts['networks'],'contacts':counts['contacts'],'ground_contacts':counts['ground_contacts'],
++      'mesh_spacings_mm':ledger['mesh_spacings_mm'],'loops':len(loops),'port_audit_sha256':sha256(out/'port-audit.json'),
+       'extra_source_evidence_sha256':{row['name']:row['sha256']for row in extra},
+-      'ground_operator':'Fresh 41-contact operator including ideal finite C7.2; incompatible with the old40-contact loaded cache. Shared only within this exact source/contact/grid identity.'if refined_combined else '40-contact loaded GND operator; VCAP loops excluded.',
+-      'acceptance_scopes':'Loaded voltage and VCAP copper loop checks must be reported separately; overall failure does not erase individual scoped results.',
++      'ground_operator':'Fresh exact source/contact/grid identity; no historical cache or package-ground sharing assumption added.',
++      'acceptance_scopes':'Actual supply pad/mode and DSM/ABC limits, numerical checks, VCAP loops and illustrations remain separately reported.',
+       'limits':ledger['limits'],'resource_bounds':freeze['pilot_resource_limits'],
+-      'estimated_runtime_minutes':[17.86,23.33]if refined_combined else [4,10],'estimated_peak_memory_GiB':[2.12,3.16]if refined_combined else [1.3,2.0],
+-      'estimate_basis':'Measured six-port GND pilot: fine mesh558404 raw nodes/132244 equations/741648 triangles,122.2 s overall,1.22GB recorded RSS. More finite contacts require fresh matrices; runtime/memory estimates are not guarantees.',
+-      'reuse':'Build/checkpoint one matrix per exact network/contact/grid identity. Reuse its factor and port matrix across all selected cases; rebuild loaded fields from the same cached identity. No VCAP six-port GND cache is reused for a changed contact set.',
+-      'source_contact_assumptions':'All60 5.0V cases disconnect servo loads. USB4.33V cases disconnect external DSM, ABC and servos. Servo11 cases use7.4V and explicit illustrative finite four-conductor profiles; no measured harness is invented.',
+-      'servo_pairs':SERVO_PAIRS,'servo_allocation':'mcu_vdd19 is a fixed diagnostic illustration, not a proved weakest servo allocation',
+-      'threshold_scope':'Retain conditional classic DSM3.1394..3.465V and ABC4.8V pad floors, U9 operating3..17V, separate4.3V accuracy-condition headroom reports, local positive/return pads and finite contact resistors. Capacity DSM0.50A has no inherited classic accuracy guarantee. CORE sink voltage is reported without inventing a universal component floor.',
+-      'not_completed_by_this_subset':['12.6V and upper-output review','75/85/95% efficiency and90/120/150mOhm U8 sensitivities','line/load/leakage allowance sweeps','all same-BEC/feed/servo/return combinations','weakest-allocation dependent slices','measured harness/source/thermal/AC/flight qualification','final routed-board analysis after later drills/fills'],
++      'runtime_estimate':'Not yet measured for corrected305 cases and new contacts; caps remain1500s/4096MiB, with no silent coarsening.',
++      'reuse':'Reuse only within the exact fresh network/contact/grid fingerprint. Case-count growth does not scale factorization cost linearly.',
++      'limitations':['Conditional20mA branches/1ohm hot ferrites are engineering acceptance bounds, not manufacturer hot-DCR guarantees.',
++                    'Current-polytope vertex coverage does not establish nonlinear interior extrema.',
++                    'Package/exposed-pad current sharing, component temperature, AC, startup, VDDA tracking and signal-level gaps remain explicit.',
++                    'Historical146/140/5532 corner postprocessing is disabled until regenerated.'],
+       'cases':[{'name':c['name'],'case_definition_sha256':c['case_definition_sha256'],'scope':c['scope'],'parameters':c['parameters']}for c in cases],
+       'prepare_source_sha256':sha256(__file__)}
+-    if refined_combined:
+-        plan['estimate_basis']='Read-only extrapolation from completed .20/.15 loaded meshes, keeping actual contours: .12/.09 forecast plus30s VCAP allowance; upper time adds25%+60s. Memory upper is an explicit planning stress, not measured virtual-memory usage. No convergence or resource guarantee.'
+-        plan['reuse']='Build the new41-contact GND operator once per grid; share its live mesh for loops and its source-bound checkpoint/factor for loaded fields. Old40-contact and historical VCAP caches are incompatible.'
+     save(out/'pilot-plan.json',plan);return plan
+ 
+ def main():
+     p=argparse.ArgumentParser(description=__doc__)
+     p.add_argument('--compiled',required=True);p.add_argument('--out',required=True);p.add_argument('--release',action='store_true')
+-    p.add_argument('--refined-combined',action='store_true',help='Approved .12/.09,73-case,five-loop scope;25-minute cap, fresh41-contact GND operator')
++    p.add_argument('--refined-combined',action='store_true',help='Reviewed corrected primary, .12/.09 grids and five VCAP loops; fresh dynamic contact identity')
++    p.add_argument('--owner-released-board-sha',help='Required only for release; exact explicit routing-owner source SHA')
+     p.add_argument('--evidence',action='append',default=[],help='Additional passed source-bound native receipt to copy and hash; repeat as needed')
+-    a=p.parse_args();r=prepare(a.compiled,a.out,a.release,a.refined_combined,a.evidence)
++    a=p.parse_args();r=prepare(a.compiled,a.out,a.release,a.refined_combined,a.evidence,a.owner_released_board_sha)
+     print(json.dumps({k:r[k]for k in ['board_sha256','freeze_sha256','ledger_sha256','case_count','families','nets','contacts','loops','numerical_execution_authorized']}))
+ 
+ if __name__=='__main__':main()
+--- historical/validate_static.py
++++ corrected-v3/validate_static.py
+@@ -15,6 +15,7 @@
+ import sexpdata
+ from copper_fem import Mesh, Limits, Refused, copper_material, native_geometry, contact_keys, contact_spec_geometry
+ from dc_circuit import solve_circuit
++from model_contract import check_ledger,REVISION,Refused as ModelRefused
+ 
+ SCHEMA = 'f722-scoped-static-freeze/v1'
+ 
+@@ -87,6 +88,10 @@
+         raise Refused('Case ledger is unfinished')
+     if ledger.get('freeze_manifest_sha256') != sha256(freeze_path):
+         raise Refused('Ledger is not bound to this freeze manifest')
++    if manifest.get('model_revision') or ledger.get('model_revision') or any(c.get('model_revision') for c in ledger.get('cases',[])):
++        if manifest.get('model_revision')!=REVISION:raise Refused('Missing corrected freeze model revision')
++        try:check_ledger(ledger,manifest.get('model_contract',{}))
++        except ModelRefused as exc:raise Refused(str(exc)) from exc
+     if manifest.get('scope') not in ('power-only', 'final-board'):
+         raise Refused('Unknown frozen scope')
+     for name,expected in manifest.get('analysis_source_sha256',{}).items():
+--- historical/summarize_loaded_pilot.py
++++ corrected-v3/summarize_loaded_pilot.py
+@@ -56,10 +56,8 @@
+     cases_all = [c for run in result['runs'] for c in run['cases']]
+ 
+     def family(name):
+-        for prefix in ['classic_BEC', 'capacity_BEC', 'usb_configuration', 'same_BEC']:
+-            if name.startswith(prefix):
+-                return prefix
+-        raise AssertionError('Unexpected case family: ' + name)
++        scope=definition_by_name[name]['scope']
++        return {'classic':'classic_BEC','capacity':'capacity_BEC','usb_configuration':'usb_configuration','same_BEC_illustrative':'same_BEC'}[scope]
+ 
+     def extrema(cases, category):
+         grouped = {}
+@@ -76,7 +74,7 @@
+         families[name] = {'cases': len(cases), 'static_probe_pass_cases': sum(c['static_probe_pass'] for c in cases),
+                           'acceptance_probes': extrema(cases, 'probes'),
+                           'report_only_probes': extrema(cases, 'report_only_probes')}
+-    sample = next(c for c in fine['cases'] if c['case'] == 'classic_BEC5_AB_mcu_vdd19_baseline')
++    sample = next(c for c in fine['cases'] if definition_by_name[c['case']]['scope']=='classic' and definition_by_name[c['case']]['parameters']['ABC_ports']==['J9','J10'])
+     v = sample['voltage_V']
+     bec = sample['fields']['+5V_BEC']
+     representatives = []
+@@ -88,7 +86,7 @@
+                'probes': c['probes'], 'report_only_probes': c['report_only_probes'], 'power_W': c['power_W']})
+     return {
+         'schema': 'f722-loaded-pilot-summary/v1',
+-        'status': 'completed numerical diagnostic; locked conditional screen failed',
++        'status': 'Completed numerical diagnostic; preserve actual scoped outcomes and runner boolean',
+         'board_sha256': result['board_sha256'], 'result_sha256': sha(result_path),
+         'freeze_sha256': sha(freeze_path), 'ledger_sha256': sha(ledger_path),
+         'summarizer_sha256': sha(__file__),
+@@ -144,8 +142,8 @@
+             'retained_single_line_subdivisions': sum(c['retained_single_line_subdivisions'] for c in certs.values()),
+             'positive_area_elements_discarded': sum(f['element_geometry']['positive_area_elements_discarded'] for f in fields)},
+         'limitations': result['limitations'] + [
+-            'Voltage sensitivity exceeds the locked 1 mV tolerance; no completed voltage convergence or acceptance is claimed.',
+-            'Large peripheral deficits are provisional route diagnostics, not qualified device voltage predictions.',
++            'Inspect actual voltage margins and locked convergence outcomes; no historical pass or failure is inherited.',
++            'Required cases are conditional prototype checks, not a global nonlinear-extrema or flight guarantee.',
+             'Modeled harness profiles are illustrative; measured harness remains unset.',
+             'High servo DC illustrations exceed the stated source continuous capability and have no assigned duration.',
+             'USB configuration has external DSM, ABC and servo loads disconnected; input below 4.3 V does not establish receiver regulation.',
+--- historical/summarize_combined_pilot.py
++++ corrected-v3/summarize_combined_pilot.py
+@@ -4,6 +4,8 @@
+ import json
+ from pathlib import Path
+ from summarize_loaded_pilot import summarize as summarize_loaded,sha,canonical
++from report_actual_sinks import extract as actual_sink_report
++from model_contract import check_ledger
+ 
+ 
+ def classify_scopes(result,ledger):
+@@ -52,7 +54,9 @@
+     if args.out.exists():parser.error('Preserve existing summary')
+     result=json.loads(args.result.read_text());ledger=json.loads(args.ledger.read_text())
+     assert result['freeze_sha256']==sha(args.freeze)and result['ledger_sha256']==sha(args.ledger)
++    check_ledger(ledger,ledger['model_contract'],full=True)
+     scopes=classify_scopes(result,ledger)
++    sink_report=actual_sink_report(result,ledger,json.loads(args.freeze.read_text())['files']['board']['sha256'],sha(args.ledger),sha(args.freeze))
+     if result.get('status')=='REFUSED':
+         summary={key:value for key,value in result.items()if key in ['status','reason','conditional_static_screen_pass','board_sha256','freeze_sha256','ledger_sha256','geometry_reproduction','linear_solver_diagnostics']}
+         summary.update(result_sha256=sha(args.result),completed_unqualified_grid_count=len(result.get('partial_runs_unqualified',[])))
+@@ -83,7 +87,7 @@
+           'maximum_energy_error_W':max(abs(f['copper_loss_W']-f['port_power_W'])for f in loop_fields),
+           'maximum_linear_residual_to_required_ratio':max(f['linear_solver_diagnostics']['last_direct_solve']['residual_norm_history_A'][-1]/f['linear_solver_diagnostics']['last_direct_solve']['required_residual_norm_A']for f in loop_fields)}
+         summary['geometry']['maximum_inserted_grid_rounding_error_mm']=max(c.get('maximum_grid_intersection_rounding_error_mm',0.)for c in result['geometry_certificates'].values())
+-    summary.update(scope_decisions=scopes,summarizer_sha256=sha(__file__))
++    summary.update(scope_decisions=scopes,actual_sink_report=sink_report,summarizer_sha256=sha(__file__))
+     args.out.write_text(json.dumps(summary,indent=2,allow_nan=False)+'\n')
+     print(json.dumps({'summary_sha256':sha(args.out),'scope_decisions':{k:v for k,v in scopes.items()if not isinstance(v,list)}}))
+ 
+--- historical/report_actual_sinks.py
++++ corrected-v3/report_actual_sinks.py
+@@ -0,0 +1,106 @@
++#!/usr/bin/env python3
++"""Strict actual-pad report extractor for a future corrected two-grid result.
++
++No solver imports. The report refuses stale/missing/duplicate source, case,
++probe or convergence evidence. It never upgrades a refused or failed solve.
++"""
++import argparse
++import math
++from pathlib import Path
++from power_case_model import digest,require,Refused,sink_probes
++from validate_static import read_json as read,sha256 as sha
++from compile_power_ledger import save
++from model_contract import check_ledger
++
++def unique(rows,key,label):
++    result={row[key]:row for row in rows}
++    require(len(result)==len(rows),'Duplicate '+label)
++    return result
++
++def extract(result,ledger,expected_board,expected_ledger,expected_freeze):
++    require(result.get('board_sha256')==expected_board,'Result board identity differs')
++    require(result.get('ledger_sha256')==expected_ledger,'Result ledger identity differs')
++    require(result.get('freeze_sha256')==expected_freeze,'Result freeze identity differs')
++    if result.get('status')=='REFUSED':
++        return {'status':'REFUSED; NO ACTUAL-SINK ACCEPTANCE','board_sha256':expected_board,
++                'reason':result.get('reason'),'runner_overall_boolean':result.get('conditional_static_screen_pass'),
++                'partial_runs_unqualified':result.get('partial_runs_unqualified',[])}
++    check_ledger(ledger,ledger['model_contract'],full=True)
++    definitions=unique(ledger['cases'],'name','ledger case')
++    require(len(definitions)==sum(ledger['model_contract']['counts'][k] for k in ['required','illustrative']),'Corrected scope missing')
++    runs=result.get('runs',[])
++    require([r['spacing_mm'] for r in runs]==ledger['mesh_spacings_mm']==[.12,.09],'Incomplete or wrong two-grid result')
++    margins={}
++    for row in result.get('voltage_margin_checks',[]):
++        key=(row['case'],row['probe'])
++        require(key not in margins,'Duplicate convergence evidence')
++        margins[key]=row
++    expected_margins={(name,p['name']) for name,c in definitions.items() for p in c['probes']}
++    require(set(margins)==expected_margins,'Missing, extra or stale voltage convergence evidence')
++    grid_cases=[unique(run['cases'],'case','result case') for run in runs]
++    require(all(set(rows)==set(definitions) for rows in grid_cases),'Missing, extra or stale result case')
++    for name,c in definitions.items():
++        grid_probes=[unique(rows[name]['probes'],'name','result probe') for rows in grid_cases]
++        require(all(set(ps)=={p['name'] for p in c['probes']} for ps in grid_probes),'Missing or extra result probe')
++        for p in c['probes']:
++            a,b=[ps[p['name']]['voltage_V'] for ps in grid_probes]
++            require(math.isfinite(a) and math.isfinite(b),'Nonfinite probe voltage')
++            delta=abs(a-b);margin=min(b-p.get('minimum_V',-math.inf),p.get('maximum_V',math.inf)-b)
++            tolerance=ledger['convergence']['absolute_voltage_V'];guard=max(delta,tolerance)
++            g=margins[(name,p['name'])]
++            for key,value in [('change_V',delta),('margin_V',margin),('numerical_guard_V',guard)]:
++                require(math.isfinite(g[key]) and abs(g[key]-value)<1e-10,'Rewritten voltage convergence evidence')
++            require(g['pass'] is (delta<=tolerance and margin>=guard),'Rewritten voltage convergence outcome')
++    output=[];bias=[]
++    for run in runs:
++        rows=unique(run['cases'],'case','result case')
++        require(set(rows)==set(definitions),'Missing, extra or stale result case')
++        for name,c in definitions.items():
++            row=rows[name]
++            require(row.get('case_definition_sha256')==c['case_definition_sha256'],'Resolved case hash differs: '+name)
++            require(digest({k:v for k,v in c.items() if k!='case_definition_sha256'})==c['case_definition_sha256'],'Ledger case bytes changed')
++            probes=unique(row['probes'],'name','result probe')
++            require(set(probes)=={p['name'] for p in c['probes']},'Missing or extra result probe')
++            for p in sink_probes(c['supply']):
++                r=probes[p['name']];v=r['voltage_V'];g=margins[(name,p['name'])]
++                require(math.isfinite(v),'Nonfinite sink voltage')
++                require((r.get('minimum_V'),r.get('maximum_V'))==(p['minimum_V'],p['maximum_V']),'Sink floor/ceiling differs')
++                actual=row['voltage_V'][p['p']]-row['voltage_V'][p['n']]
++                require(abs(actual-v)<1e-10,'Actual pad/reference report mismatch')
++                lower=v-p['minimum_V'];upper=p['maximum_V']-v
++                pass_window=lower>=0 and upper>=0
++                require(r.get('pass') is pass_window,'Rewritten sink window outcome')
++                output.append({'case':name,'scope':c['scope'],'grid_mm':run['spacing_mm'],
++                    'sink':p['name'],'p':p['p'],'n':p['n'],'mode':p['mode'],'voltage_V':v,
++                    'minimum_V':p['minimum_V'],'maximum_V':p['maximum_V'],
++                    'lower_margin_V':lower,'upper_margin_V':upper,'window_pass':pass_window,
++                    'two_grid_guard':g,'purpose':p['purpose']})
++            volts=row['voltage_V'];vbat=volts['U1.1']-volts['U1.18']
++            csb=volts['U4.2']-volts['U4.1'];io=volts['U4.6']-volts['U4.1']
++            bias.append({'case':name,'grid_mm':run['spacing_mm'],'VBAT_local_V':vbat,
++                         'VBAT_1p65_to_3p6_window':1.65<=vbat<=3.6,
++                         'CSB_local_V':csb,'VDDIO_local_V':io,'CSB_minus_0p7_VDDIO_V':csb-.7*io,
++                         'acceptance':'Separate role observations, not full functional or signal timing qualification'})
++    return {'status':'ACTUAL-SINK REPORT; CONDITIONAL DC EVIDENCE ONLY',
++        'board_sha256':expected_board,'ledger_sha256':expected_ledger,'freeze_sha256':expected_freeze,
++        'runner_overall_boolean':result['conditional_static_screen_pass'],
++        'actual_supply_rows':output,'bias_role_rows':bias,
++        'sink_window_failures':sum(not r['window_pass'] for r in output),
++        'sink_two_grid_failures':sum(not r['two_grid_guard']['pass'] for r in output[ len(output)//2:]),
++        'limitations':['Preserves all failures and the original runner boolean.',
++                       '294 required cases and11 illustrations remain separately classified.',
++                       'Conditional branch-current and hot-DCR engineering bounds require bench evidence.',
++                       'No universal CORE or flight qualification; VDDA tracking, clocks, signals, package sharing, AC and component temperature remain separate.']}
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__)
++    for name in ['result','ledger','freeze','out']:p.add_argument('--'+name,type=Path,required=True)
++    p.add_argument('--expected-board-sha',required=True)
++    a=p.parse_args();require(not a.out.exists(),'Preserve prior report')
++    freeze=read(a.freeze);board=freeze['files']['board']
++    require(board['sha256']==a.expected_board_sha and sha((a.freeze.parent/board['path']).resolve())==a.expected_board_sha,'Frozen board differs')
++    report=extract(read(a.result),read(a.ledger),a.expected_board_sha,sha(a.ledger),sha(a.freeze))
++    report['result_sha256']=sha(a.result);report['reporter_sha256']=sha(__file__)
++    save(a.out,report)
++
++if __name__=='__main__':main()
+--- historical/support_receipt.py
++++ corrected-v3/support_receipt.py
+@@ -0,0 +1,176 @@
++"""Verify typed support audit chains and emit a separate normalized proof.
++
++Original source receipts are read without adding legacy fields. The pinned owner
++adapter checks per-net predecessor UUID/group equality; this layer additionally
++binds actual native bytes, the complete current pad inventory and dependencies.
++"""
++import copy,hashlib,json,sys
++from pathlib import Path
++from power_case_model import require,Refused
++from owner_support_contract import verify as owner_verify
++
++DSM='f722-complete-DSM-support-audit-binding/v1'
++I2C='f722-I2C-complete-support-binding/v1'
++LEGACY=(None,'f722-native-support-audit/v1')
++
++def sha_bytes(value):return hashlib.sha256(value).hexdigest()
++
++def verify_files(records):
++    for name,expected in records.items():
++        require(sha_bytes(Path(name).read_bytes())==expected,'Support dependency changed: '+name)
++
++def verify_support(directory,native_path=None,report_path=None):
++    require(sys.flags.optimize==0,'Support verification requires nonoptimized Python')
++    directory=Path(directory).resolve();archive_root=directory.parent
++    dependencies={};chain=[];active=set()
++
++    def bound_bytes(path):
++        path=Path(path).resolve()
++        require(path.is_relative_to(archive_root),'Support evidence escapes selected archive root')
++        value=path.read_bytes();digest=sha_bytes(value)
++        require(str(path) not in dependencies or dependencies[str(path)]==digest,'Support evidence changed while reading')
++        dependencies[str(path)]=digest
++        return value
++
++    def bound_json(path):
++        try:return json.loads(bound_bytes(path))
++        except (ValueError,OSError) as exc:raise Refused('Missing or invalid support evidence: '+str(path)) from exc
++
++    def lookup_prior(expected_sha,source_board_sha):
++        # Hash identity, not a guessed candidate number. Search only direct
++        # candidate directories in the already selected routing archive.
++        found=[]
++        for p in sorted(archive_root.glob('candidate*/power-audit.json')):
++            if p.parent.resolve()==directory:continue
++            raw=p.read_bytes()
++            if sha_bytes(raw)==expected_sha:
++                row=json.loads(raw)
++                if row.get('board_sha256')==source_board_sha:found.append(p.resolve())
++        require(len(found)==1,'Expected one exact predecessor support receipt by SHA and board identity')
++        return found[0]
++
++    def visit(folder,selected_native=None,selected_report=None):
++        folder=Path(folder).resolve();rp=Path(selected_report) if selected_report else folder/'power-audit.json'
++        require(rp.resolve().parent==folder,'Support report must belong to selected source directory')
++        require(str(rp.resolve()) not in active,'Cyclic support evidence chain')
++        active.add(str(rp.resolve()))
++        report=bound_json(rp);schema=report.get('schema')
++        require(schema in (*LEGACY,DSM,I2C),'Unknown support-proof schema')
++        board=folder/'f722-heli.kicad_pcb';board_sha=sha_bytes(bound_bytes(board))
++        require(report.get('board_sha256')==board_sha and report.get('passed')is True,'Failed or stale support wrapper')
++        np=Path(selected_native) if selected_native else folder/'owner-native.json'
++        if not np.exists():np=folder/'f722-heli.native.json'
++        require(np.resolve().parent==folder,'Native evidence must belong to selected source directory')
++        native=bound_json(np);native_sha=dependencies[str(np.resolve())]
++        require(native.get('board_sha256')==board_sha and native.get('source_unchanged')is True,'Native export is stale or mutating')
++        nets=report.get('nets')
++        require(isinstance(nets,dict) and nets,'Empty support net inventory')
++        native_sets={}
++        for p in native['objects']:
++            if p['kind']=='pad' and p.get('number'):
++                native_sets.setdefault(p.get('net'),[]).append(p['uuid'])
++        prior=None;audit=None;ap=None
++        if schema in LEGACY:
++            require(report.get('native_sha256')==native_sha,'Legacy support/native byte binding differs')
++        else:
++            name=report.get('audit')
++            require(isinstance(name,str) and Path(name).name==name and name not in ['','.','..'],'Unsafe typed audit basename')
++            ap=folder/name;audit=bound_json(ap)
++            require(dependencies[str(ap.resolve())]==report.get('audit_sha256'),'Typed nested audit hash differs')
++            require(audit.get('passed')is True and audit.get('gates') and all(v is True for v in audit['gates'].values()),'Failed or empty typed audit gates')
++            require(audit.get('source_board_sha256')==report.get('source_board_sha256'),'Typed predecessor board binding differs')
++            if 'native_sha256' in report:
++                require(report['native_sha256']==native_sha,'Typed wrapper/native byte binding differs')
++            if schema==DSM:
++                require(audit.get('schema')=='f722-dsm41-entry-return-audit/v1','Unknown nested DSM audit schema')
++                require(audit.get('candidate_board_sha256')==board_sha and audit.get('support_nets')==nets,'DSM nested board/support inventory differs')
++                hashes=audit.get('input_hashes',{})
++                require(hashes.get(folder.name+'/f722-heli.kicad_pcb')==board_sha,'DSM nested candidate board hash differs')
++                require(hashes.get(folder.name+'/f722-heli.native.json')==native_sha,'DSM nested candidate native hash differs')
++                possible=[]
++                for key,expected in hashes.items():
++                    rel=Path(key)
++                    if rel.name!='power-audit.json':continue
++                    require(not rel.is_absolute() and len(rel.parts)==2 and '..' not in rel.parts,'Unsafe DSM predecessor receipt reference')
++                    path=archive_root/rel
++                    candidate=bound_json(path)
++                    require(dependencies[str(path.resolve())]==expected,'DSM predecessor receipt hash differs')
++                    if candidate.get('board_sha256')==report['source_board_sha256']:possible.append(path)
++                require(len(possible)==1,'DSM predecessor receipt is missing or ambiguous')
++                prior_path=possible[0]
++            else:
++                require(audit.get('schema')=='f722-I2C43-entry-support-audit/v1','Unknown nested I2C audit schema')
++                require(audit.get('board_sha256')==board_sha and audit.get('nets')==nets,'I2C nested board/support inventory differs')
++                require(audit.get('numerical_power_VCAP_applicable')is False,'I2C copper proof cannot claim numerical applicability')
++                require(audit.get('candidate_native_sha256')==native_sha,'I2C nested native byte binding differs')
++                expected=audit.get('source_power_audit_sha256')
++                require(isinstance(expected,str) and len(expected)==64,'Missing I2C predecessor receipt hash')
++                prior_path=lookup_prior(expected,report['source_board_sha256'])
++            prior,prior_native,prior_native_sha=visit(prior_path.parent,selected_report=prior_path)
++            if schema==I2C:
++                require(audit.get('source_native_sha256')==prior_native_sha,'I2C predecessor native byte binding differs')
++            else:
++                require(hashes.get(prior_path.parent.name+'/f722-heli.kicad_pcb')==prior['board_sha256'],'DSM predecessor board byte binding differs')
++                require(hashes.get(prior_path.parent.name+'/f722-heli.native.json')==prior_native_sha,'DSM predecessor native byte binding differs')
++            try:owner_verify(report,prior,report['source_board_sha256'],board_sha,folder)
++            except (AssertionError,KeyError,TypeError) as exc:raise Refused('Owner typed support UUID/group contract refused') from exc
++        normalized={}
++        for net,row in nets.items():
++            groups=row.get('groups')
++            require(isinstance(groups,list) and len(groups)==1,'Support net does not have exactly one proven group: '+net)
++            if schema in LEGACY:
++                require(row.get('pad_group_count')==1 and row.get('complete',True)is True,'Legacy support net is incomplete: '+net)
++            else:
++                require(row.get('passed')is True and row.get('source_groups_exactly_preserved')is True,'Typed support group preservation failed: '+net)
++                if 'pad_group_count' in row:require(row['pad_group_count']==len(groups),'Typed group count contradicts actual groups')
++            actual=groups[0].get('pad_uuids',[]);expected=native_sets.get(net,[])
++            require(actual and len(actual)==len(set(actual)) and len(expected)==len(set(expected)) and set(actual)==set(expected),
++                    'Support group differs from complete current native UUID inventory: '+net)
++            normalized[net]={'pad_group_count':len(groups),'groups':copy.deepcopy(groups),
++                             'proof_source':'Verified typed/legacy support evidence; normalized group count derived from checked groups',
++                             'source_report_sha256':dependencies[str(rp.resolve())],'source_report_schema':schema}
++        chain.append({'directory':str(folder),'schema':schema,'board_sha256':board_sha,'native_sha256':native_sha,
++                      'support_report_sha256':dependencies[str(rp.resolve())],
++                      'nested_audit_sha256':dependencies[str(ap.resolve())] if ap else None,'net_count':len(nets)})
++        active.remove(str(rp.resolve()))
++        if folder==directory:result.update(board_sha256=board_sha,native_sha256=native_sha,nets=normalized)
++        return report,native,native_sha
++
++    result={'schema':'f722-verified-support-connectivity/v1','passed':True,
++            'normalization':'New derived connectivity proof; original receipts remain byte-unchanged and retain their real schemas.',
++            'numerical_acceptance_claimed':False}
++    visit(directory,native_path,report_path)
++    verify_files(dependencies)
++    result.update(evidence_files_sha256=dependencies,verified_chain=chain)
++    return result
++
++def select_approved_poses(source,mechanical,explicit=None):
++    source=Path(source).resolve();expected=mechanical.get('input_hashes',{}).get('poses-native.json')
++    require(isinstance(expected,str) and len(expected)==64,'Mechanical receipt lacks a pose digest')
++    path=Path(explicit).resolve() if explicit else source/'poses-native.json'
++    require(path.is_file(),'Source-local approved poses missing; supply an explicit mechanically bound pose file')
++    require(sha_bytes(path.read_bytes())==expected,'Selected poses differ from source mechanical receipt')
++    return path
++
++def compile_connectivity(native,critical,support,networks):
++    """Select checked support rows or exact critical-pad proofs for new rails."""
++    require(native['board_sha256']==support['board_sha256']==critical['board_sha256'],'Connectivity source boards differ')
++    critical_nets={row['net']:row for row in critical['fullnet_connectivity']}
++    result={'board_sha256':native['board_sha256'],
++            'normalization':'Typed support receipts verified with owner UUID/group contract; absent rail nets require exact critical native-pad proof.',
++            'nets':{}}
++    for network in networks:
++        net=network['net']
++        objects=[p for p in native['objects'] if p['kind']=='pad' and p.get('net')==net and p.get('number')]
++        row=support['nets'].get(net)
++        if row is None:
++            proof=critical_nets.get(net,{})
++            require(proof.get('complete')is True and not proof.get('unreached') and set(proof.get('pads',[]))=={p['key'] for p in objects},
++                    'Missing exact critical connectivity proof: '+net)
++            row={'pad_group_count':1,'groups':[{'pad_uuids':[p['uuid'] for p in objects]}],
++                 'proof_source':'Critical complete native pad-key set resolved against the same board/native export'}
++        require(row['pad_group_count']==len(row['groups'])==1,'Normalized connectivity group mismatch: '+net)
++        uuids=[u for group in row['groups'] for u in group['pad_uuids']]
++        require(len(uuids)==len(set(uuids)) and set(uuids)=={p['uuid'] for p in objects},'Normalized native pad UUID mismatch: '+net)
++        result['nets'][net]=copy.deepcopy(row)
++    return result
+--- historical/owner_support_contract.py
++++ corrected-v3/owner_support_contract.py
+@@ -0,0 +1,39 @@
++"""Typed support-proof adapter; does not infer a pass from missing fields."""
++import hashlib
++import json
++from pathlib import Path
++
++
++def verify(report, prior, source_sha, board_sha, directory):
++    assert report['board_sha256'] == board_sha
++    schema = report.get('schema')
++    typed = schema in ('f722-complete-DSM-support-audit-binding/v1', 'f722-I2C-complete-support-binding/v1')
++    if typed:
++        assert report['passed'] is True and report['source_board_sha256'] == source_sha
++        name = report['audit']
++        assert Path(name).name == name
++        path = Path(directory) / name
++        assert hashlib.sha256(path.read_bytes()).hexdigest() == report['audit_sha256']
++        audit = json.loads(path.read_text())
++        assert audit['passed'] is True and all(v is True for v in audit['gates'].values())
++        assert audit['source_board_sha256'] == source_sha
++        if schema == 'f722-I2C-complete-support-binding/v1':
++            assert audit['board_sha256'] == board_sha and audit['numerical_power_VCAP_applicable'] is False
++            assert audit['nets'] == report['nets']
++        else:
++            assert audit['candidate_board_sha256'] == board_sha
++            assert audit['support_nets'] == report['nets']
++    else:
++        assert report.get('schema') in (None, 'f722-native-support-audit/v1'), 'Unknown support-proof schema'
++    assert set(report['nets']) == set(prior['nets']), 'Power support inventory changed'
++    for net, row in report['nets'].items():
++        groups = row['groups']
++        if typed:
++            assert row['passed'] is True and row['source_groups_exactly_preserved'] is True
++        else:
++            assert row['pad_group_count'] == 1 and row.get('complete', True)
++        assert len(groups) == 1, ('Power support regression', net)
++        actual = groups[0]['pad_uuids']
++        expected = [u for group in prior['nets'][net]['groups'] for u in group['pad_uuids']]
++        assert len(actual) == len(set(actual)) and set(actual) == set(expected), ('Power pad inventory changed', net)
++    return {'passed': True, 'nets': len(report['nets']), 'typed_audit_binding_checked': typed}
+--- historical/plan_power_revalidation.py
++++ corrected-v3/plan_power_revalidation.py
+@@ -15,17 +15,18 @@
+ import subprocess
+ import sys
+ import time
++from support_receipt import verify_support,verify_files as verify_support_files,select_approved_poses
+ 
+ ROOT=Path(__file__).resolve().parent
+ PROJECT=ROOT.parent
++ACCEPTED_BOARD=PROJECT/'repo/f722-heli/layout-revision/hardware/f722-heli.kicad_pcb'
+ SOURCE_FILES=['f722-heli.kicad_pcb','owner-native.json','parts.json','owner-parity.json','owner-process.json',
+  'owner-mechanical.json','owner-critical.json','power-audit.json','owner-drc.json','owner-drc-all.json',
+  'owner-protection.json','owner-supplemental.json','owner-summary.json','owner-adoption.json',
+  'power-revalidation-required.json','owner-mechanical-geometry.json','owner-firmware.json']
+-TOOLS=['compile_power_ledger.py','power_case_model.py','prepare_loaded_pilot.py','run_bounded_pilot.py',
++TOOLS=['compile_power_ledger.py','power_case_model.py','model_contract.py','prepare_loaded_pilot.py','run_bounded_pilot.py',
+  'copper_fem.py','dc_circuit.py','validate_static.py','audit_native_ports.py','native_edge_noding.py','mesh_cache.py',
+- 'summarize_loaded_pilot.py','summarize_combined_pilot.py','extend_port_corners.py','screen_port_sensitivities.py',
+- 'replay_revalidated_corners.py']
++ 'summarize_loaded_pilot.py','summarize_combined_pilot.py','report_actual_sinks.py','support_receipt.py','owner_support_contract.py']
+ JOB_KEYS=['cases','networks','loops','material','mesh_spacings_mm','convergence','limits']
+ 
+ class Refused(RuntimeError):pass
+@@ -41,7 +42,7 @@
+     if condition:raise Refused(why)
+ def local_output(p):
+     p=Path(p).resolve()
+-    refuse(not p.is_relative_to(ROOT) or p==ROOT,'Output must be isolated under static-power-validation')
++    refuse(not p.is_relative_to(ROOT) or p==ROOT,'Output must be isolated under power-terminal-correction-v3')
+     return p
+ def inventory(directory,names):return {name:sha(Path(directory)/name) for name in names}
+ def verify_inventory(directory,records):
+@@ -87,7 +88,8 @@
+     native=data['owner-native.json'];summary=data['owner-summary.json']
+     refuse(native.get('source_unchanged')is not True,'Native exporter changed source')
+     refuse(data['owner-process.json'].get('geometry_sha256')!=records['owner-native.json'],'Process/native binding differs')
+-    refuse(data['power-audit.json'].get('native_sha256')!=records['owner-native.json'],'Support audit/native binding differs')
++    support=verify_support(source,source/'owner-native.json')
++    refuse(support['board_sha256']!=expected or support['native_sha256']!=records['owner-native.json'],'Verified support/native binding differs')
+     refuse(data['owner-mechanical.json']['input_hashes']['owner-mechanical-geometry.json']!=records['owner-mechanical-geometry.json'],'Mechanical export binding differs')
+     refuse(data['owner-adoption.json']['native_gate_receipt_sha256']!=records['owner-summary.json'],'Adoption/native owner receipt binding differs')
+     refuse(data['owner-critical.json'].get('faults') or summary['critical'].get('missing_ground_returns'),'Critical geometry/return fault')
+@@ -100,61 +102,91 @@
+     refuse(data['owner-adoption.json'].get('native_unfinished_connections')!=summary['drc']['unconnected'],'Adoption does not bind current open count')
+     verify_inventory(source,records)
+     return records,dict(board_sha256=expected,native_sha256=records['owner-native.json'],
++        support_evidence_files_sha256=support['evidence_files_sha256'],support_verified_chain=support['verified_chain'],
+         native_version=native['native_version'],opens=summary['drc']['unconnected'],errors=0,warnings=0,
+         via_count=data['owner-process.json']['via_count'],unique_drill_count=data['owner-process.json']['unique_drill_count'],
+         preserved_incomplete_protection=summary['protection'],preserved_incomplete_supplemental=summary['supplemental'])
++
++
++def inspect_model_review(path,expected):
++    path=Path(path).resolve()
++    refuse(sha(path)!=expected,'Explicit owner-reviewed implementation SHA differs')
++    review=read(path)
++    refuse(review.get('schema')!='f722-corrected-implementation-review/v3','Unknown corrected implementation review')
++    refuse(set(review['runtime_source_sha256'])!=set(TOOLS),'Reviewed runtime inventory is incomplete')
++    refuse(review.get('launcher_sha256')!=sha(__file__),'Reviewed launcher changed')
++    verify_inventory(ROOT,review['runtime_source_sha256'])
++    verify_inventory(ROOT,review['model_inputs_sha256'])
++    for name,expected in review['evidence_sha256'].items():
++        refuse(sha(PROJECT/name)!=expected,'Manufacturer/branch review evidence changed: '+name)
++    return review
+ 
+ 
+ def make_plan(args):
+     out=local_output(args.out);job=local_output(args.job)
+     refuse(out.exists() or job.exists(),'Use fresh plan and job destinations')
+     refuse(out==job or out.is_relative_to(job),'Plan output must be outside its future job directory')
++    review=inspect_model_review(args.model_review,args.owner_reviewed_model_sha)
+     source=Path(args.source).resolve();accepted=Path(args.accepted_board).resolve()
++    refuse(accepted!=ACCEPTED_BOARD.resolve(),'Do not override the canonical board to evade a moved-source refusal')
+     records,scope=inspect_source(source,args.expected_board_sha,accepted)
+-    reference=ROOT/'pilot-candidate19-operator-refined-released/ledger.json';old=read(reference)
++    reference=PROJECT/'static-power-validation/pilot-candidate19-operator-refined-released/ledger.json'
++    old=read(reference)
++    refuse(sha(reference)!=review['historical_ledger_sha256'],'Historical reference changed')
+     runtime=inventory(ROOT,TOOLS)
+-    freeze=read(ROOT/'pilot-candidate19-operator-refined-released/freeze.json')
+-    for name,expected in {**freeze['analysis_source_sha256'],**freeze['compiler_source_sha256']}.items():
+-        refuse(runtime[name]!=expected,'Original reviewed numerical/compiler runtime changed: '+name)
+-    settings=read(ROOT/'compiler-settings.candidate19-refined.json')
+-    settings['source_stage']='Fresh power-only revalidation of exact board '+args.expected_board_sha+'; historical source19 result is not reused'
+-    paths={'case_plan':ROOT/'public-source-ready-v6/case-plan.disabled.json',
+-           'registry':ROOT/'public-source-ready-v6/terminal-registry.disabled.json',
+-           'source_bounds':PROJECT/'bec-voltage-source-packet/bounds.json',
+-           'poses':PROJECT/'integrated-routing/trial27/poses-native.json'}
++    model=read(ROOT/'case-plan.corrected.disabled.json')['model_contract']
++    refuse(canonical(model)!=review['model_contract_sha256'],'Reviewed corrected model contract changed')
++    settings=read(ROOT/'compiler-settings.json')
++    for key in ['material','mesh_spacings_mm','convergence','limits']:
++        refuse(settings[key]!=old[key],'Preserved physics/numerical policy changed: '+key)
++    settings['source_stage']='Fresh corrected conditional prototype validation of exact board '+args.expected_board_sha+'; no historical numerical result reused'
++    settings['owner_reviewed_model_sha256']=args.owner_reviewed_model_sha
+     mechanical=read(source/'owner-mechanical.json')
++    poses=select_approved_poses(source,mechanical,getattr(args,'poses',None))
++    paths={'case_plan':ROOT/'case-plan.corrected.disabled.json',
++           'registry':ROOT/'terminal-registry.corrected.disabled.json',
++           'model_review':Path(args.model_review).resolve(),
++           'poses':poses}
+     refuse(mechanical['input_hashes']['poses-native.json']!=sha(paths['poses']),'Approved mechanical pose input changed; review explicit pose selection')
+-    plan=dict(schema='f722-next-power-revalidation-plan/v1',status='PLANNING ONLY; NO EXPORT, COMPILE OR NUMERICAL RUN',
++    counts=model['counts']
++    plan=dict(schema='f722-corrected-power-revalidation-plan/v3',status='PLANNING ONLY; NO COMPILE OR NUMERICAL RUN',
+       heavy_execution_enabled=False,source=str(source),accepted_board=str(accepted),job=str(job),scope=scope,
+       source_files_sha256=records,runtime_source_sha256=runtime,wrapper_sha256=sha(__file__),
+       execution_runtime=runtime_identity(),
+       inputs={key:dict(path=str(path),sha256=sha(path)) for key,path in paths.items()},
+-      reference_ledger=dict(path=str(reference),sha256=sha(reference)),reference_job_sha256={k:canonical(old[k]) for k in JOB_KEYS},
+-      compiler_settings=settings,required_case_count=62,illustrative_case_count=11,VCAP_loop_count=5,
+-      grids_mm=[.12,.09],net_count=13,contact_count=99,GND_contact_count=41,
++      reviewed_model=dict(path=str(Path(args.model_review).resolve()),sha256=args.owner_reviewed_model_sha),
++      model_contract=model,
++      reference_ledger=dict(path=str(reference),sha256=sha(reference)),
++      reference_preserved_physics_sha256={k:canonical(old[k]) for k in ['material','mesh_spacings_mm','convergence','limits','loops']},
++      compiler_settings=settings,required_case_count=counts['required'],illustrative_case_count=counts['illustrative'],
++      VCAP_loop_count=counts['loops'],grids_mm=settings['mesh_spacings_mm'],
++      net_count=counts['networks'],contact_count=counts['contacts'],GND_contact_count=counts['ground_contacts'],
+       resource_bounds=dict(wall_seconds=1500,address_space_MiB=4096,numerical_threads=1,heavy_processes=1),
+-      slot_lock=str(ROOT/'.f722-heavy-slot.lock'),
+-      slot_policy='Owner must stop/release ordinary routing before launch. Advisory lock excludes cooperating launchers only; it cannot discover unrelated noncooperating jobs.',
+-      source_refresh_commands_reference='HANDOFF-NEXT-POWER.md; existing candidate reports are bound here, never synthesized by this planner.',
+-      cache_policy='Fresh job/cache directory. No source19/source24 cache copy or rewritten cache header.',
+-      estimates=dict(measured_source19_cached_field_seconds=873.1,fresh_estimated_minutes=[18,25],hard_cap_minutes=25,
+-                     memory_planning_GiB=[2.2,3.2],address_space_cap_GiB=4,
+-                     post_field_endpoint_and_sensitivity_seconds=[70,120],
+-                     meaning='Planning range only. New drill/fill topology requires fresh mesh work; refusal at a cap or guard remains visible, with no silent coarsening.'),
+-      postprocessing='After verified numerical/required/VCAP acceptance, extract new matrices, replay146 archived circuits, then140 endpoints and5532 sensitivity definitions. No new loaded fields for the added corners.')
++      slot_lock=str(PROJECT/'static-power-validation/.f722-heavy-slot.lock'),
++      slot_policy='Owner must stop/release ordinary routing before launch. Shared advisory lock excludes cooperating launchers only.',
++      cache_policy='Fresh corrected job/cache directory. No historical cache copying or rewritten identity headers.',
++      estimates=dict(status='UNMEASURED corrected workload; previous873.1s is historical context only',
++                     interpretation='305 cases do not imply4.18x factorization time; changed contacts and added rails require new matrices, with additional circuit and loaded-field work.'),
++      postprocessing='DISABLED: old146/140/5532 corner and sensitivity pipeline requires corrected regeneration.',
++      qualification='Enumerated conditional prototype DC checks; current-polytope coverage is not a proof of nonlinear interior extrema or flight qualification.')
+     out.parent.mkdir(parents=True,exist_ok=True);save(out,plan)
+     return dict(plan=str(out),plan_sha256=sha(out),job=str(job),source_scope=scope,heavy_run_started=False)
+ 
+ 
+ def load_bound_plan(path,expected):
+     refuse(sha(path)!=expected,'Plan hash differs from explicit expected digest')
+-    p=read(path);refuse(p.get('schema')!='f722-next-power-revalidation-plan/v1','Unexpected plan schema')
++    p=read(path);refuse(p.get('schema')!='f722-corrected-power-revalidation-plan/v3','Unexpected plan schema')
+     refuse(p['wrapper_sha256']!=sha(__file__),'Launcher changed after planning; re-plan')
+     refuse(p['execution_runtime']!=runtime_identity(),'Interpreter or numerical dependency identity changed; re-plan')
+     verify_inventory(p['source'],p['source_files_sha256']);verify_inventory(ROOT,p['runtime_source_sha256'])
++    verify_support_files(p['scope']['support_evidence_files_sha256'])
++    refuse(Path(p['accepted_board']).resolve()!=ACCEPTED_BOARD.resolve(),'Plan canonical board path changed')
+     refuse(sha(p['accepted_board'])!=p['scope']['board_sha256'],'Accepted canonical board moved; re-plan')
+     for row in p['inputs'].values():refuse(sha(row['path'])!=row['sha256'],'Plan/registry/pose/source-bound input changed')
+     refuse(sha(p['reference_ledger']['path'])!=p['reference_ledger']['sha256'],'Reference job changed')
++    review=inspect_model_review(p['reviewed_model']['path'],p['reviewed_model']['sha256'])
++    refuse(canonical(p['model_contract'])!=review['model_contract_sha256'],'Plan corrected model differs from owner review')
++    refuse(p['compiler_settings'].get('owner_reviewed_model_sha256')!=p['reviewed_model']['sha256'],'Compiler owner-review identity differs from plan')
+     local_output(p['job'])
+     return p
+ 
+@@ -168,12 +200,14 @@
+ 
+ 
+ def job_check(plan,directory):
++    from model_contract import check_ledger
+     ledger=read(Path(directory)/'ledger.json')
+-    for key,expected in plan['reference_job_sha256'].items():
+-        refuse(canonical(ledger[key])!=expected,'Original case/contact/material/guard job changed: '+key)
+-    refuse(len(ledger['cases'])!=73 or len(ledger['loops'])!=5,'Wrong required/illustrative/loop selection')
++    check_ledger(ledger,plan['model_contract'],full=True)
++    for key,expected in plan['reference_preserved_physics_sha256'].items():
++        refuse(canonical(ledger[key])!=expected,'Preserved physical/numerical job changed: '+key)
+     p=read(Path(directory)/'pilot-plan.json')
+     refuse(p['board_sha256']!=plan['scope']['board_sha256'],'Prepared source differs')
++    refuse(p['model_contract_sha256']!=canonical(plan['model_contract']),'Prepared corrected model differs')
+ 
+ 
+ def stage(args,plan):
+@@ -235,7 +269,7 @@
+         save(job/'launch-receipt.json',output)
+         try:
+             checked_command([sys.executable,job/'tools/prepare_loaded_pilot.py','--compiled',job/'compiled','--out',job/'released',
+-              '--refined-combined','--release','--evidence',Path(plan['source'])/'power-audit.json'],job/'release.log')
++              '--refined-combined','--release','--owner-released-board-sha',plan['scope']['board_sha256'],'--evidence',Path(plan['source'])/'power-audit.json'],job/'release.log')
+             identity=released_identity(plan);output.update(identity)
+             load_bound_plan(args.plan,args.plan_sha);bound_stage(args,plan)
+             (job/'mesh-cache').mkdir()
+@@ -281,21 +315,7 @@
+ 
+ 
+ def post(args,plan):
+-    job=Path(plan['job']);receipt=bound_launch(args,plan);before=sha(job/'launch-receipt.json')
+-    checked_command([sys.executable,job/'tools/replay_revalidated_corners.py','--freeze',job/'released/freeze.json',
+-      '--ledger',job/'released/ledger.json','--result',job/'released/result.json','--plan',job/'inputs/case_plan.json',
+-      '--source-bounds',job/'inputs/source_bounds.json','--expected-board-sha',plan['scope']['board_sha256'],
+-      '--out',job/'new-port-corners'],job/'corner-replay.log',timeout=330)
+-    load_bound_plan(args.plan,args.plan_sha);bound_launch(args,plan)
+-    refuse(sha(job/'launch-receipt.json')!=before,'Launch receipt changed during replay')
+-    summary=read(job/'new-port-corners/run-summary.json')
+-    output=dict(status='NEW SOURCE-BOUND PORT CIRCUIT CALCULATIONS COMPLETED; INSPECT SCOPED DECISIONS',
+-      plan_sha256=args.plan_sha,board_sha256=plan['scope']['board_sha256'],new_loaded_fields=0,
+-      out=str(job/'new-port-corners'),summary_sha256=sha(job/'new-port-corners/run-summary.json'),
+-      all_acceptance_and_report_grid_pass=summary['all_acceptance_and_report_grid_pass'],
+-      endpoint_voltage_checks_pass=summary['endpoint_voltage_checks_pass'],sensitivity_failed_case_count=summary['sensitivity_failed_case_count'])
+-    save(job/'post-receipt.json',output)
+-    return output
++    raise Refused('Historical146/140/5532 replay is disabled. Regenerate source-bound corrected corner/sensitivity definitions before any future replay.')
+ 
+ 
+ def main():
+@@ -303,6 +323,9 @@
+     p=sub.add_parser('plan');p.add_argument('--source',required=True);p.add_argument('--expected-board-sha',required=True)
+     p.add_argument('--accepted-board',default=str(PROJECT/'repo/f722-heli/layout-revision/hardware/f722-heli.kicad_pcb'))
+     p.add_argument('--job',required=True);p.add_argument('--out',required=True)
++    p.add_argument('--poses',help='Optional explicit approved pose input; must match the selected source mechanical receipt SHA. Default: source-local poses-native.json')
++    p.add_argument('--model-review',default=str(ROOT/'MODEL-REVIEW.json'))
++    p.add_argument('--owner-reviewed-model-sha',required=True,help='Explicit SHA of this implementation after owner review; no historical approval inheritance')
+     for mode in ['stage','launch','post']:
+         p=sub.add_parser(mode);p.add_argument('--plan',required=True);p.add_argument('--plan-sha',required=True)
+         if mode=='launch':p.add_argument('--owner-released-board-sha',required=True)
