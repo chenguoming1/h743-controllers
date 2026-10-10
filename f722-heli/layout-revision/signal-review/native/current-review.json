@@ -1,6 +1,6 @@
 {
   "schema": "f722-native-signal-review/v1",
-  "board_sha256": "24121b0e46d9a71207cd21e7cf599412c00796d48eb9af5f63ffcf92e5f2ca42",
+  "board_sha256": "14dea1df09ea9d800bf66a6d74eb5f0dac33a8705161e9ed1a02f2e11f3b58b8",
   "project_sha256": "b6f208f1659aa43b6e96e6e49a0eb396654cb426365a557b5d78ddf74423072c",
   "native_version": "10.0.6",
   "native_build": "10.0.6+dfsg-1",
@@ -10,8 +10,8 @@
     "export_native_copper.py": "d6f989ad9d7dc7e1264944cc2f334f70c5cae474b48843c3d1d6ee182716f19a",
     "exact_native_contours.py": "d0fc0b3f55892ee5a58369da103fe62b7d9aa1789e36666696257fd644d02922",
     "check_signal_geometry.py": "7e0d3eefc621bcfeb3cb446522612186a6cf2fb6a8234905a53d7cb3e5d714ca",
-    "native-geometry.json": "06264e957d9da1c94688449a4153658c7baa56c799695396862cb13a9fd2f8d1",
-    "native-signals.json": "ce5746d1805f3dfaccb445b5db7f57d9294054c9c6333d22774fae2884b683ac",
+    "native-geometry.json": "694974b065fedf387f1b66c004f440cc138b0075549fd6383e18e595c139cc53",
+    "native-signals.json": "35672972e30bfa2cefc42b111eaa0fc13e8d6dea0ffd9fa7681cd1d40f41acaf",
     "final-native-i2c-requirements.json": "a377008c847db3791993c3f0447b977952e1a4f57c8b2535c4f06fb5ffe64ebb",
     "stock-i2c-calculations.json": "ff387a816c3b043212227001c501a49d4791e0bcce3e98365a21128e5785f99f",
     "model_profile": "c89c0ebed52cee625bfaf27643a04d2405d6edcd3a2f7d361920054cb5252184"
@@ -542,14 +542,14 @@
               "GND_copper_missing_mm2": 0.4422510439559964,
               "projected_copper_by_net": [
                 {
+                  "net": "ADC_DIV_MID",
+                  "centerline_overlap_mm": 0.18131130556346875,
+                  "copper_overlap_mm2": 0.023026535806560555
+                },
+                {
                   "net": "ESC_MCU",
                   "centerline_overlap_mm": 0.1796059999999997,
                   "copper_overlap_mm2": 0.022696927102758717
-                },
-                {
-                  "net": "ADC_DIV_MID",
-                  "centerline_overlap_mm": 0.15946199278146622,
-                  "copper_overlap_mm2": 0.020251673083245807
                 }
               ]
             },
@@ -584,12 +584,12 @@
               "edge_gap_mm": 0.27448000000000045
             },
             {
-              "uuid": "c3b505f8-4dff-5cb7-9e12-cbb012eeb249",
+              "uuid": "9e7a17bf-8334-51ac-b002-167c54cdbaf3",
               "kind": "track",
               "net": "ADC_BUS",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.3054323264761347
+              "edge_gap_mm": 0.28981874288669796
             }
           ]
         },
@@ -955,12 +955,12 @@
               "edge_gap_mm": 0.2830753957153335
             },
             {
-              "uuid": "612e8117-3c64-5c7a-b099-e5511643473e",
+              "uuid": "c8481601-4736-53e4-8e08-8fbdd9be642e",
               "kind": "track",
-              "net": "ADC_DIV_MID",
+              "net": "TAIL_MCU",
               "label": null,
               "layer": "In2.Cu",
-              "edge_gap_mm": 0.30034458384983714
+              "edge_gap_mm": 0.3015508135309041
             }
           ]
         },
@@ -1051,12 +1051,12 @@
           ],
           "nearest_unrelated_same_layer_copper": [
             {
-              "uuid": "eec557b0-683f-428d-bf26-975f43dfc6a5",
+              "uuid": "a342272b-99b5-5205-bf35-d80f8a84d6ed",
               "kind": "via",
               "net": "ADC_DIV_MID",
               "label": null,
               "layer": "B.Cu",
-              "edge_gap_mm": 0.4032941869537509
+              "edge_gap_mm": 0.39568325842901175
             },
             {
               "uuid": "a399d1fc-f8f4-4b93-9ea3-6de0228db36b",
@@ -1144,13 +1144,13 @@
           "adjacent_layers": [
             {
               "layer": "In1.Cu",
-              "GND_centerline_missing_mm": 0.17042979974605288,
-              "GND_copper_missing_mm2": 0.027761191077192177,
+              "GND_centerline_missing_mm": 0.1704302274673033,
+              "GND_copper_missing_mm2": 0.02776120523419229,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
-                  "centerline_overlap_mm": 2.4730702002539466,
-                  "copper_overlap_mm2": 0.3206321538788143
+                  "centerline_overlap_mm": 2.473069772532696,
+                  "copper_overlap_mm2": 0.3206321397218142
                 }
               ]
             }
@@ -1939,12 +1939,12 @@
             {
               "layer": "In4.Cu",
               "GND_centerline_missing_mm": 0.352499801489308,
-              "GND_copper_missing_mm2": 0.051023686592422825,
+              "GND_copper_missing_mm2": 0.05102368672154377,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
                   "centerline_overlap_mm": 0.21318562345993303,
-                  "copper_overlap_mm2": 0.033487107651577176
+                  "copper_overlap_mm2": 0.03348710752245587
                 }
               ]
             }
@@ -2269,20 +2269,20 @@
               "edge_gap_mm": 0.1518992645209325
             },
             {
-              "uuid": "c56f21a1-a8e2-5637-aaae-365b97fad617",
+              "uuid": "4ffba115-ec5a-5bff-adbf-d2c6758323c9",
               "kind": "track",
-              "net": "DSM_RX_MCU",
+              "net": "LED_GREEN_K",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.152081574537845
+              "edge_gap_mm": 0.16732400679054324
             },
             {
-              "uuid": "5edff79d-e3a8-59f3-9506-3ddedc11c5a9",
+              "uuid": "789c6e95-d3bb-4838-b49f-07de4be35bb4",
               "kind": "track",
-              "net": "DSM_RX_MCU",
+              "net": "VX_PROTECTED",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.17120816298064642
+              "edge_gap_mm": 0.39453517831050383
             }
           ]
         },
@@ -2509,14 +2509,6 @@
           ],
           "nearest_unrelated_same_layer_copper": [
             {
-              "uuid": "c56f21a1-a8e2-5637-aaae-365b97fad617",
-              "kind": "track",
-              "net": "DSM_RX_MCU",
-              "label": null,
-              "layer": "In3.Cu",
-              "edge_gap_mm": 0.152081574537845
-            },
-            {
               "uuid": "a9f49556-537f-4939-b5d5-d397fabd55ad",
               "kind": "via",
               "net": "GND",
@@ -2525,12 +2517,20 @@
               "edge_gap_mm": 0.16432
             },
             {
-              "uuid": "5edff79d-e3a8-59f3-9506-3ddedc11c5a9",
-              "kind": "track",
-              "net": "DSM_RX_MCU",
+              "uuid": "99296446-cf2f-4758-b1d7-48d494622e96",
+              "kind": "via",
+              "net": "EFUSE_DVDT",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.1712084053137831
+              "edge_gap_mm": 0.3443872034146517
+            },
+            {
+              "uuid": "b931d764-eacd-41bd-af16-b2f6764a796a",
+              "kind": "via",
+              "net": "GND",
+              "label": null,
+              "layer": "In3.Cu",
+              "edge_gap_mm": 0.6451799999999999
             }
           ]
         },
@@ -2821,20 +2821,20 @@
               "edge_gap_mm": 0.14808999999999983
             },
             {
-              "uuid": "25ee9371-675e-5896-b05b-4c3ebbc40366",
+              "uuid": "4ffba115-ec5a-5bff-adbf-d2c6758323c9",
               "kind": "track",
-              "net": "DSM_RX_MCU",
+              "net": "LED_GREEN_K",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.18299700000000033
+              "edge_gap_mm": 0.1673239431206283
             },
             {
-              "uuid": "cc7006af-5590-5ec3-874d-d6daca9af8a8",
+              "uuid": "a8165302-7275-46ab-aec1-e72511cb9aa2",
               "kind": "track",
-              "net": "DSM_RX_MCU",
+              "net": "VX_RAW",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.1829999999999998
+              "edge_gap_mm": 0.4514999999999993
             }
           ]
         },
@@ -2894,12 +2894,12 @@
               "edge_gap_mm": 0.1333302553009243
             },
             {
-              "uuid": "25ee9371-675e-5896-b05b-4c3ebbc40366",
+              "uuid": "4ffba115-ec5a-5bff-adbf-d2c6758323c9",
               "kind": "track",
-              "net": "DSM_RX_MCU",
+              "net": "LED_GREEN_K",
               "label": null,
               "layer": "In3.Cu",
-              "edge_gap_mm": 0.22333165492819532
+              "edge_gap_mm": 0.23099392169817537
             },
             {
               "uuid": "3fdd61df-e805-4b66-9040-adcafec6deb5",
@@ -5353,13 +5353,13 @@
           "adjacent_layers": [
             {
               "layer": "In4.Cu",
-              "GND_centerline_missing_mm": 0.35475906992122086,
-              "GND_copper_missing_mm2": 0.054830268875721136,
+              "GND_centerline_missing_mm": 0.35475907328310896,
+              "GND_copper_missing_mm2": 0.05483027045588631,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
-                  "centerline_overlap_mm": 0.6564283508866134,
-                  "copper_overlap_mm2": 0.09672975900227941
+                  "centerline_overlap_mm": 0.6564283475247253,
+                  "copper_overlap_mm2": 0.09672975742211415
                 }
               ]
             }
@@ -6544,20 +6544,20 @@
               "edge_gap_mm": 0.34402971451002123
             },
             {
+              "uuid": "4e2ff022-5cba-5928-8a33-c52eb65ec113",
+              "kind": "track",
+              "net": "LED_GREEN_K",
+              "label": null,
+              "layer": "B.Cu",
+              "edge_gap_mm": 0.3885637109409767
+            },
+            {
               "uuid": "d4882c71-6341-4bde-8437-9f8f0a34b70a",
               "kind": "pad",
               "net": "GND",
               "label": "Y1.4",
               "layer": "B.Cu",
               "edge_gap_mm": 0.4943861348956237
-            },
-            {
-              "uuid": "682cfbb3-5a70-42f2-a4a1-d4d5c5c02720",
-              "kind": "track",
-              "net": "GND",
-              "label": null,
-              "layer": "B.Cu",
-              "edge_gap_mm": 0.5976072744253251
             }
           ]
         }
@@ -8460,13 +8460,13 @@
           "adjacent_layers": [
             {
               "layer": "In4.Cu",
-              "GND_centerline_missing_mm": 0.3542492606427561,
-              "GND_copper_missing_mm2": 0.05096356096427103,
+              "GND_centerline_missing_mm": 0.35424918680528167,
+              "GND_copper_missing_mm2": 0.05096356105225382,
               "projected_copper_by_net": [
                 {
                   "net": "GND",
-                  "centerline_overlap_mm": 4.7479561448657295,
-                  "copper_overlap_mm2": 0.6096849906317234
+                  "centerline_overlap_mm": 4.747956218703204,
+                  "copper_overlap_mm2": 0.6096849905437427
                 }
               ]
             }
@@ -10611,7 +10611,7 @@
         "plane_edge_void_or_crossing_outside_local_via_window": 0
       },
       "USB_N": {
-        "local_own_via_antipad_interval": 2.4782454418303264,
+        "local_own_via_antipad_interval": 2.4782454451922145,
         "plane_edge_void_or_crossing_outside_local_via_window": 0
       }
     },
@@ -10708,15 +10708,15 @@
         "signal_layer": "B.Cu",
         "reference_layer": "In4.Cu",
         "classification": "local_own_via_antipad_interval",
-        "length_mm": 0.35475906992122086,
+        "length_mm": 0.35475907328310896,
         "coordinates_mm": [
           [
             36.5,
             12.95
           ],
           [
-            36.85083414075484,
-            13.002625121113226
+            36.850834144079535,
+            13.00262512161193
           ]
         ],
         "via_uuid": "b4382c1d-0dbe-4a96-843b-3ce024b9324d",
@@ -10736,7 +10736,7 @@
             36.9325,
             13.3025
           ],
-          "area_mm2": 0.8005300770934993,
+          "area_mm2": 0.8005300778379996,
           "contained_vias": [
             {
               "uuid": "450ba8c4-5474-4ecb-a527-8bf06f631117",
@@ -11024,7 +11024,7 @@
             36.9325,
             13.3025
           ],
-          "area_mm2": 0.8005300770934993,
+          "area_mm2": 0.8005300778379996,
           "contained_vias": [
             {
               "uuid": "450ba8c4-5474-4ecb-a527-8bf06f631117",
@@ -11226,7 +11226,7 @@
             36.9325,
             13.3025
           ],
-          "area_mm2": 0.8005300770934993,
+          "area_mm2": 0.8005300778379996,
           "contained_vias": [
             {
               "uuid": "450ba8c4-5474-4ecb-a527-8bf06f631117",
@@ -11479,7 +11479,7 @@
   },
   "existing_critical_check": {
     "file": "owner-critical.json",
-    "sha256": "4df5ef15d5595a5810104a8d65d6707a0c06be2ba9098986ef6b6886704eec53",
+    "sha256": "6698a7a3dd52bd0aaa407beca7a6cd3df02066e9cd8a4593da7744c4d5554e58",
     "exact_board_match": true,
     "reuse_status": "source-matched subset evidence",
     "fullnet_connectivity": [
