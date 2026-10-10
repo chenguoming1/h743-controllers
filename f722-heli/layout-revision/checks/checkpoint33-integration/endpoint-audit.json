@@ -1,0 +1,1549 @@
+{
+  "status": "PASS_WITH_REDUNDANT_VIA_SPUR",
+  "passed": true,
+  "source_hashes": {
+    "ordinary-routing/candidate32/f722-heli.kicad_pcb": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+    "ordinary-routing/candidate32/f722-heli.native.json": "37ed7c4e8c80b4297dfc36432234c161a3c9cf5c529eda71bbe7719cec18f7b1",
+    "ordinary-routing/candidate33/f722-heli.kicad_pcb": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
+    "ordinary-routing/candidate33/f722-heli.native.json": "b30079f24c3a7fad2f467e07d7eacfe2691bc88eb28117eb838208dfb060a821"
+  },
+  "source_board_sha256": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+  "candidate_board_sha256": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
+  "audit_script_sha256": "98dbc7ce55f516abf1433baa038d5318c4302ec3c6d11a11495e1dd239e42a8f",
+  "method": "SMD checks follow endpoint_witness: native ERROR_INSIDE interior and complete transverse endpoint section. Vias are evaluated separately on actual annulus: conservative native outer polygon contracted by export error, minus native ERROR_OUTSIDE drill void. A finite full-width strip on each contacted layer proves annular entry; a point in the drill or endcap-only sliver does not. Buried redundant spurs are not counted as contact evidence.",
+  "source_object_count": 1757,
+  "candidate_object_count": 1777,
+  "existing_object_records_unchanged": false,
+  "ordinary_rewrite": {
+    "passed": true,
+    "receipt_sha256": "882632a45cd8928abc9acec6a74639f1251cf0c37db4efe05324796b3dc33b21",
+    "physical_net": "SERVO2_MCU",
+    "permitted_source_route_uuids": [
+      "059516ff-efba-4682-a183-da1254044a9a",
+      "06018140-c58c-4aee-ac5e-70366fee3d1b",
+      "13d2a6cd-d389-4883-8d1b-73db60d1cb77",
+      "2b07387c-0e51-4096-a791-30766feb86b6",
+      "4f93666a-7915-4e87-9d7d-050f3c81393a",
+      "59a0b526-0f98-4636-bb50-748718ff44d2",
+      "5ccfaeae-7628-42e4-9d9d-47049c11b086",
+      "7ef93c2f-799a-4117-b124-c76999e6093b",
+      "936b102a-268e-4bde-b88d-f5d6667efe9b",
+      "9d71bc2e-6825-40aa-bd2a-a5fc36f7d36d",
+      "c284754f-ab23-4ce9-ae72-2662dc7fce81",
+      "cf426146-3de2-40f4-8a27-11b4120f6103",
+      "eaa5d60d-1730-4c88-a4c8-3c1d6ae6f93a",
+      "f0ab58ba-6fac-49f0-aa28-85653a9eb251",
+      "fe28ce3e-59d1-4776-8ba8-fd2989194578"
+    ],
+    "actual_removed_uuids": [
+      "059516ff-efba-4682-a183-da1254044a9a",
+      "06018140-c58c-4aee-ac5e-70366fee3d1b",
+      "7ef93c2f-799a-4117-b124-c76999e6093b",
+      "9d71bc2e-6825-40aa-bd2a-a5fc36f7d36d",
+      "eaa5d60d-1730-4c88-a4c8-3c1d6ae6f93a",
+      "fe28ce3e-59d1-4776-8ba8-fd2989194578"
+    ],
+    "actual_added_uuids": [
+      "039a63ec-d4b3-4367-a89e-61ffdd1dd9ef",
+      "099a20ee-ccb7-487c-aa08-047b49e9d92b",
+      "099fd78e-675d-4482-a8f3-cd999d78d37c",
+      "10e08b5a-b276-499f-889f-a207bbf5254f",
+      "11eb0a22-5c41-412c-9eba-75881952d650",
+      "1db687cf-ca51-4ce8-80d8-131c798bc455",
+      "25c69f42-1efb-412a-bb87-f081745cab23",
+      "318aa7f7-a04b-475e-8507-72763503a948",
+      "50cbe89b-33f3-49f4-be25-d58d71016ad4",
+      "5e8c9153-f5f1-4ec4-ac62-cadb69d146c2",
+      "734de095-936a-4d15-b30d-c37b0f7663bb",
+      "7af3595c-7d69-471b-9895-586d3b074e8b",
+      "7d5156e4-241a-4b78-be96-beb1b68cc0a1",
+      "807e0074-3d23-4204-acf5-1c5e1cf6cb65",
+      "8113afab-5370-4609-8346-a5e532efa35b",
+      "885f072e-40d7-4335-a279-324f2d550147",
+      "8ac58f33-fbfe-46f6-866b-ec6fe6d0d24a",
+      "9c5012f3-1e04-4343-8956-7ca48b73cbba",
+      "9edf22b5-bde9-45f0-86ea-6aefaf3051b5",
+      "a05cae65-6216-4ace-acca-635d5923a6c3",
+      "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e",
+      "c5da0d1f-ce1b-4083-926b-245bf13f1cc3",
+      "cc42e771-b693-4990-98df-169a8187d1d6",
+      "cf3ef1c8-4027-456f-8883-f9f671f876e8",
+      "e3d66729-7dcf-4a0e-a0c5-5720860b1f0a",
+      "f20a3830-f6b8-4d74-bb31-d84e60dd50c4"
+    ],
+    "existing_uuid_records_edited": [],
+    "source_objects_outside_allowance_exact": 1742,
+    "all_pads_power_critical_and_other_net_objects_exact": true,
+    "scope": "Explicit ordinary route replacement only. Connectivity, pad cuts, entries, process, reference and numerical qualification remain separate."
+  },
+  "changed_existing_object_uuids": [],
+  "removed_object_uuids": [
+    "059516ff-efba-4682-a183-da1254044a9a",
+    "06018140-c58c-4aee-ac5e-70366fee3d1b",
+    "7ef93c2f-799a-4117-b124-c76999e6093b",
+    "9d71bc2e-6825-40aa-bd2a-a5fc36f7d36d",
+    "eaa5d60d-1730-4c88-a4c8-3c1d6ae6f93a",
+    "fe28ce3e-59d1-4776-8ba8-fd2989194578"
+  ],
+  "added_objects": [
+    {
+      "uuid": "039a63ec-d4b3-4367-a89e-61ffdd1dd9ef",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "099a20ee-ccb7-487c-aa08-047b49e9d92b",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "099fd78e-675d-4482-a8f3-cd999d78d37c",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "10e08b5a-b276-499f-889f-a207bbf5254f",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "11eb0a22-5c41-412c-9eba-75881952d650",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "1db687cf-ca51-4ce8-80d8-131c798bc455",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "25c69f42-1efb-412a-bb87-f081745cab23",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "318aa7f7-a04b-475e-8507-72763503a948",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "50cbe89b-33f3-49f4-be25-d58d71016ad4",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "5e8c9153-f5f1-4ec4-ac62-cadb69d146c2",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "734de095-936a-4d15-b30d-c37b0f7663bb",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "7af3595c-7d69-471b-9895-586d3b074e8b",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "7d5156e4-241a-4b78-be96-beb1b68cc0a1",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "807e0074-3d23-4204-acf5-1c5e1cf6cb65",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "8113afab-5370-4609-8346-a5e532efa35b",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "885f072e-40d7-4335-a279-324f2d550147",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "8ac58f33-fbfe-46f6-866b-ec6fe6d0d24a",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "9c5012f3-1e04-4343-8956-7ca48b73cbba",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "9edf22b5-bde9-45f0-86ea-6aefaf3051b5",
+      "kind": "via",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "a05cae65-6216-4ace-acca-635d5923a6c3",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e",
+      "kind": "via",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "c5da0d1f-ce1b-4083-926b-245bf13f1cc3",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "cc42e771-b693-4990-98df-169a8187d1d6",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "cf3ef1c8-4027-456f-8883-f9f671f876e8",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "e3d66729-7dcf-4a0e-a0c5-5720860b1f0a",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    },
+    {
+      "uuid": "f20a3830-f6b8-4d74-bb31-d84e60dd50c4",
+      "kind": "track",
+      "net": "SERVO2_MCU"
+    }
+  ],
+  "per_net": {
+    "SERVO2_MCU": {
+      "reviewed_tracks": 31,
+      "reviewed_vias": 4,
+      "total_native_tracks": 31,
+      "new_pad_termination_count": 4,
+      "scope": "New and explicitly rewritten-net source entries; full net connectivity remains separate"
+    }
+  },
+  "pad_terminations": [
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "099fd78e-675d-4482-a8f3-cd999d78d37c",
+      "layer": "B.Cu",
+      "endpoint": "end",
+      "xy_mm": [
+        20.71,
+        19.475
+      ],
+      "other_end_mm": [
+        20.70863,
+        18.77499
+      ],
+      "pad": "U1.57",
+      "pad_uuid": "225d44e7-0a28-4117-bbc6-eba4c330078a",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.14999899999999755,
+      "actual_copper_section_mm": [
+        [
+          20.646500121611638,
+          19.475124276558038
+        ],
+        [
+          20.773499878388364,
+          19.474875723441965
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.12699999999999662,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.10157041524449925,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.7000113406224241,
+      "full_width_transverse_entry_wkt": "LINESTRING (20.71 19.475, 20.70863 18.77499)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "936b102a-268e-4bde-b88d-f5d6667efe9b",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy_mm": [
+        10.99323,
+        5.39323
+      ],
+      "other_end_mm": [
+        11.67323,
+        5.39323
+      ],
+      "pad": "R21.2",
+      "pad_uuid": "158ffa8e-422f-4ad4-bfb3-44e1bf0c2de7",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.15676999999999985,
+      "actual_copper_section_mm": [
+        [
+          10.99323,
+          5.32973
+        ],
+        [
+          10.99323,
+          5.45673
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.12700000000000067,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.026244212478000142,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.1567690000000006,
+      "full_width_transverse_entry_wkt": "LINESTRING (10.99323 5.39323, 11.149999000000001 5.39323)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "cf426146-3de2-40f4-8a27-11b4120f6103",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy_mm": [
+        13.21354,
+        12.2144
+      ],
+      "other_end_mm": [
+        13.21354,
+        12.32279
+      ],
+      "pad": "U12.3",
+      "pad_uuid": "a78d2efe-86a0-4064-a928-1f3101651362",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.06353999999999971,
+      "actual_copper_section_mm": [
+        [
+          13.27704,
+          12.2144
+        ],
+        [
+          13.15004,
+          12.2144
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.1269999999999989,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.026434374955999883,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.10838999999999999,
+      "full_width_transverse_entry_wkt": "LINESTRING (13.21354 12.2144, 13.21354 12.32279)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "f20a3830-f6b8-4d74-bb31-d84e60dd50c4",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy_mm": [
+        13.45,
+        11.8875
+      ],
+      "other_end_mm": [
+        13.45,
+        12.868
+      ],
+      "pad": "U12.3",
+      "pad_uuid": "a78d2efe-86a0-4064-a928-1f3101651362",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.2999999999999989,
+      "actual_copper_section_mm": [
+        [
+          13.513499999999999,
+          11.8875
+        ],
+        [
+          13.3865,
+          11.8875
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.1269999999999989,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.09047192247800054,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.6624990000000022,
+      "full_width_transverse_entry_wkt": "LINESTRING (13.45 11.8875, 13.45 12.549999000000001)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    }
+  ],
+  "via_endpoints_classified_separately": [
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "039a63ec-d4b3-4367-a89e-61ffdd1dd9ef",
+      "endpoint": "start",
+      "xy_mm": [
+        10.7,
+        10.7
+      ],
+      "layer": "F.Cu",
+      "via_uuids": [
+        "9edf22b5-bde9-45f0-86ea-6aefaf3051b5"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "4f93666a-7915-4e87-9d7d-050f3c81393a",
+      "endpoint": "end",
+      "xy_mm": [
+        11.77,
+        5.49
+      ],
+      "layer": "F.Cu",
+      "via_uuids": [
+        "13d2a6cd-d389-4883-8d1b-73db60d1cb77"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "50cbe89b-33f3-49f4-be25-d58d71016ad4",
+      "endpoint": "end",
+      "xy_mm": [
+        21.51385,
+        13.71343
+      ],
+      "layer": "In2.Cu",
+      "via_uuids": [
+        "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "5ccfaeae-7628-42e4-9d9d-47049c11b086",
+      "endpoint": "start",
+      "xy_mm": [
+        11.67323,
+        5.39323
+      ],
+      "layer": "In3.Cu",
+      "via_uuids": [
+        "13d2a6cd-d389-4883-8d1b-73db60d1cb77"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "5e8c9153-f5f1-4ec4-ac62-cadb69d146c2",
+      "endpoint": "start",
+      "xy_mm": [
+        21.51385,
+        13.71343
+      ],
+      "layer": "B.Cu",
+      "via_uuids": [
+        "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "7af3595c-7d69-471b-9895-586d3b074e8b",
+      "endpoint": "start",
+      "xy_mm": [
+        10.16087,
+        11.17593
+      ],
+      "layer": "In2.Cu",
+      "via_uuids": [
+        "2b07387c-0e51-4096-a791-30766feb86b6"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "8113afab-5370-4609-8346-a5e532efa35b",
+      "endpoint": "end",
+      "xy_mm": [
+        10.7,
+        10.7
+      ],
+      "layer": "In3.Cu",
+      "via_uuids": [
+        "9edf22b5-bde9-45f0-86ea-6aefaf3051b5"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    },
+    {
+      "net": "SERVO2_MCU",
+      "track_uuid": "a05cae65-6216-4ace-acca-635d5923a6c3",
+      "endpoint": "start",
+      "xy_mm": [
+        10.16087,
+        11.17593
+      ],
+      "layer": "F.Cu",
+      "via_uuids": [
+        "2b07387c-0e51-4096-a791-30766feb86b6"
+      ],
+      "classification": "via_endpoint_not_a_pad_termination"
+    }
+  ],
+  "via_annular_contacts": [
+    {
+      "net": "SERVO2_MCU",
+      "via_uuid": "13d2a6cd-d389-4883-8d1b-73db60d1cb77",
+      "xy_mm": [
+        11.77,
+        5.49
+      ],
+      "drill_mm": 0.2,
+      "width_by_layer_mm": {
+        "F.Cu": 0.45,
+        "In1.Cu": 0.45,
+        "In2.Cu": 0.45,
+        "In3.Cu": 0.45,
+        "In4.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "drill_void_subtracted": true,
+      "outer_polygon_inward_reserve_mm": 1e-05,
+      "contact_layers": [
+        {
+          "layer": "F.Cu",
+          "contacts": [
+            {
+              "track_uuid": "4f93666a-7915-4e87-9d7d-050f3c81393a",
+              "start_mm": [
+                11.67323,
+                5.39323
+              ],
+              "end_mm": [
+                11.77,
+                5.49
+              ],
+              "length_mm": 0.13685344643084413,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.01192881963669009,
+              "centerline_actual_annulus_length_mm": 0.03685299122188056,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    11.679744750000001,
+                    5.39974475
+                  ],
+                  "section_mm": [
+                    [
+                      11.724646030605347,
+                      5.3548434693946545
+                    ],
+                    [
+                      11.634843469394655,
+                      5.4446460306053455
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000045,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.027639743416409776,
+                  "full_width_strip_length_mm": 0.003685299122188056,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      11.723343080605348,
+                      5.353540519394654
+                    ],
+                    [
+                      11.633540519394655,
+                      5.443343080605345
+                    ],
+                    [
+                      11.636146419394654,
+                      5.445948980605346
+                    ],
+                    [
+                      11.725948980605347,
+                      5.356146419394655
+                    ],
+                    [
+                      11.723343080605348,
+                      5.353540519394654
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      11.67323,
+                      5.39323
+                    ],
+                    [
+                      11.699289,
+                      5.419289
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.03685299122188056
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": true,
+              "classification": "verified_full_width_annular_contact"
+            },
+            {
+              "track_uuid": "936b102a-268e-4bde-b88d-f5d6667efe9b",
+              "start_mm": [
+                10.99323,
+                5.39323
+              ],
+              "end_mm": [
+                11.67323,
+                5.39323
+              ],
+              "length_mm": 0.6799999999999997,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.01774045328280657,
+              "centerline_actual_annulus_length_mm": 0.10634800331127003,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    11.646642999172183,
+                    5.39323
+                  ],
+                  "section_mm": [
+                    [
+                      11.646642999172183,
+                      5.32973
+                    ],
+                    [
+                      11.646642999172183,
+                      5.45673
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000067,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.022744098103763374,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      11.641642999172182,
+                      5.32973
+                    ],
+                    [
+                      11.641642999172182,
+                      5.45673
+                    ],
+                    [
+                      11.651642999172184,
+                      5.45673
+                    ],
+                    [
+                      11.651642999172184,
+                      5.32973
+                    ],
+                    [
+                      11.641642999172182,
+                      5.32973
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      11.56688199668873,
+                      5.39323
+                    ],
+                    [
+                      11.67323,
+                      5.39323
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.10634800331127003
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        },
+        {
+          "layer": "In3.Cu",
+          "contacts": [
+            {
+              "track_uuid": "5ccfaeae-7628-42e4-9d9d-47049c11b086",
+              "start_mm": [
+                11.67323,
+                5.39323
+              ],
+              "end_mm": [
+                11.77,
+                5.49
+              ],
+              "length_mm": 0.13685344643084413,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.01192881963669009,
+              "centerline_actual_annulus_length_mm": 0.03685299122188056,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    11.679744750000001,
+                    5.39974475
+                  ],
+                  "section_mm": [
+                    [
+                      11.724646030605347,
+                      5.3548434693946545
+                    ],
+                    [
+                      11.634843469394655,
+                      5.4446460306053455
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000045,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.027639743416409776,
+                  "full_width_strip_length_mm": 0.003685299122188056,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      11.723343080605348,
+                      5.353540519394654
+                    ],
+                    [
+                      11.633540519394655,
+                      5.443343080605345
+                    ],
+                    [
+                      11.636146419394654,
+                      5.445948980605346
+                    ],
+                    [
+                      11.725948980605347,
+                      5.356146419394655
+                    ],
+                    [
+                      11.723343080605348,
+                      5.353540519394654
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      11.67323,
+                      5.39323
+                    ],
+                    [
+                      11.699289,
+                      5.419289
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.03685299122188056
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": true,
+              "classification": "verified_full_width_annular_contact"
+            },
+            {
+              "track_uuid": "f0ab58ba-6fac-49f0-aa28-85653a9eb251",
+              "start_mm": [
+                11.77,
+                5.49
+              ],
+              "end_mm": [
+                11.77,
+                8.42774
+              ],
+              "length_mm": 2.93774,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.016404147460047553,
+              "centerline_actual_annulus_length_mm": 0.12499000000000038,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    11.77,
+                    5.652495
+                  ],
+                  "section_mm": [
+                    [
+                      11.833499999999999,
+                      5.652495
+                    ],
+                    [
+                      11.7065,
+                      5.652495
+                    ]
+                  ],
+                  "section_width_mm": 0.1269999999999989,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.05052832638543577,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      11.833499999999999,
+                      5.647495
+                    ],
+                    [
+                      11.7065,
+                      5.647495
+                    ],
+                    [
+                      11.7065,
+                      5.657495
+                    ],
+                    [
+                      11.833499999999999,
+                      5.657495
+                    ],
+                    [
+                      11.833499999999999,
+                      5.647495
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      11.77,
+                      5.59
+                    ],
+                    [
+                      11.77,
+                      5.71499
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.12499000000000038
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        }
+      ],
+      "verified_contact_layers": [
+        "F.Cu",
+        "In3.Cu"
+      ],
+      "physical_layer_transfer_passed": true
+    },
+    {
+      "net": "SERVO2_MCU",
+      "via_uuid": "2b07387c-0e51-4096-a791-30766feb86b6",
+      "xy_mm": [
+        10.16087,
+        11.17593
+      ],
+      "drill_mm": 0.2,
+      "width_by_layer_mm": {
+        "F.Cu": 0.45,
+        "In1.Cu": 0.45,
+        "In2.Cu": 0.45,
+        "In3.Cu": 0.45,
+        "In4.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "drill_void_subtracted": true,
+      "outer_polygon_inward_reserve_mm": 1e-05,
+      "contact_layers": [
+        {
+          "layer": "F.Cu",
+          "contacts": [
+            {
+              "track_uuid": "a05cae65-6216-4ace-acca-635d5923a6c3",
+              "start_mm": [
+                10.16087,
+                11.17593
+              ],
+              "end_mm": [
+                10.244,
+                11.17593
+              ],
+              "length_mm": 0.08313000000000059,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.005105928621883801,
+              "centerline_actual_annulus_length_mm": 0.0,
+              "full_width_actual_annulus_witnesses": [],
+              "full_width_actual_annulus_passed": false,
+              "centerline_wholly_in_drill_void": true,
+              "track_copper_wholly_within_existing_via_disk": true,
+              "classification": "redundant_buried_spur_not_annular_entry_evidence"
+            },
+            {
+              "track_uuid": "cc42e771-b693-4990-98df-169a8187d1d6",
+              "start_mm": [
+                10.244,
+                11.17593
+              ],
+              "end_mm": [
+                10.69,
+                11.62193
+              ],
+              "length_mm": 0.6307392488184013,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.0182619295489446,
+              "centerline_actual_annulus_length_mm": 0.13626947158961364,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    10.307823461071894,
+                    11.239753461071892
+                  ],
+                  "section_mm": [
+                    [
+                      10.35272474167724,
+                      11.194852180466546
+                    ],
+                    [
+                      10.262922180466548,
+                      11.284654741677238
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000172,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.03220683309373084,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      10.349189207771309,
+                      11.191316646560614
+                    ],
+                    [
+                      10.259386646560616,
+                      11.281119207771306
+                    ],
+                    [
+                      10.26645771437248,
+                      11.28819027558317
+                    ],
+                    [
+                      10.356260275583173,
+                      11.198387714372478
+                    ],
+                    [
+                      10.349189207771309,
+                      11.191316646560614
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      10.259644927357032,
+                      11.191574927357031
+                    ],
+                    [
+                      10.356001994786755,
+                      11.287931994786755
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.13626947158961364
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        },
+        {
+          "layer": "In2.Cu",
+          "contacts": [
+            {
+              "track_uuid": "7af3595c-7d69-471b-9895-586d3b074e8b",
+              "start_mm": [
+                10.16087,
+                11.17593
+              ],
+              "end_mm": [
+                11.10242,
+                11.17593
+              ],
+              "length_mm": 0.9415500000000012,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.016404147460047574,
+              "centerline_actual_annulus_length_mm": 0.12499000000000038,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    10.323365,
+                    11.17593
+                  ],
+                  "section_mm": [
+                    [
+                      10.323365,
+                      11.11243
+                    ],
+                    [
+                      10.323365,
+                      11.239429999999999
+                    ]
+                  ],
+                  "section_width_mm": 0.1269999999999989,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.050528326385435335,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      10.318365,
+                      11.11243
+                    ],
+                    [
+                      10.318365,
+                      11.239429999999999
+                    ],
+                    [
+                      10.328365000000002,
+                      11.239429999999999
+                    ],
+                    [
+                      10.328365000000002,
+                      11.11243
+                    ],
+                    [
+                      10.318365,
+                      11.11243
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      10.26087,
+                      11.17593
+                    ],
+                    [
+                      10.385860000000001,
+                      11.17593
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.12499000000000038
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        }
+      ],
+      "verified_contact_layers": [
+        "F.Cu",
+        "In2.Cu"
+      ],
+      "physical_layer_transfer_passed": true
+    },
+    {
+      "net": "SERVO2_MCU",
+      "via_uuid": "9edf22b5-bde9-45f0-86ea-6aefaf3051b5",
+      "xy_mm": [
+        10.7,
+        10.7
+      ],
+      "drill_mm": 0.2,
+      "width_by_layer_mm": {
+        "F.Cu": 0.45,
+        "In1.Cu": 0.45,
+        "In2.Cu": 0.45,
+        "In3.Cu": 0.45,
+        "In4.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "drill_void_subtracted": true,
+      "outer_polygon_inward_reserve_mm": 1e-05,
+      "contact_layers": [
+        {
+          "layer": "F.Cu",
+          "contacts": [
+            {
+              "track_uuid": "039a63ec-d4b3-4367-a89e-61ffdd1dd9ef",
+              "start_mm": [
+                10.7,
+                10.7
+              ],
+              "end_mm": [
+                11.01,
+                11.01
+              ],
+              "length_mm": 0.4384062043356602,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.016404225897055074,
+              "centerline_actual_annulus_length_mm": 0.12499021545781605,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    10.814901714466096,
+                    10.814901714466096
+                  ],
+                  "section_mm": [
+                    [
+                      10.859802995071442,
+                      10.77000043386075
+                    ],
+                    [
+                      10.77000043386075,
+                      10.859802995071442
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000172,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.0505280656116974,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      10.85626746116551,
+                      10.766464899954817
+                    ],
+                    [
+                      10.766464899954817,
+                      10.85626746116551
+                    ],
+                    [
+                      10.773535967766682,
+                      10.863338528977375
+                    ],
+                    [
+                      10.863338528977375,
+                      10.773535967766682
+                    ],
+                    [
+                      10.85626746116551,
+                      10.766464899954817
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      10.770711,
+                      10.770711
+                    ],
+                    [
+                      10.85909242893219,
+                      10.85909242893219
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.12499021545781605
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        },
+        {
+          "layer": "In3.Cu",
+          "contacts": [
+            {
+              "track_uuid": "8113afab-5370-4609-8346-a5e532efa35b",
+              "start_mm": [
+                10.56087,
+                10.7
+              ],
+              "end_mm": [
+                10.7,
+                10.7
+              ],
+              "length_mm": 0.13912999999999975,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.012217928621883844,
+              "centerline_actual_annulus_length_mm": 0.03913000000000011,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    10.5706525,
+                    10.7
+                  ],
+                  "section_mm": [
+                    [
+                      10.5706525,
+                      10.6365
+                    ],
+                    [
+                      10.5706525,
+                      10.763499999999999
+                    ]
+                  ],
+                  "section_width_mm": 0.1269999999999989,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.02934750000000008,
+                  "full_width_strip_length_mm": 0.003913000000000011,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      10.568696,
+                      10.6365
+                    ],
+                    [
+                      10.568696,
+                      10.763499999999999
+                    ],
+                    [
+                      10.572609,
+                      10.763499999999999
+                    ],
+                    [
+                      10.572609,
+                      10.6365
+                    ],
+                    [
+                      10.568696,
+                      10.6365
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      10.56087,
+                      10.7
+                    ],
+                    [
+                      10.6,
+                      10.7
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.03913000000000011
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": true,
+              "classification": "verified_full_width_annular_contact"
+            },
+            {
+              "track_uuid": "e3d66729-7dcf-4a0e-a0c5-5720860b1f0a",
+              "start_mm": [
+                10.16087,
+                10.3
+              ],
+              "end_mm": [
+                10.56087,
+                10.7
+              ],
+              "length_mm": 0.5656854249492372,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.017623350794012935,
+              "centerline_actual_annulus_length_mm": 0.10396346406428007,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    10.542491682391125,
+                    10.681621682391125
+                  ],
+                  "section_mm": [
+                    [
+                      10.587392962996471,
+                      10.636720401785778
+                    ],
+                    [
+                      10.497590401785779,
+                      10.726522962996471
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000172,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.02085051565777986,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      10.58385742909054,
+                      10.633184867879846
+                    ],
+                    [
+                      10.494054867879846,
+                      10.722987429090539
+                    ],
+                    [
+                      10.50112593569171,
+                      10.730058496902403
+                    ],
+                    [
+                      10.590928496902404,
+                      10.64025593569171
+                    ],
+                    [
+                      10.58385742909054,
+                      10.633184867879846
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      10.487356729564503,
+                      10.626486729564503
+                    ],
+                    [
+                      10.56087,
+                      10.7
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.10396346406428007
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        }
+      ],
+      "verified_contact_layers": [
+        "F.Cu",
+        "In3.Cu"
+      ],
+      "physical_layer_transfer_passed": true
+    },
+    {
+      "net": "SERVO2_MCU",
+      "via_uuid": "ac95ccaf-924b-4b45-8b10-fa9341e5cf7e",
+      "xy_mm": [
+        21.51385,
+        13.71343
+      ],
+      "drill_mm": 0.2,
+      "width_by_layer_mm": {
+        "F.Cu": 0.45,
+        "In1.Cu": 0.45,
+        "In2.Cu": 0.45,
+        "In3.Cu": 0.45,
+        "In4.Cu": 0.45,
+        "B.Cu": 0.45
+      },
+      "drill_void_subtracted": true,
+      "outer_polygon_inward_reserve_mm": 1e-05,
+      "contact_layers": [
+        {
+          "layer": "In2.Cu",
+          "contacts": [
+            {
+              "track_uuid": "50cbe89b-33f3-49f4-be25-d58d71016ad4",
+              "start_mm": [
+                16.73903,
+                13.71343
+              ],
+              "end_mm": [
+                21.51385,
+                13.71343
+              ],
+              "length_mm": 4.774820000000002,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.016404147460047504,
+              "centerline_actual_annulus_length_mm": 0.12499000000000038,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    21.351354999999998,
+                    13.71343
+                  ],
+                  "section_mm": [
+                    [
+                      21.351354999999998,
+                      13.649930000000001
+                    ],
+                    [
+                      21.351354999999998,
+                      13.77693
+                    ]
+                  ],
+                  "section_width_mm": 0.1269999999999989,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.05052832638543464,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      21.346355,
+                      13.649930000000001
+                    ],
+                    [
+                      21.346355,
+                      13.77693
+                    ],
+                    [
+                      21.356354999999997,
+                      13.77693
+                    ],
+                    [
+                      21.356354999999997,
+                      13.649930000000001
+                    ],
+                    [
+                      21.346355,
+                      13.649930000000001
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      21.28886,
+                      13.71343
+                    ],
+                    [
+                      21.41385,
+                      13.71343
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.12499000000000038
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        },
+        {
+          "layer": "B.Cu",
+          "contacts": [
+            {
+              "track_uuid": "5e8c9153-f5f1-4ec4-ac62-cadb69d146c2",
+              "start_mm": [
+                21.51385,
+                13.71343
+              ],
+              "end_mm": [
+                21.51385,
+                17.96977
+              ],
+              "length_mm": 4.25634,
+              "trace_width_mm": 0.127,
+              "actual_annulus_overlap_mm2": 0.016404147460047286,
+              "centerline_actual_annulus_length_mm": 0.12499000000000038,
+              "full_width_actual_annulus_witnesses": [
+                {
+                  "section_center_mm": [
+                    21.51385,
+                    13.875925
+                  ],
+                  "section_mm": [
+                    [
+                      21.577350000000003,
+                      13.875925
+                    ],
+                    [
+                      21.45035,
+                      13.875925
+                    ]
+                  ],
+                  "section_width_mm": 0.12700000000000244,
+                  "full_width_actual_annulus_section": true,
+                  "section_to_actual_annulus_boundary_mm": 0.050528326385434086,
+                  "full_width_strip_length_mm": 0.01,
+                  "full_width_strip_polygon_mm": [
+                    [
+                      21.577350000000003,
+                      13.870925
+                    ],
+                    [
+                      21.45035,
+                      13.870925
+                    ],
+                    [
+                      21.45035,
+                      13.880925000000001
+                    ],
+                    [
+                      21.577350000000003,
+                      13.880925000000001
+                    ],
+                    [
+                      21.577350000000003,
+                      13.870925
+                    ]
+                  ],
+                  "strip_area_outside_actual_annulus_mm2": 0.0,
+                  "centerline_actual_copper_interval_mm": [
+                    [
+                      21.51385,
+                      13.81343
+                    ],
+                    [
+                      21.51385,
+                      13.93842
+                    ]
+                  ],
+                  "centerline_actual_copper_interval_length_mm": 0.12499000000000038
+                }
+              ],
+              "full_width_actual_annulus_passed": true,
+              "centerline_wholly_in_drill_void": false,
+              "track_copper_wholly_within_existing_via_disk": false,
+              "classification": "verified_full_width_annular_contact"
+            }
+          ],
+          "full_width_actual_annular_entry_passed": true
+        }
+      ],
+      "verified_contact_layers": [
+        "In2.Cu",
+        "B.Cu"
+      ],
+      "physical_layer_transfer_passed": true
+    }
+  ],
+  "redundant_via_spurs": [
+    {
+      "net": "SERVO2_MCU",
+      "via_uuid": "2b07387c-0e51-4096-a791-30766feb86b6",
+      "layer": "F.Cu",
+      "track_uuid": "a05cae65-6216-4ace-acca-635d5923a6c3",
+      "start_mm": [
+        10.16087,
+        11.17593
+      ],
+      "end_mm": [
+        10.244,
+        11.17593
+      ],
+      "length_mm": 0.08313000000000059,
+      "trace_width_mm": 0.127,
+      "actual_annulus_overlap_mm2": 0.005105928621883801,
+      "centerline_actual_annulus_length_mm": 0.0,
+      "full_width_actual_annulus_witnesses": [],
+      "full_width_actual_annulus_passed": false,
+      "centerline_wholly_in_drill_void": true,
+      "track_copper_wholly_within_existing_via_disk": true,
+      "classification": "redundant_buried_spur_not_annular_entry_evidence"
+    }
+  ],
+  "incidental_via_side_overlaps_not_used_as_entry_evidence": [],
+  "summary": {
+    "pad_terminations_verified": 4,
+    "minimum_positive_pad_depth_mm": 0.06353999999999971,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.10838999999999999,
+    "full_width_actual_annular_strip_count": 11,
+    "minimum_full_width_annular_strip_length_mm": 0.003685299122188056,
+    "minimum_annular_section_boundary_reserve_mm": 0.02085051565777986,
+    "redundant_via_spurs_retained_as_non_evidence": 1,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "pad_failures": [],
+  "via_failures": [],
+  "unresolved_contacts": [],
+  "source_recheck_unchanged": true,
+  "limits": [
+    "This checks new and explicitly permitted rewritten-net source endpoints and contacts, not full routing completion.",
+    "Saved GND fills may change in the parent refill; fixed native object UUIDs and records are compared here.",
+    "Nominal geometry only; native DRC/process/connectivity remain separate owner gates."
+  ]
+}

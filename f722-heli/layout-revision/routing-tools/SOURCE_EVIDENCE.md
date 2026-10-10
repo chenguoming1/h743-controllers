@@ -1,3 +1,33 @@
+# V11 evidence boundary
+
+Latest adopted checkpoint: candidate37,45 opens/0 native errors/0 warnings. Routing and qualification are unfinished. Numerical power/VCAP applicability is false; last fully job-bound numerical source24 is historical only.
+
+- Exact sealed handoffs:34 SHA `de40925b2432c2c378accd22ec6ec01a626958b5251159e8ad2981f2998b5efa`;35 SHA `27a1f374b4946857b88e9f48dbee8af300b859e9db021410476a4b5e6a312064`;37 SHA `be1aee520044dd420b87582e0ce4a15a6bc30ca5b72ab2b318d490ad0f44beaa`.
+- Exact recovery: all 34–37 PCBs and unchanged paired 62-file projects. Raw36 stays refused. Current maps and import wrappers, the original refusal/recipe, subset repair receipt and owner adoptions are included byte-exact.
+- Native history: actual filtered07/08/09 sessions retain successful count receipts and the selected final checkpoint. Full reports are hashed and compacted only by removing fixed guard arrays; route data remain complete. Candidate37 is explicit subset cleanup of native raw36, with no new route geometry, no refill and no equality claim to the raw SES.
+- Owner adoption: included summaries, additive integration receipts, fresh reference comparisons and actual 22-case results are hash-bound to each adopted checkpoint. Original handoff pending statuses remain historical and are not rewritten to imply owner adoption.
+- Portable verification: four new exact recoveries, three packet parser/projection checks, exact34→35 saved zones, exact36→37 one-track subset, owner/reference/zero bindings, source selection, and 25 new evidence rejection controls. Five additional delta rejection controls run from a clean extracted tree.
+- Inherited verification: V10 portable receipt is retained by hash. V10 itself remains immutable. Earlier native/JVM/constructor tests are not repeated for this bounded increment.
+- Fresh37 zero is historical source-bound provenance only. Full native/model exports, binaries, fixed guard arrays and unaccepted continuations/trials are excluded. Referenced hashes for large omitted exports remain provenance, not a claim that those exports are bundled or reexecuted.
+
+## Inherited V10 evidence (historical only)
+
+# V10 evidence boundary
+
+Current package candidate33/49 is owner-adopted but geometrically unfinished. `checks/v10-portable-projections.json` binds original byte identities to path-normalized or explicitly reduced copies. `checks/v10-source-identity.json` pins exact copied sources and adoption receipts. `checks/v10-historical-receipt-status.json` records any unavailable overwritten historical bytes without replacing their original hash claims.
+
+Candidate29 remains refused. Candidate30 cleanup and candidate31/33 native construction are distinguished from actual engine29/32 sessions. The count2 SERVO2 P1 snapshot is an unadopted source corridor; it was not retained in actual engine32 output. Source33 construction, ownership, removed tracks and unchanged physical via are bound separately from native qualification. The portable verifier reruns the exact constructor with the 15 original P0 object records, necessary role fields, source32 map and retained count2 route array; generated model/native hashes differ because inputs are explicit projections. It requires byte-identical SES and identical report route geometry and contract fields. This proves the portable construction recipe, not a fresh full-native review.
+
+The new rewrite controls are also rerun with exact parsed PCB segment/via records and complete footprint records from recovered32/33. Five adversarial mutations must fail the unchanged validator. This supplements, and does not relabel, the original full native polygon audit. Full native endpoint/annulus/cut, physical DRC and support acceptance receipts are historical executions; portable packaging checks their identities and relationships only.
+
+The 50→49 owner reference classifier and its three source dependencies are included. Full signal snapshots remain external, hash-bound inputs. Tiny signed differences remain in the comparison and exact owner review. Current actual I/O is 6/20 channels, 8/22 cases; older 5/18 and 5/7 historical routing/supplemental cut conventions remain explicitly separate.
+
+The Java baseline remains byte-identical to V9 for older source-bound controls. Source33 uses the separately preserved promoted overlay. Static reversal must recover the entire baseline source exactly after removing the new logging helpers/call. Activation/restore is checked without compiling. Archived06 establishes no runtime exercise; archived07 establishes one complete logging record consistent with existing trace records and a ROUTED engine attempt. The overlay never claims final geometry or identical timing-sensitive route selection with logging disabled. No07 SES or candidate34 native geometry is included.
+
+Power/VCAP results remain in the separately maintained power-owned evidence. Their latest fully bound source here is24; numerical applicability is false from26 onward. Neither unchanged critical copper nor scoped local reference-window classification restores that binding.
+
+## Inherited V9 source evidence (historical only)
+
 # V9 evidence boundary
 
 Current checkpoint is owner-adopted28/55;27/56 is its validated intermediate. See README.md and checks/v9-source-identity.json for exact source choices, checks/v9-portable-projections.json for original versus portable byte identities, and checks/v9-evidence-verified.json for checks actually rerun during packaging. Older sections below remain historical.

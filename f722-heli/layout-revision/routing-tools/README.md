@@ -1,3 +1,62 @@
+# F722 ordinary routing: V11 checkpoint45
+
+Owner-adopted candidate37 is an unfinished geometric checkpoint: 45 open connections, zero native DRC errors/warnings, and strict schematic parity zero. PCB SHA-256: `2a73d9b7dad3a14b0d00c80e81e0ba8a817b50179c15692aad39fde9920c2115`. Numerical power/VCAP applicability remains false; candidate24 is the last fully job-bound numerical checkpoint. This is not fabrication-ready.
+
+V11 adds only the accepted progression33→34→35→37 and the refused raw36 needed to reproduce its cleanup:
+
+- Candidate34 imports the actual filtered07 final session from source33: 11 tracks and two vias complete ESC_MCU::P1, reaching 48 opens. The actual U13.3 bonded cut passes, bringing actual I/O to 9/22 cases across 7/20 channels.
+- Candidate35 imports the actual filtered08 final session from source34 with `--preserve-unaffected-fills`: three RPM_HV::P1 outer tracks, no via or refill, 47 opens. All saved source zones, drills, masks and source objects remain exact. Earlier numerical staleness persists.
+- Raw candidate36 imports source35 filtered09, routing DSM_RX_EXT and ESC_EXT. Its45/0/1 native result and failed finite-entry audit refuse one unused DSM tail. The original board, map, import receipt, refusal and repair recipe remain exactly recoverable or included.
+- Adopted candidate37 removes only that new unused track. It preserves all 1,793 source35 native objects and every other raw36 native record, with nine added tracks and one via relative to 35. ESC_EXT is complete; DSM joins D7.1 to J12.3, while R38.1 and the actual D7 cut remain unfinished. Its current import wrapper explicitly says direct engine output=false and SES/engine/native geometry equality=false; raw36 alone has the equality claim.
+
+Actual bonded I/O remains 9/22 cases, 7/20 channels; 19/51 ordinary physical nets are complete. Final owner adoption and fresh reference comparison are included. Critical objects and represented reference metrics remain unchanged. Each inner GND plane loses 0.3926085766365002mm² versus35, with zero lost-GND overlap beneath critical widths. These are geometric observations and do not qualify numerical power, VCAP, signal integrity, fabrication or flight behavior.
+
+The sealed34/35/37 handoffs, current maps/import wrappers and owner-adoption receipts are byte-exact. All four boards recover byte-exactly as 62-file paired projects. Three compact real session packets retain all route geometry and importer fields; fixed guard arrays and full native/model exports are omitted. The final checkpoint receipt may describe a later FAILED attempt that reused the last successful geometry. Separate count receipts retain the actual ROUTED attempts; the package makes no success claim from that terminal attempt.
+
+Fresh source37 zero provenance is bound to model SHA `326a5176556b8994d70ff07ff61a9fc300134865091559e5129aae5c5e5ef599`. V10's original default Java source is preserved; the same explicit diagnostics overlay is required for these later models. No predicate change is introduced.
+
+V11 is a compact changed-files delta against immutable V10 manifest `749c4e20e4dbdb2bbb0bbb91e517a71c14817ffee2adda310cc28c2c26c3e024` and ZIP `e9953844bbb38196b26fb08d8c13b866dbfc79fcbfcb50d51923c7ce4c3adbbe`. The incremental standard-library verifier checks the new recoveries, packets, exact subset, owner/reference/zero bindings and rejection controls. V10's previous verification is retained by hash; unrelated historical gates are not rerun. Packaging runs no JVM, KiCad, import/refill, DRC, field solve or route search.
+
+Candidate38 or later, source37 filtered10 and the isolated servo/RPM/I2C trials are excluded. See `REPRODUCE.md` for the portable commands.
+
+## Inherited V10 documentation (historical only)
+
+The material below retains older workflows and evidence. V11 scope, status and exclusions are stated above.
+
+# F722 ordinary routing: V10 checkpoint49
+
+Owner-adopted candidate33 is unfinished: 49 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6`. Seventeen of 51 ordinary physical nets are complete. Actual bonded I/O coverage is 8/22 cases across 6/20 channels. This is not fabrication-ready.
+
+Power/VCAP numerical applicability is false, stale since candidate26. Candidate24, SHA-256 `8373a599fe81a58571422fc4a1f4fe3afb65acad2fd7b3528eef43d575edce11`, is the last fully bound numerical checkpoint. New drills and changed saved GND fills require new source-bound numerical validation. Support connectivity and critical-reference geometry checks do not replace it.
+
+## Distinct route histories
+
+- Candidate29: the actual source28 filtered03 final session reached 53 opens, but its native geometry was refused for two dangling FLASH_HOLD_N ends and a TAIL_EXT off-center via endpoint. All refusal evidence remains intact.
+- Candidate30: explicit cleanup trims two unaccepted new track ends to exact via centers and removes one unused new stub, adding no copper and preserving source28. It passes native gates at 53 opens. This cleanup is not a new engine success.
+- Candidate31: explicit native PORT_A_TX_EXT P0 construction after actual engine insertion refusal at the shared U14.9 pad. It reaches 52 opens; P2 remains open. No engine insertion success is claimed.
+- Candidate32: the actual final source31 filtered05 session, with no manual geometry changes, reaches 50 opens. Three historical engine successes yield a net reduction of two. The intermediate SERVO2 P1 branch was removed by the engine during P0 routing; the count2 snapshot is preserved separately, never unioned into32.
+- Candidate33: explicit coordinated SERVO2 construction uses that independently retained P1 corridor and reviewed disjoint approaches. Six source P0 tracks are removed under a 15-route allowance; the existing via `2b07387c-0e51-4096-a791-30766feb86b6` keeps its physical record and physical net while its logical owner changes exclusively P0→P1. It adds 24 tracks and two vias. Native full-width/annular entry and actual U12.3 cut pass: 0.132 mm outside-pad gap, zero overlap. SERVO2_MCU becomes fully connected. This is native construction, not a successful engine insertion.
+
+The exact33 owner receipt binds the coordinated integration, actual I/O and reference comparison. Critical copper and missing centerlines remain unchanged; trace-width differences outside unchanged own-via windows are equal. The nonzero represented missing-width changes are retained: IMU_MISO +6.17441728301138e-9 mm² and USB_N −6.838594690528055e-10 mm². They lie entirely within the existing local own-via windows and actual before/after saved holes. No snapping, contour repair, epsilon or value zeroing was used. These scoped reference findings do not qualify power or signal integrity.
+
+## Source and diagnostics boundary
+
+The original endpoint/support sources and all earlier refusals remain unchanged. Separately named audit sources permit only the declared ordinary rewrite; five rejection controls cover wrong-net allowances, undeclared removal, stale source, in-place via edits and new copper on another net. Original pending handoff status is historical; owner adoption is separately retained exactly.
+
+The default `src/` retains the V9 baseline that generated engine32. The approved diagnostics-only inserter is an explicit overlay under `tests/complete-path-diagnostics/`, with baseline/source/class hashes, static checks and activation/restore instructions. Exactly one source/class changed during promotion. Source33 zero was generated with the promoted inserter, not baseline `src/` alone. Its model SHA is `1e26454313ed16a325e7925707dbdf88589dec8d9d9564f2a91f59bf4e51e051`; byte-identical zero import and logical parity pass.
+
+Located06 found no path and did not exercise the new method. A small later filtered07 record establishes that `located_connection` executed and matched three per-trace records, two intended via transitions and native endpoints. Its engine attempt was ROUTED. The excerpt includes the intermediate forced-trace refusal too. This is logging consistency evidence only, not proof that the recorded located path equals final inserted geometry, a timing-equivalence claim or native acceptance. Candidate34 and all later native candidates are excluded. The rejected shared-pad cutout patch remains excluded; no live routing predicates were changed.
+
+## Portable package
+
+V10 is a modest changed-files-only delta against immutable V9 manifest `d7fc5052b8f672f13d4fa031d23953f05916d01460b1da25fdb2e29d6da0f9d2`; V9 delta ZIP SHA-256 is `985475c549cec9c51a4d0ba425eb318ad4c6b9ea02868b50c19d2b9cfdc8d9a8`. It recovers exact paired29–33 geometry from pinned candidate28, chained from the 62-file candidate22 project. Five compact SES/report packets separate actual sessions, refused raw geometry, intermediate origin geometry and explicit construction.
+
+The standard-library verifier checks identities, all five exact paired recoveries, parser/projection agreement, source rewrite controls against parsed exact PCB records, diagnostics activation/restore and runtime-record consistency, and reproduces the exact33 SES with the unchanged constructor using disclosed sufficient projections. The source33 full native model/export and all fixed guard areas are omitted. No JVM, native import/refill, DRC, field solve, endpoint geometry run or route search is performed during packaging. See `REPRODUCE.md` and the verification receipts for precise scope.
+
+## Inherited V9 documentation (historical only)
+
+Everything below describes earlier packages. Current scope and numerical status are stated above; historical exclusions or acceptance statements do not describe V10.
+
 # F722 ordinary routing: V9 checkpoint55
 
 Owner-adopted candidate28 is an unfinished geometric checkpoint: 55 open connections, zero native DRC errors/warnings and strict schematic parity zero. PCB SHA-256: `3afc574bdd766292932323c54fd198cc2cb88ab93617a434fe5d104ab01838d2`. Power/VCAP numerical applicability remains false. Routing, numerical revalidation and final electrical/physical qualification are incomplete; this is not fabrication-ready.

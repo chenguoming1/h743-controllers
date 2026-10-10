@@ -1,0 +1,98 @@
+{
+  "schema": "f722-native-route-handoff/v1",
+  "status": "frozen_native_verified_49_open_coordinated_SERVO2_geometric_WIP_pending_owner_adoption_and_power_revalidation",
+  "board_sha256": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
+  "integration_source_sha256": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+  "drc": {
+    "unconnected": 49,
+    "errors": 0,
+    "warnings": 0,
+    "strict_schematic_parity": 0
+  },
+  "pose_reference": "integrated-routing/trial27/poses-native.json",
+  "construction_kind": "Explicit coordinated SERVO2 native rewrite, incorporating separately retained engine P1 corridor and independently reviewed disjoint local approaches.",
+  "new_tracks": 24,
+  "new_vias": 2,
+  "source_track_objects_removed": 6,
+  "source_existing_uuid_records_edited": 0,
+  "source_objects_outside_allowance_retained_exact": 1742,
+  "retained_source_objects_total": 1751,
+  "permitted_mutable_source_route_count": 15,
+  "logical_via_reassignments": 1,
+  "reference_refill_performed": true,
+  "full_width_endpoint_passed": true,
+  "endpoint_summary": {
+    "pad_terminations_verified": 4,
+    "minimum_positive_pad_depth_mm": 0.06353999999999971,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.10838999999999999,
+    "full_width_actual_annular_strip_count": 11,
+    "minimum_full_width_annular_strip_length_mm": 0.003685299122188056,
+    "minimum_annular_section_boundary_reserve_mm": 0.02085051565777986,
+    "redundant_via_spurs_retained_as_non_evidence": 1,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "new_fully_connected_physical_nets": [
+    "SERVO2_MCU"
+  ],
+  "ordinary_fully_connected_physical_nets": 17,
+  "historical_routing_pad_cuts": {
+    "passed": 5,
+    "total": 18
+  },
+  "supplemental_pad_cuts": {
+    "passed": 5,
+    "total": 7
+  },
+  "actual_bonded_io_cuts": {
+    "passed": 8,
+    "total": 22
+  },
+  "SERVO2_actual_U12_3_cut": {
+    "passed": true,
+    "outside_pad_gap_mm": 0.13199999999999967,
+    "all_layer_outside_pad_overlap_mm2": 0,
+    "scope": "Nominal native geometry; not fabrication or transient qualification"
+  },
+  "required_continuation_map": "f722-heli.logical-route-map.json",
+  "coordinated_change_receipt": "coordinated-change-receipt.json",
+  "power_scope": "Two new through-vias and refilled reference planes; all existing power/critical/pad/pose object records stay exact, but old numerical results do not bind this changed geometry.",
+  "files": {
+    "audit_native_endpoints.used.py": "6243af36ea083108ac96a8c04dfd5d76d5e4c59d6f7e8777af999462819965c8",
+    "audit_rewritten_native_endpoints.used.py": "98dbc7ce55f516abf1433baa038d5318c4302ec3c6d11a11495e1dd239e42a8f",
+    "audit_source_change_controls.used.py": "6d35128d9e1e71e9c9327ba3e7e585e9c68a0875de7a9e10ff3f9d0d041de872",
+    "audit_support_after_ordinary_rewrite.used.py": "e6983e8bda06937c79b0df97bc3829e69f01c93ff5aff40bf3e4dad9870b9ea3",
+    "construct_servo2_joint.used.py": "e0ee83225dde5c405768f15d3b35ee8e3147f5500b670b240920545bae0a7a9a",
+    "construction-provenance.json": "33b408e43e710adbc892feaa4b4bb910d3e8da54d1d63403af3a25802c34f3f6",
+    "coordinated-change-receipt.json": "882632a45cd8928abc9acec6a74639f1251cf0c37db4efe05324796b3dc33b21",
+    "endpoint-audit-scope.patch": "4a3d0eb23afb93e56373270e2c58b8ad9476ef2b2494fd60eeea75c3f99d065b",
+    "endpoint-audit.json": "ded647f3fdf9fcee236078029a9e36b20b0bbb296440b8663a66bf23d87553b2",
+    "f722-heli.import.json": "cf046707efab217335f76f1e305bd95f1f8ff70337b450e5fb49f4f55dd59b66",
+    "f722-heli.kicad_pcb": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
+    "f722-heli.logical-route-map.json": "2d25ae9a8d1c4fd6d7c3cdc7cebd060c9f12309be1ba0a1464416a5017931223",
+    "f722-heli.native.json": "b30079f24c3a7fad2f467e07d7eacfe2691bc88eb28117eb838208dfb060a821",
+    "import_session.used.py": "4f057a22a3434a618129dd5a11dad4ef29ed2f08a2b561ea818b8438cd87e292",
+    "local-geometry-review.json": "caa0df1af6e228f0f23148103fae45e7e3e3e138813c73ed6cef7f648293cce2",
+    "owner-critical.json": "4de447c61e29b245eec27e38ee89b3750c8e72ae545885cd2c0b3e9d99bd73af",
+    "owner-drc-all.json": "79e08e5e8ade012ee5fbe3b0a25a571f36680dd00ee402f5b20ba2e6cf3160f2",
+    "owner-drc-parity.json": "0e0a7f9ca7f4c87171561d2ea0b377a23471e64dfef45efb68aa9c2c63fec3bc",
+    "owner-drc.json": "c3ff7e18e7d6561aceb01481a2cc739dc31c4776ec24fc859e8b23f74e1033ee",
+    "owner-firmware.json": "4229bad4de874eb11d51ff8f0a835a25cb4192ff11169ab5de6542cf1b6e93a1",
+    "owner-mechanical-geometry.json": "3ae0f5c2575fadeabe6d95342e32e07355eff326d47a1c4182439b0f654465f1",
+    "owner-mechanical.json": "9fa4976d9cf8e0e2fe9e444d788a6fada0377c615dcdbc3d18bf20df548fe086",
+    "owner-native.json": "b30079f24c3a7fad2f467e07d7eacfe2691bc88eb28117eb838208dfb060a821",
+    "owner-parity.json": "0a453a7e9926b185f938923e546c0afbc7c5624254a1f81fb32e9a4b60000a79",
+    "owner-process.json": "80ed17eb5ceb6267b07baa406c392263a381c3ba9a461101ebdda7889024020b",
+    "owner-protection.json": "8c7ab9ebe0d21130a43a7d4a320b16ff698ab3e8620818022a31be594eedb06a",
+    "owner-summary.json": "0430a9b56963658d29f6207429a1c19d6966f61fa984b92f9684c0c655582b3c",
+    "owner-supplemental.json": "bd1e9a15b568a5266690712118545ae70dfb7f4e81aadc385d0700c22192d73d",
+    "parts.json": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+    "power-audit.json": "dec7df01fd4682ea6e45db4adc7f841af24e8a1970ecce907a9aff5a0a899147",
+    "power-revalidation-required.json": "03062e5551c5c7f4f1ab8536e601c7f6da7292692d960aeb00bf3530cbe53a80",
+    "protection-actual-io.json": "302916f322c99f16f4d7d46aff1c610e68a0920bd6ba464ea4c98de29accaf7f",
+    "route-analysis.json": "e0829a1c9fe0784f19be4ca40513562d1cbfd785f2539bf3b77f5592d9bb26a9",
+    "route_geometry.used.py": "898e4f5d683bcf46a0feff38231ca398f979ea3f60dc08a06b80b91d9c92bfe2",
+    "source-change-controls.json": "f6270d31e6c7e918f4907178fd2ee19923c12f440d764620657acd3fc486167b",
+    "support-audit-scope.patch": "820da1a387d1e51bcb4efb6260a25968a6c6b0ee95143e81e5a1924d707e2b69",
+    "validate_ordinary_rewrite.used.py": "5da5b1d2aa439d4aad2060fbac548ed01cc71664e35f0ba95ec6863f2dcb63de"
+  }
+}

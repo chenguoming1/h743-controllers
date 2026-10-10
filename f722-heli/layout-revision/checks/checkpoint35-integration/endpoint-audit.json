@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "passed": true,
+  "source_hashes": {
+    "ordinary-routing/candidate34/f722-heli.kicad_pcb": "49f5d0c7139202b51ad753906b63042449bb8cc15bdb0e688ea6253ed14385c3",
+    "ordinary-routing/candidate34/f722-heli.native.json": "f697eeea5d08bf06ae402eaf5e6da5f434a92102e55aa62ef9d5fe643da45506",
+    "ordinary-routing/candidate35/f722-heli.kicad_pcb": "a76a523b70a39f1096de40da9e91037bbdf8030f7fcd17e5d92fb20d45690a6a",
+    "ordinary-routing/candidate35/f722-heli.native.json": "d7d8ae5696d30f2ada7a5f0180671a2834258d295a42e243d804849b855b2478"
+  },
+  "source_board_sha256": "49f5d0c7139202b51ad753906b63042449bb8cc15bdb0e688ea6253ed14385c3",
+  "candidate_board_sha256": "a76a523b70a39f1096de40da9e91037bbdf8030f7fcd17e5d92fb20d45690a6a",
+  "audit_script_sha256": "6243af36ea083108ac96a8c04dfd5d76d5e4c59d6f7e8777af999462819965c8",
+  "method": "SMD checks follow endpoint_witness: native ERROR_INSIDE interior and complete transverse endpoint section. Vias are evaluated separately on actual annulus: conservative native outer polygon contracted by export error, minus native ERROR_OUTSIDE drill void. A finite full-width strip on each contacted layer proves annular entry; a point in the drill or endcap-only sliver does not. Buried redundant spurs are not counted as contact evidence.",
+  "source_object_count": 1790,
+  "candidate_object_count": 1793,
+  "existing_object_records_unchanged": true,
+  "changed_existing_object_uuids": [],
+  "removed_object_uuids": [],
+  "added_objects": [
+    {
+      "uuid": "0efd45b8-258f-4f36-880a-f1d032371ed7",
+      "kind": "track",
+      "net": "RPM_HV"
+    },
+    {
+      "uuid": "3f438523-4cd4-4589-a2b1-104591cd43eb",
+      "kind": "track",
+      "net": "RPM_HV"
+    },
+    {
+      "uuid": "d92a8d43-281a-4557-90cc-33b183b9f752",
+      "kind": "track",
+      "net": "RPM_HV"
+    }
+  ],
+  "per_net": {
+    "RPM_HV": {
+      "added_tracks": 3,
+      "added_vias": 0,
+      "total_native_tracks": 3,
+      "new_pad_termination_count": 2,
+      "scope": "Added-route endpoints only; not a full-net completion claim"
+    }
+  },
+  "pad_terminations": [
+    {
+      "net": "RPM_HV",
+      "track_uuid": "0efd45b8-258f-4f36-880a-f1d032371ed7",
+      "layer": "F.Cu",
+      "endpoint": "end",
+      "xy_mm": [
+        16.99961,
+        16.50142
+      ],
+      "other_end_mm": [
+        16.99961,
+        14.7916
+      ],
+      "pad": "U16.1",
+      "pad_uuid": "a92964ce-cb19-4225-a914-faddcd7bb6fc",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.08055557660441076,
+      "actual_copper_section_mm": [
+        [
+          16.93611,
+          16.50142
+        ],
+        [
+          17.06311,
+          16.50142
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.12700000000000244,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.01742929964906164,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.04993712455143395,
+      "full_width_transverse_entry_wkt": "LINESTRING (16.99961 16.50142, 16.99961 16.451482875448566)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    },
+    {
+      "net": "RPM_HV",
+      "track_uuid": "d92a8d43-281a-4557-90cc-33b183b9f752",
+      "layer": "F.Cu",
+      "endpoint": "start",
+      "xy_mm": [
+        18.41752,
+        12.73646
+      ],
+      "other_end_mm": [
+        18.41752,
+        13.37369
+      ],
+      "pad": "Q1.3",
+      "pad_uuid": "5918dcd5-a1fc-426c-9cab-d8400fce5610",
+      "trace_width_mm": 0.127,
+      "centerline_inside_native_pad": true,
+      "centerline_to_actual_copper_gap_mm": 0.0,
+      "centerline_depth_inside_native_pad_mm": 0.06354000000000147,
+      "actual_copper_section_mm": [
+        [
+          18.48102,
+          12.73646
+        ],
+        [
+          18.35402,
+          12.73646
+        ]
+      ],
+      "actual_copper_section_overlap_mm": 0.12700000000000244,
+      "actual_copper_section_missing_mm": 0.0,
+      "full_width_actual_copper_termination": true,
+      "native_track_actual_pad_overlap_mm2": 0.014404002478000265,
+      "drill_void_subtracted": false,
+      "full_width_annular_entry_length_mm": null,
+      "full_width_transverse_entry_length_mm": 0.06353900000000223,
+      "full_width_transverse_entry_wkt": "LINESTRING (18.41752 12.73646, 18.41752 12.799999000000001)",
+      "transverse_entry_extra_inward_reserve_mm": 1e-06,
+      "physical_entry_passed": true
+    }
+  ],
+  "via_endpoints_classified_separately": [],
+  "via_annular_contacts": [],
+  "redundant_via_spurs": [],
+  "incidental_via_side_overlaps_not_used_as_entry_evidence": [],
+  "summary": {
+    "pad_terminations_verified": 2,
+    "minimum_positive_pad_depth_mm": 0.06354000000000147,
+    "minimum_full_width_pad_transverse_entry_length_mm": 0.04993712455143395,
+    "full_width_actual_annular_strip_count": 0,
+    "minimum_full_width_annular_strip_length_mm": null,
+    "minimum_annular_section_boundary_reserve_mm": null,
+    "redundant_via_spurs_retained_as_non_evidence": 0,
+    "incidental_side_overlaps_not_used_as_entry_evidence": 0
+  },
+  "pad_failures": [],
+  "via_failures": [],
+  "unresolved_contacts": [],
+  "source_recheck_unchanged": true,
+  "limits": [
+    "This checks only newly added route endpoints and contacts, not full routing completion.",
+    "Saved GND fills may change in the parent refill; fixed native object UUIDs and records are compared here.",
+    "Nominal geometry only; native DRC/process/connectivity remain separate owner gates."
+  ]
+}

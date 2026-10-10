@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "verifier_source_sha256": "285345aa7d1c2dde12d0778ae7ebe44dae30f1e2fb6e61d9b5934e3556a39592",
+  "scope": "Portable historical binding, exact paired recovery, SES/report parsing, exact SERVO2 constructor session reproduction, parsed PCB record rewrite controls, diagnostic source overlay checks. No new native geometry qualification.",
+  "base_manifest_sha256": "d7fc5052b8f672f13d4fa031d23953f05916d01460b1da25fdb2e29d6da0f9d2",
+  "recovered_projects": [
+    {
+      "candidate": 29,
+      "board_sha256": "6285a27dc5cbe240f3a0df5bac489b7141956be5033d7326a72b49c630a042ae",
+      "functional_paired_files": 62
+    },
+    {
+      "candidate": 30,
+      "board_sha256": "a38795cf06c9b8e531b1253abbf34ef4029b80d930ed8c982aff9f2b5076f1d6",
+      "functional_paired_files": 62
+    },
+    {
+      "candidate": 31,
+      "board_sha256": "a650e7df94cea3a171cf7dc16d0b951f6f8b069c2bb587100310ef22ffe40c28",
+      "functional_paired_files": 62
+    },
+    {
+      "candidate": 32,
+      "board_sha256": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+      "functional_paired_files": 62
+    },
+    {
+      "candidate": 33,
+      "board_sha256": "1fe3090e0674c51083b924a077bb068ba8afa4041b6f92fa74ce6b9612c178a6",
+      "functional_paired_files": 62
+    }
+  ],
+  "packets": [
+    {
+      "packet": "raw53",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "engine_insertion_succeeded": true,
+      "adopted_geometry": false,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "native52",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "engine_insertion_succeeded": false,
+      "adopted_geometry": true,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "engine50",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "engine_insertion_succeeded": true,
+      "adopted_geometry": true,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "servo2-origin-count2",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "engine_insertion_succeeded": true,
+      "adopted_geometry": false,
+      "native_replay_executed": false
+    },
+    {
+      "packet": "coordinated49",
+      "ses_report_geometry_equal": true,
+      "projection_rebinding_verified": true,
+      "engine_insertion_succeeded": false,
+      "adopted_geometry": true,
+      "native_replay_executed": false
+    }
+  ],
+  "negative_controls_passed": 36,
+  "negative_controls": [
+    "wrong diagnostic activation baseline",
+    "raw53:wrong source board",
+    "raw53:tampered session.ses",
+    "raw53:tampered engine-report.json",
+    "raw53:tampered import-contract.json",
+    "native52:wrong source board",
+    "native52:tampered session.ses",
+    "native52:tampered engine-report.json",
+    "native52:tampered import-contract.json",
+    "engine50:wrong source board",
+    "engine50:tampered session.ses",
+    "engine50:tampered engine-report.json",
+    "engine50:tampered import-contract.json",
+    "servo2-origin-count2:wrong source board",
+    "servo2-origin-count2:tampered session.ses",
+    "servo2-origin-count2:tampered engine-report.json",
+    "servo2-origin-count2:tampered import-contract.json",
+    "coordinated49:wrong source board",
+    "coordinated49:tampered session.ses",
+    "coordinated49:tampered engine-report.json",
+    "coordinated49:tampered import-contract.json",
+    "wrong-net allowance",
+    "undeclared ground removal",
+    "stale rewrite source",
+    "existing via record mutation",
+    "new copper on wrong net",
+    "wrong recovery source",
+    "wrong target hash",
+    "out-of-range copy",
+    "invalid delta operation",
+    "unsupported transform",
+    "tampered paired project",
+    "unsafe recovery path:../escape",
+    "unsafe recovery path:/absolute",
+    "unsafe recovery path:safe/../escape",
+    "unsafe recovery path:windows\\escape"
+  ],
+  "original_source_hash_checks_performed": true,
+  "servo2_constructor_exact_session_reproduced": true,
+  "servo2_constructor_inputs_are_projections": true,
+  "source_rewrite_controls_reexecuted_on_exact_board_records": true,
+  "critical_reference_nonzero_deltas_retained": true,
+  "diagnostic_overlay_static_check_passed": true,
+  "diagnostic_overlay_activation_restore_verified": true,
+  "diagnostic_located_connection_runtime_exercised": true,
+  "diagnostic_runtime_reexecuted_by_packaging": false,
+  "source33_zero_import_historical_binding_verified": true,
+  "candidate33_owner_adopted": true,
+  "native_replay_reexecuted": false,
+  "native_DRC_reexecuted": false,
+  "endpoint_geometry_reexecuted": false,
+  "JVM_router_refill_or_power_solve_executed": false,
+  "numerical_power_and_VCAP_applicability": false,
+  "native_open_connections": 49,
+  "native_errors": 0,
+  "native_warnings": 0
+}

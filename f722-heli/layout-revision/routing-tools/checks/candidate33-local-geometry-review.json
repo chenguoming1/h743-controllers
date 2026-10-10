@@ -1,0 +1,342 @@
+{
+  "schema": "f722-servo2-bounded-entry-review/v1",
+  "status": "local_geometry_proposal_only_not_route_acceptance",
+  "source_hashes": {
+    "ordinary-routing/candidate32/f722-heli.kicad_pcb": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+    "ordinary-routing/candidate32/f722-heli.native.json": "37ed7c4e8c80b4297dfc36432234c161a3c9cf5c529eda71bbe7719cec18f7b1",
+    "ordinary-routing/candidate32/f722-heli.logical-route-map.json": "1fa44cce8d0a7ee85901325346094978a0a112d1828ad4f817ebcf477bb4e664",
+    "ordinary-routing/candidate31/f722-heli.kicad_pcb": "a650e7df94cea3a171cf7dc16d0b951f6f8b069c2bb587100310ef22ffe40c28",
+    "ordinary-routing/model-candidate31-ready/model.json": "1e5c74961889e21f9ebacd9d6d80a70a0f0daa95bc672711ae55b770bd98a316",
+    "ordinary-routing/model-candidate31-ready/fixed-explicit-native-ids.json": "9ea607a98f3ac47918fae9707355d087e43a471496a2bf2ab96127ac8ca96ee3",
+    "ordinary-routing/model-candidate31-ready/filtered05.successes/count2/snapshot.after.json": "e0aa7faed788de42a4d441b9a430f579f346684c20111b2a020b7d5c6a1e9a8d",
+    "ordinary-routing/model-candidate31-ready/filtered05.successes/count2/snapshot.ses": "aa39a0dba07b54b030c47304382fd20ae4574607104b1f51f798cc34f581ed88",
+    "ordinary-routing/model-candidate31-ready/filtered05.successes/count3/snapshot.after.json": "998c1b54b1378c23b0939f802b2269434f2ab906da4d2d0024e1b667a24efeb2",
+    "ordinary-routing/model-candidate31-ready/filtered05.successes/count3/snapshot.ses": "71d30256e0ef227ed1cd45676480d712b83c8325094c89613e8632819d654d2a",
+    "ordinary-routing/servo2-local-review/review_local.py": "ded6be93503350dfc7a9be710dc5b053c1e618d0352607e546c8f640e3643734",
+    "ordinary-routing/servo2-local-review/check_final.py": "18b823eadab81da9d98b3615611baad3edb3245f0ffec261895671ec86188856"
+  },
+  "scope": {
+    "geometry_bounds_mm": [
+      9.5,
+      8.5,
+      16.5,
+      15.5
+    ],
+    "method": "Bounding-box-selected native polygons; a few hand-chosen path/via queries, nominal round buffers, exact source32 U12.3 inside polygon for pad cut. No solver, JVM, native DRC or board mutation.",
+    "candidate32_board_sha256": "20072f5ed493d88dda69d61a69d8c6d9bcad9aa6d7eabed93ca060aa473cb035",
+    "source31_mutable_route_objects": 132,
+    "source31_explicit_fixed_ordinary_objects": 10
+  },
+  "recommended_minimal_group": {
+    "logical_nets": [
+      "SERVO2_MCU::P0",
+      "SERVO2_MCU::P1"
+    ],
+    "neighboring_ordinary_nets_to_reroute": [],
+    "fixed_ordinary_segments_actually_limiting": false,
+    "reason": "No source31 explicit fixed ordinary object restricts these local routes. Coordinated P0 replacement opens two independent full-width tracks to the shared clamp pad; P1 gets exclusive use of the former P0 via. Local critical and power copper can stay geometrically unchanged."
+  },
+  "proposal": {
+    "track_width_mm": 0.127,
+    "clearance_mm": 0.127,
+    "new_via": {
+      "logical_net": "SERVO2_MCU::P0",
+      "xy": [
+        10.7,
+        10.7
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented": [
+        "F.Mask",
+        "B.Mask"
+      ]
+    },
+    "P0_F_Cu_points_mm": [
+      [
+        10.7,
+        10.7
+      ],
+      [
+        11.01,
+        11.01
+      ],
+      [
+        11.01,
+        12.505
+      ],
+      [
+        11.25,
+        12.745
+      ],
+      [
+        12.79133,
+        12.745
+      ],
+      [
+        13.21354,
+        12.32279
+      ],
+      [
+        13.21354,
+        12.2144
+      ]
+    ],
+    "P1_F_Cu_points_mm": [
+      [
+        10.16087,
+        11.17593
+      ],
+      [
+        10.244,
+        11.17593
+      ],
+      [
+        10.69,
+        11.62193
+      ],
+      [
+        10.69,
+        12.556
+      ],
+      [
+        11.138,
+        13.004
+      ],
+      [
+        12.899,
+        13.004
+      ],
+      [
+        13.035,
+        12.868
+      ],
+      [
+        13.45,
+        12.868
+      ],
+      [
+        13.45,
+        11.8875
+      ]
+    ],
+    "P0_In3_replacement_tail_points_mm": [
+      [
+        10.16087,
+        10.03687
+      ],
+      [
+        10.16087,
+        10.3
+      ],
+      [
+        10.56087,
+        10.7
+      ],
+      [
+        10.7,
+        10.7
+      ]
+    ],
+    "P0_retain": "Source32 R21.2 approach, via(11.77,5.49), In3 route through(11.77,8.42774) down to(10.16087,10.03687).",
+    "P1_continue": "Use count2 P1 In2 corridor from old via(10.16087,11.17593) through(11.10242,11.17593),(12.88099,12.9545),(15.9801,12.9545),(16.73903,13.71343) to via(21.51385,13.71343), then its B.Cu tail to U1.57. This full continuation still needs source32 screening.",
+    "remove_before_inserting": {
+      "P0_F_Cu_track_uuids": [
+        "059516ff-efba-4682-a183-da1254044a9a",
+        "06018140-c58c-4aee-ac5e-70366fee3d1b",
+        "59a0b526-0f98-4636-bb50-748718ff44d2",
+        "9d71bc2e-6825-40aa-bd2a-a5fc36f7d36d",
+        "cf426146-3de2-40f4-8a27-11b4120f6103",
+        "eaa5d60d-1730-4c88-a4c8-3c1d6ae6f93a",
+        "fe28ce3e-59d1-4776-8ba8-fd2989194578"
+      ],
+      "P0_In3_tail_track_uuid": "7ef93c2f-799a-4117-b124-c76999e6093b",
+      "old_via_uuid": "2b07387c-0e51-4096-a791-30766feb86b6",
+      "old_via_disposition": "Remove/recreate as P1 exclusively, or explicitly relabel with removal/ownership validation. No P0 copper may remain connected to it outside U12.3."
+    },
+    "electrical_topology": "R21.2 \u2192 dedicated P0 \u2192 actual U12.3 pad \u2192 dedicated P1 \u2192 U1.57. P0/P1 meet only inside the real clamp pad."
+  },
+  "local_screen_measurements_mm": {
+    "P0_P1_F_Cu_outside_actual_pad_gap": 0.13200000000000145,
+    "P0_nearest_foreign_F_Cu": {
+      "uuid": "0ed43375-c6bf-4c84-89f8-00d1002eee39",
+      "kind": "pad",
+      "key": "U12.2",
+      "net": "GND",
+      "xy": [
+        12.5,
+        11.8875
+      ],
+      "logical_net": null,
+      "layer": "F.Cu",
+      "gap": 0.1303774,
+      "mutable_source31": false,
+      "explicit_fixed_source31": false,
+      "ordinary_net": false
+    },
+    "P1_nearest_foreign_F_Cu": {
+      "uuid": "fb5a234c-5d52-4584-aadd-252a670e4869",
+      "kind": "via",
+      "net": "GND",
+      "xy": [
+        13.1048,
+        13.3702
+      ],
+      "start": [
+        13.1048,
+        13.3702
+      ],
+      "end": [
+        13.1048,
+        13.3702
+      ],
+      "width": 0.45,
+      "logical_net": null,
+      "layer": "F.Cu",
+      "gap": 0.1315578,
+      "mutable_source31": false,
+      "explicit_fixed_source31": false,
+      "ordinary_net": false
+    },
+    "P0_In3_tail_nearest_foreign": {
+      "uuid": "e111e697-9a18-46ee-acde-382526f78c73",
+      "kind": "pad",
+      "key": "J4.3",
+      "net": "SERVO3_EXT",
+      "xy": [
+        9.14,
+        9.35
+      ],
+      "logical_net": null,
+      "layer": "In3.Cu",
+      "gap": 0.2669268,
+      "mutable_source31": false,
+      "explicit_fixed_source31": false,
+      "ordinary_net": true
+    },
+    "P0_In3_tail_to_P1_old_via_gap": 0.3331988596456418,
+    "new_via_nearest_foreign_copper": {
+      "uuid": "7aa57d39-de74-4e59-ae7e-b321426a2b13",
+      "kind": "via",
+      "net": "GND",
+      "xy": [
+        11.404,
+        10.7915
+      ],
+      "start": [
+        11.404,
+        10.7915
+      ],
+      "end": [
+        11.404,
+        10.7915
+      ],
+      "width": 0.45,
+      "logical_net": null,
+      "layer": "F.Cu",
+      "gap": 0.2599204,
+      "mutable_source31": false,
+      "explicit_fixed_source31": false,
+      "ordinary_net": false
+    },
+    "new_via_drill_to_nearest_SMT_mask_both_faces": {
+      "uuid": "8da809ae-9ea8-4125-bc36-df53b66f1786",
+      "kind": "pad",
+      "key": "U12.6",
+      "net": "TAIL_MCU",
+      "xy": [
+        11.55,
+        9.6125
+      ],
+      "logical_net": null,
+      "layer": "F.Mask",
+      "gap": 0.6558762,
+      "mutable_source31": false,
+      "explicit_fixed_source31": false,
+      "ordinary_net": true
+    },
+    "new_via_drill_to_nearest_drill": {
+      "uuid": "7aa57d39-de74-4e59-ae7e-b321426a2b13",
+      "kind": "via",
+      "net": "GND",
+      "xy": [
+        11.404,
+        10.7915
+      ],
+      "start": [
+        11.404,
+        10.7915
+      ],
+      "end": [
+        11.404,
+        10.7915
+      ],
+      "width": 0.45,
+      "logical_net": null,
+      "layer": "drill",
+      "gap": 0.5099122,
+      "mutable_source31": false,
+      "explicit_fixed_source31": false,
+      "ordinary_net": false
+    },
+    "new_via_to_reused_P1_via_copper_gap": 0.2691460958900749,
+    "new_via_to_count2_P1_In2_first_segment_gap": 0.18743000000000085,
+    "P0_pad_entry": {
+      "endpoint": [
+        13.21354,
+        12.2144
+      ],
+      "endpoint_depth_mm": 0.06353999999999971,
+      "full_width_transverse_entry_length_mm": 0.10838999999999999
+    },
+    "P1_pad_entry": {
+      "endpoint": [
+        13.45,
+        11.8875
+      ],
+      "endpoint_depth_mm": 0.2999999999999989,
+      "full_width_transverse_entry_length_mm": 0.6625000000000014
+    },
+    "new_via_intersected_via_keepouts": []
+  },
+  "rejected_alternatives": [
+    {
+      "proposal": "North U12.3\u2192(13.45,10.75) and immediate via",
+      "local_trace_clear": true,
+      "blockers": [
+        "B.Cu R9.1 HSE_OUT pad203f6260-eda5-4649-ad70-6ace4fd2c9c7; its B.Mask overlaps drill.",
+        "B.Cu HSE_OUT track7e13fb09-b2e8-41ee-b2c7-ed26adf964c7."
+      ]
+    },
+    {
+      "proposal": "North then west at y10.75",
+      "blockers": [
+        "F.Cu GND tracks4bdbc594-f503-4ac4-887a-602087e810a5 and651dd4bb-367c-4146-91ab-c7b2cafdcd9c. Raising to y10.47 still conflicts GND via7aa57d39-de74-4e59-ae7e-b321426a2b13."
+      ]
+    },
+    {
+      "proposal": "Immediate south vias around(13.45,12.95) and(13.7,12.95)",
+      "blockers": [
+        "B.Cu Y1.3 HSE_XTAL_OUT copper/mask, HSE_OUT trace, GND stitching vias and +3V3_ANALOG."
+      ]
+    },
+    {
+      "proposal": "Northeast track to x14.03 then y8.5",
+      "blockers": [
+        "F.Cu +3V3_CORE segment0692c3f1-6488-4fcf-8901-212399ef3c1d at y8.6. Adjacent via pockets additionally restricted by HSE/analog copper."
+      ]
+    },
+    {
+      "proposal": "P0 new In3 tail via x10.7 from y9.49774 directly to10.7",
+      "blockers": [
+        "GND through-viafdbceb98-66ac-414b-90c2-14e8474996af at(10.874,9.9139). Use the explicit replacement tail instead."
+      ]
+    }
+  ],
+  "validation_still_required": [
+    "Validate removal and logical ownership of every affected source32 object.",
+    "Screen entire count2 P1 In2/B.Cu continuation against all source32 geometry and the replacement P0.",
+    "Native full-width finite actual-pad and annular entries, actual U12.3 cut/outside-gap on all layers, native DRC/open count, full process/drill-to-both-masks and all-drill gaps, tenting, GND-only In1/In4 policy, unchanged critical/power/process/placement gates.",
+    "No manufacturing-margin, numerical-power or transient-protection qualification claim is made."
+  ]
+}

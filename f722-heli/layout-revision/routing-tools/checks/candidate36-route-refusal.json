@@ -1,0 +1,20 @@
+{
+  "schema": "f722-native-route-refusal/v1",
+  "board_sha256": "9c8e03d1cde2e309f223aab44554ced81986437828a81602d42b271f5c3b6ba4",
+  "status": "refused_unaccepted_engine_candidate",
+  "drc": {
+    "unconnected": 45,
+    "errors": 0,
+    "warnings": 1
+  },
+  "reason": "New B.Cu segment has one free endpoint and the other exactly at the new DSM via center. Native dangling warning and finite entry audit agree. Remove only the unused tail; retained D7 path independently enters the actual via annulus.",
+  "failed_track_uuid": "dd94f540-5487-4994-9f14-22a50a764a30",
+  "files": {
+    "owner-drc-all.json": "091f4921c536ea7180d33e37abab88fcd6acc934a231a1f04ca8d0bbaa3452f0",
+    "endpoint-audit.json": "d05983807773c3846e5170ac8a04fc8713b3179d951ba60edc68ee575138ac58",
+    "f722-heli.import.json": "a0f87eab976d551da50a5b3abf1c60edf72c796b2034b1df3b348f32bf0f8d22",
+    "f722-heli.logical-route-map.json": "1996cf7712eef974b1f0d77404506136a69ef8a0559a3c6dd5ded49826452965",
+    "tail-repair-recipe.json": "19f1d04e241e3643b5d243b5222b3bfe93f4e728d625429d92dbc82eb0085410"
+  },
+  "next_action": "Candidate37 subset cleanup, then independent fresh gates. Raw36 remains preserved."
+}
