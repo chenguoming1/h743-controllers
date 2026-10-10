@@ -1,0 +1,274 @@
+{
+  "schema": "f722-recovered-native7-adapter-reproducible-validation/v1",
+  "binding": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "validation_script_sha256": "2b7555880bf94efde2b75c07d9d48a950b47fca6af7c1d4bad357a937c9b058d",
+  "native_drc_reference_sha256": "60ee7e2557c615234ac89531a7b6fc3a7f970bfa02a3bedf6761c4f72680fc3d",
+  "width_negative_controls": [
+    {
+      "moving_width_mm": 0.18,
+      "foreign_gap_from_centerline_mm": 0.20375,
+      "incorrect_127_predicate": {
+        "object": "width-negative-control",
+        "uuid": "width-negative-control",
+        "net": "CONTROL_FOREIGN",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.20374999999999943,
+        "physical_gap_mm": 0.14024999999999943,
+        "extra_clearance_mm": 0.013249999999999429,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          11.0,
+          10.0
+        ],
+        "witness_on_native_obstacle_mm": [
+          11.0,
+          10.20375
+        ]
+      },
+      "actual_width_predicate": {
+        "object": "width-negative-control",
+        "uuid": "width-negative-control",
+        "net": "CONTROL_FOREIGN",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.09,
+        "required_center_distance_mm": 0.217,
+        "center_distance_mm": 0.20374999999999943,
+        "physical_gap_mm": 0.11374999999999943,
+        "extra_clearance_mm": -0.013250000000000567,
+        "pass_nominal": false,
+        "pass_with_polygon_error": false,
+        "witness_on_moving_centerline_mm": [
+          11.0,
+          10.0
+        ],
+        "witness_on_native_obstacle_mm": [
+          11.0,
+          10.20375
+        ]
+      }
+    },
+    {
+      "moving_width_mm": 0.2,
+      "foreign_gap_from_centerline_mm": 0.20875,
+      "incorrect_127_predicate": {
+        "object": "width-negative-control",
+        "uuid": "width-negative-control",
+        "net": "CONTROL_FOREIGN",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.2087500000000002,
+        "physical_gap_mm": 0.1452500000000002,
+        "extra_clearance_mm": 0.01825000000000021,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          11.0,
+          10.0
+        ],
+        "witness_on_native_obstacle_mm": [
+          11.0,
+          10.20875
+        ]
+      },
+      "actual_width_predicate": {
+        "object": "width-negative-control",
+        "uuid": "width-negative-control",
+        "net": "CONTROL_FOREIGN",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.1,
+        "required_center_distance_mm": 0.227,
+        "center_distance_mm": 0.2087500000000002,
+        "physical_gap_mm": 0.10875000000000021,
+        "extra_clearance_mm": -0.018249999999999794,
+        "pass_nominal": false,
+        "pass_with_polygon_error": false,
+        "witness_on_moving_centerline_mm": [
+          11.0,
+          10.0
+        ],
+        "witness_on_native_obstacle_mm": [
+          11.0,
+          10.20875
+        ]
+      }
+    },
+    {
+      "moving_width_mm": 0.25,
+      "foreign_gap_from_centerline_mm": 0.22125,
+      "incorrect_127_predicate": {
+        "object": "width-negative-control",
+        "uuid": "width-negative-control",
+        "net": "CONTROL_FOREIGN",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.0635,
+        "required_center_distance_mm": 0.1905,
+        "center_distance_mm": 0.2212499999999995,
+        "physical_gap_mm": 0.1577499999999995,
+        "extra_clearance_mm": 0.0307499999999995,
+        "pass_nominal": true,
+        "pass_with_polygon_error": true,
+        "witness_on_moving_centerline_mm": [
+          11.0,
+          10.0
+        ],
+        "witness_on_native_obstacle_mm": [
+          11.0,
+          10.22125
+        ]
+      },
+      "actual_width_predicate": {
+        "object": "width-negative-control",
+        "uuid": "width-negative-control",
+        "net": "CONTROL_FOREIGN",
+        "kind": "track",
+        "category": "foreign_copper",
+        "layers": [
+          "F.Cu"
+        ],
+        "required_physical_gap_mm": 0.127,
+        "moving_radius_mm": 0.125,
+        "required_center_distance_mm": 0.252,
+        "center_distance_mm": 0.2212499999999995,
+        "physical_gap_mm": 0.0962499999999995,
+        "extra_clearance_mm": -0.0307500000000005,
+        "pass_nominal": false,
+        "pass_with_polygon_error": false,
+        "witness_on_moving_centerline_mm": [
+          11.0,
+          10.0
+        ],
+        "witness_on_native_obstacle_mm": [
+          11.0,
+          10.22125
+        ]
+      }
+    }
+  ],
+  "native_open_endpoint_checks": [
+    {
+      "net": "PORT_C_RX_EXT",
+      "a": "1dbe666a-7f4b-5890-96e7-94deacbdeda9",
+      "b": "6e64820c-b464-5142-a228-ebb74be4b044",
+      "separate": true
+    },
+    {
+      "net": "PORT_C_RX_EXT",
+      "a": "893d4703-91a2-578c-bc1b-d3eb7e3aa8f7",
+      "b": "1904a95f-ded8-4123-a94a-79e3bebb7a86",
+      "separate": true
+    },
+    {
+      "net": "PORT_C_TX_MCU",
+      "a": "95d9f427-baa0-53fd-a93d-86493064e65c",
+      "b": "015bbb50-5012-47aa-b5eb-07fce31126fa",
+      "separate": true
+    },
+    {
+      "net": "PORT_C_RX_MCU",
+      "a": "6bdbd2d5-39db-40ca-aa0b-51f24338a372",
+      "b": "887ae85a-0547-556c-b373-bf1af8a908a6",
+      "separate": true
+    },
+    {
+      "net": "FLASH_MISO",
+      "a": "17ccfab5-8944-5c24-9cdf-c672404880a9",
+      "b": "4c37d1b9-7c69-40e7-a8da-a543453ca24e",
+      "separate": true
+    },
+    {
+      "net": "FLASH_MOSI",
+      "a": "83bbb75b-9ec6-4986-9665-185398c903d3",
+      "b": "936dd706-f2ec-4897-8e79-3252466dc318",
+      "separate": true
+    },
+    {
+      "net": "FLASH_SCK",
+      "a": "c1552487-e92c-4ecc-981d-5752fc0bb253",
+      "b": "5b98adf9-795d-4a01-9ed3-a14600ba3505",
+      "separate": true
+    }
+  ],
+  "affected_net_component_counts": {
+    "PORT_C_RX_EXT": 3,
+    "PORT_C_TX_MCU": 2,
+    "PORT_C_RX_MCU": 2,
+    "FLASH_MISO": 2,
+    "FLASH_MOSI": 2,
+    "FLASH_SCK": 2
+  },
+  "sum_component_excess_for_native_open_nets": 7,
+  "all_seven_native_opens_reproduced": true,
+  "connectivity_method": "Native polygon-fragment intersections on each layer; only physical via/plated barrels join layers; no tolerance bridge.",
+  "synthetic_hole_control": {
+    "passed": true,
+    "area_mm2": 3.0,
+    "interior_ring_count": 1
+  },
+  "native_copper_hole_rings": 0,
+  "contours_repaired": false,
+  "all_native_copper_matches_exported_polygons": true,
+  "loaded_objects": 2384,
+  "native_recipe_members": 233,
+  "routing_started": false,
+  "new_route_acceptance": false,
+  "fresh_full_finite_reference_review": false,
+  "seconds": 2.8195291609999913
+}

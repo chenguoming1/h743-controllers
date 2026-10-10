@@ -1,0 +1,104 @@
+{
+  "completed_utc": "2026-10-10T13:42:45.011710+00:00",
+  "runtime_directory": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/kicad10-runtime",
+  "status": "restored and startup-verified",
+  "pinned_runtime": "KiCad 10.0.6+dfsg-1",
+  "host": "Debian 13 amd64",
+  "provenance_commit": "fabc7f2213d4e1a200396a3229d23b305ef90d3d",
+  "manifest_sha256": "0e34c81331dbc05bb29f6ceba157f14eb6c749b3165e897ddf6ac2c4d1071b81",
+  "verified_package_count": 54,
+  "package_bytes": 177753396,
+  "package_sources": [
+    "https://deb.debian.org/debian/"
+  ],
+  "authenticated_index_source": "https://snapshot.debian.org/archive/debian/20261009T000000Z/dists/sid/",
+  "authenticated_index_sha256": "8ea977c3679f1256dd91c7264a861057d8768d1be25e460f5a7b7cec0f508c70",
+  "signer_fingerprints": [
+    "04B54C3CDCA79751B16BC6B5225629DF75B188BD",
+    "B8B80B5B623EAB6AD8775C45B7C5D7D6350947F8"
+  ],
+  "verification": "Official Debian archive signatures, authenticated compressed index SHA-256, all 54 index version/URL/SHA-256 matches, and every downloaded package SHA-256 verified.",
+  "index_note": "The current October 10 index advances three GStreamer packages. The official October 9 snapshot exactly authenticates all original pins; no package versions changed.",
+  "source_files": "Six copied provenance files exactly match pinned Git blob identities; see provenance/wrapper-source-identities.json.",
+  "adaptations": [
+    "Private-loader relative kiface symlinks",
+    "Checkpoint-preserved Python iterator alias",
+    "Copied official default symbol and footprint tables into runtime-local configuration"
+  ],
+  "checks": {
+    "cli_version": {
+      "returncode": 0,
+      "output_file": "provenance/cli_version.txt",
+      "result": "10.0.6"
+    },
+    "pcbnew_version": {
+      "returncode": 0,
+      "output_file": "provenance/pcbnew_version.txt",
+      "result": "{\"python\": \"3.14.8\", \"pcbnew\": \"10.0.6+dfsg-1\", \"iterator_next_alias\": true}"
+    },
+    "pcb_drc_help": {
+      "returncode": 0,
+      "output_file": "provenance/pcb_drc_help.txt"
+    },
+    "sch_erc_help": {
+      "returncode": 0,
+      "output_file": "provenance/sch_erc_help.txt"
+    },
+    "pcbnew_loader": {
+      "returncode": 0,
+      "output_file": "provenance/pcbnew_loader.txt"
+    },
+    "eeschema_loader": {
+      "returncode": 0,
+      "output_file": "provenance/eeschema_loader.txt"
+    }
+  },
+  "scope": [
+    "No system packages installed or security settings changed",
+    "No source PCB or schematic read or modified",
+    "No DRC/ERC board checks, routing, FEM or native board exports performed",
+    "Host-compatible libraries are reused as documented by the original runtime; runtime is not a standalone container",
+    "Historical README DRC/ERC numbers describe the prior restoration, not fresh validation"
+  ],
+  "entrypoints": {
+    "kicad_cli": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/kicad10-runtime/kicad-cli",
+    "python": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/kicad10-runtime/python"
+  },
+  "checkpoint_runtime_pinned_file_checks": {
+    "python": {
+      "sha256": "904e7f6fbcab80a18ce3faba2375d47d5850879056dbdb7b5fb63655d53c60f9",
+      "expected_sha256": "904e7f6fbcab80a18ce3faba2375d47d5850879056dbdb7b5fb63655d53c60f9",
+      "matches": true
+    },
+    "kicad-cli": {
+      "sha256": "649ec77520a638c28750bb518ba706cd8c5b6a79cb7667f45e8e6ec4a5b65568",
+      "expected_sha256": "649ec77520a638c28750bb518ba706cd8c5b6a79cb7667f45e8e6ec4a5b65568",
+      "matches": true
+    },
+    "runtime-env.sh": {
+      "sha256": "1ab1e4472be591b4126ff812b08cd715692ef4d95a57e7f730184bfbe29f0699",
+      "expected_sha256": "1ab1e4472be591b4126ff812b08cd715692ef4d95a57e7f730184bfbe29f0699",
+      "matches": true
+    },
+    "compat/sitecustomize.py": {
+      "sha256": "d6bed2f234e7474975bf2b5f4287b06492d0c8f8d65da8bf1646f1a5c6886666",
+      "expected_sha256": "d6bed2f234e7474975bf2b5f4287b06492d0c8f8d65da8bf1646f1a5c6886666",
+      "matches": true
+    },
+    "package-manifest.json": {
+      "sha256": "0e34c81331dbc05bb29f6ceba157f14eb6c749b3165e897ddf6ac2c4d1071b81",
+      "expected_sha256": "0e34c81331dbc05bb29f6ceba157f14eb6c749b3165e897ddf6ac2c4d1071b81",
+      "matches": true
+    },
+    "validation.json": {
+      "sha256": "adad51856c88ae87d246821b66a172663199c9bfb263fac06a8d36be9efd0363",
+      "expected_sha256": "adad51856c88ae87d246821b66a172663199c9bfb263fac06a8d36be9efd0363",
+      "matches": true
+    }
+  },
+  "historical_validation": {
+    "path": "validation.json",
+    "sha256": "adad51856c88ae87d246821b66a172663199c9bfb263fac06a8d36be9efd0363",
+    "status": "Exact historical provenance copied unchanged from checkpoint. Its board DRC/ERC, SVG and save/reload assertions were not rerun during this restoration."
+  }
+}
