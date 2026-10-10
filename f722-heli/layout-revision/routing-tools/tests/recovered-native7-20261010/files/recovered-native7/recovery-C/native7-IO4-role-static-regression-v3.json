@@ -1,0 +1,91 @@
+{
+  "source": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "model_sha256": "4d945ed87911ed76d4b12e53d0f5fe240c7d72e89e0e03178e441e7bdcfd070f",
+  "packet_sha256": "a17f1829f0fdc6df9fd23a860566a06e999259b4c62966c4a32e04c9c1ba7630",
+  "outside_IO5_symmetric_difference_empty": true,
+  "outside_IO5_overlap_rejected": true,
+  "negative_checks": [
+    {
+      "object": "U15.6",
+      "uuid": "af34758d-03d4-4898-8fb1-2be5765ea280",
+      "net": "PORT_C_RX_EXT::upstream",
+      "kind": "pad",
+      "category": "foreign_copper",
+      "layers": [
+        "F.Cu"
+      ],
+      "required_physical_gap_mm": 0.127,
+      "moving_radius_mm": 0.0635,
+      "required_center_distance_mm": 0.1905,
+      "center_distance_mm": 0.0,
+      "physical_gap_mm": -0.0635,
+      "extra_clearance_mm": -0.1905,
+      "pass_nominal": false,
+      "pass_with_polygon_error": false,
+      "witness_on_moving_centerline_mm": [
+        25.635,
+        18.6
+      ],
+      "witness_on_native_obstacle_mm": [
+        25.635,
+        18.6
+      ]
+    },
+    {
+      "object": "IO4-RX-up-bonded-to-NC6",
+      "uuid": "IO4-RX-up-bonded-to-NC6",
+      "net": "PORT_C_RX_EXT::upstream",
+      "kind": "track",
+      "category": "foreign_copper",
+      "layers": [
+        "F.Cu"
+      ],
+      "required_physical_gap_mm": 0.127,
+      "moving_radius_mm": 0.0635,
+      "required_center_distance_mm": 0.1905,
+      "center_distance_mm": 0.0,
+      "physical_gap_mm": -0.0635,
+      "extra_clearance_mm": -0.1905,
+      "pass_nominal": false,
+      "pass_with_polygon_error": false,
+      "witness_on_moving_centerline_mm": [
+        25.5,
+        18.6
+      ],
+      "witness_on_native_obstacle_mm": [
+        25.5,
+        18.6
+      ]
+    }
+  ],
+  "no_graph_or_route_search": true
+}
