@@ -1,0 +1,28 @@
+{
+  "schema": "f722-source-only-gate-review/v1",
+  "reviewed_utc": "2026-10-10T14:28:24Z",
+  "contract_sha256": "96b03e7e1dffa7e03615e0d009dcdb40178ec60cf7fc4c6c429a579c97f5fcf0",
+  "scope": "Independent static review; no geometry/native execution or candidate acceptance",
+  "dependency_hashes_verified": 18,
+  "exact_cuts": {
+    "tracks": 81,
+    "vias": 9,
+    "pads": 0,
+    "total": 90,
+    "union": "66+30-6",
+    "packet_ids_match": true
+  },
+  "converter_review": "Complete native records and canonical digests; widths and via construction preserved; canonical physical/logical identities compatible with strict importer",
+  "whole_board_gate": "All required physical nets and full original source-terminal groups checked",
+  "limitation": "Whole-board intersects partition can count zero-area tangent contact; final native finite witnesses still required",
+  "required_successor_additions": [
+    "Preserve raw intersects evidence",
+    "Positive-area drill-aware full-width/annular contact witnesses on final native geometry",
+    "Retain actual U15.1/U15.2 pad removal, no bypass and outside-pad role spacing",
+    "Assert exact cut-set equality",
+    "Pure importer validation",
+    "Plan-hash-bound recipe role sidecar mapped using importer UUID provenance"
+  ],
+  "v4_plan_exists": false,
+  "selected_geometry_changed": false
+}
