@@ -1,0 +1,359 @@
+{
+  "schema": "f722-stock-uart-swap-source-review/v1",
+  "review_date_utc": "2026-10-10",
+  "finding": "SUPPORTED",
+  "scope": "Pinned source-level UART pin swapping for the three stock Nexus F7 resource pairs. No hardware operation or installed binary qualification.",
+  "pinned_firmware_commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+  "pinned_target_commit": "1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3",
+  "local_path_basis": "The schematic pinmap path is relative to the f722-layout-rebuild workroot where its raw-byte SHA-256 was rechecked. Firmware sources are cited by pinned upstream URLs.",
+  "sources": [
+    {
+      "id": "target",
+      "repository": "rotorflight/rotorflight-targets",
+      "commit": "1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3",
+      "path": "configs/RDMS-NEXUS_F7.config",
+      "url": "https://github.com/rotorflight/rotorflight-targets/blob/1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3/configs/RDMS-NEXUS_F7.config",
+      "git_blob_sha1": "ca042b1f51a341a46980cb9aba78420beab48be7",
+      "line_ranges": [
+        [
+          19,
+          26
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-targets/blob/1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3/configs/RDMS-NEXUS_F7.config#L19-L26"
+      ],
+      "purpose": "Stock SERIAL_TX/SERIAL_RX resources.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "build",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "src/main/target/STM32_UNIFIED/target.h",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/target/STM32_UNIFIED/target.h",
+      "git_blob_sha1": "e616b044b75e5f04b4bb411386c20da404e6e176",
+      "line_ranges": [
+        [
+          109,
+          124
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/target/STM32_UNIFIED/target.h#L109-L124"
+      ],
+      "purpose": "STM32F7X2 enables UART3, UART4 and UART6.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "startup",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "src/main/fc/init.c",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/fc/init.c",
+      "git_blob_sha1": "f1696f126b30732cccca90de6b655745286d6cdb",
+      "line_ranges": [
+        [
+          512,
+          514
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/fc/init.c#L512-L514"
+      ],
+      "purpose": "Normal hardware startup calls uartPinConfigure(serialPinConfig()).",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "pin_detection",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "src/main/drivers/serial_uart_pinconfig.c",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_pinconfig.c",
+      "git_blob_sha1": "7a8a56b8952fa5b68cfa97f4e20921e5856ca8f7",
+      "line_ranges": [
+        [
+          47,
+          85
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_pinconfig.c#L47-L85"
+      ],
+      "purpose": "Opposite native TX/RX matches select their pin/AF descriptors and enable pinSwap on STM32F7.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "f7_gpio",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "src/main/drivers/serial_uart_stm32f7xx.c",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_stm32f7xx.c",
+      "git_blob_sha1": "ef3c81daad58f1e5c648f2f1a134440dadbc0c7c",
+      "line_ranges": [
+        [
+          125,
+          133
+        ],
+        [
+          158,
+          171
+        ],
+        [
+          236,
+          242
+        ],
+        [
+          358,
+          379
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_stm32f7xx.c#L125-L133",
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_stm32f7xx.c#L158-L171",
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_stm32f7xx.c#L236-L242",
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_stm32f7xx.c#L358-L379"
+      ],
+      "purpose": "Native AF tables and GPIO setup using the selected logical TX/RX descriptors.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "uart_open",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "src/main/drivers/serial_uart.c",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart.c",
+      "git_blob_sha1": "b03b80a0ee5061a1355602a31f17a6a92388cfd4",
+      "line_ranges": [
+        [
+          118,
+          141
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart.c#L118-L141"
+      ],
+      "purpose": "Opening a UART calls serialUART then uartReconfigure.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "hal_glue",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "src/main/drivers/serial_uart_hal.c",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_hal.c",
+      "git_blob_sha1": "7d3c6c765dce6ad671eef50278c968191dc48b35",
+      "line_ranges": [
+        [
+          79,
+          91
+        ],
+        [
+          120,
+          137
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_hal.c#L79-L91",
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/src/main/drivers/serial_uart_hal.c#L120-L137"
+      ],
+      "purpose": "pinSwap enables the advanced SWAP feature before normal or half-duplex initialization.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "hal_definition",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h",
+      "git_blob_sha1": "689092d36c85aa633fa4fac02ab84694a3f6bf93",
+      "line_ranges": [
+        [
+          519,
+          525
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h#L519-L525"
+      ],
+      "purpose": "UART_ADVFEATURE_SWAP_ENABLE is USART_CR2_SWAP.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    },
+    {
+      "id": "hal_register",
+      "repository": "rotorflight/rotorflight-firmware",
+      "commit": "ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94",
+      "path": "lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c",
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c",
+      "git_blob_sha1": "9b09bdb46032d505a02e6b518b2d2cde0ef31e87",
+      "line_ranges": [
+        [
+          338,
+          341
+        ],
+        [
+          405,
+          408
+        ],
+        [
+          2793,
+          2798
+        ]
+      ],
+      "line_links": [
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c#L338-L341",
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c#L405-L408",
+        "https://github.com/rotorflight/rotorflight-firmware/blob/ba6c7e3e328b91a549bf6ca87c9eadd7006b6d94/lib/main/STM32F7/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c#L2793-L2798"
+      ],
+      "purpose": "Normal and half-duplex initialization apply advanced features; configuration writes USART_CR2_SWAP.",
+      "evidence_method": "Fresh read from GitHub connector at the exact pinned commit on 2026-10-10; returned Git blob ID verified against the source index. Source files are not included in this bundle."
+    }
+  ],
+  "schematic_pinmap_identity": {
+    "path_from_workroot": "repo/f722-heli/validation/firmware-pinmap.json",
+    "sha256": "f09f99efa565075e1676e9be9d9d27f27c0b5b6e15275533b478a626d96b9826",
+    "scope": "MCU schematic connectivity only; no PCB routing or hardware operation claimed",
+    "pinned_target": "1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3/configs/RDMS-NEXUS_F7.config",
+    "checks": [
+      {
+        "resource": "SERIAL_TX",
+        "index": 3,
+        "gpio": "PB11",
+        "package_pin": "29",
+        "expected_net": "PORT_C_TX_MCU",
+        "actual_net": "PORT_C_TX_MCU",
+        "passed": true
+      },
+      {
+        "resource": "SERIAL_TX",
+        "index": 4,
+        "gpio": "PA1",
+        "package_pin": "15",
+        "expected_net": "PORT_A_TX_MCU",
+        "actual_net": "PORT_A_TX_MCU",
+        "passed": true
+      },
+      {
+        "resource": "SERIAL_TX",
+        "index": 6,
+        "gpio": "PC7",
+        "package_pin": "38",
+        "expected_net": "PORT_B_TX_MCU",
+        "actual_net": "PORT_B_TX_MCU",
+        "passed": true
+      },
+      {
+        "resource": "SERIAL_RX",
+        "index": 3,
+        "gpio": "PB10",
+        "package_pin": "28",
+        "expected_net": "PORT_C_RX_MCU",
+        "actual_net": "PORT_C_RX_MCU",
+        "passed": true
+      },
+      {
+        "resource": "SERIAL_RX",
+        "index": 4,
+        "gpio": "PA0",
+        "package_pin": "14",
+        "expected_net": "PORT_A_RX_MCU",
+        "actual_net": "PORT_A_RX_MCU",
+        "passed": true
+      },
+      {
+        "resource": "SERIAL_RX",
+        "index": 6,
+        "gpio": "PC6",
+        "package_pin": "37",
+        "expected_net": "PORT_B_RX_MCU",
+        "actual_net": "PORT_B_RX_MCU",
+        "passed": true
+      }
+    ],
+    "bytes": 5965,
+    "identity_rechecked": true
+  },
+  "ports": [
+    {
+      "uart": 3,
+      "peripheral": "USART3",
+      "af": 7,
+      "tx": {
+        "gpio": "PB11",
+        "u1_pad": "29",
+        "net": "PORT_C_TX_MCU",
+        "native_role": "USART3_RX"
+      },
+      "rx": {
+        "gpio": "PB10",
+        "u1_pad": "28",
+        "net": "PORT_C_RX_MCU",
+        "native_role": "USART3_TX"
+      },
+      "derived_pinSwap": true,
+      "derived_cr2_swap": true
+    },
+    {
+      "uart": 4,
+      "peripheral": "UART4",
+      "af": 8,
+      "tx": {
+        "gpio": "PA1",
+        "u1_pad": "15",
+        "net": "PORT_A_TX_MCU",
+        "native_role": "UART4_RX"
+      },
+      "rx": {
+        "gpio": "PA0",
+        "u1_pad": "14",
+        "net": "PORT_A_RX_MCU",
+        "native_role": "UART4_TX"
+      },
+      "derived_pinSwap": true,
+      "derived_cr2_swap": true
+    },
+    {
+      "uart": 6,
+      "peripheral": "USART6",
+      "af": 8,
+      "tx": {
+        "gpio": "PC7",
+        "u1_pad": "38",
+        "net": "PORT_B_TX_MCU",
+        "native_role": "USART6_RX"
+      },
+      "rx": {
+        "gpio": "PC6",
+        "u1_pad": "37",
+        "net": "PORT_B_RX_MCU",
+        "native_role": "USART6_TX"
+      },
+      "derived_pinSwap": true,
+      "derived_cr2_swap": true
+    }
+  ],
+  "operational_chain": [
+    "build",
+    "target",
+    "startup",
+    "pin_detection",
+    "f7_gpio",
+    "uart_open",
+    "hal_glue",
+    "hal_definition",
+    "hal_register"
+  ],
+  "review_method": "Fresh read-only inspection of nine pinned GitHub sources and the restored local schematic pinmap. Derived behavior by following resource pins through native AF matching, pinSwap selection, GPIO configuration, UART open/reconfigure and HAL register programming. No compilation, simulation, or runtime measurement performed.",
+  "limitations": [
+    "The target resource configuration must be loaded, and the relevant UART must be opened; a resource declaration alone does not enable a port or select its protocol.",
+    "The installed firmware binary, live configuration, and CR2 registers were not inspected.",
+    "U1 pad IDs and net names are taken from the existing schematic pinmap; no new package-pin, PCB geometry, signal integrity, electrical or physical UART validation is claimed.",
+    "This review requires no board or firmware change and does not establish first-article or flight readiness."
+  ],
+  "source_copy_policy": "This review bundle contains only the report and evidence metadata; no vendor or firmware source copies.",
+  "hash_method": "Firmware Git blob SHA-1 values are identities returned by GitHub for the specified repository, full commit and path. The local schematic pinmap SHA-256 is computed over raw bytes.",
+  "local_firmware_snapshot_validation": {
+    "performed": false,
+    "reason": "No retained local firmware source snapshots were present during this review. All firmware evidence was read from the pinned upstream repositories; no local normalization exception is asserted."
+  }
+}
