@@ -1,0 +1,956 @@
+{
+  "bindings": {
+    "common_proposal_packet": {
+      "path": "ordinary-routing/tests/native13-access/native7-common-planning-packet-v1.json",
+      "sha256": "b161ae1c4df8632c38bea543c4ddb07e5dcb67afd734f86ef4d931cc1584a051"
+    },
+    "current_C_scope": {
+      "path": "recovered-native7/recovery-C/native7-C-compact-scope-receipt-v4.json",
+      "sha256": "b70b00911dbcade6e97470d6a5cb593a122b20af1dcc4672e00711c107f61534"
+    },
+    "current_branch_view": {
+      "path": "recovered-native7/recovery-C/native7_C_branch_view_v1.py",
+      "sha256": "3f059b65ff3844a3256c1bcfe62f5cd285ac4cf90d0d6e22142aadd9832ddadc"
+    },
+    "historical_mapping_plan": {
+      "path": "recovered-native7/ordinary-routing/tests/portc51/U15-original-IO1-RX-IO2-TX-NC10-RX-NC9-TX-paired-source-plan56-v1.json",
+      "sha256": "2c0f517eb799693d8fc02f5ed0e2ff02e24969cd178a5a75e0519030711e7009"
+    },
+    "native7": {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505"
+    },
+    "selected_transaction": {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497"
+    }
+  },
+  "comparison": {
+    "feasibility_conclusion": "Electrically valid channel choice with a concrete southern source. Mechanical pose unchanged. Complete geometric access is unproven and held ground may trap the new pad.",
+    "versus_C12_R3": "Avoids requiring an IMU decoupler move, supply-feed width change or R3 pose move if complete RX paths fit; adds a paired clamp-pin reassignment and two full RX branch reconstructions instead.",
+    "versus_orthogonal_rotation": "Same-pose IO4 changes four pad-net assignments while preserving all pad positions, TX and ground geometry. Rotating U15 would move all ten pads and require reconstructing TX and the custom ground connection too; not preferred before this narrower control."
+  },
+  "component": {
+    "angle": 0,
+    "footprint_uuid": "080c5130-0255-45f4-aa7a-ed717f456528",
+    "mpn": "TPD4E05U06DQAR",
+    "pins": [
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "c669461425dbab76767395a95a658d4d027751a513b877540d4deb576f3222b0",
+        "key": "U15.1",
+        "kind": "pad",
+        "net": "PORT_C_RX_EXT",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "76401567-1405-4a22-b70c-0a7f2502777e",
+        "xy": [
+          25.0825,
+          16.6
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "30c626a328c2e7a981631cab90431e2dd0f64de068434528ba97330d30d81be5",
+        "key": "U15.2",
+        "kind": "pad",
+        "net": "PORT_C_TX_EXT",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "d63e714e-e781-4bd1-b1a2-4b3b4deb85a4",
+        "xy": [
+          25.0825,
+          17.1
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "597d97c5577358cc795f095bcc4a838653b2c225a95b214e0031731c3821c516",
+        "key": "U15.3",
+        "kind": "pad",
+        "net": "GND",
+        "size": [
+          0.1,
+          0.1
+        ],
+        "uuid": "ef45fa73-d7c1-46b1-b97b-5758fa665b65",
+        "xy": [
+          25.0825,
+          17.6
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "fc2392c03557ef1f5e09b0589abcacb8d738898a130af8b5bc48a750f64b7479",
+        "key": "U15.4",
+        "kind": "pad",
+        "net": "unconnected-(U15-IO3-Pad4)",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "78672a31-798b-4380-80cb-64d9fd1af6a3",
+        "xy": [
+          25.0825,
+          18.1
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "83a27207c2e1d49c85ae686d9eb54bbb9f42e0f1e6357379851d8d470f81915c",
+        "key": "U15.5",
+        "kind": "pad",
+        "net": "unconnected-(U15-IO4-Pad5)",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "dddece5c-5254-4426-8e4c-1fb5f9e85655",
+        "xy": [
+          25.0825,
+          18.6
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "c65249de6607d1a000d707609485c15a202e8eedc6dad7da69612e4798e08fcb",
+        "key": "U15.6",
+        "kind": "pad",
+        "net": "unconnected-(U15-NC6-Pad6)",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "af34758d-03d4-4898-8fb1-2be5765ea280",
+        "xy": [
+          25.9175,
+          18.6
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "245d6b3fd7e0b7a8e0ae583a9d5902405a977165797cf1d08abe7abce71864aa",
+        "key": "U15.7",
+        "kind": "pad",
+        "net": "unconnected-(U15-NC7-Pad7)",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "b18256db-e5b4-44bd-95b8-e20ab194505a",
+        "xy": [
+          25.9175,
+          18.1
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "866c458542ae9ea266e221fe1f7afa066e2983f54c93c3d5f594940fcf7dcda6",
+        "key": "U15.8",
+        "kind": "pad",
+        "net": "GND",
+        "size": [
+          0.1,
+          0.1
+        ],
+        "uuid": "51c6de31-9fac-4287-b433-3b9eaac67b1d",
+        "xy": [
+          25.9175,
+          17.6
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "31e620a259ce620b783c2d1ed4faa166ab7845a7b71a3feccfeb6d3245424797",
+        "key": "U15.9",
+        "kind": "pad",
+        "net": "PORT_C_TX_EXT",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "2f12d0fc-ff58-4f48-a7ba-1e0ccfd5bf73",
+        "xy": [
+          25.9175,
+          17.1
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "1180ddc1bcdfc92df3698439b5e4276b1a048dbc3a844e105b5f8985de8891bf",
+        "key": "U15.10",
+        "kind": "pad",
+        "net": "PORT_C_RX_EXT",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "85f6ae89-da40-4223-9e1c-51ee8cc2f22f",
+        "xy": [
+          25.9175,
+          16.6
+        ]
+      }
+    ],
+    "power_input": "None; this is a passive shunt TVS. Nearby VX_PROTECTED is not a U15 bias supply.",
+    "ref": "U15",
+    "side": "F.Cu",
+    "xy": [
+      25.5,
+      17.6
+    ]
+  },
+  "copper_scope": {
+    "additional_TX_power_ground_cuts_created_by_reassignment": [],
+    "all_original_common_donor_obligations_continue": true,
+    "count_formula": "90 common cuts minus 2 restored R3 tracks plus 4 old RX prefixes = 92 before any explicit TX/VX add-backs.",
+    "cut_count_with_only_this_delta": 92,
+    "do_not_replay_northern_RX_packet": true,
+    "hold_current_common_SPI_B_entries_and_C_MCU_entries": true,
+    "hold_native_C12_R3_poses_and_complete_original_supply_tree": true,
+    "isolated_prerequisite_preference": "Hold full native TX-up/down and private VX paths if finite against shared copper; these are add-backs to common90, not implicit contents of it. Any conflict remains an explicit existing donor obligation.",
+    "remove_and_replace_complete_original_RX_prefixes": [
+      {
+        "barrel_layers": [],
+        "end": [
+          24.85,
+          16.3
+        ],
+        "full_native_record_sha256": "fdcc9371c46468d453693e7e807388b569762db8aa9276330c5979eea085b270",
+        "kind": "track",
+        "net": "PORT_C_RX_EXT",
+        "start": [
+          24.9,
+          16.6
+        ],
+        "uuid": "7e53c88f-9a87-5ba3-9c32-455d9649a9f5",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          24.65,
+          16.1
+        ],
+        "full_native_record_sha256": "2f72ad6fc5eb889698d6bb31da5b55d61cbb074041dd96f864a6eb9d6ffafb9c",
+        "kind": "track",
+        "net": "PORT_C_RX_EXT",
+        "start": [
+          24.85,
+          16.3
+        ],
+        "uuid": "0704cc1e-3f63-51e7-b36b-26e4c9a347e5",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          25.9175,
+          16.6
+        ],
+        "full_native_record_sha256": "3700a0e3bb8da65b0bccbf59dc1be4c983855623f9fb13e373afa8306d584911",
+        "kind": "track",
+        "net": "PORT_C_RX_EXT",
+        "start": [
+          25.25,
+          16.6
+        ],
+        "uuid": "84864ccd-ac78-5d94-bbdd-daebc37d1ceb",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          26.35,
+          16.6
+        ],
+        "full_native_record_sha256": "2c618fbbbfbb824cfb9602beb3411e13c1946e70fda959b028fff0b3a6252999",
+        "kind": "track",
+        "net": "PORT_C_RX_EXT",
+        "start": [
+          25.9175,
+          16.6
+        ],
+        "uuid": "6e64820c-b464-5142-a228-ebb74be4b044",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      }
+    ],
+    "restore_original_R3_signal_leaves": [
+      {
+        "barrel_layers": [],
+        "end": [
+          24.859999,
+          10.215
+        ],
+        "full_native_record_sha256": "b77a10f1009c09a16d6c4bbad497071b62a2479c2f1e6457d35f449344016aae",
+        "kind": "track",
+        "net": "IMU_CS",
+        "start": [
+          24.259999,
+          10.365
+        ],
+        "uuid": "8a55abc3-716e-448f-887e-c4ef9f2907bd",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          25.7,
+          8.99
+        ],
+        "full_native_record_sha256": "a8ad0db92e752081dc327a1f210bfba78a6e4c957e238a998b4137862ab8f5da",
+        "kind": "track",
+        "net": "IMU_CS",
+        "start": [
+          24.859999,
+          10.215
+        ],
+        "uuid": "296bfec5-72b7-4194-9568-a88d79de25ed",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      }
+    ]
+  },
+  "current_source_and_common_roles": {
+    "common_additions_change_U15_mapping": false,
+    "common_cuts_remove_any_U15_pad_or_RX_prefix": false,
+    "source_RX_NC_land": "U15.10",
+    "source_RX_bonded_pad": "U15.1",
+    "source_TX_NC_land": "U15.9",
+    "source_TX_bonded_pad": "U15.2",
+    "source_to_current_C_downstream_start": {
+      "explanation": "The current job start is the end of a copper prefix touching actual IO1; no NC internal connection is inferred.",
+      "native_record_ids": [
+        "7e53c88f-9a87-5ba3-9c32-455d9649a9f5",
+        "0704cc1e-3f63-51e7-b36b-26e4c9a347e5"
+      ],
+      "points": [
+        [
+          24.9,
+          16.6
+        ],
+        [
+          24.85,
+          16.3
+        ],
+        [
+          24.65,
+          16.1
+        ]
+      ],
+      "start_inside_actual_IO1": [
+        24.9,
+        16.6
+      ]
+    },
+    "unused_source_net_members": {
+      "U15.4": [
+        "78672a31-798b-4380-80cb-64d9fd1af6a3"
+      ],
+      "U15.5": [
+        "dddece5c-5254-4426-8e4c-1fb5f9e85655"
+      ],
+      "U15.6": [
+        "af34758d-03d4-4898-8fb1-2be5765ea280"
+      ],
+      "U15.7": [
+        "b18256db-e5b4-44bd-95b8-e20ab194505a"
+      ]
+    }
+  },
+  "execution": {
+    "adoption_claimed": false,
+    "geometry_engine_run": false,
+    "native_run": false,
+    "router_run": false,
+    "source_mutated": false
+  },
+  "held_ground_return": {
+    "known_local_caution": {
+      "consequence": "Do not translate the old prefix blindly. Derive access from actual IO4 pad with the left/bottom GND return and all process constraints held. Bottom diagonal and barrel may further constrain the exit.",
+      "invalid_translated_prefix_example": [
+        24.65,
+        18.6
+      ],
+      "left_wall_track": "a08299df-6002-52fd-8f9e-27b83956263e",
+      "required_trace_center_setback_mm": 0.3155,
+      "scope": "Arithmetic clearance observation only; no polygon-domain or router computation.",
+      "wall_center_x": 24.5,
+      "width_mm": 0.25
+    },
+    "note": "Actual custom ground-pad polygons must be retained; the size metadata 0.1 by 0.1 is not their copper extent.",
+    "pads": [
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "597d97c5577358cc795f095bcc4a838653b2c225a95b214e0031731c3821c516",
+        "key": "U15.3",
+        "kind": "pad",
+        "net": "GND",
+        "size": [
+          0.1,
+          0.1
+        ],
+        "uuid": "ef45fa73-d7c1-46b1-b97b-5758fa665b65",
+        "xy": [
+          25.0825,
+          17.6
+        ]
+      },
+      {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "866c458542ae9ea266e221fe1f7afa066e2983f54c93c3d5f594940fcf7dcda6",
+        "key": "U15.8",
+        "kind": "pad",
+        "net": "GND",
+        "size": [
+          0.1,
+          0.1
+        ],
+        "uuid": "51c6de31-9fac-4287-b433-3b9eaac67b1d",
+        "xy": [
+          25.9175,
+          17.6
+        ]
+      }
+    ],
+    "records": [
+      {
+        "barrel_layers": [],
+        "end": [
+          24.5,
+          17.83
+        ],
+        "full_native_record_sha256": "f5f7baf0db2b8a6cdde0e5829bed0ab01c7e9ed50838e1baee07c20fe1f43dd1",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          25.0825,
+          17.6
+        ],
+        "uuid": "ac132cca-ea4d-53a6-8376-a7cab37beb2b",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          24.5,
+          18.98
+        ],
+        "full_native_record_sha256": "c191605ec8ddc9fe67e9e7c4ae7f2a2b4edc1d7620541a14ec9c7f876191590b",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          24.5,
+          17.83
+        ],
+        "uuid": "a08299df-6002-52fd-8f9e-27b83956263e",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          25.287,
+          19.1104
+        ],
+        "full_native_record_sha256": "c035fddcdeec7cf22504868f2fbf33f47a03e5104dda9ca210b68ff67c1ebfca",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          24.5,
+          18.98
+        ],
+        "uuid": "c577b646-60c8-5101-b044-be71979ecce8",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      },
+      {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          25.287,
+          19.1104
+        ],
+        "full_native_record_sha256": "176beb3b754c0f66c681ad782b331636e401c0caa03040fb4afccad5d82380e3",
+        "kind": "via",
+        "net": "GND",
+        "start": [
+          25.287,
+          19.1104
+        ],
+        "uuid": "97282ff5-d6b5-415f-a3c4-0390df70f0ea",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          25.287,
+          19.1104
+        ]
+      }
+    ]
+  },
+  "historical_scope_limit": {
+    "existing_historical_IO1_IO2_contract": "Historical pin choices describe that old proposal only; they are not a user constraint.",
+    "missing_prior_IO3_IO4_context": "The earlier equivalent-channel/NC6-NC7 plans are named by the restored metadata plan but their full original geometry receipts were not restored. No claim that the current same-pose IO4 control is new, already proved, or previously disproved.",
+    "prior_reference_hashes": {
+      "ordinary-routing/tests/portc51/C-source54-six-functions-plan-v2.json": "7206665b0aa8fd6e22309820d1f86f289579e9549c804f4d74d2cd9a678625e0",
+      "ordinary-routing/tests/portc51/C-source54-six-functions-plan-v3.json": "3ed1dce0c55f2b6e187bfdc8d4cc7e0250238ebfe03735b3edd1f0d82e67910a",
+      "ordinary-routing/tests/portc51/U15-dual-NC6-TX-NC7-RX-paired-source-plan56-v1.json": "85464b840e243f53a6a1e94e72c98ca67dcf1115c1a99b24219a7edcd5b60b44",
+      "ordinary-routing/tests/portc51/U15-equivalent-channel-plan55.json": "fd025c1e04f2de1a4f732b82ef0db1ef0a81fc75689b4764259f935420dc044f",
+      "ordinary-routing/tests/portc51/U15-left-original-channels-joint11-v2.json": "f1374502e5c99aaed9939a3dd6f008807de4848fd7252edc7bc1ef26ee4c8f4a",
+      "ordinary-routing/tests/portc51/U15-left-original-channels-joint11.json": "a5b1b462458d1cf32d61fb1185058acfe5dad90147d0ac2dca02e140c0696374",
+      "ordinary-routing/tests/portc51/U15-six-pad-NC6-NC7-paired-source-plan55.json": "f1def018a17069cdd98800378e17ecc4ce0b7a722ed26c9111d25a4f118657e8"
+    },
+    "restored_plan_status": "unselected_source_metadata_plan_not_applied_geometry_incomplete"
+  },
+  "manufacturer_evidence": [
+    {
+      "document": "SLVSBO7O, December 2012, revised August 2024",
+      "findings": [
+        "Pins 1,2,4,5 are equivalent independent ESD channels.",
+        "Pins 6,7,9,10 have no internal connection and may serve as straight-through PCB lands.",
+        "No power input is required; keep protected/unprotected paths and connector placement under layout review."
+      ],
+      "locations": [
+        "Table 4-2, page 4",
+        "7.2.1.2.1, page 14",
+        "7.3 and 7.4.1, page 16"
+      ],
+      "revision_limit": "This official revision supports channel equivalence; it does not qualify this PCB route or establish a vendor numerical relocation allowance.",
+      "url": "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf?ts=1755070916604"
+    },
+    {
+      "finding": "TI engineer Andy Robles confirms each channel is individual with the same protection; corroborates the datasheet.",
+      "url": "https://e2e.ti.com/support/interface-group/interface/f/interface-forum/920759/tpd4e05u06-tvs-diode-differential-lines-can-be-swapped"
+    }
+  ],
+  "paired_metadata_and_contract_obligations": [
+    "Create a versioned U15 symbol variant with NC6 and NC9 passive routing lands, NC10 unused, real IO1 explicitly unused, IO4 on PORT_C_RX_EXT; all other symbols and external/MCU assignments fixed.",
+    "Regenerate paired schematic, exact pad-net assignments, netlist and ERC/parity expectations together; current copper-only incremental importer does not authorize or implement these four pad-net changes.",
+    "Version branch-view BONDED RX from U15.1 to U15.5; U15.6 is upstream only, U15.1/10 no longer have RX roles; keep actual TX U15.2 foreign during RX branch routing and vice versa.",
+    "Version role scopes, endpoint contracts, TVS actual-IO coverage and logical mapping transparently. Preserve recipe-to-native UUID provenance. Do not edit historical contract in place.",
+    "Require positive-area full-width contacts of both RX branches to actual IO4, then subtract the physical IO4 copper from the complete route graph: J11.1 and R34.1 must disconnect with required outside-pad spacing; no NC bond, same-net bypass or via shortcut may satisfy it.",
+    "All C jobs, seven pre-existing opens and original donor relationships still need complete finite/contact/continuity gates, followed by exact native import/refill, DRC, ERC/parity and final bonded-pad-cut checks.",
+    "Keep full U15 .25 ground return and plated plane connections; evaluate the relocated active-channel ESD return and upstream/downstream coupling without claiming unchanged AC or ESD qualification."
+  ],
+  "prepared_utc": "2026-10-10T16:08:00Z",
+  "required_complete_functions": [
+    {
+      "end": {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "83a27207c2e1d49c85ae686d9eb54bbb9f42e0f1e6357379851d8d470f81915c",
+        "key": "U15.5",
+        "kind": "pad",
+        "net": "unconnected-(U15-IO4-Pad5)",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "dddece5c-5254-4426-8e4c-1fb5f9e85655",
+        "xy": [
+          25.0825,
+          18.6
+        ]
+      },
+      "physical_net": "PORT_C_RX_EXT",
+      "role": "upstream",
+      "start": {
+        "angle": 180.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "c5c202112ea61df00c23ede72209ee0af9a4ea4e464f93ba86a4f984df1f665e",
+        "key": "J11.1",
+        "kind": "pad",
+        "net": "PORT_C_RX_EXT",
+        "size": [
+          0.6,
+          1.7
+        ],
+        "uuid": "1904a95f-ded8-4123-a94a-79e3bebb7a86",
+        "xy": [
+          33.375,
+          20.1
+        ]
+      },
+      "through": "actual physical U15.5 bonded IO, using U15.6 only as a PCB land"
+    },
+    {
+      "end": {
+        "angle": 90.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "d10dc588b32823921cb2120c67372c9280230488af275dddf52ec284a4d358bc",
+        "key": "R34.1",
+        "kind": "pad",
+        "net": "PORT_C_RX_EXT",
+        "size": [
+          0.54,
+          0.64
+        ],
+        "uuid": "e1836b38-f5b7-467f-aa6e-2b94f3177ac6",
+        "xy": [
+          29.65,
+          20.81
+        ]
+      },
+      "physical_net": "PORT_C_RX_EXT",
+      "retained_boundary": {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          28.963321,
+          20.840573
+        ],
+        "full_native_record_sha256": "6d0b5b5dbd9901ad2476f964c49f7794de2e99c53ab269050cbc714f771a0607",
+        "kind": "via",
+        "net": "PORT_C_RX_EXT",
+        "start": [
+          28.963321,
+          20.840573
+        ],
+        "uuid": "1dbe666a-7f4b-5890-96e7-94deacbdeda9",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          28.963321,
+          20.840573
+        ]
+      },
+      "role": "downstream",
+      "start": {
+        "angle": 0.0,
+        "barrel_layers": [],
+        "full_native_record_sha256": "83a27207c2e1d49c85ae686d9eb54bbb9f42e0f1e6357379851d8d470f81915c",
+        "key": "U15.5",
+        "kind": "pad",
+        "net": "unconnected-(U15-IO4-Pad5)",
+        "size": [
+          0.565,
+          0.2
+        ],
+        "uuid": "dddece5c-5254-4426-8e4c-1fb5f9e85655",
+        "xy": [
+          25.0825,
+          18.6
+        ]
+      }
+    }
+  ],
+  "schema": "native7-U15-IO4-RX-channel-assessment-v1",
+  "source_board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+  "source_native_exporter_error_mm": 1e-05,
+  "specific_proposal": {
+    "IO4_to_retained_R34_via_straight_line_lower_bound_mm": 4.481176073573766,
+    "RX_NC_upstream_land": "U15.6",
+    "RX_bonded_pad": "U15.5",
+    "TX_NC_upstream_land": "U15.9",
+    "TX_bonded_pad": "U15.2",
+    "distance_limit": "Euclidean lower bounds only, not routed lengths or feasibility evidence.",
+    "intent": "Use the southern outside I/O row so both RX branches can be reconstructed without the northern F detour through the R3/C12 area.",
+    "new_copper_recipes": [],
+    "new_copper_status": "No centerline, barrel or finite source escape has been constructed or proved.",
+    "old_IO1_to_same_via_straight_line_lower_bound_mm": 5.748324190785518,
+    "pad_net_changes": [
+      {
+        "geometry_changed": false,
+        "net_code": "Regenerate from paired netlist; do not invent or retain stale code.",
+        "proposed_net": "unconnected-(U15-IO1-Pad1)",
+        "proposed_role": "unused_bonded_IO",
+        "source": {
+          "angle": 0.0,
+          "barrel_layers": [],
+          "full_native_record_sha256": "c669461425dbab76767395a95a658d4d027751a513b877540d4deb576f3222b0",
+          "key": "U15.1",
+          "kind": "pad",
+          "net": "PORT_C_RX_EXT",
+          "size": [
+            0.565,
+            0.2
+          ],
+          "uuid": "76401567-1405-4a22-b70c-0a7f2502777e",
+          "xy": [
+            25.0825,
+            16.6
+          ]
+        }
+      },
+      {
+        "geometry_changed": false,
+        "net_code": "Regenerate from paired netlist; do not invent or retain stale code.",
+        "proposed_net": "unconnected-(U15-NC10-Pad10)",
+        "proposed_role": "unused_NC",
+        "source": {
+          "angle": 0.0,
+          "barrel_layers": [],
+          "full_native_record_sha256": "1180ddc1bcdfc92df3698439b5e4276b1a048dbc3a844e105b5f8985de8891bf",
+          "key": "U15.10",
+          "kind": "pad",
+          "net": "PORT_C_RX_EXT",
+          "size": [
+            0.565,
+            0.2
+          ],
+          "uuid": "85f6ae89-da40-4223-9e1c-51ee8cc2f22f",
+          "xy": [
+            25.9175,
+            16.6
+          ]
+        }
+      },
+      {
+        "geometry_changed": false,
+        "net_code": "Regenerate from paired netlist; do not invent or retain stale code.",
+        "proposed_net": "PORT_C_RX_EXT",
+        "proposed_role": "bonded_RX_clamp",
+        "source": {
+          "angle": 0.0,
+          "barrel_layers": [],
+          "full_native_record_sha256": "83a27207c2e1d49c85ae686d9eb54bbb9f42e0f1e6357379851d8d470f81915c",
+          "key": "U15.5",
+          "kind": "pad",
+          "net": "unconnected-(U15-IO4-Pad5)",
+          "size": [
+            0.565,
+            0.2
+          ],
+          "uuid": "dddece5c-5254-4426-8e4c-1fb5f9e85655",
+          "xy": [
+            25.0825,
+            18.6
+          ]
+        }
+      },
+      {
+        "geometry_changed": false,
+        "net_code": "Regenerate from paired netlist; do not invent or retain stale code.",
+        "proposed_net": "PORT_C_RX_EXT",
+        "proposed_role": "upstream_PCB_routing_land_no_internal_connection",
+        "source": {
+          "angle": 0.0,
+          "barrel_layers": [],
+          "full_native_record_sha256": "c65249de6607d1a000d707609485c15a202e8eedc6dad7da69612e4798e08fcb",
+          "key": "U15.6",
+          "kind": "pad",
+          "net": "unconnected-(U15-NC6-Pad6)",
+          "size": [
+            0.565,
+            0.2
+          ],
+          "uuid": "af34758d-03d4-4898-8fb1-2be5765ea280",
+          "xy": [
+            25.9175,
+            18.6
+          ]
+        }
+      }
+    ],
+    "source_displacement_mm": [
+      0,
+      2.0
+    ],
+    "whole_footprint_transform": null
+  },
+  "status": "manufacturer_equivalence_verified_specific_unrouted_proposal_not_adopted",
+  "unchanged_external_and_MCU_endpoints": [
+    {
+      "angle": 180.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "c5c202112ea61df00c23ede72209ee0af9a4ea4e464f93ba86a4f984df1f665e",
+      "key": "J11.1",
+      "kind": "pad",
+      "net": "PORT_C_RX_EXT",
+      "size": [
+        0.6,
+        1.7
+      ],
+      "uuid": "1904a95f-ded8-4123-a94a-79e3bebb7a86",
+      "xy": [
+        33.375,
+        20.1
+      ]
+    },
+    {
+      "angle": 180.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "a5fd053fd5932e204f73510a69c087444f4794338c51a06915bb918a16e1b928",
+      "key": "J11.2",
+      "kind": "pad",
+      "net": "PORT_C_TX_EXT",
+      "size": [
+        0.6,
+        1.7
+      ],
+      "uuid": "4f1ccf9f-f0da-4233-9277-4ca5e1bb39f3",
+      "xy": [
+        32.125,
+        20.1
+      ]
+    },
+    {
+      "angle": 90.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "d10dc588b32823921cb2120c67372c9280230488af275dddf52ec284a4d358bc",
+      "key": "R34.1",
+      "kind": "pad",
+      "net": "PORT_C_RX_EXT",
+      "size": [
+        0.54,
+        0.64
+      ],
+      "uuid": "e1836b38-f5b7-467f-aa6e-2b94f3177ac6",
+      "xy": [
+        29.65,
+        20.81
+      ]
+    },
+    {
+      "angle": 90.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "6f3ec6a5a2cc13d8f3a28a447a26d188123338b46e0b9b0a6fac23b2ee0b3ac8",
+      "key": "R34.2",
+      "kind": "pad",
+      "net": "PORT_C_RX_MCU",
+      "size": [
+        0.54,
+        0.64
+      ],
+      "uuid": "48d38a21-7865-4518-b816-638d6506fbfa",
+      "xy": [
+        29.65,
+        19.79
+      ]
+    },
+    {
+      "angle": 0.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "9916f6f5569d857902db03ac200e5ed8c011cc694bf4fb2f353df890fcfc93ef",
+      "key": "U1.28",
+      "kind": "pad",
+      "net": "PORT_C_RX_MCU",
+      "size": [
+        0.3,
+        1.55
+      ],
+      "uuid": "6bdbd2d5-39db-40ca-aa0b-51f24338a372",
+      "xy": [
+        22.709999,
+        8.125
+      ]
+    },
+    {
+      "angle": 90.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "e6cb48b3560e5bea4415eb8793717bba75b2bfebf8ad5a634fe3eee22983b1a5",
+      "key": "R35.1",
+      "kind": "pad",
+      "net": "PORT_C_TX_EXT",
+      "size": [
+        0.54,
+        0.64
+      ],
+      "uuid": "c6e1aad0-1aff-43c3-b81c-63547d40595f",
+      "xy": [
+        29.2,
+        23.51
+      ]
+    },
+    {
+      "angle": 90.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "a7c2dd95624832f75a791572d06ec938b6d7db6cbfd1b0c049cda8d1405d41b4",
+      "key": "R35.2",
+      "kind": "pad",
+      "net": "PORT_C_TX_MCU",
+      "size": [
+        0.54,
+        0.64
+      ],
+      "uuid": "015bbb50-5012-47aa-b5eb-07fce31126fa",
+      "xy": [
+        29.2,
+        22.49
+      ]
+    },
+    {
+      "angle": 0.0,
+      "barrel_layers": [],
+      "full_native_record_sha256": "8511db82bb1e6311da9f565753c6aef31bdbc99a89e83306616f490e187e057c",
+      "key": "U1.29",
+      "kind": "pad",
+      "net": "PORT_C_TX_MCU",
+      "size": [
+        0.3,
+        1.55
+      ],
+      "uuid": "c84a7841-38b0-4375-a3ff-258f271deeda",
+      "xy": [
+        23.209999,
+        8.125
+      ]
+    }
+  ]
+}
