@@ -1,0 +1,339 @@
+{
+  "schema": "f722-native7-northern-RX-checkpoint/v1",
+  "source": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "common_packet_sha256": "b161ae1c4df8632c38bea543c4ddb07e5dcb67afd734f86ef4d931cc1584a051",
+  "C_scope_sha256": "b70b00911dbcade6e97470d6a5cb593a122b20af1dcc4672e00711c107f61534",
+  "selected": false,
+  "native_board_edited": false,
+  "source_access_packet": {
+    "path": "native7-northern-RX-down-source-access-packet-v1.json",
+    "sha256": "f27edfaa0dca8435820f56f7484de6e384fc89f9ece9e9d3f6bbfaef4423ef6b"
+  },
+  "northern_F_entry": {
+    "routes": [
+      {
+        "kind": "track",
+        "name": "northern-RX-down-0-source-F",
+        "net": "PORT_C_RX_EXT",
+        "logical_net": "PORT_C_RX_EXT",
+        "layer": "F.Cu",
+        "width": 0.127,
+        "points": [
+          [
+            24.65,
+            16.1
+          ],
+          [
+            25.248677,
+            16.191583
+          ],
+          [
+            27.378599,
+            15.004157
+          ],
+          [
+            27.487121,
+            14.848729
+          ],
+          [
+            26.577587,
+            9.442571
+          ],
+          [
+            25.139086,
+            9.543553
+          ],
+          [
+            25.198306,
+            10.269334
+          ],
+          [
+            25.397615,
+            10.812554
+          ]
+        ],
+        "role": "downstream"
+      }
+    ],
+    "vias": [
+      {
+        "kind": "via",
+        "name": "northern-RX-down-0-source-via",
+        "net": "PORT_C_RX_EXT",
+        "logical_net": "PORT_C_RX_EXT",
+        "xy": [
+          25.397615,
+          10.812554
+        ],
+        "diameter": 0.45,
+        "drill": 0.2,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "tented_front": true,
+        "tented_back": true,
+        "role": "downstream"
+      }
+    ],
+    "finite_and_full_width_checks_passed": true,
+    "all_seven_C_VX_access_plans_passed": true,
+    "shared_peer_demands_passed": false
+  },
+  "v2_terminal": {
+    "source_receipt": "native7-northern-RX-down-control-v2.json",
+    "sha256": "7257c8ef25a83d3b68307f10264faab77f57e29442d4ad2a43dfcdb54e3bcc84",
+    "seconds": 107.56351983199966,
+    "complete": false,
+    "failure": "Complete early RX-down consumes another C/support path",
+    "failed_inner_trunk": [
+      {
+        "kind": "track",
+        "name": "northern-RX-down-0-inner-leg-0",
+        "net": "PORT_C_RX_EXT",
+        "logical_net": "PORT_C_RX_EXT",
+        "layer": "In2.Cu",
+        "points": [
+          [
+            25.397615,
+            10.812554
+          ],
+          [
+            22.358827,
+            13.522736
+          ],
+          [
+            28.408646,
+            19.654707
+          ],
+          [
+            28.241258,
+            20.484068
+          ],
+          [
+            28.963321,
+            20.840573
+          ]
+        ],
+        "width": 0.127,
+        "role": "downstream"
+      }
+    ],
+    "disconnected_actual_C_jobs": [
+      "TX_MCU",
+      "RX_MCU"
+    ],
+    "peer_cut_final_gates_reached": false
+  },
+  "v3_terminal": {
+    "source_receipt": "native7-northern-RX-inner-layers-control-v3.json",
+    "sha256": "927eb70ccf1d3d54a0660aa57a216e8a91a4b19ce9b8b8fd024592eb59ffd95d",
+    "seconds": 47.51506483999947,
+    "terminal_reason": "Held northern F-entry/barrel fails a shared peer demand before any alternate inner trunk",
+    "complete": false,
+    "source_entry_replay_passed": true,
+    "all_twelve_baseline_results": [
+      {
+        "net": "FLASH_SCK",
+        "start_key": "U1.34",
+        "end_key": "U3.6",
+        "connected": true
+      },
+      {
+        "net": "FLASH_MISO",
+        "start_key": "U1.35",
+        "end_key": "U3.2",
+        "connected": true
+      },
+      {
+        "net": "FLASH_MOSI",
+        "start_key": "U1.36",
+        "end_key": "U3.5",
+        "connected": true
+      },
+      {
+        "net": "PORT_B_RX_MCU",
+        "start_key": "U1.37",
+        "end_key": "R32.2",
+        "connected": true
+      },
+      {
+        "net": "PORT_B_TX_MCU",
+        "start_key": "U1.38",
+        "end_key": "R33.2",
+        "connected": true
+      },
+      {
+        "net": "FLASH_CS",
+        "start_key": "U1.33",
+        "end_key": "U3.1",
+        "connected": true
+      },
+      {
+        "net": "FLASH_CS",
+        "start_key": "U1.33",
+        "end_key": "R4.2",
+        "connected": true
+      },
+      {
+        "net": "DSM_RX_MCU",
+        "start_key": "U1.43",
+        "end_key": "R38.2",
+        "connected": true
+      },
+      {
+        "net": "DSM_RX_MCU",
+        "start_key": "U1.43",
+        "end_key": "R71.2",
+        "connected": true
+      },
+      {
+        "net": "IMU_CS",
+        "start_key": "U1.20",
+        "end_key": "U2.12",
+        "connected": true
+      },
+      {
+        "net": "IMU_CS",
+        "start_key": "U1.20",
+        "end_key": "R3.2",
+        "connected": false
+      },
+      {
+        "net": "LED_GREEN_K",
+        "start_key": "U1.3",
+        "end_key": "D1.1",
+        "connected": true
+      }
+    ],
+    "failed_actual_endpoint_plan": {
+      "net": "IMU_CS",
+      "start_key": "U1.20",
+      "end_key": "R3.2",
+      "connected": false,
+      "plan": {
+        "start": [
+          18.709999,
+          8.125
+        ],
+        "end": [
+          25.7,
+          8.99
+        ],
+        "start_nodes": [
+          24
+        ],
+        "end_nodes": [
+          468
+        ],
+        "connected": false,
+        "additional_transition_count": null,
+        "legs": [],
+        "new_vias": []
+      }
+    },
+    "inner_layer_trials_attempted": 0,
+    "saved_failed_domain_WKB_available": false,
+    "domain_note": "The baseline records exact endpoint/node identities and connected=false. It did not serialize graph polygons; no failed-domain geometry is claimed."
+  },
+  "prior_front_corridor_conflict": {
+    "receipt": "ordinary-routing/tests/native13-access/native7-joint-all-functions-search-v4.json",
+    "sha256": "57e37796d487ccbe912331a675a93f37fbb2dc6e6e8f4e69db2324e66c34109e",
+    "exact_RX_down_F_centerline": [
+      [
+        24.65,
+        16.1
+      ],
+      [
+        26.756019,
+        16.385599
+      ],
+      [
+        26.400602,
+        19.627785
+      ],
+      [
+        28.394138,
+        20.494583
+      ],
+      [
+        28.963321,
+        20.840573
+      ]
+    ],
+    "disconnected_actual_jobs": [
+      "VX",
+      "RX_up",
+      "TX_up"
+    ],
+    "classification": "Finite complete RX-down path with incompatible remaining local passage; retained as negative evidence."
+  },
+  "continuation_requirements": [
+    "Restore actual IMU_CS U1.20/U2.12/R3.2 leaf while preserving the exact northern downstream entry.",
+    "Only after every baseline demand passes, test source-held direct In3 and B continuations to existing RX-down target barrel.",
+    "Preserve all actual C/VX and peer target demands, full original donor contacts, finite width and drill/mask rules, and both U15 physical pad cuts.",
+    "Complete native connectivity, mechanical, ground/reference and power checks remain required."
+  ],
+  "small_reproducible_artifacts": [
+    {
+      "path": "construct_native7_northern_RX_down_v2.py",
+      "sha256": "33a9482092644d5c628faa36b415adaa7972c8f349ef2d06ffec6db794b8fa89",
+      "bytes": 14542
+    },
+    {
+      "path": "native7-northern-RX-down-contract-v2.json",
+      "sha256": "8f3bc7bb6da4d3758e4788e3ac6278369741ac4c410fab5dbadc8315b022c4cd",
+      "bytes": 2343
+    },
+    {
+      "path": "construct_native7_northern_RX_inner_layers_v3.py",
+      "sha256": "1af728ff1411543347759adc2b8b10a3dce9a8288cece54ac4791efb957f195d",
+      "bytes": 11638
+    },
+    {
+      "path": "native7-northern-RX-inner-layers-contract-v3.json",
+      "sha256": "e00f67c1e4f5fc3bced9d0a09c45815ff3a3f314fcba53e09110a1e6f907950e",
+      "bytes": 2721
+    },
+    {
+      "path": "native7-northern-RX-down-source-access-packet-v1.json",
+      "sha256": "f27edfaa0dca8435820f56f7484de6e384fc89f9ece9e9d3f6bbfaef4423ef6b",
+      "bytes": 106901
+    }
+  ],
+  "raw_receipts_kept_local": true,
+  "repeated_domain_WKB_omitted": true
+}

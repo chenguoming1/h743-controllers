@@ -1,0 +1,72 @@
+{
+  "supporting_commit": "5c46583ee228a0a406c7ac20d5ec881b39136bd7",
+  "installed_firmware_equivalence_established": false,
+  "target": {
+    "url": "https://github.com/rotorflight/rotorflight-targets/blob/1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3/configs/RDMS-NEXUS_F7.config",
+    "git_blob_sha1": "ca042b1f51a341a46980cb9aba78420beab48be7",
+    "commit": "1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3",
+    "lines": [
+      {
+        "line": 19,
+        "text": "resource SERIAL_TX 3 B11"
+      },
+      {
+        "line": 24,
+        "text": "resource SERIAL_RX 3 B10"
+      }
+    ]
+  },
+  "uart": {
+    "url": "https://github.com/rotorflight/rotorflight-firmware/blob/5c46583ee228a0a406c7ac20d5ec881b39136bd7/src/main/drivers/serial_uart_stm32f7xx.c",
+    "git_blob_sha1": "ef3c81daad58f1e5c648f2f1a134440dadbc0c7c",
+    "lines": [
+      {
+        "line": 361,
+        "text": "    if ((options & SERIAL_BIDIR) && txIO) {"
+      },
+      {
+        "line": 363,
+        "text": "            ((options & SERIAL_INVERTED) || (options & SERIAL_BIDIR_PP) || (options & SERIAL_BIDIR_PP_PD)) ? GPIO_MODE_AF_PP : GPIO_MODE_AF_OD,"
+      },
+      {
+        "line": 364,
+        "text": "            GPIO_SPEED_FREQ_HIGH,"
+      },
+      {
+        "line": 365,
+        "text": "            ((options & SERIAL_INVERTED) || (options & SERIAL_BIDIR_PP_PD)) ? GPIO_PULLDOWN : GPIO_PULLUP"
+      },
+      {
+        "line": 369,
+        "text": "        IOConfigGPIOAF(txIO, ioCfg, uartdev->tx.af);"
+      },
+      {
+        "line": 374,
+        "text": "            IOConfigGPIOAF(txIO, IOCFG_AF_PP, uartdev->tx.af);"
+      },
+      {
+        "line": 379,
+        "text": "            IOConfigGPIOAF(rxIO, IOCFG_AF_PP, uartdev->rx.af);"
+      }
+    ]
+  },
+  "io": {
+    "url": "https://github.com/rotorflight/rotorflight-firmware/blob/5c46583ee228a0a406c7ac20d5ec881b39136bd7/src/main/drivers/io.h",
+    "git_blob_sha1": "d45f8b91bd7c2f55140c329f299f13d39619dbed",
+    "lines": [
+      {
+        "line": 48,
+        "text": "#define IOCFG_AF_PP          IO_CONFIG(GPIO_MODE_AF_PP,     GPIO_SPEED_FREQ_LOW,  GPIO_NOPULL)"
+      },
+      {
+        "line": 65,
+        "text": "#define IOCFG_AF_PP          IO_CONFIG(GPIO_Mode_AF,  0, GPIO_OType_PP, GPIO_PuPd_NOPULL)"
+      },
+      {
+        "line": 79,
+        "text": "# define IOCFG_AF_PP          0"
+      }
+    ]
+  },
+  "interpretation": "Pinned Nexus target establishes PB11 serial TX3 and PB10 serial RX3, not edge time or baud. Supporting current F7 UART source uses LOW speed through IOCFG_AF_PP for normal AF mode and HIGH for bidirectional mode. Exact installed firmware/version equivalence is not established. Incoming RX slew is external-source-dependent; low baud does not establish slow edges."
+}

@@ -1,0 +1,11 @@
+# Northern RX transition and contact-checking tools
+
+This source-only checkpoint leaves the paired hardware unchanged: the checked isolated board has seven missing connections, zero geometric errors, seven dangling-copper warnings and zero ERC/parity issues. The canonical project remains the separate eleven-open source. Current numerical power/VCAP remains pending.
+
+The frozen joint v4 trial showed that a complete F-layer C_RX downstream route blocks VX and both upstream C paths. A source-bound northern transition then produced a complete finite F entry and legal tented through-via while preserving all seven C/VX access plans. Its In2 continuation blocked both C MCU paths. The subsequent source-held control checked the twelve shared peer demands before testing other layers: eleven passed, but the actual IMU_CS branch to R3.2 was disconnected. It correctly stopped without testing In3 or B continuations. No complete joint candidate or new native board is claimed.
+
+The compact source-access packet preserves the exact successful F entry, barrel, source identities and scoped checks. It does not include the rejected In2 trunk as selected geometry. Frozen scripts and contracts reproduce the bounded controls against the recovered native7 inputs; compact summaries preserve the original outcomes and hashes without repeated raw domain polygons. The next routing step must restore the actual R3 branch before considering alternate downstream continuations.
+
+Separate planning checks retain the original intersection ledger and add positive-area, drill-aware connectivity checks. New proposed routes snap to the native 1 nm grid before original-domain and finite clearance checks; accepted copper is unchanged. Five topology and four grid synthetic controls passed. These tools have not established final-native contact acceptance; full-width/annular witnesses and current source-bound reference, power, electrical and assembly checks remain pending.
+
+Restore the previously published recovered-native7 inputs and files first, then copy this checkpoint's `files/` entries into the corresponding rebuild-root paths. Existing published files are unchanged. All routing remains WIP; no fabrication, assembly or flight qualification is claimed.

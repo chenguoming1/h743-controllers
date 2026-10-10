@@ -1,0 +1,628 @@
+{
+  "schema": "f722-native7-isolated-C-plane-span-assessment/v1",
+  "status": "Scoped negative for a few-mm bypass of the measured northern-In2 barrier; no plane route proposed or selected",
+  "source": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "source_files": [
+    {
+      "path": "recovered-native7/recovery-C/native7-northern-RX-down-control-v2.json",
+      "sha256": "7257c8ef25a83d3b68307f10264faab77f57e29442d4ad2a43dfcdb54e3bcc84"
+    },
+    {
+      "path": "recovered-native7/recovery-C/native7-northern-RX-down-source-access-packet-v1.json",
+      "sha256": "f27edfaa0dca8435820f56f7484de6e384fc89f9ece9e9d3f6bbfaef4423ef6b"
+    },
+    {
+      "path": "recovered-native7/recovery-C/complete_native7_C_v3.py",
+      "sha256": "cdcdde890745304c26a5def39019028509d6be512e84336e9fc9877fafe65b1b"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/native7-common-planning-packet-v1.json",
+      "sha256": "b161ae1c4df8632c38bea543c4ddb07e5dcb67afd734f86ef4d931cc1584a051"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/native7-coordinated-engineering-proposal-v1.json",
+      "sha256": "c08b9dbf202cfb81abc19022d97d7b152cc02a333e435e7a0b0611ae6be69291"
+    },
+    {
+      "path": "repo/f722-heli/validation/firmware-pinmap.json",
+      "sha256": "f09f99efa565075e1676e9be9d9d27f27c0b5b6e15275533b478a626d96b9826"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/native7-C-plane-span-firmware-evidence-v1.json",
+      "sha256": "1a5ab51092c7483ac17648818f322bb1799c6bb7632e2e797e17e2cd74265bd2"
+    }
+  ],
+  "measured_obstruction": {
+    "conditional_RX_down_source_entry": {
+      "kind": "track",
+      "name": "northern-RX-down-0-source-F",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "layer": "F.Cu",
+      "width": 0.127,
+      "points": [
+        [
+          24.65,
+          16.1
+        ],
+        [
+          25.248677,
+          16.191583
+        ],
+        [
+          27.378599,
+          15.004157
+        ],
+        [
+          27.487121,
+          14.848729
+        ],
+        [
+          26.577587,
+          9.442571
+        ],
+        [
+          25.139086,
+          9.543553
+        ],
+        [
+          25.198306,
+          10.269334
+        ],
+        [
+          25.397615,
+          10.812554
+        ]
+      ],
+      "role": "downstream"
+    },
+    "conditional_RX_down_In2_trunk": {
+      "kind": "track",
+      "name": "northern-RX-down-0-inner-leg-0",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "layer": "In2.Cu",
+      "points": [
+        [
+          25.397615,
+          10.812554
+        ],
+        [
+          22.358827,
+          13.522736
+        ],
+        [
+          28.408646,
+          19.654707
+        ],
+        [
+          28.241258,
+          20.484068
+        ],
+        [
+          28.963321,
+          20.840573
+        ]
+      ],
+      "width": 0.127,
+      "role": "downstream"
+    },
+    "conditional_RX_down_source_via": {
+      "kind": "via",
+      "name": "northern-RX-down-0-source-via",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "xy": [
+        25.397615,
+        10.812554
+      ],
+      "diameter": 0.45,
+      "drill": 0.2,
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "tented_front": true,
+      "tented_back": true,
+      "role": "downstream"
+    },
+    "retained_RX_down_target_via_uuid": "1dbe666a-7f4b-5890-96e7-94deacbdeda9",
+    "effects": "Added In2 trunk disconnected actual RX_MCU and TX_MCU target graphs; it completed the RX-down ordinary target route. The same northern F approach separately fails the original IMU_CS-to-R3.2 obligation. Re-layering only this trunk is therefore not a complete candidate.",
+    "whole_trunk_endpoint_Euclidean_distance_mm": 10.643092799689242,
+    "same_function_existing_RX_MCU_barrel_distance_mm": 15.516961534352657
+  },
+  "actual_native_C_barrels": [
+    {
+      "uuid": "1dbe666a-7f4b-5890-96e7-94deacbdeda9",
+      "net": "PORT_C_RX_EXT",
+      "xy": [
+        28.963321,
+        20.840573
+      ],
+      "removed_in_common_context": false,
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "a5df4a3c-85c0-54f1-8a9a-c0a73de16d7a",
+      "net": "PORT_C_RX_MCU",
+      "xy": [
+        32.077915,
+        18.824034
+      ],
+      "removed_in_common_context": false,
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "6961a72d-5b35-5766-909f-4fe23d001794",
+      "net": "PORT_C_TX_MCU",
+      "xy": [
+        22.9,
+        9.5
+      ],
+      "removed_in_common_context": true,
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "772ddcac-065d-5d1d-88d4-24a832e0f2be",
+      "net": "PORT_C_RX_MCU",
+      "xy": [
+        22.56,
+        6.563
+      ],
+      "removed_in_common_context": true,
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "9680f9d0-7616-5a75-aea8-a536d680e2a3",
+      "net": "PORT_C_TX_EXT",
+      "xy": [
+        31.635692,
+        24.656646
+      ],
+      "removed_in_common_context": true,
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "uuid": "d03267e8-28ff-509b-b000-ecec2e07ebad",
+      "net": "PORT_C_TX_EXT",
+      "xy": [
+        21.60724,
+        20.683174
+      ],
+      "removed_in_common_context": true,
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ]
+    }
+  ],
+  "proposed_common_C_source_barrels": [
+    {
+      "name": "recovered-PORT_C_RX_MCU-source-via",
+      "net": "PORT_C_RX_MCU",
+      "xy": [
+        22.566399,
+        6.564052
+      ]
+    },
+    {
+      "name": "recovered-PORT_C_TX_MCU-source-via",
+      "net": "PORT_C_TX_MCU",
+      "xy": [
+        22.88145,
+        9.521268
+      ]
+    }
+  ],
+  "saved_domain_bounds": [
+    {
+      "job": "TX_MCU",
+      "actual_start": [
+        23.209999,
+        8.125
+      ],
+      "actual_target": [
+        29.2,
+        22.49
+      ],
+      "ordinary_connected_before_RX_down_In2_trunk": true,
+      "ordinary_connected_after_RX_down_In2_trunk": false,
+      "saved_complete_source_reachable_node_ids": [
+        9,
+        10,
+        24,
+        25,
+        38,
+        60,
+        61,
+        68,
+        69,
+        259,
+        260,
+        261,
+        267,
+        275,
+        296,
+        346,
+        347,
+        354,
+        361,
+        370,
+        374,
+        380,
+        381,
+        382,
+        384,
+        386,
+        388,
+        391,
+        393,
+        449,
+        450,
+        451,
+        452,
+        468,
+        472,
+        476,
+        477,
+        479,
+        490,
+        531,
+        540
+      ],
+      "saved_complete_target_reachable_node_ids": [
+        0,
+        1,
+        15,
+        123,
+        196,
+        206,
+        240,
+        255,
+        266,
+        305,
+        342,
+        348,
+        443,
+        444,
+        445,
+        457,
+        460
+      ],
+      "new_via_domain_source_area_mm2": 23.419025149874134,
+      "new_via_domain_target_area_mm2": 1.921297660501685,
+      "minimum_new_via_domain_separation_mm": 7.824944783595085,
+      "nearest_source_domain_boundary": [
+        14.861861398657789,
+        24.913708896705106
+      ],
+      "nearest_target_domain_boundary": [
+        21.483077151070702,
+        20.743665392578198
+      ],
+      "existing_source_via_to_target_new_via_domain_minimum_mm": 11.13452697627843,
+      "closest_target_domain_to_existing_source": [
+        21.459999,
+        20.56468993525499
+      ]
+    },
+    {
+      "job": "RX_MCU",
+      "actual_start": [
+        22.709999,
+        8.125
+      ],
+      "actual_target": [
+        29.65,
+        19.79
+      ],
+      "ordinary_connected_before_RX_down_In2_trunk": true,
+      "ordinary_connected_after_RX_down_In2_trunk": false,
+      "saved_complete_source_reachable_node_ids": [
+        9,
+        10,
+        24,
+        39,
+        59,
+        60,
+        68,
+        69,
+        102,
+        254,
+        255,
+        256,
+        263,
+        271,
+        292,
+        340,
+        341,
+        348,
+        354,
+        362,
+        366,
+        372,
+        373,
+        374,
+        376,
+        378,
+        380,
+        384,
+        385,
+        402,
+        442,
+        443,
+        444,
+        445,
+        461,
+        465,
+        469,
+        470,
+        472,
+        483,
+        532,
+        551
+      ],
+      "saved_complete_target_reachable_node_ids": [
+        0,
+        1,
+        15,
+        123,
+        137,
+        176,
+        202,
+        236,
+        250,
+        262,
+        300,
+        336,
+        342,
+        436,
+        437,
+        438,
+        450,
+        453,
+        598
+      ],
+      "new_via_domain_source_area_mm2": 23.419025149874134,
+      "new_via_domain_target_area_mm2": 1.921297660501685,
+      "minimum_new_via_domain_separation_mm": 7.824944783595085,
+      "nearest_source_domain_boundary": [
+        14.861861398657789,
+        24.913708896705106
+      ],
+      "nearest_target_domain_boundary": [
+        21.483077151070702,
+        20.743665392578198
+      ],
+      "existing_source_via_to_target_new_via_domain_minimum_mm": 14.044286509257104,
+      "closest_target_domain_to_existing_source": [
+        21.459999,
+        20.56468993525499
+      ],
+      "retained_target_via_to_source_new_via_domain_minimum_mm": 14.94166800490444,
+      "closest_source_domain_to_retained_target": [
+        19.847783919101538,
+        10.240483655717837
+      ]
+    }
+  ],
+  "measurement_method": {
+    "input": "attempts[0].remaining_C_support.checks for RX_MCU and TX_MCU in the exact bound raw receipt",
+    "construction": "Union every nonempty eligible_via_wkb_hex for each side across every saved ordinary reachable node, without contour normalization; measure nearest_points between the two exact unions and to existing function barrels. C helper serializes all source|target reachable nodes, without a count cap.",
+    "domain_or_graph_or_router_rebuilt": false,
+    "saved_polygon_distance_seconds": 0.13507008799933828,
+    "interpretation": "These are lower bounds even before any plane obstacles, mutual new-via constraints, 1nm-grid interior selection, finite signal route or ground-refill constraints. The boundary coordinates are witnesses, not approved via centers. They exclude a few-mm direct bypass in this fixed historical context, not every modified ordinary routing context."
+  },
+  "affected_planes": [
+    {
+      "layer": "In1.Cu",
+      "GND_zone_uuid": "c956a476-e320-4f09-9832-420df749bd95",
+      "copper_thickness_mm": 0.0152,
+      "adjacent_layers": [
+        {
+          "layer": "F.Cu",
+          "dielectric_mm": 0.0994
+        },
+        {
+          "layer": "In2.Cu",
+          "dielectric_mm": 0.25
+        }
+      ]
+    },
+    {
+      "layer": "In4.Cu",
+      "GND_zone_uuid": "ee652b71-6147-4d53-abc1-8530e0b19eaf",
+      "copper_thickness_mm": 0.0152,
+      "adjacent_layers": [
+        {
+          "layer": "In3.Cu",
+          "dielectric_mm": 0.25
+        },
+        {
+          "layer": "B.Cu",
+          "dielectric_mm": 0.0994
+        }
+      ]
+    }
+  ],
+  "firmware_edge_evidence": {
+    "supporting_commit": "5c46583ee228a0a406c7ac20d5ec881b39136bd7",
+    "installed_firmware_equivalence_established": false,
+    "target": {
+      "url": "https://github.com/rotorflight/rotorflight-targets/blob/1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3/configs/RDMS-NEXUS_F7.config",
+      "git_blob_sha1": "ca042b1f51a341a46980cb9aba78420beab48be7",
+      "commit": "1d9cb4dc6f85c7895c2b089f4b8aa776ca3d3bd3",
+      "lines": [
+        {
+          "line": 19,
+          "text": "resource SERIAL_TX 3 B11"
+        },
+        {
+          "line": 24,
+          "text": "resource SERIAL_RX 3 B10"
+        }
+      ]
+    },
+    "uart": {
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/5c46583ee228a0a406c7ac20d5ec881b39136bd7/src/main/drivers/serial_uart_stm32f7xx.c",
+      "git_blob_sha1": "ef3c81daad58f1e5c648f2f1a134440dadbc0c7c",
+      "lines": [
+        {
+          "line": 361,
+          "text": "    if ((options & SERIAL_BIDIR) && txIO) {"
+        },
+        {
+          "line": 363,
+          "text": "            ((options & SERIAL_INVERTED) || (options & SERIAL_BIDIR_PP) || (options & SERIAL_BIDIR_PP_PD)) ? GPIO_MODE_AF_PP : GPIO_MODE_AF_OD,"
+        },
+        {
+          "line": 364,
+          "text": "            GPIO_SPEED_FREQ_HIGH,"
+        },
+        {
+          "line": 365,
+          "text": "            ((options & SERIAL_INVERTED) || (options & SERIAL_BIDIR_PP_PD)) ? GPIO_PULLDOWN : GPIO_PULLUP"
+        },
+        {
+          "line": 369,
+          "text": "        IOConfigGPIOAF(txIO, ioCfg, uartdev->tx.af);"
+        },
+        {
+          "line": 374,
+          "text": "            IOConfigGPIOAF(txIO, IOCFG_AF_PP, uartdev->tx.af);"
+        },
+        {
+          "line": 379,
+          "text": "            IOConfigGPIOAF(rxIO, IOCFG_AF_PP, uartdev->rx.af);"
+        }
+      ]
+    },
+    "io": {
+      "url": "https://github.com/rotorflight/rotorflight-firmware/blob/5c46583ee228a0a406c7ac20d5ec881b39136bd7/src/main/drivers/io.h",
+      "git_blob_sha1": "d45f8b91bd7c2f55140c329f299f13d39619dbed",
+      "lines": [
+        {
+          "line": 48,
+          "text": "#define IOCFG_AF_PP          IO_CONFIG(GPIO_MODE_AF_PP,     GPIO_SPEED_FREQ_LOW,  GPIO_NOPULL)"
+        },
+        {
+          "line": 65,
+          "text": "#define IOCFG_AF_PP          IO_CONFIG(GPIO_Mode_AF,  0, GPIO_OType_PP, GPIO_PuPd_NOPULL)"
+        },
+        {
+          "line": 79,
+          "text": "# define IOCFG_AF_PP          0"
+        }
+      ]
+    },
+    "interpretation": "Pinned Nexus target establishes PB11 serial TX3 and PB10 serial RX3, not edge time or baud. Supporting current F7 UART source uses LOW speed through IOCFG_AF_PP for normal AF mode and HIGH for bidirectional mode. Exact installed firmware/version equivalence is not established. Incoming RX slew is external-source-dependent; low baud does not establish slow edges."
+  },
+  "acceptance_requirements_for_any_later_short_span": [
+    "An isolated span would have to connect two proven source/target ordinary regions of the same logical function, with existing same-function barrels or fully legal new .45/.20 tented barrels. These saved domains do not provide a few-mm candidate; do not silently join different protected branches or reuse a foreign-net via.",
+    "If a genuinely shorter candidate emerges in a changed context, bind exact centerlines, full native cuts/added records and endpoints, then require the complete actual C pad-to-pad function and all displaced ordinary donors. Re-evaluate the independent original R3/C12 issue; changing the northern inner trunk alone cannot repair its failed F approach.",
+    "For .127 signal width and .127 clearance, nominal same-layer GND exclusion is at least .381 mm wide before exporter/fabrication reserves. Native refill must determine the actual new void including rounded ends, existing antipads, clearances and plane islands; saved-fill subtraction is a planning calculation only.",
+    "Check the affected GND plane component partition, terminal membership, annular contacts and minimum surviving necks with global physical drills subtracted. Compare current paths around both slot ends, including return sharing and newly combined voids. No safe current capability follows solely from positive plane connectivity.",
+    "Rerun source-bound DC/current analysis with actual stackup, conductivity, drill/pad contacts and unchanged load/supply definitions. Rebind all five existing VCAP copper-to-U1-ground loops (U1.12, U1.18, U1.31, U1.47, U1.63); historical source43 results and a historical35mohm limit are not available margin on this changed board.",
+    "On In1, inspect F.Cu and In2.Cu routes whose return paths would cross the slot, including IMU supplies/returns and other fast signals. On In4, inspect B.Cu and In3.Cu, including MCU/flash entries and VCAP/local ground references. The signal occupying a former GND layer has no newly guaranteed adjacent solid-GND layer: quantify actual coplanar/distant return geometry and transition return vias.",
+    "Use actual firmware mode and external-driver rise/fall/load evidence, complete signal length, series resistance and receiver thresholds for SI checks. UART baud is not an edge-rate bound. Keep protected U15 role/cut/no-bypass checks explicit, especially for a C_RX_EXT upstream versus downstream span.",
+    "Any future plane signal requires a separately scoped geometry/importer/native acceptance implementation. The current ordinary-only route helper/importer cannot silently accept In1/In4. Fresh refill/DRC/ERC/parity/positive full-width contacts/reference/power review precedes selection."
+  ],
+  "stop_condition": "No larger ground-layer span is requested or justified by this assessment. Keep the plane fallback inactive while the coordinated ordinary C12/R3 correction is assessed.",
+  "actual_completed_obligations": [],
+  "potential_obligations_if_a_new_compatible_short_span_were_proved": [
+    "PORT_C_RX_MCU actual U1.28 to R34.2 OR PORT_C_TX_MCU actual U1.29 to R35.2, one separately routed physical net per span"
+  ],
+  "no_claims": [
+    "global routing impossibility",
+    "completed C routing",
+    "safe plane neck/current capacity",
+    "verified external RX edge rate",
+    "installed firmware equivalence to current official source",
+    "AC/VCAP acceptance"
+  ],
+  "board_or_source_mutated": false
+}
