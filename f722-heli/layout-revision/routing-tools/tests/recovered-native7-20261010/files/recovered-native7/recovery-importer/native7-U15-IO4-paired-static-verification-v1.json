@@ -1,0 +1,100 @@
+{
+  "schema": "f722-native7-U15-IO4-paired-static-verification/v1",
+  "status": "PASS_SOURCE_ONLY_UNSELECTED_UNROUTED",
+  "verified_utc": "2026-10-10T16:20:00Z",
+  "files": {
+    "prepare_native7_u15_io4_pair_v1.py": {
+      "bytes": 29186,
+      "sha256": "2833c8abd0e923bbfea0cc706661457baecb2e5eda1c2f9b98956f1ae0cf95f2",
+      "git_blob_sha1": "5edc8a88503c6a864dbfd6bff8ffdd981592b60e"
+    },
+    "test_prepare_native7_u15_io4_pair_v1.py": {
+      "bytes": 10093,
+      "sha256": "14259fada403cfbceefb7055a5ecd433fb88b848683c967db18fa889745ba3a8",
+      "git_blob_sha1": "7799fe1432614eac6a609ef0b75cccc925cf57ac"
+    },
+    "native7-U15-IO4-paired-source-plan-v1.json": {
+      "bytes": 69795,
+      "sha256": "1e2126e78aef432a64f95ccb0cd92ff6706f0d503743c804a807ea7e7fe887b9",
+      "git_blob_sha1": "26993f3634a2df16a81d7c8bfb9dc9570b578d3e"
+    },
+    "native7-U15-IO4-copper-scope-v1.json": {
+      "bytes": 26721,
+      "sha256": "072f788ef6dd5f758033754a6ab7a0d8124e8a7b0a632ad1c1a94ea624221096",
+      "git_blob_sha1": "71eff9050ac24ed412ef5123ab83795c34d10e19"
+    },
+    "U15_IO4_PAIRED_SOURCE_PLAN_v1.md": {
+      "bytes": 9714,
+      "sha256": "2e266abde8feee83a5557fe859b13d036464324796c3e6eaf199c02d3973a377",
+      "git_blob_sha1": "c8ced53e6c3507eaaeae52e435f6f9837eec2cdb"
+    }
+  },
+  "tests": {
+    "command": "python -m unittest discover -s recovered-native7/recovery-importer -p test_prepare_native7_u15_io4_pair_v1.py -v",
+    "passed": 27,
+    "failed": 0,
+    "reported_seconds": 1.892,
+    "compile_pass": true
+  },
+  "source_plan_check": {
+    "command": "python recovered-native7/recovery-importer/prepare_native7_u15_io4_pair_v1.py --root . --check recovered-native7/recovery-importer/native7-U15-IO4-paired-source-plan-v1.json",
+    "exit_code": 0,
+    "exact61hardware_hashes_rechecked": true,
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505"
+  },
+  "independent_static_review": {
+    "status": "no_blocking_issues",
+    "scope": [
+      "six schematic moves and exact variant clone",
+      "full semantic XML netlist expectations",
+      "source record/68-cut bindings",
+      "explicit old/new RX terminal mapping",
+      "host-only execution surface"
+    ],
+    "hardening_added_after_review": [
+      "native code zero reserved for empty net; negative codes rejected",
+      "direct independent four-pin expected XML semantics test"
+    ],
+    "hardening_controls_passed": true
+  },
+  "verified_declarations": {
+    "pad_semantic_changes": 4,
+    "all_physical_pad_geometries_fixed": 558,
+    "unaffected_pad_records": 554,
+    "fixed_footprint_poses": 156,
+    "netlist_components": 156,
+    "netlist_nets": 127,
+    "netlist_nodes": 506,
+    "exact_contract_check_changes": "published-06.clamp U15.1 to U15.5 in each of two contracts; all other check fields and rows identical",
+    "expected_named_net_model_sha256": "5b5d78d07a569df1eb3e411094c6e272babd26b39f6a0a3e24c6ab1b762c8a8a",
+    "cut_inventory": {
+      "common": 90,
+      "addbacks": 26,
+      "extra_RX_prefixes": 4,
+      "final_removals": 68
+    },
+    "exact_cut_set_sha256": "27ea2392f736315e8bb168735685ad55bfaca93e426d2b3179f37b23ae2041be",
+    "source_only_in_memory_metadata_previews": {
+      "io-ports.kicad_sch": {
+        "before_sha256": "c680626df110e7b1bb0925d37640501cbd20de79d3288d2c5e1f321c8da5ed86",
+        "after_sha256": "b5533845c03a56a99dc787c3305b9ec89802bf01536421e84c4fb59cc11b5fab",
+        "bytes": 105032
+      },
+      "library/F722_Heli.kicad_sym": {
+        "before_sha256": "2a72616f8b739535031c720d5708ae01b2743a1ff33d1316e8df444e1b2cb097",
+        "after_sha256": "a9af7415a5aa13f58fb4860a3a1f578de3a7039d8709c6b823120ef3bdb2a1dd",
+        "bytes": 93227
+      }
+    }
+  },
+  "qualification_limits": [
+    "No native/PCB/schematic CAD file written; only Python/JSON/Markdown artifacts.",
+    "No native export/refill, route, actual-board polygon processing, DRC, ERC or full-netlist export executed.",
+    "Native numerical net-code allocation is intentionally unbound pending fresh paired export.",
+    "Exact68 removals have no associated complete additions and are not an import authorization.",
+    "Future constructor and final-contact successor require reviewed narrow four-pad binding and explicit RX terminal substitutions.",
+    "Route feasibility and ground-return/transient/power qualification are not established."
+  ],
+  "old_frozen_artifacts_modified": false
+}

@@ -1,0 +1,98 @@
+{
+  "cold_restore_fixture": "Fresh absent workspace. Routing predecessor consumed only its published chunks and its previously verified 102-path repository-base fixture. West and R32 overlays consumed only their published chunks and hash-bound predecessor inventories. No active current source input was available to the restore scripts.",
+  "engineering_code_executed": false,
+  "native_or_router_code_executed": false,
+  "overlay_restore": {
+    "added_paths": 84,
+    "all_size_sha256_git_blob_checks_passed": true,
+    "combined_workspace_paths": 454,
+    "complete_planning_witness": false,
+    "current_contract_dependencies_verified": 288,
+    "current_failed_outcome_trials": [
+      {
+        "index": 0,
+        "peer_demand_cuts": [
+          "FLASH_SCK",
+          "FLASH_MISO",
+          "FLASH_MOSI",
+          "PORT_C_TX_MCU",
+          "PORT_B_RX_MCU",
+          "PORT_C_RX_EXT::downstream",
+          "PORT_C_RX_EXT::upstream",
+          "PORT_C_TX_EXT::downstream",
+          "PORT_C_TX_EXT::upstream",
+          "PORT_B_RX_EXT::downstream"
+        ],
+        "whole_batch_rolled_back": true
+      },
+      {
+        "index": 1,
+        "peer_demand_cuts": [
+          "FLASH_SCK",
+          "FLASH_MISO",
+          "FLASH_MOSI",
+          "PORT_C_TX_MCU",
+          "PORT_B_RX_MCU",
+          "PORT_C_RX_EXT::downstream",
+          "PORT_C_RX_EXT::upstream",
+          "PORT_C_TX_EXT::downstream",
+          "PORT_C_TX_EXT::upstream",
+          "PORT_B_RX_EXT::downstream"
+        ],
+        "whole_batch_rolled_back": true
+      }
+    ],
+    "current_scope_paths_verified": 294,
+    "engineering_code_executed": false,
+    "native_edited": false,
+    "positive_original_and_current_replay_receipts_verified": true,
+    "positive_snapshot_sha256": "f4fccd1a1a6acbb63537b6831eaf9911a5c67abf26f6cad03a62398dfdc8259b",
+    "preparation_seal_bindings_verified": true,
+    "previous_paths_verified_before_and_after": 370,
+    "reused_previous_paths": 210,
+    "schema": "f722-r32-translation-overlay-restore-result/v1",
+    "terminal_failure_preserved": "The two declared complete ABC crossover cells produced no guarded physical tree",
+    "xz_crc64_verified": true
+  },
+  "post_rejection_all_scope_hashes_unchanged": true,
+  "routing_restore": {
+    "all_size_sha256_git_blob_crc32_checks_passed": true,
+    "archive_sha256": "8529a6fa01a677c1ba1019d1b3e6fdce1e51d8cb73b3847c654d20934592493f",
+    "archive_unique_objects": 242,
+    "native_router_solver_or_recovered_code_executed": false,
+    "original_zip_container_reproduced": false,
+    "original_zip_member_crc32_checks": 42,
+    "restored_paths": 344,
+    "reused_base_paths": 102,
+    "schema": "f722-routing-recovery-restore-result/v1",
+    "xz_crc64_verified": true
+  },
+  "safety_checks": [
+    "unsafe_relative_rejected:'../escape'",
+    "unsafe_relative_rejected:'/absolute'",
+    "unsafe_relative_rejected:'a/../escape'",
+    "unsafe_relative_rejected:'a//b'",
+    "unsafe_relative_rejected:''",
+    "symlink_destination_rejected",
+    "second_overlay_invocation_refused_existing_additions"
+  ],
+  "schema": "f722-r32-translation-cold-restore-verification/v1",
+  "west_restore": {
+    "added_paths": 26,
+    "all_size_sha256_git_blob_checks_passed": true,
+    "combined_workspace_paths": 370,
+    "complete_planning_witness": false,
+    "current_contract_dependencies_verified": 206,
+    "current_scope_paths_verified": 211,
+    "engineering_code_executed": false,
+    "ground_review_bindings_verified": true,
+    "native_edited": false,
+    "positive_checkpoint_complete_guard_passed": true,
+    "positive_snapshot_sha256": "46e7740e81b3a03e7b2f7d9c230b9bb97abd45e4fd85742c25b45452a53a61b5",
+    "previous_paths_verified_before_and_after": 344,
+    "reused_previous_paths": 185,
+    "schema": "f722-west-tx-bridge-overlay-restore-result/v1",
+    "terminal_failure_preserved": "Completed west TX header consumes another true demand",
+    "xz_crc64_verified": true
+  }
+}

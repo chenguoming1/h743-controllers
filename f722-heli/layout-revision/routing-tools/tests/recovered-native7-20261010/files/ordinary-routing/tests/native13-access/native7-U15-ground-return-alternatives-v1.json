@@ -1,0 +1,617 @@
+{
+  "acceptance_obligations": [
+    "Bind the chosen new source/ground transaction and all restored contacts to exact native7 and paired IO4 metadata.",
+    "Retain actual custom pad copper, masks, mechanical lands and manufacturing clearances; no tiny-pad metadata substitution.",
+    "Require full-width positive-area/drill-aware contacts and minimum .25 mm primary return width throughout any replacement.",
+    "Full native drill/annulus/mask/clearance and fresh refill main-plane membership; check all new antipads and ground necks against affected power and reference paths.",
+    "Measure actual pad-to-plane route length, minimum width and any added shared segment; compare the complete loop, not just Euclidean length.",
+    "Keep upstream/downstream ESD coupling, clamp return current and reference transitions explicit; routing geometry or low baud is not an ESD/AC qualification.",
+    "Re-run affected DC/plane-neck/reference and numerical VCAP checks if changed barrel antipads or plane paths affect those networks; do not spend stale source43 VCAP margin.",
+    "Require all actual C and shared peer functions with the full return present before candidate acceptance."
+  ],
+  "actual_board_ground_connection": {
+    "F_custom_pad_overlap_rectangle_mm": [
+      25.48999,
+      17.39999,
+      25.51001,
+      17.80001
+    ],
+    "cross_pad_center_distance_mm": 0.835,
+    "cross_pad_note": "Center distance is a placement measure, not a resistance or inductance equivalent.",
+    "declared_inside_rectangle_mm": [
+      25.49,
+      17.4,
+      25.51,
+      17.8
+    ],
+    "explanation": "Both exact outer vertex rings contain this common central rectangle. A board-level copper tie exists; no package-internal connection is assumed. Ground pad size metadata is not its actual custom contour. No contour normalization or geometry engine was used.",
+    "native_overlap_rectangle_area_mm2": 0.008008400399999999,
+    "pads": [
+      {
+        "barrel_layers": [],
+        "full_native_record_sha256": "597d97c5577358cc795f095bcc4a838653b2c225a95b214e0031731c3821c516",
+        "key": "U15.3",
+        "kind": "pad",
+        "net": "GND",
+        "uuid": "ef45fa73-d7c1-46b1-b97b-5758fa665b65",
+        "xy": [
+          25.0825,
+          17.6
+        ]
+      },
+      {
+        "barrel_layers": [],
+        "full_native_record_sha256": "866c458542ae9ea266e221fe1f7afa066e2983f54c93c3d5f594940fcf7dcda6",
+        "key": "U15.8",
+        "kind": "pad",
+        "net": "GND",
+        "uuid": "51c6de31-9fac-4287-b433-3b9eaac67b1d",
+        "xy": [
+          25.9175,
+          17.6
+        ]
+      }
+    ]
+  },
+  "bindings": {
+    "IO4_mapping_proposal": {
+      "path": "ordinary-routing/tests/native13-access/native7-U15-IO4-RX-channel-assessment-v1.json",
+      "sha256": "e2d974e25031857531de5427c06f5929a9631e6c9801bb1f02ad2c672e0d3f8d"
+    },
+    "common": {
+      "path": "ordinary-routing/tests/native13-access/native7-common-planning-packet-v1.json",
+      "sha256": "b161ae1c4df8632c38bea543c4ddb07e5dcb67afd734f86ef4d931cc1584a051"
+    },
+    "native7": {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505"
+    }
+  },
+  "current_complete_return": {
+    "barrel": {
+      "barrel_layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "end": [
+        25.287,
+        19.1104
+      ],
+      "full_native_record_sha256": "176beb3b754c0f66c681ad782b331636e401c0caa03040fb4afccad5d82380e3",
+      "kind": "via",
+      "net": "GND",
+      "start": [
+        25.287,
+        19.1104
+      ],
+      "tented": {
+        "B.Mask": true,
+        "F.Mask": true
+      },
+      "uuid": "97282ff5-d6b5-415f-a3c4-0390df70f0ea",
+      "width": 0.45,
+      "width_by_layer": {
+        "B.Cu": 0.45,
+        "F.Cu": 0.45,
+        "In1.Cu": 0.45,
+        "In2.Cu": 0.45,
+        "In3.Cu": 0.45,
+        "In4.Cu": 0.45
+      },
+      "xy": [
+        25.287,
+        19.1104
+      ]
+    },
+    "common_proposal_status": "All three wall tracks, both ground pads and this barrel are retained unchanged.",
+    "contact_scope_limit": "Exactly one track endpoint was found. This is not an exhaustive polygon contact or saved-fill membership proof; existing plane connections must be inventoried before any barrel removal.",
+    "length_mm": 2.573993726854674,
+    "native_tracks_with_exact_endpoint_at_barrel": [
+      {
+        "barrel_layers": [],
+        "end": [
+          25.287,
+          19.1104
+        ],
+        "full_native_record_sha256": "c035fddcdeec7cf22504868f2fbf33f47a03e5104dda9ca210b68ff67c1ebfca",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          24.5,
+          18.98
+        ],
+        "uuid": "c577b646-60c8-5101-b044-be71979ecce8",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      }
+    ],
+    "segments": [
+      {
+        "barrel_layers": [],
+        "end": [
+          24.5,
+          17.83
+        ],
+        "full_native_record_sha256": "f5f7baf0db2b8a6cdde0e5829bed0ab01c7e9ed50838e1baee07c20fe1f43dd1",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          25.0825,
+          17.6
+        ],
+        "uuid": "ac132cca-ea4d-53a6-8376-a7cab37beb2b",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          24.5,
+          18.98
+        ],
+        "full_native_record_sha256": "c191605ec8ddc9fe67e9e7c4ae7f2a2b4edc1d7620541a14ec9c7f876191590b",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          24.5,
+          17.83
+        ],
+        "uuid": "a08299df-6002-52fd-8f9e-27b83956263e",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          25.287,
+          19.1104
+        ],
+        "full_native_record_sha256": "c035fddcdeec7cf22504868f2fbf33f47a03e5104dda9ca210b68ff67c1ebfca",
+        "kind": "track",
+        "net": "GND",
+        "start": [
+          24.5,
+          18.98
+        ],
+        "uuid": "c577b646-60c8-5101-b044-be71979ecce8",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      }
+    ],
+    "width_mm": 0.25
+  },
+  "execution": {
+    "adoption_claimed": false,
+    "geometry_library_used": false,
+    "native_geometry_or_router_job": false,
+    "saved_native_JSON_and_arithmetic_only": true,
+    "source_or_copper_mutation": false
+  },
+  "existing_nearby_barrels": [
+    {
+      "barrel": {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          23.8105,
+          16.7987
+        ],
+        "full_native_record_sha256": "4dd50c767c5c1f161eef08d067b4ea89e8ae37a04602a996d5624cbf52f46bf8",
+        "kind": "via",
+        "net": "GND",
+        "start": [
+          23.8105,
+          16.7987
+        ],
+        "tented": {
+          "B.Mask": true,
+          "F.Mask": true
+        },
+        "uuid": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          23.8105,
+          16.7987
+        ]
+      },
+      "distance_from_GND8_mm": 2.254225075275315,
+      "existing_return_owner": "R41.2 ADC_BEC divider lower return",
+      "new_branch_status": "Not routed or finite-checked. Join at barrel if evaluated; never force ESD current through the existing narrow component return."
+    },
+    {
+      "barrel": {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          28.9218,
+          17.6918
+        ],
+        "full_native_record_sha256": "747b004fa8785048adaea0a683ecf7a40f46a2243528972519bb32863e345d12",
+        "kind": "via",
+        "net": "GND",
+        "start": [
+          28.9218,
+          17.6918
+        ],
+        "tented": {
+          "B.Mask": true,
+          "F.Mask": true
+        },
+        "uuid": "aed69746-f088-45b2-8d6d-4e7230af99b7",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          28.9218,
+          17.6918
+        ]
+      },
+      "distance_from_GND8_mm": 3.0057022024811446,
+      "existing_return_owner": "C3.2 MCU +3V3_CORE decoupler return; also connected to U1.47 by B copper",
+      "new_branch_status": "Not routed or finite-checked. Join at barrel if evaluated; never force ESD current through the existing narrow component return."
+    },
+    {
+      "barrel": {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          25.2313,
+          20.4005
+        ],
+        "full_native_record_sha256": "494bef511e0a06920499f0315ae35f5f39fdc77211c737e0efaac3cec9b3c969",
+        "kind": "via",
+        "net": "GND",
+        "start": [
+          25.2313,
+          20.4005
+        ],
+        "tented": {
+          "B.Mask": true,
+          "F.Mask": true
+        },
+        "uuid": "1d7d67c9-5479-423b-93c7-fc2241ee104b",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          25.2313,
+          20.4005
+        ]
+      },
+      "distance_from_GND8_mm": 2.883343664914052,
+      "existing_return_owner": "C17.2 MCU +3V3_CORE decoupler return",
+      "new_branch_status": "Not routed or finite-checked. Join at barrel if evaluated; never force ESD current through the existing narrow component return."
+    },
+    {
+      "barrel": {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          26.1139,
+          20.6361
+        ],
+        "full_native_record_sha256": "260d6e105e2a4e002a6eb509fae9104cf882ca0f727bc25690a7b73ccb4036f8",
+        "kind": "via",
+        "net": "GND",
+        "start": [
+          26.1139,
+          20.6361
+        ],
+        "tented": {
+          "B.Mask": true,
+          "F.Mask": true
+        },
+        "uuid": "457a8423-4269-4280-8baf-c5c61175bb86",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          26.1139,
+          20.6361
+        ]
+      },
+      "distance_from_GND8_mm": 3.042445754652001,
+      "existing_return_owner": "U4.5 DPS368 barometer return",
+      "new_branch_status": "Not routed or finite-checked. Join at barrel if evaluated; never force ESD current through the existing narrow component return."
+    },
+    {
+      "barrel": {
+        "barrel_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "end": [
+          28.95,
+          18.225
+        ],
+        "full_native_record_sha256": "918d2db6af9edbe66cee3a522e0060b3f704b6e36ab5790114bd50d0e991c596",
+        "kind": "via",
+        "net": "GND",
+        "start": [
+          28.95,
+          18.225
+        ],
+        "tented": {
+          "B.Mask": true,
+          "F.Mask": true
+        },
+        "uuid": "aea4a48f-3d16-4660-9408-3afe064264ba",
+        "width": 0.45,
+        "width_by_layer": {
+          "B.Cu": 0.45,
+          "F.Cu": 0.45,
+          "In1.Cu": 0.45,
+          "In2.Cu": 0.45,
+          "In3.Cu": 0.45,
+          "In4.Cu": 0.45
+        },
+        "xy": [
+          28.95,
+          18.225
+        ]
+      },
+      "distance_from_GND8_mm": 3.0962366269392256,
+      "existing_return_owner": "U6.15 TPS63070 converter return",
+      "new_branch_status": "Not routed or finite-checked. Join at barrel if evaluated; never force ESD current through the existing narrow component return."
+    }
+  ],
+  "manufacturer_source": {
+    "revision": "SLVSBO7O, revised August 2024",
+    "scope": "Ground pins3/8 connect to board GND; layout example uses GND-plane vias. Passive TVS has no bias supply. The document does not qualify the proposed under-body contour, new barrel, loop impedance or ESD result.",
+    "sections": [
+      "Table4-2,p4",
+      "7.3 and7.4,p16",
+      "Figure7-11,p17"
+    ],
+    "url": "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf?ts=1755070916604"
+  },
+  "primary_bounded_strategy": {
+    "comparison_limit": "The nominal proposed centerline is shorter than the current trace chain, but loop area, shared return impedance and ESD performance are not computed.",
+    "condition": "Only after an actual IO4 access test attributes failure to this ground wall.",
+    "construction_obligations": [
+      "Actual GND3/8 custom copper and first outward segment stay connected by positive-area/full-width witness.",
+      "Both old wall segments are replaced together, never deleted merely to obtain signal reachability.",
+      "Choose a source-connected via center from exact six-layer copper, pad-mask, drill and edge constraints; fail this candidate if no legal external domain exists.",
+      "Complete the new .25 mm-or-wider F branch and plated main-plane contact before claiming the wall replaced.",
+      "Keep the old barrel as a GND plane stitch initially. If its removal is necessary, separately inventory and restore every actual all-layer/fill contact and affected return relationship.",
+      "Recheck IO4 upstream/downstream and all held TX, original C12/R3, flash/B and C-source accesses with the actual new ground route/barrel present."
+    ],
+    "intent": "Keep actual custom ground3/8 copper, retain first .25 mm outward segment, replace complete left/bottom return pair with a short .25 mm-or-wider branch to a legal dedicated external GND barrel.",
+    "length_change_mm": -1.2947368957575467,
+    "planning_polyline_mm": [
+      [
+        25.0825,
+        17.6
+      ],
+      [
+        24.5,
+        17.83
+      ],
+      [
+        24.0,
+        18.25
+      ]
+    ],
+    "planning_seed_barrel_xy": [
+      24.0,
+      18.25
+    ],
+    "seed_barrel_dimensions_mm": {
+      "diameter": 0.45,
+      "drill": 0.2,
+      "tented_back": true,
+      "tented_front": true
+    },
+    "seed_length_mm": 1.2792568310971273,
+    "seed_status": "Unvalidated target for a source-connected legal-barrel-domain assessment. Not a finite route, not a claimed legal center."
+  },
+  "right_side_option": {
+    "additional_held_obstacles": [
+      {
+        "barrel_layers": [],
+        "end": [
+          26.439779,
+          17.525666
+        ],
+        "full_native_record_sha256": "72f60fc70917705510f1941184d58c768716764277c7324d126d90926150975f",
+        "kind": "track",
+        "net": "PORT_C_TX_EXT",
+        "start": [
+          26.35,
+          17.1
+        ],
+        "uuid": "91b0f23d-768a-56f0-8af3-78157e00db87",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          26.400533,
+          19.628045
+        ],
+        "full_native_record_sha256": "9a7ae2aceedaa7c0ed70488467add9411c536c9bed154ca2cca585c4b36e8af2",
+        "kind": "track",
+        "net": "PORT_C_TX_EXT",
+        "start": [
+          26.439779,
+          17.525666
+        ],
+        "uuid": "3bb5c9c7-4710-5a5f-add4-120e3ca2de6e",
+        "width": 0.127,
+        "width_by_layer": {
+          "F.Cu": 0.127
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          26.78,
+          16.6
+        ],
+        "full_native_record_sha256": "26e69555d71e67e69b856dd5826b8d801a06f7e9fbc3e6215559f3df25ece560",
+        "kind": "track",
+        "net": "VX_PROTECTED",
+        "start": [
+          26.78,
+          18.25
+        ],
+        "uuid": "56088d34-3110-5572-9533-706f5c9edd25",
+        "width": 0.25,
+        "width_by_layer": {
+          "F.Cu": 0.25
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          27.2,
+          17.7
+        ],
+        "full_native_record_sha256": "b4e9a256eacfe5e02455fd88cddb0a8a47229855263f883157220071c4f2919b",
+        "kind": "track",
+        "net": "ABC_EN",
+        "start": [
+          27.2,
+          16.2
+        ],
+        "uuid": "dda19bed-cb27-4b2c-a977-ecb23f9e1744",
+        "width": 0.2,
+        "width_by_layer": {
+          "F.Cu": 0.2
+        }
+      },
+      {
+        "barrel_layers": [],
+        "end": [
+          28.11,
+          17.7
+        ],
+        "full_native_record_sha256": "06489f567308bb5191a56b940a26871cc3dde9ddef6f0de3a3c98635621f8d2a",
+        "kind": "track",
+        "net": "ABC_EN",
+        "start": [
+          27.2,
+          17.7
+        ],
+        "uuid": "339a06c3-76e9-4647-861f-d838dbaaf652",
+        "width": 0.2,
+        "width_by_layer": {
+          "F.Cu": 0.2
+        }
+      }
+    ],
+    "conclusion": "Do not select a right barrel without exact legal-domain evidence; it may require more donor scope than the southwest alternative.",
+    "existing_under_body_tie": "Already present as the native custom pad overlap; no added bridge is required for DC continuity.",
+    "immediate_all_layer_obstacle": {
+      "B_copper_and_mask_bounds_mm": [
+        25.859999,
+        17.4,
+        27.409999,
+        17.7
+      ],
+      "effect": "A nominal barrel immediately right of U15 GND8 intersects or approaches backside MCU VDD copper/mask; F-space alone does not establish feasibility.",
+      "physical_net": "+3V3_CORE",
+      "record": {
+        "barrel_layers": [],
+        "full_native_record_sha256": "edeb4edc410ecb3bef1f2057765ca3532ed99751190e58b0ec1078f3a0949c42",
+        "key": "U1.48",
+        "kind": "pad",
+        "net": "+3V3_CORE",
+        "uuid": "110885b9-95c2-4783-abf6-01a7d0c6a2df",
+        "xy": [
+          26.634999,
+          17.55
+        ]
+      }
+    },
+    "intent": "A .25 mm-or-wider outward F branch from actual GND8 to a legal external barrel could eliminate the left/bottom wall if it has a short complete route.",
+    "obstacle_scope": "TX/VX objects are cut in common90 but explicitly restored for the isolated channel prerequisite; ABC_EN is retained. Any further cut needs its complete original functional reconstruction."
+  },
+  "schema": "native7-U15-ground-return-alternatives-v1",
+  "sharing_assessment": "Existing neighboring barrels serve an ADC divider, MCU decouplers, a barometer or converter. They are not freely interchangeable with a local dedicated TVS return. Same-plane DC continuity does not prove equivalent transient common impedance. No shared-return candidate is selected.",
+  "source_board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+  "status": "read_only_exact_inventory_and_unvalidated_complete_return_strategy",
+  "wall_roles": [
+    {
+      "role": "Pad3 outward diagonal to wall corner; preserve initially if possible.",
+      "uuid": "ac132cca-ea4d-53a6-8376-a7cab37beb2b"
+    },
+    {
+      "role": "Left wall, x24.5,y17.83 to18.98.",
+      "uuid": "a08299df-6002-52fd-8f9e-27b83956263e"
+    },
+    {
+      "role": "Bottom wall to retained barrel at25.287,19.1104.",
+      "uuid": "c577b646-60c8-5101-b044-be71979ecce8"
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "schema": "f722-native7-C12-placement-functional-assessment/v1",
+  "status": "Read-only assessment of a proposed pose; no resulting route, loop, AC or assembly qualification",
+  "source": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "source_files": [
+    {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f"
+    },
+    {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505"
+    },
+    {
+      "path": "repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/hardware/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    {
+      "path": "repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/evidence/paired.net",
+      "sha256": "4b364b3bdc0d04a078441c96326e2e1a181accf9e21da0c29c0313d00bf1a38b"
+    },
+    {
+      "path": "ordinary-routing/tests/native13-access/native7_recovered_context_v3.py",
+      "sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf"
+    }
+  ],
+  "proposed_change": {
+    "reference": "C12",
+    "manufacturer": "Samsung Electro-Mechanics",
+    "mpn": "CL05B104KO5NNNC",
+    "value": "100 nF / 16 V / X7R",
+    "footprint": "F722_Heli:C_0402_1005Metric",
+    "old_pose": {
+      "xy": [
+        26.0625,
+        12.0
+      ],
+      "angle_degrees": -90,
+      "side": "F.Cu"
+    },
+    "proposed_pose": {
+      "xy": [
+        26.3125,
+        12.0
+      ],
+      "angle_degrees": -90,
+      "side": "F.Cu"
+    },
+    "translation_mm": [
+      0.25,
+      0
+    ],
+    "new_pad1_xy": [
+      26.3125,
+      11.52
+    ],
+    "new_pad2_xy": [
+      26.3125,
+      12.48
+    ],
+    "candidate_mechanical_or_routing_pass_claimed": false
+  },
+  "actual_pin_roles": {
+    "U2.5": "VDDIO",
+    "U2.6": "Power supply GND",
+    "U2.7": "Reserved; connect to GND",
+    "U2.8": "VDD",
+    "R3": "10 kohm IMU_CS pull-up from common filtered rail"
+  },
+  "capacitors": {
+    "C12": "100 nF VDD bypass, with direct existing U2.8 branch",
+    "C11": "10 nF, matching VDDIO bypass value; all three capacitors are on common +3V3_IMU rail",
+    "C13": "2.2 uF bulk VDD bypass; direct existing branch also feeds U2.5"
+  },
+  "actual_pads": [
+    {
+      "key": "C12.1",
+      "uuid": "556e7d4e-1f2d-4918-9c23-f3b2fe429a7a",
+      "net": "+3V3_IMU",
+      "xy": [
+        26.0625,
+        11.52
+      ]
+    },
+    {
+      "key": "C12.2",
+      "uuid": "618eefa7-fbe0-4cd8-9143-bf32b70af2a1",
+      "net": "GND",
+      "xy": [
+        26.0625,
+        12.48
+      ]
+    },
+    {
+      "key": "C11.1",
+      "uuid": "78e56bd1-0236-4321-9a39-3f8bf49a7e70",
+      "net": "+3V3_IMU",
+      "xy": [
+        26.1,
+        13.52
+      ]
+    },
+    {
+      "key": "C11.2",
+      "uuid": "d91b2e60-65ea-4e58-bcea-b97cfd7dcfdf",
+      "net": "GND",
+      "xy": [
+        26.1,
+        14.48
+      ]
+    },
+    {
+      "key": "C13.1",
+      "uuid": "3300d8dd-3c68-4596-8791-c63fa4e94d22",
+      "net": "+3V3_IMU",
+      "xy": [
+        22.984999,
+        14.2
+      ]
+    },
+    {
+      "key": "C13.2",
+      "uuid": "5c5a9d43-4e10-4377-8738-d6525fffd529",
+      "net": "GND",
+      "xy": [
+        24.534999,
+        14.2
+      ]
+    },
+    {
+      "key": "R3.1",
+      "uuid": "574672cf-21fb-4908-863d-64e090679c4d",
+      "net": "+3V3_IMU",
+      "xy": [
+        25.7,
+        10.01
+      ]
+    },
+    {
+      "key": "U2.5",
+      "uuid": "04c8d478-10ac-4179-a1c7-ea639a6a0c68",
+      "net": "+3V3_IMU",
+      "xy": [
+        22.709999,
+        12.5125
+      ]
+    },
+    {
+      "key": "U2.6",
+      "uuid": "18b5b6b9-bbe6-4c29-9292-22ecb0961660",
+      "net": "GND",
+      "xy": [
+        23.209999,
+        12.5125
+      ]
+    },
+    {
+      "key": "U2.7",
+      "uuid": "b6f8e7e5-ab86-4007-a33c-be6c62aecd9f",
+      "net": "GND",
+      "xy": [
+        23.709999,
+        12.5125
+      ]
+    },
+    {
+      "key": "U2.8",
+      "uuid": "428c6b06-7197-488b-8743-2ba1c68e2fa6",
+      "net": "+3V3_IMU",
+      "xy": [
+        24.372499,
+        12.35
+      ]
+    },
+    {
+      "key": "FB2.2",
+      "uuid": "cb5b7671-4947-46a2-9c56-c5f300292b86",
+      "net": "+3V3_IMU",
+      "xy": [
+        24.075,
+        15.5
+      ]
+    }
+  ],
+  "original_F_tracks": {
+    "U2_8_to_C12_supply": [
+      {
+        "uuid": "6e4facda-8a4c-4ac9-97af-92e3c0d9bd0a",
+        "points": [
+          [
+            24.372499,
+            12.35
+          ],
+          [
+            24.897499,
+            12.195
+          ]
+        ],
+        "width_mm": 0.2
+      },
+      {
+        "uuid": "d9731330-cda6-44f0-811a-9cdea7ea0676",
+        "points": [
+          [
+            24.897499,
+            12.195
+          ],
+          [
+            25.797499,
+            11.745
+          ]
+        ],
+        "width_mm": 0.2
+      },
+      {
+        "uuid": "97832e7d-4506-4ec6-bf89-d2db05e3cda8",
+        "points": [
+          [
+            25.797499,
+            11.745
+          ],
+          [
+            26.0625,
+            11.52
+          ]
+        ],
+        "width_mm": 0.2
+      }
+    ],
+    "C12_to_C11_supply": [
+      {
+        "uuid": "fb8288a2-c699-4368-a7ab-e4e79f4d7fa4",
+        "points": [
+          [
+            26.0625,
+            11.52
+          ],
+          [
+            26.6625,
+            12.27
+          ]
+        ],
+        "width_mm": 0.2
+      },
+      {
+        "uuid": "d7e5189c-e93c-4dd6-81a5-792b677fafb4",
+        "points": [
+          [
+            26.6625,
+            12.27
+          ],
+          [
+            26.5875,
+            12.87
+          ]
+        ],
+        "width_mm": 0.2
+      },
+      {
+        "uuid": "c8bef21f-ce0a-449d-b34b-a063ce5e7c32",
+        "points": [
+          [
+            26.5875,
+            12.87
+          ],
+          [
+            26.1,
+            13.52
+          ]
+        ],
+        "width_mm": 0.2
+      }
+    ],
+    "C12_to_R3_exclusive_supply": [
+      {
+        "uuid": "da1f25da-e0ad-4065-9e0c-44670c3de5fa",
+        "points": [
+          [
+            26.0625,
+            11.52
+          ],
+          [
+            25.7,
+            10.01
+          ]
+        ],
+        "width_mm": 0.2
+      }
+    ],
+    "C12_ground": [
+      {
+        "uuid": "3d128062-54a3-4fd3-ab3d-818e4ec84e57",
+        "points": [
+          [
+            26.0625,
+            12.48
+          ],
+          [
+            25.375,
+            12.9
+          ]
+        ],
+        "width_mm": 0.2
+      }
+    ],
+    "C11_ground": [
+      {
+        "uuid": "e6cfad7e-3585-4ac5-b26e-a6d5ffdf4863",
+        "points": [
+          [
+            26.1,
+            14.48
+          ],
+          [
+            25.575,
+            13.825
+          ]
+        ],
+        "width_mm": 0.2
+      },
+      {
+        "uuid": "d574d4ee-502e-4fdc-998e-679f88314698",
+        "points": [
+          [
+            25.575,
+            13.825
+          ],
+          [
+            25.375,
+            12.9
+          ]
+        ],
+        "width_mm": 0.2
+      }
+    ],
+    "C13_ground": [
+      {
+        "uuid": "936ee9f1-2570-529f-bf21-e04f9658609a",
+        "points": [
+          [
+            24.534999,
+            14.2
+          ],
+          [
+            25.39,
+            13.85
+          ]
+        ],
+        "width_mm": 0.254
+      },
+      {
+        "uuid": "28ec0d24-f9c9-59c6-a300-8560ee207aa6",
+        "points": [
+          [
+            25.39,
+            13.85
+          ],
+          [
+            25.375,
+            12.9
+          ]
+        ],
+        "width_mm": 0.254
+      }
+    ],
+    "U2_6_primary_ground": [
+      {
+        "uuid": "a4901cd4-da0d-44c6-8240-3a96cda6c6a9",
+        "points": [
+          [
+            23.209999,
+            12.5125
+          ],
+          [
+            23.21,
+            13.3625
+          ]
+        ],
+        "width_mm": 0.25
+      }
+    ],
+    "U2_7_reserved_ground": [
+      {
+        "uuid": "4223df22-2d39-5ef5-9cf9-d3763f2c0a3f",
+        "points": [
+          [
+            23.709999,
+            12.5125
+          ],
+          [
+            23.709999,
+            13.12
+          ]
+        ],
+        "width_mm": 0.254
+      },
+      {
+        "uuid": "14d3ed60-3c28-508f-87c3-df8ba9d86305",
+        "points": [
+          [
+            23.709999,
+            13.12
+          ],
+          [
+            23.7,
+            13.36
+          ]
+        ],
+        "width_mm": 0.254
+      }
+    ]
+  },
+  "retained_ground_barrels": [
+    {
+      "uuid": "3a66a0d8-a4b0-4282-9936-fdae79b412fc",
+      "xy": [
+        25.375,
+        12.9
+      ],
+      "role": "C11/C12/C13 shared capacitor ground",
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "tented_both": true
+    },
+    {
+      "uuid": "23f2b322-6468-4bbf-b0a8-6d4b51e76bbf",
+      "xy": [
+        23.21,
+        13.3625
+      ],
+      "role": "U2.6 primary GND",
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2
+    },
+    {
+      "uuid": "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+      "xy": [
+        23.7,
+        13.36
+      ],
+      "role": "U2.7 reserved-GND return",
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2
+    }
+  ],
+  "source_finite_contact_observations": {
+    "C12_1_track_overlap_area_mm2": {
+      "97832e7d-4506-4ec6-bf89-d2db05e3cda8": 0.08513145845444343,
+      "d9731330-cda6-44f0-811a-9cdea7ea0676": 0.015677726111522523,
+      "da1f25da-e0ad-4065-9e0c-44670c3de5fa": 0.07330037483875909,
+      "fb8288a2-c699-4368-a7ab-e4e79f4d7fa4": 0.08265053008479123
+    },
+    "C12_2_ground_leaf_overlap_area_mm2": 0.08421683466498539,
+    "C12_ground_leaf_contacts": {
+      "shared_barrel_overlap_area_mm2": 0.059180847325327066,
+      "C11_d574d4ee_overlap_area_mm2": 0.032344854637239975,
+      "C13_28ec0d24_overlap_area_mm2": 0.03827184381282532,
+      "C11_and_C13_overlap_outside_barrel_area_mm2": 0
+    },
+    "scope": "Small saved-native polygon intersections, no routing or domain rebuild; area values are evidence of source contact, not final full-width/drill-aware qualification."
+  },
+  "geometric_length_comparison_mm": {
+    "old_U2_8_to_C12_1_centerline": 1.9012691775216073,
+    "old_last_supply_leg": 0.34763562821005656,
+    "new_last_supply_leg_straight_distance_minimum": 0.5620062544144874,
+    "old_C12_ground_leaf": 0.8056402733230259,
+    "new_C12_ground_straight_distance_minimum": 1.027280998558817,
+    "old_supply_plus_cap_ground_sum": 2.706909450844633,
+    "new_supply_plus_cap_ground_sum_minimum": 3.1429208022848547,
+    "minimum_increase_with_held_endpoints": 0.4360113514402218,
+    "old_C12_to_C11_supply_chain": 2.3776379667373178,
+    "scope": "Centerline geometry only, assuming the retained U2.8 feed endpoint (25.797499,11.745) and ground barrel remain fixed. New quantities are Euclidean lower bounds, not constructed routes. Capacitor internal current path and plane return are excluded."
+  },
+  "manufacturer_placement_interpretation": "The verified guidance has no numerical 0.25 mm displacement prohibition. It requires close decoupling placement; accepting increased path length therefore requires actual loop/reference comparison. No manufacturer approval or latest-document equivalence is claimed.",
+  "inherited_guidance_departures": "The retained .20 mm via drill is 7.874 mil, below the verified application-note recommendation of larger than 8 mil. Existing under-body/lead geometry and previous AC limitations are not cleared by this placement assessment. The proposed move does not change those drills.",
+  "acceptance_checklist": [
+    "Preserve C12 part/value/footprint and exact 0.25 mm translation at unchanged orientation. Verify all moved copper, solder-mask, paste, courtyard and pad identities in the candidate native export.",
+    "Rebuild all three supply branches plus the .20 mm ground branch with full-width positive-area pad/retained-copper contacts. Restore every actual source contact group, including retained d9731330; losing its direct pad overlap is permissible only when the same complete U2.8 branch is positively reconnected.",
+    "Keep FB2.2, C11.1, C12.1, C13.1, R3.1, U2.5 and U2.8 in the intended physical filtered-rail component. Keep the R3 pull-up exclusive; do not turn its low-current leaf into the sole series feed for C12 or U2.",
+    "Preserve the independent U2.6 primary and U2.7 grounded-reserved returns. Validate the C12 branch landing on the shared barrel with drill-subtracted full-width/annular witnesses; identify any new shared C11/C13 copper outside that barrel.",
+    "Recompute the actual U2.8-C12 supply/ground loop geometry and reference-plane return path after refill, including minimum necks, annulus-to-plane continuity, neighboring signal antipads, and new common return impedance. Rebind C11/common-rail paths affected by the C12-to-C11 replacement; retain C13 connection evidence.",
+    "Use final routed lengths and actual capacitor/stackup assumptions for the local PDN/noise comparison. The geometric lower bounds below do not qualify inductance, loop area, transient noise, or assembly. The previously pending whole-board power/reference acceptance remains pending.",
+    "Pass combined-candidate clearance, drill/mask, source-terminal restoration and C/SPI/B peer gates. A local capacitor move must not be accepted solely because the RX separator opens."
+  ],
+  "official_sources": [
+    {
+      "title": "DS-000347 ICM-42688-P datasheet",
+      "revision_verified": "1.6",
+      "sections": "3.3.2 (supply noise), 4.1 (pin roles), 4.2-4.3 (bypass circuit/BOM)",
+      "url": "https://product.tdk.com/system/files/dam/doc/product/sensor/mortion-inertial/imu/data_sheet/ds-000347-icm-42688-p-v1.6.pdf",
+      "verification": "Official PDF text and circuit pages inspected. VDD uses 100 nF plus 2.2 uF; VDDIO uses 10 nF. Supply-noise specification is 10 mV peak-to-peak, with stated characterization conditions."
+    },
+    {
+      "title": "AN-000393 IMU PCB Design and MEMS Assembly Guidelines",
+      "revision_verified": "2.0 indexed official text",
+      "sections": "2.1, page 6",
+      "url": "https://invensense.tdk.com/wp-content/uploads/documentation/AN-000393_TDK-InvenSense-IMU-PCB-Design-and-MEMS-Assembly-Guidelines.pdf",
+      "verification": "Official indexed text inspected; direct PDF fetch unavailable. Close decoupler placement, separate VDD/VDDIO capacitors and fanout wider than 6 mil are specified. No numerical allowable capacitor displacement was found in this verified section."
+    },
+    {
+      "title": "Current ICM-42688-P product resources",
+      "url": "https://www.invensense.tdk.com/en-us/products/6-axis/icm-42688-p",
+      "listed_revisions": {
+        "DS-000347": "1.9",
+        "AN-000393": "2.4"
+      },
+      "verification": "Product page inspected. These latest downloadable document texts were not retrievable in this pass; no complete latest-revision review is claimed."
+    }
+  ],
+  "research_date_utc": "2026-10-10",
+  "router_native_solver_executed": false,
+  "board_or_source_mutated": false
+}

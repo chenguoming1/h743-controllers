@@ -1,0 +1,637 @@
+{
+  "schema": "f722-native7-IO4-complete-RX-down-conditional/v1",
+  "source": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "source_receipt": {
+    "path": "recovered-native7/recovery-C/native7-IO4-native-joint-v5.json",
+    "sha256": "28dc5cd0989d8d79ed1966ed4ff020a6a2da423a8b0d0e505a3a498bdb750079"
+  },
+  "scope_sha256": "fc49fffe346fff2be002bfddc8057f03aba3d36e6b33296b3bcfc544724ed1ca",
+  "routes": [
+    {
+      "kind": "track",
+      "name": "native-only-IO4-up-bonded-bridge",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "role": "upstream",
+      "layer": "F.Cu",
+      "points": [
+        [
+          25.0825,
+          18.6
+        ],
+        [
+          25.9175,
+          18.6
+        ]
+      ],
+      "width": 0.127
+    },
+    {
+      "kind": "track",
+      "name": "native-only-IO4-down-west-prefix",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "role": "downstream",
+      "layer": "F.Cu",
+      "points": [
+        [
+          25.0825,
+          18.6
+        ],
+        [
+          24.7,
+          18.6
+        ]
+      ],
+      "width": 0.127
+    },
+    {
+      "kind": "track",
+      "name": "native-IO4-RX-down-short-F-entry",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "layer": "F.Cu",
+      "points": [
+        [
+          24.7,
+          18.6
+        ],
+        [
+          25.245886,
+          19.085883
+        ]
+      ],
+      "width": 0.127,
+      "role": "downstream"
+    },
+    {
+      "kind": "track",
+      "name": "native-IO4-RX-down-inner-trunk",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "layer": "In2.Cu",
+      "points": [
+        [
+          25.245886,
+          19.085883
+        ],
+        [
+          28.963321,
+          20.840573
+        ]
+      ],
+      "width": 0.127,
+      "role": "downstream"
+    }
+  ],
+  "vias": [
+    {
+      "kind": "via",
+      "name": "native-IO4-RX-down-inner-source-via",
+      "net": "PORT_C_RX_EXT",
+      "logical_net": "PORT_C_RX_EXT",
+      "xy": [
+        25.245886,
+        19.085883
+      ],
+      "diameter": 0.45,
+      "drill": 0.2,
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "tented_front": true,
+      "tented_back": true,
+      "role": "downstream"
+    }
+  ],
+  "checks": [
+    {
+      "name": "native-IO4-RX-down-inner-source-via",
+      "passed": true,
+      "nearest": [
+        {
+          "object": "2693b810-86f1-4589-8ad8-3c1875fa9fa5",
+          "uuid": "2693b810-86f1-4589-8ad8-3c1875fa9fa5",
+          "net": "+3V3_CORE",
+          "kind": "track",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.225,
+          "required_center_distance_mm": 0.352,
+          "center_distance_mm": 0.38587729649721575,
+          "physical_gap_mm": 0.16087729649721574,
+          "extra_clearance_mm": 0.03387729649721577,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.316162,
+            19.465307
+          ]
+        },
+        {
+          "object": "U1.49",
+          "uuid": "0b667c75-0804-4b48-8848-c32cae26b7b0",
+          "net": "SWCLK",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.225,
+          "required_center_distance_mm": 0.352,
+          "center_distance_mm": 0.38588700000000037,
+          "physical_gap_mm": 0.16088700000000036,
+          "extra_clearance_mm": 0.03388700000000039,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            24.859999,
+            19.085883
+          ]
+        },
+        {
+          "object": "18aaad27-d43b-4840-8637-ba8b4845e52f",
+          "uuid": "18aaad27-d43b-4840-8637-ba8b4845e52f",
+          "net": "+3V3_CORE",
+          "kind": "track",
+          "category": "foreign_copper",
+          "layers": [
+            "In3.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.225,
+          "required_center_distance_mm": 0.352,
+          "center_distance_mm": 0.3875048229691362,
+          "physical_gap_mm": 0.16250482296913618,
+          "extra_clearance_mm": 0.03550482296913621,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.34836675343806,
+            19.45959101837679
+          ]
+        },
+        {
+          "object": "U15.5",
+          "uuid": "dddece5c-5254-4426-8e4c-1fb5f9e85655",
+          "net": "PORT_C_RX_EXT::downstream",
+          "kind": "pad",
+          "category": "all_smt_masks_no_net_exception",
+          "layers": [
+            "F.Mask"
+          ],
+          "required_physical_gap_mm": 0.2,
+          "moving_radius_mm": 0.1,
+          "required_center_distance_mm": 0.30000000000000004,
+          "center_distance_mm": 0.33588384997941545,
+          "physical_gap_mm": 0.23588384997941544,
+          "extra_clearance_mm": 0.035883849979415405,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.245885280523833,
+            18.749999150021353
+          ]
+        },
+        {
+          "object": "TP2.1",
+          "uuid": "b9378691-4617-46c1-b66d-1f92b144f569",
+          "net": "SWCLK",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "layers": [
+            "B.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.225,
+          "required_center_distance_mm": 0.352,
+          "center_distance_mm": 0.4001411681580001,
+          "physical_gap_mm": 0.1751411681580001,
+          "extra_clearance_mm": 0.048141168158000125,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.503071451574122,
+            19.392425978966184
+          ]
+        }
+      ]
+    },
+    {
+      "name": "native-IO4-RX-down-short-F-entry",
+      "passed": true,
+      "width_mm": 0.127,
+      "nearest": [
+        {
+          "object": "native-only-IO4-up-bonded-bridge",
+          "uuid": "native-only-IO4-up-bonded-bridge",
+          "net": "PORT_C_RX_EXT::upstream",
+          "kind": "track",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.3934673805114683,
+          "physical_gap_mm": 0.3299673805114683,
+          "extra_clearance_mm": 0.2029673805114683,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.101545585493714,
+            18.95740827520113
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.36314682395535,
+            18.663501195392058
+          ]
+        },
+        {
+          "object": "C17.2",
+          "uuid": "53ee35eb-b575-4309-a918-0243af3f509c",
+          "net": "GND",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.4121906390518838,
+          "physical_gap_mm": 0.3486906390518838,
+          "extra_clearance_mm": 0.2216906390518838,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.317107,
+            19.491874
+          ]
+        },
+        {
+          "object": "U15.4",
+          "uuid": "78672a31-798b-4380-80cb-64d9fd1af6a3",
+          "net": "unconnected-(U15-IO3-Pad4)",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.42433894544927225,
+          "physical_gap_mm": 0.36083894544927225,
+          "extra_clearance_mm": 0.23383894544927225,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            24.7,
+            18.6
+          ],
+          "witness_on_native_obstacle_mm": [
+            24.834975,
+            18.1977
+          ]
+        },
+        {
+          "object": "U15.6",
+          "uuid": "af34758d-03d4-4898-8fb1-2be5765ea280",
+          "net": "PORT_C_RX_EXT::upstream",
+          "kind": "pad",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.5687114812846658,
+          "physical_gap_mm": 0.5052114812846658,
+          "extra_clearance_mm": 0.37821148128466575,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.649638,
+            18.685362
+          ]
+        },
+        {
+          "object": "5e1b3288-091e-43d9-9d9b-fe98b2f77b4c",
+          "uuid": "5e1b3288-091e-43d9-9d9b-fe98b2f77b4c",
+          "net": "GND",
+          "kind": "track",
+          "category": "foreign_copper",
+          "layers": [
+            "F.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.6265138377365002,
+          "physical_gap_mm": 0.5630138377365002,
+          "extra_clearance_mm": 0.43601383773650015,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            25.245886,
+            19.085883
+          ],
+          "witness_on_native_obstacle_mm": [
+            25.441097298631604,
+            19.681208236960334
+          ]
+        }
+      ],
+      "routing_attempts": [
+        {
+          "result": "exact_simple_centerline"
+        }
+      ],
+      "full_width_endpoint_contacts": [
+        {
+          "retained_uuid": "native-only-IO4-down-west-prefix",
+          "actual_pad": null,
+          "point": [
+            24.7,
+            18.6
+          ],
+          "layer": "F.Cu",
+          "cross_section_mm": 0.12699999999999984,
+          "required_width_mm": 0.127,
+          "section_wkb_hex": "010200000002000000D0FE550B02BE3840E3551712758D32409667105B64A8384051DD1B21BEA53240",
+          "passed": true
+        },
+        {
+          "retained_uuid": "native-IO4-RX-down-inner-source-via",
+          "actual_pad": null,
+          "point": [
+            25.245886,
+            19.085883
+          ],
+          "layer": "F.Cu",
+          "cross_section_mm": 0.12699999999999984,
+          "required_width_mm": 0.127,
+          "section_wkb_hex": "010200000002000000B7BF658A23343940008C26F520223340F156AB3AC1493940920422E6D7093340",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "native-IO4-RX-down-inner-trunk",
+      "passed": true,
+      "width_mm": 0.127,
+      "nearest": [
+        {
+          "object": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+          "uuid": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+          "net": "GND",
+          "kind": "via",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.3753950191744405,
+          "physical_gap_mm": 0.3118950191744405,
+          "extra_clearance_mm": 0.1848950191744405,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            28.724633115346226,
+            20.727908422321267
+          ],
+          "witness_on_native_obstacle_mm": [
+            28.884872,
+            20.388431
+          ]
+        },
+        {
+          "object": "74a8e643-08f1-4abf-bfda-30cbac6cc41a",
+          "uuid": "74a8e643-08f1-4abf-bfda-30cbac6cc41a",
+          "net": "+3V3_CORE",
+          "kind": "via",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.3904098537481308,
+          "physical_gap_mm": 0.3269098537481308,
+          "extra_clearance_mm": 0.1999098537481308,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            26.918456027616408,
+            19.875363354534304
+          ],
+          "witness_on_native_obstacle_mm": [
+            26.751808,
+            20.228419
+          ]
+        },
+        {
+          "object": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+          "uuid": "edc8e9fe-0f2a-4e73-bb68-e6ccca885bd5",
+          "net": "GND",
+          "kind": "via",
+          "category": "foreign_drill_to_track_copper",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "required_physical_gap_mm": 0.2,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.2635,
+          "center_distance_mm": 0.5003960726058935,
+          "physical_gap_mm": 0.43689607260589347,
+          "extra_clearance_mm": 0.23689607260589346,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            28.72487890931176,
+            20.728024441085115
+          ],
+          "witness_on_native_obstacle_mm": [
+            28.938475,
+            20.275506
+          ]
+        },
+        {
+          "object": "74a8e643-08f1-4abf-bfda-30cbac6cc41a",
+          "uuid": "74a8e643-08f1-4abf-bfda-30cbac6cc41a",
+          "net": "+3V3_CORE",
+          "kind": "via",
+          "category": "foreign_drill_to_track_copper",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "required_physical_gap_mm": 0.2,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.2635,
+          "center_distance_mm": 0.5154109071795838,
+          "physical_gap_mm": 0.4519109071795838,
+          "extra_clearance_mm": 0.2519109071795838,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            26.918210233650875,
+            19.875247335770457
+          ],
+          "witness_on_native_obstacle_mm": [
+            26.698205,
+            20.341344
+          ]
+        },
+        {
+          "object": "a53ae213-d094-4ff6-9d79-fc319bad9c1a",
+          "uuid": "a53ae213-d094-4ff6-9d79-fc319bad9c1a",
+          "net": "+3V3_CORE",
+          "kind": "via",
+          "category": "foreign_copper",
+          "layers": [
+            "In2.Cu"
+          ],
+          "required_physical_gap_mm": 0.127,
+          "moving_radius_mm": 0.0635,
+          "required_center_distance_mm": 0.1905,
+          "center_distance_mm": 0.5873444476660334,
+          "physical_gap_mm": 0.5238444476660334,
+          "extra_clearance_mm": 0.39684444766603344,
+          "pass_nominal": true,
+          "pass_with_polygon_error": true,
+          "witness_on_moving_centerline_mm": [
+            27.009402643190874,
+            19.918291641614605
+          ],
+          "witness_on_native_obstacle_mm": [
+            27.260113,
+            19.387144
+          ]
+        }
+      ],
+      "routing_attempts": [
+        {
+          "result": "exact_simple_centerline"
+        }
+      ],
+      "full_width_endpoint_contacts": [
+        {
+          "retained_uuid": "native-IO4-RX-down-inner-source-via",
+          "actual_pad": null,
+          "point": [
+            25.245886,
+            19.085883
+          ],
+          "layer": "In2.Cu",
+          "cross_section_mm": 0.12700000000000153,
+          "required_width_mm": 0.127,
+          "section_wkb_hex": "010200000002000000008EDEC0E2453940619DDB1049073340A88832040238394031F36CCAAF243340",
+          "passed": true
+        },
+        {
+          "retained_uuid": "1dbe666a-7f4b-5890-96e7-94deacbdeda9",
+          "actual_pad": null,
+          "point": [
+            28.963321,
+            20.840573
+          ],
+          "layer": "In2.Cu",
+          "cross_section_mm": 0.12700000000000153,
+          "required_width_mm": 0.127,
+          "section_wkb_hex": "010200000002000000228A28D6ABEF3C4076919127E3E534407A8FD4928CFD3C40A63B006E7CC83440",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "full_RX_down_target_connected": true,
+  "other_functions_pending": [
+    "RX_up",
+    "TX_up",
+    "HOLD",
+    "U15_GND"
+  ],
+  "selected": false
+}

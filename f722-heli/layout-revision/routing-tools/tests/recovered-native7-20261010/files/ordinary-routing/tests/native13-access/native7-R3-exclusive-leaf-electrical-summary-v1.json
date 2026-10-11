@@ -1,0 +1,341 @@
+{
+  "schema": "f722-native7-R3-exclusive-leaf-electrical-summary/v1",
+  "source": {
+    "schema": "f722-recovered-native7-context-binding/v1",
+    "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+    "native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+    "transaction_sha256": "b7ca08e59b4316c8a88c0ff9d3c0fe3cffac4d0f0ad2b407028cd1ef3050f497",
+    "logical_map_sha256": "a1175806ea39f0212f67e13b760782838c858dbaf285f6e4ac8919994e7364c0",
+    "adapter_sha256": "981a753c8f2df863cd358aa7f4d7ed8ef57100ccdf516e73f31690ac0ae151cf",
+    "input_paths": {
+      "board": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "native": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "transaction": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/selected-transaction.json",
+      "logical_map": "/workspace/scratch/8a35c1f26232/f722-layout-rebuild/repo/f722-heli/layout-revision/checkpoints/joint-native7-20261010/repro/logical-route-map.json"
+    },
+    "helper_sha256": {
+      "geometry": "ff10a432b973733209ca11fc84d4adde463ea4f7bc681d4bab712104535c2aa3",
+      "context": "95fc032ac4011985bced19296e719e17a5a4a904321f86369982bcc34bdb4482",
+      "route": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "graph": "3d21c3b9cd61863db02c6309f6cb493264a9ffaeb7d82457240d5f163775077c"
+    },
+    "candidate_base": "published-reference02",
+    "new_proposals_selected": false,
+    "historical_v25_v26_bytes_recovered": false,
+    "native_record_count": 2384,
+    "pads": 558,
+    "native_records_preserved_without_alias_renaming": true,
+    "role_metadata_kept_separately": true,
+    "check_track_requires_actual_width": true,
+    "native_polygons_repaired": false,
+    "finite_reference_electrical_checks_pending_for_new_proposals": true
+  },
+  "board_sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f",
+  "parts_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+  "script_sha256": "c4e555f595283201ac897d569e42991376e76dee89d395e89cc3df07514047ed",
+  "selected": false,
+  "R3_part": {
+    "manufacturer": "UNI-ROYAL (Uniroyal Elec)",
+    "mpn": "0402WGF1002TCE",
+    "jlcpcb_lcsc_code": "C25744",
+    "proposed_footprint": "F722_Heli:R_0402_1005Metric",
+    "evidence_file": "validation/passive-bom-proposals.json",
+    "datasheet_url": "",
+    "supplier_url": "https://jlcpcb.com/partdetail/26487-0402WGF1002TCE/C25744"
+  },
+  "R3_footprint": {
+    "ref": "R3",
+    "value": "10k / 1%",
+    "fpid": "F722_Heli:R_0402_1005Metric",
+    "xy": [
+      25.7,
+      9.5
+    ],
+    "angle": 90.0,
+    "side": "F.Cu"
+  },
+  "original_leaf_length_mm": 1.552902524307305,
+  "source_component_count": 1,
+  "component_count_without_leaf": 2,
+  "isolated_R3_supply_component_record_ids": [
+    "574672cf-21fb-4908-863d-64e090679c4d"
+  ],
+  "main_supply_component_actual_pads": [
+    "C11.1",
+    "C12.1",
+    "C13.1",
+    "FB2.2",
+    "U2.5",
+    "U2.8"
+  ],
+  "exclusive_R3_load_confirmed": true,
+  "stackup_copper_thickness_mm": {
+    "F.Cu": 0.035,
+    "In1.Cu": 0.0152,
+    "In2.Cu": 0.0152,
+    "In3.Cu": 0.0152,
+    "In4.Cu": 0.0152,
+    "B.Cu": 0.035
+  },
+  "current_assumptions": {
+    "maximum_normal_rail_V": 3.6,
+    "minimum_CS_node_normal_V": 0,
+    "resistor_nominal_ohm": 10000,
+    "initial_tolerance_fraction": 0.01,
+    "series_TCR_ppm_per_C": 100,
+    "maximum_absolute_temperature_offset_from_25C": 65,
+    "minimum_resistance_with_tolerance_and_TCR_ohm": 9835.65,
+    "normal_current_upper_A": 0.0003660154641533605,
+    "simple_25C_tolerance_current_A": 0.00036363636363636367,
+    "calculation_current_envelope_A": 0.0004,
+    "scope": "Normal pull-up branch current only. Material tolerance/TCR values are source-bound assumptions; aging, fault and AC qualification are not asserted."
+  },
+  "copper_assumptions": {
+    "rho20_ohm_mm2_per_m": 0.017241,
+    "temperature_slope_ohm_mm2_per_m_per_K": 6.8e-05,
+    "formula": "R = rho(T) * length_m / (width_mm * thickness_mm)",
+    "conductivity": "100% IACS annealed-copper reference, not a measured fabricated-board guarantee",
+    "geometry": "Nominal finished design width and declared board copper thickness. Supplier etch/plating tolerance and any future via resistance require actual candidate binding."
+  },
+  "resistance_drop_envelope": [
+    {
+      "layer": "F.Cu",
+      "copper_thickness_mm": 0.035,
+      "width_mm": 0.127,
+      "copper_temperature_C": 20,
+      "resistance_ohm_per_mm": 0.0038787401574803147,
+      "example_length_mm": 10,
+      "example_resistance_ohm": 0.03878740157480315,
+      "drop_V_at_0_4mA_per_mm": 1.5514960629921259e-06,
+      "example_drop_V_at_0_4mA": 1.551496062992126e-05,
+      "example_dissipation_W_at_0_4mA": 6.205984251968503e-09
+    },
+    {
+      "layer": "F.Cu",
+      "copper_thickness_mm": 0.035,
+      "width_mm": 0.127,
+      "copper_temperature_C": 85,
+      "resistance_ohm_per_mm": 0.004873115860517436,
+      "example_length_mm": 10,
+      "example_resistance_ohm": 0.04873115860517436,
+      "drop_V_at_0_4mA_per_mm": 1.9492463442069745e-06,
+      "example_drop_V_at_0_4mA": 1.9492463442069743e-05,
+      "example_dissipation_W_at_0_4mA": 7.796985376827897e-09
+    },
+    {
+      "layer": "In2.Cu",
+      "copper_thickness_mm": 0.0152,
+      "width_mm": 0.127,
+      "copper_temperature_C": 20,
+      "resistance_ohm_per_mm": 0.008931309573145462,
+      "example_length_mm": 10,
+      "example_resistance_ohm": 0.08931309573145461,
+      "drop_V_at_0_4mA_per_mm": 3.572523829258185e-06,
+      "example_drop_V_at_0_4mA": 3.572523829258185e-05,
+      "example_dissipation_W_at_0_4mA": 1.4290095317032739e-08
+    },
+    {
+      "layer": "In2.Cu",
+      "copper_thickness_mm": 0.0152,
+      "width_mm": 0.127,
+      "copper_temperature_C": 85,
+      "resistance_ohm_per_mm": 0.011220990468296726,
+      "example_length_mm": 10,
+      "example_resistance_ohm": 0.11220990468296727,
+      "drop_V_at_0_4mA_per_mm": 4.488396187318691e-06,
+      "example_drop_V_at_0_4mA": 4.4883961873186905e-05,
+      "example_dissipation_W_at_0_4mA": 1.795358474927476e-08
+    }
+  ],
+  "sources": [
+    {
+      "title": "TDK ICM-42688-P product specifications; VDD/VDDIO1.71\u20133.6V and operating-40\u201385C",
+      "url": "https://product.tdk.com/en/search/sensor/mortion-inertial/imu/info?part_no=ICM-42688-P"
+    },
+    {
+      "title": "Uniroyal general thick-film 0402 >10ohm series; +/-100ppm/C",
+      "url": "https://www.uni-royal.cn/en/product.php?s=Thick+Film+Chip+Resistors"
+    },
+    {
+      "title": "Royalohm thick-film chip resistor datasheet",
+      "url": "https://www.royalohm.com/assets/pdf/products/smd/1.pdf"
+    },
+    {
+      "title": "Copper Information Center IACS resistivity and temperature coefficient",
+      "url": "https://help.copper.fyi/hc/en-us/articles/4410229175442-How-does-copper-set-the-standard-for-electrical-conductivity"
+    }
+  ],
+  "conclusion": "A .127 mm complete replacement of only this exclusive R3 pull-up supply leaf has negligible calculated DC drop/heating under the declared copper/current assumptions. Its inherited .20 mm width is not established as a current-capacity requirement. All other IMU feeds/returns keep their declared widths. This does not qualify routing, AC/reference, assembly or manufacturing.",
+  "seconds": 1.8563370829997439,
+  "raw_receipt": {
+    "path": "ordinary-routing/tests/native13-access/native7-R3-pullup-leaf-electrical-v2.json",
+    "sha256": "656e90b948ff0d246c1cc8c163fec37a2ff98fd513ae2b041941fc10fb7590ec",
+    "bytes": 225464
+  },
+  "original_supply_leaf_record": {
+    "uuid": "da1f25da-e0ad-4065-9e0c-44670c3de5fa",
+    "kind": "track",
+    "net": "+3V3_IMU",
+    "net_code": 47,
+    "start": [
+      26.0625,
+      11.52
+    ],
+    "end": [
+      25.7,
+      10.01
+    ],
+    "width": 0.2,
+    "plated": false,
+    "barrel_layers": [],
+    "width_by_layer": {
+      "F.Cu": 0.2
+    },
+    "full_native_record_sha256": "547757a751b0165f556aebf1b8f5322270f8d135c0230e09e1d0ef7be8a29f2d"
+  },
+  "positive_area_leaf_contacts": [
+    {
+      "uuid": "556e7d4e-1f2d-4918-9c23-f3b2fe429a7a",
+      "key": "C12.1",
+      "kind": "pad",
+      "overlap_area_mm2": 0.07330037483875909,
+      "record": {
+        "uuid": "556e7d4e-1f2d-4918-9c23-f3b2fe429a7a",
+        "kind": "pad",
+        "footprint_uuid": "66888241-01b1-4318-a456-84eb74a889fb",
+        "ref": "C12",
+        "number": "1",
+        "key": "C12.1",
+        "net": "+3V3_IMU",
+        "net_code": 47,
+        "xy": [
+          26.0625,
+          11.52
+        ],
+        "angle": 270.0,
+        "size": [
+          0.56,
+          0.62
+        ],
+        "offset": [
+          0.0,
+          0.0
+        ],
+        "attribute": 1,
+        "smd": true,
+        "npth": false,
+        "plated": false,
+        "all_layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "shape_by_layer": {
+          "F.Cu": 4
+        },
+        "barrel_layers": [],
+        "full_native_record_sha256": "dabade5b71323e5f9b468ea3af7da030be51d3e3df92b85de60198b5bdf9c572"
+      }
+    },
+    {
+      "uuid": "574672cf-21fb-4908-863d-64e090679c4d",
+      "key": "R3.1",
+      "kind": "pad",
+      "overlap_area_mm2": 0.07124343689214861,
+      "record": {
+        "uuid": "574672cf-21fb-4908-863d-64e090679c4d",
+        "kind": "pad",
+        "footprint_uuid": "5520f34a-a0f7-4313-8236-35d6539cfd75",
+        "ref": "R3",
+        "number": "1",
+        "key": "R3.1",
+        "net": "+3V3_IMU",
+        "net_code": 47,
+        "xy": [
+          25.7,
+          10.01
+        ],
+        "angle": 90.0,
+        "size": [
+          0.54,
+          0.64
+        ],
+        "offset": [
+          0.0,
+          0.0
+        ],
+        "attribute": 1,
+        "smd": true,
+        "npth": false,
+        "plated": false,
+        "all_layers": [
+          "F.Cu",
+          "F.Mask",
+          "F.Paste"
+        ],
+        "shape_by_layer": {
+          "F.Cu": 4
+        },
+        "barrel_layers": [],
+        "full_native_record_sha256": "6394b8db6f250146c6174b21ec2c5f45543d214aa0bedf8595faeb7a0ed5f60b"
+      }
+    },
+    {
+      "uuid": "97832e7d-4506-4ec6-bf89-d2db05e3cda8",
+      "key": null,
+      "kind": "track",
+      "overlap_area_mm2": 0.032053321434782595,
+      "record": {
+        "uuid": "97832e7d-4506-4ec6-bf89-d2db05e3cda8",
+        "kind": "track",
+        "net": "+3V3_IMU",
+        "net_code": 47,
+        "start": [
+          25.797499,
+          11.745
+        ],
+        "end": [
+          26.0625,
+          11.52
+        ],
+        "width": 0.2,
+        "plated": false,
+        "barrel_layers": [],
+        "width_by_layer": {
+          "F.Cu": 0.2
+        },
+        "full_native_record_sha256": "dca853e304e11b955faebcecd85cfbb68064f6ac4feb1999ce5f8f251c7add41"
+      }
+    },
+    {
+      "uuid": "fb8288a2-c699-4368-a7ab-e4e79f4d7fa4",
+      "key": null,
+      "kind": "track",
+      "overlap_area_mm2": 0.031453901130614775,
+      "record": {
+        "uuid": "fb8288a2-c699-4368-a7ab-e4e79f4d7fa4",
+        "kind": "track",
+        "net": "+3V3_IMU",
+        "net_code": 47,
+        "start": [
+          26.0625,
+          11.52
+        ],
+        "end": [
+          26.6625,
+          12.27
+        ],
+        "width": 0.2,
+        "plated": false,
+        "barrel_layers": [],
+        "width_by_layer": {
+          "F.Cu": 0.2
+        },
+        "full_native_record_sha256": "e1e12455671ee7a07d1727f2e637c793854bce0b4552505d4d76fe5c2addcfc5"
+      }
+    }
+  ],
+  "actual_new_route_length_mm": null,
+  "actual_new_route_drop_V": null,
+  "length_binding_note": "Only the original leaf and a 10 mm calculation example are measured/calculated. The attempted replacement never completed; no actual new-route DC drop is claimed."
+}
