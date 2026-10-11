@@ -1,0 +1,171 @@
+{
+  "current_failed_outcome": {
+    "all_source_files_unchanged": true,
+    "path": "recovered-native7/recovery-flash/native7-R32-translation-complete-result-v7.json",
+    "phase": "complete_ABC_before_B_EXT_and_TX_source_entry",
+    "sha256": "1b68abaad02aca6f3aafbc0ddf09222e97b472c766ac9b07ba87ea01529210dd",
+    "terminal_reason": "The two declared complete ABC crossover cells produced no guarded physical tree",
+    "trials": [
+      {
+        "ABC_tree_physically_complete": true,
+        "choice": {
+          "cell": {
+            "area_mm2": 0.11803885338457866,
+            "bounds": [
+              33.00889248255903,
+              24.553800253146253,
+              33.48188456569366,
+              24.92089
+            ],
+            "wkb_sha256": "ffbfa7222fd64cc662473652fd805420eef75ec51895169afd14659a31147d7b"
+          },
+          "cell_boundary_margin_mm": 0.16319079450623902,
+          "distance_to_actual_target_mm": 15.628281456023627,
+          "middle_layer": "In3.Cu",
+          "second_xy": [
+            39.211138,
+            16.182573
+          ],
+          "source_layer": "F.Cu",
+          "target_layer": "In2.Cu",
+          "xy": [
+            33.248084,
+            24.757694
+          ]
+        },
+        "complete_guard_passed": false,
+        "contacts_passed": true,
+        "finite_object_checks_passed": true,
+        "index": 0,
+        "peer_demand_cut_count": 10,
+        "peer_demand_cuts": [
+          "FLASH_SCK",
+          "FLASH_MISO",
+          "FLASH_MOSI",
+          "PORT_C_TX_MCU",
+          "PORT_B_RX_MCU",
+          "PORT_C_RX_EXT::downstream",
+          "PORT_C_RX_EXT::upstream",
+          "PORT_C_TX_EXT::downstream",
+          "PORT_C_TX_EXT::upstream",
+          "PORT_B_RX_EXT::downstream"
+        ],
+        "rolled_back_entire_batch": true,
+        "snapshot_sha256": "f92e0ce2b560b33fe85f57f0daf5c6400f7c0695dfd35136a4889b2a43c75ee7",
+        "terminal_reason": "Complete ABC crossover consumes another whole demand"
+      },
+      {
+        "ABC_tree_physically_complete": true,
+        "choice": {
+          "cell": {
+            "area_mm2": 0.2656571708053611,
+            "bounds": [
+              36.886829472203935,
+              24.13845497630646,
+              37.90431966906983,
+              24.653679274661773
+            ],
+            "wkb_sha256": "1c1cda23a3f870dd0b9f47322f89fc84dc9394ba633fd8a9f6761437b27b3f30"
+          },
+          "cell_boundary_margin_mm": 0.20512557671396497,
+          "distance_to_actual_target_mm": 15.714411213706388,
+          "middle_layer": "In3.Cu",
+          "second_xy": [
+            39.211138,
+            16.182573
+          ],
+          "source_layer": "F.Cu",
+          "target_layer": "In2.Cu",
+          "xy": [
+            37.667794,
+            24.442295
+          ]
+        },
+        "complete_guard_passed": false,
+        "contacts_passed": true,
+        "finite_object_checks_passed": true,
+        "index": 1,
+        "peer_demand_cut_count": 10,
+        "peer_demand_cuts": [
+          "FLASH_SCK",
+          "FLASH_MISO",
+          "FLASH_MOSI",
+          "PORT_C_TX_MCU",
+          "PORT_B_RX_MCU",
+          "PORT_C_RX_EXT::downstream",
+          "PORT_C_RX_EXT::upstream",
+          "PORT_C_TX_EXT::downstream",
+          "PORT_C_TX_EXT::upstream",
+          "PORT_B_RX_EXT::downstream"
+        ],
+        "rolled_back_entire_batch": true,
+        "snapshot_sha256": "7634dd6492e088373ea4038704fdd39706431d191c14cce88d11ab5faf1c97de",
+        "terminal_reason": "Complete ABC crossover consumes another whole demand"
+      }
+    ]
+  },
+  "current_source_contract": {
+    "bindings": 288,
+    "path": "recovered-native7/recovery-flash/native7-R32-translation-complete-contract-v7.json",
+    "sha256": "56652d4741e3ad408b63927a3f8a63dc538da49674e2bd0f22d57c457db5f8ac"
+  },
+  "engineering_code_executed_during_packaging": false,
+  "erratum": {
+    "correction": "v1 inherited dispatch ignored B_RX_EXT and evaluated the whole true net. That protected all12 positive is invalid and is not reused. Corrected v2+ role-specific dispatch requires the actual U14.4 to R32.1 downstream branch; final true-net and actual-TVS IO cuts remain strict.",
+    "invalid_v1_protected_B_RX_all12_claim": {
+      "claim_limit": "B_RX intermediate graph used whole true net because inherited C dispatch did not recognize B_RX_EXT. The saved finite TX route/failure remains evidence, but no protected all12 positive is reused.",
+      "path": "recovered-native7/recovery-flash/native7-R32-translation-complete-result-v1.json",
+      "sha256": "727167b0f2ad4712ce56a766c53028d5567d858776f433646a23119baf3e6fd3"
+    },
+    "role_controls_path": "recovered-native7/recovery-flash/native7-R32-translation-role-static-controls-v2.json"
+  },
+  "limits": {
+    "U15_R32_paired_native_parity": "pending",
+    "checked_native_opens": 7,
+    "complete_planning_witness": false,
+    "final_DRC_ERC_power_and_exports": "pending",
+    "manufacturing_ready": false,
+    "native_board_and_schematic_edits": false,
+    "new_native_trial": false,
+    "power_qualification": "stale"
+  },
+  "newer_work_excluded": true,
+  "positive_checkpoint": {
+    "R32_pose": {
+      "angle": 270,
+      "side": "F.Cu",
+      "xy": [
+        23.55,
+        19.5
+      ]
+    },
+    "contact_exception": "Only R32-relief-held-TX-upstream-via may remain a finite isolated circle in intermediate joint-attachment, ABC and B_EXT checkpoints before its actual TX source entry. All other new barrels and route endpoints have full contacts; the exact exception disappears after TX entry and at final completion.",
+    "finite_contact_support_passed": true,
+    "guard_passed": true,
+    "native_cuts": 68,
+    "path": "recovered-native7/recovery-flash/native7-R32-translation-checkpoint-00-v3.json",
+    "recipes": 46,
+    "sha256": "d4de200a581fc5c9af088abd23d3ba861adbbe3f160999616b9846161467b43d",
+    "snapshot_sha256": "f4fccd1a1a6acbb63537b6831eaf9911a5c67abf26f6cad03a62398dfdc8259b",
+    "stage": "Early jointly held transition barrels all have actual terminal contacts",
+    "temporary_unlanded_barrel": "R32-relief-held-TX-upstream-via",
+    "tracks": 29,
+    "vias": 17
+  },
+  "required_bound_historical_bytes_included": true,
+  "schema": "f722-r32-source-only-checkpoint-summary/v1",
+  "scope": "SOURCE-ONLY recovery milestone; incomplete layout",
+  "storage": {
+    "combined_workspace_paths": 454,
+    "contract_dependencies": 288,
+    "engineering_code_executed": false,
+    "max_raw_chunk_bytes": 7999999,
+    "overlay_paths": 84,
+    "overlay_uncompressed_bytes": 80004948,
+    "previous_complete_restore_paths": 370,
+    "reused_previous_bytes": 315269418,
+    "reused_previous_paths": 210,
+    "scope_paths": 294
+  },
+  "unrelated_diagnostics_included": false
+}
