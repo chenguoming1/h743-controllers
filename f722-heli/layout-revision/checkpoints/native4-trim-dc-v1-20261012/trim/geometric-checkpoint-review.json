@@ -1,0 +1,71 @@
+{
+  "CORE_connected_pads": 47,
+  "DRC_warnings": 3,
+  "ERC_violations": 0,
+  "GND_connected_pads": 133,
+  "SCK_adjacent_GND_unsupported_centerline_mm": 3.542571689,
+  "SCK_length_mm": 49.739070497,
+  "SCK_new_vias": 5,
+  "SCK_reference_scope": "All unsupported centerline confined to own via antipad approaches; no extra mid-route through-crossing. Dedicated GND stitch1.15mm from relocated transition replaces3.798mm nearest-return distance. This is geometric return improvement, not SI/ESD qualification.",
+  "VX_connected_pads": 13,
+  "bindings": {
+    "board": {
+      "path": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/diagnostic-board/f722-heli.kicad_pcb",
+      "sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a"
+    },
+    "independent_handoff": {
+      "path": "recovery-negotiated-routing-20261011/native4-sck-lead-cleanup-independent-preparation-v1/final-handoff-two-track-trim-v1.json",
+      "sha256": "14ec116cf6679462a19bef6e02694b496163213a22f762790a7a08dc73ec3f64"
+    },
+    "independent_review": {
+      "path": "recovery-negotiated-routing-20261011/native4-sck-lead-cleanup-independent-preparation-v1/reviewed-two-track-trim-v1.json",
+      "sha256": "4e12de266863b87e7950f188bf836c42f1d0853ab52ac2c4f1b2fc2750c2aff4"
+    },
+    "native_gzip": {
+      "path": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/after.native.json.gz",
+      "sha256": "5edf6f61f6876157310c0912ec74896254dc378cbffd0260b4958ff65dff2dcb"
+    }
+  },
+  "board_sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a",
+  "closed_connection": "FLASH_SCK U1.34 to U3.6",
+  "contact_disposition": "Exact local same-net unions, full-width outer entries and inherited plated-barrel contacts satisfy source-bound attachment requirements; raw pairwise/midpoint failures remain unchanged. This is not a general predicate waiver.",
+  "full_RX_protection_incomplete": true,
+  "full_actual_IO_cases_pass": 21,
+  "full_actual_IO_cases_total": 22,
+  "geometric_DRC_errors": 0,
+  "holes": 326,
+  "island_cleanup": "Only two unconnected GND islands removed through explicit native zone policy; main-fill contours/all2450objects/GNDpartitions unchanged; reopen/refill reproduced.",
+  "limits": [
+    "Current full-board DC evidence stale; exact polygon current redistribution and new CORE/U15 returns require fresh source-bound solve",
+    "Four SCK reference transitions remain; dedicated stitch reduces weakest geometric return distance to1.15mm, remaining nearby returns/edge behavior require SI/bench review",
+    "RED tented via increased nominal J11 body projection overlap; no paste overlap and actual drill/mask clearances pass, assembly qualification remains pending",
+    "Shared C75 bulk return ESD/transient behavior unqualified",
+    "Stock I2C firmware/device timing and3.3V sink-guarantee gap unresolved",
+    "No manufacturing,thermal,flight or completed-board qualification"
+  ],
+  "lost_pad_pairs_vs_native5_native6_native7": 0,
+  "native_sha256": "c4d5b66eeabdc7d9e7b87715ddcb811038ce9f8b2b67a722eec578cf807fe779",
+  "native_storage": "lossless gzip; independent compressed and plain-content hashes",
+  "native_unconnected": 4,
+  "new_GND_stitches": 1,
+  "next_isolated_trial": "R35 front-side relocation and complete two-ended protected/MCU reconstruction; not run",
+  "raw_false_aggregates_retained": true,
+  "remaining_connections": [
+    "PORT_C_RX_EXT J11.1 to clamp",
+    "PORT_C_TX_MCU",
+    "PORT_C_RX_MCU",
+    "FLASH_MOSI"
+  ],
+  "reviewed_utc": "2026-10-12T14:30:35.039250+00:00",
+  "schema": "f722-geometric-routing-checkpoint/v4",
+  "schematic_parity_issues": 0,
+  "status": "ADOPTED_GEOMETRIC_ROUTING_WIP",
+  "unchanged_power_inputs_vs_stitch_predecessor": {
+    "footprints_model_scope": true,
+    "hole_owners": 326,
+    "independent_dependency_comparison": "power-return-stitch-diagnostic-v1/trim-power-input-applicability.json",
+    "nets": 15,
+    "saved_fills": true
+  },
+  "variant": "RETURN_STITCH_AND_TWO_TRACK_TRIM"
+}

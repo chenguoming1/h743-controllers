@@ -1,0 +1,82 @@
+{
+  "accepted_or_adopted": false,
+  "bounded_controls_required": [
+    "Reject unrelated track or pad change.",
+    "Reject any drill/via or fill/rule change.",
+    "Reject contact-window object or hole intrusion.",
+    "Reject wrong encoded or decoded export hash.",
+    "Reject SCK pair/fragment loss, unsupported endpoint or foreign clearance failure.",
+    "Retain incomplete RX and original raw contact false predicates."
+  ],
+  "execution_policy": {
+    "full_audit_requires_actual_native_output_and_fresh_owner_grant": true,
+    "full_lane_if_granted": {
+      "exclusive_lock": true,
+      "memory_bytes": 4294967296,
+      "seconds": 600,
+      "threads": 1
+    },
+    "geometry_run": false,
+    "no_automatic_retry": true,
+    "preparation_max_MiB": 512
+  },
+  "frozen_raw_audit": {
+    "bytes": 4362227,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/physical-audit-return-stitch-v1.json",
+    "sha256": "dff63778a524168ff42bc176e67addc280a3c80458303bba3480a70201afe3bc"
+  },
+  "frozen_reviewed_disposition": {
+    "bytes": 47269,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/reviewed-return-stitch-v1.json",
+    "sha256": "12f272ff00b08da1a3681b44a11a0b330ca66b46af9321eb83d1eb2852787799"
+  },
+  "frozen_symmetric_plane_delta": {
+    "bytes": 39490,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/symmetric-plane-delta-v1.json",
+    "sha256": "da34685b0bfd6d0192e51482d2ff9b0ad2340d033aa93d86a82823544a104279"
+  },
+  "intended_delta": {
+    "actual_new_UUIDs_coordinates_and_contours": "Must come from sealed recipe and actual native output; not assumed from planning summary.",
+    "all_drills_vias_pads_footprints_mechanics_rules_and_fills_exact": true,
+    "all_other_objects_exact": 2450,
+    "expected_add_tracks": 2,
+    "layer": "In2.Cu",
+    "net": "FLASH_SCK",
+    "replace_track_UUIDs": [
+      "27d3f5ea-ef22-58be-bf66-41b23e97fa07",
+      "4c505c31-74c0-552c-87b4-62e95fc1fd98"
+    ],
+    "width_mm": 0.127
+  },
+  "pending": [
+    "Sealed exact two-track delta/recipe and adapter contract.",
+    "Actual full native and auxiliary outputs with fresh parity/DRC/refill proofs.",
+    "Successor checker controls and exact owner audit grant."
+  ],
+  "physical_review": [
+    "Use unchanged native polygon/contact/fragment kernels; retain each raw historical predicate and source provenance.",
+    "Rebuild complete source and candidate FLASH_SCK physical graphs with actual source-specific global holes; require full U1.34 to U3.6 tree and no source pad/fragment loss.",
+    "Check both new tracks full width at every actual joint/terminal using unchanged endpoint witnesses and supporting same-net union, including retained via/barrel entry.",
+    "Check both full native track polygons against all foreign copper including polygon, all fresh fills, pads, tracks and vias on In2; require native geometric DRC zero.",
+    "Recompute whole SCK length and per-segment actual adjacent-plane centerline/copper projection against full native fresh planes; identify removal of the prior0.431089845mm through-crossing without treating terminal antipads as SI qualification.",
+    "Rebind unchanged dual-plane GND stitch/full133 GND partition and all21passed IO cuts only after exact per-net objects, holes and fills equality proves their input geometry identical. Keep RX full INCOMPLETE_BEFORE_CUT and all22contracts visible.",
+    "Compare all native4/5/6/7 pad partitions; for non-SCK nets reuse source result only with explicit complete unchanged-input proof.",
+    "Require symmetric saved-fill and each-side-own-drilled-conductive delta zero for this two-track transaction; retain earlier native4-to-stitch nonzero delta as historical current-geometry provenance."
+  ],
+  "schema": "f722-two-track-SCK-audit-reuse-plan/v1",
+  "source_board_sha256": "8f9d4be2fc97633bd9d83b2bc44be7cd4359eb45b90c14fbd410187292136029",
+  "source_native_plain_sha256": "02c72e195b5c2cde307ec83ed587b07dc0c18565892afd2b7bf16f6602986034",
+  "source_review": {
+    "bytes": 32569,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/final-handoff-return-stitch-v2.json",
+    "sha256": "5de6fe0a0f734ecbce9aa592f302dc086e53e2b6911f68ac0fce97d7dfd264ce"
+  },
+  "status": "INERT_PLAN_AWAITING_EXACT_DELTA_AND_NATIVE_OUTPUT",
+  "structural_replay": [
+    "Rehash exact adapter, recipe, delta, source/candidate board and complete lossless native/auxiliary files including both encoded and decoded hashes.",
+    "Direct raw AST comparison permits exactly two source tracks removed and two exact native tracks added; current pad settings are authority.",
+    "All 2450 retained objects and inside contours, all558 pads/nets and footprints, every drill, all zone rules and actual saved fills must be exact.",
+    "Retain source-bound prior VX/CORE/RED contact-window evidence only if complete local records, holes and fill geometry remain exact and changed tracks stay outside each declared window.",
+    "Replay full paired hardware/netlist/ERC/DRC and repeat ordinary-refill proofs against exact current board."
+  ]
+}
