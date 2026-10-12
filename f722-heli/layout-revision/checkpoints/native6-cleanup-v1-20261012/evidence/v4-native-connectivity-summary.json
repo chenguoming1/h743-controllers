@@ -1,0 +1,1628 @@
+{
+  "schema": "f722-native6-physical-connectivity-summary/v1",
+  "qualification": "Isolated native physical-connectivity diagnostic; not hardware acceptance",
+  "candidate_native_sha256": "dba3668fe6f3f0620952bf11bdaa18f342047a7cba63f98e20f5459002ee7f88",
+  "candidate_board_sha256": "76ae77d04a615762e96fbdac85c8190e52ace9125b68ce6c3176dccf776413e0",
+  "accepted_source_native_sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505",
+  "compiled_recipe_sha256": "5f2a37dfaca2f6a93f211dcab8ac092a523a9f0c637729fa5294415c486b3c24",
+  "checker_sha256": "71e8bd895494142953afd88493bd030e1f141ab03d41a670ff35b5f1a2cb3afa",
+  "full_audit_sha256": "658805cb84c2feace377c08969f49efd2abd2928460a38640343438ef61da38d",
+  "physical_net_count": 128,
+  "source_pad_pairs_lost": 0,
+  "source_pad_pairs_restored": 1,
+  "restored_pad_pair": [
+    "U1.35",
+    "U3.2"
+  ],
+  "restored_net": "FLASH_MISO",
+  "V3_pad_pairs_lost": 0,
+  "V3_new_pad_pairs": 0,
+  "retained_fragment_lineage_failures": 0,
+  "edited_net_full_pad_trees": [
+    {
+      "net": "+3V3_CORE",
+      "pad_count": 47,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "ABC_PG",
+      "pad_count": 3,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "D1_A",
+      "pad_count": 2,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "FLASH_CS",
+      "pad_count": 3,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "FLASH_HOLD_N",
+      "pad_count": 2,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "FLASH_MISO",
+      "pad_count": 2,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "GND",
+      "pad_count": 133,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "LED_GREEN_K",
+      "pad_count": 2,
+      "complete": true,
+      "pad_free_components": []
+    },
+    {
+      "net": "PORT_B_RX_MCU",
+      "pad_count": 2,
+      "complete": true,
+      "pad_free_components": []
+    }
+  ],
+  "cleanup_contact_witnesses": [
+    {
+      "check": "CORE_short_junction",
+      "uuid": "4b86f070-7c97-58ad-920b-a60e2a2cc585",
+      "endpoint": [
+        26.722473,
+        21.804392
+      ],
+      "point": [
+        26.722473,
+        21.804392
+      ],
+      "layer": "F.Cu",
+      "section": [
+        [
+          26.622473,
+          21.804392
+        ],
+        [
+          26.822473000000002,
+          21.804392
+        ]
+      ],
+      "nominal_track_width_mm": 0.2,
+      "native_contiguous_covered_width_mm": 0.1999999999999993,
+      "exporter_two_boundary_tolerance_mm": 2e-05,
+      "error_adjusted_width_lower_bound_mm": 0.1999799999999993,
+      "positive_overlap_area_mm2": 0.06167114453484475,
+      "passed": true
+    },
+    {
+      "check": "CORE_short_junction",
+      "uuid": "4b86f070-7c97-58ad-920b-a60e2a2cc585",
+      "endpoint": [
+        26.722473,
+        21.651879
+      ],
+      "point": [
+        26.722473,
+        21.651879
+      ],
+      "layer": "F.Cu",
+      "section": [
+        [
+          26.622473,
+          21.651879
+        ],
+        [
+          26.822473000000002,
+          21.651879
+        ]
+      ],
+      "nominal_track_width_mm": 0.2,
+      "native_contiguous_covered_width_mm": 0.1999999999999993,
+      "exporter_two_boundary_tolerance_mm": 2e-05,
+      "error_adjusted_width_lower_bound_mm": 0.1999799999999993,
+      "positive_overlap_area_mm2": 0.06167114453484475,
+      "passed": true
+    },
+    {
+      "check": "GREEN_shared_endpoint",
+      "uuid": "71fcb381-ca21-5040-9df5-5b6e0dc55fff",
+      "peer_uuid": "9e18ffd3-153b-5213-9d54-f67ad2248b23",
+      "point": [
+        37.001558,
+        23.342039
+      ],
+      "layer": "F.Cu",
+      "section": [
+        [
+          36.94727409915122,
+          23.37498605007493
+        ],
+        [
+          37.05584190084878,
+          23.30909194992507
+        ]
+      ],
+      "nominal_track_width_mm": 0.127,
+      "native_contiguous_covered_width_mm": 0.12699926269427092,
+      "exporter_two_boundary_tolerance_mm": 2e-05,
+      "error_adjusted_width_lower_bound_mm": 0.12697926269427093,
+      "positive_overlap_area_mm2": 0.19829510922899318,
+      "passed": true
+    },
+    {
+      "check": "GREEN_shared_endpoint",
+      "uuid": "9e18ffd3-153b-5213-9d54-f67ad2248b23",
+      "peer_uuid": "71fcb381-ca21-5040-9df5-5b6e0dc55fff",
+      "point": [
+        37.001558,
+        23.342039
+      ],
+      "layer": "F.Cu",
+      "section": [
+        [
+          37.055077962832726,
+          23.307864980944824
+        ],
+        [
+          36.94803803716728,
+          23.376213019055175
+        ]
+      ],
+      "nominal_track_width_mm": 0.127,
+      "native_contiguous_covered_width_mm": 0.12699950336472815,
+      "exporter_two_boundary_tolerance_mm": 2e-05,
+      "error_adjusted_width_lower_bound_mm": 0.12697950336472816,
+      "positive_overlap_area_mm2": 0.198295109228993,
+      "passed": true
+    },
+    {
+      "check": "shifted_MISO_annulus",
+      "uuid": "116e1048-b7e5-5abb-b246-1f308898f752",
+      "peer_uuid": "74745acf-d65a-59c4-b54b-67a8986fe567",
+      "point": [
+        33.22131317001636,
+        24.911565314362466
+      ],
+      "layer": "F.Cu",
+      "section": [
+        [
+          33.16136329146032,
+          24.932500023844952
+        ],
+        [
+          33.2812630485724,
+          24.89063060487998
+        ]
+      ],
+      "nominal_track_width_mm": 0.127,
+      "native_contiguous_covered_width_mm": 0.1269994661009132,
+      "exporter_two_boundary_tolerance_mm": 2e-05,
+      "error_adjusted_width_lower_bound_mm": 0.1269794661009132,
+      "positive_overlap_area_mm2": 0.016405366235656946,
+      "passed": true
+    },
+    {
+      "check": "shifted_MISO_annulus",
+      "uuid": "3055f5fd-a8c6-5e0e-baa9-500f4687707a",
+      "peer_uuid": "74745acf-d65a-59c4-b54b-67a8986fe567",
+      "point": [
+        33.27966221655267,
+        24.640333529476088
+      ],
+      "layer": "In3.Cu",
+      "section": [
+        [
+          33.23362408316274,
+          24.59659864324129
+        ],
+        [
+          33.32570034994261,
+          24.684068415710886
+        ]
+      ],
+      "nominal_track_width_mm": 0.127,
+      "native_contiguous_covered_width_mm": 0.12700000000000275,
+      "exporter_two_boundary_tolerance_mm": 2e-05,
+      "error_adjusted_width_lower_bound_mm": 0.12698000000000276,
+      "positive_overlap_area_mm2": 0.016405525163621475,
+      "passed": true
+    }
+  ],
+  "affected_actual_pad_contacts": [
+    {
+      "pad_key": "R6.1",
+      "pad_uuid": "02bf6cce-b2bf-42a7-b7ba-a98b990f730f",
+      "net": "+3V3_CORE",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "f05f2a34-aae9-5094-a75f-0762526bab11",
+          "point": [
+            37.45,
+            20.96
+          ],
+          "layer": "F.Cu",
+          "section": [
+            [
+              37.45,
+              21.060000000000002
+            ],
+            [
+              37.45,
+              20.86
+            ]
+          ],
+          "nominal_track_width_mm": 0.2,
+          "native_contiguous_covered_width_mm": 0.1999999999999993,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.1999799999999993,
+          "positive_overlap_area_mm2": 0.0797090403599993,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "R10.2",
+      "pad_uuid": "21f26801-660f-4e13-ab4a-3e3a92ae4514",
+      "net": "D1_A",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "271328f5-6255-5cb8-a408-78e207cf70df",
+          "point": [
+            39.13984219782128,
+            23.329695793167353
+          ],
+          "layer": "F.Cu",
+          "section": [
+            [
+              39.202936597762694,
+              23.336861454060305
+            ],
+            [
+              39.07674779787987,
+              23.3225301322744
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.12699998434665039,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.1269799843466504,
+          "positive_overlap_area_mm2": 0.017422398588331788,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "D1.2",
+      "pad_uuid": "d37bbaed-56c9-4518-b843-82729b1f24d7",
+      "net": "D1_A",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "7b996352-7de0-5e4b-bd58-dc4c2daccf18",
+          "point": [
+            38.7,
+            20.0575
+          ],
+          "layer": "F.Cu",
+          "section": [
+            [
+              38.7,
+              19.994
+            ],
+            [
+              38.7,
+              20.121000000000002
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.1269999999999989,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.1269799999999989,
+          "positive_overlap_area_mm2": 0.06665942247799911,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "U1.33",
+      "pad_uuid": "3e81fe6c-ca25-4cf5-8018-ad699a9338aa",
+      "net": "FLASH_CS",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "dcf92740-2767-56f7-9fa0-aef275b8f346",
+          "point": [
+            26.635,
+            10.05
+          ],
+          "layer": "B.Cu",
+          "section": [
+            [
+              26.635,
+              10.1135
+            ],
+            [
+              26.635,
+              9.986500000000001
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.1269999999999989,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.1269799999999989,
+          "positive_overlap_area_mm2": 0.10475954947800069,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "R6.2",
+      "pad_uuid": "94eb3e3e-63df-44d8-a047-9fe6580dd34c",
+      "net": "FLASH_HOLD_N",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "64ef3185-988b-507b-81f7-e998ab0a4f84",
+          "point": [
+            37.29649258688148,
+            20.036373873638436
+          ],
+          "layer": "F.Cu",
+          "section": [
+            [
+              37.33025621926532,
+              20.090153675871697
+            ],
+            [
+              37.26272895449763,
+              19.982594071405174
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.12699949059336002,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.12697949059336003,
+          "positive_overlap_area_mm2": 0.05170234237520947,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "U1.35",
+      "pad_uuid": "4c37d1b9-7c69-40e7-a8da-a543453ca24e",
+      "net": "FLASH_MISO",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "54654271-f9af-5220-a9a7-b9a7963c4d40",
+          "point": [
+            26.635,
+            11.05
+          ],
+          "layer": "B.Cu",
+          "section": [
+            [
+              26.635,
+              11.1135
+            ],
+            [
+              26.635,
+              10.986500000000001
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.1269999999999989,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.1269799999999989,
+          "positive_overlap_area_mm2": 0.10475954947800069,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "U3.2",
+      "pad_uuid": "ce16fd0b-3775-442f-be91-f93bb773418c",
+      "net": "FLASH_MISO",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "30455fbb-e659-5ec1-bf20-a3323d319cc1",
+          "point": [
+            30.8017,
+            22.635
+          ],
+          "layer": "B.Cu",
+          "section": [
+            [
+              30.8017,
+              22.698500000000003
+            ],
+            [
+              30.8017,
+              22.5715
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.12700000000000244,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.12698000000000245,
+          "positive_overlap_area_mm2": 0.054466579790752714,
+          "passed": true
+        },
+        {
+          "track_uuid": "31072232-3cd2-5391-af00-cc3b805d9059",
+          "point": [
+            30.8017,
+            22.635
+          ],
+          "layer": "B.Cu",
+          "section": [
+            [
+              30.846601280605345,
+              22.679901280605346
+            ],
+            [
+              30.756798719394656,
+              22.590098719394657
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.12699999999999667,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.12697999999999668,
+          "positive_overlap_area_mm2": 0.054466579790752714,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "U2.9",
+      "pad_uuid": "f1d3baec-6c61-4bbf-b975-7c79cff9ef4e",
+      "net": "GND",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "c03705cf-56a5-52c8-bdb8-32fbb3055e42",
+          "point": [
+            24.61,
+            11.85
+          ],
+          "layer": "F.Cu",
+          "section": [
+            [
+              24.61,
+              11.76
+            ],
+            [
+              24.61,
+              11.94
+            ]
+          ],
+          "nominal_track_width_mm": 0.18,
+          "native_contiguous_covered_width_mm": 0.17999999999999972,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.17997999999999972,
+          "positive_overlap_area_mm2": 0.026224214540892347,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "pad_key": "D1.1",
+      "pad_uuid": "743422e8-75b5-4ce5-b098-e5ca854aa553",
+      "net": "LED_GREEN_K",
+      "union_supported_inside_pad_witnesses": [
+        {
+          "track_uuid": "16fda3ee-81df-5ea1-bec5-f67bb94adbe6",
+          "point": [
+            38.7,
+            21.6325
+          ],
+          "layer": "F.Cu",
+          "section": [
+            [
+              38.7,
+              21.569
+            ],
+            [
+              38.7,
+              21.696
+            ]
+          ],
+          "nominal_track_width_mm": 0.127,
+          "native_contiguous_covered_width_mm": 0.12700000000000244,
+          "exporter_two_boundary_tolerance_mm": 2e-05,
+          "error_adjusted_width_lower_bound_mm": 0.12698000000000245,
+          "positive_overlap_area_mm2": 0.06665942247800095,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "U2_same_barrel_repair": {
+    "original_pad_and_barrel_unchanged_after_bijective_code_normalization": true,
+    "three_added_GND_tracks": true,
+    "exact_018_pad_section_supported_by_copper_union": true,
+    "retained_annulus_width_witnesses": [
+      {
+        "track_uuid": "12ed59c7-8911-5645-9fd5-f70e7654b483",
+        "point": [
+          25.226503081319272,
+          11.495998630524767
+        ],
+        "layer": "F.Cu",
+        "section": [
+          [
+            25.18995061937446,
+            11.413755591148943
+          ],
+          [
+            25.263055543264084,
+            11.57824166990059
+          ]
+        ],
+        "nominal_track_width_mm": 0.18,
+        "native_contiguous_covered_width_mm": 0.17999991079257466,
+        "exporter_two_boundary_tolerance_mm": 2e-05,
+        "error_adjusted_width_lower_bound_mm": 0.17997991079257467,
+        "positive_overlap_area_mm2": 0.024271629656287708,
+        "passed": true
+      }
+    ],
+    "pad_three_tracks_and_same_barrel_connected": true,
+    "barrel_land_contact_length_mm": 0.6283606793441177
+  },
+  "actual22_IO_cuts": [
+    {
+      "contract": {
+        "clamp": "D5.1",
+        "id": "published-01",
+        "minimum_gap_required_mm": 0.127,
+        "net": "USB_CC1",
+        "scope": "actual_clamp",
+        "source": "J1.A5",
+        "target": "R14.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-01",
+        "net": "USB_CC1",
+        "clamp": "D5.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.2545163965500826,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U12.1",
+        "id": "published-02",
+        "minimum_gap_required_mm": 0.127,
+        "net": "SERVO1_MCU",
+        "scope": "actual_clamp",
+        "source": "R20.2",
+        "target": "U1.56"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-02",
+        "net": "SERVO1_MCU",
+        "clamp": "U12.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 0.14329414785043498,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.14329414785043498,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 0.14329414785043498,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 0.14329414785043498,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 0.14329414785043498,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 0.14329414785043498,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U12.3",
+        "id": "published-03",
+        "minimum_gap_required_mm": 0.127,
+        "net": "SERVO2_MCU",
+        "scope": "actual_clamp",
+        "source": "R21.2",
+        "target": "U1.57"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-03",
+        "net": "SERVO2_MCU",
+        "clamp": "U12.3",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 0.2188938463257902,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.16299099999999989,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 0.2188938463257902,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 0.2188938463257902,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 0.2188938463257902,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 0.2188938463257902,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U13.6",
+        "id": "published-04",
+        "minimum_gap_required_mm": 0.127,
+        "net": "RPM_MCU",
+        "scope": "actual_clamp",
+        "source": "R39.2",
+        "target": "U1.16"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-04",
+        "net": "RPM_MCU",
+        "clamp": "U13.6",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 0.1553480077381228,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U13.1",
+        "id": "published-05",
+        "minimum_gap_required_mm": 0.127,
+        "net": "SBUS_MCU",
+        "scope": "actual_clamp",
+        "source": "R45.2",
+        "target": "U1.17"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-05",
+        "net": "SBUS_MCU",
+        "clamp": "U13.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 0.17026948414792337,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 1.2732319318317287,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 2.2122115323110516,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 2.2122115323110516,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 2.2122115323110516,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 2.2122115323110516,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U15.1",
+        "id": "published-06",
+        "minimum_gap_required_mm": 0.127,
+        "net": "PORT_C_RX_EXT",
+        "scope": "actual_clamp",
+        "source": "J11.1",
+        "target": "R34.1"
+      },
+      "source_status": "INCOMPLETE_BEFORE_CUT",
+      "candidate": {
+        "id": "published-06",
+        "net": "PORT_C_RX_EXT",
+        "clamp": "U15.1",
+        "full_actual_function_connected": false,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 3.8868608972601573,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": false,
+        "status": "INCOMPLETE_BEFORE_CUT",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U15.2",
+        "id": "published-07",
+        "minimum_gap_required_mm": 0.127,
+        "net": "PORT_C_TX_EXT",
+        "scope": "actual_clamp",
+        "source": "J11.2",
+        "target": "R35.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-07",
+        "net": "PORT_C_TX_EXT",
+        "clamp": "U15.2",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.5076947475708233,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U12.6",
+        "id": "published-08",
+        "minimum_gap_required_mm": 0.127,
+        "net": "TAIL_MCU",
+        "scope": "actual_clamp",
+        "source": "R23.2",
+        "target": "U1.55"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-08",
+        "net": "TAIL_MCU",
+        "clamp": "U12.6",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.371503028251453,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U13.3",
+        "id": "published-09",
+        "minimum_gap_required_mm": 0.127,
+        "net": "ESC_MCU",
+        "scope": "actual_clamp",
+        "source": "R24.2",
+        "target": "U1.58"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-09",
+        "net": "ESC_MCU",
+        "clamp": "U13.3",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 0.4436954459548982,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 1.4951169769526331,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 1.4951169769526331,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 0.3076100000000003,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 1.4951169769526331,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 1.4951169769526331,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U14.4",
+        "id": "published-10",
+        "minimum_gap_required_mm": 0.127,
+        "net": "PORT_B_RX_EXT",
+        "scope": "actual_clamp",
+        "source": "J10.1",
+        "target": "R32.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-10",
+        "net": "PORT_B_RX_EXT",
+        "clamp": "U14.4",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.3355054186645887,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U14.5",
+        "id": "published-11",
+        "minimum_gap_required_mm": 0.127,
+        "net": "PORT_B_TX_EXT",
+        "scope": "actual_clamp",
+        "source": "J10.2",
+        "target": "R33.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-11",
+        "net": "PORT_B_TX_EXT",
+        "clamp": "U14.5",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.19993455937963323,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U12.4",
+        "id": "published-12",
+        "minimum_gap_required_mm": 0.127,
+        "net": "SERVO3_MCU",
+        "scope": "actual_clamp",
+        "source": "R22.2",
+        "target": "U1.25"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-12",
+        "net": "SERVO3_MCU",
+        "clamp": "U12.4",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 3.1170709300726545,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 1.2996132972276158,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 3.1170709300726545,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 2.6001003580546667,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 3.1170709300726545,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 3.1170709300726545,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U14.2",
+        "id": "published-13",
+        "minimum_gap_required_mm": 0.127,
+        "net": "PORT_A_TX_EXT",
+        "scope": "actual_clamp",
+        "source": "J9.2",
+        "target": "R31.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-13",
+        "net": "PORT_A_TX_EXT",
+        "clamp": "U14.2",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 4.9867578159061425,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.20400674670628147,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 5.503976940255837,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 5.503976940255837,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 5.503976940255837,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 5.503976940255837,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U14.1",
+        "id": "published-14",
+        "minimum_gap_required_mm": 0.127,
+        "net": "PORT_A_RX_EXT",
+        "scope": "actual_clamp",
+        "source": "J9.1",
+        "target": "R30.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "published-14",
+        "net": "PORT_A_RX_EXT",
+        "clamp": "U14.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 2.123901188048067,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.14564065829302555,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 2.123901188048067,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 2.123901188048067,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 0.6354451279265282,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 2.123901188048067,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "D6.1",
+        "id": "supplemental-01",
+        "minimum_gap_required_mm": 0.127,
+        "net": "USB_CC2",
+        "scope": "actual_clamp",
+        "source": "J1.B5",
+        "target": "R15.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-01",
+        "net": "USB_CC2",
+        "clamp": "D6.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.18710179105605354,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "D3.1",
+        "id": "supplemental-02",
+        "minimum_gap_required_mm": 0.127,
+        "net": "USB_P",
+        "scope": "actual_clamp",
+        "source": "J1.A6",
+        "target": "U1.45"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-02",
+        "net": "USB_P",
+        "clamp": "D3.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.35953136183618284,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "D3.1",
+        "id": "supplemental-03",
+        "minimum_gap_required_mm": 0.127,
+        "net": "USB_P",
+        "scope": "actual_clamp",
+        "source": "J1.B6",
+        "target": "U1.45"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-03",
+        "net": "USB_P",
+        "clamp": "D3.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.35953136183618284,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "D4.1",
+        "id": "supplemental-04",
+        "minimum_gap_required_mm": 0.127,
+        "net": "USB_N",
+        "scope": "actual_clamp",
+        "source": "J1.A7",
+        "target": "U1.44"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-04",
+        "net": "USB_N",
+        "clamp": "D4.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.35953136183618284,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "D4.1",
+        "id": "supplemental-05",
+        "minimum_gap_required_mm": 0.127,
+        "net": "USB_N",
+        "scope": "actual_clamp",
+        "source": "J1.B7",
+        "target": "U1.44"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-05",
+        "net": "USB_N",
+        "clamp": "D4.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.35953136183618284,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In1.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In2.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In3.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          },
+          {
+            "layer": "In4.Cu",
+            "gap_mm": 1.8000802312308222,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U16.1",
+        "id": "supplemental-06",
+        "minimum_gap_required_mm": 0.127,
+        "net": "RPM_HV",
+        "scope": "actual_clamp",
+        "source": "R25.2",
+        "target": "Q1.3"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-06",
+        "net": "RPM_HV",
+        "clamp": "U16.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.5775051678605436,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "U16.2",
+        "id": "supplemental-07",
+        "minimum_gap_required_mm": 0.127,
+        "net": "SBUS_HV",
+        "scope": "actual_clamp",
+        "source": "R26.2",
+        "target": "Q2.3"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "supplemental-07",
+        "net": "SBUS_HV",
+        "clamp": "U16.2",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "F.Cu",
+            "gap_mm": 0.42079999999999984,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    },
+    {
+      "contract": {
+        "clamp": "D7.1",
+        "id": "actual-io-gap-01",
+        "minimum_gap_required_mm": 0.127,
+        "net": "DSM_RX_EXT",
+        "scope": "actual_clamp",
+        "source": "J12.3",
+        "target": "R38.1"
+      },
+      "source_status": "IO_CUT_PASS",
+      "candidate": {
+        "id": "actual-io-gap-01",
+        "net": "DSM_RX_EXT",
+        "clamp": "D7.1",
+        "full_actual_function_connected": true,
+        "no_outside_actual_pad_bypass": true,
+        "outside_pad_gaps": [
+          {
+            "layer": "B.Cu",
+            "gap_mm": 0.14813676113645813,
+            "required_mm": 0.12701,
+            "passed": true
+          }
+        ],
+        "passed": true,
+        "status": "IO_CUT_PASS",
+        "cut_contour": "saved_native_actual_pad_inside",
+        "pad_enlargement": false
+      },
+      "regressed": false
+    }
+  ],
+  "external_NC_bridge_checks": [
+    {
+      "physical_net": "PORT_C_RX_EXT",
+      "candidate": {
+        "external_copper_native_UUIDs": [
+          "84864ccd-ac78-5d94-bbdd-daebc37d1ceb"
+        ],
+        "physical_fragment_path_UUIDs": [
+          "85f6ae89-da40-4223-9e1c-51ee8cc2f22f",
+          "84864ccd-ac78-5d94-bbdd-daebc37d1ceb",
+          "76401567-1405-4a22-b70c-0a7f2502777e"
+        ],
+        "material_removed_from_every_overlapping_object": true,
+        "full_connected": true,
+        "both_endpoints_survive_removal": true,
+        "disconnected_without_external_bridge": true,
+        "passed": true
+      }
+    },
+    {
+      "physical_net": "PORT_C_TX_EXT",
+      "candidate": {
+        "external_copper_native_UUIDs": [
+          "e7c12a0d-96c1-5cae-baca-87c335de5014"
+        ],
+        "physical_fragment_path_UUIDs": [
+          "2f12d0fc-ff58-4f48-a7ba-1e0ccfd5bf73",
+          "e7c12a0d-96c1-5cae-baca-87c335de5014",
+          "d63e714e-e781-4bd1-b1a2-4b3b4deb85a4"
+        ],
+        "material_removed_from_every_overlapping_object": true,
+        "full_connected": true,
+        "both_endpoints_survive_removal": true,
+        "disconnected_without_external_bridge": true,
+        "passed": true
+      }
+    },
+    {
+      "physical_net": "PORT_B_RX_EXT",
+      "candidate": {
+        "external_copper_native_UUIDs": [
+          "80e6c8c0-48bb-46c8-8199-32bcc81b5699"
+        ],
+        "physical_fragment_path_UUIDs": [
+          "e846813a-f390-4cbc-8353-23b4b91006f3",
+          "80e6c8c0-48bb-46c8-8199-32bcc81b5699",
+          "cc056412-06ac-4681-9fba-bb4723da0d3d"
+        ],
+        "material_removed_from_every_overlapping_object": true,
+        "full_connected": true,
+        "both_endpoints_survive_removal": true,
+        "disconnected_without_external_bridge": true,
+        "passed": true
+      }
+    }
+  ],
+  "source_and_candidate_files_unchanged_during_audit": true,
+  "limitations": [
+    "Six native unconnected findings remain; this is an incremental routing recovery.",
+    "PORT_C_RX_EXT actual protection path remains inherited incomplete before the IO cut;21 of22 cases pass.",
+    "Positive-area DC connectivity and local full-width contacts do not qualify oscillator, return-current, ESD, assembly or power behavior.",
+    "Power evidence is stale; separate current hardware qualification required.",
+    "Full audit checker remains bound to original source-layout inputs; this compact result is evidence, not a standalone reproducibility claim."
+  ]
+}
