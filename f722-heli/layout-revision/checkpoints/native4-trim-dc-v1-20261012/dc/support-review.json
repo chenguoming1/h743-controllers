@@ -1,0 +1,104 @@
+{
+  "adapter_sha256": "de874233d5ec161e011cc71851b637ac74dd20adda84cc18e26f0b61fe028115",
+  "binding_sha256": "b6d07805cd865c159c45a7b9abf2e5b73833c9d44986734e3c4fbdc05bf48956",
+  "code_inputs_sha256": "9dbb5a4fadff636df67fa4a1a960fbc655dd05c62c1282b9eb9ad490b562a6c3",
+  "deferred_final_gates_not_general_DC_prerequisites": [
+    "ordinary_signal_closure",
+    "signal_protection",
+    "critical_signal_reference",
+    "AC_decoupling",
+    "package_return_sharing",
+    "manufacturing",
+    "canonical_adoption"
+  ],
+  "evidence": [
+    {
+      "path": "power-return-stitch-diagnostic-v1/INDEPENDENT-SOURCE-REVIEW.json",
+      "sha256": "afce66c150a5a3da51a1205b7b5b0a80900fb2fe02d6b2d2e30b26f909997142"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/README.md",
+      "sha256": "a79820f294ab033b04ad72e6fbb7e14339208e69b25fdc0f8e9b2e41c8095ce6"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/SOURCE-STORAGE-CHECKS.json",
+      "sha256": "f177c72f9130fc85c26946162616b318ab55bc089b8a57185e0be53160f3f0c6"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/storage-source-only.patch",
+      "sha256": "41de3086ba20eedbc944632e60c6e4362fc56e123aa12c232eb476304a50a99f"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/code-inputs.json",
+      "sha256": "9dbb5a4fadff636df67fa4a1a960fbc655dd05c62c1282b9eb9ad490b562a6c3"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/support-binding.json",
+      "sha256": "b6d07805cd865c159c45a7b9abf2e5b73833c9d44986734e3c4fbdc05bf48956"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/support-review.disabled.json",
+      "sha256": "521885b488e7052f78a818b7467b3522a72c479e9f370a25f4b91f350c653990"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/native-metadata-execution.json",
+      "sha256": "46c57b3184cd6a5bcbaf651af4dfae4f489a8e39e2980965b4b9cf30b5e9cc1c"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/native-primitive-parameters.json",
+      "sha256": "413d7a90eb1aa1f44336984080302f3c0c9d5251a90f58dc5e11b3c17a4a2a57"
+    },
+    {
+      "path": "power-native4-diagnostic-v1/CODE-CHECKS.json",
+      "sha256": "6940a64685afd8aa6ffffb3ea9e132c02bed26be0c574cfa204702b8d5a642bd"
+    },
+    {
+      "path": "power-native4-recheck-preparation-v1/CHECKS.json",
+      "sha256": "28f3251a36cf60b644a7d92d4c63b726be31c4ed7b554e56b417f52d734a19f4"
+    },
+    {
+      "path": "power-native4-recheck-preparation-v1/support-only.patch",
+      "sha256": "0052f191bd0cb6a9d9435e1680f1d2fd425f88eb08d7086f713780bd2260168e"
+    },
+    {
+      "path": "power-native4-diagnostic-v1/implementation-only.patch",
+      "sha256": "4dfd75c2a8c73be76774998d4a3b5d8746ad05cce3d5609ab7a32c6a63337021"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/independent_source_review.py",
+      "sha256": "91e8c70fcf35691ad041dc16f79d8dd3ebdf60469cbe9bb4ce0deca68a582f95"
+    }
+  ],
+  "findings": [
+    "All declared source/code/evidence hashes verified before and after independent checks.",
+    "The exact 586-vertex sealed integer VX polygon is source-AST bound and retained in both support inclusion points; 11 negative controls reject alterations.",
+    "Gzip input verifies the exact stored and logical sizes/hashes; five negative controls reject altered storage or logical identity. No expanded native file is created.",
+    "All mathematical and acceptance functions match the existing reviewed source. All 305 cases, contacts, materials, loops, grids, floors and failure semantics remain unchanged.",
+    "Output gzip exactly reproduces legacy logical JSON bytes and preserves rejection of NaN, oversize JSON integers, overwrites, corrupt gzip and protected aliases.",
+    "Existing bounded exact-rational serializer remains byte-identical and roundtrips an oversized exact fraction while Python integer conversion guard remains 4300.",
+    "Fresh metadata receipt is current-source bound; all 326 physical holes reach every net selector. Selector instrumentation is not connectivity qualification.",
+    "Exclusive lock, hard memory bound, stage alarm and disk watchdog remain intact. Fresh stage grants, explicit CPU-affinity launch and prelaunch resource checks remain required.",
+    "No native import, Shapely graph, diagnostic compilation, meshing, numerical solve or final qualification occurred in this review."
+  ],
+  "implementation_review_passed": true,
+  "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+  "model_review_passed": true,
+  "retained_scope_conditions": {
+    "before_compile": [
+      "Fresh support must pass all 15 modeled nets, 268 pad identities, 326 physical holes and 44 return-to-saved-plane gates.",
+      "Current-source DC physical assumptions and complete normal/all-track DRC mode provenance are still required.",
+      "Exact compile binding, independent review, stage grant and resource check remain required."
+    ],
+    "before_numerical_run": [
+      "Source stability decision, complete current-source compile/preflight and finite-port audit, source-bound run grant and disk/resource check.",
+      "Retain all 294 required cases and 11 illustrations, both grids, failed cases and truthful overall result; prior-source results cannot be rebound."
+    ],
+    "before_support": [
+      "Fresh exclusive source/review-bound support grant with current resource check and one-CPU launch; support-review does not grant execution."
+    ]
+  },
+  "review_scope": "Source-only implementation/model readiness for conditional DC support on the exact return-stitch source. No current-source connectivity, numerical or release qualification.",
+  "review_status": "PASS: exact-source implementation and unchanged conditional DC model; execution and physical/numerical qualification remain gated",
+  "reviewer": "Independent source-only review_return_stitch_power",
+  "schema": "f722-intermediate-dc-implementation-review/v1"
+}

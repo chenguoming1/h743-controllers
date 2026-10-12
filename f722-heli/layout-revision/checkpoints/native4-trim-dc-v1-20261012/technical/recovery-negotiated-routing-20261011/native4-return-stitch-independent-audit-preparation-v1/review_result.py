@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Bounded review of fresh return-stitch evidence, retaining raw source predicates."""
+import argparse,copy,json,resource
+from pathlib import Path
+import check_candidate as c
+
+def gates(report,partial,prior):
+ allowed={'R34_to_actual_RX_IO1_improved_and_safe_partial_path','VX_polygon_all_original_terminal_contacts_supported','RED_retained_B_lead_full_width_join'}
+ return {'no_native4_native5_native6_native7_pad_relationship_loss':all(report[v+'_lost_pad_pair_count']==0 for v in ['native4','native5','native6','native7']),'exact_prior_contact_scope_still_unchanged':report['preserved_source_contact_windows']['passed'] is True and prior['all_exact_contact_scope_checks_satisfied'] is True,'permitted_partial_RX_progress':partial['partial_RX_progress_gate_passed'],'all_new_and_unrelated_raw_obligations_passed':all(v for key,v in report['diagnostic_gates'].items() if key not in allowed)}
+def main():
+ resource.setrlimit(resource.RLIMIT_AS,(536870912,)*2)
+ p=argparse.ArgumentParser()
+ for name in ['binding','report','out']:p.add_argument('--'+name,type=Path,required=True)
+ for name in ['binding-sha256','report-sha256']:p.add_argument('--'+name,required=True)
+ a=p.parse_args();c.require(not a.out.exists() and a.out.resolve().parent==c.HERE,'Fresh isolated review required');c.require(c.sha(a.binding)==a.binding_sha256 and c.sha(a.report)==a.report_sha256,'Exact binding/raw report required')
+ files=c.read(a.binding)['files']
+ for row in files.values():c.bound(row)
+ raw=c.read(a.report);artifacts=c.read(files['compressed_artifacts']['path']);compact=c.load_module('review_full_lossless_reader',files['compact_reader']['path']);c.require(compact.plaintext_binding(files['candidate_native']['path'])==artifacts['native']['uncompressed'],'Complete compressed native content changed')
+ c.require(raw['geometry_run'] is True and raw['accepted_or_adopted'] is False and raw['candidate_sha256']==artifacts['native']['uncompressed']['sha256'] and raw['binding_sha256']==a.binding_sha256,'Wrong exact diagnostic')
+ rx=c.load_module('preserved_partial_RX_reviewer',files['partial_RX_helper']['path']);native=c.read(files['candidate_native']['path']);inv=rx.inventory(native);del native
+ partial=rx.evaluate(raw,inv);controls=rx.controls(raw,inv);prior=c.read(files['source_contact_disposition']['path']);reviewed=gates(raw,partial,prior)
+ bad=copy.deepcopy(raw);bad['preserved_source_contact_windows']['passed']=False;c.require(not all(gates(bad,partial,prior).values()),'Changed source contact window accepted');controls.append({'name':'changed_prior_contact_window_rejected','passed':True})
+ bad=copy.deepcopy(raw);bad['diagnostic_gates']['all_new_via_track_or_exact_GND_plane_contacts_full_width']=False;c.require(not all(gates(bad,partial,prior).values()),'New GND stitch attachment failure accepted');controls.append({'name':'failed_new_GND_plane_support_rejected','passed':True})
+ result={'schema':'f722-native4-return-stitch-reviewed-geometric-WIP/v1','status':'RETURN_STITCH_GEOMETRIC_REVIEW_NOT_ADOPTION','accepted_or_adopted':False,'candidate_native_sha256':raw['candidate_sha256'],'compressed_native_sha256':files['candidate_native']['sha256'],'candidate_board_sha256':files['candidate_board']['sha256'],'recipe_sha256':files['recipe']['sha256'],'raw_aggregate_preserved':raw['all_required_topology_and_support_checks_passed'],'raw_gates_preserved':raw['diagnostic_gates'],'reviewed_gates':reviewed,'all_exact_geometric_progress_obligations_passed':all(reviewed.values()),'prior_contact_disposition_carried_only_for_exact_unchanged_windows':raw['preserved_source_contact_windows'],'prior_raw_contact_gates_preserved':raw['prior_raw_contact_gates_preserved'],'pad_settings_provenance':raw['pad_settings_provenance'],'partial_RX_disposition':partial,'actual_IO_full_cut_passes':sum(row['candidate']['passed'] for row in raw['all22_actual_IO_cuts']),'full_RX_protection_passed':False,'native4_native5_native6_native7_pad_pair_losses':{v:raw[v+'_lost_pad_pair_count'] for v in ['native4','native5','native6','native7']},'raw_DRC_counts':raw['raw_native_DRC_counts'],'raw_DRC_violations':raw['raw_native_DRC_violations'],'fresh_via_planes_and_reference':raw['changed_via_plane_and_clearance_review'],'whole_net_groups':[{k:r[k] for k in ['net','pad_count','all_real_pads_connected']} for r in raw['all_physical_nets'] if r['net'] in c.read(c.HERE/'obligations.json')['required_complete_nets']],'GND_route_only_components':next(r['route_only_components'] for r in raw['all_physical_nets'] if r['net']=='GND'),'current_capacity_reference_SI_ESD_and_assembly_qualified':False,'controls':controls,'bindings':{'raw_audit':c.file_binding(a.report),'exact_binding':c.file_binding(a.binding),'prior_contact_disposition':files['source_contact_disposition'],'partial_RX_helper':files['partial_RX_helper'],'reviewer':c.file_binding(__file__)},'new_geometry_executed':False,'peak_RSS_MiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024}
+ c.require(c.sha(a.report)==a.report_sha256,'Raw report changed');c.write(a.out,result);print(json.dumps({'all_exact_geometric_progress_obligations_passed':result['all_exact_geometric_progress_obligations_passed'],'sha256':c.sha(a.out),'peak_RSS_MiB':result['peak_RSS_MiB']}))
+if __name__=='__main__':main()

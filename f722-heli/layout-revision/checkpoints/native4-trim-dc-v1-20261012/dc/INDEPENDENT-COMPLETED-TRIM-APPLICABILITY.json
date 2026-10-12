@@ -1,0 +1,162 @@
+{
+  "DRC_or_physical_source_qualification_transferred": false,
+  "common_exact_dependency_sha256": "2d256a009c8d9b94d1eb2a74a7468e5c76cec9968f954ab71045cbf961ddc7cc",
+  "completed_linkage_sha256": "700110ff330d328f04e13dd7a522f4c27ead711d6fe071aba269b8f86a3f2277",
+  "conditional_required_case_result_applies_to_exact_trim_DC_domain": true,
+  "evidence": [
+    {
+      "path": "power-return-stitch-diagnostic-v1/completed-trim-applicability.json",
+      "sha256": "700110ff330d328f04e13dd7a522f4c27ead711d6fe071aba269b8f86a3f2277"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/trim-power-input-applicability.json",
+      "sha256": "26d51ae44e91e6565624ffbfc29fffb1a1e62591c5d614244f640cd8abe2f57c"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/result-summary.json",
+      "sha256": "282d92501f330015db91429de9a8a84975ef209ca68cf80693278acbd0029532"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/run/run-receipt.json",
+      "sha256": "4bd3ef15b05bef1bab02f77b044ad03061440865323d166f2426415a3fc94c2c"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/run/freeze.json",
+      "sha256": "de514e7a628bd62d8e89846790fa03c801ca4e5595057a49b4b28e71722a3f47"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/run/ledger.json",
+      "sha256": "ce686fec70ea97ec0dbf950510624cc4d9edbda8b3206da67759e0ec6a05df01"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/compiled/compile-receipt.json",
+      "sha256": "281af3f371f1ee3ae634e38bc137ce9067e226fb4b31dba6686b3c6fe009e707"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/compiled/freeze.json",
+      "sha256": "f9025c4d5179004dd1ef55b23db934e230d1082df6a75d98ee2b677f79bbbeb6"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/compiled/ledger.json",
+      "sha256": "f9342935ff28cf9d7211a442d554033dec92458a48e7b7e5cbc361256e33a6e5"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/compiled/port-audit.json",
+      "sha256": "fe604a8164ecdda1d08104c161606fffbaf5e758e86fe9601184f5603ac647ea"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/power-input-projection.json",
+      "sha256": "0de0b850b439185fc0f8be3cc4eccd44073e733d4e41a7b5f5b2bdd0bc8eea30"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/power-input-projection-trim.json",
+      "sha256": "f4b050ad30ce15fafed1ee7e50fd82b557a74e2b7c40e8d632fc91a1452d65c3"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/reduced-result.json.gz",
+      "sha256": "4b2c1f7379723dab034d9444377910edcfc508b2cfa779489dbbde3df4acecd4"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/reduce_result_streaming.py",
+      "sha256": "076c792399aa8b2f2c52707be5202591ac0cad416dece21a1bf6b804680011d1"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/review_completed_trim.py",
+      "sha256": "1325e0ffc026c2f6bfd70cc7b53d142768ad6fc1a866f8987248e3fff9279392"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/failed-illustration-comparison.json",
+      "sha256": "3c23c33b821811daf440ff45e0e942b1ec6aaedc57faf4f2cf0424c1832ffe7e"
+    }
+  ],
+  "failed_illustration": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+  "failed_illustration_input_source_V": 7.4,
+  "failed_illustration_values": [
+    {
+      "external_source_current_A": 18.560507796715427,
+      "failed_probes": {
+        "J2_servo_board_pad": 5.863892251258827,
+        "J3_servo_board_pad": 5.866126336105183,
+        "J4_servo_board_pad": 5.870895542883657,
+        "J5_servo_board_pad": 5.878648172586068
+      },
+      "maximum_V": 8.4,
+      "minimum_V": 6.0,
+      "spacing_mm": 0.12
+    },
+    {
+      "external_source_current_A": 18.560741874392015,
+      "failed_probes": {
+        "J2_servo_board_pad": 5.863816631930561,
+        "J3_servo_board_pad": 5.866053063319897,
+        "J4_servo_board_pad": 5.870826833352147,
+        "J5_servo_board_pad": 5.8785875966237535
+      },
+      "maximum_V": 8.4,
+      "minimum_V": 6.0,
+      "spacing_mm": 0.09
+    }
+  ],
+  "final_electrical_AC_thermal_assembly_manufacturing_or_flight_qualification": false,
+  "fresh_execution_on_trim_claimed": false,
+  "grids_mm": [
+    0.12,
+    0.09
+  ],
+  "illustrations": 11,
+  "limitations": [
+    "Only the exact enumerated conditional DC operator/model domain is equivalent; the boards remain distinct sources.",
+    "The 18.56 A lost-J6 illustration fails the 6.0 V J2-J5 minimum on both grids; retain its failure and overall false.",
+    "Current trim DRC, physical/reference, assembly, AC, thermal, ESD and final release checks remain separate.",
+    "Any fresh execution on trim requires explicit storage/source rebinding, fresh relevant receipts and authorization.",
+    "Two-grid sensitivity and fixed 105 C copper assumptions do not establish manufacturing bounds, ampacity or dynamic behavior."
+  ],
+  "numerical_result_relabelled": false,
+  "original_result_and_source_identities_preserved": true,
+  "original_result_board_sha256": "8f9d4be2fc97633bd9d83b2bc44be7cd4359eb45b90c14fbd410187292136029",
+  "original_result_native_sha256": "02c72e195b5c2cde307ec83ed587b07dc0c18565892afd2b7bf16f6602986034",
+  "overall_conditional_static_screen_pass": false,
+  "required_cases": 294,
+  "result_storage": {
+    "decompression_verified": true,
+    "encoding": "gzip",
+    "logical_bytes": 319827334,
+    "logical_sha256": "b5fbe2411b0c027866a9e9042c1092353dbfc92cc2832886e9ccfa7e242a2814",
+    "stored_bytes": 31641201,
+    "stored_sha256": "7c928ee42d873234998f8b8d56c05160253c66436057d2ba91a6ae86a80065d8"
+  },
+  "review_passed": true,
+  "reviewed_utc": "2026-10-12T15:01:55.639233+00:00",
+  "schema": "f722-independent-completed-trim-dc-applicability-review/v1",
+  "scope": "Applicability of the completed conditional stitch DC calculation to identical mathematical inputs on the exact SCK trim; preserves the original result and its source-bound receipts.",
+  "source_only_review": {
+    "address_space_limit_MiB": 512,
+    "existing_sources_results_or_receipts_mutated": false,
+    "geometry_graph_or_solver_executed": false,
+    "integer_conversion_guard_digits": 4300,
+    "maximum_stream_buffer_characters": 4235250,
+    "native_or_numerical_modules_imported": [],
+    "peak_RSS_KiB": 385512,
+    "raw_result_expanded_to_disk": false
+  },
+  "target_board_sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a",
+  "target_native_logical_sha256": "c4d5b66eeabdc7d9e7b87715ddcb811038ce9f8b2b67a722eec578cf807fe779",
+  "target_native_stored_sha256": "5edf6f61f6876157310c0912ec74896254dc378cbffd0260b4958ff65dff2dcb",
+  "verified": {
+    "actual_ordered_15_network_records_and_saved_fills_equal": true,
+    "all_150_geometry_certificates_and_36432_reference_hashes": true,
+    "all_15_impedance_sensitivity_checks_pass": true,
+    "all_294_required_static_and_voltage_margin_checks_pass": true,
+    "all_305_case_model_records_and_acceptance_settings_equal_compiled_ledger": true,
+    "all_326_ordered_physical_hole_owners_equal": true,
+    "all_five_loop_resistance_checks_pass": true,
+    "all_source_board_native_parts_hashes": true,
+    "both_grids_have_exact_305_case_order_and_identity": true,
+    "every_retained_raw_result_value_equals_reduction": true,
+    "original_compile_run_source_and_runtime_hash_bindings": true,
+    "outline_layers_stackup_footprints_equal": true,
+    "raw_gzip_stored_and_streamed_logical_hashes": true,
+    "scope_268_pads_44_returns_and_actual_151_source_terminal_records_equal": true,
+    "voltage_and_impedance_comparison_values_independently_recomputed": true
+  }
+}

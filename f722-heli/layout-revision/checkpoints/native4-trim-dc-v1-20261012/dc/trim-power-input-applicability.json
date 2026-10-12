@@ -1,0 +1,100 @@
+{
+  "actual_source_terminal_contracts_equal": true,
+  "common_dependency_sha256": "2d256a009c8d9b94d1eb2a74a7468e5c76cec9968f954ab71045cbf961ddc7cc",
+  "common_parts_sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+  "common_reviewed_analysis_runtime": {
+    "audit_native_ports.py": "14fe6908a786c20f8c75543a89f7aaa1825e87840487b3fb4e5e296a04de0717",
+    "copper_fem.py": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+    "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+    "mesh_cache.py": "b359a8ebc81feafc36f3590e0818e601310dcbebddb80f20c83fdd780dcd780e",
+    "model_contract.py": "f4777d76d1b0f4dca00bbf30f30ccae8ae96a6e28360e7009c1583312196617e",
+    "native_edge_noding.py": "88ca7a950a6e36ba0e3d01975400f18c5463d056bd36ecc260347e8caf30b3ea",
+    "power_case_model.py": "034eb82d0be8ba17f3215bad1103b1eaa9d7213f99739159a7a07eae4ed2a3fa",
+    "validate_static.py": "955a54c5ae68ec4403858e75538e9a4e849062e21148456145441808fa0a4729"
+  },
+  "common_terminal_audit_sha256": "2d61f09bbe359f8fbb7f06f184b7a396d00571d55e1612b0df7a43b98c34ad27",
+  "input_comparison_passed": true,
+  "native_headers_equal": {
+    "copper_layers": [
+      "F.Cu",
+      "In1.Cu",
+      "In2.Cu",
+      "In3.Cu",
+      "In4.Cu",
+      "B.Cu"
+    ],
+    "native_version": "10.0.6",
+    "schema": "kicad-native-copper/v1",
+    "source_unchanged": true,
+    "units": "mm"
+  },
+  "new_source_DRC_physical_or_assembly_qualification_claimed": false,
+  "numerical_result_exists": false,
+  "numerical_result_transferred_or_relabelled": false,
+  "ordered_15_networks_fills_and_all_326_hole_owners_equal": true,
+  "outline_stackup_footprints_scope_and_305_case_model_equal": true,
+  "required_before_later_numerical_applicability_claim": [
+    "A completed result must first pass its own source-bound numerical review",
+    "Retain original result source identities and attach this reviewed exact input comparison; do not rewrite old source hashes",
+    "Keep final trim native/DRC/physical/reference/assembly checks separate and current",
+    "Explicitly rebind input-storage/PCB pins and source receipts before any fresh execution on trim"
+  ],
+  "schema": "f722-trim-exact-DC-input-applicability/v1",
+  "scope": "Exact conditional DC operator/model inputs only; current checked executable still pins stitch input and cannot accept trim without explicit source rebinding",
+  "source_controls": [
+    {
+      "path": "power-return-stitch-diagnostic-v1/SOURCE-STORAGE-CHECKS.json",
+      "sha256": "f177c72f9130fc85c26946162616b318ab55bc089b8a57185e0be53160f3f0c6"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/support-review.json",
+      "sha256": "3b265f76223c5fa755bdb7e9f38eca44e72ae36dd97fc4b3df06b864fb0849eb"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/power-input-projection.json",
+      "sha256": "0de0b850b439185fc0f8be3cc4eccd44073e733d4e41a7b5f5b2bdd0bc8eea30"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/power-input-projection-trim.json",
+      "sha256": "f4b050ad30ce15fafed1ee7e50fd82b557a74e2b7c40e8d632fc91a1452d65c3"
+    }
+  ],
+  "sources": {
+    "stitch": {
+      "board": {
+        "path": "recovery-negotiated-routing-20261011/native4-return-stitch-native-preparation-v1/outputs/native4-return-stitch-v1/diagnostic-board/f722-heli.kicad_pcb",
+        "sha256": "8f9d4be2fc97633bd9d83b2bc44be7cd4359eb45b90c14fbd410187292136029"
+      },
+      "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+      "native_logical_sha256": "02c72e195b5c2cde307ec83ed587b07dc0c18565892afd2b7bf16f6602986034",
+      "native_stored": {
+        "path": "recovery-negotiated-routing-20261011/native4-return-stitch-native-preparation-v1/outputs/native4-return-stitch-v1/after.native.json.gz",
+        "sha256": "9fdca2988505a014c28418755800ff515d2f9b3900eb0bb70a0055a4c0763142"
+      },
+      "parts": {
+        "path": "recovery-negotiated-routing-20261011/native4-return-stitch-native-preparation-v1/outputs/native4-return-stitch-v1/diagnostic-board/parts.json",
+        "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+      },
+      "terminal_audit_sha256": "2d61f09bbe359f8fbb7f06f184b7a396d00571d55e1612b0df7a43b98c34ad27",
+      "terminal_count": 151
+    },
+    "trim": {
+      "board": {
+        "path": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/diagnostic-board/f722-heli.kicad_pcb",
+        "sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a"
+      },
+      "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+      "native_logical_sha256": "c4d5b66eeabdc7d9e7b87715ddcb811038ce9f8b2b67a722eec578cf807fe779",
+      "native_stored": {
+        "path": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/after.native.json.gz",
+        "sha256": "5edf6f61f6876157310c0912ec74896254dc378cbffd0260b4958ff65dff2dcb"
+      },
+      "parts": {
+        "path": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/diagnostic-board/parts.json",
+        "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+      },
+      "terminal_audit_sha256": "2d61f09bbe359f8fbb7f06f184b7a396d00571d55e1612b0df7a43b98c34ad27",
+      "terminal_count": 151
+    }
+  }
+}

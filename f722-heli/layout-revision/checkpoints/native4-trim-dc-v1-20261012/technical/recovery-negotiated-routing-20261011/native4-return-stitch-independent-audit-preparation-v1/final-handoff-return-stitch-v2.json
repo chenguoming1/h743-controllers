@@ -1,0 +1,846 @@
+{
+  "ERC_and_full_netlist_parity_clean": {
+    "all_component_library_identities_exact": true,
+    "all_logical_pin_assignments_unchanged": true,
+    "assigned_nodes": 506,
+    "complete_expected_netlist_sha256": "1b3c44e14d518b20d002096d078e3cc1a304cc7239a7fdda8bd9fd28eaf23c26",
+    "components": 156,
+    "full_netlist_pad_parity_passed": true,
+    "nets": 127,
+    "only_existing_alias": {
+      "key": "U13.4",
+      "pcb": "unconnected-(U13-I{slash}O3-Pad4)",
+      "schematic": "unconnected-(U13-I/O3-Pad4)"
+    },
+    "physical_pads": 558
+  },
+  "GND_route_only_components": [],
+  "SCK_reference_tradeoff": {
+    "candidate_centerline_outside_adjacent_GND_mm": 3.973094933600505,
+    "candidate_length_mm": 50.689201717266144,
+    "length_increase_mm": 1.0392658162290829,
+    "new_SCK_GND_via_center_distance_mm": 1.15,
+    "new_track_projection_records": [
+      {
+        "actual_refilled_zone_uuid": "c956a476-e320-4f09-9832-420df749bd95",
+        "adjacent_GND_layer": "In1.Cu",
+        "centerline_length_mm": 5.34699835690764,
+        "centerline_outside_refilled_GND_mm": 0.431089844613457,
+        "copper_projection_outside_refilled_GND_mm2": 0.052723818377159046,
+        "layer": "In2.Cu",
+        "outside_refilled_GND_WKT": "LINESTRING (30.194653814183336 24.592989635072147, 30.62259643938315 24.64498543938315)",
+        "track_uuid": "27d3f5ea-ef22-58be-bf66-41b23e97fa07"
+      },
+      {
+        "actual_refilled_zone_uuid": "c956a476-e320-4f09-9832-420df749bd95",
+        "adjacent_GND_layer": "In1.Cu",
+        "centerline_length_mm": 0.538346982438837,
+        "centerline_outside_refilled_GND_mm": 0.3542641689863043,
+        "copper_projection_outside_refilled_GND_mm2": 0.03284306849932627,
+        "layer": "In2.Cu",
+        "outside_refilled_GND_WKT": "LINESTRING (30.697926086700143 24.750222809074007, 30.375 24.8959)",
+        "track_uuid": "4c505c31-74c0-552c-87b4-62e95fc1fd98"
+      },
+      {
+        "actual_refilled_zone_uuid": "ee652b71-6147-4d53-abc1-8530e0b19eaf",
+        "adjacent_GND_layer": "In4.Cu",
+        "centerline_length_mm": 2.4624265713336526,
+        "centerline_outside_refilled_GND_mm": 0.3549290640844133,
+        "copper_projection_outside_refilled_GND_mm2": 0.03283817478364935,
+        "layer": "B.Cu",
+        "outside_refilled_GND_WKT": "LINESTRING (30.375 24.8959, 30.70099776094375 24.755542953894366)",
+        "track_uuid": "e991e944-2e46-5383-94f0-4cea66905703"
+      }
+    ],
+    "outside_increase_mm": 0.43347238924295617,
+    "qualification": "Dedicated dual-plane return transition is closer, while overall adjacent-plane unsupported projection increases. These geometric metrics do not qualify SI or return impedance.",
+    "source_centerline_outside_adjacent_GND_mm": 3.539622544357549,
+    "source_length_mm": 49.64993590103706
+  },
+  "accepted_or_adopted": false,
+  "actual_IO_contracts": 22,
+  "all_2447_retained_inside_records_and_mechanics_exact": true,
+  "all_exact_geometric_progress_obligations_passed": true,
+  "bounded_controls": {
+    "all_post_review_passed": true,
+    "post_review": 11,
+    "post_review_peak_RSS_MiB": 333.1875,
+    "preparation": 16
+  },
+  "candidate_auxiliary_encoded": {
+    "bytes": 4502683,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-native-preparation-v1/outputs/native4-return-stitch-v1/after-auxiliary.json.gz",
+    "sha256": "3f569023af391afbcd5f9ae5b8438a5f5fb7481d374350e7bb4a7d95b742e687"
+  },
+  "candidate_board": {
+    "bytes": 1611508,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-native-preparation-v1/outputs/native4-return-stitch-v1/diagnostic-board/f722-heli.kicad_pcb",
+    "sha256": "8f9d4be2fc97633bd9d83b2bc44be7cd4359eb45b90c14fbd410187292136029"
+  },
+  "candidate_native_encoded": {
+    "bytes": 6854144,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-native-preparation-v1/outputs/native4-return-stitch-v1/after.native.json.gz",
+    "sha256": "9fdca2988505a014c28418755800ff515d2f9b3900eb0bb70a0055a4c0763142"
+  },
+  "candidate_native_plain_sha256": "02c72e195b5c2cde307ec83ed587b07dc0c18565892afd2b7bf16f6602986034",
+  "current_pad_settings_provenance": "Actual current source/candidate raw AST settings, all 558 full pad records and footprints are exact. Historical source7 sidecar intentionally inverse-restores original poses; 22 layer/paste fields on R6 and U15 pads are separately recorded, not substituted for current settings.",
+  "execution": {
+    "accepted_or_adopted": false,
+    "binding_sha256": "c2ef45f32af56e5538969dd208bf25a967fd2fb8a434d121c78a8769f72673b6",
+    "checker_sha256": "3f8b8201054659b0f31c97232259e0df9f180c2a8e51b61735a66ef3c51ad799",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/check_candidate.py",
+      "--binding",
+      "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/binding-return-stitch-v2.json",
+      "--binding-sha256",
+      "c2ef45f32af56e5538969dd208bf25a967fd2fb8a434d121c78a8769f72673b6",
+      "--out",
+      "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/physical-audit-return-stitch-v1.json",
+      "--lease",
+      "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/owner-lease-return-stitch-active-v1.json",
+      "--lease-sha256",
+      "b62d810107a4f1b0e32c1f0a0d332153a6fabed15a833c81dd7887d1cb9b26db",
+      "--lock-fd",
+      "3"
+    ],
+    "elapsed_seconds": 86.0328536159941,
+    "exclusive_lane_held_through_exit": true,
+    "memory_bytes": 4294967296,
+    "output_sha256": "dff63778a524168ff42bc176e67addc280a3c80458303bba3480a70201afe3bc",
+    "returncode": 0,
+    "single_cpu": 0,
+    "source_bindings_unchanged": true,
+    "started_utc": "2026-10-12T13:59:33.342534+00:00",
+    "timed_out": false,
+    "wall_limit_seconds": 600
+  },
+  "files": {
+    "binding-return-stitch-v2.json": {
+      "bytes": 15761,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/binding-return-stitch-v2.json",
+      "sha256": "c2ef45f32af56e5538969dd208bf25a967fd2fb8a434d121c78a8769f72673b6"
+    },
+    "check_candidate.py": {
+      "bytes": 20197,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/check_candidate.py",
+      "sha256": "3f8b8201054659b0f31c97232259e0df9f180c2a8e51b61735a66ef3c51ad799"
+    },
+    "handoff.json": {
+      "bytes": 6310,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/handoff.json",
+      "sha256": "554c049b5d31d859582f305a8d0b98a07f71a61b6e248a290d754ee587d5bdc4"
+    },
+    "physical-audit-return-stitch-v1.execution.json": {
+      "bytes": 1777,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/physical-audit-return-stitch-v1.execution.json",
+      "sha256": "9cacf9657f96178428201b36fa718f20bd5a05e8a30fcab552dd7c230814f729"
+    },
+    "physical-audit-return-stitch-v1.json": {
+      "bytes": 4362227,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/physical-audit-return-stitch-v1.json",
+      "sha256": "dff63778a524168ff42bc176e67addc280a3c80458303bba3480a70201afe3bc"
+    },
+    "physical_audit.py": {
+      "bytes": 27866,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/physical_audit.py",
+      "sha256": "564a9e1323100215d843213135cfa8a4aaeb3b93280da41696da35990ebc4e75"
+    },
+    "preparation-review.json": {
+      "bytes": 3759,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/preparation-review.json",
+      "sha256": "9cb7dbd01a4eba24b698c0c2edfffe52437593112dcff14b139ce11cbdc69b6c"
+    },
+    "review_result.py": {
+      "bytes": 5273,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/review_result.py",
+      "sha256": "636abdfc7f801aa9f6679035c81fc974f9263132f73b4003c47caa9cd6da1e78"
+    },
+    "review_symmetric_planes.py": {
+      "bytes": 5047,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/review_symmetric_planes.py",
+      "sha256": "f698d2681ac91c6dce5f836020a4f5c5b57db4055c5b3ae30137efec3be468fa"
+    },
+    "reviewed-return-stitch-v1.json": {
+      "bytes": 47269,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/reviewed-return-stitch-v1.json",
+      "sha256": "12f272ff00b08da1a3681b44a11a0b330ca66b46af9321eb83d1eb2852787799"
+    },
+    "source-bindings.json": {
+      "bytes": 9407,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/source-bindings.json",
+      "sha256": "46d50e0e9eaecfc566a8135c3c4b5afd0f54fdbca3d6dd220efe27f2f7b2af51"
+    },
+    "symmetric-plane-delta-v1.json": {
+      "bytes": 39490,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/symmetric-plane-delta-v1.json",
+      "sha256": "da34685b0bfd6d0192e51482d2ff9b0ad2340d033aa93d86a82823544a104279"
+    }
+  },
+  "full_IO_cuts_passed": 21,
+  "full_RX_protection_passed": false,
+  "full_lossless_export_receipts": {
+    "auxiliary": {
+      "compressed": {
+        "bytes": 4502683,
+        "sha256": "3f569023af391afbcd5f9ae5b8438a5f5fb7481d374350e7bb4a7d95b742e687"
+      },
+      "decompression_verified": true,
+      "encoding": "gzip",
+      "path": "after-auxiliary.json.gz",
+      "uncompressed": {
+        "bytes": 25197341,
+        "sha256": "b331268ef7141de0fe785be10f4e3e69da537cd918c21941b42265023c0697b8"
+      }
+    },
+    "native": {
+      "compressed": {
+        "bytes": 6854144,
+        "sha256": "9fdca2988505a014c28418755800ff515d2f9b3900eb0bb70a0055a4c0763142"
+      },
+      "decompression_verified": true,
+      "encoding": "gzip",
+      "path": "after.native.json.gz",
+      "uncompressed": {
+        "bytes": 36792163,
+        "sha256": "02c72e195b5c2cde307ec83ed587b07dc0c18565892afd2b7bf16f6602986034"
+      }
+    },
+    "schema": "f722-lossless-native-exports/v1",
+    "source_auxiliary": {
+      "path": "recovery-negotiated-routing-20261011/source7-native5-sck-red-polygon-native-preparation-v3/outputs/native4-cleanup-v1/after-auxiliary.json",
+      "sha256": "8c12f48a337cb102d15f5e57ead9cb064777f9970c4a8d015c46f470efa23971"
+    },
+    "source_native": {
+      "path": "recovery-negotiated-routing-20261011/source7-native5-sck-red-polygon-native-preparation-v3/outputs/native4-cleanup-v1/after.native.json",
+      "sha256": "c98fd2e2f8c66b43c38897fecfc1263f855df0bcf8598f31b3a74a10a142f762"
+    }
+  },
+  "native4_native5_native6_native7_pad_pair_losses": {
+    "native4": 0,
+    "native5": 0,
+    "native6": 0,
+    "native7": 0
+  },
+  "native4_transaction_delta": {
+    "added": [
+      "27d3f5ea-ef22-58be-bf66-41b23e97fa07",
+      "35db12f5-10fc-560e-802b-c15a36c80b34",
+      "4c505c31-74c0-552c-87b4-62e95fc1fd98",
+      "d32c719a-f1a5-5703-9665-8a93f6486bde",
+      "e991e944-2e46-5383-94f0-4cea66905703"
+    ],
+    "all_2447_retained_records_exact_except_bijective_net_codes": true,
+    "all_558_pad_identities_nets_contours_exact": true,
+    "all_footprints_board_and_zone_settings_exact": true,
+    "moved": [],
+    "removed": [
+      "1fd0b1fd-d421-5da0-bb98-604a14fbcaa4",
+      "37b44d45-2ea3-51f7-aed0-6a0037b697fa",
+      "c5d3af56-5d3a-5c84-88a2-f1d134c5d0c6"
+    ]
+  },
+  "native_geometric_DRC_errors": 0,
+  "new_and_unrelated_obligations_all_passed": true,
+  "new_via_fresh_plane_checks": [
+    {
+      "actual_GND_plane_checks": [
+        {
+          "GND_annulus_uncovered_mm2": null,
+          "GND_zone_uuid": "c956a476-e320-4f09-9832-420df749bd95",
+          "actual_land_to_refilled_plane_gap_mm": 0.12749983792930922,
+          "attachment_mode": "FOREIGN_NET_PLANE_CLEARANCE",
+          "layer": "In1.Cu",
+          "native_export_two_boundary_allowance_mm": 2e-05,
+          "passed": true,
+          "positive_copper_overlap_mm2": 0.0,
+          "required_mm": 0.127
+        },
+        {
+          "GND_annulus_uncovered_mm2": null,
+          "GND_zone_uuid": "ee652b71-6147-4d53-abc1-8530e0b19eaf",
+          "actual_land_to_refilled_plane_gap_mm": 0.12749983792930922,
+          "attachment_mode": "FOREIGN_NET_PLANE_CLEARANCE",
+          "layer": "In4.Cu",
+          "native_export_two_boundary_allowance_mm": 2e-05,
+          "passed": true,
+          "positive_copper_overlap_mm2": 0.0,
+          "required_mm": 0.127
+        }
+      ],
+      "assembly_body_projection_qualified": false,
+      "minimum_drill_to_open_mask_mm": [
+        0.7185958836119227,
+        "3db6acac-54dc-437e-b85c-e067261fb30b",
+        "B.Mask"
+      ],
+      "minimum_drill_to_other_hole_mm": [
+        0.9499999999999993,
+        "d32c719a-f1a5-5703-9665-8a93f6486bde"
+      ],
+      "net": "FLASH_SCK",
+      "passed": true,
+      "tented": {
+        "B.Mask": true,
+        "F.Mask": true
+      },
+      "uuid": "35db12f5-10fc-560e-802b-c15a36c80b34",
+      "xy": [
+        30.375,
+        24.8959
+      ]
+    },
+    {
+      "actual_GND_plane_checks": [
+        {
+          "GND_annulus_uncovered_mm2": 0.0,
+          "GND_zone_uuid": "c956a476-e320-4f09-9832-420df749bd95",
+          "actual_land_to_refilled_plane_gap_mm": 0.0,
+          "attachment_mode": "DECLARED_GND_PLANE_STITCH",
+          "layer": "In1.Cu",
+          "native_export_two_boundary_allowance_mm": 2e-05,
+          "passed": true,
+          "positive_copper_overlap_mm2": 0.12762987684200033,
+          "required_mm": 0.0
+        },
+        {
+          "GND_annulus_uncovered_mm2": 0.0,
+          "GND_zone_uuid": "ee652b71-6147-4d53-abc1-8530e0b19eaf",
+          "actual_land_to_refilled_plane_gap_mm": 0.0,
+          "attachment_mode": "DECLARED_GND_PLANE_STITCH",
+          "layer": "In4.Cu",
+          "native_export_two_boundary_allowance_mm": 2e-05,
+          "passed": true,
+          "positive_copper_overlap_mm2": 0.12762987684200033,
+          "required_mm": 0.0
+        }
+      ],
+      "assembly_body_projection_qualified": false,
+      "minimum_drill_to_open_mask_mm": [
+        0.8859306098120777,
+        "550fa594-eb93-4650-827e-48075ba044bd",
+        "F.Mask"
+      ],
+      "minimum_drill_to_other_hole_mm": [
+        0.9499999999999993,
+        "35db12f5-10fc-560e-802b-c15a36c80b34"
+      ],
+      "net": "GND",
+      "passed": true,
+      "tented": {
+        "B.Mask": true,
+        "F.Mask": true
+      },
+      "uuid": "d32c719a-f1a5-5703-9665-8a93f6486bde",
+      "xy": [
+        29.225,
+        24.8959
+      ]
+    }
+  ],
+  "ordinary_refill_raw_equality_replayed": {
+    "all_raw_board_settings_and_records_exact_except_declared_changes": true,
+    "exact_NEVER_to_ALWAYS_zone_UUIDs": [],
+    "ordinary_refill_raw_geometry_equal": true
+  },
+  "previous_handoff": {
+    "bytes": 27395,
+    "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/final-handoff-return-stitch-v1.json",
+    "sha256": "c38e46e68d33baec369f889d5b748c5c2fbe3a9d898f5219d2136f85ec972556"
+  },
+  "prior_contact_disposition": "Only source-bound unchanged VX/CORE/RED local contact windows retain the separately reviewed native4 union/annulus disposition; original raw predicates remain visible.",
+  "prior_contact_windows": {
+    "all_changed_copper_and_drills_disjoint_from_reviewed_windows": [
+      {
+        "drill_bounds_mm": [
+          29.818598,
+          24.748136,
+          30.018598,
+          24.948136
+        ],
+        "native_copper_bounds_mm": {
+          "B.Cu": [
+            29.693598,
+            24.623136,
+            30.143598,
+            25.073136
+          ],
+          "F.Cu": [
+            29.693598,
+            24.623136,
+            30.143598,
+            25.073136
+          ],
+          "In1.Cu": [
+            29.693598,
+            24.623136,
+            30.143598,
+            25.073136
+          ],
+          "In2.Cu": [
+            29.693598,
+            24.623136,
+            30.143598,
+            25.073136
+          ],
+          "In3.Cu": [
+            29.693598,
+            24.623136,
+            30.143598,
+            25.073136
+          ],
+          "In4.Cu": [
+            29.693598,
+            24.623136,
+            30.143598,
+            25.073136
+          ]
+        },
+        "uuid": "c5d3af56-5d3a-5c84-88a2-f1d134c5d0c6"
+      },
+      {
+        "drill_bounds_mm": null,
+        "native_copper_bounds_mm": {
+          "In2.Cu": [
+            25.494254,
+            23.96609,
+            29.982107,
+            24.911645
+          ]
+        },
+        "uuid": "1fd0b1fd-d421-5da0-bb98-604a14fbcaa4"
+      },
+      {
+        "drill_bounds_mm": null,
+        "native_copper_bounds_mm": {
+          "B.Cu": [
+            29.85509,
+            23.858623,
+            32.700215,
+            24.911644
+          ]
+        },
+        "uuid": "37b44d45-2ea3-51f7-aed0-6a0037b697fa"
+      },
+      {
+        "drill_bounds_mm": null,
+        "native_copper_bounds_mm": {
+          "In2.Cu": [
+            25.494254,
+            23.96609,
+            30.929234,
+            24.738035
+          ]
+        },
+        "uuid": "27d3f5ea-ef22-58be-bf66-41b23e97fa07"
+      },
+      {
+        "drill_bounds_mm": null,
+        "native_copper_bounds_mm": {
+          "In2.Cu": [
+            30.311491,
+            24.611017,
+            30.929234,
+            24.959409
+          ]
+        },
+        "uuid": "4c505c31-74c0-552c-87b4-62e95fc1fd98"
+      },
+      {
+        "drill_bounds_mm": null,
+        "native_copper_bounds_mm": {
+          "B.Cu": [
+            30.311497,
+            23.858628,
+            32.700211,
+            24.959403
+          ]
+        },
+        "uuid": "e991e944-2e46-5383-94f0-4cea66905703"
+      },
+      {
+        "drill_bounds_mm": [
+          30.275,
+          24.7959,
+          30.475,
+          24.9959
+        ],
+        "native_copper_bounds_mm": {
+          "B.Cu": [
+            30.15,
+            24.6709,
+            30.6,
+            25.1209
+          ],
+          "F.Cu": [
+            30.15,
+            24.6709,
+            30.6,
+            25.1209
+          ],
+          "In1.Cu": [
+            30.15,
+            24.6709,
+            30.6,
+            25.1209
+          ],
+          "In2.Cu": [
+            30.15,
+            24.6709,
+            30.6,
+            25.1209
+          ],
+          "In3.Cu": [
+            30.15,
+            24.6709,
+            30.6,
+            25.1209
+          ],
+          "In4.Cu": [
+            30.15,
+            24.6709,
+            30.6,
+            25.1209
+          ]
+        },
+        "uuid": "35db12f5-10fc-560e-802b-c15a36c80b34"
+      },
+      {
+        "drill_bounds_mm": [
+          29.125,
+          24.7959,
+          29.325,
+          24.9959
+        ],
+        "native_copper_bounds_mm": {
+          "B.Cu": [
+            29.0,
+            24.6709,
+            29.45,
+            25.1209
+          ],
+          "F.Cu": [
+            29.0,
+            24.6709,
+            29.45,
+            25.1209
+          ],
+          "In1.Cu": [
+            29.0,
+            24.6709,
+            29.45,
+            25.1209
+          ],
+          "In2.Cu": [
+            29.0,
+            24.6709,
+            29.45,
+            25.1209
+          ],
+          "In3.Cu": [
+            29.0,
+            24.6709,
+            29.45,
+            25.1209
+          ],
+          "In4.Cu": [
+            29.0,
+            24.6709,
+            29.45,
+            25.1209
+          ]
+        },
+        "uuid": "d32c719a-f1a5-5703-9665-8a93f6486bde"
+      }
+    ],
+    "contact_layers": {
+      "+3V3_CORE": "In3.Cu",
+      "LED_RED_K": "B.Cu",
+      "VX_PROTECTED": "In2.Cu"
+    },
+    "contact_windows_mm": {
+      "+3V3_CORE": [
+        27.6,
+        8.9,
+        28.8,
+        10.2
+      ],
+      "LED_RED_K": [
+        33.5,
+        24,
+        34.7,
+        25.3
+      ],
+      "VX_PROTECTED": [
+        24.3,
+        8,
+        29.2,
+        12
+      ]
+    },
+    "exact_retained_local_object_UUIDs": [
+      "0fe5da20-beb7-5844-8191-ee5db562417c",
+      "18a1add5-6c53-4a95-80c9-5d3c184890c1",
+      "2754fcb2-b9e9-5c3b-8023-61718c16e5e6",
+      "2f68e32c-4199-4e40-bffa-04055f629681",
+      "30a3a18f-7b79-5b61-8cba-59aaea3d9c7b",
+      "5080bbb8-ecda-5e64-af43-0365b1e0ab69",
+      "6501b708-5946-578c-b5c3-2983d10e4a15",
+      "66703958-1c80-49b8-96be-e8c143924443",
+      "70c984d3-3d34-4145-ac2c-503a1ebb04c5",
+      "76f49081-74eb-4510-a164-d5ab449d95a6",
+      "8799185f-ff68-4d69-a9fb-70119a61badf",
+      "8fde6880-ce34-592b-b1cf-9bd566e22350",
+      "916c3c9a-af23-4966-abb1-0f5d540569e7",
+      "a7c74937-541d-40cd-aa89-1cee7d312b35",
+      "bff99bb6-bcb9-43ee-97db-c5cf44f4a799",
+      "c159b9a9-53bd-4e53-a99f-81263220f28e",
+      "c1a8c497-50bc-52bc-acbb-454d77c1457e",
+      "ca49f8ab-b5a6-4faf-9e5c-d77b66ae33bd",
+      "cfe3717f-2f76-469a-9489-f2c7d85904dd",
+      "daeee948-0692-59ef-88d8-569f0b7abe4b",
+      "dc033951-9af9-426d-84f7-e3be434c25d3",
+      "dee086ad-0653-55a8-a0da-35d0f8e6dae7",
+      "ea4d64da-52eb-4bd8-9515-1e4ebd405db6",
+      "f9b40281-ba5b-44ef-9b70-61a9f4e2ef6d",
+      "fbaaee06-6e3d-5b45-b993-1fb424b507ee"
+    ],
+    "generic_kernel_certification": false,
+    "no_zone_fill_on_reviewed_contact_layers": true,
+    "passed": true,
+    "prior_raw_contact_predicates_and_separate_disposition_retained": true,
+    "source_native4_sha256": "c98fd2e2f8c66b43c38897fecfc1263f855df0bcf8598f31b3a74a10a142f762"
+  },
+  "prior_raw_contact_gates": {
+    "CORE47_and_every_new_CORE_repair_complete": true,
+    "R34_to_actual_RX_IO1_improved_and_safe_partial_path": false,
+    "RED_retained_B_lead_full_width_join": false,
+    "VX_polygon_all_original_terminal_contacts_supported": false,
+    "actual_TX_IO2_cut_complete_and_passed": true,
+    "all_22_actual_IO_contracts_reported": true,
+    "all_actual_IO_external_NC_bridges_passed": true,
+    "all_changed_real_pad_contacts_full_width": true,
+    "all_new_copper_clearances_including_polygon_and_fills": true,
+    "all_new_track_endpoints_union_or_annulus_supported": false,
+    "all_new_via_GND_plane_clearances": true,
+    "all_new_via_annular_contacts_full_width": true,
+    "all_previously_passed_actual_IO_cuts_preserved": true,
+    "all_required_whole_net_pad_counts_exact": true,
+    "all_required_whole_nets_complete": true,
+    "all_surviving_native5_object_fragments_preserved": true,
+    "every_new_copper_fragment_reaches_real_pad": true,
+    "native_geometric_DRC_errors_zero": true,
+    "no_native5_physical_pad_pair_losses": true,
+    "no_native6_physical_pad_pair_losses": true,
+    "no_native7_physical_pad_pair_losses": true,
+    "raw_native_open_count_improved": true,
+    "shared_GND_physical_support_passed": true,
+    "updated_RX_TX_branch_cut_contracts_passed": true
+  },
+  "qualification_limits": [
+    "Four original net gaps remain.",
+    "RX full protection path remains incomplete.",
+    "SCK total route length and unsupported reference projection remain material electrical limitations.",
+    "U15 ESD return shares C75 47 uF +5V_PERIPH bulk-capacitor return; shared impedance/ESD qualification pending.",
+    "VX polygon neck/current capacity, CORE and other current-density/power qualification remain pending.",
+    "Moved RED via increases J11 nominal body/drill projection overlap; no assembly waiver or qualification.",
+    "Historical native6 DC evidence is stale for current power geometry."
+  ],
+  "raw_aggregate_passed": false,
+  "raw_false_gates": [
+    "R34_to_actual_RX_IO1_improved_and_safe_partial_path",
+    "RED_retained_B_lead_full_width_join",
+    "VX_polygon_all_original_terminal_contacts_supported"
+  ],
+  "raw_native_DRC_counts": {
+    "schematic_parity": 0,
+    "unconnected_items": 4,
+    "violations": 3
+  },
+  "raw_plane_area_comparison_caveat": {
+    "candidate_representation": "Actual native conductive plane after all physical holes subtracted",
+    "consequence": "Raw areas remain preserved but cannot be described as symmetric saved-fill or symmetric conductive-plane deltas. Full graph, reference projection and new via contacts use actual candidate conductive shapes.",
+    "fields": [
+      "removed_SCK_barrel_refill_review[].all_GND_fill_area_added_mm2",
+      "removed_SCK_barrel_refill_review[].all_GND_fill_area_removed_mm2"
+    ],
+    "source_representation": "Saved native fill contours before global drill subtraction",
+    "symmetric_delta_recomputed": true
+  },
+  "recipe": {
+    "bytes": 47282,
+    "path": "recovery-negotiated-routing-20261011/native4-sck-reference-review-v1/compiled-reference-stitch-recipe-v1.json",
+    "sha256": "3d25db5a1a27e250b9a3ad7103f9aa01f58b8b5abad270c0a00e901039d2f0a4"
+  },
+  "reference_interval_coordination": {
+    "cause_assessment_pending_from_route_worker": true,
+    "exact_new_long_In2_outside_interval_mm": 0.431089844613457,
+    "no_adoption_performed": true,
+    "route_worker_informed": true
+  },
+  "remaining_RX_gap": "Original J11.1 connector branch remains disconnected. R34 to actual U15 IO1 is connected with full-width support; explicit source/target no-shared-layer and multi-layer no-bypass evidence permits only partial progress.",
+  "reviewed_gates": {
+    "all_new_and_unrelated_raw_obligations_passed": true,
+    "exact_prior_contact_scope_still_unchanged": true,
+    "no_native4_native5_native6_native7_pad_relationship_loss": true,
+    "permitted_partial_RX_progress": true
+  },
+  "schema": "f722-return-stitch-independent-final-handoff/v2",
+  "source_native4_sha256": "c98fd2e2f8c66b43c38897fecfc1263f855df0bcf8598f31b3a74a10a142f762",
+  "source_reference_report": {
+    "bytes": 4378243,
+    "path": "recovery-negotiated-routing-20261011/native5-sck-independent-audit-preparation-v2/physical-audit-native4-cleanup-v1.json",
+    "sha256": "3597f3fbc390da57255a2ab7a45132bed5ddcf7360af5dec3cdea679c1f465f8"
+  },
+  "status": "EXACT_GEOMETRIC_WIP_REVIEW_PASSED_WITH_REFERENCE_TRADEOFF",
+  "symmetric_plane_delta": {
+    "elapsed_seconds": 2.871813078993,
+    "file": {
+      "bytes": 39490,
+      "path": "recovery-negotiated-routing-20261011/native4-return-stitch-independent-audit-preparation-v1/symmetric-plane-delta-v1.json",
+      "sha256": "da34685b0bfd6d0192e51482d2ff9b0ad2340d033aa93d86a82823544a104279"
+    },
+    "peak_RSS_MiB": 381.08984375,
+    "per_plane": [
+      {
+        "conductive": {
+          "added_WKB_sha256": "82ea2832a82c678d92702b7a08750d00aff38a99ef934aa1b8b9ae4ef2ee2229",
+          "added_bounds_mm": [
+            14.145114,
+            24.495636,
+            38.8025,
+            25.1455
+          ],
+          "added_mm2": 0.2866686733675157,
+          "candidate_area_mm2": 883.8644912068017,
+          "candidate_components": 1,
+          "net_change_mm2": -0.007618489307787968,
+          "removed_WKB_sha256": "033058cfcbfdc33e33ec05d71522722cbc772a653f3b495a7dbfe9520a4145aa",
+          "removed_bounds_mm": [
+            29.125,
+            24.5434,
+            30.746179,
+            25.1455
+          ],
+          "removed_mm2": 0.2942871626750166,
+          "source_area_mm2": 883.8721096961095,
+          "source_components": 1
+        },
+        "layer": "In1.Cu",
+        "saved": {
+          "added_WKB_sha256": "78d4739b8f9ff5eb95124b7c4ec62d126c04c940d943b49e501fc89ed2d36229",
+          "added_bounds_mm": [
+            14.145114,
+            24.495636,
+            38.8025,
+            25.1455
+          ],
+          "added_mm2": 0.2866686733675157,
+          "candidate_area_mm2": 896.2096318138699,
+          "candidate_components": 1,
+          "net_change_mm2": 0.023799591412625887,
+          "removed_WKB_sha256": "9b7ecba4f2798cb6fa145f780cb84685f264e90e7ba5ed128669f35ff73bfd31",
+          "removed_bounds_mm": [
+            30.173928652464035,
+            24.5434,
+            30.746179,
+            25.1455
+          ],
+          "removed_mm2": 0.26286908195501657,
+          "source_area_mm2": 896.1858322224573,
+          "source_components": 1
+        },
+        "zone_uuid": "c956a476-e320-4f09-9832-420df749bd95"
+      },
+      {
+        "conductive": {
+          "added_WKB_sha256": "82ea2832a82c678d92702b7a08750d00aff38a99ef934aa1b8b9ae4ef2ee2229",
+          "added_bounds_mm": [
+            14.145114,
+            24.495636,
+            38.8025,
+            25.1455
+          ],
+          "added_mm2": 0.2866686733675157,
+          "candidate_area_mm2": 883.8644912068017,
+          "candidate_components": 1,
+          "net_change_mm2": -0.007618489307787968,
+          "removed_WKB_sha256": "033058cfcbfdc33e33ec05d71522722cbc772a653f3b495a7dbfe9520a4145aa",
+          "removed_bounds_mm": [
+            29.125,
+            24.5434,
+            30.746179,
+            25.1455
+          ],
+          "removed_mm2": 0.2942871626750166,
+          "source_area_mm2": 883.8721096961095,
+          "source_components": 1
+        },
+        "layer": "In4.Cu",
+        "saved": {
+          "added_WKB_sha256": "78d4739b8f9ff5eb95124b7c4ec62d126c04c940d943b49e501fc89ed2d36229",
+          "added_bounds_mm": [
+            14.145114,
+            24.495636,
+            38.8025,
+            25.1455
+          ],
+          "added_mm2": 0.2866686733675157,
+          "candidate_area_mm2": 896.2096318138699,
+          "candidate_components": 1,
+          "net_change_mm2": 0.023799591412625887,
+          "removed_WKB_sha256": "9b7ecba4f2798cb6fa145f780cb84685f264e90e7ba5ed128669f35ff73bfd31",
+          "removed_bounds_mm": [
+            30.173928652464035,
+            24.5434,
+            30.746179,
+            25.1455
+          ],
+          "removed_mm2": 0.26286908195501657,
+          "source_area_mm2": 896.1858322224573,
+          "source_components": 1
+        },
+        "zone_uuid": "ee652b71-6147-4d53-abc1-8530e0b19eaf"
+      }
+    ],
+    "source_and_candidate_each_use_own_actual_drills": true
+  },
+  "whole_net_groups": [
+    {
+      "all_real_pads_connected": true,
+      "net": "+3V3_CORE",
+      "pad_count": 47
+    },
+    {
+      "all_real_pads_connected": true,
+      "net": "FLASH_SCK",
+      "pad_count": 2
+    },
+    {
+      "all_real_pads_connected": true,
+      "net": "GND",
+      "pad_count": 133
+    },
+    {
+      "all_real_pads_connected": true,
+      "net": "LED_GREEN_K",
+      "pad_count": 2
+    },
+    {
+      "all_real_pads_connected": true,
+      "net": "LED_RED_K",
+      "pad_count": 2
+    },
+    {
+      "all_real_pads_connected": true,
+      "net": "PORT_C_TX_EXT",
+      "pad_count": 4
+    },
+    {
+      "all_real_pads_connected": true,
+      "net": "VX_PROTECTED",
+      "pad_count": 13
+    }
+  ]
+}
