@@ -1,0 +1,53 @@
+(footprint "R_0201_0603Metric_YAGEO_AC"
+  (version 20260206)
+  (generator "pcbnew")
+  (layer "F.Cu")
+  (descr "YAGEO AC0201FR-0722RL / C144830, EIA 0201 (0603 metric); manufacturer reflow land and paste pattern per YAGEO Chip Resistors Mounting V10 Table 1/Fig 4: A=1.00 B=0.30 C=0.35 D=0.40 mm. AC-series datasheet explicitly applies RC mounting guidance. Max body 0.63x0.33x0.26 mm. Courtyard copper envelope +0.15 mm. Sources: https://www.yageogroup.com/content/datasheet/asset/file/PYU-AC_51_ROHS_L ; https://yageogroup.com/content/Resource%20Library/Product%20Guide-Catalog/yageo_PYu-R_Mount_10_19050818_343.pdf")
+  (tags "resistor YAGEO AC0201 0603 metric C144830")
+  (property "Reference" "REF**"
+    (at 0 -0.70 0)
+    (layer "F.SilkS")
+    (effects (font (size 0.40 0.40) (thickness 0.07)))
+  )
+  (property "Value" "R_0201_0603Metric_YAGEO_AC"
+    (at 0 0.70 0)
+    (layer "F.Fab")
+    (effects (font (size 0.40 0.40) (thickness 0.07)))
+  )
+  (attr smd)
+  (fp_rect
+    (start -0.65 -0.35)
+    (end 0.65 0.35)
+    (stroke (width 0.05) (type solid))
+    (fill no)
+    (layer "F.CrtYd")
+  )
+  (fp_rect
+    (start -0.30 -0.15)
+    (end 0.30 0.15)
+    (stroke (width 0.05) (type solid))
+    (fill no)
+    (layer "F.Fab")
+  )
+  (fp_text user "${REFERENCE}"
+    (at 0 0 0)
+    (layer "F.Fab")
+    (effects (font (size 0.20 0.20) (thickness 0.04)))
+  )
+  (pad "1" smd rect
+    (at -0.325 0)
+    (size 0.35 0.40)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+  )
+  (pad "2" smd rect
+    (at 0.325 0)
+    (size 0.35 0.40)
+    (layers "F.Cu" "F.Paste" "F.Mask")
+  )
+  (embedded_fonts no)
+  (model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0201_0603Metric.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+)

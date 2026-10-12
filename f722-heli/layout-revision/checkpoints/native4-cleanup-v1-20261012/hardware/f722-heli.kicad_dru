@@ -1,0 +1,6 @@
+(version 1)
+# Project-local manufacturing constraints; no diagnostics are suppressed.
+(rule "Signal minimum" (constraint track_width (min 0.127mm)))
+(rule "Copper edge clearance" (constraint edge_clearance (min 0.254mm)))
+(rule "Manufacturing drill-to-copper" (constraint hole_clearance (min 0.2mm)))
+(rule "Through-via annulus" (constraint annular_width (min 0.125mm)))
