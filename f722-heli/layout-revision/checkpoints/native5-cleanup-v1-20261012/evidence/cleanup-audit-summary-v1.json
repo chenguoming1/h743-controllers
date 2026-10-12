@@ -1,0 +1,216 @@
+{
+  "accepted_or_adopted": false,
+  "audit_bindings": {
+    "binding-native5-cleanup-v1.json": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/binding-native5-cleanup-v1.json",
+      "sha256": "6045cb8ef82492e6c250f3e7cb53f921c45db4790f0bc73b106203db97857332"
+    },
+    "check_candidate.py": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/check_candidate.py",
+      "sha256": "bf58bbfe12e450d06826004c499fbf12d81a149e49deea7e81eeb08919eebba1"
+    },
+    "cleanup-reviewed-disposition-v1.json": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/cleanup-reviewed-disposition-v1.json",
+      "sha256": "be2dfb278ef81590a2cb8b2abd86f47a1b82875ab9a294c7467eafcec9470bae"
+    },
+    "physical-audit-native5-cleanup-v1.execution.json": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/physical-audit-native5-cleanup-v1.execution.json",
+      "sha256": "486db036ec0b0284b241e36fe452dedc206255f91b42af6e64e57b928f5ff3e0"
+    },
+    "physical-audit-native5-cleanup-v1.json": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/physical-audit-native5-cleanup-v1.json",
+      "sha256": "26ca9d2fc020c0b6bb8d0346441cec2a21c99e560304572752e54d91bfa256e7"
+    },
+    "physical_audit.py": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/physical_audit.py",
+      "sha256": "70f7b0e24997e17c8af1e8ac1ebc49ca53f3642801946692c132a525b09f4477"
+    },
+    "review_cleanup_result.py": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/review_cleanup_result.py",
+      "sha256": "583f9ffa45122d0b9ad2b1d9563bd3988569f21f090377fd66e853d23e777aca"
+    },
+    "review_partial_rx_progress.py": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-reflected-connectivity-preparation-v3/review_partial_rx_progress.py",
+      "sha256": "90f39177c91a7ca2d642bec738cd60db92ea3dcbebca91361d0f45eff7b0dba3"
+    }
+  },
+  "candidate": {
+    "board_sha256": "01b115302e079c6c7a2b1370ef4a089c19c7c2b54fd13e73cf2341db2dffc133",
+    "native_sha256": "46d0b78c82003a3042e68ea2258fa40e5032499b3c3dc864594519c9178821ea",
+    "recipe_sha256": "0dfd4ea5db3699d0e1bc94254ddeb24d4ad1f0a3063fea49476f0aa3e17c50f3"
+  },
+  "cleanup_delta": {
+    "all_94_prior_additions_and_other_retained_full_records_unchanged": true,
+    "all_four_trim_endpoints_full_width_supported": true,
+    "both_trim_fragments_reach_real_pads": true,
+    "cumulative_added_tracks": 87,
+    "cumulative_added_vias": 9,
+    "cumulative_source7_cuts": 64,
+    "exact_ten_TX_source_cuts": true,
+    "two_trim_tracks": true
+  },
+  "execution": {
+    "elapsed_seconds": 74.89889359101653,
+    "enforced_memory_bytes": 4294967296,
+    "enforced_wall_seconds": 600,
+    "post_review_controls_passed": 12,
+    "post_review_peak_RSS_MiB": 335.33984375,
+    "returncode": 0
+  },
+  "full_actual_IO_cuts": {
+    "TX_actual_IO2_cut_complete_and_passed": true,
+    "all_previously_passed_cases_preserved": true,
+    "contracts_reported": 22,
+    "full_RX_protection_passed": false,
+    "full_RX_status": "INCOMPLETE_BEFORE_CUT",
+    "incomplete": 1,
+    "incomplete_case": "published-06 / PORT_C_RX_EXT / actual IO U15.1",
+    "passed": 21
+  },
+  "native_DRC": {
+    "ERC_violations": 0,
+    "all_warning_UUIDs_present_in_native6": true,
+    "geometric_error_entries": 0,
+    "schematic_parity_entries": 0,
+    "unconnected_items": 5,
+    "warning_UUIDs": [
+      "6961a72d-5b35-5766-909f-4fe23d001794",
+      "772ddcac-065d-5d1d-88d4-24a832e0f2be",
+      "a5df4a3c-85c0-54f1-8a9a-c0a73de16d7a"
+    ],
+    "warning_type": "via_dangling",
+    "warnings": 3
+  },
+  "partial_RX_review": {
+    "J11_connector_gap_remains": true,
+    "R34_to_actual_IO1_connected_full_width": true,
+    "all_seven_RX_records_inventoried_no_vias_or_zones": true,
+    "completed_RX_component_layer_superset": [
+      "B.Cu"
+    ],
+    "empty_gap_disposition": "PROVED_NO_COMMON_CONDUCTIVE_LAYER",
+    "external_endpoints_survive_actual_IO_cut": true,
+    "multilayer_outside_actual_IO_no_bypass": true,
+    "no_full_RX_pass_inferred": true,
+    "raw_aggregate_false_preserved": true,
+    "raw_aggregate_gate": false,
+    "reviewed_partial_progress_passed": true,
+    "same_layer_gap_list": [],
+    "source_component_layer_superset": [
+      "F.Cu"
+    ]
+  },
+  "physical_pad_relationships": {
+    "UUID_or_role_permutation_used": false,
+    "all_558_pad_identities_and_nets_unchanged": true,
+    "all_surviving_native6_object_fragments_preserved": true,
+    "cut_exemptions": "Only 20 original reflected-transaction cuts and 10 exact TX cleanup cuts; no blanket fragment exemption",
+    "native6_lost_pad_pairs": 0,
+    "native7_lost_pad_pairs": 0,
+    "raw_native5_lost_pad_pairs": 0
+  },
+  "qualification_limits": {
+    "C75_role": "47uF +5V_PERIPH bulk capacitor GND return",
+    "C75_shared_barrel": "c8f3ea5d-98d9-430c-8f71-b02f9adc0f94",
+    "current_thermal_or_transient_qualification_performed": false,
+    "prior_native6_DC_power_evidence_current_for_candidate": false,
+    "shared_ESD_reference_equivalence_qualified": false
+  },
+  "schema": "f722-native5-TX-cleanup-independent-audit-summary/v1",
+  "source_bindings": {
+    "baseline_board": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-native-preparation-v1/outputs/local-cleanup-v4/diagnostic-board/f722-heli.kicad_pcb",
+      "sha256": "76ae77d04a615762e96fbdac85c8190e52ace9125b68ce6c3176dccf776413e0"
+    },
+    "baseline_native": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-native-preparation-v1/outputs/local-cleanup-v4/after.native.json",
+      "sha256": "dba3668fe6f3f0620952bf11bdaa18f342047a7cba63f98e20f5459002ee7f88"
+    },
+    "candidate_board": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/diagnostic-board/f722-heli.kicad_pcb",
+      "sha256": "01b115302e079c6c7a2b1370ef4a089c19c7c2b54fd13e73cf2341db2dffc133"
+    },
+    "candidate_native": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/after.native.json",
+      "sha256": "46d0b78c82003a3042e68ea2258fa40e5032499b3c3dc864594519c9178821ea"
+    },
+    "cleanup_guard": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/cleanup_guard.py",
+      "sha256": "20141a0e44abc6fb2119e90666df1b96cd0bfcd6fc16b13d057a76e72c69266e"
+    },
+    "drc": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/drc-all.json",
+      "sha256": "58bff634c44075c0083966e1bfcc065d05057141825e6d268846fadd0f9a18b9"
+    },
+    "erc": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/erc-all.json",
+      "sha256": "bda2def4d0a0901151a8eb200682fa17558503f5cfacd14caa178a2da953af00"
+    },
+    "native_adapter": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/native_trial.py",
+      "sha256": "592abb53e1b2585cd566545c52cdba7eba734132ac530b01efd3f7da70e0f1b8"
+    },
+    "native_contract": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/contract-native5-cleanup-v1.json",
+      "sha256": "ca9f4fcb07f11f45d57d6a4b05c055f915e7a6a0e0ccd8b7b91495f884ad74b0"
+    },
+    "netlist": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/fresh-paired.net",
+      "sha256": "ba77915e497eeb0053fe0c31f28f94c05a51f1296cb9312953d22274f160ddfb"
+    },
+    "paired_native_proof": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/paired-native-proof.json",
+      "sha256": "af562318d01942e39b11507d7ab33c03716e33f6969b6d4ae2d650e31b164d85"
+    },
+    "pre_cleanup_board": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v3/outputs/native5-assessment-v1/diagnostic-board/f722-heli.kicad_pcb",
+      "sha256": "6cfb7c94f45485d4a3fc65d82bccafd8e645d4b3bab47ba46619fdaaa4102da0"
+    },
+    "pre_cleanup_native": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v3/outputs/native5-assessment-v1/after.native.json",
+      "sha256": "6e87945a86154094d8eff3d135dd2135b0bdb8ed8f0ca00199e6483b3d2446e1"
+    },
+    "recipe": {
+      "path": "recovery-negotiated-routing-20261011/native5-tx-unused-arm-cleanup-v1/compiled-cleanup-recipe-v1.json",
+      "sha256": "0dfd4ea5db3699d0e1bc94254ddeb24d4ad1f0a3063fea49476f0aa3e17c50f3"
+    },
+    "representation_adapter": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/representation_equivalence.py",
+      "sha256": "07ca034d92b18a159a24a0d376a39758d41cca6c3c1791f3f6b64e0febf135e8"
+    },
+    "representation_policy": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/representation-policy.json",
+      "sha256": "f8b304ec6559f7c7fe05528175eb560bf5935d61cf67eb21208711f78f4a9407"
+    },
+    "saved_return_review": {
+      "path": "recovery-negotiated-routing-20261011/native6-u15-saved-return-review-v1/review.json",
+      "sha256": "e1c8b20bbb7f6e8a8861504215360b6c88397fd856eeb189d3f158cab7dc01bb"
+    },
+    "source_board": {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.kicad_pcb",
+      "sha256": "a7355c26018a7bea66b77ccdc5201c2042a96b8e6820179fc5684dc72e170b4f"
+    },
+    "source_native": {
+      "path": "recovered-native7/ordinary-routing/tests/native13-access/joint-native-import11-v1/candidates/published-reference02/f722-heli.native.json",
+      "sha256": "53ddf869c36da4a026880c6b3346dd1ddb304aaabaa948b20f1e66fc3db62505"
+    },
+    "structural_ledger": {
+      "path": "recovery-negotiated-routing-20261011/source7-r6-d1-u15-back-reflected-native-preparation-v4/outputs/native5-cleanup-v1/structural-edit-ledger.json",
+      "sha256": "cd7dd4f5ce8b54ef98405cf0fbfd140f43c421fec47d90dc468a5b01788eae16"
+    }
+  },
+  "status": "PERMITTED_PARTIAL_PROGRESS_VERIFIED_NOT_ADOPTED",
+  "whole_net_and_contact_checks": {
+    "CORE_all47_pads_and_every_new_repair_complete": true,
+    "GND_all133_pads_complete": true,
+    "GREEN_all2_pads_complete": true,
+    "TX_all4_pads_complete": true,
+    "actual_IO_external_NC_bridges_passed": true,
+    "all_changed_pad_contacts_full_width": true,
+    "all_new_track_endpoints_supported": true,
+    "all_new_via_annular_contacts_full_width": true,
+    "both_U15_GND_pads_custom_union_and_shared_barrel_full_width_supported": true,
+    "every_new_record_fragment_reaches_real_pad": true,
+    "updated_RX_protected_NC10_and_TX_connector_NC9_branch_cuts_passed": true
+  }
+}

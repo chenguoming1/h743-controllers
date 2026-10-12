@@ -1,0 +1,39 @@
+{
+  "schema": "f722-geometric-routing-checkpoint/v2",
+  "reviewed_utc": "2026-10-12T12:09:09.973258+00:00",
+  "status": "ADOPTED_GEOMETRIC_ROUTING_WIP",
+  "board_sha256": "01b115302e079c6c7a2b1370ef4a089c19c7c2b54fd13e73cf2341db2dffc133",
+  "native_sha256": "46d0b78c82003a3042e68ea2258fa40e5032499b3c3dc864594519c9178821ea",
+  "raw_physical_audit_sha256": "26ca9d2fc020c0b6bb8d0346441cec2a21c99e560304572752e54d91bfa256e7",
+  "reviewed_partial_cleanup_disposition_sha256": "be2dfb278ef81590a2cb8b2abd86f47a1b82875ab9a294c7467eafcec9470bae",
+  "native_unconnected": 5,
+  "geometric_DRC_errors": 0,
+  "DRC_warnings": 3,
+  "ERC_violations": 0,
+  "schematic_parity_issues": 0,
+  "unchanged_pad_net_identities": 558,
+  "unchanged_nonboard_hardware_files": 60,
+  "lost_pad_pairs_vs_native6": 0,
+  "lost_pad_pairs_vs_native7": 0,
+  "CORE_connected_pads": 47,
+  "GND_connected_pads": 133,
+  "full_actual_IO_cases_pass": 21,
+  "full_actual_IO_cases_total": 22,
+  "incomplete_actual_IO_case": "PORT_C_RX_EXT J11.1 remains isolated onF; R34.1/U15.1/U15.10 joined onB",
+  "raw_false_aggregate_preserved": true,
+  "raw_false_aggregate_disposition": "Empty same-layer gap list is expected because incomplete RX components occupy disjoint layers; independently proven narrow partial-progress criteria pass. Full RX protection remains incomplete.",
+  "remaining_connections": [
+    "PORT_C_RX_EXT J11.1 to clamp",
+    "PORT_C_TX_MCU",
+    "PORT_C_RX_MCU",
+    "FLASH_MOSI",
+    "FLASH_SCK"
+  ],
+  "limits": [
+    "Revised CORE/GND and drill/fill geometry invalidates native6 DC applicability until fresh binding/solve",
+    "Shared C75 peripheral bulk return requires transient/ESD qualification",
+    "Complete timing/reference-return assessment and unresolved stock-I2C guarantee gap remain",
+    "Manufacturing/assembly/thermal/flight qualification not established"
+  ],
+  "recipe_sha256": "0dfd4ea5db3699d0e1bc94254ddeb24d4ad1f0a3063fea49476f0aa3e17c50f3"
+}
