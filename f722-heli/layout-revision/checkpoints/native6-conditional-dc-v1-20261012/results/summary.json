@@ -1,0 +1,131 @@
+{
+  "AC_thermal_manufacturing_or_flight_qualification": false,
+  "all_impedance_checks_pass": true,
+  "all_recorded_source_files_unchanged": 1737,
+  "all_resistance_margin_checks_pass": true,
+  "cases_per_grid": 305,
+  "certificate_count": 150,
+  "certificate_references_verified": 36432,
+  "completed": true,
+  "conditional_required_envelope_pass": true,
+  "convergence_limits": {
+    "absolute_impedance_ohm": 0.0001,
+    "absolute_voltage_V": 0.001,
+    "relative_impedance": 0.025
+  },
+  "elapsed_seconds": 1363.4111616720038,
+  "exit_code": 1,
+  "failed_illustration_BEC_input_A": 18.560739574512237,
+  "final_board_qualification": false,
+  "fine_grid_illustrative_failures": [
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "case_group": "illustrative",
+      "maximum_V": 8.4,
+      "minimum_V": 6.0,
+      "name": "J2_servo_board_pad",
+      "pass": false,
+      "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+      "voltage_V": 5.863817071448887
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "case_group": "illustrative",
+      "maximum_V": 8.4,
+      "minimum_V": 6.0,
+      "name": "J3_servo_board_pad",
+      "pass": false,
+      "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+      "voltage_V": 5.866053464026195
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "case_group": "illustrative",
+      "maximum_V": 8.4,
+      "minimum_V": 6.0,
+      "name": "J4_servo_board_pad",
+      "pass": false,
+      "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+      "voltage_V": 5.870827183956023
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "case_group": "illustrative",
+      "maximum_V": 8.4,
+      "minimum_V": 6.0,
+      "name": "J5_servo_board_pad",
+      "pass": false,
+      "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+      "voltage_V": 5.878587895501002
+    }
+  ],
+  "finite_contacts": 107,
+  "fresh_mesh_builds": 30,
+  "geometric_DRC_errors": 0,
+  "grids_mm": [
+    0.12,
+    0.09
+  ],
+  "ignored_DRC_checks": 0,
+  "illustrations_failed_per_grid": 1,
+  "illustrations_passed_per_grid": 10,
+  "illustrative_cases_per_grid": 11,
+  "inherited_dangling_warnings": 6,
+  "matching_checkpoint_reloads": 26,
+  "material": {
+    "conductivity_IACS": 0.95,
+    "plating_mm": 0.015,
+    "temperature_C": 105,
+    "thickness_mm": 0.015
+  },
+  "maximum_case_power_balance_error_W": 1.8822460257084117e-10,
+  "maximum_loaded_field_KCL_residual_A": 3.81426607266081e-09,
+  "maximum_port_to_direct_field_energy_difference_W": 2.2604362825973112e-11,
+  "maximum_two_grid_voltage_change_V": 0.0005758471927661546,
+  "minimum_loaded_flash_voltage_V": 3.0977393402359565,
+  "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+  "native_export_version": "10.0.6",
+  "networks": 15,
+  "ordinary_opens_outside_power_scope": 6,
+  "overall_screen_pass": false,
+  "peak_RSS_KiB": 2817700,
+  "physical_drills": 321,
+  "physical_pads": 268,
+  "raw_result_bytes": 317826675,
+  "raw_result_included": false,
+  "raw_result_sha256": "c9afa4edd1037f716dd32687a3f528a9cbae27893df243c02f77be5f9bff04b7",
+  "real_returns": 44,
+  "required_cases_per_grid": 294,
+  "required_static_evaluations_passed": 588,
+  "required_voltage_margin_checks_passed": 4536,
+  "ring_guards_verified": 6934,
+  "schema": "f722-native6-conditional-dc-technical-summary/v1",
+  "scope_counts": {
+    "capacity": 126,
+    "classic": 126,
+    "same_BEC_illustrative": 11,
+    "usb_configuration": 42
+  },
+  "software": {
+    "numpy": "2.2.6",
+    "python": "3.12.14",
+    "scipy": "1.17.0",
+    "shapely": "2.2.0",
+    "source_sha256": {
+      "copper_fem.py": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f",
+      "dc_circuit.py": "5a0ae6257979e9b05d23ccdb109d59b7c2b7f17f49fd1caf13b2cb66f2e7572d",
+      "validate_static.py": "d94e735c3ff113ccaa4fd726e834ebdcd1651df3a0eacec265184d9e9c1ad006"
+    }
+  },
+  "source_board_sha256": "76ae77d04a615762e96fbdac85c8190e52ace9125b68ce6c3176dccf776413e0",
+  "source_native_sha256": "dba3668fe6f3f0620952bf11bdaa18f342047a7cba63f98e20f5459002ee7f88",
+  "vcap_loops": 5,
+  "worst_required_guarded_margin": {
+    "case": "corrected_classic_BEC5.0_911_mcu_vdd64__analog0m__none",
+    "change_V": 5.52253589587437e-05,
+    "margin_V": 0.01880816780750605,
+    "numerical_guard_V": 0.001,
+    "pass": true,
+    "probe": "classic_DSM_pad"
+  }
+}
