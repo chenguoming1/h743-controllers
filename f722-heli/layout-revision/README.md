@@ -7,6 +7,9 @@ The unchanged text below is the historical eleven-open record. Its current/sourc
 
 The [current conditional DC and local assembly evidence](checkpoints/native0-rx-complete-v1-20261013/supplements/conditional-dc-v1/README.md) preserves complete reduced results, source/replay dependencies and the false servo illustration. The 294 required cases cover accessory/logic/USB only; no servo qualification is claimed. The original native0 checkpoint and all paired source bytes remain exact.
 
+
+The [IMU/internal CAM supplement and exporter correction](checkpoints/native0-rx-complete-v1-20261013/supplements/imu-cam-v1/README.md) retain original failed predicates and explicit WIP limits. See its [remaining decisions and acceptance gates](checkpoints/native0-rx-complete-v1-20261013/supplements/imu-cam-v1/OUTSTANDING-GATES.md).
+
 ---
 
 # F722 layout revision — work in progress
