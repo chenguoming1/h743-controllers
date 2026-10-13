@@ -1,0 +1,561 @@
+{
+  "accounting": {
+    "C14_C15": "Ideal steady DC capacitors have no load injection; real leakage, startup and AC charging are not separately bounded here.",
+    "R10_R11": "LED branch demand is not separately spatially modeled. The existing model does not enumerate an explicit LED current allowance; use remains conditional on the total electronics budget including this demand.",
+    "R4_R6_R71": "Pull-up demand is inside the conditional electronics budget; zero modeled terminal current is not zero physical current.",
+    "U3": "0.32 A is an adversarial allocation vertex, not nominal flash demand and not extra to the aggregate.",
+    "basis": "All CORE-powered logic/bias/quiescent demand is included once in the aggregate electronics allowance.",
+    "electronics_aggregate_BEC_A": 0.32,
+    "electronics_aggregate_USB_A": 0.3,
+    "limitation": "The 42-vertex hull covers the defined terminal allocation space; it does not independently prove local drop at omitted R10/R11/R4/R6/R71 terminals or global nonlinear interior extrema."
+  },
+  "candidate_board_bound": false,
+  "corrected_model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+  "delta_sha256": "3d65e175e2752f8eb26ac0c552001d9e0af6ba27b64fdc7974aebf5ac983d82f",
+  "downstream_explicit_model_elements": {
+    "converters": [],
+    "loads": [
+      {
+        "current_A": 0.26,
+        "n": "U3.4",
+        "name": "aggregate_electronics_adversarial__flash",
+        "p": "U3.8"
+      },
+      {
+        "current_A": 0.28,
+        "n": "U3.4",
+        "name": "aggregate_electronics_adversarial__flash",
+        "p": "U3.8"
+      },
+      {
+        "current_A": 0.3,
+        "n": "U3.4",
+        "name": "aggregate_electronics_adversarial__flash",
+        "p": "U3.8"
+      },
+      {
+        "current_A": 0.32,
+        "n": "U3.4",
+        "name": "aggregate_electronics_adversarial__flash",
+        "p": "U3.8"
+      }
+    ],
+    "resistors": []
+  },
+  "downstream_functions_from_source": {
+    "C14": {
+      "MPN": "CL05B104KO5NNNC",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "GND"
+      },
+      "pose": [
+        "39.9",
+        "24.2",
+        "90"
+      ],
+      "value": "100nF / 16V / X7R"
+    },
+    "C15": {
+      "MPN": "CL10B105KP8NNNC",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "GND"
+      },
+      "pose": [
+        "39.9",
+        "21.4",
+        "90"
+      ],
+      "value": "1uF / 10V / X7R"
+    },
+    "D1": {
+      "MPN": "KT-0603YG",
+      "layer": "F.Cu",
+      "pads": {
+        "1": "LED_GREEN_K",
+        "2": "D1_A"
+      },
+      "pose": [
+        "38.7",
+        "20.845",
+        "90"
+      ],
+      "value": "GREEN"
+    },
+    "D2": {
+      "MPN": "KT-0603R",
+      "layer": "F.Cu",
+      "pads": {
+        "1": "LED_RED_K",
+        "2": "D2_A"
+      },
+      "pose": [
+        "40.5",
+        "21",
+        "90"
+      ],
+      "value": "RED"
+    },
+    "L2": {
+      "MPN": "DFE322512F-3R3M=P2",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "CORE_SW",
+        "2": "+3V3_CORE"
+      },
+      "pose": [
+        "33.06",
+        "2.5"
+      ],
+      "value": "3.3uH / DFE322512F"
+    },
+    "R10": {
+      "MPN": "0402WGF2201TCE",
+      "layer": "F.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "D1_A"
+      },
+      "pose": [
+        "38.8",
+        "23.6"
+      ],
+      "value": "2.2k / 1%"
+    },
+    "R11": {
+      "MPN": "0402WGF2201TCE",
+      "layer": "F.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "D2_A"
+      },
+      "pose": [
+        "40.5",
+        "23.6",
+        "90"
+      ],
+      "value": "2.2k / 1%"
+    },
+    "R4": {
+      "MPN": "0402WGF1002TCE",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "FLASH_CS"
+      },
+      "pose": [
+        "40.55",
+        "19",
+        "180"
+      ],
+      "value": "10k / 1%"
+    },
+    "R6": {
+      "MPN": "0402WGF1002TCE",
+      "layer": "F.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "FLASH_HOLD_N"
+      },
+      "pose": [
+        "37.45",
+        "20.45",
+        "90"
+      ],
+      "value": "10k / 1%"
+    },
+    "R71": {
+      "MPN": "0402WGF1003TCE",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "+3V3_CORE",
+        "2": "DSM_RX_MCU"
+      },
+      "pose": [
+        "34.8",
+        "17.8",
+        "90"
+      ],
+      "value": "100k / 1% / ROM RX idle"
+    },
+    "U10": {
+      "MPN": "TPS2553DRVR",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "USB_LIMITED",
+        "2": "USB_ILIM",
+        "3": "unconnected-(U10-~{FAULT}-Pad3)",
+        "4": "USB_VBUS_RAW",
+        "5": "GND",
+        "6": "USB_VBUS_RAW",
+        "7": "GND"
+      },
+      "pose": [
+        "39.1",
+        "11.95"
+      ],
+      "value": "TPS2553DRVR / USB input limit"
+    },
+    "U11": {
+      "MPN": "TPS2553DRVR",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "+3V3_DSM",
+        "2": "DSM_ILIM",
+        "3": "unconnected-(U11-~{FAULT}-Pad3)",
+        "4": "+3V3_CORE",
+        "5": "GND",
+        "6": "+3V3_CORE",
+        "7": "GND"
+      },
+      "pose": [
+        "20",
+        "22.5"
+      ],
+      "value": "TPS2553DRVR / DSM output limit"
+    },
+    "U3": {
+      "MPN": "W25N01GVZEIG",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "FLASH_CS",
+        "2": "FLASH_MISO",
+        "3": "FLASH_WP_N",
+        "4": "GND",
+        "5": "FLASH_MOSI",
+        "6": "FLASH_SCK",
+        "7": "FLASH_HOLD_N",
+        "8": "+3V3_CORE",
+        "9": "GND"
+      },
+      "pose": [
+        "34.7",
+        "22"
+      ],
+      "value": "W25N01GVZEIG / 128MiB"
+    },
+    "U9": {
+      "MPN": "TPS62162DSGR",
+      "layer": "B.Cu",
+      "pads": {
+        "1": "GND",
+        "2": "CORE_BUCK_IN",
+        "3": "CORE_BUCK_IN",
+        "4": "GND",
+        "5": "GND",
+        "6": "+3V3_CORE",
+        "7": "CORE_SW",
+        "8": "unconnected-(U9-PG-Pad8)",
+        "9": "GND"
+      },
+      "pose": [
+        "28.86",
+        "2.5"
+      ],
+      "value": "TPS62162DSGR / 3.3V 1A"
+    }
+  },
+  "downstream_pad_keys": [
+    "C14.1",
+    "C15.1",
+    "R10.1",
+    "R11.1",
+    "R4.1",
+    "R6.1",
+    "R71.1",
+    "U3.8"
+  ],
+  "evidence": [
+    {
+      "path": "recovery-negotiated-routing-20261011/native4-r35-rotated-TX-donor-construction-v1/complete-physical-delta.json",
+      "sha256": "3d65e175e2752f8eb26ac0c552001d9e0af6ba27b64fdc7974aebf5ac983d82f"
+    },
+    {
+      "path": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/diagnostic-board/f722-heli.kicad_pcb",
+      "sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a"
+    },
+    {
+      "path": "recovery-negotiated-routing-20261011/native4-r35-rotated-TX-donor-construction-v1/CORE-anchor-source-incidence.json",
+      "sha256": "461d962deb3befb9181043dd8f99c696619391fdb6acd44476c5173a1cb71b7b"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/preparation/electrical-model.template.json.gz",
+      "sha256": "c7a9c3dd4d45224207e48918b0c44923087042a3697f857b96fc24df9fc4b542"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/runtime/power_case_model.py",
+      "sha256": "034eb82d0be8ba17f3215bad1103b1eaa9d7213f99739159a7a07eae4ed2a3fa"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/runtime/copper_fem.py",
+      "sha256": "b8a656d7f5003803d9926334f57e36eccc70234d970169ce11150658fa17094f"
+    },
+    {
+      "path": "power-return-stitch-diagnostic-v1/FINAL-HANDOFF.json",
+      "sha256": "8bf016268ca87b17874eff7547713eb8720e6f8511ee043c4a66a87e2b5fdbec"
+    },
+    {
+      "path": "power-recovery-prep/prepare_final_power.py",
+      "sha256": "46a6b528f4e9c816c86c8b43eb6a738faf59e9af6451dc725948698a3f6ae912"
+    }
+  ],
+  "final_qualification_claimed": false,
+  "illustration_explicit_flash_load_count": 0,
+  "isolated_strip_subtraction": {
+    "drop_at_032_A_V": 0.025244746642337196,
+    "reason": "Different endpoints and layers retain other feed segments and redistribute current through existing barrels.",
+    "resistance_ohm": 0.07888983325730374,
+    "valid_network_delta_or_upper_bound": false
+  },
+  "material": {
+    "conductivity_IACS": 0.95,
+    "fixed_temperature_only": true,
+    "plating_mm": 0.015,
+    "resistivity_ohm_mm": 2.4210901105263158e-05,
+    "temperature_C": 105,
+    "thickness_mm": 0.015
+  },
+  "new_strip": {
+    "length_mm": 11.593319319728645,
+    "screens": [
+      {
+        "current_A": 0,
+        "drop_V": 0.0,
+        "loss_W": 0.0
+      },
+      {
+        "current_A": 0.26,
+        "drop_V": 0.024326007986079538,
+        "loss_W": 0.006324762076380681
+      },
+      {
+        "current_A": 0.28,
+        "drop_V": 0.02619723936962412,
+        "loss_W": 0.0073352270234947545
+      },
+      {
+        "current_A": 0.3,
+        "drop_V": 0.028068470753168696,
+        "loss_W": 0.008420541225950609
+      },
+      {
+        "current_A": 0.32,
+        "drop_V": 0.029939702136713278,
+        "loss_W": 0.00958070468374825
+      }
+    ],
+    "tracks": [
+      {
+        "end": [
+          27.561497,
+          24.481253
+        ],
+        "layers": [
+          "In3.Cu"
+        ],
+        "start": [
+          26.654389,
+          24.9187
+        ],
+        "uuid": "0cff7bdd-1ad7-5ba8-affc-20ffbd68ec24",
+        "width": 0.2
+      },
+      {
+        "end": [
+          32.075395,
+          24.24444
+        ],
+        "layers": [
+          "In3.Cu"
+        ],
+        "start": [
+          27.561497,
+          24.481253
+        ],
+        "uuid": "0ed148c6-4340-55d9-95a4-d52a607cffe9",
+        "width": 0.2
+      },
+      {
+        "end": [
+          35.510317,
+          19.244508
+        ],
+        "layers": [
+          "In3.Cu"
+        ],
+        "start": [
+          32.075395,
+          24.24444
+        ],
+        "uuid": "eccdd47e-1f67-5f89-9fc7-d0f7094b0a1f",
+        "width": 0.2
+      }
+    ],
+    "uniform_strip_resistance_ohm": 0.09356156917722899
+  },
+  "passive_ceiling_screen": {
+    "LED_forward_drop_V": 0,
+    "added_to_032_A": false,
+    "included_inside_electronics_aggregate": true,
+    "new_shared_strip_drop_V": 0.0003807414600236988,
+    "other_terminal_minimum_V": 0,
+    "qualification": "Local arithmetic screen only. Conditional on voltage and resistance bounds; no independently verified resistor hot tolerance, diode/driver behavior, capacitor leakage, retained-path resistance or thermal/AC result.",
+    "rail_ceiling_V": 3.6,
+    "resistor_tolerance_fraction": 0.01,
+    "rows": [
+      {
+        "ceiling_A": 0.001652892561983471,
+        "nominal_ohm": 2200,
+        "other_net": "D1_A",
+        "reference": "R10",
+        "screen_minimum_ohm": 2178.0
+      },
+      {
+        "ceiling_A": 0.001652892561983471,
+        "nominal_ohm": 2200,
+        "other_net": "D2_A",
+        "reference": "R11",
+        "screen_minimum_ohm": 2178.0
+      },
+      {
+        "ceiling_A": 0.00036363636363636367,
+        "nominal_ohm": 10000,
+        "other_net": "FLASH_CS",
+        "reference": "R4",
+        "screen_minimum_ohm": 9900.0
+      },
+      {
+        "ceiling_A": 0.00036363636363636367,
+        "nominal_ohm": 10000,
+        "other_net": "FLASH_HOLD_N",
+        "reference": "R6",
+        "screen_minimum_ohm": 9900.0
+      },
+      {
+        "ceiling_A": 3.6363636363636364e-05,
+        "nominal_ohm": 100000,
+        "other_net": "DSM_RX_MCU",
+        "reference": "R71",
+        "screen_minimum_ohm": 99000.0
+      }
+    ],
+    "total_A": 0.004069421487603306
+  },
+  "prior_failed_illustration": {
+    "J2_J3_J4_J5_V": [
+      5.863816631930561,
+      5.866053063319897,
+      5.870826833352147,
+      5.8785875966237535
+    ],
+    "fine_source_current_A": 18.560741874392015,
+    "maximum_V": 8.4,
+    "minimum_V": 6.0,
+    "source_V": 7.4
+  },
+  "prior_overall_conditional_static_screen_pass": false,
+  "removed_strip": {
+    "length_mm": 1.8179913076513863,
+    "screens": [
+      {
+        "current_A": 0,
+        "drop_V": 0.0,
+        "loss_W": 0.0
+      },
+      {
+        "current_A": 0.26,
+        "drop_V": 0.003814651339180566,
+        "loss_W": 0.0009918093481869473
+      },
+      {
+        "current_A": 0.28,
+        "drop_V": 0.004108086057579071,
+        "loss_W": 0.00115026409612214
+      },
+      {
+        "current_A": 0.3,
+        "drop_V": 0.004401520775977576,
+        "loss_W": 0.0013204562327932727
+      },
+      {
+        "current_A": 0.32,
+        "drop_V": 0.0046949554943760815,
+        "loss_W": 0.001502385758200346
+      }
+    ],
+    "tracks": [
+      {
+        "end": [
+          29.364175,
+          22.589793
+        ],
+        "layers": [
+          "F.Cu"
+        ],
+        "start": [
+          28.122461,
+          21.261923
+        ],
+        "uuid": "0835cbb5-b8a2-5fb4-a9e7-1aa56958edcf",
+        "width": 0.2
+      }
+    ],
+    "uniform_strip_resistance_ohm": 0.014671735919925254
+  },
+  "required_case_allocation": {
+    "BEC": {
+      "bridge_side_explicit_load_counts": {
+        "0": 216,
+        "0.28": 12,
+        "0.3": 18,
+        "0.32": 6
+      },
+      "case_count": 252
+    },
+    "USB": {
+      "bridge_side_explicit_load_counts": {
+        "0": 36,
+        "0.26": 2,
+        "0.28": 3,
+        "0.3": 1
+      },
+      "case_count": 42
+    }
+  },
+  "required_recheck": {
+    "all_cases": 305,
+    "fresh_CORE_network": true,
+    "fresh_GND_and_five_VCAP_loops": true,
+    "illustrations": 11,
+    "limits_or_case_definitions_changed": false,
+    "mesh_spacings_mm": [
+      0.12,
+      0.09
+    ],
+    "reason": "Three added signal vias add physical drill voids on their spans; source refill may alter modeled saved copper. Existing CORE barrels carry changed layer currents.",
+    "required_cases": 294,
+    "reuse_prior_geometry_or_result_without_exact_applicability": false
+  },
+  "schema": "f722-tx-core-source-bound-branch-review/v1",
+  "source_board_sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a",
+  "source_native_sha256": "c4d5b66eeabdc7d9e7b87715ddcb811038ce9f8b2b67a722eec578cf807fe779",
+  "source_terminal_correctness": {
+    "TPS2553": "U10 and U11 current paths are IN6 to OUT1; EN4 remains control, with IN6/GND5 IQ accounting.",
+    "converter_CORE_injection": "L2.2/B.Cu",
+    "converter_CORE_return": "U9.1/B.Cu",
+    "converter_CORE_sense_only": [
+      "U9.6/B.Cu",
+      "U9.4/B.Cu"
+    ],
+    "flash_actual_load": [
+      "U3.8/B.Cu",
+      "U3.4/B.Cu"
+    ],
+    "flash_exposed_pad_not_idealized_return": "U3.9 remains physical copper; package split is not established.",
+    "historical_IN4_results_valid": false
+  },
+  "status": "SOURCE/DELTA SCREEN ONLY; FRESH CANDIDATE NATIVE/DC REVIEW PENDING"
+}
