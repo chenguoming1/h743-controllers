@@ -1,0 +1,3031 @@
+{
+  "evidence": {
+    "all_net_drills_included": true,
+    "board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+    "contact_count": 107,
+    "faults": [],
+    "input_sha256": {
+      "board": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+      "connectivity": "afafbce8af5eae14273ccc5bf283950e7222ca2fae3d5ca7da8ef1d897925142",
+      "geometry": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+      "ledger": "6c3a48c3c02a2cc1c373915f74a5eb94d31dbb172df79cb8aad4eacf83f98536"
+    },
+    "limitations": [
+      "Physical/DRC/source-acceptance gates remain separate and must all pass before numerical activation.",
+      "This audit does not establish copper resistance, current sharing, voltage margins, ampacity or temperature.",
+      "Any later route, via, drill, pad or fill change invalidates this source binding. Re-audit the final routed board."
+    ],
+    "loops": [
+      {
+        "endpoint_bindings_valid": true,
+        "legs": [
+          {
+            "net": "VCAP",
+            "sink": "R16.1",
+            "source": "U1.30"
+          },
+          {
+            "net": "VCAP_CAP",
+            "sink": "C7.1",
+            "source": "R16.2"
+          },
+          {
+            "net": "GND",
+            "sink": "U1.12",
+            "source": "C7.2"
+          }
+        ],
+        "maximum_ohm": 0.035,
+        "name": "VCAP_copper_to_U1.12",
+        "resistance_solved": false
+      },
+      {
+        "endpoint_bindings_valid": true,
+        "legs": [
+          {
+            "net": "VCAP",
+            "sink": "R16.1",
+            "source": "U1.30"
+          },
+          {
+            "net": "VCAP_CAP",
+            "sink": "C7.1",
+            "source": "R16.2"
+          },
+          {
+            "net": "GND",
+            "sink": "U1.18",
+            "source": "C7.2"
+          }
+        ],
+        "maximum_ohm": 0.035,
+        "name": "VCAP_copper_to_U1.18",
+        "resistance_solved": false
+      },
+      {
+        "endpoint_bindings_valid": true,
+        "legs": [
+          {
+            "net": "VCAP",
+            "sink": "R16.1",
+            "source": "U1.30"
+          },
+          {
+            "net": "VCAP_CAP",
+            "sink": "C7.1",
+            "source": "R16.2"
+          },
+          {
+            "net": "GND",
+            "sink": "U1.31",
+            "source": "C7.2"
+          }
+        ],
+        "maximum_ohm": 0.035,
+        "name": "VCAP_copper_to_U1.31",
+        "resistance_solved": false
+      },
+      {
+        "endpoint_bindings_valid": true,
+        "legs": [
+          {
+            "net": "VCAP",
+            "sink": "R16.1",
+            "source": "U1.30"
+          },
+          {
+            "net": "VCAP_CAP",
+            "sink": "C7.1",
+            "source": "R16.2"
+          },
+          {
+            "net": "GND",
+            "sink": "U1.47",
+            "source": "C7.2"
+          }
+        ],
+        "maximum_ohm": 0.035,
+        "name": "VCAP_copper_to_U1.47",
+        "resistance_solved": false
+      },
+      {
+        "endpoint_bindings_valid": true,
+        "legs": [
+          {
+            "net": "VCAP",
+            "sink": "R16.1",
+            "source": "U1.30"
+          },
+          {
+            "net": "VCAP_CAP",
+            "sink": "C7.1",
+            "source": "R16.2"
+          },
+          {
+            "net": "GND",
+            "sink": "U1.63",
+            "source": "C7.2"
+          }
+        ],
+        "maximum_ohm": 0.035,
+        "name": "VCAP_copper_to_U1.63",
+        "resistance_solved": false
+      }
+    ],
+    "native_version": "10.0.6",
+    "networks": [
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 2.488487810522423,
+          "F.Cu": 0.9927657492918279,
+          "In1.Cu": 0.12762987684199995,
+          "In2.Cu": 0.12762987684199995,
+          "In3.Cu": 0.12762987684199995,
+          "In4.Cu": 0.12762987684199995
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 1502,
+          "F.Cu": 767,
+          "In1.Cu": 560,
+          "In2.Cu": 560,
+          "In3.Cu": 560,
+          "In4.Cu": 560
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "FB1.2",
+            "native_pad_uuids": [
+              "181604b2-d971-4016-9374-1b6d951613ee"
+            ],
+            "pads": [
+              "FB1.2"
+            ],
+            "physical_bounds_mm": [
+              10.69,
+              8.1,
+              11.19,
+              8.6
+            ],
+            "physical_contact_area_mm2": 0.24785189845200017,
+            "physical_geometry_sha256": "009d73b0805619e6d4168859a73eb908a5bd57f24d1d2ed63d71e230f18f118b",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.24785189845200012
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -6.661338147750939e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.13",
+            "native_pad_uuids": [
+              "f59c5b6e-4c69-4411-b640-fd07bf5cf3c7"
+            ],
+            "pads": [
+              "U1.13"
+            ],
+            "physical_bounds_mm": [
+              14.509999,
+              11.4,
+              16.059999,
+              11.7
+            ],
+            "physical_contact_area_mm2": 0.46016830668799896,
+            "physical_geometry_sha256": "d43449b6d041a5dd2bda5f231b9cf46ac51e225e33babbbd247be41676da4aa1",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879983
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 8,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 4,
+        "net": "+3V3_ANALOG",
+        "plated_barrel_count": 1
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 32.226165832589416,
+          "F.Cu": 17.154037343663028,
+          "In1.Cu": 2.935487167365998,
+          "In2.Cu": 7.614665724168117,
+          "In3.Cu": 19.80070068165349,
+          "In4.Cu": 2.935487167365998
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 19419,
+          "F.Cu": 18088,
+          "In1.Cu": 12880,
+          "In2.Cu": 13639,
+          "In3.Cu": 14849,
+          "In4.Cu": 12880
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "FB1.1",
+            "native_pad_uuids": [
+              "8e5041bf-d9b8-4c0c-8bed-6b3c796a0d05"
+            ],
+            "pads": [
+              "FB1.1"
+            ],
+            "physical_bounds_mm": [
+              10.69,
+              9.0,
+              11.19,
+              9.5
+            ],
+            "physical_contact_area_mm2": 0.24785189845200006,
+            "physical_geometry_sha256": "ca1a89800d0cf8a553104650ba9b22c94ba49c185c7d03dcb02abf06cc75f5a1",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.24785189845200004
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "FB2.1",
+            "native_pad_uuids": [
+              "c576aed4-293d-4b24-97aa-76ebda29841f"
+            ],
+            "pads": [
+              "FB2.1"
+            ],
+            "physical_bounds_mm": [
+              22.925,
+              15.25,
+              23.425,
+              15.75
+            ],
+            "physical_contact_area_mm2": 0.24785189845199995,
+            "physical_geometry_sha256": "62085555c74af36c15bf9982484719086fa1aa423c1997758cca3c5d706ad4be",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.24785189845199998
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "L2.2",
+            "native_pad_uuids": [
+              "54f0ae3e-4922-4a43-9c47-827de2513e7e"
+            ],
+            "pads": [
+              "L2.2"
+            ],
+            "physical_bounds_mm": [
+              34.01,
+              1.1,
+              34.91,
+              3.9
+            ],
+            "physical_contact_area_mm2": 2.519999999999996,
+            "physical_geometry_sha256": "88bfad43f51ca11c72f8238309f753410e373318459bedd1fbd50efafa52984e",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 2.519999999999996
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.1",
+            "native_pad_uuids": [
+              "5612cc20-6eed-4208-bc79-0b56e995f3aa"
+            ],
+            "pads": [
+              "U1.1"
+            ],
+            "physical_bounds_mm": [
+              14.509999,
+              17.4,
+              16.059999,
+              17.7
+            ],
+            "physical_contact_area_mm2": 0.4601683066880011,
+            "physical_geometry_sha256": "9c9b2f35c322faaa8bceb9649650978db815d2748e3aad90d3eeb2384f92a010",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.460168306688001
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.19",
+            "native_pad_uuids": [
+              "4ad29ac9-7a83-4065-bc2d-c2800fc7b5d7"
+            ],
+            "pads": [
+              "U1.19"
+            ],
+            "physical_bounds_mm": [
+              18.059999,
+              7.35,
+              18.359999,
+              8.9
+            ],
+            "physical_contact_area_mm2": 0.46016830668799613,
+            "physical_geometry_sha256": "003b5497ef84a72e56aa9ceeebe3c4ae2876b4c428c6125af22a921533db5a28",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879962
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.32",
+            "native_pad_uuids": [
+              "35a3d56c-c549-404c-b192-21ef366d50e3"
+            ],
+            "pads": [
+              "U1.32"
+            ],
+            "physical_bounds_mm": [
+              24.559999,
+              7.35,
+              24.859999,
+              8.9
+            ],
+            "physical_contact_area_mm2": 0.46016830668799613,
+            "physical_geometry_sha256": "6e81b57e49736acdebe3d01b6b8dc40039f6df56f8828c9d9c6120d9b2eff2e9",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879962
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.48",
+            "native_pad_uuids": [
+              "110885b9-95c2-4783-abf6-01a7d0c6a2df"
+            ],
+            "pads": [
+              "U1.48"
+            ],
+            "physical_bounds_mm": [
+              25.859999,
+              17.4,
+              27.409999,
+              17.7
+            ],
+            "physical_contact_area_mm2": 0.46016830668800107,
+            "physical_geometry_sha256": "793449d772abaf002d7b0381057ab4eb0607dc06b1fa67aa48d2ea4d03942f15",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066880011
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.64",
+            "native_pad_uuids": [
+              "80062ceb-4334-4b58-a700-1234ba33328c"
+            ],
+            "pads": [
+              "U1.64"
+            ],
+            "physical_bounds_mm": [
+              17.059999,
+              18.7,
+              17.359999,
+              20.25
+            ],
+            "physical_contact_area_mm2": 0.46016830668799613,
+            "physical_geometry_sha256": "a51ab7b3162a17b17c00a782928a15c90e2135aa94fa8a678aaa8f73f7fb9c7c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879961
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U11.4",
+            "native_pad_uuids": [
+              "a064fa7a-0305-42b1-8081-94c601667c0b"
+            ],
+            "pads": [
+              "U11.4"
+            ],
+            "physical_bounds_mm": [
+              20.75,
+              21.7,
+              21.2,
+              22.0
+            ],
+            "physical_contact_area_mm2": 0.13285189845200002,
+            "physical_geometry_sha256": "638c28f409572440d5bc7c7cdd3f8a505ffae454744c3f2270322bcaebf7ed4f",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.13285189845200013
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U11.6",
+            "native_pad_uuids": [
+              "294c941a-1107-4fda-8580-cb1b6badc3eb"
+            ],
+            "pads": [
+              "U11.6"
+            ],
+            "physical_bounds_mm": [
+              20.75,
+              23.0,
+              21.2,
+              23.3
+            ],
+            "physical_contact_area_mm2": 0.13285189845200007,
+            "physical_geometry_sha256": "1c9a524e7159a1f1135184c2dcedc7a6f842877c488860b8cf66bfa0c6092770",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.13285189845200013
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.6653345369377348e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U3.8",
+            "native_pad_uuids": [
+              "13742b73-4aff-447b-be1b-b262e2b1c9e3"
+            ],
+            "pads": [
+              "U3.8"
+            ],
+            "physical_bounds_mm": [
+              38.125,
+              23.655,
+              38.775,
+              24.155
+            ],
+            "physical_contact_area_mm2": 0.3115822087999996,
+            "physical_geometry_sha256": "32dbec166c40746d24eb7deaa1ddd47bb95b381e321afdd28532baff81caf90c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.31158220879999976
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U4.2",
+            "native_pad_uuids": [
+              "51ecba5f-2692-471e-bb93-db43a36b19c4"
+            ],
+            "pads": [
+              "U4.2"
+            ],
+            "physical_bounds_mm": [
+              24.05,
+              22.1,
+              24.5,
+              22.55
+            ],
+            "physical_contact_area_mm2": 0.20249999999999935,
+            "physical_geometry_sha256": "81359a921acf3cb842580737217f906937fb5c284a478ab57ec3c704662727e3",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.20249999999999935
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U4.6",
+            "native_pad_uuids": [
+              "61a38faa-6301-4cea-a9d7-ecad8ce939e7"
+            ],
+            "pads": [
+              "U4.6"
+            ],
+            "physical_bounds_mm": [
+              25.5,
+              21.45,
+              25.95,
+              21.9
+            ],
+            "physical_contact_area_mm2": 0.20249999999999937,
+            "physical_geometry_sha256": "e89594133b2af0d9ccbc3727fba9c97f7cdb6199f498f710f4ffe6c4a6fe86e3",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.20249999999999935
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U4.8",
+            "native_pad_uuids": [
+              "36c95934-afb4-4b16-b2a2-f951714c1da3"
+            ],
+            "pads": [
+              "U4.8"
+            ],
+            "physical_bounds_mm": [
+              25.5,
+              22.75,
+              25.95,
+              23.2
+            ],
+            "physical_contact_area_mm2": 0.20249999999999935,
+            "physical_geometry_sha256": "f85dccfaf51cf84f230652268fda20ba499fb4581ea4ced7d64059fb99a97113",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.20249999999999935
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U9.6",
+            "native_pad_uuids": [
+              "61bdd795-8477-45fe-9f61-222fc1ee0f4b"
+            ],
+            "pads": [
+              "U9.6"
+            ],
+            "physical_bounds_mm": [
+              29.56,
+              2.125,
+              30.06,
+              2.375
+            ],
+            "physical_contact_area_mm2": 0.12285189845199997,
+            "physical_geometry_sha256": "6931b64ecb2944e3ed6b7a532a1d3e41dc88909bd37711af2bbf3355b7123d58",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.12285189845199997
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 153,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 47,
+        "net": "+3V3_CORE",
+        "plated_barrel_count": 23
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 1.353640334279994,
+          "F.Cu": 2.8829239924492,
+          "In1.Cu": 0.2552597536840002,
+          "In2.Cu": 1.9053305228329969,
+          "In3.Cu": 0.2552597536840002,
+          "In4.Cu": 0.2552597536840002
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 1450,
+          "F.Cu": 1306,
+          "In1.Cu": 1120,
+          "In2.Cu": 840,
+          "In3.Cu": 1120,
+          "In4.Cu": 1120
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 3.5002559752861373e-06,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J12.1",
+            "native_pad_uuids": [
+              "37582d0c-4c94-46ae-9928-0aa7517e0954"
+            ],
+            "pads": [
+              "J12.1"
+            ],
+            "physical_bounds_mm": [
+              19.15,
+              19.00000000361521,
+              19.84999999961971,
+              22.69999999638479
+            ],
+            "physical_contact_area_mm2": 2.5637004790840354,
+            "physical_geometry_sha256": "466d976adbde22d004db61a980386ea69f833f968843b57109a7a6e49250ddd2",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 2.5637039793400107
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U11.1",
+            "native_pad_uuids": [
+              "bd755cd3-37cc-4cdc-a7f3-e235b0072b07"
+            ],
+            "pads": [
+              "U11.1"
+            ],
+            "physical_bounds_mm": [
+              18.8,
+              23.0,
+              19.25,
+              23.3
+            ],
+            "physical_contact_area_mm2": 0.13285189845200007,
+            "physical_geometry_sha256": "c15e6dd8a2e8e87a251293b92490b34921054568be4c9f0a8e8d702d322dd7ce",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.1328518984520001
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 14,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 3,
+        "net": "+3V3_DSM",
+        "plated_barrel_count": 2
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 0.0,
+          "F.Cu": 4.497895922041984,
+          "In1.Cu": 0.0,
+          "In2.Cu": 0.0,
+          "In3.Cu": 0.0,
+          "In4.Cu": 0.0
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 0,
+          "F.Cu": 2089,
+          "In1.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0,
+          "In4.Cu": 0
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "FB2.2",
+            "native_pad_uuids": [
+              "cb5b7671-4947-46a2-9c56-c5f300292b86"
+            ],
+            "pads": [
+              "FB2.2"
+            ],
+            "physical_bounds_mm": [
+              23.825,
+              15.25,
+              24.325,
+              15.75
+            ],
+            "physical_contact_area_mm2": 0.247851898452,
+            "physical_geometry_sha256": "b662c51bab1803b0d313893de2d9d5e84699d88687d735864e290062d2a026ec",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.24785189845199998
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U2.5",
+            "native_pad_uuids": [
+              "04c8d478-10ac-4179-a1c7-ea639a6a0c68"
+            ],
+            "pads": [
+              "U2.5"
+            ],
+            "physical_bounds_mm": [
+              22.534999,
+              12.2,
+              22.884999,
+              12.825
+            ],
+            "physical_contact_area_mm2": 0.21217422938200067,
+            "physical_geometry_sha256": "e0469d893c30d21280c7e1ceb3233efec9855e70342e1b664e5aa6cca9a857bb",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.21217422938200067
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -1.3877787807814457e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U2.8",
+            "native_pad_uuids": [
+              "428c6b06-7197-488b-8743-2ba1c68e2fa6"
+            ],
+            "pads": [
+              "U2.8"
+            ],
+            "physical_bounds_mm": [
+              24.059999,
+              12.175,
+              24.684999,
+              12.525
+            ],
+            "physical_contact_area_mm2": 0.21217422938199992,
+            "physical_geometry_sha256": "adea7d41cf7e71df2c1726120b4b68812cf13786f2f4d6e990981863fe17720a",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.21217422938199978
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 3,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 7,
+        "net": "+3V3_IMU",
+        "plated_barrel_count": 0
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 11.65410045153377,
+          "F.Cu": 4.4851177811827405,
+          "In1.Cu": 0.8934091378940001,
+          "In2.Cu": 23.601879324875586,
+          "In3.Cu": 59.111375353042376,
+          "In4.Cu": 0.8934091378940001
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 5276,
+          "F.Cu": 3902,
+          "In1.Cu": 3920,
+          "In2.Cu": 6942,
+          "In3.Cu": 7892,
+          "In4.Cu": 3920
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R54.1",
+            "native_pad_uuids": [
+              "7ec360c1-260b-4207-bd14-b677495be048"
+            ],
+            "pads": [
+              "R54.1"
+            ],
+            "physical_bounds_mm": [
+              32.52,
+              16.78,
+              33.06,
+              17.42
+            ],
+            "physical_contact_area_mm2": 0.329949897986,
+            "physical_geometry_sha256": "3e71bd7e3473a1f20b1ea95a33549eda033a86441f2d4e961981d4e18e381a8d",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599994
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R58.1",
+            "native_pad_uuids": [
+              "c8eb153e-6088-429e-ac18-1dfce3dc735e"
+            ],
+            "pads": [
+              "R58.1"
+            ],
+            "physical_bounds_mm": [
+              36.72,
+              0.88,
+              37.26,
+              1.52
+            ],
+            "physical_contact_area_mm2": 0.3299498979859996,
+            "physical_geometry_sha256": "34da0b4e5035c21ce24276c77cd0b35757c233805e89d6ee2ee50e3908a8ed17",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979859996
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U6.OUT_7_8",
+            "native_pad_uuids": [
+              "2556c4c2-1dc8-4ebf-a376-8fc60f8c5d22",
+              "3b69a42c-322f-4c75-9d21-9ff1b451eb12"
+            ],
+            "pads": [
+              "U6.7",
+              "U6.8"
+            ],
+            "physical_bounds_mm": [
+              31.8,
+              15.55,
+              32.5,
+              16.4
+            ],
+            "physical_contact_area_mm2": 0.5392053518199976,
+            "physical_geometry_sha256": "0ee7bd42751f38931017468a9504e3bdce76e5210503b5118f469d2c4246f17e",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.5392053518199982
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U7.3",
+            "native_pad_uuids": [
+              "49e039c7-6a12-4621-b60e-b65eb150a836"
+            ],
+            "pads": [
+              "U7.3"
+            ],
+            "physical_bounds_mm": [
+              37.3,
+              6.205,
+              37.6,
+              6.875
+            ],
+            "physical_contact_area_mm2": 0.1988518984520024,
+            "physical_geometry_sha256": "85bbc575145ce8ab77be4cded68c112d077585538c695110062ab3ce94c9d409",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.19885189845200246
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 46,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 12,
+        "net": "+5V_BEC",
+        "plated_barrel_count": 7
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 6.523212136084364,
+          "F.Cu": 4.261766259203666,
+          "In1.Cu": 0.7657792610520004,
+          "In2.Cu": 0.7657792610520004,
+          "In3.Cu": 55.94516652277496,
+          "In4.Cu": 0.7657792610520004
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 4131,
+          "F.Cu": 3771,
+          "In1.Cu": 3360,
+          "In2.Cu": 3360,
+          "In3.Cu": 9590,
+          "In4.Cu": 3360
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.3322676295501878e-15,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J10.3",
+            "native_pad_uuids": [
+              "468bb194-cbdc-479b-b84b-f63d8a986f4d"
+            ],
+            "pads": [
+              "J10.3"
+            ],
+            "physical_bounds_mm": [
+              31.825,
+              4.65,
+              32.425,
+              6.35
+            ],
+            "physical_contact_area_mm2": 1.0006795695439967,
+            "physical_geometry_sha256": "356deb1215b795fb344d62b880f57e7e05d9f4686c84e633ba8d91efe7f40345",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 1.000679569543998
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 8.881784197001252e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J11.3",
+            "native_pad_uuids": [
+              "7b8f2991-ae63-4cd7-a5dc-f3bbc019ac67"
+            ],
+            "pads": [
+              "J11.3"
+            ],
+            "physical_bounds_mm": [
+              30.575,
+              19.25,
+              31.175,
+              20.95
+            ],
+            "physical_contact_area_mm2": 1.000679569544002,
+            "physical_geometry_sha256": "4e7106db52fc04a1234d07a2f2b4ccfdf27aa92964fe15edef8a10f7f53b710c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 1.000679569544003
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.3322676295501878e-15,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J9.3",
+            "native_pad_uuids": [
+              "00d45fb6-34ed-404d-a694-dc8de73a4ca6"
+            ],
+            "pads": [
+              "J9.3"
+            ],
+            "physical_bounds_mm": [
+              18.325,
+              4.65,
+              18.925,
+              6.35
+            ],
+            "physical_contact_area_mm2": 1.0006795695440018,
+            "physical_geometry_sha256": "c4d123fd8e31b60259c0bb9c8c1dd32210e217255362a767f09bc45198a35742",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 1.0006795695440032
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -4.440892098500626e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R42.1",
+            "native_pad_uuids": [
+              "ffcaa37f-4c24-41b4-9aba-10376242234e"
+            ],
+            "pads": [
+              "R42.1"
+            ],
+            "physical_bounds_mm": [
+              15.44,
+              3.68,
+              15.98,
+              4.32
+            ],
+            "physical_contact_area_mm2": 0.3299498979860007,
+            "physical_geometry_sha256": "13a9bce2bdd4353ded870538a32428becfc122095edd1bbfc469565542bb6cd5",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979860003
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U7.2",
+            "native_pad_uuids": [
+              "a6b483a2-dc5c-495b-a487-16205b55ffb9"
+            ],
+            "pads": [
+              "U7.2"
+            ],
+            "physical_bounds_mm": [
+              37.8,
+              6.205,
+              38.1,
+              6.875
+            ],
+            "physical_contact_area_mm2": 0.1988518984520024,
+            "physical_geometry_sha256": "4c0eb63d9dd1fa8ff73791dfceb9910e2774cfb68536721909cf3e2331c6b928",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.19885189845200246
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 8.326672684688674e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U7.7",
+            "native_pad_uuids": [
+              "97228188-d041-470c-917e-732f5f369245"
+            ],
+            "pads": [
+              "U7.7"
+            ],
+            "physical_bounds_mm": [
+              37.8,
+              4.725,
+              38.1,
+              5.395
+            ],
+            "physical_contact_area_mm2": 0.1988518984520024,
+            "physical_geometry_sha256": "4e41fdb3c330453714b8180466cda1ec0fdaca89a4e7a70bc9a8a14a1a3e1a49",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.1988518984520025
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 42,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 8,
+        "net": "+5V_PERIPH",
+        "plated_barrel_count": 6
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 0.9726454213834166,
+          "F.Cu": 0.5700672511672882,
+          "In1.Cu": 0.12762987684200003,
+          "In2.Cu": 0.12762987684200003,
+          "In3.Cu": 0.12762987684200003,
+          "In4.Cu": 0.12762987684200003
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 927,
+          "F.Cu": 785,
+          "In1.Cu": 560,
+          "In2.Cu": 560,
+          "In3.Cu": 560,
+          "In4.Cu": 560
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R54.2",
+            "native_pad_uuids": [
+              "e6d16a64-d358-425e-952f-a36d47627b9b"
+            ],
+            "pads": [
+              "R54.2"
+            ],
+            "physical_bounds_mm": [
+              33.54,
+              16.78,
+              34.08,
+              17.42
+            ],
+            "physical_contact_area_mm2": 0.32994989798599994,
+            "physical_geometry_sha256": "438a6e766a12024e5d43fe534a74f253b6c174920e9a2d7d486b91cbb7ccd798",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599983
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.220446049250313e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R55.1",
+            "native_pad_uuids": [
+              "c5b8a8e9-5854-451d-9595-0e25129b9b82"
+            ],
+            "pads": [
+              "R55.1"
+            ],
+            "physical_bounds_mm": [
+              32.52,
+              17.88,
+              33.06,
+              18.52
+            ],
+            "physical_contact_area_mm2": 0.32994989798600016,
+            "physical_geometry_sha256": "817f641d1823bc8a37f8fbcaa69657583aaba13b8d989a1723c3273a6d04e398",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599994
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U6.5",
+            "native_pad_uuids": [
+              "95a61321-8af3-4811-8433-b0a4ad6c84a7"
+            ],
+            "pads": [
+              "U6.5"
+            ],
+            "physical_bounds_mm": [
+              31.85,
+              17.1,
+              32.45,
+              17.35
+            ],
+            "physical_contact_area_mm2": 0.14785189845200022,
+            "physical_geometry_sha256": "20382d627122b2c6bb8d316498364b52e6b42b876d4b06236b86dbe5c296e838",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.14785189845200028
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 9,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 3,
+        "net": "ABC_FB",
+        "plated_barrel_count": 1
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 3.74019574065242,
+          "F.Cu": 1.579447421460809,
+          "In1.Cu": 0.382889630526,
+          "In2.Cu": 12.263440063681365,
+          "In3.Cu": 0.382889630526,
+          "In4.Cu": 0.382889630526
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 2197,
+          "F.Cu": 1887,
+          "In1.Cu": 1680,
+          "In2.Cu": 2603,
+          "In3.Cu": 1680,
+          "In4.Cu": 1680
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U8.1",
+            "native_pad_uuids": [
+              "8ddf0cf4-ff63-40c2-af5c-49e5e48d0280"
+            ],
+            "pads": [
+              "U8.1"
+            ],
+            "physical_bounds_mm": [
+              28.3,
+              5.95,
+              29.35,
+              6.35
+            ],
+            "physical_contact_area_mm2": 0.4178518984519998,
+            "physical_geometry_sha256": "b7e9604607f3a7e5dc538e6b3d0478718ac197023fa804de955dc5bedca30459",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.41785189845199955
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U8.8",
+            "native_pad_uuids": [
+              "c2dd0d01-bc46-4692-b682-d5314f616ed1"
+            ],
+            "pads": [
+              "U8.8"
+            ],
+            "physical_bounds_mm": [
+              29.65,
+              5.95,
+              30.7,
+              6.35
+            ],
+            "physical_contact_area_mm2": 0.4178518984519998,
+            "physical_geometry_sha256": "19d0cbe67d8a8499a04ef7ea93ba9dacae270c40424281a0d3efb07c5e56d07f",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.41785189845199955
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U9.2",
+            "native_pad_uuids": [
+              "25451035-d2c6-4ae2-8346-11213dbb386e"
+            ],
+            "pads": [
+              "U9.2"
+            ],
+            "physical_bounds_mm": [
+              27.66,
+              2.625,
+              28.16,
+              2.875
+            ],
+            "physical_contact_area_mm2": 0.12285189845199994,
+            "physical_geometry_sha256": "5fcee95662452ebea49fcd44e6ed3311483c5005c01af4466200c9b7cadd1968",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.12285189845199991
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 21,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 6,
+        "net": "CORE_BUCK_IN",
+        "plated_barrel_count": 3
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 103.39328487729165,
+          "F.Cu": 59.83731471848283,
+          "In1.Cu": 883.0852992887515,
+          "In2.Cu": 33.26109346789845,
+          "In3.Cu": 33.26109346789845,
+          "In4.Cu": 875.3247997931575
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 80642,
+          "F.Cu": 73665,
+          "In1.Cu": 38077,
+          "In2.Cu": 66856,
+          "In3.Cu": 66856,
+          "In4.Cu": 38172
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 3.3306690738754696e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "C7.2",
+            "native_pad_uuids": [
+              "82e9ad96-c7fa-4163-9df9-142174cfd6c7"
+            ],
+            "pads": [
+              "C7.2"
+            ],
+            "physical_bounds_mm": [
+              19.775,
+              5.675,
+              20.675,
+              6.625
+            ],
+            "physical_contact_area_mm2": 0.8115337440160006,
+            "physical_geometry_sha256": "c1a879d190fe33f82ac531de13f097a3f9141b9c2c229a68f2d01c52b009fecc",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.811533744016001
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.A1",
+            "native_pad_uuids": [
+              "1e193618-f26d-4fac-8e78-2e98a0f398c3"
+            ],
+            "pads": [
+              "J1.A1"
+            ],
+            "physical_bounds_mm": [
+              36.94,
+              15.6,
+              38.09,
+              15.9
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "e671d9cf2476acbb140cf8b892d159c218a242763a513f4ae4e5fbda29c3238b",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.A12",
+            "native_pad_uuids": [
+              "874f781c-553a-4978-9e25-f694629e21b2"
+            ],
+            "pads": [
+              "J1.A12"
+            ],
+            "physical_bounds_mm": [
+              36.94,
+              10.1,
+              38.09,
+              10.4
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "a31594be7d42b29b4e4138f5fa42f6d3dc853602d1d97def9c4b21256cc3277d",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.B1",
+            "native_pad_uuids": [
+              "7fa4ec5b-63c8-405a-a0d2-5c56cfac6bd6"
+            ],
+            "pads": [
+              "J1.B1"
+            ],
+            "physical_bounds_mm": [
+              39.91,
+              10.1,
+              41.06,
+              10.4
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "d5e4376df5b403ee8ab4096153e13ed43d99408715901a81f29e21aa2f764883",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.B12",
+            "native_pad_uuids": [
+              "38d465b6-dc1f-426c-9e84-67f1a8825f8f"
+            ],
+            "pads": [
+              "J1.B12"
+            ],
+            "physical_bounds_mm": [
+              39.91,
+              15.6,
+              41.06,
+              15.9
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "87156760ceff6b3dd6fda3401511d06e0bc612d865ca6317893d9c71603d47f1",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.9984014443252818e-15,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J10.4",
+            "native_pad_uuids": [
+              "3eced521-2068-4efa-894c-bc8b2a0a2b12"
+            ],
+            "pads": [
+              "J10.4"
+            ],
+            "physical_bounds_mm": [
+              33.075,
+              4.65,
+              33.675,
+              6.35
+            ],
+            "physical_contact_area_mm2": 1.0006795695439914,
+            "physical_geometry_sha256": "01c5b6ed7834a7ac0c6f9eddfa106c002588888ac55d1addaf916602ce59339a",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 1.0006795695439934
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-15,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J11.4",
+            "native_pad_uuids": [
+              "e87ce64f-bc8b-4c7b-b47d-6583e39ba853"
+            ],
+            "pads": [
+              "J11.4"
+            ],
+            "physical_bounds_mm": [
+              29.325,
+              19.25,
+              29.925,
+              20.95
+            ],
+            "physical_contact_area_mm2": 1.0006795695440018,
+            "physical_geometry_sha256": "d4f792735ec80befb69606ff73754960845121b7d7ae48e8a008c9455b70b0f0",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 1.000679569544003
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 3.3583570067108326e-06,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J12.2",
+            "native_pad_uuids": [
+              "0b82e684-0067-48f3-b2a1-22418441f89f"
+            ],
+            "pads": [
+              "J12.2"
+            ],
+            "physical_bounds_mm": [
+              17.65,
+              19.00000000361521,
+              18.34999999961971,
+              22.69999999638479
+            ],
+            "physical_contact_area_mm2": 2.563700620983004,
+            "physical_geometry_sha256": "f8a1ff6fd7a9ef69e0b02c8749509bd79298e4e50c1ff0face76b8e86fc65446",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 2.5637039793400107
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409439994,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J2.1",
+            "native_pad_uuids": [
+              "1bf358e5-deb5-427d-b92c-fe2a47541be2"
+            ],
+            "pads": [
+              "J2.1"
+            ],
+            "physical_bounds_mm": [
+              3.16,
+              2.25,
+              4.96,
+              4.05
+            ],
+            "physical_contact_area_mm2": 2.289656359056,
+            "physical_geometry_sha256": "e14cf0bfc4655549d7334201bdf6fa0e8fd2ecd7e3cb20c151b3589ade29e59f",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 3.2399999999999993
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409439998,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J3.1",
+            "native_pad_uuids": [
+              "780f76f6-0e74-4f0b-89fb-ff8c0ce1fe1e"
+            ],
+            "pads": [
+              "J3.1"
+            ],
+            "physical_bounds_mm": [
+              3.16,
+              5.35,
+              4.96,
+              7.15
+            ],
+            "physical_contact_area_mm2": 2.2896563590560013,
+            "physical_geometry_sha256": "adcda46592e297c8241b500c09e3036db511d3e0fdb7e6dc9a3aba89703872b0",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 3.240000000000001
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409439998,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J4.1",
+            "native_pad_uuids": [
+              "c55c3374-8fcd-4b15-b42f-33de7059f275"
+            ],
+            "pads": [
+              "J4.1"
+            ],
+            "physical_bounds_mm": [
+              3.16,
+              8.45,
+              4.96,
+              10.25
+            ],
+            "physical_contact_area_mm2": 2.2896563590560013,
+            "physical_geometry_sha256": "9d4622faf27049cb1c51415599bc9764c55a3d28918af5a0701ebab246755b70",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 3.240000000000001
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409439985,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J5.1",
+            "native_pad_uuids": [
+              "8e7c1dee-7d64-46fc-b147-5e938d07f96d"
+            ],
+            "pads": [
+              "J5.1"
+            ],
+            "physical_bounds_mm": [
+              3.16,
+              11.55,
+              4.96,
+              13.35
+            ],
+            "physical_contact_area_mm2": 2.289656359055999,
+            "physical_geometry_sha256": "f49b9848e7b72272dad443e7f96fc116009dc8ff3b5a10b7742e8e46bff41fd0",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 3.2399999999999975
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409439994,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J6.1",
+            "native_pad_uuids": [
+              "af51dd6f-74b4-44f0-9e09-812208bfc448"
+            ],
+            "pads": [
+              "J6.1"
+            ],
+            "physical_bounds_mm": [
+              3.16,
+              15.15,
+              4.96,
+              16.95
+            ],
+            "physical_contact_area_mm2": 2.289656359055998,
+            "physical_geometry_sha256": "0ea801f0693186f92ff24d0db1e1585ce83fcf82f68c0931c392fa1f6f816cd3",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 3.2399999999999975
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409439998,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J8.1",
+            "native_pad_uuids": [
+              "db8a6f67-908e-47e0-8c1d-8db72a4f2772"
+            ],
+            "pads": [
+              "J8.1"
+            ],
+            "physical_bounds_mm": [
+              3.16,
+              21.35,
+              4.96,
+              23.15
+            ],
+            "physical_contact_area_mm2": 2.2896563590559946,
+            "physical_geometry_sha256": "fa0b3520369044dc3f3966afa5b2d5f9dcccd95cb00769a235ae5937740e0d47",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 3.2399999999999944
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.3322676295501878e-15,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J9.4",
+            "native_pad_uuids": [
+              "729841e0-dde6-438a-ab26-e0d7166ed62d"
+            ],
+            "pads": [
+              "J9.4"
+            ],
+            "physical_bounds_mm": [
+              19.575,
+              4.65,
+              20.175,
+              6.35
+            ],
+            "physical_contact_area_mm2": 1.0006795695440018,
+            "physical_geometry_sha256": "e5a3eee02aeddbe9f70fb7681eab025fb485a2bd01996a1e73ffc94b8aaed4e4",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 1.0006795695440032
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "R41.2",
+            "native_pad_uuids": [
+              "37a0e339-0b9d-4d52-8218-2aa8a2455247"
+            ],
+            "pads": [
+              "R41.2"
+            ],
+            "physical_bounds_mm": [
+              22.94,
+              16.23,
+              23.48,
+              16.87
+            ],
+            "physical_contact_area_mm2": 0.32994989798599983,
+            "physical_geometry_sha256": "9b144c1f02189378c2014fd98a9f4b57872ff5156a8e6ac67e78f4ca29a375d3",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599983
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -1.6653345369377348e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R44.2",
+            "native_pad_uuids": [
+              "69dd15ed-318d-4e07-93df-53253587847d"
+            ],
+            "pads": [
+              "R44.2"
+            ],
+            "physical_bounds_mm": [
+              15.18,
+              4.62,
+              15.82,
+              5.16
+            ],
+            "physical_contact_area_mm2": 0.3299498979860004,
+            "physical_geometry_sha256": "7d6289cb95c40e1d218c1770bf1661f8c0746e3072dac16d362096f87ab81506",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979860002
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R53.2",
+            "native_pad_uuids": [
+              "8ec243cf-c0e0-47e7-b3ce-9b80d9b190c9"
+            ],
+            "pads": [
+              "R53.2"
+            ],
+            "physical_bounds_mm": [
+              17.85,
+              1.55,
+              18.35,
+              2.05
+            ],
+            "physical_contact_area_mm2": 0.24785189845199998,
+            "physical_geometry_sha256": "77fdd23fd5a1264be6f32d95b2f76844f770e3abfd989e832c12fc8953c3d7bb",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.247851898452
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R55.2",
+            "native_pad_uuids": [
+              "4c8611df-c28a-42ec-852a-6cd52927a70a"
+            ],
+            "pads": [
+              "R55.2"
+            ],
+            "physical_bounds_mm": [
+              33.54,
+              17.88,
+              34.08,
+              18.52
+            ],
+            "physical_contact_area_mm2": 0.32994989798599994,
+            "physical_geometry_sha256": "315be632be38f1f1bbfc533d8cdb0c3c109af6da24b4ce5ed737b989adf6a0c3",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979859999
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R58.2",
+            "native_pad_uuids": [
+              "a3ae499d-fbd1-40c5-885e-76a5dd503919"
+            ],
+            "pads": [
+              "R58.2"
+            ],
+            "physical_bounds_mm": [
+              37.74,
+              0.88,
+              38.28,
+              1.52
+            ],
+            "physical_contact_area_mm2": 0.32994989798599983,
+            "physical_geometry_sha256": "135531a42adda74021ee9942db5e84d7d7f5a07d01f636d7816a2475c6efe432",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979859998
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R61.2",
+            "native_pad_uuids": [
+              "8afbbb87-be99-4d59-9e6c-d55b4c3b80a3"
+            ],
+            "pads": [
+              "R61.2"
+            ],
+            "physical_bounds_mm": [
+              27.54,
+              0.38,
+              28.08,
+              1.02
+            ],
+            "physical_contact_area_mm2": 0.3299498979859996,
+            "physical_geometry_sha256": "e49a6bab2f2d9412f2b58a3493ffc77cd549752a3e63f59bff291b09a2ae7880",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599933
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.220446049250313e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "R68.2",
+            "native_pad_uuids": [
+              "c918eac1-5f31-43a6-ba52-4144aae2e45c"
+            ],
+            "pads": [
+              "R68.2"
+            ],
+            "physical_bounds_mm": [
+              38.24,
+              5.98,
+              38.78,
+              6.62
+            ],
+            "physical_contact_area_mm2": 0.3299498979859997,
+            "physical_geometry_sha256": "f7b39060ae1960b6879c60847384d9fc8c6c627788ee6d2059672424418d2ff0",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979859995
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -3.3306690738754696e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R69.2",
+            "native_pad_uuids": [
+              "79b46a7d-fc78-4177-8ace-95cd8c0db7ce"
+            ],
+            "pads": [
+              "R69.2"
+            ],
+            "physical_bounds_mm": [
+              35.74,
+              15.98,
+              36.28,
+              16.62
+            ],
+            "physical_contact_area_mm2": 0.32994989798600016,
+            "physical_geometry_sha256": "0f2a8e675890fbc1491a9d17539823708d4308f77d6e8c2a623094554d8a24cd",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599983
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.220446049250313e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.12",
+            "native_pad_uuids": [
+              "cabcae10-a3d7-4d4a-92c7-2288835232e1"
+            ],
+            "pads": [
+              "U1.12"
+            ],
+            "physical_bounds_mm": [
+              14.509999,
+              11.9,
+              16.059999,
+              12.2
+            ],
+            "physical_contact_area_mm2": 0.4601683066879985,
+            "physical_geometry_sha256": "22cf4cb57f0f426b8f6ef6e07040d1ada450574d7e21733f196993e44daca29b",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879983
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.18",
+            "native_pad_uuids": [
+              "a423716f-eeb5-4ffb-959f-47f260ba6e75"
+            ],
+            "pads": [
+              "U1.18"
+            ],
+            "physical_bounds_mm": [
+              17.559999,
+              7.35,
+              17.859999,
+              8.9
+            ],
+            "physical_contact_area_mm2": 0.46016830668799624,
+            "physical_geometry_sha256": "61e4a780145b14029fd5fd705fa73b549beadc0b971f16bf4ec424610d76fa2c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879962
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.31",
+            "native_pad_uuids": [
+              "8ad7b19c-6d39-4870-90fc-cb6efe53fcc0"
+            ],
+            "pads": [
+              "U1.31"
+            ],
+            "physical_bounds_mm": [
+              24.059999,
+              7.35,
+              24.359999,
+              8.9
+            ],
+            "physical_contact_area_mm2": 0.46016830668799624,
+            "physical_geometry_sha256": "ee0c955ecf2bd0d010f1a5fe96a091a5588bb7ed44f040cc55588ff8d2cccf19",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879962
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.47",
+            "native_pad_uuids": [
+              "1734a3b0-2991-4d14-b03e-af17c954adea"
+            ],
+            "pads": [
+              "U1.47"
+            ],
+            "physical_bounds_mm": [
+              25.859999,
+              16.9,
+              27.409999,
+              17.2
+            ],
+            "physical_contact_area_mm2": 0.46016830668800107,
+            "physical_geometry_sha256": "cc19d20f32c9a6df2eccf38879f5e94b17b756874c64251d723dfc5dca0ad59f",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066880011
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -3.3306690738754696e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.63",
+            "native_pad_uuids": [
+              "f9e43e39-7c9d-4f6b-a212-8c78c61e27e2"
+            ],
+            "pads": [
+              "U1.63"
+            ],
+            "physical_bounds_mm": [
+              17.559999,
+              18.7,
+              17.859999,
+              20.25
+            ],
+            "physical_contact_area_mm2": 0.4601683066879964,
+            "physical_geometry_sha256": "43138664fd0abeea35f4e871570d8b06293de7533303c54a10c551749ad42c6c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879961
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U10.5",
+            "native_pad_uuids": [
+              "663178d8-c282-49b0-b9f9-8b45503c957d"
+            ],
+            "pads": [
+              "U10.5"
+            ],
+            "physical_bounds_mm": [
+              39.85,
+              11.8,
+              40.3,
+              12.1
+            ],
+            "physical_contact_area_mm2": 0.13285189845199888,
+            "physical_geometry_sha256": "a2a470f96a20ff64a78bab4c1addd0e38d24e6e41d7600c40148b625088d5933",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.13285189845199888
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 8.326672684688674e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U11.5",
+            "native_pad_uuids": [
+              "e1cbbf23-c132-47cf-844a-be1cbce7b612"
+            ],
+            "pads": [
+              "U11.5"
+            ],
+            "physical_bounds_mm": [
+              20.75,
+              22.35,
+              21.2,
+              22.65
+            ],
+            "physical_contact_area_mm2": 0.1328518984519989,
+            "physical_geometry_sha256": "6a5573bf28966cb93c97fe2d4416fc3710d7c51250586b75eb20884159b4219d",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.132851898451999
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U2.6",
+            "native_pad_uuids": [
+              "18b5b6b9-bbe6-4c29-9292-22ecb0961660"
+            ],
+            "pads": [
+              "U2.6"
+            ],
+            "physical_bounds_mm": [
+              23.034999,
+              12.2,
+              23.384999,
+              12.825
+            ],
+            "physical_contact_area_mm2": 0.21217422938200067,
+            "physical_geometry_sha256": "073ceeda10bf0a6c91dfdf62db9436b4be42a5af8a06d3721aa7298e5e3ffd8b",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.21217422938200067
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U3.4",
+            "native_pad_uuids": [
+              "7dd76d33-50e2-41f3-b4a6-4ee3225c4264"
+            ],
+            "pads": [
+              "U3.4"
+            ],
+            "physical_bounds_mm": [
+              30.625,
+              19.845,
+              31.275,
+              20.345
+            ],
+            "physical_contact_area_mm2": 0.3115822087999995,
+            "physical_geometry_sha256": "c85fa4d0b259c1891df7dc627276b79b60c6705bfd89aa44900f27a380363124",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.31158220879999954
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U4.1",
+            "native_pad_uuids": [
+              "1b4af1f3-9d14-4234-8043-78be0ae8d970"
+            ],
+            "pads": [
+              "U4.1"
+            ],
+            "physical_bounds_mm": [
+              24.05,
+              22.75,
+              24.5,
+              23.2
+            ],
+            "physical_contact_area_mm2": 0.20249999999999935,
+            "physical_geometry_sha256": "7e08b7e824105dbf76ed0bec9502a850237518eead8df22615746891464a2bb5",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.20249999999999935
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U4.7",
+            "native_pad_uuids": [
+              "ad1da66b-fad4-496a-ae55-3e41dda1352f"
+            ],
+            "pads": [
+              "U4.7"
+            ],
+            "physical_bounds_mm": [
+              25.5,
+              22.1,
+              25.95,
+              22.55
+            ],
+            "physical_contact_area_mm2": 0.20249999999999935,
+            "physical_geometry_sha256": "220659184700e32372f9a5df3c540c48617af362793ee9b7c0269fb35fbb9bdd",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.20249999999999935
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U5.8",
+            "native_pad_uuids": [
+              "4f0016cf-9995-4856-bdc4-785313abd18b"
+            ],
+            "pads": [
+              "U5.8"
+            ],
+            "physical_bounds_mm": [
+              12.66,
+              16.6,
+              13.26,
+              16.85
+            ],
+            "physical_contact_area_mm2": 0.14785189845199986,
+            "physical_geometry_sha256": "d95fecd50c5ab7976c933679b846a0de0c3886a92e5b29971fa03af078f4a190",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.14785189845199997
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.675139322254715e-06,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U6.10",
+            "native_pad_uuids": [
+              "0ecb6e31-4fc1-4249-b2e7-8d82dd1891b4"
+            ],
+            "pads": [
+              "U6.10"
+            ],
+            "physical_bounds_mm": [
+              30.57500000057618,
+              15.0,
+              30.92499999942382,
+              16.799999993925127
+            ],
+            "physical_contact_area_mm2": 0.6214101045766799,
+            "physical_geometry_sha256": "11b11c4605d8ac9b87c1d26c69f3f50b35427ccaf218ab79e62f8e3f3030be97",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.6214117797160021
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U6.4",
+            "native_pad_uuids": [
+              "d614e648-8ba8-4ff1-80be-0f038a8ec7e0"
+            ],
+            "pads": [
+              "U6.4"
+            ],
+            "physical_bounds_mm": [
+              31.375,
+              17.35,
+              31.625,
+              17.95
+            ],
+            "physical_contact_area_mm2": 0.1478518984519998,
+            "physical_geometry_sha256": "f86b1985f41f4fc7cc41ded0216638ab317dd8ac7feee2520eaa7c65e34fb452",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.1478518984519997
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U7.1",
+            "native_pad_uuids": [
+              "d107941e-2013-4bb2-adb1-3b11a38a73f4"
+            ],
+            "pads": [
+              "U7.1"
+            ],
+            "physical_bounds_mm": [
+              38.3,
+              6.205,
+              38.6,
+              6.875
+            ],
+            "physical_contact_area_mm2": 0.19885189845200243,
+            "physical_geometry_sha256": "4c0f9370870334dac4926354baf9fbd62a999fc99237e5b8d95321c78357caa3",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.19885189845200246
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -4.163336342344337e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U8.12",
+            "native_pad_uuids": [
+              "c71cf299-32b7-42bc-bc3e-cb78f838b70e"
+            ],
+            "pads": [
+              "U8.12"
+            ],
+            "physical_bounds_mm": [
+              28.65,
+              6.65,
+              28.85,
+              7.25
+            ],
+            "physical_contact_area_mm2": 0.1178518984520014,
+            "physical_geometry_sha256": "74a6cc0745fd263d53ca9a4eb51ff437f3b5f78d931d9a4f6a5d76feb3f3c3c0",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.11785189845200136
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -6.938893903907228e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U9.1",
+            "native_pad_uuids": [
+              "ecc08311-2984-4a23-90d6-5e10cb92cc27"
+            ],
+            "pads": [
+              "U9.1"
+            ],
+            "physical_bounds_mm": [
+              27.66,
+              3.125,
+              28.16,
+              3.375
+            ],
+            "physical_contact_area_mm2": 0.12285189845199998,
+            "physical_geometry_sha256": "c83420b237871183d0d64b931ceeeca3b6e0ae455e4ba55cf5562e6b5a08ebcf",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.12285189845199991
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -1.3877787807814457e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U9.4",
+            "native_pad_uuids": [
+              "cd210699-a66d-4f46-be75-95bfa97122a7"
+            ],
+            "pads": [
+              "U9.4"
+            ],
+            "physical_bounds_mm": [
+              27.66,
+              1.625,
+              28.16,
+              1.875
+            ],
+            "physical_contact_area_mm2": 0.12285189845199997,
+            "physical_geometry_sha256": "9f9d86a5eca6188b00c51eacb29c517bc7d892bc000118b10e6d41898a74c4e9",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.12285189845199995
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 749,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 133,
+        "net": "GND",
+        "plated_barrel_count": 118
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 5.522011508281101,
+          "F.Cu": 3.749351601445661,
+          "In1.Cu": 0.8934091378939999,
+          "In2.Cu": 2.8523826925751448,
+          "In3.Cu": 15.321729797426567,
+          "In4.Cu": 0.8934091378939999
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 4796,
+          "F.Cu": 4157,
+          "In1.Cu": 3920,
+          "In2.Cu": 3839,
+          "In3.Cu": 4745,
+          "In4.Cu": 3920
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "R68.1",
+            "native_pad_uuids": [
+              "ef0fdcb7-fb4c-4713-8b93-9fcc4e671402"
+            ],
+            "pads": [
+              "R68.1"
+            ],
+            "physical_bounds_mm": [
+              37.22,
+              5.98,
+              37.76,
+              6.62
+            ],
+            "physical_contact_area_mm2": 0.3299498979859996,
+            "physical_geometry_sha256": "b6cd49a9485fed51e51f33e055dcb4e3ffdc6f50677bbaa5f7f379d1e8a1414e",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599933
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U10.1",
+            "native_pad_uuids": [
+              "17a1a012-29cd-46f9-a7ce-d5c2ca3c83d4"
+            ],
+            "pads": [
+              "U10.1"
+            ],
+            "physical_bounds_mm": [
+              37.9,
+              12.45,
+              38.35,
+              12.75
+            ],
+            "physical_contact_area_mm2": 0.13285189845200074,
+            "physical_geometry_sha256": "86eef02a25f292d51a66ae5d4cb1c0e5c8c398c0210c2abe6f76418e3a652302",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.13285189845200074
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U7.6",
+            "native_pad_uuids": [
+              "4f0bf3fd-9b00-42b4-9044-8ce9b59ab94c"
+            ],
+            "pads": [
+              "U7.6"
+            ],
+            "physical_bounds_mm": [
+              37.3,
+              4.725,
+              37.6,
+              5.395
+            ],
+            "physical_contact_area_mm2": 0.19885189845200238,
+            "physical_geometry_sha256": "b2064655f48eb6e4d51e5b7c2657f04ece4a1f750d3e4c0583c4644b3cfd7eab",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.1988518984520025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U8.2",
+            "native_pad_uuids": [
+              "ea316c8c-d8d2-4c26-b505-1ba70c8fbe9b"
+            ],
+            "pads": [
+              "U8.2"
+            ],
+            "physical_bounds_mm": [
+              28.3,
+              5.25,
+              29.35,
+              5.65
+            ],
+            "physical_contact_area_mm2": 0.4178518984520005,
+            "physical_geometry_sha256": "8abf52fd0b13fff6eae0c01e8b222aec8fe74ced7322975d13888197c0b6f2e9",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4178518984520005
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 46,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 7,
+        "net": "USB_LIMITED",
+        "plated_barrel_count": 7
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 7.32406131180422,
+          "F.Cu": 6.990052957903643,
+          "In1.Cu": 1.021039014736,
+          "In2.Cu": 5.158979953737522,
+          "In3.Cu": 1.021039014736,
+          "In4.Cu": 1.021039014736
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 5894,
+          "F.Cu": 5526,
+          "In1.Cu": 4480,
+          "In2.Cu": 4480,
+          "In3.Cu": 4480,
+          "In4.Cu": 4480
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.A4",
+            "native_pad_uuids": [
+              "750f8162-78b8-41d3-a3b2-1bd2ce8cfb63"
+            ],
+            "pads": [
+              "J1.A4"
+            ],
+            "physical_bounds_mm": [
+              36.94,
+              14.1,
+              38.09,
+              14.4
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "d58233aeb304aba02a97bedf262c6a62b9669d130e0c89b84844344a05128afe",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.A9",
+            "native_pad_uuids": [
+              "07ad31bd-bd78-44d4-8e70-300d12ded866"
+            ],
+            "pads": [
+              "J1.A9"
+            ],
+            "physical_bounds_mm": [
+              36.94,
+              11.6,
+              38.09,
+              11.9
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "a2a8a4defe9e7490316d64893f93cb274c3ba47a4c2e48b3e22fdbc4ae781f6c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.B4",
+            "native_pad_uuids": [
+              "1d6d41c2-ab84-41a8-8644-4e36923e6fb5"
+            ],
+            "pads": [
+              "J1.B4"
+            ],
+            "physical_bounds_mm": [
+              39.91,
+              11.6,
+              41.06,
+              11.9
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "2a12536d3363cea8644af6a5d236c3d647cb52611a5e77fe1889a38e72be5530",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J1.B9",
+            "native_pad_uuids": [
+              "3e64be90-9076-4bed-96e6-27f6edda5bcf"
+            ],
+            "pads": [
+              "J1.B9"
+            ],
+            "physical_bounds_mm": [
+              39.91,
+              14.1,
+              41.06,
+              14.4
+            ],
+            "physical_contact_area_mm2": 0.3450000000000025,
+            "physical_geometry_sha256": "e73823337e86d7b6305876be3a0ced3283632d5165697e600bddbcf7c7a21eb8",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3450000000000025
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.220446049250313e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R69.1",
+            "native_pad_uuids": [
+              "97e5d1f3-a692-4c5d-9227-2cf3d83d133a"
+            ],
+            "pads": [
+              "R69.1"
+            ],
+            "physical_bounds_mm": [
+              34.72,
+              15.98,
+              35.26,
+              16.62
+            ],
+            "physical_contact_area_mm2": 0.329949897986,
+            "physical_geometry_sha256": "586bea34e85a98cc0707b0d18eae9381b71a550342ba421dbca5f8041737d499",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979859998
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U10.4",
+            "native_pad_uuids": [
+              "07a60c76-2a6a-4d28-81a9-eb601942ac32"
+            ],
+            "pads": [
+              "U10.4"
+            ],
+            "physical_bounds_mm": [
+              39.85,
+              11.15,
+              40.3,
+              11.45
+            ],
+            "physical_contact_area_mm2": 0.1328518984519989,
+            "physical_geometry_sha256": "77d501cf2148d9443e266831e9435104f9eaa5084616f11ff62a71b747e4b256",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.13285189845199893
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U10.6",
+            "native_pad_uuids": [
+              "a81d617f-131f-45da-be9b-a7c452897140"
+            ],
+            "pads": [
+              "U10.6"
+            ],
+            "physical_bounds_mm": [
+              39.85,
+              12.45,
+              40.3,
+              12.75
+            ],
+            "physical_contact_area_mm2": 0.13285189845199952,
+            "physical_geometry_sha256": "10cc6ffc6172c2b92ad5dbba9a313f4bfacbb0f29efb560a2c791c60dfceef3c",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.1328518984519995
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 55,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 9,
+        "net": "USB_VBUS_RAW",
+        "plated_barrel_count": 8
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 1.3225846653206235,
+          "F.Cu": 0.0,
+          "In1.Cu": 0.0,
+          "In2.Cu": 0.0,
+          "In3.Cu": 0.0,
+          "In4.Cu": 0.0
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 548,
+          "F.Cu": 0,
+          "In1.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0,
+          "In4.Cu": 0
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 7.540477987566518e-07,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R16.1",
+            "native_pad_uuids": [
+              "f5380bc1-fd78-4412-a339-ecb82ad6ae56"
+            ],
+            "pads": [
+              "R16.1"
+            ],
+            "physical_bounds_mm": [
+              23.87500000469865,
+              6.005000002360967,
+              24.82499999530135,
+              6.68
+            ],
+            "physical_contact_area_mm2": 0.6069046800202011,
+            "physical_geometry_sha256": "04874d0c4371e99b324279cf668138e8eea4c8ae3748dbd2d882a16255909bef",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.6069054340679999
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U1.30",
+            "native_pad_uuids": [
+              "408e32ee-653c-49f3-8a6e-082b316344b7"
+            ],
+            "pads": [
+              "U1.30"
+            ],
+            "physical_bounds_mm": [
+              23.559999,
+              7.35,
+              23.859999,
+              8.9
+            ],
+            "physical_contact_area_mm2": 0.46016830668799624,
+            "physical_geometry_sha256": "1f951221043d670c08de8307d34341ddd5282cecf56b9e121636fc64e4bcb74e",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4601683066879962
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 2,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 2,
+        "net": "VCAP",
+        "plated_barrel_count": 0
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 2.0289629697645597,
+          "F.Cu": 0.0,
+          "In1.Cu": 0.0,
+          "In2.Cu": 0.0,
+          "In3.Cu": 0.0,
+          "In4.Cu": 0.0
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 682,
+          "F.Cu": 0,
+          "In1.Cu": 0,
+          "In2.Cu": 0,
+          "In3.Cu": 0,
+          "In4.Cu": 0
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 5.551115123125783e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "C7.1",
+            "native_pad_uuids": [
+              "cf32f749-831f-4823-975f-64b94d255207"
+            ],
+            "pads": [
+              "C7.1"
+            ],
+            "physical_bounds_mm": [
+              21.325,
+              5.675,
+              22.225,
+              6.625
+            ],
+            "physical_contact_area_mm2": 0.8115337440160006,
+            "physical_geometry_sha256": "a02128db7f78c0b013ffcb26baba65d2f22a0314b73ee30c8516525d1e7e5949",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.8115337440160012
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 7.924770581979601e-07,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R16.2",
+            "native_pad_uuids": [
+              "4d21069c-a605-46b5-8f14-1050fa8c4ea9"
+            ],
+            "pads": [
+              "R16.2"
+            ],
+            "physical_bounds_mm": [
+              23.875,
+              4.480000002360968,
+              24.82499999530135,
+              5.154999997639033
+            ],
+            "physical_contact_area_mm2": 0.6069046415909419,
+            "physical_geometry_sha256": "216279f25607bb270f775e47a488b6dff913a807e42968c9a65d66273b00754e",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.6069054340680001
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 2,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 2,
+        "net": "VCAP_CAP",
+        "plated_barrel_count": 0
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 10.114439481808638,
+          "F.Cu": 8.080433686943776,
+          "In1.Cu": 1.0210390147359998,
+          "In2.Cu": 24.43069458207671,
+          "In3.Cu": 27.250359548809534,
+          "In4.Cu": 1.0210390147359998
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 5718,
+          "F.Cu": 5237,
+          "In1.Cu": 4480,
+          "In2.Cu": 4517,
+          "In3.Cu": 4443,
+          "In4.Cu": 4480
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 2.7755575615628914e-17,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R53.1",
+            "native_pad_uuids": [
+              "1f92e8c9-5032-4ae6-8375-1d7413a2de5a"
+            ],
+            "pads": [
+              "R53.1"
+            ],
+            "physical_bounds_mm": [
+              16.85,
+              1.55,
+              17.35,
+              2.05
+            ],
+            "physical_contact_area_mm2": 0.24785189845199998,
+            "physical_geometry_sha256": "7585680c6ac333088d5a31077ff0004e138fa9dfc0642993210a1d04863abeb0",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.247851898452
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.7755575615628914e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "R60.1",
+            "native_pad_uuids": [
+              "1f3cf98d-08a9-4ee3-a58a-f09457e6a007"
+            ],
+            "pads": [
+              "R60.1"
+            ],
+            "physical_bounds_mm": [
+              28.52,
+              0.38,
+              29.06,
+              1.02
+            ],
+            "physical_contact_area_mm2": 0.32994989798599966,
+            "physical_geometry_sha256": "30d31f7086192a5ea6c89d66bdfe8faef6972b62866d23c50d23cb4b2824a35a",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.3299498979859994
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U5.6",
+            "native_pad_uuids": [
+              "fae78596-f5d0-4dbe-95ff-acb9c7ee3a2c"
+            ],
+            "pads": [
+              "U5.6"
+            ],
+            "physical_bounds_mm": [
+              12.16,
+              15.3,
+              12.46,
+              17.7
+            ],
+            "physical_contact_area_mm2": 0.7178518984520014,
+            "physical_geometry_sha256": "341fde0d515b78eed677ceb2507d551f9eaa1ff288785434be0411df9fa1c6e4",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.7178518984520014
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.0,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U6.VIN_12_13",
+            "native_pad_uuids": [
+              "0526091c-ee27-42ce-8a71-7e1565c51a6e",
+              "e531483b-2d06-4a6d-bfdc-5bb2f9c9a5ab"
+            ],
+            "pads": [
+              "U6.12",
+              "U6.13"
+            ],
+            "physical_bounds_mm": [
+              29.0,
+              15.55,
+              29.7,
+              16.4
+            ],
+            "physical_contact_area_mm2": 0.5392053518199978,
+            "physical_geometry_sha256": "173f7d3a49e31ea08af793b07da9945e13c84e8a47db0ab30e1985fe92dcecd7",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.5392053518199978
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -2.220446049250313e-16,
+            "finite_connected_contact": true,
+            "layer": "B.Cu",
+            "name": "U8.7",
+            "native_pad_uuids": [
+              "68cb1a26-42db-4ea2-9012-095924df7626"
+            ],
+            "pads": [
+              "U8.7"
+            ],
+            "physical_bounds_mm": [
+              29.65,
+              5.25,
+              30.7,
+              5.65
+            ],
+            "physical_contact_area_mm2": 0.4178518984520007,
+            "physical_geometry_sha256": "783d93d66ef6eed61c8c59dc2dd91bac60bc879c36bcebd2e7d0eea942d212ca",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.4178518984520005
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 53,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 13,
+        "net": "VX_PROTECTED",
+        "plated_barrel_count": 8
+      },
+      {
+        "actual_copper_area_mm2_by_layer": {
+          "B.Cu": 60.91662834940602,
+          "F.Cu": 55.9370025350122,
+          "In1.Cu": 11.543450801278011,
+          "In2.Cu": 62.684403766861706,
+          "In3.Cu": 19.05009979510861,
+          "In4.Cu": 11.543450801278011
+        },
+        "boundary_vertices_by_layer": {
+          "B.Cu": 6667,
+          "F.Cu": 7030,
+          "In1.Cu": 10080,
+          "In2.Cu": 6150,
+          "In3.Cu": 10014,
+          "In4.Cu": 10080
+        },
+        "connectivity_proof": "Native pad UUID groups",
+        "contacts": [
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409440074,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J2.2",
+            "native_pad_uuids": [
+              "52d6c02a-5f32-4129-8e2d-9ef504aaef76"
+            ],
+            "pads": [
+              "J2.2"
+            ],
+            "physical_bounds_mm": [
+              5.70001,
+              2.25001,
+              7.49999,
+              4.04999
+            ],
+            "physical_contact_area_mm2": 1.5943090255159968,
+            "physical_geometry_sha256": "38178b0ebbd64f961a04725b8ba8caffad5720977fbc035e4f645f2dcbb7d636",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 2.544652666460004
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409440034,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J3.2",
+            "native_pad_uuids": [
+              "a268303a-6757-4dd1-8456-ddcdcfffed12"
+            ],
+            "pads": [
+              "J3.2"
+            ],
+            "physical_bounds_mm": [
+              5.70001,
+              5.35001,
+              7.49999,
+              7.14999
+            ],
+            "physical_contact_area_mm2": 1.5943090255159995,
+            "physical_geometry_sha256": "6dba40cc787f2780d8248ab826a8b9acfa4508016d1b4097bde9c83e89e88b8c",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 2.544652666460003
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409440011,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J4.2",
+            "native_pad_uuids": [
+              "4081316f-7265-4ae1-8b2f-ebaddc806712"
+            ],
+            "pads": [
+              "J4.2"
+            ],
+            "physical_bounds_mm": [
+              5.70001,
+              8.45001,
+              7.49999,
+              10.24999
+            ],
+            "physical_contact_area_mm2": 1.5943090255159986,
+            "physical_geometry_sha256": "0c157dca2d27b2d96bbbf6aaddc3fcb70e9ef9f5b482893d416e1b2ecfd7b1c3",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 2.5446526664599998
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409440047,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J5.2",
+            "native_pad_uuids": [
+              "5456a4f3-3d53-47a5-8f37-f6e4c5e0f99f"
+            ],
+            "pads": [
+              "J5.2"
+            ],
+            "physical_bounds_mm": [
+              5.70001,
+              11.55001,
+              7.49999,
+              13.34999
+            ],
+            "physical_contact_area_mm2": 1.5943090255159973,
+            "physical_geometry_sha256": "9fcc14dff527b781e6ed6e59a781e0e31251e858dcd7651f719c67b0fadbcb97",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 2.544652666460002
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.950343640944004,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J6.2",
+            "native_pad_uuids": [
+              "f9e9ce7a-8208-4a8a-9929-9ab7e932ef7b"
+            ],
+            "pads": [
+              "J6.2"
+            ],
+            "physical_bounds_mm": [
+              5.70001,
+              15.15001,
+              7.49999,
+              16.94999
+            ],
+            "physical_contact_area_mm2": 1.594309025515998,
+            "physical_geometry_sha256": "783243633f5f2cd9a5a87d0e8d84d6ab8a136bedbcd22d08ecded40a49eb5448",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 2.544652666460002
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 0.9503436409440027,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "J8.2",
+            "native_pad_uuids": [
+              "c9fb48af-0028-458e-8536-1cf27a135609"
+            ],
+            "pads": [
+              "J8.2"
+            ],
+            "physical_bounds_mm": [
+              5.70001,
+              21.35001,
+              7.49999,
+              23.14999
+            ],
+            "physical_contact_area_mm2": 1.5943090255159975,
+            "physical_geometry_sha256": "d9876105c82cf3b6f3068729d62958c6f3ba57aba2650f8f23baee1c14aef442",
+            "physical_holes": 1,
+            "raw_land_area_mm2": 2.54465266646
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": -5.551115123125783e-17,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "R40.1",
+            "native_pad_uuids": [
+              "74a8e12d-3f5e-434a-bb8c-7c4a65369c2b"
+            ],
+            "pads": [
+              "R40.1"
+            ],
+            "physical_bounds_mm": [
+              19.87,
+              15.98,
+              20.41,
+              16.62
+            ],
+            "physical_contact_area_mm2": 0.3299498979859999,
+            "physical_geometry_sha256": "f8acc724700619d845568dd1f5faa3a174f9841e3e2d2de5087c3db0dc0c4fa9",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.32994989798599983
+          },
+          {
+            "area_removed_by_actual_drills_or_outline_mm2": 1.1102230246251565e-16,
+            "finite_connected_contact": true,
+            "layer": "F.Cu",
+            "name": "U5.5",
+            "native_pad_uuids": [
+              "85e6caf7-e9d6-48fc-be04-1cbfbfff3020"
+            ],
+            "pads": [
+              "U5.5"
+            ],
+            "physical_bounds_mm": [
+              11.66,
+              15.3,
+              11.96,
+              17.7
+            ],
+            "physical_contact_area_mm2": 0.7178518984520013,
+            "physical_geometry_sha256": "ef22ef5aefd2f9c88721daaac407d61e7aeb47fef3f4beef5b687b12b29d748d",
+            "physical_holes": 0,
+            "raw_land_area_mm2": 0.7178518984520014
+          }
+        ],
+        "ideal_land_equivalence": {
+          "finite_interlayer_barrel_resistance_preserved": true,
+          "ideal_region_count": 68,
+          "terminal_collisions": []
+        },
+        "native_all_pad_connectivity_complete": true,
+        "native_pad_count": 12,
+        "net": "VX_RAW",
+        "plated_barrel_count": 10
+      }
+    ],
+    "passed": true,
+    "physical_drill_objects": 328,
+    "saved_fills_used_without_repair": true,
+    "source_acceptance_or_final_board_qualification": false,
+    "stackup": {
+      "fabricator_acceptance": false,
+      "layer_z_mm": {
+        "B.Cu": 1.0149000000000001,
+        "F.Cu": 0.0175,
+        "In1.Cu": 0.14200000000000002,
+        "In2.Cu": 0.4072,
+        "In3.Cu": 0.6252000000000001,
+        "In4.Cu": 0.8904000000000001
+      },
+      "layers": [
+        {
+          "name": "F.Cu",
+          "thickness_mm": 0.035,
+          "type": "copper"
+        },
+        {
+          "name": "dielectric 1",
+          "thickness_mm": 0.0994,
+          "type": "prepreg"
+        },
+        {
+          "name": "In1.Cu",
+          "thickness_mm": 0.0152,
+          "type": "copper"
+        },
+        {
+          "name": "dielectric 2",
+          "thickness_mm": 0.25,
+          "type": "core"
+        },
+        {
+          "name": "In2.Cu",
+          "thickness_mm": 0.0152,
+          "type": "copper"
+        },
+        {
+          "name": "dielectric 3",
+          "thickness_mm": 0.2028,
+          "type": "prepreg"
+        },
+        {
+          "name": "In3.Cu",
+          "thickness_mm": 0.0152,
+          "type": "copper"
+        },
+        {
+          "name": "dielectric 4",
+          "thickness_mm": 0.25,
+          "type": "core"
+        },
+        {
+          "name": "In4.Cu",
+          "thickness_mm": 0.0152,
+          "type": "copper"
+        },
+        {
+          "name": "dielectric 5",
+          "thickness_mm": 0.0994,
+          "type": "prepreg"
+        },
+        {
+          "name": "B.Cu",
+          "thickness_mm": 0.035,
+          "type": "copper"
+        }
+      ],
+      "native_metal_to_metal_thickness_mm": 1.0324
+    },
+    "status": "GEOMETRY AND NATIVE CONNECTIVITY AUDIT ONLY; NO MESH OR CIRCUIT RUN"
+  },
+  "normalization": {
+    "changes": [],
+    "policy": "Technical results, numerical values, geometric identities and recorded pass/fail claims are retained. Local filesystem locators and execution coordination metadata are explicitly removed. Original local evidence is not modified. Historical pending/not-adopted wording reports the state when each source was issued; CURRENT-STATE.json supplies the later disposition."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 94416,
+    "git_blob_sha": "89d636db7564b1d47fbea94a5a817aa0a1483304",
+    "sha256": "22387e57e006f0435268b0ab938dcee542d54730514007c12c5e3f39ac52394d"
+  }
+}

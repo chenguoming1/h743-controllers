@@ -1,8 +1,8 @@
 # Current project entry point
 
-**The current paired native3 project is [../hardware/f722-heli.kicad_pro](../hardware/f722-heli.kicad_pro). It has three unfinished connections and is not fabrication-ready.** See the [current project status](../README.md), [exact native3 geometry checkpoint](checkpoints/native3-r35-cleanup-v1-20261012/README.md) and [current conditional DC/assembly evidence](checkpoints/native3-dc-assembly-v1-20261012/README.md).
+**The current paired native2 In4 RX project is [../hardware/f722-heli.kicad_pro](../hardware/f722-heli.kicad_pro). Two connections remain and it is not fabrication-ready.** See the [project status](../README.md) and [exact native2 checkpoint with current conditional DC evidence](checkpoints/native2-in4-rx-v5-20261013/README.md).
 
-The unchanged text below is the historical eleven-open checkpoint record. Its use of “current,” its route counts, pending-DC statements, placement previews and `hardware/` path describe that older checkpoint. Its reproduction recipe requires the historical final95 input at [commit bf8189c2ecf87815a24f3acfa16fbf5f462194c4](https://github.com/chenguoming1/h743-controllers/tree/bf8189c2ecf87815a24f3acfa16fbf5f462194c4/f722-heli/hardware); the newly promoted `../hardware/` is not that input.
+The unchanged text below is the historical eleven-open checkpoint record. Its use of “current,” its route counts, pending-DC statements, previews and `hardware/` path describe that earlier checkpoint. Its recipe requires the historical final95 input at [commit bf8189c2ecf87815a24f3acfa16fbf5f462194c4](https://github.com/chenguoming1/h743-controllers/tree/bf8189c2ecf87815a24f3acfa16fbf5f462194c4/f722-heli/hardware). The newly promoted `../hardware/` is not that input. The subsequent native3 and DC/assembly checkpoints remain preserved alongside the new native2 record.
 
 ---
 

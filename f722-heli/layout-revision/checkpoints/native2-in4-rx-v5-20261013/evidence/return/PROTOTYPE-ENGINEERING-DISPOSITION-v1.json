@@ -1,0 +1,173 @@
+{
+  "evidence": {
+    "DC_result_at_issue": "Authorized full solve running; no pass assumed.",
+    "accepted_or_adopted": false,
+    "all_net_reference_summary": {
+      "FLASH_SCK_28_track_projections_unchanged": true,
+      "FLASH_WP_N_new_reference_loss": 0.0,
+      "In1_exact": true,
+      "In4_own_drilled_removed_mm2": 7.760499768455465,
+      "RX_EXT_new_reference_loss": 0.0,
+      "critical_centerline_new_loss_mm": 0.0,
+      "new_In4_tracks": 10,
+      "non_GND_routed_nets": 93,
+      "retained_track_projections": 1610
+    },
+    "candidate_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+    "candidate_native_logical_sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+    "evidence": [
+      {
+        "path": "[local provenance path omitted]",
+        "sha256": "f09b780b70e9da71a9516188eb7665278e61bad64ec66bbe42748c43638b5565"
+      },
+      {
+        "path": "[local provenance path omitted]",
+        "sha256": "dd8059bab425dffed7cd82db0ba14b92cb4adefec1b534c0829567ce659d5735"
+      },
+      {
+        "path": "[local provenance path omitted]",
+        "sha256": "cb481ca71bda0886c5ad2c8bad1513d5e602b9a2f7a8ad12537483d18a194250"
+      },
+      {
+        "path": "[local provenance path omitted]",
+        "sha256": "09fb9b9e3608b0776ada6ef71e902339d9c01a61fabe5cadc43b2abaeca64163"
+      }
+    ],
+    "fast_edge_assumptions": {
+      "R34_ohm": 22,
+      "baud_used_as_edge_bound": false,
+      "explicit_shunt_filter": false,
+      "external_RX_driver_edge_bound_provided": false,
+      "homogeneous_eps_range": [
+        4.1,
+        4.4
+      ],
+      "hypothetical_edge_ns": [
+        0.5,
+        1.0
+      ],
+      "illustrative_one_way_delay_ns": [
+        0.1449019663502773,
+        0.1501096764479619
+      ],
+      "illustrative_round_trip_delay_ns": [
+        0.2898039327005546,
+        0.3002193528959238
+      ],
+      "interpretation": "A propagation scale only, not extracted impedance, crosstalk or overshoot bound. The new RX trace is electrically relevant for a.5ns edge; probe actual receiver waveforms and simultaneous aggressors. Direct coupling and return inductance need actual source impedance/loading for a defensible voltage bound.",
+      "new_RX_length_mm": 21.453742
+    },
+    "locally_disposed_regions": {
+      "C3": {
+        "direct_branch_margins_mm": [
+          0.813412,
+          0.966165,
+          1.58625
+        ],
+        "disposition": "Direct100nF-to-MCU supply and ground paths remain exact and well separated. The two lower-margin feed-track projections remain fully supported. The restricted provisional-band exception is reasonable for this candidate; fresh DC checks actual feed/current consequences.",
+        "separate_feed_margins_mm": [
+          0.02780642,
+          0.02781048
+        ]
+      },
+      "FLASH_CS_bypass": {
+        "disposition": "A continuous short bypass and full offset loop join the real U14 ground annulus. The checked exit is slightly above the existing .127mm signal-width design reference; do not label it an exact .150mm native neck everywhere or a fabrication-tolerance guarantee.",
+        "local_centerline_length_mm": 0.42796432888436287,
+        "narrowest_checked_upper_exit_full_width_mm": 0.13058888
+      },
+      "TP2": {
+        "actual_dielectric_mm": 0.0994,
+        "actual_margin_mm": 0.099780947,
+        "disposition": "Finite connected GND beyond the whole pad; the approximately one-dielectric pad collar is a reasonable prototype geometry. It is not an enforced trace-width rule or extracted impedance guarantee."
+      },
+      "U15_J11": {
+        "annular_approach_width_mm": 0.254,
+        "annular_lip_to_lip_length_mm": 2.478705783,
+        "approach_area_mm2": 0.629591269,
+        "disposition": "Full finite inward ground approach and both annular attachments survive. A smaller outward all-direction radial collar alone does not require a new geometry change or prove ESD immunity.",
+        "new_approach_loss_mm2": 0.0,
+        "outward_land_to_slot_mm": 0.0021150693994485287
+      }
+    },
+    "production_release_or_transient_certification": false,
+    "prospective_MOSI_combination": {
+      "existing_v5_acceptance_does_not_transfer": true,
+      "own_final_SPI_length_edge_reference_SCK_review_required": true,
+      "smallest_ranked_improvement": "Screen one GND stitch on the left of the RX slot outside the actual U2 via keepout, using existing right-side ground contacts to serve MOSI and the nearby B_RX/B_TX crossings jointly. No coordinate or final improvement is presumed qualified.",
+      "specific_new_issue": "A planned B MOSI launch crosses the RX slot for.384528406mm."
+    },
+    "prototype_checks": [
+      "Close the two known remaining opens before a functioning complete-board release.",
+      "Confirm required fresh DC cases and local return concentration with current model geometry.",
+      "Exercise external RX and adjacent UART/SBUS with conservative fast source edges and simultaneous switching; measure logic-level margin, ringing and error behavior at the actual receiver.",
+      "Use real connector ESD/EMC tests before making an immunity claim; DC and source NC/IO cuts do not certify transient performance."
+    ],
+    "recommendation": "Retain the short v5 RX route as the prototype routing baseline if required conditional DC cases pass. No further geometry change is justified solely to restore historical TP2, FLASH_CS bypass, C3-feed or J11 radial margins. Complete remaining ordinary opens and assess any later SPI additions independently.",
+    "remaining_saved_geometry_work": "Short current guard/slot classification and finite crossing paths using exact v5 annuli after the pending DC review; old v1 paths are not asserted as current v5 facts. This is a bounded confirmation of specific crossings, not a demand for unchanged reference everywhere.",
+    "residual_dynamic_cases": [
+      {
+        "disposition": "Short isolated gap; use actual nearest return path/stitch evidence and fast external input test, not baud-rate acceptance.",
+        "net": "PORT_B_RX_MCU",
+        "new_centerline_gap_mm": 0.391596393
+      },
+      {
+        "disposition": "Short isolated gap; verify driven waveform with simultaneous RX and neighboring switching. No automatic gap-length rejection.",
+        "net": "PORT_B_TX_MCU",
+        "new_centerline_gap_mm": 0.399073865
+      },
+      {
+        "disposition": "Two held MCU-to-via B approach segments, only.004537831mm more unsupported than v1; assess actual layer-transition return context, not a wholly new independent long crossing.",
+        "net": "PORT_C_TX_MCU",
+        "new_centerline_gap_mm": 0.968528902
+      },
+      {
+        "disposition": "Two adjoining sections of the BSS138/470ohm branch; edge behavior is asymmetric and should be tested, without assuming that baud fixes edge rate.",
+        "net": "SBUS_HV",
+        "new_centerline_gap_mm": 1.063784491
+      },
+      {
+        "disposition": "Low-priority switched load/reference change; retain actual current and noise observation in prototype test, not a high-speed timing-equality rule.",
+        "net": "LED_GREEN_K",
+        "new_centerline_gap_mm": 1.018622034
+      }
+    ],
+    "schema": "source3-In4-v5-practical-prototype-engineering-disposition/v1",
+    "source_board_sha256": "c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8"
+  },
+  "normalization": {
+    "changes": [
+      {
+        "action": "remove local locator or execution coordination wording; retain technical values",
+        "original_value_sha256": "8ebd201a84703523f95269fe919f174c28b18e26504a2fe33e57570c6ae4c51d",
+        "pointer": "/evidence/0/path"
+      },
+      {
+        "action": "remove local locator or execution coordination wording; retain technical values",
+        "original_value_sha256": "91eb76c883e2b8bde67762f8adf37654caa5ce25dabeb10f4e82666f7b7d0516",
+        "pointer": "/evidence/1/path"
+      },
+      {
+        "action": "remove local locator or execution coordination wording; retain technical values",
+        "original_value_sha256": "6fcea8463b848b3703de9503fc04109d5ab6a6550ee533399e138627033fe7bd",
+        "pointer": "/evidence/2/path"
+      },
+      {
+        "action": "remove local locator or execution coordination wording; retain technical values",
+        "original_value_sha256": "3d73a7c2a7df7ca730b4fb156762853a1d8e37772e5c14586d7b00a98cd88531",
+        "pointer": "/evidence/3/path"
+      },
+      {
+        "action": "remove local locator or execution coordination wording; retain technical values",
+        "original_value_sha256": "c1b49734bba03f4163ad29047ea008a49866729862d4a2cb48b7be6765dbbcbc",
+        "pointer": "/remaining_saved_geometry_work"
+      }
+    ],
+    "policy": "Technical results, numerical values, geometric identities and recorded pass/fail claims are retained. Local filesystem locators and execution coordination metadata are explicitly removed. Original local evidence is not modified. Historical pending/not-adopted wording reports the state when each source was issued; CURRENT-STATE.json supplies the later disposition."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 7255,
+    "git_blob_sha": "b7d678e641cb2afb8fc10fa32234b1c5e35b696f",
+    "sha256": "1e5434752250a1efa602151feaa63756df736de38dd6ee145908116c6dade6f0"
+  }
+}
