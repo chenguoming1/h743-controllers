@@ -1,0 +1,100 @@
+--- published-native1/dc/replay.py
++++ current-native0/dc/replay.py
+@@ -16,6 +16,7 @@
+ import time
+ 
+ HERE=Path(__file__).resolve().parent
++SHARED=HERE/'../../native1-mosi-baro-v1-20261013/dc'
+ MIB=1024**2
+ THREAD_KEYS=('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS','BLIS_NUM_THREADS',
+              'VECLIB_MAXIMUM_THREADS','NUMEXPR_NUM_THREADS')
+@@ -38,6 +39,31 @@
+ 
+ def object_sha(data):
+     return hashlib.sha256(json.dumps(data,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
++
++def runtime_source(name):
++    local=HERE/'runtime'/name
++    return local if local.is_file() else SHARED/'runtime'/name
++
++def portable_ledger():
++    binding=load(HERE/'ledger-binding.json')
++    require(binding['replace_only_JSON_pointer']=='/freeze_manifest_sha256','Unexpected ledger edit')
++    base=HERE/binding['base_path']
++    require(sha(base)==binding['base_sha256'],'Shared historical ledger changed')
++    ledger=load(base)
++    ledger['freeze_manifest_sha256']=binding['replacement_value']
++    body=(json.dumps(ledger,indent=2,allow_nan=False)+'\n').encode()
++    require(hashlib.sha256(body).hexdigest()==binding['portable_ledger_serialized_sha256'],'Virtual ledger identity differs')
++    return ledger
++
++def materialize_runtime(out):
++    target=out/'runtime';target.mkdir(exist_ok=True)
++    for name,expected in load(HERE/'freeze.json')['analysis_source_sha256'].items():
++        source=runtime_source(name);require(sha(source)==expected,'Runtime source changed')
++        path=target/name
++        if not path.exists():
++            with path.open('xb') as stream:stream.write(source.read_bytes())
++        require(sha(path)==expected,'Materialized runtime changed')
++    sys.path.insert(0,str(target))
+ 
+ def verify():
+     require(sys.flags.dont_write_bytecode and not sys.flags.optimize,'Use nonoptimized Python -B')
+@@ -46,16 +72,17 @@
+         path=HERE/row['path']
+         require(path.is_file() and sha(path)==row['stored_sha256'],'Missing or changed package input: '+row['path'])
+         if row.get('logical_sha256'):require(sha(path,True)==row['logical_sha256'],'Logical source differs: '+row['path'])
++    sys.path.insert(0,str(SHARED/'runtime'))
+     sys.path.insert(0,str(HERE/'runtime'))
+     from model_contract import check_inputs,registry_networks
+     from power_case_model import build_cases
+-    plan=load(HERE/'model/case-plan.corrected.disabled.json')
+-    registry=load(HERE/'model/terminal-registry.corrected.disabled.json')
+-    settings=load(HERE/'model/compiler-settings.disabled.json')
++    plan=load(SHARED/'model/case-plan.corrected.disabled.json')
++    registry=load(SHARED/'model/terminal-registry.corrected.disabled.json')
++    settings=load(SHARED/'model/compiler-settings.disabled.json')
+     contract=check_inputs(plan,registry,settings)
+     require(object_sha(contract)==MODEL_SHA,'Corrected model contract differs')
+     families,_=build_cases(plan,settings)
+-    ledger=load(HERE/'ledger.json');freeze=load(HERE/'freeze.json')
++    ledger=portable_ledger();freeze=load(HERE/'freeze.json')
+     regenerated={'networks':registry_networks(registry),'cases':[c for rows in families.values() for c in rows],
+                  'loops':plan['VCAP_copper_loops'],'unit_transfers':[],
+                  **{k:settings[k] for k in ('material','mesh_spacings_mm','convergence','limits')}}
+@@ -71,10 +98,10 @@
+         path=HERE/row['path']
+         require(sha(path,path.suffix=='.gz')==row['sha256'],'Frozen input differs: '+role)
+     for name,expected in freeze['analysis_source_sha256'].items():
+-        require(sha(HERE/'runtime'/name)==expected,'Numerical source differs: '+name)
++        require(sha(runtime_source(name))==expected,'Numerical source differs: '+name)
+     return {'schema':'f722-portable-dc-source-verification/v1','passed':True,'counts':counts,
+             'model_contract_sha256':MODEL_SHA,'portable_freeze_sha256':sha(HERE/'freeze.json'),
+-            'portable_ledger_sha256':sha(HERE/'ledger.json'),'package_manifest_sha256':sha(HERE/'PACKAGE-MANIFEST.json'),
++            'portable_ledger_sha256':load(HERE/'ledger-binding.json')['portable_ledger_serialized_sha256'],'package_manifest_sha256':sha(HERE/'PACKAGE-MANIFEST.json'),
+             'mesh_or_numerical_execution_performed':False}
+ 
+ def relocate(freeze,destination):
+@@ -93,11 +120,11 @@
+     resource.setrlimit(resource.RLIMIT_AS,(4096*MIB,4096*MIB))
+     wall=600 if stage=='prepare' else 1800
+     signal.signal(signal.SIGALRM,signal.SIG_DFL);signal.alarm(wall)
+-    verification=verify();validator,ports=numeric_imports()
++    verification=verify();materialize_runtime(out);validator,ports=numeric_imports()
+     if stage=='prepare':
+         dest=out/'prepared';require(not dest.exists(),'Fresh prepared destination required');dest.mkdir()
+         freeze=relocate(load(HERE/'freeze.json'),dest);save(dest/'freeze.json',freeze)
+-        ledger=load(HERE/'ledger.json');ledger['freeze_manifest_sha256']=sha(dest/'freeze.json');save(dest/'ledger.json',ledger)
++        ledger=portable_ledger();ledger['freeze_manifest_sha256']=sha(dest/'freeze.json');save(dest/'ledger.json',ledger)
+         context=validator.preflight(dest/'freeze.json',dest/'ledger.json')
+         files={k:dest/v['path'] for k,v in freeze['files'].items()}
+         audit=ports.audit_ports(files['board'],files['geometry'],dest/'ledger.json',files['connectivity'])
+@@ -119,7 +146,7 @@
+     freeze['numerical_execution_authorized']=True
+     freeze['pilot_resource_limits']={'overall_wall_seconds':1800,'address_space_MiB':4096,'heavy_processes':1,'BLAS_threads':1,'OpenMP_threads':1}
+     save(dest/'freeze.json',freeze)
+-    ledger=load(HERE/'ledger.json');ledger['freeze_manifest_sha256']=sha(dest/'freeze.json');save(dest/'ledger.json',ledger)
++    ledger=portable_ledger();ledger['freeze_manifest_sha256']=sha(dest/'freeze.json');save(dest/'ledger.json',ledger)
+     sys.argv=['validate_static.py','--freeze',str(dest/'freeze.json'),'--ledger',str(dest/'ledger.json'),
+               '--out',str(dest/'result.json.gz'),'--run','--mesh-cache',str(dest/'mesh-cache')]
+     code=validator.main();verify()

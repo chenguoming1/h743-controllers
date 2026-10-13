@@ -1,0 +1,17 @@
+{
+  "stage": "drc_all_track",
+  "returncode": 0,
+  "command": [
+    "historical/source-tree/kicad10-runtime/kicad-cli",
+    "pcb",
+    "drc",
+    "--format",
+    "json",
+    "--all-track-errors",
+    "--severity-all",
+    "--schematic-parity",
+    "--output",
+    "inputs/drc_all_track.json",
+    "../hardware/f722-heli.kicad_pcb"
+  ]
+}

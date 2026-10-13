@@ -1,0 +1,591 @@
+{
+  "schema": "f722-native0-completed-result-reconciliation/v1",
+  "evidence": {
+    "raw": {
+      "path": "historical/by-sha256/a56f50ed965b6aaec75a0d77f4be5af4a9d3fa3cf23bdb65ea1b8a4aaa9cb401",
+      "sha256": "a56f50ed965b6aaec75a0d77f4be5af4a9d3fa3cf23bdb65ea1b8a4aaa9cb401"
+    },
+    "reduced": {
+      "path": "evidence/reduced-result.json.gz",
+      "sha256": "56e934301fceb6d05add472aefa3beee5b30063c9ebe14b8fb9fc297fcfc5700"
+    },
+    "summary": {
+      "path": "evidence/result-summary.json",
+      "sha256": "d706dd291c492e5cf805e25e9e128605a2e45837b17ef07bc55b9ba5ffca085b"
+    },
+    "terminal": {
+      "path": "evidence/run-terminal-review.json",
+      "sha256": "72047466fb513085a8e29a6f0d9e523baa2bdde2cd55033c65e70afa7b4749fb"
+    }
+  },
+  "reviewer_script": {
+    "path": "historical/by-sha256/ed7ffc6105f1fa556eef00101f5fb68ef9238c62469bad8729a0acda5de6ad22",
+    "sha256": "ed7ffc6105f1fa556eef00101f5fb68ef9238c62469bad8729a0acda5de6ad22"
+  },
+  "complete_raw_reduction_exact_case_and_certificate_review_passed": true,
+  "board_sha256": "84229c571433bd72d410fb18d02cffa3a380c00a87fbe1270e3a73b63f8dd6cd",
+  "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+  "required_cases": 294,
+  "illustrations": 11,
+  "grids": [
+    {
+      "spacing_mm": 0.12,
+      "cases": 305,
+      "required_failures": [],
+      "illustrative_failures": [
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ],
+      "VCAP_loops": [
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.12",
+          "pass": true,
+          "resistance_ohm": 0.01916014134278951
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.18",
+          "pass": true,
+          "resistance_ohm": 0.01863408604228259
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.31",
+          "pass": true,
+          "resistance_ohm": 0.023832904514223048
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.47",
+          "pass": true,
+          "resistance_ohm": 0.026214248256352705
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.63",
+          "pass": true,
+          "resistance_ohm": 0.025192205043470403
+        }
+      ]
+    },
+    {
+      "spacing_mm": 0.09,
+      "cases": 305,
+      "required_failures": [],
+      "illustrative_failures": [
+        "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19"
+      ],
+      "VCAP_loops": [
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.12",
+          "pass": true,
+          "resistance_ohm": 0.019229522932215082
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.18",
+          "pass": true,
+          "resistance_ohm": 0.01870216412525875
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.31",
+          "pass": true,
+          "resistance_ohm": 0.02392317742334689
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.47",
+          "pass": true,
+          "resistance_ohm": 0.02632449285967174
+        },
+        {
+          "maximum_ohm": 0.035,
+          "meaning": "Sum of stated DC unit legs; not inductance or startup/dynamic validation",
+          "name": "VCAP_copper_to_U1.63",
+          "pass": true,
+          "resistance_ohm": 0.02528309063548645
+        }
+      ]
+    }
+  ],
+  "overall_conditional_static_screen_pass": false,
+  "required_voltage_margin_failures": [],
+  "illustrative_voltage_margin_failures": [
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "probe": "J2_servo_board_pad",
+      "change_V": 7.593499185354347e-05,
+      "margin_V": -0.13628133368839634,
+      "numerical_guard_V": 0.001,
+      "pass": false
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "probe": "J3_servo_board_pad",
+      "change_V": 7.355486093363339e-05,
+      "margin_V": -0.13403499508948968,
+      "numerical_guard_V": 0.001,
+      "pass": false
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "probe": "J4_servo_board_pad",
+      "change_V": 6.895420436237032e-05,
+      "margin_V": -0.12924758642174794,
+      "numerical_guard_V": 0.001,
+      "pass": false
+    },
+    {
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "probe": "J5_servo_board_pad",
+      "change_V": 6.077653444247488e-05,
+      "margin_V": -0.1214715836122684,
+      "numerical_guard_V": 0.001,
+      "pass": false
+    }
+  ],
+  "impedance_sensitivity": [
+    {
+      "allowed_ohm": 0.0013214689655159772,
+      "max_impedance_change_ohm": 0.00024689706185471866,
+      "net": "+3V3_ANALOG",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.009509640514804251,
+      "max_impedance_change_ohm": 0.0010312262962780538,
+      "net": "+3V3_CORE",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0002607050777234953,
+      "max_impedance_change_ohm": 1.6347596734746575e-05,
+      "net": "+3V3_DSM",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0015688000150506408,
+      "max_impedance_change_ohm": 0.00029711869672034014,
+      "net": "+3V3_IMU",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0013232618165334418,
+      "max_impedance_change_ohm": 0.00018886558758727384,
+      "net": "+5V_BEC",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0014254144252839214,
+      "max_impedance_change_ohm": 9.195451442195468e-05,
+      "net": "+5V_PERIPH",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0005276330912608212,
+      "max_impedance_change_ohm": 3.081882590920057e-05,
+      "net": "ABC_FB",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0009608389315373137,
+      "max_impedance_change_ohm": 0.00012645294577199456,
+      "net": "CORE_BUCK_IN",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0006894509695957342,
+      "max_impedance_change_ohm": 0.00010633713672001353,
+      "net": "GND",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.001250020056994038,
+      "max_impedance_change_ohm": 8.614231561536803e-05,
+      "net": "USB_LIMITED",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.00302068666127059,
+      "max_impedance_change_ohm": 0.000276552294945942,
+      "net": "USB_VBUS_RAW",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.00010245737733762333,
+      "max_impedance_change_ohm": 2.182766084290414e-05,
+      "net": "VCAP",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0002707611304717553,
+      "max_impedance_change_ohm": 2.0086936923548182e-05,
+      "net": "VCAP_CAP",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0024892845123248254,
+      "max_impedance_change_ohm": 0.00015607350612709125,
+      "net": "VX_PROTECTED",
+      "pass": true
+    },
+    {
+      "allowed_ohm": 0.0015072489590237416,
+      "max_impedance_change_ohm": 5.5247783369120895e-05,
+      "net": "VX_RAW",
+      "pass": true
+    }
+  ],
+  "resistance_margin_checks": [
+    {
+      "name": "VCAP_copper_to_U1.12",
+      "change_ohm": 6.938158942557116e-05,
+      "margin_ohm": 0.01577047706778492,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.18",
+      "change_ohm": 6.807808297615986e-05,
+      "margin_ohm": 0.016297835874741252,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.31",
+      "change_ohm": 9.027290912384106e-05,
+      "margin_ohm": 0.011076822576653114,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.47",
+      "change_ohm": 0.00011024460331903602,
+      "margin_ohm": 0.008675507140328262,
+      "numerical_guard_ohm": 0.00011024460331903602,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.63",
+      "change_ohm": 9.088559201604618e-05,
+      "margin_ohm": 0.009716909364513554,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    }
+  ],
+  "physics": {
+    "maximum_circuit_equation_residual": 7.275957614183426e-12,
+    "maximum_converter_balance_error_W": 4.874411985156257e-10,
+    "maximum_circuit_balance_error_W": 1.8428625292443712e-10,
+    "maximum_field_KCL_residual_A": 2.9872052791485434e-09,
+    "maximum_direct_field_vs_port_loss_error_W": 1.3996803716054274e-11,
+    "raw_case_fields_checked": 6542
+  },
+  "certificate_inventory": {
+    "references": 36432,
+    "unique_referenced": 150,
+    "certificates": 150,
+    "all_hashes_exact": true,
+    "native_vertices_changed": 0,
+    "epsilon_merging": false
+  },
+  "anchor_layer_coverage_by_grid": {
+    "0.12": [
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ]
+      }
+    ],
+    "0.09": [
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ]
+      },
+      {
+        "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "F.Cu",
+          "In1.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In1.Cu",
+          "In2.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In3.Cu",
+          "In4.Cu"
+        ]
+      },
+      {
+        "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+        "layers": [
+          "In4.Cu",
+          "B.Cu"
+        ]
+      }
+    ]
+  },
+  "anchor_maximum_absolute_current_rows": {
+    "bb91164d-e30f-4698-8d8c-16486d2764eb:F.Cu/In1.Cu": {
+      "case": "corrected_classic_BEC5.0_911_flash__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+      "layers": [
+        "F.Cu",
+        "In1.Cu"
+      ],
+      "resistance_ohm": 0.0003198226207717681,
+      "current_A": -0.32000000000141304,
+      "loss_W": 3.274983636731829e-05
+    },
+    "bb91164d-e30f-4698-8d8c-16486d2764eb:In1.Cu/In2.Cu": {
+      "case": "corrected_classic_BEC5.0_911_flash__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+      "layers": [
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "resistance_ohm": 0.0006812607150897421,
+      "current_A": -0.32000000000141304,
+      "loss_W": 6.97610972258057e-05
+    },
+    "bb91164d-e30f-4698-8d8c-16486d2764eb:In2.Cu/In3.Cu": {
+      "case": "corrected_classic_BEC5.0_911_flash__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+      "layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "resistance_ohm": 0.000560010693399562,
+      "current_A": -0.32000000000141304,
+      "loss_W": 5.73450950046216e-05
+    },
+    "bb91164d-e30f-4698-8d8c-16486d2764eb:In3.Cu/In4.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_flash__analog0m__imu_vddio",
+      "spacing_mm": 0.12,
+      "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+      "layers": [
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "resistance_ohm": 0.0006812607150897421,
+      "current_A": 8.792840788116373e-15,
+      "loss_W": 5.267102439349197e-32
+    },
+    "bb91164d-e30f-4698-8d8c-16486d2764eb:In4.Cu/B.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_flash__analog0m__imu_vddio",
+      "spacing_mm": 0.12,
+      "uuid": "bb91164d-e30f-4698-8d8c-16486d2764eb",
+      "layers": [
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "resistance_ohm": 0.0003198226207717683,
+      "current_A": 8.803434572198435e-15,
+      "loss_W": 2.4786400313603406e-32
+    },
+    "fbbf08d3-7329-4f98-9d62-fc64b4f478db:F.Cu/In1.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_flash__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+      "layers": [
+        "F.Cu",
+        "In1.Cu"
+      ],
+      "resistance_ohm": 0.0003198226207717681,
+      "current_A": 0.2811156689195111,
+      "loss_W": 2.5274308605544733e-05
+    },
+    "fbbf08d3-7329-4f98-9d62-fc64b4f478db:In1.Cu/In2.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_flash__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+      "layers": [
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "resistance_ohm": 0.0006812607150897421,
+      "current_A": 0.2811156689195111,
+      "loss_W": 5.3837322427232625e-05
+    },
+    "fbbf08d3-7329-4f98-9d62-fc64b4f478db:In2.Cu/In3.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_flash__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+      "layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "resistance_ohm": 0.000560010693399562,
+      "current_A": 0.2811156689195111,
+      "loss_W": 4.4255415871556256e-05
+    },
+    "fbbf08d3-7329-4f98-9d62-fc64b4f478db:In3.Cu/In4.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_mcu_vdd64__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+      "layers": [
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "resistance_ohm": 0.0006812607150897421,
+      "current_A": 0.14873653208554397,
+      "loss_W": 1.5071228304390814e-05
+    },
+    "fbbf08d3-7329-4f98-9d62-fc64b4f478db:In4.Cu/B.Cu": {
+      "case": "corrected_capacity_BEC5.0_1011_mcu_vdd64__analog0m__none",
+      "spacing_mm": 0.12,
+      "uuid": "fbbf08d3-7329-4f98-9d62-fc64b4f478db",
+      "layers": [
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "resistance_ohm": 0.0003198226207717683,
+      "current_A": 0.14873653208554397,
+      "loss_W": 7.075293830681212e-06
+    }
+  },
+  "all_retained_anchor_rows_exactly_match_raw": true,
+  "current_native_dispositions": {
+    "source": {
+      "path": "provenance/physical-audit.json",
+      "sha256": "878eb09201f137b85c213df861cb70f4480b3b198bbe54943d28a65770581fc6"
+    },
+    "conditions": {
+      "final_release_ready": false,
+      "full_RX_protection_passed": true,
+      "current_capacity_reference_timing_SI_ESD_assembly_qualified": false
+    }
+  },
+  "partial_result_acceptance_allowed": false,
+  "final_board_acceptance_claimed": false,
+  "thermal_AC_manufacturing_or_flight_qualification": false,
+  "reviewer_performed_native_geometry_or_numerical_execution": false,
+  "address_space_limit_MiB": 512,
+  "peak_RSS_KiB": 98932,
+  "peak_raw_buffer_characters": 4407493,
+  "elapsed_seconds": 7.8284339549718425
+}

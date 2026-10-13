@@ -1,8 +1,11 @@
 # Current project entry point
 
-**Open the paired [../hardware/f722-heli.kicad_pro](../hardware/f722-heli.kicad_pro). Native0 has zero opens, DRC errors/warnings, ERC and parity findings. It is a geometric WIP milestone; fresh DC and electrical/manufacturing/flight qualification remain pending.** See [project status](../README.md) and the [selected native0 checkpoint](checkpoints/native0-rx-complete-v1-20261013/README.md).
+**Open the paired [../hardware/f722-heli.kicad_pro](../hardware/f722-heli.kicad_pro). Native0 has zero opens, DRC errors/warnings, ERC and parity findings. It is a geometric WIP milestone; fresh conditional DC is recorded; electrical-system, manufacturing and flight qualification remain pending.** See [project status](../README.md) and the [selected native0 checkpoint](checkpoints/native0-rx-complete-v1-20261013/README.md).
 
 The unchanged text below is the historical eleven-open record. Its current/source paths, counts, pending statements, poses and manufacturing descriptions belong to that earlier geometry. Its recipe requires [historical final95 commit bf8189c2ecf87815a24f3acfa16fbf5f462194c4](https://github.com/chenguoming1/h743-controllers/tree/bf8189c2ecf87815a24f3acfa16fbf5f462194c4/f722-heli/hardware). The promoted ../hardware/ is not that input. All later native3, native2, native1 and source/evidence checkpoints remain preserved.
+
+
+The [current conditional DC and local assembly evidence](checkpoints/native0-rx-complete-v1-20261013/supplements/conditional-dc-v1/README.md) preserves complete reduced results, source/replay dependencies and the false servo illustration. The 294 required cases cover accessory/logic/USB only; no servo qualification is claimed. The original native0 checkpoint and all paired source bytes remain exact.
 
 ---
 
