@@ -1,0 +1,76 @@
+{
+  "schema": "f722-intermediate-dc-physical-review/v1",
+  "passed": true,
+  "board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+  "native_sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+  "checks": {
+    "saved_fill_matches_source": true,
+    "modeled_conductor_dimensions": true,
+    "all_physical_drill_voids": true,
+    "modeled_terminal_geometry": true,
+    "modeled_copper_and_barrel_assumptions": true
+  },
+  "material": {
+    "temperature_C": 105,
+    "thickness_mm": 0.015,
+    "conductivity_IACS": 0.95,
+    "plating_mm": 0.015
+  },
+  "evidence": [
+    {
+      "path": "provenance/current-dc-input-reconciliation.json",
+      "sha256": "1d472924d31a4ee8b98a46d7bd1160eaa6f53f8d9d4f1f794cdec03df3d5b5fa"
+    },
+    {
+      "path": "inputs/support.json",
+      "sha256": "a5e89ea87f394c8da0d687f9102f51cffcd46aab74baddc5725ff819c164d7b3"
+    },
+    {
+      "path": "inputs/native-primitive-parameters.json",
+      "sha256": "4ab15136ce5dedeecba080e6af61f01b82592a2b836cbb053f412dec1f0f9f43"
+    },
+    {
+      "path": "provenance/terminal-audit.json",
+      "sha256": "2ab2c67a91fac48858fa844aa9b991ebce59203ad8d86b2f1d8e15c0de0add81"
+    },
+    {
+      "path": "provenance/structural-edit-ledger.json",
+      "sha256": "ca1a7f0a55fe03a12f720d0a02ff033c7d3a91d250653688af09009f27851f2c"
+    },
+    {
+      "path": "provenance/physical-audit.json",
+      "sha256": "47c9b7bb1ba54b71bc9ccf3ed949324f92d5f52a2d920ce0359662600492c3ef"
+    },
+    {
+      "path": "provenance/source3-physical-assumptions.json",
+      "sha256": "c647ad192d0e6c831be6b82ef2537edf4feae3c45d6cb86d131579f22f273c1d"
+    },
+    {
+      "path": "provenance/preparation-checks-evidence.json",
+      "sha256": "da765c4a7ac89cb670b707840bb17fae0f4c08c39fcc8624285a7106b85f7ed8"
+    },
+    {
+      "path": "provenance/reconcile_current_physical_inputs.py",
+      "sha256": "a582eb8633c1efc3d1221c65ba6617077cf630422d370c076aa152aa703c497f"
+    }
+  ],
+  "scope": "Current-source DC computational geometry/assumptions reconciliation only",
+  "source3_dimensions_method": "Every original native record, including all modeled copper/barrels/drills, exactly matches source3; fresh exact primitive metadata and current fill/support are independently bound.",
+  "limitations": [
+    "All 1610 track records, 301 via records and 558 pad identity/position/size/net/plating records match the exact current saved source.",
+    "All 328 actual drilled objects, including all 27 pad drills and their transformed slot axes, are bound to the current passed conservative support result; foreign-net holes remain included.",
+    "Both exact saved GND boundary sets match the current PCB after cancellation only of opposite integer fracture edges. The exact 586-vertex VX_PROTECTED polygon source binding remains unchanged.",
+    "All 268 scoped native metadata raw pad-form hashes match the current PCB. All 151 terminal-audit records and 107 model contacts resolve to actual current pad UUIDs, nets and layers.",
+    "Fresh support independently reviewed: all eight gates passed, all 15 net pad sets exact and all 44 required returns reach actual current saved GND-plane witnesses. The reviewer did not rerun the support engine.",
+    "The six source stackup layer centers determine actual physical barrel spans. Copper 105 C, thickness0.015mm,95%IACS and plating0.015mm remain unchanged conditional computational assumptions, not a manufactured-stackup or thermal guarantee.",
+    "Finite clipped contact windows and ideal-land/alias collision tests remain a separate mandatory compile-stage audit. This physical-assumptions pass does not assert those tests have run.",
+    "Within-layer finite lands and annuli remain idealized; package/pin/solder/contact current distribution and heating are not established.",
+    "The earlier pending physical packet and source-audit dependency fields are preserved as observations before this terminal support-result review. This new receipt completes only the five DC computational physical checks.",
+    "Raw historical false predicates, source-scoped contact dispositions and current reference/timing/SI/ESD/assembly/final-board limitations are retained without promoting them to new source metrics.",
+    "No compile or numerical run has occurred or is authorized by this receipt. The prior overall-false 18.560741874A illustration remains historical; fresh DC requires all305cases, both grids and fiveVCAPloops."
+  ],
+  "final_source": false,
+  "electrical_acceptance_claimed": false,
+  "manufacturing_release": false,
+  "numerical_execution_authorized": false
+}

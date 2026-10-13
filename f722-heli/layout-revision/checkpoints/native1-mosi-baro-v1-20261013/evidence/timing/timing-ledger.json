@@ -1,0 +1,62 @@
+{
+  "evidence": {
+    "candidate_delta_sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549",
+    "cases": [
+      {
+        "MISO_hold_margin_before_extra_skew_ns": 16.51851851851852,
+        "MISO_setup_margin_after_selected2ns_budget_ns": 2.7185185185185183,
+        "MISO_setup_margin_before_extra_settling_ns": 4.718518518518518,
+        "MOSI_hold_margin_before_extra_skew_ns": 14.11851851851852,
+        "MOSI_setup_margin_before_extra_settling_ns": 12.118518518518519,
+        "SCK_MHz": 27,
+        "datasheet_supported_SPI2": true,
+        "extra_settling_jitter_threshold_budget_ns": 2.0,
+        "flight_time_allocation_per_signal_ns": 0.4,
+        "nominal_half_cycle_ns": 18.51851851851852,
+        "short_phase_screen_ns": 17.51851851851852
+      },
+      {
+        "MISO_hold_margin_before_extra_skew_ns": 14.666666666666668,
+        "MISO_setup_margin_after_selected2ns_budget_ns": 0.866666666666668,
+        "MISO_setup_margin_before_extra_settling_ns": 2.866666666666668,
+        "MOSI_hold_margin_before_extra_skew_ns": 12.266666666666667,
+        "MOSI_setup_margin_before_extra_settling_ns": 10.266666666666667,
+        "SCK_MHz": 30,
+        "datasheet_supported_SPI2": false,
+        "extra_settling_jitter_threshold_budget_ns": 2.0,
+        "flight_time_allocation_per_signal_ns": 0.4,
+        "nominal_half_cycle_ns": 16.666666666666668,
+        "short_phase_screen_ns": 15.666666666666668
+      }
+    ],
+    "equations": {
+      "MISO_hold": "short SCK high phase + nonnegative SCK/MISO flight + flash minimum output hold - MCU input hold",
+      "MISO_setup": "short SCK low phase - SCK flight to flash - flash maximum clock-to-output-valid - MISO flight to MCU - MCU input setup",
+      "MOSI_hold": "short SCK high phase + MCU minimum output hold - worst negative MOSI-minus-SCK flight skew - flash hold",
+      "MOSI_setup": "short SCK low phase - MCU maximum clock-to-MOSI-valid - worst positive MOSI-minus-SCK flight skew - flash setup"
+    },
+    "flight_time_allocation_is_engineering_screen_not_extracted_bound": true,
+    "inherited_source_clock_settings_not_verified_on_installed_binary": true,
+    "propagation_note": "Stackup-only quasi-TEM estimate uses the largest declared dielectric constant4.4; reflections, discontinuity settling, unknown dielectric dispersion, package delay and threshold-reference differences are not modeled.",
+    "schema": "source-bound-SPI-timing-ledger/v1",
+    "source_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+    "source_record_lengths": "[local provenance path omitted]",
+    "two_ns_extra_budget_is_proposed_bench_budget_not_datasheet_requirement": true
+  },
+  "normalization": {
+    "changes": [
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "8e63c1b01d87c9879229f3e7f7f3c89d3e8f937db514377ab4cd5d30f9d7dd23",
+        "pointer": "/source_record_lengths"
+      }
+    ],
+    "policy": "Technical values, scientific limits, original false predicates and issue-time status are retained. Local filesystem locators and execution coordination are explicitly removed. Raw local evidence remains unchanged."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 2629,
+    "git_blob_sha": "f07a2f71435a71a5d6232f995a25dc44a1787651",
+    "sha256": "4ec9d70995ffd2182d6476f7b18eaef3f85f7aa0dcff9fd0bd2b635c04d189d8"
+  }
+}

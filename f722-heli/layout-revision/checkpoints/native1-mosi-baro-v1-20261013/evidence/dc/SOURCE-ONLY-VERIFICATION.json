@@ -1,0 +1,48 @@
+{
+  "evidence": {
+    "command": [
+      "timeout",
+      "--signal=KILL",
+      "60s",
+      "python3.12",
+      "-B",
+      "[local provenance path omitted]",
+      "verify"
+    ],
+    "elapsed_seconds": 0.9026664500124753,
+    "returncode": 0,
+    "stderr": "",
+    "verification": {
+      "counts": {
+        "VCAP_loops": 5,
+        "contacts": 107,
+        "illustrative_cases": 11,
+        "networks": 15,
+        "required_cases": 294
+      },
+      "mesh_or_numerical_execution_performed": false,
+      "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+      "package_manifest_sha256": "cbaf8190130046f2dc2bee0581863ebc9d520701d081f27f6c0a1391413b1cbc",
+      "passed": true,
+      "portable_freeze_sha256": "efeed3f28535a3f9712780b966016d3a6470e4a8cfb034e3961b0baa867e0b9b",
+      "portable_ledger_sha256": "0ee2c7d04c9bba02dd4a40f640fd8c38feea8d06fc91c182ecee5b5aba602e61",
+      "schema": "f722-portable-dc-source-verification/v1"
+    }
+  },
+  "normalization": {
+    "changes": [
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "453ee57489edbdbf4c75b105544cdf477fdf82edb8107b08b6f2423ee4a7dd5e",
+        "pointer": "/command/5"
+      }
+    ],
+    "policy": "Technical values, scientific limits, original false predicates and issue-time status are retained. Local filesystem locators and execution coordination are explicitly removed. Raw local evidence remains unchanged."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 951,
+    "git_blob_sha": "3ac9f23cb16707ac5ebee8bc28d0c59976446bc2",
+    "sha256": "cc456f36ebe0d84bc0a609c4f1c1e62eb0170d64d567511813318af0eabec3b8"
+  }
+}

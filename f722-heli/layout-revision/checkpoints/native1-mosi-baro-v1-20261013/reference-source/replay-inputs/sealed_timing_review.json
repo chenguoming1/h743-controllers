@@ -1,0 +1,44 @@
+{
+  "schema": "native2-completed-MOSI-SPI-review-handoff/v1",
+  "status": "BOUNDED_SOURCE_TIMING_REVIEW_COMPLETE_ACTUAL_RETURN_AND_BENCH_PENDING",
+  "source_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+  "candidate_delta_sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549",
+  "files": {
+    "REVIEW.md": {
+      "path": "source-artifact:REVIEW.md",
+      "sha256": "6cfec5eb09f08a840997bfa74e7e4a07ff882c7dca0cc69fd446bbb2aa8966f9",
+      "bytes": 9588
+    },
+    "timing-ledger.json": {
+      "path": "source-artifact:timing-ledger.json",
+      "sha256": "4ec9d70995ffd2182d6476f7b18eaef3f85f7aa0dcff9fd0bd2b635c04d189d8",
+      "bytes": 2629
+    },
+    "exact-SPI-routing-inventory.json": {
+      "path": "source-artifact:exact-SPI-routing-inventory.json",
+      "sha256": "0a01fa322c4c9a9f4e09ecd3ea412610283063ded8f877a9fec3cbabc4aad3f4",
+      "bytes": 37044
+    },
+    "source-index.json": {
+      "path": "source-artifact:source-index.json",
+      "sha256": "fde2b464aacadc6df7cc02dd126cd6bd4052ea903333d45d96c4e7b9f149a2d6",
+      "bytes": 4592
+    }
+  },
+  "conclusion": "No length-matching reroute is indicated; 27 MHz has useful timing margin. Prototype acceptance remains conditional on actual finite return disposition and focused waveform/function checks. 30 MHz is an out-of-datasheet overclock stress case.",
+  "timing_residual_at27MHz_ns": {
+    "MOSI_setup_before_extra_settling": 12.1185185185,
+    "MISO_setup_before_extra_settling": 4.7185185185,
+    "MISO_setup_after_proposed2ns_budget": 2.7185185185
+  },
+  "source_bindings": "Seven pinned stock-source Git blobs checked. Stock binary and live registers not verified.",
+  "geometry_modification": false,
+  "heavy_solve": false,
+  "adoption": false,
+  "return_review_status": {
+    "new_refill_exports_pending": true,
+    "old_return_witness_invalidated": true,
+    "new_left_witness_removed_mm": 1.274883510432006,
+    "new_finite_paths_not_claimed": true
+  }
+}

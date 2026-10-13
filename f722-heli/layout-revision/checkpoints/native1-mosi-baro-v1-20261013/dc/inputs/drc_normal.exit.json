@@ -1,0 +1,16 @@
+{
+  "stage": "drc_normal",
+  "returncode": 0,
+  "command": [
+    "historical/source-tree/kicad10-runtime/kicad-cli",
+    "pcb",
+    "drc",
+    "--format",
+    "json",
+    "--severity-all",
+    "--schematic-parity",
+    "--output",
+    "inputs/drc_normal.json",
+    "../hardware/f722-heli.kicad_pcb"
+  ]
+}

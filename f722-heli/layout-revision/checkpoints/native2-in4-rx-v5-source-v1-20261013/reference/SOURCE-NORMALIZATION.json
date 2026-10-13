@@ -1,0 +1,96 @@
+{
+  "entries": [
+    {
+      "normalization": "Absolute provenance paths become provenance-artifact:basename; numerical values, UUIDs and WKB are unchanged.",
+      "original_artifact": "150um-collar-local-paths.json",
+      "original_sha256": "10df8687f48bbe85c5d4f8ade5f3b55a9009c3f2ef7ca412532a05c94b20e59e",
+      "output": "inputs/collar-paths.json",
+      "selection": "Only the four measured path witnesses, exact existing-via exit witnesses and FLASH_CS reference track identities used by targeted_review.py."
+    },
+    {
+      "normalization": "Absolute provenance paths become provenance-artifact:basename; numerical values, UUIDs and WKB are unchanged.",
+      "original_artifact": "continuous-facing-collar-0p15.json",
+      "original_sha256": "8a11eb56781c435ba88f89e6782cbb42f7f4dae067efb4457b4a9688a34ba8e1",
+      "output": "inputs/collar-mask.json",
+      "selection": "Exact source .15 mm continuous-facing collar WKB and its derivation, without historical route diagnostics."
+    },
+    {
+      "normalization": "Absolute provenance paths become provenance-artifact:basename; numerical values, UUIDs and WKB are unchanged.",
+      "original_artifact": "preferred-U15-J11-return-corridor.json",
+      "original_sha256": "1e50bf02879a8878b1e2461a36efda9a3dcef4f06c3f3012396ca77fe093e438",
+      "output": "inputs/U15-J11-corridor.json",
+      "selection": "Exact source finite corridor, two endpoint identities and width."
+    },
+    {
+      "normalization": "Absolute provenance paths become provenance-artifact:basename; numerical values, UUIDs and WKB are unchanged.",
+      "original_artifact": "C3-DIRECT-LOOP-AND-FEED-EXCEPTION.json",
+      "original_sha256": "6a8ad8e28d33d5304ac6fde1002279728e057b8701f976af3f695b321ac9362f",
+      "output": "inputs/C3-loop-and-feed-exception.json",
+      "selection": "Retained C3 source records, positive contact witnesses and the exact two-feed-track exception."
+    },
+    {
+      "normalization": "Absolute provenance paths become provenance-artifact:basename; numerical values, UUIDs and WKB are unchanged.",
+      "original_artifact": "actual-ground-via-inventory.json.gz",
+      "original_sha256": "d38da4ead9bbb06a06023131d00ce9d1fc4b571d5186b3fa263d64a7da91ab62",
+      "output": "inputs/source-return-annuli.json",
+      "selection": "Only the two source3 U15/J11 In4 annular overlap witnesses. Candidate-v1 data and all unrelated via rows are excluded."
+    },
+    {
+      "normalization": "Absolute provenance paths become provenance-artifact:basename; numerical values, UUIDs and WKB are unchanged.",
+      "original_artifact": "critical-guard-manifest.json.gz",
+      "original_sha256": "82f1c99c877cbaca2e81b816f66d40e85d308de803f165634a5620794e868544",
+      "output": "inputs/selected-native-records.json",
+      "selection": "Exact selection UUIDs used to retain source pads/vias needed by the targeted review. Full constructor guard geometry is not needed by this replay."
+    },
+    {
+      "function_ASTs_exact": true,
+      "normalization": "Only seven pure functions and their require/defaultdict namespace. No historical dispatcher or geometry mutation.",
+      "original_artifact": "audit_native7_final_contacts_v2.py",
+      "original_sha256": "1c2cb00c26efe26ef306e9c03feb0034c53c136635edf77b6b69085407b90292",
+      "output": "finite_kernel.py",
+      "selection": [
+        "conductive_shapes",
+        "geometry_modules",
+        "hole_map",
+        "line_parts",
+        "native_polygons",
+        "native_records_with_fills",
+        "polygon_parts"
+      ]
+    },
+    {
+      "function_ASTs_exact": true,
+      "normalization": "Pure streaming reader only; original pose conflict worker is excluded.",
+      "original_artifact": "inspect_exact_pose_conflicts.py",
+      "original_sha256": "fbcba0c497d8b5b00648d2d4141a3ed04013a0660f860ba2eda91e0cb7cad4c5",
+      "output": "stream_native.py",
+      "selection": [
+        "stream_field"
+      ]
+    },
+    {
+      "normalization": "Replace absolute/bootstrap/contact-dispatcher paths with exact public-input manifest and copied pure finite kernel. No numerical geometry expressions changed; omit unexecuted guards/sections/slot commands.",
+      "original_artifact": "measure_reference.py",
+      "original_sha256": "3be4e8d52fd669a3e58abcf5929e31ef58df8ee1906314b9e218dbf3d18c9e44",
+      "output": "measure_reference.py",
+      "selection": "extract, gap, evidence and inventory operations only"
+    },
+    {
+      "normalization": "Only public-relative S/C/P and direct pure-reader import; current physical/native source hashes and all measurement predicates unchanged.",
+      "original_artifact": "review_returns.py",
+      "original_sha256": "7f177a3be27e679b7a815eda831e1b68cb7dfd64d2f1d6524bec542c4002e583",
+      "output": "review_returns.py",
+      "selection": "complete actual-return geometry worker"
+    },
+    {
+      "normalization": "Replace input paths and normalized-input pins. Generated actual-return receipt is bound to current source/candidate boards rather than the local metadata-bearing output hash; all measurement expressions unchanged.",
+      "original_artifact": "targeted_review.py",
+      "original_sha256": "53083b1e6be1a8a1b22d4d0a2adba173e85551b642451cfed621ae798961c492",
+      "output": "targeted_review.py",
+      "selection": "complete targeted measurement body"
+    }
+  ],
+  "geometry_or_solver_rerun_for_packaging": false,
+  "original_local_artifacts_mutated": false,
+  "schema": "f722-native2-v5-reference-source-normalization/v1"
+}
