@@ -1,8 +1,8 @@
 # Current project entry point
 
-**The current paired native1 MOSI/BARO project is [../hardware/f722-heli.kicad_pro](../hardware/f722-heli.kicad_pro). One PORT_C_RX_EXT connection remains; it is not fabrication-ready.** See the [project status](../README.md) and [exact native1 checkpoint](checkpoints/native1-mosi-baro-v1-20261013/README.md).
+**Open the paired [../hardware/f722-heli.kicad_pro](../hardware/f722-heli.kicad_pro). Native0 has zero opens, DRC errors/warnings, ERC and parity findings. It is a geometric WIP milestone; fresh DC and electrical/manufacturing/flight qualification remain pending.** See [project status](../README.md) and the [selected native0 checkpoint](checkpoints/native0-rx-complete-v1-20261013/README.md).
 
-The unchanged text below is the historical eleven-open checkpoint record. Its use of current, route counts, pending-DC statements, previews and hardware/ path describes that earlier checkpoint. Its recipe requires the historical final95 input at [commit bf8189c2ecf87815a24f3acfa16fbf5f462194c4](https://github.com/chenguoming1/h743-controllers/tree/bf8189c2ecf87815a24f3acfa16fbf5f462194c4/f722-heli/hardware). The promoted ../hardware/ is not that input. Subsequent native3, native2, DC/assembly and portable-source checkpoints remain preserved alongside native1.
+The unchanged text below is the historical eleven-open record. Its current/source paths, counts, pending statements, poses and manufacturing descriptions belong to that earlier geometry. Its recipe requires [historical final95 commit bf8189c2ecf87815a24f3acfa16fbf5f462194c4](https://github.com/chenguoming1/h743-controllers/tree/bf8189c2ecf87815a24f3acfa16fbf5f462194c4/f722-heli/hardware). The promoted ../hardware/ is not that input. All later native3, native2, native1 and source/evidence checkpoints remain preserved.
 
 ---
 

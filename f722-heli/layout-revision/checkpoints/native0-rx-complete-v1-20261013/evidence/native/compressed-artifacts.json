@@ -1,0 +1,62 @@
+{
+  "evidence": {
+    "auxiliary": {
+      "compressed": {
+        "bytes": 4615247,
+        "sha256": "7c4d9199a607c1d19799cf5ab478448cbe86a4aeede6505aaec3e6d40bf024ba"
+      },
+      "decompression_verified": true,
+      "encoding": "gzip",
+      "path": "after-auxiliary.json.gz",
+      "uncompressed": {
+        "bytes": 25700413,
+        "sha256": "fd69a86a4df11b1815419a288012e32487c7c57a6d0200eab1d7f53007f3f6ba"
+      }
+    },
+    "native": {
+      "compressed": {
+        "bytes": 6988276,
+        "sha256": "83a6c87643977d21a1c3841bc26d4f28694ff721436e36ba20824b7b191174d1"
+      },
+      "decompression_verified": true,
+      "encoding": "gzip",
+      "path": "after.native.json.gz",
+      "uncompressed": {
+        "bytes": 37371312,
+        "sha256": "04d8ecd80edf004f3226f204f23adba51692a498ae38edc183debeffb704603d"
+      }
+    },
+    "schema": "f722-lossless-native-exports/v1",
+    "source_auxiliary": {
+      "compressed_sha256": "1005f169fc4ca9104131c479a200fb1f5f9b1a52c6c2fe54d8e520fb9f890f11",
+      "path": "[local provenance path omitted]",
+      "sha256": "a753bfb3928d1fe909f1861c7f1f1b6b45ecee89fca1a4f7b5e9d71430b3cae0"
+    },
+    "source_native": {
+      "compressed_sha256": "acd2880bb9dfd957ae0c159139260725f543248d0a88261d5906bf6744253cd3",
+      "path": "[local provenance path omitted]",
+      "sha256": "6451ad15a4d9f3bceb92399331145d592b9d99765eba8aec761e03611aa76c47"
+    }
+  },
+  "normalization": {
+    "changes": [
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "3b28f173bb9058a5db8ad73876ddfec2939e77b5a01673a678d76664397b40de",
+        "pointer": "/source_auxiliary/path"
+      },
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "3e2e1cdd1607c8deb5ac10256fc4f40b54fa65cd5f9cd934220fdfb1fe6a90af",
+        "pointer": "/source_native/path"
+      }
+    ],
+    "policy": "Technical values, scientific limits, original false predicates and issue-time status are retained. Local filesystem locators and execution coordination are explicitly removed. Raw local evidence remains unchanged."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 1251,
+    "git_blob_sha": "a77c1d1d493e6b245e6fb7b3326e161b539755c9",
+    "sha256": "c29a98e4059cf5cf83bb353094c98fa0122c9e3fd044a94e8ba9ad0d099bbaed"
+  }
+}
