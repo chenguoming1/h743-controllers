@@ -1,0 +1,60 @@
+{
+  "schema": "f722-owner-geometric-adoption/v1",
+  "observed_utc": "2026-10-12T16:24:06.690910+00:00",
+  "status": "ADOPTED_GEOMETRIC_WIP_NATIVE3",
+  "board_sha256": "c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8",
+  "native_logical_sha256": "a4fddb679e9d73dd2a7b6300fa8888be47e30ab6f139bd5b78ab308d9192563c",
+  "native_gzip_sha256": "fa9edf10e18b76701e60ff534987c63830421630dd2bf5b2d49851f865f7d3ff",
+  "opens": 3,
+  "geometric_errors": 0,
+  "ERC": 0,
+  "parity": 0,
+  "historical_RX_via_warnings": 2,
+  "remaining_nets": [
+    "FLASH_MOSI",
+    "PORT_C_RX_EXT",
+    "PORT_C_RX_MCU"
+  ],
+  "all_required_new_physical_gates_passed": true,
+  "raw_historical_false_predicates_preserved": true,
+  "source_scoped_contact_disposition_not_general_waiver": true,
+  "original_reports_unmodified": true,
+  "fresh_DC_required": true,
+  "reference_timing_SI_ESD_assembly_review_pending": true,
+  "manufacturing_ready": false,
+  "flight_qualified": false,
+  "changes": "R35 rotates in place by180 degrees; C_TX MCU connection and all CORE/SERVO2/TX repairs complete. Cumulative17sourcecuts,32tracks/3vias added,one obsolete CORE barrel removed.",
+  "evidence": {
+    "diagnostic-result.json": {
+      "path": "f722-layout-rebuild/recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/diagnostic-result.json",
+      "sha256": "3443d433901ef25777f8502fdb6c9ffa249e3b25ca2b49988164dd3448e2921b"
+    },
+    "physical-audit.json": {
+      "path": "f722-layout-rebuild/recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/physical-audit.json",
+      "sha256": "96fccc71a784c65655554abe33b599adb90be42d854bd41ae890dc8dc611d37b"
+    },
+    "drc-all.json": {
+      "path": "f722-layout-rebuild/recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/drc-all.json",
+      "sha256": "7fd0a4b8242abf16f2541957a4ace5b38431fe945817027b81234c8acc96c4ad"
+    },
+    "erc-all.json": {
+      "path": "f722-layout-rebuild/recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/erc-all.json",
+      "sha256": "9f24b55f265a3bb843c94e2e49d0253f8509b357f0d46a877c854f1ce5823b23"
+    },
+    "paired-native-proof.json": {
+      "path": "f722-layout-rebuild/recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/paired-native-proof.json",
+      "sha256": "e92d6904f708742d4bd98cda33d7c83afe0c1f6cc8c0a0db5b6ce598700721ec"
+    },
+    "paired-source-proof.json": {
+      "path": "f722-layout-rebuild/recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/paired-source-proof.json",
+      "sha256": "e682be816b323c4dd630dd529ad5750277357d940dc762ed9ec9b04f8fe8a45c"
+    }
+  },
+  "limits": [
+    "Current power/reference evidence must be rebuilt for changed CORE copper and GND antipads.",
+    "Prior DC294requiredcases remain historical for previous source; failed18.56Aillustration stays visible.",
+    "RX protection remains incomplete before actual IO cut; no new protection regressions.",
+    "Historical contact disposition fields retain original source identities and are not current signal-reference metrics.",
+    "Stock I2C timing/sink-guarantee gap and hardware qualification remain unresolved."
+  ]
+}
