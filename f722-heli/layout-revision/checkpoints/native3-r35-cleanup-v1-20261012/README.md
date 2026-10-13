@@ -1,0 +1,24 @@
+# Native3 R35 cleanup: geometric WIP checkpoint
+
+This is the current geometrically adopted checkpoint. R35 rotates in place from B.Cu 90° to 270°. The completed TX/CORE/SERVO2 transaction removes 17 source primitives, adds 32 tracks and three vias, and removes one obsolete CORE barrel. Native connectivity has three opens: FLASH_MOSI, PORT_C_RX_EXT and PORT_C_RX_MCU. There are zero geometric DRC errors, zero ERC violations, zero schematic-parity issues and two unchanged historical RX dangling-via warnings.
+
+The current geometry is `hardware/f722-heli.kicad_pcb`, SHA256 `c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8`. Its complete native export has logical SHA256 `a4fddb679e9d73dd2a7b6300fa8888be47e30ab6f139bd5b78ab308d9192563c` and gzip SHA256 `fa9edf10e18b76701e60ff534987c63830421630dd2bf5b2d49851f865f7d3ff`. The 61 paired hardware files are included exactly; unchanged files are identity-matched to the pinned predecessor.
+
+All newly required physical gates passed. All 558 pad mappings and source pad relationships were preserved; 21/22 actual-I/O protection cuts remain passing, with RX incomplete before its cut and no new regression. Original raw false findings and narrowly source-scoped contact dispositions are retained in the physical evidence. They are not general waivers. Historical `accepted_or_adopted: false` fields in diagnostic reports describe their earlier diagnostic stage; `current/owner-geometric-adoption.json` records subsequent geometric adoption of these exact bytes.
+
+## Qualification limits
+
+There is **no current numerical power qualification**. The new CORE path is 11.593 mm of 0.20 mm In3.Cu copper using existing barrels, and changed CORE copper, drilled holes and filled GND antipads require fresh DC and reference review. The predecessor's 294 passing conditional cases remain historical in `../native4-trim-dc-v1-20261012/dc/`; they do not transfer to this board. Its failed 7.4 V / 18.56 A single-feed servo illustration remains visible there, including J2–J5 at 5.864–5.879 V versus a 6.0 V floor. Passing conditional cases do not qualify source, harness or servos.
+
+FLASH_SCK still measures 49.739070497 mm with 3.542571689 mm outside adjacent actual GND coverage. These unchanged geometric measurements provide no signal-integrity guarantee. Three opens, full RX protection, fresh CORE/DC/reference review, timing/SI, shared C75 ESD/transients, RED/J11 assembly, stock-I2C timing and sink-current guarantees, thermal/AC behavior and final manufacturing/flight qualification remain unresolved. **WIP: not fabrication-ready or flight-qualified.**
+
+## What is preserved and how to verify it
+
+- `current/`: complete compressed native and auxiliary geometry, pad settings, native connectivity, DRC/ERC, paired proofs, structural edit ledger, full compact physical audit, diagnostic result and geometric-adoption receipt.
+- `recipe/`: the complete cumulative 17-cut native recipe, the earlier constructor recipe clearly marked historical, eight-record cleanup proof and R35 pose/source records.
+- `technical/`: bounded, non-executing source excerpts from the construction, cleanup and physical-audit implementations. They preserve useful algorithm evidence, but are not a portable importable copy of the original execution system.
+- `reproduction/replay_native.py`: a standalone verifier and minimal explicit KiCad recipe replay. Run `python reproduction/replay_native.py` for hashes, gzip CRC/logical identities and the 61-file hardware count. This verification executes no geometry or numerical solver. Optional `--rebuild /new/output/directory` requires official KiCad `10.0.6+dfsg-1` with pcbnew; it clones the exact predecessor board and this checkpoint's paired files, applies the sealed recipe, refills, and requires exact current board bytes. Native replay was not run during packaging and does not rerun all physical gates, ERC, DRC or any power/SI model.
+- `SOURCE-PROVENANCE.json`: distinct original and publication SHA256/Git identities. Public copies normalize execution paths and omit private execution coordination. Existing original reports and the complete local recovery source remain preserved separately. Original hash fields inside public reports continue to identify the original records; use this provenance map to resolve their normalized copies.
+- `INPUT-REFERENCES.json`: pinned predecessor inputs and blob reuse proofs. `CONTENT-MANIFEST.json` binds every public payload file except itself; the external sealed envelope binds the manifest.
+
+The earlier three-new-warning candidate is not published as current. Large recovery archives, numerical operators, private execution records and repeated failed routing diagnostics are excluded. This additions-only checkpoint preserves every preceding repository path, file mode, blob and B-RID record. No native, routing, numerical-power, GitHub, manufacturing or deployment action occurred during packaging.

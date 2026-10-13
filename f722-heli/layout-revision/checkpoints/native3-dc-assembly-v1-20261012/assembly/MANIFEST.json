@@ -1,0 +1,102 @@
+{
+  "PCB_native_solver_export_or_public_repository_mutations": false,
+  "files": [
+    {
+      "bytes": 5998,
+      "path": "assembly-native3-review-20261012/REVIEW.md",
+      "sha256": "6d1d17ebbf4e327a55cda0bec8572f9b9881ebc27607eebf37070493edf5a524"
+    },
+    {
+      "bytes": 9280,
+      "path": "assembly-native3-review-20261012/evidence.json",
+      "sha256": "bacd3964521df5ec3a66649b55f08df94dfb768100c1458839096dec60d41015"
+    },
+    {
+      "bytes": 10975,
+      "path": "assembly-native3-review-20261012/review.py",
+      "sha256": "1e038d867aee101bfb94c18f00bacf9fa8b868d039738d954be6d63d2e2f484e"
+    }
+  ],
+  "limitations": [
+    "A1 is relative to package seating plane; no assembled PCB height inference.",
+    "No via filling, capping, flatness or production tolerance assumed.",
+    "No final export, CAM, stencil, JLC preview or first-article acceptance performed.",
+    "Three opens and stale power/reference evidence remain outside this review."
+  ],
+  "measured_peak_RSS_MiB": 327.24609375,
+  "official_sources": [
+    {
+      "document": "DS11853 Rev 9, section 7.1, pages 197-199",
+      "read_utc_date": "2026-10-12",
+      "scope": "LQFP64 package and seating-plane definition; A1 0.05-0.15 mm, ccc maximum 0.08 mm; no assembled PCB clearance inferred",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f722re.pdf"
+    },
+    {
+      "read_utc_date": "2026-10-12",
+      "scope": "Tenting versus filling/capping; residual beads and no inferred flatness",
+      "url": "https://jlcpcb.com/help/article/pcb-via-covering"
+    },
+    {
+      "read_utc_date": "2026-10-12",
+      "scope": "Both sides in one CPL with explicit side fields",
+      "url": "https://jlcpcb.com/help/article/advice-for-bom-and-cpl-files-preparation"
+    }
+  ],
+  "predecessor_source": {
+    "board": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/diagnostic-board/f722-heli.kicad_pcb",
+    "board_sha256": "1b463dbb2115f5fa0d0ffada1f80fe674b1418a4ddbd661c83cb7516f334374a",
+    "native": "recovery-negotiated-routing-20261011/native4-sck-lead-trim-native-preparation-v1/outputs/native4-SCK-trim-v1/after.native.json.gz",
+    "native_gzip_sha256": "5edf6f61f6876157310c0912ec74896254dc378cbffd0260b4958ff65dff2dcb",
+    "native_logical_sha256": "c4d5b66eeabdc7d9e7b87715ddcb811038ce9f8b2b67a722eec578cf807fe779",
+    "pad_settings_sha256": "ba62b0e6147c74b26bb81f872215a31fa1c41d850ee75ba5514663adba0cf673"
+  },
+  "resource_limit_MiB": 512,
+  "reviewed_source": {
+    "board": "recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/diagnostic-board/f722-heli.kicad_pcb",
+    "board_sha256": "c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8",
+    "native": "recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/after.native.json.gz",
+    "native_gzip_sha256": "fa9edf10e18b76701e60ff534987c63830421630dd2bf5b2d49851f865f7d3ff",
+    "native_logical_sha256": "a4fddb679e9d73dd2a7b6300fa8888be47e30ab6f139bd5b78ab308d9192563c",
+    "pad_settings_sha256": "ba62b0e6147c74b26bb81f872215a31fa1c41d850ee75ba5514663adba0cf673"
+  },
+  "schema": "f722-native3-assembly-review-manifest/v1",
+  "sealed_utc": "2026-10-12T16:42:16.216927+00:00",
+  "status": "BOUNDED_CURRENT_SOURCE_REVIEW_COMPLETE_NOT_MANUFACTURING_QUALIFICATION",
+  "supporting_evidence": [
+    {
+      "bytes": 7401,
+      "path": "assembly-trimmed-native4-review-20261012/REVIEW.md",
+      "sha256": "951aadd1c8fcc055975c358c7ecd78d5afd170937efbf576737aec6fe487d1ab"
+    },
+    {
+      "bytes": 7762,
+      "path": "assembly-trimmed-native4-review-20261012/geometry.json",
+      "sha256": "89b5341addda8e8155bc0aa0338cdf494f52a9dfe66da599065bd19790af1b6a"
+    },
+    {
+      "bytes": 4663,
+      "path": "assembly-trimmed-native4-review-20261012/review.py",
+      "sha256": "2fa2b9249c02d360c12bf22f9e0025a2ae1f1e48a91a0fc8b65167f3dd5b4f58"
+    },
+    {
+      "bytes": 17248,
+      "path": "recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/FINAL-HANDOFF.json",
+      "sha256": "7cf29bebd27105a8b0c7acdde956581a0cca98b699030a9ee369e3cb4f8e3276"
+    },
+    {
+      "bytes": 3418,
+      "path": "recovery-negotiated-routing-20261011/native4-r35-cleanup-native-preparation-v2/outputs/r35-cleanup-native-v1/owner-geometric-adoption.json",
+      "sha256": "4af1bfb7bdd0b8bea18d87c69fc57b2889120388c1a350523a416e013c03cadd"
+    },
+    {
+      "bytes": 35359,
+      "path": "final-export-preparation-20261010/exporter-recovery-v1/export-tools/native_export.py",
+      "sha256": "d571a9763c3134d1995bf8a192cfdddcb4991dc637f9a20bfd7119877a6ecdfa"
+    },
+    {
+      "bytes": 8207,
+      "path": "final-export-preparation-20261010/exporter-recovery-v1/export-tools/README.md",
+      "sha256": "09eb73f83dd67e6f5b98068a885ab2853767f0c88b50689d24b590d455cfca06"
+    }
+  ]
+}
