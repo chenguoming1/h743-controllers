@@ -1,0 +1,83 @@
+--- a/f722-heli/layout-revision/export-tools/native_export.py
++++ b/f722-heli/layout-revision/export-tools/native_export.py
+@@ -8,6 +8,7 @@
+ from collections import Counter, defaultdict
+ import csv
+ from datetime import datetime, timezone
++from decimal import Decimal
+ import hashlib
+ import json
+ import math
+@@ -270,6 +271,55 @@
+     return (plating, kind, round(diameter, 3), *coords)
+ 
+ 
++def match_drill_features(expected, actual):
++    """Unique drill census match at the emitted metric 0.001 mm precision.
++
++    Coordinates may differ by half one output unit. The additional bound is
++    only 16 binary64 ulps for native unit conversion/rotated-slot arithmetic;
++    it is not a drill, placement, or fabrication tolerance.
++    """
++    require(len(expected) == len(actual), 'Drill feature census mismatch')
++    half_grid = Decimal('0.0005')
++
++    def canonical(item):
++        plating, kind, diameter, *coords = item
++        require(kind in ('round', 'slot'), 'Unknown drill feature kind')
++        require(len(coords) == (2 if kind == 'round' else 4), 'Malformed drill coordinates')
++        if kind == 'slot':
++            ends = sorted([coords[:2], coords[2:]])
++            coords = ends[0] + ends[1]
++        values = [Decimal(str(v)) for v in [diameter, *coords]]
++        require(all(v.is_finite() for v in values), 'Non-finite drill feature')
++        return (plating, kind, values[0]), values[1:]
++
++    source = [canonical(item) for item in expected]
++    used, maximum_delta, maximum_roundoff = set(), Decimal(0), Decimal(0)
++    for item in actual:
++        key, coordinates = canonical(item)
++        matches = []
++        for index, (source_key, source_coordinates) in enumerate(source):
++            if key != source_key:
++                continue
++            deltas = [abs(a-b) for a, b in zip(coordinates, source_coordinates)]
++            roundoff = [Decimal(str(16 * math.ulp(max(1.0, abs(float(a)), abs(float(b))))))
++                        for a, b in zip(coordinates, source_coordinates)]
++            if all(d <= half_grid+r for d, r in zip(deltas, roundoff)):
++                matches.append((index, deltas, roundoff))
++        require(len(matches) == 1, 'Drill feature has missing or ambiguous native match')
++        index, deltas, roundoff = matches[0]
++        require(index not in used, 'Duplicate exported drill feature')
++        used.add(index)
++        maximum_delta = max(maximum_delta, *deltas)
++        maximum_roundoff = max(maximum_roundoff, *roundoff)
++    require(len(used) == len(source), 'Native drill feature left unmatched')
++    return {'unique_one_to_one_feature_match': True,
++            'coordinate_resolution_mm': 0.001,
++            'coordinate_half_grid_mm': float(half_grid),
++            'maximum_absolute_coordinate_delta_mm': float(maximum_delta),
++            'maximum_binary64_roundoff_bound_mm': float(maximum_roundoff),
++            'plating_kind_diameter_exact': True}
++
++
+ def parse_drill(path, plating):
+     content = path.read_text()
+     require('METRIC' in content and 'G90' in content, 'Unexpected Excellon units/origin convention')
+@@ -353,13 +403,14 @@
+     for plating in ['PTH', 'NPTH']:
+         features, tools = parse_drill(out/'drill'/f'f722-heli-{plating}.drl', plating)
+         expected = [d for d in inv['drills'] if d[0] == plating]
+-        require(Counter(map(drill_key, features)) == Counter(map(drill_key, expected)), f'{plating} native/Excellon hole or slot mismatch at 0.001 mm')
++        precision_match = match_drill_features(expected, features)
+         require((out/'drill'/f'f722-heli-{plating}-drl_map.svg').is_file(), f'Missing {plating} drill map')
+         slots = [{'tool_mm': d[2], 'start_mm': d[3:5], 'end_mm': d[5:7],
+                   'finished_length_mm': round(math.dist(d[3:5], d[5:7])+d[2], 6)} for d in features if d[1] == 'slot']
+         results['drill_checks'][plating] = {'round_holes': sum(d[1] == 'round' for d in features), 'routed_slots': len(slots),
+                                             'total': len(features), 'tools_mm': tools, 'slot_details': slots,
+-                                            'native_coordinate_and_size_match_at_0_001mm': True}
++                                            'native_coordinate_and_size_match_at_0_001mm': True,
++                                            'precision_aware_matching': precision_match}
+     _, actual = parse_gerber(paths['Edge.Cuts'])
+     segkey = lambda seg: tuple(sorted(map(xykey, seg)))
+     require(Counter(map(segkey, actual)) == Counter(map(segkey, inv['outline'])), 'Export/native outline segments differ')

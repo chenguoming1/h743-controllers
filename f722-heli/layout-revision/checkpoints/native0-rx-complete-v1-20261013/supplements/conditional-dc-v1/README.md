@@ -1,0 +1,37 @@
+# Native0 conditional DC and local assembly evidence
+
+This evidence-only successor applies to PCB `84229c571433bd72d410fb18d02cffa3a380c00a87fbe1270e3a73b63f8dd6cd`. All 61 paired design files and the original native0 geometric checkpoint remain unchanged. The earlier checkpoint's DC-pending statements describe its issue time; the fresh result below supersedes that pending status only. This remains prototype WIP, without manufacturing, electrical-system or flight release.
+
+## Fresh conditional DC result
+
+All **294 required accessory/logic/USB cases pass on both grids** (0.12 and 0.09 mm), all 15 numerical convergence comparisons pass, and all five VCAP copper-resistance loops pass. Independent review recalculated 9,500 positive-minus-return pad probes and checked the source bindings. These are enumerated static model results, not servo or transient qualification.
+
+The raw aggregate remains **false**: the illustrative single-feed servo case draws 18.560991390649388 A on the fine grid and gives J2–J5 board-pad floors 5.863718666311604, 5.86596500491051, 5.870752413578252 and 5.878528416387732 V, below 6 V. All 11 servo cases are illustrations. The six heavier examples exceed the version-qualified 10 A continuous BEC reference on both grids, including examples whose ideal-source board voltage passes. Conversion/input current accounting is retained; currents on different voltage rails must not be added directly.
+
+See [the normalized final handoff](review/FINAL-HANDOFF.json), [independent review](../../dc/evidence/INDEPENDENT-COMPLETED-DC-REVIEW.json), and [current DC inputs, complete reduced evidence and replay instructions](../../dc/REPLAY.md). The shared model and numerical source are hash-bound to published native1 inputs. Fresh preparation, the bounded original solve and terminal review were executed on this board; portable source/hash/model checks are distinct from a second portable heavy replay, which has not been run.
+
+The full 31,564,460-byte compressed raw field archive remains local and is **not included** here. Its stored SHA-256 is `a56f50ed965b6aaec75a0d77f4be5af4a9d3fa3cf23bdb65ea1b8a4aaa9cb401`; logical SHA-256 is `ff4671a226068efdf29def43ad26a434f0d88a4dea7dbd3541689531da641eb3`. The public reduced case/probe/loop/convergence evidence supports review of the reported screens and includes identities of the original verification. It does not provide every raw field/certificate byte for independent archive inspection. The published dependency closure supports a fresh numerical replay, which must generate its own raw output; byte-identical regeneration of the original archive is not promised.
+
+## Supply and operating envelope
+
+Intended KST servo operation is 6.0–8.4 V; raw 12.6 V servo operation is excluded. The raw servo bus bypasses U5 electronics protection. The [Hobbywing 200 A V4.1 product page](https://www.hobbywing.com/en/products/platinum-hv-200a-v4167) covers SBEC SKU 30209101 (5–8 V, 10 A continuous/30 A peak) and OPTO SKU 30209102 (no BEC), both for 6–14S. The [120 A V4](https://www.hobbywing.com/en/products/platinum-120a-v471), SKU 30203401, is 3–6S and lists 5–8 V, 10 A continuous/25 A peak BEC. Its [manual](https://www.hobbywing.com/en/uploads/file/20221015/44a066bfd0664eae2a4ae4a9fded4d36.pdf) does not state a BEC peak duration; the 120 A ten-second row concerns motor current. These are variant-specific references, not confirmation of an installed ESC, selected pack or external BEC. Actual variant, current limiting, harness/contact resistance, thermal limits and duty profile remain unbound. Two feeds from one BEC do not double its source capacity.
+
+DC screening excludes regulation dynamics, startup/reversal/stall, cable transients, thermal/ampacity acceptance, signal integrity and ESD. The VCAP figures cover copper resistance, excluding component ESR/ESL and regulator stability. Retain the reviewed 27 MHz source/bench envelope, flash settling, BARO/IMU noise and waveform/ESD checks. Requested 400 kHz I2C with internal pull-ups off is approved in documentation but unapplied, and its physical overshoot/measurement caveat remains; 385 kHz is unapproved and unapplied.
+
+## Moved-part nominal assembly review
+
+[The local review](assembly/MOVED-ASSEMBLY-REVIEW.md) and [exact geometry measurements](assembly/MOVED-ASSEMBLY-GEOMETRY.json) find no nominal aperture, foreign-land, drill, body or courtyard overlap for U15/R34/R35 and the relocated RX/GREEN vias. All paste lies within its own copper and mask. The U15–R34 nominal courtyard separation is 0.050 mm; it is not a placement-tolerance guarantee. RX's tighter back-side via-disk to land/mask/paste separation is 0.147415 mm, with 0.272412 mm drill clearance. GREEN's back-side exposed-pad land/mask gap is 0.376558 mm and paste gap at least 0.541558 mm.
+
+Both vias remain ordinary 0.45/0.20 mm, tented on both sides with no mask openings. RX lies under J11/U3 nominal body projections; GREEN lies under U3. Nominal clearance does not establish actual underside metal or reflow seating. Exact stack/tenting versus filled/capped quote applicability, J1 oval/slots, panel/rails, double-sided handling, stencil/reflow and factory acceptance remain pending. No process change is adopted. Unfinished CAM/export output is excluded from this checkpoint.
+
+The [assembly launcher](assembly/replay.py) defaults to source/hash checks. Explicit `--run --work NEW_DIRECTORY` performs the bounded geometry pass with Python 3.11 and Shapely 2.2.0. The three exact inputs are the existing selected PCB/native gzip and the included small pad-settings file. Computational statements are AST-identical after documented execution-path substitutions. Packaging tested source bindings and syntax only; it did not rerun geometry.
+
+## Static firmware and connector mapping
+
+The [firmware receipt](firmware/REVIEW.md) checks all 29 historical mapping rows against the pinned full target and enumerates all 31 assigned target resources. All 558 physical pads, 510 numbered native/PCB pad maps and 506 schematic nodes reconcile, along with 14 connector chains and 11 device endpoints. PPM1 shares PA3 with the SBUS path; assigned TX1/PA9 is intentionally unconnected. The published original Nexus DSM interface exposes RX/GND/3.3 V, and the pinned ordinary DSM receive/bind source uses the RX resource. TX-dependent half-duplex/SRXL configurations are not claimed supported by that unconnected path.
+
+`python -B firmware/audit.py` reruns the text/source audit using only included small inputs and the existing selected PCB/native. This exact default invocation was tested in the final directory layout. One netlist documentary source locator is explicitly normalized; component/net bytes and technical checks remain exact. The primary manual was inspected locally and remains URL/hash-only in this compact package. Actual binary/configuration, boot/DFU, sensor axes, live protocol behavior and physical I2C/SPI timing remain unverified. Source/config identities cannot establish those runtime results.
+
+## Evidence integrity
+
+Original local reports are preserved with exact hashes. Public JSON wrappers document every removed local locator or execution-coordination field while retaining technical values, false predicates and issue-time limitations. The assembly report's old DC-pending sentence remains explicitly historical. No old evidence is silently rewritten. Existing native/reference recovery remains the original checkpoint's scope; this supplement does not expand it into a complete native-proof replay.

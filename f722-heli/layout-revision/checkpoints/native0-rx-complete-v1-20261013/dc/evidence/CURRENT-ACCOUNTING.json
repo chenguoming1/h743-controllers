@@ -1,0 +1,887 @@
+{
+  "USB_extraction_note": "In REQUIRED-CASE-ENVELOPE.json only USB_at_ideal_contact_common is the external source. Other USB-prefixed values are signed zero-volt contact/return tie currents, not additional supplies. Their signs follow the original source orientation.",
+  "board_sha256": "84229c571433bd72d410fb18d02cffa3a380c00a87fbe1270e3a73b63f8dd6cd",
+  "existing10A_reference_scope": "Preserved10A reference is supported by official linked200A SBEC30209101 and120A V4 30203401 specifications. The200A OPTO30209102 has no BEC. InstalledSKU, battery and harness remain unbound; the diagnostic model is not changed to either variant or an unspecified externalBEC.",
+  "extraction_performed_solver_run": false,
+  "maximum_absolute_identity_error_A": 2.4831824930440696e-11,
+  "raw_servo_path": "VX_RAW directly feedsJ2/J3/J4/J5; raw source-side servos bypassU5. U5electronics branch and control limits do not qualify or protect total servo current.",
+  "reduced_result_sha256": "56e934301fceb6d05add472aefa3beee5b30063c9ebe14b8fb9fc297fcfc5700",
+  "required_group_source_delivery_fine_A": {
+    "capacity": {
+      "maximum": 3.198142159542918,
+      "minimum": 3.197515538747229
+    },
+    "classic": {
+      "maximum": 2.7828522074745297,
+      "minimum": 2.7822641411161033
+    },
+    "usb_configuration": {
+      "maximum": 0.27134511410137746,
+      "minimum": 0.27133980113944345
+    }
+  },
+  "rows": [
+    {
+      "U5_electronics_path_A": 1.849417568253189,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770745566819333,
+          "derived_efficiency": 0.8500000000362649,
+          "input_A": 1.667272602335738,
+          "input_V": 7.105714864791779,
+          "input_power_W": 11.847163714077126,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389563671694,
+          "output_V": 5.034443072583923,
+          "output_power_W": 10.070089157395193,
+          "power_balance_error_W": -4.296367706047022e-10
+        },
+        {
+          "conversion_loss_W": 0.19110619032177967,
+          "derived_efficiency": 0.8500000000368928,
+          "input_A": 0.17945423777258115,
+          "input_V": 7.099532922369798,
+          "input_power_W": 1.2740412691252176,
+          "name": "U9_total_efficiency",
+          "output_A": 0.34000000000007274,
+          "output_V": 3.1851031729506065,
+          "output_power_W": 1.082935078803438,
+          "power_balance_error_W": -4.70030681043454e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.821824698594125e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -6.623703728515437e-13,
+      "source_delivery_A": 5.350085786499513
+    },
+    {
+      "U5_electronics_path_A": 1.8666695365555184,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770691011588937,
+          "derived_efficiency": 0.850000000040867,
+          "input_A": 1.6828606082384647,
+          "input_V": 7.039874417577568,
+          "input_power_W": 11.847127344286994,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238957395212,
+          "output_V": 5.034427614709453,
+          "output_power_W": 10.0700582431281,
+          "power_balance_error_W": -4.841549383627353e-10
+        },
+        {
+          "conversion_loss_W": 0.19110590534973682,
+          "derived_efficiency": 0.8500000000418042,
+          "input_A": 0.18113449636730705,
+          "input_V": 7.033665010831501,
+          "input_power_W": 1.2740393693533132,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000000735,
+          "output_V": 3.185098423539242,
+          "output_power_W": 1.0829334640035764,
+          "power_balance_error_W": -5.3260285071132785e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.770445876866713e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.436246462813457e-13,
+      "source_delivery_A": 5.367337241014043
+    },
+    {
+      "U5_electronics_path_A": 1.8668962788255548,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.777065162426453,
+          "derived_efficiency": 0.8500000000410187,
+          "input_A": 1.6830646457171863,
+          "input_V": 7.039005374053493,
+          "input_power_W": 11.847101086082711,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389557936726,
+          "output_V": 5.03441646033765,
+          "output_power_W": 10.070035923656258,
+          "power_balance_error_W": -4.859543878410477e-10
+        },
+        {
+          "conversion_loss_W": 0.19110580222622886,
+          "derived_efficiency": 0.8500000000418727,
+          "input_A": 0.1811574325295626,
+          "input_V": 7.032770690520443,
+          "input_power_W": 1.2740386818638425,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000000736,
+          "output_V": 3.1850967048158214,
+          "output_power_W": 1.0829328796376136,
+          "power_balance_error_W": -5.334754860086832e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.769787868685336e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.7448783670265195e-13,
+      "source_delivery_A": 5.367563976703967
+    },
+    {
+      "U5_electronics_path_A": 1.9428747067454566,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770313843098329,
+          "derived_efficiency": 0.8500000000379684,
+          "input_A": 1.7517088072965534,
+          "input_V": 6.763039524064,
+          "input_power_W": 11.8468758983976,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238956247116,
+          "output_V": 5.034320765845392,
+          "output_power_W": 10.069844514087768,
+          "power_balance_error_W": -4.49807302516092e-10
+        },
+        {
+          "conversion_loss_W": 0.1911042964599301,
+          "derived_efficiency": 0.8500000000386374,
+          "input_A": 0.18856003077929223,
+          "input_V": 6.756620892184764,
+          "input_power_W": 1.2740286433943682,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000000765,
+          "output_V": 3.1850716086299835,
+          "output_power_W": 1.082924346934438,
+          "power_balance_error_W": -4.922506846583019e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.554768820298087e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.2808953822352727e-12,
+      "source_delivery_A": 5.443540254431379
+    },
+    {
+      "U5_electronics_path_A": 1.9413881379810545,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.777038561838495,
+          "derived_efficiency": 0.8500000000374681,
+          "input_A": 1.7503673009060916,
+          "input_V": 6.7682501509349065,
+          "input_power_W": 11.846923748549179,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238958959931,
+          "output_V": 5.034341092899593,
+          "output_power_W": 10.069885186710684,
+          "power_balance_error_W": -4.438813760998528e-10
+        },
+        {
+          "conversion_loss_W": 0.1911044934160291,
+          "derived_efficiency": 0.8500000000382035,
+          "input_A": 0.18841365094706974,
+          "input_V": 6.761877125289886,
+          "input_power_W": 1.274029956431344,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000000765,
+          "output_V": 3.185074891220798,
+          "output_power_W": 1.082925463015315,
+          "power_balance_error_W": -4.867262148877671e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.5587878729108915e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.2765641978441005e-12,
+      "source_delivery_A": 5.442053725857507
+    },
+    {
+      "U5_electronics_path_A": 2.2228738573543203,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770272854413882,
+          "derived_efficiency": 0.8500000000315445,
+          "input_A": 1.760368618344328,
+          "input_V": 6.729754466563303,
+          "input_power_W": 11.846848572100612,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238952976986,
+          "output_V": 5.034309161748977,
+          "output_power_W": 10.069821286659224,
+          "power_balance_error_W": -3.737046228025065e-10
+        },
+        {
+          "conversion_loss_W": 0.46100357973413253,
+          "derived_efficiency": 0.8500000000361626,
+          "input_A": 0.45990786380019244,
+          "input_V": 6.682549790676576,
+          "input_power_W": 3.073357198968487,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000000764,
+          "output_V": 3.1857970966269646,
+          "output_power_W": 2.6123536192343546,
+          "power_balance_error_W": -1.1114043019233577e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.5464738664396837e-05,
+      "raw_servo_subtotal_A": 8.9,
+      "source_current_sum_error_A": -2.292206863500814e-12,
+      "source_delivery_A": 11.123539322090693
+    },
+    {
+      "U5_electronics_path_A": 2.192024157529144,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770449413594207,
+          "derived_efficiency": 0.8500000000275741,
+          "input_A": 1.7359639941623053,
+          "input_V": 6.824430873996361,
+          "input_power_W": 11.846966277907274,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238955316553,
+          "output_V": 5.034359174828795,
+          "output_power_W": 10.069921336547853,
+          "power_balance_error_W": -3.2667024640886666e-10
+        },
+        {
+          "conversion_loss_W": 0.46100716295508803,
+          "derived_efficiency": 0.8500000000316915,
+          "input_A": 0.45343932016802,
+          "input_V": 6.777932460461876,
+          "input_power_W": 3.073381087016588,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000000753,
+          "output_V": 3.185821858611293,
+          "output_power_W": 2.6123739240615,
+          "power_balance_error_W": -9.740031003957483e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.619888581193366e-05,
+      "raw_servo_subtotal_A": 8.9,
+      "source_current_sum_error_A": -2.671782608522355e-13,
+      "source_delivery_A": 11.092690356414689
+    },
+    {
+      "U5_electronics_path_A": 2.1925658166092417,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.777039534830525,
+          "derived_efficiency": 0.8500000000275837,
+          "input_A": 1.7363900521155493,
+          "input_V": 6.822735605947645,
+          "input_power_W": 11.846930234382045,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389533634783,
+          "output_V": 5.034343863076265,
+          "output_power_W": 10.06989069955152,
+          "power_balance_error_W": -3.267821568897489e-10
+        },
+        {
+          "conversion_loss_W": 0.4610067970761387,
+          "derived_efficiency": 0.8500000000317507,
+          "input_A": 0.45355536031773425,
+          "input_V": 6.776192978232635,
+          "input_power_W": 3.0733786478248035,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000000753,
+          "output_V": 3.185819330181006,
+          "output_power_W": 2.612371850748665,
+          "power_balance_error_W": -9.758194252640351e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.618598918100158e-05,
+      "raw_servo_subtotal_A": 8.9,
+      "source_current_sum_error_A": -2.644559850511867e-13,
+      "source_delivery_A": 11.093232002598159
+    },
+    {
+      "U5_electronics_path_A": 2.324890606102316,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7769687059982147,
+          "derived_efficiency": 0.8500000000365694,
+          "input_A": 1.8410453738576626,
+          "input_V": 6.434636653225747,
+          "input_power_W": 11.846458042876215,
+          "name": "U6_total_efficiency",
+          "output_A": 2.00023894499242,
+          "output_V": 5.034143226781418,
+          "output_power_W": 10.069489336878,
+          "power_balance_error_W": -4.332179059929331e-10
+        },
+        {
+          "conversion_loss_W": 0.460991692780619,
+          "derived_efficiency": 0.8500000000423109,
+          "input_A": 0.48132100140511025,
+          "input_V": 6.385090082846845,
+          "input_power_W": 3.0732779527376817,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000000797,
+          "output_V": 3.18571495116684,
+          "output_power_W": 2.6122862599570627,
+          "power_balance_error_W": -1.3003331744698698e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.318079409422524e-05,
+      "raw_servo_subtotal_A": 15.8,
+      "source_current_sum_error_A": -2.2484286229195426e-12,
+      "source_delivery_A": 18.125553786894162
+    },
+    {
+      "U5_electronics_path_A": 2.2714601785894772,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7769952550584556,
+          "derived_efficiency": 0.8500000000307601,
+          "input_A": 1.7987944356958336,
+          "input_V": 6.585874850991367,
+          "input_power_W": 11.846635036152398,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389470368755,
+          "output_V": 5.034218434757986,
+          "output_power_W": 10.069639781093942,
+          "power_balance_error_W": -3.644036183914068e-10
+        },
+        {
+          "conversion_loss_W": 0.46099763671553884,
+          "derived_efficiency": 0.8500000000355452,
+          "input_A": 0.47010405244218706,
+          "input_V": 6.537526240980075,
+          "input_power_W": 3.073317578831871,
+          "name": "U9_total_efficiency",
+          "output_A": 0.820000000000078,
+          "output_V": 3.185756026970834,
+          "output_power_W": 2.6123199421163323,
+          "power_balance_error_W": -1.0924194882022675e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.435063527156875e-05,
+      "raw_servo_subtotal_A": 15.9,
+      "source_current_sum_error_A": -2.554377133531967e-13,
+      "source_delivery_A": 18.172124529224494
+    },
+    {
+      "U5_electronics_path_A": 2.660099416050442,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.776830606266893,
+          "derived_efficiency": 0.8500000000353032,
+          "input_A": 2.105872827799918,
+          "input_V": 5.625001292350586,
+          "input_power_W": 11.845537377900522,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238943978616,
+          "output_V": 5.033751993452473,
+          "output_power_W": 10.068706771633629,
+          "power_balance_error_W": -4.1818459806108876e-10
+        },
+        {
+          "conversion_loss_W": 0.46095604809367474,
+          "derived_efficiency": 0.8500000000404373,
+          "input_A": 0.5519026645969496,
+          "input_V": 5.568083864384225,
+          "input_power_W": 3.073040321452934,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000000888,
+          "output_V": 3.1854686260475322,
+          "output_power_W": 2.612084273359259,
+          "power_balance_error_W": -1.2426548678945437e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.12,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 4.695343766463572e-05,
+      "raw_servo_subtotal_A": 15.9,
+      "source_current_sum_error_A": -2.1099166183191458e-12,
+      "source_delivery_A": 18.560756369485997
+    },
+    {
+      "U5_electronics_path_A": 1.849499617348549,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770813571755326,
+          "derived_efficiency": 0.8500000000361104,
+          "input_A": 1.6673474498369927,
+          "input_V": 7.105423078943248,
+          "input_power_W": 11.847209050688939,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389541485273,
+          "output_V": 5.034462343925361,
+          "output_power_W": 10.070127693513406,
+          "power_balance_error_W": -4.278088994169593e-10
+        },
+        {
+          "conversion_loss_W": 0.19110629173272997,
+          "derived_efficiency": 0.8500000000369307,
+          "input_A": 0.17946150251079238,
+          "input_V": 7.099249295106752,
+          "input_power_W": 1.2740419451985414,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000003354,
+          "output_V": 3.1851048631315972,
+          "output_power_W": 1.0829356534658114,
+          "power_balance_error_W": -4.7051251783614134e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.821799254781436e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.4831824930440696e-11,
+      "source_delivery_A": 5.350167835316265
+    },
+    {
+      "U5_electronics_path_A": 1.8667538197438087,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.77707588099066,
+          "derived_efficiency": 0.8500000000410286,
+          "input_A": 1.6829374836882303,
+          "input_V": 7.039579698001987,
+          "input_power_W": 11.847172543178216,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238955178305,
+          "output_V": 5.03444682752411,
+          "output_power_W": 10.070096662187556,
+          "power_balance_error_W": -4.860734037492875e-10
+        },
+        {
+          "conversion_loss_W": 0.1911060059091494,
+          "derived_efficiency": 0.850000000041876,
+          "input_A": 0.18114196784743375,
+          "input_V": 7.033378597405235,
+          "input_power_W": 1.2740400397500078,
+          "name": "U9_total_efficiency",
+          "output_A": 0.34000000000033875,
+          "output_V": 3.1851000995287633,
+          "output_power_W": 1.0829340338408584,
+          "power_balance_error_W": -5.33517674483619e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.7704201388506215e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.449995563954914e-11,
+      "source_delivery_A": 5.367421523920697
+    },
+    {
+      "U5_electronics_path_A": 1.8669811447447455,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.777071942364806,
+          "derived_efficiency": 0.8500000000411442,
+          "input_A": 1.6831420465985771,
+          "input_V": 7.038708533022075,
+          "input_power_W": 11.847146285681644,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389535742107,
+          "output_V": 5.0344356734592655,
+          "output_power_W": 10.070074343316838,
+          "power_balance_error_W": -4.874411985156257e-10
+        },
+        {
+          "conversion_loss_W": 0.19110590246480585,
+          "derived_efficiency": 0.8500000000419375,
+          "input_A": 0.1811649618720494,
+          "input_V": 7.032482092323037,
+          "input_power_W": 1.2740393501215732,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000003388,
+          "output_V": 3.1850983754579065,
+          "output_power_W": 1.0829334476567674,
+          "power_balance_error_W": -5.3430149193900434e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.7697605628432976e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.4538234339149378e-11,
+      "source_delivery_A": 5.367648842325836
+    },
+    {
+      "U5_electronics_path_A": 1.9429729813904315,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770380733572964,
+          "derived_efficiency": 0.8500000000380624,
+          "input_A": 1.7517983619998576,
+          "input_V": 6.762719242715993,
+          "input_power_W": 11.846920492054794,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389540288137,
+          "output_V": 5.034339721469318,
+          "output_power_W": 10.069882418697498,
+          "power_balance_error_W": -4.509228546112354e-10
+        },
+        {
+          "conversion_loss_W": 0.19110439212730124,
+          "derived_efficiency": 0.8500000000387005,
+          "input_A": 0.1885688203591142,
+          "input_V": 6.756309334444005,
+          "input_power_W": 1.2740292811773781,
+          "name": "U9_total_efficiency",
+          "output_A": 0.34000000000035274,
+          "output_V": 3.1850732030851567,
+          "output_power_W": 1.0829248890500769,
+          "power_balance_error_W": -4.930544861281305e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.554732423323825e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.3250566436614026e-11,
+      "source_delivery_A": 5.443638528691414
+    },
+    {
+      "U5_electronics_path_A": 1.9414841405917946,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770452526038838,
+          "derived_efficiency": 0.8500000000375667,
+          "input_A": 1.750454804434836,
+          "input_V": 6.767937294721851,
+          "input_power_W": 11.846968353659571,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389567459735,
+          "output_V": 5.034360053379636,
+          "output_power_W": 10.069923101055688,
+          "power_balance_error_W": -4.4505199525701755e-10
+        },
+        {
+          "conversion_loss_W": 0.19110458971808275,
+          "derived_efficiency": 0.8500000000382743,
+          "input_A": 0.18842221777159854,
+          "input_V": 6.761573096384997,
+          "input_power_W": 1.2740305984456357,
+          "name": "U9_total_efficiency",
+          "output_A": 0.3400000000003526,
+          "output_V": 3.1850764962542057,
+          "output_power_W": 1.082926008727553,
+          "power_balance_error_W": -4.876254955377135e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.34,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.558756878205899e-05,
+      "raw_servo_subtotal_A": 3.5,
+      "source_current_sum_error_A": -2.325768802536026e-11,
+      "source_delivery_A": 5.442149728137319
+    },
+    {
+      "U5_electronics_path_A": 2.223000405068238,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.777033968268368,
+          "derived_efficiency": 0.8500000000317834,
+          "input_A": 1.760467729334651,
+          "input_V": 6.729400901189344,
+          "input_power_W": 11.846893124299358,
+          "name": "U6_total_efficiency",
+          "output_A": 2.00023895075473,
+          "output_V": 5.034328099765996,
+          "output_power_W": 10.06985915603099,
+          "power_balance_error_W": -3.765361356045105e-10
+        },
+        {
+          "conversion_loss_W": 0.4610041006491512,
+          "derived_efficiency": 0.8500000000362443,
+          "input_A": 0.459935378874611,
+          "input_V": 6.682157565823659,
+          "input_power_W": 3.0733606717369533,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000003517,
+          "output_V": 3.185800696447173,
+          "output_power_W": 2.612356571087802,
+          "power_balance_error_W": -1.113917846851109e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.5464391156797826e-05,
+      "raw_servo_subtotal_A": 8.9,
+      "source_current_sum_error_A": -2.4459565164838652e-11,
+      "source_delivery_A": 11.123665869434936
+    },
+    {
+      "U5_electronics_path_A": 2.1921443442251567,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770516565711194,
+          "derived_efficiency": 0.850000000027712,
+          "input_A": 1.7360581591016826,
+          "input_V": 6.824086499571165,
+          "input_power_W": 11.847011045996162,
+          "name": "U6_total_efficiency",
+          "output_A": 2.0002389530979596,
+          "output_V": 5.034378204578379,
+          "output_power_W": 10.069959389425042,
+          "power_balance_error_W": -3.283044947011149e-10
+        },
+        {
+          "conversion_loss_W": 0.46100769483272375,
+          "derived_efficiency": 0.8500000000317606,
+          "input_A": 0.4534654181029405,
+          "input_V": 6.77755019495494,
+          "input_power_W": 3.073384632868908,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000003468,
+          "output_V": 3.185825534189121,
+          "output_power_W": 2.612376938036184,
+          "power_balance_error_W": -9.761258468188316e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.619857166529675e-05,
+      "raw_servo_subtotal_A": 8.9,
+      "source_current_sum_error_A": -2.416702105226048e-11,
+      "source_delivery_A": 11.092810542772655
+    },
+    {
+      "U5_electronics_path_A": 2.192687441124027,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7770462487367737,
+          "derived_efficiency": 0.850000000027718,
+          "input_A": 1.7364853486991003,
+          "input_V": 6.822386956874066,
+          "input_power_W": 11.846974993767656,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238951141072,
+          "output_V": 5.034362889136976,
+          "output_power_W": 10.069928745030882,
+          "power_balance_error_W": -3.283755489746909e-10
+        },
+        {
+          "conversion_loss_W": 0.4610073275597566,
+          "derived_efficiency": 0.8500000000318225,
+          "input_A": 0.4535817655406449,
+          "input_V": 6.775806299709654,
+          "input_power_W": 3.073382184383729,
+          "name": "U9_total_efficiency",
+          "output_A": 0.820000000000347,
+          "output_V": 3.1858229961254474,
+          "output_power_W": 2.612374856823972,
+          "power_balance_error_W": -9.780265486369899e-11
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.618564344354683e-05,
+      "raw_servo_subtotal_A": 8.9,
+      "source_current_sum_error_A": -2.420684352700533e-11,
+      "source_delivery_A": 11.093353626743264
+    },
+    {
+      "U5_electronics_path_A": 2.3250367871573294,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7769752939594916,
+          "derived_efficiency": 0.8500000000367167,
+          "input_A": 1.8411597078839528,
+          "input_V": 6.434260923646274,
+          "input_power_W": 11.846501962629706,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238942763093,
+          "output_V": 5.034161896058457,
+          "output_power_W": 10.069526668670214,
+          "power_balance_error_W": -4.3496406476606353e-10
+        },
+        {
+          "conversion_loss_W": 0.4609921783023254,
+          "derived_efficiency": 0.8500000000424085,
+          "input_A": 0.481352931876788,
+          "input_V": 6.3846732532995665,
+          "input_power_W": 3.073281189551057,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000003667,
+          "output_V": 3.1857183063994676,
+          "output_power_W": 2.6122890112487314,
+          "power_balance_error_W": -1.3033307766363578e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.318040200482805e-05,
+      "raw_servo_subtotal_A": 15.8,
+      "source_current_sum_error_A": -2.3941817244835153e-11,
+      "source_delivery_A": 18.125699967535393
+    },
+    {
+      "U5_electronics_path_A": 2.271594803281908,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.777001898958348,
+          "derived_efficiency": 0.8500000000308169,
+          "input_A": 1.7988997950480057,
+          "input_V": 6.585513746476745,
+          "input_power_W": 11.846679328822841,
+          "name": "U6_total_efficiency",
+          "output_A": 2.000238944810495,
+          "output_V": 5.034237262497909,
+          "output_power_W": 10.069677429864493,
+          "power_balance_error_W": -3.650786339903789e-10
+        },
+        {
+          "conversion_loss_W": 0.460998140556371,
+          "derived_efficiency": 0.850000000035616,
+          "input_A": 0.470133397831775,
+          "input_V": 6.537125317933511,
+          "input_power_W": 3.073320937772204,
+          "name": "U9_total_efficiency",
+          "output_A": 0.820000000000359,
+          "output_V": 3.1857595087984016,
+          "output_power_W": 2.612322797215833,
+          "power_balance_error_W": -1.0945955253305328e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 5.435029091413345e-05,
+      "raw_servo_subtotal_A": 15.9,
+      "source_current_sum_error_A": -2.3769513443562713e-11,
+      "source_delivery_A": 18.172259153549053
+    },
+    {
+      "U5_electronics_path_A": 2.660334437938931,
+      "U5_raw_input_IQ_A": 0.00061,
+      "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "converter_results": [
+        {
+          "conversion_loss_W": 1.7768368328138973,
+          "derived_efficiency": 0.8500000000364177,
+          "input_A": 2.106056075113022,
+          "input_V": 5.6245315726772445,
+          "input_power_W": 11.845578888301912,
+          "name": "U6_total_efficiency",
+          "output_A": 2.00023894175013,
+          "output_V": 5.033769638880375,
+          "output_power_W": 10.068742055488014,
+          "power_balance_error_W": -4.313900348051902e-10
+        },
+        {
+          "conversion_loss_W": 0.4609564218041098,
+          "derived_efficiency": 0.8500000000406247,
+          "input_A": 0.5519545441315561,
+          "input_V": 5.567565020584788,
+          "input_power_W": 3.0730428128596743,
+          "name": "U9_total_efficiency",
+          "output_A": 0.8200000000004073,
+          "output_V": 3.1854712086027646,
+          "output_power_W": 2.6120863910555645,
+          "power_balance_error_W": -1.248414704946299e-10
+        }
+      ],
+      "downstream_ABC_load_A": 2,
+      "downstream_CORE_aggregate_A": 0.82,
+      "grid_mm": 0.09,
+      "ideal_source_V": 7.4,
+      "raw_BEC_ADC_divider_A": 4.695273194225656e-05,
+      "raw_servo_subtotal_A": 15.9,
+      "source_current_sum_error_A": -2.1485741157967805e-11,
+      "source_delivery_A": 18.560991390649388
+    }
+  ],
+  "schema": "f722-native0-source-versus-load-current-accounting/v1",
+  "source_current_identity": "BEC source delivery = raw servo subtotal + U5 electronics path + U5 raw-side IQ + raw BEC ADC divider current",
+  "source_ledger_sha256": "7a7801ee14b33c5c32f2b028a543b6b681061c0cd4d6022ff8d445f54a67716e",
+  "why_load_currents_do_not_add": "ABC loads are at about5 V and CORE/DSM at about3.3 V, while source is7.4 V. U6 andU9 transform voltage/current with85% total efficiency. Adding amperes across these rails is not source current; their powers and modeled losses determine input current."
+}

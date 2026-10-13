@@ -1,0 +1,45 @@
+{
+  "actual_census": {
+    "NPTH": {
+      "matched_count": 2,
+      "unique_assignment": true
+    },
+    "PTH": {
+      "matched_count": 329,
+      "unique_assignment": true
+    }
+  },
+  "controls": {
+    "duplicate_same_census": {
+      "correctly_rejected": true,
+      "reason": "Duplicate actual feature assignment"
+    },
+    "five_actual_rounding_ties": "PASS",
+    "missing": {
+      "correctly_rejected": true,
+      "reason": "Census mismatch"
+    },
+    "overshift_0p000501mm": {
+      "correctly_rejected": true,
+      "reason": "Missing or ambiguous feature assignment"
+    },
+    "slot_endpoint_reversal": "PASS: same physical slot",
+    "wrong_slot_endpoint": {
+      "correctly_rejected": true,
+      "reason": "Missing or ambiguous feature assignment"
+    },
+    "wrong_tool_diameter": {
+      "correctly_rejected": true,
+      "reason": "Missing or ambiguous feature assignment"
+    }
+  },
+  "extra_arithmetic_tolerance_mm": "0",
+  "finalrelease": false,
+  "half_grid_mm": "0.0005",
+  "matcher_sha256": "2742c627d829237b6564c538e4141add7a9edf1cbad96be4c124a99ac9e4c015",
+  "original_exporter_failed_report_preserved": true,
+  "precision_mm": "0.001",
+  "schema": "f722-precision-drill-diagnostic-controls/v1",
+  "scope": "Read-only diagnostic validation; no modification of final exporter or source",
+  "source_diagnostic_sha256": "d5956b9e5a169dcd0098f7cc07a9fac5e0d18baffb31a062a98a3484ef4dd8b2"
+}

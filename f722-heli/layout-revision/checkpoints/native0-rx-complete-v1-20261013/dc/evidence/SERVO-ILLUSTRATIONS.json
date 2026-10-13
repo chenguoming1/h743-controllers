@@ -1,0 +1,4871 @@
+{
+  "all_required_cases_pass_both_grids": true,
+  "common_component_resistor_models": [
+    {
+      "condition": "1 ohm engineering acceptance screen, conditional on measured hot resistance <=1 ohm and branch current <=20mA; not a Murata guarantee or copper-temperature conversion.",
+      "n": "FB1.2",
+      "name": "FB1_conditional_hot_DCR",
+      "ohm": 1.0,
+      "p": "FB1.1"
+    },
+    {
+      "condition": "1 ohm engineering acceptance screen, conditional on measured hot resistance <=1 ohm and branch current <=20mA; not a Murata guarantee or copper-temperature conversion.",
+      "n": "FB2.2",
+      "name": "FB2_conditional_hot_DCR",
+      "ohm": 1.0,
+      "p": "FB2.1"
+    },
+    {
+      "condition": "150mOhm engineering screen; current limiter dynamics excluded",
+      "n": "U11.1",
+      "name": "U11_selected_path",
+      "ohm": 0.15,
+      "p": "U11.6",
+      "terminal_correction": "TPS2553 DRV IN=6; EN=4 is not a supply-current entry"
+    },
+    {
+      "condition": "45mOhm maximum row tested at3A; above3A is explicit extrapolation",
+      "n": "U5.6",
+      "name": "U5_efuse_path",
+      "ohm": 0.045,
+      "p": "U5.5"
+    },
+    {
+      "condition": "Native105k+20k; internal divider copper omitted",
+      "n": "R41.2",
+      "name": "BEC_ADC_divider_lumped",
+      "ohm": 125000,
+      "p": "R40.1"
+    },
+    {
+      "condition": "Native18k+10k;330k ST coupling must be bounded separately",
+      "n": "R61.2",
+      "name": "U8_priority_bias_lumped",
+      "ohm": 28000,
+      "p": "R60.1"
+    },
+    {
+      "condition": "Native68k+16k+16k; internal divider copper and ADC input currents omitted",
+      "n": "R44.2",
+      "name": "ABC_ADC_divider_lumped",
+      "ohm": 100000,
+      "p": "R42.1"
+    },
+    {
+      "condition": "TPS2117 33mOhm tested at200mA through105C;2A is explicit extrapolation",
+      "n": "DEV_U7_OUT",
+      "name": "U7_BEC_selected_path",
+      "ohm": 0.033,
+      "p": "U7.3"
+    },
+    {
+      "n": "DEV_U8_OUT",
+      "name": "U8_BEC_selected_path",
+      "ohm": 0.09,
+      "p": "U8.7"
+    },
+    {
+      "n": "R53.2",
+      "name": "R53_protected_bleeder",
+      "ohm": 4700,
+      "p": "R53.1"
+    },
+    {
+      "n": "R54.2",
+      "name": "R54_feedback_top",
+      "ohm": 53546.4,
+      "p": "R54.1"
+    },
+    {
+      "n": "R55.2",
+      "name": "R55_feedback_bottom",
+      "ohm": 10009.999999999998,
+      "p": "R55.1"
+    },
+    {
+      "n": "R58.2",
+      "name": "R58_ABC_bleeder",
+      "ohm": 47000,
+      "p": "R58.1"
+    }
+  ],
+  "common_verbatim_assumptions": [
+    "105C remains modeled copper temperature, not ambient, ferrite body temperature, or permitted X5R body temperature.",
+    "42-vertex load-polytope coverage does not by itself prove global voltage extrema for nonlinear constant-power converter equations.",
+    "All CORE-powered logic/bias/quiescent demand is included once in the aggregate electronics allowance.",
+    "At5V raw, U6 can operate in mild boost; the2A output row VOUT/VIN<=1 is not unconditionally applicable.",
+    "B=C=1 A is the selected representative peripheral loading; expand to A/B/C combinations if allocation or return rankings change.",
+    "Converter eta_total is an engineering assumption including converter operating loss; additive IQ=0 avoids double counting and does not mean zero physical IQ.",
+    "Corrected physical supply entries: TPS2553 pin6 is IN, pin4 is EN; DPS368 pin2 CSB and pin5 SDO are not power entry/return pins.",
+    "External ABC load is exactly1A on each of the two named ports;2A aggregate, never2A through one GH contact.",
+    "Feed/contact resistance values are illustrative sensitivity inputs, not measured factory bounds. No 50/50 positive or return sharing is imposed.",
+    "Filtered branches each have a conditional 20mA budget, with combined IMU VDD+VDDIO <=20mA. Their demand is included once within the electronics aggregate.",
+    "Finite native sheet/barrel paths and actual load returns are required; no nominal-width shortcut.",
+    "J8 auxiliary feed requires unused SBUS, an empty signal cavity and verified polarity/fit.",
+    "Mux selection is prescribed; no startup, hysteresis, switching or backfeed result is implied.",
+    "New adversarial electronics-current allocation, not a recovered historical load split.",
+    "No duration is assigned. The BEC 30 A peak number does not establish an allowable PCB, contact, harness or servo pulse envelope.",
+    "One 7.4 V external BEC drives the actual J6/J8 positive and return pads through four independent finite resistances when both feeds are present.",
+    "Servo currents are approximate plotted 7.4 V endpoints held constant for the DC comparison. Voltage dependence, startup, reversal and stall are unknown.",
+    "The 15.8/15.9 A servo-only endpoint examples already exceed 10 A continuous BEC capability. The 8.9 A cases need newly solved electronics demand before comparison.",
+    "The source voltage is an illustrative ideal external BEC terminal condition; actual regulation, source impedance and current limiting remain unbound.",
+    "Two declared spatial illustrations, not weakest-location selections. Actual servo return currents can change rankings; expand to other vertices when needed.",
+    "U10 IQ remains the inherited conditional140uA table screen at actual IN6/GND5. Auxiliary2mA sensitivity slices are disabled; any future legacy added_auxiliary_U10.4 label must still map its actual endpoint to IN6 and be renamed before publication.",
+    "U11 supply/enable consumption and CORE-powered bias are counted once in the aggregate electronics allowance; their individual injection/contact-current distribution is not separately resolved by this allocation model.",
+    "U8 RON row is specified at VINx>=5V, |IOUT|=200mA. Effective RON outside those tests is a sensitivity assumption.",
+    "U9 setpoint uses the conservative initial PFM low factor; line/load/ripple and input headroom remain separate guards."
+  ],
+  "floor_changes": false,
+  "interpretation": [
+    "Ten of eleven illustration cases pass their board-pad static voltage probes on both grids; the eleventh fails the four6 V servo minima. That raw overallfalse is preserved.",
+    "Passing board-pad voltage probes does not establish BEC continuous-current capability. Six cases exceed the preserved10 A continuous BEC reference after solving electronics demand, including all three8.9 A servo-subtotal cases.",
+    "Four lead/contact resistors are independent positive and return paths. Sharing is solved, not constrained50/50; crossed resistance can place most positive current through one header and most return current through the other.",
+    "Servo load points are approximate plotted7.4 V endpoints held constant as an engineering comparison; they are not manufacturer continuous servo-current ratings. Moderate1/1/1/0.5 A is an illustrative load assignment.",
+    "No duration is assigned. A30 A BEC peak figure cannot establish an allowed PCB/contact/harness/servo pulse envelope.",
+    "Raw VX servo power bypasses U5. The electronics branch eFuse does not impose a servo-bus current or overvoltage limit. Confirm exact installed servo voltage and feed/header ratings before any installed-system suitability claim."
+  ],
+  "overall_raw_conditional_static_screen_pass": false,
+  "provenance": {
+    "board_sha256": "84229c571433bd72d410fb18d02cffa3a380c00a87fbe1270e3a73b63f8dd6cd",
+    "current_native0_conditional_DC_applicability": true,
+    "current_native0_inputs": [
+      {
+        "path": "historical/by-sha256/7a7801ee14b33c5c32f2b028a543b6b681061c0cd4d6022ff8d445f54a67716e",
+        "sha256": "7a7801ee14b33c5c32f2b028a543b6b681061c0cd4d6022ff8d445f54a67716e"
+      },
+      {
+        "path": "evidence/reduced-result.json.gz",
+        "sha256": "56e934301fceb6d05add472aefa3beee5b30063c9ebe14b8fb9fc297fcfc5700"
+      },
+      {
+        "path": "evidence/RESULT-REVIEW.json",
+        "sha256": "9258091d161bda3fe7fe4b09d8e59164319f6936fa04e7bb9fee6e1bc32b6f1b"
+      }
+    ],
+    "extraction_script_sha256": "aa4d72d9a0c69e1aee95ce02e1c17f336671f52d08525ff3bfef0f32ee329bc6",
+    "fresh_solve": false,
+    "raw_result_logical_sha256": "ff4671a226068efdf29def43ad26a434f0d88a4dea7dbd3541689531da641eb3",
+    "raw_result_stored_sha256": "a56f50ed965b6aaec75a0d77f4be5af4a9d3fa3cf23bdb65ea1b8a4aaa9cb401"
+  },
+  "required_case_relabeling": false,
+  "row_count": 11,
+  "rows": [
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "c00e1eb1d55208961218d62c413092f506b265f0a4430c1e63651ed8758f84e3",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.849417568253189,
+              "loss_W": 0.15391554037935926,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770745566819333,
+              "input_A": 1.667272602335738,
+              "input_V": 7.105714864791779,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389563671694,
+              "output_V": 5.034443072583923,
+              "power_balance_error_W": -4.296367706047022e-10
+            },
+            {
+              "conversion_loss_W": 0.19110619032177967,
+              "input_A": 0.17945423777258115,
+              "input_V": 7.099532922369798,
+              "name": "U9_total_efficiency",
+              "output_A": 0.34000000000007274,
+              "output_V": 3.1851031729506065,
+              "power_balance_error_W": -4.70030681043454e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.649914213500487,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 2.7182953124618603,
+              "loss_W": 0.14778258811504244,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 2.6965754623756313,
+              "loss_W": 0.145430384485727,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 2.6317904740376985,
+              "loss_W": 0.1385264219847115,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 2.653510324124166,
+              "loss_W": 0.14082234080467074,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.2917025845032555,
+            "J8": 7.294293984036768
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.05393150924751263,
+            "J6.2": 7.3456340937507685,
+            "J8.1": 0.05307020648248332,
+            "J8.2": 7.347364190519252
+          },
+          "power_balance": {
+            "balance_error": -2.2660207044111758e-12,
+            "conversion_loss": 1.968180747003713,
+            "copper_loss": 0.3913536320480065,
+            "load_absorption": 36.35544565259956,
+            "resistor_loss": 0.8756547884474093,
+            "source_delivery": 39.590634820096426
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.284466095720042
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.285033274205185
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.2862057224899734
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.288114813876558
+            }
+          ],
+          "source_current_A_raw": -5.350085786499513,
+          "source_delivery_current_A": 5.350085786499513,
+          "source_terminal_voltage_V": 7.400000000000006,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.849499617348549,
+              "loss_W": 0.15392919755575932,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770813571755326,
+              "input_A": 1.6673474498369927,
+              "input_V": 7.105423078943248,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389541485273,
+              "output_V": 5.034462343925361,
+              "power_balance_error_W": -4.278088994169593e-10
+            },
+            {
+              "conversion_loss_W": 0.19110629173272997,
+              "input_A": 0.17946150251079238,
+              "input_V": 7.099249295106752,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000003354,
+              "output_V": 3.1851048631315972,
+              "power_balance_error_W": -4.7051251783614134e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.649832164683735,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 2.7183767208780907,
+              "loss_W": 0.14779143993223842,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 2.6966657237989877,
+              "loss_W": 0.14544012051824637,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 2.6317911144381423,
+              "loss_W": 0.1385264894007112,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 2.653502111542328,
+              "loss_W": 0.14082146911919186,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.29169915110646,
+            "J8": 7.294294135480393
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.05393331447597976,
+            "J6.2": 7.34563246558244,
+            "J8.1": 0.05307004223084656,
+            "J8.2": 7.347364177711239
+          },
+          "power_balance": {
+            "balance_error": -1.8428625292443712e-10,
+            "conversion_loss": 1.9681876489082626,
+            "copper_loss": 0.39236859811887037,
+            "load_absorption": 36.35500019635769,
+            "resistor_loss": 0.8756855381398345,
+            "source_delivery": 39.591241981340374
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.2844559570684995
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.285023822345172
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.286197449310226
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.288108624306738
+            }
+          ],
+          "source_current_A_raw": -5.350167835316265,
+          "source_delivery_current_A": 5.350167835316265,
+          "source_terminal_voltage_V": 7.400000000000002,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_moderate_equal20m_classic__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.02,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.34,
+        "DSM_A": 0.02,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "equal20m",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "classic",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "d1ae729263379f6e3141edbd2085f0dc97c73c1af1d18cca1ea8e56b67297469",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.08,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.08,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.8666695365555184,
+              "loss_W": 0.15680048214169773,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770691011588937,
+              "input_A": 1.6828606082384647,
+              "input_V": 7.039874417577568,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238957395212,
+              "output_V": 5.034427614709453,
+              "power_balance_error_W": -4.841549383627353e-10
+            },
+            {
+              "conversion_loss_W": 0.19110590534973682,
+              "input_A": 0.18113449636730705,
+              "input_V": 7.033665010831501,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000000735,
+              "output_V": 3.185098423539242,
+              "power_balance_error_W": -5.3260285071132785e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.632662758985957,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 4.297998630142574,
+              "loss_W": 0.3694558444941489,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 4.2902593366379165,
+              "loss_W": 0.3681265035121763,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 1.0693386108715064,
+              "loss_W": 0.09147880517604824,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 1.0770779043760361,
+              "loss_W": 0.09280774496760588,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.228234840664392,
+            "J8": 7.228286678780199
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.08580518673275833,
+            "J6.2": 7.314040027397151,
+            "J8.1": 0.08616623235008289,
+            "J8.2": 7.314452911130282
+          },
+          "power_balance": {
+            "balance_error": 3.3489877537817847e-13,
+            "conversion_loss": 1.9681750065086305,
+            "copper_loss": 0.3907569561880579,
+            "load_absorption": 36.13170082534218,
+            "resistor_loss": 1.2276627954647286,
+            "source_delivery": 39.71829558350393
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.220538075241345
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.221116184893572
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.222309034038721
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.224266461201024
+            }
+          ],
+          "source_current_A_raw": -5.367337241014043,
+          "source_delivery_current_A": 5.367337241014043,
+          "source_terminal_voltage_V": 7.400000000000002,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.8667538197438087,
+              "loss_W": 0.1568146420587645,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.77707588099066,
+              "input_A": 1.6829374836882303,
+              "input_V": 7.039579698001987,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238955178305,
+              "output_V": 5.03444682752411,
+              "power_balance_error_W": -4.860734037492875e-10
+            },
+            {
+              "conversion_loss_W": 0.1911060059091494,
+              "input_A": 0.18114196784743375,
+              "input_V": 7.033378597405235,
+              "name": "U9_total_efficiency",
+              "output_A": 0.34000000000033875,
+              "output_V": 3.1851000995287633,
+              "power_balance_error_W": -5.33517674483619e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.632578476079303,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 4.298071846352558,
+              "loss_W": 0.36946843192816975,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 4.290327071411529,
+              "loss_W": 0.3681381275937325,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 1.0693496775680988,
+              "loss_W": 0.09148069863319976,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 1.077094452533822,
+              "loss_W": 0.09281059677433069,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.228232021644711,
+            "J8": 7.22828446959184
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.08580654142823058,
+            "J6.2": 7.314038563072942,
+            "J8.1": 0.08616755620270576,
+            "J8.2": 7.314452025794545
+          },
+          "power_balance": {
+            "balance_error": -1.8078877284111172e-10,
+            "conversion_loss": 1.9681818868998093,
+            "copper_loss": 0.391775687700696,
+            "load_absorption": 36.13125647270709,
+            "resistor_loss": 1.2277052298863114,
+            "source_delivery": 39.71891927701312
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.220528217193179
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.221107036347318
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.222301084587078
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.224260637840839
+            }
+          ],
+          "source_current_A_raw": -5.367421523920697,
+          "source_delivery_current_A": 5.367421523920697,
+          "source_terminal_voltage_V": 7.399999999999993,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_moderate_paired_J8_weak_classic__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.02,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.34,
+        "DSM_A": 0.02,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "paired_J8_weak",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "classic",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "cf2e74e793a1de0d242f0c1ceff3ca2848a9094747af2a493c14523ffaa729c6",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.08,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.08,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.8668962788255548,
+              "loss_W": 0.15683857721517164,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.777065162426453,
+              "input_A": 1.6830646457171863,
+              "input_V": 7.039005374053493,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389557936726,
+              "output_V": 5.03441646033765,
+              "power_balance_error_W": -4.859543878410477e-10
+            },
+            {
+              "conversion_loss_W": 0.19110580222622886,
+              "input_A": 0.1811574325295626,
+              "input_V": 7.032770690520443,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000000736,
+              "output_V": 3.1850967048158214,
+              "power_balance_error_W": -5.334754860086832e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.632436023296033,
+          "equation_residual_max": 7.275957614183426e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 4.298180161531517,
+              "loss_W": 0.36948705401966203,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 1.0945820614172372,
+              "loss_W": 0.09584879113411268,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 1.0693838151724422,
+              "loss_W": 0.09148653953222144,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 4.272981915286635,
+              "loss_W": 0.36516748896733275,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.226469831855997,
+            "J8": 7.228989656480478
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.08756656491337898,
+            "J6.2": 7.314036396769376,
+            "J8.1": 0.0854596383057327,
+            "J8.2": 7.314449294786211
+          },
+          "power_balance": {
+            "balance_error": 3.883005028626485e-13,
+            "conversion_loss": 1.968170964652682,
+            "copper_loss": 0.39638332869796683,
+            "load_absorption": 36.12759989828845,
+            "resistor_loss": 1.2278192359699005,
+            "source_delivery": 39.71997342760939
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.2194115795709255
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.219969766830245
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.221127679372528
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.223015907071614
+            }
+          ],
+          "source_current_A_raw": -5.367563976703967,
+          "source_delivery_current_A": 5.367563976703967,
+          "source_terminal_voltage_V": 7.400000000000007,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.8669811447447455,
+              "loss_W": 0.156852836767458,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.777071942364806,
+              "input_A": 1.6831420465985771,
+              "input_V": 7.038708533022075,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389535742107,
+              "output_V": 5.0344356734592655,
+              "power_balance_error_W": -4.874411985156257e-10
+            },
+            {
+              "conversion_loss_W": 0.19110590246480585,
+              "input_A": 0.1811649618720494,
+              "input_V": 7.032482092323037,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000003388,
+              "output_V": 3.1850983754579065,
+              "power_balance_error_W": -5.3430149193900434e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.632351157674164,
+          "equation_residual_max": 3.751665644813329e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 4.298253844493516,
+              "loss_W": 0.3694997222340658,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 1.0946389777044931,
+              "loss_W": 0.09585875932079502,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 1.0693949978323514,
+              "loss_W": 0.09148845291110838,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 4.273009864646031,
+              "loss_W": 0.3651722660672459,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.2264638048937675,
+            "J8": 7.228988202880489
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.08757111821635945,
+            "J6.2": 7.314034923110127,
+            "J8.1": 0.08546019729292063,
+            "J8.2": 7.31444840017341
+          },
+          "power_balance": {
+            "balance_error": -1.8106338650625275e-10,
+            "conversion_loss": 1.9681778448296119,
+            "copper_loss": 0.3974151946270297,
+            "load_absorption": 36.127146259972506,
+            "resistor_loss": 1.2278621339630813,
+            "source_delivery": 39.720601433211165
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.219399126253095
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.219957979787703
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.221117050760083
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.22300732133813
+            }
+          ],
+          "source_current_A_raw": -5.367648842325836,
+          "source_delivery_current_A": 5.367648842325836,
+          "source_terminal_voltage_V": 7.399999999999998,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_moderate_crossed_J6_positive_strong_classic__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.02,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.34,
+        "DSM_A": 0.02,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "crossed_J6_positive_strong",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "classic",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "0489936a293aa97d2573eda26a4d0acfee5b9ff48dafe2ada3d686f7e4f89597",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.9428747067454566,
+              "loss_W": 0.16986429567500597,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770313843098329,
+              "input_A": 1.7517088072965534,
+              "input_V": 6.763039524064,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238956247116,
+              "output_V": 5.034320765845392,
+              "power_balance_error_W": -4.49807302516092e-10
+            },
+            {
+              "conversion_loss_W": 0.1911042964599301,
+              "input_A": 0.18856003077929223,
+              "input_V": 6.756620892184764,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000000765,
+              "output_V": 3.1850716086299835,
+              "power_balance_error_W": -4.922506846583019e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.556459745568621,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 5.443540254431389,
+              "loss_W": 1.1852852200645982,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 5.443540254433198,
+              "loss_W": 1.1852852200653856,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.957440214424196,
+            "J8": 6.964516779645419
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.2207307083124969,
+            "J6.2": 7.178170922736693,
+            "J8.1": 0.2177416101773279,
+            "J8.2": 7.182258389822747
+          },
+          "power_balance": {
+            "balance_error": -1.3178957924964152e-11,
+            "conversion_loss": 1.968135680769763,
+            "copper_loss": 0.43787180436976464,
+            "load_absorption": 35.187495008215755,
+            "resistor_loss": 2.688695389450107,
+            "source_delivery": 40.28219788279221
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.950934239773086
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.9514877583396775
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.952632825168227
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.954468849658827
+            }
+          ],
+          "source_current_A_raw": -5.443540254431379,
+          "source_delivery_current_A": 5.443540254431379,
+          "source_terminal_voltage_V": 7.400000000000002,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.9429729813904315,
+              "loss_W": 0.16988148028859498,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770380733572964,
+              "input_A": 1.7517983619998576,
+              "input_V": 6.762719242715993,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389540288137,
+              "output_V": 5.034339721469318,
+              "power_balance_error_W": -4.509228546112354e-10
+            },
+            {
+              "conversion_loss_W": 0.19110439212730124,
+              "input_A": 0.1885688203591142,
+              "input_V": 6.756309334444005,
+              "name": "U9_total_efficiency",
+              "output_A": 0.34000000000035274,
+              "output_V": 3.1850732030851567,
+              "power_balance_error_W": -4.930544861281305e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.556361471308586,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 5.443638528691408,
+              "loss_W": 1.1853280172421423,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 5.443638528714801,
+              "loss_W": 1.1853280172523297,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.957423315433051,
+            "J8": 6.964508917703756
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.22074010484185994,
+            "J6.2": 7.1781634202749105,
+            "J8.1": 0.21774554114859204,
+            "J8.2": 7.1822544588523485
+          },
+          "power_balance": {
+            "balance_error": -1.6787515821903298e-10,
+            "conversion_loss": 1.9681424654845976,
+            "copper_loss": 0.4389808423830034,
+            "load_absorption": 35.18700430992514,
+            "resistor_loss": 2.6887974946916144,
+            "source_delivery": 40.282925112316484
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.950911185690893
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.951465364018823
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.952611586198782
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.954449638387133
+            }
+          ],
+          "source_current_A_raw": -5.443638528691414,
+          "source_delivery_current_A": 5.443638528691414,
+          "source_terminal_voltage_V": 7.400000000000005,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_moderate_J6_feed_lost_classic__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.02,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.34,
+        "DSM_A": 0.02,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "J6_feed_lost",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "classic",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "8df4533226eb330b0bfe24c43e78f09cd7a399948e019238481396ecf599c247",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J6.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.9413881379810545,
+              "loss_W": 0.16960445560320955,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.777038561838495,
+              "input_A": 1.7503673009060916,
+              "input_V": 6.7682501509349065,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238958959931,
+              "output_V": 5.034341092899593,
+              "power_balance_error_W": -4.438813760998528e-10
+            },
+            {
+              "conversion_loss_W": 0.1911044934160291,
+              "input_A": 0.18841365094706974,
+              "input_V": 6.761877125289886,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000000765,
+              "output_V": 3.185074891220798,
+              "power_balance_error_W": -4.867262148877671e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.557946274142493,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 5.44205372585751,
+              "loss_W": 1.1846379502047841,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 5.442053725859204,
+              "loss_W": 1.184637950205522,
+              "name": "J6_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.964635701931332,
+            "J8": 6.962926241823032
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.2176821490343682,
+            "J6.2": 7.1823178509657,
+            "J8.1": 0.21889639914104456,
+            "J8.2": 7.181822640964077
+          },
+          "power_balance": {
+            "balance_error": -1.2714440611460986e-11,
+            "conversion_loss": 1.968143055254524,
+            "copper_loss": 0.40833769919673796,
+            "load_absorption": 35.207562304037346,
+            "resistor_loss": 2.6871545128696597,
+            "source_delivery": 40.27119757134555
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.95657961100959
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.957168080426816
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.958379327995639
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.96037631562935
+            }
+          ],
+          "source_current_A_raw": -5.442053725857507,
+          "source_delivery_current_A": 5.442053725857507,
+          "source_terminal_voltage_V": 7.4,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 1.9414841405917946,
+              "loss_W": 0.16962123006762567,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770452526038838,
+              "input_A": 1.750454804434836,
+              "input_V": 6.767937294721851,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389567459735,
+              "output_V": 5.034360053379636,
+              "power_balance_error_W": -4.4505199525701755e-10
+            },
+            {
+              "conversion_loss_W": 0.19110458971808275,
+              "input_A": 0.18842221777159854,
+              "input_V": 6.761573096384997,
+              "name": "U9_total_efficiency",
+              "output_A": 0.3400000000003526,
+              "output_V": 3.1850764962542057,
+              "power_balance_error_W": -4.876254955377135e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": -4.557850271862681,
+          "equation_residual_max": 3.694822225952521e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": false,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 5.442149728137324,
+              "loss_W": 1.184679746538606,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 5.442149728160799,
+              "loss_W": 1.1846797465488261,
+              "name": "J6_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.964628021748073,
+            "J8": 6.962917066889848
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.21768598912643194,
+            "J6.2": 7.182314010874505,
+            "J8.1": 0.21890158482736663,
+            "J8.2": 7.181818651717215
+          },
+          "power_balance": {
+            "balance_error": -1.6832585325587957e-10,
+            "conversion_loss": 1.9681498423219665,
+            "copper_loss": 0.4094037757591465,
+            "load_absorption": 35.20710014602099,
+            "resistor_loss": 2.687254224282371,
+            "source_delivery": 40.27190798821615
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.9565646142347495
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.957153816044331
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.958366284425414
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.960365439927457
+            }
+          ],
+          "source_current_A_raw": -5.442149728137319,
+          "source_delivery_current_A": 5.442149728137319,
+          "source_terminal_voltage_V": 7.399999999999998,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_moderate_J8_feed_lost_classic__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.02,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.34,
+        "DSM_A": 0.02,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "J8_feed_lost",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "moderate",
+        "servo_subtotal_A": 3.5,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "classic",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "407db3cd8623780b8054beea902655731e50e9f294c0e0383e73fc85da80220a",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.2228738573543203,
+              "loss_W": 0.22235256835691736,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770272854413882,
+              "input_A": 1.760368618344328,
+              "input_V": 6.729754466563303,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238952976986,
+              "output_V": 5.034309161748977,
+              "power_balance_error_W": -3.737046228025065e-10
+            },
+            {
+              "conversion_loss_W": 0.46100357973413253,
+              "input_A": 0.45990786380019244,
+              "input_V": 6.682549790676576,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000000764,
+              "output_V": 3.1857970966269646,
+              "power_balance_error_W": -1.1114043019233577e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 1.1235393220906928,
+          "equation_residual_max": 3.694822225952521e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 5.607733818003657,
+              "loss_W": 1.257867142943275,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 5.586230455994287,
+              "loss_W": 1.2482388282991257,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 5.515805504087035,
+              "loss_W": 1.2169644143566731,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 5.537308866098346,
+              "loss_W": 1.2264715791428542,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.95224142904008,
+            "J8": 6.957875425192582
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.22344921823977149,
+            "J6.2": 7.175690647279851,
+            "J8.1": 0.22149235464393385,
+            "J8.2": 7.179367779836516
+          },
+          "power_balance": {
+            "balance_error": -1.3997247805264124e-11,
+            "conversion_loss": 2.2380308651755207,
+            "copper_loss": 0.637989557809505,
+            "load_absorption": 74.06485508407884,
+            "resistor_loss": 5.373315476421236,
+            "source_delivery": 82.31419098347111
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.934193580725803
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.93740749692149
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.940470073269899
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.943866482905222
+            }
+          ],
+          "source_current_A_raw": -11.123539322090693,
+          "source_delivery_current_A": 11.123539322090693,
+          "source_terminal_voltage_V": 7.399999999999998,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.223000405068238,
+              "loss_W": 0.22237788604200975,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.777033968268368,
+              "input_A": 1.760467729334651,
+              "input_V": 6.729400901189344,
+              "name": "U6_total_efficiency",
+              "output_A": 2.00023895075473,
+              "output_V": 5.034328099765996,
+              "power_balance_error_W": -3.765361356045105e-10
+            },
+            {
+              "conversion_loss_W": 0.4610041006491512,
+              "input_A": 0.459935378874611,
+              "input_V": 6.682157565823659,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000003517,
+              "output_V": 3.185800696447173,
+              "power_balance_error_W": -1.113917846851109e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 1.1236658694349355,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 5.6078401198655925,
+              "loss_W": 1.2579148323989657,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 5.58634896281267,
+              "loss_W": 1.2482917893727277,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 5.5158257495693475,
+              "loss_W": 1.2169733479844902,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 5.537316906646932,
+              "loss_W": 1.2264751409855181,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.9522324366928645,
+            "J8": 6.957874293751344
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.2234539585125068,
+            "J6.2": 7.175686395205371,
+            "J8.1": 0.2214926762658773,
+            "J8.2": 7.179366970017221
+          },
+          "power_balance": {
+            "balance_error": -1.7653833950248554e-10,
+            "conversion_loss": 2.238038068917519,
+            "copper_loss": 0.6394694014271809,
+            "load_absorption": 74.06416483041203,
+            "resistor_loss": 5.373455133238274,
+            "source_delivery": 82.31512743381846
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.934167845615122
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.937384823301048
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.940450388010831
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.943850616974251
+            }
+          ],
+          "source_current_A_raw": -11.123665869434936,
+          "source_delivery_current_A": 11.123665869434936,
+          "source_terminal_voltage_V": 7.399999999999995,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_heavy_S1_905X_equal40m_capacity__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.82,
+        "DSM_A": 0.5,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "equal40m",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "heavy_S1_905X",
+        "servo_subtotal_A": 8.9,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "capacity",
+      "servo_loads": [
+        {
+          "current_A": 4.5,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 2.4,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "29fe802ae4bc4370a761e247692cf353024ca0b6bcc588215ed8b6d005933399",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.08,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.08,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.192024157529144,
+              "loss_W": 0.2162236458236109,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770449413594207,
+              "input_A": 1.7359639941623053,
+              "input_V": 6.824430873996361,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238955316553,
+              "output_V": 5.034359174828795,
+              "power_balance_error_W": -3.2667024640886666e-10
+            },
+            {
+              "conversion_loss_W": 0.46100716295508803,
+              "input_A": 0.45343932016802,
+              "input_V": 6.777932460461876,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000000753,
+              "output_V": 3.185821858611293,
+              "power_balance_error_W": -9.740031003957483e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 1.092690356414689,
+          "equation_residual_max": 1.8189894035458565e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 8.88312806774958,
+              "loss_W": 1.5781992853608076,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 8.868442315987824,
+              "loss_W": 1.5729853822400697,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 2.2095622886651456,
+              "loss_W": 0.3905732405992925,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 2.2242480404268075,
+              "loss_W": 0.39578234762739944,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.044968592325249,
+            "J8": 7.045295173672641
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.1773688463197565,
+            "J6.2": 7.222337438645006,
+            "J8.1": 0.1779398432341446,
+            "J8.2": 7.223235016906786
+          },
+          "power_balance": {
+            "balance_error": 4.028999356364693e-13,
+            "conversion_loss": 2.2380521043145087,
+            "copper_loss": 0.60019265074123,
+            "load_absorption": 74.8926814297813,
+            "resistor_loss": 4.35498245263123,
+            "source_delivery": 82.08590863746868
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028674361987489
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028450943742187
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.0322093660179466
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.03578874332855
+            }
+          ],
+          "source_current_A_raw": -11.092690356414689,
+          "source_delivery_current_A": 11.092690356414689,
+          "source_terminal_voltage_V": 7.399999999999998,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.1921443442251567,
+              "loss_W": 0.2162473571663254,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770516565711194,
+              "input_A": 1.7360581591016826,
+              "input_V": 6.824086499571165,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389530979596,
+              "output_V": 5.034378204578379,
+              "power_balance_error_W": -3.283044947011149e-10
+            },
+            {
+              "conversion_loss_W": 0.46100769483272375,
+              "input_A": 0.4534654181029405,
+              "input_V": 6.77755019495494,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000003468,
+              "output_V": 3.185825534189121,
+              "power_balance_error_W": -9.761258468188316e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 1.0928105427726553,
+          "equation_residual_max": 3.751665644813329e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 8.88323648112821,
+              "loss_W": 1.5782378075929417,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 8.868542350239302,
+              "loss_W": 1.5730208683597608,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 2.209574061644448,
+              "loss_W": 0.3905774027113555,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 2.2242681925577314,
+              "loss_W": 0.395789519393923,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.044964423372647,
+            "J8": 7.045292619663823
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.17737084700478603,
+            "J6.2": 7.2223352703774335,
+            "J8.1": 0.1779414554046185,
+            "J8.2": 7.223234075068442
+          },
+          "power_balance": {
+            "balance_error": -1.7599710577798078e-10,
+            "conversion_loss": 2.238059351403843,
+            "copper_loss": 0.6016067926409808,
+            "load_absorption": 74.89203930563949,
+            "resistor_loss": 4.355092567009307,
+            "source_delivery": 82.08679801651762
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.0286551880403305
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028431992313812
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.032193826002017
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.035777155681019
+            }
+          ],
+          "source_current_A_raw": -11.092810542772655,
+          "source_delivery_current_A": 11.092810542772655,
+          "source_terminal_voltage_V": 7.399999999999998,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_heavy_S2_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.82,
+        "DSM_A": 0.5,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "paired_J8_weak",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "heavy_S2_905X",
+        "servo_subtotal_A": 8.9,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "capacity",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 2.4,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "c36e3078a4634b24c7e8c909db1640986ec0083a317e6c9bf006a0e1c0f433e0",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.08,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.08,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.1925658166092417,
+              "loss_W": 0.21633051870735076,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.777039534830525,
+              "input_A": 1.7363900521155493,
+              "input_V": 6.822735605947645,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389533634783,
+              "output_V": 5.034343863076265,
+              "power_balance_error_W": -3.267821568897489e-10
+            },
+            {
+              "conversion_loss_W": 0.4610067970761387,
+              "input_A": 0.45355536031773425,
+              "input_V": 6.776192978232635,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000000753,
+              "output_V": 3.185819330181006,
+              "power_balance_error_W": -9.758194252640351e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 1.0932320025981586,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 8.883604774703446,
+              "loss_W": 1.5783686758626774,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 2.2643221753294447,
+              "loss_W": 0.4101723930950935,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 2.2096272278947615,
+              "loss_W": 0.39059619890031105,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 8.828909827268658,
+              "loss_W": 1.5589929747608218,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.041182130479577,
+            "J8": 7.046651625223048
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.1811457740263556,
+            "J6.2": 7.222327904505933,
+            "J8.1": 0.17657819654537316,
+            "J8.2": 7.223229821768421
+          },
+          "power_balance": {
+            "balance_error": 4.3354209111612363e-13,
+            "conversion_loss": 2.2380463319066637,
+            "copper_loss": 0.6125665564369828,
+            "load_absorption": 74.8836213563741,
+            "resistor_loss": 4.355682574508216,
+            "source_delivery": 82.0899168192264
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028173736603858
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028566865306569
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028852592337628
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.032959859650679
+            }
+          ],
+          "source_current_A_raw": -11.093232002598159,
+          "source_delivery_current_A": 11.093232002598159,
+          "source_terminal_voltage_V": 7.400000000000002,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.192687441124027,
+              "loss_W": 0.21635451965083646,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7770462487367737,
+              "input_A": 1.7364853486991003,
+              "input_V": 6.822386956874066,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238951141072,
+              "output_V": 5.034362889136976,
+              "power_balance_error_W": -3.283755489746909e-10
+            },
+            {
+              "conversion_loss_W": 0.4610073275597566,
+              "input_A": 0.4535817655406449,
+              "input_V": 6.775806299709654,
+              "name": "U9_total_efficiency",
+              "output_A": 0.820000000000347,
+              "output_V": 3.1858229961254474,
+              "power_balance_error_W": -9.780265486369899e-11
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 1.093353626743264,
+          "equation_residual_max": 7.275957614183426e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 8.883714310236623,
+              "loss_W": 1.5784075989180593,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 2.2644324876680346,
+              "loss_W": 0.4102123592965155,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 2.209639316506651,
+              "loss_W": 0.3906004727241583,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 8.828921139099647,
+              "loss_W": 1.558996969608812,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 7.0411711147818234,
+            "J8": 7.046650431897474
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.18115459901344277,
+            "J6.2": 7.222325713795266,
+            "J8.1": 0.17657842278199293,
+            "J8.2": 7.2232288546794665
+          },
+          "power_balance": {
+            "balance_error": -1.76319292499727e-10,
+            "conversion_loss": 2.2380535762965303,
+            "copper_loss": 0.6140266868695122,
+            "load_absorption": 74.88294177054041,
+            "resistor_loss": 4.355794804369999,
+            "source_delivery": 82.09081683790014
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028150806825174
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.028544456552016
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.02883078822981
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 7.03294231890415
+            }
+          ],
+          "source_current_A_raw": -11.093353626743264,
+          "source_delivery_current_A": 11.093353626743264,
+          "source_terminal_voltage_V": 7.399999999999999,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_heavy_S3_905X_crossed_J6_positive_strong_capacity__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.82,
+        "DSM_A": 0.5,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "crossed_J6_positive_strong",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "heavy_S3_905X",
+        "servo_subtotal_A": 8.9,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "capacity",
+      "servo_loads": [
+        {
+          "current_A": 1.0,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 1.0,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 2.4,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "0097e7e4945fb53ccbee70ca1ecad80272b3597c90c1a47216b5a4ea074cfcfb",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.324890606102316,
+              "loss_W": 0.2432302348654257,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7769687059982147,
+              "input_A": 1.8410453738576626,
+              "input_V": 6.434636653225747,
+              "name": "U6_total_efficiency",
+              "output_A": 2.00023894499242,
+              "output_V": 5.034143226781418,
+              "power_balance_error_W": -4.332179059929331e-10
+            },
+            {
+              "conversion_loss_W": 0.460991692780619,
+              "input_A": 0.48132100140511025,
+              "input_V": 6.385090082846845,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000000797,
+              "output_V": 3.18571495116684,
+              "power_balance_error_W": -1.3003331744698698e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 8.125553786894162,
+          "equation_residual_max": 7.275957614183426e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 9.137862379835337,
+              "loss_W": 3.3400211549123973,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 9.104243989581365,
+              "loss_W": 3.3154903448731363,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 8.98769140705884,
+              "loss_W": 3.2311438731407724,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 9.021309797314741,
+              "loss_W": 3.2553612183650773,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.670315745223331,
+            "J8": 6.679639951825055
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.3641697595832546,
+            "J6.2": 7.034485504806585,
+            "J8.1": 0.36085239189258966,
+            "J8.2": 7.040492343717645
+          },
+          "power_balance": {
+            "balance_error": -1.3244516594568267e-11,
+            "conversion_loss": 2.2379603987788337,
+            "copper_loss": 0.9778812217589756,
+            "load_absorption": 117.32577180665301,
+            "resistor_loss": 13.587484595839207,
+            "source_delivery": 134.12909802301678
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.641173958159912
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.643464774890503
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.64834285377281
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.656378670069301
+            }
+          ],
+          "source_current_A_raw": -18.125553786894162,
+          "source_delivery_current_A": 18.125553786894162,
+          "source_terminal_voltage_V": 7.399999999999999,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.3250367871573294,
+              "loss_W": 0.24326082277356947,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7769752939594916,
+              "input_A": 1.8411597078839528,
+              "input_V": 6.434260923646274,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238942763093,
+              "output_V": 5.034161896058457,
+              "power_balance_error_W": -4.3496406476606353e-10
+            },
+            {
+              "conversion_loss_W": 0.4609921783023254,
+              "input_A": 0.481352931876788,
+              "input_V": 6.3846732532995665,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000003667,
+              "output_V": 3.1857183063994676,
+              "power_balance_error_W": -1.3033307766363578e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 8.125699967535393,
+          "equation_residual_max": 4.3653969328261155e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 9.138005678765548,
+              "loss_W": 3.3401259114060564,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 9.104410582028656,
+              "loss_W": 3.3156116818462147,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 8.98769428876982,
+              "loss_W": 3.231145945135426,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 9.021289385530997,
+              "loss_W": 3.2553464870997697,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.6703033495682265,
+            "J8": 6.679640653027962
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.36417642328114624,
+            "J6.2": 7.034479772849373,
+            "J8.1": 0.3608515754212399,
+            "J8.2": 7.040492228449202
+          },
+          "power_balance": {
+            "balance_error": -1.6923795698176036e-10,
+            "conversion_loss": 2.237967472261817,
+            "copper_loss": 0.9797525975040591,
+            "load_absorption": 117.32472941055492,
+            "resistor_loss": 13.58773027961027,
+            "source_delivery": 134.13017975976183
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.641134199149063
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.643427484986923
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.648310239177162
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.656354427405199
+            }
+          ],
+          "source_current_A_raw": -18.125699967535393,
+          "source_delivery_current_A": 18.125699967535393,
+          "source_terminal_voltage_V": 7.399999999999995,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_all_cyclic_805X_equal40m_capacity__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.82,
+        "DSM_A": 0.5,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "equal40m",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "all_cyclic_805X",
+        "servo_subtotal_A": 15.8,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "capacity",
+      "servo_loads": [
+        {
+          "current_A": 4.5,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 2.3,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "2331f871cc54e6b1ef5b5107481dfa4ff9e792de6c039d31df44a2a25b2355d5",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J6.2",
+          "name": "J6_positive_lead_contact",
+          "ohm": 0.02,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J6_return_lead_contact",
+          "ohm": 0.02,
+          "p": "J6.1"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.08,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.08,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.2714601785894772,
+              "loss_W": 0.23217891043129826,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7769952550584556,
+              "input_A": 1.7987944356958336,
+              "input_V": 6.585874850991367,
+              "name": "U6_total_efficiency",
+              "output_A": 2.0002389470368755,
+              "output_V": 5.034218434757986,
+              "power_balance_error_W": -3.644036183914068e-10
+            },
+            {
+              "conversion_loss_W": 0.46099763671553884,
+              "input_A": 0.47010405244218706,
+              "input_V": 6.537526240980075,
+              "name": "U9_total_efficiency",
+              "output_A": 0.820000000000078,
+              "output_V": 3.185756026970834,
+              "power_balance_error_W": -1.0924194882022675e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 8.172124529224494,
+          "equation_residual_max": 1.8189894035458565e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 14.552554898219805,
+              "loss_W": 4.235537081314025,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 14.529329493034764,
+              "loss_W": 4.222028310343397,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 3.6195696310047376,
+              "loss_W": 1.0481027450953417,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 3.642795036189709,
+              "loss_W": 1.0615964540550706,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.818362312174906,
+            "J8": 6.819010826624442
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.2905865898606953,
+            "J6.2": 7.108948902035602,
+            "J8.1": 0.2914236028951767,
+            "J8.2": 7.110434429519619
+          },
+          "power_balance": {
+            "balance_error": 5.152545057285352e-13,
+            "conversion_loss": 2.2379928917739944,
+            "copper_loss": 0.9131419600892626,
+            "load_absorption": 120.32136079812169,
+            "resistor_loss": 11.001225866275746,
+            "source_delivery": 134.4737215162612
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.78763724473244
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.78995914767867
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.794895874993335
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.803064893295433
+            }
+          ],
+          "source_current_A_raw": -18.172124529224494,
+          "source_delivery_current_A": 18.172124529224494,
+          "source_terminal_voltage_V": 7.399999999999998,
+          "spacing_mm": 0.12,
+          "static_probe_pass": true
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.271594803281908,
+              "loss_W": 0.23220643276338165,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.777001898958348,
+              "input_A": 1.7988997950480057,
+              "input_V": 6.585513746476745,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238944810495,
+              "output_V": 5.034237262497909,
+              "power_balance_error_W": -3.650786339903789e-10
+            },
+            {
+              "conversion_loss_W": 0.460998140556371,
+              "input_A": 0.470133397831775,
+              "input_V": 6.537125317933511,
+              "name": "U9_total_efficiency",
+              "output_A": 0.820000000000359,
+              "output_V": 3.1857595087984016,
+              "power_balance_error_W": -1.0945955253305328e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 8.172259153549053,
+          "equation_residual_max": 3.808509063674137e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 14.552682932079275,
+              "loss_W": 4.2356116104326285,
+              "name": "J6_positive_lead_contact"
+            },
+            {
+              "current_A": 14.529445823764473,
+              "loss_W": 4.222095918914137,
+              "name": "J6_return_lead_contact"
+            },
+            {
+              "current_A": 3.6195762214698224,
+              "loss_W": 1.0481065618423806,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 3.642813329808619,
+              "loss_W": 1.0616071164665086,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 6.818357424883122,
+            "J8": 6.819008835897722
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.29058891647528945,
+            "J6.2": 7.108946341358411,
+            "J8.1": 0.2914250663846895,
+            "J8.2": 7.110433902282411
+          },
+          "power_balance": {
+            "balance_error": -1.7014234465762001e-10,
+            "conversion_loss": 2.238000039514719,
+            "copper_loss": 0.9148883006645481,
+            "load_absorption": 120.32041799211683,
+            "resistor_loss": 11.001411404136975,
+            "source_delivery": 134.47471773626293
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.787603838735207
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.789928274800782
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.794869733650352
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": true,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 6.803047235781159
+            }
+          ],
+          "source_current_A_raw": -18.172259153549053,
+          "source_delivery_current_A": 18.172259153549053,
+          "source_terminal_voltage_V": 7.399999999999997,
+          "spacing_mm": 0.09,
+          "static_probe_pass": true
+        }
+      ],
+      "name": "same_BEC_all_cyclic_905X_paired_J8_weak_capacity__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.82,
+        "DSM_A": 0.5,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "paired_J8_weak",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "all_cyclic_905X",
+        "servo_subtotal_A": 15.9,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "capacity",
+      "servo_loads": [
+        {
+          "current_A": 4.5,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 2.4,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    },
+    {
+      "allocation_basis": "fixed declared illustration; not selected from a numerical ranking",
+      "case_definition_sha256": "4f6434bb9aeec6ed7b826de93784a95494067bda30f1270a73e9a599a2b991f2",
+      "feed_contact_resistors": [
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "J8.2",
+          "name": "J8_positive_lead_contact",
+          "ohm": 0.04,
+          "p": "BEC_POS"
+        },
+        {
+          "classification": "Illustrative, unmeasured",
+          "n": "SOURCE_GND",
+          "name": "J8_return_lead_contact",
+          "ohm": 0.04,
+          "p": "J8.1"
+        }
+      ],
+      "grids": [
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.660099416050442,
+              "loss_W": 0.3184258006472356,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.776830606266893,
+              "input_A": 2.105872827799918,
+              "input_V": 5.625001292350586,
+              "name": "U6_total_efficiency",
+              "output_A": 2.000238943978616,
+              "output_V": 5.033751993452473,
+              "power_balance_error_W": -4.1818459806108876e-10
+            },
+            {
+              "conversion_loss_W": 0.46095604809367474,
+              "input_A": 0.5519026645969496,
+              "input_V": 5.568083864384225,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000000888,
+              "output_V": 3.1854686260475322,
+              "power_balance_error_W": -1.2426548678945437e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 8.560756369485997,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.863794601303457
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.866038559771444
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.870821367782614
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.878589192922174
+            }
+          ],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 18.560756369485976,
+              "loss_W": 13.780067080296568,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 18.560756369487873,
+              "loss_W": 13.780067080299387,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 5.890543701503831,
+            "J8": 5.9151394904410495
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.7530025083738502,
+            "J6.2": 6.643546209877681,
+            "J8.1": 0.742430254779515,
+            "J8.2": 6.657569745220564
+          },
+          "power_balance": {
+            "balance_error": -1.0744294343112415e-11,
+            "conversion_loss": 2.237786654360568,
+            "copper_loss": 1.3985001130376604,
+            "load_absorption": 105.62845215476271,
+            "resistor_loss": 28.084858212046246,
+            "source_delivery": 137.34959713419644
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.863794601303457
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.866038559771444
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.870821367782614
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.878589192922174
+            }
+          ],
+          "source_current_A_raw": -18.560756369485997,
+          "source_delivery_current_A": 18.560756369485997,
+          "source_terminal_voltage_V": 7.400000000000003,
+          "spacing_mm": 0.12,
+          "static_probe_pass": false
+        },
+        {
+          "U5_electronics_branch": [
+            {
+              "current_A": 2.660334437938931,
+              "loss_W": 0.3184820694757731,
+              "name": "U5_efuse_path"
+            }
+          ],
+          "converters": [
+            {
+              "conversion_loss_W": 1.7768368328138973,
+              "input_A": 2.106056075113022,
+              "input_V": 5.6245315726772445,
+              "name": "U6_total_efficiency",
+              "output_A": 2.00023894175013,
+              "output_V": 5.033769638880375,
+              "power_balance_error_W": -4.313900348051902e-10
+            },
+            {
+              "conversion_loss_W": 0.4609564218041098,
+              "input_A": 0.5519545441315561,
+              "input_V": 5.567565020584788,
+              "name": "U9_total_efficiency",
+              "output_A": 0.8200000000004073,
+              "output_V": 3.1854712086027646,
+              "power_balance_error_W": -1.248414704946299e-10
+            }
+          ],
+          "difference_from_10_A_continuous_reference_A": 8.560991390649388,
+          "equation_residual_max": 3.637978807091713e-12,
+          "exceeds_preserved_10_A_BEC_continuous_reference": true,
+          "failed_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.863718666311604
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.86596500491051
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.870752413578252
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.878528416387732
+            }
+          ],
+          "feed_contact_current_and_loss": [
+            {
+              "current_A": 18.560991390649374,
+              "loss_W": 13.780416056150406,
+              "name": "J8_positive_lead_contact"
+            },
+            {
+              "current_A": 18.5609913906713,
+              "loss_W": 13.780416056182965,
+              "name": "J8_return_lead_contact"
+            }
+          ],
+          "feed_pad_voltage_V": {
+            "J6": 5.890493392495724,
+            "J8": 5.915120688747168
+          },
+          "feed_terminal_voltages_V_relative_SOURCE_GND": {
+            "J6.1": 0.7530312304749978,
+            "J6.2": 6.643524622970721,
+            "J8.1": 0.742439655626852,
+            "J8.2": 6.657560344374019
+          },
+          "power_balance": {
+            "balance_error": -1.4302647954878012e-10,
+            "conversion_loss": 2.237793254618007,
+            "copper_loss": 1.4010954511893785,
+            "load_absorption": 105.62683121490123,
+            "resistor_loss": 28.085616370239773,
+            "source_delivery": 137.35133629080536
+          },
+          "servo_pad_probes": [
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J2_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.863718666311604
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J3_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.86596500491051
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J4_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.870752413578252
+            },
+            {
+              "maximum_V": 8.4,
+              "minimum_V": 6.0,
+              "name": "J5_servo_board_pad",
+              "pass": false,
+              "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+              "voltage_V": 5.878528416387732
+            }
+          ],
+          "source_current_A_raw": -18.560991390649388,
+          "source_delivery_current_A": 18.560991390649388,
+          "source_terminal_voltage_V": 7.399999999999994,
+          "spacing_mm": 0.09,
+          "static_probe_pass": false
+        }
+      ],
+      "name": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+      "other_loads": [
+        {
+          "current_A": 0.0004,
+          "n": "U8.12",
+          "name": "U8_IQ_screen",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.00061,
+          "n": "U5.8",
+          "name": "U5_IQ_table_screen",
+          "p": "U5.5"
+        },
+        {
+          "current_A": 4.4e-06,
+          "n": "U7.1",
+          "name": "U7_IQ_table_screen",
+          "p": "U7.3"
+        },
+        {
+          "current_A": 2e-05,
+          "n": "R61.2",
+          "name": "U8_ST_coupling_reserve",
+          "p": "R60.1"
+        },
+        {
+          "current_A": 0.0005,
+          "n": "U8.12",
+          "name": "U8_inactive_leakage_reserve",
+          "p": "U8.7"
+        },
+        {
+          "current_A": 0.32,
+          "n": "U1.18",
+          "name": "aggregate_electronics_adversarial",
+          "p": "U1.19"
+        },
+        {
+          "current_A": 0.5,
+          "n": "J12.2",
+          "name": "DSM_external",
+          "p": "J12.1"
+        },
+        {
+          "current_A": 1,
+          "n": "J10.4",
+          "name": "J10_external",
+          "p": "J10.3"
+        },
+        {
+          "current_A": 1,
+          "n": "J11.4",
+          "name": "J11_external",
+          "p": "J11.3"
+        }
+      ],
+      "parameters": {
+        "ABC_ports": [
+          "J10",
+          "J11"
+        ],
+        "CORE_aggregate_A": 0.82,
+        "DSM_A": 0.5,
+        "U6_IFB_sensitivity_A": 0,
+        "U8_effective_RON_ohm": 0.09,
+        "allocation_vertex": "mcu_vdd19",
+        "efficiency_total": 0.85,
+        "electronics_A": 0.32,
+        "feed_profile": "J6_feed_lost",
+        "input_at_defined_source_V": 7.4,
+        "servo_profile": "all_cyclic_905X",
+        "servo_subtotal_A": 15.9,
+        "u6_corner": "initial_low"
+      },
+      "receiver_scope": "capacity",
+      "servo_loads": [
+        {
+          "current_A": 4.5,
+          "n": "J2.1",
+          "name": "J2_servo_illustration",
+          "p": "J2.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J3.1",
+          "name": "J3_servo_illustration",
+          "p": "J3.2"
+        },
+        {
+          "current_A": 4.5,
+          "n": "J4.1",
+          "name": "J4_servo_illustration",
+          "p": "J4.2"
+        },
+        {
+          "current_A": 2.4,
+          "n": "J5.1",
+          "name": "J5_servo_illustration",
+          "p": "J5.2"
+        }
+      ],
+      "servo_voltage_windows": [
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J2.1",
+          "name": "J2_servo_board_pad",
+          "p": "J2.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J3.1",
+          "name": "J3_servo_board_pad",
+          "p": "J3.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J4.1",
+          "name": "J4_servo_board_pad",
+          "p": "J4.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        },
+        {
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "n": "J5.1",
+          "name": "J5_servo_board_pad",
+          "p": "J5.2",
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo."
+        }
+      ],
+      "sources": [
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.1",
+          "name": "U8_OUT1",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U8.8",
+          "name": "U8_OUT8",
+          "p": "DEV_U8_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.2",
+          "name": "U7_OUT2",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "meaning": "Explicit ideal internal pin/entry tie; package/contact resistance excluded",
+          "n": "U7.7",
+          "name": "U7_OUT7",
+          "p": "DEV_U7_OUT",
+          "voltage_V": 0
+        },
+        {
+          "n": "SOURCE_GND",
+          "name": "one_external_BEC",
+          "p": "BEC_POS",
+          "voltage_V": 7.4
+        }
+      ]
+    }
+  ],
+  "schema": "f722-native0-servo-illustrations/v1"
+}

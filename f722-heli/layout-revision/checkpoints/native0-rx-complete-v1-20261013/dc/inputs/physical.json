@@ -1,0 +1,68 @@
+{
+  "schema": "f722-intermediate-dc-physical-review/v1",
+  "passed": true,
+  "board_sha256": "84229c571433bd72d410fb18d02cffa3a380c00a87fbe1270e3a73b63f8dd6cd",
+  "native_sha256": "04d8ecd80edf004f3226f204f23adba51692a498ae38edc183debeffb704603d",
+  "checks": {
+    "saved_fill_matches_source": true,
+    "modeled_conductor_dimensions": true,
+    "all_physical_drill_voids": true,
+    "modeled_terminal_geometry": true,
+    "modeled_copper_and_barrel_assumptions": true
+  },
+  "material": {
+    "temperature_C": 105,
+    "thickness_mm": 0.015,
+    "conductivity_IACS": 0.95,
+    "plating_mm": 0.015
+  },
+  "evidence": [
+    {
+      "path": "provenance/current-dc-input-reconciliation.json",
+      "sha256": "154171e35ae8ee3d230a1182fc52ba087d1e5b1da2278eb06fa5e674cc596ce7"
+    },
+    {
+      "path": "provenance/source-identity-evidence.json",
+      "sha256": "ae9bce1340a3cf46a7477b14ae7049fd1160c332d0814bb4794ac8753ee07ba1"
+    },
+    {
+      "path": "inputs/support.json",
+      "sha256": "48beee28049c99f1e28b2cf4da0930cc718586c3886cf68083851598f3f616c2"
+    },
+    {
+      "path": "inputs/native-primitive-parameters.json",
+      "sha256": "d20a4ff6fdfe5cb2513209785e898e9ba109227da8362469504dedb201385f11"
+    },
+    {
+      "path": "provenance/terminal-audit.json",
+      "sha256": "40afcb28bba7020f52670d405c31560bb22bc583a3b8f80bb03bfc6255b21a7f"
+    },
+    {
+      "path": "provenance/structural-edit-ledger.json",
+      "sha256": "2070c53993606bc14913b74e3d3909c73844c3e341daad4277c4a5a8bef10c92"
+    },
+    {
+      "path": "provenance/physical-audit.json",
+      "sha256": "878eb09201f137b85c213df861cb70f4480b3b198bbe54943d28a65770581fc6"
+    },
+    {
+      "path": "provenance/reconcile_current_physical_inputs.py",
+      "sha256": "77e310987ae23c75ede142b6980712d3f2cfd1806dc4addcbc11cb956bc176ac"
+    }
+  ],
+  "scope": "Current clean native0 computational DC physical assumptions only",
+  "limitations": [
+    "Declared U15.3/U15.8 pose and one-ground-track-to-three replacement are rebound; all107 injected-terminal records remain exact. U15 static support is not injected-load or transient-ESD validation.",
+    "All331 current physical holes remove copper on physically spanned layers irrespective of net. Fresh saved fill is used.",
+    "Fresh268-pad metadata,15-network conservative support and44 actual return-to-plane witnesses are current-source evidence.107 finite contacts require separate compile audit.",
+    "Prior native warnings and raw source equality failures remain historical; exact declared edits own their disposition, not model repairs.",
+    "105C,0.015mm copper and plating,95%IACS and source-stackup barrel spans are unchanged conditional assumptions, not thermal or manufacturing guarantees.",
+    "All294required+11illustrations,bothgrids,fiveVCAPloops andnumericalguards remain unchanged; native1passes and18.560994Afailedillustration do not transfer.",
+    "Required cases contain no servo loading. Every servo case remains an illustration; actual ESCversion/harness/contacts/thermal/timing remain separate suitability conditions.",
+    "Ideal lands,annuli andpackage distribution remain modelassumptions; AC,startup,thermal,flight andfinalboardqualification remain outside thisreview."
+  ],
+  "final_source": false,
+  "electrical_acceptance_claimed": false,
+  "manufacturing_release": false,
+  "numerical_execution_authorized": false
+}
