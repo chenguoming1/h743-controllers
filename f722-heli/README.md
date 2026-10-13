@@ -1,25 +1,30 @@
-# F722 Nexus-style controller prototype
+# F722 controller: current native3 layout, work in progress
 
-A [replacement layout is in progress](layout-revision/README.md). Its paired native checkpoint has 11 unfinished connections and is not a manufacturing release. The files described below remain the previous published prototype.
+**Open [hardware/f722-heli.kicad_pro](hardware/f722-heli.kicad_pro) for the current paired project. Three connections remain unrouted. Do not manufacture or fly this revision.**
 
-**Electrical-model correction:** the older USB and DSM path-specific modeled margins are invalid because the source model used the enable terminal instead of the supply input. The [corrected source-bound review](layout-revision/power-evidence/corrected-v3-source43/REPORT.md) applies only to its identified revised-layout board. It does not qualify the older prototype below or the newest routing checkpoint. Historical raw reports are retained for provenance.
+The normal `f722-heli/hardware/` project now contains the adopted native3 R35-cleanup layout and its exact paired schematics, parts metadata and libraries. All 61 design files match the [preserved native3 checkpoint](layout-revision/checkpoints/native3-r35-cleanup-v1-20261012/hardware/). This promotion changes their canonical location; it does not add routing or make the board complete.
 
-The board is fully routed at nominal **47.5 × 25.4 mm overall**, including the direct right-angle servo contacts. It retains the Nexus firmware pinout, STM32F722RET6, ICM42688P with the reviewed CW90 mapping, W25N01GV flash and approved DPS368. USB-C opens upward; J10 and J11 have the requested consistent outward housing orientation.
+Current PCB: [hardware/f722-heli.kicad_pcb](hardware/f722-heli.kicad_pcb). SHA-256: `c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8`. [Canonical source identities](hardware/CANONICAL-SOURCE.json) bind all paired files to the checkpoint.
 
-**Current status: verified prototype files for CAM/assembly review.** The frozen PCB is `4da0708a4795662cc32b035a0783c70b9bdb85fc386bd4d39af33385b175667f`. Fresh KiCad 10.0.6 checks report **0 unfinished connections, 0 geometric errors, 9 unsuppressed power/ground warnings and 0 ERC violations**. All 18 scoped protection-path checks pass. Of the nine visible warnings, eight have operating-current or local copper-spreading fields in the reviewed cases; PERIPH track `874efe98` is an unloaded retained obsolete tail. Final exact-board electrical analysis and manufacturing-export verification are complete. Factory CAM/assembly acceptance and first-article qualification remain; this is not a production or flight qualification.
+## Verified state and remaining routing
 
-Open `hardware/f722-heli.kicad_pro` for the paired nine-sheet project. [Prototype handoff](docs/prototype-handoff.md) separates the CAD checks, assembly conditions and physical tests. [KST/Hobbywing setup](docs/kst-hobbywing-setup.md) records the specified servo/ESC installation and manufacturer sources. Earlier routing reports describe preserved checkpoints and do not replace this status.
+- Three unfinished nets: **FLASH_MOSI, PORT_C_RX_EXT and PORT_C_RX_MCU**.
+- Recorded KiCad 10.0.6 checks: zero geometric DRC errors, zero ERC violations, zero schematic-parity issues, and two unchanged historical RX dangling-via warnings.
+- All 558 pad mappings and source-pair relationships are preserved. The scoped physical gates pass; actual-I/O protection remains 21/22, with RX incomplete.
+- R35 is the adopted B.Cu 270-degree orientation. The current layout retains the repaired TX/CORE/SERVO2 transaction. See the [exact geometric evidence](layout-revision/checkpoints/native3-r35-cleanup-v1-20261012/README.md).
 
-![Front copper and component placement](docs/images/board-front.png)
+## Conditional evidence and qualification limits
 
-![Back copper and component placement](docs/images/board-back.png)
+The [current native3 DC and assembly evidence](layout-revision/checkpoints/native3-dc-assembly-v1-20261012/README.md) applies to this exact PCB. All 294 required conditional static DC cases pass on both grids; the 15 impedance-sensitivity checks and five VCAP margins also pass. **The overall static screen remains false:** the retained 18.560750 A single-feed illustration fails the four servo voltage floors. These modeled results depend on their stated material, temperature, contact, source and load assumptions; they are not bench measurements or an ampacity guarantee.
 
-The back view is mirrored for inspection; value labels are hidden in that preview only. CAD, BOM and placement data retain every actual value and orientation.
+The bounded assembly review found no demonstrated land/paste collision requiring a PCB move or a change from ordinary both-sides-tented vias. It does not guarantee assembled seating height, tolerance or factory placement. Regenerate the final placement data from the eventual completed board, especially R35's bottom orientation, and inspect the factory preview.
 
-The [final electrical assessment](docs/final-electrical-review.md) separates classic DSM 20 mA, nominal DSM 0.5 A/shared ABC 2 A, and the specified Hobbywing/KST dual-feed installation. Nominal 0.5 A DSM is not a 3.3 V ±5% guarantee. Actual Hobbywing plugs, pulse duration, thermal rise and KST signal levels still require qualification; the SBEC peak label is not a 30 A board rating.
+Complete RX protection, final signal/reference and timing/SI review, shared-C75 ESD/transient behavior, thermal/AC and servo testing, factory orientation/process review, first-article and flight qualification remain open. The approved 400 kHz I2C operating choice retains its overshoot caveat; device timing, sink-current bounds and actual waveforms remain to be validated. This promotion applies no firmware or 385 kHz setting change.
 
-## Current versus historical evidence
+## Historical files and manufacturing data
 
-The current design is the exact final95 board identified above. [Current validation status](validation/current-status.json), [prototype handoff](docs/prototype-handoff.md), [final electrical assessment](docs/final-electrical-review.md) and the current manufacturing manifest are authoritative for this revision.
+The previous [final95 project overview](README-final95-historical.md), `docs/` board images and prototype reports, `validation/` status and `manufacturing/` outputs describe the old fully routed prototype. They are preserved for history and **do not describe or qualify this current three-open PCB**. Do not use those old BOM/CPL/Gerber/stencil exports to manufacture the canonical native3 layout.
 
-Earlier schematic-development PDFs, first-article/power/sensor/passive/HV/DSM/USB narratives and older validation files may remain in the repository for provenance. They describe earlier checkpoints or unperformed test plans and are superseded wherever they conflict with the exact 4da0708a reports. Their old route counts, power margins, part alternatives, pending-work statements or proposed geometry must not be carried forward as current results. The publication update overlays current files without deleting or moving those historical records.
+The [layout-revision history](layout-revision/README.md) retains its original checkpoint reports and recipes; its older eleven-open project is historical. The [native3 geometry checkpoint](layout-revision/checkpoints/native3-r35-cleanup-v1-20261012/) preserves exact design bytes and recorded checks; the [later DC/assembly packet](layout-revision/checkpoints/native3-dc-assembly-v1-20261012/) supplies the current conditional evidence. The older geometry README's pending-DC wording predates that later packet. All earlier checkpoints and B-RID records remain preserved.
+
+This publication verifies file identities, paired completeness and repository scope. It does not rerun routing, KiCad checks or numerical models, and it is not a fabrication release.
