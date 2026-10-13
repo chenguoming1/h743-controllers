@@ -1,0 +1,102 @@
+{
+  "I2C": {
+    "385000_Hz_change_pending": true,
+    "approved_setting_Hz": 400000,
+    "firmware_or_setting_changed": false,
+    "overshoot_and_measurement_caveat_retained": true
+  },
+  "added_tracks": 25,
+  "added_vias": 2,
+  "adopted_as_prototype_routing_baseline": true,
+  "adopted_utc": "2026-10-13T10:56:40.923491+00:00",
+  "board_sha256": "b31e6b9ca47e8e5a0b8967ec25f8390a66541b0c374ebedde77a39380e7d73ca",
+  "complete_native2_RX_path_preserved_exact": true,
+  "current_DC": {
+    "VCAP_copper_loop_limits_passed": 5,
+    "grid_sensitivity_comparisons_passed": 15,
+    "grids_mm": [
+      0.12,
+      0.09
+    ],
+    "illustrative_fine_grid_J2_to_J5_board_pad_V": [
+      5.863718452178178,
+      5.865964788871354,
+      5.870752194831584,
+      5.87852819444083
+    ],
+    "illustrative_floor_V": 6.0,
+    "illustrative_lost_J6_feed_current_A": 18.560994254382265,
+    "independent_disposition": "evidence/dc/INDEPENDENT-DC-AND-REFERENCE-DISPOSITION.json",
+    "original_independent_disposition_sha256": "ff92bedefc4939b0263a4794590f0cb98fe86951112a4dc5c7f0ca6b33ca7651",
+    "overall_static_screen_pass": false,
+    "raw_logical_sha256": "adc0b6e38cfe09bc2d65fc7288e4d949c69981ffef1ed02eaaddde7f6ab14761",
+    "raw_stored_sha256": "79774d3af8c62c3e8a3b06dd89de85a78c6f3abcdf43015e3dc8c53ba5b184ba",
+    "required_cases_per_grid": 294,
+    "required_conditional_pass": true,
+    "source2_maximum_VCAP_increase_ohm": 0.00010635834720160511,
+    "source2_maximum_fine_absolute_probe_change_V": 0.00043532552623304355,
+    "source2_probe_rows_compared": 9500,
+    "total_cases_per_grid": 305
+  },
+  "flight_qualified": false,
+  "footprint_pose_changes": 0,
+  "historical_evidence_policy": "Preliminary candidate and diagnostic reports retain their issue-time pending/not-adopted claims. This final current disposition supersedes status only, preserving all recorded technical values and false predicates.",
+  "limits": [
+    "One PORT_C_RX_EXT open remains; no complete functional-board release.",
+    "SPI/BARO approximately 10 mm return detours require focused 27 MHz flash settling, BARO/IMU noise and ESD bench assessment.",
+    "VCAP DC copper-leg checks do not establish startup, ESR/ESL or AC stability.",
+    "Material/contact/temperature/case assumptions do not establish thermal or ampacity qualification.",
+    "JLC ordinary-via process/stack, USB slots and StandardPCBA panel acceptance remain unresolved.",
+    "Subsequent copper/pose changes need current source-bound review."
+  ],
+  "manufacturing_ready": false,
+  "native_logical_sha256": "6c0485bf7e1098d0f51d8d63ca7e7a5ee6a26c21656192c0c967cd6e32917261",
+  "native_or_numerical_rerun_during_packaging": false,
+  "nonboard_files_unchanged": 60,
+  "pad_map_changes": 0,
+  "paired_file_count": 61,
+  "predecessor_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+  "public_source_commit": "6a8e126b4c0444e4477ba602f9bf151e4a09ef8b",
+  "public_source_tree": "5bf7c78e5858bd1ead6699aa084629454496cacd",
+  "recorded_checks": {
+    "ERC_findings": 0,
+    "fresh_scoped_VX_contact_disposition_pass": true,
+    "full_RX_protection_complete": false,
+    "general_physical_predicate_relaxed": false,
+    "native_DRC_warnings": 0,
+    "native_geometric_DRC_errors": 0,
+    "raw_aggregate_physical_pass": false,
+    "raw_inherited_contact_applicability": false,
+    "schematic_parity_findings": 0,
+    "unconnected_items": 1
+  },
+  "remaining_open_terminals": [
+    "J11.1",
+    "R34.1"
+  ],
+  "remaining_unrouted_nets": [
+    "PORT_C_RX_EXT"
+  ],
+  "removed_tracks": 1,
+  "reproduction_status": {
+    "complete_public_numerical_reference_source_closure_claimed": false,
+    "full_raw_DC_result": "PRESERVED_IN_FOUR_LOSSLESS_CHUNKS",
+    "native1_reference_geometry_replay_source": "ARCHIVAL_SOURCE_AND_INPUTS_PRESENT_PATH_REBINDING_AND_RUNTIME_SETUP_REQUIRED",
+    "native_construction_recipe": "PUBLIC_SOURCE_PRESENT_NOT_RERUN_DURING_PACKAGING",
+    "portable_numerical_source": "PRESENT_SOURCE_MODEL_HASH_CHECKS_PASSED_HEAVY_REPLAY_UNRUN",
+    "reference_evidence": "COMPLETE_ALL_TRACK_INVENTORY_AND_FINITE_PATH_RESULTS_PRESERVED",
+    "saved_design_recovery": "COMPLETE_BYTE_EXACT_PATCH_VERIFIED"
+  },
+  "retained_original_objects_exact": 2479,
+  "return_and_timing": {
+    "30MHz_qualified": false,
+    "BARO_finite_planar_path_mm": 10.10334090604143,
+    "SPI_finite_planar_path_mm": 9.887114425438234,
+    "conditional_prototype_bench_clock_MHz": 27,
+    "fast_edge_AC_or_ESD_equivalence_established": false,
+    "layer_transition_surface_distance_reported_separately": true,
+    "stock_binary_and_live_registers_verified": false
+  },
+  "schema": "f722-native1-mosi-baro-current-state/v1",
+  "status": "ADOPTED_PROTOTYPE_ROUTING_BASELINE_WIP"
+}

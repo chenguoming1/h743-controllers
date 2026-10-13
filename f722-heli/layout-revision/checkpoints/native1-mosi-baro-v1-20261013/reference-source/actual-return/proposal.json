@@ -1,0 +1,338 @@
+{
+  "schema": "f722-native2-MOSI-actual-return-review/v1",
+  "source": {
+    "board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+    "native_logical_sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5"
+  },
+  "candidate": {
+    "board_sha256": "b31e6b9ca47e8e5a0b8967ec25f8390a66541b0c374ebedde77a39380e7d73ca",
+    "native_logical_sha256": "6c0485bf7e1098d0f51d8d63ca7e7a5ee6a26c21656192c0c967cd6e32917261"
+  },
+  "inputs": {
+    "candidate_native": {
+      "path": "../native/after.native.json.gz",
+      "sha256": "09771f922d59f4714bb42a7532369ce88534738d177e0125bf211a1ed52bd5db"
+    },
+    "candidate_PCB": {
+      "path": "../hardware/f722-heli.kicad_pcb",
+      "sha256": "b31e6b9ca47e8e5a0b8967ec25f8390a66541b0c374ebedde77a39380e7d73ca"
+    },
+    "candidate_auxiliary": {
+      "path": "../native/after-auxiliary.json.gz",
+      "sha256": "fad5cb7e03d8f5e8a045e5f6bc537f801b0037e8a65fca189e4742f6600c4981"
+    },
+    "source_projection": {
+      "path": "replay-inputs/source-ground-projection.json.gz",
+      "sha256": "81783cd8792af05e4ffd4df4797aff6e52fa8821dff40f37741fa53df0420dd2"
+    },
+    "source_ground_record_hashes": {
+      "path": "replay-inputs/source_ground_record_hashes.json",
+      "sha256": "db79eb465186ba2e002e106b1e675fcb5a5f1d40b15815fadc1de8a2f03f879a"
+    },
+    "delta": {
+      "path": "replay-inputs/delta.json",
+      "sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549"
+    },
+    "critical_manifest": {
+      "path": "replay-inputs/critical-guard-rows.json.gz",
+      "sha256": "daa834751faaf2ec9986b889e9b8dd14c11751f5bfacb1f6484eded8d85f2266"
+    },
+    "old_SPI_witness": {
+      "path": "replay-inputs/old_SPI_witness.json",
+      "sha256": "62849623db9117c02c4b63729f0718d2d6306241f6926213e9c741155f5fa272"
+    },
+    "generic_route_core": {
+      "path": "replay-inputs/generic_route_core.py",
+      "sha256": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8"
+    },
+    "sealed_timing_review": {
+      "path": "replay-inputs/sealed_timing_review.json",
+      "sha256": "aa67dffcb37ded2ff171c6facea88cc3a62b5b0ffb6617da296f2e8f4d9be0bf"
+    }
+  },
+  "shared_lock": "unresolved/runtime/execution.lock",
+  "python_dependencies": "unresolved/runtime/python-deps",
+  "local_window_mm": [
+    17.5,
+    9,
+    25.75,
+    18
+  ],
+  "witness_width_mm": 0.127,
+  "GND_via_UUIDs": [
+    "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+    "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+    "edb837fc-28fc-4a24-af99-97e27d7acfb6"
+  ],
+  "old_witness_via_UUIDs": [
+    "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+    "edb837fc-28fc-4a24-af99-97e27d7acfb6"
+  ],
+  "projection_records": [
+    [
+      "44157701-e327-5a4b-b57a-38796d46efc3",
+      "B.Cu",
+      "new MOSI launch across held RX slot"
+    ],
+    [
+      "21d935a4-2b67-5f33-8a62-7e92c2879104",
+      "In3.Cu",
+      "retained BARO_SCL at reviewed orthogonal MOSI crossing"
+    ]
+  ],
+  "paths": [
+    {
+      "name": "SPI_left",
+      "layer": "In4.Cu",
+      "from_xy": [
+        22.10756033247403,
+        11.592129665346377
+      ],
+      "to_via": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+      "signal_layer": "B.Cu",
+      "signal_to_return_surface_distance_mm": 0.0994,
+      "signal_comparison_xy": [
+        [
+          22.10756033247403,
+          11.592129665346377
+        ],
+        [
+          24.237870341456535,
+          11.781977865586674
+        ]
+      ],
+      "signal_transition_xy": [
+        [
+          21.222599,
+          11.513264
+        ]
+      ]
+    },
+    {
+      "name": "SPI_right",
+      "layer": "In4.Cu",
+      "from_xy": [
+        24.237870341456535,
+        11.781977865586674
+      ],
+      "to_via": "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+      "signal_layer": "B.Cu",
+      "signal_to_return_surface_distance_mm": 0.0994,
+      "signal_comparison_xy": [
+        [
+          22.10756033247403,
+          11.592129665346377
+        ],
+        [
+          24.237870341456535,
+          11.781977865586674
+        ]
+      ],
+      "signal_transition_xy": [
+        [
+          21.222599,
+          11.513264
+        ]
+      ]
+    },
+    {
+      "name": "SPI_In1_link",
+      "layer": "In1.Cu",
+      "from_via": "6854f5bd-7b7d-5f17-992c-de1e87b1ece3",
+      "to_via": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+      "signal_layer": "B.Cu",
+      "signal_to_return_surface_distance_mm": 0.8326,
+      "signal_comparison_xy": [
+        [
+          22.10756033247403,
+          11.592129665346377
+        ],
+        [
+          24.237870341456535,
+          11.781977865586674
+        ]
+      ],
+      "signal_transition_xy": [
+        [
+          21.222599,
+          11.513264
+        ]
+      ]
+    },
+    {
+      "name": "BARO_left",
+      "layer": "In4.Cu",
+      "from_xy": [
+        18.855621,
+        15.86298
+      ],
+      "to_via": "edb837fc-28fc-4a24-af99-97e27d7acfb6",
+      "signal_layer": "In3.Cu",
+      "signal_to_return_surface_distance_mm": 0.25,
+      "signal_comparison_xy": [
+        [
+          18.855621,
+          15.86298
+        ],
+        [
+          19.455621,
+          15.86298
+        ]
+      ],
+      "signal_transition_xy": [
+        [
+          21.994297,
+          15.86298
+        ],
+        [
+          21.4815,
+          21.33
+        ],
+        [
+          17.61,
+          16.86474
+        ]
+      ]
+    },
+    {
+      "name": "BARO_right",
+      "layer": "In4.Cu",
+      "from_xy": [
+        19.455621,
+        15.86298
+      ],
+      "to_via": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+      "signal_layer": "In3.Cu",
+      "signal_to_return_surface_distance_mm": 0.25,
+      "signal_comparison_xy": [
+        [
+          18.855621,
+          15.86298
+        ],
+        [
+          19.455621,
+          15.86298
+        ]
+      ],
+      "signal_transition_xy": [
+        [
+          21.994297,
+          15.86298
+        ],
+        [
+          21.4815,
+          21.33
+        ],
+        [
+          17.61,
+          16.86474
+        ]
+      ]
+    },
+    {
+      "name": "BARO_In1_link",
+      "layer": "In1.Cu",
+      "from_via": "edb837fc-28fc-4a24-af99-97e27d7acfb6",
+      "to_via": "5653fd7d-25ee-4a89-b5b1-681a74e21ede",
+      "signal_layer": "In3.Cu",
+      "signal_to_return_surface_distance_mm": 0.468,
+      "signal_comparison_xy": [
+        [
+          18.855621,
+          15.86298
+        ],
+        [
+          19.455621,
+          15.86298
+        ]
+      ],
+      "signal_transition_xy": [
+        [
+          21.994297,
+          15.86298
+        ],
+        [
+          21.4815,
+          21.33
+        ],
+        [
+          17.61,
+          16.86474
+        ]
+      ]
+    }
+  ],
+  "return_groups": {
+    "SPI": {
+      "paths": [
+        "SPI_left",
+        "SPI_right",
+        "SPI_In1_link"
+      ],
+      "signal_flank_xy": [
+        [
+          22.10756033247403,
+          11.592129665346377
+        ],
+        [
+          24.237870341456535,
+          11.781977865586674
+        ]
+      ]
+    },
+    "BARO": {
+      "paths": [
+        "BARO_left",
+        "BARO_right",
+        "BARO_In1_link"
+      ],
+      "signal_flank_xy": [
+        [
+          18.855621,
+          15.86298
+        ],
+        [
+          19.455621,
+          15.86298
+        ]
+      ]
+    }
+  },
+  "sensitive_supply_nets": [
+    "+3V3_CORE",
+    "+5V_BEC",
+    "VX_PROTECTED",
+    "USB_LIMITED",
+    "+5V_PERIPH",
+    "CORE_BUCK_IN",
+    "+3V3_IMU",
+    "ABC_FB",
+    "+3V3_ANALOG",
+    "ABC_VAUX",
+    "CORE_REF",
+    "+3V3_DSM",
+    "EFUSE_DVDT",
+    "USB_VBUS_RAW",
+    "VX_RAW",
+    "VCAP",
+    "VCAP_CAP",
+    "CORE_SS"
+  ],
+  "resources": {
+    "CPU": 1,
+    "address_space_bytes": 1073741824,
+    "cooperative_seconds": 115,
+    "hard_seconds": 120,
+    "output_bytes": 16777216,
+    "minimum_free_bytes": 134217728
+  },
+  "scope": [
+    "Exact native drilled ground polygons plus unchanged GND copper; explicit positive zone-fill annular attachments.",
+    "Six fixed geometric witness requests; no conductor changes, native build, DC or EM solve.",
+    "Finite 0.127 mm disk-path width is a geometry comparison, not fast-edge return qualification.",
+    "Report real path length, signal-plane separation, transition distance, planar loop detour and sensitive supply projections.",
+    "No automatic width reduction, window expansion, additional path or route trial.",
+    "Broad all-track reference inventory remains separately reported.",
+    "Conditional 27 MHz prototype timing/bench scope remains; no transfer from old 11.537 mm return witness."
+  ]
+}

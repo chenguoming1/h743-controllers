@@ -1,0 +1,75 @@
+{
+  "schema": "f722-MOSI-return-replay-input-map/v1",
+  "original_proposal_sha256": "efd5bdfcef0d3d56f65c4bf219a848b984cd037d0e3dc7b47caac94f31b1698b",
+  "inputs": {
+    "candidate_native": {
+      "external_required": true,
+      "sha256": "09771f922d59f4714bb42a7532369ce88534738d177e0125bf211a1ed52bd5db",
+      "original_artifact_id": "after.native.json.gz",
+      "checkpoint_relative_path": "../native/after.native.json.gz"
+    },
+    "candidate_PCB": {
+      "external_required": true,
+      "sha256": "b31e6b9ca47e8e5a0b8967ec25f8390a66541b0c374ebedde77a39380e7d73ca",
+      "original_artifact_id": "f722-heli.kicad_pcb",
+      "checkpoint_relative_path": "../hardware/f722-heli.kicad_pcb"
+    },
+    "candidate_auxiliary": {
+      "external_required": true,
+      "sha256": "fad5cb7e03d8f5e8a045e5f6bc537f801b0037e8a65fca189e4742f6600c4981",
+      "original_artifact_id": "after-auxiliary.json.gz",
+      "checkpoint_relative_path": "../native/after-auxiliary.json.gz"
+    },
+    "source_projection": {
+      "package_path": "replay-inputs/source-ground-projection.json.gz",
+      "sha256": "81783cd8792af05e4ffd4df4797aff6e52fa8821dff40f37741fa53df0420dd2",
+      "original_sha256": "47ffdd7f7f7c54bf0bbd4ae7506b609c985ada5332c5eb1a26ca443b5cb07a52",
+      "original_artifact_id": "candidate-projection-input.json.gz",
+      "preserved_input_original_sha256": "81783cd8792af05e4ffd4df4797aff6e52fa8821dff40f37741fa53df0420dd2"
+    },
+    "source_ground_record_hashes": {
+      "package_path": "replay-inputs/source_ground_record_hashes.json",
+      "sha256": "db79eb465186ba2e002e106b1e675fcb5a5f1d40b15815fadc1de8a2f03f879a",
+      "original_sha256": "db79eb465186ba2e002e106b1e675fcb5a5f1d40b15815fadc1de8a2f03f879a",
+      "original_artifact_id": "source-records.json",
+      "preserved_input_original_sha256": "db79eb465186ba2e002e106b1e675fcb5a5f1d40b15815fadc1de8a2f03f879a"
+    },
+    "delta": {
+      "package_path": "replay-inputs/delta.json",
+      "sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549",
+      "original_sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549",
+      "original_artifact_id": "candidate-delta.json",
+      "preserved_input_original_sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549"
+    },
+    "critical_manifest": {
+      "package_path": "replay-inputs/critical-guard-rows.json.gz",
+      "sha256": "daa834751faaf2ec9986b889e9b8dd14c11751f5bfacb1f6484eded8d85f2266",
+      "original_sha256": "ae076a2688f08ac82ff3cc6750edbda90361b91ee1ee58163fcecbee6127536d",
+      "original_artifact_id": "critical-guard-manifest.json.gz",
+      "preserved_input_original_sha256": "daa834751faaf2ec9986b889e9b8dd14c11751f5bfacb1f6484eded8d85f2266"
+    },
+    "old_SPI_witness": {
+      "package_path": "replay-inputs/old_SPI_witness.json",
+      "sha256": "62849623db9117c02c4b63729f0718d2d6306241f6926213e9c741155f5fa272",
+      "original_sha256": "9b914333328b01de1c1f412cb3945a6e42c3f1c46bda22f49f6db9532a5227cb",
+      "original_artifact_id": "SPI-existing-return-comparison.json",
+      "preserved_input_original_sha256": "9b914333328b01de1c1f412cb3945a6e42c3f1c46bda22f49f6db9532a5227cb"
+    },
+    "generic_route_core": {
+      "package_path": "replay-inputs/generic_route_core.py",
+      "sha256": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "original_sha256": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8",
+      "original_artifact_id": "route_native11.py",
+      "preserved_input_original_sha256": "34e745a038ae823f88d25eb2e87496f70a869277d4c7769009017b18915d43b8"
+    },
+    "sealed_timing_review": {
+      "package_path": "replay-inputs/sealed_timing_review.json",
+      "sha256": "aa67dffcb37ded2ff171c6facea88cc3a62b5b0ffb6617da296f2e8f4d9be0bf",
+      "original_sha256": "af86a13832ef43693c1b073db7d38b6a3a86b98009716bb113d85ff5298583de",
+      "original_artifact_id": "FINAL-HANDOFF.json",
+      "preserved_input_original_sha256": "af86a13832ef43693c1b073db7d38b6a3a86b98009716bb113d85ff5298583de"
+    }
+  },
+  "raw_exports_not_copied": true,
+  "original_ground_record_hash_binding": "The original source3 GND record hashes remain valid because accepted source2 and this candidate do not modify any GND object. The source2 plane geometry has its own exact board/native identity."
+}

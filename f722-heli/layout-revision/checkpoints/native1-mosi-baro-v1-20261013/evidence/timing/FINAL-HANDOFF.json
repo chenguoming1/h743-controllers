@@ -1,0 +1,87 @@
+{
+  "evidence": {
+    "adoption": false,
+    "candidate_delta_sha256": "0015ca1835034eb6a00b4d534ff2e52db90e3231fcad3f4245964322f7e95549",
+    "conclusion": "No length-matching reroute is indicated; 27 MHz has useful timing margin. Prototype acceptance remains conditional on actual finite return disposition and focused waveform/function checks. 30 MHz is an out-of-datasheet overclock stress case.",
+    "files": {
+      "REVIEW.md": {
+        "bytes": 9588,
+        "path": "[local provenance path omitted]",
+        "sha256": "6cfec5eb09f08a840997bfa74e7e4a07ff882c7dca0cc69fd446bbb2aa8966f9"
+      },
+      "exact-SPI-routing-inventory.json": {
+        "bytes": 37044,
+        "path": "[local provenance path omitted]",
+        "sha256": "0a01fa322c4c9a9f4e09ecd3ea412610283063ded8f877a9fec3cbabc4aad3f4"
+      },
+      "source-index.json": {
+        "bytes": 4592,
+        "path": "[local provenance path omitted]",
+        "sha256": "fde2b464aacadc6df7cc02dd126cd6bd4052ea903333d45d96c4e7b9f149a2d6"
+      },
+      "timing-ledger.json": {
+        "bytes": 2629,
+        "path": "[local provenance path omitted]",
+        "sha256": "4ec9d70995ffd2182d6476f7b18eaef3f85f7aa0dcff9fd0bd2b635c04d189d8"
+      }
+    },
+    "geometry_modification": false,
+    "heavy_solve": false,
+    "return_review_status": {
+      "new_finite_paths_not_claimed": true,
+      "new_left_witness_removed_mm": 1.274883510432006,
+      "new_refill_exports_pending": true,
+      "old_return_witness_invalidated": true
+    },
+    "schema": "native2-completed-MOSI-SPI-review-handoff/v1",
+    "source_bindings": "Seven pinned stock-source Git blobs checked. Stock binary and live registers not verified.",
+    "source_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+    "status": "BOUNDED_SOURCE_TIMING_REVIEW_COMPLETE_ACTUAL_RETURN_AND_BENCH_PENDING",
+    "timing_residual_at27MHz_ns": {
+      "MISO_setup_after_proposed2ns_budget": 2.7185185185,
+      "MISO_setup_before_extra_settling": 4.7185185185,
+      "MOSI_setup_before_extra_settling": 12.1185185185
+    }
+  },
+  "normalization": {
+    "changes": [
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "76195fc72f71a08aab560773066054516ae4ed09b4e7b555dd14343d848d80d8",
+        "pointer": "/files/REVIEW.md/path"
+      },
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "ec199d4e3d3732b6c5870252d5a994991064d2300d3e68aa09b1a92aea157ecc",
+        "pointer": "/files/timing-ledger.json/path"
+      },
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "8e63c1b01d87c9879229f3e7f7f3c89d3e8f937db514377ab4cd5d30f9d7dd23",
+        "pointer": "/files/exact-SPI-routing-inventory.json/path"
+      },
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "8a3f0c1e2248f23d9ad8145ca85feb03eaa1f7a8483c742e95d6e347aef1f935",
+        "pointer": "/files/source-index.json/path"
+      },
+      {
+        "action": "normalize execution or local-locator key",
+        "original_key_sha256": "10a07978f807bb027fbe2dae3546541c0e2d073719e3bea4f3a4a44e9c3bf3d6",
+        "pointer": "/return_review_status"
+      },
+      {
+        "action": "omit execution coordination metadata",
+        "original_value_sha256": "785db604f0f2d78a003ba7ed53a0ef71f33df0877449bb5190e3e521120f4b71",
+        "pointer_sha256": "ab3ae7d2b228c056b06ac2f382fea7ea49c1816b3dc5b0fb09d4878fb3dc4ea3"
+      }
+    ],
+    "policy": "Technical values, scientific limits, original false predicates and issue-time status are retained. Local filesystem locators and execution coordination are explicitly removed. Raw local evidence remains unchanged."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 2129,
+    "git_blob_sha": "c44a52d9d6e97fc22c61aaacb571a7c24e721843",
+    "sha256": "af86a13832ef43693c1b073db7d38b6a3a86b98009716bb113d85ff5298583de"
+  }
+}
