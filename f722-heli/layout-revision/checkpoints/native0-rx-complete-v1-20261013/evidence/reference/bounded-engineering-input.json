@@ -1,0 +1,80 @@
+{
+  "evidence": {
+    "MISO_edge_overhang_plate_capacitance_scale_pF": 1.24921782711577e-05,
+    "actual_v2_PCB": "462fe6420795db1be524689132d6a60ef1461a89a6426f58e9ade46396ab2bf2",
+    "actual_v2_native_logical_sha256": "6451ad15a4d9f3bceb92399331145d592b9d99765eba8aec761e03611aa76c47",
+    "clean_candidate_PCB": "84229c571433bd72d410fb18d02cffa3a380c00a87fbe1270e3a73b63f8dd6cd",
+    "clean_candidate_native_logical_sha256": "04d8ecd80edf004f3226f204f23adba51692a498ae38edc183debeffb704603d",
+    "edge_overhang_scale_not_upper_bound": true,
+    "exact_cleanup_SPI_length_applicability": {
+      "FLASH_MISO": {
+        "clean_actual_length_mm": 49.051343460770035,
+        "matches_v2": true
+      },
+      "FLASH_MOSI": {
+        "clean_actual_length_mm": 48.644680661517555,
+        "matches_v2": true
+      },
+      "FLASH_SCK": {
+        "clean_actual_length_mm": 49.739070496553154,
+        "matches_v2": true
+      }
+    },
+    "input": {
+      "path": "[local provenance path omitted]",
+      "sha256": "b19e19d0dbd5ba70d12f8ac6657d7d86f6b230787f398772c6cf7bc21053db68"
+    },
+    "retained_timing_source": {
+      "path": "[local provenance path omitted]",
+      "sha256": "4ec9d70995ffd2182d6476f7b18eaef3f85f7aa0dcff9fd0bd2b635c04d189d8"
+    },
+    "scope": "Actual v2 and cleaned native0 route-length applicability; all three SPI sums remain exact. No measured load/edge or extracted SI claim.",
+    "signals": {
+      "FLASH_MISO": {
+        "actual_planar_length_mm": 49.051343460770035,
+        "largest_declared_epsilon_r_scale": 4.4,
+        "less_than_prior_point4ns_flight_screen": true,
+        "quasi_TEM_flight_ns": 0.3602153832997408,
+        "retained_used_vertical_span_mm": 2.4308,
+        "track_count": 27
+      },
+      "FLASH_MOSI": {
+        "actual_planar_length_mm": 48.644680661517555,
+        "largest_declared_epsilon_r_scale": 4.4,
+        "less_than_prior_point4ns_flight_screen": true,
+        "quasi_TEM_flight_ns": 0.3421041692610255,
+        "retained_used_vertical_span_mm": 0.249,
+        "track_count": 27
+      },
+      "FLASH_SCK": {
+        "actual_planar_length_mm": 49.739070496553154,
+        "largest_declared_epsilon_r_scale": 4.4,
+        "less_than_prior_point4ns_flight_screen": true,
+        "quasi_TEM_flight_ns": 0.3704807237074637,
+        "retained_used_vertical_span_mm": 3.2102,
+        "track_count": 28
+      }
+    }
+  },
+  "normalization": {
+    "changes": [
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "556aecba4f28c46535371cae48c90f000882fa90795ea3d4dba6daea341ff6f6",
+        "pointer": "/input/path"
+      },
+      {
+        "action": "remove local filesystem locator; retain adjacent artifact identities",
+        "original_value_sha256": "ec199d4e3d3732b6c5870252d5a994991064d2300d3e68aa09b1a92aea157ecc",
+        "pointer": "/retained_timing_source/path"
+      }
+    ],
+    "policy": "Technical values, scientific limits, original false predicates and issue-time status are retained. Local filesystem locators and execution coordination are explicitly removed. Raw local evidence remains unchanged."
+  },
+  "schema": "f722-public-evidence-normalization/v1",
+  "source_artifact": {
+    "bytes": 2345,
+    "git_blob_sha": "19ff711ce21561d7db708ab48732c706be23af16",
+    "sha256": "a6f2f63f3167193f485e2f134eb6d0bdfa6dccbad93c1b60b25bd30a9b4824b5"
+  }
+}
