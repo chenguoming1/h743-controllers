@@ -1,0 +1,116 @@
+{
+  "acceptance": "Historical exact v5 measurement reproduction only; no new AC, ESD, fabrication or adoption qualification.",
+  "candidate_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+  "dependencies": {
+    "Shapely": "2.2.0",
+    "native_reexport_required": false,
+    "numpy": "2.2.6",
+    "platform": "Linux (resource, sched_setaffinity, fcntl)",
+    "python": "3.12"
+  },
+  "geometry_runtime_per_stage": {
+    "CPU": 1,
+    "address_space_MiB": 512,
+    "wall_seconds": 125,
+    "worker_CPU_seconds": 120
+  },
+  "outputs": {
+    "maximum_MiB": 64,
+    "minimum_free_reserve_MiB": 128
+  },
+  "package_files": {
+    "EXPECTED-METRICS.json": {
+      "bytes": 83920,
+      "sha256": "2420ce09284f1c90e016a7ac800eaa0b4619f52176d595c2067d6adf062e69d1"
+    },
+    "README.md": {
+      "bytes": 6654,
+      "sha256": "70045a4b2150da11ed09b7a4714d04bf66a29035b6ab0e210499fb28085ee577"
+    },
+    "SOURCE-NORMALIZATION.json": {
+      "bytes": 5519,
+      "sha256": "af5317f8100de3359c24f1a0afca73fb4f5cc78b40430c494f58b3ae58d625ca"
+    },
+    "compare_metrics.py": {
+      "bytes": 3665,
+      "sha256": "24f9b20ce4a9ff12f02ddee6b83a3d4f34a80ab7c952feac188fd2e3639f217a"
+    },
+    "finite_kernel.py": {
+      "bytes": 2912,
+      "sha256": "9f2bfed113c58a28c997d9e2be3ed42805af8ae0224b0c766b3e17799a37479d"
+    },
+    "inputs/C3-loop-and-feed-exception.json": {
+      "bytes": 83682,
+      "sha256": "6b076afed650dffeff73b397cc238d661f7b3230cce14d44062bf97a08c01b0d"
+    },
+    "inputs/U15-J11-corridor.json": {
+      "bytes": 16961,
+      "sha256": "6a8774447ccfa8721ef63dbc00cec226d072f429885f2f8f5423c710efd4e403"
+    },
+    "inputs/collar-mask.json": {
+      "bytes": 2906,
+      "sha256": "656f91de351a1763b02694d393797f06278a9c4812110f45107f2411efba56c2"
+    },
+    "inputs/collar-paths.json": {
+      "bytes": 12098,
+      "sha256": "d8b5c4fbdd73203fde8056663cca36245d90d89a28499ea4f0290a9c4b3059e9"
+    },
+    "inputs/selected-native-records.json": {
+      "bytes": 38833,
+      "sha256": "cbee9fc10a6f37ea334e6c837075217a45379788bdacbaa50a8a4d9b590381f9"
+    },
+    "inputs/source-return-annuli.json": {
+      "bytes": 36573,
+      "sha256": "cf90e979e9a1dc0c1b2018f52f12fdda604ede739dfb87b7b955879fa32e1bf8"
+    },
+    "measure_reference.py": {
+      "bytes": 7534,
+      "sha256": "6ab0925b34ea6ebb181e36b80206e87646ddddada7e1ed84d9c8421964cb72c0"
+    },
+    "portable_paths.py": {
+      "bytes": 1761,
+      "sha256": "16a4d6b41442d246a8ebc0cba92b5e9f409ffbcaab14953771b66b3187e2b9a4"
+    },
+    "review_returns.py": {
+      "bytes": 7584,
+      "sha256": "40a665edab223d6bb6fce8db276c0d9c24d58a278c36f92dbdf907406342cf73"
+    },
+    "run_review.py": {
+      "bytes": 3234,
+      "sha256": "5c1a2824a7c30db68f4b60aa2bfaf46bd98ab081b5287212df2c5dee5967fccb"
+    },
+    "stream_native.py": {
+      "bytes": 552,
+      "sha256": "9ae18f1479bf68436b6037fc52584a98f7cc0c9d6f02fad38fa617ea235b9d2e"
+    },
+    "targeted_review.py": {
+      "bytes": 9666,
+      "sha256": "fb8d88c39476958fb5f0da2170b848c9353abff1f2dc87f35a8daf847aa0b59f"
+    }
+  },
+  "packaging_status": "SOURCE_ONLY_CHECKED; portable geometry replay has not been executed",
+  "public_checkpoint": "f722-heli/layout-revision/checkpoints/native2-in4-rx-v5-20261013",
+  "public_inputs": {
+    "candidate_board": {
+      "checkpoint_relative_path": "hardware/f722-heli.kicad_pcb",
+      "sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb"
+    },
+    "candidate_native": {
+      "checkpoint_relative_path": "native/after.native.json.gz",
+      "logical_sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+      "sha256": "c193b7e9988bbf0d72bf08365ba01268244a349db41c832a5a6785f91b8f0cef"
+    },
+    "source_board": {
+      "checkpoint_relative_path": "../native3-r35-cleanup-v1-20261012/hardware/f722-heli.kicad_pcb",
+      "sha256": "c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8"
+    },
+    "source_native": {
+      "checkpoint_relative_path": "../native3-r35-cleanup-v1-20261012/current/after.native.json.gz",
+      "logical_sha256": "a4fddb679e9d73dd2a7b6300fa8888be47e30ab6f139bd5b78ab308d9192563c",
+      "sha256": "fa9edf10e18b76701e60ff534987c63830421630dd2bf5b2d49851f865f7d3ff"
+    }
+  },
+  "public_source_supplement": "f722-heli/layout-revision/checkpoints/native2-in4-rx-v5-source-v1-20261013",
+  "schema": "f722-native2-v5-portable-reference-recipe/v1",
+  "source_board_sha256": "c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8"
+}

@@ -1,0 +1,541 @@
+{
+  "schema": "f722-in4-v5-independent-current-dc-review/v1",
+  "current_board_sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+  "current_native_logical_sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+  "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+  "evidence": {
+    "run/result.json.gz": {
+      "path": "evidence/result.json.gz",
+      "sha256": "d9c6687a883e02bcb8af61733b938d374ba5e9d8c3199d5b63a2aab3e467f1ca"
+    },
+    "reduced-result.json.gz": {
+      "path": "historical/by-sha256/5526a49995f4dbbc3fee03c8d9157bff53784b7c48e976ed920c8630c244746b/reduced-result.json.gz",
+      "sha256": "5526a49995f4dbbc3fee03c8d9157bff53784b7c48e976ed920c8630c244746b"
+    },
+    "result-summary.json": {
+      "path": "evidence/result-summary.json",
+      "sha256": "2cfa30ee4192cd5aa42ce98cb2a6c307ad3f16d64f8beb1dd47504f8d3c6eab2"
+    },
+    "run-terminal-review.json": {
+      "path": "evidence/run-terminal-review.json",
+      "sha256": "c94962aad061ab996b6000ee6623d75f38926a9f9af81e365742968543ae1bac"
+    },
+    "RESULT-REVIEW.json": {
+      "path": "evidence/RESULT-REVIEW.json",
+      "sha256": "e25fad91f301b25ab6b722d7a02328696afc2699c55a83b3e43b8e9a887060e3"
+    },
+    "verify_terminal_results.py": {
+      "path": "historical/by-sha256/a113f5ed2d4bc266563dd515dff9fe0794ab1ab584310ceb3f9011c4a7693e21/verify_terminal_results.py",
+      "sha256": "a113f5ed2d4bc266563dd515dff9fe0794ab1ab584310ceb3f9011c4a7693e21"
+    },
+    "compiled/compile-receipt.json": {
+      "path": "historical/by-sha256/e399054e5e3cf3f0e8628c40ee4282cb7e6e57aeae763f19894e749cfc0b324b/compile-receipt.json",
+      "sha256": "e399054e5e3cf3f0e8628c40ee4282cb7e6e57aeae763f19894e749cfc0b324b"
+    },
+    "compiled/port-audit.json": {
+      "path": "evidence/port-audit.json",
+      "sha256": "22387e57e006f0435268b0ab938dcee542d54730514007c12c5e3f39ac52394d"
+    }
+  },
+  "review_script": {
+    "path": "historical/by-sha256/a9068cfd7313092584365afb6eef031d18ea1665e3460ffb85913bd14b5a0f9e/review_current_result.py",
+    "sha256": "a9068cfd7313092584365afb6eef031d18ea1665e3460ffb85913bd14b5a0f9e"
+  },
+  "source_input_checks": [
+    {
+      "name": "board",
+      "path": "../hardware/f722-heli.kicad_pcb",
+      "sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_all_track",
+      "path": "inputs/drc_all_track.json",
+      "sha256": "b1395c28217b0a61053a07f82f6c28d71a3c80e699511cc04ac5df747bb7d02e",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_normal",
+      "path": "inputs/drc_normal.json",
+      "sha256": "7d8380da43cf98fb8d6b8cfb0e2ea8dff99c30520f009c919fbb5f4cdae6cb71",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_provenance",
+      "path": "inputs/drc-provenance.json",
+      "sha256": "1eb8ba04a779bd28288fb88d75716d91ab6475e8d314ca9e7bae430505e3416c",
+      "logical_gzip": false
+    },
+    {
+      "name": "metadata",
+      "path": "inputs/native-primitive-parameters.json",
+      "sha256": "4ab15136ce5dedeecba080e6af61f01b82592a2b836cbb053f412dec1f0f9f43",
+      "logical_gzip": false
+    },
+    {
+      "name": "native",
+      "path": "../native/after.native.json.gz",
+      "sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+      "logical_gzip": true
+    },
+    {
+      "name": "parts",
+      "path": "../hardware/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858",
+      "logical_gzip": false
+    },
+    {
+      "name": "physical_assumptions",
+      "path": "inputs/physical-assumptions.json",
+      "sha256": "32e4d4e47ae9a63a92a030ee7e95a1b60e6703feaf4dff1cebd3257afd066d5c",
+      "logical_gzip": false
+    },
+    {
+      "name": "scope",
+      "path": "inputs/scope.json",
+      "sha256": "01c2d1099f84d5eaafb69546f7264cdbd07a8fb060f0cc65af3c97fa589cdef0",
+      "logical_gzip": false
+    },
+    {
+      "name": "support",
+      "path": "inputs/support.json",
+      "sha256": "a5e89ea87f394c8da0d687f9102f51cffcd46aab74baddc5725ff819c164d7b3",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_all_track_receipt",
+      "path": "inputs/drc_all_track.receipt.json",
+      "sha256": "22184512b9db72662644f50b5605c4c760132673b4e7f745d6b46135f2e61710",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_all_track_producer",
+      "path": "inputs/run_drc_pair.py",
+      "sha256": "8550969630936ca1af10bb2c8e4bbead019b11850f6da7add5f4be5e60348463",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_all_track_project",
+      "path": "../hardware/f722-heli.kicad_pro",
+      "sha256": "b6f208f1659aa43b6e96e6e49a0eb396654cb426365a557b5d78ddf74423072c",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_all_track_rules",
+      "path": "../hardware/f722-heli.kicad_dru",
+      "sha256": "511f856b819a29ae71b2a556e618209321bbffb30101ca193beaac338ce2e36b",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_all_track_execution",
+      "path": "inputs/drc_all_track.exit.json",
+      "sha256": "f9ac579bc30edb42c67f071fdfd68f9448c2f8780d63ec02ec455a00ba561c54",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_normal_receipt",
+      "path": "inputs/drc_normal.receipt.json",
+      "sha256": "3950669ebc1e470708316d18a21ddcf2b25307cc87f420991b612d26c02b9f09",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_normal_producer",
+      "path": "inputs/run_drc_pair.py",
+      "sha256": "8550969630936ca1af10bb2c8e4bbead019b11850f6da7add5f4be5e60348463",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_normal_project",
+      "path": "../hardware/f722-heli.kicad_pro",
+      "sha256": "b6f208f1659aa43b6e96e6e49a0eb396654cb426365a557b5d78ddf74423072c",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_normal_rules",
+      "path": "../hardware/f722-heli.kicad_dru",
+      "sha256": "511f856b819a29ae71b2a556e618209321bbffb30101ca193beaac338ce2e36b",
+      "logical_gzip": false
+    },
+    {
+      "name": "drc_normal_execution",
+      "path": "inputs/drc_normal.exit.json",
+      "sha256": "da1f0214130aebf0614e3df5037cd504812bac55e8ddd714ae42954d166d1b19",
+      "logical_gzip": false
+    },
+    {
+      "name": "connectivity",
+      "path": "inputs/connectivity.json",
+      "sha256": "afafbce8af5eae14273ccc5bf283950e7222ca2fae3d5ca7da8ef1d897925142",
+      "logical_gzip": false
+    },
+    {
+      "name": "parity",
+      "path": "inputs/parity.json",
+      "sha256": "d7b70da00e04ef0181b253135d2f6a6c17a8b6400b493ae5aaae84cc284b1c43",
+      "logical_gzip": false
+    },
+    {
+      "name": "physical",
+      "path": "inputs/physical.json",
+      "sha256": "32e4d4e47ae9a63a92a030ee7e95a1b60e6703feaf4dff1cebd3257afd066d5c",
+      "logical_gzip": false
+    },
+    {
+      "name": "geometry",
+      "path": "../native/after.native.json.gz",
+      "sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5",
+      "logical_gzip": true
+    }
+  ],
+  "raw_verification_method": "Independently reviewed pinned streaming verifier and its passed 610-case/150-certificate receipt; separately recomputed all reduced case/VCAP/impedance/margin decisions and current source/model identities. No repeated solver or raw reconstruction.",
+  "raw_rows": 610,
+  "probe_rows": 9500,
+  "finite_contact_count": 107,
+  "grids": [
+    {
+      "spacing_mm": 0.12,
+      "case_count": 305,
+      "required_cases": 294,
+      "illustrative_cases": 11,
+      "failed_probes": [
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J2_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.8638552371633095
+        },
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J3_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.866092559531853
+        },
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J4_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.870866095450222
+        },
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J5_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.878623367223057
+        }
+      ]
+    },
+    {
+      "spacing_mm": 0.09,
+      "case_count": 305,
+      "required_cases": 294,
+      "illustrative_cases": 11,
+      "failed_probes": [
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J2_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.863779518446441
+        },
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J3_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.86601919768272
+        },
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J4_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.870797308084823
+        },
+        {
+          "case": "same_BEC_all_cyclic_905X_J6_feed_lost_capacity__sample_mcu_vdd19",
+          "scope": "illustrative",
+          "maximum_V": 8.4,
+          "minimum_V": 6.0,
+          "name": "J5_servo_board_pad",
+          "pass": false,
+          "purpose": "PCB pad window only. Output servo harness/contact drop is unmeasured; this cannot establish voltage at the servo.",
+          "voltage_V": 5.878562726170582
+        }
+      ]
+    }
+  ],
+  "VCAP_loops": [
+    {
+      "spacing_mm": 0.12,
+      "name": "VCAP_copper_to_U1.12",
+      "resistance_ohm": 0.019134493720789007,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.12,
+      "name": "VCAP_copper_to_U1.18",
+      "resistance_ohm": 0.01863041525286279,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.12,
+      "name": "VCAP_copper_to_U1.31",
+      "resistance_ohm": 0.023821486201014784,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.12,
+      "name": "VCAP_copper_to_U1.47",
+      "resistance_ohm": 0.026179048650753014,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.12,
+      "name": "VCAP_copper_to_U1.63",
+      "resistance_ohm": 0.025085779743764497,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.09,
+      "name": "VCAP_copper_to_U1.12",
+      "resistance_ohm": 0.019203847247694063,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.09,
+      "name": "VCAP_copper_to_U1.18",
+      "resistance_ohm": 0.018698491722794582,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.09,
+      "name": "VCAP_copper_to_U1.31",
+      "resistance_ohm": 0.023911680027289727,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.09,
+      "name": "VCAP_copper_to_U1.47",
+      "resistance_ohm": 0.026289150495679335,
+      "maximum_ohm": 0.035,
+      "pass": true
+    },
+    {
+      "spacing_mm": 0.09,
+      "name": "VCAP_copper_to_U1.63",
+      "resistance_ohm": 0.025176508644378853,
+      "maximum_ohm": 0.035,
+      "pass": true
+    }
+  ],
+  "impedance_sensitivity": [
+    {
+      "net": "+3V3_ANALOG",
+      "max_impedance_change_ohm": 0.00024689706185471866,
+      "allowed_ohm": 0.0013214689655159772,
+      "pass": true
+    },
+    {
+      "net": "+3V3_CORE",
+      "max_impedance_change_ohm": 0.0010312262962780538,
+      "allowed_ohm": 0.009509640514804251,
+      "pass": true
+    },
+    {
+      "net": "+3V3_DSM",
+      "max_impedance_change_ohm": 1.6347596734746575e-05,
+      "allowed_ohm": 0.0002607050777234953,
+      "pass": true
+    },
+    {
+      "net": "+3V3_IMU",
+      "max_impedance_change_ohm": 0.00029711869672034014,
+      "allowed_ohm": 0.0015688000150506408,
+      "pass": true
+    },
+    {
+      "net": "+5V_BEC",
+      "max_impedance_change_ohm": 0.00018886558758727384,
+      "allowed_ohm": 0.0013232618165334418,
+      "pass": true
+    },
+    {
+      "net": "+5V_PERIPH",
+      "max_impedance_change_ohm": 9.195451442195468e-05,
+      "allowed_ohm": 0.0014254144252839214,
+      "pass": true
+    },
+    {
+      "net": "ABC_FB",
+      "max_impedance_change_ohm": 3.081882590920057e-05,
+      "allowed_ohm": 0.0005276330912608212,
+      "pass": true
+    },
+    {
+      "net": "CORE_BUCK_IN",
+      "max_impedance_change_ohm": 0.00012645294577199456,
+      "allowed_ohm": 0.0009608389315373137,
+      "pass": true
+    },
+    {
+      "net": "GND",
+      "max_impedance_change_ohm": 0.00010628376178629766,
+      "allowed_ohm": 0.0006893928131206838,
+      "pass": true
+    },
+    {
+      "net": "USB_LIMITED",
+      "max_impedance_change_ohm": 8.614231561536803e-05,
+      "allowed_ohm": 0.001250020056994038,
+      "pass": true
+    },
+    {
+      "net": "USB_VBUS_RAW",
+      "max_impedance_change_ohm": 0.000276552294945942,
+      "allowed_ohm": 0.00302068666127059,
+      "pass": true
+    },
+    {
+      "net": "VCAP",
+      "max_impedance_change_ohm": 2.182766084290414e-05,
+      "allowed_ohm": 0.00010245737733762333,
+      "pass": true
+    },
+    {
+      "net": "VCAP_CAP",
+      "max_impedance_change_ohm": 2.0086936923548182e-05,
+      "allowed_ohm": 0.0002707611304717553,
+      "pass": true
+    },
+    {
+      "net": "VX_PROTECTED",
+      "max_impedance_change_ohm": 0.00015607350612709125,
+      "allowed_ohm": 0.0024892845123248254,
+      "pass": true
+    },
+    {
+      "net": "VX_RAW",
+      "max_impedance_change_ohm": 5.5247783369120895e-05,
+      "allowed_ohm": 0.0015072489590237416,
+      "pass": true
+    }
+  ],
+  "resistance_margin_checks": [
+    {
+      "name": "VCAP_copper_to_U1.12",
+      "change_ohm": 6.935352690505547e-05,
+      "margin_ohm": 0.01579615275230594,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.18",
+      "change_ohm": 6.807646993179164e-05,
+      "margin_ohm": 0.01630150827720542,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.31",
+      "change_ohm": 9.019382627494313e-05,
+      "margin_ohm": 0.011088319972710276,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.47",
+      "change_ohm": 0.00011010184492632122,
+      "margin_ohm": 0.008710849504320668,
+      "numerical_guard_ohm": 0.00011010184492632122,
+      "pass": true
+    },
+    {
+      "name": "VCAP_copper_to_U1.63",
+      "change_ohm": 9.072890061435565e-05,
+      "margin_ohm": 0.00982349135562115,
+      "numerical_guard_ohm": 0.0001,
+      "pass": true
+    }
+  ],
+  "required_voltage_margin_failures": [],
+  "required_static_failures": [],
+  "required_conditional_DC_pass": true,
+  "raw_overall_conditional_static_screen_pass_preserved": false,
+  "raw_physics_checks": {
+    "maximum_circuit_equation_residual": 8.731237954862081e-12,
+    "maximum_converter_balance_error_W": 4.87668572191069e-10,
+    "maximum_circuit_balance_error_W": 1.8498758080909283e-10,
+    "maximum_field_KCL_residual_A": 4.286181994580947e-09,
+    "maximum_direct_field_vs_port_loss_error_W": 2.4786395158571395e-11,
+    "raw_case_fields_checked": 6542
+  },
+  "certificate_inventory": {
+    "references": 36432,
+    "unique_referenced": 150,
+    "certificates": 150,
+    "all_hashes_exact": true,
+    "native_vertices_changed": 0,
+    "epsilon_merging": false
+  },
+  "lowest_required_fine_grid_guarded_voltage_margin": {
+    "case": "corrected_classic_BEC5.0_911_mcu_vdd64__analog0m__none",
+    "probe": "classic_DSM_pad",
+    "change_V": 5.492298308373833e-05,
+    "margin_V": 0.018942312750862556,
+    "numerical_guard_V": 0.001,
+    "pass": true
+  },
+  "prototype_geometry_disposition": {
+    "path": "historical/by-sha256/1e5434752250a1efa602151feaa63756df736de38dd6ee145908116c6dade6f0/PROTOTYPE-ENGINEERING-DISPOSITION-v1.json",
+    "sha256": "1e5434752250a1efa602151feaa63756df736de38dd6ee145908116c6dade6f0"
+  },
+  "combined_engineering_disposition": "Required conditional DC is satisfied for this exact v5 source. The sealed finite-geometry disposition supports retaining v5 as the prototype routing baseline. Its illustrative lost-J6-feed failure remains an explicit unsupported operating case. No source-equivalence or automatic canonical adoption is claimed.",
+  "remaining_limits": [
+    "Two original ordinary opens still require repair before a complete functional board release.",
+    "UART/SBUS fast-edge and ESD return behavior remain targeted bench validation, not inferred from DC.",
+    "VCAP is a DC copper-leg check, not regulator startup, capacitor ESR/ESL or AC stability qualification.",
+    "Copper material/thickness/temperature assumptions and enumerated cases do not establish ampacity, manufacturing tolerance, thermal or flight qualification.",
+    "Future MOSI routing and any RX detour are separate geometry and require new source-bound native/reference/power applicability review."
+  ],
+  "old_result_used_as_current": false,
+  "candidate_adopted": false,
+  "numerical_solver_rerun": false,
+  "resource": {
+    "maximum_address_space_MiB": 512,
+    "elapsed_seconds": 0.6632188399962615,
+    "peak_RSS_KiB": 90756
+  }
+}

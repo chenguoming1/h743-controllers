@@ -1,0 +1,279 @@
+{
+  "schema": "f722-intermediate-dc-physical-review/v1",
+  "board_sha256": "c3183f7841bae96a59b29fd13ce9789cf47386a9db452a327ca797187d2ca8a8",
+  "native_sha256": "a4fddb679e9d73dd2a7b6300fa8888be47e30ab6f139bd5b78ab308d9192563c",
+  "passed": true,
+  "checks": {
+    "saved_fill_matches_source": true,
+    "modeled_conductor_dimensions": true,
+    "all_physical_drill_voids": true,
+    "modeled_terminal_geometry": true,
+    "modeled_copper_and_barrel_assumptions": true
+  },
+  "material": {
+    "temperature_C": 105,
+    "thickness_mm": 0.015,
+    "conductivity_IACS": 0.95,
+    "plating_mm": 0.015
+  },
+  "evidence": [
+    {
+      "path": "historical/by-sha256/960fe0dca40940600072231c519576f692db2da13c4c1306808f91d019ed150f/geometry-source-audit.json",
+      "sha256": "960fe0dca40940600072231c519576f692db2da13c4c1306808f91d019ed150f"
+    },
+    {
+      "path": "historical/by-sha256/4d49946c437663ea53814a0bd50f33e31d3ec0cc58f9837d9173a4526a620b47/support-result-review.json",
+      "sha256": "4d49946c437663ea53814a0bd50f33e31d3ec0cc58f9837d9173a4526a620b47"
+    },
+    {
+      "path": "historical/by-sha256/2802408125a3b33b786126eba5c8d72867859aaae71603fa51cb6c0364e0cb1a/support.json",
+      "sha256": "2802408125a3b33b786126eba5c8d72867859aaae71603fa51cb6c0364e0cb1a"
+    },
+    {
+      "path": "historical/by-sha256/c80a8a46c1edf544545fcbf44343dd1cfe94f4a363dead1f5fb7c8e445315c78/support-execution.json",
+      "sha256": "c80a8a46c1edf544545fcbf44343dd1cfe94f4a363dead1f5fb7c8e445315c78"
+    },
+    {
+      "path": "historical/by-sha256/7f06e8f0e1e169df69a88ca343a17febd425b1c062bbd5005b90e4fc6ea98a28/support-binding.json",
+      "sha256": "7f06e8f0e1e169df69a88ca343a17febd425b1c062bbd5005b90e4fc6ea98a28"
+    },
+    {
+      "path": "historical/by-sha256/71933c49c62fe918ca4ff452f56c64af31d52ac03efb4f4ac194140f96f88cfe/support-review.json",
+      "sha256": "71933c49c62fe918ca4ff452f56c64af31d52ac03efb4f4ac194140f96f88cfe"
+    },
+    {
+      "path": "historical/by-sha256/43ae171695c1d47e0bce14a751bee9ed608be7b2d000db70573c59bb48bee790/native-primitive-parameters.json",
+      "sha256": "43ae171695c1d47e0bce14a751bee9ed608be7b2d000db70573c59bb48bee790"
+    },
+    {
+      "path": "historical/by-sha256/ffc2df68541b2d2865fd4b4593970e21f0f5f6222591edafc3da1b5ca79b1a78/native-metadata-execution.json",
+      "sha256": "ffc2df68541b2d2865fd4b4593970e21f0f5f6222591edafc3da1b5ca79b1a78"
+    },
+    {
+      "path": "historical/by-sha256/d4f9628b7d7a53a41d51e4b026fd0a889f1cf191944eef9512be6bed2b70ec48/OWNER-GEOMETRIC-ADOPTION-BINDING.json",
+      "sha256": "d4f9628b7d7a53a41d51e4b026fd0a889f1cf191944eef9512be6bed2b70ec48"
+    },
+    {
+      "path": "model/compiler-settings.disabled.json",
+      "sha256": "a5b47d07729b1d3f2b72943ca6d13d5d9d5de49ffeb2fb128056c7ed29af0b2c"
+    },
+    {
+      "path": "historical/by-sha256/e0f60bef313a3d9df6d1979fee4887b48595d56223d8ece9136c341e135fec03/INDEPENDENT-SOURCE-SHORT-STAGE-REVIEW.json",
+      "sha256": "e0f60bef313a3d9df6d1979fee4887b48595d56223d8ece9136c341e135fec03"
+    }
+  ],
+  "scope": "DC computational geometry/assumptions only",
+  "final_source": false,
+  "electrical_acceptance_claimed": false,
+  "manufacturing_release": false,
+  "numerical_execution_authorized": false,
+  "reviewed_utc": "2026-10-12T16:51:05.136075+00:00",
+  "reviewer": "Independent exact-source DC computational geometry and conditional physical-assumption review",
+  "review_notes": [
+    "All 1610 track records, 301 via records and 558 pad identity/position/size/net/plating records match the exact current saved source.",
+    "All 328 actual drilled objects, including all 27 pad drills and their transformed slot axes, are bound to the current passed conservative support result; foreign-net holes remain included.",
+    "Both exact saved GND boundary sets match the current PCB after cancellation only of opposite integer fracture edges. The exact 586-vertex VX_PROTECTED polygon source binding remains unchanged.",
+    "All 268 scoped native metadata raw pad-form hashes match the current PCB. All 151 terminal-audit records and 107 model contacts resolve to actual current pad UUIDs, nets and layers.",
+    "Fresh support independently reviewed: all eight gates passed, all 15 net pad sets exact and all 44 required returns reach actual current saved GND-plane witnesses. The reviewer did not rerun the support engine.",
+    "The six source stackup layer centers determine actual physical barrel spans. Copper 105 C, thickness0.015mm,95%IACS and plating0.015mm remain unchanged conditional computational assumptions, not a manufactured-stackup or thermal guarantee.",
+    "Finite clipped contact windows and ideal-land/alias collision tests remain a separate mandatory compile-stage audit. This physical-assumptions pass does not assert those tests have run.",
+    "Within-layer finite lands and annuli remain idealized; package/pin/solder/contact current distribution and heating are not established.",
+    "The earlier pending physical packet and source-audit dependency fields are preserved as observations before this terminal support-result review. This new receipt completes only the five DC computational physical checks.",
+    "Raw historical false predicates, source-scoped contact dispositions and current reference/timing/SI/ESD/assembly/final-board limitations are retained without promoting them to new source metrics.",
+    "No compile or numerical run has occurred or is authorized by this receipt. The prior overall-false 18.560741874A illustration remains historical; fresh DC requires all305cases, both grids and fiveVCAPloops."
+  ],
+  "unresolved_final_conditions": {
+    "owner_adoption": {
+      "path": "historical/by-sha256/4af1bfb7bdd0b8bea18d87c69fc57b2889120388c1a350523a416e013c03cadd/owner-geometric-adoption.json",
+      "sha256": "4af1bfb7bdd0b8bea18d87c69fc57b2889120388c1a350523a416e013c03cadd"
+    },
+    "current_physical_audit": {
+      "path": "historical/by-sha256/96fccc71a784c65655554abe33b599adb90be42d854bd41ae890dc8dc611d37b/physical-audit.json",
+      "sha256": "96fccc71a784c65655554abe33b599adb90be42d854bd41ae890dc8dc611d37b"
+    },
+    "raw_historical_aggregate_value_preserved": false,
+    "raw_historical_gates_preserved": {
+      "CORE47_and_every_new_CORE_repair_complete": true,
+      "R34_to_actual_RX_IO1_improved_and_safe_partial_path": false,
+      "RED_retained_B_lead_full_width_join": false,
+      "VX_polygon_all_original_terminal_contacts_supported": false,
+      "actual_TX_IO2_cut_complete_and_passed": true,
+      "all_22_actual_IO_contracts_reported": true,
+      "all_actual_IO_external_NC_bridges_passed": true,
+      "all_changed_real_pad_contacts_full_width": true,
+      "all_new_copper_clearances_including_polygon_and_fills": true,
+      "all_new_track_endpoints_union_or_annulus_supported": true,
+      "all_new_via_GND_plane_clearances": true,
+      "all_new_via_track_or_exact_GND_plane_contacts_full_width": true,
+      "all_previously_passed_actual_IO_cuts_preserved": true,
+      "all_required_whole_net_pad_counts_exact": true,
+      "all_required_whole_nets_complete": true,
+      "all_surviving_native4_object_fragments_preserved": true,
+      "all_unchanged_net_predicates_have_exact_full_geometry_inputs": true,
+      "complete_SCK_original_tree_and_all_terminals": true,
+      "every_new_copper_fragment_reaches_real_pad": true,
+      "native_geometric_DRC_errors_zero": true,
+      "no_native4_physical_pad_pair_losses": true,
+      "no_native5_physical_pad_pair_losses": true,
+      "no_native6_physical_pad_pair_losses": true,
+      "no_native7_physical_pad_pair_losses": true,
+      "raw_native_open_count_held": true,
+      "saved_and_own_drilled_planes_unchanged": true,
+      "shared_GND_physical_support_passed": true,
+      "updated_RX_TX_branch_cut_contracts_passed": true
+    },
+    "source_scoped_disposition": {
+      "CORE_disposition": "Actual full-width entry exists outside the physical drill; both inherited and candidate midpoint witnesses under-sample the annulus. Real plated barrel contact is positive.",
+      "RED_disposition": "The exact new via plus join copper union gives full-width retained-lead support. Pairwise old-endpoint failure stays raw. New drill subtracts 2.2813129358519034e-7 mm2 from the retained native track shape; the complete fragment and union proofs remain explicit.",
+      "VX_disposition": "Five original direct contact regions survive. Inherited side-branch/partial-annulus predicates stay raw. Whole-union track and barrel support is preserved, and the far1.2mm external port terminates at an existing plated drill with full annular support. Narrowed polygon current capacity remains unqualified.",
+      "accepted_or_adopted": false,
+      "actual_IO_full_cut_passes": 21,
+      "actual_SCK_outside_adjacent_GND_mm": 3.539622544357549,
+      "all_exact_contact_scope_checks_satisfied": true,
+      "bindings": {
+        "local_geometry": {
+          "bytes": 66418,
+          "path": "historical/by-sha256/0542e0786bd23a749b51d94ee5f6ea1ee7b1bb0a2f3cf6b651a4f47a023b0c09/review.json",
+          "sha256": "0542e0786bd23a749b51d94ee5f6ea1ee7b1bb0a2f3cf6b651a4f47a023b0c09"
+        },
+        "local_geometry_script": {
+          "bytes": 10378,
+          "path": "historical/by-sha256/110298af5ad64288715936d7f84b38b8602feecdc94513cb66f6c9140ea9fd1f/review_local.py",
+          "sha256": "110298af5ad64288715936d7f84b38b8602feecdc94513cb66f6c9140ea9fd1f"
+        },
+        "partial_RX_review": {
+          "bytes": 105876,
+          "path": "historical/by-sha256/cc65b8da00fbe10def714fd1d9bf4d769b7acd718e2fb1de3d6f709a1f008863/reviewed-native4-cleanup-v1.json",
+          "sha256": "cc65b8da00fbe10def714fd1d9bf4d769b7acd718e2fb1de3d6f709a1f008863"
+        },
+        "raw_audit": {
+          "bytes": 4378243,
+          "path": "historical/by-sha256/3597f3fbc390da57255a2ab7a45132bed5ddcf7360af5dec3cdea679c1f465f8/physical-audit-native4-cleanup-v1.json",
+          "sha256": "3597f3fbc390da57255a2ab7a45132bed5ddcf7360af5dec3cdea679c1f465f8"
+        },
+        "reviewer": {
+          "bytes": 9981,
+          "path": "historical/by-sha256/c246f00bcf38beba01881d07f7dc962123505ac54dfd2c2e0b01308ba23b1c46/review_disposition.py",
+          "sha256": "c246f00bcf38beba01881d07f7dc962123505ac54dfd2c2e0b01308ba23b1c46"
+        }
+      },
+      "candidate_native_sha256": "c98fd2e2f8c66b43c38897fecfc1263f855df0bcf8598f31b3a74a10a142f762",
+      "controls": [
+        {
+          "name": "exact_saved_contact_evidence_positive",
+          "passed": true
+        },
+        {
+          "name": "CORE_missing_full_width_entry",
+          "passed": true
+        },
+        {
+          "name": "CORE_clip_boundary_section",
+          "passed": true
+        },
+        {
+          "name": "CORE_unplated_connection",
+          "passed": true
+        },
+        {
+          "name": "RED_pairwise_only_support",
+          "passed": true
+        },
+        {
+          "name": "VX_lost_original_contact",
+          "passed": true
+        },
+        {
+          "name": "VX_lost_barrel_contact",
+          "passed": true
+        },
+        {
+          "name": "VX_branch_union_neck",
+          "passed": true
+        },
+        {
+          "name": "VX_terminal_is_not_existing_drill",
+          "passed": true
+        },
+        {
+          "name": "unrelated_new_endpoint_failure",
+          "passed": true
+        },
+        {
+          "name": "unrelated_pad_pair_loss",
+          "passed": true
+        },
+        {
+          "name": "unrelated_raw_clearance_failure",
+          "passed": true
+        }
+      ],
+      "current_capacity_reference_SI_ESD_and_assembly_qualified": false,
+      "full_RX_protection_passed": false,
+      "new_geometry_executed": false,
+      "peak_RSS_MiB": 29.0625,
+      "raw_aggregate_preserved": false,
+      "raw_gates_preserved": {
+        "CORE47_and_every_new_CORE_repair_complete": true,
+        "R34_to_actual_RX_IO1_improved_and_safe_partial_path": false,
+        "RED_retained_B_lead_full_width_join": false,
+        "VX_polygon_all_original_terminal_contacts_supported": false,
+        "actual_TX_IO2_cut_complete_and_passed": true,
+        "all_22_actual_IO_contracts_reported": true,
+        "all_actual_IO_external_NC_bridges_passed": true,
+        "all_changed_real_pad_contacts_full_width": true,
+        "all_new_copper_clearances_including_polygon_and_fills": true,
+        "all_new_track_endpoints_union_or_annulus_supported": false,
+        "all_new_via_GND_plane_clearances": true,
+        "all_new_via_annular_contacts_full_width": true,
+        "all_previously_passed_actual_IO_cuts_preserved": true,
+        "all_required_whole_net_pad_counts_exact": true,
+        "all_required_whole_nets_complete": true,
+        "all_surviving_native5_object_fragments_preserved": true,
+        "every_new_copper_fragment_reaches_real_pad": true,
+        "native_geometric_DRC_errors_zero": true,
+        "no_native5_physical_pad_pair_losses": true,
+        "no_native6_physical_pad_pair_losses": true,
+        "no_native7_physical_pad_pair_losses": true,
+        "raw_native_open_count_improved": true,
+        "shared_GND_physical_support_passed": true,
+        "updated_RX_TX_branch_cut_contracts_passed": true
+      },
+      "raw_kernel_or_report_changed": false,
+      "reviewed_contact_gates": {
+        "CORE_actual_full_width_annular_entry_and_barrel": true,
+        "RED_actual_new_join_plus_via_full_width_support": true,
+        "VX_actual_source_barrel_support_preserved": true,
+        "VX_all_five_original_contact_regions_preserved": true,
+        "VX_drilled_terminal_and_external_port_geometry_accounted_for": true,
+        "VX_existing_track_full_width_union_support_preserved": true,
+        "accepted_narrow_partial_RX_evidence_retained": true,
+        "all_baseline_pad_and_retained_fragment_relationships_preserved": true,
+        "all_other_raw_physical_obligations_passed": true
+      },
+      "source_bound_scope_is_not_general_kernel_certification": true,
+      "status": "EXACT_CONTACT_SCOPE_REVIEW_FOR_OWNER_NOT_ACCEPTANCE"
+    },
+    "full_RX_protection_passed": false,
+    "all_22_full_protection_passed": false,
+    "current_capacity_reference_timing_SI_ESD_assembly_qualified": false,
+    "final_release_ready": false,
+    "current_owner_limits": [
+      "Current power/reference evidence must be rebuilt for changed CORE copper and GND antipads.",
+      "Prior DC294requiredcases remain historical for previous source; failed18.56Aillustration stays visible.",
+      "RX protection remains incomplete before actual IO cut; no new protection regressions.",
+      "Historical contact disposition fields retain original source identities and are not current signal-reference metrics.",
+      "Stock I2C timing/sink-guarantee gap and hardware qualification remain unresolved."
+    ],
+    "remaining_nets": [
+      "FLASH_MOSI",
+      "PORT_C_RX_EXT",
+      "PORT_C_RX_MCU"
+    ],
+    "historical_contact_fields_are_not_current_signal_reference_metrics": true
+  },
+  "finite_port_audit_complete": false,
+  "compile_complete": false,
+  "fresh_DC_result_complete": false,
+  "evidence_binding_note": "Plain-source evidence rows are compatible with diagnostic.bound. Full model-template equality is established by the referenced independent source review; the plain JSON compiler settings bind material, grids, limits and acceptance settings."
+}

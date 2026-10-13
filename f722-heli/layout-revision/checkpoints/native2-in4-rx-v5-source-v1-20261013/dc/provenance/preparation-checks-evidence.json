@@ -1,0 +1,118 @@
+{
+  "schema": "f722-in4-v5-source-only-preservation-checks/v1",
+  "passed": true,
+  "candidate": {
+    "board": {
+      "path": "../hardware/f722-heli.kicad_pcb",
+      "sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb"
+    },
+    "native": {
+      "path": "../native/after.native.json.gz",
+      "sha256": "ae89889c542bca2c96abbdd48e66e70215ab7da84ceb9bccf7d619f8739825a5"
+    },
+    "auxiliary": {
+      "path": "../native/after-auxiliary.json.gz",
+      "sha256": "25ebe3efbc70a167010ac03fa5ffa953fb22717db194297a491d1ec3b39e7154"
+    },
+    "parts": {
+      "path": "../hardware/parts.json",
+      "sha256": "99e1589baf2033bc696613ad52c5deab3403397d7caafff6d8aa011296846858"
+    },
+    "project": {
+      "path": "../hardware/f722-heli.kicad_pro",
+      "sha256": "b6f208f1659aa43b6e96e6e49a0eb396654cb426365a557b5d78ddf74423072c"
+    },
+    "rules": {
+      "path": "../hardware/f722-heli.kicad_dru",
+      "sha256": "511f856b819a29ae71b2a556e618209321bbffb30101ca193beaac338ce2e36b"
+    },
+    "refill_reopen": {
+      "path": "historical/by-sha256/7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb/refill-reopen-check.kicad_pcb",
+      "sha256": "7d9af57e9b22064fc6b2fd9cde4f2f5b72dc252cdbb1b104e706472bfdbbcdcb"
+    },
+    "structural_edit_ledger": {
+      "path": "provenance/structural-edit-ledger.json",
+      "sha256": "ca1a7f0a55fe03a12f720d0a02ff033c7d3a91d250653688af09009f27851f2c"
+    },
+    "paired_native_proof": {
+      "path": "historical/by-sha256/ccd49fbcf2479bad0fa6c8f4cdc53e120a429c50c9c783d6109a1987ea49a424/paired-native-proof.json",
+      "sha256": "ccd49fbcf2479bad0fa6c8f4cdc53e120a429c50c9c783d6109a1987ea49a424"
+    },
+    "diagnostic_result": {
+      "path": "historical/by-sha256/64daa8a008bf044e2b2ffea4c05cd4df93a6ace23e9e6b607e4103daee6c684a/diagnostic-result.json",
+      "sha256": "64daa8a008bf044e2b2ffea4c05cd4df93a6ace23e9e6b607e4103daee6c684a"
+    }
+  },
+  "model_template_exactly_equal_to_successful_source3": true,
+  "model_contract_sha256": "285961cbf0d79d0ae28e2e2a84b256380da8c6a922b6977a2495b7554c922a95",
+  "counts": {
+    "required": 294,
+    "illustrative": 11,
+    "loops": 5,
+    "networks": 15,
+    "contacts": 107,
+    "ground_contacts": 41
+  },
+  "all305_cases15_networks107_contacts5_loops_material_grids_convergence_limits_exact": true,
+  "all268_pads44_return_identities_exact": true,
+  "unchanged_runtime_modules": [
+    "mesh_cache.py",
+    "model_contract.py",
+    "exact_native_contours.py",
+    "summarize_combined_pilot.py",
+    "audit_native_ports.py",
+    "copper_fem.py",
+    "validate_static.py",
+    "native_edge_noding.py",
+    "power_case_model.py",
+    "dc_circuit.py",
+    "compile_power_ledger.py",
+    "run_bounded_pilot.py",
+    "report_actual_sinks.py",
+    "prepare_loaded_pilot.py",
+    "build_model_inputs.py",
+    "summarize_loaded_pilot.py",
+    "support_receipt.py",
+    "owner_support_contract.py",
+    "plan_power_revalidation.py",
+    "stream_result_gzip.py"
+  ],
+  "native_storage_polygon_helper_functions_AST_exact": true,
+  "adapter_changed_functions": [
+    "bound",
+    "code_inventory",
+    "load_module",
+    "compile_diagnostic"
+  ],
+  "current_binding": {
+    "path": "historical/by-sha256/0488f24188270b693b42c5f3a9f4c076fd4ae5366a689c9b429f4962f53156e5/binding.template.json",
+    "sha256": "0488f24188270b693b42c5f3a9f4c076fd4ae5366a689c9b429f4962f53156e5"
+  },
+  "code_inputs": {
+    "path": "historical/by-sha256/91a70935df75c773f1d797308f255f20560384e0285ea761bc072b1ff285b2a6/code-inputs.json",
+    "sha256": "91a70935df75c773f1d797308f255f20560384e0285ea761bc072b1ff285b2a6"
+  },
+  "adapter": {
+    "path": "historical/by-sha256/af556eabe75fe59990882cccbf43d0c39604a441ee008c19a4940e09bbe0f1ff/diagnostic.py",
+    "sha256": "af556eabe75fe59990882cccbf43d0c39604a441ee008c19a4940e09bbe0f1ff"
+  },
+  "source_selection": {
+    "path": "historical/by-sha256/5155cbbba439faaa3d780cf6e58348b98206c3ecdad3b7de55fcebff2e9aaaad/source-selection.json",
+    "sha256": "5155cbbba439faaa3d780cf6e58348b98206c3ecdad3b7de55fcebff2e9aaaad"
+  },
+  "patch": {
+    "path": "historical/by-sha256/cf093755852ff58d4e285cbfc10d372f8e7201f741ec340e7182743d7f3ca75d/adaptation-only.patch",
+    "sha256": "cf093755852ff58d4e285cbfc10d372f8e7201f741ec340e7182743d7f3ca75d"
+  },
+  "supervisor": {
+    "path": "historical/by-sha256/5e7dd494cfd4540c4245a6f4e7e04062b47f98f7b1ef3f11c10d07cd9f5e0d12/supervise_tmp_stage.py",
+    "sha256": "5e7dd494cfd4540c4245a6f4e7e04062b47f98f7b1ef3f11c10d07cd9f5e0d12"
+  },
+  "all_active_leases_absent": true,
+  "all_heavy_stages_not_run": true,
+  "current_result_applicability": "PENDING",
+  "v1_preparation_preserved": {
+    "path": "historical/by-sha256/469dc69ff66937177ad61ac87c22eff830e02c45de372233ecf711d2962d8326/PRE-SOLVE-HANDOFF.json",
+    "sha256": "469dc69ff66937177ad61ac87c22eff830e02c45de372233ecf711d2962d8326"
+  }
+}
