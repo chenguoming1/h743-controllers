@@ -1,18 +1,16 @@
-# Design review — revision 4: full schematic, 3-slot header joint, clear header band
+# Design review — revision 5: routed 6-layer board, VBar-style 2-bar joint, JLCPCB outputs
 
-**Status: schematic complete, every part placed, not routed.** Both boards pass KiCad 10.0.6 checks:
+**Status: both boards fully routed and checked; fabrication and assembly files are ready.** KiCad 10.0.6:
 
-| Board | ERC | DRC errors | Schematic ↔ PCB parity | Unrouted connections |
+| Board | ERC | DRC errors | Unconnected | Schematic ↔ PCB parity |
 |---|---|---|---|---|
-| Main board | 0 | 0 | 0 issues | 275 (routing is the next step) |
-| Header child board | 0 | 0 | 0 issues | 24 |
+| Main board (6 layers) | 0 | 0 | 0 | 0 issues |
+| Header child board (2 layers) | 0 | 0 | 0 | 0 issues |
 
-The only DRC warnings are silkscreen overlaps from LCSC footprint artwork. Silkscreen is redone at routing.
+The remaining DRC warnings are silkscreen artwork from the LCSC footprints (overlaps, text over pads; the Gerbers clip silk away from exposed copper), plus 12 short track ends that KiCad calls "dangling" but that carry a connection along their length.
 
 - Schematics: [main](schematic-main.pdf), [header child board](schematic-header-board.pdf)
-- BOMs with LCSC part numbers: [main](../manufacturing/bom-main.csv) (88 parts), [child board](../manufacturing/bom-header-board.csv)
-
-![Annotated placement](images/floorplan.svg)
+- JLCPCB packages: [manufacturing/](../manufacturing/) (see [Manufacturing files](#manufacturing-files))
 
 | Top | Bottom (seen from below) |
 |---|---|
@@ -22,23 +20,13 @@ The only DRC warnings are silkscreen overlaps from LCSC footprint artwork. Silks
 |---|---|
 | ![header end](images/floorplan-iso-header.png) | ![iso](images/floorplan-iso.png) |
 
-## Changes since revision 3
+## Changes since revision 4
 
-1. **Header joint is now bar–gap–bar–gap–bar.** The child board has three long tabs with 1.0 mm gaps between them, going into three long **non-plated** slots:
-   - Tab 1: VX, SBUS, RPM.
-   - Tab 2: ESC, TAIL, S3.
-   - Tab 3: S2, S1, GND.
-
-   **Both sides of the child board are soldered.**
-   - **Inner face:** one pad per net (7 signals, plus VX and GND). Each is soldered to the inner slot edge on the main board's top and bottom.
-   - **Outer face (header side):** one long full-width strip per tab, **GND – VX – GND**: a big power strip in the middle, ground on each side. They are soldered to matching strips on the outer slot edges, on both the main board's **top and bottom**.
-     - On top, the outer strips sit under the header's plastic body, with a 0.7 mm gap that is open at the board edge.
-     - Solder them with paste and hot air, or with a fine iron tip from the board edge.
-     - The bottom joints can be done with an ordinary iron.
-
-   Every tab is therefore soldered on both faces, top and bottom: four fillets per column. Power and ground get the wide strips, and every signal gets its own pad.
-
-   To make room for the outer strips, the child board moved 0.8 mm inward, so the main board now runs 1.6 mm past its outer face, under the header body. The servo pin tips are still flush with the case end, and the main board grew to **22.4 × 33.1 mm**. The gaps between tabs fall between pads, so none is cut.
+1. **Header joint redone VBar style: two bars, soldered on the bottom only.** The child board ends in two long tabs (bar–gap–bar, 1.0 mm gap) that pass through two long non-plated slots and stick out 1.0 mm below the main board. All soldering is on the main board's **bottom** face:
+   - **Inner slot edge:** one pad per net. Left bar: SBUS, RPM, ESC, TAIL, VX. Right bar: GND, S3, S2, S1. VX and GND sit next to the centre bridge.
+   - **Outer slot edge:** one long strip per slot, **VX** on the left and **GND** on the right, soldered to matching strips on the tab's outer (header) face.
+   - No copper or solder on the main board's top face at the joint, and still no parts within 5.0 mm of the header edge on either side.
+   - On the main board, the VX strip reaches the VX pad through the centre bridge on In2/In3, and the GND strip and pad drop straight into the In1/In4 ground planes. The copper next to the slots is laid by script with a 0.3 mm keep-out, so the router never goes near a slot.
 
    ![child board, header side](images/header-board-front-flat.png)
 
@@ -46,24 +34,55 @@ The only DRC warnings are silkscreen overlaps from LCSC footprint artwork. Silks
 
    ![joint cross-section](images/joint-section.svg)
 
-   From the socket (top) side: the child board's inner face, its pin tails, and the per-net pads at its foot on the main board's top pads.
-
-   ![joint from the socket side](images/joint-top-angle.png)
+   ![joint from below](images/joint-bottom-angle.png)
    ![child board inner face](images/header-board-back.png)
-   ![joint from below](images/joint-underside.png)
-2. **No parts within 5.0 mm of the header edge, top or bottom.** The joint footprint's courtyard covers that band on both layers, so KiCad's DRC flags any part placed in it.
-3. **To make room, DSM 3.3 V now comes from the MCU 3V3 buck through a 0.5 A polyfuse (F2).** This is the option Rotorflight's requirements allow. The TPS629210 is rated 1 A: MCU, sensors and flash draw about 0.2 A, plus up to 0.5 A for DSM. The separate DSM buck and its five support parts are removed.
-4. **Hand-placed clusters:**
-   - The 5 V buck runs along the VX side.
-   - The MCU 3V3 buck sits at the lower left.
-   - The crystal sits right below the oscillator pins, with its load capacitors on each side.
-   - The USB fuse sits between the USB shell tabs, with the ESD and mux next to it.
-   - The MCU moved 0.7 mm right.
-   - The two MCU VDD capacitors and VCAP that sit under the 5 V buck strip are on the top side, directly over their pins.
-   - The voltage-sense dividers are on the top side as well.
-5. **The MCU buck output is a single 22 µF**, TI's typical value, replacing 2 × 10 µF.
+2. **Main board is now 6 layers and fully routed** (see [Routing](#routing)).
+3. **SWD test pads moved to the right side**, next to the MCU's PA13/PA14; 3V3, GND and NRST pads are on the left.
 
-Four small parts are on the opposite side from their pin and connect through a via: the I²C pull-ups, the sensor-LDO input capacitor and the 5 V bulk capacitor. None of them is timing- or stability-critical.
+## Routing
+
+**Stackup** (JLCPCB 6-layer, 1.6 mm, JLC06161H-2116 style, ENIG): SIG – GND – SIG – SIG – GND – SIG.
+
+| Layer | Use |
+|---|---|
+| F.Cu (1 oz) | parts, signals, GND pour |
+| In1.Cu (0.5 oz) | solid GND plane |
+| In2.Cu / In3.Cu (0.5 oz) | signals and power, GND pour |
+| In4.Cu (0.5 oz) | solid GND plane |
+| B.Cu (1 oz) | MCU, flash, power stages, signals, GND pour |
+
+Every signal layer sits next to a ground plane. The inner layers are separated by the thick cores, so In2/In3 signals reference In1/In4.
+
+**Rules — JLCPCB 6-layer at no extra cost:**
+- Track and spacing 0.09 mm minimum (3.5 mil). Signals are 0.12 mm and neck to 0.09 mm only at fine-pitch pads; spacing is 0.09 mm (0.12 mm next to VX / 5 V buck copper).
+- **One via size everywhere: 0.2 mm drill / 0.45 mm pad**, the smallest JLCPCB builds without a surcharge: 227 vias. Via-in-pad is free on 6+ layers (filled and capped), and a few are used.
+- Copper 0.3 mm from the board edge and from the joint slots; 0.2 mm from any hole.
+- Net widths: VX / 5 V buck / switch nodes 0.5 mm, USB 5 V 0.35 mm, 3V3 / VSYS / VBUS / DSM 3.3 V 0.25 mm, USB D+/D− 0.15 mm, signals 0.12 mm.
+
+**How it was routed** (`tools/route_board.py`, rerun with `FREEROUTING_JAR` set):
+1. Fixed copper at the header joint, GND planes on In1/In4.
+2. Freerouting 2.5.0, several sessions in a row, keeping the best.
+3. `tools/finish_route.py` connects what Freerouting left: a grid maze router that may rip up other nets' tracks, kept only if every cut net reconnects; it tries several net orders in parallel.
+4. GND pours on the four signal layers, ground stitching vias, and a final check that every pour fragment reaches the planes.
+5. `tools/clean_dangling.py` removes stubs left by rip-ups, only when connectivity is unchanged.
+
+## Manufacturing files
+
+Generated by `python3 tools/export_fab.py` into `manufacturing/<board>/`, set up for JLCPCB:
+
+| File | Contents |
+|---|---|
+| `<board>-gerbers.zip` | Gerber RS-274X (Protel names) for every copper, mask, paste and silk layer, plus Excellon drill (plated and non-plated separate, slots as routed holes). Upload this. |
+| `<board>-bom-jlc.csv` | Comment, Designator, Footprint, LCSC Part # |
+| `<board>-cpl-jlc.csv` | Designator, Mid X, Mid Y, Layer, Rotation |
+
+The Gerbers, drills and CPL all use the board's lower-left corner as the origin.
+
+**Order notes:**
+- **Main board:** 6 layers, 1.6 mm, ENIG, JLC06161H-2116 stackup, minimum via 0.2/0.45 mm (the no-extra-cost option). 82 parts are placed on both sides; test pads TP1–TP5 and the joint have no part.
+- **Check rotations in JLC's placement preview before paying**, especially bottom-side parts (U1, U4, U5, U9, U14, diodes, LEDs): JLC's rotation convention for bottom parts sometimes differs.
+- **Child board:** 2 layers, 1.6 mm. The only part is the 3×7 through-hole header (C32713294); hand-soldering it is cheaper than JLC through-hole assembly. 2 oz copper is recommended, since servo current flows on it.
+- Assembly: fit the child board through the slots so the tabs stick out 1.0 mm below the main board, then solder the per-net pads and the two long strips on the bottom.
 
 ## Circuit summary (values in the schematic)
 
@@ -84,7 +103,7 @@ Four small parts are on the opposite side from their pin and connect through a v
 | Receiver ports | - GH-4: [GND, 5V, RX, TX]. ZH-3 DSM: [3.3V, GND, DATA].<br>- SRV05-4 ESD on all UART lines, referenced to 5 V.<br>- UART1 TX joins DSM DATA through 1 k for SRXL2 half-duplex. RX-only DSM is unaffected. |
 | Servo header lines | SRV05-4 clamps right at the joint, referenced to 5 V, so lines clamp at about 5.7 V; all seven pins are 5 V-tolerant. No series resistors, per Rotorflight. |
 | LEDs | - PC14 (yellow-green) and PC15 (red) are active-low through 1 k, about 1.3 mA. That is under the 3 mA these backup-domain pins can sink.<br>- Blue power LED on the 5 V bus, 1 k. |
-| SWD | Test pads for SWDIO, SWCLK, NRST, 3V3 and GND. |
+| SWD | Test pads: SWDIO and SWCLK on the right edge, NRST, 3V3 and GND on the left edge. |
 
 ## How the design is generated
 
@@ -96,10 +115,6 @@ tools/build_all.sh
 
 The schematics are generated: every pin has a wire stub and a net label, grouped by function. You can edit them in KiCad from now on, or keep editing `design.py` and regenerating. Pick one, because regenerating overwrites manual schematic edits.
 
-## Next step: routing
+## Open points
 
-The remaining step is routing: 4 layers, with GND on an inner layer, and power pours for VX, 5 V and 3V3. After that come silkscreen cleanup and JLCPCB fab/assembly outputs (Gerbers, CPL, BOM).
-
-Open points:
-1. **IMU orientation:** I'll fix U2's rotation so the stock `CW90` is correct, once we confirm which end of the Nexus faces forward.
-2. **Child board copper:** 2 oz is recommended, since servo current flows on it.
+1. **IMU orientation:** U2's rotation will be set so the stock `CW90` alignment is correct, once we confirm which end of the Nexus faces forward.

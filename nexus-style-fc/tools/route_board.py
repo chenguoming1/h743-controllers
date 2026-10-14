@@ -30,7 +30,7 @@ PLANE3 = os.environ.get("ROUTE_PLANE3", "0") == "1"      # In3 as 3V3 plane (1) 
 WORK = os.environ.get("ROUTE_WORK", os.path.join(HERE, "..", ".route"))
 KICAD_CLI = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 JAVA = os.environ.get("JAVA", "/opt/homebrew/opt/openjdk/bin/java")
-FREEROUTING = os.environ.get("FREEROUTING_JAR", "")
+FREEROUTING = os.environ.get("FREEROUTING_JAR", os.path.expanduser("~/.cache/freerouting/freerouting-2.5.0.jar"))
 PASSES = int(os.environ.get("ROUTE_PASSES", "100"))
 ROUNDS = int(os.environ.get("ROUTE_ROUNDS", "4"))
 FINISH_TRIES = int(os.environ.get("ROUTE_FINISH_TRIES", "6"))          # Freerouting sessions, each starting from the last
@@ -203,6 +203,7 @@ def write_project_rules(pcb_path, classes, patterns, rules):
 # Freerouting necks every class down to 75 % of its width at crowded pads, so 0.12 mm signals end up no
 # thinner than 0.09 mm (JLC's no-surcharge minimum); the board rule is 0.09 mm track and space.
 SIG_W = float(os.environ.get("ROUTE_SIG_W", "0.12"))
+CLR = float(os.environ.get("ROUTE_CLR", "0.10"))          # copper-to-copper; JLC's no-surcharge minimum is 0.09
 VIA_DIA, VIA_DRILL = 0.45, 0.2     # the one via on the main board: JLC's cheapest 6-layer via
 JLC6_RULES = {"min_clearance": 0.09, "min_track_width": 0.09, "min_via_diameter": 0.45, "min_via_annular_width": 0.125,
               "min_through_hole_diameter": 0.2, "min_hole_to_hole": 0.25, "min_hole_clearance": 0.2,
@@ -221,14 +222,14 @@ def setup_rules(board):
     ds.m_CopperEdgeClearance = mm(0.3)
     ns = ds.m_NetSettings
     nc = ns.GetDefaultNetclass()
-    nc.SetClearance(mm(0.1))
+    nc.SetClearance(mm(CLR))
     nc.SetTrackWidth(mm(SIG_W))
     nc.SetViaDiameter(mm(VIA_DIA))
     nc.SetViaDrill(mm(VIA_DRILL))
     for name, width, clr, nets in (("HighCurrent", 0.5, 0.12, HIGH_CURRENT_NETS),
-                                   ("Port5V", 0.35, 0.1, PORT5V_NETS),
-                                   ("Power", 0.25, 0.1, POWER_NETS + ([] if PLANE3 else [PLANE_3V3])),
-                                   ("USB", 0.15, 0.1, USB_NETS)):
+                                   ("Port5V", 0.35, CLR, PORT5V_NETS),
+                                   ("Power", 0.25, CLR, POWER_NETS + ([] if PLANE3 else [PLANE_3V3])),
+                                   ("USB", 0.15, CLR, USB_NETS)):
         via, drill = VIA_DIA, VIA_DRILL
         c = pcbnew.NETCLASS(name)
         c.SetTrackWidth(mm(width))
@@ -490,6 +491,25 @@ def pour():
     pcbnew.SaveBoard(PCB, board)
 
 
+def clean_stubs(passes=8):
+    """Remove the dangling stubs rip-ups leave (tools/clean_dangling.py keeps any that carry a connection)."""
+    import json
+    rep = os.path.join(WORK, "dangling.json")
+    ids = os.path.join(WORK, "dangling.txt")
+    for _ in range(passes):
+        subprocess.run([KICAD_CLI, "pcb", "drc", "--severity-all", "--format", "json", "-o", rep, PCB],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        d = json.load(open(rep))
+        u = [i["uuid"] for v in d["violations"] if v["type"] in ("track_dangling", "via_dangling") for i in v["items"][:1]]
+        if not u:
+            break
+        open(ids, "w").write("\n".join(u))
+        r = subprocess.run([sys.executable, os.path.join(HERE, "clean_dangling.py"), PCB, ids], capture_output=True, text=True)
+        if "removed 0 " in r.stdout or "removed" not in r.stdout:
+            break
+    refill(PCB)
+
+
 def refill(path):
     """Fill every zone with kicad-cli (the pcbnew filler leaves stale fills after an SES import)."""
     subprocess.run([KICAD_CLI, "pcb", "drc", "--refill-zones", "--save-board", "-o", os.devnull, path],
@@ -503,8 +523,8 @@ def main():
         return one_round()
     os.makedirs(WORK, exist_ok=True)
     v = (VIA_DIA, VIA_DRILL)
-    write_project_rules(PCB, [("Default", SIG_W, 0.1, *v), ("HighCurrent", 0.5, 0.12, *v),
-                              ("Port5V", 0.35, 0.1, *v), ("Power", 0.25, 0.1, *v), ("USB", 0.15, 0.1, *v)],
+    write_project_rules(PCB, [("Default", SIG_W, CLR, *v), ("HighCurrent", 0.5, 0.12, *v),
+                              ("Port5V", 0.35, CLR, *v), ("Power", 0.25, CLR, *v), ("USB", 0.15, CLR, *v)],
                         [("HighCurrent", HIGH_CURRENT_NETS), ("Port5V", PORT5V_NETS),
                          ("Power", POWER_NETS + ([] if PLANE3 else [PLANE_3V3])), ("USB", USB_NETS)], JLC6_RULES)
     if "--more" in sys.argv or "--finish" in sys.argv:
@@ -540,6 +560,7 @@ def main():
                        capture_output=True, text=True, env=dict(os.environ, ROUTE_PCB=PCB))
     print("\n".join(l for l in r.stdout.splitlines() if "GND" in l))
     refill(PCB)
+    clean_stubs()
     print("wrote", PCB)
 
 

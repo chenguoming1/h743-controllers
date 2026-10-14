@@ -24,7 +24,7 @@ from PIL import Image, ImageDraw
 import route_board as rb
 
 G = 0.05                                       # grid, mm
-CLR = 0.10                                     # copper clearance (JLC 0.09; class rules 0.10)
+CLR = rb.CLR                                   # copper clearance (class rules; JLC minimum 0.09)
 CLR_HC = 0.12                                  # next to HighCurrent copper
 MARGIN = 0.05                                  # rasterising and 45-degree steps on the grid
 HOLE_CLR = 0.20                                # copper to any drill (JLC: via/NPTH hole to track 0.2)
