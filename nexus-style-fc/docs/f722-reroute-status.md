@@ -37,3 +37,37 @@ Main rule errors are 437 clearance and 199 grouped track-width findings. Static 
 7. Manufacturing ZIPs/BOMs are historical and on hold until stable source and all release gates pass.
 
 This draft is a progress checkpoint, not a fabrication release or a stock-firmware/power qualification.
+
+## Checkpoint 2: native gates and router safeguards
+
+The first protected routing seeds were created from the exact current source,
+with all 88 footprint definitions, pad/net assignments, placements, outline,
+physical stack and setup preserved. Source-identified offending copper was
+removed only on rollback-protected experimental copies. Exact native geometry
+also identified 18 ordinary drilled vias intersecting pasted SMT lands (19 pairs);
+those were removed in the experiments, not yet from the published main PCB.
+
+A diagnostic route exposed two independent Freerouting 2.5.0 necking paths:
+fixed-width retry could narrow power nets even with automatic pad neckdown off,
+and the fanout stage could independently micro-neck traces. That candidate was
+stopped before import/publication. Both mechanisms are now disabled in the
+routing defaults; the finisher no longer falls back below 0.25 mm for new Power
+class routes. Actual imported widths and power-net regressions remain gated.
+
+The bounded four-routing-layer attempts remained congested. A separate bounded
+experiment may use all six existing layers, omitting generated GND pours only
+from the router exchange, with original zone definitions restored before native
+refill. This is not a passed six-layer reroute, and restoring zone definitions
+does not prove equivalent finite ground return paths. No experimental copper
+has been accepted or published in this checkpoint.
+
+Both original schematics now have native KiCad 10.0.7 ERC results with zero
+errors and zero warnings using matching libraries. Fourteen focused regression
+tests pass for the new read-only [native validator](reroute-validation.md).
+Full regeneration now rejects an older native KiCad before overwriting source
+and requires a failing exit status on DRC errors before export can continue.
+
+The published PCB files retain their original hashes and remain noncompliant
+with the transferred manufacturing rules. Main rerouting, header mechanics,
+USB/reference-path review, power qualification and manufacturing release remain
+open. Existing manufacturing files remain on hold.

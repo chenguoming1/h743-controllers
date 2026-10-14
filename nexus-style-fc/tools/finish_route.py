@@ -36,7 +36,7 @@ LAYERS = [pcbnew.F_Cu, pcbnew.In2_Cu, pcbnew.In3_Cu, pcbnew.B_Cu]          # rou
 ALL_CU = [pcbnew.F_Cu, pcbnew.In1_Cu, pcbnew.In2_Cu, pcbnew.In3_Cu, pcbnew.In4_Cu, pcbnew.B_Cu]
 VIA_COST = 10.0
 RIP_COST = 25.0                                # per cell of someone else's track crossed
-WIDTHS = {"HighCurrent": [0.5, 0.35, 0.25], "Port5V": [0.35, 0.25], "Power": [0.25, 0.18, rb.MIN_TRACK],
+WIDTHS = {"HighCurrent": [0.5, 0.35, 0.25], "Port5V": [0.35, 0.25], "Power": [0.25],
           "USB": [0.15], "Default": [rb.SIG_W, rb.MIN_TRACK]}
 
 

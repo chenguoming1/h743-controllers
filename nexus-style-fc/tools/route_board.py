@@ -343,10 +343,14 @@ def drop_dangling_vias(board):
 
 
 def run_freerouting(dsn, ses, work=None, edge_um=310, hole_um=210, log="freerouting.log"):
+    # Fixed-width retry is separate from automatic pad neckdown. Disable it: a
+    # global 127 um retry would silently narrow power classes as well as signals.
+    # Freerouting 2.5 fanout also micro-necks independently, so disable that stage.
     if not FREEROUTING or not os.path.exists(FREEROUTING):
         raise SystemExit("set FREEROUTING_JAR to the freerouting jar")
     cmd = [JAVA, "-Djava.awt.headless=true", "-jar", FREEROUTING, "--gui.enabled=false",
-           "--router.automatic_neckdown=false", "--router.neck_width_um=127",
+           "--router.automatic_neckdown=false", "--router.neck_width_um=0",
+           "--router.fanout.enabled=false",
            f"--router.copper_to_edge_clearance_um={edge_um}",
            f"--router.hole_clearance_um={hole_um}",
            "-de", dsn, "-do", ses, "-mp", str(PASSES), "-mt", "8"]
