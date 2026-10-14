@@ -592,6 +592,45 @@ def join_net(model, net, tries=4, depth=1):
     return False
 
 
+def open_count(model, nets):
+    return sum(model.islands(n)[1] - 1 for n in nets)
+
+
+def clear_out(model, net, nets, radius=1.0, grow=(1.0, 1.6, 2.4)):
+    """Last resort for a walled-in pad: lift other nets' soft copper around the smallest island of the
+    net, route this net first, then let the lifted nets find new ways. Kept only if fewer stay open."""
+    label, n = model.islands(net)
+    if n <= 1:
+        return True
+    sizes = sorted((int((label == k).sum()), k) for k in range(1, n + 1))
+    small = label == sizes[0][1]
+    ys, xs = np.nonzero(small.any(axis=0))
+    cx, cy = model.x0 + xs.mean() * G, model.y0 + ys.mean() * G
+    before = open_count(model, nets)
+    for r in grow:
+        snap = snapshot(model)
+        lifted = set()
+        for it in model.items:
+            if it.removed or not it.soft or it.net == net:
+                continue
+            if seg_dist(it.a, it.b, (cx, cy), (cx, cy)) < r + it.w / 2:
+                it.removed = True
+                lifted.add(it.net)
+        for n_ in lifted:
+            model.rebuild(n_)
+        while model.islands(net)[1] > 1 and join_net(model, net):
+            pass
+        for n_ in sorted(lifted):
+            while model.islands(n_)[1] > 1 and join_net(model, n_, tries=4, depth=1):
+                pass
+        after = open_count(model, nets)
+        print(f"  {net}: clear-out r={r} mm lifted {' '.join(sorted(lifted))}: {before} -> {after} open")
+        if after < before:
+            return True
+        revert(model, snap)
+    return False
+
+
 def commit(model):
     added = removed = 0
     for it in model.items:
@@ -736,7 +775,30 @@ def stitch_islands(model, zone_clr=0.2, min_w=0.2):
                 src = [(L, int(y), int(x)) for y, x in zip(ys, xs)]
                 tgt = np.zeros((len(LAYERS), model.ny, model.nx), bool)
                 tgt[:] = reached & ~piece[None, :, :]
-                done = connect_tx(model, "GND", src, tgt, tries=12, depth=3)
+                done = connect_tx(model, "GND", src, tgt, tries=8, depth=1)
+                if not done:                   # clear the neighbourhood, tie GND first, re-route the rest
+                    sig = [n for n in {it.net for it in model.items} if n and n != "GND" and not n.startswith("unconnected-")]
+                    before = open_count(model, sig)
+                    cx, cy = model.x0 + xs.mean() * G, model.y0 + ys.mean() * G
+                    for r in (1.0, 1.6, 2.4):
+                        snap = snapshot(model)
+                        lifted = set()
+                        for it in model.items:
+                            if not it.removed and it.soft and seg_dist(it.a, it.b, (cx, cy), (cx, cy)) < r + it.w / 2:
+                                it.removed = True
+                                lifted.add(it.net)
+                        for n_ in lifted:
+                            model.rebuild(n_)
+                        if route_between(model, "GND", src, tgt, False, widths=(0.15, 0.12))[0]:
+                            for n_ in sorted(lifted):
+                                while model.islands(n_)[1] > 1 and join_net(model, n_, tries=4, depth=1):
+                                    pass
+                            after = open_count(model, sig)
+                            print(f"  GND clear-out r={r} mm lifted {' '.join(sorted(lifted))}: {before} -> {after} open")
+                            if after <= before:
+                                done = True
+                                break
+                        revert(model, snap)
                 if done:
                     commit(model)
                     added += 1
@@ -792,10 +854,12 @@ def main():
     print("nets with islands:", " ".join(todo))
     for net in todo:
         while model.islands(net)[1] > 1:
-            if not join_net(model, net) and not join_net(model, net, tries=8, depth=2) \
-                    and not join_net(model, net, tries=12, depth=3):
+            if not join_net(model, net) and not join_net(model, net, tries=8, depth=2):
                 print(f"  {net}: stuck")
                 break
+    for net in nets:                       # walled-in pads: clear the neighbourhood and route them first
+        if model.islands(net)[1] > 1:
+            clear_out(model, net, nets)
     for n in nets:
         prune(model, n)
     commit(model)
