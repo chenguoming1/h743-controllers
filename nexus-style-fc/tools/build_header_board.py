@@ -21,7 +21,7 @@ OUTDIR = os.path.join(HW, "header-board")
 PROJECT = "nexus-header-board"
 OUT = os.path.join(OUTDIR, PROJECT + ".kicad_pcb")
 WRL = os.path.join(HW, "library", "NexusFC.3dshapes", "nexus-header-board.wrl")
-KICAD_CLI = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
+KICAD_CLI = os.environ.get("KICAD_CLI", "kicad-cli")
 
 W, TOP, TAB = mf.CHILD_W, mf.CHILD_TOP, mf.TAB_LEN
 R = 0.5
@@ -49,7 +49,7 @@ def main():
     b = Board(100.0, 100.0 + TOP, 2)
     ds = b.board.GetDesignSettings()
     ds.SetBoardThickness(b.mm(mf.CHILD_T))
-    ds.m_CopperEdgeClearance = b.mm(0.15)
+    ds.m_CopperEdgeClearance = b.mm(0.254)
     ds.m_MinSilkTextHeight = b.mm(0.5)
     nc = ds.m_NetSettings.GetDefaultNetclass()
     nc.SetClearance(b.mm(0.15))

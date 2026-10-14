@@ -11,9 +11,9 @@ Stackup (Altium-style: every signal layer next to a plane), JLC06161H-2116-like 
   In3   3V3 plane (paired with In4 GND)   0.5 oz
   In4   GND plane                           0.5 oz
   B.Cu  signal (MCU side)                   1 oz
-Rules follow JLCPCB 6-layer capabilities at no surcharge: 0.09 mm (3.5 mil) min track/space (we route
-0.1 mm), and one via size only - 0.2 mm drill / 0.45 mm pad, the smallest via JLC builds without extra cost
-(drill < 0.2 mm, or 0.2-0.25 mm drill with pad < 0.45 mm, is charged). Via-in-pad is free on 6+ layers (POFV).
+F722-compatible rules: 0.127 mm minimum track/clearance, 0.15 mm preferred signal width,
+and ordinary main-board vias 0.20 mm drill / 0.45 mm pad. The stack and via-in-pad
+process require board-specific review; filled/capped vias are not assumed approved.
 Routing: Specctra DSN -> Freerouting (headless) -> SES import, then GND pours on all layers.
 """
 import os
@@ -28,8 +28,8 @@ HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
 PCB = os.environ.get("ROUTE_PCB", os.path.join(HW, "nexus-style-fc.kicad_pcb"))
 PLANE3 = os.environ.get("ROUTE_PLANE3", "0") == "1"      # In3 as 3V3 plane (1) or as a signal layer (0)
 WORK = os.environ.get("ROUTE_WORK", os.path.join(HERE, "..", ".route"))
-KICAD_CLI = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
-JAVA = os.environ.get("JAVA", "/opt/homebrew/opt/openjdk/bin/java")
+KICAD_CLI = os.environ.get("KICAD_CLI", "kicad-cli")
+JAVA = os.environ.get("JAVA", "java")
 FREEROUTING = os.environ.get("FREEROUTING_JAR", os.path.expanduser("~/.cache/freerouting/freerouting-2.5.0.jar"))
 PASSES = int(os.environ.get("ROUTE_PASSES", "100"))
 ROUNDS = int(os.environ.get("ROUTE_ROUNDS", "4"))
@@ -200,20 +200,22 @@ def write_project_rules(pcb_path, classes, patterns, rules):
     json.dump(d, open(pro, "w"), indent=2)
 
 
-# Freerouting necks every class down to 75 % of its width at crowded pads, so 0.12 mm signals end up no
-# thinner than 0.09 mm (JLC's no-surcharge minimum); the board rule is 0.09 mm track and space.
-SIG_W = float(os.environ.get("ROUTE_SIG_W", "0.12"))
-CLR = float(os.environ.get("ROUTE_CLR", "0.10"))          # copper-to-copper; JLC's no-surcharge minimum is 0.09
+# A router preference is not a manufacturing minimum. Never permit neck-down below MIN_TRACK.
+MIN_TRACK = MIN_CLEARANCE = 0.127
+SIG_W = float(os.environ.get("ROUTE_SIG_W", "0.15"))
+CLR = float(os.environ.get("ROUTE_CLR", "0.127"))
+if SIG_W < MIN_TRACK or CLR < MIN_CLEARANCE:
+    raise SystemExit("Routing width/clearance must be at least 0.127 mm")
 VIA_DIA, VIA_DRILL = 0.45, 0.2     # the one via on the main board: JLC's cheapest 6-layer via
-JLC6_RULES = {"min_clearance": 0.09, "min_track_width": 0.09, "min_via_diameter": 0.45, "min_via_annular_width": 0.125,
+JLC6_RULES = {"min_clearance": MIN_CLEARANCE, "min_track_width": MIN_TRACK, "min_via_diameter": 0.45, "min_via_annular_width": 0.125,
               "min_through_hole_diameter": 0.2, "min_hole_to_hole": 0.25, "min_hole_clearance": 0.2,
               "min_copper_edge_clearance": 0.3, "min_resolved_spokes": 2}
 
 
 def setup_rules(board):
     ds = board.GetDesignSettings()
-    ds.m_TrackMinWidth = mm(0.09)
-    ds.m_MinClearance = mm(0.09)
+    ds.m_TrackMinWidth = mm(MIN_TRACK)
+    ds.m_MinClearance = mm(MIN_CLEARANCE)
     ds.m_ViasMinSize = mm(VIA_DIA)
     ds.m_ViasMinAnnularWidth = mm((VIA_DIA - VIA_DRILL) / 2)
     ds.m_MinThroughDrill = mm(0.2)
@@ -226,7 +228,7 @@ def setup_rules(board):
     nc.SetTrackWidth(mm(SIG_W))
     nc.SetViaDiameter(mm(VIA_DIA))
     nc.SetViaDrill(mm(VIA_DRILL))
-    for name, width, clr, nets in (("HighCurrent", 0.5, 0.12, HIGH_CURRENT_NETS),
+    for name, width, clr, nets in (("HighCurrent", 0.5, CLR, HIGH_CURRENT_NETS),
                                    ("Port5V", 0.35, CLR, PORT5V_NETS),
                                    ("Power", 0.25, CLR, POWER_NETS + ([] if PLANE3 else [PLANE_3V3])),
                                    ("USB", 0.15, CLR, USB_NETS)):
@@ -242,7 +244,7 @@ def setup_rules(board):
     ns.RecomputeEffectiveNetclasses()
 
 
-VIP_DIA, VIP_DRILL = VIA_DIA, VIA_DRILL   # via-in-pad (JLC 6-layer: filled + capped, free)
+VIP_DIA, VIP_DRILL = VIA_DIA, VIA_DRILL   # only after an explicit assembly-process disposition
 VIP_MIN_PAD = 0.47                # pad must be at least this wide to take a via
 
 
@@ -255,7 +257,7 @@ def via_in_pad(board, nets):
             bb = p.GetBoundingBox()
             others.append((bb.GetX(), bb.GetY(), bb.GetRight(), bb.GetBottom(), p.GetNetCode()))
     edge = board.GetBoardEdgesBoundingBox()
-    keep = mm(VIP_DIA / 2 + 0.12)                         # via radius + clearance
+    keep = mm(VIP_DIA / 2 + CLR)                         # via radius + clearance
     placed, vias = [], 0
     for fp in board.GetFootprints():
         for p in fp.Pads():
@@ -311,11 +313,14 @@ def write_stackup(path):
 
 
 def allow_via_in_pad(dsn):
-    """JLC 6-layer boards get filled + capped vias for free, so let the router put vias in SMD pads."""
+    """Set the explicit via-in-SMD routing policy; ordinary tenting is not filling/capping."""
     txt = open(dsn).read()
-    if "(via_at_smd" not in txt:
-        txt = txt.replace("    (rule\n", "    (control\n      (via_at_smd on)\n    )\n    (rule\n", 1)
-        open(dsn, "w").write(txt)
+    policy = "on" if os.environ.get("ROUTE_APPROVED_VIA_IN_PAD") == "1" else "off"
+    if re.search(r"\(via_at_smd\s+[^)]+\)", txt):
+        txt = re.sub(r"\(via_at_smd\s+[^)]+\)", f"(via_at_smd {policy})", txt)
+    else:
+        txt = txt.replace("    (rule\n", f"    (control\n      (via_at_smd {policy})\n    )\n    (rule\n", 1)
+    open(dsn, "w").write(txt)
 
 
 def drop_dangling_vias(board):
@@ -341,7 +346,7 @@ def run_freerouting(dsn, ses, work=None, edge_um=310, hole_um=210, log="freerout
     if not FREEROUTING or not os.path.exists(FREEROUTING):
         raise SystemExit("set FREEROUTING_JAR to the freerouting jar")
     cmd = [JAVA, "-Djava.awt.headless=true", "-jar", FREEROUTING, "--gui.enabled=false",
-           "--router.automatic_neckdown=false", "--router.neck_width_um=100",
+           "--router.automatic_neckdown=false", "--router.neck_width_um=127",
            f"--router.copper_to_edge_clearance_um={edge_um}",
            f"--router.hole_clearance_um={hole_um}",
            "-de", dsn, "-do", ses, "-mp", str(PASSES), "-mt", "8"]
@@ -358,7 +363,8 @@ def route_header():
     write_project_rules(pcb, [("Default", 0.2, 0.15, 0.6, 0.3), ("Power", 0.5, 0.15, 0.8, 0.4)],
                         [("Power", ["VX", "GND"])],
                         {"min_clearance": 0.15, "min_track_width": 0.15, "min_through_hole_diameter": 0.3,
-                         "min_copper_edge_clearance": 0.15, "min_via_annular_width": 0.15})
+                         "min_copper_edge_clearance": 0.254, "min_via_annular_width": 0.15,
+                         "min_hole_clearance": 0.25, "min_hole_to_hole": 0.25})
     board = pcbnew.LoadBoard(pcb)
     if len(board.Zones()) or len(board.Tracks()):
         raise SystemExit("header board already has copper; rebuild it with build_header_board.py first")
@@ -366,7 +372,10 @@ def route_header():
     ds.m_TrackMinWidth = mm(0.15)
     ds.m_MinClearance = mm(0.15)
     ds.m_MinThroughDrill = mm(0.3)
-    ds.m_CopperEdgeClearance = mm(0.15)
+    ds.m_CopperEdgeClearance = mm(0.254)
+    ds.m_ViasMinAnnularWidth = mm(0.15)
+    ds.m_HoleToHoleMin = mm(0.25)
+    ds.m_HoleClearance = mm(0.25)
     ns = ds.m_NetSettings
     nc = ns.GetDefaultNetclass()
     nc.SetClearance(mm(0.15))
@@ -385,7 +394,7 @@ def route_header():
     dsn, ses = os.path.join(work, "board.dsn"), os.path.join(work, "board.ses")
     if not pcbnew.ExportSpecctraDSN(board, dsn):
         raise SystemExit("DSN export failed")
-    run_freerouting(dsn, ses, work, edge_um=160, hole_um=210)
+    run_freerouting(dsn, ses, work, edge_um=264, hole_um=260)
     if not pcbnew.ImportSpecctraSES(board, ses):
         raise SystemExit("SES import failed")
     for lyr in (pcbnew.F_Cu, pcbnew.B_Cu):
@@ -523,7 +532,7 @@ def main():
         return one_round()
     os.makedirs(WORK, exist_ok=True)
     v = (VIA_DIA, VIA_DRILL)
-    write_project_rules(PCB, [("Default", SIG_W, CLR, *v), ("HighCurrent", 0.5, 0.12, *v),
+    write_project_rules(PCB, [("Default", SIG_W, CLR, *v), ("HighCurrent", 0.5, CLR, *v),
                               ("Port5V", 0.35, CLR, *v), ("Power", 0.25, CLR, *v), ("USB", 0.15, CLR, *v)],
                         [("HighCurrent", HIGH_CURRENT_NETS), ("Port5V", PORT5V_NETS),
                          ("Power", POWER_NETS + ([] if PLANE3 else [PLANE_3V3])), ("USB", USB_NETS)], JLC6_RULES)
@@ -544,6 +553,8 @@ def main():
         add_zone(board, pcbnew.In4_Cu, "GND", 0)
         joint_copper(board)
         if os.environ.get("ROUTE_VIP", "0") == "1":
+            if os.environ.get("ROUTE_APPROVED_VIA_IN_PAD") != "1":
+                raise SystemExit("Via-in-pad requires an explicit assembly-process disposition")
             via_in_pad(board, ["GND", PLANE_3V3] if PLANE3 else ["GND"])
         pcbnew.ZONE_FILLER(board).Fill(board.Zones())
         pcbnew.SaveBoard(PCB, board)

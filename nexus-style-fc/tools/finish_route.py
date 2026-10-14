@@ -24,8 +24,8 @@ from PIL import Image, ImageDraw
 import route_board as rb
 
 G = 0.05                                       # grid, mm
-CLR = rb.CLR                                   # copper clearance (class rules; JLC minimum 0.09)
-CLR_HC = 0.12                                  # next to HighCurrent copper
+CLR = rb.CLR                                   # must be >= the 0.127 mm manufacturing floor
+CLR_HC = max(rb.CLR, rb.MIN_CLEARANCE)                                  # next to HighCurrent copper
 MARGIN = 0.05                                  # rasterising and 45-degree steps on the grid
 HOLE_CLR = 0.20                                # copper to any drill (JLC: via/NPTH hole to track 0.2)
 BORDER = 1.0                                   # grid reaches this far past the board outline
@@ -36,8 +36,8 @@ LAYERS = [pcbnew.F_Cu, pcbnew.In2_Cu, pcbnew.In3_Cu, pcbnew.B_Cu]          # rou
 ALL_CU = [pcbnew.F_Cu, pcbnew.In1_Cu, pcbnew.In2_Cu, pcbnew.In3_Cu, pcbnew.In4_Cu, pcbnew.B_Cu]
 VIA_COST = 10.0
 RIP_COST = 25.0                                # per cell of someone else's track crossed
-WIDTHS = {"HighCurrent": [0.5, 0.35, 0.25], "Port5V": [0.35, 0.25], "Power": [0.25, 0.18, 0.12],
-          "USB": [0.15], "Default": [rb.SIG_W, 0.1]}
+WIDTHS = {"HighCurrent": [0.5, 0.35, 0.25], "Port5V": [0.35, 0.25], "Power": [0.25, 0.18, rb.MIN_TRACK],
+          "USB": [0.15], "Default": [rb.SIG_W, rb.MIN_TRACK]}
 
 
 def mm(v):
@@ -118,6 +118,25 @@ class Model:
                 ImageDraw.Draw(self.keepout).polygon(
                     [self.px(ol.CPoint(n).x, ol.CPoint(n).y) for n in range(ol.PointCount())], fill=1)
         self.keepout = np.array(self.keepout, dtype=bool)
+        # Unapproved ordinary tented vias must not drill through pasted SMD copper,
+        # including pads of the via's own net. This applies to every via-placing path.
+        pasted = self.blank()
+        if os.environ.get("ROUTE_APPROVED_VIA_IN_PAD") != "1":
+            for f in board.GetFootprints():
+                for p in f.Pads():
+                    if p.GetAttribute() != pcbnew.PAD_ATTRIB_SMD:
+                        continue
+                    for copper, paste in ((pcbnew.F_Cu, pcbnew.F_Paste), (pcbnew.B_Cu, pcbnew.B_Paste)):
+                        if not p.IsOnLayer(paste):
+                            continue
+                        poly = pcbnew.SHAPE_POLY_SET()
+                        p.TransformShapeToPolygon(poly, copper, 0, mm(0.005), pcbnew.ERROR_OUTSIDE)
+                        for k in range(poly.OutlineCount()):
+                            outline = poly.Outline(k)
+                            ImageDraw.Draw(pasted).polygon(
+                                [self.px(outline.CPoint(n).x, outline.CPoint(n).y)
+                                 for n in range(outline.PointCount())], fill=1)
+        self.pasted_smd = np.array(pasted, dtype=bool)
         ps = pcbnew.SHAPE_POLY_SET()
         board.GetBoardPolygonOutlines(ps, False)
         inside = self.blank()
@@ -245,6 +264,7 @@ class Model:
         via_h = self.dilate(self.outside, EDGE + VIA_R + MARGIN) | self.dilate(self.keepout, VIA_R + MARGIN)
         via_h |= self.dilate(self.holes, HOLE_GAP + VIA_DRILL_R + MARGIN)
         via_h |= self.dilate(self.other_holes(net), HOLE_CLR + VIA_R + MARGIN)
+        via_h |= self.dilate(self.pasted_smd, VIA_DRILL_R + HOLE_CLR + MARGIN)
         via_c = np.zeros((self.ny, self.nx), np.float32)
         for layer in ALL_CU:
             hard = np.zeros((self.ny, self.nx), bool)
@@ -789,7 +809,7 @@ def stitch_islands(model, zone_clr=0.2, min_w=0.2):
                                 lifted.add(it.net)
                         for n_ in lifted:
                             model.rebuild(n_)
-                        if route_between(model, "GND", src, tgt, False, widths=(0.15, 0.12))[0]:
+                        if route_between(model, "GND", src, tgt, False, widths=(0.15, rb.MIN_TRACK))[0]:
                             for n_ in sorted(lifted):
                                 while model.islands(n_)[1] > 1 and join_net(model, n_, tries=4, depth=1):
                                     pass
@@ -833,12 +853,11 @@ def main():
         return
     nets = sorted(n for n in {it.net for it in model.items} if n and n != "GND" and not n.startswith("unconnected-"))
     thin = set()
-    for it in model.items:                 # Freerouting's 75 % neck of 0.12 mm comes back as 0.0899x
-        if it.kind == "track" and 0.085 < it.w < 0.09:
-            it.obj.SetWidth(mm(0.09))
-            it.w = 0.09
-        elif it.kind == "track" and it.w < 0.085 and it.soft:
-            it.removed = True              # thinner than JLC allows: route it again
+    for it in model.items:
+        if it.kind == "track" and it.w < rb.MIN_TRACK - 1e-6:
+            if not it.soft:
+                raise SystemExit(f"Protected track {it.obj.m_Uuid.AsString()} on {it.net} is below 0.127 mm; resolve explicitly")
+            it.removed = True              # no blind widening: reroute and verify native DRC
             thin.add(it.net)
     for n in thin:
         model.rebuild(n)

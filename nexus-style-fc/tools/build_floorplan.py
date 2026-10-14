@@ -106,9 +106,11 @@ def main():
     b = Board(OX, OY, 4)
     ds = b.board.GetDesignSettings()
     ds.SetBoardThickness(b.mm(1.6))
-    ds.m_TrackMinWidth = b.mm(0.1)          # JLCPCB 4-layer capability
-    ds.m_MinClearance = b.mm(0.1)
-    ds.m_ViasMinSize = b.mm(0.4)
+    ds.m_TrackMinWidth = b.mm(0.127)        # F722-compatible manufacturing floor
+    ds.m_MinClearance = b.mm(0.127)
+    ds.m_ViasMinSize = b.mm(0.45)
+    ds.m_ViasMinAnnularWidth = b.mm(0.125)
+    ds.m_HoleToHoleMin = b.mm(0.25)
     ds.m_MinThroughDrill = b.mm(0.2)
     ds.m_CopperEdgeClearance = b.mm(0.3)
     ds.m_HoleClearance = b.mm(0.2)
@@ -117,7 +119,7 @@ def main():
     nc.SetClearance(b.mm(0.15))
     nc.SetTrackWidth(b.mm(0.15))
     nc.SetViaDiameter(b.mm(0.45))
-    nc.SetViaDrill(b.mm(0.25))
+    nc.SetViaDrill(b.mm(0.20))
     outline(b)
 
     cx0 = (W - CASE_W) / 2
