@@ -1,0 +1,85 @@
+{
+  "role": "experimental-r51",
+  "transaction": {
+    "role": "experimental-r51",
+    "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r51-ldo-output",
+    "source_board_sha256": "4e3b32282d184faef88e86e1d8f269065cfbf2acc79457953ee75bc610405d66",
+    "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+    "candidate_schema_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+    "candidate_pre_refill_sha256": "b584fd486051c3399ccfa7a534b59e89fdf2ef5ad8cb362785312df3e424766e",
+    "source_main_commit_reported_by_owner": "80a3f763d5031198b4622402bb73a532676b9be9",
+    "approved_footprint_uuid": "2adce67c-e374-4481-bd09-c981604a7cf8",
+    "approved_metadata_delta": {
+      "removed_property_name": "LCSC Part",
+      "removed_property_value": "C82942",
+      "removed_property_uuid": "a8a9b1e2-0542-4e0f-bb93-99362e70f0d2",
+      "old_lib_description": "ME6211C33M5G-N",
+      "new_lib_description": "SOT-23-5 footprint; selected part TPS70933DBVR, LCSC C89347"
+    },
+    "generator_helper_smoke": {
+      "generator_sha256": "2780be1bbbe625430dc4ca4b3e1f6eb3e4c87c74dcb0f33bb60394df8d8fb14c",
+      "native_saved_sha256": "3e3869e15a819c3e8091fe5f73d13ffd5139af07f7fd2c4fe1eafcf0b3fb1b2b",
+      "all_footprint_definitions_equal_to_exact_text_patch": true
+    },
+    "scope": "Only U10 stale donor property removal and exact library-description replacement. All selected part fields, library ID, geometry, pads, nets, tracks, vias and other metadata must remain exact."
+  },
+  "erc": {
+    "argv": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "erc",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/canonical/native-erc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/canonical/hardware/nexus-style-fc.kicad_sch"
+    ],
+    "started_utc": "2026-10-15T04:43:07.676645+00:00",
+    "finished_utc": "2026-10-15T04:43:18.954950+00:00",
+    "exit_code": 0,
+    "log_sha256": "01732353888deeb73262f7a4752b6d49cf721288a15b17f87c297d93ba71d8af"
+  },
+  "netlist": {
+    "argv": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "export",
+      "netlist",
+      "--format",
+      "kicadxml",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/canonical/final-netlist.xml",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/canonical/hardware/nexus-style-fc.kicad_sch"
+    ],
+    "started_utc": "2026-10-15T04:43:18.955235+00:00",
+    "finished_utc": "2026-10-15T04:43:20.327835+00:00",
+    "exit_code": 0,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "erc_netlist_basis": "Fresh canonical run bound to exact shared unchanged schematic bytes; carried byte-for-byte to experimental",
+  "drc": {
+    "argv": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/experimental-r51/native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/experimental-r51/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T04:43:34.861690+00:00",
+    "finished_utc": "2026-10-15T04:43:47.159546+00:00",
+    "exit_code": 5,
+    "log_sha256": "3085e944902a649e0d121efc0e9c04556245c9b04c38b5faa9fd9c53ba976ed7"
+  },
+  "post_native_pcb_sha256": "3e3869e15a819c3e8091fe5f73d13ffd5139af07f7fd2c4fe1eafcf0b3fb1b2b"
+}

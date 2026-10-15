@@ -1,0 +1,241 @@
+{
+  "status": "PASS: exact U10 donor-metadata cleanup; selected-part fields, copper and physical geometry unchanged; manufacturing DRC remains unfinished",
+  "role": "canonical",
+  "source_main_commit_reported_by_owner": "80a3f763d5031198b4622402bb73a532676b9be9",
+  "source_board_sha256": "afd0f3225b8d9eca28487b62dfe92ed8feba742e9577b70fb08b03ff8411859f",
+  "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "candidate_board_sha256": "925642c3a3b8e032701ded5587814b91a78f50b1b3819d07aee303a026a70d6c",
+  "schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "project_sha256": "274a7c6c2152b00ff2c7e123e69414bf0da3d72417d0ce27cabbb0c8219ab538",
+  "rules_sha256": "3c261423d4fb5b02b61cf26ee73f62c417e487f71a5f28b5327213618212bd89",
+  "native_drc_sha256": "66bb01020aee09403c93863b2e2a8eae63e55a24cd34135b8d3ae164de6b487e",
+  "erc_evidence_basis": "Fresh native ERC on exact unchanged schematic; experimental copy carries the byte-identical canonical ERC receipt",
+  "native_erc_sha256": "1620d0f2ab4a21e69eaf984f7fc853166dc776aa3303617cadd7c179dc8f588e",
+  "native_netlist_sha256": "9def92f4b021194a4a0d7d8d4ac329da491f45e5d73f8586553e9d38e41a9a36",
+  "native_error_count": 627,
+  "native_errors_by_type": {
+    "clearance": 428,
+    "track_width": 199
+  },
+  "unchanged_warnings": 54,
+  "opens": 0,
+  "parity_issues": 0,
+  "erc_violations": 0,
+  "exact_net_pin_pairs": 347,
+  "source_schema_net_pin_delta": [],
+  "approved_U10_metadata_delta": {
+    "removed_property_name": "LCSC Part",
+    "removed_property_value": "C82942",
+    "removed_property_uuid": "a8a9b1e2-0542-4e0f-bb93-99362e70f0d2",
+    "old_lib_description": "ME6211C33M5G-N",
+    "new_lib_description": "SOT-23-5 footprint; selected part TPS70933DBVR, LCSC C89347"
+  },
+  "U10_only_invariant_normalization": "Remove only exact stale LCSC Part property UUID/value and replace only footprint lib-description; every other property and footprint node remains exact.",
+  "en_no_connect_evidence": {
+    "net": "unconnected-(U10-EN-Pad3)",
+    "node": {
+      "ref": "U10",
+      "pin": "3",
+      "pinfunction": "EN_3",
+      "pintype": "passive+no_connect"
+    },
+    "node_count": 1
+  },
+  "en_conductive_contacts": [],
+  "native_drc_pairs_and_descriptions_exactly_unchanged": true,
+  "all_copper_primitive_definitions_exactly_unchanged": true,
+  "all_saved_filled_copper_areas_exactly_unchanged": [
+    {
+      "zone": "0ba708d8-02af-4c6d-846f-691ffde96921",
+      "layer": "F.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "layer": "F.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "layer": "In1.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "layer": "In2.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "layer": "In3.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "layer": "In4.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "layer": "B.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "layer": "F.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "layer": "In1.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "layer": "In2.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "layer": "In3.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "layer": "In4.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "layer": "B.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "507ea958-7f6b-49f3-b81d-b28ecb44358b",
+      "layer": "B.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "9f2a2d78-0e48-4414-9879-4fc68abc23e3",
+      "layer": "In1.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "31ebd316-e294-41f0-8942-ba78a56019d4",
+      "layer": "In2.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "7dc40ad3-0aeb-4519-a7e1-c34857407d88",
+      "layer": "In3.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    },
+    {
+      "zone": "88957e6f-e13e-4cbf-a8e2-1d52ff9863ab",
+      "layer": "In4.Cu",
+      "lost_area_mm2": 0.0,
+      "added_area_mm2": 0.0
+    }
+  ],
+  "retained_direct_contacts_preserved": 2542,
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4",
+        "candidate_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "ef2784fd2782abe1f59b5c14cf0eef1f42e3a8e636000fc2751b9d64b01446ea",
+        "candidate_sha256": "ef2784fd2782abe1f59b5c14cf0eef1f42e3a8e636000fc2751b9d64b01446ea"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "pasted_via_contacts_unchanged": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "minimum_remaining_clearance_mm": 0.0898,
+  "worsened_residual_pairs": [],
+  "qualification": "Native source-bound integration only. Known DRC errors, regulator effective capacitance and loops, power/return/SI, ordinary pasted vias, header edge and mechanical and fabrication gates remain open.",
+  "generator_helper_native_smoke_pass": true,
+  "BOM_CPL_byte_equal": true,
+  "export_equality_sha256": "ea58a0cc2f5c8b03f92347be42cf17387d3082c2057b7d902a60952e802ef5c9",
+  "all_metadata_source_filled_copper_exact": true,
+  "source_main_binding_sha256": "7a566edeccff306c76b381a38f341855c64355f1dac69db8c8e4a4e2c8d1b79f"
+}

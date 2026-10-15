@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,re,hashlib,sys,shutil,uuid
+sys.path.insert(0,'/workspace/shared/nexus-recovery-evidence');from apply_en_cut import children,field
+R=Path('/workspace/scratch/8a35c1f26232/nexus-recovery-20261015');S=R/'routing-continuation/r48-local-bends';O=R/'routing-continuation/r50-cc1-spoke-preserved';assert not O.exists();P=S/'hardware/nexus-style-fc.kicad_pcb';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();F=R/'cc1-corridor-study/complete-plan-probe-v4.json';j=json.loads(F.read_text());assert not j['clearance_obstructions'];expected='5ec240f46778b220b3980aac72444912dac88bbf8f317ee0c6964f97786457e8';assert sha(P)==expected==j['source_board_sha256'];text=P.read_text();nodes={field(text[i:z],'uuid').strip('"'):(i,z,text[i:z]) for i,z in children(text) if text[i:z].startswith(('(segment\n','(via\n'))};patches=[];added=[]
+for d in j['removed_track_geometry']:
+ i,z,t=nodes[d['uuid']];assert field(t,'net').strip('"')==d['net'] and field(t,'layer').strip('"')==d['layer'] and float(field(t,'width'))==d['width_mm'];assert list(map(float,field(t,'start').split()))==d['start'] and list(map(float,field(t,'end').split()))==d['end'];patches.append((i,z,''));d['source_text']=t
+for d in j['moved_vias']:
+ i,z,t=nodes[d['uuid']];assert field(t,'net').strip('"')==d['net'] and list(map(float,field(t,'at').split()))==d['from'] and float(field(t,'size'))==.45 and float(field(t,'drill'))==.2;d['size_mm']=.45;d['drill_mm']=.2;patches.append((i,z,re.sub(r'\(at\s+[^()]+\)',f'(at {d["to"][0]} {d["to"][1]})',t,count=1)))
+for r in j['routes']:
+ r['new_uuids']=[]
+ for idx,(a,c) in enumerate(zip(r['points'],r['points'][1:])):
+  nu=str(uuid.uuid5(uuid.NAMESPACE_URL,f'nexus/r50-cc1/{r["name"]}/{idx}'));r['new_uuids'].append(nu);added.append(f'\t(segment\n\t\t(start {a[0]} {a[1]})\n\t\t(end {c[0]} {c[1]})\n\t\t(width {r["width_mm"]})\n\t\t(layer "{r["layer"]}")\n\t\t(net "{r["net"]}")\n\t\t(uuid "{nu}")\n\t)\n')
+for d in j['new_vias']:
+ nu=str(uuid.uuid5(uuid.NAMESPACE_URL,'nexus/r50-cc1/'+d['name']));d['uuid']=nu;d['size_mm']=.45;d['drill_mm']=.2;a=d['to'];added.append(f'\t(via\n\t\t(at {a[0]} {a[1]})\n\t\t(size 0.45)\n\t\t(drill 0.2)\n\t\t(layers "F.Cu" "B.Cu")\n\t\t(tenting front back)\n\t\t(net "{d["net"]}")\n\t\t(uuid "{nu}")\n\t)\n')
+for i,z,v in sorted(patches,reverse=True):text=text[:i]+v+text[z:]
+end=text.rfind(')');text=text[:end]+''.join(added)+text[end:];shutil.copytree(S/'hardware',O/'hardware');out=O/'hardware/nexus-style-fc.kicad_pcb';out.write_text(text);shutil.copy2(R/'current-main-binding-09.json',O/'current-main-binding.json');shutil.copy2(F,O/'source-proposal.json');j.update({'status':'Conditional complete CC1/power/GND experiment; native and finite return proof pending, not adopted','source_directory':str(S),'source_schematic_sha256':sha(S/'hardware/nexus-style-fc.kicad_sch'),'candidate_pre_refill_sha256':sha(out),'source_proposal_sha256':sha(F),'removed_tracks':j.pop('removed_track_geometry'),'width_layer_policy':'VBUS remains .250 mm B.Cu. VBUS_C remains inherited .250 mm F/In2. CC1 is .127 mm with one additional ordinary tented .45/.20 via and local In3 span. GND .127 mm branch gains one ordinary tented .45/.20 via with finite actual plane topology required.'});(O/'transaction.json').write_text(json.dumps(j,indent=2)+'\n');print(sha(out))

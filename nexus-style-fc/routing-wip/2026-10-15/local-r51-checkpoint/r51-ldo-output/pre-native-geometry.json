@@ -1,0 +1,797 @@
+{
+  "status": "PASS: U10 complete atomic donor paths and finite full-width physical ports; native and return qualification separate",
+  "source_sha256": "dcc05684e414cb291761e02b97c2e27fa118dae4cf9363598499972c7e5b3d2a",
+  "candidate_sha256": "b88aaf89500da3ab9ddec3a8c8c34b61fae004c4a745f2ace6a6c792d5679d95",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4",
+        "candidate_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "2eaa1f5dff1dbec290e9dedcd1f0b43b07a5ff31a8f8fd3d201e6ce2f6b7b266",
+        "candidate_sha256": "2eaa1f5dff1dbec290e9dedcd1f0b43b07a5ff31a8f8fd3d201e6ce2f6b7b266"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "removed_tracks": 8,
+  "removed_vias": 2,
+  "new_tracks": 7,
+  "new_vias": 1,
+  "untouched_original_direct_contacts_preserved": 2609,
+  "source_donor_contacts": [
+    {
+      "a": "16764742-6246-471b-b23f-55a089d3fc36",
+      "b": "561575cf-f2d6-4ff8-b3ef-d1a67c206cec",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "16764742-6246-471b-b23f-55a089d3fc36",
+      "b": "94cbeda2-92b2-4ecf-9ae4-febc5f9d0599",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "27961961-aebc-4e21-abce-c170061b0970",
+      "b": "d48d609d-0488-42cd-bd70-535e343fc803",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "27961961-aebc-4e21-abce-c170061b0970",
+      "b": "f9d03d4c-6fc9-491c-940f-232766770f8c",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "379803c4-3c43-4a54-afe8-1aabe6e556c7",
+      "b": "a287c7d5-a48b-4d29-a5ef-c7be54d3702b",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "379803c4-3c43-4a54-afe8-1aabe6e556c7",
+      "b": "f9d03d4c-6fc9-491c-940f-232766770f8c",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "382c42bd-28db-4867-8a39-e01afa8fc026",
+      "b": "54aabec8-33dc-4725-92db-c353e1612ad5",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "382c42bd-28db-4867-8a39-e01afa8fc026",
+      "b": "561575cf-f2d6-4ff8-b3ef-d1a67c206cec",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "382c42bd-28db-4867-8a39-e01afa8fc026",
+      "b": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "54aabec8-33dc-4725-92db-c353e1612ad5",
+      "b": "382c42bd-28db-4867-8a39-e01afa8fc026",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "54aabec8-33dc-4725-92db-c353e1612ad5",
+      "b": "96b12e5e-968d-4500-97cd-2fe832e967c6",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "54aabec8-33dc-4725-92db-c353e1612ad5",
+      "b": "f526e6a3-c8c8-473d-81cb-48d54ae7aaaa",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "54aabec8-33dc-4725-92db-c353e1612ad5",
+      "b": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "561575cf-f2d6-4ff8-b3ef-d1a67c206cec",
+      "b": "16764742-6246-471b-b23f-55a089d3fc36",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "561575cf-f2d6-4ff8-b3ef-d1a67c206cec",
+      "b": "382c42bd-28db-4867-8a39-e01afa8fc026",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "a287c7d5-a48b-4d29-a5ef-c7be54d3702b",
+      "b": "19e80f2c-5258-4403-b89e-070b548f644a",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "a287c7d5-a48b-4d29-a5ef-c7be54d3702b",
+      "b": "746585f8-9682-45a4-b160-1be69fa175fc",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "a287c7d5-a48b-4d29-a5ef-c7be54d3702b",
+      "b": "379803c4-3c43-4a54-afe8-1aabe6e556c7",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "a287c7d5-a48b-4d29-a5ef-c7be54d3702b",
+      "b": "dff6de08-a0f9-4b2d-ac39-4b0c40e24e39",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "bdbe0053-df2f-430f-a388-8d2015ab70ec",
+      "b": "d48d609d-0488-42cd-bd70-535e343fc803",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "bdbe0053-df2f-430f-a388-8d2015ab70ec",
+      "b": "bda31769-fa61-4779-a1c6-4b3f64c2f417",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "d48d609d-0488-42cd-bd70-535e343fc803",
+      "b": "bdbe0053-df2f-430f-a388-8d2015ab70ec",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "d48d609d-0488-42cd-bd70-535e343fc803",
+      "b": "27961961-aebc-4e21-abce-c170061b0970",
+      "layers": [
+        "F.Cu"
+      ]
+    },
+    {
+      "a": "f9d03d4c-6fc9-491c-940f-232766770f8c",
+      "b": "27961961-aebc-4e21-abce-c170061b0970",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "f9d03d4c-6fc9-491c-940f-232766770f8c",
+      "b": "379803c4-3c43-4a54-afe8-1aabe6e556c7",
+      "layers": [
+        "In3.Cu"
+      ]
+    }
+  ],
+  "all_eight_external_port_proofs": [
+    {
+      "kind": "exact shared centerline endpoint; replacement at least retained branch width",
+      "port": "19e80f2c-5258-4403-b89e-070b548f644a",
+      "replacement_track": "9b50f9bd-dbb9-517f-903d-660848453e78",
+      "shared_endpoints": [
+        [
+          108.625,
+          109.8
+        ]
+      ],
+      "replacement_width_mm": 0.25,
+      "retained_width_mm": 0.1874
+    },
+    {
+      "kind": "exact shared centerline endpoint; replacement at least retained branch width",
+      "port": "746585f8-9682-45a4-b160-1be69fa175fc",
+      "replacement_track": "9b50f9bd-dbb9-517f-903d-660848453e78",
+      "shared_endpoints": [
+        [
+          108.625,
+          109.8
+        ]
+      ],
+      "replacement_width_mm": 0.25,
+      "retained_width_mm": 0.25
+    },
+    {
+      "kind": "finite full-width entry",
+      "new_track": "b3f7f221-e9a1-57d6-bf46-218646a793af",
+      "port": "94cbeda2-92b2-4ecf-9ae4-febc5f9d0599",
+      "width_mm": 0.25,
+      "axial_depth_mm": 0.02,
+      "corners": [
+        [
+          108.575,
+          108.07000000000001
+        ],
+        [
+          108.325,
+          108.07000000000001
+        ],
+        [
+          108.575,
+          108.09
+        ],
+        [
+          108.325,
+          108.09
+        ]
+      ],
+      "minimum_distance_from_port_center_mm": 0.11
+    },
+    {
+      "kind": "unchanged wholly via-contained stub; full-width replacement enters same plated annulus on B.Cu",
+      "port": "96b12e5e-968d-4500-97cd-2fe832e967c6",
+      "containing_via": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+      "copper_containment_margin_mm": 0.08538929862221165,
+      "replacement_annular_entry": {
+        "kind": "finite full-width entry",
+        "new_track": "e7c00463-e7b1-519a-9fba-367610bf2baf",
+        "port": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+        "width_mm": 0.25,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            107.89480393514633,
+            105.83016833940214
+          ],
+          [
+            107.69789402326602,
+            105.98420238305253
+          ],
+          [
+            107.90712665863835,
+            105.84592113235256
+          ],
+          [
+            107.71021674675804,
+            105.99995517600296
+          ]
+        ],
+        "minimum_distance_from_port_center_mm": 0.11
+      }
+    },
+    {
+      "kind": "finite full-width entry",
+      "new_track": "189e23e6-f316-5cd8-a580-4918ab6e72b0",
+      "port": "bda31769-fa61-4779-a1c6-4b3f64c2f417",
+      "width_mm": 0.25,
+      "axial_depth_mm": 0.02,
+      "corners": [
+        [
+          108.575,
+          106.01
+        ],
+        [
+          108.325,
+          106.01
+        ],
+        [
+          108.575,
+          106.03
+        ],
+        [
+          108.325,
+          106.03
+        ]
+      ],
+      "minimum_distance_from_port_center_mm": 0.11
+    },
+    {
+      "kind": "finite full-width entry",
+      "new_track": "e7c00463-e7b1-519a-9fba-367610bf2baf",
+      "port": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+      "width_mm": 0.25,
+      "axial_depth_mm": 0.02,
+      "corners": [
+        [
+          107.89480393514633,
+          105.83016833940214
+        ],
+        [
+          107.69789402326602,
+          105.98420238305253
+        ],
+        [
+          107.90712665863835,
+          105.84592113235256
+        ],
+        [
+          107.71021674675804,
+          105.99995517600296
+        ]
+      ],
+      "minimum_distance_from_port_center_mm": 0.11
+    },
+    {
+      "kind": "finite full-width entry",
+      "new_track": "9b50f9bd-dbb9-517f-903d-660848453e78",
+      "port": "dff6de08-a0f9-4b2d-ac39-4b0c40e24e39",
+      "width_mm": 0.25,
+      "axial_depth_mm": 0.02,
+      "corners": [
+        [
+          108.63512989163202,
+          109.61993782936018
+        ],
+        [
+          108.44547333023941,
+          109.7828193467915
+        ],
+        [
+          108.64816041302653,
+          109.63511035427159
+        ],
+        [
+          108.45850385163392,
+          109.7979918717029
+        ]
+      ],
+      "minimum_distance_from_port_center_mm": 0.11000000000000011
+    },
+    {
+      "kind": "unchanged wholly via-contained stub; full-width replacement enters same plated annulus on B.Cu",
+      "port": "f526e6a3-c8c8-473d-81cb-48d54ae7aaaa",
+      "containing_via": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+      "copper_containment_margin_mm": 0.02165205490250005,
+      "replacement_annular_entry": {
+        "kind": "finite full-width entry",
+        "new_track": "e7c00463-e7b1-519a-9fba-367610bf2baf",
+        "port": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+        "width_mm": 0.25,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            107.89480393514633,
+            105.83016833940214
+          ],
+          [
+            107.69789402326602,
+            105.98420238305253
+          ],
+          [
+            107.90712665863835,
+            105.84592113235256
+          ],
+          [
+            107.71021674675804,
+            105.99995517600296
+          ]
+        ],
+        "minimum_distance_from_port_center_mm": 0.11
+      }
+    }
+  ],
+  "new_via_full_width_annular_entries": [
+    {
+      "kind": "finite full-width entry",
+      "new_track": "e7c00463-e7b1-519a-9fba-367610bf2baf",
+      "port": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "width_mm": 0.25,
+      "axial_depth_mm": 0.02,
+      "corners": [
+        [
+          108.94335725324196,
+          107.17058982399703
+        ],
+        [
+          108.74644734136164,
+          107.32462386764743
+        ],
+        [
+          108.95567997673398,
+          107.18634261694746
+        ],
+        [
+          108.75877006485366,
+          107.34037666059785
+        ]
+      ],
+      "minimum_distance_from_port_center_mm": 0.11000000000000011
+    },
+    {
+      "kind": "finite full-width entry",
+      "new_track": "69de6a7a-9ce0-553f-b0b4-e84bb67907cb",
+      "port": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "width_mm": 0.25,
+      "axial_depth_mm": 0.02,
+      "corners": [
+        [
+          108.8987453445901,
+          107.51442534193154
+        ],
+        [
+          108.7652470967431,
+          107.3030531161738
+        ],
+        [
+          108.88183556652947,
+          107.5251052017593
+        ],
+        [
+          108.74833731868247,
+          107.31373297600156
+        ]
+      ],
+      "minimum_distance_from_port_center_mm": 0.11
+    }
+  ],
+  "retained_C18_upstream_contact_edges": [
+    {
+      "a": "b62e502f-93fd-4035-976c-3c8ef076fb8e",
+      "b": "abb6d92c-fe4d-4098-9639-a5176a79b8cf",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "a": "abb6d92c-fe4d-4098-9639-a5176a79b8cf",
+      "b": "7050ad6f-9636-4133-ba0b-11f6e38331d3",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "a": "7050ad6f-9636-4133-ba0b-11f6e38331d3",
+      "b": "4d573730-8312-45a6-a98e-3d8cfed2019b",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "a": "4d573730-8312-45a6-a98e-3d8cfed2019b",
+      "b": "e0ea22eb-7130-400d-9532-cf8cdccb26c6",
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "a": "e0ea22eb-7130-400d-9532-cf8cdccb26c6",
+      "b": "20c92583-f061-4cfc-9cd0-70d5d54fc129",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "20c92583-f061-4cfc-9cd0-70d5d54fc129",
+      "b": "2122ed59-e6e7-4653-a9f1-b199de5811a2",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "2122ed59-e6e7-4653-a9f1-b199de5811a2",
+      "b": "a85b7648-2f13-44d9-af39-35e11cb35d4a",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "a85b7648-2f13-44d9-af39-35e11cb35d4a",
+      "b": "79c2d0d0-a175-4560-bfe6-3ff9a505332c",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "79c2d0d0-a175-4560-bfe6-3ff9a505332c",
+      "b": "d0b3f615-e8ef-477f-a373-dfa08c81d05b",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "d0b3f615-e8ef-477f-a373-dfa08c81d05b",
+      "b": "4ddde9b9-0a61-4774-8248-8928b07a2441",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "4ddde9b9-0a61-4774-8248-8928b07a2441",
+      "b": "3841d624-65e7-4456-a4dd-6d947d586701",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "3841d624-65e7-4456-a4dd-6d947d586701",
+      "b": "372f5df5-cbd1-44bd-bc7c-c369fcd0e6f9",
+      "layers": [
+        "In3.Cu"
+      ]
+    },
+    {
+      "a": "372f5df5-cbd1-44bd-bc7c-c369fcd0e6f9",
+      "b": "ce0c83ec-dabe-41bb-a4f2-460dd49ca91c",
+      "layers": [
+        "In3.Cu"
+      ]
+    }
+  ],
+  "direct_C19_GND_chain_preserved": [
+    "0c2644fc-74b6-44df-8fe2-efdd67e19a51",
+    "0e6f7d27-c86a-48a8-b273-5095c1cb41da",
+    "14bc041b-ae7c-41de-af46-a97528a3dcf6",
+    "ad3d5f69-4db4-4e49-a09a-3a335bf5e76c"
+  ],
+  "new_copper_obstructions_at_0_127002_mm": [],
+  "new_copper_gaps_under_0_150_mm": [
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "ac498990-e515-4440-bfd2-6098f34b593b",
+      "net": "RPM",
+      "layer": "In3.Cu",
+      "gap_mm_upper": 0.128247
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "ddee4200-187f-498f-85ba-46c07ae1d279",
+      "net": "RPM",
+      "layer": "In3.Cu",
+      "gap_mm_upper": 0.130577
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "ad3d5f69-4db4-4e49-a09a-3a335bf5e76c",
+      "net": "GND",
+      "layer": "F.Cu",
+      "gap_mm_upper": 0.130827
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "d72c8220-7f9f-4fd2-8531-f182e7d2e60d",
+      "net": "FLASH_CS",
+      "layer": "F.Cu",
+      "gap_mm_upper": 0.140266
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "d72c8220-7f9f-4fd2-8531-f182e7d2e60d",
+      "net": "FLASH_CS",
+      "layer": "In1.Cu",
+      "gap_mm_upper": 0.140266
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "d72c8220-7f9f-4fd2-8531-f182e7d2e60d",
+      "net": "FLASH_CS",
+      "layer": "In2.Cu",
+      "gap_mm_upper": 0.140266
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "d72c8220-7f9f-4fd2-8531-f182e7d2e60d",
+      "net": "FLASH_CS",
+      "layer": "In3.Cu",
+      "gap_mm_upper": 0.140266
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "d72c8220-7f9f-4fd2-8531-f182e7d2e60d",
+      "net": "FLASH_CS",
+      "layer": "In4.Cu",
+      "gap_mm_upper": 0.140266
+    },
+    {
+      "new_item": "1fd3f693-c109-5d93-be61-930ed902a1f2",
+      "obstacle": "d72c8220-7f9f-4fd2-8531-f182e7d2e60d",
+      "net": "FLASH_CS",
+      "layer": "B.Cu",
+      "gap_mm_upper": 0.140266
+    }
+  ],
+  "power_width_floor": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 74,
+        "candidate_items": 74,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 21,
+        "candidate_items": 21,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 9,
+        "candidate_items": 9,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 33,
+        "candidate_items": 32,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 81,
+        "candidate_items": 81,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 135,
+        "candidate_items": 135,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "pasted_vias_unchanged": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "en_conductive_contacts": [],
+  "qualification": "Geometry only. Actual post-refill full-width reference connectivity and input tradeoff require separate review. C19 effective capacitance/ESR and stability remain unqualified."
+}

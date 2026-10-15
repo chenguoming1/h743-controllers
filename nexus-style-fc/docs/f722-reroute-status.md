@@ -1,3 +1,17 @@
+# Current r51 checkpoint: unfinished, 18 clearance errors
+
+[Exact candidate and evidence](../routing-wip/2026-10-15/local-r51-checkpoint/README.md) continues PR37 from main 80a3f763. Complete-contact r48/r50 repairs improve 24 to 18 errors; fresh r51 restores a 4.400335 mm all-F.Cu, 0.250 mm U10 output leg while retaining an explicitly documented input transient/PSRR tradeoff. Native refill/save/all-track DRC: 18 clearance errors, zero opens/parity, 54 unchanged silk warnings, minimum gap 0.0878 mm. Fresh ERC is zero for the exact unchanged 49f9 schematic. No new/worsened residual pair is accepted.
+
+The final metadata-only pass removes U10's stale donor LCSC field and corrects its library description, with unchanged selected TPS70933DBVR/C89347 fields, geometry, fills, BOM/CPL exports and 347-pin map. The scoped generator hook does not edit shared libraries or other projects. Canonical copper remains unchanged at 627 inherited errors, with zero opens/parity/ERC and 54 silk warnings.
+
+All 96 inherited shield-spoke regions are preserved by the corrected CC1 transaction. The U10 decision uses actual device guidance: input capacitance is not a stability prerequisite; the measured input reference/travel change remains an electrical qualification issue. No C18 substitution or placement change is made. Historical r44 hold statements below are superseded by the fresh r51 decision and validation, not by reusing an old receipt.
+
+Header remains at 11 edge errors; a read-only fit review identifies a concrete but unapproved slot/tab/contact/fixture redesign. USB pair/actual-stack/ESD work and power/thermal/fault qualification remain open. CAM/CPL are stale; manufacturing stays on hold. No fabrication or flight readiness.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current r47 checkpoint: unfinished, 24 clearance errors
 
 [Exact candidate and evidence](../routing-wip/2026-10-15/local-r47-checkpoint/README.md) follows main 80a3f763. Three bounded complete-contact repairs improve the published 29-error experimental route to 24. Native KiCad 10.0.7 refill/save/all-track DRC gives 24 clearance errors, zero opens/parity and 54 unchanged silk warnings. Minimum remaining gap 0.0785 mm; no new/worsened residual pairs. The final 49f9 schematic/ERC is unchanged. Canonical, header, schematic/generators/BOMs and all unrelated files are untouched.
