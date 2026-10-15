@@ -1,0 +1,9 @@
+# Independent final review
+
+All 15 panels were inspected as actual pixels. Regulator flow, local bypass, feedback dividers, protection networks and all seven servo signals are explicitly wired. After the C19 approval, panel04 shows 10uF; the other 14 panels are byte-identical to the reviewed renders. All physical net assignments and original identities remain exact, with only the approved C19 Value/LCSC/Description metadata change. Added ground symbols are virtual global power-input markers, not new drivers or board parts.
+
+The final PCB audit explicitly allows only those three C19 property strings at exact existing UUIDs. All other part/pad/placement/copper/stack/outline/zone fields, 2,542 canonical and 2,627 routed direct contacts, and EN isolation pass. Native counts remain 627 canonical / 29 experimental / 11 unchanged header edge errors, with zero opens/parity/ERC in both main states and 54 inherited silk warnings. This is source-bound validation with visible unfinished DRC, not fabrication release.
+
+The C19 report's same-footprint 10uF recommendation has been approved and applied. Typical DC-bias data support more screening margin, but do not guarantee full-corner capacitance/ESR or prove board stability. Parallel remote rail capacitors remain unqualified contributors.
+
+The U10 output/input loop remains unresolved in the published r43 geometry. A separate experiment gives an all-F.Cu output path with full-width In1 ground coverage but worsens input reference coverage from 84.19% to 58.43% B/In4 and 65.97% F/In1, adding 0.389 mm planar and 1.413 mm modeled barrel travel. It is excluded from adoption. Preserved zone definitions and zero opens do not establish equivalent high-frequency returns. Thinner-layer power cross-sections, USB impedance/ESD, header fit/edges, pasted vias, connector pin-order and U2 orientation/FSYNC remain open. No current rating or flight readiness is asserted.

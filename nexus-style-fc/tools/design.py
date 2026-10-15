@@ -52,9 +52,9 @@ def R(value, a, b, place, group, note=""):
     part(f"R{_count['R']}", "Device:R", value, R0402, RES[value], {"1": a, "2": b}, place, group, note)
 
 
-def C(value, a, b, place, group, fp=C0402, note=""):
+def C(value, a, b, place, group, fp=C0402, note="", lcsc=None):
     _count["C"] += 1
-    part(f"C{_count['C']}", "Device:C", value, fp, CAP[(value, fp)], {"1": a, "2": b}, place, group, note)
+    part(f"C{_count['C']}", "Device:C", value, fp, lcsc if lcsc is not None else CAP[(value, fp)], {"1": a, "2": b}, place, group, note)
 
 
 def nc(*pins):
@@ -136,7 +136,7 @@ part("U10", "NexusFC:TPS70933DBVR", "TPS70933DBVR", "NexusFC:SOT-23-5_L3.0-W1.7-
      {"1": "VSYS", "2": "GND", "3": None, "4": None, "5": "3V3_SENS"},
      ("xy", 14.0, 9.0, 0, "F"), "SENSORS", "3V3 sensor LDO, 30 V input; EN intentionally floating (internal pull-up), never tied to VSYS")
 C("1uF", "VSYS", "GND", ("near", "U10", "1", "F"), "SENSORS", note="LDO in")
-C("2.2uF", "3V3_SENS", "GND", ("xy", 9.4, 9.0, 0, "F"), "SENSORS", fp=C0603, note="LDO out, >=2 uF effective")
+C("10uF", "3V3_SENS", "GND", ("xy", 9.4, 9.0, 0, "F"), "SENSORS", fp=C0603, note="LDO output; Samsung CL10A106KP8NNNC; 10 uF, 10 V, X5R, +/-10%; JLC/LCSC C19702", lcsc="C19702")
 
 part("U4", "NexusFC:W25N01GVZEIG_C907680", "W25N01GVZEIG", "NexusFC:WSON-8_L8.0-W6.10-P1.27-BL-EP", "C907680",
      {"1": "FLASH_CS", "2": "SPI2_MISO", "3": "FLASH_WP", "4": "GND", "5": "SPI2_MOSI",
