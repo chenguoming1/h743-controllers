@@ -1,0 +1,78 @@
+{
+  "status": "ACCEPTED two scoped off-pad GND-via relocations; native DRC remains unfinished",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r55-vsys-thermal",
+  "source_board_sha256": "26c63920e944baaada474e49c8e7c08ab0260176047f6b452d4232746c91fe7b",
+  "candidate_board_sha256": "64eb0addce9b1ef9c14f29714224834a09e44b96ecd66a967d2f667f9530900f",
+  "schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "native_drc_sha256": "1185c544ecde9c02a37c702eb299b1d620ebcfb6a92bda416f8ffd725a956eb4",
+  "source_clearance_errors": 13,
+  "candidate_clearance_errors": 13,
+  "unchanged_silk_warnings": 54,
+  "opens": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "erc_evidence_basis": "Exact unchanged schematic and source-native ERC receipt; fresh PCB schematic-parity check",
+  "minimum_remaining_clearance_mm": 0.0893,
+  "worsened_residual_pairs": [],
+  "removed_native_violation_pairs": [],
+  "new_native_violation_pairs": [],
+  "geometry_receipt_sha256": "1ccf1f466d97f1dd7168cf98de4dd1ec12c7fb65a2ed0ed7d3c508314d7c67f8",
+  "invariants": "pass",
+  "source_pasted_vias": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "remaining_inherited_pasted_vias": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "exact_removed_paste_contacts": [
+    {
+      "via_uuid": "7f89653b-c07a-4bb7-8d55-49a1f1873aa3",
+      "via_position_iu": [
+        101975000,
+        117575000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J2",
+      "pad": "5",
+      "pad_uuid": "376d1147-a7d3-4a6f-9bb1-6d35b740c15a",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+      "via_position_iu": [
+        105575000,
+        130925000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J6",
+      "pad": "B12",
+      "pad_uuid": "227cbe24-655e-44e4-b732-f919c3156199",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    }
+  ],
+  "no_other_paste_contact_changes": true,
+  "en_conductive_contacts": [],
+  "qualification": "Native unfinished routing checkpoint only. Power/return/thermal, regulator capacitor loops, USB/SI, inherited pasted vias, header/mechanical and fabrication gates remain open.",
+  "local-ground-return-proof.json_sha256": "fd7bbb4707bb09d247ef528a2917bc5e77c5ae46841ace1c8a5635368d40e992",
+  "ldo-return-continuity.json_sha256": "0e97daf82754fc24a99eec1bf682ef8d5ffe3de31d23e1950116d7d2b92ec108",
+  "routing-return-continuity_cc1-return-continuity.json_sha256": "faa27f891464c109bb9d40ca00aead71bcf1639f7b16257632a497e461f62a37",
+  "mask-paste-proof.json_sha256": "6885fd50a24c347e35d21d1a1141d4169322fe4e57aa10f53d6c9d282c53629b",
+  "explicit_added_ground_centerline_mm": {
+    "J6_B12": 0.4,
+    "J2_lower_GND": 0.25
+  },
+  "C18_return_scope": "Primary and all other local C18 return paths unchanged. Secondary path through J2 lower GND via gains exact 0.250 mm dogbone; finite main-plane contacts preserved.",
+  "nominal_mask_paste_scope": "Exact four native Gerbers unchanged except creation timestamps; moved drill edges clear all front aperture bounds by >=0.225 mm, back >=0.325734659 mm. Fabrication tolerances/process are not qualified."
+}

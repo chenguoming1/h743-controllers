@@ -1,0 +1,44 @@
+{
+  "status": "One complete same-width same-layer RPM donor centered into fixed via; native/contact/return checks pending",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r56-offpad-ground",
+  "source_board_sha256": "64eb0addce9b1ef9c14f29714224834a09e44b96ecd66a967d2f667f9530900f",
+  "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "candidate_pre_refill_sha256": "18797910a5ff3f216851314b5dbfef7a757f08257de3420edd6b800fa23f0a8b",
+  "routes": [
+    {
+      "name": "RPM_In2",
+      "net": "RPM",
+      "layer": "In2.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          106.417159,
+          104.563013
+        ],
+        [
+          107.225,
+          105.275
+        ]
+      ],
+      "removed_uuids": [
+        "842641a6-6c0e-4e61-8e31-f9beee7b5389"
+      ],
+      "new_uuids": [
+        "29723fff-9efe-5610-8dc9-09ee1761108a"
+      ],
+      "expected_external_ports": [
+        "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+        "b3e36731-ab6b-4ca2-aba8-551591dfbbd2"
+      ]
+    }
+  ],
+  "removed_tracks": [
+    {
+      "uuid": "842641a6-6c0e-4e61-8e31-f9beee7b5389",
+      "source_text": "(segment\n\t\t(start 106.608159 104.601013)\n\t\t(end 107.225 105.275)\n\t\t(width 0.127)\n\t\t(layer \"In2.Cu\")\n\t\t(net \"RPM\")\n\t\t(uuid \"842641a6-6c0e-4e61-8e31-f9beee7b5389\")\n\t)"
+    }
+  ],
+  "moved_vias": [],
+  "width_layer_policy": "One In2.Cu 0.127 mm segment replaces one at exactly the inherited width/layer. Fixed via and remote endpoint, all other copper/parts/pads/nets/stack/outline unchanged.",
+  "stopping_bound": "One complete original segment replacement with its via endpoint centered; no via, power, pad or other donor change. Reject any missing full-width port, new/worse native pair or changed main reference/shield topology."
+}

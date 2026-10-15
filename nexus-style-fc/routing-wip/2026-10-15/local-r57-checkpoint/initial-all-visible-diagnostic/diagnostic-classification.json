@@ -1,0 +1,511 @@
+{
+  "status": "Diagnostic complete, not an adopted rule/board change",
+  "source_board_sha256": "64eb0addce9b1ef9c14f29714224834a09e44b96ecd66a967d2f667f9530900f",
+  "diagnostic_board_sha256": "64eb0addce9b1ef9c14f29714224834a09e44b96ecd66a967d2f667f9530900f",
+  "diagnostic_drc_sha256": "cd7213533d252301dcc6d65ea6a0c9194e0a16e03cb075fb914547f73192c127",
+  "exact_board_copper_footprint_pad_net_outline_stack_preservation": true,
+  "exact_project_change": {
+    "footprint_filters_mismatch": [
+      "ignore",
+      "warning"
+    ],
+    "footprint_type_mismatch": [
+      "ignore",
+      "warning"
+    ],
+    "missing_courtyard": [
+      "ignore",
+      "warning"
+    ],
+    "track_not_centered_on_via": [
+      "ignore",
+      "warning"
+    ],
+    "tuning_profile_track_geometries": [
+      "ignore",
+      "warning"
+    ]
+  },
+  "counts": {
+    "clearance": 13,
+    "track_not_centered_on_via": 18,
+    "silk_edge_clearance": 3,
+    "footprint_type_mismatch": 5,
+    "silk_overlap": 32,
+    "silk_over_copper": 19
+  },
+  "schematic_parity_counts": {
+    "footprint_filters_mismatch": 3
+  },
+  "clearance_errors_unchanged": 13,
+  "opens": 0,
+  "footprint_filter_classification": "J1/L1/L2 names do not match schematic library wildcard filters; these are distinct from pin-net or part-value parity changes. Canonical settings unchanged.",
+  "footprint_type_classification": "J1/J6/U3/L2/U14 instance type vs native pad-technology metadata mismatch. Review footprint semantics; do not assume an electrical short or fix by suppressing.",
+  "centering_rows": [
+    {
+      "track_uuid": "8bf1f735-5727-4a93-89b9-f4c68f458136",
+      "via_uuid": "4f77f6ac-d5bf-479f-8694-ff7f6720e5cb",
+      "net": "3V3",
+      "layer": "B.Cu",
+      "track_width_mm": 0.25,
+      "track_length_mm": 0.967,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.06315853069855551,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.25,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            120.19500000000001,
+            115.475
+          ],
+          [
+            120.19500000000001,
+            115.725
+          ],
+          [
+            120.215,
+            115.475
+          ],
+          [
+            120.215,
+            115.725
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "ef93ab06-67d1-492d-92b9-6653e7c97bb7",
+      "via_uuid": "4f77f6ac-d5bf-479f-8694-ff7f6720e5cb",
+      "net": "3V3",
+      "layer": "B.Cu",
+      "track_width_mm": 0.25,
+      "track_length_mm": 0.6788225099390857,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.06315853069855551,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.25,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            120.28648272016355,
+            115.79625941546018
+          ],
+          [
+            120.46325941546019,
+            115.61948272016355
+          ],
+          [
+            120.27234058453982,
+            115.78211727983646
+          ],
+          [
+            120.44911727983646,
+            115.60534058453982
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "c44b2cb3-53f7-4976-b348-971040b7dec4",
+      "via_uuid": "a453278f-57c9-4aa0-adf1-9b1e0b86dbab",
+      "net": "GND",
+      "layer": "F.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.602,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.07971198153351675,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            105.5865,
+            128.505
+          ],
+          [
+            105.71350000000001,
+            128.505
+          ],
+          [
+            105.5865,
+            128.485
+          ],
+          [
+            105.71350000000001,
+            128.485
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "c495cdfe-172d-4895-8c97-706e3d8cca7a",
+      "via_uuid": "a453278f-57c9-4aa0-adf1-9b1e0b86dbab",
+      "net": "GND",
+      "layer": "F.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.005,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.07971198153351675,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "fc266535-d741-48e9-bf14-22b7f2c64c17",
+      "via_uuid": "a453278f-57c9-4aa0-adf1-9b1e0b86dbab",
+      "net": "GND",
+      "layer": "F.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.347,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.08132035415564964,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            105.705,
+            128.4155
+          ],
+          [
+            105.705,
+            128.2885
+          ],
+          [
+            105.685,
+            128.4155
+          ],
+          [
+            105.685,
+            128.2885
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "3a026593-ff10-4187-8b99-15b9409df6ff",
+      "via_uuid": "de26675a-ecba-4fa3-966f-2bc38e53bb1f",
+      "net": "GND",
+      "layer": "B.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.577,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.025079872407960033,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            102.5865,
+            108.35499999999999
+          ],
+          [
+            102.71350000000001,
+            108.35499999999999
+          ],
+          [
+            102.5865,
+            108.335
+          ],
+          [
+            102.71350000000001,
+            108.335
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "76992858-2d46-466d-a634-29ef11b4d64f",
+      "via_uuid": "de26675a-ecba-4fa3-966f-2bc38e53bb1f",
+      "net": "GND",
+      "layer": "B.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.25,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.025079872407960033,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            102.545,
+            108.1595
+          ],
+          [
+            102.545,
+            108.2865
+          ],
+          [
+            102.565,
+            108.1595
+          ],
+          [
+            102.565,
+            108.2865
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "8616bef8-9677-4633-a113-188e514381f4",
+      "via_uuid": "50d7be4f-4eac-4267-b11f-807be235481e",
+      "net": "GND",
+      "layer": "B.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 2.017,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.11417968295628728,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            100.8725,
+            123.44500000000001
+          ],
+          [
+            100.74549999999999,
+            123.44500000000001
+          ],
+          [
+            100.8725,
+            123.465
+          ],
+          [
+            100.74549999999999,
+            123.465
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "a74638eb-c551-47b0-91c8-0611ed1962c4",
+      "via_uuid": "50d7be4f-4eac-4267-b11f-807be235481e",
+      "net": "GND",
+      "layer": "B.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.5883128419472076,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.11417968295628728,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            100.86018302653586,
+            123.64538046532518
+          ],
+          [
+            100.77038046532518,
+            123.73518302653586
+          ],
+          [
+            100.8743251621596,
+            123.6595226009489
+          ],
+          [
+            100.7845226009489,
+            123.7493251621596
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "e6c8eaf3-22f1-4cc4-9065-3a438164ce7f",
+      "via_uuid": "75531463-64bc-4739-9786-f6f8b5e46a18",
+      "net": "GND",
+      "layer": "B.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.212,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.16850519279832268,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "842641a6-6c0e-4e61-8e31-f9beee7b5389",
+      "via_uuid": "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+      "net": "RPM",
+      "layer": "In2.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.9136472489150286,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.19474342094150626,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "4e154a61-a21e-4878-9d58-4ed089e47358",
+      "via_uuid": "7dace066-4359-4c56-b914-53acaa4c96fd",
+      "net": "VCAP",
+      "layer": "F.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.3978287123122211,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.0876042558326945,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            111.07455984776595,
+            108.68971278984017
+          ],
+          [
+            111.0835890301473,
+            108.81639141418353
+          ],
+          [
+            111.09450923742634,
+            108.68829087135492
+          ],
+          [
+            111.10353841980768,
+            108.81496949569828
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "225e3440-8c6b-4c75-83b1-cb36a6d2b249",
+      "via_uuid": "90c9a5c5-ad44-4fbc-aea4-72dcf4fd8c8c",
+      "net": "DSM_TX",
+      "layer": "F.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 0.022,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.056320511361314336,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "6bccc59d-e3a2-4889-921d-c16ccb6a186b",
+      "via_uuid": "90c9a5c5-ad44-4fbc-aea4-72dcf4fd8c8c",
+      "net": "DSM_TX",
+      "layer": "F.Cu",
+      "track_width_mm": 0.127,
+      "track_length_mm": 1.4127993488107222,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.07766595135579603,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": {
+        "width_mm": 0.127,
+        "depth_mm": 0.02,
+        "corners": [
+          [
+            101.96211953467483,
+            118.66768302653585
+          ],
+          [
+            101.87231697346414,
+            118.57788046532517
+          ],
+          [
+            101.9479773990511,
+            118.6818251621596
+          ],
+          [
+            101.85817483784041,
+            118.59202260094891
+          ]
+        ]
+      },
+      "classification": "Direct full-width annular patch proved; off-center warning remains"
+    },
+    {
+      "track_uuid": "0097f17a-a60a-4d12-973b-5461dabae78d",
+      "via_uuid": "a33d9038-104a-4904-836a-f2c168df6d4c",
+      "net": "5V_BUCK",
+      "layer": "B.Cu",
+      "track_width_mm": 0.375,
+      "track_length_mm": 1.199,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.2245016703724088,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "961eede3-9481-48f8-b1ce-59d89e287a7d",
+      "via_uuid": "a33d9038-104a-4904-836a-f2c168df6d4c",
+      "net": "5V_BUCK",
+      "layer": "B.Cu",
+      "track_width_mm": 0.5,
+      "track_length_mm": 1.789,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.2245016703724088,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "eba8ff79-64eb-43fc-a9c1-492395d73f30",
+      "via_uuid": "a33d9038-104a-4904-836a-f2c168df6d4c",
+      "net": "5V_BUCK",
+      "layer": "B.Cu",
+      "track_width_mm": 0.5,
+      "track_length_mm": 1.534946516014483,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.2245016703724088,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    },
+    {
+      "track_uuid": "8fde276c-ea86-49b6-b2c1-c7966a02f478",
+      "via_uuid": "51a22cd5-55d6-4b2a-ab4e-1419692162c2",
+      "net": "5V_BUCK",
+      "layer": "In2.Cu",
+      "track_width_mm": 0.5,
+      "track_length_mm": 0.9989736818480254,
+      "via_land_diameter_mm": 0.45,
+      "via_drill_mm": 0.2,
+      "closest_centerline_endpoint_to_via_center_mm": 0.21641164478835612,
+      "actual_copper_contact": true,
+      "direct_full_track_width_by_0_020_mm_annular_patch": null,
+      "classification": "Direct full-width 0.020 mm annular-entry test did not pass; short-stub/other-donor and current-path review needed. This test alone does not prove a discontinuity."
+    }
+  ],
+  "unproved_direct_entry_count": 8,
+  "other_reenabled_checks": "No missing_courtyard or tuning_profile_track_geometries findings",
+  "qualification": "The direct-entry test is scoped geometry only. A tiny fully contained stub may rely on another full-width donor; widths larger than the via land cannot meet this rectangle criterion. Unproved cases need topology/current review, not blanket rejection or acceptance."
+}

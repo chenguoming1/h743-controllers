@@ -18,7 +18,7 @@ import sexpr as sx
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STOCK = os.environ.get("KICAD_SYMBOL_DIR", "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols" if sys.platform == "darwin" else "/usr/share/kicad/symbols")
-LIBS = {"NexusFC": os.path.normpath(os.path.join(HERE, "..", "hardware", "library", "NexusFC.kicad_sym"))}
+LIBS = {"NexusFC": os.path.normpath(os.path.join(HERE, "..", "hardware", "library", "NexusFC.kicad_sym")), "NexusReviewed": os.path.normpath(os.path.join(HERE, "..", "hardware", "library", "NexusReviewed.kicad_sym"))}
 NS = uuid.UUID("6f3c2a1e-9b7d-4c55-8a10-2d4e5f6a7b80")
 GRID = 1.27
 STUB = 2.54
@@ -100,9 +100,16 @@ def label_width(name):
 
 def main(mod_name, out_path, project):
     d = importlib.import_module(mod_name)
+    # Only this main schematic uses the reviewed custom-footprint filters.
+    # Never mutate design.PARTS: sibling projects import it directly.
+    parts = d.PARTS
+    if mod_name == "design" and project == "nexus-style-fc":
+        reviewed = {"J1": "NexusReviewed:HeaderBoardJoint",
+                    "L1": "NexusReviewed:PowerInductor", "L2": "NexusReviewed:PowerInductor"}
+        parts = [dict(p, sym=reviewed.get(p["ref"], p["sym"])) for p in d.PARTS]
     root = uid(project, "root")
     symdefs = {}
-    for p in d.PARTS:
+    for p in parts:
         if p["sym"] not in symdefs:
             symdefs[p["sym"]] = load_symbol(p["sym"], use_pinned=mod_name == "design")
     flags = getattr(d, "PWR_FLAGS", [])
@@ -125,7 +132,7 @@ def main(mod_name, out_path, project):
         row_h = max(row_h, height)
         return px, py
 
-    order = list(dict.fromkeys(p["group"] for p in d.PARTS))
+    order = list(dict.fromkeys(p["group"] for p in parts))
     for g in order:
         # new group always starts a new row with a title
         if cx > x0:
@@ -133,7 +140,7 @@ def main(mod_name, out_path, project):
         texts.append(["text", S(GROUP_TITLES.get(g, g)), ["exclude_from_sim", "no"],
                       ["at", snap(x0), snap(cy - 4.0), 0], ["effects", ["font", ["size", 2.5, 2.5], ["bold", "yes"]],
                                                             ["justify", "left", "bottom"]], ["uuid", uid(project, "title", g)]])
-        for p in [q for q in d.PARTS if q["group"] == g]:
+        for p in [q for q in parts if q["group"] == g]:
             sym = symdefs[p["sym"]]
             pins = sx.symbol_pins(sym)
             extra = set(p["pins"]) - set(pins)
@@ -227,7 +234,7 @@ def main(mod_name, out_path, project):
         sch = arrange(sch, d, project)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     open(out_path, "w", encoding="utf-8").write(sx.dump(sch) + "\n")
-    print("wrote", out_path, f"({len(d.PARTS)} symbols)")
+    print("wrote", out_path, f"({len(parts)} symbols)")
 
 
 if __name__ == "__main__":

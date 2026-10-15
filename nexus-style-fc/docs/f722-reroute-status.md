@@ -1,3 +1,17 @@
+# Current r57 checkpoint: unfinished, 13 clearance errors
+
+[Exact experimental source, native receipts and open gates](../routing-wip/2026-10-15/local-r57-checkpoint/README.md).
+
+Fresh native KiCad 10.0.7: experimental 13 clearance errors, minimum 0.0893 mm; canonical 627 inherited errors. Both have zero opens, exact 347 physical pin/net mapping, zero ERC and no footprint-filter parity warnings. All-visible diagnostics retain 17 experimental / 21 canonical off-center warnings, five footprint-type warnings and 54 silk warnings each. No new or worsened native clearance pair, exclusion or suppression is accepted.
+
+New progress: same-layer thermal-via clearance repair; two holes moved outside pasted pads with unchanged mask/paste apertures; centered full-width RPM annular entry; exact Nexus-only filter-library binding with unchanged shared design imports and BOM/CPL bytes. Four 5V_BUCK annular/current entries remain under review. Sixteen pasted vias / seventeen contacts remain.
+
+The separate mechanical candidate is an unfinished r54-based implementation with known shorts/gaps. Its dimensions/tolerance/strength calculations do not prove physical fit or load capacity. Accepted header remains eleven edge errors until successful replay/reroute. USB pair, power/reference/transient and fabrication/assembly qualifications remain open. Do not fabricate or assemble.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current r54 checkpoint: unfinished, 14 clearance errors
 
 [Exact current experimental project and evidence](../routing-wip/2026-10-15/local-r54-checkpoint/README.md) continues from the published 18-error r51 state through complete DSM_DATA, CC2 and C_RX/GND repairs. Native KiCad10 refill/save/all-track DRC: 14 clearance errors, zero opens/parity, 54 unchanged silk warnings; minimum remaining gap 0.0893 mm. No new/worsened pair is accepted. The exact unchanged 49f9 schematic retains its zero-ERC receipt; no new ERC run is claimed for these copper-only transactions.

@@ -1,0 +1,64 @@
+{
+  "status": "PASS bounded static delta; UNFINISHED electrical/native/3D/physical validation",
+  "candidate": "candidate-02",
+  "source_manifest_sha256": "d1cb86f086fff6a37b51b507bd5863265228f035f01f402c26097bf552e53998",
+  "source_hashes": {
+    "main": "5677fb38db7d7e19cd3afa9dd5da61bbd9932ed0be7f6f2899f7bf4bf58e8fc9",
+    "child": "99d06c7ec685f776f357958c22f684f198f9ef5bf7e9bed437833c9d6aadfba0",
+    "child-schematic": "7514ce37f03803bdbce5a2f54f290ff78e6cf1f719f5d51fb3509116a4e1cb10"
+  },
+  "candidate_hashes": {
+    "main": "40c4cdf78e7cb15a6ee5ed8219284f19e3a58b10686b0688daadd5f3d00c0689",
+    "child": "f89abf8e21697fc401f16f48ee3877dd8c4d9f1360b10f79412bbd692a6da19c"
+  },
+  "implementation_hashes": {
+    "tools/apply_header_interface.py": "aa45ae9ee01a8ccc40fd4915b8184c0c40832bfad9c90d8db03c0067c2533ef4",
+    "tools/header_interface_geometry.py": "21a9540f5f96c63a242db7ca3616c741f15735492799c1ae0afedbc222b8e8d6",
+    "tools/header_interface_r54_anchors.json": "54a26aab6baba4f39a251a13cc06071533ad956e04004db567bd447fc11bf525",
+    "tools/sexpr.py": "8b8ebd58b1a78b88923e69d8d3da56bdd019cd3faefd08846277df5f4a70952e",
+    "tools/make_footprints.py": "aedb4616b94093dfc9f928f70271f32db5fa5e345e7e10aab8fbb4c2a1dcb1c8",
+    "tools/build_header_board.py": "1ea246b65023f92418706d21a5959119c11df221c9817777c4c576ac7821a5bd",
+    "tools/design_header.py": "2c47b41d6bb5396275ca17628984b9b2a00f27c488b627a89aa32bce8e50f2e9",
+    "tools/pcbutil.py": "2780be1bbbe625430dc4ca4b3e1f6eb3e4c87c74dcb0f33bb60394df8d8fb14c",
+    "tools/route_board.py": "860e928a61be6e8c227e87055bc3c4426707da422a512fe0790ba60bbeaf1439",
+    "hardware/library/NexusFC.pretty/ChildBoard_TabPad_Pwr.kicad_mod": "8d56d0dd82e130b49b1fb0ce4ef9947b900fdb329e2fb98b6d93cf0130c39a19",
+    "hardware/library/NexusFC.pretty/ChildBoard_TabPad_Sig.kicad_mod": "105f9adf9720554d1187afaff03bc123fe0687132ae73022e454c1cedb58ddfa",
+    "hardware/library/NexusFC.pretty/ChildBoard_TabStrip_W7.892.kicad_mod": "7e33996c0cdf5bb7b31b9cbf0461dc4c6cfe4cda3a469c7757117a9b999b7a20",
+    "hardware/library/NexusFC.pretty/HeaderBoard_Joint.kicad_mod": "f9e90613fec2df5b1135e7dbbf5264dce72feb3fdc65a7b54a0a657f4a58f38f",
+    "hardware/library/NexusFC.pretty/Header_3x07_P2.54_Vertical_Servo.kicad_mod": "15e3b65970f36884d7e15a86901520a2c0e77b23c872fa711c894a58887de54d"
+  },
+  "all_14_implementation_bindings_verified": true,
+  "exact_delta": {
+    "only_J1_attr_and_two_keepout_polygons_changed": true,
+    "child_board_byte_identical": true,
+    "main_J1_attr": [
+      "attr",
+      "smd"
+    ]
+  },
+  "native_in_memory_replay_exact": {
+    "main": true,
+    "child": true
+  },
+  "generator_library_exact": {
+    "Header_3x07_P2.54_Vertical_Servo": true,
+    "HeaderBoard_Joint": true,
+    "ChildBoard_TabPad_Sig": true,
+    "ChildBoard_TabPad_Pwr": true,
+    "ChildBoard_TabStrip_W7.892": true
+  },
+  "route_math_keepouts_equal_native": true,
+  "route_guards": {
+    "rotated_refused_before_any_item_added": true,
+    "back_side_refused_before_any_item_added": true
+  },
+  "artifacts_sha256": {
+    "candidate02-addendum.md": "7ab80b130130dd8f8579dc9da9805399f50ee2d77352f3a7f54e2675c27b4693",
+    "candidate02/delta-review.json": "fc2735ea89d3ac3479139f8c0fd983354c92de3451931e1d8ad03c3aed004f07",
+    "candidate02/native-review.json": "8cac82ed06ae22b69860c3b77fba305ce1684af9e1354e8976dce32cccf76b06",
+    "candidate02/review_delta.py": "f511b5397d5d4c64fc869546b896de4a1f5169d35a11f371362c3a663ed42463",
+    "candidate02/review_native.py": "5893783a45091c4023116ace885d82f68c8335a8d31c53e5f2c3ca5a16dc4d1d",
+    "candidate02/review_route_math.py": "e14c27a6314db8be410f32770cdde600ed690a9a327fd3ab64181d86b1657197",
+    "candidate02/route-math-review.json": "fef6eb0def66d20eba7174e762d025098422c8675c18cb7104c8a82d78467b0d"
+  }
+}
