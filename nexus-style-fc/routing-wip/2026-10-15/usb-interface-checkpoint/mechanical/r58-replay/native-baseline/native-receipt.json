@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+    "pcb",
+    "drc",
+    "--all-track-errors",
+    "--schematic-parity",
+    "--refill-zones",
+    "--save-board",
+    "--severity-all",
+    "--format",
+    "json",
+    "--exit-code-violations",
+    "-o",
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/r58-replay/native-baseline/native-drc.json",
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/r58-replay/native-baseline/hardware/nexus-style-fc.kicad_pcb"
+  ],
+  "started_utc": "2026-10-15T06:26:28.844583+00:00",
+  "finished_utc": "2026-10-15T06:26:40.337542+00:00",
+  "exit_code": 5,
+  "board_sha256": "9818f3a8b18b84a300d7455b7251c18e46fde6d764a67829d0a49a98e19c99da",
+  "drc_sha256": "439699be9ab40791a020f9299021cd5fac450d97c03e9d88e16d85443f32a397",
+  "counts": {
+    "items_not_allowed:error": 7,
+    "clearance:error": 13,
+    "shorting_items:error": 9,
+    "hole_clearance:error": 8,
+    "copper_edge_clearance:error": 3,
+    "solder_mask_bridge:error": 9,
+    "via_dangling:warning": 1,
+    "track_dangling:warning": 2,
+    "track_not_centered_on_via:warning": 13,
+    "silk_edge_clearance:warning": 3,
+    "footprint_type_mismatch:warning": 4,
+    "silk_overlap:warning": 32,
+    "silk_over_copper:warning": 19
+  },
+  "opens": 1,
+  "parity": 0
+}

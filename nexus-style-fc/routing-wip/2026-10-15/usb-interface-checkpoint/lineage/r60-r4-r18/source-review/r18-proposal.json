@@ -1,0 +1,1492 @@
+{
+  "status": "Exact source-bound geometric proposal; native refill/DRC and return-plane audit required before adoption",
+  "source": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r58-buck-center/hardware/nexus-style-fc.kicad_pcb",
+  "source_board_sha256": "85c5cede5407d2022df36e0323527704a84c55687fc9dcc426565073aa9c4f8e",
+  "netlist": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r58-buck-center/final-netlist.xml",
+  "netlist_sha256": "abb488beeeafc472836437552e7160169fa91e0ec9dfd156ff75a257784065bc",
+  "scope": "R18 5V clearance: coordinated 5V branch and 5V_SENSE donor reroute",
+  "removed_uuids": {
+    "5V": [
+      "3b84a2cb-d2a1-4329-87ef-6289e1948800",
+      "c2466293-6162-4568-be77-df41578dae9a",
+      "cdce57f1-e941-4d25-b793-e958559c51bf"
+    ],
+    "5V_SENSE": [
+      "372df86c-664c-4888-8da1-6e60fa58d5d8",
+      "eb3b5fa9-00ce-499a-9c96-417289bed851",
+      "6df822c6-0a4b-430c-a1a6-da2431fc9dd9",
+      "7f724ce5-ac26-4882-8a3f-5a740ddffc3e"
+    ]
+  },
+  "removed_objects": [
+    {
+      "uuid": "372df86c-664c-4888-8da1-6e60fa58d5d8",
+      "net": "5V_SENSE",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "F.Cu"
+      ],
+      "start": [
+        114.317213,
+        114.507858
+      ],
+      "end": [
+        114.512,
+        113.498
+      ],
+      "width": 0.127
+    },
+    {
+      "uuid": "3b84a2cb-d2a1-4329-87ef-6289e1948800",
+      "net": "5V",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "F.Cu"
+      ],
+      "start": [
+        114.322858,
+        112.406326
+      ],
+      "end": [
+        115.462,
+        112.423
+      ],
+      "width": 0.35
+    },
+    {
+      "uuid": "6df822c6-0a4b-430c-a1a6-da2431fc9dd9",
+      "net": "5V_SENSE",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "In3.Cu"
+      ],
+      "start": [
+        112.867689,
+        114.797995
+      ],
+      "end": [
+        114.162,
+        113.514
+      ],
+      "width": 0.127
+    },
+    {
+      "uuid": "7f724ce5-ac26-4882-8a3f-5a740ddffc3e",
+      "net": "5V_SENSE",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "In3.Cu"
+      ],
+      "start": [
+        114.162,
+        113.514
+      ],
+      "end": [
+        114.178203,
+        111.18419
+      ],
+      "width": 0.127
+    },
+    {
+      "uuid": "c2466293-6162-4568-be77-df41578dae9a",
+      "net": "5V",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "F.Cu"
+      ],
+      "start": [
+        113.75,
+        113.01
+      ],
+      "end": [
+        114.322858,
+        112.406326
+      ],
+      "width": 0.35
+    },
+    {
+      "uuid": "cdce57f1-e941-4d25-b793-e958559c51bf",
+      "net": "5V",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "F.Cu"
+      ],
+      "start": [
+        115.462,
+        112.423
+      ],
+      "end": [
+        115.619,
+        112.58
+      ],
+      "width": 0.35
+    },
+    {
+      "uuid": "eb3b5fa9-00ce-499a-9c96-417289bed851",
+      "net": "5V_SENSE",
+      "kind": "PCB_TRACK",
+      "layers": [
+        "F.Cu"
+      ],
+      "start": [
+        114.512,
+        113.498
+      ],
+      "end": [
+        114.77,
+        113.01
+      ],
+      "width": 0.127
+    }
+  ],
+  "new_tracks": [
+    {
+      "uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "route": "power_front",
+      "net": "5V",
+      "layer": "F.Cu",
+      "width_mm": 0.35,
+      "start": [
+        113.75,
+        113.01
+      ],
+      "end": [
+        114.18,
+        113.5
+      ]
+    },
+    {
+      "uuid": "5efb0c33-f796-5dd8-b3d4-c00659627907",
+      "route": "power_inner",
+      "net": "5V",
+      "layer": "In3.Cu",
+      "width_mm": 0.35,
+      "start": [
+        114.18,
+        113.5
+      ],
+      "end": [
+        115.619,
+        112.77
+      ]
+    },
+    {
+      "uuid": "8ed73ef5-8616-524a-a3a3-ad5729a1042a",
+      "route": "sense_front",
+      "net": "5V_SENSE",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "start": [
+        114.77,
+        113.01
+      ],
+      "end": [
+        114.77,
+        113.5
+      ]
+    },
+    {
+      "uuid": "3aa958f1-b0c8-5eaf-8b7a-1efa4636d385",
+      "route": "sense_front",
+      "net": "5V_SENSE",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "start": [
+        114.77,
+        113.5
+      ],
+      "end": [
+        114.504,
+        113.77
+      ]
+    },
+    {
+      "uuid": "e4935664-3602-5182-9884-c3de6c0d8154",
+      "route": "sense_front",
+      "net": "5V_SENSE",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "start": [
+        114.504,
+        113.77
+      ],
+      "end": [
+        114.45,
+        113.82
+      ]
+    },
+    {
+      "uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "route": "sense_front",
+      "net": "5V_SENSE",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "start": [
+        114.45,
+        113.82
+      ],
+      "end": [
+        114.426,
+        113.944
+      ]
+    },
+    {
+      "uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "route": "sense_front",
+      "net": "5V_SENSE",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "start": [
+        114.426,
+        113.944
+      ],
+      "end": [
+        114.317213,
+        114.507858
+      ]
+    },
+    {
+      "uuid": "7abe4757-3440-5d22-b7b3-495032af094a",
+      "route": "sense_inner",
+      "net": "5V_SENSE",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "start": [
+        112.867689,
+        114.797995
+      ],
+      "end": [
+        113.65,
+        114.0
+      ]
+    },
+    {
+      "uuid": "bc9d01e6-6586-5790-a6e0-34e170fb9d8a",
+      "route": "sense_inner",
+      "net": "5V_SENSE",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "start": [
+        113.65,
+        114.0
+      ],
+      "end": [
+        113.65,
+        111.65
+      ]
+    },
+    {
+      "uuid": "0a27032d-2e2b-58d0-a7be-542c3ed0f5da",
+      "route": "sense_inner",
+      "net": "5V_SENSE",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "start": [
+        113.65,
+        111.65
+      ],
+      "end": [
+        114.178203,
+        111.18419
+      ]
+    }
+  ],
+  "new_vias": [
+    {
+      "uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "net": "5V",
+      "type": "through",
+      "position": [
+        114.18,
+        113.5
+      ],
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2
+    }
+  ],
+  "moved_vias": [],
+  "changed_parts_nets_placement_mechanics": false,
+  "power_width_mm": 0.35,
+  "sense_width_mm": 0.127,
+  "geometry_clearance_mm": 0.127002,
+  "nearest_gaps": [
+    {
+      "new_uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "other_uuid": "11cd1464-b4be-4ccd-beb1-45f4e2df84e2",
+      "layer": "F.Cu",
+      "other_net": "GND",
+      "gap_lower_bound_mm": 0.128465
+    },
+    {
+      "new_uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "other_uuid": "823b9ccc-0513-4fd9-9689-29433c6f8e22",
+      "layer": "F.Cu",
+      "other_net": "GND",
+      "gap_lower_bound_mm": 0.128465
+    },
+    {
+      "new_uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "other_uuid": "b451ac71-4c83-4fc3-8886-6e232e9a0142",
+      "layer": "F.Cu",
+      "other_net": "VX_SENSE",
+      "gap_lower_bound_mm": 0.129091
+    },
+    {
+      "new_uuid": "e4935664-3602-5182-9884-c3de6c0d8154",
+      "other_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.129743
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "e4935664-3602-5182-9884-c3de6c0d8154",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.129743
+    },
+    {
+      "new_uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "other_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.130188
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.130188
+    },
+    {
+      "new_uuid": "3aa958f1-b0c8-5eaf-8b7a-1efa4636d385",
+      "other_uuid": "5c8b9c9e-5fe5-4462-90a1-3da76685b9ce",
+      "layer": "F.Cu",
+      "other_net": "GND",
+      "gap_lower_bound_mm": 0.131298
+    },
+    {
+      "new_uuid": "3aa958f1-b0c8-5eaf-8b7a-1efa4636d385",
+      "other_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.133253
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "3aa958f1-b0c8-5eaf-8b7a-1efa4636d385",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.133253
+    },
+    {
+      "new_uuid": "e4935664-3602-5182-9884-c3de6c0d8154",
+      "other_uuid": "5c8b9c9e-5fe5-4462-90a1-3da76685b9ce",
+      "layer": "F.Cu",
+      "other_net": "GND",
+      "gap_lower_bound_mm": 0.133382
+    },
+    {
+      "new_uuid": "bc9d01e6-6586-5790-a6e0-34e170fb9d8a",
+      "other_uuid": "e79d29fc-3fbc-43e0-b5d6-54e6a9022da7",
+      "layer": "In3.Cu",
+      "other_net": "DSM_DATA",
+      "gap_lower_bound_mm": 0.1365
+    },
+    {
+      "new_uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "other_uuid": "5c8b9c9e-5fe5-4462-90a1-3da76685b9ce",
+      "layer": "F.Cu",
+      "other_net": "GND",
+      "gap_lower_bound_mm": 0.140214
+    },
+    {
+      "new_uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "other_uuid": "5c8b9c9e-5fe5-4462-90a1-3da76685b9ce",
+      "layer": "F.Cu",
+      "other_net": "GND",
+      "gap_lower_bound_mm": 0.141914
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "b451ac71-4c83-4fc3-8886-6e232e9a0142",
+      "layer": "F.Cu",
+      "other_net": "VX_SENSE",
+      "gap_lower_bound_mm": 0.142841
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "other_uuid": "e4935664-3602-5182-9884-c3de6c0d8154",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.179743
+    },
+    {
+      "new_uuid": "e4935664-3602-5182-9884-c3de6c0d8154",
+      "other_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.179743
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "other_uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.180188
+    },
+    {
+      "new_uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "other_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.180188
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "other_uuid": "3aa958f1-b0c8-5eaf-8b7a-1efa4636d385",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.183253
+    },
+    {
+      "new_uuid": "3aa958f1-b0c8-5eaf-8b7a-1efa4636d385",
+      "other_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.183253
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "a7ccde99-d72c-468e-9acd-18cd492edbc1",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.187768
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "other_uuid": "b451ac71-4c83-4fc3-8886-6e232e9a0142",
+      "layer": "F.Cu",
+      "other_net": "VX_SENSE",
+      "gap_lower_bound_mm": 0.192841
+    },
+    {
+      "new_uuid": "6214c7f8-5047-5e64-820c-c21f0fadf502",
+      "other_uuid": "b451ac71-4c83-4fc3-8886-6e232e9a0142",
+      "layer": "F.Cu",
+      "other_net": "VX_SENSE",
+      "gap_lower_bound_mm": 0.213667
+    },
+    {
+      "new_uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "other_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "layer": "F.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.219094
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "a9aa1fc0-5ddd-5e33-ae21-736c08a0fd38",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.219094
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "other_uuid": "a7ccde99-d72c-468e-9acd-18cd492edbc1",
+      "layer": "F.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.237768
+    },
+    {
+      "new_uuid": "bc9d01e6-6586-5790-a6e0-34e170fb9d8a",
+      "other_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "layer": "In3.Cu",
+      "other_net": "5V",
+      "gap_lower_bound_mm": 0.2415
+    },
+    {
+      "new_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "other_uuid": "bc9d01e6-6586-5790-a6e0-34e170fb9d8a",
+      "layer": "In3.Cu",
+      "other_net": "5V_SENSE",
+      "gap_lower_bound_mm": 0.2415
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "other_uuid": "ac35a308-c8d6-407c-833c-692401b84934",
+      "layer": "F.Cu",
+      "other_net": "3V3_SENS",
+      "gap_lower_bound_mm": 0.2515
+    }
+  ],
+  "offpad_via_proof": {
+    "entire_new_via_land_disjoint_from_every_front_and_back_pad": true,
+    "nearest_pad_gaps": [
+      {
+        "pad": {
+          "uuid": "35e3fd16-e6dc-4aed-bd4d-c435206c0ed8",
+          "net": "5V",
+          "kind": "PAD",
+          "layers": [
+            "F.Cu"
+          ],
+          "ref": "R18",
+          "pad": "1",
+          "pos": [
+            113.75,
+            113.01
+          ],
+          "size": [
+            0.54,
+            0.64
+          ],
+          "shape": 4,
+          "angle": 0.0
+        },
+        "layer": "F.Cu",
+        "land_gap_lower_bound_mm": 0.064322,
+        "drill_gap_lower_bound_mm": 0.189322
+      },
+      {
+        "pad": {
+          "uuid": "b451ac71-4c83-4fc3-8886-6e232e9a0142",
+          "net": "VX_SENSE",
+          "kind": "PAD",
+          "layers": [
+            "F.Cu"
+          ],
+          "ref": "R17",
+          "pad": "1",
+          "pos": [
+            113.88,
+            114.16
+          ],
+          "size": [
+            0.54,
+            0.64
+          ],
+          "shape": 4,
+          "angle": 0.0
+        },
+        "layer": "F.Cu",
+        "land_gap_lower_bound_mm": 0.142841,
+        "drill_gap_lower_bound_mm": 0.267841
+      },
+      {
+        "pad": {
+          "uuid": "a7ccde99-d72c-468e-9acd-18cd492edbc1",
+          "net": "5V_SENSE",
+          "kind": "PAD",
+          "layers": [
+            "F.Cu"
+          ],
+          "ref": "R18",
+          "pad": "2",
+          "pos": [
+            114.77,
+            113.01
+          ],
+          "size": [
+            0.54,
+            0.64
+          ],
+          "shape": 4,
+          "angle": 0.0
+        },
+        "layer": "F.Cu",
+        "land_gap_lower_bound_mm": 0.187768,
+        "drill_gap_lower_bound_mm": 0.312768
+      },
+      {
+        "pad": {
+          "uuid": "5c8b9c9e-5fe5-4462-90a1-3da76685b9ce",
+          "net": "GND",
+          "kind": "PAD",
+          "layers": [
+            "F.Cu"
+          ],
+          "ref": "R17",
+          "pad": "2",
+          "pos": [
+            114.9,
+            114.16
+          ],
+          "size": [
+            0.54,
+            0.64
+          ],
+          "shape": 4,
+          "angle": 0.0
+        },
+        "layer": "F.Cu",
+        "land_gap_lower_bound_mm": 0.393558,
+        "drill_gap_lower_bound_mm": 0.5185580000000001
+      }
+    ]
+  },
+  "full_width_pad_via_entries": [
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "port_uuid": "35e3fd16-e6dc-4aed-bd4d-c435206c0ed8",
+      "proof": {
+        "width_mm": 0.35,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            113.95408938353228,
+            112.97725059497621
+          ],
+          [
+            113.69102039235764,
+            113.20810705661928
+          ],
+          [
+            113.96728118134045,
+            112.99228310875762
+          ],
+          [
+            113.70421219016582,
+            113.22313957040069
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.11
+      }
+    },
+    {
+      "new_uuid": "d4916e2d-5975-5db1-8fbd-588e963332d4",
+      "port_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "proof": {
+        "width_mm": 0.35,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            114.22578780983419,
+            113.28686042959932
+          ],
+          [
+            113.96271881865955,
+            113.51771689124239
+          ],
+          [
+            114.23897960764236,
+            113.30189294338072
+          ],
+          [
+            113.97591061646773,
+            113.5327494050238
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.11
+      }
+    },
+    {
+      "new_uuid": "5efb0c33-f796-5dd8-b3d4-c00659627907",
+      "port_uuid": "f51035c2-51b9-5ecf-a8e9-1555020db2a5",
+      "proof": {
+        "width_mm": 0.35,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            114.19892692886329,
+            113.2941680992562
+          ],
+          [
+            114.35727107832521,
+            113.6063012925106
+          ],
+          [
+            114.21676311133496,
+            113.28511986214409
+          ],
+          [
+            114.37510726079688,
+            113.59725305539848
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.11
+      }
+    },
+    {
+      "new_uuid": "5efb0c33-f796-5dd8-b3d4-c00659627907",
+      "port_uuid": "7ec7822c-40c1-4348-9a46-8ccfc2c16a3a",
+      "proof": {
+        "width_mm": 0.35,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            115.42389273920313,
+            112.67274694460151
+          ],
+          [
+            115.58223688866505,
+            112.98488013785591
+          ],
+          [
+            115.4417289216748,
+            112.6636987074894
+          ],
+          [
+            115.60007307113672,
+            112.9758319007438
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.10999999999999989
+      }
+    },
+    {
+      "new_uuid": "8ed73ef5-8616-524a-a3a3-ad5729a1042a",
+      "port_uuid": "a7ccde99-d72c-468e-9acd-18cd492edbc1",
+      "proof": {
+        "width_mm": 0.127,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            114.8335,
+            113.12
+          ],
+          [
+            114.70649999999999,
+            113.12
+          ],
+          [
+            114.8335,
+            113.14
+          ],
+          [
+            114.70649999999999,
+            113.14
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.11
+      }
+    },
+    {
+      "new_uuid": "7abe4757-3440-5d22-b7b3-495032af094a",
+      "port_uuid": "4c8b79af-68bd-4e72-ab67-315fc898e40d",
+      "proof": {
+        "width_mm": 0.127,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            112.8993503187155,
+            114.67499170371411
+          ],
+          [
+            112.99003967353784,
+            114.7638986265149
+          ],
+          [
+            112.91335140892036,
+            114.66070991555311
+          ],
+          [
+            113.0040407637427,
+            114.7496168383539
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.11
+      }
+    },
+    {
+      "new_uuid": "0a27032d-2e2b-58d0-a7be-542c3ed0f5da",
+      "port_uuid": "3a44b3d5-2ed4-4fb2-93f7-5a697a650aaa",
+      "proof": {
+        "width_mm": 0.127,
+        "axial_depth_mm": 0.02,
+        "corners": [
+          [
+            114.03870082942773,
+            111.22254875917739
+          ],
+          [
+            114.12270127699541,
+            111.31780066103991
+          ],
+          [
+            114.05370112893364,
+            111.20932034223759
+          ],
+          [
+            114.13770157650133,
+            111.30457224410011
+          ]
+        ],
+        "minimum_patch_distance_from_port_center_mm": 0.11
+      }
+    }
+  ],
+  "ports_and_connectivity": [
+    {
+      "net": "5V",
+      "external_ports": [
+        {
+          "uuid": "35e3fd16-e6dc-4aed-bd4d-c435206c0ed8",
+          "net": "5V",
+          "kind": "PAD",
+          "layers": [
+            "F.Cu"
+          ],
+          "ref": "R18",
+          "pad": "1",
+          "pos": [
+            113.75,
+            113.01
+          ],
+          "size": [
+            0.54,
+            0.64
+          ],
+          "shape": 4,
+          "angle": 0.0
+        },
+        {
+          "uuid": "7ec7822c-40c1-4348-9a46-8ccfc2c16a3a",
+          "net": "5V",
+          "kind": "PCB_VIA",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "pos": [
+            115.619,
+            112.77
+          ],
+          "size": 0.45,
+          "drill": 0.2
+        },
+        {
+          "uuid": "8ef483d2-5fed-43cb-9397-1ea81b47508b",
+          "net": "5V",
+          "kind": "PCB_TRACK",
+          "layers": [
+            "F.Cu"
+          ],
+          "start": [
+            116.103,
+            112.58
+          ],
+          "end": [
+            115.619,
+            112.58
+          ],
+          "width": 0.35
+        },
+        {
+          "uuid": "a983519b-4533-4b62-8b22-08db6d92a8ea",
+          "net": "5V",
+          "kind": "PCB_TRACK",
+          "layers": [
+            "F.Cu"
+          ],
+          "start": [
+            115.619,
+            112.58
+          ],
+          "end": [
+            115.619,
+            112.77
+          ],
+          "width": 0.35
+        }
+      ],
+      "all_retained_object_component_equivalence": true,
+      "retained_object_count": 95
+    },
+    {
+      "net": "5V_SENSE",
+      "external_ports": [
+        {
+          "uuid": "3a44b3d5-2ed4-4fb2-93f7-5a697a650aaa",
+          "net": "5V_SENSE",
+          "kind": "PCB_VIA",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "pos": [
+            114.178203,
+            111.18419
+          ],
+          "size": 0.45,
+          "drill": 0.2
+        },
+        {
+          "uuid": "4c8b79af-68bd-4e72-ab67-315fc898e40d",
+          "net": "5V_SENSE",
+          "kind": "PCB_VIA",
+          "layers": [
+            "F.Cu",
+            "In1.Cu",
+            "In2.Cu",
+            "In3.Cu",
+            "In4.Cu",
+            "B.Cu"
+          ],
+          "pos": [
+            112.867689,
+            114.797995
+          ],
+          "size": 0.45,
+          "drill": 0.2
+        },
+        {
+          "uuid": "a7ccde99-d72c-468e-9acd-18cd492edbc1",
+          "net": "5V_SENSE",
+          "kind": "PAD",
+          "layers": [
+            "F.Cu"
+          ],
+          "ref": "R18",
+          "pad": "2",
+          "pos": [
+            114.77,
+            113.01
+          ],
+          "size": [
+            0.54,
+            0.64
+          ],
+          "shape": 4,
+          "angle": 0.0
+        },
+        {
+          "uuid": "c3486199-05ee-4c98-a176-b4b11742238c",
+          "net": "5V_SENSE",
+          "kind": "PCB_TRACK",
+          "layers": [
+            "F.Cu"
+          ],
+          "start": [
+            114.132,
+            114.682213
+          ],
+          "end": [
+            114.317213,
+            114.507858
+          ],
+          "width": 0.127
+        }
+      ],
+      "all_retained_object_component_equivalence": true,
+      "retained_object_count": 22
+    }
+  ],
+  "actual_netlist_ports": {
+    "5V": [
+      {
+        "ref": "C26",
+        "pin": "1",
+        "pintype": "passive"
+      },
+      {
+        "ref": "J3",
+        "pin": "2",
+        "pinfunction": "2_2",
+        "pintype": "passive"
+      },
+      {
+        "ref": "J4",
+        "pin": "2",
+        "pinfunction": "2_2",
+        "pintype": "passive"
+      },
+      {
+        "ref": "J5",
+        "pin": "2",
+        "pinfunction": "2_2",
+        "pintype": "passive"
+      },
+      {
+        "ref": "R18",
+        "pin": "1",
+        "pintype": "passive"
+      },
+      {
+        "ref": "R4",
+        "pin": "1",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U11",
+        "pin": "5",
+        "pinfunction": "5_5",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U12",
+        "pin": "5",
+        "pinfunction": "5_5",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U13",
+        "pin": "5",
+        "pinfunction": "5_5",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U15",
+        "pin": "5",
+        "pinfunction": "5_5",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U9",
+        "pin": "2",
+        "pinfunction": "VOUT_2",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U9",
+        "pin": "7",
+        "pinfunction": "VOUT_7",
+        "pintype": "passive"
+      }
+    ],
+    "5V_SENSE": [
+      {
+        "ref": "C30",
+        "pin": "1",
+        "pintype": "passive"
+      },
+      {
+        "ref": "R18",
+        "pin": "2",
+        "pintype": "passive"
+      },
+      {
+        "ref": "R19",
+        "pin": "1",
+        "pintype": "passive"
+      },
+      {
+        "ref": "U1",
+        "pin": "10",
+        "pinfunction": "PC2_10",
+        "pintype": "passive"
+      }
+    ]
+  },
+  "relevant_components": {
+    "C26": {
+      "value": "22uF",
+      "description": "5 V bus bulk"
+    },
+    "C30": {
+      "value": "100nF",
+      "description": "ADC filter"
+    },
+    "R18": {
+      "value": "21k",
+      "description": "5 V bus sense x0.323 (vbus_divider 320)"
+    },
+    "R19": {
+      "value": "10k",
+      "description": null
+    },
+    "U9": {
+      "value": "TPS2116DRLR",
+      "description": "priority mux: buck (VIN1) first, USB (VIN2) second"
+    }
+  },
+  "all_retained_pad_geometry": {
+    "5V": [
+      {
+        "uuid": "dbf021c9-f352-4296-8dd5-12cb203d8d54",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "J5",
+        "pad": "2",
+        "pos": [
+          117.02,
+          119.32
+        ],
+        "size": [
+          0.6,
+          1.7
+        ],
+        "shape": 1,
+        "angle": 0.0
+      },
+      {
+        "uuid": "a94f92ad-0f25-4985-9305-ecc861a4040a",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "C26",
+        "pad": "1",
+        "pos": [
+          118.05,
+          127.26
+        ],
+        "size": [
+          1.0,
+          1.45
+        ],
+        "shape": 4,
+        "angle": 90.0
+      },
+      {
+        "uuid": "35e3fd16-e6dc-4aed-bd4d-c435206c0ed8",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "R18",
+        "pad": "1",
+        "pos": [
+          113.75,
+          113.01
+        ],
+        "size": [
+          0.54,
+          0.64
+        ],
+        "shape": 4,
+        "angle": 0.0
+      },
+      {
+        "uuid": "7f1167dc-263a-4b41-b643-5e64e1d8b7bb",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "U15",
+        "pad": "5",
+        "pos": [
+          107.45,
+          116.4
+        ],
+        "size": [
+          1.1,
+          0.6
+        ],
+        "shape": 1,
+        "angle": 0.0
+      },
+      {
+        "uuid": "ae501599-018d-4882-9f4c-b57152d0efd2",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "J3",
+        "pad": "2",
+        "pos": [
+          117.22,
+          112.58
+        ],
+        "size": [
+          0.6,
+          1.7
+        ],
+        "shape": 1,
+        "angle": 90.0
+      },
+      {
+        "uuid": "86cb8234-d997-46ae-8804-c9e3fbbf6f8d",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "J4",
+        "pad": "2",
+        "pos": [
+          106.62,
+          119.32
+        ],
+        "size": [
+          0.6,
+          1.7
+        ],
+        "shape": 1,
+        "angle": 0.0
+      },
+      {
+        "uuid": "11db9d4f-3ec9-4080-9f09-6436e93a2de3",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "U11",
+        "pad": "5",
+        "pos": [
+          103.55,
+          106.7
+        ],
+        "size": [
+          1.1,
+          0.6
+        ],
+        "shape": 1,
+        "angle": 0.0
+      },
+      {
+        "uuid": "4c1ad9d9-6e68-40f6-998a-8a89c27de80e",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "U13",
+        "pad": "5",
+        "pos": [
+          112.65,
+          116.4
+        ],
+        "size": [
+          1.1,
+          0.6
+        ],
+        "shape": 1,
+        "angle": 0.0
+      },
+      {
+        "uuid": "e47fe2a6-c5ac-448b-8541-a0cc93957273",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "R4",
+        "pad": "1",
+        "pos": [
+          111.88,
+          126.32
+        ],
+        "size": [
+          0.54,
+          0.64
+        ],
+        "shape": 4,
+        "angle": 0.0
+      },
+      {
+        "uuid": "ad5c5310-3673-47e0-a058-70eff01dbac8",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "U12",
+        "pad": "5",
+        "pos": [
+          116.25,
+          106.7
+        ],
+        "size": [
+          1.1,
+          0.6
+        ],
+        "shape": 1,
+        "angle": 0.0
+      },
+      {
+        "uuid": "781ce48c-cc55-4fa9-9040-84a0f10b5e53",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "B.Cu"
+        ],
+        "ref": "U9",
+        "pad": "2",
+        "pos": [
+          113.85,
+          124.84
+        ],
+        "size": [
+          0.28,
+          0.68
+        ],
+        "shape": 1,
+        "angle": 180.0
+      },
+      {
+        "uuid": "a969cff9-20ab-4fe5-85b9-5ca5d86683cb",
+        "net": "5V",
+        "kind": "PAD",
+        "layers": [
+          "B.Cu"
+        ],
+        "ref": "U9",
+        "pad": "7",
+        "pos": [
+          113.85,
+          123.56
+        ],
+        "size": [
+          0.28,
+          0.68
+        ],
+        "shape": 1,
+        "angle": 180.0
+      }
+    ],
+    "5V_SENSE": [
+      {
+        "uuid": "6386cb42-b2f5-4691-9aa2-16f557f7988b",
+        "net": "5V_SENSE",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "C30",
+        "pad": "1",
+        "pos": [
+          108.11,
+          112.97
+        ],
+        "size": [
+          0.56,
+          0.62
+        ],
+        "shape": 4,
+        "angle": 0.0
+      },
+      {
+        "uuid": "cfe0ac74-681a-49c9-9b42-a438b7b8d6f5",
+        "net": "5V_SENSE",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "R19",
+        "pad": "1",
+        "pos": [
+          113.83,
+          111.79
+        ],
+        "size": [
+          0.54,
+          0.64
+        ],
+        "shape": 4,
+        "angle": 0.0
+      },
+      {
+        "uuid": "a7ccde99-d72c-468e-9acd-18cd492edbc1",
+        "net": "5V_SENSE",
+        "kind": "PAD",
+        "layers": [
+          "F.Cu"
+        ],
+        "ref": "R18",
+        "pad": "2",
+        "pos": [
+          114.77,
+          113.01
+        ],
+        "size": [
+          0.54,
+          0.64
+        ],
+        "shape": 4,
+        "angle": 0.0
+      },
+      {
+        "uuid": "a41ebbe2-20c5-4ab3-ad40-ad3dc12051fb",
+        "net": "5V_SENSE",
+        "kind": "PAD",
+        "layers": [
+          "B.Cu"
+        ],
+        "ref": "U1",
+        "pad": "10",
+        "pos": [
+          112.85,
+          117.55
+        ],
+        "size": [
+          0.3,
+          1.5
+        ],
+        "shape": 2,
+        "angle": 180.0
+      }
+    ]
+  },
+  "electrical_scope": "R18 is the 21k upper leg of the 5V_SENSE divider with R19 10k, C30 and U1 PC2. The new 0.35 mm branch still taps the identical 5V via 7ec7822c at (115.619,112.77); J3/main 5V feed remains unchanged. U9 TPS2116 VOUT pins 2/7, C26 bulk supply branch, C30 sense filter branch and all ground copper/returns are retained. Connectivity is geometric; no claim of analog noise/current/thermal qualification.",
+  "required_native_gates": [
+    "Replay only if exact source SHA or donor definitions match; recheck interactions with simultaneous USB proposal",
+    "Refill all zones and native DRC, requiring R18 clearance removed and no new errors/unconnected",
+    "Check complete schematic/BOM/placement/mechanical invariants, power widths and no new drill/paste contacts",
+    "Audit ground continuity/reference and C30 filter/return topology on refilled candidate; added via creates plane clearances",
+    "Recompute nearest-clearance and finite full-width pad/annulus proofs from final saved board"
+  ],
+  "no_board_write_or_native_run": true,
+  "cross_section_loading_assessment": {
+    "source_stackup_copper_thickness_mm": {
+      "F.Cu": 0.035,
+      "In3.Cu": 0.0152
+    },
+    "before_removed_R18_only_branch": {
+      "layer": "F.Cu",
+      "length_mm": 2.1935146277821667,
+      "width_mm": 0.35,
+      "cross_section_mm2": 0.01225,
+      "resistance_ohm_assumed_20C": 0.0030798735998247566,
+      "note": "Removed chain from R18 pin 1 to the retained common F.Cu joint (115.619,112.58); shared 0.19 mm spoke from that joint to source via remains unchanged."
+    },
+    "after": {
+      "F.Cu": {
+        "length_mm": 0.6519202405202655,
+        "width_mm": 0.35,
+        "thickness_mm": 0.035,
+        "cross_section_mm2": 0.01225,
+        "resistance_ohm_assumed_20C": 0.0009153492356692705
+      },
+      "In3.Cu": {
+        "length_mm": 1.6135739834293268,
+        "width_mm": 0.35,
+        "thickness_mm": 0.0152,
+        "cross_section_mm2": 0.00532,
+        "resistance_ohm_assumed_20C": 0.005216818141914365
+      }
+    },
+    "inner_cross_section_ratio_vs_outer": 0.4342857142857142,
+    "new_5V_trace_resistance_ohm_assumed_20C": 0.006132167377583635,
+    "assumptions": [
+      "Nominal 5 V rail, R18=21k, R19=10k from current netlist",
+      "Copper resistivity assumed 1.72e-8 ohm metre at 20 C for a simple DC estimate; no plating/tolerance/temperature/current-rating qualification",
+      "Added via resistance not quantified because finished plating specification is not established"
+    ],
+    "divider_DC_current_A": 0.00016129032258064516,
+    "upper_bound_current_while_C30_discharged_A": 0.0002380952380952381,
+    "new_5V_trace_drop_DC_V": 9.890592544489734e-07,
+    "new_5V_trace_drop_C30_discharged_V": 1.4600398518056275e-06,
+    "delta_trace_resistance_ohm_vs_removed_chain": 0.0030522937777588788,
+    "load_implication": "The thinner In3 branch carries only the R18 21k upper-leg current, not J3/J4/J5 or U11/U12/U13/U15 load current. Every shared 5V feed segment and the original source via remains unchanged. Equal width is explicitly not equal copper cross-section.",
+    "retained_shared_supply_objects": [
+      "7ec7822c-40c1-4348-9a46-8ccfc2c16a3a",
+      "a983519b-4533-4b62-8b22-08db6d92a8ea",
+      "8ef483d2-5fed-43cb-9397-1ea81b47508b",
+      "f045086e-a594-46c0-b9b8-b335c971d9e6",
+      "069bb2a3-9216-4c5e-a215-8e53393793fc"
+    ],
+    "outer_copper_practicality": "The old F.Cu corridor crosses the overlapping x-range of R19 ground and R18 sense pads with only 0.580 mm clear vertical separation. A 0.350 mm trace plus two 0.127 mm clearances requires 0.604 mm there. The proposed off-pad via bypasses that corridor without moving the power rail shared loads or other components."
+  }
+}

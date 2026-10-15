@@ -1,0 +1,557 @@
+{
+  "status": "PASS: fixed U5 thermal/return via and all direct ports retained; exact main In1/In4 GND fills and finite thermal-via contacts preserved",
+  "source_sha256": "583e73ba08c80e70d42bfd726ef1b440ab0ddf4d7309cef266de486fd03f461f",
+  "candidate_sha256": "85c5cede5407d2022df36e0323527704a84c55687fc9dcc426565073aa9c4f8e",
+  "measurements": {
+    "before": {
+      "pcb_sha256": "583e73ba08c80e70d42bfd726ef1b440ab0ddf4d7309cef266de486fd03f461f",
+      "thermal_via_position": [
+        102.675,
+        108.225
+      ],
+      "thermal_via_size_mm": 0.45,
+      "thermal_via_drill_mm": 0.2,
+      "thermal_via_direct_contacts": [
+        {
+          "uuid": "0372f0a0-b4dd-474e-999b-c33861e8c83f",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "3a026593-ff10-4187-8b99-15b9409df6ff",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "3b1989eb-2d2e-468e-bcbd-28504c38821f",
+          "net": "GND",
+          "kind": "PAD",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": [
+            "U5",
+            "17"
+          ]
+        },
+        {
+          "uuid": "4a3740c1-c0a3-4db5-b400-c147d064ba64",
+          "net": "GND",
+          "kind": "PAD",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": [
+            "U5",
+            "6"
+          ]
+        },
+        {
+          "uuid": "76992858-2d46-466d-a634-29ef11b4d64f",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "888b7a64-02d9-4c2e-8840-ed9b5eb025bc",
+          "net": "GND",
+          "kind": "PAD",
+          "physical_contact_layers": [
+            "F.Cu"
+          ],
+          "ref_pin": [
+            "C15",
+            "2"
+          ]
+        },
+        {
+          "uuid": "aec6ce35-8e39-4867-ac9f-c18e59fdc9c1",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "F.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "ba76be56-808d-417b-9039-ede0036e1aef",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "F.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "ec1180af-dab2-4e6e-9f63-1b77363db1f5",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        }
+      ],
+      "thermal_via_main_plane_contacts": [
+        {
+          "layer": "In1.Cu",
+          "component_index": 0,
+          "component_area_mm2": 580.5845027863235,
+          "finite_annular_patch": {
+            "width_mm": 0.127,
+            "depth_mm": 0.02,
+            "corners": [
+              [
+                102.815,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.2885
+              ],
+              [
+                102.815,
+                108.2885
+              ]
+            ]
+          }
+        },
+        {
+          "layer": "In4.Cu",
+          "component_index": 0,
+          "component_area_mm2": 580.5845027863235,
+          "finite_annular_patch": {
+            "width_mm": 0.127,
+            "depth_mm": 0.02,
+            "corners": [
+              [
+                102.815,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.2885
+              ],
+              [
+                102.815,
+                108.2885
+              ]
+            ]
+          }
+        }
+      ],
+      "power_projections": [
+        {
+          "net": "5V_BUCK",
+          "route": "buck_0",
+          "routing_layer": "B.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.375,
+          "track_uuids": [
+            "0097f17a-a60a-4d12-973b-5461dabae78d"
+          ],
+          "full_width_area_mm2": 0.56022931114,
+          "uncovered_area_mm2": 0.2508231024805,
+          "covered_fraction": 0.5522849349490393,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.199
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_1",
+          "routing_layer": "B.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "961eede3-9481-48f8-b1ce-59d89e287a7d"
+          ],
+          "full_width_area_mm2": 1.091055998454,
+          "uncovered_area_mm2": 0.1847865121,
+          "covered_fraction": 0.8306351714652245,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.789
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_2",
+          "routing_layer": "B.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "eba8ff79-64eb-43fc-a9c1-492395d73f30"
+          ],
+          "full_width_area_mm2": 0.9640292840925,
+          "uncovered_area_mm2": 0.221805861093,
+          "covered_fraction": 0.7699179218380285,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.534946516014483
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_3",
+          "routing_layer": "In2.Cu",
+          "reference_layer": "In1.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "8fde276c-ea86-49b6-b2c1-c7966a02f478"
+          ],
+          "full_width_area_mm2": 0.6960428926885,
+          "uncovered_area_mm2": 0.1520681452765,
+          "covered_fraction": 0.7815247495895988,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 0.9989736818480254
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_3",
+          "routing_layer": "In2.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "8fde276c-ea86-49b6-b2c1-c7966a02f478"
+          ],
+          "full_width_area_mm2": 0.6960428926885,
+          "uncovered_area_mm2": 0.1520681452765,
+          "covered_fraction": 0.7815247495895988,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 0.9989736818480254
+        }
+      ]
+    },
+    "after": {
+      "pcb_sha256": "85c5cede5407d2022df36e0323527704a84c55687fc9dcc426565073aa9c4f8e",
+      "thermal_via_position": [
+        102.675,
+        108.225
+      ],
+      "thermal_via_size_mm": 0.45,
+      "thermal_via_drill_mm": 0.2,
+      "thermal_via_direct_contacts": [
+        {
+          "uuid": "0372f0a0-b4dd-474e-999b-c33861e8c83f",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "3a026593-ff10-4187-8b99-15b9409df6ff",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "3b1989eb-2d2e-468e-bcbd-28504c38821f",
+          "net": "GND",
+          "kind": "PAD",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": [
+            "U5",
+            "17"
+          ]
+        },
+        {
+          "uuid": "4a3740c1-c0a3-4db5-b400-c147d064ba64",
+          "net": "GND",
+          "kind": "PAD",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": [
+            "U5",
+            "6"
+          ]
+        },
+        {
+          "uuid": "76992858-2d46-466d-a634-29ef11b4d64f",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "888b7a64-02d9-4c2e-8840-ed9b5eb025bc",
+          "net": "GND",
+          "kind": "PAD",
+          "physical_contact_layers": [
+            "F.Cu"
+          ],
+          "ref_pin": [
+            "C15",
+            "2"
+          ]
+        },
+        {
+          "uuid": "aec6ce35-8e39-4867-ac9f-c18e59fdc9c1",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "F.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "ba76be56-808d-417b-9039-ede0036e1aef",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "F.Cu"
+          ],
+          "ref_pin": null
+        },
+        {
+          "uuid": "ec1180af-dab2-4e6e-9f63-1b77363db1f5",
+          "net": "GND",
+          "kind": "PCB_TRACK",
+          "physical_contact_layers": [
+            "B.Cu"
+          ],
+          "ref_pin": null
+        }
+      ],
+      "thermal_via_main_plane_contacts": [
+        {
+          "layer": "In1.Cu",
+          "component_index": 0,
+          "component_area_mm2": 580.5845027863235,
+          "finite_annular_patch": {
+            "width_mm": 0.127,
+            "depth_mm": 0.02,
+            "corners": [
+              [
+                102.815,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.2885
+              ],
+              [
+                102.815,
+                108.2885
+              ]
+            ]
+          }
+        },
+        {
+          "layer": "In4.Cu",
+          "component_index": 0,
+          "component_area_mm2": 580.5845027863235,
+          "finite_annular_patch": {
+            "width_mm": 0.127,
+            "depth_mm": 0.02,
+            "corners": [
+              [
+                102.815,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.16149999999999
+              ],
+              [
+                102.835,
+                108.2885
+              ],
+              [
+                102.815,
+                108.2885
+              ]
+            ]
+          }
+        }
+      ],
+      "power_projections": [
+        {
+          "net": "5V_BUCK",
+          "route": "buck_0",
+          "routing_layer": "B.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.375,
+          "track_uuids": [
+            "8d5b4432-a69e-552b-9380-b8799f76fec2"
+          ],
+          "full_width_area_mm2": 0.4762727284645,
+          "uncovered_area_mm2": 0.1813380327565,
+          "covered_fraction": 0.6192558970547556,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 0.9751153777887004
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_1",
+          "routing_layer": "B.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "59758e87-6422-55fb-80be-64096d156220"
+          ],
+          "full_width_area_mm2": 1.0905990062755,
+          "uncovered_area_mm2": 0.2589267143915,
+          "covered_fraction": 0.7625830273990809,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.7880861276795366
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_2",
+          "routing_layer": "B.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "ef6a9fb0-ba01-57aa-83fe-8b03d30cba2e"
+          ],
+          "full_width_area_mm2": 1.0521143412705,
+          "uncovered_area_mm2": 0.3304467981405,
+          "covered_fraction": 0.6859212110525337,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.7111153225381974
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_3",
+          "routing_layer": "In2.Cu",
+          "reference_layer": "In1.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "8b6363a1-a5c8-5526-9fec-35839a8cc664"
+          ],
+          "full_width_area_mm2": 0.7963773460055,
+          "uncovered_area_mm2": 0.258929949787,
+          "covered_fraction": 0.6748652493874283,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.1996418828237867
+        },
+        {
+          "net": "5V_BUCK",
+          "route": "buck_3",
+          "routing_layer": "In2.Cu",
+          "reference_layer": "In4.Cu",
+          "width_mm": 0.5,
+          "track_uuids": [
+            "8b6363a1-a5c8-5526-9fec-35839a8cc664"
+          ],
+          "full_width_area_mm2": 0.7963773460055,
+          "uncovered_area_mm2": 0.258929949787,
+          "covered_fraction": 0.6748652493874283,
+          "touched_component_ids": [
+            0
+          ],
+          "centerline_length_mm": 1.1996418828237867
+        }
+      ]
+    }
+  },
+  "unchanged_main_planes": [
+    {
+      "layer": "In1.Cu",
+      "removed_GND_area_mm2": 0.0,
+      "added_GND_area_mm2": 0.0,
+      "before_after_component_count": 1
+    },
+    {
+      "layer": "In4.Cu",
+      "removed_GND_area_mm2": 0.0,
+      "added_GND_area_mm2": 0.0,
+      "before_after_component_count": 1
+    }
+  ],
+  "power_projection_changes": [
+    {
+      "route": "buck_0",
+      "net": "5V_BUCK",
+      "reference_layer": "In4.Cu",
+      "before_coverage_fraction": 0.5522849349490393,
+      "after_coverage_fraction": 0.6192558970547556,
+      "uncovered_area_delta_mm2": -0.06948506972399998,
+      "centerline_length_delta_mm": -0.22388462221129968
+    },
+    {
+      "route": "buck_1",
+      "net": "5V_BUCK",
+      "reference_layer": "In4.Cu",
+      "before_coverage_fraction": 0.8306351714652245,
+      "after_coverage_fraction": 0.7625830273990809,
+      "uncovered_area_delta_mm2": 0.07414020229150001,
+      "centerline_length_delta_mm": -0.0009138723204633603
+    },
+    {
+      "route": "buck_2",
+      "net": "5V_BUCK",
+      "reference_layer": "In4.Cu",
+      "before_coverage_fraction": 0.7699179218380285,
+      "after_coverage_fraction": 0.6859212110525337,
+      "uncovered_area_delta_mm2": 0.1086409370475,
+      "centerline_length_delta_mm": 0.17616880652371436
+    },
+    {
+      "route": "buck_3",
+      "net": "5V_BUCK",
+      "reference_layer": "In1.Cu",
+      "before_coverage_fraction": 0.7815247495895988,
+      "after_coverage_fraction": 0.6748652493874283,
+      "uncovered_area_delta_mm2": 0.10686180451050001,
+      "centerline_length_delta_mm": 0.20066820097576132
+    },
+    {
+      "route": "buck_3",
+      "net": "5V_BUCK",
+      "reference_layer": "In4.Cu",
+      "before_coverage_fraction": 0.7815247495895988,
+      "after_coverage_fraction": 0.6748652493874283,
+      "uncovered_area_delta_mm2": 0.10686180451050001,
+      "centerline_length_delta_mm": 0.20066820097576132
+    }
+  ],
+  "qualification": "Measured geometry and finite continuity only. Input/output power, high-frequency return and U5 thermal/paste process qualification remain open; the retained thermal via remains within the continuous mask/paste opening."
+}

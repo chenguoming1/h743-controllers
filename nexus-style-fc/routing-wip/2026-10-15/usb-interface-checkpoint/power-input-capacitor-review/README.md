@@ -1,0 +1,7 @@
+# C27 input capacitance: unresolved electrical gate
+
+The current C27 is Samsung CL10A475KA8NQNC / JLC C69335, 4.7 uF, 25 V, X5R, 0603. Its exact manufacturer DC-bias data at 25 C, 1 kHz and 1 Vrms gives approximately 2.431 uF at 5 V and 1.641 uF at 7.4 V. These are typical design-reference curves, not guaranteed minimums. Separately multiplying tolerance and temperature factors is a screening estimate, not a guaranteed combined corner.
+
+[Samsung exact series and packaging data](https://product.samsungsem.com/mlcc/CL10A475KA8NQN.do) and the [TI TPS629210 data sheet](https://www.ti.com/lit/ds/symlink/tps629210.pdf), section 7.3, support this concern: TI requires at least 3 uF effective input capacitance. The 7.4 V BEC feeds VSYS through D5, so actual bias depends on source voltage, diode drop and load; 7.4 V is a screening point rather than a measured operating voltage. Existing C18 is the only other direct VSYS capacitor and is remote. It does not establish compliance or a compact high-frequency input loop.
+
+The attached exact curve extraction, interpolation and native-netlist binding preserve the finding. No C27 substitution or placement change is made in this checkpoint. A concrete remedy, its effective capacitance over operating conditions and its input/return routing need engineering review and any required component/placement approval. This gate remains even if geometric DRC reaches zero.

@@ -1,0 +1,56 @@
+{
+  "preferred": "compact-in1-port-proposal.json",
+  "preferred_sha256": "2b25f3dae34bba22e2ad729195012f81fd59591decf3696bf83942f229ca248f",
+  "secondary_comparison": "compact-port-proposal.json",
+  "secondary_sha256": "115046df338351b8210266492a2f7303db6137fcf4bfbda2e08b1aed3ec50e86",
+  "conductor_geometry_diff": [
+    {
+      "segment_id": "compact_dp_B6_to_A6_1",
+      "changed_fields": [
+        "layer"
+      ],
+      "before": {
+        "kind": "segment",
+        "id": "compact_dp_B6_to_A6_1",
+        "net": "USB_DP",
+        "layer": "In4.Cu",
+        "start": [
+          108.66,
+          129.82
+        ],
+        "end": [
+          108.075,
+          127.375
+        ],
+        "width": 0.15
+      },
+      "after": {
+        "kind": "segment",
+        "id": "compact_dp_B6_to_A6_1",
+        "net": "USB_DP",
+        "layer": "In1.Cu",
+        "start": [
+          108.66,
+          129.82
+        ],
+        "end": [
+          108.075,
+          127.375
+        ],
+        "width": 0.15
+      }
+    }
+  ],
+  "all_vias_unchanged": true,
+  "all_donor_transactions_unchanged": true,
+  "all_new_mutual_screen_hit_count": 0,
+  "fixed_object_screen_hit_count": 0,
+  "pending_qualification": [
+    "In1 local GND-plane slot and changed connector-launch reference",
+    "Nearby F.Cu/reference coupling",
+    "Zone refill and native DRC",
+    "Per-orientation differential delay and impedance; planar skew remains about 2.6 mm",
+    "Unequal via transition counts despite equal 2.2885 mm used-barrel bookkeeping",
+    "Tight .130mm VBUS_C via-to-J6.B5 copper clearance"
+  ]
+}

@@ -1,0 +1,9 @@
+# Exact taper corridor proof and diagnostic history
+
+The PCB geometry was never changed during these checks. All four approved native net-assigned In3 filled polygons retain their exact vertices and dimensions.
+
+An initial axis-aligned 0.150 x 0.020 mm cross-seam rectangle failed the DM north start by 0.0000023667655 mm². That rectangle extended along the taper axis through an angled incoming donor, so it tested a different approach direction. A subsequent single straight narrow-centre to wide-centre capsule left approximately 0.0000001743775 mm² at DP south/north and 0.000000173445 mm² at DM south, localized to a 0.187 µm outboard wedge near the narrow seam. The separate taper-diagnostic.json retains 20/5/1 nm approximation results. No manufacturing rule, geometric dimension or numerical acceptance tolerance was relaxed.
+
+The final proof tests a physically available 0.150 mm path through the exact taper and adjacent native conductor union: go axially for the first 0.050 mm, then turn to the wide endpoint. The taper has widened before the lateral centreline shift. Both round-ended swept segments are contained within the real copper union at 1 nm polygon approximation and the unchanged 0.00000001 mm² residual-area tolerance. Their shared full-radius disk proves continuity at the internal turn. Every endpoint has a finite overlap exceeding 0.001 mm² with its exact 0.150/0.170 mm native donor. This is an existence proof for a full-width physical copper corridor, not an assertion that every possible centreline through the trapezoid would fit.
+
+The geometry-verification.json stores all path points, residuals and overlap areas. cam-verification.json independently requires all four exact polygon boundaries as dark, solid, correctly net-tagged regions in the actual exported In3 Gerber. Diagnostic CAM is not a release package.
