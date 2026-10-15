@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "legacy_part_count": 88,
+  "selected_main_part_count": 89,
+  "legacy_PARTS_CAP_and_default_nets_exact": true,
+  "standalone_power_PARTS_and_nets_exact": true,
+  "selected_other_parts_exact": true,
+  "deep_copy_isolation": true,
+  "added_physical_pins": 2,
+  "placement_status": "Approved centers and D5 move; native position proof passed; final PCB validation separate",
+  "consumer_bindings": {
+    "gen_schematic.py": "get_main_parts only for design/nexus-style-fc; explicit selection passed to Draft",
+    "draft_circuits.py": "explicit selected parts argument; legacy fallback retained",
+    "build_floorplan.py": "get_main_parts at main entry; no board generated",
+    "export_fab.py": "get_main_parts only for design/nexus-style-fc; no CAM/CPL generated",
+    "design.py": "get_main_nets explicit; default nets retains legacy behavior; CLI main selection"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "review_date": "2026-10-15",
+  "decision": "Proceed with approved native experiment; no production/HF signoff. No unconditional additional component or EN change justified by current evidence.",
+  "scope": "Read-only accepted r61 and sealed atomic proposal; live r62 not read. No KiCad/native/solver or board edits.",
+  "inputs": [
+    {
+      "path": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/r61-cap-star-study/atomic-proposal.json",
+      "sha256": "1b3fe4992369b702493961750834c0411f6015c15bbdf8991359a482cd88d123"
+    },
+    {
+      "path": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r61-six-clearances/hardware/nexus-style-fc.kicad_pcb",
+      "sha256": "5a51610cc1569958442f97407e11533b646b1e0d8997d86356b8968dce50487e"
+    },
+    {
+      "path": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/r61-cap-star-study/power-distribution-tradeoffs.json",
+      "sha256": "73fef8c94192dd2c17b78e3540f187815e60a78eefef479f285a7acad94cb891"
+    },
+    {
+      "path": "/workspace/shared/c27-parallel-placement-study/r61/FINAL-ASSEMBLY-SUPPLEMENT.md",
+      "sha256": "be27d1470cba3395bc133df3da1030a7dad47ab22f2adbf3c63bde6d62bf2c3a"
+    },
+    {
+      "path": "/workspace/shared/nexus-c27-qualification/C27_decision.txt",
+      "sha256": "214c8364d31cc3c901e16ad181c4b693e0b003bd29842119ac2e702a89c65a86"
+    },
+    {
+      "path": "/workspace/shared/nexus-c27-qualification/qualification-screens.json",
+      "sha256": "f35e59ac5683f4b6f67d70004b231bd6f5627dd18fdc900f026c54824f371f8b"
+    },
+    {
+      "path": "/workspace/shared/nexus-c27-qualification/aging-guidance-scenario.json",
+      "sha256": "95ad8a76519c403236e69146602fc439e6f4f0f259d5f6c5dd43b0d1cef2a0a3"
+    },
+    {
+      "path": "/workspace/shared/nexus-c27-qualification/CL21A226MAYNNN-curves.json",
+      "sha256": "d7310ed0d787ebc8ef2962a167726912c3a64d4cbdd020f1e71ed9e8316a8ea5"
+    },
+    {
+      "path": "/workspace/shared/nexus-c27-qualification/CL21A226MAYNNN-specsheet.pdf",
+      "sha256": "45789a6b2c801790f9a026c7ed6f38821a026371aad32197c44399fb1d3480da"
+    }
+  ],
+  "independently_recomputed_VIN": {
+    "segments": [
+      {
+        "id": "VIN_cap",
+        "length_mm": 1.0547511554864533,
+        "width_mm": 0.25,
+        "thickness_mm": 0.035,
+        "nominal_R_ohm_20C": 0.0020782816767705072
+      },
+      {
+        "id": "VIN_F",
+        "length_mm": 7.756523625561309,
+        "width_mm": 0.25,
+        "thickness_mm": 0.035,
+        "nominal_R_ohm_20C": 0.015283454151806002
+      },
+      {
+        "id": "VIN_B",
+        "length_mm": 0.5897880975401333,
+        "width_mm": 0.25,
+        "thickness_mm": 0.035,
+        "nominal_R_ohm_20C": 0.0011621184673930784
+      }
+    ],
+    "length_mm": 9.401062878587895,
+    "nominal_R_ohm_20C": 0.01852385429596959,
+    "length_reduction_mm": 2.8697763088886923,
+    "nominal_R_reduction_ohm": 0.01951507115180525,
+    "excluded": "Via barrels, pad spreading, copper variation, temperature rise and parallel planes."
+  },
+  "referenced_not_rerun": [
+    "physical-contact branch cuts",
+    "assembly and obstruction screens",
+    "capacitance curve extraction and lifetime scenario"
+  ],
+  "primary_sources": [
+    {
+      "title": "TI TPS629210 Rev B",
+      "url": "https://www.ti.com/lit/ds/symlink/tps629210.pdf",
+      "sections": [
+        "7.3",
+        "9.2.2.3.3.2",
+        "11.1"
+      ]
+    },
+    {
+      "title": "TI switching-loop guidance",
+      "url": "https://www.ti.com/document-viewer/lit/html/SSZTBF4/GUID-095BD04D-6DAF-42E7-9AA0-72CB14E1F58C"
+    },
+    {
+      "title": "Exact Samsung capacitor family",
+      "url": "https://product.samsungsem.com/mlcc/CL21A226MAYNNN.do"
+    }
+  ]
+}

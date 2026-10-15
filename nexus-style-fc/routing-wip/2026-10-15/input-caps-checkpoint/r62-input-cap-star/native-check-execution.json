@@ -1,0 +1,102 @@
+[
+  {
+    "name": "post-refill-source-scope",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/python",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/scripts/preflight_cap_star.py",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star"
+    ],
+    "started_utc": "2026-10-15T08:11:11.772363+00:00",
+    "finished_utc": "2026-10-15T08:11:15.026358+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "fresh-erc",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "erc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/native-erc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/hardware/nexus-style-fc.kicad_sch"
+    ],
+    "started_utc": "2026-10-15T08:11:15.027269+00:00",
+    "finished_utc": "2026-10-15T08:11:34.208904+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "fresh-netlist",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "export",
+      "netlist",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/final-netlist.xml",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/hardware/nexus-style-fc.kicad_sch"
+    ],
+    "started_utc": "2026-10-15T08:11:34.209511+00:00",
+    "finished_utc": "2026-10-15T08:11:36.834807+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "all-visible",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/all-visible/native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/all-visible/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T08:11:36.935418+00:00",
+    "finished_utc": "2026-10-15T08:12:02.133163+00:00",
+    "exit_code": 5
+  },
+  {
+    "name": "mask-before",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "export",
+      "gerbers",
+      "--layers",
+      "F.Mask,B.Mask,F.Paste,B.Paste",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/mask-paste/before/",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r61-six-clearances/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T08:12:02.168053+00:00",
+    "finished_utc": "2026-10-15T08:12:03.749261+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "mask-after",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "export",
+      "gerbers",
+      "--layers",
+      "F.Mask,B.Mask,F.Paste,B.Paste",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/mask-paste/after/",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r62-input-cap-star/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T08:12:03.752308+00:00",
+    "finished_utc": "2026-10-15T08:12:06.397328+00:00",
+    "exit_code": 0
+  }
+]
