@@ -1,0 +1,94 @@
+{
+  "before": {
+    "items_not_allowed:error": 7,
+    "clearance:error": 13,
+    "shorting_items:error": 9,
+    "hole_clearance:error": 8,
+    "copper_edge_clearance:error": 3,
+    "solder_mask_bridge:error": 9,
+    "via_dangling:warning": 1,
+    "track_dangling:warning": 2,
+    "track_not_centered_on_via:warning": 13,
+    "silk_edge_clearance:warning": 3,
+    "footprint_type_mismatch:warning": 4,
+    "silk_overlap:warning": 32,
+    "silk_over_copper:warning": 19
+  },
+  "after": {
+    "items_not_allowed:error": 7,
+    "clearance:error": 13,
+    "shorting_items:error": 7,
+    "hole_clearance:error": 8,
+    "copper_edge_clearance:error": 3,
+    "solder_mask_bridge:error": 7,
+    "track_dangling:warning": 2,
+    "via_dangling:warning": 1,
+    "track_not_centered_on_via:warning": 13,
+    "silk_edge_clearance:warning": 3,
+    "footprint_type_mismatch:warning": 4,
+    "silk_overlap:warning": 32,
+    "silk_over_copper:warning": 19
+  },
+  "new": [],
+  "removed": [
+    [
+      "shorting_items",
+      "error",
+      [
+        "62aa1890-1d51-5a51-a2ab-0a3e85e99c83",
+        "8ea5193e-de93-4efe-a0bd-a4acf31dcdb7"
+      ]
+    ],
+    [
+      "shorting_items",
+      "error",
+      [
+        "3c6b6b07-bc47-44c3-933e-dec9987cb0a7",
+        "88f85b62-430b-4757-bf91-dcd7fbcf0265"
+      ]
+    ],
+    [
+      "solder_mask_bridge",
+      "error",
+      [
+        "62aa1890-1d51-5a51-a2ab-0a3e85e99c83",
+        "8ea5193e-de93-4efe-a0bd-a4acf31dcdb7"
+      ]
+    ],
+    [
+      "solder_mask_bridge",
+      "error",
+      [
+        "3c6b6b07-bc47-44c3-933e-dec9987cb0a7",
+        "88f85b62-430b-4757-bf91-dcd7fbcf0265"
+      ]
+    ]
+  ],
+  "before_opens": [
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [TAIL] on B.Cu, length 0.3422 mm",
+          "pos": {
+            "x": 107.208,
+            "y": 105.012
+          },
+          "uuid": "f0e51cc4-fc8d-4c3e-beb8-bedb938236c5"
+        },
+        {
+          "description": "Track [TAIL] on B.Cu, length 1.7770 mm",
+          "pos": {
+            "x": 108.025,
+            "y": 104.625
+          },
+          "uuid": "3c6b6b07-bc47-44c3-933e-dec9987cb0a7"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    }
+  ],
+  "after_opens": [],
+  "parity": []
+}

@@ -1,0 +1,99 @@
+[
+  {
+    "name": "ldo-returns",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/python",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/scripts/check_ldo_continuity.py",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial"
+    ],
+    "started_utc": "2026-10-15T06:48:39.177896+00:00",
+    "finished_utc": "2026-10-15T06:48:42.928150+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "shield-returns",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/python",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/scripts/check_cc1_continuity.py",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r50-cc1-spoke-preserved",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/routing-return-continuity"
+    ],
+    "started_utc": "2026-10-15T06:48:42.929200+00:00",
+    "finished_utc": "2026-10-15T06:48:44.558331+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "all-visible",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/all-visible/native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/all-visible/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T06:48:44.622194+00:00",
+    "finished_utc": "2026-10-15T06:48:56.149183+00:00",
+    "exit_code": 5
+  },
+  {
+    "name": "export-mask-before",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "export",
+      "gerbers",
+      "--layers",
+      "F.Mask,B.Mask,F.Paste,B.Paste",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/mask-paste/before/",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r58-buck-center/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T06:48:56.174518+00:00",
+    "finished_utc": "2026-10-15T06:48:57.343692+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "export-mask-after",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "export",
+      "gerbers",
+      "--layers",
+      "F.Mask,B.Mask,F.Paste,B.Paste",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/mask-paste/after/",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T06:48:57.345090+00:00",
+    "finished_utc": "2026-10-15T06:48:58.863077+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "export-in3",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "export",
+      "gerbers",
+      "--layers",
+      "In3.Cu",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/diagnostic-in3-cam/",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T06:48:58.864045+00:00",
+    "finished_utc": "2026-10-15T06:48:59.827991+00:00",
+    "exit_code": 0
+  }
+]

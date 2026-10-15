@@ -1,0 +1,7 @@
+# Full-width entry proof
+
+The exact copper never changed during verification. Clipping the imported R18 .350 x .020 mm patch against a native 1 nm inward-approximated track polygon initially returned 0.000000013192 mm² outside, slightly above the unchanged 0.00000001 mm² tolerance. The patch lies on the exact straight track side, while both its imported floating-point corners and polygon approximation are rounded independently.
+
+The final proof uses the established native full-width-entry method instead of clipping a second independently rounded representation against that side. Each strip is constructed directly from the native track's exact start/end, normalized direction and half-width. Its centreline interval is strictly inside the segment, so the entire nominal full-width rectangle belongs to the track by construction. Every strip corner must lie in the actual convex pad/land effective shape; for a via, the minimum distance from the drill centre to the complete rectangle must exceed the drill radius by 0.001 mm. This proves finite full-width copper outside the hole, not merely point overlap. The .350 mm inherited source-via entries and .150 mm approved R4 contact are both checked. All generated corners are retained in geometry-verification.json.
+
+No clearance, width, drill or numerical threshold was loosened. The rejected double-polygon-clipping predicate is described here rather than silently discarded. R4's two explicitly approved width reductions are separately bounded by exact UUIDs and complete isolated-branch cut tests.

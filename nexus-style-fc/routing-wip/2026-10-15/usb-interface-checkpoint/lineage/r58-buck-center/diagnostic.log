@@ -1,0 +1,97 @@
+{
+  "status": "PASS: only the four targeted 5V_BUCK centering findings removed; inherited type warnings remain visible; no filter or electrical parity findings",
+  "candidate_board_sha256": "85c5cede5407d2022df36e0323527704a84c55687fc9dcc426565073aa9c4f8e",
+  "schema_sha256": "5e964b66b1bf4aa02caf87b678fc725b82ed688d0050609746a029eba928f101",
+  "diagnostic_project_sha256": "b34415304c2bd364fed7f2f22231db9a893f4a0a4810e0c9300f54499674ba5b",
+  "accepted_project_unchanged": true,
+  "changed_diagnostic_severities": {
+    "footprint_filters_mismatch": [
+      "ignore",
+      "warning"
+    ],
+    "footprint_type_mismatch": [
+      "ignore",
+      "warning"
+    ],
+    "missing_courtyard": [
+      "ignore",
+      "warning"
+    ],
+    "track_not_centered_on_via": [
+      "ignore",
+      "warning"
+    ],
+    "tuning_profile_track_geometries": [
+      "ignore",
+      "warning"
+    ]
+  },
+  "command": [
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+    "pcb",
+    "drc",
+    "--all-track-errors",
+    "--schematic-parity",
+    "--refill-zones",
+    "--save-board",
+    "--severity-all",
+    "--format",
+    "json",
+    "--exit-code-violations",
+    "-o",
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r58-buck-center/all-visible/native-drc.json",
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r58-buck-center/all-visible/hardware/nexus-style-fc.kicad_pcb"
+  ],
+  "started_utc": "2026-10-15T06:15:26.363834+00:00",
+  "finished_utc": "2026-10-15T06:15:36.878251+00:00",
+  "exit_code": 5,
+  "native_drc_sha256": "f351c49fcb4808fc1b13294cf1f0f1aa36625d76fc5626077124b10a81fd0eb5",
+  "counts": {
+    "clearance": 13,
+    "track_not_centered_on_via": 13,
+    "silk_edge_clearance": 3,
+    "footprint_type_mismatch": 5,
+    "silk_overlap": 32,
+    "silk_over_copper": 19
+  },
+  "schematic_parity_counts": {},
+  "removed_findings": [
+    [
+      "track_not_centered_on_via",
+      "warning",
+      [
+        "0097f17a-a60a-4d12-973b-5461dabae78d",
+        "a33d9038-104a-4904-836a-f2c168df6d4c"
+      ],
+      "Track endpoint not centered on via"
+    ],
+    [
+      "track_not_centered_on_via",
+      "warning",
+      [
+        "961eede3-9481-48f8-b1ce-59d89e287a7d",
+        "a33d9038-104a-4904-836a-f2c168df6d4c"
+      ],
+      "Track endpoint not centered on via"
+    ],
+    [
+      "track_not_centered_on_via",
+      "warning",
+      [
+        "a33d9038-104a-4904-836a-f2c168df6d4c",
+        "eba8ff79-64eb-43fc-a9c1-492395d73f30"
+      ],
+      "Track endpoint not centered on via"
+    ],
+    [
+      "track_not_centered_on_via",
+      "warning",
+      [
+        "51a22cd5-55d6-4b2a-ab4e-1419692162c2",
+        "8fde276c-ea86-49b6-b2c1-c7966a02f478"
+      ],
+      "Track endpoint not centered on via"
+    ]
+  ],
+  "opens": 0
+}

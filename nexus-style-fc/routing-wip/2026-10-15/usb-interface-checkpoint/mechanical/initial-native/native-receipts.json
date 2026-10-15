@@ -1,0 +1,74 @@
+{
+  "main": {
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/initial-native/main-native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/initial-native/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T06:04:21.226616+00:00",
+    "finished_utc": "2026-10-15T06:04:36.205722+00:00",
+    "exit_code": 5,
+    "board_sha256": "260574be4c465aca9450c719fb7a778e1dd128a0170cf8f3bacfc700353a0d77",
+    "drc_sha256": "0a64fae1f8333a6c82f2077e3fd26833e11d818a9907a2fbbc203d4017b20e0b",
+    "violations_by_type_severity": {
+      "items_not_allowed:error": 7,
+      "clearance:error": 13,
+      "shorting_items:error": 9,
+      "hole_clearance:error": 8,
+      "copper_edge_clearance:error": 3,
+      "solder_mask_bridge:error": 9,
+      "via_dangling:warning": 1,
+      "track_dangling:warning": 2,
+      "track_not_centered_on_via:warning": 17,
+      "silk_edge_clearance:warning": 3,
+      "footprint_type_mismatch:warning": 4,
+      "silk_overlap:warning": 32,
+      "silk_over_copper:warning": 19
+    },
+    "opens": 1,
+    "parity": 0,
+    "ignored_checks": []
+  },
+  "child": {
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/initial-native/child-native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/initial-native/hardware/header-board/nexus-header-board.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T06:04:36.209917+00:00",
+    "finished_utc": "2026-10-15T06:04:46.320246+00:00",
+    "exit_code": 5,
+    "board_sha256": "de56d5e4a066ff03a8c16d7e0501f45ca651ebf177c45ba12667488162010f38",
+    "drc_sha256": "d259df78652821cb7d43849c634d9bb6d03abeeb87208d104d93b0088c6fa290",
+    "violations_by_type_severity": {
+      "copper_edge_clearance:error": 12,
+      "track_dangling:warning": 2,
+      "missing_courtyard:warning": 11
+    },
+    "opens": 2,
+    "parity": 11,
+    "ignored_checks": []
+  }
+}

@@ -1,0 +1,11 @@
+# Accepted USB170 experimental routing baseline, unfinished
+
+Fresh KiCad 10.0.7 refill/DRC reduces 13 clearances to 10, removing all three previous USB clearance pairs. There are zero opens, zero enabled schematic parity findings and no new or worsened residual error pairs. The minimum remaining gap is 0.0927 mm at J4 VSYS/C_TX. All-visible diagnostic retains 13 centering, 5 footprint-type and 54 silk warnings, with no filter warnings.
+
+The complete USB transaction preserves all five physical pads per net, both connector orientations, both U7 external protection-pad bridges and the MCU endpoints. Bridge removal tests exclude a bypass that relies on an internal chip connection. All six changed nets have complete donor-port proofs. All 2,544 untouched original direct contacts survive; four exact taper corridors pass full-width containment and actual Gerber checks. Power widths are unchanged. No new pasted-hole contact is introduced; 16 inherited locations remain.
+
+Fresh filled-plane checks preserve all 96 shield-spoke regions, R20/U7/J6 finite main-plane contacts and the current U10/C18/C19 returns. U7 and C28 have explicit finite copper paths to ground vias. In1 and In4 remain individually connected main planes and have finite interlayer via witnesses. Every actual ground component projected below the USB copper reaches that common main-ground network.
+
+This does not establish a uniform or low-inductance USB reference. The compact DP In1 join removes 0.952993 mm² of ground inside its clearance envelope, has no F.Cu ground projection and approximately 46.1% In2 ground projection. The new In3 conductors have approximately 53.9% DP / 55.7% DM full-width In2 projection and remote In4 coverage. Measured nearest transition ground-via distances span 1.134–2.884 mm. DP join coupling beneath connector DM, variable reference/gap, fabrication tolerance and actual-stack impedance remain engineering qualifications.
+
+The .170 mm In3 trunk/.150 mm terminal scope and exact four taper shapes are explicit. The native/physical/CAM checks support a bounded routing trial only. The parent and routing owner accepted this as the next experimental baseline after reviewing the measured tradeoffs. Canonical and mechanical candidates are untouched.

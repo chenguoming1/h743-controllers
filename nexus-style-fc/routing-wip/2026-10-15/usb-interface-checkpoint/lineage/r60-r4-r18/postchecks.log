@@ -1,0 +1,163 @@
+ldo-returns 0
+shield-returns 0
+all-visible 5
+export-mask-before 0
+export-mask-after 0
+export-in3 0
+{
+  "all_visible": {
+    "candidate_board_sha256": "db583aaa5a1c2ddac33e42a174bd614504dc21b86b953bd0ec93d8360903f4b8",
+    "changed_diagnostic_severities": {
+      "footprint_filters_mismatch": [
+        "ignore",
+        "warning"
+      ],
+      "footprint_type_mismatch": [
+        "ignore",
+        "warning"
+      ],
+      "missing_courtyard": [
+        "ignore",
+        "warning"
+      ],
+      "track_not_centered_on_via": [
+        "ignore",
+        "warning"
+      ],
+      "tuning_profile_track_geometries": [
+        "ignore",
+        "warning"
+      ]
+    },
+    "counts": {
+      "clearance:error": 8,
+      "track_not_centered_on_via:warning": 13,
+      "silk_edge_clearance:warning": 3,
+      "footprint_type_mismatch:warning": 5,
+      "silk_overlap:warning": 32,
+      "silk_over_copper:warning": 19
+    },
+    "new_findings": [],
+    "removed_findings": [
+      [
+        "clearance",
+        "error",
+        [
+          "948aa098-16f1-4e41-a570-5d7b123bc1d8",
+          "f9feebca-9d75-4115-a19a-8b48285cdae3"
+        ]
+      ],
+      [
+        "clearance",
+        "error",
+        [
+          "3b84a2cb-d2a1-4329-87ef-6289e1948800",
+          "a7ccde99-d72c-468e-9acd-18cd492edbc1"
+        ]
+      ]
+    ],
+    "opens": [],
+    "parity": [],
+    "native_drc_sha256": "f8259751fd170a52df21fafaa719549ad18a021876bd1ee08229f756d361c733",
+    "accepted_project_unchanged": true
+  },
+  "postchecks": [
+    {
+      "name": "ldo-returns",
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/python",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/scripts/check_ldo_continuity.py",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18"
+      ],
+      "started_utc": "2026-10-15T07:12:15.400511+00:00",
+      "finished_utc": "2026-10-15T07:12:21.451528+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "shield-returns",
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/python",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/scripts/check_cc1_continuity.py",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r50-cc1-spoke-preserved",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/routing-return-continuity"
+      ],
+      "started_utc": "2026-10-15T07:12:21.455229+00:00",
+      "finished_utc": "2026-10-15T07:12:23.614937+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "all-visible",
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "pcb",
+        "drc",
+        "--all-track-errors",
+        "--schematic-parity",
+        "--refill-zones",
+        "--save-board",
+        "--severity-all",
+        "--format",
+        "json",
+        "--exit-code-violations",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/all-visible/native-drc.json",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/all-visible/hardware/nexus-style-fc.kicad_pcb"
+      ],
+      "started_utc": "2026-10-15T07:12:23.694941+00:00",
+      "finished_utc": "2026-10-15T07:12:36.811393+00:00",
+      "exit_code": 5
+    },
+    {
+      "name": "export-mask-before",
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "pcb",
+        "export",
+        "gerbers",
+        "--layers",
+        "F.Mask,B.Mask,F.Paste,B.Paste",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/mask-paste/before/",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r59-usb170-trial/hardware/nexus-style-fc.kicad_pcb"
+      ],
+      "started_utc": "2026-10-15T07:12:36.826923+00:00",
+      "finished_utc": "2026-10-15T07:12:38.524895+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "export-mask-after",
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "pcb",
+        "export",
+        "gerbers",
+        "--layers",
+        "F.Mask,B.Mask,F.Paste,B.Paste",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/mask-paste/after/",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/hardware/nexus-style-fc.kicad_pcb"
+      ],
+      "started_utc": "2026-10-15T07:12:38.527746+00:00",
+      "finished_utc": "2026-10-15T07:12:40.769916+00:00",
+      "exit_code": 0
+    },
+    {
+      "name": "export-in3",
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "pcb",
+        "export",
+        "gerbers",
+        "--layers",
+        "In3.Cu",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/diagnostic-in3-cam/",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18/hardware/nexus-style-fc.kicad_pcb"
+      ],
+      "started_utc": "2026-10-15T07:12:40.773757+00:00",
+      "finished_utc": "2026-10-15T07:12:42.426280+00:00",
+      "exit_code": 0
+    }
+  ]
+}

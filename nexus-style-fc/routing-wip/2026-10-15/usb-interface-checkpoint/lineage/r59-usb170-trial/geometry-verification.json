@@ -1,0 +1,1356 @@
+{
+  "status": "PASS source-bound USB170 geometry, complete physical ports and protection bridges; qualification pending",
+  "source_sha256": "85c5cede5407d2022df36e0323527704a84c55687fc9dcc426565073aa9c4f8e",
+  "candidate_sha256": "29bd295c734f5661151253773b6108a647c4d110e9cc2aec00b672c6ac58351d",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4",
+        "candidate_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "ef2784fd2782abe1f59b5c14cf0eef1f42e3a8e636000fc2751b9d64b01446ea",
+        "candidate_sha256": "ef2784fd2782abe1f59b5c14cf0eef1f42e3a8e636000fc2751b9d64b01446ea"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "untouched_original_direct_contacts_preserved": 2544,
+  "complete_components": {
+    "IMU_CS": {
+      "replacement_objects": 5,
+      "complete_external_ports": [
+        "071949d7-2ed8-412a-9603-f5db809d1dfc",
+        "d1ecbb59-89ae-47ce-83ac-59a4412dfd9f"
+      ],
+      "component_object_count": 33
+    },
+    "LED1_K": {
+      "replacement_objects": 5,
+      "complete_external_ports": [
+        "2e663193-c0ae-4b4d-9ee9-8fe4c8a39375",
+        "a4162359-68c1-4694-bdcb-b34487f11ffd"
+      ],
+      "component_object_count": 32
+    },
+    "SWDIO": {
+      "replacement_objects": 6,
+      "complete_external_ports": [
+        "0a4ad166-9289-4ed4-b244-08e470c46176",
+        "4e1dd17e-a6c7-4e09-aaa2-a0a70784f250"
+      ],
+      "component_object_count": 12
+    },
+    "USB_DM": {
+      "replacement_objects": 49,
+      "complete_external_ports": [
+        "3a64059b-ba0e-4f2e-8e31-d65de297c836",
+        "43fb2d79-50b4-441f-9d1c-56e81d217b57",
+        "56509515-8363-4481-b7e8-541c352989c4",
+        "7cb59797-2230-4c9a-989f-5c91e5286e1a",
+        "f746048e-a455-4f00-84d8-c574ad90336b",
+        "f87a5217-7d2f-4574-aa8c-a55afcd713cf"
+      ],
+      "component_object_count": 58,
+      "required_pads": [
+        {
+          "uuid": "43fb2d79-50b4-441f-9d1c-56e81d217b57",
+          "ref": "J6",
+          "pin": "A7"
+        },
+        {
+          "uuid": "56509515-8363-4481-b7e8-541c352989c4",
+          "ref": "J6",
+          "pin": "B7"
+        },
+        {
+          "uuid": "7554188a-abf3-478d-89bb-d7f4997473e8",
+          "ref": "U7",
+          "pin": "1"
+        },
+        {
+          "uuid": "ebe2d5a6-f8d7-4d3c-8899-7f55eb76bd6f",
+          "ref": "U7",
+          "pin": "6"
+        },
+        {
+          "uuid": "f87a5217-7d2f-4574-aa8c-a55afcd713cf",
+          "ref": "U1",
+          "pin": "44"
+        }
+      ],
+      "external_bridge_cut_checks": [
+        "2bb5dd39-b4da-41e5-ad25-1a3813fe3eef",
+        "3a64059b-ba0e-4f2e-8e31-d65de297c836",
+        "f746048e-a455-4f00-84d8-c574ad90336b"
+      ]
+    },
+    "USB_DP": {
+      "replacement_objects": 45,
+      "complete_external_ports": [
+        "07a85585-c95a-4260-8691-21a24518bbdd",
+        "08f95a2e-32e5-4b93-8b46-677ce0b93b2c",
+        "1f7fa4fc-b31a-4f0d-ad7f-3f667146104e",
+        "34111c85-6920-47b2-8378-5f4b143fa938",
+        "3f44a6b8-79f3-4e0b-89ac-d46704459f50",
+        "8cbcb43b-72f1-4045-a0cb-37a120df3288",
+        "a8da0433-cccc-4e53-aac2-06016b3462a5",
+        "fb41830a-10c6-450a-b7ef-00603b762515"
+      ],
+      "component_object_count": 54,
+      "required_pads": [
+        {
+          "uuid": "07a85585-c95a-4260-8691-21a24518bbdd",
+          "ref": "J6",
+          "pin": "A6"
+        },
+        {
+          "uuid": "08f95a2e-32e5-4b93-8b46-677ce0b93b2c",
+          "ref": "U1",
+          "pin": "45"
+        },
+        {
+          "uuid": "3f44a6b8-79f3-4e0b-89ac-d46704459f50",
+          "ref": "U7",
+          "pin": "3"
+        },
+        {
+          "uuid": "8cbcb43b-72f1-4045-a0cb-37a120df3288",
+          "ref": "J6",
+          "pin": "B6"
+        },
+        {
+          "uuid": "d0b6a951-a739-4d09-9706-f79ca6e00b5e",
+          "ref": "U7",
+          "pin": "4"
+        }
+      ],
+      "external_bridge_cut_checks": [
+        "34111c85-6920-47b2-8378-5f4b143fa938"
+      ]
+    },
+    "VBUS_C": {
+      "replacement_objects": 6,
+      "complete_external_ports": [
+        "551824ee-c3fd-4568-83a1-e3c46ce8790e",
+        "7be2c9a7-92ef-59bf-b2de-7806eb35a2d5",
+        "7c8cdf92-7f77-4001-8f27-4ba83227cc0a",
+        "af02f8fc-41c9-4391-bec4-dbdf6a29456b"
+      ],
+      "component_object_count": 18
+    }
+  },
+  "external_finite_port_proofs": [
+    {
+      "port": "0a4ad166-9289-4ed4-b244-08e470c46176",
+      "new_track": "53ce9ac3-10ba-54a3-b267-92711671e518",
+      "shared_endpoints": [
+        [
+          114.191252,
+          108.776284
+        ]
+      ],
+      "retained_width_mm": 0.127,
+      "new_width_mm": 0.127
+    },
+    {
+      "track": "113c3125-a3af-55ad-956e-48caa0aba2c5",
+      "port": "4e1dd17e-a6c7-4e09-aaa2-a0a70784f250",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          116.4135,
+          106.25
+        ],
+        [
+          116.28649999999999,
+          106.25
+        ],
+        [
+          116.4135,
+          106.27000000000001
+        ],
+        [
+          116.28649999999999,
+          106.27000000000001
+        ]
+      ]
+    },
+    {
+      "port": "551824ee-c3fd-4568-83a1-e3c46ce8790e",
+      "new_track": "eabdbdd6-a496-599e-8454-9c8d9751651d",
+      "shared_endpoints": [
+        [
+          109.5,
+          129.6
+        ]
+      ],
+      "retained_width_mm": 0.25,
+      "new_width_mm": 0.25
+    },
+    {
+      "port": "7c8cdf92-7f77-4001-8f27-4ba83227cc0a",
+      "kind": "full inherited-width primary donor chain with exact centerline joints; incidental direct overlap remains",
+      "width_mm": 0.25,
+      "layer": "F.Cu",
+      "chain": [
+        "eabdbdd6-a496-599e-8454-9c8d9751651d",
+        "551824ee-c3fd-4568-83a1-e3c46ce8790e",
+        "ad756e4d-6932-428c-b9c9-b88701ced578",
+        "7c8cdf92-7f77-4001-8f27-4ba83227cc0a"
+      ]
+    },
+    {
+      "port": "7be2c9a7-92ef-59bf-b2de-7806eb35a2d5",
+      "new_track": "ad6cf041-37d6-5266-9722-1b7c598eeefa",
+      "shared_endpoints": [
+        [
+          107.732,
+          128.645
+        ]
+      ],
+      "retained_width_mm": 0.25,
+      "new_width_mm": 0.25
+    },
+    {
+      "track": "ead38a3c-9bb6-5f4c-a0c9-567bb78b196f",
+      "port": "af02f8fc-41c9-4391-bec4-dbdf6a29456b",
+      "layer": "B.Cu",
+      "width_mm": 0.25,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.57307969639415,
+          130.90827155947267
+        ],
+        [
+          108.4012031359233,
+          130.72672694247535
+        ],
+        [
+          108.55855612703436,
+          130.92202168431032
+        ],
+        [
+          108.38667956656352,
+          130.740477067313
+        ]
+      ]
+    },
+    {
+      "track": "cda416e2-ba78-549e-9e63-4b9f4df9de42",
+      "port": "8cbcb43b-72f1-4045-a0cb-37a120df3288",
+      "layer": "F.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.575,
+          130.55
+        ],
+        [
+          108.72500000000001,
+          130.55
+        ],
+        [
+          108.575,
+          130.53
+        ],
+        [
+          108.72500000000001,
+          130.53
+        ]
+      ]
+    },
+    {
+      "track": "ea9b27c1-a343-513f-a67f-724b280a97f7",
+      "port": "07a85585-c95a-4260-8691-21a24518bbdd",
+      "layer": "F.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.075,
+          128.85
+        ],
+        [
+          108.22500000000001,
+          128.85
+        ],
+        [
+          108.075,
+          128.82999999999998
+        ],
+        [
+          108.22500000000001,
+          128.82999999999998
+        ]
+      ]
+    },
+    {
+      "track": "5921fed3-abf3-5b46-8341-2f5c847101ba",
+      "port": "1f7fa4fc-b31a-4f0d-ad7f-3f667146104e",
+      "layer": "B.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.08968019484661,
+          123.85638582233138
+        ],
+        [
+          107.98361417766861,
+          123.75031980515338
+        ],
+        [
+          108.07553805922288,
+          123.8705279579551
+        ],
+        [
+          107.96947204204488,
+          123.76446194077711
+        ]
+      ]
+    },
+    {
+      "port": "34111c85-6920-47b2-8378-5f4b143fa938",
+      "new_track": "baedd977-db18-55df-9590-c1ddd284d935",
+      "shared_endpoints": [
+        [
+          110.85,
+          124.35
+        ]
+      ],
+      "retained_width_mm": 0.15,
+      "new_width_mm": 0.15
+    },
+    {
+      "track": "d07bb99c-434b-5416-b9e5-54e08d9d49ed",
+      "port": "08f95a2e-32e5-4b93-8b46-677ce0b93b2c",
+      "layer": "B.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          115.925,
+          106.25
+        ],
+        [
+          115.77499999999999,
+          106.25
+        ],
+        [
+          115.925,
+          106.27000000000001
+        ],
+        [
+          115.77499999999999,
+          106.27000000000001
+        ]
+      ]
+    },
+    {
+      "track": "e6a07155-da85-55f4-8282-676f2283c7b6",
+      "port": "3f44a6b8-79f3-4e0b-89ac-d46704459f50",
+      "layer": "B.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.42999999999999,
+          124.27499999999999
+        ],
+        [
+          108.42999999999999,
+          124.425
+        ],
+        [
+          108.45,
+          124.27499999999999
+        ],
+        [
+          108.45,
+          124.425
+        ]
+      ]
+    },
+    {
+      "track": "5e65dbe2-55cb-5175-9ea9-8ae96a360a09",
+      "port": "fb41830a-10c6-450a-b7ef-00603b762515",
+      "layer": "B.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          109.715,
+          124.8
+        ],
+        [
+          109.715,
+          124.64999999999999
+        ],
+        [
+          109.69500000000001,
+          124.8
+        ],
+        [
+          109.69500000000001,
+          124.64999999999999
+        ]
+      ]
+    },
+    {
+      "track": "ea9b27c1-a343-513f-a67f-724b280a97f7",
+      "port": "a8da0433-cccc-4e53-aac2-06016b3462a5",
+      "layer": "F.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.075,
+          127.515
+        ],
+        [
+          108.22500000000001,
+          127.515
+        ],
+        [
+          108.075,
+          127.495
+        ],
+        [
+          108.22500000000001,
+          127.495
+        ]
+      ]
+    },
+    {
+      "track": "71234fe4-7a91-5b1a-b062-b11cd36b942f",
+      "port": "56509515-8363-4481-b7e8-541c352989c4",
+      "layer": "F.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.075,
+          130.55
+        ],
+        [
+          108.22500000000001,
+          130.55
+        ],
+        [
+          108.075,
+          130.53
+        ],
+        [
+          108.22500000000001,
+          130.53
+        ]
+      ]
+    },
+    {
+      "port": "f746048e-a455-4f00-84d8-c574ad90336b",
+      "kind": "full inherited-width primary donor chain with exact centerline joints; incidental direct overlap remains",
+      "width_mm": 0.15,
+      "layer": "B.Cu",
+      "chain": [
+        "c2eaf779-0946-5f37-b425-c06071149af1",
+        "2bb5dd39-b4da-41e5-ad25-1a3813fe3eef",
+        "f746048e-a455-4f00-84d8-c574ad90336b"
+      ]
+    },
+    {
+      "track": "8e4c006a-7020-5565-ac03-c0a1186d71cd",
+      "port": "43fb2d79-50b4-441f-9d1c-56e81d217b57",
+      "layer": "F.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.575,
+          128.85
+        ],
+        [
+          108.72500000000001,
+          128.85
+        ],
+        [
+          108.575,
+          128.82999999999998
+        ],
+        [
+          108.72500000000001,
+          128.82999999999998
+        ]
+      ]
+    },
+    {
+      "track": "e1d3adf9-550c-53e0-a8cc-88cb4b256312",
+      "port": "f87a5217-7d2f-4574-aa8c-a55afcd713cf",
+      "layer": "B.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          115.42184873759436,
+          106.25228762831398
+        ],
+        [
+          115.27192152334501,
+          106.24761532401851
+        ],
+        [
+          115.4212257636883,
+          106.27227792354722
+        ],
+        [
+          115.27129854943895,
+          106.26760561925175
+        ]
+      ]
+    },
+    {
+      "port": "3a64059b-ba0e-4f2e-8e31-d65de297c836",
+      "new_track": "336ae8c1-cac1-535a-b43a-fa9379153cc8",
+      "shared_endpoints": [
+        [
+          108.55,
+          126.25
+        ]
+      ],
+      "retained_width_mm": 0.15,
+      "new_width_mm": 0.15
+    },
+    {
+      "track": "8e4c006a-7020-5565-ac03-c0a1186d71cd",
+      "port": "7cb59797-2230-4c9a-989f-5c91e5286e1a",
+      "layer": "F.Cu",
+      "width_mm": 0.15,
+      "depth_mm": 0.02,
+      "corners": [
+        [
+          108.575,
+          127.986
+        ],
+        [
+          108.72500000000001,
+          127.986
+        ],
+        [
+          108.575,
+          127.96600000000001
+        ],
+        [
+          108.72500000000001,
+          127.96600000000001
+        ]
+      ]
+    },
+    {
+      "port": "d1ecbb59-89ae-47ce-83ac-59a4412dfd9f",
+      "new_track": "d5691092-2c25-5b34-8abe-08cad709eea9",
+      "shared_endpoints": [
+        [
+          110.528858,
+          109.112142
+        ]
+      ],
+      "retained_width_mm": 0.127,
+      "new_width_mm": 0.127
+    },
+    {
+      "port": "071949d7-2ed8-412a-9603-f5db809d1dfc",
+      "new_track": "dcd3451f-10da-5915-b88c-36a4f766267c",
+      "shared_endpoints": [
+        [
+          111.610503,
+          110.264497
+        ]
+      ],
+      "retained_width_mm": 0.127,
+      "new_width_mm": 0.127
+    },
+    {
+      "port": "a4162359-68c1-4694-bdcb-b34487f11ffd",
+      "new_track": "0a6aab27-dd46-5acc-a3a3-997f1e6e958e",
+      "shared_endpoints": [
+        [
+          108.56,
+          124.36
+        ]
+      ],
+      "retained_width_mm": 0.127,
+      "new_width_mm": 0.127
+    },
+    {
+      "port": "2e663193-c0ae-4b4d-9ee9-8fe4c8a39375",
+      "new_track": "6a0a1583-6613-5704-84fe-891ea4855a87",
+      "shared_endpoints": [
+        [
+          110.775,
+          126.575
+        ]
+      ],
+      "retained_width_mm": 0.127,
+      "new_width_mm": 0.127
+    }
+  ],
+  "new_via_finite_annular_entries": [
+    {
+      "via": "786a30c5-23c6-500c-8e4e-09befdcfb594",
+      "entries": [
+        {
+          "track": "71234fe4-7a91-5b1a-b062-b11cd36b942f",
+          "port": "786a30c5-23c6-500c-8e4e-09befdcfb594",
+          "layer": "F.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              108.075,
+              129.91
+            ],
+            [
+              108.22500000000001,
+              129.91
+            ],
+            [
+              108.075,
+              129.89000000000001
+            ],
+            [
+              108.22500000000001,
+              129.89000000000001
+            ]
+          ]
+        },
+        {
+          "track": "07b26030-b810-58c5-85ee-42326db1b248",
+          "port": "786a30c5-23c6-500c-8e4e-09befdcfb594",
+          "layer": "In3.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              108.04217591482936,
+              129.63363894037886
+            ],
+            [
+              108.18599713986558,
+              129.6762470995632
+            ],
+            [
+              108.0478570027206,
+              129.6144627770407
+            ],
+            [
+              108.19167822775682,
+              129.65707093622504
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "via": "5101ab31-44f3-5fa9-8fdd-ddcbd57b40ef",
+      "entries": [
+        {
+          "track": "eabdbdd6-a496-599e-8454-9c8d9751651d",
+          "port": "5101ab31-44f3-5fa9-8fdd-ddcbd57b40ef",
+          "layer": "F.Cu",
+          "width_mm": 0.25,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              109.24492930345978,
+              129.67172277991034
+            ],
+            [
+              109.41813582700921,
+              129.85199895748218
+            ],
+            [
+              109.25935139766553,
+              129.6578662580264
+            ],
+            [
+              109.43255792121495,
+              129.83814243559823
+            ]
+          ]
+        },
+        {
+          "track": "e34eb332-5a7d-526b-bb30-33500174dd96",
+          "port": "5101ab31-44f3-5fa9-8fdd-ddcbd57b40ef",
+          "layer": "B.Cu",
+          "width_mm": 0.25,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              109.37,
+              129.965
+            ],
+            [
+              109.12,
+              129.965
+            ],
+            [
+              109.37,
+              129.98499999999999
+            ],
+            [
+              109.12,
+              129.98499999999999
+            ]
+          ]
+        },
+        {
+          "track": "6625576c-bcad-5593-83c2-bbc609dd4464",
+          "port": "5101ab31-44f3-5fa9-8fdd-ddcbd57b40ef",
+          "layer": "In2.Cu",
+          "width_mm": 0.25,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              109.12,
+              129.725
+            ],
+            [
+              109.37,
+              129.725
+            ],
+            [
+              109.12,
+              129.705
+            ],
+            [
+              109.37,
+              129.705
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "via": "4b3e82b8-c6ac-5a0a-a31e-57761b73fbf5",
+      "entries": [
+        {
+          "track": "7497acc8-70f4-5db9-942e-c7face3854e0",
+          "port": "4b3e82b8-c6ac-5a0a-a31e-57761b73fbf5",
+          "layer": "In3.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              109.65681980515339,
+              125.17211417766862
+            ],
+            [
+              109.76288582233138,
+              125.27818019484661
+            ],
+            [
+              109.67096194077712,
+              125.15797204204489
+            ],
+            [
+              109.77702795795511,
+              125.26403805922288
+            ]
+          ]
+        },
+        {
+          "track": "2b32733c-ed95-5681-9a44-554ad1c1d383",
+          "port": "4b3e82b8-c6ac-5a0a-a31e-57761b73fbf5",
+          "layer": "B.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              109.55,
+              125.45
+            ],
+            [
+              109.7,
+              125.45
+            ],
+            [
+              109.55,
+              125.43
+            ],
+            [
+              109.7,
+              125.43
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "via": "80bbf2b2-b623-5172-8f7a-4ada37e612de",
+      "entries": [
+        {
+          "track": "74404e9b-c1ee-52cd-84d6-9e4a99699df5",
+          "port": "80bbf2b2-b623-5172-8f7a-4ada37e612de",
+          "layer": "In3.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              111.11788582233139,
+              109.7118198051534
+            ],
+            [
+              111.0118198051534,
+              109.81788582233139
+            ],
+            [
+              111.13202795795512,
+              109.72596194077713
+            ],
+            [
+              111.02596194077712,
+              109.83202795795512
+            ]
+          ]
+        },
+        {
+          "track": "d61e1f6c-4efc-5761-bea9-bfb61c76da37",
+          "port": "80bbf2b2-b623-5172-8f7a-4ada37e612de",
+          "layer": "B.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              111.12,
+              109.75500000000001
+            ],
+            [
+              111.12,
+              109.605
+            ],
+            [
+              111.10000000000001,
+              109.75500000000001
+            ],
+            [
+              111.10000000000001,
+              109.605
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "via": "d0db924c-08f9-51bc-9ac2-773e1bf20716",
+      "entries": [
+        {
+          "track": "b0a09446-9d99-5ae3-8642-19581891b69f",
+          "port": "d0db924c-08f9-51bc-9ac2-773e1bf20716",
+          "layer": "In3.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              110.9401801948466,
+              110.47788582233139
+            ],
+            [
+              110.83411417766861,
+              110.3718198051534
+            ],
+            [
+              110.92603805922288,
+              110.49202795795512
+            ],
+            [
+              110.81997204204488,
+              110.38596194077712
+            ]
+          ]
+        },
+        {
+          "track": "7a103667-2ed0-5d26-a4cf-ce002a25ed43",
+          "port": "d0db924c-08f9-51bc-9ac2-773e1bf20716",
+          "layer": "B.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              111.112,
+              110.415
+            ],
+            [
+              111.112,
+              110.265
+            ],
+            [
+              111.092,
+              110.415
+            ],
+            [
+              111.092,
+              110.265
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "via": "2db2dae1-d77a-5674-b7fa-8109075d209a",
+      "entries": [
+        {
+          "track": "d0236510-3142-5978-8b11-2dc0df8b1635",
+          "port": "2db2dae1-d77a-5674-b7fa-8109075d209a",
+          "layer": "F.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              108.58176533912541,
+              129.9582184424664
+            ],
+            [
+              108.73172479310495,
+              129.9617058716287
+            ],
+            [
+              108.58223032968039,
+              129.93822384860246
+            ],
+            [
+              108.73218978365992,
+              129.94171127776477
+            ]
+          ]
+        },
+        {
+          "track": "61dae4af-e681-52bf-9d2a-e5a1c8218977",
+          "port": "2db2dae1-d77a-5674-b7fa-8109075d209a",
+          "layer": "In1.Cu",
+          "width_mm": 0.15,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              108.55913527576388,
+              129.72074624740208
+            ],
+            [
+              108.70501770744522,
+              129.68584186190776
+            ],
+            [
+              108.55448135769797,
+              129.70129525651123
+            ],
+            [
+              108.70036378937931,
+              129.66639087101692
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "via": "2395ac3b-e8ef-5230-80b0-1a3b0a25b667",
+      "entries": [
+        {
+          "track": "53ce9ac3-10ba-54a3-b267-92711671e518",
+          "port": "2395ac3b-e8ef-5230-80b0-1a3b0a25b667",
+          "layer": "In3.Cu",
+          "width_mm": 0.127,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              114.28193663241922,
+              108.6822836723071
+            ],
+            [
+              114.15919683252474,
+              108.64966555583995
+            ],
+            [
+              114.27679992116455,
+              108.70161277465267
+            ],
+            [
+              114.15406012127008,
+              108.66899465818553
+            ]
+          ]
+        },
+        {
+          "track": "a82766e1-96c8-523b-a980-d2e2338559d9",
+          "port": "2395ac3b-e8ef-5230-80b0-1a3b0a25b667",
+          "layer": "B.Cu",
+          "width_mm": 0.127,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              114.39528322997145,
+              108.49590633123923
+            ],
+            [
+              114.30548066876077,
+              108.40610377002854
+            ],
+            [
+              114.38114109434773,
+              108.51004846686295
+            ],
+            [
+              114.29133853313704,
+              108.42024590565227
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "taper_seam_proofs": [
+    {
+      "uuid": "8180cd8b-8f64-5fed-9c58-a01e75396032",
+      "net": "USB_DP",
+      "joints": [
+        {
+          "port": "start_port",
+          "track": "5f93b218-474e-5501-8945-9032f3aca06a",
+          "native_width_mm": 0.15,
+          "finite_overlap_area_mm2": 0.00883558147
+        },
+        {
+          "port": "end_port",
+          "track": "916c1124-a33b-56b1-856b-33d4f5c1055e",
+          "native_width_mm": 0.17,
+          "finite_overlap_area_mm2": 0.0113440725365
+        }
+      ],
+      "full_transition_no_neck_capsule_width_mm": 0.15,
+      "capsule_path_points": [
+        [
+          109.51150000000001,
+          124.0
+        ],
+        [
+          109.51150000000001,
+          123.95
+        ],
+        [
+          109.50150000000001,
+          123.8
+        ]
+      ],
+      "uncovered_capsule_area_mm2": [
+        0.0,
+        0.0
+      ],
+      "method": "Exact approved trapezoid plus adjoining native copper contains two joined 0.150 mm swept round-ended conductors: first 0.050 mm axially from the narrow seam, then to the wide endpoint. Delaying the centerline shift until the taper has widened avoids the artificial straight-axis edge wedge. The shared full-radius disk proves continuity at the bend. Polygon approximation 1 nm; unchanged residual-area tolerance 0.00000001 mm2."
+    },
+    {
+      "uuid": "55081a0f-7560-5f8c-af17-15ab46692af2",
+      "net": "USB_DM",
+      "joints": [
+        {
+          "port": "start_port",
+          "track": "02cb1dd0-31b1-50c2-a01c-e327950e5838",
+          "native_width_mm": 0.15,
+          "finite_overlap_area_mm2": 0.00883558147
+        },
+        {
+          "port": "end_port",
+          "track": "fd6230a3-db77-5db8-892c-cf073cb94871",
+          "native_width_mm": 0.17,
+          "finite_overlap_area_mm2": 0.0113440637405
+        }
+      ],
+      "full_transition_no_neck_capsule_width_mm": 0.15,
+      "capsule_path_points": [
+        [
+          109.7885,
+          124.0
+        ],
+        [
+          109.7885,
+          123.95
+        ],
+        [
+          109.7985,
+          123.8
+        ]
+      ],
+      "uncovered_capsule_area_mm2": [
+        0.0,
+        0.0
+      ],
+      "method": "Exact approved trapezoid plus adjoining native copper contains two joined 0.150 mm swept round-ended conductors: first 0.050 mm axially from the narrow seam, then to the wide endpoint. Delaying the centerline shift until the taper has widened avoids the artificial straight-axis edge wedge. The shared full-radius disk proves continuity at the bend. Polygon approximation 1 nm; unchanged residual-area tolerance 0.00000001 mm2."
+    },
+    {
+      "uuid": "dd7ffd8b-0b1e-5d58-b63d-adfecf741ac3",
+      "net": "USB_DP",
+      "joints": [
+        {
+          "port": "start_port",
+          "track": "d9bbddfa-32cd-5154-af1a-3aa4c043ff93",
+          "native_width_mm": 0.15,
+          "finite_overlap_area_mm2": 0.00883558147
+        },
+        {
+          "port": "end_port",
+          "track": "33b7b3ad-ee0c-5660-b1ff-6a96fa5c27de",
+          "native_width_mm": 0.17,
+          "finite_overlap_area_mm2": 0.0113440734565
+        }
+      ],
+      "full_transition_no_neck_capsule_width_mm": 0.15,
+      "capsule_path_points": [
+        [
+          110.76150000000001,
+          110.85
+        ],
+        [
+          110.76150000000001,
+          110.89999999999999
+        ],
+        [
+          110.75150000000001,
+          111.05
+        ]
+      ],
+      "uncovered_capsule_area_mm2": [
+        0.0,
+        0.0
+      ],
+      "method": "Exact approved trapezoid plus adjoining native copper contains two joined 0.150 mm swept round-ended conductors: first 0.050 mm axially from the narrow seam, then to the wide endpoint. Delaying the centerline shift until the taper has widened avoids the artificial straight-axis edge wedge. The shared full-radius disk proves continuity at the bend. Polygon approximation 1 nm; unchanged residual-area tolerance 0.00000001 mm2."
+    },
+    {
+      "uuid": "88e5c10a-c74b-5691-b258-ae59bab2e467",
+      "net": "USB_DM",
+      "joints": [
+        {
+          "port": "start_port",
+          "track": "ac2b3e0c-21b0-5c4f-bd84-fb3879176b81",
+          "native_width_mm": 0.15,
+          "finite_overlap_area_mm2": 0.0089640476515
+        },
+        {
+          "port": "end_port",
+          "track": "86788352-62b2-5b84-88ae-46a7f46f491b",
+          "native_width_mm": 0.17,
+          "finite_overlap_area_mm2": 0.0113440646605
+        }
+      ],
+      "full_transition_no_neck_capsule_width_mm": 0.15,
+      "capsule_path_points": [
+        [
+          111.0385,
+          110.85
+        ],
+        [
+          111.0385,
+          110.89999999999999
+        ],
+        [
+          111.0485,
+          111.05
+        ]
+      ],
+      "uncovered_capsule_area_mm2": [
+        7.7445e-09,
+        0.0
+      ],
+      "method": "Exact approved trapezoid plus adjoining native copper contains two joined 0.150 mm swept round-ended conductors: first 0.050 mm axially from the narrow seam, then to the wide endpoint. Delaying the centerline shift until the taper has widened avoids the artificial straight-axis edge wedge. The shared full-radius disk proves continuity at the bend. Polygon approximation 1 nm; unchanged residual-area tolerance 0.00000001 mm2."
+    }
+  ],
+  "power_width_preservation": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 21,
+        "candidate_items": 21,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 9,
+        "candidate_items": 11,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 36,
+        "candidate_items": 36,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 81,
+        "candidate_items": 81,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 135,
+        "candidate_items": 135,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "pasted_vias_before": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "pasted_vias_after": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "new_pasted_contacts": [],
+  "en_conductive_contacts": [],
+  "qualification": "Net-assigned finite copper and native connectivity are proved. Actual post-refill reference/return/mask and differential/common-mode behavior require separate review; no SI or manufacturing qualification."
+}

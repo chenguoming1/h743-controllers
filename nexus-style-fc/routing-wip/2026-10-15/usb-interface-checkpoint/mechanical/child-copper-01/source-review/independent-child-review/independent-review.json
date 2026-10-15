@@ -1,0 +1,1133 @@
+{
+  "status": "PASS for independent nominal retained-copper geometry and connectivity; NOT native DRC sign-off. Stored zone fill collisions make native refill mandatory.",
+  "method": "Independent read-only analytic geometry check; writes reports only beside itself.\n\nNo native KiCad, source writes, regeneration, routing or refill. Two-dimensional\nnominal geometry uses Euclidean distances, with exact line/circle/rectangle\nprimitives and circular Edge.Cuts arcs. Stored zone fills are separately screened\nas polygons; no connectivity conclusion depends on those stale fills.\n",
+  "source": {
+    "path": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/initial-native/hardware/header-board/nexus-header-board.kicad_pcb",
+    "sha256_before": "de56d5e4a066ff03a8c16d7e0501f45ca651ebf177c45ba12667488162010f38",
+    "sha256_after": "de56d5e4a066ff03a8c16d7e0501f45ca651ebf177c45ba12667488162010f38"
+  },
+  "proposal_sha256": "0b130c0700b6adcbead837aaded342dc6d73d6f7301f4b9bbeeb1928c40dc6d9",
+  "guards": [
+    {
+      "net": "VX",
+      "exact_donor_native_records": true,
+      "original_width_preserved_mm": 0.5,
+      "replacement_count": 2
+    },
+    {
+      "net": "S1",
+      "exact_donor_native_records": true,
+      "original_width_preserved_mm": 0.2,
+      "replacement_count": 2
+    },
+    {
+      "net": "SBUS",
+      "exact_donor_native_records": true,
+      "original_width_preserved_mm": 0.2,
+      "replacement_count": 3
+    },
+    {
+      "net": "GND",
+      "exact_donor_native_records": true,
+      "original_width_preserved_mm": 0.5,
+      "replacement_count": 2
+    }
+  ],
+  "scope_counts": {
+    "donors_removed": 6,
+    "replacement_segments": 9,
+    "segments_before": 70,
+    "segments_after": 73,
+    "vias_before_and_after": 3,
+    "affected_net_physical_pads": 22
+  },
+  "inventory": [
+    {
+      "net": "GND",
+      "pad_count": 9,
+      "complete_pad_segment_via_uuid_and_native_records": true
+    },
+    {
+      "net": "S1",
+      "pad_count": 2,
+      "complete_pad_segment_via_uuid_and_native_records": true
+    },
+    {
+      "net": "SBUS",
+      "pad_count": 2,
+      "complete_pad_segment_via_uuid_and_native_records": true
+    },
+    {
+      "net": "VX",
+      "pad_count": 9,
+      "complete_pad_segment_via_uuid_and_native_records": true
+    }
+  ],
+  "connectivity_without_zones": [
+    {
+      "net": "GND",
+      "all_physical_pads_connected": true,
+      "pad_count": 9,
+      "pad_components": [
+        [
+          {
+            "kind": "pad",
+            "uuid": "c7f6608f-acd2-4b12-9306-8b7637e460e5",
+            "net": "GND",
+            "reference": "K1",
+            "number": "1"
+          },
+          {
+            "kind": "pad",
+            "uuid": "0180c7f6-705f-4d9f-969d-277b24cc2982",
+            "net": "GND",
+            "reference": "J1",
+            "number": "3"
+          },
+          {
+            "kind": "pad",
+            "uuid": "1a834636-1ba6-4985-ab39-4d27eb0e6a16",
+            "net": "GND",
+            "reference": "J1",
+            "number": "6"
+          },
+          {
+            "kind": "pad",
+            "uuid": "032c2bb4-2aad-4a3f-b196-b9a9c65ef587",
+            "net": "GND",
+            "reference": "J1",
+            "number": "9"
+          },
+          {
+            "kind": "pad",
+            "uuid": "83adb636-86ab-4350-96f8-941ea80441a0",
+            "net": "GND",
+            "reference": "J1",
+            "number": "12"
+          },
+          {
+            "kind": "pad",
+            "uuid": "1d741680-aff5-431f-bcdd-060eba0aca58",
+            "net": "GND",
+            "reference": "J1",
+            "number": "15"
+          },
+          {
+            "kind": "pad",
+            "uuid": "917fc077-7e23-489b-a193-8c2a8eade2c8",
+            "net": "GND",
+            "reference": "J1",
+            "number": "18"
+          },
+          {
+            "kind": "pad",
+            "uuid": "cc3135d3-50ed-4612-a504-6da995b8e96f",
+            "net": "GND",
+            "reference": "J1",
+            "number": "21"
+          },
+          {
+            "kind": "pad",
+            "uuid": "593f504c-b0ba-4b7a-8979-468783d8d541",
+            "net": "GND",
+            "reference": "T1",
+            "number": "1"
+          }
+        ]
+      ],
+      "all_copper_component_count_excluding_zones": 1,
+      "zone_fill_needed_for_proof": false
+    },
+    {
+      "net": "S1",
+      "all_physical_pads_connected": true,
+      "pad_count": 2,
+      "pad_components": [
+        [
+          {
+            "kind": "pad",
+            "uuid": "91a926d2-e1b4-4309-8831-862ca42562a9",
+            "net": "S1",
+            "reference": "P1",
+            "number": "1"
+          },
+          {
+            "kind": "pad",
+            "uuid": "6ceb0b5b-a995-48dd-aad7-46ff3c27eb75",
+            "net": "S1",
+            "reference": "J1",
+            "number": "1"
+          }
+        ]
+      ],
+      "all_copper_component_count_excluding_zones": 1,
+      "zone_fill_needed_for_proof": false
+    },
+    {
+      "net": "SBUS",
+      "all_physical_pads_connected": true,
+      "pad_count": 2,
+      "pad_components": [
+        [
+          {
+            "kind": "pad",
+            "uuid": "0cb5a42c-9f57-4282-b15c-11cc8653ec25",
+            "net": "SBUS",
+            "reference": "P7",
+            "number": "1"
+          },
+          {
+            "kind": "pad",
+            "uuid": "2d6a2187-80fb-43b5-a471-a7c9fc3ef946",
+            "net": "SBUS",
+            "reference": "J1",
+            "number": "19"
+          }
+        ]
+      ],
+      "all_copper_component_count_excluding_zones": 1,
+      "zone_fill_needed_for_proof": false
+    },
+    {
+      "net": "VX",
+      "all_physical_pads_connected": true,
+      "pad_count": 9,
+      "pad_components": [
+        [
+          {
+            "kind": "pad",
+            "uuid": "d3e98d6c-ddf5-4574-b2f8-b3809258c4c1",
+            "net": "VX",
+            "reference": "T2",
+            "number": "1"
+          },
+          {
+            "kind": "pad",
+            "uuid": "3f742520-2456-4ead-b7d2-1b418a815151",
+            "net": "VX",
+            "reference": "K2",
+            "number": "1"
+          },
+          {
+            "kind": "pad",
+            "uuid": "d560aeee-a73c-49ff-8bdd-0c758cbc8c9e",
+            "net": "VX",
+            "reference": "J1",
+            "number": "2"
+          },
+          {
+            "kind": "pad",
+            "uuid": "870b2bf8-a60f-4d00-8272-a18378e4f3e7",
+            "net": "VX",
+            "reference": "J1",
+            "number": "5"
+          },
+          {
+            "kind": "pad",
+            "uuid": "5c8884fb-00db-4854-af6a-1e087e728531",
+            "net": "VX",
+            "reference": "J1",
+            "number": "8"
+          },
+          {
+            "kind": "pad",
+            "uuid": "454055fa-42ca-43df-a699-516619954c24",
+            "net": "VX",
+            "reference": "J1",
+            "number": "11"
+          },
+          {
+            "kind": "pad",
+            "uuid": "e2eb9d2e-329f-4a53-99ff-22c0ae110db4",
+            "net": "VX",
+            "reference": "J1",
+            "number": "14"
+          },
+          {
+            "kind": "pad",
+            "uuid": "d0b6464a-e4d6-489e-b61b-6a3bf9bda328",
+            "net": "VX",
+            "reference": "J1",
+            "number": "17"
+          },
+          {
+            "kind": "pad",
+            "uuid": "b7efa968-a740-4abd-87aa-92df9df01c2e",
+            "net": "VX",
+            "reference": "J1",
+            "number": "20"
+          }
+        ]
+      ],
+      "all_copper_component_count_excluding_zones": 1,
+      "zone_fill_needed_for_proof": false
+    }
+  ],
+  "original_external_contacts": [
+    {
+      "net": "VX",
+      "all_original_external_contacts": [
+        {
+          "external_object": {
+            "kind": "segment",
+            "uuid": "9b297fa4-a862-45ed-91d0-fb202dd3ab9b",
+            "net": "VX"
+          },
+          "original_donor_contacts": [
+            "231b7cbd-70f5-429b-b94b-faef2b63c3af"
+          ],
+          "replacement_contacts": [
+            "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+            "ca788c04-a07c-422b-824f-dbeafc220a25"
+          ],
+          "same_net": true,
+          "preserved_direct_contact": true
+        },
+        {
+          "external_object": {
+            "kind": "pad",
+            "uuid": "d3e98d6c-ddf5-4574-b2f8-b3809258c4c1",
+            "net": "VX",
+            "reference": "T2",
+            "number": "1"
+          },
+          "original_donor_contacts": [
+            "ca788c04-a07c-422b-824f-dbeafc220a25"
+          ],
+          "replacement_contacts": [
+            "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+            "ca788c04-a07c-422b-824f-dbeafc220a25"
+          ],
+          "same_net": true,
+          "preserved_direct_contact": true
+        }
+      ],
+      "all_same_net_external_contacts_preserved": true,
+      "foreign_nonzone_original_contacts": [],
+      "original_endpoint_contacts": [
+        {
+          "donor_uuid": "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+          "endpoint": "start",
+          "point": [
+            113.5022,
+            107.9983
+          ],
+          "external_contacts": [
+            {
+              "kind": "segment",
+              "uuid": "9b297fa4-a862-45ed-91d0-fb202dd3ab9b",
+              "net": "VX"
+            }
+          ]
+        },
+        {
+          "donor_uuid": "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+          "endpoint": "end",
+          "point": [
+            112.7,
+            107.9983
+          ],
+          "external_contacts": []
+        },
+        {
+          "donor_uuid": "ca788c04-a07c-422b-824f-dbeafc220a25",
+          "endpoint": "start",
+          "point": [
+            112.7,
+            109.625
+          ],
+          "external_contacts": [
+            {
+              "kind": "pad",
+              "uuid": "d3e98d6c-ddf5-4574-b2f8-b3809258c4c1",
+              "net": "VX",
+              "reference": "T2",
+              "number": "1"
+            }
+          ]
+        },
+        {
+          "donor_uuid": "ca788c04-a07c-422b-824f-dbeafc220a25",
+          "endpoint": "end",
+          "point": [
+            112.7,
+            107.9983
+          ],
+          "external_contacts": []
+        }
+      ]
+    },
+    {
+      "net": "S1",
+      "all_original_external_contacts": [
+        {
+          "external_object": {
+            "kind": "segment",
+            "uuid": "ae55c203-0407-40db-b99e-b8b03ba44007",
+            "net": "S1"
+          },
+          "original_donor_contacts": [
+            "1311c86b-1e8c-4833-8518-864755ff334c"
+          ],
+          "replacement_contacts": [
+            "1311c86b-1e8c-4833-8518-864755ff334c"
+          ],
+          "same_net": true,
+          "preserved_direct_contact": true
+        }
+      ],
+      "all_same_net_external_contacts_preserved": true,
+      "foreign_nonzone_original_contacts": [],
+      "original_endpoint_contacts": [
+        {
+          "donor_uuid": "1311c86b-1e8c-4833-8518-864755ff334c",
+          "endpoint": "start",
+          "point": [
+            101.3,
+            104.3017
+          ],
+          "external_contacts": [
+            {
+              "kind": "segment",
+              "uuid": "ae55c203-0407-40db-b99e-b8b03ba44007",
+              "net": "S1"
+            }
+          ]
+        },
+        {
+          "donor_uuid": "1311c86b-1e8c-4833-8518-864755ff334c",
+          "endpoint": "end",
+          "point": [
+            101.3,
+            108.1483
+          ],
+          "external_contacts": []
+        },
+        {
+          "donor_uuid": "a189ef97-eaa6-4497-8a33-d897ace91f54",
+          "endpoint": "start",
+          "point": [
+            101.3,
+            109.625
+          ],
+          "external_contacts": []
+        },
+        {
+          "donor_uuid": "a189ef97-eaa6-4497-8a33-d897ace91f54",
+          "endpoint": "end",
+          "point": [
+            101.3,
+            108.1483
+          ],
+          "external_contacts": []
+        }
+      ]
+    },
+    {
+      "net": "SBUS",
+      "all_original_external_contacts": [
+        {
+          "external_object": {
+            "kind": "segment",
+            "uuid": "dc40e5af-cf50-4658-b8e2-9cb48de8a057",
+            "net": "SBUS"
+          },
+          "original_donor_contacts": [
+            "66d19cc4-5711-4d71-8657-ceebbea5c7b9"
+          ],
+          "replacement_contacts": [
+            "66d19cc4-5711-4d71-8657-ceebbea5c7b9"
+          ],
+          "same_net": true,
+          "preserved_direct_contact": true
+        }
+      ],
+      "all_same_net_external_contacts_preserved": true,
+      "foreign_nonzone_original_contacts": [],
+      "original_endpoint_contacts": [
+        {
+          "donor_uuid": "66d19cc4-5711-4d71-8657-ceebbea5c7b9",
+          "endpoint": "start",
+          "point": [
+            121.1,
+            103.3
+          ],
+          "external_contacts": [
+            {
+              "kind": "segment",
+              "uuid": "dc40e5af-cf50-4658-b8e2-9cb48de8a057",
+              "net": "SBUS"
+            }
+          ]
+        },
+        {
+          "donor_uuid": "66d19cc4-5711-4d71-8657-ceebbea5c7b9",
+          "endpoint": "end",
+          "point": [
+            121.1,
+            109.625
+          ],
+          "external_contacts": []
+        }
+      ]
+    },
+    {
+      "net": "GND",
+      "all_original_external_contacts": [
+        {
+          "external_object": {
+            "kind": "segment",
+            "uuid": "b46a978f-a7c6-41f7-a829-bb2695caf596",
+            "net": "GND"
+          },
+          "original_donor_contacts": [
+            "cbf85f81-7873-4ccf-8b3d-ddc0f3494041"
+          ],
+          "replacement_contacts": [
+            "cbf85f81-7873-4ccf-8b3d-ddc0f3494041"
+          ],
+          "same_net": true,
+          "preserved_direct_contact": true
+        },
+        {
+          "external_object": {
+            "kind": "pad",
+            "uuid": "593f504c-b0ba-4b7a-8979-468783d8d541",
+            "net": "GND",
+            "reference": "T1",
+            "number": "1"
+          },
+          "original_donor_contacts": [
+            "cbf85f81-7873-4ccf-8b3d-ddc0f3494041"
+          ],
+          "replacement_contacts": [
+            "6a072bfd-24cb-570a-9b36-3790ae596065"
+          ],
+          "same_net": true,
+          "preserved_direct_contact": true
+        }
+      ],
+      "all_same_net_external_contacts_preserved": true,
+      "foreign_nonzone_original_contacts": [],
+      "original_endpoint_contacts": [
+        {
+          "donor_uuid": "cbf85f81-7873-4ccf-8b3d-ddc0f3494041",
+          "endpoint": "start",
+          "point": [
+            109.7,
+            107.14
+          ],
+          "external_contacts": [
+            {
+              "kind": "segment",
+              "uuid": "b46a978f-a7c6-41f7-a829-bb2695caf596",
+              "net": "GND"
+            }
+          ]
+        },
+        {
+          "donor_uuid": "cbf85f81-7873-4ccf-8b3d-ddc0f3494041",
+          "endpoint": "end",
+          "point": [
+            109.7,
+            109.625
+          ],
+          "external_contacts": [
+            {
+              "kind": "pad",
+              "uuid": "593f504c-b0ba-4b7a-8979-468783d8d541",
+              "net": "GND",
+              "reference": "T1",
+              "number": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "terminal_contact": [
+    {
+      "net": "VX",
+      "pad": {
+        "kind": "pad",
+        "uuid": "d3e98d6c-ddf5-4574-b2f8-b3809258c4c1",
+        "net": "VX",
+        "reference": "T2",
+        "number": "1"
+      },
+      "endpoint": [
+        113.654,
+        109.573
+      ],
+      "center_matches": true,
+      "trace_width_mm": 0.5,
+      "endpoint_disk_inside_pad": true,
+      "minimum_endpoint_disk_to_pad_boundary_mm": 0.5499999999999972
+    },
+    {
+      "net": "S1",
+      "pad": {
+        "kind": "pad",
+        "uuid": "91a926d2-e1b4-4309-8831-862ca42562a9",
+        "net": "S1",
+        "reference": "P1",
+        "number": "1"
+      },
+      "endpoint": [
+        102.254,
+        109.573
+      ],
+      "center_matches": true,
+      "trace_width_mm": 0.2,
+      "endpoint_disk_inside_pad": true,
+      "minimum_endpoint_disk_to_pad_boundary_mm": 0.49999999999999434
+    },
+    {
+      "net": "SBUS",
+      "pad": {
+        "kind": "pad",
+        "uuid": "0cb5a42c-9f57-4282-b15c-11cc8653ec25",
+        "net": "SBUS",
+        "reference": "P7",
+        "number": "1"
+      },
+      "endpoint": [
+        120.146,
+        109.573
+      ],
+      "center_matches": true,
+      "trace_width_mm": 0.2,
+      "endpoint_disk_inside_pad": true,
+      "minimum_endpoint_disk_to_pad_boundary_mm": 0.49999999999999434
+    },
+    {
+      "net": "GND",
+      "pad": {
+        "kind": "pad",
+        "uuid": "593f504c-b0ba-4b7a-8979-468783d8d541",
+        "net": "GND",
+        "reference": "T1",
+        "number": "1"
+      },
+      "endpoint": [
+        108.746,
+        109.573
+      ],
+      "center_matches": true,
+      "trace_width_mm": 0.5,
+      "endpoint_disk_inside_pad": true,
+      "minimum_endpoint_disk_to_pad_boundary_mm": 0.5499999999999972
+    }
+  ],
+  "project_floors_mm": {
+    "min_clearance": 0.15,
+    "min_copper_edge_clearance": 0.254,
+    "min_hole_clearance": 0.25
+  },
+  "replacement_edge_clearances": [
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "cbf85f81-7873-4ccf-8b3d-ddc0f3494041",
+        "net": "GND"
+      },
+      "clearance_mm": 0.565218613006974,
+      "nearest_edge_uuid": "905391c2-5115-544a-ae6d-ccf5b7f9b009",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "6663f657-e200-5715-9735-24cf272a6353",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.6000000000000029,
+      "nearest_edge_uuid": "2093de5f-79cf-5025-bda9-d7bf7c8f409b",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "cead2d63-fe15-51dc-8401-547242c1a0d8",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.6000000000000029,
+      "nearest_edge_uuid": "a4ffbd4d-3cc3-5c9b-b2ba-9c3669c0100c",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+        "net": "VX"
+      },
+      "clearance_mm": 0.7086047202720913,
+      "nearest_edge_uuid": "708bc87f-e2f8-5aa4-9b26-62fd093a9f2c",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "a189ef97-eaa6-4497-8a33-d897ace91f54",
+        "net": "S1"
+      },
+      "clearance_mm": 0.7539999999999992,
+      "nearest_edge_uuid": "afd631cb-9988-563a-9672-83c4ba4b134b",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "ca788c04-a07c-422b-824f-dbeafc220a25",
+        "net": "VX"
+      },
+      "clearance_mm": 0.804000000000002,
+      "nearest_edge_uuid": "6b5036c0-5021-5ae1-a930-0062a9558b73",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "6a072bfd-24cb-570a-9b36-3790ae596065",
+        "net": "GND"
+      },
+      "clearance_mm": 0.804000000000002,
+      "nearest_edge_uuid": "905391c2-5115-544a-ae6d-ccf5b7f9b009",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "1311c86b-1e8c-4833-8518-864755ff334c",
+        "net": "S1"
+      },
+      "clearance_mm": 1.199999999999997,
+      "nearest_edge_uuid": "e858e7f6-06ce-4767-a311-917fb88cfb7f",
+      "base_points_inside_outline": true
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "66d19cc4-5711-4d71-8657-ceebbea5c7b9",
+        "net": "SBUS"
+      },
+      "clearance_mm": 1.2000000000000113,
+      "nearest_edge_uuid": "4d49d70d-ed0d-4e8b-a0ee-e933bc0e8a03",
+      "base_points_inside_outline": true
+    }
+  ],
+  "replacement_foreign_nonzone_copper_clearances": [
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "6663f657-e200-5715-9735-24cf272a6353",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.25860000000000416,
+      "nearest": {
+        "kind": "segment",
+        "uuid": "47cbbe89-5da4-417f-9adf-ef1623973fd8",
+        "net": "RPM"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "a189ef97-eaa6-4497-8a33-d897ace91f54",
+        "net": "S1"
+      },
+      "clearance_mm": 0.4759999999999933,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "0180c7f6-705f-4d9f-969d-277b24cc2982",
+        "net": "GND",
+        "reference": "J1",
+        "number": "3"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "1311c86b-1e8c-4833-8518-864755ff334c",
+        "net": "S1"
+      },
+      "clearance_mm": 0.721979163347908,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "0180c7f6-705f-4d9f-969d-277b24cc2982",
+        "net": "GND",
+        "reference": "J1",
+        "number": "3"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "66d19cc4-5711-4d71-8657-ceebbea5c7b9",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.7254364474646258,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "b7efa968-a740-4abd-87aa-92df9df01c2e",
+        "net": "VX",
+        "reference": "J1",
+        "number": "20"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "cead2d63-fe15-51dc-8401-547242c1a0d8",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.8730000000000132,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "d661567b-d6ba-4ee1-8101-0985b54f36ac",
+        "net": "RPM",
+        "reference": "P6",
+        "number": "1"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+        "net": "VX"
+      },
+      "clearance_mm": 0.9131366208402296,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "1d741680-aff5-431f-bcdd-060eba0aca58",
+        "net": "GND",
+        "reference": "J1",
+        "number": "15"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "ca788c04-a07c-422b-824f-dbeafc220a25",
+        "net": "VX"
+      },
+      "clearance_mm": 0.923000000000016,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "9772aec2-b4e9-4338-afa2-c2353fc6ea0d",
+        "net": "TAIL",
+        "reference": "P4",
+        "number": "1"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "6a072bfd-24cb-570a-9b36-3790ae596065",
+        "net": "GND"
+      },
+      "clearance_mm": 1.4473330000000004,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "21b18e41-e63f-4281-b3f2-a0564db1de23",
+        "net": "S3",
+        "reference": "P3",
+        "number": "1"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "cbf85f81-7873-4ccf-8b3d-ddc0f3494041",
+        "net": "GND"
+      },
+      "clearance_mm": 1.4746957160290648,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "21b18e41-e63f-4281-b3f2-a0564db1de23",
+        "net": "S3",
+        "reference": "P3",
+        "number": "1"
+      }
+    }
+  ],
+  "replacement_foreign_drill_clearances": [
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "a189ef97-eaa6-4497-8a33-d897ace91f54",
+        "net": "S1"
+      },
+      "clearance_mm": 0.7259999999999933,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "0180c7f6-705f-4d9f-969d-277b24cc2982",
+        "net": "GND"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "6663f657-e200-5715-9735-24cf272a6353",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.8799999999999897,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "cc3135d3-50ed-4612-a504-6da995b8e96f",
+        "net": "GND"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "1311c86b-1e8c-4833-8518-864755ff334c",
+        "net": "S1"
+      },
+      "clearance_mm": 0.971979163347908,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "0180c7f6-705f-4d9f-969d-277b24cc2982",
+        "net": "GND"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "66d19cc4-5711-4d71-8657-ceebbea5c7b9",
+        "net": "SBUS"
+      },
+      "clearance_mm": 0.9754364474646258,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "b7efa968-a740-4abd-87aa-92df9df01c2e",
+        "net": "VX"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+        "net": "VX"
+      },
+      "clearance_mm": 1.0991476645080724,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "928e519e-31d7-4b73-9506-1a763473ec8c",
+        "net": "TAIL"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "ca788c04-a07c-422b-824f-dbeafc220a25",
+        "net": "VX"
+      },
+      "clearance_mm": 1.301903021587508,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "1d741680-aff5-431f-bcdd-060eba0aca58",
+        "net": "GND"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "cbf85f81-7873-4ccf-8b3d-ddc0f3494041",
+        "net": "GND"
+      },
+      "clearance_mm": 2.1888943296318524,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "928e519e-31d7-4b73-9506-1a763473ec8c",
+        "net": "TAIL"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "cead2d63-fe15-51dc-8401-547242c1a0d8",
+        "net": "SBUS"
+      },
+      "clearance_mm": 3.1175267315783857,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "cc3135d3-50ed-4612-a504-6da995b8e96f",
+        "net": "GND"
+      }
+    },
+    {
+      "object": {
+        "kind": "segment",
+        "uuid": "6a072bfd-24cb-570a-9b36-3790ae596065",
+        "net": "GND"
+      },
+      "clearance_mm": 3.2748065323224806,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "928e519e-31d7-4b73-9506-1a763473ec8c",
+        "net": "TAIL"
+      }
+    }
+  ],
+  "whole_board_nonzone_minimums": {
+    "edge": {
+      "object": {
+        "kind": "pad",
+        "uuid": "d3e98d6c-ddf5-4574-b2f8-b3809258c4c1",
+        "net": "VX",
+        "reference": "T2",
+        "number": "1"
+      },
+      "clearance_mm": 0.2539999999999907,
+      "nearest_edge_uuid": "66120e90-9291-589a-bbf4-5892fdd5b1ad",
+      "base_points_inside_outline": true
+    },
+    "foreign_copper": {
+      "object": {
+        "kind": "segment",
+        "uuid": "adc30260-e7a2-4c0c-9738-829ba4648a30",
+        "net": "VX"
+      },
+      "clearance_mm": 0.15824090758355847,
+      "nearest": {
+        "kind": "pad",
+        "uuid": "cc3135d3-50ed-4612-a504-6da995b8e96f",
+        "net": "GND",
+        "reference": "J1",
+        "number": "21"
+      }
+    },
+    "foreign_drill": {
+      "object": {
+        "kind": "segment",
+        "uuid": "f9db54a0-0228-48db-8cfe-34254eb9cbaa",
+        "net": "GND"
+      },
+      "clearance_mm": 0.31829999999999925,
+      "nearest": {
+        "kind": "drill",
+        "uuid": "3c9361c0-bd79-4ae1-854a-1afbcbd154c4",
+        "net": "ESC"
+      }
+    }
+  },
+  "whole_board_nonzone_violations": {
+    "edge": [],
+    "foreign_copper": [],
+    "foreign_drill": []
+  },
+  "stored_zone_fill_screen": {
+    "status": "Stale pre-edit fills cannot be retained for final validation; refill required. No connectivity proof relies on zones.",
+    "replacement_to_foreign_fill": [
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "1311c86b-1e8c-4833-8518-864755ff334c",
+          "net": "S1"
+        },
+        "clearance_mm": -0.1,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:0",
+          "net": "GND"
+        }
+      },
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "a189ef97-eaa6-4497-8a33-d897ace91f54",
+          "net": "S1"
+        },
+        "clearance_mm": -0.1,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:0",
+          "net": "GND"
+        }
+      },
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "231b7cbd-70f5-429b-b94b-faef2b63c3af",
+          "net": "VX"
+        },
+        "clearance_mm": 0.05824599999999691,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:2",
+          "net": "GND"
+        }
+      },
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "ca788c04-a07c-422b-824f-dbeafc220a25",
+          "net": "VX"
+        },
+        "clearance_mm": 0.05824599999999691,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:2",
+          "net": "GND"
+        }
+      },
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "6663f657-e200-5715-9735-24cf272a6353",
+          "net": "SBUS"
+        },
+        "clearance_mm": 0.6090999999999923,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:2",
+          "net": "GND"
+        }
+      },
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "66d19cc4-5711-4d71-8657-ceebbea5c7b9",
+          "net": "SBUS"
+        },
+        "clearance_mm": 1.5796606614554562,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:2",
+          "net": "GND"
+        }
+      },
+      {
+        "object": {
+          "kind": "segment",
+          "uuid": "cead2d63-fe15-51dc-8401-547242c1a0d8",
+          "net": "SBUS"
+        },
+        "clearance_mm": 1.8302008504634923,
+        "nearest": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:2",
+          "net": "GND"
+        }
+      }
+    ],
+    "same_net_original_fill_contacts": [
+      {
+        "net": "GND",
+        "fill": {
+          "kind": "stored_zone_fill",
+          "uuid": "28b1deac-8f72-4ef6-97f6-3f620479a2ad:1",
+          "net": "GND"
+        },
+        "old_donor_touch": true,
+        "replacement_still_touches_stored_fill": true
+      }
+    ]
+  },
+  "limitations": [
+    "Native zone refill, all-visible native DRC/ERC/parity and manufactured tolerances are not evaluated.",
+    "Copper shapes are nominal and finite-precision; comparisons allow 0.0000001 mm numerical tolerance.",
+    "Stored fill polygons are screened literally; no refill is attempted."
+  ]
+}

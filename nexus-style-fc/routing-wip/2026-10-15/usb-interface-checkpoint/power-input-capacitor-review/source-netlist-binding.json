@@ -1,0 +1,114 @@
+{
+  "source_netlist": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/filter-schema-integration-v2/experimental-r57/final-netlist.xml",
+  "source_sha256": "abb488beeeafc472836437552e7160169fa91e0ec9dfd156ff75a257784065bc",
+  "VSYS_nodes": [
+    {
+      "ref": "C18",
+      "pin": "1",
+      "pintype": "passive"
+    },
+    {
+      "ref": "C27",
+      "pin": "1",
+      "pintype": "passive"
+    },
+    {
+      "ref": "D5",
+      "pin": "1",
+      "pinfunction": "K_1",
+      "pintype": "passive"
+    },
+    {
+      "ref": "D6",
+      "pin": "1",
+      "pinfunction": "K_1",
+      "pintype": "passive"
+    },
+    {
+      "ref": "U10",
+      "pin": "1",
+      "pinfunction": "IN_1",
+      "pintype": "passive"
+    },
+    {
+      "ref": "U14",
+      "pin": "6",
+      "pinfunction": "VIN_6",
+      "pintype": "passive"
+    },
+    {
+      "ref": "U14",
+      "pin": "7",
+      "pinfunction": "EN_7",
+      "pintype": "passive"
+    }
+  ],
+  "components": [
+    {
+      "ref": "C18",
+      "value": "1uF",
+      "footprint": "Capacitor_SMD:C_0402_1005Metric",
+      "fields": {
+        "LCSC": "C52923",
+        "Footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "Datasheet": null,
+        "Description": "LDO in"
+      }
+    },
+    {
+      "ref": "C27",
+      "value": "4.7uF",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "fields": {
+        "LCSC": "C69335",
+        "Footprint": "Capacitor_SMD:C_0603_1608Metric",
+        "Datasheet": null,
+        "Description": "buck in, 25 V"
+      }
+    },
+    {
+      "ref": "D5",
+      "value": "B5819WS",
+      "footprint": "NexusFC:SOD-323_L1.8-W1.3-LS2.5-RD",
+      "fields": {
+        "LCSC": "C22624",
+        "Footprint": "NexusFC:SOD-323_L1.8-W1.3-LS2.5-RD",
+        "Datasheet": null,
+        "Description": "VX -> VSYS"
+      }
+    },
+    {
+      "ref": "D6",
+      "value": "B5819WS",
+      "footprint": "NexusFC:SOD-323_L1.8-W1.3-LS2.5-RD",
+      "fields": {
+        "LCSC": "C22624",
+        "Footprint": "NexusFC:SOD-323_L1.8-W1.3-LS2.5-RD",
+        "Datasheet": null,
+        "Description": "VBUS -> VSYS (USB-only boot)"
+      }
+    },
+    {
+      "ref": "U10",
+      "value": "TPS70933DBVR",
+      "footprint": "NexusFC:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL",
+      "fields": {
+        "LCSC": "C89347",
+        "Footprint": "NexusFC:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL",
+        "Datasheet": null,
+        "Description": "3V3 sensor LDO, 30 V input; EN intentionally floating (internal pull-up), never tied to VSYS"
+      }
+    },
+    {
+      "ref": "U14",
+      "value": "TPS629210DRLR",
+      "footprint": "NexusFC:SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A",
+      "fields": {
+        "LCSC": "C5219301",
+        "Footprint": "NexusFC:SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A",
+        "Datasheet": null,
+        "Description": "3V3 MCU buck; S-CONF 27.4k = VSET mode, FB/VSET open = 3.3 V"
+      }
+    }
+  ]
+}

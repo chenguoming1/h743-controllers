@@ -1,0 +1,11 @@
+# R4/R18 accepted experimental routing checkpoint, unfinished
+
+Fresh native KiCad 10.0.7 refill/DRC removes both targeted clearances: 10 to 8 errors, zero opens and zero schematic parity findings, with the same 54 silk warnings. The minimum remaining gap is 0.0927 mm and no residual pair worsens. All-visible diagnostics retain 13 centering and 5 footprint-type warnings; no filter warning or new finding appears.
+
+R4 changes exactly two isolated indicator-branch tracks from .350 to .150 mm on their original F.Cu centreline, total 1.501113 mm. The complete seven-track branch has only R4.1 and its original source-via ports. Removing it isolates R4 while every other 5V load remains supplied. The nominal-5V intact-1k-resistor current screen is 5.2 mA including the stated tolerance/TCR envelope, with about 25.6 µV estimated trace drop. This is the sole approved two-UUID width exception, not a shared power-feed change.
+
+R18 retains .350 mm width on its isolated 21k divider feed, adding one off-pad .450/.200 via and moving 1.613574 mm onto 15.2 µm In3 copper. Shared J3/5V feed copper and source-via entries remain exact. The approximately 161 µA divider current gives a simple trace-only estimate of 0.99 µV drop; via plating resistance and thermal/fault qualification remain open. The coordinated .127 mm 5V_SENSE donors preserve every external port.
+
+All 2,681 untouched original direct contacts and every complete replacement port pass. Full-width pad/annular entry proofs, exact R4/R18 branch cut tests, actual branch-reference projections and the source-bound cross-section evidence are included. All accepted USB geometry, four taper Gerber regions and full-width USB reference projection remain unchanged. U10/C18/C19 returns, U7/C28 ground paths and all 96 shield-spoke regions are freshly verified after refill. Actual F/B mask/paste apertures are unchanged; the new via hole clears every conservative aperture bound by at least 0.133452 mm. The 16 inherited pasted-hole locations remain unresolved.
+
+Canonical copper and separate mechanical candidates remain untouched. USB/SI, power/transient, via/assembly process, header fit/strength and final fabrication qualification are still open.

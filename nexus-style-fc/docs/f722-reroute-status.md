@@ -1,3 +1,17 @@
+# Current experimental routing: 8 clearance errors, unfinished
+
+[Exact source, native receipts, mechanical states and open gates](../routing-wip/2026-10-15/usb-interface-checkpoint/README.md).
+
+Fresh native KiCad 10.0.7 experimental result: 8 clearance errors, minimum 0.0927 mm, zero opens/electrical and footprint-filter parity findings. Exact unchanged schematic/ERC binding remains valid. All-visible diagnostics retain 13 centering, five footprint-type and 54 silk warnings. Canonical remains 627 inherited errors. No new exclusion or suppression is introduced.
+
+Complete USB routing removes all three USB clearance pairs with explicit .170 mm inner/.150 mm launch widths and exact tapers. Actual filled-return/CAM/finite-port checks pass; production-stack impedance and USB electrical qualification remain open. Four buck entries are now centered with finite annular proofs.
+
+The separate child mechanical correction reaches zero errors/opens/ERC while retaining 11 filter and 11 courtyard warnings. Main mechanical copper remains 45 errors/zero opens. Physical fit/fixture/solder/strength tests remain pending. C27's effective input capacitance is inadequate in the manufacturer typical-bias screen; a supported remedy and input-loop qualification are required. Do not fabricate or assemble.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current r57 checkpoint: unfinished, 13 clearance errors
 
 [Exact experimental source, native receipts and open gates](../routing-wip/2026-10-15/local-r57-checkpoint/README.md).
