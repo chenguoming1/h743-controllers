@@ -19,6 +19,7 @@ PCB SHA256 2099ceb9ff904859a68e288683ee68b2ad74d7741b8b670341baf67bf67e1ea3; sch
 - [Final-source schematic PDF](docs/connected.pdf)
 - [Exact source archive](docs/nexus-integrated-project-source.zip)
 - [Fresh WIP BOM/CPL](manufacturing-wip/README.md)
+- [Sealed main/child Gerber, drill and assembly review package](manufacturing-review/README.md)
 - [Latest native/source/export evidence](../2026-10-15/assembly-source-checkpoint/README.md)
 - [Manufacturing release gates](../2026-10-15/assembly-source-checkpoint/manufacturing-gates/RELEASE-GATES.md)
 - [Integrated geometry and fit evidence](../2026-10-15/integrated-interface-checkpoint/README.md)
