@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the power-module PCB from design_power.py: outline, stackup, rules, all parts, nets. No routing.
 
-Run through tools/build.sh, or with KiCad's bundled Python after the schematic is generated:
+Run through tools/build.sh, or with KiCad's bundled Python after gen_power_schematic.py:
   .../Python.framework/Versions/Current/bin/python3 tools/build_power_module.py
 
 Parts and generators come from the sibling nexus-style-fc project; the footprints, symbols and 3D models this
@@ -10,7 +10,8 @@ board uses are copied into hardware/library/, so this project opens on its own.
 4-layer JLC04161H-7628-like 1.6 mm: F.Cu parts + signal, In1 GND, In2 GND / power, B.Cu signal.
 Rules are JLCPCB's no-surcharge limits, as on the main board: 0.09 mm track / space, one via 0.2 / 0.45 mm.
 Fixed parts use the ("xy", ...) positions; ("near", ref, pad, side) parts are auto-placed next to that pad.
-Footprints are linked to the generated schematic symbols, so "Update PCB from Schematic" works afterwards.
+Footprints are linked to the schematic symbols and pads take the schematic's net names, so the board matches
+"Update PCB from Schematic" exactly.
 """
 import json
 import math
@@ -21,7 +22,7 @@ import shutil
 import pcbnew
 
 import design_power as dp      # also puts the nexus-style-fc tools on sys.path
-import gen_schematic as gs
+import gen_power_schematic as gps
 import sexpr as sx
 from pcbutil import Board, courtyard_boxes, uid
 
@@ -29,6 +30,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUTDIR = os.path.normpath(os.path.join(HERE, "..", "hardware"))
 PROJECT = "nexus-style-fc-power-module"
 OUT = os.path.join(OUTDIR, PROJECT + ".kicad_pcb")
+SCH = os.path.join(OUTDIR, PROJECT + ".kicad_sch")
 NEXUS_HW = os.path.normpath(os.path.join(dp.NEXUS_TOOLS, "..", "hardware"))
 NEXUS_LIB = os.path.join(NEXUS_HW, "library")
 TEMPLATE_PRO = os.path.join(NEXUS_HW, "header-board", "nexus-header-board.kicad_pro")
@@ -146,7 +148,7 @@ def setup_rules(b):
     ds.m_MinSilkTextHeight = b.mm(0.5)
 
 
-def write_project():
+def write_project(names):
     """KiCad 10 keeps net classes and rule minimums in the .kicad_pro."""
     d = json.load(open(TEMPLATE_PRO))
     d["meta"]["filename"] = PROJECT + ".kicad_pro"
@@ -161,7 +163,7 @@ def write_project():
                  priority=2147483647 if name == "Default" else i - 1)
         out.append(c)
     ns["classes"] = out
-    ns["netclass_patterns"] = [{"netclass": c[0], "pattern": n} for c in CLASSES for n in c[3]]
+    ns["netclass_patterns"] = [{"netclass": c[0], "pattern": names[n]} for c in CLASSES for n in c[3]]
     d["board"]["design_settings"]["rules"].update(JLC_RULES)
     tv = d["board"]["design_settings"].get("track_widths")
     if tv is not None:
@@ -212,18 +214,22 @@ def main():
     setup_rules(b)
     outline(b)
 
+    # net names exactly as the schematic has them (as "Update PCB from Schematic" would set them): power-symbol
+    # rails keep their names, local-label nets get KiCad's "/" prefix, unused pins their "unconnected-(...)" net
+    sch_nets = gps.export_netlist(SCH)
+    names = gps.check_netlist(sch_nets)
+    pin_net = {rp: n for n, rps in sch_nets.items() for rp in rps}
+
+    def footprint(p):
+        q = dict(p, pins={pad: pin_net[(p["ref"], pad)] for pad in p["pins"]})
+        return b.footprint(q, PROJECT, root)
+
     root = uid(PROJECT, "root")
-    names = {}
-    for p in dp.PARTS:
-        if p["sym"] not in names:
-            lib, name = p["sym"].split(":")
-            sym = sx.symbol_from_lib(gs.lib_path(lib), name)
-            names[p["sym"]] = {k: v[4] for k, v in sx.symbol_pins(sym).items()}
     placer = Placer(b)
     fps = {}
     for p in dp.PARTS:                            # fixed parts first
         if p["place"][0] == "xy":
-            fp = b.footprint(p, PROJECT, root, names[p["sym"]])
+            fp = footprint(p)
             _, x, y, rot, side = p["place"]
             b.put(fp, x, y, rot, side)
             fps[p["ref"]] = fp
@@ -246,7 +252,7 @@ def main():
         _, aref, apad, side = p["place"]
         pad = [q for q in fps[aref].Pads() if q.GetNumber() == apad][0]
         pos = pad.GetPosition()
-        fp = b.footprint(p, PROJECT, root, names[p["sym"]])
+        fp = footprint(p)
         fps[p["ref"]] = fp
         if not placer.near(fp, (pcbnew.ToMM(pos.x) - OX, pcbnew.ToMM(pos.y) - OY), side):
             failed.append(p["ref"])
@@ -255,7 +261,7 @@ def main():
     b.text(pcbnew.F_Fab, W / 2, L + 1.5, f"Nexus-style FC power module {W} x {L} mm, rev {dp.REV}", 0.8)
     b.save(OUT)
     write_stackup(OUT)
-    write_project()
+    write_project(names)
     export_library()
     open(os.path.join(OUTDIR, "fp-lib-table"), "w").write(
         '(fp_lib_table\n  (version 7)\n  (lib (name "NexusFC") (type "KiCad") '

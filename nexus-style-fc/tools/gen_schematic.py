@@ -6,9 +6,6 @@ connectivity is exactly the netlist in the design module. Symbols are grouped by
 
   python3 tools/gen_schematic.py design  hardware/nexus-style-fc.kicad_sch  nexus-style-fc
   python3 tools/gen_schematic.py design_header  hardware/header-board/nexus-header-board.kicad_sch  nexus-header-board
-  (../nexus-style-fc-power-module/tools/build.sh runs it for design_power with PYTHONPATH set)
-
-A design module may override PAGE and GROUP_TITLES, and list in SAME_ROW the groups that continue the previous row.
 """
 import importlib
 import math
@@ -102,9 +99,7 @@ def main(mod_name, out_path, project):
 
     items = []
     texts = []
-    page = getattr(d, "PAGE", PAGE)
-    titles = {**GROUP_TITLES, **getattr(d, "GROUP_TITLES", {})}
-    _, PW, PH = page
+    _, PW, PH = PAGE
     x0, y0, xmax = 20.0, 30.0, PW - 20.0
     cx, cy, row_h = x0, y0, 0.0
     group = None
@@ -119,17 +114,12 @@ def main(mod_name, out_path, project):
         return px, py
 
     order = list(dict.fromkeys(p["group"] for p in d.PARTS))
-    same_row = getattr(d, "SAME_ROW", ())
     for g in order:
-        # a new group starts a new row with a title, unless the design module lists it in SAME_ROW
-        tx = x0
-        if g in same_row and cx > x0:
-            cx += 10.0
-            tx = cx
-        elif cx > x0:
+        # new group always starts a new row with a title
+        if cx > x0:
             cx, cy, row_h = x0, cy + row_h + 14.0, 0.0
-        texts.append(["text", S(titles.get(g, g)), ["exclude_from_sim", "no"],
-                      ["at", snap(tx), snap(cy - 4.0), 0], ["effects", ["font", ["size", 2.5, 2.5], ["bold", "yes"]],
+        texts.append(["text", S(GROUP_TITLES.get(g, g)), ["exclude_from_sim", "no"],
+                      ["at", snap(x0), snap(cy - 4.0), 0], ["effects", ["font", ["size", 2.5, 2.5], ["bold", "yes"]],
                                                             ["justify", "left", "bottom"]], ["uuid", uid(project, "title", g)]])
         for p in [q for q in d.PARTS if q["group"] == g]:
             sym = symdefs[p["sym"]]
@@ -211,7 +201,7 @@ def main(mod_name, out_path, project):
             items.append(glabel(net, ex, snap(ey + STUB), 270, "right", uid(project, "lbl", ref)))
 
     sch = ["kicad_sch", ["version", 20250114], ["generator", S("eeschema")], ["generator_version", S("10.0")],
-           ["uuid", root], ["paper", S(page[0])],
+           ["uuid", root], ["paper", S(PAGE[0])],
            ["title_block", ["title", S(getattr(d, "TITLE", project))], ["date", S("2026-10-13")],
             ["rev", S(getattr(d, "REV", "0.2"))],
             ["comment", 1, S("Generated from tools/" + mod_name + ".py - edit the design file, then regenerate")],

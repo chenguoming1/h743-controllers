@@ -26,8 +26,9 @@ PCB: 1.6 mm, 4 layers (F.Cu parts and signals, In1 GND, In2 GND or power, B.Cu s
 |---|---|
 | `hardware/` | KiCad project, plus `library/` with the NexusFC footprints, symbols and 3D models this board uses (copied from nexus-style-fc) |
 | `tools/design_power.py` | Takes the POWER group from `../nexus-style-fc/tools/design.py` and adds the headers, block grouping and placement |
-| `tools/build_power_module.py` | Builds the PCB: outline, stackup, rules, parts and nets |
-| `tools/build.sh` | Regenerates the schematic and PCB (using the nexus-style-fc generators), runs ERC and DRC, and exports `docs/` |
+| `tools/gen_power_schematic.py` | Draws the schematic: wired blocks, power symbols for the rails, local labels on internal nodes, global labels only on the J2 signals. It exports the netlist and fails unless the connections match `design_power.py` exactly |
+| `tools/build_power_module.py` | Builds the PCB: outline, stackup, rules, parts, and nets named as in the schematic |
+| `tools/build.sh` | Regenerates the schematic and PCB, runs ERC and DRC, and exports `docs/` |
 | `docs/` | Schematic PDF and top render |
 
 Running `tools/build.sh` regenerates the PCB, which wipes any routing done in KiCad. After you start routing, change the board in KiCad or with "Update PCB from Schematic" instead.

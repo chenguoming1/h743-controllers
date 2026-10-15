@@ -3,6 +3,7 @@ on its own board.
 
 Parts, values, LCSC codes, nets and reference designators come straight from design.py, so the module
 always matches the main board; only the grouping, the placement and the two headers are added here.
+The schematic drawing is in gen_power_schematic.py, the PCB in build_power_module.py.
 
   J1 in  : VX, GND, VBUS (USB 5 V after the main board's PTC), GND
   J2 out : 5V, GND, VSYS, 3V3, 3V3_DSM, GND, VX_SENSE, 5V_SENSE
@@ -22,19 +23,14 @@ import design  # noqa: E402
 
 TITLE = "Nexus-style FBL - power module"
 REV = "0.1"
-PAGE = ("A3", 420.0, 297.0)
 W, L = 26.0, 22.0                      # board outline, mm
 
 GROUP_TITLES = {
-    "IO": "MODULE I/O  J1 in | J2 out",
     "BUCK5": "5V BUCK  TPS62130 3 A, 2.5 MHz  + VX input TVS",
     "MUX": "5V PRIORITY MUX  TPS2116: buck (VIN1) first, USB VBUS (VIN2) second",
     "BUCK3": "3V3 MCU BUCK  TPS629210 1 A, fed from VSYS (VX or VBUS through Schottky OR)  + DSM 3V3 port fuse",
     "SENSE": "ADC SENSE  VX x0.161 (vbec_divider 160) | 5V x0.323 (vbus_divider 320)",
 }
-
-SAME_ROW = {"SENSE"}                   # the dividers sit beside J2 on the schematic, as on the board
-ORDER = ["IO", "SENSE", "BUCK5", "MUX", "BUCK3"]
 
 # main-board ref -> module sub-block
 BLOCK = {"D4": "BUCK5", "U5": "BUCK5", "L1": "BUCK5", "U9": "MUX", "D5": "BUCK3", "D6": "BUCK3",
@@ -107,7 +103,6 @@ for _p in PARTS:
         raise SystemExit(f"design_power: no placement for {_p['ref']}")
     _p["place"] = ("near", ic, hit[0], "F")
 
-PARTS.sort(key=lambda p: ORDER.index(p["group"]))     # schematic block order (stable within a block)
 PWR_FLAGS = ["VX", "GND", "VBUS"]
 
 

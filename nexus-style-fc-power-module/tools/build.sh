@@ -5,10 +5,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
 K=/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli
-NEXUS=../../nexus-style-fc/tools
 B=../hardware/nexus-style-fc-power-module
 
-PYTHONPATH=. python3 "$NEXUS/gen_schematic.py" design_power "$B.kicad_sch" nexus-style-fc-power-module
+python3 gen_power_schematic.py
 $PY build_power_module.py 2>&1 | grep -v "assert\|wxApp"
 $K sch erc --severity-error --exit-code-violations -o /dev/null "$B.kicad_sch" 2>&1 | grep Found
 $K pcb drc --schematic-parity --severity-error -o /dev/null "$B.kicad_pcb" 2>&1 | grep Found
