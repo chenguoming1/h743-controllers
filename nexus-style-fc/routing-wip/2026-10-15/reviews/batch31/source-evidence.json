@@ -1,0 +1,41 @@
+{
+  "reviewed_pcb_sha256": "47b6cf94fb2213c0ae46ab692fd9b8f71e90c2c278944827f9156daa25e8e23b",
+  "sources": [
+    {
+      "url": "https://www.ti.com/lit/ds/symlink/tps709.pdf",
+      "document": "TPS709 SBVS186H Rev H July 2021",
+      "sections": [
+        "5 Pin Configuration and Functions",
+        "8.1.1 Input and Output Capacitor",
+        "10.1 Layout Guidelines"
+      ],
+      "key_facts": [
+        "TPS709 DBV pin 5 is OUT; pin 2 is GND",
+        "Minimum effective output capacitance for 3.3 V output is 1.5 uF; maximum 47 uF; capacitor ESR 0 to 0.2 ohm",
+        "Close capacitors and direct output-cap ground connection are recommended; no numerical allowable PCB loop length is provided here"
+      ]
+    },
+    {
+      "url": "https://www.lcsc.com/product-detail/C23630.html",
+      "identity": "C23630 is Samsung CL10A225KO8NNNC"
+    },
+    {
+      "url": "https://jlcpcb.com/partdetail/CL10A225KO8NNNC/C23630",
+      "identity": "C23630 is Samsung CL10A225KO8NNNC"
+    }
+  ],
+  "calculation_assumptions": {
+    "copper_resistivity_ohm_m": 1.724e-08,
+    "temperature_C": 20,
+    "copper_thickness_F_mm": 0.035,
+    "copper_thickness_In3_mm": 0.0152,
+    "trace_model": "R = rho * L / (width * thickness); vias, pads and temperature variation excluded"
+  },
+  "limits": [
+    "Stored polygon coverage only; maximum centerline sample step 0.02 mm",
+    "No DRC/refill/solver executed; no source edits",
+    "Plane coverage is not return-current fraction",
+    "Nearest GND-via distance is not a universal failure criterion",
+    "C19 effective capacitance under bias/temperature/tolerance/aging is not verified"
+  ]
+}
