@@ -1,3 +1,11 @@
+# Current published experimental checkpoint: batch31, unfinished
+
+Batch31 has 37 native clearance errors, 0 opens, 0 schematic-parity findings and 54 inherited silkscreen warnings. It is preserved under [routing-wip/2026-10-15/batch31](../routing-wip/2026-10-15/batch31/README.md), with exact source, native receipts and cumulative contact/width evidence. The canonical hardware PCBs are unchanged. Four new compliant ordinary tented vias are outside pasted pads; 18 inherited pasted-via locations and all header/mechanical, USB, power and fabrication gates remain open. No manufacturing outputs were regenerated.
+
+The candidate08 material below is superseded historical evidence, not the current best published route.
+
+## Historical rule-transfer and routing record
+
 # F722-rule reroute: unfinished
 
 ## Source and scope
