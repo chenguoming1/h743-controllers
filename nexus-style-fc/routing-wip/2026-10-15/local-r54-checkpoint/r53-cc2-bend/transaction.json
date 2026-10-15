@@ -1,0 +1,73 @@
+{
+  "status": "Bounded same-width same-layer CC2 bend; native and shield-return checks pending",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r52-dsm-bypass",
+  "source_board_sha256": "96bff56f7d8caf7bb306ee14b2e7340ab80e48397c753116279da3001c24baac",
+  "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "candidate_pre_refill_sha256": "ca8d1c4858bd9763e47565dfb4cb58826545edbe3b4a307363d787de82cc3529",
+  "routes": [
+    {
+      "name": "CC2_F",
+      "net": "CC2",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          111.317716,
+          132.6865
+        ],
+        [
+          110.4,
+          132.725
+        ],
+        [
+          110.116,
+          132.65
+        ]
+      ],
+      "removed_uuids": [
+        "0af3b73f-633f-4ee3-8ff9-e4c4f9f8b95a"
+      ],
+      "new_uuids": [
+        "a7074ce0-9224-5e56-8fba-ba32c57b827d",
+        "0364949d-9a76-5939-9cfd-32e9b2915c8d"
+      ],
+      "expected_external_ports": [
+        "0dbcdc40-091b-4647-be47-7f5d8790601d",
+        "0f90e411-dc35-497e-a46f-3486641a74fe",
+        "ce0a259f-95d4-447d-8ee2-893428c1193f"
+      ]
+    }
+  ],
+  "removed_tracks": [
+    {
+      "uuid": "0af3b73f-633f-4ee3-8ff9-e4c4f9f8b95a",
+      "source_text": "(segment\n\t\t(start 111.317716 132.6865)\n\t\t(end 110.116 132.65)\n\t\t(width 0.127)\n\t\t(layer \"F.Cu\")\n\t\t(net \"CC2\")\n\t\t(uuid \"0af3b73f-633f-4ee3-8ff9-e4c4f9f8b95a\")\n\t)"
+    }
+  ],
+  "moved_vias": [],
+  "source_reference_measurement": {
+    "minimum_J6_EP_gap_mm": 0.103149,
+    "full_width_In1_coverage_fraction": 0.31016829168142024
+  },
+  "candidate_reference_prediction": {
+    "points": [
+      [
+        111.317716,
+        132.6865
+      ],
+      [
+        110.4,
+        132.725
+      ],
+      [
+        110.116,
+        132.65
+      ]
+    ],
+    "length_mm": 1.2122594968069067,
+    "minimum_J6_EP_gap_mm": 0.138814,
+    "full_width_In1_coverage_fraction": 0.3719788111069845
+  },
+  "width_layer_policy": "One F.Cu 0.127 mm signal donor becomes two F.Cu 0.127 mm segments with both endpoints fixed. All vias, power, pads, footprint, nets, stack and outline unchanged.",
+  "stopping_bound": "One atomic local bend. Reject any new/worsened native pair, missing full-width original port, lost shield-spoke copper or main-plane change."
+}

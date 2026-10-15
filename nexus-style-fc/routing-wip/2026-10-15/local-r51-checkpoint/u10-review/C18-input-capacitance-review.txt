@@ -1,0 +1,59 @@
+Nexus C18 input-capacitor qualification
+TPS70933DBVR (non-Q1), nominal 7.4 V BEC input | 15 October 2026
+
+Decision
+
+Retain C18/C52923 for a placement-only proposal. Its capacitance is strongly DC-bias derated, but the available evidence does not establish an input-capacitance stability violation or compel a BOM substitution. The defensible result is favorable typical component screening with unqualified board-level input-loop/transient performance. A shorter local IN-to-C18-to-GND loop is the concrete improvement to evaluate. This review does not authorize or make source, PCB, BOM, publication or purchasing changes.
+
+What TI actually requires
+
+Current non-Q1 TPS709 datasheet SBVS186H, printed p.14, §8.1.1, says an input capacitor is unnecessary for stability. It recommends 0.1–2.2 µF between IN and GND for reactive input sources, transients, ripple and PSRR. Its exact conditional statement is: “An input capacitor is necessary if line transients greater than 10 V in magnitude are anticipated.” [1]
+
+That refers to the magnitude of a line-voltage transient, rather than a 10 V limit on steady DC input. The same datasheet permits 2.7–30 V input and illustrates a 5–20 V application. The quoted passage does not specify waveform, slew rate or a numeric mandatory minimum capacitance for that condition. A nominal 7.4 V BEC alone cannot rule out overshoot or ringing. [1; interpretation]
+
+The 1.5 µF effective-capacitance minimum is specifically an OUTPUT stability condition for this 3.3 V regulator; it is not a C18 input requirement. TI’s example uses 1 µF/25 V X7R at the input. §10.1, printed p.16, separately calls for close input/output capacitor placement. [1]
+
+Exact C18 identity, tolerance and temperature
+
+The approved design.py mapping and r48 main PCB both identify C18 as 1 µF, C52923, 0402. JLC and LCSC identify this number as Samsung CL05A105KA5NQNC. Samsung’s exact product page explicitly includes the C packaging suffix. [2–4]
+
+Samsung’s 9 May 2024 reference specification gives 1 µF ±10%, 25 V, X5R, 0402, with a 1.00 ±0.10 × 0.50 ±0.10 × 0.50 ±0.10 mm body. Capacitance is measured at 1 kHz ±10%, 1.0 ±0.2 Vrms. X5R temperature change is within ±15% from −55 to +85°C; this does not establish capacitance under simultaneous DC bias. [5, pp.1–2]
+
+This is a derating-marked part. Its manual’s voltage/temperature graph falls to approximately 70% of rated voltage at +85°C: about 17.5 V for a 25 V part. The nominal 7.4 V input is 29.6% of rating, within that static envelope; actual DC-plus-ripple/transient peaks and capacitor surface temperature still need checking. X5R does not qualify operation above +85°C. [5, PDF pp.18–19; calculations]
+
+Exact manufacturer curve at 7.4 V
+
+Samsung publishes typical design-reference data, not guaranteed minima. The exact-part DC-bias curve uses 25°C, 1 kHz, 1 Vrms. The surrounding embedded-data points are:
+- 7.279200 V: −74.48144184% capacitance change
+- 7.455350 V: −75.22855208%
+
+Linear interpolation gives −74.99379448% at 7.4 V, or 1 µF × 0.25006206 = approximately 0.2501 µF typical. Applying separate −10% initial tolerance and −15% X5R factors yields 0.25006206 × 0.90 × 0.85 = approximately 0.1913 µF. This is a screening calculation, not a guaranteed simultaneous-corner bound. [4; calculations]
+
+Both estimates exceed the 0.1 µF endpoint of TI’s recommended range, by about 2.50× and 1.91× respectively. Those ratios are not stability margins. The initial nominal 1 µF is itself within TI’s recommendation; the data do not justify demanding 1 µF effective input capacitance. [1,4; engineering interpretation]
+
+Limitations and next action
+
+The exact zero-bias temperature curve is available, as is a combined bias/temperature curve at 12.5 V. A combined 7.4 V curve or guaranteed minimum across bias, temperature, frequency, small-signal amplitude, aging and lot variation was not found. Samsung separately warns that aging, applied voltage and temperature affect Class II capacitance. [4,5]
+
+C18 is B-side in r48; the supplied routing review reports approximately 25.543 mm serial input path to U10. That remote capacitor cannot be assumed to provide the same high-frequency bypass as a local one. This component review did not independently remeasure that path or simulate its parasitics. Neither capacitor nominal value nor reference-plane coverage percentage establishes loop/transient performance.
+
+Preserve C19’s approved 10 µF substitution and EN floating. Evaluate moving the existing C18 close to U10 with a short return, then verify startup, BEC/load steps, supply ringing and sensor-rail disturbance over actual operating corners. No concrete replacement is warranted solely by the present evidence. If those tests fail, or a new effective-capacitance or >85°C requirement is imposed, qualify an exact alternative separately and seek the user’s approval before substituting it.
+
+Sources
+
+[1] TI TPS709, non-Q1, current official datasheet SBVS186H, §§6.3, 8.1.1, 8.2 and 10.1, printed pp.4, 14–16.
+https://www.ti.com/lit/ds/symlink/tps709.pdf
+
+[2] JLC C52923 identity only.
+https://jlcpcb.com/partdetail/CL05A105KA5NQNC/C52923
+
+[3] LCSC C52923 identity only.
+https://www.lcsc.com/product-detail/C52923.html
+
+[4] Samsung exact product page and embedded datasheetData typical curves for CL05A105KA5NQN; page lists CL05A105KA5NQNC.
+https://product.samsungsem.com/mlcc/CL05A105KA5NQN.do
+
+[5] Samsung CL05A105KA5NQNC reference specification, issued 9 May 2024; obtained from the official product page’s Specsheet button. Electrical ratings: pp.1–2; aging: PDF pp.13–14; derating and applied voltage: PDF pp.18–19.
+https://product.samsungsem.com/mlcc/CL05A105KA5NQN.do
+
+Reproducibility: exact manufacturer product HTML, extracted curve JSON, specsheet PDF/text, derating-page image, calculation JSON and evidence manifest are retained beside this report. Source PCB and design files were only read.

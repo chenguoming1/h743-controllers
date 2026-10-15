@@ -1,0 +1,326 @@
+{
+  "status": "PASS: two complete ordinary off-pad GND relocations retain all original copper contacts and entire original outer land, with no narrowing or other geometry change; native/return/mask acceptance separate",
+  "source_sha256": "26c63920e944baaada474e49c8e7c08ab0260176047f6b452d4232746c91fe7b",
+  "candidate_sha256": "64eb0addce9b1ef9c14f29714224834a09e44b96ecd66a967d2f667f9530900f",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4",
+        "candidate_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "ef2784fd2782abe1f59b5c14cf0eef1f42e3a8e636000fc2751b9d64b01446ea",
+        "candidate_sha256": "ef2784fd2782abe1f59b5c14cf0eef1f42e3a8e636000fc2751b9d64b01446ea"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "removed_tracks": 0,
+  "new_tracks": 2,
+  "moved_vias": [
+    {
+      "uuid": "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+      "from": [
+        105.575,
+        130.925
+      ],
+      "to": [
+        105.175,
+        130.925
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2,
+      "source_text": "(via\n\t\t(at 105.575 130.925)\n\t\t(size 0.45)\n\t\t(drill 0.2)\n\t\t(layers \"F.Cu\" \"B.Cu\")\n\t\t(net \"GND\")\n\t\t(uuid \"3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3\")\n\t)"
+    },
+    {
+      "uuid": "7f89653b-c07a-4bb7-8d55-49a1f1873aa3",
+      "from": [
+        101.975,
+        117.575
+      ],
+      "to": [
+        101.975,
+        117.825
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2,
+      "source_text": "(via\n\t\t(at 101.975 117.575)\n\t\t(size 0.45)\n\t\t(drill 0.2)\n\t\t(layers \"F.Cu\" \"B.Cu\")\n\t\t(net \"GND\")\n\t\t(uuid \"7f89653b-c07a-4bb7-8d55-49a1f1873aa3\")\n\t)"
+    }
+  ],
+  "untouched_original_direct_contacts_preserved": 2635,
+  "route_physical_proofs": [
+    {
+      "via": "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+      "old_center": [
+        105.575,
+        130.925
+      ],
+      "new_center": [
+        105.175,
+        130.925
+      ],
+      "new_track": "96771c04-cf1d-573e-8c44-698dd51cb53a",
+      "track_width_mm": 0.45,
+      "added_centerline_length_mm": 0.4,
+      "full_old_land_disk_retained": true,
+      "full_new_via_annulus_contained_by_track": true,
+      "complete_original_ports": [
+        {
+          "uuid": "227cbe24-655e-44e4-b732-f919c3156199",
+          "kind": "PAD",
+          "proof": "Entire original via F.Cu disk is contained in the unchanged-diameter round endpoint of the new track, so every original pad/track overlap area is retained; original donor geometry is exact."
+        },
+        {
+          "uuid": "3ee5f82d-eab7-4937-9911-2fdd1e99108b",
+          "kind": "PCB_TRACK",
+          "proof": "Entire original via F.Cu disk is contained in the unchanged-diameter round endpoint of the new track, so every original pad/track overlap area is retained; original donor geometry is exact."
+        }
+      ]
+    },
+    {
+      "via": "7f89653b-c07a-4bb7-8d55-49a1f1873aa3",
+      "old_center": [
+        101.975,
+        117.575
+      ],
+      "new_center": [
+        101.975,
+        117.825
+      ],
+      "new_track": "ef1df147-73af-54ce-a73e-fd6aaee6f46c",
+      "track_width_mm": 0.45,
+      "added_centerline_length_mm": 0.25,
+      "full_old_land_disk_retained": true,
+      "full_new_via_annulus_contained_by_track": true,
+      "complete_original_ports": [
+        {
+          "uuid": "376d1147-a7d3-4a6f-9bb1-6d35b740c15a",
+          "kind": "PAD",
+          "proof": "Entire original via F.Cu disk is contained in the unchanged-diameter round endpoint of the new track, so every original pad/track overlap area is retained; original donor geometry is exact."
+        }
+      ]
+    }
+  ],
+  "new_copper_obstructions_at_0_127002_mm": [],
+  "power_width_floor": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 21,
+        "candidate_items": 21,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 9,
+        "candidate_items": 9,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 36,
+        "candidate_items": 36,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 81,
+        "candidate_items": 81,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 135,
+        "candidate_items": 135,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "source_pasted_vias": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "candidate_pasted_vias": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "exact_removed_paste_contacts": [
+    {
+      "via_uuid": "7f89653b-c07a-4bb7-8d55-49a1f1873aa3",
+      "via_position_iu": [
+        101975000,
+        117575000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J2",
+      "pad": "5",
+      "pad_uuid": "376d1147-a7d3-4a6f-9bb1-6d35b740c15a",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+      "via_position_iu": [
+        105575000,
+        130925000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J6",
+      "pad": "B12",
+      "pad_uuid": "227cbe24-655e-44e4-b732-f919c3156199",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    }
+  ],
+  "no_other_paste_contact_changes": true,
+  "en_conductive_contacts": [],
+  "qualification": "Only two inherited drill/pasted-pad contacts removed geometrically. Remaining pasted vias, actual masks/paste, thermal/return, power, USB and fabrication qualification remain open."
+}

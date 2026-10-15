@@ -1,0 +1,587 @@
+{
+  "status": "PASS: complete fixed-layer donor transactions and finite full-width port topology; native acceptance separate",
+  "source_sha256": "10c4da72046f311a0ad61ac150091573966c8d9fae70fa93a57402a568d059c5",
+  "candidate_sha256": "cf07ab15453d013f668058071e017822e2b7e4f568e9b73f27673c9cd727c127",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4",
+        "candidate_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "2eaa1f5dff1dbec290e9dedcd1f0b43b07a5ff31a8f8fd3d201e6ce2f6b7b266",
+        "candidate_sha256": "2eaa1f5dff1dbec290e9dedcd1f0b43b07a5ff31a8f8fd3d201e6ce2f6b7b266"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "removed_tracks": 12,
+  "new_tracks": 15,
+  "moved_vias": [
+    {
+      "uuid": "b3a0b52a-4c51-4418-a01c-a7d1f2d1e7e4",
+      "from": [
+        113.358237,
+        111.038239
+      ],
+      "to": [
+        113.3,
+        110.83
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2
+    }
+  ],
+  "complete_via_definition_preserved_except_declared_position": true,
+  "untouched_original_direct_contacts_preserved": 2602,
+  "route_physical_proofs": [
+    {
+      "name": "power",
+      "net": "3V3_SENS",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 1.3892304752711089,
+      "new_centerline_length_mm": 1.5450998438657129,
+      "all_external_ports": [
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "304fcda4-003b-4f90-ac4e-202861b57138",
+          "new_track": "fcadac09-73d0-5aac-af39-964439ed99ed",
+          "shared_endpoints": [
+            [
+              113.75585,
+              111.217795
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "ba4b1cff-15aa-4d38-9172-479d06437259",
+          "new_track": "93b117ba-0ad5-55f4-96bb-e34e3281ffb6",
+          "shared_endpoints": [
+            [
+              113.418,
+              112.415
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 3
+    },
+    {
+      "name": "cs_f",
+      "net": "IMU_CS",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 1.5840082084701115,
+      "new_centerline_length_mm": 1.470554632502366,
+      "all_external_ports": [
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "2de755f3-da58-4f30-bbb8-1bc14fa69f80",
+          "new_track": "d7b50956-b047-5c16-be57-eb7002ad7c33",
+          "shared_endpoints": [
+            [
+              112.014,
+              111.276
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "426874be-df21-5750-8794-35ffe63a4695",
+          "port": "b3a0b52a-4c51-4418-a01c-a7d1f2d1e7e4",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              113.17276695939488,
+              110.8988767259557
+            ],
+            [
+              113.27611111023815,
+              110.97269397655803
+            ],
+            [
+              113.18439172326926,
+              110.88260205653157
+            ],
+            [
+              113.28773587411253,
+              110.9564193071339
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        },
+        {
+          "kind": "full-width path through unchanged retained donor to existing pad or via annulus",
+          "port": "fab2a7d2-ed32-4065-b388-cef7a453f99d",
+          "new_track": "d7b50956-b047-5c16-be57-eb7002ad7c33",
+          "retained_bridge": "2de755f3-da58-4f30-bbb8-1bc14fa69f80",
+          "shared_centerline_endpoints": [
+            [
+              112.014,
+              111.276
+            ]
+          ],
+          "bridge_width_mm": 0.127,
+          "annular_entry": {
+            "kind": "finite full-width entry",
+            "new_track": "2de755f3-da58-4f30-bbb8-1bc14fa69f80",
+            "port": "fab2a7d2-ed32-4065-b388-cef7a453f99d",
+            "width_mm": 0.127,
+            "axial_depth_mm": 0.02,
+            "corners": [
+              [
+                111.93288046532517,
+                111.26731697346413
+              ],
+              [
+                112.02268302653586,
+                111.35711953467482
+              ],
+              [
+                111.94702260094891,
+                111.2531748378404
+              ],
+              [
+                112.0368251621596,
+                111.3429773990511
+              ]
+            ],
+            "minimum_distance_from_port_center_mm": 0.11
+          }
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 1
+    },
+    {
+      "name": "cs_b",
+      "net": "IMU_CS",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 0.8243294190243364,
+      "new_centerline_length_mm": 1.0154305079423651,
+      "all_external_ports": [
+        {
+          "kind": "finite full-width entry",
+          "new_track": "81d49fe7-a211-5720-bf82-2c0f345a0c75",
+          "port": "b3a0b52a-4c51-4418-a01c-a7d1f2d1e7e4",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              113.21834532901225,
+              110.9494351904
+            ],
+            [
+              113.34400688415728,
+              110.96782468627488
+            ],
+            [
+              113.2212413126146,
+              110.9296459691173
+            ],
+            [
+              113.34690286775962,
+              110.94803546499219
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "f82c6c43-633a-4950-a45c-755cc5979275",
+          "new_track": "671a3719-1a60-580e-a8af-17978d1b6117",
+          "shared_endpoints": [
+            [
+              112.774647,
+              111.620426
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 1
+    },
+    {
+      "name": "cs_in2",
+      "net": "IMU_CS",
+      "layer": "In2.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 1.2564924724366637,
+      "new_centerline_length_mm": 1.0826384438029162,
+      "all_external_ports": [
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "071949d7-2ed8-412a-9603-f5db809d1dfc",
+          "new_track": "b3f8a721-b004-5151-a696-015a121998eb",
+          "shared_endpoints": [
+            [
+              112.409,
+              110.215
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "b3f8a721-b004-5151-a696-015a121998eb",
+          "port": "b3a0b52a-4c51-4418-a01c-a7d1f2d1e7e4",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              113.17339956309092,
+              110.81977359425635
+            ],
+            [
+              113.24554276144775,
+              110.71525393614915
+            ],
+            [
+              113.15693977441263,
+              110.80841246065684
+            ],
+            [
+              113.22908297276946,
+              110.70389280254965
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 0
+    },
+    {
+      "name": "int_b",
+      "net": "IMU_INT",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 3.4045574743548688,
+      "new_centerline_length_mm": 3.534931879789681,
+      "all_external_ports": [
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "0268e208-eed3-45d5-b9a1-d370dd58670e",
+          "new_track": "1d1aae1d-d5ea-5639-b004-7a40bfe0ab6b",
+          "shared_endpoints": [
+            [
+              115.147241,
+              108.691071
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "873405e4-8db6-403f-981e-9198c6430054",
+          "new_track": "bf092c18-e119-502d-97bf-309478f5c8c1",
+          "shared_endpoints": [
+            [
+              112.903128,
+              111.133442
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 2
+    },
+    {
+      "name": "gnd_f",
+      "net": "GND",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 1.478,
+      "new_centerline_length_mm": 1.38,
+      "all_external_ports": [
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "4dd9f4d6-629f-4a6a-9443-834dc9f07219",
+          "new_track": "fd0b7e94-7714-5023-8624-8324a4b07fa4",
+          "shared_endpoints": [
+            [
+              112.66,
+              112.15
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "fd0b7e94-7714-5023-8624-8324a4b07fa4",
+          "port": "8a84b298-a4a6-4e05-a1fc-469e5ca625b8",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              112.765,
+              112.21350000000001
+            ],
+            [
+              112.765,
+              112.0865
+            ],
+            [
+              112.745,
+              112.21350000000001
+            ],
+            [
+              112.745,
+              112.0865
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11059950271135972
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "fd0b7e94-7714-5023-8624-8324a4b07fa4",
+          "port": "b789020e-400a-478d-9418-3e0c83a7dd84",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              112.78999999999999,
+              112.21350000000001
+            ],
+            [
+              112.78999999999999,
+              112.0865
+            ],
+            [
+              112.77,
+              112.21350000000001
+            ],
+            [
+              112.77,
+              112.0865
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "2326d31e-5049-5e7f-ac90-fafd9e17d51f",
+          "port": "f55e2429-bcba-4a6a-af3b-e25b13de4652",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              112.77,
+              111.5865
+            ],
+            [
+              112.77,
+              111.71350000000001
+            ],
+            [
+              112.78999999999999,
+              111.5865
+            ],
+            [
+              112.78999999999999,
+              111.71350000000001
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 2
+    }
+  ],
+  "new_copper_obstructions_at_0_127002_mm": [],
+  "power_width_floor": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 74,
+        "candidate_items": 74,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 9,
+        "candidate_items": 9,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 33,
+        "candidate_items": 33,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 78,
+        "candidate_items": 80,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 135,
+        "candidate_items": 135,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "pasted_vias_unchanged": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "en_conductive_contacts": [],
+  "qualification": "Preservation and local geometry checks only; power/return/SI/USB/regulator/pasted-via and fabrication gates remain open."
+}

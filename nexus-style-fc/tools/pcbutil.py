@@ -14,6 +14,16 @@ def uid(*parts):
     return str(uuid.uuid5(NS, "/".join(str(p) for p in parts)))
 
 
+def clear_main_u10_donor_metadata(fp, part, project):
+    """Remove inherited supplier identity only for this project's selected U10."""
+    if (project, part["ref"], part["value"], part["lcsc"]) != (
+            "nexus-style-fc", "U10", "TPS70933DBVR", "C89347"):
+        return
+    if fp.HasField("LCSC Part"):
+        fp.Remove(fp.GetField("LCSC Part"))
+    fp.SetLibDescription("SOT-23-5 footprint; selected part TPS70933DBVR, LCSC C89347")
+
+
 class Board:
     def __init__(self, ox, oy, layers):
         self.ox, self.oy = ox, oy
@@ -81,6 +91,7 @@ class Board:
         fp.SetValue(part["value"])
         fp.SetField("LCSC", part["lcsc"])
         fp.GetField("LCSC").SetVisible(False)
+        clear_main_u10_donor_metadata(fp, part, project)
         if part.get("note"):
             fp.SetField("Description", part["note"])
             fp.GetField("Description").SetVisible(False)

@@ -1,0 +1,284 @@
+{
+  "status": "PASS: complete fixed-layer donor transactions and finite full-width port topology; native acceptance separate",
+  "source_sha256": "0c70e5be9f0e4a3dfe4c5d074dc11980b66c4bc779b3ec39bc7705b61b55540c",
+  "candidate_sha256": "a1703af533e47f20ddc9830683b8239253c0d60be26b6eaeeb5c904fbb731cf9",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4",
+        "candidate_sha256": "f248ded527b3699402575d5df9a8375429902afb699a5fddab1051d7372289c4"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "2eaa1f5dff1dbec290e9dedcd1f0b43b07a5ff31a8f8fd3d201e6ce2f6b7b266",
+        "candidate_sha256": "2eaa1f5dff1dbec290e9dedcd1f0b43b07a5ff31a8f8fd3d201e6ce2f6b7b266"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "removed_tracks": 2,
+  "new_tracks": 2,
+  "moved_vias": [],
+  "complete_via_definition_preserved_except_declared_position": true,
+  "untouched_original_direct_contacts_preserved": 2622,
+  "route_physical_proofs": [
+    {
+      "name": "u2_power_f",
+      "net": "3V3_SENS",
+      "layer": "F.Cu",
+      "width_mm": 0.25,
+      "old_centerline_length_mm": 1.417330340967127,
+      "new_centerline_length_mm": 1.4512937873317622,
+      "all_external_ports": [
+        {
+          "kind": "full-width path through unchanged retained donor to existing pad or via annulus",
+          "port": "136ff8fe-7a19-4262-9b42-e6b1d54455f0",
+          "new_track": "fce1fab5-2c86-5b55-a152-553f04a56642",
+          "retained_bridge": "1a50bc31-f28e-4bc3-9a1f-6263a97fae35",
+          "shared_centerline_endpoints": [
+            [
+              110.9,
+              113.8175
+            ]
+          ],
+          "bridge_width_mm": 0.25,
+          "annular_entry": {
+            "kind": "finite full-width entry",
+            "new_track": "1a50bc31-f28e-4bc3-9a1f-6263a97fae35",
+            "port": "136ff8fe-7a19-4262-9b42-e6b1d54455f0",
+            "width_mm": 0.25,
+            "axial_depth_mm": 0.02,
+            "corners": [
+              [
+                111.025,
+                113.52
+              ],
+              [
+                110.775,
+                113.52
+              ],
+              [
+                111.025,
+                113.53999999999999
+              ],
+              [
+                110.775,
+                113.53999999999999
+              ]
+            ],
+            "minimum_distance_from_port_center_mm": 0.11
+          }
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "1a50bc31-f28e-4bc3-9a1f-6263a97fae35",
+          "new_track": "fce1fab5-2c86-5b55-a152-553f04a56642",
+          "shared_endpoints": [
+            [
+              110.9,
+              113.8175
+            ]
+          ],
+          "new_width_mm": 0.25,
+          "retained_width_mm": 0.25
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "9f740237-6d36-4437-a290-ab47073b5d80",
+          "new_track": "c67433e3-8c3e-5b54-8f17-ee991f9fcb08",
+          "shared_endpoints": [
+            [
+              112.255,
+              114.036642
+            ]
+          ],
+          "new_width_mm": 0.25,
+          "retained_width_mm": 0.25
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 1
+    }
+  ],
+  "new_copper_obstructions_at_0_127002_mm": [],
+  "power_width_floor": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 74,
+        "candidate_items": 74,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 9,
+        "candidate_items": 9,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 33,
+        "candidate_items": 33,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 80,
+        "candidate_items": 80,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 135,
+        "candidate_items": 135,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "pasted_vias_unchanged": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "en_conductive_contacts": [],
+  "qualification": "Preservation and local geometry checks only; power/return/SI/USB/regulator/pasted-via and fabrication gates remain open."
+}

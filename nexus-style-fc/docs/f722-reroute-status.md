@@ -1,3 +1,57 @@
+# Current r57 checkpoint: unfinished, 13 clearance errors
+
+[Exact experimental source, native receipts and open gates](../routing-wip/2026-10-15/local-r57-checkpoint/README.md).
+
+Fresh native KiCad 10.0.7: experimental 13 clearance errors, minimum 0.0893 mm; canonical 627 inherited errors. Both have zero opens, exact 347 physical pin/net mapping, zero ERC and no footprint-filter parity warnings. All-visible diagnostics retain 17 experimental / 21 canonical off-center warnings, five footprint-type warnings and 54 silk warnings each. No new or worsened native clearance pair, exclusion or suppression is accepted.
+
+New progress: same-layer thermal-via clearance repair; two holes moved outside pasted pads with unchanged mask/paste apertures; centered full-width RPM annular entry; exact Nexus-only filter-library binding with unchanged shared design imports and BOM/CPL bytes. Four 5V_BUCK annular/current entries remain under review. Sixteen pasted vias / seventeen contacts remain.
+
+The separate mechanical candidate is an unfinished r54-based implementation with known shorts/gaps. Its dimensions/tolerance/strength calculations do not prove physical fit or load capacity. Accepted header remains eleven edge errors until successful replay/reroute. USB pair, power/reference/transient and fabrication/assembly qualifications remain open. Do not fabricate or assemble.
+
+Historical entries follow and do not override this state.
+
+---
+
+# Current r54 checkpoint: unfinished, 14 clearance errors
+
+[Exact current experimental project and evidence](../routing-wip/2026-10-15/local-r54-checkpoint/README.md) continues from the published 18-error r51 state through complete DSM_DATA, CC2 and C_RX/GND repairs. Native KiCad10 refill/save/all-track DRC: 14 clearance errors, zero opens/parity, 54 unchanged silk warnings; minimum remaining gap 0.0893 mm. No new/worsened pair is accepted. The exact unchanged 49f9 schematic retains its zero-ERC receipt; no new ERC run is claimed for these copper-only transactions.
+
+All accepted widths/layers and external ports are preserved. The final saved board rechecks all 96 inherited shield-spoke regions, actual R20/U7/J6 finite ground contacts, and U10 full-width output-reference projection. USB copper is unchanged; the conditional neck proposal is excluded while complete paired topology/reference work continues.
+
+A source-bound read-only pasted-via review records all 18 inherited locations and shared capacitor/thermal/ESD donors. Filled/capped processing is not universally mandatory; TI also allows properly plugged or tented thermal vias. The actual current pad mask/paste opening, rather than global tenting alone, needs a verified process remedy. No paste/mask/footprint/process change is made.
+
+Canonical is unchanged at 627 inherited errors; header at 11 edge errors and unresolved tab/slot fit. Power/thermal/fault, USB/SI/ESD, manufacturing and mechanical qualification remain open. CAM/CPL are stale; do not fabricate or assemble.
+
+Historical entries follow and do not override this state.
+
+---
+
+# Current r51 checkpoint: unfinished, 18 clearance errors
+
+[Exact candidate and evidence](../routing-wip/2026-10-15/local-r51-checkpoint/README.md) continues PR37 from main 80a3f763. Complete-contact r48/r50 repairs improve 24 to 18 errors; fresh r51 restores a 4.400335 mm all-F.Cu, 0.250 mm U10 output leg while retaining an explicitly documented input transient/PSRR tradeoff. Native refill/save/all-track DRC: 18 clearance errors, zero opens/parity, 54 unchanged silk warnings, minimum gap 0.0878 mm. Fresh ERC is zero for the exact unchanged 49f9 schematic. No new/worsened residual pair is accepted.
+
+The final metadata-only pass removes U10's stale donor LCSC field and corrects its library description, with unchanged selected TPS70933DBVR/C89347 fields, geometry, fills, BOM/CPL exports and 347-pin map. The scoped generator hook does not edit shared libraries or other projects. Canonical copper remains unchanged at 627 inherited errors, with zero opens/parity/ERC and 54 silk warnings.
+
+All 96 inherited shield-spoke regions are preserved by the corrected CC1 transaction. The U10 decision uses actual device guidance: input capacitance is not a stability prerequisite; the measured input reference/travel change remains an electrical qualification issue. No C18 substitution or placement change is made. Historical r44 hold statements below are superseded by the fresh r51 decision and validation, not by reusing an old receipt.
+
+Header remains at 11 edge errors; a read-only fit review identifies a concrete but unapproved slot/tab/contact/fixture redesign. USB pair/actual-stack/ESD work and power/thermal/fault qualification remain open. CAM/CPL are stale; manufacturing stays on hold. No fabrication or flight readiness.
+
+Historical entries follow and do not override this state.
+
+---
+
+# Current r47 checkpoint: unfinished, 24 clearance errors
+
+[Exact candidate and evidence](../routing-wip/2026-10-15/local-r47-checkpoint/README.md) follows main 80a3f763. Three bounded complete-contact repairs improve the published 29-error experimental route to 24. Native KiCad 10.0.7 refill/save/all-track DRC gives 24 clearance errors, zero opens/parity and 54 unchanged silk warnings. Minimum remaining gap 0.0785 mm; no new/worsened residual pairs. The final 49f9 schematic/ERC is unchanged. Canonical, header, schematic/generators/BOMs and all unrelated files are untouched.
+
+[USB/stack review](../routing-wip/2026-10-15/local-r47-checkpoint/usb-review/USB-STACK-REVIEW.md) measures the exact earlier 29-error source and identifies full-port/return/impedance/ESD work; it is not validation of a later refill. No arbitrary length/skew caps are added. U10 input/output-loop qualification is still open; the conditional r44 route is excluded. No C18 relocation is applied.
+
+Canonical remains 627 inherited errors; header 11 fixed edge errors and unresolved tab/slot fit. Prior exact receipts remain below. CAM/CPL remain stale and the entire manufacturing package remains on hold. No fabrication or flight readiness.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current checkpoint 07: circuit redraw, approved C19 upgrade and r43, unfinished
 
 [Exact checkpoint and native evidence](../routing-wip/2026-10-15/drafted-circuits-checkpoint/README.md) is based on main cc1ec880. All 15 functional sections are conventionally drafted. Only approved C19 metadata changes electrically selected parts: 10uF/10V Samsung CL10A106KP8NNNC, JLC C19702, unchanged footprint/placement. All 347 physical pin nets and original identities remain exact.

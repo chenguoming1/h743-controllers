@@ -1,0 +1,128 @@
+{
+  "status": "Fresh bounded C_RX via plus complete two-track GND-donor bend; native and ground-return checks pending",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r53-cc2-bend",
+  "source_board_sha256": "3e0795a336cb3fd461b4c5a80025cc676028986f0b467ef331c10f505da8f842",
+  "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "candidate_pre_refill_sha256": "1854bf248dbf82b777ab9cd5345ab7edcf3f2f76ae79f6eb9f3bc857bc893994",
+  "routes": [
+    {
+      "name": "C_RX_B.Cu",
+      "net": "C_RX",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          106.4485,
+          112.408894
+        ],
+        [
+          106.919,
+          111.922
+        ]
+      ],
+      "removed_uuids": [
+        "b0edc82f-a231-4c1b-a97b-496edbdcfd1f"
+      ],
+      "new_uuids": [
+        "716d03f6-7d11-5127-9ba1-2b9c907ae8f4"
+      ],
+      "expected_external_ports": [
+        "36e5eb1d-51cf-4184-be29-23f79441bcd2",
+        "cc17f0c6-9994-49c4-8e4c-66ea164a5008"
+      ]
+    },
+    {
+      "name": "C_RX_In3.Cu",
+      "net": "C_RX",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          105.38,
+          113.46
+        ],
+        [
+          106.4485,
+          112.408894
+        ]
+      ],
+      "removed_uuids": [
+        "ba6985f1-a39a-458e-a55c-05e07601874e"
+      ],
+      "new_uuids": [
+        "2f5541b2-e2b9-56b9-8e1f-6654ff4b698c"
+      ],
+      "expected_external_ports": [
+        "36e5eb1d-51cf-4184-be29-23f79441bcd2",
+        "6c00d625-0cf5-497e-82ad-1ad0ae0b778a"
+      ]
+    },
+    {
+      "name": "GND_B.Cu",
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          106.098,
+          112.168
+        ],
+        [
+          105.918,
+          112.368
+        ],
+        [
+          106.148,
+          112.718
+        ]
+      ],
+      "removed_uuids": [
+        "5c5cf7b7-ccb6-4186-8f09-950446b3973d",
+        "f16ee243-13fd-4537-8f7b-780b4a4696a5"
+      ],
+      "new_uuids": [
+        "c37f0d1e-fa76-505f-9ba6-d0827b82aaac",
+        "70e1f764-0308-5c39-8346-064bfa9e6f79"
+      ],
+      "expected_external_ports": [
+        "0e353f99-f08a-45ce-95f8-37326f8e52cd",
+        "63de1067-fbce-4e94-9040-d8d8ab583e97"
+      ]
+    }
+  ],
+  "removed_tracks": [
+    {
+      "uuid": "b0edc82f-a231-4c1b-a97b-496edbdcfd1f",
+      "source_text": "(segment\n\t\t(start 106.4635 112.398894)\n\t\t(end 106.919 111.922)\n\t\t(width 0.127)\n\t\t(layer \"B.Cu\")\n\t\t(net \"C_RX\")\n\t\t(uuid \"b0edc82f-a231-4c1b-a97b-496edbdcfd1f\")\n\t)"
+    },
+    {
+      "uuid": "ba6985f1-a39a-458e-a55c-05e07601874e",
+      "source_text": "(segment\n\t\t(start 105.38 113.46)\n\t\t(end 106.4635 112.398894)\n\t\t(width 0.127)\n\t\t(layer \"In3.Cu\")\n\t\t(net \"C_RX\")\n\t\t(uuid \"ba6985f1-a39a-458e-a55c-05e07601874e\")\n\t)"
+    },
+    {
+      "uuid": "5c5cf7b7-ccb6-4186-8f09-950446b3973d",
+      "source_text": "(segment\n\t\t(start 106.098 112.168)\n\t\t(end 105.998 112.368)\n\t\t(width 0.127)\n\t\t(layer \"B.Cu\")\n\t\t(net \"GND\")\n\t\t(uuid \"5c5cf7b7-ccb6-4186-8f09-950446b3973d\")\n\t)"
+    },
+    {
+      "uuid": "f16ee243-13fd-4537-8f7b-780b4a4696a5",
+      "source_text": "(segment\n\t\t(start 105.998 112.368)\n\t\t(end 106.148 112.718)\n\t\t(width 0.127)\n\t\t(layer \"B.Cu\")\n\t\t(net \"GND\")\n\t\t(uuid \"f16ee243-13fd-4537-8f7b-780b4a4696a5\")\n\t)"
+    }
+  ],
+  "moved_vias": [
+    {
+      "uuid": "36e5eb1d-51cf-4184-be29-23f79441bcd2",
+      "from": [
+        106.4635,
+        112.398894
+      ],
+      "to": [
+        106.4485,
+        112.408894
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2
+    }
+  ],
+  "width_layer_policy": "Every track retains its inherited 0.127 mm width and layer; only existing C_RX .45/.20 via moves (-.015,+.010) mm. GND joint moves .080 mm west, with complete upstream/downstream contacts retained. No new via, footprint, pad, net, outline, stack or power-width change.",
+  "stopping_bound": "One complete coordinated transaction. Reject new/worsened native errors, lost full-width ports, pasted-via deltas, EN contacts or regressing proven U10/USB shield/return topology."
+}

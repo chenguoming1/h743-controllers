@@ -1,0 +1,96 @@
+{
+  "status": "Two bounded ordinary off-pad GND-via relocations; original full F.Cu land retained as same-diameter track endpoint; native/return/mask acceptance pending",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r55-vsys-thermal",
+  "source_board_sha256": "26c63920e944baaada474e49c8e7c08ab0260176047f6b452d4232746c91fe7b",
+  "source_manifest_sha256": "c95fcb0ae5ac7fae4b25fbc424d8b620fa5ba12c2be0f2d4bafd60285e5320bd",
+  "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "candidate_pre_refill_sha256": "b2557dfa4336970b985b6efea6e77fd336835b33ba8f2b4497e81b7bb55b5598",
+  "routes": [
+    {
+      "name": "offpad_ground_0",
+      "net": "GND",
+      "layer": "F.Cu",
+      "width_mm": 0.45,
+      "points": [
+        [
+          105.575,
+          130.925
+        ],
+        [
+          105.175,
+          130.925
+        ]
+      ],
+      "new_uuids": [
+        "96771c04-cf1d-573e-8c44-698dd51cb53a"
+      ],
+      "removed_uuids": [],
+      "moved_via": "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+      "expected_source_direct_ports": [
+        "227cbe24-655e-44e4-b732-f919c3156199",
+        "3ee5f82d-eab7-4937-9911-2fdd1e99108b"
+      ]
+    },
+    {
+      "name": "offpad_ground_1",
+      "net": "GND",
+      "layer": "F.Cu",
+      "width_mm": 0.45,
+      "points": [
+        [
+          101.975,
+          117.575
+        ],
+        [
+          101.975,
+          117.825
+        ]
+      ],
+      "new_uuids": [
+        "ef1df147-73af-54ce-a73e-fd6aaee6f46c"
+      ],
+      "removed_uuids": [],
+      "moved_via": "7f89653b-c07a-4bb7-8d55-49a1f1873aa3",
+      "expected_source_direct_ports": [
+        "376d1147-a7d3-4a6f-9bb1-6d35b740c15a"
+      ]
+    }
+  ],
+  "moved_vias": [
+    {
+      "uuid": "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+      "from": [
+        105.575,
+        130.925
+      ],
+      "to": [
+        105.175,
+        130.925
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2,
+      "source_text": "(via\n\t\t(at 105.575 130.925)\n\t\t(size 0.45)\n\t\t(drill 0.2)\n\t\t(layers \"F.Cu\" \"B.Cu\")\n\t\t(net \"GND\")\n\t\t(uuid \"3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3\")\n\t)"
+    },
+    {
+      "uuid": "7f89653b-c07a-4bb7-8d55-49a1f1873aa3",
+      "from": [
+        101.975,
+        117.575
+      ],
+      "to": [
+        101.975,
+        117.825
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2,
+      "source_text": "(via\n\t\t(at 101.975 117.575)\n\t\t(size 0.45)\n\t\t(drill 0.2)\n\t\t(layers \"F.Cu\" \"B.Cu\")\n\t\t(net \"GND\")\n\t\t(uuid \"7f89653b-c07a-4bb7-8d55-49a1f1873aa3\")\n\t)"
+    }
+  ],
+  "removed_tracks": [],
+  "expected_removed_paste_contact_vias": [
+    "3cfc0b66-fb89-4bcd-8fd4-b8f8542b90a3",
+    "7f89653b-c07a-4bb7-8d55-49a1f1873aa3"
+  ],
+  "width_layer_policy": "No original track changed. Two .450 mm F.Cu GND dogbones exactly contain old via land and new via annular copper. Existing .450/.200 mm through vias retain all attributes except position. No footprint, pad, aperture, net, part, stack, outline or rule changes.",
+  "stopping_bound": "One atomic two-via trial. Reject new/worsened DRC, any lost direct donor or finite return/shield contact, any new hole/paste/mask contact, or change beyond these two removed pasted-hole locations. No manufacturing process qualification inferred."
+}

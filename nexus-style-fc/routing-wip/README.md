@@ -1,5 +1,5 @@
 # Unfinished routing experiments
 
-Current checkpoint: [all-section circuit redraw, approved C19 upgrade and r43](2026-10-15/drafted-circuits-checkpoint/README.md). The separate experimental route has 29 clearance errors; canonical has 627 inherited errors. Both use the exact final schematic and C19 metadata, with zero opens/parity/ERC and 54 unchanged silk warnings. Header remains at 11 fixed edge errors. No fabrication release.
+Current accepted checkpoint: [r57, 13 clearance errors](2026-10-15/local-r57-checkpoint/README.md), zero opens/electrical parity/ERC. All-visible diagnostics retain 17 off-center and 5 footprint-type warnings plus 54 silk warnings; exact selected-footprint filter mismatches are corrected. Four 5V_BUCK finite entries remain under review. The pasted-hole inventory is 16 vias/17 contacts.
 
-The full PDFs/source ZIP and source-bound native receipts are linked in the checkpoint. The conditional U10 route is excluded; power/return, USB/ESD and mechanical gates remain open. [Prior checkpoint](2026-10-15/en-readable-checkpoint/README.md) and earlier routing snapshots are historical.
+Canonical remains 627 inherited errors; unchanged header remains 11 edge errors. The separately preserved mechanical candidate has known new conflicts and is not accepted routing. USB and power/manufacturing qualification remain unfinished. No fabrication release.
