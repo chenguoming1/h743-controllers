@@ -1,0 +1,99 @@
+[
+  {
+    "name": "main-drc",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "start_utc": "2026-10-15T10:52:44.267288+00:00",
+    "end_utc": "2026-10-15T10:53:01.534044+00:00",
+    "exit_code": 5
+  },
+  {
+    "name": "main-erc",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "erc",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/main-native-erc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/nexus-style-fc.kicad_sch"
+    ],
+    "start_utc": "2026-10-15T10:53:01.534597+00:00",
+    "end_utc": "2026-10-15T10:53:18.724304+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "main-netlist",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "export",
+      "netlist",
+      "--format",
+      "kicadxml",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/final-netlist.xml",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/nexus-style-fc.kicad_sch"
+    ],
+    "start_utc": "2026-10-15T10:53:18.724919+00:00",
+    "end_utc": "2026-10-15T10:53:20.017213+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "child-drc",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/child-native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/header-board/nexus-header-board.kicad_pcb"
+    ],
+    "start_utc": "2026-10-15T10:53:20.018315+00:00",
+    "end_utc": "2026-10-15T10:53:31.726664+00:00",
+    "exit_code": 5
+  },
+  {
+    "name": "child-erc",
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "sch",
+      "erc",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/child-native-erc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/header-board/nexus-header-board.kicad_sch"
+    ],
+    "start_utc": "2026-10-15T10:53:31.743411+00:00",
+    "end_utc": "2026-10-15T10:53:41.655729+00:00",
+    "exit_code": 0
+  }
+]

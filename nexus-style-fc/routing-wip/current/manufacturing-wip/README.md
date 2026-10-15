@@ -1,3 +1,7 @@
-# WIP review exports — not manufacturing release
+# Unreleased review BOM/CPL
 
-These BOM/CPL files were regenerated with the exact reviewed main-only source selector and real native KiCad position export from PCB `ee1b9b1c814998b957b03777644b531f78b5301856c2a5eb823a6ef07c99059c`. C27/C31 are C602037; D5 is at its approved moved position. [Source binding](source-binding.json) and [full comparison](../../2026-10-15/input-caps-checkpoint/r62-input-cap-star/source-export-verification.json) are retained. No production Gerber/drill release is supplied here. Electrical, mechanical, assembly and process gates remain open. Do not submit these files for assembly.
+Actual exports from the exact annotation successor. The five authorized footprint aliases are the
+only BOM metadata changes. Selected components, values, JLC/LCSC codes and quantities are unchanged.
+CPL is byte-identical: 83 machine placements, J1 manual joint omitted and J6 retained. Reel zero-angle,
+mixed-technology shell soldering, paste/via process and physical qualification remain open.
+See the source-bound export receipt in the latest accepted checkpoint. These are not production files.

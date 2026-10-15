@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/study/preflight_annotation_variants_10.py", line 15, in <module>
+    p=C/row['variant_library'];assert sha(p)==row['variant_library_sha256'];f=P.FootprintLoad(str(p.parent),p.stem);assert f is not None,ref;probe.Add(f);f.SetReference(ref);f.SetPosition(source[ref].GetPosition());f.SetOrientationDegrees(source[ref].GetOrientationDegrees());assert f.GetLayer()==source[ref].GetLayer();assert shapes(f)==shapes(source[ref]),(ref,'native graphic geometry');assert pads(f)==pads(source[ref]),(ref,'native pad geometry');rows.append({'ref':ref,'library':row['variant_library'],'sha256':sha(p),'native_shapes_match_approved_stage09':True,'native_pad_geometry_match':True,'shape_count':len(shapes(f)),'pad_count':len(pads(f))})
+                                                                                                                                                                                                                                                                                                                                       ^^^^^^^^^
+  File "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/study/preflight_annotation_variants_10.py", line 10, in shapes
+    out.append([int(g.GetShape()),int(g.GetLayer()),int(g.GetWidth()),xy(g.GetStart()),xy(g.GetEnd()),bool(g.IsFilled())])
+                                                                                                           ^^^^^^^^^^
+AttributeError: 'PCB_SHAPE' object has no attribute 'IsFilled'. Did you mean: 'SetFilled'?

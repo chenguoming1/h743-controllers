@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+    "pcb",
+    "drc",
+    "--all-track-errors",
+    "--schematic-parity",
+    "--refill-zones",
+    "--save-board",
+    "--severity-all",
+    "--format",
+    "json",
+    "--exit-code-violations",
+    "-o",
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-signal-slot-08/native-drc.json",
+    "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-signal-slot-08/hardware/nexus-style-fc.kicad_pcb"
+  ],
+  "started_utc": "2026-10-15T09:48:23.785855+00:00",
+  "finished_utc": "2026-10-15T09:48:47.762776+00:00",
+  "exit_code": 5,
+  "board_sha256": "ccd8865f6785fd1cdec0214a08fe409faed4d47bb01e8474f09264ee36acab99",
+  "counts": {
+    "track_not_centered_on_via:warning": 11,
+    "silk_edge_clearance:warning": 3,
+    "footprint_type_mismatch:warning": 4,
+    "silk_overlap:warning": 32,
+    "silk_over_copper:warning": 19
+  },
+  "opens": 0,
+  "parity": 0
+}

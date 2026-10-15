@@ -1,0 +1,102 @@
+{
+  "checks": {
+    "closed_main_cutout_contours": true,
+    "continuous_child_bottom_contour": true,
+    "native_and_generated_mating_pad_geometry_agree": true,
+    "full_1p2_signal_1p6_power_widths_retained": true,
+    "all_22_mating_pads_nominal_edge_limits": true,
+    "main_signal_pinmap_and_all_connected_pad_ids_unchanged": "asserted by transaction",
+    "main_schematic_expected_sha256": "7a133c241ba24a688d2d2490ae423ff74d26f57cf6578f871cc757093584de42"
+  },
+  "cases": [
+    {
+      "case": "nominal",
+      "slot_length": 10.1,
+      "slot_width": 2.2,
+      "child_thickness": 1.6,
+      "entire_tab_envelope_width": 8.4,
+      "slot_radius": 0.5,
+      "pair_pitch_mismatch": 0,
+      "usable_width": 10.016515138991167,
+      "remaining_total_x_budget": 1.6165151389911667,
+      "total_y_budget": 0.6000000000000001,
+      "rigid_centered_size_screen": "no interference",
+      "unallocated_common_x_translation_half_budget": 0.8082575694955834
+    },
+    {
+      "case": "adverse_size_R0.5",
+      "slot_length": 9.9,
+      "slot_width": 2.0,
+      "child_thickness": 1.76,
+      "entire_tab_envelope_width": 8.6,
+      "slot_radius": 0.5,
+      "pair_pitch_mismatch": 0,
+      "usable_width": 9.549923072370877,
+      "remaining_total_x_budget": 0.9499230723708774,
+      "total_y_budget": 0.24,
+      "rigid_centered_size_screen": "no interference",
+      "unallocated_common_x_translation_half_budget": 0.4749615361854387
+    },
+    {
+      "case": "adverse_size_pitch0.4_R0.5",
+      "slot_length": 9.9,
+      "slot_width": 2.0,
+      "child_thickness": 1.76,
+      "entire_tab_envelope_width": 8.6,
+      "slot_radius": 0.5,
+      "pair_pitch_mismatch": 0.4,
+      "usable_width": 9.549923072370877,
+      "remaining_total_x_budget": 0.5499230723708773,
+      "total_y_budget": 0.24,
+      "rigid_centered_size_screen": "no interference",
+      "unallocated_common_x_translation_half_budget": 0.27496153618543867
+    },
+    {
+      "case": "adverse_size_pitch0.4_R0.55",
+      "slot_length": 9.9,
+      "slot_width": 2.0,
+      "child_thickness": 1.76,
+      "entire_tab_envelope_width": 8.6,
+      "slot_radius": 0.55,
+      "pair_pitch_mismatch": 0.4,
+      "usable_width": 9.48585712797929,
+      "remaining_total_x_budget": 0.4858571279792908,
+      "total_y_budget": 0.24,
+      "rigid_centered_size_screen": "no interference",
+      "unallocated_common_x_translation_half_budget": 0.2429285639896454
+    },
+    {
+      "case": "adverse_size_pitch0.4_R0.6",
+      "slot_length": 9.9,
+      "slot_width": 2.0,
+      "child_thickness": 1.76,
+      "entire_tab_envelope_width": 8.6,
+      "slot_radius": 0.6,
+      "pair_pitch_mismatch": 0.4,
+      "usable_width": 9.420000000000002,
+      "remaining_total_x_budget": 0.42000000000000204,
+      "total_y_budget": 0.24,
+      "rigid_centered_size_screen": "no interference",
+      "unallocated_common_x_translation_half_budget": 0.21000000000000102
+    },
+    {
+      "case": "loose_size",
+      "slot_length": 10.299999999999999,
+      "slot_width": 2.4000000000000004,
+      "child_thickness": 1.44,
+      "entire_tab_envelope_width": 8.2,
+      "slot_radius": 0.5,
+      "pair_pitch_mismatch": 0,
+      "usable_width": 10.299199679743742,
+      "remaining_total_x_budget": 2.0991996797437427,
+      "total_y_budget": 0.9600000000000004,
+      "rigid_centered_size_screen": "no interference",
+      "unallocated_common_x_translation_half_budget": 1.0495998398718713
+    }
+  ],
+  "tilt": {
+    "adverse_size_only_max_transverse_tilt_degrees": 7.304445560612671,
+    "equation": "t/cos(theta) + main_thickness*tan(abs(theta)) <= slot_width",
+    "assumptions": "t=1.76, main thickness=1.76, slot width=2.0; straight-sided section only, no bow/burr/finish/radius/position allowances. Not an assembly angle specification."
+  }
+}

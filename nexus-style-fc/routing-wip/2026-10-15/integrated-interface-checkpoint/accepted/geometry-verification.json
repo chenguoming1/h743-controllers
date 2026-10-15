@@ -1,0 +1,940 @@
+{
+  "status": "PASS complete source-bound signal/slot geometry and physical ports; post-refill return and fit review remain required",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "d7d53d855d841e5825671b9c7483fe4ab662ba2baf3639e7f5f28e8933bd10bd",
+        "candidate_sha256": "d7d53d855d841e5825671b9c7483fe4ab662ba2baf3639e7f5f28e8933bd10bd"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a29938d09d293e24c61bfc7e01f4360e745f7a2b49a6000305b9bd0c9b24a0fb",
+        "candidate_sha256": "a29938d09d293e24c61bfc7e01f4360e745f7a2b49a6000305b9bd0c9b24a0fb"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "436765f88d9632ca4c75dfbd3caed664bf6192e0fa4768e26de8c04dd6e09554",
+        "candidate_sha256": "436765f88d9632ca4c75dfbd3caed664bf6192e0fa4768e26de8c04dd6e09554"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "00bc496a15e69988abece6072f23d58f592b2c0129046b4c6da776243fd5c815",
+        "candidate_sha256": "00bc496a15e69988abece6072f23d58f592b2c0129046b4c6da776243fd5c815"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 89,
+      "candidate_footprints": 89,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact.",
+    "approved_normalization": "Only the exact 16 J1 slot-edge records, J1 slot description and two keepout Y polygons, individually checked against sealed old/new specification. Native pad/part geometry, body, stack, rules and all other fields remain exact."
+  },
+  "approved_mechanical_changes": [
+    {
+      "uuid": "0eab7b6a-9deb-563b-b4d2-7a49c29da1b8",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "ec7609c6-dd17-5d02-995f-0f6a5c5f66f7",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "45ea784c-7c21-51e1-a8f1-be01ad836376",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "3afc3c8d-686a-57dc-8996-72699684683e",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "367ab145-e62b-517c-9887-7925a18a70ad",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "2430c59b-cbbd-53d2-bb14-b30de640bbb3",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "04824ebf-df0a-52a5-94fa-5612eaa6e1e9",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "170094b1-2225-54ae-943e-6b9d45cd86b3",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "78bc0f88-f916-509c-b8f0-54967da84386",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "9fabead6-5f41-5d1d-9dcc-ee2443cadba5",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "12d11e31-3e9c-5695-8e8a-f947c2424885",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "35a1e33a-8b4f-5449-ae88-11812fd31ffa",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "d06ea5ab-fe0e-5d92-b254-cdab55b76868",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "40e51994-86b5-50b2-b662-1339e2df7255",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "5e218c17-d1fc-512f-bff2-9c91e6846bea",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "1a44f364-1a78-5c6d-bb39-1e332a4e3872",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a",
+      "exact_approved_change": true
+    },
+    {
+      "uuid": "c67f2612-ad61-4083-8c9a-72e3a887c688",
+      "exact_approved_change": true
+    }
+  ],
+  "source_sha256": "1d40a35cf373bef251f8032001766016f09500b007f22ff27ccb6578b0c4e263",
+  "candidate_sha256": "ccd8865f6785fd1cdec0214a08fe409faed4d47bb01e8474f09264ee36acab99",
+  "retained_direct_contacts": 2728,
+  "original_affected_component_preservation": [
+    {
+      "net": "DSM_DATA",
+      "original_modified_members": [
+        "1820c4c2-7b40-522a-a5f4-bb1f05c3ea7b",
+        "23a76edb-07a7-56c4-ac2b-748fb6295bbe",
+        "527e82f5-aa9c-530c-848d-87b60ae4314f"
+      ],
+      "retained_members": [
+        "0c0b060d-12fa-4b11-b100-019c978df58e",
+        "0e45d849-5983-4bd9-aecb-211aab5877ea",
+        "0fd631d7-2a04-46b8-9d86-b6d6fc46fa7e",
+        "2421b8d0-477e-49dc-8c0a-8971baedc08e",
+        "277e2020-42f5-4c3e-bac7-f580914ca13d",
+        "2b221ed7-32c4-4c0f-8f21-0fac43dca4f2",
+        "2c3f2c86-eaeb-4e5c-bc9f-3f7eb53a9ec5",
+        "2f753c74-945f-468b-8c7e-c02c12a05525",
+        "2fd86053-be10-40ab-9ab6-6c7b587735d9",
+        "30710790-4e0b-459a-a62f-d5873fc3ac53",
+        "3127e196-51ab-44b3-8c0b-785bf79ce8c6",
+        "3b5e6ada-3dec-4d76-b263-92307a1455cd",
+        "45e5da5c-222c-44a3-864c-1627ea672357",
+        "47b2f342-5fd8-5b6b-b90a-976bbb4d9279",
+        "48ae8d55-0ca9-407d-86f6-fae31fa4b2e2",
+        "4a8edaa1-b102-4207-82c7-622d6c351f52",
+        "4b8974ed-bdd7-49d3-891a-6735916d0283",
+        "4d7f1026-e3e3-5f38-9c98-7a0a759a52d0",
+        "5988b255-ef83-49f0-b20c-0b5eb0c2bbd1",
+        "59a85cd0-1f95-4154-9c45-b79b472c328d",
+        "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+        "5f42572a-67e1-5028-967c-9d558ea6f2a0",
+        "6968e172-efb0-45fa-a496-1e5a81c809dc",
+        "77201ee5-9b4c-4173-b410-91a623eb23d2",
+        "81316fa3-625c-41db-8b07-eae477954384",
+        "87e8d54f-5287-4323-90ad-2ba690cc25e3",
+        "88b1df64-4782-4f1e-a7bb-5e851569dec6",
+        "8f8ab239-441d-4935-b778-fa5f611032d7",
+        "90cf6d36-3657-54ce-80be-a098e50d6a5a",
+        "971a5798-0240-48f6-9b9a-232862b9cb71",
+        "97c13329-2e7d-4d4f-aea4-a4159a9a10e1",
+        "a50c1c1d-e0ba-49bc-a766-07f50271cce1",
+        "aa910f8e-857c-4d0a-90e1-17c327b36a6c",
+        "ac642dcd-c3c9-4b0b-8607-030b4dfaccb8",
+        "b4090169-dbe5-4621-8cb1-c59bdd87ee0e",
+        "b5be3d01-736e-46d5-b8bd-d703782e1980",
+        "b6f030cf-869c-4747-8af6-394bc5b2e415",
+        "b8a4a05a-c4fe-471c-9774-9ae6eb8ba5bd",
+        "bb23b271-f7c2-469d-b1f2-14bc6b5ab3ed",
+        "bedffad1-ac19-4264-b90b-95bdf2ef0a29",
+        "c145da0f-e4d0-45ba-adfd-4d47530b42ed",
+        "c9261bdf-7d69-441b-8b59-a0bb30aacf1f",
+        "c93748ed-b076-4ce8-9c73-a59a61e9f25c",
+        "ca1f9602-ae5d-4b94-aebf-aed0dcf4dd9a",
+        "cac5e298-a3f9-4b9d-82da-dfb7a1bb1be1",
+        "d8dc9233-2a5c-462d-b33b-ea97b9aea3df",
+        "daa79a0c-b443-5924-8c4c-875ac5b3a4b6",
+        "dacfa6a2-e243-418d-b906-6ab881f301fc",
+        "df9c4500-e3fb-4372-b00b-7045965660cb",
+        "e0d0f9cf-3aa4-4b01-9851-aa2999f40805",
+        "e22b4130-083a-495b-9c23-b8c63feb03ed",
+        "e29db36d-b2b4-4217-99c2-53d850c577a7",
+        "e79d29fc-3fbc-43e0-b5d6-54e6a9022da7",
+        "ede7822e-a074-4220-acb9-a96ce6359396",
+        "f4258c4b-d39a-4aef-9243-ffd1d7e75bf2",
+        "f46ea90d-7fc9-4106-b902-3e6cc10a6d80",
+        "f4d1763d-11c2-40b1-af7a-0207af1b49d5",
+        "f7ab70ca-845d-4161-8a13-ff5ad497c055",
+        "f833ccbd-99a0-4fd6-a9ee-746fb01c2152",
+        "fb1603c5-23e7-5d3d-8d9e-6f1747be3eec",
+        "fd1c928e-8edd-5d48-b27f-09b58d266c2f"
+      ],
+      "all_remain_explicitly_connected": true
+    },
+    {
+      "net": "RPM",
+      "original_modified_members": [
+        "0776de35-d936-5dc0-9f8e-467207c0608c",
+        "207d5aae-fdb6-5c5b-9fa8-b001300e018f",
+        "3f128601-71a7-5c11-94ad-ec17ff3f09f5",
+        "95bb64e1-40db-5533-8e8f-5b0e17c9fb93",
+        "9a14f81a-c3d1-51ef-8ac6-bc16bacc3273",
+        "a8d184d4-2bd8-5d1e-a6c8-9d1da6045780"
+      ],
+      "retained_members": [
+        "0557afdd-6755-44e7-8edd-6f6a9a51003c",
+        "1407684f-ef4f-42cd-b116-6f5d19576f18",
+        "20667b3a-f69e-5480-a56f-9c6c28587e7a",
+        "2e5b7770-9cd5-46bc-9d3c-7ec3c2940d0a",
+        "5e6e604b-0714-495f-b34b-8bf4f96f8668",
+        "6bd0af4e-b749-44e7-9946-a9679f19578e",
+        "70fa77fa-e0d3-4fa0-bc3e-e47879dded91",
+        "7ff50f3e-8ad0-42ca-8d30-b78821d5b75b",
+        "8a2c6b89-c079-5b50-8655-00c752b32db0",
+        "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+        "936787b7-9ab6-5760-98fc-fd6bf549dd35",
+        "a5e5bc86-52b4-4da9-8b3b-c0d45aee3200",
+        "a7fcb347-a27d-4b04-b06a-966c6999035b",
+        "aa74afe7-2a19-51be-a607-b8b2b2d4519b",
+        "ac498990-e515-4440-bfd2-6098f34b593b",
+        "c210b3cc-4f70-499d-89e6-187c1acfff2d",
+        "d803b6e9-1234-4261-8866-0c7729f6f1ec",
+        "ddee4200-187f-498f-85ba-46c07ae1d279",
+        "f06dc209-c025-4528-8c09-e0af5ba19eb6"
+      ],
+      "all_remain_explicitly_connected": true
+    },
+    {
+      "net": "SBUS",
+      "original_modified_members": [
+        "462b10e8-de29-5589-bf84-1e5fe532c011",
+        "52495b62-e8d8-5974-b48a-9ad0746192a9",
+        "d660d049-2008-4d65-8191-98514fc6022c"
+      ],
+      "retained_members": [
+        "0cc71973-cff9-453a-bdd0-0a653a874dea",
+        "113de551-7be4-4a13-8e02-0620b3159ae7",
+        "1eb91479-ef90-4072-871d-14040854059b",
+        "212a552a-bc2b-4201-8f5e-a5fb732c492d",
+        "38829a86-f282-4185-8540-d2df746679cf",
+        "3ab75202-06dd-4641-82e9-a35daa0870d6",
+        "583731a7-307f-4ae4-926e-fc2366f831a9",
+        "5a1bf48f-8ff0-41f3-8521-69e77cdb7893",
+        "618dd4d0-5a91-4e29-ab37-ce61b1537064",
+        "6a1a798b-1bd7-41e7-a0af-bed3844e3bce",
+        "749a0d59-9a3d-4c69-926c-023574c75069",
+        "7f79880d-1257-42a8-ac78-beb40a3758e8",
+        "854cb221-9dc3-4522-9d75-1b7eb84b6745",
+        "9c0cf058-2cf2-45a3-8d4e-361cb413c6a1",
+        "9ecefde7-dc1c-4acc-b00f-9b6dba50a2f0",
+        "a9b8c547-4c04-4306-98f8-636cfc24d9cc",
+        "cc0531cc-d19b-4fae-a0f0-24264b2e173d",
+        "d44c2b59-39cd-49be-af83-003c2edfd198",
+        "d7d00f3c-fa71-4391-bbeb-56b53a6c42eb",
+        "e40e44e1-b9b5-4af8-8873-e2aee90f2691",
+        "e4c61ca8-563e-466e-8ced-2a2d6d2b48f9",
+        "f40c88c5-9a6d-4d9f-a2fd-9bd25af267d4",
+        "fc61c06b-9b03-4009-afe0-f8d6b0436f46"
+      ],
+      "all_remain_explicitly_connected": true
+    }
+  ],
+  "external_contact_inventory": [
+    {
+      "changed": "52495b62-e8d8-5974-b48a-9ad0746192a9",
+      "port": "38829a86-f282-4185-8540-d2df746679cf"
+    },
+    {
+      "changed": "d660d049-2008-4d65-8191-98514fc6022c",
+      "port": "9ecefde7-dc1c-4acc-b00f-9b6dba50a2f0"
+    },
+    {
+      "changed": "a8d184d4-2bd8-5d1e-a6c8-9d1da6045780",
+      "port": "8d4e76ee-941f-4cc6-8549-2fd09506e82a"
+    },
+    {
+      "changed": "207d5aae-fdb6-5c5b-9fa8-b001300e018f",
+      "port": "a7fcb347-a27d-4b04-b06a-966c6999035b"
+    },
+    {
+      "changed": "1820c4c2-7b40-522a-a5f4-bb1f05c3ea7b",
+      "port": "4d7f1026-e3e3-5f38-9c98-7a0a759a52d0"
+    },
+    {
+      "changed": "527e82f5-aa9c-530c-848d-87b60ae4314f",
+      "port": "ede7822e-a074-4220-acb9-a96ce6359396"
+    }
+  ],
+  "replacement_components": {
+    "DSM_DATA": [
+      {
+        "modified_objects": [
+          "922695a3-bcd0-5bbe-adc0-53963206ea20",
+          "a594b6e4-7240-5b74-bcb6-9fbbe16ea2e3",
+          "b8df0722-920f-5c52-926b-f6e59aa5b2e0",
+          "bc4b4030-b3c5-50fd-82ea-4960db15edff",
+          "c1958fcd-2792-5784-b84b-4025e33436d4",
+          "c7c850ed-ad45-51eb-b36f-095e0634617a",
+          "db5c0bcc-bbe9-58c7-afc2-071ead82f854",
+          "e6ce9485-0c34-5f01-8f1b-79465ce94e4a"
+        ],
+        "external_ports": [
+          "4d7f1026-e3e3-5f38-9c98-7a0a759a52d0",
+          "ede7822e-a074-4220-acb9-a96ce6359396"
+        ],
+        "object_count": 69
+      }
+    ],
+    "RPM": [
+      {
+        "modified_objects": [
+          "8477f743-9c81-5e95-b3fd-e0b142c2b62f",
+          "994759f4-711e-50b5-8ef8-e65918386439",
+          "9f67c3ab-cef6-5140-964d-7b448cad0b85",
+          "c017aeaa-3efb-5b7c-a2d0-3604a8a1c43f",
+          "cf38346f-679e-53ee-b051-56908f66edf8",
+          "f5e5375a-5ee4-5e9a-affa-bd3674c1d5c5"
+        ],
+        "external_ports": [
+          "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+          "a7fcb347-a27d-4b04-b06a-966c6999035b"
+        ],
+        "object_count": 25
+      }
+    ],
+    "SBUS": [
+      {
+        "modified_objects": [
+          "3818c825-1689-552d-a124-144c6a7d91f3",
+          "68968eff-516a-5e7e-850c-41dbfc73601f",
+          "a72d67b7-c8e8-5395-974c-29b0029624dc"
+        ],
+        "external_ports": [
+          "38829a86-f282-4185-8540-d2df746679cf",
+          "9ecefde7-dc1c-4acc-b00f-9b6dba50a2f0"
+        ],
+        "object_count": 26
+      }
+    ]
+  },
+  "full_width_external_ports": [
+    {
+      "port": "9ecefde7-dc1c-4acc-b00f-9b6dba50a2f0",
+      "full_width_donor_path": [
+        "9ecefde7-dc1c-4acc-b00f-9b6dba50a2f0",
+        "a72d67b7-c8e8-5395-974c-29b0029624dc"
+      ],
+      "proofs": [
+        {
+          "tracks": [
+            "9ecefde7-dc1c-4acc-b00f-9b6dba50a2f0",
+            "a72d67b7-c8e8-5395-974c-29b0029624dc"
+          ],
+          "exact_shared_centerline_endpoints": [
+            [
+              104.655331,
+              105.475
+            ]
+          ],
+          "widths_mm": [
+            0.127,
+            0.127
+          ]
+        }
+      ]
+    },
+    {
+      "port": "38829a86-f282-4185-8540-d2df746679cf",
+      "full_width_donor_path": [
+        "38829a86-f282-4185-8540-d2df746679cf",
+        "3818c825-1689-552d-a124-144c6a7d91f3"
+      ],
+      "proofs": [
+        {
+          "track": "3818c825-1689-552d-a124-144c6a7d91f3",
+          "port": "38829a86-f282-4185-8540-d2df746679cf",
+          "layer": "In2.Cu",
+          "width_mm": 0.127,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              102.36340578918089,
+              104.3565973603328
+            ],
+            [
+              102.26261778129683,
+              104.43386816637725
+            ],
+            [
+              102.37557442005402,
+              104.37246948755863
+            ],
+            [
+              102.27478641216996,
+              104.44974029360309
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "port": "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+      "full_width_donor_path": [
+        "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+        "8477f743-9c81-5e95-b3fd-e0b142c2b62f"
+      ],
+      "proofs": [
+        {
+          "track": "8477f743-9c81-5e95-b3fd-e0b142c2b62f",
+          "port": "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+          "layer": "In2.Cu",
+          "width_mm": 0.127,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              103.33580528824709,
+              104.20913826692772
+            ],
+            [
+              103.34372733058879,
+              104.33589094439505
+            ],
+            [
+              103.35576633981675,
+              104.20789070120462
+            ],
+            [
+              103.36368838215846,
+              104.33464337867194
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "port": "a7fcb347-a27d-4b04-b06a-966c6999035b",
+      "full_width_donor_path": [
+        "a7fcb347-a27d-4b04-b06a-966c6999035b",
+        "c017aeaa-3efb-5b7c-a2d0-3604a8a1c43f"
+      ],
+      "proofs": [
+        {
+          "track": "c017aeaa-3efb-5b7c-a2d0-3604a8a1c43f",
+          "port": "a7fcb347-a27d-4b04-b06a-966c6999035b",
+          "layer": "In2.Cu",
+          "width_mm": 0.127,
+          "depth_mm": 0.02,
+          "corners": [
+            [
+              109.03342391262692,
+              106.36758293329443
+            ],
+            [
+              108.94464302335888,
+              106.45839567304374
+            ],
+            [
+              109.04772513148507,
+              106.38156417569884
+            ],
+            [
+              108.95894424221703,
+              106.47237691544815
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "port": "4d7f1026-e3e3-5f38-9c98-7a0a759a52d0",
+      "full_width_donor_path": [
+        "4d7f1026-e3e3-5f38-9c98-7a0a759a52d0",
+        "c1958fcd-2792-5784-b84b-4025e33436d4"
+      ],
+      "proofs": [
+        {
+          "tracks": [
+            "4d7f1026-e3e3-5f38-9c98-7a0a759a52d0",
+            "c1958fcd-2792-5784-b84b-4025e33436d4"
+          ],
+          "exact_shared_centerline_endpoints": [
+            [
+              106.9,
+              107.05
+            ]
+          ],
+          "widths_mm": [
+            0.127,
+            0.127
+          ]
+        }
+      ]
+    },
+    {
+      "port": "ede7822e-a074-4220-acb9-a96ce6359396",
+      "full_width_donor_path": [
+        "ede7822e-a074-4220-acb9-a96ce6359396",
+        "c7c850ed-ad45-51eb-b36f-095e0634617a"
+      ],
+      "proofs": [
+        {
+          "tracks": [
+            "ede7822e-a074-4220-acb9-a96ce6359396",
+            "c7c850ed-ad45-51eb-b36f-095e0634617a"
+          ],
+          "exact_shared_centerline_endpoints": [
+            [
+              100.425,
+              105.075
+            ]
+          ],
+          "widths_mm": [
+            0.127,
+            0.127
+          ]
+        }
+      ]
+    }
+  ],
+  "new_moved_via_entries": [],
+  "approved_pad_entries": [],
+  "U14_EN_VIN_branch_cut_proof": [],
+  "power_width_preservation": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 81,
+        "candidate_items": 81,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.15,
+        "candidate_minimum_mm": 0.15,
+        "required_floor_mm": 0.15,
+        "baseline_items": 76,
+        "candidate_items": 76,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 21,
+        "candidate_items": 21,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 11,
+        "candidate_items": 11,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 58,
+        "candidate_items": 58,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 81,
+        "candidate_items": 81,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 140,
+        "candidate_items": 140,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "pasted_before": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "pasted_after": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "paste_contacts_after": [
+    {
+      "via_uuid": "60a570d4-d180-4837-955a-c82a7043b5e1",
+      "via_position_iu": [
+        109875000,
+        109425000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "C19",
+      "pad": "2",
+      "pad_uuid": "0c2644fc-74b6-44df-8fe2-efdd67e19a51",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "75531463-64bc-4739-9786-f6f8b5e46a18",
+      "via_position_iu": [
+        101975000,
+        116375000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "C24",
+      "pad": "2",
+      "pad_uuid": "c768a300-ec95-44b0-adf7-5b1d684883ef",
+      "pad_net": "GND",
+      "layer": "B.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "c4b3b423-445a-49e6-94c7-60580fca053f",
+      "via_position_iu": [
+        117575000,
+        124775000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "C26",
+      "pad": "2",
+      "pad_uuid": "c0a690ab-58cb-4c54-b88e-d50122e3630d",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "c6b2be3c-7a31-443d-a979-07b36853d97f",
+      "via_position_iu": [
+        121075000,
+        106925000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "3V3",
+      "footprint": "C3",
+      "pad": "1",
+      "pad_uuid": "4f9413e2-88a5-41bb-bdf3-85e1fa2a4f52",
+      "pad_net": "3V3",
+      "layer": "B.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "d30fd1f1-ea51-4879-afb4-cb5b48b11566",
+      "via_position_iu": [
+        112825000,
+        109975000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "C9",
+      "pad": "2",
+      "pad_uuid": "c2fb5e54-d00a-40ba-a0ee-a1696af1b9ef",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "75531463-64bc-4739-9786-f6f8b5e46a18",
+      "via_position_iu": [
+        101975000,
+        116375000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J2",
+      "pad": "5",
+      "pad_uuid": "376d1147-a7d3-4a6f-9bb1-6d35b740c15a",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "0681e911-2822-4e01-aad6-56e27edbf6d1",
+      "via_position_iu": [
+        119975000,
+        116375000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J3",
+      "pad": "6",
+      "pad_uuid": "5a8f079a-2faa-4fec-baff-7bc8752dfcdc",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "097c5d92-2f36-4050-b22e-14c4f712950a",
+      "via_position_iu": [
+        101825000,
+        123725000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J4",
+      "pad": "6",
+      "pad_uuid": "cc366a5d-f086-4ddc-b11a-97623ddc8a7c",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "25ba0288-a08d-4fc8-969d-e2de64ccd669",
+      "via_position_iu": [
+        119975000,
+        122375000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "J5",
+      "pad": "5",
+      "pad_uuid": "d84735a1-cd46-4c3a-bef0-b15747515659",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "9f8ce822-f748-44e1-bd99-7bd276d97d9f",
+      "via_position_iu": [
+        113225000,
+        126975000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "R14",
+      "pad": "2",
+      "pad_uuid": "3fc74b6a-fabf-40e5-964e-5faa24e015f1",
+      "pad_net": "GND",
+      "layer": "B.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "d803b6e9-1234-4261-8866-0c7729f6f1ec",
+      "via_position_iu": [
+        109775000,
+        118025000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "RPM",
+      "footprint": "U1",
+      "pad": "16",
+      "pad_uuid": "6bd0af4e-b749-44e7-9946-a9679f19578e",
+      "pad_net": "RPM",
+      "layer": "B.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "542bda53-3f22-4449-92e4-39e5cfb5d551",
+      "via_position_iu": [
+        120125000,
+        114075000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "I2C1_SCL",
+      "footprint": "U1",
+      "pad": "61",
+      "pad_uuid": "165541fd-a165-4ac0-8ca5-fbcdd01ce732",
+      "pad_net": "I2C1_SCL",
+      "layer": "B.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "b96d95ce-3a93-4c15-98c1-3e21617b4956",
+      "via_position_iu": [
+        105725000,
+        106625000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "U11",
+      "pad": "2",
+      "pad_uuid": "395c466c-159d-4988-b17a-edd8130d6d50",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "5f46e9a4-f918-4841-852c-5aabd6a859b8",
+      "via_position_iu": [
+        109975000,
+        111575000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "SPI1_MISO",
+      "footprint": "U2",
+      "pad": "1",
+      "pad_uuid": "2b439799-9fe8-4c47-9a7b-0199abb3c20d",
+      "pad_net": "SPI1_MISO",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "8a84b298-a4a6-4e05-a1fc-469e5ca625b8",
+      "via_position_iu": [
+        112875000,
+        112075000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "U2",
+      "pad": "10",
+      "pad_uuid": "b789020e-400a-478d-9418-3e0c83a7dd84",
+      "pad_net": "GND",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "2f0f2bad-7fd0-41f4-94b8-6cc583942404",
+      "via_position_iu": [
+        112825000,
+        107275000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "3V3_SENS",
+      "footprint": "U3",
+      "pad": "6",
+      "pad_uuid": "3cf2f46d-7dc9-4345-a124-9a5550da4f8a",
+      "pad_net": "3V3_SENS",
+      "layer": "F.Cu",
+      "same_net": true
+    },
+    {
+      "via_uuid": "de26675a-ecba-4fa3-966f-2bc38e53bb1f",
+      "via_position_iu": [
+        102675000,
+        108225000
+      ],
+      "drill_mm": 0.2,
+      "via_net": "GND",
+      "footprint": "U5",
+      "pad": "17",
+      "pad_uuid": "3b1989eb-2d2e-468e-bcbd-28504c38821f",
+      "pad_net": "GND",
+      "layer": "B.Cu",
+      "same_net": true
+    }
+  ],
+  "new_pasted_contacts": [],
+  "U10_EN_isolated": true
+}

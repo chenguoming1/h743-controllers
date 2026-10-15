@@ -30,7 +30,7 @@ PARTS.append(dict(ref="T2", sym="Connector_Generic:Conn_01x01", value="VX tab pa
 OUTER_NETS_CHILD = {"1": "VX", "2": "GND"}
 for i, ((a, b), n) in enumerate(zip(mf.BARS_CHILD, reversed(mf.OUTER_NETS_MAIN))):
     net = OUTER_NETS_CHILD[n]
-    w = round(b - a - 2 * mf.STRIP_INSET, 2)
+    w = round(b - a - 2 * mf.STRIP_INSET, 3)
     PARTS.append(dict(ref=f"K{i + 1}", sym="Connector_Generic:Conn_01x01", value=f"{net} strip", lcsc="",
                       fp="NexusFC:" + mf.strip_name(w), pins={"1": net},
                       place=("xy", (a + b) / 2, 0, 0, "F"), group="CHILD",

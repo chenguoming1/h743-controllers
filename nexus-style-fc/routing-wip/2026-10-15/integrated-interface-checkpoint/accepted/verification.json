@@ -1,0 +1,483 @@
+{
+  "status": "ACCEPTED EXPERIMENTAL integrated zero-error mechanical routing checkpoint; physical qualification remains open",
+  "source_sha256": "1d40a35cf373bef251f8032001766016f09500b007f22ff27ccb6578b0c4e263",
+  "candidate_sha256": "ccd8865f6785fd1cdec0214a08fe409faed4d47bb01e8474f09264ee36acab99",
+  "native_drc_sha256": "614b1dfe003a5d837c9d4c2090b37c9cce1d3f0c028f8eee70a8df65703efc94",
+  "errors": 0,
+  "opens": 0,
+  "physical_schematic_parity_findings": 0,
+  "dangling": 0,
+  "counts": {
+    "track_not_centered_on_via:warning": 11,
+    "silk_edge_clearance:warning": 3,
+    "footprint_type_mismatch:warning": 4,
+    "silk_overlap:warning": 32,
+    "silk_over_copper:warning": 19
+  },
+  "full_width_external_ports": 6,
+  "retained_direct_contacts": 2728,
+  "source_schematic_sha256": "7a133c241ba24a688d2d2490ae423ff74d26f57cf6578f871cc757093584de42",
+  "main_binding_sha256": "36bebd4fe4ca7ad6da19ede924cfea3e331075fcdc66e2036f32360583c4bcb1",
+  "approved_geometry": "10.10 x 2.20 mm R0.50 slots, fixed centres/pads/child/body; expanded two keepout Y ranges101.00..103.80; exactly12 complete signal tracks become17, all .127 mm In2, no vias moved. RPM In4 trench removed.",
+  "RPM_return_restoration": {
+    "status": "MEASURED restored RPM In2 reference and direct TAIL return witnesses",
+    "candidate_sha256": "ccd8865f6785fd1cdec0214a08fe409faed4d47bb01e8474f09264ee36acab99",
+    "RPM_actual_full_width_projection": {
+      "copper_area_mm2": 0.86368371751,
+      "uncovered_In1_area_mm2": 0.1020067082495,
+      "transition_envelope_radius_mm": 0.425,
+      "uncovered_outside_two_transition_envelopes_mm2": 0.0,
+      "outside_bound_components": 0
+    },
+    "RPM_transition_finite_ground_contacts": [
+      {
+        "RPM_via": "8d4e76ee-941f-4cc6-8549-2fd09506e82a",
+        "position": [
+          103.22,
+          104.28
+        ],
+        "nearest_finite_ground_transfer": [
+          {
+            "via": "b96d95ce-3a93-4c15-98c1-3e21617b4956",
+            "position": [
+              105.725,
+              106.625
+            ],
+            "component": "In1.Cu:0",
+            "annular_patch": {
+              "angle_deg": 0,
+              "width_mm": 0.127,
+              "depth_mm": 0.02,
+              "corners": [
+                [
+                  105.865,
+                  106.5615
+                ],
+                [
+                  105.88499999999999,
+                  106.5615
+                ],
+                [
+                  105.88499999999999,
+                  106.6885
+                ],
+                [
+                  105.865,
+                  106.6885
+                ]
+              ]
+            },
+            "distance_mm": 3.431333560002579
+          },
+          {
+            "via": "b96d95ce-3a93-4c15-98c1-3e21617b4956",
+            "position": [
+              105.725,
+              106.625
+            ],
+            "component": "In4.Cu:0",
+            "annular_patch": {
+              "angle_deg": 0,
+              "width_mm": 0.127,
+              "depth_mm": 0.02,
+              "corners": [
+                [
+                  105.865,
+                  106.5615
+                ],
+                [
+                  105.88499999999999,
+                  106.5615
+                ],
+                [
+                  105.88499999999999,
+                  106.6885
+                ],
+                [
+                  105.865,
+                  106.6885
+                ]
+              ]
+            },
+            "distance_mm": 3.431333560002579
+          }
+        ]
+      },
+      {
+        "RPM_via": "a7fcb347-a27d-4b04-b06a-966c6999035b",
+        "position": [
+          109.089142,
+          106.510858
+        ],
+        "nearest_finite_ground_transfer": [
+          {
+            "via": "60a570d4-d180-4837-955a-c82a7043b5e1",
+            "position": [
+              109.875,
+              109.425
+            ],
+            "component": "In1.Cu:0",
+            "annular_patch": {
+              "angle_deg": 0,
+              "width_mm": 0.127,
+              "depth_mm": 0.02,
+              "corners": [
+                [
+                  110.015,
+                  109.36149999999999
+                ],
+                [
+                  110.035,
+                  109.36149999999999
+                ],
+                [
+                  110.035,
+                  109.4885
+                ],
+                [
+                  110.015,
+                  109.4885
+                ]
+              ]
+            },
+            "distance_mm": 3.018243925253225
+          },
+          {
+            "via": "60a570d4-d180-4837-955a-c82a7043b5e1",
+            "position": [
+              109.875,
+              109.425
+            ],
+            "component": "In4.Cu:0",
+            "annular_patch": {
+              "angle_deg": 0,
+              "width_mm": 0.127,
+              "depth_mm": 0.02,
+              "corners": [
+                [
+                  110.015,
+                  109.36149999999999
+                ],
+                [
+                  110.035,
+                  109.36149999999999
+                ],
+                [
+                  110.035,
+                  109.4885
+                ],
+                [
+                  110.015,
+                  109.4885
+                ]
+              ]
+            },
+            "distance_mm": 3.018243925253225
+          }
+        ]
+      }
+    ],
+    "TAIL_direct_ground_witnesses": [
+      {
+        "retained_B_track": "f0e51cc4-fc8d-4c3e-beb8-bedb938236c5",
+        "net": "TAIL",
+        "old_grid_witness_length_mm": 10.950000000000003,
+        "new_direct_witness_length_mm": 0.8139410298049993,
+        "width_mm": 0.127,
+        "endpoints": [
+          [
+            107.1,
+            105.15
+          ],
+          [
+            107.65,
+            104.55
+          ]
+        ],
+        "uncovered_swept_area_mm2": 0.0,
+        "contained": true
+      },
+      {
+        "retained_B_track": "483b7cc9-fabd-52a4-8c6b-7218f061cc81",
+        "net": "TAIL",
+        "old_grid_witness_length_mm": 9.5,
+        "new_direct_witness_length_mm": 0.9219544457292764,
+        "width_mm": 0.127,
+        "endpoints": [
+          [
+            107.65,
+            104.65
+          ],
+          [
+            108.25,
+            105.35
+          ]
+        ],
+        "uncovered_swept_area_mm2": 0.0,
+        "contained": true
+      }
+    ],
+    "ESC_same_probe_classification": {
+      "retained_B_track": "250359cd-954a-42aa-b249-9e299fc16f81",
+      "same_old_probe": [
+        105.47900000000001,
+        104.071
+      ],
+      "local_measurement_radius_mm": 0.2,
+      "own_ESC_via": "7f1a6800-9665-4da9-adf9-0538a13f207d",
+      "via_position": [
+        105.3,
+        104.42
+      ],
+      "probe_to_own_via_mm": 0.39222697510498744,
+      "own_antipad_radius_mm": 0.425,
+      "probe_inside_own_antipad": true,
+      "local_uncovered_ground_mm2": 0.040806233256,
+      "uncovered_outside_own_ESC_antipad_mm2": 0.0,
+      "interpretation": "The old endpoint-search probe is inside the retained ESC transition antipad. The exact local disk is used to distinguish that necessary transition opening from the removed RPM trench; no missing endpoint is called a disconnected plane."
+    },
+    "qualification": "Finite geometry and restored direct .127 mm ground witnesses do not establish SI/EMI or return impedance. Nearest actual ground-transfer distances are measurements, not arbitrary acceptance thresholds."
+  },
+  "all_cap_star_full_width_reference_deltas": [
+    {
+      "key": [
+        "VX_top",
+        "In3.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VX_top",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VX_left",
+        "In3.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VX_left",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VX_right",
+        "In3.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VX_right",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VX_D5",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VIN_cap",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VIN_F",
+        "F.Cu",
+        "In1.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "VIN_B",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "EN_inner",
+        "In3.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "EN_inner",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "EN_B",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "GND_F_port",
+        "F.Cu",
+        "In1.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "GND_inner",
+        "In1.Cu",
+        "F.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "GND_inner",
+        "In1.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "west_0",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "west_1",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "west_2",
+        "In3.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "west_2",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "west_3",
+        "In3.Cu",
+        "In2.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "west_3",
+        "In3.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "C31 VSYS lead",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "C27 direct GND port preservation",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    },
+    {
+      "key": [
+        "C31 GND via lead",
+        "B.Cu",
+        "In4.Cu"
+      ],
+      "uncovered_area_delta_mm2": 0.0
+    }
+  ],
+  "critical_returns": "All actual cap-star/U5/U11/IMU main-plane paths, U10/C18/C19 returns, USB projections and 96 shield regions pass. In1 and In4 remain single connected filled components with finite shared-via contacts.",
+  "pasted_inventory": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "actual_WIP_BOM_CPL": {
+    "status": "PASS actual native WIP BOM/CPL exports byte-identical to approved r62",
+    "board": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-signal-slot-08/hardware/nexus-style-fc.kicad_pcb",
+    "board_sha256": "ccd8865f6785fd1cdec0214a08fe409faed4d47bb01e8474f09264ee36acab99",
+    "source_r62_board_sha256": "ee1b9b1c814998b957b03777644b531f78b5301856c2a5eb823a6ef07c99059c",
+    "exporter_sha256": "5dd121c3bd0110840ead6ef33c8aa86a7cd4c8179d2cba503cd91a5897439398",
+    "design_sha256": "e8dda72ddd60680c01b8eecf7b9b0e6015a72950b5a0562cc592c47b0c4f4695",
+    "files": [
+      {
+        "file": "nexus-style-fc-bom-jlc.csv",
+        "sha256": "1bd331634b17ee22fcd66cdb2d0948827dfb3974babf7b7258a4911545f6caef",
+        "byte_identical_to_accepted_r62": true,
+        "data_rows": 48
+      },
+      {
+        "file": "nexus-style-fc-cpl-jlc.csv",
+        "sha256": "0047a54fe66ffbb23fbbcf0214f5889df379bd312270925e194ae49a57d3f6fd",
+        "byte_identical_to_accepted_r62": true,
+        "data_rows": 83
+      }
+    ],
+    "runtime_cli": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+    "method": "Exact reviewed bom_cpl main-only selector, real native position export. Diagnostic WIP only; no release CAM."
+  },
+  "child_status": "Exact child/model remains zero-error/open with11 footprint-filter and11 courtyard advisories; carried receipts are explicitly source-bound historical, final successor will refresh.",
+  "ERC_scope": "Exact349-pin schema and library/netlist are unchanged. Carried enabled ERC0 is settings-bound; all-visible source ERC has13 single-global-label warnings.",
+  "qualifications": [
+    "Illustrative adverse size/radius/pitch and +/-0.10X,+/-0.05Y leaves only0.0139966 mm corner reserve; vendor drawing acceptance, registration, solder joint, strength/shock/fatigue remain open.",
+    "RPM ground transfer distances3.431/3.018 mm remain measured SI/EMI qualifications; restored ground geometry is not impedance signoff.",
+    "Power/HF/transient/current and USB actual-stack impedance qualification remain open.",
+    "16 inherited pasted-via locations and under-body tenting/assembly remain open."
+  ],
+  "preparation_failures": "Three deterministic parser/iterator/quoted-node preparation stops occurred before native DRC; preserved logs. One critical-return check exited137 before producing measurements; one bounded non-login retry passed with unchanged source."
+}

@@ -1,0 +1,55 @@
+{
+  "source_project": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-terminal-cleanup-07",
+  "reviewed_output": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-signal-slot-08",
+  "source_main_sha256": "1d40a35cf373bef251f8032001766016f09500b007f22ff27ccb6578b0c4e263",
+  "output_sha256": {
+    "hardware/nexus-style-fc.kicad_pcb": "ccd8865f6785fd1cdec0214a08fe409faed4d47bb01e8474f09264ee36acab99",
+    "hardware/header-board/nexus-header-board.kicad_pcb": "bfec2a120fbda6c97c1f8a36dfff6a35337e13ab1c3af63abb987f529d761403",
+    "hardware/nexus-style-fc.kicad_sch": "7a133c241ba24a688d2d2490ae423ff74d26f57cf6578f871cc757093584de42",
+    "hardware/header-board/nexus-header-board.kicad_sch": "946c4006e8e481bd5d39f61956ce1c61feed1c75d8359751fff5f8ea4ee31fe9",
+    "hardware/library/NexusFC.3dshapes/nexus-header-board-root-relief-candidate.wrl": "e1f0da0372a9d95a13fcff612a7effc7f4033363e482d384f0d170019d3f5dbe"
+  },
+  "tests": {
+    "all_other_footprints_exact_geometry": true,
+    "J1_only_16_edges_and_description_changed": true,
+    "all_11_J1_pads_unchanged": true,
+    "J1_model_transform_unchanged": true,
+    "outer_body_unchanged": true,
+    "thickness_unchanged": true,
+    "setup_rules_unchanged": true,
+    "keepout_79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a": true,
+    "keepout_c67f2612-ad61-4083-8c9a-72e3a887c688": true,
+    "hardware/header-board/nexus-header-board.kicad_pcb_byte_unchanged": true,
+    "hardware/nexus-style-fc.kicad_sch_byte_unchanged": true,
+    "hardware/header-board/nexus-header-board.kicad_sch_byte_unchanged": true,
+    "hardware/library/NexusFC.3dshapes/nexus-header-board-root-relief-candidate.wrl_byte_unchanged": true,
+    "library_exact_bounded_edit": true,
+    "native_library_slot_geometry_agree": true,
+    "shared_slot_dimensions": true,
+    "shared_keepout_offsets": true
+  },
+  "source_tool_checks": {
+    "tools/header_interface_geometry.py": {
+      "expected_sha256": "7f47bf2136ce80e78db3b620cdb5bff7d5f037a280595af307329fa47e5d2d88",
+      "actual_sha256": "7f47bf2136ce80e78db3b620cdb5bff7d5f037a280595af307329fa47e5d2d88",
+      "exact_proposed_text": true
+    },
+    "tools/make_footprints.py": {
+      "expected_sha256": "eee61262367b6e108abfc4f1aee68cb7b8c1fa4dbf05309a2b7e24374ead354a",
+      "actual_sha256": "b749b71dc49f8b5cf71d534f78ab3a1bf5c3b3342efc29342547acdb4992d17c",
+      "exact_proposed_text": false
+    },
+    "tools/apply_header_interface.py": {
+      "expected_sha256": "8653732c82f6df453bf562e8e1076b966a99d118358852fe0192ad25e9696921",
+      "actual_sha256": "8653732c82f6df453bf562e8e1076b966a99d118358852fe0192ad25e9696921",
+      "exact_proposed_text": true
+    },
+    "tools/check_header_interface_static.py": {
+      "expected_sha256": "7ed855295c42b31090e936589348e8cac811905a4eea71a8085454f674ed84dd",
+      "actual_sha256": "7ed855295c42b31090e936589348e8cac811905a4eea71a8085454f674ed84dd",
+      "exact_proposed_text": true
+    }
+  },
+  "all_geometry_checks_pass": true,
+  "scope": "Numeric spelling rounded to native 1nm only; quoted strings, UUIDs, pad/net/model/body/connectors and all unaffected fields remain compared. No native DRC/refill/solid renderer or physical test. Tool text differences require explicit review rather than automatic rejection when additional approved comments/guards exist."
+}

@@ -1,0 +1,162 @@
+{
+  "status": "PASS native final PDF/vector/raster equivalence and printed cathode geometry",
+  "before_schematic_sha256": "7a133c241ba24a688d2d2490ae423ff74d26f57cf6578f871cc757093584de42",
+  "after_schematic_sha256": "7bfd6617e7d0285c738615fd2b6d7b6d6958675c095e50de87a8ed44111b972b",
+  "final_PDF": "after/nexus-schematic.pdf",
+  "final_PDF_sha256": "06137f3fef3f09ea5c1db867acd8f797b438cd476d599345a4491dfbe024c439",
+  "SVG_geometry_byte_exact_after_removing_nonrendering_title_desc_metadata": true,
+  "native_PDF_raster_byte_exact": true,
+  "raster_sha256": "427e2def4cae1a89c663be7f67338eb5603c7496c519edb1bc0f7fae76f68825",
+  "markers": [
+    {
+      "ref": "D1",
+      "plot_center_mm": [
+        7.2,
+        26.25
+      ],
+      "absolute_board_center_mm": [
+        107.2,
+        126.25
+      ],
+      "outer_ink_diameter_mm": 0.3,
+      "native_exported": true
+    },
+    {
+      "ref": "D2",
+      "plot_center_mm": [
+        13.6,
+        26.25
+      ],
+      "absolute_board_center_mm": [
+        113.6,
+        126.25
+      ],
+      "outer_ink_diameter_mm": 0.3,
+      "native_exported": true
+    },
+    {
+      "ref": "D3",
+      "plot_center_mm": [
+        10.4,
+        26.25
+      ],
+      "absolute_board_center_mm": [
+        110.4,
+        126.25
+      ],
+      "outer_ink_diameter_mm": 0.3,
+      "native_exported": true
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "sch",
+        "export",
+        "pdf",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/before/nexus-schematic.pdf",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-signal-slot-08/hardware/nexus-style-fc.kicad_sch"
+      ],
+      "log": "before-pdf.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "sch",
+        "export",
+        "svg",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/before/svg",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-signal-slot-08/hardware/nexus-style-fc.kicad_sch"
+      ],
+      "log": "before-svg.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-scale-to",
+        "2200",
+        "-png",
+        "-singlefile",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/before/nexus-schematic.pdf",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/before/schematic"
+      ],
+      "log": "before-raster.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "sch",
+        "export",
+        "pdf",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/after/nexus-schematic.pdf",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/nexus-style-fc.kicad_sch"
+      ],
+      "log": "after-pdf.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "sch",
+        "export",
+        "svg",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/after/svg",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/nexus-style-fc.kicad_sch"
+      ],
+      "log": "after-svg.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "pdftoppm",
+        "-scale-to",
+        "2200",
+        "-png",
+        "-singlefile",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/after/nexus-schematic.pdf",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/after/schematic"
+      ],
+      "log": "after-raster.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+        "pcb",
+        "export",
+        "svg",
+        "--layers",
+        "F.Mask,F.SilkS,Edge.Cuts",
+        "--mode-single",
+        "--fit-page-to-board",
+        "--exclude-drawing-sheet",
+        "-o",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/top-silk-mask.svg",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/hardware/nexus-style-fc.kicad_pcb"
+      ],
+      "log": "top-plot.log",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "inkscape",
+        "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/annotation-detail-inspection.svg",
+        "--export-type=png",
+        "--export-width=1800",
+        "--export-background=white",
+        "--export-filename=/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/main-assembly-annotation-10/visual-proof/annotation-detail-inspection.png"
+      ],
+      "log": "annotation-render.log",
+      "exit_code": 0
+    }
+  ],
+  "qualification": "Marker orientation is additionally bound to the primary manufacturer drawings in the annotation handoff. High-contrast cropped inspection derivative is labeled; exact original native SVG is retained. Existing silk advisories remain."
+}

@@ -22,6 +22,7 @@ import subprocess
 import sys
 
 import pcbnew
+import header_interface_geometry as hig
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
@@ -94,7 +95,7 @@ def add_zone(board, layer, netname, priority, clearance=0.2, min_width=0.2, conn
     return z
 
 
-LINK_W = 0.18           # fixed links through the 0.8 mm bridges between header slots (0.31 mm to each slot)
+LINK_W = 0.18           # inherited fixed-link width; candidate central web is 1.2 mm
 
 
 def joint_copper(board):
@@ -108,7 +109,14 @@ def joint_copper(board):
     """
     j = board.FindFootprintByReference("J1")
     pads = list(j.Pads())
-    slots = sorted((p.GetBoundingBox() for p in pads if p.GetAttribute() == pcbnew.PAD_ATTRIB_NPTH), key=lambda b: b.GetX())
+    # These cutouts are Edge.Cuts contours, not oval NPTH pads.
+    if j.GetOrientationDegrees() != 0 or j.GetLayer() != pcbnew.F_Cu:
+        raise SystemExit("Root-aware joint geometry requires its fixed F.Cu, zero-rotation placement")
+    origin = j.GetPosition()
+    slots = [pcbnew.BOX2I(pcbnew.VECTOR2I(origin.x + mm(cx - hig.SLOT_LENGTH / 2),
+                                       origin.y + mm(cy - hig.SLOT_WIDTH / 2)),
+                         pcbnew.VECTOR2I(mm(hig.SLOT_LENGTH), mm(hig.SLOT_WIDTH)))
+             for cx, cy in hig.SLOT_CENTERS]
     sy0, sy1 = slots[0].GetY(), slots[0].GetBottom()
     bridges = [(slots[i].GetRight() + slots[i + 1].GetX()) // 2 for i in range(len(slots) - 1)]
     net = lambda n: board.GetNetInfo().GetNetItem(n)
@@ -171,11 +179,12 @@ def joint_copper(board):
         z.SetDoNotAllowZoneFills(False)
         z.SetDoNotAllowFootprints(False)
         z.SetLayerSet(pcbnew.LSET.AllCuMask())
-        e = mm(0.3)
+        ex = mm(hig.SLOT_ROUTE_KEEPOUT_X)
+        ey = mm(hig.SLOT_ROUTE_KEEPOUT_Y)
         ol = z.Outline()
         ol.NewOutline()
-        for x, y in ((s.GetX() - e, s.GetY() - e), (s.GetRight() + e, s.GetY() - e),
-                     (s.GetRight() + e, s.GetBottom() + e), (s.GetX() - e, s.GetBottom() + e)):
+        for x, y in ((s.GetX() - ex, s.GetY() - ey), (s.GetRight() + ex, s.GetY() - ey),
+                     (s.GetRight() + ex, s.GetBottom() + ey), (s.GetX() - ex, s.GetBottom() + ey)):
             ol.Append(int(x), int(y))
         board.Add(z)
     print(f"joint: {len(slots)} slot keep-outs, VX link via bridge x={pcbnew.ToMM(bx):.2f}, GND links {len(bridges)}")
