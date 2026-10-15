@@ -60,6 +60,7 @@ class Board:
         tx.SetTextThickness(self.mm(size * 0.15))
         tx.SetTextAngleDegrees(angle)
         self.board.Add(tx)
+        return tx
 
     # -- nets / parts
     def net(self, name):

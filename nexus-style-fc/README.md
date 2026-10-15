@@ -29,3 +29,5 @@ Existing manufacturing outputs are historical/stale and must not be used as curr
 | `docs/` | Review notes and renders |
 
 The firmware config is copied unchanged from [rotorflight-targets `configs/RDMS-NEXUS_F7.config`](https://github.com/rotorflight/rotorflight-targets/blob/master/configs/RDMS-NEXUS_F7.config) (master, latest commit `b89676f`, 2026-03-02) and stays attributed to its upstream authors. No firmware binary is included. RadioMaster branding is not used on the board.
+
+The power block is also available as a separate board: [../nexus-style-fc-power-module](../nexus-style-fc-power-module/) takes its parts from `tools/design.py` and uses the generators in `tools/`.
