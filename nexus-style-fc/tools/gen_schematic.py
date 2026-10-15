@@ -8,6 +8,7 @@ connectivity is exactly the netlist in the design module. Symbols are grouped by
   python3 tools/gen_schematic.py design_header  hardware/header-board/nexus-header-board.kicad_sch  nexus-header-board
 """
 import importlib
+from functools import lru_cache
 import math
 import os
 import sys
@@ -16,7 +17,7 @@ import uuid
 import sexpr as sx
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-STOCK = "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols"
+STOCK = os.environ.get("KICAD_SYMBOL_DIR", "/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols" if sys.platform == "darwin" else "/usr/share/kicad/symbols")
 LIBS = {"NexusFC": os.path.normpath(os.path.join(HERE, "..", "hardware", "library", "NexusFC.kicad_sym"))}
 NS = uuid.UUID("6f3c2a1e-9b7d-4c55-8a10-2d4e5f6a7b80")
 GRID = 1.27
@@ -47,7 +48,18 @@ def lib_path(lib):
     return LIBS.get(lib) or os.path.join(STOCK, lib + ".kicad_sym")
 
 
-def load_symbol(lib_id):
+@lru_cache(maxsize=1)
+def pinned_stock_symbols():
+    """Exact stock definitions from the reviewed schematic, independent of host version."""
+    path = os.path.normpath(os.path.join(HERE, "..", "hardware", "library", "SchematicStock.kicad_sym"))
+    if not os.path.exists(path):
+        return {}
+    return {sx.text(s[1]): s for s in sx.find(sx.parse(open(path, encoding="utf-8").read()), "symbol")}
+
+
+def load_symbol(lib_id, use_pinned=False):
+    if use_pinned and lib_id in pinned_stock_symbols():
+        return pinned_stock_symbols()[lib_id]
     lib, name = lib_id.split(":")
     sym = sx.symbol_from_lib(lib_path(lib), name)
     if sx.find(sym, "extends"):
@@ -92,10 +104,10 @@ def main(mod_name, out_path, project):
     symdefs = {}
     for p in d.PARTS:
         if p["sym"] not in symdefs:
-            symdefs[p["sym"]] = load_symbol(p["sym"])
+            symdefs[p["sym"]] = load_symbol(p["sym"], use_pinned=mod_name == "design")
     flags = getattr(d, "PWR_FLAGS", [])
     if flags:
-        symdefs["power:PWR_FLAG"] = load_symbol("power:PWR_FLAG")
+        symdefs["power:PWR_FLAG"] = load_symbol("power:PWR_FLAG", use_pinned=mod_name == "design")
 
     items = []
     texts = []
@@ -210,6 +222,11 @@ def main(mod_name, out_path, project):
     sch += texts + items
     sch.append(["sheet_instances", ["path", S("/"), ["page", S("1")]]])
     sch.append(["embedded_fonts", "no"])
+    if mod_name == "design":
+        from readable_schematic import arrange
+        sch = arrange(sch, d, project)
+        from connect_functional_units import connect
+        sch = connect(sch, d, project)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     open(out_path, "w", encoding="utf-8").write(sx.dump(sch) + "\n")
     print("wrote", out_path, f"({len(d.PARTS)} symbols)")

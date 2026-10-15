@@ -1,3 +1,20 @@
+# Current checkpoint 06: connected schematic and EN isolation, unfinished
+
+[Checkpoint 06](../routing-wip/2026-10-15/en-readable-checkpoint/README.md) includes the approved U10 EN correction and a physically connected functional-unit schematic, rebuilt on latest main 866afe8. Native KiCad 10.0.7 revalidation gives:
+
+- Canonical minimal-fix board: 627 inherited errors (428 clearance, 199 width).
+- Separate experimental batch35-derived board: 32 clearance errors, minimum remaining gap 0.0751 mm.
+- Both: zero opens, zero schematic-PCB parity findings, zero ERC findings, 54 unchanged silk warnings; no new/worsened native pairs or new suppressions.
+- Unchanged header: 11 fixed contact-edge errors, zero opens/parity/ERC.
+
+[Single-sheet schematic](schematic-main.pdf) · [Functional-unit detail booklet](nexus-schematic-review.pdf) · [Source-bound board-level risks](../routing-wip/2026-10-15/reviews/current-gates/RECOVERY-QUALIFICATION.md)
+
+Only the approved EN terminal branch is removed in the canonical PCB; the experimental reroute remains separate. All other parts, pin mappings and placement are retained. EN has no conductive contact after refill. This does not qualify 7.4 V power operation, regulator stability, current capacity, USB/ESD behavior or assembly. Header mechanics and pasted vias remain open. Historical CAM/BOM/CPL remain on hold. No fabrication release.
+
+The following entries are historical records and do not override this current state.
+
+---
+
 # Current published experimental checkpoint: batch35, unfinished
 
 [Batch35](../routing-wip/2026-10-15/batch35/README.md) has 33 native clearance errors, zero opens/parity, and 54 inherited silk warnings. The worst RPM/J1 gap is repaired; minimum remaining clearance is 0.0751 mm, still below 0.127 mm. Both accepted steps since batch31 have no worsened residual gap. Exact candidate, native/contact/width/gap evidence and the independent [batch31 board-level review](../routing-wip/2026-10-15/reviews/batch31/README.md) are archived. Canonical hardware PCBs and manufacturing holds remain unchanged. U10/C19 output-loop, L2 distribution and B_TX return/coupling qualification remain provisional.

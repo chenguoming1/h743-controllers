@@ -133,8 +133,8 @@ C("100nF", "3V3_SENS", "GND", ("near", "U3", "6", "F"), "SENSORS", note="baro VD
 R("2.2k", "I2C1_SCL", "3V3_SENS", ("near", "U3", "4", "F"), "SENSORS", note="I2C pull-up")
 R("2.2k", "I2C1_SDA", "3V3_SENS", ("near", "U3", "3", "F"), "SENSORS", note="I2C pull-up")
 part("U10", "NexusFC:TPS70933DBVR", "TPS70933DBVR", "NexusFC:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL", "C89347",
-     {"1": "VSYS", "2": "GND", "3": "VSYS", "4": None, "5": "3V3_SENS"},
-     ("xy", 14.0, 9.0, 0, "F"), "SENSORS", "3V3 sensor LDO, 30 V input")
+     {"1": "VSYS", "2": "GND", "3": None, "4": None, "5": "3V3_SENS"},
+     ("xy", 14.0, 9.0, 0, "F"), "SENSORS", "3V3 sensor LDO, 30 V input; EN intentionally floating (internal pull-up), never tied to VSYS")
 C("1uF", "VSYS", "GND", ("near", "U10", "1", "F"), "SENSORS", note="LDO in")
 C("2.2uF", "3V3_SENS", "GND", ("xy", 9.4, 9.0, 0, "F"), "SENSORS", fp=C0603, note="LDO out, >=2 uF effective")
 
