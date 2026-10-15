@@ -223,10 +223,8 @@ def main(mod_name, out_path, project):
     sch.append(["sheet_instances", ["path", S("/"), ["page", S("1")]]])
     sch.append(["embedded_fonts", "no"])
     if mod_name == "design":
-        from readable_schematic import arrange
+        from draft_circuits import arrange
         sch = arrange(sch, d, project)
-        from connect_functional_units import connect
-        sch = connect(sch, d, project)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     open(out_path, "w", encoding="utf-8").write(sx.dump(sch) + "\n")
     print("wrote", out_path, f"({len(d.PARTS)} symbols)")

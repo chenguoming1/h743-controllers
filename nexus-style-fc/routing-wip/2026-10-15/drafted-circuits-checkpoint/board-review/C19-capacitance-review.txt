@@ -1,0 +1,64 @@
+Nexus C19 capacitance review
+
+TPS70933DBVR output at 3.3 V | Research snapshot 15 October 2026
+
+C19 alone does not have supportable full-corner capacitance margin. Samsung’s exact-part typical DC-bias curve implies about 1.375 µF at 3.3 V, below TI’s 1.5 µF effective-capacitance guidance. A same-footprint 10 µF candidate offers substantially more screening margin. This is a component-selection finding; it does not establish that the populated rail is unstable.
+
+Existing part and applicable requirement
+
+The frozen PCB identifies C19 as 2.2uF, LCSC C23630, on Capacitor_SMD:C_0603_1608Metric. LCSC maps C23630 to Samsung CL10A225KO8NNNC. Samsung’s exact family page explicitly includes suffix C: 2.2 µF, ±10%, 16 V, X5R, 0603. Its reference specsheet, issued 8 May 2024, specifies X5R capacitance change within ±15% over −55 to +85°C. [1–3]
+
+TI’s non-Q1 TPS709 datasheet, SBVS186H (July 2021), §8.1.1, page 14, calls for 1.5–47 µF effective output capacitance at outputs ≥1.5 V and 0–0.2 Ω output-capacitor ESR. Effective capacitance includes tolerance, temperature and DC bias. The 2.2 µF nominal example does not qualify every 2.2 µF MLCC. §10.1 requires close placement and a direct output-capacitor ground connection to the regulator ground. [4]
+
+Exact part DC bias evidence
+
+Samsung’s official CL10A225KO8NNN data use 25°C, 1 kHz and 1 Vrms. Two bracketing points are 3.246475 V / −36.769566% and 3.336800 V / −38.026322%. Linear interpolation gives −37.5143% at 3.3 V; applying that typical ratio to nominal gives 2.2 × 0.624857 = 1.37469 µF. Samsung labels the curves typical design-reference data, not guaranteed minima. [2]
+
+Conservative separate-factor screening: 2.2 × 0.90 × 0.85 = 1.683 µF before bias. That leaves only 10.87% additional bias loss before reaching 1.5 µF. Including the typical bias ratio yields about 1.052 µF. Multiplying independent factors is a screening estimate, not a measured simultaneous-corner bound. A guarantee of the actual lot at 3.3 V across temperature, signal level and aging is not established. [2,3; calculations]
+
+What the rail evidence does and does not show
+
+C13 (100 nF), C14 (2.2 µF, C12530, 0402), C15 (10 nF), C16 (100 nF) and C17 (100 nF) are also electrically parallel on 3V3_SENS/GND. C19 is therefore not the total rail capacitance. Their bias derating and effectiveness through the local routing have not been qualified here. This review neither proves nor disproves overall loop stability, transient performance, thermal/current capability or operation from 7.4 V. The proposed X5R parts do not establish operation above +85°C.
+
+Proposed same footprint candidate
+
+Samsung CL10A106KP8NNNC, LCSC/JLC C19702: 10 µF, ±10%, 10 V, X5R. Samsung lists it in mass production. Body dimensions and termination-width specification match C19: 1.60 ±0.10 × 0.80 ±0.10 × 0.80 ±0.10 mm; terminal width 0.30 ±0.20 mm. It is a same-footprint 0603 candidate for the 3.3 V output, pending board-level validation. [5,6]
+
+Its exact-part typical curve uses the same 25°C / 1 kHz / 1 Vrms conditions. Bracketing points: 3.246475 V / −54.959248% and 3.336800 V / −56.229015%. Interpolation gives −55.7117% at 3.3 V, or 4.42883 µF from nominal. Including ±10% initial tolerance and the −15% X5R factor gives 10 × 0.90 × 0.85 × 0.442883 = 3.38806 µF, about 2.26 times TI’s 1.5 µF minimum. This has useful screening margin, but is not a guaranteed lower bound. [5,6; calculations]
+
+ESR remains a separate qualification item. Samsung’s typical zero-bias, 25°C frequency data are consistent with low ceramic ESR: about 0.0273 Ω for C19 and 0.00818 Ω for the candidate near 98.1 kHz. These sample values are not a full-frequency/full-corner guarantee. TI explains that the relevant ESR is around control-loop crossover. [2,5,9]
+
+Sourcing and decision
+
+JLC’s direct C19702 listing identifies Samsung CL10A106KP8NNNC as Basic, for Economic and Standard assembly. LCSC’s current product page showed 4,999,040 units, USD 0.031 each at 20+ and USD 0.0167 at 4,000+. These are availability/price snapshots; JLC assembly inventory, final board quote, taxes and shipping were not verified. Use C19702, not the separate “JLCPCB Assembly” proxy listing for the same text part number. [7,8]
+
+Recommendation: approve a C19-only substitution to C19702 if the goal is to provide ample local-capacitor margin without relying on remote decouplers. A change is recommended on that basis, but is not proven mandatory for the entire existing parallel network. Final qualification still needs worst-case capacitance/ESR evidence and board startup/load-transient testing. No BOM, schematic, footprint, PCB or repository changes were made by this review.
+
+Sources
+
+[1] LCSC C23630 identity
+https://www.lcsc.com/product-detail/C23630.html
+
+[2] Samsung CL10A225KO8NNN exact product and typical curves
+https://product.samsungsem.com/mlcc/CL10A225KO8NNN.do
+
+[3] Samsung CL10A225KO8NNNC Specsheet, 8 May 2024, pp 1–2; via Specsheet button
+https://product.samsungsem.com/mlcc/CL10A225KO8NNN.do
+
+[4] TI TPS709 datasheet, SBVS186H, §§8.1.1 and 10.1
+https://www.ti.com/lit/ds/symlink/tps709.pdf
+
+[5] Samsung CL10A106KP8NNN exact product and typical curves
+https://product.samsungsem.com/mlcc/CL10A106KP8NNN.do
+
+[6] Samsung CL10A106KP8NNNC Specsheet, 8 May 2024, pp 1–2; via Specsheet button
+https://product.samsungsem.com/mlcc/CL10A106KP8NNN.do
+
+[7] JLC C19702 identity and Basic classification
+https://jlcpcb.com/partdetail/CL10A106KP8NNNC/C19702
+
+[8] LCSC C19702 identity, inventory and price
+https://www.lcsc.com/product-detail/C19702.html
+
+[9] TI E2E TPS709xx Cout ESR Requirements
+https://e2e.ti.com/support/power-management/f/power-management-forum/439712/tps709xx-cout-esr-requirements

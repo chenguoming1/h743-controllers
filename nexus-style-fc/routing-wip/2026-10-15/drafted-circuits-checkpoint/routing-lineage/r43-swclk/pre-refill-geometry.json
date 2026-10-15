@@ -1,0 +1,505 @@
+{
+  "status": "PASS: complete fixed-layer donor transactions and finite full-width port topology; native acceptance separate",
+  "source_sha256": "07bd34fd91df1d7ea2a21fbe4b4282b0fe9deffa8f19c1ae25d3db27dc093d5c",
+  "candidate_sha256": "e78976708b2dafee1789db0098ba0e874c6bdf7849786a15fdc8ae9c737d6afa",
+  "invariants": {
+    "status": "pass",
+    "checks": {
+      "footprint_and_pad_native_geometry": {
+        "status": "pass",
+        "baseline_sha256": "f6380e9ed540e4fe263421c1040de88877799e6c80809e5237d8600f3452630a",
+        "candidate_sha256": "f6380e9ed540e4fe263421c1040de88877799e6c80809e5237d8600f3452630a"
+      },
+      "complete_footprint_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a61aee55c9778198cc471cabe3cacda5cb70108cd99e1bb26d3a21c09cd7aea6",
+        "candidate_sha256": "a61aee55c9778198cc471cabe3cacda5cb70108cd99e1bb26d3a21c09cd7aea6"
+      },
+      "net_names": {
+        "status": "pass",
+        "baseline_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2",
+        "candidate_sha256": "aa6f5ca90039e2297507b0fe7e8056d643c7ef6e479caad5a5433ce8ce86fdf2"
+      },
+      "outline": {
+        "status": "pass",
+        "baseline_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76",
+        "candidate_sha256": "d64b259e7b7fb0e543740efee83ed5946fc9f3050e77cb8280f9989810befb76"
+      },
+      "zone_and_keepout_definitions": {
+        "status": "pass",
+        "baseline_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a",
+        "candidate_sha256": "a1a70a8fb9977b2f8cbd1e3f223447186f0086a93f87c7c3841787bd5f6c734a"
+      },
+      "copper_layer_count": {
+        "status": "pass",
+        "baseline_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+        "candidate_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      "layers": {
+        "status": "pass",
+        "baseline_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f",
+        "candidate_sha256": "229c81719e2c80aee7b9e9338dc7244fe0ea893b28864c6a1d5e5df20966a52f"
+      },
+      "setup": {
+        "status": "pass",
+        "baseline_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83",
+        "candidate_sha256": "228c9685f3e8959453bce39a69faee9510a211c390071318e7bcb2b9ad8ecf83"
+      },
+      "general": {
+        "status": "pass",
+        "baseline_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577",
+        "candidate_sha256": "f59bf54a34188d4fdc2b18be57fdfdbc130a708180036149a110cd94de00e577"
+      }
+    },
+    "counts": {
+      "baseline_footprints": 88,
+      "candidate_footprints": 88,
+      "baseline_pads": 356,
+      "candidate_pads": 356,
+      "baseline_copper_layers": 6,
+      "candidate_copper_layers": 6,
+      "baseline_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      },
+      "candidate_zones": {
+        "total": 8,
+        "keepouts": 2,
+        "ground_copper_zones": 6
+      }
+    },
+    "normalization": "Whitespace, equivalent decimal spelling, and net-code renumbering only; native net names/pad connectivity remain exact. Top-level generation metadata is not an invariant. Board-zone definitions ignore only direct filled_polygon/fill_segments children and direct optional yes/no fill-state atoms within fill; a resulting empty fill node is omitted. All other zone/keepout fields and nested fill rules remain exact."
+  },
+  "removed_tracks": 14,
+  "new_tracks": 12,
+  "moved_vias": [
+    {
+      "uuid": "666b0a4b-d514-43f7-93ca-63f2b1517252",
+      "from": [
+        118.216566,
+        108.187455
+      ],
+      "to": [
+        118.1,
+        108.2
+      ],
+      "size_mm": 0.45,
+      "drill_mm": 0.2,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "all_other_source_fields_unchanged": true
+    }
+  ],
+  "complete_via_definition_preserved_except_declared_position": true,
+  "untouched_original_direct_contacts_preserved": 2608,
+  "route_physical_proofs": [
+    {
+      "name": "SWCLK/B.Cu",
+      "net": "SWCLK",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 1.122391721863481,
+      "new_centerline_length_mm": 1.2041594578792294,
+      "all_external_ports": [
+        {
+          "kind": "finite full-width entry",
+          "new_track": "50c459ad-13b6-540c-8580-fa1d1849b031",
+          "port": "09ac2547-ba11-42b3-9e99-daf16b157c99",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              119.19565335456377,
+              108.17241565843246
+            ],
+            [
+              119.18510657862234,
+              108.04585434713535
+            ],
+            [
+              119.17572243939888,
+              108.17407656802953
+            ],
+            [
+              119.16517566345745,
+              108.04751525673242
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "50c459ad-13b6-540c-8580-fa1d1849b031",
+          "port": "666b0a4b-d514-43f7-93ca-63f2b1517252",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              118.23482433654254,
+              108.25248474326757
+            ],
+            [
+              118.22427756060111,
+              108.12592343197046
+            ],
+            [
+              118.21489342137765,
+              108.25414565286465
+            ],
+            [
+              118.20434664543622,
+              108.12758434156754
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11000000000000011
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 0
+    },
+    {
+      "name": "SWCLK/In3.Cu",
+      "net": "SWCLK",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 3.909574288746236,
+      "new_centerline_length_mm": 4.002747896710109,
+      "all_external_ports": [
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "46eaa641-553c-4187-8495-793e6ee35e8e",
+          "new_track": "3a41a0d5-6ec5-5e80-ad8c-6254573119d8",
+          "shared_endpoints": [
+            [
+              118.825,
+              104.525
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "9df80333-1da0-53f9-82e5-fa1abfd29ab6",
+          "port": "666b0a4b-d514-43f7-93ca-63f2b1517252",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              118.2395426285256,
+              108.16178868198864
+            ],
+            [
+              118.15564288587431,
+              108.06644806533944
+            ],
+            [
+              118.22452835818714,
+              108.17500123988648
+            ],
+            [
+              118.14062861553586,
+              108.07966062323729
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 1
+    },
+    {
+      "name": "I2C1_SDA/In2.Cu",
+      "net": "I2C1_SDA",
+      "layer": "In2.Cu",
+      "width_mm": 0.127,
+      "old_centerline_length_mm": 6.439919285223189,
+      "new_centerline_length_mm": 6.3558782643415235,
+      "all_external_ports": [
+        {
+          "kind": "finite full-width entry",
+          "new_track": "e457fd2d-24df-5479-b56e-a569af321e0a",
+          "port": "47982d8d-8766-4228-94b6-7e31c3dc82bd",
+          "width_mm": 0.127,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              115.88070466828425,
+              108.22435977242993
+            ],
+            [
+              115.87810524401148,
+              108.35133316725519
+            ],
+            [
+              115.90070047849295,
+              108.22476913058314
+            ],
+            [
+              115.89810105422018,
+              108.3517425254084
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "6961fe38-7d2e-4b34-8d63-872f0ab3e64d",
+          "new_track": "35ac1ae5-bd7b-5348-82f3-1e022912bb7b",
+          "shared_endpoints": [
+            [
+              120.876484,
+              111.500315
+            ]
+          ],
+          "new_width_mm": 0.127,
+          "retained_width_mm": 0.127
+        },
+        {
+          "kind": "full-width path through unchanged retained donor to existing via annulus",
+          "port": "9a114b52-9c59-492d-b9a9-08251bb430cd",
+          "new_track": "35ac1ae5-bd7b-5348-82f3-1e022912bb7b",
+          "retained_bridge": "6961fe38-7d2e-4b34-8d63-872f0ab3e64d",
+          "shared_centerline_endpoints": [
+            [
+              120.876484,
+              111.500315
+            ]
+          ],
+          "bridge_width_mm": 0.127,
+          "annular_entry": {
+            "kind": "finite full-width entry",
+            "new_track": "6961fe38-7d2e-4b34-8d63-872f0ab3e64d",
+            "port": "9a114b52-9c59-492d-b9a9-08251bb430cd",
+            "width_mm": 0.127,
+            "axial_depth_mm": 0.02,
+            "corners": [
+              [
+                121.029484,
+                111.563815
+              ],
+              [
+                121.029484,
+                111.436815
+              ],
+              [
+                121.009484,
+                111.563815
+              ],
+              [
+                121.009484,
+                111.436815
+              ]
+            ],
+            "minimum_distance_from_port_center_mm": 0.11
+          }
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 1
+    },
+    {
+      "name": "5V/F.Cu",
+      "net": "5V",
+      "layer": "F.Cu",
+      "width_mm": 0.35,
+      "old_centerline_length_mm": 9.56502758682433,
+      "new_centerline_length_mm": 8.078375124652977,
+      "all_external_ports": [
+        {
+          "kind": "finite full-width entry",
+          "new_track": "de04883b-8f27-52ef-805f-62bf530f658a",
+          "port": "ad5c5310-3673-47e0-a058-70eff01dbac8",
+          "width_mm": 0.35,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              116.36,
+              106.525
+            ],
+            [
+              116.36,
+              106.875
+            ],
+            [
+              116.38,
+              106.525
+            ],
+            [
+              116.38,
+              106.875
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.11
+        },
+        {
+          "kind": "finite full-width entry",
+          "new_track": "1f5dc896-9dab-5a39-aa2a-284316dcd743",
+          "port": "ae501599-018d-4882-9f4c-b57152d0efd2",
+          "width_mm": 0.35,
+          "axial_depth_mm": 0.02,
+          "corners": [
+            [
+              117.95460870689186,
+              112.5376539604855
+            ],
+            [
+              117.7177138513857,
+              112.28000919062842
+            ],
+            [
+              117.9398861486143,
+              112.55119080937158
+            ],
+            [
+              117.70299129310814,
+              112.2935460395145
+            ]
+          ],
+          "minimum_distance_from_port_center_mm": 0.5615482710293992
+        },
+        {
+          "kind": "exact common centerline endpoint with no width reduction",
+          "port": "f045086e-a594-46c0-b9b8-b335c971d9e6",
+          "new_track": "5255549d-ec3a-5524-a3a3-07e9384fdc10",
+          "shared_endpoints": [
+            [
+              117.22,
+              112.58
+            ]
+          ],
+          "new_width_mm": 0.35,
+          "retained_width_mm": 0.35
+        }
+      ],
+      "consecutive_same_width_centerline_joints": 6
+    }
+  ],
+  "new_copper_obstructions_at_0_127002_mm": [],
+  "power_width_floor": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.5,
+        "candidate_minimum_mm": 0.5,
+        "required_floor_mm": 0.5,
+        "baseline_items": 16,
+        "candidate_items": 16,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 75,
+        "candidate_items": 74,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 25,
+        "candidate_items": 25,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 9,
+        "candidate_items": 9,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 33,
+        "candidate_items": 33,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 13,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 78,
+        "candidate_items": 78,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 135,
+        "candidate_items": 135,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "pasted_vias_unchanged": {
+    "contact_pairs": 19,
+    "unique_vias": 18,
+    "same_net_pairs": 19,
+    "different_net_pairs": 0
+  },
+  "en_conductive_contacts": [],
+  "qualification": "Preservation and local geometry checks only; power/return/SI/USB/regulator/pasted-via and fabrication gates remain open."
+}

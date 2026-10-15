@@ -1,3 +1,17 @@
+# Current checkpoint 07: circuit redraw, approved C19 upgrade and r43, unfinished
+
+[Exact checkpoint and native evidence](../routing-wip/2026-10-15/drafted-circuits-checkpoint/README.md) is based on main cc1ec880. All 15 functional sections are conventionally drafted. Only approved C19 metadata changes electrically selected parts: 10uF/10V Samsung CL10A106KP8NNNC, JLC C19702, unchanged footprint/placement. All 347 physical pin nets and original identities remain exact.
+
+Native KiCad 10.0.7 against final schematic 49f9e057 gives 627 canonical errors (428 clearance,199 width), 29 experimental clearance errors, zero opens/parity/ERC and 54 unchanged silk warnings in both main states. No new/worsened native pair is hidden. All copper and physical geometry are unchanged by the C19 update. Header retains 11 fixed edge errors, with exact prior source-bound checks.
+
+[Single-sheet PDF](schematic-main.pdf), [15-page circuit booklet](nexus-schematic-review.pdf), [exact source/validation ZIP](nexus-drafted-schematic-source-and-validation.zip). Earlier Library previews may still show the prior version; these files are current.
+
+Both BOMs update C19 only and pass full part/reference parity. CAM/CPL remain stale and on hold. C19's stronger typical capacitance margin does not qualify stability, input/output loops, power/return paths, USB/ESD, current/thermal/fault behavior or assembly. The conditional U10 reroute is excluded because of its input-reference tradeoff. No fabrication release.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current checkpoint 06: connected schematic and EN isolation, unfinished
 
 [Checkpoint 06](../routing-wip/2026-10-15/en-readable-checkpoint/README.md) includes the approved U10 EN correction and a physically connected functional-unit schematic, rebuilt on latest main 866afe8. Native KiCad 10.0.7 revalidation gives:
