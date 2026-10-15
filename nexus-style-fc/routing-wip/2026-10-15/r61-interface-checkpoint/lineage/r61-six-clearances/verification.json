@@ -1,0 +1,295 @@
+{
+  "status": "ACCEPTED six complete source-bound clearance repairs; two J4 errors remain in unfinished experimental routing",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/routing-continuation/r60-r4-r18",
+  "source_board_sha256": "db583aaa5a1c2ddac33e42a174bd614504dc21b86b953bd0ec93d8360903f4b8",
+  "candidate_board_sha256": "5a51610cc1569958442f97407e11533b646b1e0d8997d86356b8968dce50487e",
+  "schematic_sha256": "5e964b66b1bf4aa02caf87b678fc725b82ed688d0050609746a029eba928f101",
+  "native_drc_sha256": "3faa3a01ec3691852609c08d7305e5f33cd4c40fd29195cdec88cd6282b26147",
+  "source_clearance_errors": 8,
+  "candidate_clearance_errors": 2,
+  "unchanged_silk_warnings": 54,
+  "opens": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "erc_evidence_basis": "Exact unchanged schematic/library/project bindings and copied source-native ERC/netlist receipts; fresh PCB schematic-parity check",
+  "minimum_remaining_clearance_mm": 0.0927,
+  "worsened_residual_pairs": [],
+  "removed_native_violation_pairs": [
+    [
+      "clearance",
+      "error",
+      [
+        "47982d8d-8766-4228-94b6-7e31c3dc82bd",
+        "bc4877ff-9f3a-4060-aa8f-0a3fcb600b2d"
+      ]
+    ],
+    [
+      "clearance",
+      "error",
+      [
+        "0268e208-eed3-45d5-b9a1-d370dd58670e",
+        "47982d8d-8766-4228-94b6-7e31c3dc82bd"
+      ]
+    ],
+    [
+      "clearance",
+      "error",
+      [
+        "469f60b4-5f4b-4421-80d8-18f78d94ad94",
+        "81e769ef-9569-4752-be75-44abf1c869b2"
+      ]
+    ],
+    [
+      "clearance",
+      "error",
+      [
+        "3e80683a-a987-4037-bb01-55bca4c7f789",
+        "d0c59509-f0dd-4761-be34-8f55ed42a036"
+      ]
+    ],
+    [
+      "clearance",
+      "error",
+      [
+        "113de551-7be4-4a13-8e02-0620b3159ae7",
+        "bc1db484-51d5-48b4-a0cd-87d1357477f9"
+      ]
+    ],
+    [
+      "clearance",
+      "error",
+      [
+        "5a638f48-d552-4ee1-a297-306142078e63",
+        "848288f4-ed7f-440e-adcf-8e1101e0d219"
+      ]
+    ]
+  ],
+  "new_native_violation_pairs": [],
+  "geometry_receipt_sha256": "bd9afcb35ffd970c3a162d8ddba39bdbbb28e2367aaf1768fbb8ec803f17f23c",
+  "invariants": "pass",
+  "remaining_inherited_pasted_vias": {
+    "contact_pairs": 17,
+    "unique_vias": 16,
+    "same_net_pairs": 17,
+    "different_net_pairs": 0
+  },
+  "all_visible_counts": {
+    "clearance:error": 2,
+    "track_not_centered_on_via:warning": 13,
+    "silk_edge_clearance:warning": 3,
+    "footprint_type_mismatch:warning": 5,
+    "silk_overlap:warning": 32,
+    "silk_over_copper:warning": 19
+  },
+  "all_visible_filter_warnings": 0,
+  "complete_components": {
+    "3V3": {
+      "replacement_objects": 8,
+      "complete_external_ports": [
+        "105831b3-9d66-44f4-81a2-9b52d43006ba",
+        "40c22272-c4e5-48dc-980b-61ab0e410b98",
+        "75e5c8ee-08a0-4ae5-891b-7b6902e49d18",
+        "7713758d-1754-4ce2-bba5-7991b63e13b0",
+        "d23f520f-b9a1-4fdc-beb1-72d4662d5bbd"
+      ],
+      "component_object_count": 176
+    },
+    "GND": {
+      "replacement_objects": 3,
+      "complete_external_ports": [
+        "13c2cc54-5805-4e46-a4ce-8f335cc44d14",
+        "46c5756f-95cd-4f7f-9062-6c07940ca7d9",
+        "845abe73-5c44-40b9-8de1-85815a1545ab"
+      ],
+      "component_object_count": 21
+    },
+    "I2C1_SCL": {
+      "replacement_objects": 3,
+      "complete_external_ports": [
+        "384ae8ca-9cc6-48f0-b4e2-0fe2066403e4",
+        "54337392-01a6-4417-9732-15a148ec4c83"
+      ],
+      "component_object_count": 25
+    },
+    "I2C1_SDA": {
+      "replacement_objects": 3,
+      "complete_external_ports": [
+        "35ac1ae5-bd7b-5348-82f3-1e022912bb7b",
+        "3a292b93-d848-450a-bd34-3978e8575034"
+      ],
+      "component_object_count": 17
+    },
+    "IMU_INT": {
+      "replacement_objects": 3,
+      "complete_external_ports": [
+        "1d1aae1d-d5ea-5639-b004-7a40bfe0ab6b",
+        "57fd86aa-151f-4fe4-b12f-eaded3a763ab",
+        "fae2d13e-b953-44be-a4cb-c5cb08c30199"
+      ],
+      "component_object_count": 14
+    },
+    "VSYS": {
+      "replacement_objects": 3,
+      "complete_external_ports": [
+        "690e86eb-3235-46b2-bf43-d7acbe3aad4f",
+        "91ccb31a-d9bd-4d48-b7ea-a9eb542a1bf3",
+        "b3116b78-2467-4d50-ad6e-43bd0130ed1d",
+        "c3989c1b-781f-4f56-8ba3-f12fd4d59ee1"
+      ],
+      "component_object_count": 45
+    },
+    "VX_SENSE": {
+      "replacement_objects": 6,
+      "complete_external_ports": [
+        "046fcb03-54c4-454f-a3fa-575741cbf3c0",
+        "4ca418aa-8dfc-4a06-a24b-c8848d3904fa",
+        "e212521c-9141-41c2-9f77-06dd5e5b7b19",
+        "efcfbecc-e6e6-48ee-bebc-fefb0057681d",
+        "f065f050-b786-478b-a6d8-96eaafa9dd44"
+      ],
+      "component_object_count": 23
+    }
+  },
+  "untouched_direct_contacts_preserved": 2656,
+  "complete_external_port_count": 24,
+  "new_via_finite_annular_entry_count": 4,
+  "all_complete_external_ports_proved": true,
+  "width_scope": "No new width exception. Every added route preserves its inherited width and layer; r60 approved R4 two-UUID exception and all R18/shared supply copper remain byte-exact. Four existing ordinary vias are relocated with complete donors, no net increase.",
+  "all_accepted_USB_copper_tapers_and_reference_projection_preserved": true,
+  "shield_regions_preserved": 96,
+  "U10_C18_C19_U7_C28_returns_preserved": true,
+  "C6_C11_U1_12_finite_main_plane_paths_proved": true,
+  "source_to_candidate_plane_changes": [
+    {
+      "layer": "F.Cu",
+      "removed_ground_area_mm2": 0.3882428611745,
+      "added_ground_area_mm2": 0.2519186336525,
+      "source_component_count": 8,
+      "candidate_component_count": 8
+    },
+    {
+      "layer": "In1.Cu",
+      "removed_ground_area_mm2": 0.37380034567,
+      "added_ground_area_mm2": 0.3707714310755,
+      "source_component_count": 1,
+      "candidate_component_count": 1
+    },
+    {
+      "layer": "In2.Cu",
+      "removed_ground_area_mm2": 0.3572075928245,
+      "added_ground_area_mm2": 0.3468375857665,
+      "source_component_count": 12,
+      "candidate_component_count": 12
+    },
+    {
+      "layer": "In3.Cu",
+      "removed_ground_area_mm2": 0.079950498476,
+      "added_ground_area_mm2": 0.0703093924665,
+      "source_component_count": 11,
+      "candidate_component_count": 11
+    },
+    {
+      "layer": "In4.Cu",
+      "removed_ground_area_mm2": 0.37380034567,
+      "added_ground_area_mm2": 0.3707714310755,
+      "source_component_count": 1,
+      "candidate_component_count": 1
+    },
+    {
+      "layer": "B.Cu",
+      "removed_ground_area_mm2": 0.432442099125,
+      "added_ground_area_mm2": 0.3589881213615,
+      "source_component_count": 16,
+      "candidate_component_count": 16
+    }
+  ],
+  "per_net_layer_length_changes": [
+    {
+      "group": "F2_VSYS_escape",
+      "net": "VSYS",
+      "layer": "B.Cu",
+      "source_length_mm": 1.0112618410471446,
+      "candidate_length_mm": 1.1491406111368616
+    },
+    {
+      "group": "F2_VSYS_escape",
+      "net": "VSYS",
+      "layer": "In3.Cu",
+      "source_length_mm": 5.309007871171788,
+      "candidate_length_mm": 4.884358072066789
+    },
+    {
+      "group": "coordinated_SDA_SCL_IMU",
+      "net": "I2C1_SCL",
+      "layer": "F.Cu",
+      "source_length_mm": 0.0931,
+      "candidate_length_mm": 0.1345942420759521
+    },
+    {
+      "group": "coordinated_SDA_SCL_IMU",
+      "net": "I2C1_SCL",
+      "layer": "In2.Cu",
+      "source_length_mm": 0.47179758932194643,
+      "candidate_length_mm": 0.4324077303772448
+    },
+    {
+      "group": "coordinated_SDA_SCL_IMU",
+      "net": "I2C1_SDA",
+      "layer": "F.Cu",
+      "source_length_mm": 1.491561380308903,
+      "candidate_length_mm": 1.5168570193755904
+    },
+    {
+      "group": "coordinated_SDA_SCL_IMU",
+      "net": "I2C1_SDA",
+      "layer": "In2.Cu",
+      "source_length_mm": 1.680924136065932,
+      "candidate_length_mm": 1.6656259427641609
+    },
+    {
+      "group": "coordinated_SDA_SCL_IMU",
+      "net": "IMU_INT",
+      "layer": "B.Cu",
+      "source_length_mm": 3.1697575065409973,
+      "candidate_length_mm": 3.1718017148636526
+    },
+    {
+      "group": "ground_c6_donor",
+      "net": "GND",
+      "layer": "B.Cu",
+      "source_length_mm": 1.8764982545226458,
+      "candidate_length_mm": 1.8125503417650044
+    },
+    {
+      "group": "sbus_power_donor",
+      "net": "3V3",
+      "layer": "B.Cu",
+      "source_length_mm": 2.5507035775153257,
+      "candidate_length_mm": 2.531429324151282
+    },
+    {
+      "group": "vx_arx_arc",
+      "net": "VX_SENSE",
+      "layer": "F.Cu",
+      "source_length_mm": 2.025866934045596,
+      "candidate_length_mm": 2.034558156949979
+    },
+    {
+      "group": "vx_c6_via_donor",
+      "net": "VX_SENSE",
+      "layer": "B.Cu",
+      "source_length_mm": 0.5860956421856419,
+      "candidate_length_mm": 0.5261151031751512
+    },
+    {
+      "group": "vx_c6_via_donor",
+      "net": "VX_SENSE",
+      "layer": "F.Cu",
+      "source_length_mm": 0.22344574285494903,
+      "candidate_length_mm": 0.26923595599399425
+    }
+  ],
+  "en_conductive_contacts": [],
+  "remaining_exact_cluster": "VSYS via e0ea22eb-7130-400d-9532-cf8cdccb26c6 at (104.747720,119.967290): 0.1073 mm to J4.3 C_RX and 0.0927 mm to J4.4 C_TX. Resolution is coordinated with the separately approved C27/C31 placement/input route, which is not in this checkpoint.",
+  "qualification": "Two native clearance errors remain. Nominal narrow VX_SENSE arc corridor has limited manufacturing margin, not a tolerance allowance. Actual power/ground continuity and preserved widths do not qualify current, transient or SI behavior. USB mixed-reference/impedance, 16 inherited pasted-hole locations, header/mechanical fit/strength and fabrication qualification remain open."
+}

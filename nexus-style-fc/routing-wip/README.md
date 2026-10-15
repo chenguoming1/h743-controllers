@@ -1,5 +1,5 @@
-# Unfinished routing experiments
+# Routing work in progress
 
-Current [USB/interface progress checkpoint](2026-10-15/usb-interface-checkpoint/README.md): 8 native clearance errors, zero opens/electrical and footprint-filter parity. The exact unchanged schematic retains ERC 0. All-visible diagnostics retain 13 centering, five footprint-type and 54 silk warnings. USB width changes and actual-stack/reference qualification remain explicit.
+Use the [stable current candidate folder](current/README.md): r61, **two clearance errors**, zero opens/electrical and footprint-filter parity. [Open its KiCad project](current/hardware/nexus-style-fc.kicad_pro).
 
-The separate redesigned child reaches zero errors/opens, while its matching main mechanical board remains at 45 errors. They are not substituted for accepted routing. Canonical remains 627 inherited errors; accepted old header remains 11 edge errors. C27 effective input capacitance, power/current and manufacturing/assembly qualification remain unresolved. No fabrication release.
+[Latest evidence and remaining gates](2026-10-15/r61-interface-checkpoint/README.md). Separate mechanical main is 24 errors; child has zero errors/opens but warnings and physical tests remain. Canonical main remains 627 errors. Approved capacitor/D5 implementation is pending combined native validation. No fabrication release.

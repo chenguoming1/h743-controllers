@@ -1,0 +1,658 @@
+{
+  "status": "PASS: actual exported F/B mask and paste apertures are unchanged except creation timestamps, and both relocated holes clear every aperture by at least 0.200 mm using conservative aperture bounding boxes",
+  "source_board_sha256": "010d4fb54b8b9444eb739658200c107c6011ac7eca8308c90b38f6a2b0cf64cb",
+  "candidate_board_sha256": "c6d2a7d9c868f5964e109cb39ad116ab594ec8ac3c8f2988a4682f7e3b343e04",
+  "native_export": "KiCad 10.0.7 pcb export gerbers --layers F.Mask,B.Mask,F.Paste,B.Paste; same source/candidate file stem, no refill or edits during export",
+  "method": "Parses every actual aperture definition/flash. C/R/O aperture bounds, complete rotated custom polygon bounds, and rounded-rectangle corner/radius bounds conservatively contain all dark aperture geometry. Absolute 4.6-mm coordinates only; rejects unhandled drawing/clear polarity/transform commands. Positive distance from the drill edge to every aperture bounding box proves nominal hole/opening separation.",
+  "files": [
+    {
+      "filename": "nexus-style-fc-F_Mask.gts",
+      "source_gerber_sha256": "a4f3dfcf2eb335a265c55f8d5024ee292342ac8f8f6ee59fff1b3436bc70a764",
+      "candidate_gerber_sha256": "e1a59547e14d66132fd1fefb0ba148b6504235b3d575b601094cdec7440c9076",
+      "identical_except_creation_timestamps": true,
+      "parsed_dark_aperture_flash_count": 153,
+      "hole_clearances": [
+        {
+          "via": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                113.955,
+                104.866
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.7539999999999992,
+              "nearest_aperture": {
+                "ref": "U3",
+                "aperture_id": 30,
+                "aperture_type": "R",
+                "center": [
+                  114.12,
+                  105.92
+                ],
+                "bounds_board_mm": [
+                  113.82000000000001,
+                  105.72,
+                  114.42,
+                  106.12
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.025
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.5342046995404177,
+              "nearest_aperture": {
+                "ref": "U12",
+                "aperture_id": 32,
+                "aperture_type": "R",
+                "center": [
+                  116.25,
+                  105.75
+                ],
+                "bounds_board_mm": [
+                  115.7,
+                  105.45,
+                  116.8,
+                  106.05
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                114.325,
+                104.375
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.2449999999999988,
+              "nearest_aperture": {
+                "ref": "U3",
+                "aperture_id": 30,
+                "aperture_type": "R",
+                "center": [
+                  114.12,
+                  105.92
+                ],
+                "bounds_board_mm": [
+                  113.82000000000001,
+                  105.72,
+                  114.42,
+                  106.12
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.65
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.031370849898472,
+              "nearest_aperture": {
+                "ref": "U12",
+                "aperture_id": 32,
+                "aperture_type": "R",
+                "center": [
+                  116.25,
+                  105.75
+                ],
+                "bounds_board_mm": [
+                  115.7,
+                  105.45,
+                  116.8,
+                  106.05
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "3bc1d32f-634e-4d77-9c5d-f6bdd353e76c",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                119.975,
+                104.225
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.213868334347097,
+              "nearest_aperture": {
+                "ref": "U12",
+                "aperture_id": 32,
+                "aperture_type": "R",
+                "center": [
+                  118.95,
+                  105.75
+                ],
+                "bounds_board_mm": [
+                  118.4,
+                  105.45,
+                  119.5,
+                  106.05
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                120.825,
+                105.05
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.7792752697534555,
+              "nearest_aperture": {
+                "ref": "R5",
+                "aperture_id": 16,
+                "aperture_type": "RoundRect",
+                "center": [
+                  121.32,
+                  106.22
+                ],
+                "bounds_board_mm": [
+                  121.05,
+                  105.9,
+                  121.58999999999999,
+                  106.53999999999999
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "nexus-style-fc-B_Mask.gbs",
+      "source_gerber_sha256": "fbf70dce000329d8b8139441319047b0e4b4730faa7571cf655b4d7c578cdd2f",
+      "candidate_gerber_sha256": "93ff8483abe4ad813d46a70e2393d77ebb970ddbc0d8f545a04558e4f14380b6",
+      "identical_except_creation_timestamps": true,
+      "parsed_dark_aperture_flash_count": 207,
+      "hole_clearances": [
+        {
+          "via": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                113.955,
+                104.866
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.11600000000000818,
+              "nearest_aperture": {
+                "ref": "J1",
+                "aperture_id": 11,
+                "aperture_type": "R",
+                "center": [
+                  113.654,
+                  104.225
+                ],
+                "bounds_board_mm": [
+                  112.854,
+                  103.8,
+                  114.454,
+                  104.64999999999999
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.025
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.3460000000000122,
+              "nearest_aperture": {
+                "ref": "J1",
+                "aperture_id": 11,
+                "aperture_type": "R",
+                "center": [
+                  113.654,
+                  104.225
+                ],
+                "bounds_board_mm": [
+                  112.854,
+                  103.8,
+                  114.454,
+                  104.64999999999999
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                114.325,
+                104.375
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": -0.1,
+              "nearest_aperture": {
+                "ref": "J1",
+                "aperture_id": 11,
+                "aperture_type": "R",
+                "center": [
+                  113.654,
+                  104.225
+                ],
+                "bounds_board_mm": [
+                  112.854,
+                  103.8,
+                  114.454,
+                  104.64999999999999
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.65
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.3460000000000122,
+              "nearest_aperture": {
+                "ref": "J1",
+                "aperture_id": 11,
+                "aperture_type": "R",
+                "center": [
+                  113.654,
+                  104.225
+                ],
+                "bounds_board_mm": [
+                  112.854,
+                  103.8,
+                  114.454,
+                  104.64999999999999
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "3bc1d32f-634e-4d77-9c5d-f6bdd353e76c",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                119.975,
+                104.225
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": -0.1,
+              "nearest_aperture": {
+                "ref": "J1",
+                "aperture_id": 12,
+                "aperture_type": "R",
+                "center": [
+                  120.146,
+                  104.225
+                ],
+                "bounds_board_mm": [
+                  119.546,
+                  103.8,
+                  120.746,
+                  104.64999999999999
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                120.825,
+                105.05
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.2400000000000034,
+              "nearest_aperture": {
+                "ref": "C3",
+                "aperture_id": 22,
+                "aperture_type": "RoundRect",
+                "center": [
+                  120.9,
+                  105.67
+                ],
+                "bounds_board_mm": [
+                  120.59,
+                  105.39,
+                  121.21000000000001,
+                  105.95
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "nexus-style-fc-F_Paste.gtp",
+      "source_gerber_sha256": "47ccee240e2182be167007ddf855df577ea4111cbea2524e31f58f5e358cdfed",
+      "candidate_gerber_sha256": "c15e765eb21b3fb18a701c2949bdc02ca546f5473bdb05f1615e5d16105b1167",
+      "identical_except_creation_timestamps": true,
+      "parsed_dark_aperture_flash_count": 142,
+      "hole_clearances": [
+        {
+          "via": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                113.955,
+                104.866
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.7539999999999992,
+              "nearest_aperture": {
+                "ref": "U3",
+                "aperture_id": 26,
+                "aperture_type": "R",
+                "center": [
+                  114.12,
+                  105.92
+                ],
+                "bounds_board_mm": [
+                  113.82000000000001,
+                  105.72,
+                  114.42,
+                  106.12
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.025
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.5342046995404177,
+              "nearest_aperture": {
+                "ref": "U12",
+                "aperture_id": 28,
+                "aperture_type": "R",
+                "center": [
+                  116.25,
+                  105.75
+                ],
+                "bounds_board_mm": [
+                  115.7,
+                  105.45,
+                  116.8,
+                  106.05
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                114.325,
+                104.375
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.2449999999999988,
+              "nearest_aperture": {
+                "ref": "U3",
+                "aperture_id": 26,
+                "aperture_type": "R",
+                "center": [
+                  114.12,
+                  105.92
+                ],
+                "bounds_board_mm": [
+                  113.82000000000001,
+                  105.72,
+                  114.42,
+                  106.12
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.65
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.031370849898472,
+              "nearest_aperture": {
+                "ref": "U12",
+                "aperture_id": 28,
+                "aperture_type": "R",
+                "center": [
+                  116.25,
+                  105.75
+                ],
+                "bounds_board_mm": [
+                  115.7,
+                  105.45,
+                  116.8,
+                  106.05
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "3bc1d32f-634e-4d77-9c5d-f6bdd353e76c",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                119.975,
+                104.225
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.213868334347097,
+              "nearest_aperture": {
+                "ref": "U12",
+                "aperture_id": 28,
+                "aperture_type": "R",
+                "center": [
+                  118.95,
+                  105.75
+                ],
+                "bounds_board_mm": [
+                  118.4,
+                  105.45,
+                  119.5,
+                  106.05
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                120.825,
+                105.05
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.7792752697534555,
+              "nearest_aperture": {
+                "ref": "R5",
+                "aperture_id": 15,
+                "aperture_type": "RoundRect",
+                "center": [
+                  121.32,
+                  106.22
+                ],
+                "bounds_board_mm": [
+                  121.05,
+                  105.9,
+                  121.58999999999999,
+                  106.53999999999999
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "nexus-style-fc-B_Paste.gbp",
+      "source_gerber_sha256": "42e09237428331fae66d6e2f50836e601b948288595da2562628255d9ace94be",
+      "candidate_gerber_sha256": "a481b890d9c904e106ec313c7c3658d794c85a68bafd0c05c906e7b24cbdd184",
+      "identical_except_creation_timestamps": true,
+      "parsed_dark_aperture_flash_count": 190,
+      "hole_clearances": [
+        {
+          "via": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                113.955,
+                104.866
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.43400000000000605,
+              "nearest_aperture": {
+                "ref": "U1",
+                "aperture_id": 24,
+                "aperture_type": "O",
+                "center": [
+                  113.85,
+                  106.15
+                ],
+                "bounds_board_mm": [
+                  113.69999999999999,
+                  105.4,
+                  114.0,
+                  106.9
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.025
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.275,
+              "nearest_aperture": {
+                "ref": "U1",
+                "aperture_id": 24,
+                "aperture_type": "O",
+                "center": [
+                  114.85,
+                  106.15
+                ],
+                "bounds_board_mm": [
+                  114.69999999999999,
+                  105.4,
+                  115.0,
+                  106.9
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                114.325,
+                104.375
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.9250000000000057,
+              "nearest_aperture": {
+                "ref": "U1",
+                "aperture_id": 24,
+                "aperture_type": "O",
+                "center": [
+                  114.35,
+                  106.15
+                ],
+                "bounds_board_mm": [
+                  114.19999999999999,
+                  105.4,
+                  114.5,
+                  106.9
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                114.9,
+                104.65
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.65,
+              "nearest_aperture": {
+                "ref": "U1",
+                "aperture_id": 24,
+                "aperture_type": "O",
+                "center": [
+                  114.85,
+                  106.15
+                ],
+                "bounds_board_mm": [
+                  114.69999999999999,
+                  105.4,
+                  115.0,
+                  106.9
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "via": "3bc1d32f-634e-4d77-9c5d-f6bdd353e76c",
+          "measurements": [
+            {
+              "state": "before",
+              "via_center_mm": [
+                119.975,
+                104.225
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 1.2173647938213719,
+              "nearest_aperture": {
+                "ref": "C3",
+                "aperture_id": 16,
+                "aperture_type": "RoundRect",
+                "center": [
+                  120.9,
+                  105.67
+                ],
+                "bounds_board_mm": [
+                  120.59,
+                  105.39,
+                  121.21000000000001,
+                  105.95
+                ]
+              }
+            },
+            {
+              "state": "after",
+              "via_center_mm": [
+                120.825,
+                105.05
+              ],
+              "drill_edge_to_all_aperture_bounds_lower_bound_mm": 0.2400000000000034,
+              "nearest_aperture": {
+                "ref": "C3",
+                "aperture_id": 16,
+                "aperture_type": "RoundRect",
+                "center": [
+                  120.9,
+                  105.67
+                ],
+                "bounds_board_mm": [
+                  120.59,
+                  105.39,
+                  121.21000000000001,
+                  105.95
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "qualification": "Nominal exported geometry only. Mask registration, fabrication tolerances, stencil/reflow, other 16 inherited pasted vias and overall manufacturing qualification remain open."
+}

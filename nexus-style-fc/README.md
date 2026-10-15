@@ -8,9 +8,13 @@ The requested rule floor is now 0.127 mm track/clearance, with 0.15 mm preferred
 0.20 mm drill-to-copper, 0.25 mm drill-to-drill, and 0.125 mm via annulus.
 Existing stronger header-board rules are retained. Main vias remain 0.45/0.20 mm.
 
-The canonical board retains the approved U10 EN isolation, C19-only 10uF/C19702 upgrade and conventional schematic across all 15 functional sections. Its unchanged native result is 627 inherited errors. The separate [current experimental route](routing-wip/2026-10-15/usb-interface-checkpoint/README.md) has 8 clearance errors, zero opens and zero electrical/footprint-filter parity findings; the unchanged schematic retains ERC 0. All-visible experimental checks disclose 13 off-center, five footprint-type and 54 silk warnings. USB is now completely rerouted with explicit width/reference tradeoffs and actual-stack qualification pending.
+## Which PCB should I open?
 
-The separately redesigned child board reaches zero native errors/opens; its matching main mechanical copper remains unfinished at 45 errors. Neither replaces canonical or accepted routing. The old accepted header still has 11 edge errors. Review [exact files, receipts and open gates](routing-wip/2026-10-15/usb-interface-checkpoint/README.md), the [schematic](docs/schematic-main.pdf), [functional-unit booklet](docs/nexus-schematic-review.pdf) and [source archive](docs/nexus-drafted-schematic-source-and-validation.zip). C27 effective input capacitance is a newly documented power gate. CAM/CPL remain historical/stale and manufacturing stays on hold.
+For the latest improved routing, open **[routing-wip/current/hardware/nexus-style-fc.kicad_pro](routing-wip/current/hardware/nexus-style-fc.kicad_pro)**. Its [PCB](routing-wip/current/hardware/nexus-style-fc.kicad_pcb) is r61 with **two clearance errors**, zero opens and electrical/footprint-filter parity. This simple stable folder contains the matching schematic, project, rules and libraries. [Read the current candidate guide](routing-wip/current/README.md).
+
+The root `hardware/` remains the earlier canonical reference with 627 inherited errors and its coherent approved schematic/part fixes. It is not the improved route. All-visible r61 diagnostics retain 13 centering, five footprint-type and 54 silk warnings; the exact unchanged schematic retains its ERC 0 binding. Historical snapshots and [exact validation evidence](routing-wip/2026-10-15/r61-interface-checkpoint/README.md) are retained separately.
+
+The approved capacitor pair/D5 relocation is undergoing atomic source/PCB validation and is not in this freeze. Separate mechanical progress has 24 errors on the main board and zero child errors/opens; historical native mechanical baselines with an automatic via-net reassignment are explicitly rejected. USB impedance, power/current/thermal/transient, via-in-paste process, mechanical fit/strength and assembly remain open. CAM/CPL are historical/stale. **Do not fabricate, assemble or fly.**
 
 
 ![Floorplan](docs/images/floorplan.svg)
