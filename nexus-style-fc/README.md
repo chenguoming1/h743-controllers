@@ -8,12 +8,9 @@ The requested rule floor is now 0.127 mm track/clearance, with 0.15 mm preferred
 0.20 mm drill-to-copper, 0.25 mm drill-to-drill, and 0.125 mm via annulus.
 Existing stronger header-board rules are retained. Main vias remain 0.45/0.20 mm.
 
-The existing copper does not yet satisfy these rules. Native KiCad 10.0.7 confirms
-636 main-board rule errors and 11 header contact-pad edge errors after refill, with
-zero opens and zero schematic-parity issues at this initial rule-transfer checkpoint.
-The main reroute is in progress. Header contact/slot geometry needs a separate
-mechanical decision. See [the current checkpoint and open gates](docs/f722-reroute-status.md).
-Existing manufacturing outputs are historical/stale and must not be used as current CAM.
+The current canonical board has the approved U10 EN isolation and readable, locally wired functional-unit schematic. Native KiCad 10.0.7 revalidation reports 627 inherited rule errors, zero opens/parity/ERC and 54 inherited silk warnings. The separate [current experimental route](routing-wip/2026-10-15/en-readable-checkpoint/README.md) has 32 clearance errors, zero opens/parity/ERC and the same warnings. The unchanged header has 11 contact-edge errors. All remain unfinished.
+
+Review the [single-sheet schematic](docs/schematic-main.pdf), [functional-unit detail booklet](docs/nexus-schematic-review.pdf), and [exact validation and open gates](docs/f722-reroute-status.md). The EN correction does not establish power/current or regulator-loop qualification. Header contact/slot geometry needs a separate mechanical decision. Existing manufacturing outputs are historical/stale and must not be used as current CAM.
 
 
 ![Floorplan](docs/images/floorplan.svg)
