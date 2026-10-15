@@ -92,6 +92,10 @@ class Sheet:
             fl = [f("Reference", ref, x + 2.54, y - 1.27, "left"), f("Value", p["value"], x + 2.54, y + 1.27, "left")]
         elif text == "left":
             fl = [f("Reference", ref, x - 2.54, y - 1.27, "right"), f("Value", p["value"], x - 2.54, y + 1.27, "right")]
+        elif text == "inside":       # big IC symbol: both fields in the middle of the body
+            fl = [f("Reference", ref, x, y - 2.54), f("Value", p["value"], x, y + 2.54)]
+        elif text == "ictop":        # IC: both fields over the body
+            fl = [f("Reference", ref, x, y - yb - 3.81), f("Value", p["value"], x, y - yb - 1.27)]
         elif text == "top":          # horizontal two-pin part, both fields above
             fl = [f("Reference", ref, x, y - 5.08), f("Value", p["value"], x, y - 2.54)]
         elif text == "above":        # horizontal two-pin part
@@ -218,7 +222,7 @@ def draw():
     # ---------------------------------------------------------------- input: J1, VX TVS, power flags
     s.box("INPUT  J1", 15.24, 40.64, 83.82, 81.28)
     s.part("J1", 30.48, 55.88, mirror=True, text="ic")
-    for num, net in (("1", "VX"), ("2", G), ("3", "VBUS"), ("4", G)):
+    for num, net in (("1", "VX"), ("2", G)):
         x, y = s.pin("J1", num)
         s.wire((x, y), (x + 7.62, y))
         s.power(net, x + 7.62, y, "right")
@@ -229,9 +233,6 @@ def draw():
     s.wire(s.pin("D4", "2"), (63.5, 63.5), (73.66, 63.5))
     s.power(G, 63.5, 63.5, "down")
     s.flag(73.66, 63.5, "down")
-    s.wire((58.42, 73.66), (73.66, 73.66))
-    s.power("VBUS", 58.42, 73.66)
-    s.flag(73.66, 73.66, "down")
 
     # ---------------------------------------------------------------- 5 V buck
     s.box(dp.GROUP_TITLES["BUCK5"], 88.9, 40.64, 210.82, 106.68)
@@ -305,11 +306,10 @@ def draw():
     # ---------------------------------------------------------------- output connector
     s.box("OUTPUT  J2", 345.44, 40.64, 405.13, 106.68)
     s.part("J2", 396.24, 73.66, text="right")
-    for num, net in (("1", "5V"), ("2", G), ("3", "VSYS"), ("4", "3V3"), ("5", "3V3_DSM"), ("6", G),
-                     ("7", "VX_SENSE"), ("8", "5V_SENSE")):
+    for num, net in PARTS["J2"]["pins"].items():
         x, y = s.pin("J2", num)
         s.wire((x, y), (x - 7.62, y))
-        if num in ("5", "7", "8"):
+        if net in ("3V3_DSM", "VX_SENSE", "5V_SENSE", "USB_DM", "USB_DP"):
             s.label(net, x - 7.62, y, "left", glob=True)
         else:
             s.power(net, x - 7.62, y, "left")
@@ -372,6 +372,45 @@ def draw():
         s.wire((x + 12.7, 205.74), (x + 22.86, 205.74))
         s.label(net, x + 22.86, 205.74, "right", glob=True)
         s.text(note, x + 22.86, 201.93)
+    # ---------------------------------------------------------------- USB-C
+    s.box(dp.GROUP_TITLES["USB"], 15.24, 203.2, 196.85, 264.16)
+    j = s.part("J6", 68.58, 228.6, text="ictop")
+    for side, sx_, d in (("A", -1, "left"), ("B", 1, "right")):
+        x0 = j[side + "1"][0] + sx_ * 5.08                   # stub ends
+        for pin, net in (("1", G), ("4", "VBUS_C"), ("6", "USB_DP"), ("7", "USB_DM"), ("9", "VBUS_C"), ("12", G)):
+            pt = j[side + pin]
+            s.wire(pt, (x0, pt[1]))
+            if net == G:
+                s.power(G, x0, pt[1], d)
+            else:
+                s.label(net, x0, pt[1], d, glob=net.startswith("USB"))
+        r = "R20" if side == "A" else "R21"                  # Rd on CC, far enough out to clear the labels
+        cc = j[side + "5"]
+        xr = cc[0] + sx_ * 31.75
+        s.part(r, xr, cc[1] + 3.81, text="left" if side == "A" else "right")
+        s.wire(cc, s.pin(r, "1"))
+        s.label("CC1" if side == "A" else "CC2", xr - sx_ * 2.54, cc[1], "right" if side == "A" else "left")
+        s.power(G, xr, cc[1] + 7.62, "down")
+    s.wire(j["EP"], (j["EP"][0], j["EP"][1] + 2.54))
+    s.power(G, j["EP"][0], j["EP"][1] + 2.54, "down")
+    f1 = s.part("F1", 127.0, 219.71, text="above")         # VBUS_C -> fuse -> VBUS
+    s.wire((114.3, f1["1"][1]), f1["1"])
+    s.label("VBUS_C", 114.3, f1["1"][1], "left")
+    s.wire(f1["2"], (153.67, f1["2"][1]))
+    s.power("VBUS", 140.97, f1["2"][1])
+    s.flag(153.67, f1["2"][1])
+    e = s.part("U7", 162.56, 241.3, text="inside")         # ESD: D- on 1/6 over the top, D+ on 3/4 under
+    s.wire(e["1"], (143.51, e["1"][1]), (143.51, 226.06), (181.61, 226.06), (181.61, e["6"][1]), e["6"])
+    s.wire((143.51, 226.06), (138.43, 226.06))
+    s.label("USB_DM", 138.43, 226.06, "left", glob=True)
+    s.wire(e["3"], (143.51, e["3"][1]), (143.51, 256.54), (181.61, 256.54), (181.61, e["4"][1]), e["4"])
+    s.wire((143.51, 256.54), (138.43, 256.54))
+    s.label("USB_DP", 138.43, 256.54, "left", glob=True)
+    s.wire(e["2"], (140.97, e["2"][1]))
+    s.power(G, 140.97, e["2"][1], "left")
+    s.wire(e["5"], (184.15, e["5"][1]))
+    s.power("VBUS", 184.15, e["5"][1], "right")
+    s.text("SBU1 / SBU2 not used; Rd 5.1k on each CC = 5 V sink (UFP)", 20.32, 261.62)
     return s
 
 

@@ -43,7 +43,8 @@ GAP = 0.05                      # extra courtyard gap
 VIA_DIA, VIA_DRILL = 0.45, 0.2  # the one via: JLC's cheapest multilayer via
 CLASSES = (  # name, track, clearance, nets
     ("HighCurrent", 0.5, 0.12, ["VX", "SW_5V", "5V_BUCK", "5V"]),
-    ("Power", 0.3, 0.10, ["VBUS", "VSYS", "3V3", "SW_3V3", "3V3_DSM"]),
+    ("Power", 0.3, 0.10, ["VBUS_C", "VBUS", "VSYS", "3V3", "SW_3V3", "3V3_DSM"]),
+    ("USB", 0.2, 0.15, ["USB_DP", "USB_DM"]),
 )
 JLC_RULES = {"min_clearance": 0.09, "min_track_width": 0.09, "min_via_diameter": 0.45,
              "min_via_annular_width": 0.125, "min_through_hole_diameter": 0.2, "min_hole_to_hole": 0.25,
@@ -235,7 +236,7 @@ def main():
             fps[p["ref"]] = fp
             placer.add(fp)
     # pin names next to the headers on the silkscreen; they also keep the auto-placed parts out of that band
-    short = {"3V3_DSM": "DSM", "VX_SENSE": "VX_S", "5V_SENSE": "5V_S"}
+    short = {"3V3_DSM": "DSM", "VX_SENSE": "VX_S", "5V_SENSE": "5V_S", "USB_DM": "D-", "USB_DP": "D+"}
     for ref, dy in (("J1", 1.9), ("J2", -1.9)):
         part = next(p for p in dp.PARTS if p["ref"] == ref)
         for pad in fps[ref].Pads():
