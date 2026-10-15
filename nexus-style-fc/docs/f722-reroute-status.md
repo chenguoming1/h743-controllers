@@ -71,3 +71,26 @@ The published PCB files retain their original hashes and remain noncompliant
 with the transferred manufacturing rules. Main rerouting, header mechanics,
 USB/reference-path review, power qualification and manufacturing release remain
 open. Existing manufacturing files remain on hold.
+
+## Checkpoint 3: connected local-clearance experiment
+
+The [separate candidate 08](../routing-wip/2026-10-14/README.md) preserves the
+connected original route while widening subminimum tracks and making bounded
+local coordinate repairs. Native KiCad 10.0.7 refill, full-severity DRC and parity
+report **361 clearance errors, 0 opens, 0 parity issues**, no new dangling copper,
+and the original 54 silkscreen warnings. This reduces the widened seed's 458 clearance
+errors by 97; it does not establish compliance. All 361 remaining findings are
+published in the native report.
+
+Exact footprint/pad/net, placement, outline, stack, setup and zone invariants
+pass. All tracks meet 0.127 mm, all 225 vias retain 0.45/0.20 mm, and aggregate power
+width floors pass. The original 18 pasted-via locations remain (19 contact pairs);
+no new contact was added. Their assembly disposition is still unresolved.
+
+A separate global-route branch reached zero geometry errors but retained 62 opens
+and 51 dangling items after safe source-power restoration. It is not the selected
+connected local-repair candidate and is not a completed route.
+
+Neither experimental result is a fabrication release. The canonical PCB files
+remain unchanged; header mechanics, USB/reference review, power qualification
+and historical manufacturing-output holds remain open.
