@@ -1,3 +1,15 @@
+# Current r47 checkpoint: unfinished, 24 clearance errors
+
+[Exact candidate and evidence](../routing-wip/2026-10-15/local-r47-checkpoint/README.md) follows main 80a3f763. Three bounded complete-contact repairs improve the published 29-error experimental route to 24. Native KiCad 10.0.7 refill/save/all-track DRC gives 24 clearance errors, zero opens/parity and 54 unchanged silk warnings. Minimum remaining gap 0.0785 mm; no new/worsened residual pairs. The final 49f9 schematic/ERC is unchanged. Canonical, header, schematic/generators/BOMs and all unrelated files are untouched.
+
+[USB/stack review](../routing-wip/2026-10-15/local-r47-checkpoint/usb-review/USB-STACK-REVIEW.md) measures the exact earlier 29-error source and identifies full-port/return/impedance/ESD work; it is not validation of a later refill. No arbitrary length/skew caps are added. U10 input/output-loop qualification is still open; the conditional r44 route is excluded. No C18 relocation is applied.
+
+Canonical remains 627 inherited errors; header 11 fixed edge errors and unresolved tab/slot fit. Prior exact receipts remain below. CAM/CPL remain stale and the entire manufacturing package remains on hold. No fabrication or flight readiness.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current checkpoint 07: circuit redraw, approved C19 upgrade and r43, unfinished
 
 [Exact checkpoint and native evidence](../routing-wip/2026-10-15/drafted-circuits-checkpoint/README.md) is based on main cc1ec880. All 15 functional sections are conventionally drafted. Only approved C19 metadata changes electrically selected parts: 10uF/10V Samsung CL10A106KP8NNNC, JLC C19702, unchanged footprint/placement. All 347 physical pin nets and original identities remain exact.
