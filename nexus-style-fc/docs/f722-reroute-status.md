@@ -1,3 +1,11 @@
+# Latest: r61, two clearance errors
+
+[Open the stable current candidate](../routing-wip/current/README.md). The matching PCB/project/schema/rules are together there. [Exact native and mechanical evidence](../routing-wip/2026-10-15/r61-interface-checkpoint/README.md) records zero opens/parity/ERC binding, 13 centering/five type/54 silk warnings, and separate mechanical main 24 errors. The old canonical route remains at 627 errors. Approved C27/C31/D5 changes are still pending atomic native validation and excluded here. No fabrication release.
+
+Historical status follows; it does not override the current guide or the newly recorded mechanical native-net rejection.
+
+---
+
 # Current experimental routing: 8 clearance errors, unfinished
 
 [Exact source, native receipts, mechanical states and open gates](../routing-wip/2026-10-15/usb-interface-checkpoint/README.md).

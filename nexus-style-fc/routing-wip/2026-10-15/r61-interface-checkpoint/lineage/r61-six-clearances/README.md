@@ -1,0 +1,9 @@
+# Six-clearance accepted experimental checkpoint, unfinished
+
+Fresh KiCad 10.0.7 native refill/DRC reduces eight clearances to two, with zero opens/parity and unchanged 54 silk warnings. All-visible output also retains 13 centering and 5 footprint-type warnings, without new findings or filters. The remaining J4 VSYS-via gaps are 0.1073 mm to C_RX and 0.0927 mm to C_TX; neither worsens.
+
+Exactly 24 original primitives are replaced by 29 reviewed primitives. All source records match current r60 before replay. The transactions repair VX_SENSE/A_RX, 3V3/SBUS, GND/C6 with the complete VX_SENSE via donor, SDA/U12 plus SCL/IMU_INT donors, and F2/VSYS. All widths and layers are preserved; four existing ordinary vias are replaced at new positions, with no net increase. There is no new power-width exception or component/net/footprint/outline change. The accepted R4/R18 and USB transactions remain intact.
+
+All 24 external ports and four relocated-via annular entries pass full-width physical checks. All 2,656 untouched original direct contacts remain. VSYS and 3V3 donor lengths decrease, as does the direct B.Cu U1.12/C11.2 ground donor. Actual finite C6/C11/U1.12, U7/C28 and U10/C18/C19 main-plane paths are checked after refill. All 96 shield-spoke regions survive, both main planes remain connected, and full-width USB reference projection is unchanged. Actual mask/paste apertures remain unchanged; each relocated hole clears every conservative aperture bound by at least 0.256595 mm. The 16 inherited pasted-hole locations remain.
+
+The final J4 clearance transaction is coordinated with the separately approved C27/C31 capacitor placement. No capacitor, extra component move or new pin-map change is present here. Canonical copper and mechanical candidates are separate. Narrow nominal arc margin, USB impedance/return, power/transient, via/assembly process, header fit/strength and final fabrication gates remain open.

@@ -1,0 +1,678 @@
+{
+  "status": "READ-ONLY EXACT GEOMETRY PROPOSAL; no board written; native refill/DRC and integrated acceptance still required",
+  "source_board": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/r61-replay/native-baseline/hardware/nexus-style-fc.kicad_pcb",
+  "source_board_sha256": "010d4fb54b8b9444eb739658200c107c6011ac7eca8308c90b38f6a2b0cf64cb",
+  "source_drc": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/r61-replay/native-baseline/native-drc.json",
+  "source_drc_sha256": "dae4aaebf13a0d4cd3c3975654c9d912e9a74d77894e789d68e12c9172d7dcc8",
+  "native_receipt": {
+    "command": [
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/runtime/kicad-cli",
+      "pcb",
+      "drc",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/r61-replay/native-baseline/native-drc.json",
+      "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/mechanical-integration/r61-replay/native-baseline/hardware/nexus-style-fc.kicad_pcb"
+    ],
+    "started_utc": "2026-10-15T07:29:37.509122+00:00",
+    "finished_utc": "2026-10-15T07:29:49.740569+00:00",
+    "exit_code": 5,
+    "board_sha256": "010d4fb54b8b9444eb739658200c107c6011ac7eca8308c90b38f6a2b0cf64cb",
+    "drc_sha256": "dae4aaebf13a0d4cd3c3975654c9d912e9a74d77894e789d68e12c9172d7dcc8",
+    "source_r61_sha256": "5a51610cc1569958442f97407e11533b646b1e0d8997d86356b8968dce50487e",
+    "counts": {
+      "items_not_allowed:error": 7,
+      "clearance:error": 2,
+      "shorting_items:error": 7,
+      "hole_clearance:error": 8,
+      "copper_edge_clearance:error": 3,
+      "solder_mask_bridge:error": 7,
+      "via_dangling:warning": 1,
+      "track_dangling:warning": 2,
+      "track_not_centered_on_via:warning": 13,
+      "silk_edge_clearance:warning": 3,
+      "footprint_type_mismatch:warning": 4,
+      "silk_overlap:warning": 32,
+      "silk_over_copper:warning": 19
+    },
+    "opens": 0,
+    "parity": 0,
+    "qualification": "Fresh mechanical replay with already proved S3/TAIL and child copper. This is not a new mechanical clearance repair or final integrated acceptance."
+  },
+  "source_records_count": 6,
+  "moved_vias": [
+    {
+      "uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "net": "ESC",
+      "from": [
+        113.955,
+        104.866
+      ],
+      "to": [
+        114.9,
+        104.025
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "preserve_every_other_source_field": true,
+      "source_record": "(via\n\t(at 113.955 104.866)\n\t(size 0.45)\n\t(drill 0.2)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(net \"ESC\")\n\t(uuid \"459a4761-77d0-43e9-b237-e430a4fc7a74\")\n)"
+    },
+    {
+      "uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "net": "DSM_DATA",
+      "from": [
+        114.325,
+        104.375
+      ],
+      "to": [
+        114.9,
+        104.65
+      ],
+      "diameter_mm": 0.45,
+      "drill_mm": 0.2,
+      "preserve_every_other_source_field": true,
+      "source_record": "(via\n\t(at 114.325 104.375)\n\t(size 0.45)\n\t(drill 0.2)\n\t(layers \"F.Cu\" \"B.Cu\")\n\t(net \"DSM_DATA\")\n\t(uuid \"5e03b83d-dc80-4c83-a1ac-907e2c0c639f\")\n)"
+    }
+  ],
+  "routes": [
+    {
+      "net": "ESC",
+      "layer": "In2.Cu",
+      "width_mm": 0.127,
+      "removed_uuids": [
+        "6bad5e66-8f88-4792-b89c-06b30cc75a31"
+      ],
+      "source_record": "(segment\n\t(start 112.424 104.866)\n\t(end 113.955 104.866)\n\t(width 0.127)\n\t(layer \"In2.Cu\")\n\t(net \"ESC\")\n\t(uuid \"6bad5e66-8f88-4792-b89c-06b30cc75a31\")\n)",
+      "replacement_segments": [
+        {
+          "uuid": "d03757a2-ee6b-55f6-ba70-a0499bde5d05",
+          "start": [
+            112.424,
+            104.866
+          ],
+          "end": [
+            114.9,
+            104.025
+          ],
+          "width_mm": 0.127,
+          "layer": "In2.Cu",
+          "net": "ESC"
+        }
+      ],
+      "points": [
+        [
+          112.424,
+          104.866
+        ],
+        [
+          114.9,
+          104.025
+        ]
+      ],
+      "expected_external_ports": [
+        "72a6ef05-b988-46f5-b55d-11e4a5adef38"
+      ]
+    },
+    {
+      "net": "ESC",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "removed_uuids": [
+        "fe5b2f09-67a7-4200-aab5-9d3cf4a453de"
+      ],
+      "source_record": "(segment\n\t(start 117.614 108.526)\n\t(end 113.955 104.866)\n\t(width 0.127)\n\t(layer \"In3.Cu\")\n\t(net \"ESC\")\n\t(uuid \"fe5b2f09-67a7-4200-aab5-9d3cf4a453de\")\n)",
+      "replacement_segments": [
+        {
+          "uuid": "fb67b86f-557a-5fe8-9d44-9562c55bdc8b",
+          "start": [
+            117.614,
+            108.526
+          ],
+          "end": [
+            115.55,
+            104.5
+          ],
+          "width_mm": 0.127,
+          "layer": "In3.Cu",
+          "net": "ESC"
+        },
+        {
+          "uuid": "bfbae660-7a6e-5eba-8cb2-fb1d2416e057",
+          "start": [
+            115.55,
+            104.5
+          ],
+          "end": [
+            114.9,
+            104.025
+          ],
+          "width_mm": 0.127,
+          "layer": "In3.Cu",
+          "net": "ESC"
+        }
+      ],
+      "points": [
+        [
+          117.614,
+          108.526
+        ],
+        [
+          115.55,
+          104.5
+        ],
+        [
+          114.9,
+          104.025
+        ]
+      ],
+      "expected_external_ports": [
+        "a9a13299-5ede-49b1-9e8a-1bf17fc5f38f"
+      ]
+    },
+    {
+      "net": "DSM_DATA",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "removed_uuids": [
+        "d3b48651-8a36-4b7d-a8a5-e2cee42f9873"
+      ],
+      "source_record": "(segment\n\t(start 114.85 104.9)\n\t(end 114.325 104.375)\n\t(width 0.127)\n\t(layer \"B.Cu\")\n\t(net \"DSM_DATA\")\n\t(uuid \"d3b48651-8a36-4b7d-a8a5-e2cee42f9873\")\n)",
+      "replacement_segments": [
+        {
+          "uuid": "fd1c928e-8edd-5d48-b27f-09b58d266c2f",
+          "start": [
+            114.85,
+            104.9
+          ],
+          "end": [
+            114.9,
+            104.65
+          ],
+          "width_mm": 0.127,
+          "layer": "B.Cu",
+          "net": "DSM_DATA"
+        }
+      ],
+      "points": [
+        [
+          114.85,
+          104.9
+        ],
+        [
+          114.9,
+          104.65
+        ]
+      ],
+      "expected_external_ports": [
+        "f4d1763d-11c2-40b1-af7a-0207af1b49d5"
+      ]
+    },
+    {
+      "net": "DSM_DATA",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "removed_uuids": [
+        "40258b5d-976f-48f5-b49f-6a536d757be1"
+      ],
+      "source_record": "(segment\n\t(start 114.325 104.375)\n\t(end 113.725 104.375)\n\t(width 0.127)\n\t(layer \"In3.Cu\")\n\t(net \"DSM_DATA\")\n\t(uuid \"40258b5d-976f-48f5-b49f-6a536d757be1\")\n)",
+      "replacement_segments": [
+        {
+          "uuid": "90cf6d36-3657-54ce-80be-a098e50d6a5a",
+          "start": [
+            113.725,
+            104.375
+          ],
+          "end": [
+            114.9,
+            104.65
+          ],
+          "width_mm": 0.127,
+          "layer": "In3.Cu",
+          "net": "DSM_DATA"
+        }
+      ],
+      "points": [
+        [
+          113.725,
+          104.375
+        ],
+        [
+          114.9,
+          104.65
+        ]
+      ],
+      "expected_external_ports": [
+        "c93748ed-b076-4ce8-9c73-a59a61e9f25c"
+      ]
+    }
+  ],
+  "all_original_contacts": [
+    {
+      "source_uuid": "40258b5d-976f-48f5-b49f-6a536d757be1",
+      "contact_uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "layers": [
+        "In3.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "40258b5d-976f-48f5-b49f-6a536d757be1",
+      "contact_uuid": "c93748ed-b076-4ce8-9c73-a59a61e9f25c",
+      "layers": [
+        "In3.Cu"
+      ],
+      "inside_transaction": false
+    },
+    {
+      "source_uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "contact_uuid": "6bad5e66-8f88-4792-b89c-06b30cc75a31",
+      "layers": [
+        "In2.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "contact_uuid": "fe5b2f09-67a7-4200-aab5-9d3cf4a453de",
+      "layers": [
+        "In3.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "contact_uuid": "d3b48651-8a36-4b7d-a8a5-e2cee42f9873",
+      "layers": [
+        "B.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "contact_uuid": "40258b5d-976f-48f5-b49f-6a536d757be1",
+      "layers": [
+        "In3.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "6bad5e66-8f88-4792-b89c-06b30cc75a31",
+      "contact_uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "layers": [
+        "In2.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "6bad5e66-8f88-4792-b89c-06b30cc75a31",
+      "contact_uuid": "72a6ef05-b988-46f5-b55d-11e4a5adef38",
+      "layers": [
+        "In2.Cu"
+      ],
+      "inside_transaction": false
+    },
+    {
+      "source_uuid": "d3b48651-8a36-4b7d-a8a5-e2cee42f9873",
+      "contact_uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "layers": [
+        "B.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "d3b48651-8a36-4b7d-a8a5-e2cee42f9873",
+      "contact_uuid": "f4d1763d-11c2-40b1-af7a-0207af1b49d5",
+      "layers": [
+        "B.Cu"
+      ],
+      "inside_transaction": false
+    },
+    {
+      "source_uuid": "fe5b2f09-67a7-4200-aab5-9d3cf4a453de",
+      "contact_uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "layers": [
+        "In3.Cu"
+      ],
+      "inside_transaction": true
+    },
+    {
+      "source_uuid": "fe5b2f09-67a7-4200-aab5-9d3cf4a453de",
+      "contact_uuid": "a9a13299-5ede-49b1-9e8a-1bf17fc5f38f",
+      "layers": [
+        "In3.Cu"
+      ],
+      "inside_transaction": false
+    }
+  ],
+  "all_external_ports": [
+    {
+      "source_donor_uuid": "6bad5e66-8f88-4792-b89c-06b30cc75a31",
+      "external_port": {
+        "uuid": "72a6ef05-b988-46f5-b55d-11e4a5adef38",
+        "net": "ESC",
+        "layers": [
+          "In2.Cu"
+        ],
+        "kind": "PCB_TRACK",
+        "start": [
+          111.886,
+          105.415848
+        ],
+        "end": [
+          112.424,
+          104.866
+        ],
+        "width": 0.127,
+        "common_layers": [
+          "In2.Cu"
+        ]
+      },
+      "proof": "Exact shared centerline endpoint, unchanged retained 0.127 mm track and replacement 0.127 mm track",
+      "shared_endpoints": [
+        [
+          112.424,
+          104.866
+        ]
+      ]
+    },
+    {
+      "source_donor_uuid": "fe5b2f09-67a7-4200-aab5-9d3cf4a453de",
+      "external_port": {
+        "uuid": "a9a13299-5ede-49b1-9e8a-1bf17fc5f38f",
+        "net": "ESC",
+        "layers": [
+          "In3.Cu"
+        ],
+        "kind": "PCB_TRACK",
+        "start": [
+          117.597717,
+          110.677716
+        ],
+        "end": [
+          117.614,
+          108.526
+        ],
+        "width": 0.127,
+        "common_layers": [
+          "In3.Cu"
+        ]
+      },
+      "proof": "Exact shared centerline endpoint, unchanged retained 0.127 mm track and replacement 0.127 mm track",
+      "shared_endpoints": [
+        [
+          117.614,
+          108.526
+        ]
+      ]
+    },
+    {
+      "source_donor_uuid": "d3b48651-8a36-4b7d-a8a5-e2cee42f9873",
+      "external_port": {
+        "uuid": "f4d1763d-11c2-40b1-af7a-0207af1b49d5",
+        "net": "DSM_DATA",
+        "layers": [
+          "B.Cu"
+        ],
+        "kind": "PCB_TRACK",
+        "start": [
+          114.85,
+          106.15
+        ],
+        "end": [
+          114.85,
+          104.9
+        ],
+        "width": 0.127,
+        "common_layers": [
+          "B.Cu"
+        ]
+      },
+      "proof": "Exact shared centerline endpoint, unchanged retained 0.127 mm track and replacement 0.127 mm track",
+      "shared_endpoints": [
+        [
+          114.85,
+          104.9
+        ]
+      ]
+    },
+    {
+      "source_donor_uuid": "40258b5d-976f-48f5-b49f-6a536d757be1",
+      "external_port": {
+        "uuid": "c93748ed-b076-4ce8-9c73-a59a61e9f25c",
+        "net": "DSM_DATA",
+        "layers": [
+          "In3.Cu"
+        ],
+        "kind": "PCB_TRACK",
+        "start": [
+          113.725,
+          104.375
+        ],
+        "end": [
+          113.475,
+          104.625
+        ],
+        "width": 0.127,
+        "common_layers": [
+          "In3.Cu"
+        ]
+      },
+      "proof": "Exact shared centerline endpoint, unchanged retained 0.127 mm track and replacement 0.127 mm track",
+      "shared_endpoints": [
+        [
+          113.725,
+          104.375
+        ]
+      ]
+    }
+  ],
+  "annular_entry_proofs": [
+    {
+      "via_uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "track_uuid": "d03757a2-ee6b-55f6-ba70-a0499bde5d05",
+      "layer": "In2.Cu",
+      "width_mm": 0.127,
+      "axial_entry_depth_mm": 0.02,
+      "entry_rectangle_corners": [
+        [
+          114.7878606536905,
+          104.13015235142059
+        ],
+        [
+          114.74701557757862,
+          104.00989978488907
+        ],
+        [
+          114.76892324163829,
+          104.13658464687127
+        ],
+        [
+          114.72807816552641,
+          104.01633208033975
+        ]
+      ],
+      "minimum_rectangle_distance_from_drill_center_mm": 0.14,
+      "maximum_corner_distance_from_center_mm": 0.1721402044846003,
+      "hole_radius_mm": 0.1,
+      "copper_radius_mm": 0.225,
+      "conclusion": "A finite full-width copper rectangle lies entirely in the actual via annulus, with at least 0.04 mm radial separation from drill."
+    },
+    {
+      "via_uuid": "459a4761-77d0-43e9-b237-e430a4fc7a74",
+      "track_uuid": "bfbae660-7a6e-5eba-8cb2-fb1d2416e057",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "axial_entry_depth_mm": 0.02,
+      "entry_rectangle_corners": [
+        [
+          115.05050081053935,
+          104.05633298624456
+        ],
+        [
+          114.97556870369289,
+          104.1588716587713
+        ],
+        [
+          115.0666486329845,
+          104.0681333180314
+        ],
+        [
+          114.99171652613803,
+          104.17067199055815
+        ]
+      ],
+      "minimum_rectangle_distance_from_drill_center_mm": 0.14,
+      "maximum_corner_distance_from_center_mm": 0.1721402044846003,
+      "hole_radius_mm": 0.1,
+      "copper_radius_mm": 0.225,
+      "conclusion": "A finite full-width copper rectangle lies entirely in the actual via annulus, with at least 0.04 mm radial separation from drill."
+    },
+    {
+      "via_uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "track_uuid": "fd1c928e-8edd-5d48-b27f-09b58d266c2f",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "axial_entry_depth_mm": 0.02,
+      "entry_rectangle_corners": [
+        [
+          114.93481061398703,
+          104.79973466917802
+        ],
+        [
+          114.81027686817427,
+          104.77482792001545
+        ],
+        [
+          114.93088829128426,
+          104.81934628269184
+        ],
+        [
+          114.8063545454715,
+          104.79443953352927
+        ]
+      ],
+      "minimum_rectangle_distance_from_drill_center_mm": 0.14,
+      "maximum_corner_distance_from_center_mm": 0.1721402044846003,
+      "hole_radius_mm": 0.1,
+      "copper_radius_mm": 0.225,
+      "conclusion": "A finite full-width copper rectangle lies entirely in the actual via annulus, with at least 0.04 mm radial separation from drill."
+    },
+    {
+      "via_uuid": "5e03b83d-dc80-4c83-a1ac-907e2c0c639f",
+      "track_uuid": "90cf6d36-3657-54ce-80be-a098e50d6a5a",
+      "layer": "In3.Cu",
+      "width_mm": 0.127,
+      "axial_entry_depth_mm": 0.02,
+      "entry_rectangle_corners": [
+        [
+          114.74921299129001,
+          104.67992537392067
+        ],
+        [
+          114.778154318647,
+          104.55626697521353
+        ],
+        [
+          114.72973922771408,
+          104.67536768457312
+        ],
+        [
+          114.75868055507107,
+          104.55170928586598
+        ]
+      ],
+      "minimum_rectangle_distance_from_drill_center_mm": 0.14,
+      "maximum_corner_distance_from_center_mm": 0.1721402044846003,
+      "hole_radius_mm": 0.1,
+      "copper_radius_mm": 0.225,
+      "conclusion": "A finite full-width copper rectangle lies entirely in the actual via annulus, with at least 0.04 mm radial separation from drill."
+    }
+  ],
+  "minimum_gaps": {
+    "new_copper_to_retained_other_net_copper": {
+      "gap_mm": 0.221,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "dea2f044-cc28-4a19-911a-12c0b90c79cf"
+      ],
+      "layer": "B.Cu"
+    },
+    "new_drill_to_retained_other_net_copper": {
+      "gap_mm": 0.346,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "dea2f044-cc28-4a19-911a-12c0b90c79cf"
+      ],
+      "layer": "B.Cu"
+    },
+    "new_copper_to_retained_other_net_drill": {
+      "gap_mm": 0.417702,
+      "objects": [
+        "ESC_In3.Cu_0",
+        "666b0a4b-d514-43f7-93ca-63f2b1517252"
+      ],
+      "layer": "In3.Cu"
+    },
+    "new_drill_to_retained_drill": {
+      "gap_mm": 2.003548,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "c8d8f762-ee23-4ed9-9b59-fc6c0c22f7ea"
+      ]
+    },
+    "new_copper_to_edge": {
+      "gap_mm": 0.325,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "04824ebf-df0a-52a5-94fa-5612eaa6e1e9"
+      ]
+    },
+    "new_copper_to_rule_area": {
+      "gap_mm": 0.05,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "79e1149d-aeb4-4aaf-8cd7-cf3a7ca09f8a"
+      ]
+    },
+    "new_to_new_other_net_copper": {
+      "gap_mm": 0.175,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "5e03b83d-dc80-4c83-a1ac-907e2c0c639f"
+      ],
+      "layer": "F.Cu"
+    },
+    "new_drill_to_new_other_net_copper": {
+      "gap_mm": 0.3,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "5e03b83d-dc80-4c83-a1ac-907e2c0c639f"
+      ],
+      "layer": "F.Cu"
+    },
+    "new_drill_to_new_drill": {
+      "gap_mm": 0.425,
+      "objects": [
+        "459a4761-77d0-43e9-b237-e430a4fc7a74",
+        "5e03b83d-dc80-4c83-a1ac-907e2c0c639f"
+      ]
+    }
+  },
+  "screen_candidates_tested": 3,
+  "clearance_guard_mm": 2e-06,
+  "geometry_method": "KiCad 10.0.7 effective-shape geometry only. No route search, board edit/save, zone refill or native DRC job. Minimum gaps are conservative 1 nm lower bounds from integer collision bisection. All retained tracks/vias/pads, new-to-new copper, native hole shapes, board and footprint Edge.Cuts, and rule areas are checked. Same-net annular contacts are intentional.",
+  "invariants": "Only two ordinary through-via positions and four complete fixed-layer donor records change. All widths remain 0.127 mm. Other footprints, pads, stackup, netlist, outlines, zones/rules, r61 USB and power returns are fixed. No DSM_DATA slot-edge corridor, VX keepout or left RPM/ESC/TAIL cluster change.",
+  "post_apply_required": [
+    "Invalidate/refill cached copper zones; source cached fill does not anticipate relocated vias or tracks. Zone outlines/rules remain fixed.",
+    "Native DRC with schematic parity and all-track-errors on the complete integrated candidate. Compare all errors/opens/warnings to the bound receipt and reject regressions.",
+    "Verify all four external full-width track ports and four annular entries on saved/reloaded board.",
+    "Do not interpret this geometry pass as mechanical fit, strength, mask, fabrication or final integrated acceptance."
+  ]
+}
