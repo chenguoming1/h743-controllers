@@ -1,0 +1,51 @@
+{
+  "status": "FAILED CLEARANCE - EXPERIMENT ONLY - DO NOT FABRICATE",
+  "source_commit": "dc1ea0c324b5f4a0bb3c8e250a31acdfe5793c4c",
+  "source_pcb_sha256": "b467854d4e4a49959d61bdbaa088e78165129ce30ae8ab9dedf4d45c58999b5c",
+  "native_version": "10.0.7",
+  "experimental_files": {
+    "attempt-08.kicad_pcb": "a8979b82be1272844947ffe30f74a3434dee29270bced8588eae8629b7c6e9b6",
+    "attempt-08-drc.json": "4f9a6ab6bc9e4144fbbd58ce4f3f6cc611ae055c12964651d7b77aa79528a9ba",
+    "attempt-08-validation.json": "18254120792df19a1523b6db534343a3a1542fb8b90d12bacc2de5a3ddc54309"
+  },
+  "canonical_companion_sha256": {
+    "nexus-style-fc.kicad_pro": "274a7c6c2152b00ff2c7e123e69414bf0da3d72417d0ce27cabbb0c8219ab538",
+    "nexus-style-fc.kicad_dru": "3c261423d4fb5b02b61cf26ee73f62c417e487f71a5f28b5327213618212bd89",
+    "nexus-style-fc.kicad_sch": "2fa51815d14bd029f9232afc49d9a7f047d1aa26519b1c68ea7464290879997b"
+  },
+  "native_invocation": "kicad-cli pcb drc --all-track-errors --schematic-parity --refill-zones --save-board --severity-all --format json --exit-code-violations -o REPORT ISOLATED_HARDWARE/nexus-style-fc.kicad_pcb",
+  "native_summary": {
+    "clearance_errors": 361,
+    "opens": 0,
+    "schematic_parity": 0,
+    "new_dangling_warnings": 0,
+    "historical_silkscreen_warnings": 54,
+    "existing_pasted_vias": 18,
+    "existing_drill_paste_contact_pairs": 19,
+    "new_drill_paste_contacts": 0
+  },
+  "validation_gates": {
+    "invariants": "pass",
+    "manufacturing_geometry_gate": "pass",
+    "native_drc": "fail",
+    "native_erc": "pass",
+    "power_width_preservation": "pass",
+    "project_suppressions": "pass"
+  },
+  "local_repair": {
+    "candidate_sha256": "743464d11b8812bf8843707c6d3611e33b3e3d4625cf3d4e1d9b2fd6bccd2135",
+    "source_sha256": "6351431317249df9c139b3adc556a445fdd351dae5eda61bfcd90e924bd1c1a3",
+    "accepted_patches": 66,
+    "attempted_patches": 80,
+    "max_displacement_mm": 0.07976660590120549,
+    "candidate": "/tmp/nexus-reroute-f722-20261014/local-repair-prep/run-20261014T182955Z/candidate.kicad_pcb",
+    "full_native_DRC_refill_parity": "NOT RUN",
+    "status": "experimental local proposal; not ready for publication"
+  },
+  "limitations": [
+    "This candidate is fully connected in the enabled native checks but has 361 clearance violations and is not rule-compliant.",
+    "Canonical PCB files remain unchanged and do not meet the transferred rules.",
+    "All eighteen original drilled-paste vias remain and need removal or a qualified assembly disposition.",
+    "USB impedance/return path, power/thermal/current capacity, header fit/contact geometry and manufacturing release remain open."
+  ]
+}

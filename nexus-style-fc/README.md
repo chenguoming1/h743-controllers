@@ -1,8 +1,20 @@
 # Nexus-style FBL controller
 
-This is a fresh KiCad 10 design modelled on the [RadioMaster Nexus](https://radiomasterrc.com/products/nexus-control-system) flybarless controller. It uses LCSC-purchasable parts and keeps the stock Rotorflight `RDMS-NEXUS_F7` pinout, so the standard Nexus firmware target can run on it.
+This is a fresh KiCad 10 design modelled on the [RadioMaster Nexus](https://radiomasterrc.com/products/nexus-control-system) flybarless controller. It uses LCSC-purchasable parts and keeps the stock Rotorflight `RDMS-NEXUS_F7` pinout, as its resource-map basis. Stock-target orientation and hardware bring-up remain unverified.
 
-**Status: revision 5 — fully routed, ready to order from JLCPCB.** It has a 22.4 × 33.1 mm 6-layer main board (88 parts, 82 placed by JLC) and a vertical servo-header child board that joins it VBar style: two tabs through two non-plated slots, soldered on the main board's bottom face. It is sized to the Nexus 41.3 × 25.4 mm case. Both boards pass ERC, DRC (0 errors, 0 unconnected) and schematic/PCB parity, using only JLCPCB's no-extra-cost rules (0.09 mm track and space, one 0.2/0.45 mm via). See [docs/layout-review.md](docs/layout-review.md), the [schematic PDF](docs/schematic-main.pdf) and the [manufacturing files](manufacturing/).
+**Status: unfinished F722-rule reroute. Do not fabricate or assemble from this checkpoint.**
+The requested rule floor is now 0.127 mm track/clearance, with 0.15 mm preferred signal width,
+0.254 mm minimum copper-to-edge (the main board retains its stricter 0.30 mm),
+0.20 mm drill-to-copper, 0.25 mm drill-to-drill, and 0.125 mm via annulus.
+Existing stronger header-board rules are retained. Main vias remain 0.45/0.20 mm.
+
+The existing copper does not yet satisfy these rules. Native KiCad 10.0.7 confirms
+636 main-board rule errors and 11 header contact-pad edge errors after refill, with
+zero opens and zero schematic-parity issues at this initial rule-transfer checkpoint.
+The main reroute is in progress. Header contact/slot geometry needs a separate
+mechanical decision. See [the current checkpoint and open gates](docs/f722-reroute-status.md).
+Existing manufacturing outputs are historical/stale and must not be used as current CAM.
+
 
 ![Floorplan](docs/images/floorplan.svg)
 

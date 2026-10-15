@@ -2,9 +2,15 @@
 # Regenerate everything from tools/design.py and tools/design_header.py, then run the checks.
 set -euo pipefail
 cd "$(dirname "$0")"
-PY=/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
-K=/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli
+PY=${KICAD_PYTHON:-python3}
+K=${KICAD_CLI:-kicad-cli}
 HW=../hardware
+# This is a full regeneration, not a reroute of manually revised source boards.
+# Fail before overwriting anything when the native parser cannot support this project.
+case "$($K --version)" in
+  10.*) ;;
+  *) echo "KiCad 10 is required; existing sources have not been regenerated" >&2; exit 1 ;;
+esac
 
 python3 make_footprints.py >/dev/null
 python3 fix_courtyards.py
@@ -25,8 +31,9 @@ python3 joint_section.py
 
 for b in "$HW/nexus-style-fc" "$HW/header-board/nexus-header-board"; do
   echo "== $(basename "$b")"
-  $K sch erc --severity-error --exit-code-violations -o /dev/null "$b.kicad_sch" 2>&1 | grep Found
-  $K pcb drc --schematic-parity --severity-error -o /dev/null "$b.kicad_pcb" 2>&1 | grep Found
+  $K sch erc --severity-error --exit-code-violations -o /dev/null "$b.kicad_sch"
+  $K pcb drc --all-track-errors --schematic-parity --refill-zones --save-board \
+    --severity-error --exit-code-violations -o /dev/null "$b.kicad_pcb"
 done
 
 $K sch export pdf -o ../docs/schematic-main.pdf "$HW/nexus-style-fc.kicad_sch" >/dev/null 2>&1
