@@ -1,0 +1,1 @@
+This is the source-only preparation evidence. Its illustrative boards were not adopted. The accepted directory contains the actual guarded replay and final native checks. Original manufacturer PDFs are cited in the polarity review and hash inventory; only the reviewed package-drawing images are copied here.
