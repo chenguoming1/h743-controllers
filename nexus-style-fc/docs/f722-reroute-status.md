@@ -1,4 +1,10 @@
-# Current published experimental checkpoint: batch31, unfinished
+# Current published experimental checkpoint: batch35, unfinished
+
+[Batch35](../routing-wip/2026-10-15/batch35/README.md) has 33 native clearance errors, zero opens/parity, and 54 inherited silk warnings. The worst RPM/J1 gap is repaired; minimum remaining clearance is 0.0751 mm, still below 0.127 mm. Both accepted steps since batch31 have no worsened residual gap. Exact candidate, native/contact/width/gap evidence and the independent [batch31 board-level review](../routing-wip/2026-10-15/reviews/batch31/README.md) are archived. Canonical hardware PCBs and manufacturing holds remain unchanged. U10/C19 output-loop, L2 distribution and B_TX return/coupling qualification remain provisional.
+
+## Superseded published checkpoint31 and earlier history
+
+# Historical published experimental checkpoint: batch31
 
 Batch31 has 37 native clearance errors, 0 opens, 0 schematic-parity findings and 54 inherited silkscreen warnings. It is preserved under [routing-wip/2026-10-15/batch31](../routing-wip/2026-10-15/batch31/README.md), with exact source, native receipts and cumulative contact/width evidence. The canonical hardware PCBs are unchanged. Four new compliant ordinary tented vias are outside pasted pads; 18 inherited pasted-via locations and all header/mechanical, USB, power and fabrication gates remain open. No manufacturing outputs were regenerated.
 
