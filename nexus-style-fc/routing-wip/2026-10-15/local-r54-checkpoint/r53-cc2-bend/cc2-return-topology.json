@@ -1,0 +1,40 @@
+{
+  "status": "PASS: exact main-plane preservation and non-regressing scoped CC2 reference projection",
+  "source_board_sha256": "96bff56f7d8caf7bb306ee14b2e7340ab80e48397c753116279da3001c24baac",
+  "candidate_board_sha256": "3e0795a336cb3fd461b4c5a80025cc676028986f0b467ef331c10f505da8f842",
+  "main_plane_comparison": [
+    {
+      "layer": "In1.Cu",
+      "lost_GND_area_mm2": 0.0,
+      "added_GND_area_mm2": 0.0,
+      "exact_saved_filled_copper_equal": true
+    },
+    {
+      "layer": "In4.Cu",
+      "lost_GND_area_mm2": 0.0,
+      "added_GND_area_mm2": 0.0,
+      "exact_saved_filled_copper_equal": true
+    }
+  ],
+  "full_width_projection": [
+    {
+      "state": "before",
+      "routing_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "full_width_track_polygon_area_mm2": 0.1653973846485,
+      "uncovered_area_mm2": 0.1140963604035,
+      "GND_fill_coverage_fraction": 0.31016829168142024,
+      "centerline_length_mm": 1.2022701837174539
+    },
+    {
+      "state": "after",
+      "routing_layer": "F.Cu",
+      "reference_layer": "In1.Cu",
+      "full_width_track_polygon_area_mm2": 0.179373198082,
+      "uncovered_area_mm2": 0.112650169115,
+      "GND_fill_coverage_fraction": 0.3719788111069845,
+      "centerline_length_mm": 1.2122594968069051
+    }
+  ],
+  "qualification": "The inherited partial GND-fill projection is measured, not called a continuous reference or USB/ESD qualification. All main-plane copper and original ground primitives remain unchanged; separate post-refill shield-spoke and R20/U7/J6 component checks are required."
+}

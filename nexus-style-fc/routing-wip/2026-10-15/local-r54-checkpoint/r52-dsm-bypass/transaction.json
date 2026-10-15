@@ -1,0 +1,85 @@
+{
+  "status": "Bounded DSM local bypass via two existing vias; native and return acceptance pending",
+  "source_directory": "/workspace/scratch/8a35c1f26232/nexus-recovery-20261015/u10-metadata-integration/experimental-r51",
+  "source_board_sha256": "3e3869e15a819c3e8091fe5f73d13ffd5139af07f7fd2c4fe1eafcf0b3fb1b2b",
+  "source_schematic_sha256": "49f9e0571424d0610e294bdcd6b120a42d04db284ecda9e660428fc587e62699",
+  "candidate_pre_refill_sha256": "b42520321d8a4e576416fa38bfbace8b140e1c9b8cbc9e48389c5f1c1271fcf2",
+  "routes": [
+    {
+      "name": "DSM_B",
+      "net": "DSM_DATA",
+      "layer": "B.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          101.375,
+          111.675
+        ],
+        [
+          101.375,
+          112.825
+        ],
+        [
+          101.775,
+          113.225
+        ]
+      ],
+      "removed_uuids": [],
+      "new_uuids": [
+        "fb1603c5-23e7-5d3d-8d9e-6f1747be3eec",
+        "daa79a0c-b443-5924-8c4c-875ac5b3a4b6"
+      ]
+    },
+    {
+      "name": "DSM_F",
+      "net": "DSM_DATA",
+      "layer": "F.Cu",
+      "width_mm": 0.127,
+      "points": [
+        [
+          101.775,
+          113.225
+        ],
+        [
+          100.66,
+          114.496
+        ]
+      ],
+      "removed_uuids": [
+        "1e87d743-ebb9-40a9-a891-2357ffc18d2a",
+        "95998f31-6893-4884-b5f2-ed36bfde4294",
+        "cb054904-7c15-4bd2-a45c-831a234ed68f"
+      ],
+      "new_uuids": [
+        "5f42572a-67e1-5028-967c-9d558ea6f2a0"
+      ]
+    }
+  ],
+  "removed_tracks": [
+    {
+      "uuid": "1e87d743-ebb9-40a9-a891-2357ffc18d2a",
+      "source_text": "(segment\n\t\t(start 102.451 112.387583)\n\t\t(end 101.709379 111.650621)\n\t\t(width 0.127)\n\t\t(layer \"F.Cu\")\n\t\t(net \"DSM_DATA\")\n\t\t(uuid \"1e87d743-ebb9-40a9-a891-2357ffc18d2a\")\n\t)"
+    },
+    {
+      "uuid": "95998f31-6893-4884-b5f2-ed36bfde4294",
+      "source_text": "(segment\n\t\t(start 102.451 112.705)\n\t\t(end 102.451 112.387583)\n\t\t(width 0.127)\n\t\t(layer \"F.Cu\")\n\t\t(net \"DSM_DATA\")\n\t\t(uuid \"95998f31-6893-4884-b5f2-ed36bfde4294\")\n\t)"
+    },
+    {
+      "uuid": "cb054904-7c15-4bd2-a45c-831a234ed68f",
+      "source_text": "(segment\n\t\t(start 102.451 112.705)\n\t\t(end 100.66 114.496)\n\t\t(width 0.127)\n\t\t(layer \"F.Cu\")\n\t\t(net \"DSM_DATA\")\n\t\t(uuid \"cb054904-7c15-4bd2-a45c-831a234ed68f\")\n\t)"
+    }
+  ],
+  "moved_vias": [],
+  "expected_external_ports": [
+    "277e2020-42f5-4c3e-bac7-f580914ca13d",
+    "4b8974ed-bdd7-49d3-891a-6735916d0283",
+    "6968e172-efb0-45fa-a496-1e5a81c809dc",
+    "77201ee5-9b4c-4173-b410-91a623eb23d2",
+    "e29db36d-b2b4-4217-99c2-53d850c577a7",
+    "f4258c4b-d39a-4aef-9243-ffd1d7e75bf2"
+  ],
+  "existing_top_via": "b8a4a05a-c4fe-471c-9774-9ae6eb8ba5bd",
+  "existing_bottom_via": "277e2020-42f5-4c3e-bac7-f580914ca13d",
+  "width_layer_policy": "0.127 mm signal donor replaced by same-width B.Cu path between existing plated vias, plus F.Cu exit. No power, via, footprint, pad, net, stack or outline change. Upper retained donor chain and all physical ports must be complete; no reliance on mere electrical-open count.",
+  "stopping_bound": "One source-matched atomic transaction. Reject any new/worsened native pair, incomplete full-width donor port, loss of existing contacts, changed main-plane ground fill or unsupported mid-span reference gap."
+}

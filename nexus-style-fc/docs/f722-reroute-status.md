@@ -1,3 +1,17 @@
+# Current r54 checkpoint: unfinished, 14 clearance errors
+
+[Exact current experimental project and evidence](../routing-wip/2026-10-15/local-r54-checkpoint/README.md) continues from the published 18-error r51 state through complete DSM_DATA, CC2 and C_RX/GND repairs. Native KiCad10 refill/save/all-track DRC: 14 clearance errors, zero opens/parity, 54 unchanged silk warnings; minimum remaining gap 0.0893 mm. No new/worsened pair is accepted. The exact unchanged 49f9 schematic retains its zero-ERC receipt; no new ERC run is claimed for these copper-only transactions.
+
+All accepted widths/layers and external ports are preserved. The final saved board rechecks all 96 inherited shield-spoke regions, actual R20/U7/J6 finite ground contacts, and U10 full-width output-reference projection. USB copper is unchanged; the conditional neck proposal is excluded while complete paired topology/reference work continues.
+
+A source-bound read-only pasted-via review records all 18 inherited locations and shared capacitor/thermal/ESD donors. Filled/capped processing is not universally mandatory; TI also allows properly plugged or tented thermal vias. The actual current pad mask/paste opening, rather than global tenting alone, needs a verified process remedy. No paste/mask/footprint/process change is made.
+
+Canonical is unchanged at 627 inherited errors; header at 11 edge errors and unresolved tab/slot fit. Power/thermal/fault, USB/SI/ESD, manufacturing and mechanical qualification remain open. CAM/CPL are stale; do not fabricate or assemble.
+
+Historical entries follow and do not override this state.
+
+---
+
 # Current r51 checkpoint: unfinished, 18 clearance errors
 
 [Exact candidate and evidence](../routing-wip/2026-10-15/local-r51-checkpoint/README.md) continues PR37 from main 80a3f763. Complete-contact r48/r50 repairs improve 24 to 18 errors; fresh r51 restores a 4.400335 mm all-F.Cu, 0.250 mm U10 output leg while retaining an explicitly documented input transient/PSRR tradeoff. Native refill/save/all-track DRC: 18 clearance errors, zero opens/parity, 54 unchanged silk warnings, minimum gap 0.0878 mm. Fresh ERC is zero for the exact unchanged 49f9 schematic. No new/worsened residual pair is accepted.
