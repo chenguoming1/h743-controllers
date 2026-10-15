@@ -1,3 +1,11 @@
+# Latest: r62, zero main-board native errors
+
+[Stable current project](../routing-wip/current/README.md) and [full source-bound evidence](../routing-wip/2026-10-15/input-caps-checkpoint/README.md). Approved C27/C31/D5 changes are atomic with the matching schematic/library/tools/PCB. Zero opens/parity; all-visible PCB has 11 centering/five type/54 silk warnings. Enabled ERC has zero findings; all-visible ERC has 13 single-global-label warnings. Mechanical integration and electrical/assembly/production qualifications remain open. No fabrication release.
+
+Historical status follows and does not override the current guide.
+
+---
+
 # Latest: r61, two clearance errors
 
 [Open the stable current candidate](../routing-wip/current/README.md). The matching PCB/project/schema/rules are together there. [Exact native and mechanical evidence](../routing-wip/2026-10-15/r61-interface-checkpoint/README.md) records zero opens/parity/ERC binding, 13 centering/five type/54 silk warnings, and separate mechanical main 24 errors. The old canonical route remains at 627 errors. Approved C27/C31/D5 changes are still pending atomic native validation and excluded here. No fabrication release.

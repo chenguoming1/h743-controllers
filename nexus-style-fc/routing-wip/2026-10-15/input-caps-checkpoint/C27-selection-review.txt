@@ -1,0 +1,79 @@
+C27 input-capacitance gate and remedy decision
+15 October 2026. Read-only engineering screen; no design, BOM, vendor, or GitHub changes.
+
+CAPACITOR CHANGE APPROVED; PHYSICAL FEASIBILITY PENDING
+No single 0603 replacement was qualified in this bounded screen. For a margin-first proposal, replace C27 with Samsung CL21A226MAYNNNE / JLC-LCSC C602037 (22 µF, 25 V, ±20%, X5R, 0805) and add one identical capacitor in parallel locally at U14 VIN/GND. This changes the C27 footprint and adds one new capacitor/reference. The user has approved this capacitor change; an actual fit/layout check remains pending. An additional D5 move has not been approved. It preserves the 25 V capacitor rating. The pair has materially more screening margin than a one-part nominal-value substitution.
+
+This is a defensible design proposal, NOT a guaranteed manufacturer minimum or board-level signoff. A separate read-only placement check is underway. The capacitor-change approval does not establish a compact feasible local loop or authorize an additional D5 move. Final acceptance still requires the actual BEC envelope and service-life qualification; do not treat either the 25% example or 8.4 V point as an acceptance criterion.
+
+VERIFIED CURRENT GATE
+TI TPS629210 non-Q1 Rev B §7.3 specifies 3 µF minimum effective input capacitance. §11.1 requires a short local VIN/GND loop and a VIN-tied EN connection directly at the input capacitor. Current native netlist confirms C27=C69335 and C18=C52923 are the only capacitors directly spanning VSYS; U14 VIN and EN are on VSYS. VSYS is after D5, so a nominal 7.4 V BEC does not mean exactly 7.4 V at C27.
+
+Across illustrative 6.8–7.4 V VSYS, C27's exact Samsung typical DC-bias curve gives only 1.801–1.641 µF. Even the arithmetic total with C18 is only 2.078–1.892 µF typical; this total is not credited as local high-frequency CIN. Thus the current evidence cannot substantiate TI's 3 µF requirement. The chosen 6.8–7.4 V range is a screen, not a measured BEC tolerance/drop/transient specification.
+
+C602037 EVIDENCE AND LIMITS
+Samsung lists CL21A226MAYNNNE as mass production and the recommended replacement for NRND CL21A226MAQNNNE/C45783. Exact reference specification dated 13 November 2025: 22 µF ±20%,25 V,X5R ±15% over −55 to +85 °C; body 2.00±0.20 ×1.25±0.20 ×1.25±0.20 mm. Current C27 is 1.60±0.15 ×0.80±0.15 ×0.80±0.15 mm: the proposal requires 0805 land patterns and up to 1.45 mm height rather than 0.95 mm. It is not a drop-in for the current C_0603_1608Metric footprint. Do not assume enclosure/courtyard clearance.
+
+MANUFACTURER LAND-PATTERN CHECK
+Exact C602037 specsheet PDF p.33 §5-4, metric2012 size with±0.20 mm chip tolerance: pad-to-pad gap a=0.83–0.93 mm, each pad length b=0.91–1.01 mm, pad width c=1.35–1.45 mm; overall copper length a+2b=2.65–2.95 mm. Diagram and row were visually verified. The standard KiCad0805 pad1.00×1.45 mm at±0.95 mm centers has0.90 mm gap and lies within these ranges. There is no manufacturer basis for squeezing Y pad width to≤1.20 mm. Body maximum width itself is1.45 mm; required courtyard and assembly tolerances remain separate. A placement worker reported fixed-copper/courtyard conflicts in the current pocket, so physical feasibility must be resolved with that review rather than assuming a custom undersized footprint is acceptable. Rendered source page: successor-reflow-land.png.
+
+EXACT BEC CONTEXT AND SCREENING BASIS
+Hobbywing Platinum 120 A V4, SKU 30203401, is the established ESC, used on6S. Its official manual specifies a 5–8 V BEC setting range in 0.1 V steps,6 V default,10 A continuous/25 A peak. The intended7.4 V setting is valid but is not verified as actually programmed. The0.1 V step is programming resolution, not voltage accuracy/tolerance. The manual requires saving settings and powering the ESC off/on for them to take effect. The separate ESC120 A/150 A rating has a 10 s peak annotation in the 2016 manual/product page; do not transfer that duration to the BEC 25 A rating.
+
+No numerical BEC output accuracy/tolerance, ripple limit, startup/load-step overshoot ceiling, or duration for the BEC 25 A peak was found in the reviewed official product pages, brochure and 2016/2018 manuals. This is a documented information gap, not evidence of zero overshoot or unlimited peak duration. Raw 6S must never feed the FC.
+
+The2018 manual§04.2 recommends the stock external capacitor pack in parallel at the BEC output for sudden servo loads beyond its capability; the wiring drawing labels it10 V/4700 µF. This is separate remote bulk support, not a published transient ceiling or qualification of local C27. Do not credit it as a compact U14 input capacitor.
+
+Meaningful nominal DC screen: cover the published 5–8 V BEC setpoint range and credit NO diode drop at the upper end.8.0 V is therefore the conservative nominal-setpoint screening point. It is not a measured or guaranteed maximum voltage at VSYS; regulation tolerance and transients can exceed a programmed setpoint.10 V and 12 V below are additional sensitivity points only, not asserted transient bounds.7.4 V remains the intended user setting. Confirm actual output after configuration and validate VSYS at the populated board during startup/hot plug and worst BEC/servo/load steps.
+
+Exact capacitor DCBias curve conditions:25 °C,120 Hz,0.5 Vrms. Values in µF:
+VSYS     One typical   Pair ×0.8 tolerance×0.85 temperature    Pair with generic 10-year aging scenario below
+6.8 V    6.9697        9.4788                                 7.1362
+7.4 V    6.3380        8.6197                                 6.4894
+8.0 V    5.7883        7.8721                                 5.9266
+8.4 V    5.4164        7.3663                                 5.5458
+10 V     4.4215        6.0133                                 4.5272
+12 V     3.6905        5.0190                                 3.7786
+
+This supports the two-capacitor design direction: at the maximum published nominal BEC setpoint, the pair has~7.87 µF before aging in the tolerance/temperature screen. The manufacturer-data-based aging scenario retains~5.93 µF, or~1.98× TI’s3 µF minimum. A single C602037 under the same scenario is only~2.96 µF at 8 V, so the one-part0805 option is not the recommendation. Samsung curves are typical reference data; multiplication by separate factors does not establish a guaranteed combined-corner minimum. Additional 25% flat aging values in the raw calculation file remain sensitivity examples only and are not acceptance criteria.
+
+MANUFACTURER AGING GUIDANCE
+The exact C602037 manual (PDF pp.13–14) says Class II capacitance falls with log(time),  varies by model, and is recovered by 150 °C/1 h heat treatment, after which aging restarts. It supplies no exact-part numerical aging rate. Samsung’s official FAQ illustrates a GENERIC TYPICAL X5R/X7R slope of 2–5% per decade-hour with C(t)=C0[1−k log10(t)]. The table’s analytical scenario selects the upper illustrated5%/decade and 10 years from a 1 h reference, giving factor0.75286. Ten years is an explicit assumption, not a supplied requirement; the generic typical slope is not an exact-part upper bound, and the DC-bias curve’s aging reference is unspecified. This supports a conservative direction but cannot certify lifetime. Exact-part/lot combined-corner data or measured validation remains necessary.
+https://m.samsungsem.com/kr/support/contact-us/faq.do?searchInput=%EC%8B%9C%EA%B0%84%EC%9D%B4+%EC%A7%80%EB%82%A8%EC%97%90+%EB%94%B0%EB%9D%BC+MLCC%EC%9D%98+%EC%9 A%A9%EB%9F%89%EC%9D%B4+%EB%B3%80%ED%95%98%EB%8 A%94+%EC%9D%B4%EC%9C%A0%EB%8 A%94+%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9 A%94%3F
+
+FINAL VALIDATION LIMITS
+The actual BEC tolerance/transient envelope and intended service life remain release gates. Also check the compact local VIN/GND loop, VIN-tied EN connection at the capacitors, source impedance/added-capacitance inrush, ripple heating, small-signal capacitance, lot and temperature corners. Capacitor surface temperature must remain within−55 to+85 °C including self-heating. TPS629210 permits17 V maximum recommended VIN and 18 V absolute maximum; capacitor25 V rating does not extend those IC limits. This study does not qualify the pair across the converter’s full 3–17 V operating range or guarantee any unbounded transient.
+
+SOURCING
+Official JLC page verifies C602037, exact Samsung MPN,0805,Extended part,SMT assembly/Economic and Standard. It did not expose current orderable stock in the accessible page. Official LCSC page retrieved today reported258,110 units in stock (not reserved; recheck at BOM/order time). Do not confuse this exact part with C45783 or generic JLC Assembly look-alikes.
+
+OTHER SCREENED CANDIDATES
+At7.4 V, separate tolerance/temp screens before aging:
+- Current C69335:1.256 µF.
+- C96446 Samsung 10 µF 25 V 0603:2.122 µF; ±10% variant only 2.388 µF.
+- Samsung 22 µF 16 V 0603 CL10A226MO7JZNC/C2762594:2.953 µF; also reduces voltage rating. No robust simple swap.
+- Samsung 4.7 µF 50 V 0603:1.590 µF.
+- TDK10 µF 25 V 0603 C1608X5R1E106M080AC:~2.082 µF even typical.
+- Taiyo Yuden10 µF 25 V 0603 MSAST168BB5106MTNA01:2.213 µF.
+- Murata10 µF 25 V 0603 C344022: exact bias data unavailable; unqualified.
+- Murata22 µF 25 V 0603 C29519229: exact bias data unavailable and manufacturer mobile-device-only restriction; unqualified.
+These are a bounded candidate screen, not proof that no suitable0603 exists.
+
+APPROVED CAPACITOR SCOPE
+The user approved replacing C27 with Samsung CL21A226MAYNNNE/C602037 (22 µF, 25 V, 0805) and adding one identical local parallel capacitor. Approval evidence supplied by the parent: user message Sentinel_7f29e30037b08191a48f16a7fc67ef39, “approved”, following the explicit two-capacitor proposal and clarification that the change would stay out until approved. The original capacitor approval request is resolved. Physical feasibility remains pending; an additional D5 move is outside this approval. All technical validation limits above remain in force.
+
+PRIMARY SOURCES
+Hobbywing exact SKU/product: https://www.hobbywing.com/en/products/platinum-120a-v471.html
+Hobbywing official 2016 manual: https://www.hobbywing.com/en/uploads/file/20221015/ea7842443975d494e7d32b28c3a6af6b.pdf
+Hobbywing official 2018 manual: https://support.hobbywingdirect.com/hc/en-us/article_attachments/17873440353811
+TI requirement/layout: https://www.ti.com/lit/ds/symlink/tps629210.pdf (§§7.3,9.2.2.3.3.2,11.1)
+Current C27: https://product.samsungsem.com/mlcc/CL10A475KA8NQN.do
+Rejected 22 µF 16 V: https://product.samsungsem.com/mlcc/CL10A226MO7JZN.do
+Recommended C602037: https://product.samsungsem.com/mlcc/CL21A226MAYNNN.do
+NRND predecessor/replacement relation: https://product.samsungsem.com/mlcc/CL21A226MAQNNN.do
+Exact JLC identity: https://jlcpcb.com/partdetail/CL21A226MAYNNNE/C602037
+LCSC identity/stock snapshot: https://www.lcsc.com/product-detail/C602037.html
+Additional manufacturers:25v-alternatives/decision.md
+
+REPRODUCIBILITY
+calculate_screens.py generates qualification-screens.json from the preserved exact Samsung JSON curves using linear interpolation. HTML, reference-sheet PDF/text and extended candidate evidence are saved alongside. source-netlist-binding.json identifies the exact netlist; SHA256 rechecked unchanged:abb488beeeafc472836437552e7160169fa91e0ec9dfd156ff75a257784065bc. No source or PCB edits made. Numeric screens do not include board parasitics, production lot distributions, ripple-current thermal testing, small-signal amplitude uncertainty or demonstrated life aging.

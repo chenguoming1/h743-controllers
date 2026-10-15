@@ -1,0 +1,8 @@
+(version 1)
+# F722-compatible manufacturing floor; preserve stricter existing board constraints.
+# No exceptions or DRC exclusions are introduced by this rule transfer.
+(rule "F722 minimum track" (constraint track_width (min 0.127mm)))
+(rule "F722 minimum clearance" (constraint clearance (min 0.127mm)))
+(rule "F722 copper edge" (constraint edge_clearance (min 0.3mm)))
+(rule "F722 drill-to-copper" (constraint hole_clearance (min 0.2mm)))
+(rule "F722 through-via annulus" (constraint annular_width (min 0.125mm)))

@@ -10,11 +10,13 @@ Existing stronger header-board rules are retained. Main vias remain 0.45/0.20 mm
 
 ## Which PCB should I open?
 
-For the latest improved routing, open **[routing-wip/current/hardware/nexus-style-fc.kicad_pro](routing-wip/current/hardware/nexus-style-fc.kicad_pro)**. Its [PCB](routing-wip/current/hardware/nexus-style-fc.kicad_pcb) is r61 with **two clearance errors**, zero opens and electrical/footprint-filter parity. This simple stable folder contains the matching schematic, project, rules and libraries. [Read the current candidate guide](routing-wip/current/README.md).
+Open **[routing-wip/current/hardware/nexus-style-fc.kicad_pro](routing-wip/current/hardware/nexus-style-fc.kicad_pro)** for the latest improved PCB. The [current guide](routing-wip/current/README.md) links its board, matching schematic, PDFs and review exports.
 
-The root `hardware/` remains the earlier canonical reference with 627 inherited errors and its coherent approved schematic/part fixes. It is not the improved route. All-visible r61 diagnostics retain 13 centering, five footprint-type and 54 silk warnings; the exact unchanged schematic retains its ERC 0 binding. Historical snapshots and [exact validation evidence](routing-wip/2026-10-15/r61-interface-checkpoint/README.md) are retained separately.
+Current r62 has **zero native main-board errors, zero opens and zero schematic parity issues**, including the approved C27/C31 capacitor pair and D5 0.400 mm move. All-visible diagnostics retain 11 centering, five footprint-type and 54 silk warnings. Enabled ERC has zero findings; all-visible ERC retains 13 single-global-label advisories. [Exact evidence](routing-wip/2026-10-15/input-caps-checkpoint/README.md).
 
-The approved capacitor pair/D5 relocation is undergoing atomic source/PCB validation and is not in this freeze. Separate mechanical progress has 24 errors on the main board and zero child errors/opens; historical native mechanical baselines with an automatic via-net reassignment are explicitly rejected. USB impedance, power/current/thermal/transient, via-in-paste process, mechanical fit/strength and assembly remain open. CAM/CPL are historical/stale. **Do not fabricate, assemble or fly.**
+The root `hardware/` remains the older coherent canonical reference with 627 inherited errors. The redesigned mechanical interface is still separate: main 24 errors, child zero errors/opens with warnings. Its integration and physical tests remain unfinished. The current project still carries the original header with 11 edge errors.
+
+USB impedance/compliance, actual capacitor/input-loop and BEC-transient behavior, power/current/thermal, via-in-paste process, enclosure/assembly and mechanical qualification remain open. Current BOM/CPL are review-only WIP; old canonical CAM/CPL are historical/stale. **Do not fabricate, assemble or fly.**
 
 
 ![Floorplan](docs/images/floorplan.svg)
