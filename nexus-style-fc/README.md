@@ -11,14 +11,15 @@ Existing stronger header-board rules are retained. Main vias remain 0.45/0.20 mm
 ## Which PCB should I open?
 
 Open **[routing-wip/current/hardware/nexus-style-fc.kicad_pro](routing-wip/current/hardware/nexus-style-fc.kicad_pro)**.
-The [current guide](routing-wip/current/README.md) links the exact main/child boards, matching schematic,
-PDFs and WIP exports. The integrated main and redesigned child have zero native geometric errors and
-opens. The approved capacitor changes and mechanical interface are now in the same reviewable project.
+The [current guide](routing-wip/current/README.md) links the matching main/child boards, schematic,
+BOM/CPL and source evidence. Both boards have zero native geometric errors and opens. The current
+candidate includes approved capacitor fixes, repaired routing, redesigned interface and source-consistent
+assembly markings. [Release gates](routing-wip/2026-10-15/assembly-source-checkpoint/manufacturing-gates/RELEASE-GATES.md)
+remain open; this is an unfinished engineering checkpoint.
 
-Warnings, actual-stack USB/power/process qualifications, finished fit/alignment and physical strength
-tests remain open. [Exact evidence and limits](routing-wip/2026-10-15/integrated-interface-checkpoint/README.md).
-The root `hardware/` remains the older coherent 627-error reference; its CAM is stale.
-**Do not fabricate, assemble or fly.**
+Root hardware remains the older coherent 627-error reference and its CAM is stale.
+The legacy floorplan image below is historical and does not show the current routing.
+**Fabrication, assembly and flight qualification remain on hold.**
 
 
 ![Floorplan](docs/images/floorplan.svg)

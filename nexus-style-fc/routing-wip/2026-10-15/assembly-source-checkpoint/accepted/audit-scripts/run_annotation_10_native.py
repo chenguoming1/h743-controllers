@@ -1,0 +1,10 @@
+from pathlib import Path
+import json,subprocess,datetime,hashlib,shutil
+R=Path('/workspace/scratch/8a35c1f26232/nexus-recovery-20261015');C=R/'mechanical-integration/main-assembly-annotation-10';K=str(R/'runtime/kicad-cli');sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();assert (C/'annotation-integration-transaction.json').is_file();receipts=[];child=sha(C/'hardware/header-board/nexus-header-board.kicad_pcb')
+commands=[('main-drc',[K,'pcb','drc','--all-track-errors','--schematic-parity','--refill-zones','--save-board','--severity-all','--format','json','--exit-code-violations','-o',str(C/'native-drc.json'),str(C/'hardware/nexus-style-fc.kicad_pcb')]),('main-erc',[K,'sch','erc','--severity-all','--format','json','--exit-code-violations','-o',str(C/'main-native-erc.json'),str(C/'hardware/nexus-style-fc.kicad_sch')]),('main-netlist',[K,'sch','export','netlist','--format','kicadxml','-o',str(C/'final-netlist.xml'),str(C/'hardware/nexus-style-fc.kicad_sch')]),('child-drc',[K,'pcb','drc','--all-track-errors','--schematic-parity','--refill-zones','--save-board','--severity-all','--format','json','--exit-code-violations','-o',str(C/'child-native-drc.json'),str(C/'hardware/header-board/nexus-header-board.kicad_pcb')]),('child-erc',[K,'sch','erc','--severity-all','--format','json','--exit-code-violations','-o',str(C/'child-native-erc.json'),str(C/'hardware/header-board/nexus-header-board.kicad_sch')])]
+for name,cmd in commands:
+ start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+ with (C/(name+'.log')).open('w') as f:p=subprocess.run(['timeout','--signal=INT','--kill-after=5s','150s']+cmd,stdout=f,stderr=subprocess.STDOUT)
+ row={'name':name,'command':cmd,'start_utc':start,'end_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exit_code':p.returncode};receipts.append(row);(C/'native-receipts.json').write_text(json.dumps(receipts,indent=2)+'\n');print('finished',name,p.returncode,flush=True);assert p.returncode in [0,5],row
+assert sha(C/'hardware/header-board/nexus-header-board.kicad_pcb')==child,'Child changed after fresh refill'
+print('candidate SHA',sha(C/'hardware/nexus-style-fc.kicad_pcb'),flush=True)

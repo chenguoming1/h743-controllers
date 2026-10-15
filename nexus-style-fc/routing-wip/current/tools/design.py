@@ -320,6 +320,16 @@ MAIN_INPUT_CAP_PLACEMENT = {
     "D5": ("xy", 2.280, 25.380, 0, "B"),
 }
 
+# Main-board-only library variants for the approved annotation artwork.
+# Legacy PARTS and sibling projects retain their original generic footprints.
+MAIN_ANNOTATION_FOOTPRINTS = {
+    'J4': ('NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN', 'C161692', 'NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4'),
+    'J6': ('NexusFC:USB-C-SMD_TYPE-C-31-D-06', 'C2689964', 'NexusFC:USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6'),
+    'D1': ('NexusFC:LED0603-RD_GREEN', 'C965806', 'NexusFC:LED0603-RD_GREEN__NexusMain_D1'),
+    'D2': ('NexusFC:LED0603-RD_RED', 'C965799', 'NexusFC:LED0603-RD_RED__NexusMain_D2'),
+    'D3': ('NexusFC:LED0603-RD_BLUE', 'C965807', 'NexusFC:LED0603-RD_BLUE__NexusMain_D3'),
+}
+
 def get_main_parts():
     """Return an independent main-board selection without mutating legacy PARTS."""
     import copy
@@ -335,6 +345,10 @@ def get_main_parts():
                  note="Main VSYS local parallel input bulk; Samsung CL21A226MAYNNNE; 22 uF, 25 V, X5R, +/-20%; JLC/LCSC C602037")
     selected.append(extra)
     by_ref["D5"]["place"] = MAIN_INPUT_CAP_PLACEMENT["D5"]
+    for ref, (original_fp, lcsc, variant_fp) in MAIN_ANNOTATION_FOOTPRINTS.items():
+        p = by_ref[ref]
+        assert (p["fp"], p["lcsc"]) == (original_fp, lcsc), (ref, "annotation variant identity changed")
+        p["fp"] = variant_fp
     return selected
 
 def get_main_nets():

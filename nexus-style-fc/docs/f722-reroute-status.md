@@ -1,3 +1,11 @@
+# Latest source-consistent integrated candidate
+
+[Current project](../routing-wip/current/README.md), [exact evidence](../routing-wip/2026-10-15/assembly-source-checkpoint/README.md) and [release gates](../routing-wip/2026-10-15/assembly-source-checkpoint/manufacturing-gates/RELEASE-GATES.md). Zero main/child native errors and opens; advisory and qualification gates remain.
+
+Historical status follows.
+
+---
+
 # Latest integrated candidate
 
 [Current project](../routing-wip/current/README.md) and [exact evidence](../routing-wip/2026-10-15/integrated-interface-checkpoint/README.md). Main/child geometric errors and opens are zero. Advisory and electrical/physical/process qualification gates remain open. No fabrication release.
