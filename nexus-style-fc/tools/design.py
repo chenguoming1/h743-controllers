@@ -323,6 +323,16 @@ MAIN_INPUT_CAP_PLACEMENT = {
 # Main-board-only library variants for the approved annotation artwork.
 # Legacy PARTS and sibling projects retain their original generic footprints.
 MAIN_ANNOTATION_FOOTPRINTS = {
+    # Fabrication cleanup: main-only artwork variants; copper/pads/parts unchanged.
+    'J2': ('NexusFC:CONN-SMD_B3B-ZR-SM4-TF', 'C489717', 'NexusFC:CONN-SMD_B3B-ZR-SM4-TF__NexusMain_J2'),
+    'R2': ('Resistor_SMD:R_0402_1005Metric', 'C11702', 'NexusFC:R_0402_1005Metric__NexusMain_R2'),
+    'J5': ('NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN', 'C161692', 'NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J5'),
+    'F2': ('NexusFC:F0805', 'C20978', 'NexusFC:F0805__NexusMain_F2'),
+    'J3': ('NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN', 'C161692', 'NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J3'),
+    'R4': ('Resistor_SMD:R_0402_1005Metric', 'C11702', 'NexusFC:R_0402_1005Metric__NexusMain_R4'),
+    'L2': ('NexusFC:IND-SMD_L2.0-W1.6', 'C5291913', 'NexusFC:IND-SMD_L2.0-W1.6__NexusMain_L2'),
+    'F1': ('NexusFC:F0805', 'C20978', 'NexusFC:F0805__NexusMain_F1'),
+    'Y1': ('NexusFC:CRYSTAL-SMD_4P-L3.2-W2.5-BL', 'C5181477', 'NexusFC:CRYSTAL-SMD_4P-L3.2-W2.5-BL__NexusMain_Y1'),
     'J4': ('NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN', 'C161692', 'NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4'),
     'J6': ('NexusFC:USB-C-SMD_TYPE-C-31-D-06', 'C2689964', 'NexusFC:USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6'),
     'D1': ('NexusFC:LED0603-RD_GREEN', 'C965806', 'NexusFC:LED0603-RD_GREEN__NexusMain_D1'),

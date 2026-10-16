@@ -1,9 +1,9 @@
 {
-  "status": "PARTIAL: FRESH PCB DFM COMPLETE; CPL UPLOAD COMPLETION UNVERIFIED; NO ASSEMBLY RESULT; NOT MANUFACTURING RELEASE",
+  "status": "FRESH PCB AND SMT DFM NUMERICAL RESULTS COMPLETE; UNRESOLVED FINDINGS; NOT MANUFACTURING RELEASE",
   "revision": "main-adc-stage36",
-  "observed_at_utc": "2026-10-15T23:59:54Z",
+  "observed_at_utc": "2026-10-16T08:03:44Z",
   "binding": {
-    "status": "Fresh PCB check returned. Gerber/drill ZIP and BOM accepted. CPL setFiles executed after renewed approval; website acceptance unverified because follow-up read was blocked. Assembly not checked.",
+    "status": "PCB and SMT automated numerical checks complete; 48 BOM groups confirmed and 83 placements reconciled; unresolved findings remain.",
     "revision": "main-adc-stage36",
     "files": {
       "ENGINEERING-CHECKPOINT-SEAL.json": "3c778d236ba3876dbde64401e8edc67409db6e59547cb30dfc11b40dc6638270",
@@ -53,7 +53,10 @@
     },
     "destination": "https://jlcdfm.com/",
     "source_revision": "main-adc-stage36",
-    "cpl_upload_state": "Executed once after renewed user approval, site completion uncertain; do not duplicate before verifying."
+    "cpl_upload_state": "Accepted and processed. Earlier interrupted transfer was checked and found unbound before restoring the exact sealed BOM/CPL.",
+    "assembly_observed_at_utc": "2026-10-16T08:00:17Z",
+    "matched_bom_groups": 48,
+    "matched_designators": 83
   },
   "pcb_summary": [
     {
@@ -1199,17 +1202,945 @@
       "object_2": "r17.7165"
     }
   ],
-  "assembly_status": "BOM accepted. CPL file selection/upload ran after renewed approval at 2026-10-16 00:12:36 UTC. Immediate website state showed uploading; follow-up read-only verification was blocked. CPL acceptance is uncertain. No duplicate upload, BOM/CPL processing, or assembly DFM result.",
+  "assembly_status": "48 BOM groups and 83 placements matched. Fresh SMT calculation returned at 08:00 UTC. All danger/warning counts match stage35.",
   "limitations": [
-    "Generic rule results, no factory-specific process acceptance.",
-    "At least pad-spacing details are capped to first 50 per layer (201 bottom results and 136 front results); counts are displayed counts, not exhaustive totals.",
-    "Pad-spacing table references only Gerber aperture shapes; no net, component reference or XY mapping is available.",
-    "Remaining front pad-spacing danger is 0.05 mm; five bottom dangers display 0.08, 0.08, 0.08, 0.09 and 0.1 mm. Rounded display can coincide with a threshold.",
-    "Visualization is still blocked by Retrieving DFM data overlay. Detail illustration is a generic example, not board geometry.",
-    "No PDF export attempted for stage36; no download retry loop.",
-    "Stage35 assembly results remain historical and cannot be treated as stage36 validation.",
-    "No order, payment, factory outreach, rule edit, placement edit or GitHub publication.",
-    "BOM-only accepted snapshot predates the authorized CPL upload attempt; it is retained as historical evidence, not current proof that CPL is absent."
+    "Generic-rule counts, some capped. These are not exhaustive physical defect counts or factory acceptance.",
+    "Pad-spacing details show 50 per layer out of 201 bottom and 136 front results. Six displayed dangers: front 0.05 mm; bottom 0.08, 0.08, 0.08, 0.09, 0.1 mm. Shape descriptors provide no nets or XY mapping.",
+    "3D rendering unavailable. Preview and viewer remained behind Generating PCB / Loading components / Retrieving DFM data overlays. U10 fallback SVG is only a label rectangle.",
+    "U10 detail reports lead overlap as ratio 0.66; combined report incorrectly labels the same category 0.02 mm. Preserve detail ratio and this source inconsistency.",
+    "One PDF export attempt stalled; download wait timed out after 10 seconds. Combined report text retained instead. No repeated export attempts.",
+    "Additional Pin left edge detail read was denied; no further browser actions were taken. All 47 category counts and the key U10 details were already obtained.",
+    "No order, payment, factory outreach, rule edit, placement edit, design edit or GitHub publication. Source is the immutable stage36 checkpoint, not any later design.",
+    "Factory-specific stack-up, panel handling, tenting, via fill/plug/cap, stencil and model orientation acceptance remain unverified."
   ],
-  "last_status_update_utc": "2026-10-16T00:13:10Z"
+  "last_status_update_utc": "2026-10-16T00:13:10Z",
+  "smt_summary": [
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Component collision warning",
+      "danger": 0,
+      "warning": 0,
+      "good": 3
+    },
+    {
+      "section": "SMT",
+      "check": "Component spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 100
+    },
+    {
+      "section": "SMT",
+      "check": "Component to board edge distance",
+      "danger": 4,
+      "warning": 7,
+      "good": 3
+    },
+    {
+      "section": "SMT",
+      "check": "Lead to hole distance",
+      "danger": 10,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 7,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Coponent pad spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Component clipped by board outline",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Pin inner edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Pin left edge",
+      "danger": 9,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Pin without pad",
+      "danger": 1,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Pin outer edge",
+      "danger": 2,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Pin right edge",
+      "danger": 3,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Missing hole for component pin",
+      "danger": 0,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "section": "SMT",
+      "check": "Lead area overlapping pad",
+      "danger": 4,
+      "warning": 0,
+      "good": 0
+    }
+  ],
+  "smt_changes_from_stage35": [
+    {
+      "check": "Component collision warning",
+      "stage35_to_stage36": {
+        "good": [
+          2,
+          3
+        ]
+      }
+    }
+  ],
+  "smt_details": [
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0.45mm",
+      "object_1": "R12",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 2,
+      "severity": "Danger",
+      "value": "0.45mm",
+      "object_1": "R11",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 3,
+      "severity": "Danger",
+      "value": "0.5mm",
+      "object_1": "U4",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 4,
+      "severity": "Warning",
+      "value": "0.55mm",
+      "object_1": "L1",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 5,
+      "severity": "Warning",
+      "value": "0.56mm",
+      "object_1": "C23",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 6,
+      "severity": "Warning",
+      "value": "0.74mm",
+      "object_1": "C5",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 7,
+      "severity": "Warning",
+      "value": "0.8mm",
+      "object_1": "D4",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 8,
+      "severity": "Good",
+      "value": "0.87mm",
+      "object_1": "C27",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "bottom",
+      "index": 9,
+      "severity": "Good",
+      "value": "0.95mm",
+      "object_1": "U14",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "top",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0.33mm",
+      "object_1": "J2",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "top",
+      "index": 2,
+      "severity": "Warning",
+      "value": "0.58mm",
+      "object_1": "J3",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "top",
+      "index": 3,
+      "severity": "Warning",
+      "value": "0.7mm",
+      "object_1": "R22",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "top",
+      "index": 4,
+      "severity": "Warning",
+      "value": "0.8mm",
+      "object_1": "C17",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Component to board edge distance",
+      "side": "top",
+      "index": 5,
+      "severity": "Good",
+      "value": "0.85mm",
+      "object_1": "J6",
+      "object_2": "r3.93701"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "bottom",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "R14",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "bottom",
+      "index": 2,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "U5",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "J4",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 2,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "U2",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 3,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "U2",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 4,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "U11",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 5,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "C19",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 6,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "J5",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 7,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "U3",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead to hole distance",
+      "side": "top",
+      "index": 8,
+      "severity": "Danger",
+      "value": "0.05mm",
+      "object_1": "J3",
+      "object_2": "r7.87402"
+    },
+    {
+      "check": "Lead area overlapping pad",
+      "side": "top",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0.66",
+      "object_1": "U10",
+      "object_2": "i274x.RoundRect.d13"
+    },
+    {
+      "check": "Lead area overlapping pad",
+      "side": "top",
+      "index": 2,
+      "severity": "Danger",
+      "value": "0.66",
+      "object_1": "U10",
+      "object_2": "i274x.RoundRect.d13"
+    },
+    {
+      "check": "Lead area overlapping pad",
+      "side": "top",
+      "index": 3,
+      "severity": "Danger",
+      "value": "0.66",
+      "object_1": "U10",
+      "object_2": "i274x.RoundRect.d13"
+    },
+    {
+      "check": "Lead area overlapping pad",
+      "side": "top",
+      "index": 4,
+      "severity": "Danger",
+      "value": "0.66",
+      "object_1": "U10",
+      "object_2": "i274x.RoundRect.d13"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "top",
+      "index": 1,
+      "severity": "Warning",
+      "value": "null",
+      "object_1": "SW1",
+      "object_2": "null"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "top",
+      "index": 2,
+      "severity": "Warning",
+      "value": "null",
+      "object_1": "F2",
+      "object_2": "null"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "top",
+      "index": 3,
+      "severity": "Warning",
+      "value": "0.96mm",
+      "object_1": "U10",
+      "object_2": "null"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "bottom",
+      "index": 1,
+      "severity": "Warning",
+      "value": "null",
+      "object_1": "U1",
+      "object_2": "null"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "bottom",
+      "index": 2,
+      "severity": "Warning",
+      "value": "null",
+      "object_1": "U1",
+      "object_2": "null"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "bottom",
+      "index": 3,
+      "severity": "Warning",
+      "value": "null",
+      "object_1": "D4",
+      "object_2": "null"
+    },
+    {
+      "check": "Component through-hole",
+      "side": "bottom",
+      "index": 4,
+      "severity": "Warning",
+      "value": "null",
+      "object_1": "F1",
+      "object_2": "null"
+    },
+    {
+      "check": "Pin outer edge",
+      "side": "top",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0.15mm",
+      "object_1": "U10",
+      "object_2": "null"
+    },
+    {
+      "check": "Pin outer edge",
+      "side": "top",
+      "index": 2,
+      "severity": "Danger",
+      "value": "0.15mm",
+      "object_1": "U10",
+      "object_2": "null"
+    },
+    {
+      "check": "Pin without pad",
+      "side": "top",
+      "index": 1,
+      "severity": "Danger",
+      "value": "null",
+      "object_1": "U10",
+      "object_2": "null"
+    }
+  ],
+  "via_to_pad_details": [
+    {
+      "side": "bottom",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "r7.87402",
+      "object_2": "i274x.RoundRect.d26"
+    },
+    {
+      "side": "bottom",
+      "index": 2,
+      "severity": "Good",
+      "value": "0.2mm",
+      "object_1": "r7.87402",
+      "object_2": "r17.7165"
+    },
+    {
+      "side": "bottom",
+      "index": 3,
+      "severity": "Good",
+      "value": "0.2mm",
+      "object_1": "r7.87402",
+      "object_2": "r17.7165"
+    },
+    {
+      "side": "bottom",
+      "index": 4,
+      "severity": "Good",
+      "value": "0.23mm",
+      "object_1": "r7.87402",
+      "object_2": "i274x.RoundRect.d27"
+    },
+    {
+      "side": "bottom",
+      "index": 5,
+      "severity": "Good",
+      "value": "0.25mm",
+      "object_1": "r7.87402",
+      "object_2": "i274x.RoundRect.d21"
+    },
+    {
+      "side": "bottom",
+      "index": 6,
+      "severity": "Good",
+      "value": "0.25mm",
+      "object_1": "r7.87402",
+      "object_2": "r17.7165"
+    },
+    {
+      "side": "bottom",
+      "index": 7,
+      "severity": "Good",
+      "value": "0.25mm",
+      "object_1": "r7.87402",
+      "object_2": "r17.7165"
+    },
+    {
+      "side": "front",
+      "index": 1,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "r7.87402",
+      "object_2": "r39.3701"
+    },
+    {
+      "side": "front",
+      "index": 2,
+      "severity": "Danger",
+      "value": "0mm",
+      "object_1": "r7.87402",
+      "object_2": "i274x.RoundRect.d32"
+    },
+    {
+      "side": "front",
+      "index": 3,
+      "severity": "Warning",
+      "value": "0.13mm",
+      "object_1": "r7.87402",
+      "object_2": "r39.3701"
+    },
+    {
+      "side": "front",
+      "index": 4,
+      "severity": "Good",
+      "value": "0.25mm",
+      "object_1": "r7.87402",
+      "object_2": "r39.3701"
+    }
+  ],
+  "matched_parts": [
+    {
+      "top_designators": "C2,C13,C16,C17,C29,C30",
+      "bottom_designators": "C1,C3,C4,C7,C8,C10,C20,C22",
+      "comment": "100nF",
+      "footprint": "C_0402_1005Metric",
+      "matched_part": "CL05B104KO5NNNC C1525 100nF 16V X7R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C5,C9",
+      "comment": "4.7uF",
+      "footprint": "C_0603_1608Metric",
+      "matched_part": "CL10A475KA8NQNC C69335 25V 4.7uF X5R \u00b110% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C6,C18,C25",
+      "comment": "1uF",
+      "footprint": "C_0402_1005Metric",
+      "matched_part": "CL05A105KA5NQNC C52923 1uF 25V X5R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C11,C12",
+      "comment": "30pF",
+      "footprint": "C_0402_1005Metric",
+      "matched_part": "0402CG300J500NT C1570 30pF 50V C0G \u00b15% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "C14",
+      "bottom_designators": "",
+      "comment": "2.2uF",
+      "footprint": "C_0402_1005Metric",
+      "matched_part": "CL05A225MQ5NSNC C12530 2.2uF 6.3V X5R \u00b120% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "C15",
+      "bottom_designators": "",
+      "comment": "10nF",
+      "footprint": "C_0402_1005Metric",
+      "matched_part": "CL05B103KB5NNNC C15195 10nF 50V X7R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "C19",
+      "bottom_designators": "",
+      "comment": "10uF",
+      "footprint": "C_0603_1608Metric",
+      "matched_part": "CL10A106KP8NNNC C19702 10V 10uF X5R \u00b110% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C21",
+      "comment": "10uF",
+      "footprint": "C_0603_1608Metric",
+      "matched_part": "CL10A106MA8NRNC C96446 10uF 25V X5R \u00b120% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C23",
+      "comment": "3.3nF",
+      "footprint": "C_0402_1005Metric",
+      "matched_part": "CL05B332KB5NNNC C26404 3.3nF 50V X7R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C27,C31",
+      "comment": "22uF",
+      "footprint": "C_0805_2012Metric_Samsung_CL21_MinLand",
+      "matched_part": "CL21A226MAYNNNE C602037 22uF 25V X5R \u00b120% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "C26",
+      "bottom_designators": "C24",
+      "comment": "22uF",
+      "footprint": "C_0805_2012Metric",
+      "matched_part": "CL21A226MAYNNNE C602037 22uF 25V X5R \u00b120% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "C28",
+      "comment": "22uF",
+      "footprint": "C_0603_1608Metric",
+      "matched_part": "CL10A226MP8NUNE C86295 10V 22uF X5R \u00b120% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+    },
+    {
+      "top_designators": "D1",
+      "bottom_designators": "",
+      "comment": "LED1yellow-green",
+      "footprint": "LED0603-RD_GREEN__NexusMain_D1",
+      "matched_part": "XL-1608SYGC-04 C965806 -40\u2103~+85\u2103 120\u00b0 2.4V 20mA 50mW 50mcd 565nm~575nm 572nm Discrete Diode Top-mount Water Clear Yellow Green 0603 LED Indication - Discrete ROHS"
+    },
+    {
+      "top_designators": "D2",
+      "bottom_designators": "",
+      "comment": "LED2red",
+      "footprint": "LED0603-RD_RED__NexusMain_D2",
+      "matched_part": "XL-1608SURC-06 C965799 -40\u2103~+85\u2103 120\u00b0 2.3V 20mA 225mcd 50mW 620nm~630nm 625nm Discrete Diode Red Top-mount Water Clear 0603 LED Indication - Discrete ROHS"
+    },
+    {
+      "top_designators": "D3",
+      "bottom_designators": "",
+      "comment": "PowerLEDblue",
+      "footprint": "LED0603-RD_BLUE__NexusMain_D3",
+      "matched_part": "XL-1608UBC-04 C965807 -40\u2103~+85\u2103 120\u00b0 20mA 3.3V 300mcd 455nm~475nm 470nm 70mW Blue Discrete Diode Top-mount Water Clear 0603 LED Indication - Discrete ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "D4",
+      "comment": "SMF13A",
+      "footprint": "SOD-123FL_L2.8-W1.8-LS3.6-RD",
+      "matched_part": "SMF13A C353315 -55\u2103~+150\u2103 13V 15.9V 1uA 200W@10/1000us 21.5V 9.3A@10/1000us TVS Unidirectional SOD-123FL ESD and Surge Protection (TVS/ESD) ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "D5,D6",
+      "comment": "B5819WS",
+      "footprint": "SOD-323_L1.8-W1.3-LS2.5-RD",
+      "matched_part": "B5819WS C22624 -55\u2103~+125\u2103 1.5A 1A 40V 600mV@1A Independent SOD-323 Schottky Diodes ROHS"
+    },
+    {
+      "top_designators": "F2",
+      "bottom_designators": "F1",
+      "comment": "0.5APTC",
+      "footprint": "F0805",
+      "matched_part": "SMD0805P050TF C20978 -40\u2103~+85\u2103 1.5mm 100ms 100m\u03a9 1A 1mm 2.2mm 30A 500mA 500mW 6V 850m\u03a9 0805 Resettable Fuses ROHS"
+    },
+    {
+      "top_designators": "J2",
+      "bottom_designators": "",
+      "comment": "DSM(UART1)",
+      "footprint": "CONN-SMD_B3B-ZR-SM4-TF",
+      "matched_part": "B3B-ZR-SM4-TF(LF)(SN) C489717 -25\u2103~+85\u2103 1 1.5mm 1A 1x3P 3 3P 5.2mm 50V 5mm 7.5mm Auxiliary Solder Pin Brass PA6T Surface Mount,Vertical Tin UL94V-0 White ZH SMD,P=1.5mm Wire To Board Connector ROHS"
+    },
+    {
+      "top_designators": "J3",
+      "bottom_designators": "",
+      "comment": "A-CRSF(UART4)",
+      "footprint": "CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN",
+      "matched_part": "BM04B-GHS-TBT(LF)(SN) C161692 -25\u2103~+85\u2103 1 1.25mm 1A 1x4P 4 4.05mm 4.32mm 4P 50V 8.25mm Auxiliary Solder Pin GH PA9T Phosphor bronze Surface Mount,Vertical Tin UL94V-0 White SMD,P=1.25mm Wire To Board Connector ROHS"
+    },
+    {
+      "top_designators": "J4",
+      "bottom_designators": "",
+      "comment": "C(UART3)",
+      "footprint": "CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4",
+      "matched_part": "BM04B-GHS-TBT(LF)(SN) C161692 -25\u2103~+85\u2103 1 1.25mm 1A 1x4P 4 4.05mm 4.32mm 4P 50V 8.25mm Auxiliary Solder Pin GH PA9T Phosphor bronze Surface Mount,Vertical Tin UL94V-0 White SMD,P=1.25mm Wire To Board Connector ROHS"
+    },
+    {
+      "top_designators": "J5",
+      "bottom_designators": "",
+      "comment": "B(UART6)",
+      "footprint": "CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN",
+      "matched_part": "BM04B-GHS-TBT(LF)(SN) C161692 -25\u2103~+85\u2103 1 1.25mm 1A 1x4P 4 4.05mm 4.32mm 4P 50V 8.25mm Auxiliary Solder Pin GH PA9T Phosphor bronze Surface Mount,Vertical Tin UL94V-0 White SMD,P=1.25mm Wire To Board Connector ROHS"
+    },
+    {
+      "top_designators": "J6",
+      "bottom_designators": "",
+      "comment": "USB-Cvertical",
+      "footprint": "USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6",
+      "matched_part": "TYPE-C-31-D-06 C2689964 -25\u2103~+85\u2103 1 10,000 cycles 16P 5A 5V 6.4mm Female Surface Mount,Vertical Type-C SMD USB Connectors ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "L1",
+      "comment": "2.2uH3A",
+      "footprint": "IND-SMD_L4.6-W4.1",
+      "matched_part": "MHCI04020-2R2M-R8 C142096 2.2uH 3A 58m\u03a9 5A Magnetic Shielded Inductor \u00b120% SMD,4.6x4.1mm Power Inductors ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "L2",
+      "comment": "2.2uH",
+      "footprint": "IND-SMD_L2.0-W1.6",
+      "matched_part": "CKCSA201610-2.2uH/M C5291913 1.3A 1.7A 185m\u03a9 2.2uH Magnetic Shielded Inductor \u00b120% 0806 Power Inductors ROHS"
+    },
+    {
+      "top_designators": "R2,R3,R4,R22",
+      "bottom_designators": "",
+      "comment": "1k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF1001TCE C11702 -55\u2103~+155\u2103 1k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "R5,R17,R19",
+      "bottom_designators": "R1,R8,R9,R10",
+      "comment": "10k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF1002TCE C25744 -55\u2103~+155\u2103 10k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R6,R7",
+      "comment": "2.2k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF2201TCE C25879 -55\u2103~+155\u2103 2.2k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R11",
+      "comment": "120k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF1203TCE C25750 -55\u2103~+155\u2103 120k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R12",
+      "comment": "22k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF2202TCE C25768 -55\u2103~+155\u2103 22k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R13",
+      "comment": "100k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF1003TCE C25741 -55\u2103~+155\u2103 100k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R14",
+      "comment": "27k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF2702TCE C25771 -55\u2103~+155\u2103 27k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R15",
+      "comment": "27.4k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF2742TCE C26971 -55\u2103~+155\u2103 27.4k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "R16",
+      "bottom_designators": "",
+      "comment": "52.3k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF5232TCE C26982 -55\u2103~+155\u2103 50V 52.3k\u03a9 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "R18",
+      "bottom_designators": "",
+      "comment": "21k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF2102TCE C25766 -55\u2103~+155\u2103 21k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "R20,R21",
+      "comment": "5.1k",
+      "footprint": "R_0402_1005Metric",
+      "matched_part": "0402WGF5101TCE C25905 -55\u2103~+155\u2103 5.1k\u03a9 50V 62.5mW Thick Film Resistor \u00b11% \u00b1100ppm/\u2103 0402 Chip Resistor - Surface Mount ROHS"
+    },
+    {
+      "top_designators": "SW1",
+      "bottom_designators": "",
+      "comment": "BOOT",
+      "footprint": "SW-SMD_L3.9-W3.0-P4.45",
+      "matched_part": "TS-1088-AR02016 C720477 -30\u2103~+80\u2103 1.6N 100,000 cycles 12V 2mm 3.9mm 3mm 50mA Black Round Button SMD(SMT) Tab SPST Surface Mount,Vertical Without Bracket SMD,4x3mm Tactile Switches ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "U1",
+      "comment": "STM32F722RET6",
+      "footprint": "LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL",
+      "matched_part": "STM32F722RET6 C118207 -40\u2103~+85\u2103 1.7V~3.6V 12bit 12bit 216MHz 256KB 32 Bit 50 512KB ARM Cortex-M7 Built-in FLASH LQFP-64(10x10) Microcontrollers (MCU/MPU/SOC) ROHS"
+    },
+    {
+      "top_designators": "U2",
+      "bottom_designators": "",
+      "comment": "ICM-42688-P",
+      "footprint": "LGA-14_L3.0-W2.5-P0.50-TL",
+      "matched_part": "ICM-42688-P C1850418 -40\u2103~+85\u2103 1.71V~3.6V 16bit 2KB 7.5uA IMU (accelerometer + gyroscope) SPI\u3001I2C X,Y,Z X,Y,Z \u00b116g \u00b12000dps Motion Event Detection, Synchronization, Timestamp Support LGA-14(2.5x3) Accelerometers ROHS"
+    },
+    {
+      "top_designators": "U3",
+      "bottom_designators": "",
+      "comment": "DPS368XTSA1",
+      "footprint": "LGA-8_L2.5-W2.0-P0.65-TR_DPS368",
+      "matched_part": "DPS368XTSA1 C3232508 -40\u2103~+85\u2103 0.5pa/K 1.7V~3.6V 100pa 27.6ms 30Kpa~1.2bar 500nA 6pa I2C\u3001SPI No VLGA-8(2x2.5) Pressure Sensors ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "U4",
+      "comment": "W25N01GVZEIG",
+      "footprint": "WSON-8_L8.0-W6.10-P1.27-BL-EP",
+      "matched_part": "W25N01GVZEIG C907680 -40\u2103~+85\u2103 10 Years 100,000 cycles 104MHz 10uA 1Gbit 2.7V~3.6V 2ms 700us SPI WSON-8-EP(6x8) NAND FLASH ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "U5",
+      "comment": "TPS62130RGTR",
+      "footprint": "QFN-16_L3.0-W3.0-P0.50-TL-EP1.7",
+      "matched_part": "TPS62130RGTR C43590 -40\u2103~+85\u2103@(TA) 1 17uA 2.5MHz 3A 3V~17V 900mV~6V Adjustable Buck Buck Built-in Yes QFN-16-EP(3x3) DC-DC Converters ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "U7",
+      "comment": "USBLC6-2SC6",
+      "footprint": "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL",
+      "matched_part": "USBLC6-2SC6 C7519 -40\u2103~+125\u2103 150nA 17V 2 3.5pF 5.25V 5A 6V ESD IEC 61000-4-2 Unidirectional SOT-23-6L ESD and Surge Protection (TVS/ESD) ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "U9",
+      "comment": "TPS2116DRLR",
+      "footprint": "SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL",
+      "matched_part": "TPS2116DRLR C3235557 Operating status indication SOT-583 Power Management - Specialized ROHS"
+    },
+    {
+      "top_designators": "U10",
+      "bottom_designators": "",
+      "comment": "TPS70933DBVR",
+      "footprint": "TPS70933DBVR_TI_DBV0005A",
+      "matched_part": "TPS70933DBVR C89347 -40\u2103~+125\u2103@(Tj) 1 1.4uA 150mA 190uVrms 3.3V 30V 80dB@(10Hz) 960mV@(150mA) Fixed Positive Under Voltage Lockout\u3001Over Current Protection\u3001Over Temperature Protection\u3001Enable SOT-23-5 Voltage Regulators - Linear, Low Drop Out (LDO) Regulators ROHS"
+    },
+    {
+      "top_designators": "U11,U12,U13,U15",
+      "bottom_designators": "",
+      "comment": "SRV05-4",
+      "footprint": "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR",
+      "matched_part": "SRV05-4.TCT C13612 -55\u2103~+125\u2103 12A@8/20us 17.5V 300W@8/20us 3pF 5V 5uA 6V Four channels IEC 61000-4-2\u3001IEC 61000-4-5\u3001IEC 61000-4-4 TVS Unidirectional SOT-23-6L ESD and Surge Protection (TVS/ESD) ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "U14",
+      "comment": "TPS629210DRLR",
+      "footprint": "SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A",
+      "matched_part": "TPS629210DRLR C5219301 -40\u2103~+150\u2103 1A 2.5MHz 3V~17V 400mV~5.5V 4uA Adjustable Buck Buck Built-in SOT-5x3(DRL)-8 DC-DC Converters ROHS"
+    },
+    {
+      "top_designators": "",
+      "bottom_designators": "Y1",
+      "comment": "8MHz20pF",
+      "footprint": "CRYSTAL-SMD_4P-L3.2-W2.5-BL",
+      "matched_part": "3225 8M 20PF 10PPM C5181477 -40\u2103~+80\u2103 20pF 8MHz \u00b110ppm \u00b130ppm SMD3225-4P Crystals ROHS"
+    }
+  ],
+  "u10": {
+    "part": "TPS70933DBVR",
+    "jlc_part": "C89347",
+    "footprint": "TPS70933DBVR_TI_DBV0005A",
+    "cpl_rotation_degrees": 0,
+    "side": "Top",
+    "cpl_x_mm": 9.45,
+    "cpl_y_mm": 26.1,
+    "pin_without_pad_danger": 1,
+    "lead_overlap_danger": 4,
+    "lead_overlap_ratio": 0.66,
+    "pin_outer_edge_danger": 2,
+    "pin_outer_edge_mm": 0.15,
+    "misalignment_warning": 1,
+    "misalignment_mm": 0.96,
+    "visual_alignment": "Unverified: browser cannot render 3D models; fallback SVG is a label rectangle only, no pin geometry.",
+    "placement_edited": false
+  }
 }

@@ -1,0 +1,259 @@
+Browser view, Title: "JLCDFM Viewer - Free Online PCB DFM Tool", URL: "[private JLC project]".
+1 AXWebArea JLCDFM Viewer - Free Online PCB DFM Tool, URL: [private JLC project]
+	2 container smt-ui-container
+		10 container
+			11 image
+			12 content list
+				13 container Undo(Ctrl+Z)
+				14 container Redo(Ctrl+Y)
+				15 container Zoom in(A)
+				16 container Zoom out(Z)
+				17 container Fit selection
+				18 container Fit window(K)
+				259 container Flip board(Shift+F)
+				260 container Rotate whole counterclockwise
+				261 container Rotate whole clockwise
+				262 container Rotate counterclockwise(Space)
+				263 container Individually rotate clockwise
+				264 container Mirror Y
+				265 container Mirror X
+				266 container 自动对齐
+				267 container Measure(Ctrl+M)
+				268 container Export analysis report
+				269 container Help Document
+				270 container Settings
+		25 text nexus-style-fc-gerbers.zip
+		3 text Units ：
+		26 text Metric（cm/mm）
+		4 container toggle
+			271 container
+				272 button PCB DFM
+				273 button SMT DFM
+				274 button DFM check
+				275 button BOM match
+				276 table
+					277 row
+						278 cell
+							279 text Analyze project
+						280 cell
+							281 text Statistics
+						282 cell
+							283 text Operation
+				284 text Component assembly analysis
+				285 table
+					286 row
+						287 cell
+							288 text Component through-hole
+						289 cell
+							290 text 0 ,   0 ,   0
+						291 cell
+							292 button (disabled) Details
+					293 row
+						294 cell
+							295 text Component collision warning
+						296 cell
+							297 text 0 ,   0 ,   3
+						298 cell
+							299 button Details
+					300 row
+						301 cell
+							302 text Component spacing
+						303 cell
+							304 text 0 ,   0 ,   100
+						305 cell
+							306 button Details
+					307 row
+						308 cell
+							309 text Component to board edge distance
+						310 cell
+							311 text 4 ,   7 ,   3
+						312 cell
+							313 button Details
+					314 row
+						315 cell
+							316 text Lead to hole distance
+						317 cell
+							318 text 10 ,   0 ,   0
+						319 cell
+							320 button Details
+					321 row
+						322 cell
+							323 text Component through-hole
+						324 cell
+							325 text 0 ,   7 ,   0
+						326 cell
+							327 button Details
+					328 row
+						329 cell
+							330 text Coponent pad spacing
+						331 cell
+							332 text 0 ,   0 ,   0
+						333 cell
+							334 button (disabled) Details
+					335 row
+						336 cell
+							337 text Component clipped by board outline
+						338 cell
+							339 text 0 ,   0 ,   0
+						340 cell
+							341 button (disabled) Details
+					342 row
+						343 cell
+							344 text Pin inner edge
+						345 cell
+							346 text 0 ,   0 ,   0
+						347 cell
+							348 button (disabled) Details
+					349 row
+						350 cell
+							351 text Pin left edge
+						352 cell
+							353 text 9 ,   0 ,   0
+						354 cell
+							355 button Details
+					356 row
+						357 cell
+							358 text Pin without pad
+						359 cell
+							360 text 1 ,   0 ,   0
+						361 cell
+							362 button Details
+					363 row
+						364 cell
+							365 text Pin outer edge
+						366 cell
+							367 text 2 ,   0 ,   0
+						368 cell
+							369 button Details
+					370 row
+						371 cell
+							372 text Pin right edge
+						373 cell
+							374 text 3 ,   0 ,   0
+						375 cell
+							376 button Details
+					377 row
+						378 cell
+							379 text Component through-hole
+						380 cell
+							381 text 0 ,   0 ,   0
+						382 cell
+							383 button (disabled) Details
+					384 row
+						385 cell
+							386 text Component through-hole
+						387 cell
+							388 text 0 ,   0 ,   0
+						389 cell
+							390 button (disabled) Details
+					391 row
+						392 cell
+							393 text Component through-hole
+						394 cell
+							395 text 0 ,   0 ,   0
+						396 cell
+							397 button (disabled) Details
+					398 row
+						399 cell
+							400 text Missing hole for component pin
+						401 cell
+							402 text 0 ,   0 ,   0
+						403 cell
+							404 button (disabled) Details
+					405 row
+						406 cell
+							407 text Lead area overlapping pad
+						408 cell
+							409 text 4 ,   0 ,   0
+						410 cell
+							411 button Details
+		8 container
+			412 container
+				413 text Gerber
+				414 text Wireframe
+				415 text 2D
+				416 text 3D
+				417 text Top layer
+				418 text Bottom layer
+			9 image smt-engine-canvas-dfm
+			254 container loading-messager
+				255 text Retrieving DFM data, please wait...
+			419 container loading-messager
+				420 text Loading components, please wait...
+		256 container toggle
+			257 container
+				258 text Show layer controls
+			421 table
+				422 row
+					423 cell
+						424 text Edit
+					425 cell
+						426 text Content
+			427 container gerber
+				428 table
+					429 row
+						430 cell
+							431 text Pin marker
+				432 table
+					433 row
+						434 cell
+							435 text Orientation marker
+				436 table
+					437 row
+						438 cell
+							439 text Model designator
+		440 container
+			441 text Component assembly analysis > Pin outer edge
+			442 text Measure if component pin edges extend past pad edges Layer
+			443 container component_+_top
+				444 text component_+_top ( 2 ,  0 ,  0 )
+			445 table
+				446 row
+					447 cell
+						448 text No.
+					449 cell
+						450 pop up button (collapsed, settable) Value: All, Secondary Actions: Expand
+							451 menu
+								452 (selected) All
+								453 Good
+								454 Warning
+								455 Danger
+					456 cell
+						457 text Value
+					458 cell
+						459 text Object 1
+					460 cell
+						461 text Object 2
+			462 table
+				463 row
+					464 cell
+						465 text 1
+					466 cell
+						467 text Danger
+					468 cell
+						469 text 0.15mm
+					470 cell
+						471 text U10
+					472 cell
+						473 text null
+				482 row
+					483 cell
+						484 text 2
+					485 cell
+						486 text Danger
+					487 cell
+						488 text 0.15mm
+					489 cell
+						490 text U10
+					491 cell
+						492 text null
+			474 checkbox (settable, integer) Description: Smart layer display, Value: 1
+			475 checkbox (settable, integer) Description: Auto fit view, Value: 1
+			476 button First
+			477 button Previous
+			478 button Next
+			479 button Last
+			480 button All
+			481 text Checks if a pin's outer edge extends past its corresponding pad edge, as this can affect solderability if excessive, unless by special design. Alert value ： Danger Warning Good
+
+The focused UI element is 369 button Details

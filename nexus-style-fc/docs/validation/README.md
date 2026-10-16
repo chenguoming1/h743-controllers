@@ -4,13 +4,15 @@ This is the single evidence location. **The working design is `../../hardware/`,
 
 ## Current checks
 
+- [Fabrication cleanup](fabrication-fixes/REPORT.md): current native checks, regenerated main CAM, source/BOM/CPL consistency and open gates
+
 - [Consolidation report](consolidation/REPORT.md): fresh read-only KiCad 10.0.7 ERC/DRC, native/source/BOM/CPL checks and path inventory
 - [Main stage36 engineering report](stage36/MAIN-PLACEMENT-CHECKPOINT.md) and [original source seal](stage36/ENGINEERING-CHECKPOINT-SEAL.json)
-- [Stage36 PCB-only JLCDFM](reviews/jlcdfm-main-stage36/REVIEW-STATUS.md): assembly result unavailable; CPL acceptance uncertain
+- [Stage36 predecessor PCB/SMT JLCDFM](reviews/jlcdfm-main-stage36/REVIEW-STATUS.md): completed numerical screening; unresolved U10/model and process findings, not current CAM approval
 - [Child b49ef410 JLCDFM](reviews/jlcdfm-child-b49ef410/REVIEW-STATUS.md), [child engineering review](child-b49ef410/ENGINEERING-REVIEW.md) and [mechanical proposal](child-b49ef410/verification/mechanical/PCB_ONLY_PROPOSAL.md)
 - [Stage35 DFM](reviews/jlcdfm-main-stage35/REVIEW-STATUS.md) and [stage10 DFM](reviews/jlcdfm-stage10/REVIEW-STATUS.md) are historical main-board evidence, not fresh stage36 assembly validation
 
-Both native designs, library definitions and matching manufacturing exports retain their exact published content. Latest `tools/design.py` has SHA-256 `ea95b1c7edfe1ec5db765c5b3823a4f388d633cb98e46f93df7777893b8a56a0`, restored by the owner before consolidation. Excluded historical `design.py` and `prepared-design.py` have not been reconstructed or added.
+The consolidation preserved the owner-restored source. The current fabrication cleanup adds main-only artwork identities and reviewed symbol filters while retaining parts, pad geometry and placement. Historical seals below remain predecessor evidence. Excluded historical generators have not been restored.
 
 ## How evidence is bound to a revision
 

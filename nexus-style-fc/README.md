@@ -11,7 +11,7 @@ A KiCad 10 F722 controller based on the RadioMaster Nexus form factor and Rotorf
 - [Review-only Gerber, BOM and CPL files](manufacturing/README.md)
 - [Validation, exact source provenance and open gates](docs/validation/README.md)
 
-There is one working design in this project root. `hardware/`, `tools/` and `manufacturing/` hold the matched stage36 main and b49ef410 child. Work directly here on a Git branch; use commits, branches and pull requests for revisions. Older project snapshots are available in Git history, rather than additional working version folders. The other repository projects are unchanged.
+There is one working design in this project root. `hardware/`, `tools/` and `manufacturing/` hold the current fabrication-cleanup main and matched b49ef410 child. Work directly here on a Git branch; use commits, branches and pull requests for revisions. Older project snapshots are available in Git history, rather than additional working version folders. The other repository projects are unchanged.
 
 ## Source layout
 
@@ -41,13 +41,11 @@ This checks paths, Python syntax, ERC and DRC with schematic parity and writes r
 
 ## Current evidence and remaining gates
 
-The consolidation changes paths, documentation and tooling safeguards only. Main PCB SHA-256 is `bed37199e8d62b8135a27b9e182f8e8f584f1a9fb722cb6efb5d4c87b2a320b8`; child PCB is `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. Main `tools/design.py` is the exact file restored by the owner in commit `fad62076054229a1d3de79106984d8b71906379e`.
+The latest [fabrication cleanup report](docs/validation/fabrication-fixes/REPORT.md) and [input hashes](docs/validation/fabrication-fixes/INPUT-BINDING.json) bind the current source and review exports. Main native DRC is now zero errors/warnings/opens/parity; both boards have zero ERC findings under unchanged settings. Child retains 11 intentional bare-contact courtyard warnings and zero parity findings.
 
-Fresh consolidation checks with KiCad 10.0.7: both ERC reports have zero violations; both DRC reports have zero errors/opens. Main has 61 warnings and zero parity findings. Child has 11 missing-courtyard plus 11 schematic footprint-filter warnings. All inherited rule settings are unchanged.
+Main PCB SHA-256: `7a5abe70f1c7f0ac5693cfa4a3156432f6321f5907bbcb0e0892687da51a5d60`. Child remains `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. Main pad geometry, part selection, placement and CPL are unchanged; new main-only artwork footprint names are synchronized in source/schematic/BOM. Main CAM is regenerated.
 
-[Stage36 external DFM](docs/validation/reviews/jlcdfm-main-stage36/REVIEW-STATUS.md) is **PCB-only**: six pad-spacing danger counts remain. BOM acceptance was observed; CPL acceptance is uncertain, and there is no stage36 assembly result. Child-specific historical DFM remains bound to the unchanged child hash. These are screening results, not supplier process approval.
-
-Open gates include U10 model/overlap and assembly fit, local NRST placement, matched main/child mechanical fit, PCB thickness/copper/process acceptance, header/contact current, thermal/transient/SI/PI/EMI, vibration and physical testing. The retained header is rated 3 A; no 10 A system rating is established. Stock-target orientation and flight qualification are also open.
+Stage36 external PCB/SMT screening applies to the predecessor, not these new CAM bytes. U10 model alignment, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit and physical qualification remain open. Retained header rating is 3 A/contact; no 10 A system rating is established.
 
 ## Attribution and sibling project
 
