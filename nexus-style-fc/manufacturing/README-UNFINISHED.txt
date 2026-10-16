@@ -1,1 +1,1 @@
-Engineering checkpoint exports only. Main outputs bind to stage36; child remains the sealed b49ef410 design. Not released for fabrication or assembly. Earlier JLC results are historical and do not accept these exact stage36 inputs. The child through-hole header is not an SMT placement.
+Engineering checkpoint only. Main outputs bind to the current fabrication cleanup; child retains PCB b49ef410. See docs/validation/fabrication-fixes/INPUT-BINDING.json and REPORT.md. Not released for fabrication, assembly or flight. Stage36 JLC results apply to predecessor inputs.
