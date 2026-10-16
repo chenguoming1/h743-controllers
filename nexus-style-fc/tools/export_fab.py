@@ -21,7 +21,7 @@ import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
-K = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
+K = os.environ.get("KICAD_CLI") or shutil.which("kicad-cli") or "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 BOARDS = [
     ("nexus-style-fc", "hardware/nexus-style-fc.kicad_pcb", "design", 6),
     ("nexus-header-board", "hardware/header-board/nexus-header-board.kicad_pcb", "design_header", 2),
@@ -64,7 +64,8 @@ def export_gerbers(name, pcb, ncu, out, gdir):
 def bom_cpl(name, pcb, mod, out):
     if True:
         d = importlib.import_module(mod)
-        parts = {p["ref"]: p for p in d.PARTS if p.get("lcsc") and p["lcsc"].startswith("C")}
+        selected = d.get_main_parts() if mod == "design" and name == "nexus-style-fc" else d.PARTS
+        parts = {p["ref"]: p for p in selected if p.get("lcsc") and p["lcsc"].startswith("C")}
         groups = {}
         for p in parts.values():
             groups.setdefault((p["value"], p["fp"].split(":")[1], p["lcsc"]), []).append(p["ref"])

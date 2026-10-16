@@ -102,11 +102,11 @@ def main(mod_name, out_path, project):
     d = importlib.import_module(mod_name)
     # Only this main schematic uses the reviewed custom-footprint filters.
     # Never mutate design.PARTS: sibling projects import it directly.
-    parts = d.PARTS
+    parts = d.get_main_parts() if mod_name == "design" and project == "nexus-style-fc" else d.PARTS
     if mod_name == "design" and project == "nexus-style-fc":
         reviewed = {"J1": "NexusReviewed:HeaderBoardJoint",
                     "L1": "NexusReviewed:PowerInductor", "L2": "NexusReviewed:PowerInductor"}
-        parts = [dict(p, sym=reviewed.get(p["ref"], p["sym"])) for p in d.PARTS]
+        parts = [dict(p, sym=reviewed.get(p["ref"], p["sym"])) for p in parts]
     root = uid(project, "root")
     symdefs = {}
     for p in parts:
@@ -231,7 +231,7 @@ def main(mod_name, out_path, project):
     sch.append(["embedded_fonts", "no"])
     if mod_name == "design":
         from draft_circuits import arrange
-        sch = arrange(sch, d, project)
+        sch = arrange(sch, d, project, parts=parts)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     open(out_path, "w", encoding="utf-8").write(sx.dump(sch) + "\n")
     print("wrote", out_path, f"({len(parts)} symbols)")

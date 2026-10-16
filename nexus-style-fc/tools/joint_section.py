@@ -65,8 +65,8 @@ def main():
     g.append(rect(ip0, -mt, ip1, -mt - cu, "cu"))
     g.append(rect(op0, -mt, op1, -mt - cu, "cu"))
     # solder fillets: bottom face only (VBar style)
-    g.append(poly([(ci, -tab + 0.25), (ci, -mt), (ip1 - 0.15, -mt)], "solder"))
-    g.append(poly([(co, -tab + 0.25), (co, -mt), (op0 + 0.1, -mt)], "solder"))
+    g.append(poly([(ci, -tab + mf.PAD_INSET), (ci, -mt), (ip1 - 0.15, -mt)], "solder"))
+    g.append(poly([(co, -tab + mf.PAD_INSET), (co, -mt), (op0 + 0.1, -mt)], "solder"))
     g.append(text(co - 2.6, 0.95, "no solder on the top face", "ts", "end"))
     # keep-out band
     g.append(line(mf.KEEPOUT_Y, 3.0, mf.KEEPOUT_Y, -3.2, "ko"))
@@ -84,7 +84,7 @@ def main():
     g.append(text(-0.1, -3.5, "main-board edge", "ts", "end"))
     g.append(line(co - 8.5, 3.0, co - 8.5, 8.0, "edge"))
     g.append(text(co - 8.4, 8.3, "pin tips = case end", "ts"))
-    g.append(text(Y0 + 0.2, Z0 - 0.5, "Header joint, section through one servo column (to scale)", "h"))
+    g.append(text(Y0 + 0.2, Z0 - 0.5, "UNFINISHED header joint: nominal section, illustrative solder", "h"))
     w, h = W_MM * S + 40, H_MM * S + 40
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.0f}" height="{h:.0f}" viewBox="0 0 {w:.0f} {h:.0f}">',
            '<style>'
@@ -93,6 +93,7 @@ def main():
            '.ko{stroke:#d1242f;stroke-width:1.5;stroke-dasharray:6 4}.edge{stroke:#57606a;stroke-width:1;stroke-dasharray:3 3}'
            '.t{font:13px sans-serif;fill:#1f2328}.ts{font:11px sans-serif;fill:#1f2328}.h{font:600 15px sans-serif;fill:#1f2328}'
            '</style><rect width="100%" height="100%" fill="#ffffff"/>'] + g + ['</svg>']
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w").write("\n".join(svg))
     print("wrote", OUT)
 

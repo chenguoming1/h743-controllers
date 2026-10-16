@@ -3,10 +3,10 @@ import copy, math
 import sexpr as sx
 G=1.27
 class Draft:
- def __init__(self,sch,design,project):
+ def __init__(self,sch,design,project,parts=None):
   from gen_schematic import uid,S,glabel
   self.uid,self.S,self.glabel=uid,S,glabel;self.project=project;self.sch=sch;self.design=design
-  self.parts={p['ref']:p for p in design.PARTS};self.defs={sx.text(n[1]):n for n in sx.find(sch,'lib_symbols')[0][1:]};self.orig={sx.text(sx.find(n,'property')[0][2]):n for n in sx.find(sch,'symbol')};self.items=[];self.pins={};self.used=set();self.connected=set();self.count=0;self.offset=(0,0);self.grounds={}
+  self.parts={p['ref']:p for p in (design.PARTS if parts is None else parts)};self.defs={sx.text(n[1]):n for n in sx.find(sch,'lib_symbols')[0][1:]};self.orig={sx.text(sx.find(n,'property')[0][2]):n for n in sx.find(sch,'symbol')};self.items=[];self.pins={};self.used=set();self.connected=set();self.count=0;self.offset=(0,0);self.grounds={}
   from gen_schematic import pinned_stock_symbols
   sx.find(sch,'lib_symbols')[0].append(copy.deepcopy(pinned_stock_symbols()['power:GND']))
  def snap(self,x):return round(round(x/G)*G,4)
@@ -73,8 +73,8 @@ class Draft:
   keep=[n for n in self.sch if not isinstance(n,list) or n[0] not in ('symbol','wire','global_label','no_connect','text','junction','polyline')]
   return keep+self.items
 
-def arrange(sch,design,project):
- d=Draft(sch,design,project)
+def arrange(sch,design,project,parts=None):
+ d=Draft(sch,design,project,parts=parts)
  d.text('NEXUS-STYLE FLIGHT CONTROLLER  |  CIRCUIT SCHEMATIC',20,20,3,True)
  d.text('POWER  /  COMPUTE + SENSORS  /  INTERFACES. Named boundaries connect between functional circuits.',20,28,1.8)
  d.text('UNFINISHED PCB CHECKPOINT - NOT RELEASED FOR FABRICATION. X = intentionally unconnected pin.',20,35,1.6)

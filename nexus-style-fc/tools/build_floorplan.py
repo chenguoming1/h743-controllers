@@ -19,6 +19,7 @@ import gen_schematic as gs
 import make_footprints as mf
 import sexpr as sx
 from pcbutil import Board, courtyard_boxes, uid
+from generate_u10_ti_variant import generate as generate_u10_ti_variant
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HW = os.path.normpath(os.path.join(HERE, "..", "hardware"))
@@ -103,6 +104,10 @@ class Placer:
 
 
 def main():
+    # This dedicated main-only variant does not alter the shared generic land
+    # pattern or the independently maintained child-board generator.
+    generate_u10_ti_variant(os.path.join(HW, "library", "NexusFC.pretty"))
+    parts = design.get_main_parts()
     b = Board(OX, OY, 4)
     ds = b.board.GetDesignSettings()
     ds.SetBoardThickness(b.mm(1.6))
@@ -130,14 +135,14 @@ def main():
 
     root = uid(PROJECT, "root")
     names = {}
-    for p in design.PARTS:
+    for p in parts:
         if p["sym"] not in names:
             lib, name = p["sym"].split(":")
             sym = sx.symbol_from_lib(gs.lib_path(lib), name)
             names[p["sym"]] = {k: v[4] for k, v in sx.symbol_pins(sym).items()}
     placer = Placer(b)
     fps = {}
-    for p in design.PARTS:                        # fixed parts first
+    for p in parts:                        # fixed parts first
         if p["place"][0] == "xy":
             fp = b.footprint(p, PROJECT, root, names[p["sym"]])
             _, x, y, rot, side = p["place"]
@@ -147,7 +152,7 @@ def main():
             fps[p["ref"]] = fp
             placer.add(fp)
     failed, moved, retry = [], [], []
-    todo = [p for p in design.PARTS if p["place"][0] == "near"]
+    todo = [p for p in parts if p["place"][0] == "near"]
     ordered = []
     while todo:                                   # anchors must be placed before their dependants
         ready = [p for p in todo if p["place"][1] in fps or p["place"][1] in {q["ref"] for q in ordered}]
@@ -180,7 +185,7 @@ def main():
     b.text(pcbnew.F_Fab, 3.05, 12.4 + mf.DESIGN_SHIFT, "DSM", 0.7, angle=90)
     b.text(pcbnew.F_Fab, 19.0, 12.4 + mf.DESIGN_SHIFT, "A-CRSF", 0.7, angle=90)
     b.save(OUT)
-    print("wrote", OUT, f"({W} x {L} mm, {len(design.PARTS)} parts, {len(b.nets)} nets)")
+    print("wrote", OUT, f"({W} x {L} mm, {len(parts)} parts, {len(b.nets)} nets)")
     if moved:
         print("placed on the opposite side of their anchor:", ", ".join(moved))
     if failed:

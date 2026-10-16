@@ -58,6 +58,10 @@ SILK_BODY = {"WSON-8_L8.0-W6.10-P1.27-BL-EP"}
 
 
 def fix(path):
+    if os.path.basename(path) == "TPS70933DBVR_TI_DBV0005A.kicad_mod":
+        # Exact TI-derived lands/courtyard are owned by the main-only generator.
+        # Reformatting this variant would break its guarded idempotence check.
+        return False
     text = open(path).read()
     if not text.lstrip().startswith("(module"):
         return False                      # project-generated footprints are already correct

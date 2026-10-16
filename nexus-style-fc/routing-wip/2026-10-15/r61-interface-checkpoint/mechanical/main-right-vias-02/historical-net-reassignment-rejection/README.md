@@ -1,7 +1,0 @@
-# Rejected mechanical native source-net baselines
-
-The original accepted routing sources and guarded mechanical text replays retain GND on via 3bc1d32f-634e-4d77-9c5d-f6bdd353e76c at (119.975, 104.225). The new S1 contact overlaps that via. KiCad 10.0.7 automatically reassigns it to S1 during LoadBoard, before explicit refill. The saved historical initial-native, r58-replay/native-baseline, main-signal-01 and r61-replay/native-baseline therefore do not preserve the original copper net assignment. Their native receipts are retained as actual diagnostic results, but zero opens/parity does not establish source-net invariance. They remain rejected/incomplete mechanical baselines.
-
-The S3/TAIL local donor proofs are still source-bound local geometry evidence, not global net-equivalence evidence. The original accepted r61 routing board is unaffected. Main-right-vias-02 is a separate fresh trial built from the original guarded text, retaining GND and moving the via off the S1 pad before native loading; its retained copper net assignments now match exactly. Its geometry/return acceptance is separate and pending at this supplement seal.
-
-No historical file was edited. Full original file hashes and exact via nodes are in historical-via-identity.json. The complete retained segment/arc/via/net-assigned polygon comparison is in complete-retained-copper-net-audit.json. The source-to-native r58 and r61 comparisons find exactly this one net difference.

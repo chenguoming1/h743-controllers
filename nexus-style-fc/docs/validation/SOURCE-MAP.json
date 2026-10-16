@@ -1,0 +1,2893 @@
+{
+  "source_commit": "fad62076054229a1d3de79106984d8b71906379e",
+  "source_repository": "chenguoming1/h743-controllers",
+  "path_prefix": "nexus-style-fc/",
+  "status": "Unfinished, not fabrication/assembly/flight approval",
+  "notes": [
+    "Paths are project-relative. Existing Git blobs are reused for unchanged content.",
+    "pcbutil.py and build_all.sh are intentionally modified for portability and overwrite protection; .gitignore and current README files are updated. Their entries identify the starting source, not final-file hashes.",
+    "All discarded snapshots and associated evidence remain in the source commit. Historical relative references belong to that pinned revision."
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "source_path": ".gitignore",
+      "git_blob": "19f1a0b7092390a3671c71e8de244195661c6931"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/CHILD-ENGINEERING-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/CHILD-ENGINEERING-SEAL.json",
+      "git_blob": "02ca94b4caaf25d5e000eee5da578a301eda3374",
+      "sha256": "d44c47508536b1a8db8df056287a2201aa5fba298a809afff421cc48f7c945fc"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/ENGINEERING-REVIEW.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/ENGINEERING-REVIEW.md",
+      "git_blob": "23d82475744dd50dcb99d06c9f8570a94c0a6848",
+      "sha256": "4cba49c700c044e5fb0dff6cf2513262b69f82caa053e523e9d94b8cb74da4d9"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/all-native-advisories.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/all-native-advisories.json",
+      "git_blob": "dc95e0898898e8f3e78a46f1b5fa84c17d660d2a",
+      "sha256": "390d20e5fc6df2cd63eacfc94492732bb6bfc6cc6cc88079b05e7a416c4f1fb8"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/all-visible-erc-child/erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/all-visible-erc-child/erc.json",
+      "git_blob": "5fca0ae8c2ccd7909ce426b7e145268d3b90eeed",
+      "sha256": "4ed7dbc1397c442d7d725a13c664d3065013ddb86f38673216950fa3e0300722"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/all-visible-erc-main/erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/all-visible-erc-main/erc.json",
+      "git_blob": "a22f9084b632957aa98d95533970602609597312",
+      "sha256": "cd90169ef68869d3a4d4a205d3681b0fd7b6b140bee59c7ea0df68ff2d413f51"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/child-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/child-drc.json",
+      "git_blob": "45ec8e8d6a70ad8e9db90ddcb8a4449a080f9bd1",
+      "sha256": "3e1e0c5fee6bc2c5087e9cd26e412d4e278f897ed8e07cbb19cf2daff7598863"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/child-erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/child-erc.json",
+      "git_blob": "2a4bb2071566063e760a9c8f3b39fea81c534793",
+      "sha256": "27b5c75f099ec2dac477b4fa3d3aa2f8a99f54a969a15be2df7de84c86853cd3"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/continuous-vx-transaction.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/continuous-vx-transaction.json",
+      "git_blob": "5a9dc2b71144ec8f6474a4b8eecd2a28e0f3ce3f",
+      "sha256": "100256b43cc97a46498416fea2f570c1117fa6c1b4b505188cf00575eadf7dc2"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/final-source-integrity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/final-source-integrity.json",
+      "git_blob": "53b4ca11483309b9fc1d31159d2b020b3a819744",
+      "sha256": "b9290ff1f2f1083a4e365ae02d1d38c99fa91fc6f36838a498733ec6bb4e6431"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/geometry-contract.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/geometry-contract.json",
+      "git_blob": "4a2a911dff1e9ad18986dad419ba2da6504b577f",
+      "sha256": "df616630f6ec676340b1c03efc8d1d5a651a0bc7ccf4440910b684e6cc794bf6"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/iteration1-crossing-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/iteration1-crossing-drc.json",
+      "git_blob": "b49aae0b7966e03911e549e632eb59f2f5caac4c",
+      "sha256": "f46bc5f74db2e86eddffedd477b17879ac02de8b4ce7376a06123c3155f40e05"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/main-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/main-drc.json",
+      "git_blob": "f92fdfdb1b93946a2acf240a56248bb33283fc01",
+      "sha256": "0c2fd4ec212eb6457e56f6c976fbae688b1ae7056d307b1ebf8c074158ad3883"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/main-erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/main-erc.json",
+      "git_blob": "5ee6462c78f5f5095ea08f5d4a6a00a6099a4dfe",
+      "sha256": "0ed9566d5180a6a0b1007c554529803b5d3b1f8c0f81135c2e86e32c3f556481"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/mechanical/PCB_ONLY_PROPOSAL.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/mechanical/PCB_ONLY_PROPOSAL.md",
+      "git_blob": "c9a5b4885d9138bc4faeac3f6c37f855bbc042c6",
+      "sha256": "ab3d341e7f7f478b1664dfdb2b3db9806cd0bff0711b69f9293318aacb6ffa20"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/mechanical/fit-verification.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/mechanical/fit-verification.json",
+      "git_blob": "e0b5332214f1584690504bd58021b46bc5191558",
+      "sha256": "20e99a0a1a1780942a7aad76543170bc3b81c7cc2e395a58f76e72ff19914828"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/mechanical/geometry-contract.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/mechanical/geometry-contract.json",
+      "git_blob": "4a2a911dff1e9ad18986dad419ba2da6504b577f",
+      "sha256": "df616630f6ec676340b1c03efc8d1d5a651a0bc7ccf4440910b684e6cc794bf6"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/mechanical/independent-continuous-vx-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/mechanical/independent-continuous-vx-proof.json",
+      "git_blob": "650c4057ae99454b86fcadb380bf71dff2908604",
+      "sha256": "9c5b29ae265ba2f75567f304104ba5d1698b06e5204708b453efca41dc4ba68b"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/mechanical/independent-integrated-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/mechanical/independent-integrated-proof.json",
+      "git_blob": "f2839614928afe51e6f61ca38c9b9d6783c166dc",
+      "sha256": "6a71031e79ed0f81d6786d2b2fc1a7922369012367cd1f6ad51e5469032b3346"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/mechanical/mechanical-evidence-manifest.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/mechanical/mechanical-evidence-manifest.json",
+      "git_blob": "5e04e5572979da36dff7f24ffeb7ea6c3f159852",
+      "sha256": "be4df8691a9ea0d8d11d876de996b019182492d3d83563cc10481cd0d0f19dad"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/V1-ROLLBACK-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/V1-ROLLBACK-SEAL.json",
+      "git_blob": "06b0e5721e0ac39027db7c2280bc573dcf4331c5",
+      "sha256": "7436b5f14650d81a33e2e857fd7924dd6035891ef6b53997d0996a58414c6459"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/V2-POWER-REVIEW-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/V2-POWER-REVIEW-SEAL.json",
+      "git_blob": "868bfe5ea6a7ea8d119e025e3b5a040ed8b05320",
+      "sha256": "6697d5e9df04ac8c57f67e0a16f384608c7878707816e4593eec9624805c6571"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/V2-POWER-REVIEW.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/V2-POWER-REVIEW.md",
+      "git_blob": "51a35efe8c395e92e5262b8ac989c889fb6b355d",
+      "sha256": "9ad7fcc92386038b26c33c89b6461976769081c244c4c8ffbd28f441ac291fc2"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/ADDENDUM-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/ADDENDUM-SEAL.json",
+      "git_blob": "6817648ad3bcc1c7d82c61eddc8fcab0d41f0f90",
+      "sha256": "fe944a97a2de516e1b5b3fb2c7c8c36ae4760073a169f58ebd971cb930f8876d"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/MECHANICAL-SOURCE-NOTE.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/MECHANICAL-SOURCE-NOTE.txt",
+      "git_blob": "4616f307007384d9c770bcfaa4db482c58411dfe",
+      "sha256": "966bc3a85797baeddf38081ac31ac5e5b8eb3d062bba0031f4b62cd287322fc5"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/PCB_ONLY_PROPOSAL-at-barrel-audit.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/PCB_ONLY_PROPOSAL-at-barrel-audit.md",
+      "git_blob": "b95758e048ce8518089e0d43a95447f7b60a51bd",
+      "sha256": "cf32a5c650c95eb303f9ddb3e7d8ae389ec754558036be9b56e859ba47fc72ee"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/V2-BARREL-TOLERANCE-ADDENDUM.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/V2-BARREL-TOLERANCE-ADDENDUM.md",
+      "git_blob": "10f726ebef5140fd6fcf6e7a2842fb3d627c3a6b",
+      "sha256": "e1439f1b3d7ec4e1312a0986f0329f10a87c673d0b6cb938411f6077c432a69c"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/barrel-length-sensitivity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/barrel-length-sensitivity.json",
+      "git_blob": "c4dd2b0126afe6c945dccd8feaa13873fc35f05f",
+      "sha256": "312793f029ff8bbbc20c5c0390554eff6487d1aa4c08aa24abffb8c58094acc5"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/bore-run.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/bore-run.txt",
+      "git_blob": "2d1967be78d10fd6b1318cfaf1323690dfa81501",
+      "sha256": "1c3704eaec518b027494a77d55b536e78c59e77233b248595199e018147f6b8e"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/build_addendum.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/build_addendum.py",
+      "git_blob": "a9f9073b6ab5b90341dbb45092c9fb2e47dec1b0",
+      "sha256": "f2fac919a22e1baa0eed97513709b3901de6ceb8d527993169832e0786a828cf"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/header-bore-sensitivity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/header-bore-sensitivity.json",
+      "git_blob": "96cd5529af7c15c353a0f598442a02e1aa57cc60",
+      "sha256": "3c8d6d5ee080d38a601064eea609e490e5fe7203c61c72447dc912e09883830a"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/barrel-length-addendum/header-hole-drawing.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/barrel-length-addendum/header-hole-drawing.png",
+      "git_blob": "772687373ea819745e2f1c4d1b48e5c7af99d317",
+      "sha256": "fbe2f1141865d070900c5e91e8db22b74f63c7f3d19a46db32eba63d0576e2cd"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/extract_v2.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/extract_v2.py",
+      "git_blob": "36dfafd214e9b8a580980b69197fb84486604260",
+      "sha256": "9674a47860c4f44d6c9ca834ba1178e06f75964bc4ac8d091b1278fa25845c1a"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/measure_sections.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/measure_sections.py",
+      "git_blob": "d40fc949af8c2f19e20a62b5c8c3aee2043e9497",
+      "sha256": "18e47b0226f277a27e7b83db94bd4f2306cfd7cda17a8b8207f5173136e1fe33"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/power_sheet_model.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/power_sheet_model.py",
+      "git_blob": "e3a43b2f5fc0dd540cbfac62e6007955976f3064",
+      "sha256": "79b57f35cf2717f3e8f572a985610a7d81e42f566fcea4797aba1d1b0860877d"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/solve_barrel_length_addendum.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/solve_barrel_length_addendum.py",
+      "git_blob": "2ca2a58606d7b0844c7e4e36ffe7e9b17bf9a97f",
+      "sha256": "a9a55e6176a96b8e456411eef75b223e3a70d6e6ef9e7303ab9788019918d245"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/solve_bench_cases.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/solve_bench_cases.py",
+      "git_blob": "f86b57ea21cb3311cf1d7c080161bb74739e8392",
+      "sha256": "1a8b2cf3cae22961ff129fce0ce8fc9cb55b7474d3e6b68f613cbb833af2525a"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/solve_header_bore_addendum.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/solve_header_bore_addendum.py",
+      "git_blob": "255bcb70e43147752f3e228ff334215aa12f108c",
+      "sha256": "ea692a7e57140aa99afdc65b29af13912727008f6844472460cb903424f19ac9"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-GND-saved-copper-screen.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-GND-saved-copper-screen.png",
+      "git_blob": "eac28462b87a83082af0543277b0e3467a5f098a",
+      "sha256": "666330a66c524d99bf93b5377bacd064dfc1275c110acd75e7ca7318d901f008"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-VX-saved-copper-screen.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-VX-saved-copper-screen.png",
+      "git_blob": "a339fd1e875203e023a3b4749ee304e0f0911a99",
+      "sha256": "c4d567af5d60f2e7c71cf41b22b5ec45ad55fa3d5b456bcf899d499a5d167ca6"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-bench-cases.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-bench-cases.json",
+      "git_blob": "ac70353c300d619b0968c5ec45b449e3304baff8",
+      "sha256": "e3c4b8723384302f718276440f2a78940a280982a5eeaecbcdb103be2b6051af"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-copper-sections.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-copper-sections.json",
+      "git_blob": "9727c10fff542ff9f23e61e258064ec617cd9d1b",
+      "sha256": "490c92f0d03523beb20de2a34856e259d533ca9f8ef4bb5f204582c0282305b4"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-exact-key-results.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-exact-key-results.txt",
+      "git_blob": "02293721d364e728e930b74b1bf171d9a33d7b22",
+      "sha256": "3ac245b3ff98d6901a61f9ea12e782d1143757c440921bdf3e24c814587873dc"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-geometry.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-geometry.json",
+      "git_blob": "8cd53158611e36a04134d3f2902352e8a2c2240e",
+      "sha256": "ebc4a183a4d320796d6d0cb3e7e7388531c33c59c4d248e0650f1a5e5d6cd327"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-primary-table.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-primary-table.md",
+      "git_blob": "68c0e0e13f32c538f407187a5329db5e3badd904",
+      "sha256": "7ee87e69679f380fe7b6f512e2a0a4ec621162af4857a3810ecd450bf4626b87"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-result-sensitivities.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-result-sensitivities.json",
+      "git_blob": "18bb089693a51a582565ea41c4e23557723d3579",
+      "sha256": "9a0ed4f73f4ab9231d1fbb98b15406da26b4756ab64ec61df7d724e4bf42dccf"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/power/v2-sheet-model.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/power/v2-sheet-model.json",
+      "git_blob": "7c2f6ad165a3245a780edae22f7fc7b10de9616f",
+      "sha256": "7ce62203e95796dcfdf6eae2e303052ef29257839f9ab54e343f592acf494dba"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/child-continuous-vx-review.pdf",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/child-continuous-vx-review.pdf",
+      "git_blob": "4581a5a561a20134352a6837d401afa02c770126",
+      "sha256": "3cd203a157abc56a1cf31ded036bc0f051764c40d88f87e53961120118163238"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/child-continuous-vx-review.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/child-continuous-vx-review.png",
+      "git_blob": "f645676a684e48ee1d5d1a61e4bacf80b7203d6c",
+      "sha256": "3d2627b5889691b27474155afda98cabb892144f30c4756ae64aa21a3ad9f271"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/child-continuous-vx-review.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/child-continuous-vx-review.svg",
+      "git_blob": "b6af733ede7d685ee8c9a9c857772d97978040f9",
+      "sha256": "1cf0c74172156140a8453a5fc9efe2525a2e02b3ced9915ef67cda42fa81a7e9"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/native-back-unmirrored.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/native-back-unmirrored.svg",
+      "git_blob": "051ef2ac97ce2e0239746647ad86bd2f671c2ab4",
+      "sha256": "dcada0a952b2543f0783cb1bb70ed5ec132cf9173df16ba18ac59ca73c96ee48"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/native-front.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/native-front.svg",
+      "git_blob": "07238a4bfe54c499ef95ac7e302d66fb1cc43cd3",
+      "sha256": "9ee4d77fc984b9362377180a1a3a0d8352b9baa67f0e33a477587900cf761612"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/pdf-render-check.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/pdf-render-check.png",
+      "git_blob": "03cb766886b929c67c990ad96745eb134afef8b2",
+      "sha256": "f238fa9200eaae04a439a56b315c909b28404213909f77749422890f449246bd"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/preview/source-integrity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/preview/source-integrity.json",
+      "git_blob": "edc88cb6587b5dc192bfae72746d72631aa1f587",
+      "sha256": "f380192b69fd27f641e51f575372718f8950c379a54799474e95430a00604508"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/primary-evidence/header-C32713294-manufacturer.pdf",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/primary-evidence/header-C32713294-manufacturer.pdf",
+      "git_blob": "09a65de3bf1d2f83a707b7758ab9f6aa4a80c261",
+      "sha256": "b44606922b5eca64eafbe10a439688848635336dbf1bba66a53dd5ae916e88f8"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/primary-evidence/hobbywing-120A-v4-manual.pdf",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/primary-evidence/hobbywing-120A-v4-manual.pdf",
+      "git_blob": "d62410a14f8c110195266b710bcf0daf32e33cb2",
+      "sha256": "f719b18c467ef12e10659db0f3d2afddaeb0f067927a41ed7c43007a56251635"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/reproduction-scripts/build_compact_power.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/reproduction-scripts/build_compact_power.py",
+      "git_blob": "4002ca09178f32e5e417230fe31b5b4074563ec6",
+      "sha256": "57998e29791495b6064c4e9218c62753f38d25ed6b98d82a7ec909ffabe4cca0"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/reproduction-scripts/check_continuous_vx_parity.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/reproduction-scripts/check_continuous_vx_parity.py",
+      "git_blob": "7c9cc64466dd2b2e61fded2ff5ebed4752e9be44",
+      "sha256": "c3956cccff9dcb480c757112367b50cf086cf2228ac93b9d0b8076230845905c"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/reproduction-scripts/connect_full_vx_sheet.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/reproduction-scripts/connect_full_vx_sheet.py",
+      "git_blob": "6679744b96333c100f2f7a4b5c55a360d3b97349",
+      "sha256": "867b6acd9d18e3c1c69100b760682640e74b3256df98887a573c1ac59aee302d"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/reproduction-scripts/integrate_matched_child.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/reproduction-scripts/integrate_matched_child.py",
+      "git_blob": "7f4f5f7bd27e00b5bcc7e207f5c2af57a90bac5a",
+      "sha256": "aefba722e8d1bfa8f9ae1baf73a088524aeb1fcff92c24118419437ca9f2a23f"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/route-reproduction-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/route-reproduction-proof.json",
+      "git_blob": "90505d3ba0cb9c27979fda8e45da2151184df719",
+      "sha256": "287e9dad9ad9a73280dde5585a208edc1ab6438cad4ce6340b935e3fc61e5593"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/semantic-parity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/semantic-parity.json",
+      "git_blob": "e3bdac6afe77d7e4f5d3d2fe4b6805fac57f84b9",
+      "sha256": "05715109336fc402b718c7c618dbfb212476db6365491a568ff4e6b60343bfe9"
+    },
+    {
+      "path": "docs/validation/child-b49ef410/verification/unchanged-receipts-provenance.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/historical-child-engineering/verification/unchanged-receipts-provenance.json",
+      "git_blob": "bb15fe98b893f99ac48eb0fdfda389f3c633cd9b",
+      "sha256": "7bca4d94377c1a399430bce7ab3958fb3c96522d210f3437ec4d1c9856436971"
+    },
+    {
+      "path": "docs/validation/history/docs/f722-reroute-status.md",
+      "source_path": "docs/f722-reroute-status.md",
+      "git_blob": "4fed661767a024ae4325ff83e3771b5cc4f18635"
+    },
+    {
+      "path": "docs/validation/history/docs/layout-review.md",
+      "source_path": "docs/layout-review.md",
+      "git_blob": "ab6d6ea7ee232e8d902a76b76182bbcf4545b66d"
+    },
+    {
+      "path": "docs/validation/history/docs/nexus-schematic-review.pdf",
+      "source_path": "docs/nexus-schematic-review.pdf",
+      "git_blob": "9c685bf045f523f271d47cfb345bff5a4425db7f"
+    },
+    {
+      "path": "docs/validation/history/docs/reroute-validation.md",
+      "source_path": "docs/reroute-validation.md",
+      "git_blob": "efc5319a51e2ee69075f704181d8f6f52aafba46"
+    },
+    {
+      "path": "docs/validation/history/docs/schematic-header-board.pdf",
+      "source_path": "docs/schematic-header-board.pdf",
+      "git_blob": "bf5aa7d90ac53263bf00f3ee3fbd66e04cf98172"
+    },
+    {
+      "path": "docs/validation/history/docs/schematic-main.pdf",
+      "source_path": "docs/schematic-main.pdf",
+      "git_blob": "e1dd3e09e7af7c10aea34d60825496626e053ad0"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-14/README.md",
+      "source_path": "routing-wip/2026-10-14/README.md",
+      "git_blob": "f74a1c54c2299e6c890d1b38791c31249d0f36a6"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/README.md",
+      "git_blob": "909e567f0aa7262e93ceb8ee76f293cd39a9574b"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/accepted/README.md",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/accepted/README.md",
+      "git_blob": "8dc2d12733e87c6d4fc2193631eeffdbe17e5424"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/accepted/annotation-primary-evidence/datasheet-evidence/XL-1608SURC-06.pdf",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/accepted/annotation-primary-evidence/datasheet-evidence/XL-1608SURC-06.pdf",
+      "git_blob": "34cc656417b4b42b92c30bf210704ef630fbba26"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/accepted/annotation-primary-evidence/datasheet-evidence/XL-1608SYGC-04.pdf",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/accepted/annotation-primary-evidence/datasheet-evidence/XL-1608SYGC-04.pdf",
+      "git_blob": "62b973c49ef4fbb8c8ed36d4556a0d642d3d6705"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/accepted/annotation-primary-evidence/datasheet-evidence/XL-1608UBC-04.pdf",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/accepted/annotation-primary-evidence/datasheet-evidence/XL-1608UBC-04.pdf",
+      "git_blob": "9d0bb1f342169960e9372153c5bc529f8d3c612e"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/accepted/source-overlay-evidence/README.md",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/accepted/source-overlay-evidence/README.md",
+      "git_blob": "498b3dfd9205c9f486ae3f237d7b928a125ac081"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/assembly-source-checkpoint/accepted/visual-proof/before/nexus-schematic.pdf",
+      "source_path": "routing-wip/2026-10-15/assembly-source-checkpoint/accepted/visual-proof/before/nexus-schematic.pdf",
+      "git_blob": "4460730626363c7dccab868ef63e4054063bd754"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/batch31/README.md",
+      "source_path": "routing-wip/2026-10-15/batch31/README.md",
+      "git_blob": "d23489143f8feb4532daea947ba04aa4627122d9"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/batch35/README.md",
+      "source_path": "routing-wip/2026-10-15/batch35/README.md",
+      "git_blob": "cfa0b07001c01a95e2e4302076c2621e6465aea8"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/drafted-circuits-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/drafted-circuits-checkpoint/README.md",
+      "git_blob": "7cc426919d211f0c52fa7defc6bd9e9534e2d229"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/drafted-circuits-checkpoint/board-review/independent-review.md",
+      "source_path": "routing-wip/2026-10-15/drafted-circuits-checkpoint/board-review/independent-review.md",
+      "git_blob": "7f663237f6c0aa00a4938ec7c67c9c9a6e9ca384"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/en-readable-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/en-readable-checkpoint/README.md",
+      "git_blob": "cddb03884d6b7798abe808eae57ed929c26be098"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/input-caps-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/input-caps-checkpoint/README.md",
+      "git_blob": "53fed03788522d417d7f5e8273817432f27ebf1d"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/README.md",
+      "source_path": "routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/README.md",
+      "git_blob": "4d6f0525131c2c6667ff6caa4f216e784dc38f20"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/independent-review/REVIEW.md",
+      "source_path": "routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/independent-review/REVIEW.md",
+      "git_blob": "8df061f992d13512d2be45720c9680eb04f95d6d"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/physical-assembly-evidence/D5-JSCJ-B5819WS.pdf",
+      "source_path": "routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/physical-assembly-evidence/D5-JSCJ-B5819WS.pdf",
+      "git_blob": "cf5a25f017af7dc38c82088b494316f81b688efc"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/physical-assembly-evidence/FINAL-ASSEMBLY-SUPPLEMENT.md",
+      "source_path": "routing-wip/2026-10-15/input-caps-checkpoint/r62-input-cap-star/physical-assembly-evidence/FINAL-ASSEMBLY-SUPPLEMENT.md",
+      "git_blob": "c8d6742afab7a41753e8211ece8a221e78c9338f"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/input-caps-checkpoint/schematic-source-evidence/preview/connected.pdf",
+      "source_path": "routing-wip/2026-10-15/input-caps-checkpoint/schematic-source-evidence/preview/connected.pdf",
+      "git_blob": "f0be9e2fe1b733f8c6a13b2b9bed9e7d3153ac41"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/integrated-interface-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/integrated-interface-checkpoint/README.md",
+      "git_blob": "124bf124ee75d0eade2ef97fb60ce6c84b024f4d"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/integrated-interface-checkpoint/accepted/README.md",
+      "source_path": "routing-wip/2026-10-15/integrated-interface-checkpoint/accepted/README.md",
+      "git_blob": "2287c6564ec9792680c206c6e43182c1b6bf8405"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/integrated-interface-checkpoint/annotation-preparation/POLARITY-DRAWING-REVIEW.md",
+      "source_path": "routing-wip/2026-10-15/integrated-interface-checkpoint/annotation-preparation/POLARITY-DRAWING-REVIEW.md",
+      "git_blob": "d27a6bdcdab010a2d7f42f42ffa91a93457b13e2"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/integrated-interface-checkpoint/annotation-preparation/README.md",
+      "source_path": "routing-wip/2026-10-15/integrated-interface-checkpoint/annotation-preparation/README.md",
+      "git_blob": "34dd584a986111f043d6b66f46569b576cf28fea"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/integrated-interface-checkpoint/annotation-preparation/SOURCE-NOTE.md",
+      "source_path": "routing-wip/2026-10-15/integrated-interface-checkpoint/annotation-preparation/SOURCE-NOTE.md",
+      "git_blob": "19cb28471c3140e9ff409b4f0983af0383c82c86"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/integrated-interface-checkpoint/fit-review/README.md",
+      "source_path": "routing-wip/2026-10-15/integrated-interface-checkpoint/fit-review/README.md",
+      "git_blob": "a69c826594e763cbf57fe84378d24b41c27ab5a0"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r47-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r47-checkpoint/README.md",
+      "git_blob": "509b05024b0b07077732efa6af7746eb1ee94d89"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r47-checkpoint/usb-review/USB-STACK-REVIEW.md",
+      "source_path": "routing-wip/2026-10-15/local-r47-checkpoint/usb-review/USB-STACK-REVIEW.md",
+      "git_blob": "84483e345d123228500ce241f557f9db613fd939"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r51-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r51-checkpoint/README.md",
+      "git_blob": "da07ae935f5e1ded6900423c7b59343308173cde"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r51-checkpoint/header-review/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r51-checkpoint/header-review/README.md",
+      "git_blob": "d2ae297fa6b567c3d07eda522207621dcccb320d"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r51-checkpoint/u10-review/C18-placement-review.md",
+      "source_path": "routing-wip/2026-10-15/local-r51-checkpoint/u10-review/C18-placement-review.md",
+      "git_blob": "157333b1e844e87d439d955137a6ccac6cdfbc96"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r51-checkpoint/u10-review/DECISION.md",
+      "source_path": "routing-wip/2026-10-15/local-r51-checkpoint/u10-review/DECISION.md",
+      "git_blob": "10a951bffbabd0e2166b91f38051a508a2e239cf"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r54-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r54-checkpoint/README.md",
+      "git_blob": "2c577e7b18b534d701523fc5c1f5c3d518ffd577"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r54-checkpoint/pasted-via-review/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r54-checkpoint/pasted-via-review/README.md",
+      "git_blob": "bdf1cb75345c6c43b810887d5e4cb1b60a34e36b"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/README.md",
+      "git_blob": "2e1f4a136dce89b0da3b4a7bebd5991ebb5e3431"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/filter-integration/preview/source-visual-reference.pdf",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/filter-integration/preview/source-visual-reference.pdf",
+      "git_blob": "eae542e1b084b7b9e0e724206653d6899ec38188"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/INTEGRATION.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/INTEGRATION.md",
+      "git_blob": "61346769ea1f54b1b11804d79a97a2fe6b2ecb9a"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/PUBLICATION-STATUS.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/PUBLICATION-STATUS.md",
+      "git_blob": "c3fcd2ba0f256e15c43ab6fcdc897d9bbccc8303"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/README.md",
+      "git_blob": "7ae3a36c8871a92111b196ee35d46aba5e3eafb7"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/candidate-01/nexus-style-fc/docs/header-interface-candidate/header-interface-dimensioned-preview.pdf",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/candidate-01/nexus-style-fc/docs/header-interface-candidate/header-interface-dimensioned-preview.pdf",
+      "git_blob": "0579c99da0459a5e7eb56c937b61fc2f555c36e9"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/candidate-02/nexus-style-fc/docs/header-interface-candidate/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/candidate-02/nexus-style-fc/docs/header-interface-candidate/README.md",
+      "git_blob": "2809b4ebbac635051cfb1feb9436c19428024473"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/candidate-02/nexus-style-fc/docs/header-interface-candidate/header-interface-dimensioned-preview.pdf",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/candidate-02/nexus-style-fc/docs/header-interface-candidate/header-interface-dimensioned-preview.pdf",
+      "git_blob": "76ad2bcb75f37219577be80038a6630a34e04ea8"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/independent-review/README.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/independent-review/README.md",
+      "git_blob": "91b2d96839dea0e879d6d7e7bb00796382fa3f03"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/independent-review/candidate02-addendum.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/mechanical-candidate02/independent-review/candidate02-addendum.md",
+      "git_blob": "2f3749012a24b5512d85ac0466235b4fd7487669"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/local-r57-checkpoint/rejected-c29-placement-option/C29-PLACEMENT-OPTION.md",
+      "source_path": "routing-wip/2026-10-15/local-r57-checkpoint/rejected-c29-placement-option/C29-PLACEMENT-OPTION.md",
+      "git_blob": "c51f5950e46c2fd5294cad0a64ce9d4cdcc8c770"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/r61-interface-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/r61-interface-checkpoint/README.md",
+      "git_blob": "82f01f7a86419fa066bbd1fe410153f6dd30c562"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/r61-interface-checkpoint/lineage/r61-six-clearances/README.md",
+      "source_path": "routing-wip/2026-10-15/r61-interface-checkpoint/lineage/r61-six-clearances/README.md",
+      "git_blob": "c21e2841f0f762dfaf99e0cc992fa5238ff91de7"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/r61-interface-checkpoint/mechanical/main-right-vias-02/README.md",
+      "source_path": "routing-wip/2026-10-15/r61-interface-checkpoint/mechanical/main-right-vias-02/README.md",
+      "git_blob": "e7a80a378754c7e5c3c7431a84ea8e529c09a69b"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/r61-interface-checkpoint/mechanical/native-net-reassignment-audit/README.md",
+      "source_path": "routing-wip/2026-10-15/r61-interface-checkpoint/mechanical/native-net-reassignment-audit/README.md",
+      "git_blob": "41b444ecc9a861f45dda3810c1114082f1998f87"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/batch31/README.md",
+      "source_path": "routing-wip/2026-10-15/reviews/batch31/README.md",
+      "git_blob": "23e22b6d51807bbadc9c09eb44ac561d1e9d8410"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/batch31/native-evidence-review.md",
+      "source_path": "routing-wip/2026-10-15/reviews/batch31/native-evidence-review.md",
+      "git_blob": "e0d4597807abb8b16ad2f70300ecd6e87850660c"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/batch31/review.md",
+      "source_path": "routing-wip/2026-10-15/reviews/batch31/review.md",
+      "git_blob": "db719a7c44069b2eae17524871de529ad0a88ff3"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/current-gates/README.md",
+      "source_path": "routing-wip/2026-10-15/reviews/current-gates/README.md",
+      "git_blob": "8168ed5f66dc943d8b616fd36ca7836c768599cb"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/current-gates/RECOVERY-QUALIFICATION.md",
+      "source_path": "routing-wip/2026-10-15/reviews/current-gates/RECOVERY-QUALIFICATION.md",
+      "git_blob": "739d66135ba4aa15d44c9564b338db0fb2a59f3d"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/current-gates/header-contact-remedy-readonly.md",
+      "source_path": "routing-wip/2026-10-15/reviews/current-gates/header-contact-remedy-readonly.md",
+      "git_blob": "8fb8d11efe9f12a0a55dfbba258cb7b8275ca66b"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/reviews/current-gates/ldo-en-source-clarification.md",
+      "source_path": "routing-wip/2026-10-15/reviews/current-gates/ldo-en-source-clarification.md",
+      "git_blob": "4001f38b2dcbb60174d07dd8cf315f519e3c4769"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/stage36-main-child-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/README.md",
+      "git_blob": "28402d46a06a75b38058c71d1b47f36c245c0fba"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/README.md",
+      "git_blob": "2d58ba2dee0741e5e8214cd1c1b1859eded613a2"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/README.md",
+      "git_blob": "93f71b3e01ac43a8b130934887990eaf687ee146"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/COMPLETE-PAIR-HANDOFF.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/COMPLETE-PAIR-HANDOFF.md",
+      "git_blob": "e195492433bfc9c44dc226c7df68e2a0b66b8c45"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/WIDTH-SENSITIVITY.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/WIDTH-SENSITIVITY.md",
+      "git_blob": "e8a31f679b20b363bc25e5d9f9d5567c5549002b"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/mcu/REPORT.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/mcu/REPORT.md",
+      "git_blob": "f9b95ef8b256f374921a951bdeab7a0ab4b5cb78"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/ports/COMPACT-IN1-README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/ports/COMPACT-IN1-README.md",
+      "git_blob": "16209d8fb4ee498435bd080f3783b74ab626a827"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/ports/COMPACT-README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/ports/COMPACT-README.md",
+      "git_blob": "b2feae283ce4dc77b5e232bcec0af307948eab75"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/ports/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/ports/README.md",
+      "git_blob": "9ed5d61d64cee31434afa4594483d829def68388"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/reference/REPORT.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/source-review/reference/REPORT.md",
+      "git_blob": "7225217e17017c530482e3e205f9ed6e74c05f6e"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/taper-check-method.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r59-usb170-trial/taper-check-method.md",
+      "git_blob": "b0e16b566ce62c6c5c8a6168c8cf4db8fab71b64"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r60-r4-r18/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r60-r4-r18/README.md",
+      "git_blob": "202862ec6848abb9b07a4d61a0e8eb40413a7853"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r60-r4-r18/finite-entry-method.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/lineage/r60-r4-r18/finite-entry-method.md",
+      "git_blob": "e6d42f2d4ee400fd925bdd6b09c8d2e4f0e5e311"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/mechanical/child-copper-01/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/mechanical/child-copper-01/README.md",
+      "git_blob": "1b56dfb3b6fcf2ace9c8d184734ae009add2cef0"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/mechanical/child-copper-01/source-review/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/mechanical/child-copper-01/source-review/README.md",
+      "git_blob": "cefacd55e8b4362f54343173daac775b46067189"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/2026-10-15/usb-interface-checkpoint/power-input-capacitor-review/README.md",
+      "source_path": "routing-wip/2026-10-15/usb-interface-checkpoint/power-input-capacitor-review/README.md",
+      "git_blob": "40491891439f5e27023b342a8c43bda67cfd88d2"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/README.md",
+      "source_path": "routing-wip/README.md",
+      "git_blob": "f5606f5f1749c34dc0f3fab3470a3eceb88a1323"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/current/README.md",
+      "source_path": "routing-wip/current/README.md",
+      "git_blob": "e552beca7f336878702b4364780b114e64656fa8"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/current/docs/connected.pdf",
+      "source_path": "routing-wip/current/docs/connected.pdf",
+      "git_blob": "3434b34c20cc52b01d7599d0ac32a515f2bfbc28"
+    },
+    {
+      "path": "docs/validation/history/routing-wip/current/docs/nexus-connected-circuits-review.pdf",
+      "source_path": "routing-wip/current/docs/nexus-connected-circuits-review.pdf",
+      "git_blob": "7e0b52044f79f4f914561f29559cce279005c426"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/PUBLIC-EVIDENCE-MANIFEST.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/PUBLIC-EVIDENCE-MANIFEST.json",
+      "git_blob": "74f0b64961bd94157f2079db7f63c35b09a4ae8e",
+      "sha256": "50a8771b6c5fca6d534ad96738a396a8fe43b772d4f3864e639d6bb413b809e1"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/REVIEW-STATUS.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/REVIEW-STATUS.md",
+      "git_blob": "84f914c12ab8d860fb0bfbae267070a59ff089a4",
+      "sha256": "14634f645ddaaf283845dc53338d35755da8e676ec64325e670d84fd990935f3"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/assembly-j1-edge-warning.jpg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/assembly-j1-edge-warning.jpg",
+      "git_blob": "79a330f9ca87f86e20b2cc4565083e2723b5886c",
+      "sha256": "3e80cc12e44c3e11582a56c84fcbdb14b9e31a27781a0c46f6c7d04400ae8a76"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/child-dfm-findings.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/child-dfm-findings.json",
+      "git_blob": "81aae46948f7b509531139c911af994609a7a7d7",
+      "sha256": "32991797739b0c0a117b6fe048c6671c1cef6caf971c04d04f15a4866340ff86"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/child-dfm-summary.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/child-dfm-summary.csv",
+      "git_blob": "e80b54be34cf6a900c831236e0ec941dc1486fcb",
+      "sha256": "32afe271a6a9bfb336f4ccfccadfa94f253165b86dfae0af579c3be2647bef59"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/combined-report-dom.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/combined-report-dom.txt",
+      "git_blob": "feff7b668e5f6992eae700dd01a376dfb8037877",
+      "sha256": "6d15ca31384de851c665a573a2eeaf9e55b811f5ff83311ca26dcc226aa6724b"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/combined-report-visible-text.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/combined-report-visible-text.txt",
+      "git_blob": "888af3d0648c11d3e6a2caf4ed5e82de50a7077a",
+      "sha256": "cc4cef983db875717dda10cefb7cd807b964bb41658cded1e749078f5119d9a2"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/input-binding.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/input-binding.json",
+      "git_blob": "26aee1694550b3eb646308557b13c8514d414e0c",
+      "sha256": "2878ffb03e2a68a397dcf367e20bcbc33bf4a292d4389e9a55a03cd67244678f"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-child-b49ef410/pcb-summary-and-pdf-export-blocker.jpg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-child-b49ef410/pcb-summary-and-pdf-export-blocker.jpg",
+      "git_blob": "6e494eb74237f5bc079543dd9a0a3c02d39d6079",
+      "sha256": "b20cd8b891527fd42e6319fed236de8d7f2914a7650accade1c5c760c518d57f"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/PUBLIC-EVIDENCE-MANIFEST.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/PUBLIC-EVIDENCE-MANIFEST.json",
+      "git_blob": "ab8ac2a074540ad6bab1a06b1e4da527fd33348a",
+      "sha256": "5f81d770393e1deb614d4d21cfe3cec3c95a2bd045fac4e8d5eeb7d1d8002fc5"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/REVIEW-STATUS.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/REVIEW-STATUS.md",
+      "git_blob": "88736a4643435d3cc9ebebf072e3098e11112bcc",
+      "sha256": "99c987f9153d378377ce44b209f8e446a0c30792132f24b4199253ccf64e88fc"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/combined-report-dom.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/combined-report-dom.txt",
+      "git_blob": "d4111dd9f216d7ea36432492a56447c351cb5be0",
+      "sha256": "8e7b2d994372c12569eb26917dd53806a59c29e703bbaa854fcd35eb6d9a0c01"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/combined-report-visible-text.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/combined-report-visible-text.txt",
+      "git_blob": "d2d77d5db62a21ca4d4e9924ce7c6568df34c9ed",
+      "sha256": "f21b3808be62b3076317c03c280a4268b1d506f1dadaa24d99437f32449b31f5"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/dfm-summary.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/dfm-summary.csv",
+      "git_blob": "ee35a150cad5b066037ea2d4c78eca1cd0b9f662",
+      "sha256": "8dfd507925b1cf50967f4d6f19517090bdc81de151b2aec840486f080474a3aa"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/input-binding.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/input-binding.json",
+      "git_blob": "f11dd65623df805ac83ea1c5fd7eda1bd0fba364",
+      "sha256": "fbc97cb1f1c863b62c3c581bf09ab1a1447aeb2a90e4d89988c641910d380128"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/localized-findings.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/localized-findings.csv",
+      "git_blob": "33e33527030ac0fc7c3c378f6fa0e128de4fecb7",
+      "sha256": "2c3e3e0d16a1a91c4bd107eb725145464abfbd74a96147851decf4211b2d3951"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/pcb-mask-danger-cleared.jpg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/pcb-mask-danger-cleared.jpg",
+      "git_blob": "cd24e20f9f87b48f68c8e60bdc24fe7cf2de5564",
+      "sha256": "acd974c4f0f67fc4deab2954dda0469862317c1807f0fc32a4f954936d96b06e"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/stage35-dfm-findings.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/stage35-dfm-findings.json",
+      "git_blob": "4fd4061d757ee83db1461c37f2a81706153732b7",
+      "sha256": "5e231bf95f240267866daed8daba7194c9e50eac156d7f44f7bcc54c364de19f"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage35/u10-overlap-still-open.jpg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage35/u10-overlap-still-open.jpg",
+      "git_blob": "ced6db980ed36c0165e0e3bd9ca1ca0673e75c5f",
+      "sha256": "d27b4c4d14ad62bf513505fc3cf45fe09823f1cacb39662473785a37181f9fc5"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/PUBLIC-EVIDENCE-MANIFEST.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/PUBLIC-EVIDENCE-MANIFEST.json",
+      "git_blob": "ba55f8d10129f4f94faca7d5b92985875faa3420",
+      "sha256": "1caee42fce047d7844d88014ed9f859ff1cf9eac4e25effd46da248318c047b0"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/REVIEW-STATUS.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/REVIEW-STATUS.md",
+      "git_blob": "1565b90d157239b351a81f5fe1cfb4fd5bca6c93",
+      "sha256": "2c6a6ab5310a0db1d8f1bc42e35b5cac42f986c12f84c7a48c0fc21cc7eba782"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/bom-only-accepted-sanitized.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/bom-only-accepted-sanitized.txt",
+      "git_blob": "5a31c0f2e197d67b7fdf93de819c511dc2490110",
+      "sha256": "2e5e957cdeff72a2989b65ad67cde0d52085b3d97e59837fda6e8c0d39589e6d"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/input-binding.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/input-binding.json",
+      "git_blob": "ca1edc2af589fdd05ad5c70ea6a4dbb632152d57",
+      "sha256": "c1fa78a73a681fe14238770db9c7e893a25feebcbf948365e20203104e29b9bf"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-pad-spacing-bottom-sanitized.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-pad-spacing-bottom-sanitized.txt",
+      "git_blob": "71f221f698f3029c07129a84b0e5ccd59086e7aa",
+      "sha256": "0cfe955e59f5df0517b85c461f2df73d8cc53fcc23b34388617aaa6cd287e8f8"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-pad-spacing-details.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-pad-spacing-details.csv",
+      "git_blob": "5bf484d3171c3212ae407ee685c65b54662e3b13",
+      "sha256": "308abcb225d59bbec916aefe0546f1c61b429cf5ca705f49e6f56fbfd4c69f61"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-pad-spacing-front-sanitized.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-pad-spacing-front-sanitized.txt",
+      "git_blob": "f2c1761f59a20c5027b63189d7ac06b9344cc063",
+      "sha256": "3be577ac8296f0fef60820fbbb02c0bcbd8492960c18dbd724c830a2d8dbbfa0"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-pad-spacing-front.jpg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-pad-spacing-front.jpg",
+      "git_blob": "6f1df3c0c9518b8b31c49ac0a474926985176a77",
+      "sha256": "3e0aedcd86086f4cdd128000e8138578f06f9f7519d9ba7e58abdb5a2aacd66d"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-summary-sanitized.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-summary-sanitized.txt",
+      "git_blob": "ef874fcda3501e7cf546f0f2c885d56588ce597b",
+      "sha256": "948a89bcb0cd542aeda2050862a778ee9990d2613fc3023ec1d51ccd211074fd"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-summary.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-summary.csv",
+      "git_blob": "efe27210da4f77072a2c113552f781941d47beb6",
+      "sha256": "d687a076664488896ecd69c60958de6da7241e3c2636568c51b5bcd4ceeabc7f"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/pcb-summary.jpg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/pcb-summary.jpg",
+      "git_blob": "560d44338c6346939159faa12e39ff67c58be618",
+      "sha256": "0c94fe9520870bd894cf9a20faac119540c4b2ffd09b46f3bfada8d6e92ad870"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-main-stage36/stage36-dfm-findings.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-main-stage36/stage36-dfm-findings.json",
+      "git_blob": "af0b3617e446ce5e3f69c58ccbf83c3c1cdd2e30",
+      "sha256": "e5bd66b67cbdbbc275052051cab7959dd7dd36341461fbe0a6a323548ad77ace"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-stage10/REVIEW-STATUS.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-stage10/REVIEW-STATUS.md",
+      "git_blob": "471359dacddeaab229e131325b9a21b5a20f76bc",
+      "sha256": "23f150fba16bdd503ac62f333919333a9facb39ef71215224838013c29cff06e"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-stage10/child-combined-report-visible-text.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-stage10/child-combined-report-visible-text.txt",
+      "git_blob": "06ff979fa18ccfd80aee0e61d5ff09c6e6caa269",
+      "sha256": "d95cb8a6b895eedd4a179180a7c37b192af9771f0525b074ec7ace7ed0a0d434"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-stage10/main-combined-report-visible-text.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-stage10/main-combined-report-visible-text.txt",
+      "git_blob": "18891699e6d12eda75b9e312b52369cfb85c3e3d",
+      "sha256": "6273895a5024dce231e6d1934130e3b5bb4d24ffa1eceb7ed051f1750e1cbda7"
+    },
+    {
+      "path": "docs/validation/reviews/jlcdfm-stage10/stage10-dfm-findings.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/jlcdfm-stage10/stage10-dfm-findings.json",
+      "git_blob": "a6295a57a235cdfd5bdd1691f2a0900c250beda3",
+      "sha256": "8273422601ebea2dce7679471684277921e1a9c1a4dacf20cee74820f21c85d3"
+    },
+    {
+      "path": "docs/validation/reviews/placement/Nexus-stage10-placement-audit.pdf",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/placement/Nexus-stage10-placement-audit.pdf",
+      "git_blob": "57e28aff9be1aaef050a657eed992018763aa262",
+      "sha256": "b44e5ba19d439fc363b791f704511c5fa5175d2d4c984bac36c068b43287cbc7"
+    },
+    {
+      "path": "docs/validation/reviews/placement/REVIEW.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/placement/REVIEW.md",
+      "git_blob": "155ff102ebe618aeb5f40a4625b722595e98d597",
+      "sha256": "cd39105f7418a2b7cf6ff0c9989ec4a3ebda6c9fd5be35238a1ca2f961da9d72"
+    },
+    {
+      "path": "docs/validation/reviews/placement/critical-paths.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/placement/critical-paths.png",
+      "git_blob": "507755cdd78f5e4e4669bf8f4cc1b5383ff2d040",
+      "sha256": "9d366c6b2e4abc91fa897a31aee5e484f809e65fd1594993d5d90cbf4bcfa1b4"
+    },
+    {
+      "path": "docs/validation/reviews/u10/AUDIT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/reviews/u10/AUDIT.md",
+      "git_blob": "bb012f9e78e5037c256cecc2aab5bb77f7077000",
+      "sha256": "d0e9451703171e6ca74c04c9a374727438c5abbbf5d4b7ced16a2e85e8c0d55d"
+    },
+    {
+      "path": "docs/validation/stage36/ENGINEERING-CHECKPOINT-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/ENGINEERING-CHECKPOINT-SEAL.json",
+      "git_blob": "f561640de639f5a18b3cb73cf5624a5eac747571",
+      "sha256": "3c778d236ba3876dbde64401e8edc67409db6e59547cb30dfc11b40dc6638270"
+    },
+    {
+      "path": "docs/validation/stage36/MAIN-PLACEMENT-CHECKPOINT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/MAIN-PLACEMENT-CHECKPOINT.md",
+      "git_blob": "37761d5a3d6883fee8a172e3d29e0af0db00aa41",
+      "sha256": "bb22cb01a906d34a0f2eb47ee5aafa184e65edcb3983fdc040566178ff3e9c00"
+    },
+    {
+      "path": "docs/validation/stage36/README-CHECKPOINT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/README-CHECKPOINT.md",
+      "git_blob": "9df94b1b8a55307f26deb51577fa7a4f0bc9a8f5",
+      "sha256": "bdb7e1df06ef20891461d4ce79f1b5c603508b9bf2ba442655365c8408b9cd25"
+    },
+    {
+      "path": "docs/validation/stage36/hardware-transactions/nexus-style-fc.dfm-delta.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.dfm-delta.json",
+      "git_blob": "33f9d5124687783aa8bb05251a41e2ee96e36a16",
+      "sha256": "fa9a9e406560c19bf50475fd41e373974032cbf7c4c3f1f1bcb35f071be03427"
+    },
+    {
+      "path": "docs/validation/stage36/hardware-transactions/nexus-style-fc.en-minimal.patch",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.en-minimal.patch",
+      "git_blob": "00f29a4c250024c5e2c12199b704eff6ebe7753e",
+      "sha256": "c0d2fd87537b7bf808789b7968c36ced11702ff3cec7f42dfaf7b6ee39f26368"
+    },
+    {
+      "path": "docs/validation/stage36/hardware-transactions/nexus-style-fc.en-transaction.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.en-transaction.json",
+      "git_blob": "3e9d86ceddf7f83af4a643613ecf196979ec68cb",
+      "sha256": "b8d88c16bf447aa5d226f44b9936e8c268c531fc45fc1028677bfa32649a7c24"
+    },
+    {
+      "path": "docs/validation/stage36/hardware-transactions/nexus-style-fc.usb-bevel.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.usb-bevel.json",
+      "git_blob": "24ada7529e90d14317e69ac9fc95dd42b541421f",
+      "sha256": "6eb0de1f1da426bbbcf3a6d819aaedb58ac709441ac6da6e2b248ba920b337a5"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-ENGINEERING-CHECKPOINT-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-ENGINEERING-CHECKPOINT-SEAL.json",
+      "git_blob": "84037973848dcc78ac78d292decf1458b3afd4f1",
+      "sha256": "4a48e4d9a6a11f0e563fe55f5f36be44533c5e628e8297bf5ed25d9968f86df3"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-MAIN-PLACEMENT-CHECKPOINT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-MAIN-PLACEMENT-CHECKPOINT.md",
+      "git_blob": "c9cac674d705bcf5692a469d6d19f14def2d12d5",
+      "sha256": "9022d1478373663202c1c2e82a151c145315338ab6d589fb33fe6f2a5a6d6769"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-README-CHECKPOINT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-README-CHECKPOINT.md",
+      "git_blob": "67da22bf7eed0c78edf22cbf4356919fc0e03194",
+      "sha256": "7d696e9fe253e73303cbe03bc1e9a742989308ce1cb0c0b4c2a2a3a895d41897"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/child-integration-manifest.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/child-integration-manifest.json",
+      "git_blob": "f81396b67faebb224297a0d2db1e6451eba2410c",
+      "sha256": "83e80ee4cb40564441340378faf407b1369cc7197d17a3ba12c224277856457c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/child/unchanged-sealed-child-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/child/unchanged-sealed-child-drc.json",
+      "git_blob": "45ec8e8d6a70ad8e9db90ddcb8a4449a080f9bd1",
+      "sha256": "3e1e0c5fee6bc2c5087e9cd26e412d4e278f897ed8e07cbb19cf2daff7598863"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/erc/child-erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/erc/child-erc.json",
+      "git_blob": "6f26e830e1edc55f5ea8afce860229b11d2d0e88",
+      "sha256": "1020e30c82406b338cfb1af80e510d1ba99719d54a8ca36fdd28952061300ca7"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/erc/child-erc.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/erc/child-erc.log",
+      "git_blob": "fe2542e3bcf6ab5815af3d8237a33647d71180df",
+      "sha256": "4900d2b5fff976d1ad1d2f96a438e6e595b8ce3d102f7d4a42fb972985c25f22"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/erc/main-erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/erc/main-erc.json",
+      "git_blob": "c50be17f29e128d09fb0aa4cbde5dcd5d4734ab9",
+      "sha256": "c304defcf482c3f67dde4418639728636942b52105d4b4b3ba1ff64d2b3eb08f"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/erc/main-erc.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/erc/main-erc.log",
+      "git_blob": "a624d095f67088e5c019959bf55fbb33d4d60d11",
+      "sha256": "404afa09a134b48cf587608dbc996512b9321d62d31fe35695e6682a6c38ba79"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/export-binding.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/export-binding.json",
+      "git_blob": "a8f32146b73c91f1bfe7d9df94db1d600993924e",
+      "sha256": "180985d67dcfd024933d38b6dc5f04320d52d4df1d32f1f49d33aba575893f69"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/fabrication-export.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/fabrication-export.log",
+      "git_blob": "0b71e859b447c2754cd191b0af9b1967a0684e83",
+      "sha256": "cbe1afc74d36ca5ac0c1d1a0ef7625c363f5cc52bc0b587353067763346c0ec9"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/c2-local-ground-repair.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/c2-local-ground-repair.json",
+      "git_blob": "d909f4d10683277c4bc84fe56206fdb42af13542",
+      "sha256": "bdeb5bd6ae7030daeef359dea69ade55bf9b39870166213166393352c7dc19f6"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/drc.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/drc.log",
+      "git_blob": "462b275cb453263151b071e482a74b7dbd929aa4",
+      "sha256": "350df08926574b24689af582c44650eba3541b0b81bf79c16992384001d37238"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/final-corner-mask-evidence.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/final-corner-mask-evidence.json",
+      "git_blob": "c7488af9fe708db75d1239d288cca74d0cbaa8c7",
+      "sha256": "fa351aecab2aca7e431c559e3d48f6e4c92e7424612f9eb78df7a31eb62862a8"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/native-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/native-drc.json",
+      "git_blob": "39603115fa53e4de3c137b0fb48b51dfc7d49b7e",
+      "sha256": "ea5fbe186140329eea004c71674aec3bbd917844b6a4fcfa465dffabac2cbcec"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/new-via-contact-evidence.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/new-via-contact-evidence.json",
+      "git_blob": "aca3195e05053f6424ebedb353f8b09d8d3fdcf4",
+      "sha256": "1d6651a878b90c7a622dd79907b0a76ad5650789e48554af83e59788c04001ea"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/new-via-pad-screen.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/new-via-pad-screen.json",
+      "git_blob": "fe51488c7066f6687ef680d6bfaa4f7768ef205c",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/stage32-plane-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/stage32-plane-proof.json",
+      "git_blob": "e63323e876473e13ad5465018f105b488f52e9a7",
+      "sha256": "de1a09cbe30ce10ce722d2df9c820c6b5827726a9a767b92707659e79915fa84"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-placement/stage32-return-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-placement/stage32-return-proof.log",
+      "git_blob": "c061b12e0de55d60865a8021071d3c473726fb41",
+      "sha256": "5e8ae4d21ee528353095a9d53841b6d815c1dc003e65731596fe30eb233c3e09"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/README.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/README.txt",
+      "git_blob": "99c00b871c064d9d3a523442dc20a1cbc8c6c1d2",
+      "sha256": "f4d3e52c74b0f7b41135ff233fe35035e23ad533a53c3ca31d6bb4e3433d9e70"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/bom-cpl/nexus-style-fc-bom-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/bom-cpl/nexus-style-fc-bom-jlc.csv",
+      "git_blob": "612e2f800b163704b5b7c3287b2c14fc5f7bc65d",
+      "sha256": "2f6a4b397ec8f024e5d7a3af2dda365843d928af03de5ace5fd50504501bd9fc"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/bom-cpl/nexus-style-fc-cpl-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/bom-cpl/nexus-style-fc-cpl-jlc.csv",
+      "git_blob": "b54a4f47f76588c315e3e5f23ce2c7f8a77991ba",
+      "sha256": "dedbc7419bcf7d472864b7e0f0e7aabdada9d939caccd508f1ec1398261b96a1"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/final-bound-files-sha256.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/final-bound-files-sha256.json",
+      "git_blob": "36036731507575f225c8b3c2c628a586430665bf",
+      "sha256": "03137a0ed8eab959b64b9f4330dcf12514393230d9e855b2eef7479df395b759"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/placement-pad-snapshot.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/placement-pad-snapshot.json",
+      "git_blob": "f26da32c835c4707ee2b417d13e4534a86d319af",
+      "sha256": "01aac763442f5e3d4a86cc7072ff066a87d25d1d49bb971976d3f6968b63a943"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/synchronization-report.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/synchronization-report.json",
+      "git_blob": "c751dbfc5d998bc4f9a07eae8ec2cb45fbe1b06d",
+      "sha256": "cc64f30ea1872db9556f7d8911fd972d5ffc4013208ffc8bfae0859802d07500"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/synchronize_main.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/synchronize_main.py",
+      "git_blob": "2f0b03fb76e18a6edfa752408ca809d20d783849",
+      "sha256": "ccff5803c21a5c0472e4f735f24582441e2360c2ce153aff0422d12085d85fdf"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/main-source-synchronization/u10-source-integration-check.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/main-source-synchronization/u10-source-integration-check.json",
+      "git_blob": "61c399e9e14f0d5f9a14d3446290f800f23660ae",
+      "sha256": "7d46c1c6a26e30fd839cc46400ff30074e071043180ba321a975c04d8e66dfff"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/mechanical/FINAL_STAGE32_BINDING.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/mechanical/FINAL_STAGE32_BINDING.md",
+      "git_blob": "703d321ef71030aa799828b2db961117462345b8",
+      "sha256": "c5a05abdf1babf041a3697674ab139aeaaa7da9189c53564ae8a66e49810ceb1"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/mechanical/final-stage32-joint-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/mechanical/final-stage32-joint-proof.json",
+      "git_blob": "3cf3441e15c61f2f096b3739cbf88c76f4d40aa8",
+      "sha256": "a824794b94b4f399aeeaefd14ff996dacabb0006005125b263e42cccf16456f3"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/mechanical/geometry-contract.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/mechanical/geometry-contract.json",
+      "git_blob": "4a2a911dff1e9ad18986dad419ba2da6504b577f",
+      "sha256": "df616630f6ec676340b1c03efc8d1d5a651a0bc7ccf4440910b684e6cc794bf6"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/mechanical/mechanical-evidence-manifest.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/mechanical/mechanical-evidence-manifest.json",
+      "git_blob": "f85c11afdd541059b0a1f456be6a4336923dd5f5",
+      "sha256": "5730cf947327f7edaac800e48e2270c136a31df689c22a9dd083a8d82d3e2caa"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/u10/DELIVERABLE.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/u10/DELIVERABLE.md",
+      "git_blob": "578d1ea1ef6509c441b3e7b082434ba2d5c1dbb9",
+      "sha256": "5e1913924e0aa002a1051409b0f93de26affe4b3c9d2c6aa9b36f5cef12e0d8c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/u10/check-library.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/u10/check-library.log",
+      "git_blob": "047d0b1803c865ec7bd3a4bd59603482e76d8d33",
+      "sha256": "a5ab810df85ccfa78dbe40c715f2b119ef8b799139e7cd644c313859e331f59c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/u10/guarded-delta.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/u10/guarded-delta.json",
+      "git_blob": "7c4e876ab36a42fbcb8aca55135157e8f5ead920",
+      "sha256": "70ed87f23030576004f96e37d5a093d67b75ccdc1becf0fd6b6206b9a4aeb18b"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/u10/guarded-schematic-delta.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/u10/guarded-schematic-delta.json",
+      "git_blob": "2f9bc09d3593e4c84689e4926878d61073a4a0fe",
+      "sha256": "41cac8b9118439c551ae6dcaec2b3517a1fff62ed41090a65312858731a88cb9"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/u10/local-validation.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/u10/local-validation.json",
+      "git_blob": "3bd3f141226dd6abf9c660d28affd662747c46c3",
+      "sha256": "55e1bd35d6b529ce0b08148036d28353e617f208b2148817bf4bd0a0e67cd9d1"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/visual/main-back.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/visual/main-back.png",
+      "git_blob": "135a961d94b925f97f0715227421e4bbb325dcb6",
+      "sha256": "194eef1b83f880accd1e82942da3121275e5eb801d9e2cdd11cd9a27db4edb2e"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/visual/main-back.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/visual/main-back.svg",
+      "git_blob": "98f2e42467dbf48872f0622dd47e0eaee292c79c",
+      "sha256": "954fdf929eb21a03139f8726391a5d1478a7952998b1ce6babfe8f80cfe768ac"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/visual/main-front.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/visual/main-front.png",
+      "git_blob": "f8fbfc45088cde49ded1c1f2fe287e2b08e56167",
+      "sha256": "e9e9de7994a0c6454cdbb6f0b1c5447465edbfbbc911746b298457273a308190"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage32-verification/visual/main-front.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage32-verification/visual/main-front.svg",
+      "git_blob": "e385cd44d43bb0257d2bba1ab6c986aebc4fe155",
+      "sha256": "a10a27bc476db52d96d9f9c19340f7241897d1c5ff1ebba68658d414811f8557"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-ENGINEERING-CHECKPOINT-SEAL.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-ENGINEERING-CHECKPOINT-SEAL.json",
+      "git_blob": "13e8d177bb1ce8f773ec3e851c12af39c063f84e",
+      "sha256": "8705a184aab9fd5dfa307e4a3e10c94caeeadbb25fff6722a67d475be0ea9bfa"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-MAIN-PLACEMENT-CHECKPOINT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-MAIN-PLACEMENT-CHECKPOINT.md",
+      "git_blob": "b4444a528b8172037573fb8991f3428432724209",
+      "sha256": "3107b3db776a618117823da687824351b48188a47588435e0e241759dce7a5a3"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-README-CHECKPOINT.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-README-CHECKPOINT.md",
+      "git_blob": "250ca16b18776092d298c3c558b264981ba0b53f",
+      "sha256": "b1d3610a311860c2ddbb076a64ffe5110e1bad71b75e098bb0088ba1b7386546"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-jlc-dfm/REVIEW-STATUS.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-jlc-dfm/REVIEW-STATUS.md",
+      "git_blob": "88736a4643435d3cc9ebebf072e3098e11112bcc",
+      "sha256": "99c987f9153d378377ce44b209f8e446a0c30792132f24b4199253ccf64e88fc"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-jlc-dfm/dfm-summary.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-jlc-dfm/dfm-summary.csv",
+      "git_blob": "ee35a150cad5b066037ea2d4c78eca1cd0b9f662",
+      "sha256": "8dfd507925b1cf50967f4d6f19517090bdc81de151b2aec840486f080474a3aa"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-jlc-dfm/stage35-dfm-findings.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-jlc-dfm/stage35-dfm-findings.json",
+      "git_blob": "4fd4061d757ee83db1461c37f2a81706153732b7",
+      "sha256": "5e231bf95f240267866daed8daba7194c9e50eac156d7f44f7bcc54c364de19f"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/delta.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/delta.log",
+      "git_blob": "33f9d5124687783aa8bb05251a41e2ee96e36a16",
+      "sha256": "fa9a9e406560c19bf50475fd41e373974032cbf7c4c3f1f1bcb35f071be03427"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/README.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/README.md",
+      "git_blob": "3dfeb122fe39b2326bd6097890b298eb46dacb19",
+      "sha256": "fbeb891df07b2e7c7bf7a4515ce44d999e9b0eb153b71cd830b1ea99e96f1453"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/SHA256SUMS.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/SHA256SUMS.txt",
+      "git_blob": "710f9c5caae93e3fcc55c102ad153ea5cddb02fa",
+      "sha256": "5cfac9e92ed3ed0a688a941b379726143dc0ce41c6a1a26af73e8709082d106a"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/apply_dfm_leaf_and_sw_fix.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/apply_dfm_leaf_and_sw_fix.py",
+      "git_blob": "a9a85756a6215cdd0a42a99fb0b69e380e5aa40e",
+      "sha256": "29e8e3abe8ed3aef22103af1e04ad367a550ded9bfa3266d48effe56c4326f0f"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/final-verification-summary.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/final-verification-summary.json",
+      "git_blob": "f28548bdbf9b4149f13c3c43fd6b191eb8f8512a",
+      "sha256": "e8877a74c50a40661358f272a37e183a2615e0d199de81043f12b7ff1047a9cf"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/gerber-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/gerber-proof.json",
+      "git_blob": "57ca9a61aff75f4eb73495da7855c19696d60b2b",
+      "sha256": "0cc4111c8bf06e3f34a17c3561a916442e13b471a3bee28d82c57d8da217fd4c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/native-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/native-proof.log",
+      "git_blob": "f4cf0736fdd44ac59c10925de22eb2ec2ca32076",
+      "sha256": "435fc8eef15717c5eec4905dbf9b1dfdef44c5a22a666a5329d9e98b2ff5c13c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/saved-stage35-native-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/saved-stage35-native-proof.json",
+      "git_blob": "cbb9c04303ea38567593a137441ca7c0e6d5e2ac",
+      "sha256": "641425761d848cb49c6db7e12f9e16dcb7809b04018d1830eb0dae71a401deda"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/verify_gerber_proof.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/verify_gerber_proof.py",
+      "git_blob": "cb6903febac8876c6cf00581c91978f165d9c886",
+      "sha256": "21af50429c17f8c7337d16d79d6a92ce4f91719a45c55642745e5c4f67f6bed7"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/dfm-local-repair/verify_saved_dfm.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/dfm-local-repair/verify_saved_dfm.py",
+      "git_blob": "265853de234af7670b40a61b6367ae126150180e",
+      "sha256": "90e0c8cd29038846f78ddffc5d80425d278afe6ecc65a28dd65ae2fcc5eb4d44"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/drc.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/drc.log",
+      "git_blob": "651d880964c8ce2c2583ab406c2fad19e0264853",
+      "sha256": "af1217f80596b4555990a2fbfbcf53105435c7ba25b7e3603cac1a1627af2327"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/erc.json",
+      "git_blob": "fd29ea0848b535797a8f799654c4c94958e58c0a",
+      "sha256": "7d36abb9c6b0d0e68f0376ebb15a8a2714741ae5b97d42e0181a59b0d7986aec"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/README.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/README.txt",
+      "git_blob": "7cf5716e7985bfb86ca4bb7eba010be391a1ece9",
+      "sha256": "66c6ccfb488e87591e5a34879640a1a30f593fff7f42307fd08c5d46fc4ddcfe"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/bom-cpl/nexus-style-fc-bom-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/bom-cpl/nexus-style-fc-bom-jlc.csv",
+      "git_blob": "612e2f800b163704b5b7c3287b2c14fc5f7bc65d",
+      "sha256": "2f6a4b397ec8f024e5d7a3af2dda365843d928af03de5ace5fd50504501bd9fc"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/bom-cpl/nexus-style-fc-cpl-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/bom-cpl/nexus-style-fc-cpl-jlc.csv",
+      "git_blob": "b54a4f47f76588c315e3e5f23ce2c7f8a77991ba",
+      "sha256": "dedbc7419bcf7d472864b7e0f0e7aabdada9d939caccd508f1ec1398261b96a1"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/bound-files-sha256.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/bound-files-sha256.json",
+      "git_blob": "c51814f73360e81365234fd14d48d7b1423883b4",
+      "sha256": "94f6c4de170f20a3b0f8ff3c18e07d7a8275b75e9436826dae6b74c40b83d59b"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/light-source-comparison.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/light-source-comparison.json",
+      "git_blob": "98748e8af33f72e796c29970e6e1a7e2ee9df338",
+      "sha256": "2e04274ef6ccdc925cb354d9264b9b6c50daad22fc6e2ea07a5397092aa03238"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/placement-pad-snapshot.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/placement-pad-snapshot.json",
+      "git_blob": "324fa775edeaa3e9f9974538105f87898379ef7b",
+      "sha256": "6f1a6f8d67cc6e1df98a8a9fdf448602218a48997240bd6ecab46b996012a593"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/synchronize_main.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/synchronize_main.py",
+      "git_blob": "2f0b03fb76e18a6edfa752408ca809d20d783849",
+      "sha256": "ccff5803c21a5c0472e4f735f24582441e2360c2ce153aff0422d12085d85fdf"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/verification-report.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/verification-report.json",
+      "git_blob": "f207bc22c974ffb295e71b23d05c5729ab8ebabe",
+      "sha256": "8229f475564dc61c4953fc33d5c06fef30fbce4b1ea2bbe13f4884fc56227ec3"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/main-source-synchronization/verify_usb_successor.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/main-source-synchronization/verify_usb_successor.py",
+      "git_blob": "b915dc00833e02090e2b1a7132f627f70125fe5f",
+      "sha256": "212f23f9d5ba1394728d18aeec9ff3aadf633e3e701a2653feed8b6356e246dc"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/mechanical/stage35-mechanical-identity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/mechanical/stage35-mechanical-identity.json",
+      "git_blob": "f150a4a6a62e9529596183263453a05233323df9",
+      "sha256": "497ead3077c49cf4f7b707eb9e44224a01751188320e36e62bf887f894e613c2"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/native-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/native-drc.json",
+      "git_blob": "a5ee3813f9732f914bd133a9e73b2cbda9c6ca1b",
+      "sha256": "1fa1528637b9d34240e01627fc289a63b2ced75bcab1eda9973d5000ceb0275c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/returns/plane-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/returns/plane-proof.json",
+      "git_blob": "345314daa335af9f5f5fbaf0c2d10d1a68d251a4",
+      "sha256": "ea4a324e67e739c8e5ffe84dbccd146340001bcb7a528f2a57d4710e9782b097"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/returns/plane-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/returns/plane-proof.log",
+      "git_blob": "cb633295fa129c28d91c5febdefb1a783d0f1622",
+      "sha256": "8bc552b484886cde7d9529420411de2503a768be2314effc6d5287586b9e3878"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/returns/plane-proof.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/returns/plane-proof.py",
+      "git_blob": "b5c3ecade47a8e96b9ba3343231d793dc1f8674e",
+      "sha256": "1312a6010f18373f01ea1d4f1cf1c8f31bfe4b0af1438e130b7eccbddd699b8c"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/SHA256SUMS.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/SHA256SUMS.txt",
+      "git_blob": "3a2e8f7c2f554e9e776ed797b9a30b1ac9db5dd8",
+      "sha256": "f9394c831a7647f4b43a71b081468828b38514a514881fa5e6c5aa8ccd4a204a"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/USB-POST-REFILL-VERIFICATION.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/USB-POST-REFILL-VERIFICATION.md",
+      "git_blob": "2b859c86b9d66cdc1d8a745a5df22b4d610c4051",
+      "sha256": "8900a7374e7fb7092db8f5e4cbfa1b0fc9e403a896ee32818c78e6f72c8e1e4d"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/check_saved_references.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/check_saved_references.py",
+      "git_blob": "10e3402ee3574435b3187c1ffa76370abcaba55b",
+      "sha256": "ac31304024445e809b7812ef2cb6a194013bcffc0d182d6047d8f9168dc21462"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/native-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/native-proof.log",
+      "git_blob": "7b38b385b021340af3a9390ebb60afd6fdde6d15",
+      "sha256": "92c5f89a33bd2e48f25d76b87ac49f68092adb821101c777806c5e2576c82a54"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/reference-preservation-comparison.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/reference-preservation-comparison.json",
+      "git_blob": "8d21b3af2cdf03c06361cd49ad9f59960cb3892a",
+      "sha256": "6fca509492d47a418ad0aa99b4ff7cf21df24ef93808546350cc6cc8b3005943"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/reference-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/reference-proof.log",
+      "git_blob": "455a592868bad2febc77b1f39044bec997780d5e",
+      "sha256": "976b08b21b130c6d4c28313217a9f2f19d467846d7594da08dad3438cea62962"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/saved-stage35-native-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/saved-stage35-native-proof.json",
+      "git_blob": "52d8093eca7a527dc03737401146c64b5a3d832e",
+      "sha256": "a9386f6116cc7ab7ce1f73e9b6e4c31e969e38a3f5a75ba5e7d02be93c509013"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/saved-stage35-reference-projections.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/saved-stage35-reference-projections.json",
+      "git_blob": "3fb9480f7c41b4062352514471f69586bb7b1987",
+      "sha256": "18f6dfcb15da13d3e7343e644b532445ec6d0f79f24e4cafc23b470d0acdc1ff"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/usb/verify_saved_stage35.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/usb/verify_saved_stage35.py",
+      "git_blob": "fa117f94395dc578fe39cb111121ec4ffd1ce957",
+      "sha256": "7be2e85823d03b901600a9b53ea31303d4126683919329c810d3fe466dc1d8f4"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/visual/main-back.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/visual/main-back.png",
+      "git_blob": "ac5382ea14d3552f83db0c73180cc7cfe99eb1dd",
+      "sha256": "799ab43780ac45fa6114d88091a2212dedb633435c0711d8de6bd596fee11993"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/visual/main-back.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/visual/main-back.svg",
+      "git_blob": "dc7d3b569939270897ac26b7888ac0523ac79106",
+      "sha256": "0cbd4d918178f8e1f8f09bbb2ef11be13bfe647d62fb96fa8c9660847be89752"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/visual/main-front.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/visual/main-front.png",
+      "git_blob": "fb122a6847f5a8840e299da47bb3ae8e84fcfe57",
+      "sha256": "1fe1db5495bfa8a855bb0f7722d0e65c8f3f6a87f80d9e72305076d153108064"
+    },
+    {
+      "path": "docs/validation/stage36/history/stage35-verification/visual/main-front.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/history/stage35-verification/visual/main-front.svg",
+      "git_blob": "988e2d37faa8819efc24da4352349ccc6587eb5b",
+      "sha256": "c4e407ada2ca0655c739298eedb1a40c2cddaa34a579e84044ae644c7e36a912"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/README.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/README.md",
+      "git_blob": "448501ea57a477eb2b23e8f60374ecc144090d4f",
+      "sha256": "b09623211557573f1baafcc4e9c7d7dc9aa1776f1093ba86de695ecad4933dd1"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/implementation/ADC_DSM_PLAN.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/implementation/ADC_DSM_PLAN.md",
+      "git_blob": "7d319d2c4bec5616cb2c0308f9f6dea6f059ea8d",
+      "sha256": "e4ab704d557a9f7c7e3691684ef21a54c5984bfcc69b51399b4268a90586ae05"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/implementation/adc-only3.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/implementation/adc-only3.log",
+      "git_blob": "fecf77b7197badce945c80b1113ed13f2d9f57b8",
+      "sha256": "440f826089f3a815672993ea69265ecfda7cd2e702586e5fb1b5fe26c6a329ab"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/implementation/apply_adc_dsm_delta.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/implementation/apply_adc_dsm_delta.py",
+      "git_blob": "4fce93f500c3a0b48d3a3fbd42b94cb93c2ad65e",
+      "sha256": "694852a7d7b31ccb97771d3b808a0c7e7306dec10372908eac88bb17bb9efa7a"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/implementation/build_adc_only3.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/implementation/build_adc_only3.py",
+      "git_blob": "32846e03d1d136235458901c22f23d14dd102a45",
+      "sha256": "780f93f6df2eb298258bee70f343f9bc954e3b712eb67c085193bb1bdcb94782"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/implementation/center_adc_ground.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/implementation/center_adc_ground.py",
+      "git_blob": "fa7ea640283e3c10d096e2a36452b8c7ccd6ca85",
+      "sha256": "895ecc5716a9c40829fd11e95ffbc28bf5dc9ee5145dd8da6162f0d6c8f90f8d"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/implementation/check_adc_only.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/implementation/check_adc_only.log",
+      "git_blob": "fa254a23c994ca13b5607f744d1fb2f30259f894",
+      "sha256": "a7f89b7e676d49f0b96abe34d94cf99c105ce4b207b563cc26bc81109fd7cf27"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/prove_saved_adc.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/prove_saved_adc.py",
+      "git_blob": "e668221ff88f2bcf52c4ef06179c15a60e8fc962",
+      "sha256": "e8a1905e94326647b8b3f185777b6a57ecd44608b0f31c2127ff03a8d57bf7ef"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/saved-board-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/saved-board-proof.json",
+      "git_blob": "2afb111e1950bbf7d922d05b8f9c9355d0dab2b0",
+      "sha256": "58ff55c31010bad543011bc06f8b282adc5015ac6df72b44267317b61969acd6"
+    },
+    {
+      "path": "docs/validation/stage36/verification/adc-local/saved-board-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/adc-local/saved-board-proof.log",
+      "git_blob": "267e7b97916eae6d125ad6ff2eb48040425c694d",
+      "sha256": "23dcdb753efd9449fb98130394739074ef9c6a16ff39c48599a0fc2b6aa93289"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/README.md",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/README.md",
+      "git_blob": "120306331a32c2639f984447077bdf6e3dffbdb5",
+      "sha256": "d1fdeb9cef6e8da536a9435709176ef95ae4f209bec326249d0da15cdd2a520c"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/SHA256SUMS.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/SHA256SUMS.txt",
+      "git_blob": "e8839d356812baed219cfb76dd21e1cc35511226",
+      "sha256": "44c5885468b7102cbbeda7a4626ce370ff82f8d3ae9866e83e0e74e925fe0791"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/final-verification-summary.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/final-verification-summary.json",
+      "git_blob": "144092b18c397fe49ee8693967e0276dbb9989a1",
+      "sha256": "7dd1e4c637fe601a05faae3d58086e056e69071bd4e79e74a718bc0ef25500df"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/gerber-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/gerber-proof.json",
+      "git_blob": "685a3b918ef06f8b1af956891ff3587ef7516cc6",
+      "sha256": "d5e1a8787f447cebce23a43a227ee5713d4bdac816e284aa623a807da7a5799f"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/gerber-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/gerber-proof.log",
+      "git_blob": "dec9b77fb9ec11f6fa204731e46be975ec3f84ba",
+      "sha256": "f96a83702e679f32b897b771bb0f7314cc44c9e87f70530fbaa212d0ecf061da"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/saved-identity-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/saved-identity-proof.json",
+      "git_blob": "45e9add56caf327378f21db954d8583c51a54913",
+      "sha256": "5cc2991188f0e6487f73d089bb45cdd40d50b0efe70d52f529d35cd5d400b81e"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/saved-identity-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/saved-identity-proof.log",
+      "git_blob": "2e4916f9695e9690c1270219ec12bbf144f89383",
+      "sha256": "940e6bad59658e031139e23b324014d3c708ed7c2ec67a23e3887880b33d7e2e"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/verify_gerber_proof.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/verify_gerber_proof.py",
+      "git_blob": "0b66703614c1bdcb69ef5b6b82f49e7bb58aecb6",
+      "sha256": "201cc5de3fc60411400b70ee23cc8646136a77e0e857a331b5c22485c8d861e4"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/verify_saved_identities.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/verify_saved_identities.py",
+      "git_blob": "5c668ad19fd954466031ace77bb1d87fd8ac3357",
+      "sha256": "1c208a11c644d35e64c4a6c33fb8e49b02ab902b34dba730a9944210c339f49d"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/via-aperture-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/via-aperture-proof.json",
+      "git_blob": "761261cf9f50f7e09fd64757e5d856dbe5caafcb",
+      "sha256": "69952dbf51432e8ba67bbd5f4022edaf5d84d0c66534da1f613494d2c26ea731"
+    },
+    {
+      "path": "docs/validation/stage36/verification/dfm-local-repair/via-aperture-proof.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/dfm-local-repair/via-aperture-proof.py",
+      "git_blob": "852e7f656a8ad33f374eafd606ef0e60ab741658",
+      "sha256": "b82fba572483376357f2d4cfb46e70588736eaf1c20ff74f6cb689b9d5ffabe8"
+    },
+    {
+      "path": "docs/validation/stage36/verification/drc.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/drc.log",
+      "git_blob": "6fd4d538ac41189dcf758517cfb3ba52b3289128",
+      "sha256": "c9c8e8346f9568adac9e8dc0b72d9dda76c46e68aabfd65a7c2d75693ceb61df"
+    },
+    {
+      "path": "docs/validation/stage36/verification/erc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/erc.json",
+      "git_blob": "fd29ea0848b535797a8f799654c4c94958e58c0a",
+      "sha256": "7d36abb9c6b0d0e68f0376ebb15a8a2714741ae5b97d42e0181a59b0d7986aec"
+    },
+    {
+      "path": "docs/validation/stage36/verification/export.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/export.log",
+      "git_blob": "c4c52cc9f54caf2be50c34727e0ca0095733468a",
+      "sha256": "15d5c291bc683e1ca7f02305889685e3a4eb219da33b5da00eec9d2c806d1981"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/README.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/README.txt",
+      "git_blob": "bee5ed00bf0dbc83f8ef537b021ea2f25d1c83be",
+      "sha256": "9c001a19692eacf13eb20e9a34e1605235f338fd85ce0a40c9a515cbf8e21678"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/bom-cpl/nexus-style-fc-bom-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/bom-cpl/nexus-style-fc-bom-jlc.csv",
+      "git_blob": "612e2f800b163704b5b7c3287b2c14fc5f7bc65d",
+      "sha256": "2f6a4b397ec8f024e5d7a3af2dda365843d928af03de5ace5fd50504501bd9fc"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/bom-cpl/nexus-style-fc-cpl-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/bom-cpl/nexus-style-fc-cpl-jlc.csv",
+      "git_blob": "60b743731bd0c09000a6bf4c0527a12510498014",
+      "sha256": "6e0eaff4d1e2276106c0c16ccf5a52cb43b7fdb3d80ae219f353da7828ec4d70"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/bound-files-sha256.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/bound-files-sha256.json",
+      "git_blob": "e5c0727a80fb37f130ff8b17edbf8b483b297940",
+      "sha256": "1652689b17d4d6f7699639f027501fdb7d24c51e32cc647b961a22917f9e343e"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/placement-pad-snapshot.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/placement-pad-snapshot.json",
+      "git_blob": "f4fd913e0c80d3e715f809147f99a15ee3266ae5",
+      "sha256": "6ad3a71822a729fb4f9ee8ee7b504f2bb23ac96d26316dda69a329ed9dae481f"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/prepared-source-comparison.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/prepared-source-comparison.json",
+      "git_blob": "d21ff5896b230d90189407239a11087f0c1559e9",
+      "sha256": "334f3de6fcef7827b670d006051620e64e7c015206fc700e581879b60f8a3b54"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/synchronize_main.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/synchronize_main.py",
+      "git_blob": "2f0b03fb76e18a6edfa752408ca809d20d783849",
+      "sha256": "ccff5803c21a5c0472e4f735f24582441e2360c2ce153aff0422d12085d85fdf"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/verification-report.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/verification-report.json",
+      "git_blob": "87d777c2048bd053b2225ed7e5831f6ecf7ef533",
+      "sha256": "967b6aace631b14f452ce1e08b857c62bceb8f77019fb0c841bb7956fd865fe1"
+    },
+    {
+      "path": "docs/validation/stage36/verification/main-source-synchronization/verify_adc_successor.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/main-source-synchronization/verify_adc_successor.py",
+      "git_blob": "38f6da0d0d0a4f681f646da31d1269cf779c78f7",
+      "sha256": "a2d930ce147a03bca91c55814ca853777ed5bee13efaa6ca29f1c1626736988d"
+    },
+    {
+      "path": "docs/validation/stage36/verification/mechanical/stage36-mechanical-identity.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/mechanical/stage36-mechanical-identity.json",
+      "git_blob": "c1155140c19529b9c663be4bdbd6058573418823",
+      "sha256": "7b0b8b2ae625bfe9b1c4b6cc971582361a90fcc836f6cbaebcced6ab8ffeb802"
+    },
+    {
+      "path": "docs/validation/stage36/verification/native-drc.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/native-drc.json",
+      "git_blob": "3b1e62d377882bb1f322f0f725eeebffde72cb40",
+      "sha256": "7529b7732210b1185c7c279ac0354809144f2f7232ba97d187c5132bbe61100d"
+    },
+    {
+      "path": "docs/validation/stage36/verification/returns/stage36-compare.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/returns/stage36-compare.log",
+      "git_blob": "1b8b2b778a5b2eb79144c9228b2c536d7e88701f",
+      "sha256": "74938d332a2d18098d656fe295d471dfce09d6e02420dad1ecb108dc0a809953"
+    },
+    {
+      "path": "docs/validation/stage36/verification/returns/stage36-engineering-proof.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/returns/stage36-engineering-proof.txt",
+      "git_blob": "65ecc4568fffdb1bb4cf467af9b306de2e8c19ef",
+      "sha256": "ef3845a47091598ab0d4303732a794bd4c7cc70d18c7f8a8dbc14c0385d2d12b"
+    },
+    {
+      "path": "docs/validation/stage36/verification/returns/stage36-proof.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/returns/stage36-proof.log",
+      "git_blob": "44db0a6e4dd744d75959ac5d0aafd785fbbe5033",
+      "sha256": "15d38bea7efd80662e5259360f22153cb95b6c52c13b47f301e466dfa9a5eeff"
+    },
+    {
+      "path": "docs/validation/stage36/verification/returns/stage36-return-proof.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/returns/stage36-return-proof.json",
+      "git_blob": "62f8015260bb9a814c346c98f1edf44c734e8aea",
+      "sha256": "af14dd978dc3f8f93a375e015db44a8df15a3b16e6461fd056c6580d0b131dc5"
+    },
+    {
+      "path": "docs/validation/stage36/verification/visual/INSPECTION.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/visual/INSPECTION.txt",
+      "git_blob": "fb188effa4f867a018169129b124b6236f66dbf3",
+      "sha256": "a9bb9d5f0e1baf7d19e30f5e274aa87ea7908b164ac5181646b4d4b67b7c34a0"
+    },
+    {
+      "path": "docs/validation/stage36/verification/visual/export.log",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/visual/export.log",
+      "git_blob": "a087adefdcfaec840425101d2a53997a21b04d79",
+      "sha256": "6d6803eccdfd5463358150290ba69194203358ac68ab339432b629ce02416df3"
+    },
+    {
+      "path": "docs/validation/stage36/verification/visual/main-back.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/visual/main-back.png",
+      "git_blob": "62ce31ee3168f43ad59c2577ff8cf84ba10bc366",
+      "sha256": "7400198c683c01b8f74ac48fe08626116b1ca591dbd5e5a69d73c1013903898f"
+    },
+    {
+      "path": "docs/validation/stage36/verification/visual/main-back.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/visual/main-back.svg",
+      "git_blob": "62c0e24a3fa63b9f0d148ededc0a656dd8db0392",
+      "sha256": "eaea19f2453f911125d74ff322432fc6dba438e7cc3baff39f4d01b685562606"
+    },
+    {
+      "path": "docs/validation/stage36/verification/visual/main-front.png",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/visual/main-front.png",
+      "git_blob": "9c2ae91d74e66711d16cbc0b2f2e34012edce9d6",
+      "sha256": "2ff7263cd8c7d4712847e9c02636dfd3c4c6f4caff0248988b94f241be6284f7"
+    },
+    {
+      "path": "docs/validation/stage36/verification/visual/main-front.svg",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/verification/visual/main-front.svg",
+      "git_blob": "a5b771ff6572a3cde6ef4271eadb2d7329c15ea7",
+      "sha256": "7f53b3cbd5e7bcf4283280ed9e5b8952e23c9c6ecdd4e5e8c1c7b732d613b5c0"
+    },
+    {
+      "path": "firmware/RDMS-NEXUS_F7.config",
+      "source_path": "firmware/RDMS-NEXUS_F7.config",
+      "git_blob": "ca042b1f51a341a46980cb9aba78420beab48be7"
+    },
+    {
+      "path": "hardware/fp-lib-table",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/fp-lib-table",
+      "git_blob": "d2c67c8930e45bafca93a641a3f6ec2f046b7162",
+      "sha256": "69b3ac5f0f00c427b935a8cf41ee25b46547e5a7444763bae494c8df5ca7761d"
+    },
+    {
+      "path": "hardware/header-board/fp-lib-table",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/header-board/fp-lib-table",
+      "git_blob": "8befedd8c1c1e61055176433b749b802dccbd2da",
+      "sha256": "3859622e73476b07a2d24ac1c24c3aba4baf1086e533ec865057e6604c519b2f"
+    },
+    {
+      "path": "hardware/header-board/nexus-header-board.kicad_dru",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/header-board/nexus-header-board.kicad_dru",
+      "git_blob": "26a7c53010b9c232e579ae6ee8a3b429cdbd5785",
+      "sha256": "7d51575353b0d1a167d2516111e8575ec3e0b9ea0bd338f4be79d0fd4c38cf4c"
+    },
+    {
+      "path": "hardware/header-board/nexus-header-board.kicad_pcb",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/header-board/nexus-header-board.kicad_pcb",
+      "git_blob": "9880c4b449b5dd34e5461b1c037a9e974a83e186",
+      "sha256": "b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6"
+    },
+    {
+      "path": "hardware/header-board/nexus-header-board.kicad_pro",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/header-board/nexus-header-board.kicad_pro",
+      "git_blob": "13e0f1f0f960d47d0e5ae56983dba2669e31363d",
+      "sha256": "ce1c0fd1576d3a4d531ada8f8b8d796901c3215a9ad1343b801ba805ece15390"
+    },
+    {
+      "path": "hardware/header-board/nexus-header-board.kicad_sch",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/header-board/nexus-header-board.kicad_sch",
+      "git_blob": "801e88272bccdda5830b3e6a0e478c9a2fb60a35",
+      "sha256": "946c4006e8e481bd5d39f61956ce1c61feed1c75d8359751fff5f8ea4ee31fe9"
+    },
+    {
+      "path": "hardware/header-board/sym-lib-table",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/header-board/sym-lib-table",
+      "git_blob": "63b3bcb16ec95cc5ed30848344fd7af7f06c7a42",
+      "sha256": "889eb645dcdc9e75c09fa553bd9528fa880828666caab9212b540e70a497dc49"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CONN-SMD_B3B-ZR-SM4-TF.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/CONN-SMD_B3B-ZR-SM4-TF.step",
+      "git_blob": "3136e2a1462d326b47fa2df0967386a49f96b570"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CONN-SMD_B3B-ZR-SM4-TF.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/CONN-SMD_B3B-ZR-SM4-TF.wrl",
+      "git_blob": "439688f06ac062beff3ff6d62bfdc5df93af80e0"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CONN-SMD_GH1.25-LS-4P.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/CONN-SMD_GH1.25-LS-4P.step",
+      "git_blob": "e038173094184be994aaf369256d62d8bba2c13d"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CONN-SMD_GH1.25-LS-4P.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/CONN-SMD_GH1.25-LS-4P.wrl",
+      "git_blob": "173c8c0cee8b33ec65a2bebda5aa6a3a74db80e9"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CONN-TH_HX-PZ2.54-3X7P-ZZ.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/CONN-TH_HX-PZ2.54-3X7P-ZZ.step",
+      "git_blob": "71a505e2e56218099de7a731c1b251d61c0ce5da"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CONN-TH_HX-PZ2.54-3X7P-ZZ.wrl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.3dshapes/CONN-TH_HX-PZ2.54-3X7P-ZZ.wrl",
+      "git_blob": "492eb6ee2afdf010eadde41a7ffb166546829f33",
+      "sha256": "cd25aa172890bc506dc1254577b35eda18c9faff947c4a08dc74b8e0192f8294"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CRYSTAL-SMD_4P-L3.2-W2.5-BL.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/CRYSTAL-SMD_4P-L3.2-W2.5-BL.step",
+      "git_blob": "227a3ec22c470c1c0f8d53ab7448c06011d97910"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/CRYSTAL-SMD_4P-L3.2-W2.5-BL.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/CRYSTAL-SMD_4P-L3.2-W2.5-BL.wrl",
+      "git_blob": "2a2400780ca7d4fdc406ac2cbdc8012f5dc51fd7"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/F0805_L2.1-W1.4-H0.8.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/F0805_L2.1-W1.4-H0.8.step",
+      "git_blob": "a71d491eb5896386f98923646bb5871abbc383bc"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/F0805_L2.1-W1.4-H0.8.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/F0805_L2.1-W1.4-H0.8.wrl",
+      "git_blob": "bb8ffc9cc75b01bf08b66b7a69992c2f82a179a2"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/HDR-TH_9P-P2.54_C9900044301.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/HDR-TH_9P-P2.54_C9900044301.step",
+      "git_blob": "4a75fab261a56aac2d155584738b9f8cba9849f7"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/HDR-TH_9P-P2.54_C9900044301.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/HDR-TH_9P-P2.54_C9900044301.wrl",
+      "git_blob": "e6930abf605ccea78204b1a274859c7b7a05da3e"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.0-W1.6-H1.1.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.0-W1.6-H1.1.step",
+      "git_blob": "194f018acfb04e7091bd7b60c6ad3bb1cfda51f9"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.0-W1.6-H1.1.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.0-W1.6-H1.1.wrl",
+      "git_blob": "3b33a1d90b9d4fed79a66fed34ae161081ca55f1"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.5-W2.0-H1.2-252012.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.5-W2.0-H1.2-252012.step",
+      "git_blob": "98c29c1b26a9589afd4498d405c9762ace808dc1"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.5-W2.0-H1.2-252012.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L2.5-W2.0-H1.2-252012.wrl",
+      "git_blob": "c7f9b38f5eca23e19ad5218068afb91d3df39d22"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.0-W4.0-H1.9.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.0-W4.0-H1.9.step",
+      "git_blob": "e9acc96571cf01486a9302c1017e4dfe4fc71eb8"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.0-W4.0-H1.9.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.0-W4.0-H1.9.wrl",
+      "git_blob": "b5939db524921ed38b464737c6e7e1ace1c24d9f"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.6-W4.1-H1.5.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.6-W4.1-H1.5.step",
+      "git_blob": "866ffd9c673b5c91be14fa71fb89a8f54cb66044"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.6-W4.1-H1.5.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/IND-SMD_L4.6-W4.1-H1.5.wrl",
+      "git_blob": "f9965f55bca75ce086723621a01ccb0197483365"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/L0806_L2.0-W1.6-H1.0.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/L0806_L2.0-W1.6-H1.0.step",
+      "git_blob": "ea071c1d558a68aa1deafe6ec54e81e944f488d6"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/L0806_L2.0-W1.6-H1.0.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/L0806_L2.0-W1.6-H1.0.wrl",
+      "git_blob": "32cf14f3adca1fbab2c8d08b6bf91077ca054473"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED-SMD_L1.0-W0.5_FC-F1005UGK.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED-SMD_L1.0-W0.5_FC-F1005UGK.step",
+      "git_blob": "639bac8a1986cbc9f02e1f5bd46a646df98ae6a9"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED-SMD_L1.0-W0.5_FC-F1005UGK.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED-SMD_L1.0-W0.5_FC-F1005UGK.wrl",
+      "git_blob": "811de101af26d879500ec139b84d286e92f8f895"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0402_L1.0-W0.5-H0.4.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0402_L1.0-W0.5-H0.4.step",
+      "git_blob": "b71112d5539bc96499ea26f935ee31b774fa7461"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0402_L1.0-W0.5-H0.4.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0402_L1.0-W0.5-H0.4.wrl",
+      "git_blob": "07670a21b58855d10b509d76909bb5b2ea68001b"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0603-RD_BLUE.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0603-RD_BLUE.step",
+      "git_blob": "51988ff0cbf4ac054b54e5f51503dbb67fedf4f6"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0603-RD_BLUE.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0603-RD_BLUE.wrl",
+      "git_blob": "ddf0dc25b2976f35d299ff58f57326e3e423c5fa"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0603-RD_GREEN.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0603-RD_GREEN.step",
+      "git_blob": "1f40816a7a8e0f81cb5658a4e479bcae12a055a6"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0603-RD_GREEN.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0603-RD_GREEN.wrl",
+      "git_blob": "9be9876a3e2c791749fe4718e5d86544a0554795"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0603-RD_RED.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0603-RD_RED.step",
+      "git_blob": "4a5c205897555ab0ffc001eed6d2e346d9242dab"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LED0603-RD_RED.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LED0603-RD_RED.wrl",
+      "git_blob": "737d7a85eef180d15037b0936b25f7909c4ec211"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LGA-14_L2.5-W3.0-H0.9-P0.50.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LGA-14_L2.5-W3.0-H0.9-P0.50.step",
+      "git_blob": "b45c34987e58ebf57cb8f3dffde296ce0d2ec0b8"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LGA-14_L2.5-W3.0-H0.9-P0.50.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LGA-14_L2.5-W3.0-H0.9-P0.50.wrl",
+      "git_blob": "c922bb502decc90f8f413226a7788118d95815d7"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LGA-8_L2.5-W2.0-P0.65-TR_DPS368.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LGA-8_L2.5-W2.0-P0.65-TR_DPS368.step",
+      "git_blob": "8bc568da1952d767577fecce57e90d01d41f1da6"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LGA-8_L2.5-W2.0-P0.65-TR_DPS368.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LGA-8_L2.5-W2.0-P0.65-TR_DPS368.wrl",
+      "git_blob": "914ba979c2b75d66f79dd8c68099f434f944bbcd"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LQFP-64_L10.0-W10.0-H1.4-LS12.0-P0.50.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/LQFP-64_L10.0-W10.0-H1.4-LS12.0-P0.50.step",
+      "git_blob": "8afeabda11ee9dc50b6afde24ac17994261c17f0"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/LQFP-64_L10.0-W10.0-H1.4-LS12.0-P0.50.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/LQFP-64_L10.0-W10.0-H1.4-LS12.0-P0.50.wrl",
+      "git_blob": "838c64c147f0564e2a26b0f8534ae6622eb0a163"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/QFN-16_L3.0-W3.0-P0.50-EP1.7.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/QFN-16_L3.0-W3.0-P0.50-EP1.7.step",
+      "git_blob": "9ed7fdccdad5f23b729609b866b2aa5fce4432ec"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/QFN-16_L3.0-W3.0-P0.50-EP1.7.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/QFN-16_L3.0-W3.0-P0.50-EP1.7.wrl",
+      "git_blob": "cb1fb668f6325c10560272deefe8a4433c7256bc"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SMA_L4.4-W2.6-LS5.0-RD.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SMA_L4.4-W2.6-LS5.0-RD.step",
+      "git_blob": "7a684d3a73aaff3d17228aa6be105c60b4a82a4c"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SMA_L4.4-W2.6-LS5.0-RD.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SMA_L4.4-W2.6-LS5.0-RD.wrl",
+      "git_blob": "49019198375e06ce10ec11f7c47c1d7705d3f452"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOD-123FL_L2.8-W1.8-LS3.6-RD.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOD-123FL_L2.8-W1.8-LS3.6-RD.step",
+      "git_blob": "4a60130f0724c57de246b0934b840eaefaa64231"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOD-123FL_L2.8-W1.8-LS3.6-RD.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOD-123FL_L2.8-W1.8-LS3.6-RD.wrl",
+      "git_blob": "e9224bd97c1d4e24f96461ff2c6f0cef6a627620"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOD-123_L2.7-W1.6-LS3.7-RD-1.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOD-123_L2.7-W1.6-LS3.7-RD-1.step",
+      "git_blob": "b509abd2fed6d3cd5fe30460b162b981ec3d584f"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOD-123_L2.7-W1.6-LS3.7-RD-1.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOD-123_L2.7-W1.6-LS3.7-RD-1.wrl",
+      "git_blob": "aae61c6239003373f07e24cb9c3e04751f895fe0"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOD-323_L1.8-W1.3-LS2.5-RD.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOD-323_L1.8-W1.3-LS2.5-RD.step",
+      "git_blob": "02a0924caf12ea41d9c53b36283e9afd1f4baff4"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOD-323_L1.8-W1.3-LS2.5-RD.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOD-323_L1.8-W1.3-LS2.5-RD.wrl",
+      "git_blob": "378f827094a083a96264b80d92a057395b8febdc"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.step",
+      "git_blob": "44ba2b14be5fd3fb7d6e092becc08a5a572c52a3"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-23-5_L2.9-W1.6-H1.1-LS2.8-P0.95.wrl",
+      "git_blob": "4863c411169d61484bf5b7be08273944969110d5"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step",
+      "git_blob": "07fc99fd1836ea7e566f1e03acdf114f08c1521c"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.wrl",
+      "git_blob": "1dd94b60181e8f68c7097cd3e7c3eb6152960cb4"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL.step",
+      "git_blob": "eebc59fec0d2f1c9629eccaf3ca9b1ddaa8f02e5"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL.wrl",
+      "git_blob": "8382e19cdf1438097b643e0d8f50fa2cbc4ee412"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A.step",
+      "git_blob": "7712163cf51e4129e3b611fb150760e0e5a841a5"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A.wrl",
+      "git_blob": "fd427817fac8c4a1ef0ff7c01ec469a76897df60"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.step",
+      "git_blob": "c8a6691d256d9e4a1778cbeef0c3fe8a536a6d15"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl",
+      "git_blob": "1301272ba4b52683f736b81ce1badb7b55707850"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/USB-C-SMD_TYPE-C-31-D-06.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/USB-C-SMD_TYPE-C-31-D-06.step",
+      "git_blob": "b926733021eebb949dd2926e337873e9ab193716"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/USB-C-SMD_TYPE-C-31-D-06.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/USB-C-SMD_TYPE-C-31-D-06.wrl",
+      "git_blob": "96b5fea4b12dd6e4de8356f04158561b9c86273d"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/WSON-8_L8.0-W6.0-H0.78-P1.27.step",
+      "source_path": "hardware/library/NexusFC.3dshapes/WSON-8_L8.0-W6.0-H0.78-P1.27.step",
+      "git_blob": "497ff7cbf16ad1dafd5b72c5c352278367430fc2"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/WSON-8_L8.0-W6.0-H0.78-P1.27.wrl",
+      "source_path": "hardware/library/NexusFC.3dshapes/WSON-8_L8.0-W6.0-H0.78-P1.27.wrl",
+      "git_blob": "cacdc03be5740724fa1fd1f1ccf1ea23d5d71376"
+    },
+    {
+      "path": "hardware/library/NexusFC.3dshapes/nexus-header-board-root-relief-candidate.wrl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.3dshapes/nexus-header-board-root-relief-candidate.wrl",
+      "git_blob": "49b5d73dda219ea38aa184d37c1775d30bb67f27",
+      "sha256": "fae6c66ed62270d7096f0ce6272e00ce853ec379e43c03f58bf43e89370c61cc"
+    },
+    {
+      "path": "hardware/library/NexusFC.kicad_sym",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.kicad_sym",
+      "git_blob": "8d8592638f5182d8a96c142f078c8f95db741c49",
+      "sha256": "ef69ef0de74a91efabb1c29ccfbcde7568d1ad53d17a956279f0249c7f53cba1"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN.kicad_mod",
+      "git_blob": "92977a51c4d8d4f1f909763f161f1195b2cb8b7e",
+      "sha256": "0d1ddc2d40ee8f9ed78649e936d4de6e64d4c61a1401920bede89ddcf981899d"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4.kicad_mod",
+      "git_blob": "8a868a6b300633d108d6c605110214e897026481",
+      "sha256": "5c9a37d218fd7dbe5815546701a31d90134b63e6012a7377f587caa5469bee8d"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/CONN-SMD_B3B-ZR-SM4-TF.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/CONN-SMD_B3B-ZR-SM4-TF.kicad_mod",
+      "git_blob": "ce47cd4ce6528698125e1e7f3ccfe70ddd2cf895",
+      "sha256": "60cfa8e9aa7e9176023a9b369c91d707b7126f22c25942d7bab45a23ef944821"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/CONN-TH_HX-PZ2.54-3X7P-ZZ.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/CONN-TH_HX-PZ2.54-3X7P-ZZ.kicad_mod",
+      "git_blob": "be110d310bb1ba6ad01a2e698d301cf1388053c2",
+      "sha256": "a03fa10f54323666aaa1cc1671349cc03201d1f7d2b205b90ceb2fceea116f22"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/CRYSTAL-SMD_4P-L3.2-W2.5-BL.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/CRYSTAL-SMD_4P-L3.2-W2.5-BL.kicad_mod",
+      "git_blob": "be3f7782f2c348fc5c514f5636c48129978f33ff",
+      "sha256": "ae9a6143d831db21b1fdbfd33895ebd557eea99ba062a6db2c90aabbd3073fee"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/C_0805_2012Metric_Samsung_CL21_MinLand.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/C_0805_2012Metric_Samsung_CL21_MinLand.kicad_mod",
+      "git_blob": "3a95ffc89fe3a6c050af3dd8b4b59952b5e07017",
+      "sha256": "4b7f31f2b58c9093c8ddb024b7e2d53273ca906ad5cf5d4c9d2fcffa9695dc11"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/ChildBoard_TabPad_Pwr.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/ChildBoard_TabPad_Pwr.kicad_mod",
+      "git_blob": "6f3f3d20687f3e73ccf04468dbec9a1bf2a02fd3",
+      "sha256": "588d892f40b726300f9b79970e78dc36fd0edfe2c93a8ce79064413e72870235"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/ChildBoard_TabPad_Sig.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/ChildBoard_TabPad_Sig.kicad_mod",
+      "git_blob": "439d8660ca890fd652f7ecc2c247fea4999c2e64",
+      "sha256": "8f3d02c04cdd7272bbf9899c2356c7b7f3a24a2b073634908991ed7493d2186f"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/ChildBoard_TabStrip_W7.892.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/ChildBoard_TabStrip_W7.892.kicad_mod",
+      "git_blob": "80323a830fef1e775b10302b69b732b2607d5d05",
+      "sha256": "ab303d31a9f12e5df21e2f2f2f4b647b5f7ea9b42d08ff56721fc1bce29cb640"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/ChildBoard_TabStrip_W9.8.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/ChildBoard_TabStrip_W9.8.kicad_mod",
+      "git_blob": "eb1a305f33f1f7e4d82fbb6901464a5466c86384",
+      "sha256": "0638cb774972d4a4a83b2482564833e76af2e01c4e70c9fd26ec53d7c5a3db1a"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/F0805.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/F0805.kicad_mod",
+      "git_blob": "df0e8aaffb91b90b27ece42a2bfeb4b6b8f165d7",
+      "sha256": "934a1d4f23081a0332607824f01e2c77132717b8cf031686ceebde483dc27ba2"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/HeaderBoard_Joint.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/HeaderBoard_Joint.kicad_mod",
+      "git_blob": "29b4b3fdf9e49bb49e25f9d2c86ae5e2dea5eda1",
+      "sha256": "bc12e255e248763edb2d13be860400ea577364312e7d629e1dc763cf59ae4200"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/Header_3x07_P2.54_Vertical_Servo.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/Header_3x07_P2.54_Vertical_Servo.kicad_mod",
+      "git_blob": "9c3a49a20333f0ea6a92d97581d088528fc94c1d",
+      "sha256": "15e3b65970f36884d7e15a86901520a2c0e77b23c872fa711c894a58887de54d"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/IND-SMD_L2.0-W1.6.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/IND-SMD_L2.0-W1.6.kicad_mod",
+      "git_blob": "e8d2f3cf1d2c67e129680586df80428d9b0fd58d",
+      "sha256": "985c39db120f1504fcb5254a2447a76ab5022b7f95fd1617bf360ef3096a78ba"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/IND-SMD_L4.6-W4.1.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/IND-SMD_L4.6-W4.1.kicad_mod",
+      "git_blob": "ed9136bfc7cb39781c6b51a132d83e0dbf38af6b",
+      "sha256": "ee5042ea97fb9f1cac69666c8f0cb6f53ef4c6562e0a2e8c187fc73caff9873d"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LED0603-RD_BLUE.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LED0603-RD_BLUE.kicad_mod",
+      "git_blob": "68ac4f59aa4924dfbb5eee6ecfdc56391d42b7a1",
+      "sha256": "96b49a999c9ec02156c26ecbe5dda5c7abf86f7ef0a5b72d4c81c9f25aa2f307"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LED0603-RD_BLUE__NexusMain_D3.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LED0603-RD_BLUE__NexusMain_D3.kicad_mod",
+      "git_blob": "68e988ef38f4dd93ca5dea95cc71e39deb469848",
+      "sha256": "51fe97fe025c7ce1c89976b2d55fce6a6507a87b6942a8b6bd972b489cb4102a"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LED0603-RD_GREEN.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LED0603-RD_GREEN.kicad_mod",
+      "git_blob": "7a678d3fcd78cc05d39593106f58ff9bf7d5f2b8",
+      "sha256": "2f5c7c5bf47051f7896919ff3cee56114e78ee6183dd1f0d77d7681a6b2515fd"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LED0603-RD_GREEN__NexusMain_D1.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LED0603-RD_GREEN__NexusMain_D1.kicad_mod",
+      "git_blob": "88df84dff55954591cdb922fcbed351e865a7d51",
+      "sha256": "4b33dfe963094eef0bc2f2ef7c2f8ea99719d96901ebfc7e2f8afde191e9095c"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LED0603-RD_RED.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LED0603-RD_RED.kicad_mod",
+      "git_blob": "e9adc1b9f983d2481a42ffca29af10d9aa3b85b5",
+      "sha256": "fe4e5f1e116e9f0487d23df19eb17d5cc5652d7d753d3cb48de0bcb7827f3f75"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LED0603-RD_RED__NexusMain_D2.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LED0603-RD_RED__NexusMain_D2.kicad_mod",
+      "git_blob": "f8f8b09f79e165d9beb410efeb44679e74da496a",
+      "sha256": "379cc7030ea2e9718ad6877c4c2b4ef32961cfa8dce2c8b46928dacf2d91d59d"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LGA-14_L3.0-W2.5-P0.50-TL.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LGA-14_L3.0-W2.5-P0.50-TL.kicad_mod",
+      "git_blob": "f4e11b456b8f9860eefa76c0f4e3d6c44a4d1ce2",
+      "sha256": "cb1fc1506d96e2c0e606f2b45a7d809a5b982d9d3e97c1138336fc4daaa9a78e"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LGA-8_L2.5-W2.0-P0.65-TR_DPS368.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LGA-8_L2.5-W2.0-P0.65-TR_DPS368.kicad_mod",
+      "git_blob": "2f491ba0b6eb0cede6f11fde4c6235ed7e20fd9a",
+      "sha256": "88db09449e6dcba61665a7a07a37fd2919df50f9cd5dd50a4d4234b07b6d7a31"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL.kicad_mod",
+      "git_blob": "721f69eb041aad0ff8b111abb110c8056b726f42",
+      "sha256": "c83bb2be415fb2ae776085fe8cdbd3080bc0b205e13120d6c81630d5d1bc2e04"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/QFN-16_L3.0-W3.0-P0.50-TL-EP1.7.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/QFN-16_L3.0-W3.0-P0.50-TL-EP1.7.kicad_mod",
+      "git_blob": "1c19827dbb591bad03d138924a2d296641fcdd6b",
+      "sha256": "7e1848fe5acf243b7140f628295d36fe88705cbcb1f61d288c9f6dde3aa4d10e"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SMA_L4.4-W2.6-LS5.0-RD.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SMA_L4.4-W2.6-LS5.0-RD.kicad_mod",
+      "git_blob": "a0891d087aa930ba4d5908d46fcbb0ed8438f012",
+      "sha256": "30702ff9b469c03370430d69793f768fb48ef7582b190fa5d8f46d55930b9f30"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOD-123FL_L2.8-W1.8-LS3.6-RD.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOD-123FL_L2.8-W1.8-LS3.6-RD.kicad_mod",
+      "git_blob": "f6767a0db2c02de11fb7b70fa1df5801fbfe7b18",
+      "sha256": "8d5ff97e591422776cbc1a0fb60cf8b26ecc3b11335d8d99536f12dfd29b6c02"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOD-123_L2.7-W1.6-LS3.7-RD-1.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOD-123_L2.7-W1.6-LS3.7-RD-1.kicad_mod",
+      "git_blob": "b19668c83877873e1ffcf7c815f34920e262503b",
+      "sha256": "74529c198245b75b4fb3419852bd8a965dd2ede5c0bd1906946f2ae024b47cfb"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOD-323_L1.8-W1.3-LS2.5-RD.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOD-323_L1.8-W1.3-LS2.5-RD.kicad_mod",
+      "git_blob": "3751b8468a24be0a563b875dd37c542f74bcf406",
+      "sha256": "a7ecef31b8dcff739e7fce65bfde4535eec4b6ca6b7491e7a0c0bc7dc47d4834"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL.kicad_mod",
+      "git_blob": "c53d601050ef6e312d12d7f15378867d48ec7708",
+      "sha256": "0e848fc80f0e987752fe491671fe967ef71933de5dd38a36d0a8b7400a401754"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL.kicad_mod",
+      "git_blob": "87b0abde9551dee9aa026ad576da988c88701a2f",
+      "sha256": "80fdc3bab0ba75d060f5ec6d0d2fe79df74434378ffb15cabae4ef3fd9f55675"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR.kicad_mod",
+      "git_blob": "3d76d565cd304bc0196bfb9ba11153d5e3ad0dc8",
+      "sha256": "0606bceee0bd7cadc4ca167984bf7c29e9d01138864965b340dd62c42a5f996e"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL.kicad_mod",
+      "git_blob": "4b72655c33027b945e30f7c32aeedeea17b42094",
+      "sha256": "6450c6c2e37ed75c6236210758902cf7e407ce821aeeb0cc306b9cd59779b6f1"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A.kicad_mod",
+      "git_blob": "e2fff6f9078758b894804098fc2b8073aa139fc2",
+      "sha256": "69f72f11a60bd91c809d0074d92b130af1b49f6ed532e90c663a7344ef6e7c4a"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/SW-SMD_L3.9-W3.0-P4.45.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/SW-SMD_L3.9-W3.0-P4.45.kicad_mod",
+      "git_blob": "e88ef8c466ffe414c387d398c543a728426ef5ba",
+      "sha256": "dc27c08dac0e56a69ad05ea6d19bdc11e9ab12065521a8bec8960e24db132497"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/TPS70933DBVR_TI_DBV0005A.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/TPS70933DBVR_TI_DBV0005A.kicad_mod",
+      "git_blob": "2072de0df16db87c55a67965dda7cda57eabee71",
+      "sha256": "a87cf8de859159267e49701b70f82af0d40331f130b46a90025bd9e880d9d0b3"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/USB-C-SMD_TYPE-C-31-D-06.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/USB-C-SMD_TYPE-C-31-D-06.kicad_mod",
+      "git_blob": "ab030067749c2c74c56fe4561effd153fda47e54",
+      "sha256": "abf7afb85e855f1fbad3a811cdc8cac14e6602a94f2a1883eaf1631dff7f6cbf"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6.kicad_mod",
+      "git_blob": "171b5de7118a2e679a497f319babf664be7389c2",
+      "sha256": "b614ea10fe760e8fd5bdd7e8974ad1b6864a0e3c48123dbc4ca2f06ce7320481"
+    },
+    {
+      "path": "hardware/library/NexusFC.pretty/WSON-8_L8.0-W6.10-P1.27-BL-EP.kicad_mod",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusFC.pretty/WSON-8_L8.0-W6.10-P1.27-BL-EP.kicad_mod",
+      "git_blob": "8b2ad0986dc3447c6289969f5f220e81128c7ff3",
+      "sha256": "6776519d24a22645bc9e7084d46ce127f01fb7f01339be1d88c3dbd35adebd46"
+    },
+    {
+      "path": "hardware/library/NexusReviewed.kicad_sym",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/NexusReviewed.kicad_sym",
+      "git_blob": "81163a331c3240a02ee87e444aa895ddc714428f",
+      "sha256": "d82a4b3cd2371f111ecb2cfc7708e13c65cb06bc746ca126a887bb7e3ab311ee"
+    },
+    {
+      "path": "hardware/library/SchematicStock.kicad_sym",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/library/SchematicStock.kicad_sym",
+      "git_blob": "8ea2b3e60ca7e5df5b949237633c5187d3cdb3ce",
+      "sha256": "6dbf35c77289e368b56964d66f279e637b8ede46d6bfe5043630fc9a00b7bb0f"
+    },
+    {
+      "path": "hardware/nexus-style-fc.kicad_dru",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.kicad_dru",
+      "git_blob": "37f482528b5b67e35f82d74dfd18e5475f982af4",
+      "sha256": "3c261423d4fb5b02b61cf26ee73f62c417e487f71a5f28b5327213618212bd89"
+    },
+    {
+      "path": "hardware/nexus-style-fc.kicad_pcb",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.kicad_pcb",
+      "git_blob": "cf48b86113adf52b6a9eb6ec12e3561f15c4c5ce",
+      "sha256": "bed37199e8d62b8135a27b9e182f8e8f584f1a9fb722cb6efb5d4c87b2a320b8"
+    },
+    {
+      "path": "hardware/nexus-style-fc.kicad_pro",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.kicad_pro",
+      "git_blob": "406935c2de6c33ca6931c624f334c10e4fa13af6",
+      "sha256": "ac4eb6dea52f66417f12afe9a23ee7a8ff2ff9872cee20164a383bf3e61b2066"
+    },
+    {
+      "path": "hardware/nexus-style-fc.kicad_sch",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/nexus-style-fc.kicad_sch",
+      "git_blob": "9fd70406a03c77b0a6fd8653666c36ae3b28035c",
+      "sha256": "c30a80b045278ff68fffadd7bf2b691eb84a4a8320d919004f358be732818a24"
+    },
+    {
+      "path": "hardware/sym-lib-table",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/hardware/sym-lib-table",
+      "git_blob": "b02c4877af481e6c8df5c755958ba66f24a7171b",
+      "sha256": "26236e95331fb80367290656a29c41e26d82a5e8515769733a3e4ae7326908c4"
+    },
+    {
+      "path": "manufacturing/README-UNFINISHED.txt",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/README-UNFINISHED.txt",
+      "git_blob": "f33fd2becb9c4f12f8d740e3acc9e77cbc3b7961",
+      "sha256": "657190b64938e6675b770e1d351f2c7d6d675434302332ba7299b0c19a33ae89"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Cu.gbl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Cu.gbl",
+      "git_blob": "54b7def5f5c75f889738dc57f960db66a4309801",
+      "sha256": "1d3da18e206c879182087b070b5ad951a53de882788f39963c394a21ec568546"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Mask.gbs",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Mask.gbs",
+      "git_blob": "b1fedf3eb10045bfd044b1ded77a8892f5d9352c",
+      "sha256": "6fb503a8406eb1073852f1e513176ce08f8defd38fb3afb32ed7e659e21a20d7"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Paste.gbp",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Paste.gbp",
+      "git_blob": "ecc4a19d3f8109f63ca5c382ec1faab2ab6a3549",
+      "sha256": "7d25598c70ae3f3c73ee3947c0169a24783a0cdc2fc7d8db061010c8002df5a9"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Silkscreen.gbo",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-B_Silkscreen.gbo",
+      "git_blob": "af3807bae96af58345aa1903dfa22335c0c9daa2",
+      "sha256": "b3016d83821631f68c531a4675645d1a56fc7e2e293baded483c3eb3bc296a42"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-Edge_Cuts.gm1",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-Edge_Cuts.gm1",
+      "git_blob": "ca4624f25bd895c7db85a8dc5f0e4e14c40e5040",
+      "sha256": "8fd34b128de286d9b4401af32cef2a0ce3197887b90bd689a4e623c8476a3788"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Cu.gtl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Cu.gtl",
+      "git_blob": "298923e9782cc4b731e20897e09078ad6983f4af",
+      "sha256": "2589b6cc3e9902a1463b64e1ba9d835c4f90a75e8351a2e713610a740ee7f2fe"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Mask.gts",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Mask.gts",
+      "git_blob": "53724597120c4258632ea672eedb292378046177",
+      "sha256": "a9855bd8cac81475bc863a8f7307b0f35d0bf7f7f45ec44eeac1cc4e5741948e"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Paste.gtp",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Paste.gtp",
+      "git_blob": "9208dbdb370001810c88755bcf4fcc81ba251f11",
+      "sha256": "cb7ee629e4a1b91f1c132d3d8186088cce7a658f081a7fd0ceef8fc88dffd99f"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Silkscreen.gto",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-F_Silkscreen.gto",
+      "git_blob": "130e5e4a4b129ee079e2fc693aa69c94b1080088",
+      "sha256": "faf01f7f6c4cd5bfeef239044f29d9f474e11b2aede91168c6aab93a62124d3b"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-NPTH.drl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-NPTH.drl",
+      "git_blob": "77a8b89c476433a8d44241bd880b9cdfa943c579",
+      "sha256": "9c53cd2684b90a83b5b65299e9771d06e91cb57e352c4d813c3db96139879723"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-PTH.drl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-PTH.drl",
+      "git_blob": "c392f0877d40c2d44937051d7930e8055d6c0824",
+      "sha256": "49b7bd9a3bebbb011655578ac5d6a37f0c38e27cc6b1e9b62dd54fbb2031604a"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/gerbers/nexus-header-board-job.gbrjob",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/gerbers/nexus-header-board-job.gbrjob",
+      "git_blob": "5611dd8f51e44478d2cee8cf21b5a24082de19b4",
+      "sha256": "27f8d7010497285c690d6cbd158f310ae477215b24ba8130ce67cc237e8aa317"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/nexus-header-board-bom-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/nexus-header-board-bom-jlc.csv",
+      "git_blob": "cc913e2a19083dc87057c2c0ff382b4259f9f8c6",
+      "sha256": "6a2b3bbf1d27e84750eeaf034740681aaec0cd7413f736f5d7a42f3fed85e706"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/nexus-header-board-cpl-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/nexus-header-board-cpl-jlc.csv",
+      "git_blob": "888a741863ffe70f22ed39839b6c679e838107a3",
+      "sha256": "bf4bcb800239e4bae3c8b60adf1c5857b3636ae2fb359dbaedc06789f03488cf"
+    },
+    {
+      "path": "manufacturing/nexus-header-board/nexus-header-board-gerbers.zip",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-header-board/nexus-header-board-gerbers.zip",
+      "git_blob": "d1ab2b1816e3c3333b598c6f06252c400d66cbb3",
+      "sha256": "f8affddaaaebb806f4bba6eb0df319968af2c698f46d9733d9e6f23671112ea6"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Cu.gbl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Cu.gbl",
+      "git_blob": "8fa2f8151a52efb4742cd6a8b2b65a864d18c04b",
+      "sha256": "748d0176dc70bada0e5634a785a5f9b3e2d885fdebc12b6a9109fc0f94409eda"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Mask.gbs",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Mask.gbs",
+      "git_blob": "68fece53cc6a0f57384aebabf109f4dcdbee26b2",
+      "sha256": "96249a5356a744fff70b0480ece60d5a9f9fbb14481d10247dc7162e59995459"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Paste.gbp",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Paste.gbp",
+      "git_blob": "216e55ee3c939f1ac0952a9fa5b77c4e1fdd2f4f",
+      "sha256": "a6f2e29ca942a2acdad79a6922c976897738e33302da06da47aa8cd1ef908833"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Silkscreen.gbo",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-B_Silkscreen.gbo",
+      "git_blob": "b635b15a153ba0483791ad169d35e1bfd7c673de",
+      "sha256": "2e3c91ae650a47976d3c9278e89493ad60c10d78f9ea872fff64ae1f66636e16"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-Edge_Cuts.gm1",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-Edge_Cuts.gm1",
+      "git_blob": "fd3bb63b6b62e4213d85385fb79b8d7d8acd9b0b",
+      "sha256": "dec38f5700296645cc9a881067d176816bb515cc094e6d74b90f90e24e657ca4"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Cu.gtl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Cu.gtl",
+      "git_blob": "c845964964cd2d9cd486075e86270f413598540c",
+      "sha256": "9659e5f80eb111c8773dbb481d74cd3a3010913b3de443ee408e1db680f35695"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Mask.gts",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Mask.gts",
+      "git_blob": "20270ab0455d8d5162060c22eebef990763373fb",
+      "sha256": "69fa630f86bc2b30442e4e8fce276c9b986570147efd850750a801e320626d90"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Paste.gtp",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Paste.gtp",
+      "git_blob": "c4b6f1a3f17cc813c2221c57c86564fcd1b6c2ab",
+      "sha256": "25dedb2a100bfec48eff03be5b6b497ff7c99e5e4280720bdb0d370780484576"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Silkscreen.gto",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-F_Silkscreen.gto",
+      "git_blob": "c4465c84cdc5fc9be0fb71f5ea5ad59db1af2129",
+      "sha256": "e3ae1f8dfc8ffb2baa48b6f58bfa702494469bfc5e888eb6a06b7939531b716a"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In1_Cu.g1",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In1_Cu.g1",
+      "git_blob": "da3f69fb76f807ef2c6f522f25c532b0d28ccd4a",
+      "sha256": "b565c26a3c657be62533ea60d2bb731ab69be250e5b741204502ec92ed67c9ad"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In2_Cu.g2",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In2_Cu.g2",
+      "git_blob": "93cbe38580831bec2e5b77cba904506447bab0ad",
+      "sha256": "23fb22c1ed864a0fdbe92964e3fff13e7790d34bacf6a761a495e1a6d8b2cc1c"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In3_Cu.g3",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In3_Cu.g3",
+      "git_blob": "4c9a09b02861d96861c3aa5940eda5586f4ef3d6",
+      "sha256": "cd509256accd63fbcc96d2c2c60b213da2b306ee41146d8ca7a8c2e6462eb7c3"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In4_Cu.g4",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-In4_Cu.g4",
+      "git_blob": "5591f3ff984caf1e728d3743576339d2ca32a1f3",
+      "sha256": "92719644eeb460851342adc66c061d5f60abb4df6d6b3c9dc49f44035c55ff12"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-NPTH.drl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-NPTH.drl",
+      "git_blob": "dec5508495e7cd6d5cd19c5e16f9cef10114be96",
+      "sha256": "c195ca329f029da7c33000d31ebe4ad7659598d83702aa43bb0133f533e90405"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-PTH.drl",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-PTH.drl",
+      "git_blob": "b0d802d77b96fbabf9f0969d397cda97c0256dcf",
+      "sha256": "b694c97cc495c841c2ed8e5150876011a79971fe3420604b2b7ac6b0baef59b1"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/gerbers/nexus-style-fc-job.gbrjob",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/gerbers/nexus-style-fc-job.gbrjob",
+      "git_blob": "e9e148474f8df52741f0a61c119dbb4a7f5e2908",
+      "sha256": "768293b31005a4d885a7ccd236273e9b73ca161ba8c103430d2f9a68023d2136"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/nexus-style-fc-bom-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/nexus-style-fc-bom-jlc.csv",
+      "git_blob": "612e2f800b163704b5b7c3287b2c14fc5f7bc65d",
+      "sha256": "2f6a4b397ec8f024e5d7a3af2dda365843d928af03de5ace5fd50504501bd9fc"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/nexus-style-fc-cpl-jlc.csv",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/nexus-style-fc-cpl-jlc.csv",
+      "git_blob": "60b743731bd0c09000a6bf4c0527a12510498014",
+      "sha256": "6e0eaff4d1e2276106c0c16ccf5a52cb43b7fdb3d80ae219f353da7828ec4d70"
+    },
+    {
+      "path": "manufacturing/nexus-style-fc/nexus-style-fc-gerbers.zip",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/manufacturing/nexus-style-fc/nexus-style-fc-gerbers.zip",
+      "git_blob": "0ae11b7381570824d49e495c6204d9012d0d8a91",
+      "sha256": "f80c677b397a79dd26804744fcf1b986309e0d4569f900341ef26a0eb0f8e9a8"
+    },
+    {
+      "path": "tools/apply_continuous_vx_route.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/apply_continuous_vx_route.py",
+      "git_blob": "4dd224dd2578c1ebdb20fae0f5b42dda81025633",
+      "sha256": "8bc2fee7cef16dd39b28226bf08f840f088dd82b53ecca726ec39ca2a693aa08"
+    },
+    {
+      "path": "tools/apply_header_interface.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/apply_header_interface.py",
+      "git_blob": "2fcba328c743259bfa26a9bfd9e98f321c979d5a",
+      "sha256": "8653732c82f6df453bf562e8e1076b966a99d118358852fe0192ad25e9696921"
+    },
+    {
+      "path": "tools/build_all.sh",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/build_all.sh",
+      "git_blob": "ee6dab9402719083ea5635b0e59a1fdb8b4f6935",
+      "sha256": "13814a0d371397abcac3779405986ccd6b8cc384e1f2042b70947a5c70e3e7c7"
+    },
+    {
+      "path": "tools/build_floorplan.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/build_floorplan.py",
+      "git_blob": "a1edd66cc7bf8569187d46ced80c96fe791fc776",
+      "sha256": "cb1e7a1fc1b8b62ee0d66719bdb04c613c7b116fe66f6209f6e40f80b92124c3"
+    },
+    {
+      "path": "tools/build_header_board.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/build_header_board.py",
+      "git_blob": "6b406c1e49a69747ecb23199a55ceb4faa257aaa",
+      "sha256": "348d8eb00deb63af9fa3a3b84bed612ccaed4b389ed2ff080778d15f789706cd"
+    },
+    {
+      "path": "tools/check_header_interface_static.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/check_header_interface_static.py",
+      "git_blob": "788af2021218d9b857d7029e474ec67049dfc03b",
+      "sha256": "23b3c5ffebd28393b10c5fcb69f87a10976eceaa2b307f5e8693f4f29d788065"
+    },
+    {
+      "path": "tools/clean_dangling.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/clean_dangling.py",
+      "git_blob": "d6643fc861411669a23f19c83f614017f28881b2",
+      "sha256": "16fcfbfe8355e637c523595e89ed34a1892252eae6d4215dd319f608a28b98e1"
+    },
+    {
+      "path": "tools/connect_functional_units.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/connect_functional_units.py",
+      "git_blob": "57dedeaa323aaa3c6c7537ab0fd0dd7ba2fb1100",
+      "sha256": "87cefb7688d59502022d861dc32a9b777e300ec3344b5dfdc5b6d32f178778da"
+    },
+    {
+      "path": "tools/design.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/design.py",
+      "git_blob": "a8064ae3f3d374b8f0378a77a6716f882e5192da",
+      "sha256": "ea95b1c7edfe1ec5db765c5b3823a4f388d633cb98e46f93df7777893b8a56a0"
+    },
+    {
+      "path": "tools/design_header.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/design_header.py",
+      "git_blob": "be22411d7487fdb577b2b1f69e1f3ace3c583f75",
+      "sha256": "1322b540e99b77b803a82a0bf1315fe4e4e732454a4de0e9e5597f9de75508c9"
+    },
+    {
+      "path": "tools/draft_circuits.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/draft_circuits.py",
+      "git_blob": "e23b19ee2468bc8bbb20cf592cfbaf6181d327ca",
+      "sha256": "280080d448c7ddd834f1a8f6acbe5aa09c9318fcf361eda6a9e8826f57069808"
+    },
+    {
+      "path": "tools/draft_compute.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/draft_compute.py",
+      "git_blob": "cade38477625018a6efae561eb0cc7870235aa83",
+      "sha256": "21af4d20866db0bc3a6139b1baa2cf8dcb1abac07314a6383b5f7e93aa00405e"
+    },
+    {
+      "path": "tools/draft_interfaces.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/draft_interfaces.py",
+      "git_blob": "1732d0d29139cdf72849e7fce75cefbc8be8bc9d",
+      "sha256": "28020ac149b1dff5fa5097d5f96a32c58f8393adcdf521d4d01297f85e13c311"
+    },
+    {
+      "path": "tools/draft_power.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/draft_power.py",
+      "git_blob": "5ada7284377f7a53b21d7df2128c89b16690499b",
+      "sha256": "932b7bc260b7e65e3af21e58ce065c49f9a1f9f167c0709b35215e84ab5a9fe7"
+    },
+    {
+      "path": "tools/draw_header_interface_candidate.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/draw_header_interface_candidate.py",
+      "git_blob": "6d50931cdd9147d3cd5f715ce862ab3436d0fd7e",
+      "sha256": "785e974f06d7165280c92700fbd3b23682e328205b25e4e222594bbe6dbfdb50"
+    },
+    {
+      "path": "tools/export_fab.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/export_fab.py",
+      "git_blob": "a7306e9860ad5232a1693f9e958c57d676580788",
+      "sha256": "714541ea3985effff8b130dd9042a1a717821615650377db893cb0986dc342e9"
+    },
+    {
+      "path": "tools/finish_route.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/finish_route.py",
+      "git_blob": "efbdc463bea66d8243bad2ab6e6c19d5e8045fa1",
+      "sha256": "191c6ed5092e7c13d113093a36d0902cc942c7c349b48d380330680769bbba74"
+    },
+    {
+      "path": "tools/fix_courtyards.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/fix_courtyards.py",
+      "git_blob": "422946186f9993f919d223ff4c667f7ef6cbc20b",
+      "sha256": "8481f1abbce91994c31cf851a96ff57c88706b81c6033f28d89889d67a0eef7a"
+    },
+    {
+      "path": "tools/floorplan_svg.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/floorplan_svg.py",
+      "git_blob": "7b1285f3d891bbdd50dc25b357f8d8eefba4aee3",
+      "sha256": "cb13e67643a3854fa6661a33df722025760f510867f1341c6e06d074f3996ea3"
+    },
+    {
+      "path": "tools/gen_schematic.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/gen_schematic.py",
+      "git_blob": "4b08779b5a4fcf085b33bd8c9b2e7b9ee6b36c6a",
+      "sha256": "82d6c7d51716bebefa645992c5f96c40fc7fc9f1feb191dff3f5e8efc40ac2ac"
+    },
+    {
+      "path": "tools/generate_u10_ti_variant.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/generate_u10_ti_variant.py",
+      "git_blob": "37a0b623c3fd6fc1a6c44b681e785f9001e3a528",
+      "sha256": "15841795d86e057bf9dfea163bd39f4f3a815ff73ba226d07e7818f732b7093d"
+    },
+    {
+      "path": "tools/header_interface_geometry.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/header_interface_geometry.py",
+      "git_blob": "a4bcbf7ccece736d672f09f82d28c77c41d99dbf",
+      "sha256": "3df57f60fe48b0cd88c59b01ddda35d8cb06bec064c852929d1d5a2680d21d9d"
+    },
+    {
+      "path": "tools/header_interface_r54_anchors.json",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/header_interface_r54_anchors.json",
+      "git_blob": "42a741d5d888874db06e511721a3a51e3862acb4",
+      "sha256": "54a26aab6baba4f39a251a13cc06071533ad956e04004db567bd447fc11bf525"
+    },
+    {
+      "path": "tools/joint_section.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/joint_section.py",
+      "git_blob": "bdf66192acfca548832da3a0328a03df663ab35b",
+      "sha256": "09d1adc9d8391ddde24aac3a8698438f2ee3c1408bd6cdae757f64803d166c35"
+    },
+    {
+      "path": "tools/make_footprints.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/make_footprints.py",
+      "git_blob": "b2e10789011a4437c5c7c5964cc5bd3bd12331e7",
+      "sha256": "2c64852852843b4d469a0f532fce8634bf6f1a116f451a1d76ed388362a8afdd"
+    },
+    {
+      "path": "tools/pcbutil.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/pcbutil.py",
+      "git_blob": "6c757fb7a1c56f825627e710c5f42de86ed93c8b",
+      "sha256": "2780be1bbbe625430dc4ca4b3e1f6eb3e4c87c74dcb0f33bb60394df8d8fb14c"
+    },
+    {
+      "path": "tools/readable_schematic.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/readable_schematic.py",
+      "git_blob": "86b64fe34bdbcb09ccccf6b77c325a5c4c6d45c0",
+      "sha256": "bfbc72ab9d11e5f83e4ed03c355df4c4a4f6001dc8359bb0b7e89dae06f21076"
+    },
+    {
+      "path": "tools/route_board.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/route_board.py",
+      "git_blob": "f57a797f219caa5a6cb73553e486b69f8baf271f",
+      "sha256": "3b9a223356d1a62558e3f12a24248e14eccad450036dee71b21952394582e68f"
+    },
+    {
+      "path": "tools/sexpr.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/sexpr.py",
+      "git_blob": "905168b6517cc04bea534b4ab5e2334808278a35",
+      "sha256": "8b8ebd58b1a78b88923e69d8d3da56bdd019cd3faefd08846277df5f4a70952e"
+    },
+    {
+      "path": "tools/test_validate_nexus_reroute.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/test_validate_nexus_reroute.py",
+      "git_blob": "9168c0dc4697c80b91c6a25c64511a89bbb9ff86",
+      "sha256": "4e75464ae1c28d49ebddc0cec04d412e05d506409f48415a9853576cf836e459"
+    },
+    {
+      "path": "tools/validate_nexus_reroute.py",
+      "source_path": "routing-wip/2026-10-15/stage36-main-child-checkpoint/candidate/tools/validate_nexus_reroute.py",
+      "git_blob": "ab1911b71145e61af5a81848001024b75944870d",
+      "sha256": "480a20e0878bd5cd68ce3cdb8809e540ce27959b92eaf041f7ba354c75245c25"
+    }
+  ]
+}
