@@ -1,6 +1,15 @@
 #!/bin/bash
 # Regenerate everything from tools/design.py and tools/design_header.py, then run the checks.
 set -euo pipefail
+# The checked-in boards include manual routing and are the authoritative design.
+# This legacy generator creates a NEW UNROUTED baseline; it is not a reproducible
+# build of the accepted main/child pair. Run only in a disposable Git worktree.
+if [ "${1:-}" != "--regenerate-unrouted" ] || [ "$#" -ne 1 ]; then
+  echo "Refusing to replace the routed boards. Use tools/validate_project.sh for read-only checks." >&2
+  echo "To intentionally regenerate in a disposable Git worktree: tools/build_all.sh --regenerate-unrouted" >&2
+  exit 2
+fi
+echo "WARNING: replacing native sources with a new baseline; routing and child integration will need review." >&2
 cd "$(dirname "$0")"
 PY=${KICAD_PYTHON:-python3}
 K=${KICAD_CLI:-kicad-cli}
@@ -12,10 +21,10 @@ case "$($K --version)" in
   *) echo "KiCad 10 is required; existing sources have not been regenerated" >&2; exit 1 ;;
 esac
 
-python3 make_footprints.py >/dev/null
-python3 fix_courtyards.py
-python3 gen_schematic.py design "$HW/nexus-style-fc.kicad_sch" nexus-style-fc
-python3 gen_schematic.py design_header "$HW/header-board/nexus-header-board.kicad_sch" nexus-header-board
+"$PY" make_footprints.py >/dev/null
+"$PY" fix_courtyards.py
+"$PY" gen_schematic.py design "$HW/nexus-style-fc.kicad_sch" nexus-style-fc
+"$PY" gen_schematic.py design_header "$HW/header-board/nexus-header-board.kicad_sch" nexus-header-board
 $PY build_header_board.py 2>&1 | grep -v "assert\|wxApp"
 $PY build_floorplan.py 2>&1 | grep -v "assert\|wxApp"
 # 6-layer stackup, JLC rules, GND planes, Freerouting, GND pours (needs FREEROUTING_JAR and Java 25+)
@@ -27,7 +36,7 @@ else
   echo "FREEROUTING_JAR not set: board left unrouted"
 fi
 $PY floorplan_svg.py 2>&1 | grep -v "assert\|wxApp"
-python3 joint_section.py
+"$PY" joint_section.py
 
 for b in "$HW/nexus-style-fc" "$HW/header-board/nexus-header-board"; do
   echo "== $(basename "$b")"
@@ -44,5 +53,5 @@ for b in nexus-style-fc:main header-board/nexus-header-board:header-board; do
     --labels 'Designator,Value,Footprint,LCSC Part #,Quantity' --group-by 'Value,Footprint,LCSC' \
     -o "../manufacturing/bom-${b##*:}.csv" "$HW/${b%%:*}.kicad_sch" >/dev/null 2>&1
 done
-python3 export_fab.py
+"$PY" export_fab.py
 echo "done"

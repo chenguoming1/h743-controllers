@@ -1,1 +1,0 @@
-Historical diagnostic only. Its recovered design.py predates approved C19 metadata and is not the authoritative main-bound source. The correct source export is ../source, verified against current-main-binding.json per-file hashes. The candidate export and saved board were correct and unchanged.

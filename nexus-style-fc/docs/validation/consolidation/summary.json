@@ -1,0 +1,181 @@
+{
+  "status": "PASS within inherited warnings/settings; unfinished engineering checkpoint, not fabrication/assembly/flight release",
+  "accepted_source_main_commit": "fad62076054229a1d3de79106984d8b71906379e",
+  "runtime": "Official KiCad 10.0.7 via approved wrappers",
+  "native_checks": {
+    "main-erc": {
+      "kicad_version": "10.0.7",
+      "process_exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "excluded": 0,
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [
+        {
+          "description": "Global label only appears once in the schematic",
+          "key": "single_global_label"
+        },
+        {
+          "description": "Four connection points are joined together",
+          "key": "four_way_junction"
+        },
+        {
+          "description": "SPICE model issue",
+          "key": "simulation_model_issue"
+        },
+        {
+          "description": "Assigned footprint doesn't match footprint filters",
+          "key": "footprint_filter"
+        }
+      ],
+      "warning_types": {}
+    },
+    "main-drc": {
+      "kicad_version": "10.0.7",
+      "process_exit_code": 5,
+      "errors": 0,
+      "warnings": 61,
+      "excluded": 0,
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [],
+      "warning_types": {
+        "track_not_centered_on_via": 7,
+        "silk_edge_clearance": 3,
+        "footprint_type_mismatch": 1,
+        "silk_overlap": 31,
+        "silk_over_copper": 19
+      },
+      "unconnected_items": 0,
+      "schematic_parity_findings": 0,
+      "refill": false,
+      "save_board": false,
+      "all_track_errors": true,
+      "schematic_parity_enabled": true
+    },
+    "child-erc": {
+      "kicad_version": "10.0.7",
+      "process_exit_code": 0,
+      "errors": 0,
+      "warnings": 0,
+      "excluded": 0,
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [
+        {
+          "description": "Global label only appears once in the schematic",
+          "key": "single_global_label"
+        },
+        {
+          "description": "Four connection points are joined together",
+          "key": "four_way_junction"
+        },
+        {
+          "description": "SPICE model issue",
+          "key": "simulation_model_issue"
+        },
+        {
+          "description": "Assigned footprint doesn't match footprint filters",
+          "key": "footprint_filter"
+        }
+      ],
+      "warning_types": {}
+    },
+    "child-drc": {
+      "kicad_version": "10.0.7",
+      "process_exit_code": 5,
+      "errors": 0,
+      "warnings": 22,
+      "excluded": 0,
+      "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+      ],
+      "ignored_checks": [],
+      "warning_types": {
+        "missing_courtyard": 11,
+        "footprint_filters_mismatch": 11
+      },
+      "unconnected_items": 0,
+      "schematic_parity_findings": 11,
+      "refill": false,
+      "save_board": false,
+      "all_track_errors": true,
+      "schematic_parity_enabled": true
+    }
+  },
+  "native_input_hashes": {
+    "hardware/nexus-style-fc.kicad_pcb": {
+      "sha256": "bed37199e8d62b8135a27b9e182f8e8f584f1a9fb722cb6efb5d4c87b2a320b8",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/nexus-style-fc.kicad_sch": {
+      "sha256": "c30a80b045278ff68fffadd7bf2b691eb84a4a8320d919004f358be732818a24",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/nexus-style-fc.kicad_pro": {
+      "sha256": "ac4eb6dea52f66417f12afe9a23ee7a8ff2ff9872cee20164a383bf3e61b2066",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/nexus-style-fc.kicad_dru": {
+      "sha256": "3c261423d4fb5b02b61cf26ee73f62c417e487f71a5f28b5327213618212bd89",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/header-board/nexus-header-board.kicad_pcb": {
+      "sha256": "b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/header-board/nexus-header-board.kicad_sch": {
+      "sha256": "946c4006e8e481bd5d39f61956ce1c61feed1c75d8359751fff5f8ea4ee31fe9",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/header-board/nexus-header-board.kicad_pro": {
+      "sha256": "ce1c0fd1576d3a4d531ada8f8b8d796901c3215a9ad1343b801ba805ece15390",
+      "identical_to_accepted_stage36": true
+    },
+    "hardware/header-board/nexus-header-board.kicad_dru": {
+      "sha256": "7d51575353b0d1a167d2516111e8575ec3e0b9ea0bd338f4be79d0fd4c38cf4c",
+      "identical_to_accepted_stage36": true
+    }
+  },
+  "drc_findings_identical_to_accepted_reports": {
+    "main": {
+      "violations": true,
+      "unconnected_items": true,
+      "schematic_parity": true,
+      "ignored_checks": true
+    },
+    "child": {
+      "violations": true,
+      "unconnected_items": true,
+      "schematic_parity": true,
+      "ignored_checks": true
+    }
+  },
+  "source_consistency_report": "source-consistency.json",
+  "planned_git_tree_path_check": {
+    "status": "pass",
+    "mode": "git-tree inventory",
+    "local_dependencies_checked": 36,
+    "missing": [],
+    "note": "Stock KiCad symbols, footprints and 3D models require KiCad 10 libraries. Model fit is not validated."
+  },
+  "scope_limits": [
+    "Saved copper validated without regeneration/refill/save; physical source bytes preserved.",
+    "Inherited ERC ignores: single_global_label, four_way_junction, simulation_model_issue, footprint_filter. No DRC ignored checks or exclusions.",
+    "No fresh external DFM, assembly, physical current/thermal/mechanical, flight or 3D fit qualification.",
+    "Full build was not run because it regenerates accepted native source. get_main_parts, net identities, all main poses, accepted pad snapshot and BOM/CPL were verified read-only."
+  ],
+  "validation_method": "Read-only native checks plus source/Git-blob verification. Existing model blobs were retained by SHA; planned-tree paths were checked without downloading all large models. No 3D fit qualification."
+}

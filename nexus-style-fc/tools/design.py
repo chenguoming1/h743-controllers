@@ -70,7 +70,7 @@ mcu = {
     "24": None, "25": "S3", "26": None, "27": None, "28": "C_RX", "29": "C_TX", "30": "VCAP",
     "31": "GND", "32": "3V3", "33": "FLASH_CS", "34": "SPI2_SCK", "35": "SPI2_MISO",
     "36": "SPI2_MOSI", "37": "B_RX", "38": "B_TX", "39": None, "40": None, "41": None,
-    "42": "DSM_TX", "43": "DSM_DATA", "44": "USB_DM", "45": "USB_DP", "46": "SWDIO",
+    "42": "DSM_TX", "43": "DSM_DATA", "44": "USB_DN", "45": "USB_DP", "46": "SWDIO",
     "47": "GND", "48": "3V3", "49": "SWCLK", "50": "IMU_INT", "51": None, "52": None,
     "53": None, "54": None, "55": "TAIL", "56": "S1", "57": "S2", "58": "ESC", "59": None,
     "60": "BOOT0", "61": "I2C1_SCL", "62": "I2C1_SDA", "63": "GND", "64": "3V3",
@@ -201,14 +201,14 @@ C("100nF", "5V_SENSE", "GND", ("near", "U1", "10", "F"), "POWER", note="ADC filt
 part("J6", "NexusFC:TYPE-C-31-D-06", "USB-C vertical", "NexusFC:USB-C-SMD_TYPE-C-31-D-06", "C2689964",
      {"A1": "GND", "A12": "GND", "B1": "GND", "B12": "GND", "A4": "VBUS_C", "A9": "VBUS_C",
       "B4": "VBUS_C", "B9": "VBUS_C", "A5": "CC1", "B5": "CC2", "A6": "USB_DP", "B6": "USB_DP",
-      "A7": "USB_DM", "B7": "USB_DM", "A8": None, "B8": None, "EP": "GND"},
+      "A7": "USB_DN", "B7": "USB_DN", "A8": None, "B8": None, "EP": "GND"},
      ("xy", 8.4, 29.0, 0, "F"), "USB", "top-entry USB-C")
 R("5.1k", "CC1", "GND", ("near", "J6", "A5", "B"), "USB", note="UFP Rd")
 R("5.1k", "CC2", "GND", ("near", "J6", "B5", "B"), "USB", note="UFP Rd")
 part("F1", "NexusFC:SMD0805P050TF", "0.5A PTC", "NexusFC:F0805", "C20978",
      {"1": "VBUS_C", "2": "VBUS"}, ("xy", 5.6, 24.6, 0, "B"), "USB", "VBUS resettable fuse")
 part("U7", "NexusFC:USBLC6-2SC6", "USBLC6-2SC6", "NexusFC:SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL", "C7519",
-     {"1": "USB_DM", "6": "USB_DM", "3": "USB_DP", "4": "USB_DP", "2": "GND", "5": "VBUS"},
+     {"1": "USB_DN", "6": "USB_DN", "3": "USB_DP", "4": "USB_DP", "2": "GND", "5": "VBUS"},
      ("xy", 9.2, 24.6, 90, "B"), "USB", "USB ESD")
 
 # ---------------------------------------------------------------- receiver ports
@@ -247,21 +247,17 @@ part("U12", "NexusFC:SRV05-4.TCT", "SRV05-4", srv, "C13612",
 PWR_FLAGS = ["VX", "GND", "VBUS_C"]
 
 
-def nets():
+def nets(parts=None):
+    """Net map for an explicit selection; default preserves legacy imports."""
     out = {}
-    for p in PARTS:
+    for p in PARTS if parts is None else parts:
         for pad, net in p["pins"].items():
             if net:
                 out.setdefault(net, []).append((p["ref"], pad))
     return out
 
 
-if __name__ == "__main__":
-    n = nets()
-    print(len(PARTS), "parts,", len(n), "nets")
-    for name, conns in sorted(n.items()):
-        if len(conns) < 2:
-            print("single-pin net:", name, conns)
+
 
 
 # ---------------------------------------------------------------- layout (overrides the per-part placement above)
@@ -312,3 +308,169 @@ def _prio(p):
 
 
 PARTS.sort(key=_prio)
+
+
+# Main-board-only approved input-capacitor update. Legacy PARTS is intentionally
+# retained for sibling projects that import it, including the standalone module.
+# Main placement tuples compensate Board.put bottom-side flip; physical positions
+# are verified independently. Board origin=(100,100), DESIGN_SHIFT=0.8 mm.
+MAIN_INPUT_CAP_PLACEMENT = {
+    'C27': ('xy', 1.87, 23.52, 0.0, 'B'),
+    'C31': ('xy', 5.82, 25.5, 180.0, 'B'),
+    'D5': ('xy', 2.28, 25.38, 0.0, 'B'),
+}
+
+# Main-board-only library variants for the approved annotation artwork.
+# Legacy PARTS and sibling projects retain their original generic footprints.
+MAIN_ANNOTATION_FOOTPRINTS = {
+    'J4': ('NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN', 'C161692', 'NexusFC:CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4'),
+    'J6': ('NexusFC:USB-C-SMD_TYPE-C-31-D-06', 'C2689964', 'NexusFC:USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6'),
+    'D1': ('NexusFC:LED0603-RD_GREEN', 'C965806', 'NexusFC:LED0603-RD_GREEN__NexusMain_D1'),
+    'D2': ('NexusFC:LED0603-RD_RED', 'C965799', 'NexusFC:LED0603-RD_RED__NexusMain_D2'),
+    'D3': ('NexusFC:LED0603-RD_BLUE', 'C965807', 'NexusFC:LED0603-RD_BLUE__NexusMain_D3'),
+}
+
+
+
+
+
+
+# Routed main-board placement checkpoint. This overrides main-only placement
+# after component selection; legacy PARTS and sibling projects are unchanged.
+# Coordinates are generator inputs, not raw PCB angles: Board.put mirrors
+# bottom footprints, and build_floorplan adds DESIGN_SHIFT except for J1.
+# Source PCB SHA256: bed37199e8d62b8135a27b9e182f8e8f584f1a9fb722cb6efb5d4c87b2a320b8
+# Footprint/pad placement SHA256: 9040f59deef1988e96422fba5bb59813c65accf9c892750553563afcefb6869e
+MAIN_ROUTED_PLACEMENT = {
+    'C1': ('xy', 5.9, 14.6, 0.0, 'B'),
+    'C2': ('xy', 7.3, 9.73, 90.0, 'F'),
+    'C3': ('xy', 20.9, 5.35, 90.0, 'B'),
+    'C4': ('xy', 20.9, 14.8, 90.0, 'B'),
+    'C5': ('xy', 21.26, 17.39, 90.0, 'B'),
+    'C6': ('xy', 10.8, 18.25, 0.0, 'B'),
+    'C7': ('xy', 10.68, 19.31, 0.0, 'B'),
+    'C8': ('xy', 19.04, 18.38, 0.0, 'B'),
+    'C9': ('xy', 6.2, 7.35, 90.0, 'B'),
+    'C10': ('xy', 11.75, 21.25, 0.0, 'B'),
+    'C11': ('xy', 17.45, 19.7, 90.0, 'B'),
+    'C12': ('xy', 12.35, 19.7, 270.0, 'B'),
+    'C13': ('xy', 13.85, 11.8, 270.0, 'F'),
+    'C14': ('xy', 14.95, 11.8, 270.0, 'F'),
+    'C15': ('xy', 8.6, 13.2, 180.0, 'F'),
+    'C16': ('xy', 2.23, 5.42, 90.0, 'F'),
+    'C17': ('xy', 1.05, 5.67, 90.0, 'F'),
+    'C18': ('xy', 5.93, 16.14, 0.0, 'B'),
+    'C19': ('xy', 9.4, 9.0, 0.0, 'F'),
+    'C20': ('xy', 20.25, 21.07, 0.0, 'B'),
+    'C21': ('xy', 3.55, 5.0, 180.0, 'B'),
+    'C22': ('xy', 6.04, 4.75, 180.0, 'B'),
+    'C23': ('xy', 1.06, 4.75, 0.0, 'B'),
+    'C24': ('xy', 5.9, 12.05, 90.0, 'B'),
+    'C25': ('xy', 11.04, 22.31, 0.0, 'B'),
+    'C26': ('xy', 18.05, 25.51, 90.0, 'F'),
+    'C27': ('xy', 1.87, 23.52, 0.0, 'B'),
+    'C28': ('xy', 5.0, 23.3, 0.0, 'B'),
+    'C29': ('xy', 11.0, 18.4, 270.0, 'F'),
+    'C30': ('xy', 14.39, 13.36, 0.0, 'F'),
+    'C31': ('xy', 5.82, 25.5, 180.0, 'B'),
+    'D1': ('xy', 8.0, 24.3, 0.0, 'F'),
+    'D2': ('xy', 14.4, 24.3, 0.0, 'F'),
+    'D3': ('xy', 11.2, 24.3, 0.0, 'F'),
+    'D4': ('xy', 2.6, 18.0, 0.0, 'B'),
+    'D5': ('xy', 2.28, 25.38, 0.0, 'B'),
+    'D6': ('xy', 3.37, 28.35, 90.0, 'B'),
+    'F1': ('xy', 8.4, 29.0, 90.0, 'B'),
+    'F2': ('xy', 4.67, 24.5, 0.0, 'F'),
+    'J1': ('xy', 0.0, 0.0, 0.0, 'F'),
+    'J2': ('xy', 3.3, 12.4, 270.0, 'F'),
+    'J3': ('xy', 18.9, 12.4, 90.0, 'F'),
+    'J4': ('xy', 6.0, 20.2, 0.0, 'F'),
+    'J5': ('xy', 16.4, 20.2, 0.0, 'F'),
+    'J6': ('xy', 8.4, 29.0, 0.0, 'F'),
+    'L1': ('xy', 2.6, 12.775, 270.0, 'B'),
+    'L2': ('xy', 5.0, 21.0, 0.0, 'B'),
+    'R1': ('xy', 20.9, 12.8, 90.0, 'B'),
+    'R2': ('xy', 9.24, 25.52, 0.0, 'F'),
+    'R3': ('xy', 16.43, 24.53, 90.0, 'F'),
+    'R4': ('xy', 12.39, 25.52, 0.0, 'F'),
+    'R5': ('xy', 20.81, 5.42, 0.0, 'F'),
+    'R6': ('xy', 20.96, 7.38, 90.0, 'B'),
+    'R7': ('xy', 20.85, 9.61, 90.0, 'B'),
+    'R8': ('xy', 15.0, 30.78, 90.0, 'B'),
+    'R9': ('xy', 14.99, 28.62, 90.0, 'B'),
+    'R10': ('xy', 18.52, 20.62, 90.0, 'B'),
+    'R11': ('xy', 0.7, 8.35, 90.0, 'B'),
+    'R12': ('xy', 0.7, 6.2, 90.0, 'B'),
+    'R13': ('xy', 13.05, 25.17, 0.0, 'B'),
+    'R14': ('xy', 13.52, 26.29, 0.0, 'B'),
+    'R15': ('xy', 7.4, 21.0, 90.0, 'B'),
+    'R16': ('xy', 11.4, 20.35, 90.0, 'F'),
+    'R17': ('xy', 11.4, 22.4, 270.0, 'F'),
+    'R18': ('xy', 14.6, 9.2, 90.0, 'F'),
+    'R19': ('xy', 13.6, 8.9, 90.0, 'F'),
+    'R20': ('xy', 6.88, 28.79, 90.0, 'B'),
+    'R21': ('xy', 9.92, 29.21, 90.0, 'B'),
+    'R22': ('xy', 0.95, 18.28, 90.0, 'F'),
+    'SW1': ('xy', 17.0, 29.0, 0.0, 'F'),
+    'TP1': ('xy', 21.15, 26.2, 0.0, 'F'),
+    'TP2': ('xy', 21.15, 28.4, 0.0, 'F'),
+    'TP3': ('xy', 1.6, 26.0, 0.0, 'F'),
+    'TP4': ('xy', 1.6, 28.2, 0.0, 'F'),
+    'TP5': ('xy', 1.6, 30.4, 0.0, 'F'),
+    'U1': ('xy', 13.6, 11.05, 0.0, 'B'),
+    'U2': ('xy', 11.4, 11.6, 0.0, 'F'),
+    'U3': ('xy', 13.4, 6.1, 0.0, 'F'),
+    'U4': ('xy', 18.9, 26.6, 0.0, 'B'),
+    'U5': ('xy', 3.3, 7.85, 90.0, 'B'),
+    'U7': ('xy', 9.7, 24.5, 90.0, 'B'),
+    'U9': ('xy', 13.6, 23.4, 0.0, 'B'),
+    'U10': ('xy', 9.4, 6.25, 0.0, 'F'),
+    'U11': ('xy', 4.9, 5.9, 0.0, 'F'),
+    'U12': ('xy', 17.6, 5.9, 0.0, 'F'),
+    'U13': ('xy', 14.0, 15.6, 0.0, 'F'),
+    'U14': ('xy', 2.0, 21.0, 0.0, 'B'),
+    'U15': ('xy', 8.8, 15.6, 0.0, 'F'),
+    'Y1': ('xy', 14.9, 19.7, 0.0, 'B'),
+}
+
+def get_main_parts():
+    """Return an independent main-board selection without mutating legacy PARTS."""
+    import copy
+    selected = copy.deepcopy(PARTS)
+    by_ref = {p["ref"]: p for p in selected}
+    assert "C31" not in by_ref, "C31 is reserved for the parallel input capacitor"
+    cap = by_ref["C27"]
+    cap.update(value="22uF", fp="NexusFC:C_0805_2012Metric_Samsung_CL21_MinLand", lcsc="C602037",
+               place=MAIN_INPUT_CAP_PLACEMENT["C27"],
+               note="Main VSYS input bulk; Samsung CL21A226MAYNNNE; 22 uF, 25 V, X5R, +/-20%; JLC/LCSC C602037")
+    extra = copy.deepcopy(cap)
+    extra.update(ref="C31", place=MAIN_INPUT_CAP_PLACEMENT["C31"],
+                 note="Main VSYS local parallel input bulk; Samsung CL21A226MAYNNNE; 22 uF, 25 V, X5R, +/-20%; JLC/LCSC C602037")
+    selected.append(extra)
+    by_ref["D5"]["place"] = MAIN_INPUT_CAP_PLACEMENT["D5"]
+    for ref, (original_fp, lcsc, variant_fp) in MAIN_ANNOTATION_FOOTPRINTS.items():
+        p = by_ref[ref]
+        assert (p["fp"], p["lcsc"]) == (original_fp, lcsc), (ref, "annotation variant identity changed")
+        p["fp"] = variant_fp
+    # Main-only TI DBV0005A example lands. Keep the selected TPS70933DBVR,
+    # its pin roles and the legacy generic footprint used by sibling projects.
+    u10 = by_ref["U10"]
+    assert (u10["value"], u10["lcsc"], u10["fp"]) == (
+        "TPS70933DBVR", "C89347", "NexusFC:SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL")
+    assert u10["pins"] == {"1": "VSYS", "2": "GND", "3": None, "4": None, "5": "3V3_SENS"}
+    u10["fp"] = "NexusFC:TPS70933DBVR_TI_DBV0005A"
+    assert set(MAIN_ROUTED_PLACEMENT) == {p["ref"] for p in selected}, "Main placement coverage changed"
+    for p in selected:
+        p["place"] = MAIN_ROUTED_PLACEMENT[p["ref"]]
+    return selected
+
+def get_main_nets():
+    return nets(get_main_parts())
+
+if __name__ == "__main__":
+    selected = get_main_parts()
+    n = nets(selected)
+    print(len(selected), "main-board parts,", len(n), "nets")
+    for name, conns in sorted(n.items()):
+        if len(conns) < 2:
+            print("single-pin net:", name, conns)

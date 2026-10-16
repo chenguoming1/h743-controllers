@@ -1,12 +1,15 @@
 """Shared helpers for building the KiCad boards from a design module (KiCad bundled Python)."""
 import os
+import sys
 import uuid
 
 import pcbnew
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LIBDIR = os.path.normpath(os.path.join(HERE, "..", "hardware", "library", "NexusFC.pretty"))
-STOCK = "/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints"
+STOCK = (os.environ.get("KICAD_FOOTPRINT_DIR") or os.environ.get("KICAD10_FOOTPRINT_DIR")
+         or ("/Applications/KiCad/KiCad.app/Contents/SharedSupport/footprints"
+             if sys.platform == "darwin" else "/usr/share/kicad/footprints"))
 NS = uuid.UUID("6f3c2a1e-9b7d-4c55-8a10-2d4e5f6a7b80")   # same namespace as gen_schematic.py
 
 

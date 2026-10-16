@@ -1,8 +1,8 @@
 (version 1)
-# F722-compatible manufacturing floor; preserve stricter existing board constraints.
-# No exceptions or DRC exclusions are introduced by this rule transfer.
-(rule "F722 minimum track" (constraint track_width (min 0.15mm)))
-(rule "F722 minimum clearance" (constraint clearance (min 0.15mm)))
-(rule "F722 copper edge" (constraint edge_clearance (min 0.254mm)))
-(rule "F722 drill-to-copper" (constraint hole_clearance (min 0.25mm)))
-(rule "F722 through-via annulus" (constraint annular_width (min 0.15mm)))
+# JLC 2-layer2oz published minimum0.16/0.16; conservative track0.20.
+(rule "2oz copper width" (constraint track_width (min 0.20mm)))
+(rule "2oz copper spacing" (constraint clearance (min 0.16mm)))
+(rule "Child edge" (constraint edge_clearance (min 0.254mm)))
+(rule "Hole copper" (constraint hole_clearance (min 0.25mm)))
+(rule "Hole hole" (constraint hole_to_hole (min 0.25mm)))
+(rule "Via annulus" (constraint annular_width (min 0.15mm)))
