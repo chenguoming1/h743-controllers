@@ -1,0 +1,551 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-10-15T17:22:21.253608+00:00",
+  "source_board": {
+    "path": "/workspace/shared/nexus-main-placement-fix/stage36/hardware/nexus-style-fc.kicad_pcb",
+    "sha256": "bed37199e8d62b8135a27b9e182f8e8f584f1a9fb722cb6efb5d4c87b2a320b8",
+    "auxiliary_origin_pcb_mm": [
+      99.95,
+      133.15
+    ]
+  },
+  "coordinate_convention": "Gerber x = PCB x - 99.95; Gerber y = 133.15 - PCB y; absolute mm, 4.6",
+  "method": "Strict modal Gerber primitive/aperture parser; exact integer-coordinate matches, both segment directions; region edges excluded from track-stroke inventory. Names U5.3/SW_5V/sensor describe task targets; geometric assertions use exact coordinates and apertures, not labels.",
+  "replacement_path": {
+    "pcb_points_mm": [
+      [
+        103.55,
+        110.15
+      ],
+      [
+        103.55,
+        110.65
+      ],
+      [
+        102.6,
+        111.675
+      ]
+    ],
+    "width_mm": 0.25,
+    "evidence": [
+      {
+        "line": 1766,
+        "raw": "X3600000Y22500000D01*",
+        "aperture": 44,
+        "aperture_selection_line": 1758,
+        "polarity": "dark",
+        "interpolation": 1,
+        "file": "nexus-style-fc-B_Cu.gbl",
+        "aperture_definition": {
+          "code": 44,
+          "shape": "C",
+          "parameters_mm": [
+            0.25
+          ],
+          "declaration_line": 137,
+          "declaration": "%ADD44C,0.250000*%"
+        },
+        "start_gerber_mm": [
+          3.6,
+          23.0
+        ],
+        "end_gerber_mm": [
+          3.6,
+          22.5
+        ]
+      },
+      {
+        "line": 1760,
+        "raw": "X2650000Y21475000D01*",
+        "aperture": 44,
+        "aperture_selection_line": 1758,
+        "polarity": "dark",
+        "interpolation": 1,
+        "file": "nexus-style-fc-B_Cu.gbl",
+        "aperture_definition": {
+          "code": 44,
+          "shape": "C",
+          "parameters_mm": [
+            0.25
+          ],
+          "declaration_line": 137,
+          "declaration": "%ADD44C,0.250000*%"
+        },
+        "start_gerber_mm": [
+          3.6,
+          22.5
+        ],
+        "end_gerber_mm": [
+          2.65,
+          21.475
+        ]
+      }
+    ]
+  },
+  "u5_pin3_aperture": {
+    "pcb_center_mm": [
+      103.05,
+      110.15
+    ],
+    "shape": "vertical oval",
+    "size_mm": [
+      0.28,
+      0.85
+    ],
+    "copper_mask_paste_geometry_identical": true,
+    "evidence": [
+      {
+        "line": 391,
+        "raw": "X3100000Y23000000D03*",
+        "aperture": 38,
+        "aperture_selection_line": 388,
+        "polarity": "dark",
+        "file": "nexus-style-fc-B_Cu.gbl",
+        "aperture_definition": {
+          "code": 38,
+          "shape": "O",
+          "parameters_mm": [
+            0.28,
+            0.85
+          ],
+          "declaration_line": 119,
+          "declaration": "%ADD38O,0.280000X0.850000*%"
+        },
+        "at_gerber_mm": [
+          3.1,
+          23.0
+        ]
+      },
+      {
+        "line": 306,
+        "raw": "X3100000Y23000000D03*",
+        "aperture": 40,
+        "aperture_selection_line": 303,
+        "polarity": "dark",
+        "file": "nexus-style-fc-B_Mask.gbs",
+        "aperture_definition": {
+          "code": 40,
+          "shape": "O",
+          "parameters_mm": [
+            0.28,
+            0.85
+          ],
+          "declaration_line": 64,
+          "declaration": "%ADD40O,0.280000X0.850000*%"
+        },
+        "at_gerber_mm": [
+          3.1,
+          23.0
+        ]
+      },
+      {
+        "line": 276,
+        "raw": "X3100000Y23000000D03*",
+        "aperture": 34,
+        "aperture_selection_line": 273,
+        "polarity": "dark",
+        "file": "nexus-style-fc-B_Paste.gbp",
+        "aperture_definition": {
+          "code": 34,
+          "shape": "O",
+          "parameters_mm": [
+            0.28,
+            0.85
+          ],
+          "declaration_line": 58,
+          "declaration": "%ADD34O,0.280000X0.850000*%"
+        },
+        "at_gerber_mm": [
+          3.1,
+          23.0
+        ]
+      }
+    ]
+  },
+  "whole_new_path_gap": {
+    "method": "Minimum segment-to-oval-spine distance minus 0.125 mm track radius and 0.14 mm oval radius; includes full segments and circular endcaps.",
+    "oval_spine_gerber_mm": [
+      [
+        3.1,
+        22.715
+      ],
+      [
+        3.1,
+        23.285
+      ]
+    ],
+    "per_segment": [
+      {
+        "pcb_segment_mm": [
+          [
+            103.55,
+            110.15
+          ],
+          [
+            103.55,
+            110.65
+          ]
+        ],
+        "centerline_distance_mm": 0.5,
+        "trace_closest_gerber_mm": [
+          3.6,
+          23.0
+        ],
+        "oval_spine_closest_gerber_mm": [
+          3.1,
+          23.0
+        ],
+        "edge_gap_mm": 0.235
+      },
+      {
+        "pcb_segment_mm": [
+          [
+            103.55,
+            110.65
+          ],
+          [
+            102.6,
+            111.675
+          ]
+        ],
+        "centerline_distance_mm": 0.5128645513193507,
+        "trace_closest_gerber_mm": [
+          3.4761503999999994,
+          22.3663728
+        ],
+        "oval_spine_closest_gerber_mm": [
+          3.1,
+          22.715
+        ],
+        "edge_gap_mm": 0.2478645513193507
+      }
+    ],
+    "minimum_edge_gap_mm": 0.235,
+    "applies_to": [
+      "B.Cu U5.3",
+      "B.Mask U5.3 opening",
+      "B.Paste U5.3 aperture"
+    ]
+  },
+  "removed_stroke_checks": [
+    {
+      "description": "Former direct SW_5V diagonal",
+      "file": "nexus-style-fc-B_Cu.gbl",
+      "pcb_endpoints_mm": [
+        [
+          103.55,
+          110.15
+        ],
+        [
+          102.6,
+          111.675
+        ]
+      ],
+      "gerber_endpoints_mm": [
+        [
+          3.6,
+          23.0
+        ],
+        [
+          2.65,
+          21.475
+        ]
+      ],
+      "matching_linear_stroke_count_either_direction_any_aperture": 0
+    },
+    {
+      "description": "Front dead sensor branch segment 1",
+      "file": "nexus-style-fc-F_Cu.gtl",
+      "pcb_endpoints_mm": [
+        [
+          121.320142,
+          110.390037
+        ],
+        [
+          119.266,
+          110.395
+        ]
+      ],
+      "gerber_endpoints_mm": [
+        [
+          21.370142,
+          22.759963
+        ],
+        [
+          19.316,
+          22.755
+        ]
+      ],
+      "matching_linear_stroke_count_either_direction_any_aperture": 0
+    },
+    {
+      "description": "Front dead sensor branch segment 2",
+      "file": "nexus-style-fc-F_Cu.gtl",
+      "pcb_endpoints_mm": [
+        [
+          119.266,
+          110.395
+        ],
+        [
+          118.984415,
+          110.156542
+        ]
+      ],
+      "gerber_endpoints_mm": [
+        [
+          19.316,
+          22.755
+        ],
+        [
+          19.034415,
+          22.993458
+        ]
+      ],
+      "matching_linear_stroke_count_either_direction_any_aperture": 0
+    },
+    {
+      "description": "Front dead sensor branch segment 3",
+      "file": "nexus-style-fc-F_Cu.gtl",
+      "pcb_endpoints_mm": [
+        [
+          118.984415,
+          110.156542
+        ],
+        [
+          118.894,
+          110.024
+        ]
+      ],
+      "gerber_endpoints_mm": [
+        [
+          19.034415,
+          22.993458
+        ],
+        [
+          18.944,
+          23.126
+        ]
+      ],
+      "matching_linear_stroke_count_either_direction_any_aperture": 0
+    },
+    {
+      "description": "Front dead sensor branch segment 4",
+      "file": "nexus-style-fc-F_Cu.gtl",
+      "pcb_endpoints_mm": [
+        [
+          118.894,
+          110.024
+        ],
+        [
+          118.879858,
+          108.918253
+        ]
+      ],
+      "gerber_endpoints_mm": [
+        [
+          18.944,
+          23.126
+        ],
+        [
+          18.929858,
+          24.231747
+        ]
+      ],
+      "matching_linear_stroke_count_either_direction_any_aperture": 0
+    },
+    {
+      "description": "Bottom dead sensor branch segment",
+      "file": "nexus-style-fc-B_Cu.gbl",
+      "pcb_endpoints_mm": [
+        [
+          120.85,
+          109.9
+        ],
+        [
+          121.320142,
+          110.390037
+        ]
+      ],
+      "gerber_endpoints_mm": [
+        [
+          20.9,
+          23.25
+        ],
+        [
+          21.370142,
+          22.759963
+        ]
+      ],
+      "matching_linear_stroke_count_either_direction_any_aperture": 0
+    }
+  ],
+  "removed_through_via": {
+    "pcb_center_mm": [
+      121.320142,
+      110.390037
+    ],
+    "former_copper_diameter_mm": 0.45,
+    "former_drill_mm": 0.2,
+    "gerber_center_mm": [
+      21.370142,
+      22.759963
+    ],
+    "all_copper_layers": [
+      {
+        "file": "nexus-style-fc-B_Cu.gbl",
+        "flash_count_any_aperture_at_exact_center": 0
+      },
+      {
+        "file": "nexus-style-fc-F_Cu.gtl",
+        "flash_count_any_aperture_at_exact_center": 0
+      },
+      {
+        "file": "nexus-style-fc-In1_Cu.g1",
+        "flash_count_any_aperture_at_exact_center": 0
+      },
+      {
+        "file": "nexus-style-fc-In2_Cu.g2",
+        "flash_count_any_aperture_at_exact_center": 0
+      },
+      {
+        "file": "nexus-style-fc-In3_Cu.g3",
+        "flash_count_any_aperture_at_exact_center": 0
+      },
+      {
+        "file": "nexus-style-fc-In4_Cu.g4",
+        "flash_count_any_aperture_at_exact_center": 0
+      }
+    ],
+    "pth_drill_absence": {
+      "file": "nexus-style-fc-PTH.drl",
+      "nearest_drill": {
+        "line": 239,
+        "tool": 1,
+        "diameter_mm": 0.2,
+        "at_gerber_mm": [
+          21.639,
+          22.225
+        ]
+      },
+      "nearest_distance_mm": 0.5987236721000736,
+      "rounding_allowance_mm": 0.0007071067811865476
+    }
+  },
+  "manufacturing_sha256": {
+    "nexus-style-fc-B_Cu.gbl": "748d0176dc70bada0e5634a785a5f9b3e2d885fdebc12b6a9109fc0f94409eda",
+    "nexus-style-fc-B_Mask.gbs": "96249a5356a744fff70b0480ece60d5a9f9fbb14481d10247dc7162e59995459",
+    "nexus-style-fc-B_Paste.gbp": "a6f2e29ca942a2acdad79a6922c976897738e33302da06da47aa8cd1ef908833",
+    "nexus-style-fc-B_Silkscreen.gbo": "2e3c91ae650a47976d3c9278e89493ad60c10d78f9ea872fff64ae1f66636e16",
+    "nexus-style-fc-Edge_Cuts.gm1": "dec38f5700296645cc9a881067d176816bb515cc094e6d74b90f90e24e657ca4",
+    "nexus-style-fc-F_Cu.gtl": "9659e5f80eb111c8773dbb481d74cd3a3010913b3de443ee408e1db680f35695",
+    "nexus-style-fc-F_Mask.gts": "69fa630f86bc2b30442e4e8fce276c9b986570147efd850750a801e320626d90",
+    "nexus-style-fc-F_Paste.gtp": "25dedb2a100bfec48eff03be5b6b497ff7c99e5e4280720bdb0d370780484576",
+    "nexus-style-fc-F_Silkscreen.gto": "e3ae1f8dfc8ffb2baa48b6f58bfa702494469bfc5e888eb6a06b7939531b716a",
+    "nexus-style-fc-In1_Cu.g1": "b565c26a3c657be62533ea60d2bb731ab69be250e5b741204502ec92ed67c9ad",
+    "nexus-style-fc-In2_Cu.g2": "23fb22c1ed864a0fdbe92964e3fff13e7790d34bacf6a761a495e1a6d8b2cc1c",
+    "nexus-style-fc-In3_Cu.g3": "cd509256accd63fbcc96d2c2c60b213da2b306ee41146d8ca7a8c2e6462eb7c3",
+    "nexus-style-fc-In4_Cu.g4": "92719644eeb460851342adc66c061d5f60abb4df6d6b3c9dc49f44035c55ff12",
+    "nexus-style-fc-NPTH.drl": "c195ca329f029da7c33000d31ebe4ad7659598d83702aa43bb0133f533e90405",
+    "nexus-style-fc-PTH.drl": "b694c97cc495c841c2ed8e5150876011a79971fe3420604b2b7ac6b0baef59b1",
+    "nexus-style-fc-job.gbrjob": "768293b31005a4d885a7ccd236273e9b73ca161ba8c103430d2f9a68023d2136"
+  },
+  "parsed_inventories": {
+    "nexus-style-fc-B_Cu.gbl": {
+      "apertures": 41,
+      "linear_strokes": 511,
+      "arc_strokes": 0,
+      "flashes": 438,
+      "region_edges": 6605
+    },
+    "nexus-style-fc-B_Mask.gbs": {
+      "apertures": 34,
+      "linear_strokes": 0,
+      "arc_strokes": 0,
+      "flashes": 213,
+      "region_edges": 0
+    },
+    "nexus-style-fc-B_Paste.gbp": {
+      "apertures": 28,
+      "linear_strokes": 0,
+      "arc_strokes": 0,
+      "flashes": 196,
+      "region_edges": 0
+    },
+    "nexus-style-fc-B_Silkscreen.gbo": {
+      "apertures": 42,
+      "linear_strokes": 142,
+      "arc_strokes": 39,
+      "flashes": 213,
+      "region_edges": 19
+    },
+    "nexus-style-fc-Edge_Cuts.gm1": {
+      "apertures": 2,
+      "linear_strokes": 12,
+      "arc_strokes": 12,
+      "flashes": 0,
+      "region_edges": 0
+    },
+    "nexus-style-fc-F_Cu.gtl": {
+      "apertures": 36,
+      "linear_strokes": 459,
+      "arc_strokes": 0,
+      "flashes": 374,
+      "region_edges": 7672
+    },
+    "nexus-style-fc-F_Mask.gts": {
+      "apertures": 28,
+      "linear_strokes": 0,
+      "arc_strokes": 0,
+      "flashes": 149,
+      "region_edges": 0
+    },
+    "nexus-style-fc-F_Paste.gtp": {
+      "apertures": 24,
+      "linear_strokes": 0,
+      "arc_strokes": 0,
+      "flashes": 138,
+      "region_edges": 0
+    },
+    "nexus-style-fc-F_Silkscreen.gto": {
+      "apertures": 36,
+      "linear_strokes": 187,
+      "arc_strokes": 70,
+      "flashes": 149,
+      "region_edges": 4
+    },
+    "nexus-style-fc-In1_Cu.g1": {
+      "apertures": 5,
+      "linear_strokes": 6,
+      "arc_strokes": 0,
+      "flashes": 231,
+      "region_edges": 5586
+    },
+    "nexus-style-fc-In2_Cu.g2": {
+      "apertures": 8,
+      "linear_strokes": 240,
+      "arc_strokes": 0,
+      "flashes": 231,
+      "region_edges": 4881
+    },
+    "nexus-style-fc-In3_Cu.g3": {
+      "apertures": 11,
+      "linear_strokes": 275,
+      "arc_strokes": 16,
+      "flashes": 231,
+      "region_edges": 4967
+    },
+    "nexus-style-fc-In4_Cu.g4": {
+      "apertures": 5,
+      "linear_strokes": 5,
+      "arc_strokes": 0,
+      "flashes": 231,
+      "region_edges": 5605
+    }
+  },
+  "input_hashes_unchanged_after_verification": true,
+  "verifier_sha256": "201cc5de3fc60411400b70ee23cc8646136a77e0e857a331b5c22485c8d861e4",
+  "limits": [
+    "This is the bounded manufacturing-geometry proof, not a new fabrication/assembly acceptance or electrical qualification.",
+    "No refill, native SaveBoard, DRC, export, source edit or external upload performed. Native 0-error/0-open/0-parity acceptance is supplied context, not rerun here."
+  ]
+}

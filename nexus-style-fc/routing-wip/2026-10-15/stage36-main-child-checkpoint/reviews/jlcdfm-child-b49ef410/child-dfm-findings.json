@@ -1,0 +1,1422 @@
+{
+  "revision": "continuous-vx-b49ef410",
+  "source_sha256": "b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6",
+  "input_files_sha256": {
+    "hardware/header-board/nexus-header-board.kicad_pcb": "b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6",
+    "CHILD-ENGINEERING-SEAL.json": "d44c47508536b1a8db8df056287a2201aa5fba298a809afff421cc48f7c945fc",
+    "verification/wip-fabrication/source-binding.json": "98e2c9547a89ab6974f156c1fbe0b991a00f8faff3f5092902dd67fbb424c91f",
+    "verification/wip-fabrication/nexus-header-board-gerbers.zip": "79992a19ed45803321ac0dff7762fc96e10b41c2f740df3c2fac40d74067c21b",
+    "verification/wip-fabrication/nexus-header-board-bom-jlc.csv": "6a2b3bbf1d27e84750eeaf034740681aaec0cd7413f736f5d7a42f3fed85e706",
+    "verification/wip-fabrication/nexus-header-board-cpl-jlc.csv": "bf4bcb800239e4bae3c8b60adf1c5857b3636ae2fb359dbaedc06789f03488cf"
+  },
+  "destination": "https://jlcdfm.com/",
+  "browser": "dot cloud Chrome",
+  "site_report_generated_at_literal": "2026-10-15 07:47:10",
+  "site_time_zone": "not exposed",
+  "capture_date_utc": "2026-10-15",
+  "detected_layers": 2,
+  "detected_size_mm": [
+    22.4,
+    11.0
+  ],
+  "source_declarations": {
+    "layers": 2,
+    "nominal_board_thickness_mm": 1.6,
+    "nominal_copper_oz_each_face": 2,
+    "stackup_mm": {
+      "front_copper": 0.07,
+      "core": 1.44,
+      "back_copper": 0.07,
+      "front_mask": 0.01,
+      "back_mask": 0.01
+    },
+    "finish": "ENIG",
+    "via_process": "Ordinary tented; unfilled/unplugged/uncapped"
+  },
+  "applied_rules": {
+    "name": "Built-in system rules",
+    "available_presets": [
+      "Built-in system rules"
+    ],
+    "two_oz_selector_exposed": false,
+    "board_thickness_or_finish_selector_exposed": false,
+    "rules_changed": false,
+    "factory_process_acceptance": false
+  },
+  "assembly_input": {
+    "reference": "J1",
+    "matched_lcsc": "C32713294",
+    "matched_part": "HX PZ2.54-3x7P ZZ",
+    "technology": "Through Hole",
+    "confirmed_bom_rows": 1,
+    "cpl_side": "Top",
+    "cpl_rotation_deg": 0,
+    "cpl_mid_x_mm": 11.225,
+    "cpl_mid_y_mm": 7.465,
+    "placement_changed": false
+  },
+  "summary": {
+    "pcb_displayed_danger": 0,
+    "pcb_displayed_warning": 32,
+    "pcb_displayed_good": 141,
+    "assembly_displayed_danger": 0,
+    "assembly_displayed_warning": 7,
+    "assembly_displayed_good": 50
+  },
+  "thresholds": {
+    "annular_ring": {
+      "rule_values_mil": [
+        4,
+        6,
+        8
+      ],
+      "danger_warning_boundary_mm": 0.1016,
+      "warning_good_boundary_mm": 0.1524,
+      "warning_measurement_displayed_mm": 0.15,
+      "aperture_geometry_interpretation_mm": {
+        "hole": 0.3,
+        "diameter": 0.6,
+        "nominal_annulus": 0.15
+      }
+    },
+    "tht_to_smd": {
+      "detail_displayed_boundaries_mm": [
+        2.03,
+        3.05
+      ],
+      "warning_values_displayed_mm_range": [
+        2.35,
+        2.85
+      ],
+      "front_warning_count": 8,
+      "back_warning_count": 18,
+      "exact_unrounded_rule_values": "not exposed in inspected preset table"
+    },
+    "component_to_board_edge": {
+      "rule_values_mil": [
+        20,
+        32,
+        40
+      ],
+      "danger_warning_boundary_mm": 0.508,
+      "warning_good_boundary_mm": 0.8128,
+      "warning_measurement_displayed_mm": 0.56,
+      "warning_count": 7,
+      "reference": "J1"
+    },
+    "trace_width": {
+      "rule_values_mil": [
+        4,
+        5,
+        8
+      ],
+      "minimum_displayed_mm": 0.2,
+      "classification": "Good"
+    },
+    "trace_spacing": {
+      "rule_values_mil": [
+        4,
+        6,
+        8
+      ],
+      "zero_result_rows": true,
+      "minimum_measured_spacing": "not provided"
+    },
+    "pad_to_board_edge": {
+      "rule_values_mil": [
+        5,
+        8,
+        16
+      ],
+      "minimum_displayed_mm": 0.23
+    },
+    "pad_spacing": {
+      "rule_values_mil": [
+        4,
+        6,
+        8
+      ],
+      "minimum_displayed_mm": 0.37
+    },
+    "pth_to_trace_clearance": {
+      "rule_values_mil": [
+        7,
+        9,
+        12
+      ],
+      "minimum_displayed_mm": 0.44
+    }
+  },
+  "report_rows": [
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Sharp trace corner",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Sharp trace corner \uff08Check for sharp corners in traces\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "BGA pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "BGA pad \uff08Check BGA pads on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Via placed within a pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Via placed within a pad \uff08Check if there is a via placed within a pad\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Trace to board edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Trace to board edge \uff08Detect traces too close to the board edge\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Trace spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Trace spacing \uff08Measure spacing between adjacent parallel traces\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Unconnected trace end",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Unconnected trace end \uff08Free-standing trace ends not connected to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Trace width",
+      "danger": 0,
+      "warning": 0,
+      "good": 34,
+      "site_summary_row": "Trace width \uff08Trace width information\uff09 0.2mm Good No nexus-header-board-F_Cu.gtl nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a34"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Fiducial",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Fiducial \uff08Detect fiducial marks on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Pad to board edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 25,
+      "site_summary_row": "Pad to board edge \uff08Measure distance of pads from the board edge\uff09 0.23mm Good No nexus-header-board-F_Cu.gtl nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a25"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Pad spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 4,
+      "site_summary_row": "Pad spacing \uff08Measure pad to pad spacing\uff09 0.37mm Good No nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a4"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Plated through-hole to trace clearance",
+      "danger": 0,
+      "warning": 0,
+      "good": 11,
+      "site_summary_row": "Plated through-hole to trace clearance \uff08Measure clearance of plated through-holes to traces\uff09 0.44mm Good No nexus-header-board-F_Cu.gtl nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a11"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Annular ring",
+      "danger": 0,
+      "warning": 6,
+      "good": 21,
+      "site_summary_row": "Annular ring \uff08Annular ring width of pads compared to holes\uff09 0.15mm Warning No nexus-header-board-F_Cu.gtl nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a6 Good\uff1a21"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "tht to smd",
+      "danger": 0,
+      "warning": 26,
+      "good": 44,
+      "site_summary_row": "tht to smd \uff08Detect clearance of vias to pads\uff09 2.35mm Warning No nexus-header-board-F_Cu.gtl nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a26 Good\uff1a44"
+    },
+    {
+      "section": "PCB DFM>Routing layer analysis",
+      "check": "Via to pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 2,
+      "site_summary_row": "Via to pad \uff08Detect clearance of vias to pads\uff09 0.2mm Good No nexus-header-board-F_Cu.gtl nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a2"
+    },
+    {
+      "section": "PCB DFM>Soldermask layer analysis",
+      "check": "Soldermask bridge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Soldermask bridge \uff08Detect distance between parallel soldermask opening edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Soldermask layer analysis",
+      "check": "Solder mask opening exposing trace",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Solder mask opening exposing trace \uff08Detect clearance of solder mask openings to nearby traces\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Soldermask layer analysis",
+      "check": "Soldermask opening with multiple segments",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Soldermask opening with multiple segments \uff08Check if solder mask openings are constructed from multiple geometric shapes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Soldermask layer analysis",
+      "check": "Negative soldermask expansion",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Negative soldermask expansion \uff08Detect solder mask openings smaller than their corresponding pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Silkscreen layer analysis",
+      "check": "Silkscreen to pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Silkscreen to pad \uff08Detect clearance of silkscreen to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Silkscreen layer analysis",
+      "check": "Silkscreen to hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Silkscreen to hole \uff08Detect clearance of silkscreen to holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Silkscreen layer analysis",
+      "check": "Silkscreen line width",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Silkscreen line width \uff08Check silkscreen line width\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Unconnected via",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Missing plated through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Missing plated through-hole \uff08Detect top and bottom pads at the same location without plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Unconnected via",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Plated through-hole spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Plated through-hole spacing \uff08Measure spacing between plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Short slot detection",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Short slot detection \uff08Detect slots shorter than twice their width\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Slot width check",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Slot width check \uff08Measure slot width\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Via to PTH spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Via to PTH spacing \uff08Measure spacing of vias to plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "PCB DFM>Drill layer analysis",
+      "check": "Unconnected via",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component collision warning",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component collision warning \uff08Component collision warning;Component 1;Component 2\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 50,
+      "site_summary_row": "Component spacing \uff08Component to component spacing;Component 1;Component 2\uff09 1.63mm Good No component_+_top Danger\uff1a0 Warning\uff1a0 Good\uff1a50"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component to board edge distance",
+      "danger": 0,
+      "warning": 7,
+      "good": 0,
+      "site_summary_row": "Component to board edge distance \uff08Measure distance from component outline to the board edge\uff09 0.56mm Warning No component_+_top Danger\uff1a0 Warning\uff1a7 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Lead to hole distance",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Lead to hole distance \uff08Detect clearance of component leads to holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Coponent pad spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Coponent pad spacing \uff08Detect clearance between pads of the same component\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component clipped by board outline",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component clipped by board outline \uff08Detect component boundary clipping by the board outline\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Pin inner edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Pin inner edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Pin left edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Pin left edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Pin without pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Pin without pad \uff08Detect if component pins without pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Pin outer edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Pin outer edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Pin right edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Pin right edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Missing hole for component pin",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Missing hole for component pin \uff08Detect component through-hole pins without corresponding holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    },
+    {
+      "section": "SMT DFM>Component assembly analysis",
+      "check": "Lead area overlapping pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "site_summary_row": "Lead area overlapping pad \uff08Detect insufficient overlap between component pins and pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    }
+  ],
+  "detail_tables": [
+    {
+      "receipt": "annular-front-details",
+      "layer": "F.Cu",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Warning",
+          "displayed_value_mm": 0.15,
+          "site_objects": "r11.811 r23.622"
+        },
+        {
+          "site_row": 2,
+          "classification": "Warning",
+          "displayed_value_mm": 0.15,
+          "site_objects": "r11.811 r23.622"
+        },
+        {
+          "site_row": 3,
+          "classification": "Warning",
+          "displayed_value_mm": 0.15,
+          "site_objects": "r11.811 r23.622"
+        },
+        {
+          "site_row": 4,
+          "classification": "Warning",
+          "displayed_value_mm": 0.15,
+          "site_objects": "r11.811 r23.622"
+        },
+        {
+          "site_row": 5,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 s59.0551"
+        },
+        {
+          "site_row": 6,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 7,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 8,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 9,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 10,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 11,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    },
+    {
+      "receipt": "annular-bottom-details",
+      "layer": "B.Cu",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Warning",
+          "displayed_value_mm": 0.15,
+          "site_objects": "r11.811 r23.622"
+        },
+        {
+          "site_row": 2,
+          "classification": "Warning",
+          "displayed_value_mm": 0.15,
+          "site_objects": "r11.811 r23.622"
+        },
+        {
+          "site_row": 3,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 s59.0551"
+        },
+        {
+          "site_row": 4,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 5,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 6,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 7,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 8,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 9,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 10,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 11,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 12,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 13,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 14,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 15,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        },
+        {
+          "site_row": 16,
+          "classification": "Good",
+          "displayed_value_mm": 0.25,
+          "site_objects": "r39.3701 r59.0551"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    },
+    {
+      "receipt": "tht-to-smd-front-details",
+      "layer": "F.Cu",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 2,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 3,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 4,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 5,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 6,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 7,
+          "classification": "Warning",
+          "displayed_value_mm": 2.76,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 8,
+          "classification": "Warning",
+          "displayed_value_mm": 2.76,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 9,
+          "classification": "Good",
+          "displayed_value_mm": 4.47,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 10,
+          "classification": "Good",
+          "displayed_value_mm": 4.47,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 11,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 12,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 13,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 14,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 15,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 16,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 17,
+          "classification": "Good",
+          "displayed_value_mm": 5.13,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 18,
+          "classification": "Good",
+          "displayed_value_mm": 5.13,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 19,
+          "classification": "Good",
+          "displayed_value_mm": 6.28,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        },
+        {
+          "site_row": 20,
+          "classification": "Good",
+          "displayed_value_mm": 6.28,
+          "site_objects": "r59.0551 rect310.709x60.8661"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    },
+    {
+      "receipt": "tht-to-smd-bottom-details",
+      "layer": "B.Cu",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 2,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 3,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 4,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 5,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 6,
+          "classification": "Warning",
+          "displayed_value_mm": 2.35,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 7,
+          "classification": "Warning",
+          "displayed_value_mm": 2.36,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 8,
+          "classification": "Warning",
+          "displayed_value_mm": 2.43,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 9,
+          "classification": "Warning",
+          "displayed_value_mm": 2.43,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 10,
+          "classification": "Warning",
+          "displayed_value_mm": 2.54,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 11,
+          "classification": "Warning",
+          "displayed_value_mm": 2.56,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 12,
+          "classification": "Warning",
+          "displayed_value_mm": 2.58,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 13,
+          "classification": "Warning",
+          "displayed_value_mm": 2.74,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 14,
+          "classification": "Warning",
+          "displayed_value_mm": 2.76,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 15,
+          "classification": "Warning",
+          "displayed_value_mm": 2.76,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 16,
+          "classification": "Warning",
+          "displayed_value_mm": 2.78,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 17,
+          "classification": "Warning",
+          "displayed_value_mm": 2.85,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 18,
+          "classification": "Warning",
+          "displayed_value_mm": 2.85,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 19,
+          "classification": "Good",
+          "displayed_value_mm": 3.09,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 20,
+          "classification": "Good",
+          "displayed_value_mm": 3.33,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 21,
+          "classification": "Good",
+          "displayed_value_mm": 3.42,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 22,
+          "classification": "Good",
+          "displayed_value_mm": 3.75,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 23,
+          "classification": "Good",
+          "displayed_value_mm": 3.75,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 24,
+          "classification": "Good",
+          "displayed_value_mm": 4.02,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 25,
+          "classification": "Good",
+          "displayed_value_mm": 4.08,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 26,
+          "classification": "Good",
+          "displayed_value_mm": 4.43,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 27,
+          "classification": "Good",
+          "displayed_value_mm": 4.47,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 28,
+          "classification": "Good",
+          "displayed_value_mm": 4.47,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 29,
+          "classification": "Good",
+          "displayed_value_mm": 4.5,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 30,
+          "classification": "Good",
+          "displayed_value_mm": 4.6,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 31,
+          "classification": "Good",
+          "displayed_value_mm": 4.6,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 32,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 33,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 34,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 35,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 36,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 37,
+          "classification": "Good",
+          "displayed_value_mm": 4.89,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 38,
+          "classification": "Good",
+          "displayed_value_mm": 4.9,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 39,
+          "classification": "Good",
+          "displayed_value_mm": 4.94,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 40,
+          "classification": "Good",
+          "displayed_value_mm": 4.94,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 41,
+          "classification": "Good",
+          "displayed_value_mm": 4.99,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 42,
+          "classification": "Good",
+          "displayed_value_mm": 5.01,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 43,
+          "classification": "Good",
+          "displayed_value_mm": 5.02,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 44,
+          "classification": "Good",
+          "displayed_value_mm": 5.12,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 45,
+          "classification": "Good",
+          "displayed_value_mm": 5.13,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 46,
+          "classification": "Good",
+          "displayed_value_mm": 5.13,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 47,
+          "classification": "Good",
+          "displayed_value_mm": 5.14,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        },
+        {
+          "site_row": 48,
+          "classification": "Good",
+          "displayed_value_mm": 5.18,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 49,
+          "classification": "Good",
+          "displayed_value_mm": 5.18,
+          "site_objects": "r59.0551 rect62.9921x60.8661"
+        },
+        {
+          "site_row": 50,
+          "classification": "Good",
+          "displayed_value_mm": 5.3,
+          "site_objects": "r59.0551 rect47.2441x60.8661"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    },
+    {
+      "receipt": "trace-width-front-details",
+      "layer": "F.Cu",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    },
+    {
+      "receipt": "trace-width-bottom-details",
+      "layer": "B.Cu",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 2,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 3,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 4,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 5,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 6,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 7,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 8,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 9,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 10,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 11,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 12,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 13,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 14,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 15,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 16,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 17,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 18,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 19,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 20,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 21,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 22,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 23,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 24,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 25,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 26,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 27,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 28,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 29,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 30,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 31,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 32,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        },
+        {
+          "site_row": 33,
+          "classification": "Good",
+          "displayed_value_mm": 0.2,
+          "site_objects": "r7.87402 null"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    },
+    {
+      "receipt": "assembly-edge-details",
+      "layer": "component_+_top",
+      "rows": [
+        {
+          "site_row": 1,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        },
+        {
+          "site_row": 2,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        },
+        {
+          "site_row": 3,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        },
+        {
+          "site_row": 4,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        },
+        {
+          "site_row": 5,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        },
+        {
+          "site_row": 6,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        },
+        {
+          "site_row": 7,
+          "classification": "Warning",
+          "displayed_value_mm": 0.56,
+          "site_objects": "J1 r1.9685"
+        }
+      ],
+      "coordinates": "not exposed in retrieved tables"
+    }
+  ],
+  "limitations": [
+    "Design declarations do not guarantee delivered copper or finished thickness.",
+    "Proposed 60um minimum copper is not a published supplier guarantee.",
+    "Matched-profile mechanical tolerances and finished edge registration remain open.",
+    "J1 C32713294 is through-hole; ordinary SMT placement acceptance does not qualify insertion/soldering.",
+    "DFM does not validate current, thermal, joint, vibration or flight performance.",
+    "Default rule preset does not certify 2 oz fabrication. Nominal 2 oz, 1.6 mm and ENIG remain source declarations, not accepted manufacturing settings.",
+    "DFM counts are item/primitive findings, not counts of components, and the same feature may appear on both sides.",
+    "Bottom tht-to-smd category states 68 results but only first 50 are shown; displayed table retains 18 warnings and 32 good rows.",
+    "Graphical board and component rendering did not complete. Browser reported 3D models unsupported. Exact XY locations and pin IDs were not recovered.",
+    "Some zero-result report rows show No for measurements/screenshots/layers. Zero is not proof of comprehensive coverage.",
+    "PDF export remained Exporting PDF, please wait after a runtime timeout; no downloaded PDF was obtained. Actual report text and screenshots are preserved.",
+    "An initial unauthenticated/stale-session upload selection returned a site error and no project ID; its server storage is unknown. One controlled retry after restored sign-in created the confirmed project. No deletion was attempted."
+  ],
+  "qualification": "NOT RELEASED FOR FABRICATION OR FLIGHT"
+}

@@ -1,0 +1,883 @@
+{
+  "status": "AUTOMATED PCB AND SMT FINDINGS RETURNED; REPORT PDF/GRAPHICS EXPORT BLOCKED; NOT MANUFACTURING RELEASE",
+  "source_stage": "main-assembly-annotation-10",
+  "source_board_sha256": "2099ceb9ff904859a68e288683ee68b2ad74d7741b8b670341baf67bf67e1ea3",
+  "package_manifest_sha256": "7bbe7d69ccab7102c7afa71fdd94c895a571993aa5f1d6d5c6e0bcebfb3c73a0",
+  "browser_action_status": "All six sealed ZIP/BOM/CPL files uploaded once into the two existing DFM projects in dot cloud browser. Main 48 and child 1 BOM rows automatically matched. Unchanged matching saved, and both PCB and SMT checks returned tables. Combined report content preserved from rendered DOM. PDF downloads did not complete; graphics/model loading remained stalled after supported recovery. No duplicate projects or placement edits.",
+  "main": {
+    "zip_sha256": "74fd6d8660deabfc12a24cfe9decdecc5549a3ae8bc61782e9c8de2f57cd2d2c",
+    "auto_detected_layers": 6,
+    "auto_detected_size_mm": [
+      22.4,
+      33.1
+    ],
+    "displayed_results": [
+      {
+        "check": "Pad spacing",
+        "displayed_mm": 0.05,
+        "danger": 9,
+        "warning": 83,
+        "good": 8
+      },
+      {
+        "check": "Via to pad",
+        "displayed_mm": 0.0,
+        "danger": 6,
+        "warning": 1,
+        "good": 7
+      },
+      {
+        "check": "Slot width check",
+        "displayed_mm": 0.6,
+        "danger": 4,
+        "warning": 0,
+        "good": 0
+      },
+      {
+        "check": "Trace spacing",
+        "displayed_mm": 0.14,
+        "danger": 0,
+        "warning": 2,
+        "good": 3
+      },
+      {
+        "check": "Trace width",
+        "displayed_mm": 0.13,
+        "danger": 0,
+        "warning": 96,
+        "good": 4
+      },
+      {
+        "check": "Annular ring",
+        "displayed_mm": 0.12,
+        "danger": 0,
+        "warning": 100,
+        "good": 0
+      }
+    ],
+    "report_rows_observed": [
+      "- row \"Analyze project Analysis results PCB screenshot Layer distribution Statistics\":",
+      "- row \"Sharp trace corner \uff08Check for sharp corners in traces\uff09 null Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a2 Good\uff1a0\":",
+      "- row \"BGA pad \uff08Check BGA pads on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Via placed within a pad \uff08Check if there is a via placed within a pad\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Trace to board edge \uff08Detect traces too close to the board edge\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Trace spacing \uff08Measure spacing between adjacent parallel traces\uff09 0.14mm Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a2 Good\uff1a3\":",
+      "- row \"Unconnected trace end \uff08Free-standing trace ends not connected to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Trace width \uff08Trace width information\uff09 0.13mm Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a96 Good\uff1a4\":",
+      "- row \"Fiducial \uff08Detect fiducial marks on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Pad to board edge \uff08Measure distance of pads from the board edge\uff09 0.28mm Good No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a54\":",
+      "- row \"Pad spacing \uff08Measure pad to pad spacing\uff09 0.05mm Danger No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a9 Warning\uff1a83 Good\uff1a8\":",
+      "- row \"Plated through-hole to trace clearance \uff08Measure clearance of plated through-holes to traces\uff09 0.25mm Good No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a100\":",
+      "- row \"Annular ring \uff08Annular ring width of pads compared to holes\uff09 0.12mm Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a100 Good\uff1a0\":",
+      "- row \"tht to smd \uff08Detect clearance of vias to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Via to pad \uff08Detect clearance of vias to pads\uff09 0mm Danger No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a6 Warning\uff1a1 Good\uff1a7\":",
+      "- row \"Analyze project Analysis results PCB screenshot Layer distribution Statistics\":",
+      "- row \"Soldermask bridge \uff08Detect distance between parallel soldermask opening edges\uff09 0.2mm Good No nexus-style-fc-F_Mask.gts nexus-style-fc-B_Mask.gbs Danger\uff1a0 Warning\uff1a0 Good\uff1a60\":",
+      "- row \"Solder mask opening exposing trace \uff08Detect clearance of solder mask openings to nearby traces\uff09 0.11mm Warning No nexus-style-fc-F_Mask.gts nexus-style-fc-B_Mask.gbs Danger\uff1a0 Warning\uff1a96 Good\uff1a4\":",
+      "- row \"Soldermask opening with multiple segments \uff08Check if solder mask openings are constructed from multiple geometric shapes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Negative soldermask expansion \uff08Detect solder mask openings smaller than their corresponding pads\uff09 0mm Warning No nexus-style-fc-F_Mask.gts nexus-style-fc-B_Mask.gbs Danger\uff1a0 Warning\uff1a9 Good\uff1a0\":",
+      "- row \"Analyze project Analysis results PCB screenshot Layer distribution Statistics\":",
+      "- row \"Silkscreen to pad \uff08Detect clearance of silkscreen to pads\uff09 0mm Danger No nexus-style-fc-F_Silkscreen.gto nexus-style-fc-B_Silkscreen.gbo Danger\uff1a100 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Silkscreen to hole \uff08Detect clearance of silkscreen to holes\uff09 0mm Danger No nexus-style-fc-F_Silkscreen.gto nexus-style-fc-B_Silkscreen.gbo Danger\uff1a100 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Silkscreen line width \uff08Check silkscreen line width\uff09 0.15mm Warning No nexus-style-fc-F_Silkscreen.gto nexus-style-fc-B_Silkscreen.gbo Danger\uff1a0 Warning\uff1a44 Good\uff1a4\":",
+      "- row \"Analyze project Analysis results PCB screenshot Layer distribution Statistics\":",
+      "- row \"Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Missing plated through-hole \uff08Detect top and bottom pads at the same location without plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Plated through-hole spacing \uff08Measure spacing between plated through-holes\uff09 0.25mm Good No nexus-style-fc-PTH.drl Danger\uff1a0 Warning\uff1a0 Good\uff1a1\":",
+      "- row \"Short slot detection \uff08Detect slots shorter than twice their width\uff09 0.25mm Warning No nexus-style-fc-PTH.drl Danger\uff1a0 Warning\uff1a4 Good\uff1a0\":",
+      "- row \"Slot width check \uff08Measure slot width\uff09 0.6mm Danger No nexus-style-fc-PTH.drl Danger\uff1a4 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Via to PTH spacing \uff08Measure spacing of vias to plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0\":",
+      "- row \"Analyze project Statistics Operation\":",
+      "- row \"Sharp trace corner 0, 2, 0 Details\":",
+      "- row \"BGA pad 0, 0, 0 Details\":",
+      "- row \"Via placed within a pad 0, 0, 0 Details\":",
+      "- row \"Trace to board edge 0, 0, 0 Details\":",
+      "- row \"Trace spacing 0, 2, 3 Details\":",
+      "- row \"Unconnected trace end 0, 0, 0 Details\":",
+      "- row \"Trace width 0, 96, 4 Details\":",
+      "- row \"Fiducial 0, 0, 0 Details\":",
+      "- row \"Pad to board edge 0, 0, 54 Details\":",
+      "- row \"Pad spacing 9, 83, 8 Details\":",
+      "- row \"Plated through-hole to trace clearance 0, 0, 100 Details\":",
+      "- row \"Annular ring 0, 100, 0 Details\":",
+      "- row \"tht to smd 0, 0, 0 Details\":",
+      "- row \"Via to pad 6, 1, 7 Details\":",
+      "- row \"Soldermask bridge 0, 0, 60 Details\":",
+      "- row \"Solder mask opening exposing trace 0, 96, 4 Details\":",
+      "- row \"Soldermask opening with multiple segments 0, 0, 0 Details\":",
+      "- row \"Negative soldermask expansion 0, 9, 0 Details\":",
+      "- row \"Silkscreen to pad 100, 0, 0 Details\":",
+      "- row \"Silkscreen to hole 100, 0, 0 Details\":",
+      "- row \"Silkscreen line width 0, 44, 4 Details\":",
+      "- row \"Unconnected via 0, 0, 0 Details\":",
+      "- row \"Missing plated through-hole 0, 0, 0 Details\":",
+      "- row \"Unconnected via 0, 0, 0 Details\":",
+      "- row \"Plated through-hole spacing 0, 0, 1 Details\":",
+      "- row \"Short slot detection 0, 4, 0 Details\":",
+      "- row \"Slot width check 4, 0, 0 Details\":",
+      "- row \"Via to PTH spacing 0, 0, 0 Details\":",
+      "- row \"Unconnected via 0, 0, 0 Details\":",
+      "- row \"Edit Layer type\":"
+    ],
+    "analysis_scope": "Detected six copper layers, but observed routing result/detail layer lists expose F_Cu and B_Cu only. Inner-layer application of the same checks is unverified.",
+    "detail_findings": [
+      {
+        "check": "Pad spacing",
+        "observed_layers": [
+          "F_Cu",
+          "B_Cu"
+        ],
+        "displayed_legend_mm": [
+          0.1,
+          0.15
+        ],
+        "built_in_thresholds_mil": [
+          4,
+          6,
+          8
+        ],
+        "built_in_thresholds_exact_mm": [
+          0.1016,
+          0.1524,
+          0.2032
+        ],
+        "front": {
+          "danger": 2,
+          "warning": 41,
+          "good": 7,
+          "actual_results_notice": 150,
+          "retained_rows": 50,
+          "first_danger_displayed_mm": 0.05,
+          "first_objects": [
+            "rect23.622x66.9291",
+            "r17.7165"
+          ]
+        },
+        "back": {
+          "danger": 7,
+          "warning": 42,
+          "good": 1,
+          "actual_results_notice": 209,
+          "retained_rows": 50,
+          "lowest_displayed_mm": 0.08
+        },
+        "location_status": "Layer and Gerber primitive types exposed; no XY, reference designator or net shown. Parent native comparison identifies a plausible same-net B_TX via/pad .055 mm match, but site-to-native localization remains unconfirmed."
+      },
+      {
+        "check": "Slot width check",
+        "layer": "nexus-style-fc-PTH.drl",
+        "count": 4,
+        "displayed_mm": 0.6,
+        "objects": [
+          "r23.622",
+          null
+        ],
+        "displayed_legend_mm": [
+          0.61,
+          0.81
+        ],
+        "built_in_thresholds_mil": [
+          24,
+          32,
+          40
+        ],
+        "built_in_thresholds_exact_mm": [
+          0.6096,
+          0.8128,
+          1.016
+        ],
+        "interpretation": "These are PTH slots, consistent with the four native USB shell slots. The generic built-in danger cutoff is not a factory capability rejection. Parent is preserving official capability evidence separately; no rule was altered."
+      },
+      {
+        "check": "Via to pad",
+        "front_counts": [
+          3,
+          1,
+          3
+        ],
+        "back_counts": [
+          3,
+          0,
+          4
+        ],
+        "front_first_three_displayed_mm": [
+          0,
+          0,
+          0
+        ],
+        "first_objects": [
+          "r7.87402",
+          "r39.3701"
+        ],
+        "other_object": "i274x.RoundRect.d20",
+        "displayed_legend_mm": [
+          0.1,
+          0.15
+        ],
+        "ui_explanation": "Vias near pads may cause solder wicking.",
+        "location_status": "No XY or component/net identity exposed."
+      }
+    ],
+    "bom_rows_confirmed_by_site": 48,
+    "uploaded_files": [
+      {
+        "name": "nexus-style-fc-gerbers.zip",
+        "sha256": "74fd6d8660deabfc12a24cfe9decdecc5549a3ae8bc61782e9c8de2f57cd2d2c"
+      },
+      {
+        "name": "nexus-style-fc-bom-jlc.csv",
+        "sha256": "094a1b8e03f8a19f3066bcc67db5cd070201fd641b22a56113d831f68f751b46"
+      },
+      {
+        "name": "nexus-style-fc-cpl-jlc.csv",
+        "sha256": "0047a54fe66ffbb23fbbcf0214f5889df379bd312270925e194ae49a57d3f6fd"
+      }
+    ],
+    "combined_report_rows_observed": [
+      "Sharp trace corner \uff08Check for sharp corners in traces\uff09 null Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a2 Good\uff1a0",
+      "BGA pad \uff08Check BGA pads on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Via placed within a pad \uff08Check if there is a via placed within a pad\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Trace to board edge \uff08Detect traces too close to the board edge\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Trace spacing \uff08Measure spacing between adjacent parallel traces\uff09 0.14mm Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a2 Good\uff1a3",
+      "Unconnected trace end \uff08Free-standing trace ends not connected to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Trace width \uff08Trace width information\uff09 0.13mm Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a96 Good\uff1a4",
+      "Fiducial \uff08Detect fiducial marks on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pad to board edge \uff08Measure distance of pads from the board edge\uff09 0.28mm Good No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a54",
+      "Pad spacing \uff08Measure pad to pad spacing\uff09 0.05mm Danger No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a9 Warning\uff1a83 Good\uff1a8",
+      "Plated through-hole to trace clearance \uff08Measure clearance of plated through-holes to traces\uff09 0.25mm Good No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a100",
+      "Annular ring \uff08Annular ring width of pads compared to holes\uff09 0.12mm Warning No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a0 Warning\uff1a100 Good\uff1a0",
+      "tht to smd \uff08Detect clearance of vias to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Via to pad \uff08Detect clearance of vias to pads\uff09 0mm Danger No nexus-style-fc-F_Cu.gtl nexus-style-fc-B_Cu.gbl Danger\uff1a6 Warning\uff1a1 Good\uff1a7",
+      "Soldermask bridge \uff08Detect distance between parallel soldermask opening edges\uff09 0.2mm Good No nexus-style-fc-F_Mask.gts nexus-style-fc-B_Mask.gbs Danger\uff1a0 Warning\uff1a0 Good\uff1a60",
+      "Solder mask opening exposing trace \uff08Detect clearance of solder mask openings to nearby traces\uff09 0.11mm Warning No nexus-style-fc-F_Mask.gts nexus-style-fc-B_Mask.gbs Danger\uff1a0 Warning\uff1a96 Good\uff1a4",
+      "Soldermask opening with multiple segments \uff08Check if solder mask openings are constructed from multiple geometric shapes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Negative soldermask expansion \uff08Detect solder mask openings smaller than their corresponding pads\uff09 0mm Warning No nexus-style-fc-F_Mask.gts nexus-style-fc-B_Mask.gbs Danger\uff1a0 Warning\uff1a9 Good\uff1a0",
+      "Silkscreen to pad \uff08Detect clearance of silkscreen to pads\uff09 0mm Danger No nexus-style-fc-F_Silkscreen.gto nexus-style-fc-B_Silkscreen.gbo Danger\uff1a100 Warning\uff1a0 Good\uff1a0",
+      "Silkscreen to hole \uff08Detect clearance of silkscreen to holes\uff09 0mm Danger No nexus-style-fc-F_Silkscreen.gto nexus-style-fc-B_Silkscreen.gbo Danger\uff1a100 Warning\uff1a0 Good\uff1a0",
+      "Silkscreen line width \uff08Check silkscreen line width\uff09 0.15mm Warning No nexus-style-fc-F_Silkscreen.gto nexus-style-fc-B_Silkscreen.gbo Danger\uff1a0 Warning\uff1a44 Good\uff1a4",
+      "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Missing plated through-hole \uff08Detect top and bottom pads at the same location without plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Plated through-hole spacing \uff08Measure spacing between plated through-holes\uff09 0.25mm Good No nexus-style-fc-PTH.drl Danger\uff1a0 Warning\uff1a0 Good\uff1a1",
+      "Short slot detection \uff08Detect slots shorter than twice their width\uff09 0.25mm Warning No nexus-style-fc-PTH.drl Danger\uff1a0 Warning\uff1a4 Good\uff1a0",
+      "Slot width check \uff08Measure slot width\uff09 0.6mm Danger No nexus-style-fc-PTH.drl Danger\uff1a4 Warning\uff1a0 Good\uff1a0",
+      "Via to PTH spacing \uff08Measure spacing of vias to plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component collision warning \uff08Component collision warning;Component 1;Component 2\uff09 0mm Good No component_+_top Danger\uff1a0 Warning\uff1a0 Good\uff1a2",
+      "Component spacing \uff08Component to component spacing;Component 1;Component 2\uff09 0.5mm Good No component_+_top component_+_bottom Danger\uff1a0 Warning\uff1a0 Good\uff1a100",
+      "Component to board edge distance \uff08Measure distance from component outline to the board edge\uff09 0.33mm Danger No component_+_top component_+_bottom Danger\uff1a2 Warning\uff1a6 Good\uff1a4",
+      "Lead to hole distance \uff08Detect clearance of component leads to holes\uff09 0mm Danger No component_+_top component_+_bottom Danger\uff1a12 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 null Warning No component_+_top component_+_bottom Danger\uff1a0 Warning\uff1a7 Good\uff1a0",
+      "Coponent pad spacing \uff08Detect clearance between pads of the same component\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component clipped by board outline \uff08Detect component boundary clipping by the board outline\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin inner edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin left edge \uff08Measure if component pin edges extend past pad edges\uff09 0mm Danger No component_+_top component_+_bottom Danger\uff1a8 Warning\uff1a0 Good\uff1a0",
+      "Pin without pad \uff08Detect if component pins without pads\uff09 null Danger No component_+_top Danger\uff1a1 Warning\uff1a0 Good\uff1a0",
+      "Pin outer edge \uff08Measure if component pin edges extend past pad edges\uff09 0.21mm Danger No component_+_top Danger\uff1a2 Warning\uff1a0 Good\uff1a0",
+      "Pin right edge \uff08Measure if component pin edges extend past pad edges\uff09 0mm Danger No component_+_top component_+_bottom Danger\uff1a2 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Missing hole for component pin \uff08Detect component through-hole pins without corresponding holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Lead area overlapping pad \uff08Detect insufficient overlap between component pins and pads\uff09 0.01mm Danger No component_+_top Danger\uff1a4 Warning\uff1a0 Good\uff1a0"
+    ],
+    "pdf_download_confirmed": false,
+    "report_site_timestamp": "2026-10-15 05:59:23",
+    "report_site_timestamp_timezone": "Not specified by site; observed browser clock differs. Do not interpret as UTC.",
+    "smt": {
+      "counts_danger_warning_good": {
+        "Component collision warning": [
+          0,
+          0,
+          2
+        ],
+        "Component spacing": [
+          0,
+          0,
+          100
+        ],
+        "Component to board edge distance": [
+          2,
+          6,
+          4
+        ],
+        "Lead to hole distance": [
+          12,
+          0,
+          0
+        ],
+        "Component through-hole (misalignment description)": [
+          0,
+          7,
+          0
+        ],
+        "Pin left edge": [
+          8,
+          0,
+          0
+        ],
+        "Pin without pad": [
+          1,
+          0,
+          0
+        ],
+        "Pin outer edge": [
+          2,
+          0,
+          0
+        ],
+        "Pin right edge": [
+          2,
+          0,
+          0
+        ],
+        "Lead area overlapping pad": [
+          4,
+          0,
+          0
+        ]
+      },
+      "top_details": {
+        "Pin without pad": [
+          {
+            "reference": "U10",
+            "displayed_value": null,
+            "status": "Danger"
+          }
+        ],
+        "Pin outer edge": [
+          {
+            "reference": "U10",
+            "displayed_mm": 0.21,
+            "count": 2,
+            "status": "Danger",
+            "numeric_threshold_exposed": false
+          }
+        ],
+        "Lead area overlapping pad": [
+          {
+            "reference": "U10",
+            "overlap_ratio": 0.54,
+            "count": 4,
+            "threshold_legend": [
+              0.75,
+              0.9
+            ],
+            "objects": [
+              "rect19.2913x45.5512",
+              "rect19.2913x46.2598"
+            ]
+          }
+        ],
+        "Component through-hole (misalignment description)": [
+          {
+            "reference": "F2",
+            "displayed_value": null
+          },
+          {
+            "reference": "U10",
+            "displayed_mm": 0.96
+          },
+          {
+            "reference": "SW1",
+            "displayed_value": null
+          }
+        ],
+        "Pin left edge": [
+          {
+            "reference": "D2",
+            "displayed_mm": 0,
+            "count": 2
+          },
+          {
+            "reference": "D3",
+            "displayed_mm": 0,
+            "count": 2
+          },
+          {
+            "reference": "F2",
+            "displayed_mm": 0,
+            "count": 1
+          },
+          {
+            "reference": "D1",
+            "displayed_mm": 0,
+            "count": 2
+          }
+        ],
+        "Pin right edge": [
+          {
+            "reference": "F2",
+            "displayed_mm": 0,
+            "count": 1
+          }
+        ],
+        "Lead to hole distance": {
+          "threshold_legend_mm": [
+            0.2,
+            0.25
+          ],
+          "zero_mm_references": [
+            "J4",
+            "J2",
+            "U3",
+            "U2",
+            "U2",
+            "C19",
+            "U11",
+            "J5"
+          ],
+          "other": [
+            {
+              "reference": "J3",
+              "displayed_mm": 0.05
+            }
+          ],
+          "hole_object": "r7.87402",
+          "ui_risk": "Solder wicking"
+        },
+        "Component to board edge distance": {
+          "threshold_legend_mm": [
+            0.51,
+            0.81
+          ],
+          "rows": [
+            {
+              "reference": "J2",
+              "displayed_mm": 0.33,
+              "status": "Danger"
+            },
+            {
+              "reference": "J3",
+              "displayed_mm": 0.58,
+              "status": "Warning"
+            },
+            {
+              "reference": "R22",
+              "displayed_mm": 0.7,
+              "status": "Warning"
+            },
+            {
+              "reference": "C17",
+              "displayed_mm": 0.8,
+              "status": "Warning"
+            },
+            {
+              "reference": "J6",
+              "displayed_mm": 0.85,
+              "status": "Good"
+            }
+          ]
+        }
+      },
+      "bottom_detail_status": "Counts exposed, but switching details to bottom did not change the top rows because the loading overlay intercepted the layer control. Do not use main-smt-bottom-details.json as bottom identities.",
+      "interpretation": "U10 findings require checking source pad geometry, CPL coordinate/rotation convention and library model alignment. No cause was established and no placements were changed.",
+      "report_formatting_discrepancy": "Combined report summarizes lead overlap as 0.01mm; detail shows dimensionless ratio0.54 and explains the ratio. Use the detailed ratio, retain both originals.",
+      "source_placements_for_localized_findings": [
+        {
+          "Designator": "C17",
+          "Mid X": "1.1000mm",
+          "Mid Y": "26.6800mm",
+          "Layer": "Top",
+          "Rotation": "90",
+          "lcsc": "C1525",
+          "footprint": "C_0402_1005Metric"
+        },
+        {
+          "Designator": "C19",
+          "Mid X": "9.4500mm",
+          "Mid Y": "23.3500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C19702",
+          "footprint": "C_0603_1608Metric"
+        },
+        {
+          "Designator": "D1",
+          "Mid X": "8.0500mm",
+          "Mid Y": "8.0500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C965806",
+          "footprint": "LED0603-RD_GREEN__NexusMain_D1"
+        },
+        {
+          "Designator": "D2",
+          "Mid X": "14.4500mm",
+          "Mid Y": "8.0500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C965799",
+          "footprint": "LED0603-RD_RED__NexusMain_D2"
+        },
+        {
+          "Designator": "D3",
+          "Mid X": "11.2500mm",
+          "Mid Y": "8.0500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C965807",
+          "footprint": "LED0603-RD_BLUE__NexusMain_D3"
+        },
+        {
+          "Designator": "F2",
+          "Mid X": "4.7200mm",
+          "Mid Y": "7.8500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C20978",
+          "footprint": "F0805"
+        },
+        {
+          "Designator": "J2",
+          "Mid X": "3.3500mm",
+          "Mid Y": "19.9500mm",
+          "Layer": "Top",
+          "Rotation": "270",
+          "lcsc": "C489717",
+          "footprint": "CONN-SMD_B3B-ZR-SM4-TF"
+        },
+        {
+          "Designator": "J3",
+          "Mid X": "18.9500mm",
+          "Mid Y": "19.9500mm",
+          "Layer": "Top",
+          "Rotation": "90",
+          "lcsc": "C161692",
+          "footprint": "CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN"
+        },
+        {
+          "Designator": "J4",
+          "Mid X": "6.0500mm",
+          "Mid Y": "12.1500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C161692",
+          "footprint": "CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4"
+        },
+        {
+          "Designator": "J5",
+          "Mid X": "16.4500mm",
+          "Mid Y": "12.1500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C161692",
+          "footprint": "CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN"
+        },
+        {
+          "Designator": "J6",
+          "Mid X": "8.4500mm",
+          "Mid Y": "3.3500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C2689964",
+          "footprint": "USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6"
+        },
+        {
+          "Designator": "R22",
+          "Mid X": "1.0000mm",
+          "Mid Y": "14.0700mm",
+          "Layer": "Top",
+          "Rotation": "90",
+          "lcsc": "C11702",
+          "footprint": "R_0402_1005Metric"
+        },
+        {
+          "Designator": "SW1",
+          "Mid X": "17.0500mm",
+          "Mid Y": "3.3500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C720477",
+          "footprint": "SW-SMD_L3.9-W3.0-P4.45"
+        },
+        {
+          "Designator": "U2",
+          "Mid X": "11.4500mm",
+          "Mid Y": "20.7500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C1850418",
+          "footprint": "LGA-14_L3.0-W2.5-P0.50-TL"
+        },
+        {
+          "Designator": "U3",
+          "Mid X": "13.4500mm",
+          "Mid Y": "26.2500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C3232508",
+          "footprint": "LGA-8_L2.5-W2.0-P0.65-TR_DPS368"
+        },
+        {
+          "Designator": "U10",
+          "Mid X": "9.4500mm",
+          "Mid Y": "26.1000mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C89347",
+          "footprint": "SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL"
+        },
+        {
+          "Designator": "U11",
+          "Mid X": "4.9500mm",
+          "Mid Y": "26.4500mm",
+          "Layer": "Top",
+          "Rotation": "0",
+          "lcsc": "C13612",
+          "footprint": "SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR"
+        }
+      ]
+    }
+  },
+  "child": {
+    "zip_sha256": "48dd57665db8233d41b43fa3d02e9ec851222c9cb0c03239a8eb09ee444dbbdc",
+    "source_layers": 2,
+    "auto_detected_layers": 2,
+    "displayed_results": [
+      {
+        "check": "tht to smd",
+        "danger": 18,
+        "warning": 11,
+        "good": 41
+      },
+      {
+        "check": "Annular ring",
+        "danger": 0,
+        "warning": 6,
+        "good": 28
+      }
+    ],
+    "table_rows_observed": [
+      "- row \"Analyze project Statistics Operation\":",
+      "- row \"Sharp trace corner 0, 0, 0 Details\":",
+      "- row \"BGA pad 0, 0, 0 Details\":",
+      "- row \"Via placed within a pad 0, 0, 0 Details\":",
+      "- row \"Trace to board edge 0, 0, 0 Details\":",
+      "- row \"Trace spacing 0, 0, 0 Details\":",
+      "- row \"Unconnected trace end 0, 0, 0 Details\":",
+      "- row \"Trace width 0, 0, 28 Details\":",
+      "- row \"Fiducial 0, 0, 0 Details\":",
+      "- row \"Pad to board edge 0, 0, 33 Details\":",
+      "- row \"Pad spacing 0, 0, 4 Details\":",
+      "- row \"Plated through-hole to trace clearance 0, 0, 10 Details\":",
+      "- row \"Annular ring 0, 6, 28 Details\":",
+      "- row \"tht to smd 18, 11, 41 Details\":",
+      "- row \"Via to pad 0, 0, 0 Details\":",
+      "- row \"Soldermask bridge 0, 0, 0 Details\":",
+      "- row \"Solder mask opening exposing trace 0, 0, 0 Details\":",
+      "- row \"Soldermask opening with multiple segments 0, 0, 0 Details\":",
+      "- row \"Negative soldermask expansion 0, 0, 0 Details\":",
+      "- row \"Silkscreen to pad 0, 0, 0 Details\":",
+      "- row \"Silkscreen to hole 0, 0, 0 Details\":",
+      "- row \"Silkscreen line width 0, 0, 0 Details\":",
+      "- row \"Unconnected via 0, 0, 0 Details\":",
+      "- row \"Missing plated through-hole 0, 0, 0 Details\":",
+      "- row \"Unconnected via 0, 0, 0 Details\":",
+      "- row \"Plated through-hole spacing 0, 0, 0 Details\":",
+      "- row \"Short slot detection 0, 0, 0 Details\":",
+      "- row \"Slot width check 0, 0, 0 Details\":",
+      "- row \"Via to PTH spacing 0, 0, 0 Details\":",
+      "- row \"Unconnected via 0, 0, 0 Details\":",
+      "- row \"Edit Layer type\":"
+    ],
+    "detail_findings": [
+      {
+        "check": "tht to smd",
+        "bottom_counts": [
+          12,
+          9,
+          29
+        ],
+        "front_counts": [
+          6,
+          2,
+          12
+        ],
+        "bottom_actual_results_notice": 68,
+        "bottom_retained_rows": 50,
+        "first_danger_displayed_mm_range": [
+          1.55,
+          1.85
+        ],
+        "object_examples": [
+          "r59.0551",
+          "rect47.2441x92.3622",
+          "rect62.9921x92.3622"
+        ],
+        "displayed_legend_mm": [
+          2.03,
+          3.05
+        ],
+        "raw_threshold_mil": "not verified",
+        "ui_explanation": "Vias near pads may cause solder wicking.",
+        "location_status": "No XY or component/net identity exposed."
+      }
+    ],
+    "auto_detected_size_mm": [
+      22.4,
+      11.0
+    ],
+    "bom_rows_confirmed_by_site": 1,
+    "uploaded_files": [
+      {
+        "name": "nexus-header-board-gerbers.zip",
+        "sha256": "48dd57665db8233d41b43fa3d02e9ec851222c9cb0c03239a8eb09ee444dbbdc"
+      },
+      {
+        "name": "nexus-header-board-bom-jlc.csv",
+        "sha256": "6a2b3bbf1d27e84750eeaf034740681aaec0cd7413f736f5d7a42f3fed85e706"
+      },
+      {
+        "name": "nexus-header-board-cpl-jlc.csv",
+        "sha256": "bf4bcb800239e4bae3c8b60adf1c5857b3636ae2fb359dbaedc06789f03488cf"
+      }
+    ],
+    "combined_report_rows_observed": [
+      "Sharp trace corner \uff08Check for sharp corners in traces\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "BGA pad \uff08Check BGA pads on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Via placed within a pad \uff08Check if there is a via placed within a pad\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Trace to board edge \uff08Detect traces too close to the board edge\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Trace spacing \uff08Measure spacing between adjacent parallel traces\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Unconnected trace end \uff08Free-standing trace ends not connected to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Trace width \uff08Trace width information\uff09 0.2mm Good No nexus-header-board-B_Cu.gbl nexus-header-board-F_Cu.gtl Danger\uff1a0 Warning\uff1a0 Good\uff1a28",
+      "Fiducial \uff08Detect fiducial marks on the board\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pad to board edge \uff08Measure distance of pads from the board edge\uff09 0.23mm Good No nexus-header-board-B_Cu.gbl nexus-header-board-F_Cu.gtl Danger\uff1a0 Warning\uff1a0 Good\uff1a33",
+      "Pad spacing \uff08Measure pad to pad spacing\uff09 0.37mm Good No nexus-header-board-B_Cu.gbl Danger\uff1a0 Warning\uff1a0 Good\uff1a4",
+      "Plated through-hole to trace clearance \uff08Measure clearance of plated through-holes to traces\uff09 0.42mm Good No nexus-header-board-B_Cu.gbl nexus-header-board-F_Cu.gtl Danger\uff1a0 Warning\uff1a0 Good\uff1a10",
+      "Annular ring \uff08Annular ring width of pads compared to holes\uff09 0.15mm Warning No nexus-header-board-B_Cu.gbl nexus-header-board-F_Cu.gtl Danger\uff1a0 Warning\uff1a6 Good\uff1a28",
+      "tht to smd \uff08Detect clearance of vias to pads\uff09 1.55mm Danger No nexus-header-board-B_Cu.gbl nexus-header-board-F_Cu.gtl Danger\uff1a18 Warning\uff1a11 Good\uff1a41",
+      "Via to pad \uff08Detect clearance of vias to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Soldermask bridge \uff08Detect distance between parallel soldermask opening edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Solder mask opening exposing trace \uff08Detect clearance of solder mask openings to nearby traces\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Soldermask opening with multiple segments \uff08Check if solder mask openings are constructed from multiple geometric shapes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Negative soldermask expansion \uff08Detect solder mask openings smaller than their corresponding pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Silkscreen to pad \uff08Detect clearance of silkscreen to pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Silkscreen to hole \uff08Detect clearance of silkscreen to holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Silkscreen line width \uff08Check silkscreen line width\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Missing plated through-hole \uff08Detect top and bottom pads at the same location without plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Plated through-hole spacing \uff08Measure spacing between plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Short slot detection \uff08Detect slots shorter than twice their width\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Slot width check \uff08Measure slot width\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Via to PTH spacing \uff08Measure spacing of vias to plated through-holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Unconnected via \uff08Detect isolated unconnected vias\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component collision warning \uff08Component collision warning;Component 1;Component 2\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component spacing \uff08Component to component spacing;Component 1;Component 2\uff09 1.63mm Good No component_+_top Danger\uff1a0 Warning\uff1a0 Good\uff1a50",
+      "Component to board edge distance \uff08Measure distance from component outline to the board edge\uff09 0.56mm Warning No component_+_top Danger\uff1a0 Warning\uff1a7 Good\uff1a0",
+      "Lead to hole distance \uff08Detect clearance of component leads to holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Coponent pad spacing \uff08Detect clearance between pads of the same component\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component clipped by board outline \uff08Detect component boundary clipping by the board outline\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin inner edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin left edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin without pad \uff08Detect if component pins without pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin outer edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Pin right edge \uff08Measure if component pin edges extend past pad edges\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Component through-hole \uff08Detect misalignment of component through-hole pins to pad holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Missing hole for component pin \uff08Detect component through-hole pins without corresponding holes\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0",
+      "Lead area overlapping pad \uff08Detect insufficient overlap between component pins and pads\uff09 No No No Danger\uff1a0 Warning\uff1a0 Good\uff1a0"
+    ],
+    "pdf_download_confirmed": false,
+    "report_site_timestamp": "2026-10-15 06:02:03",
+    "report_site_timestamp_timezone": "Not specified by site; observed browser clock differs. Do not interpret as UTC.",
+    "smt": {
+      "part": "J1",
+      "lcsc": "C32713294",
+      "site_classification": "Through Hole",
+      "counts_danger_warning_good": {
+        "Component spacing": [
+          0,
+          0,
+          50
+        ],
+        "Component to board edge distance": [
+          0,
+          7,
+          0
+        ]
+      },
+      "edge_details": {
+        "reference": "J1",
+        "layer": "top",
+        "displayed_mm": 0.56,
+        "count": 7,
+        "status": "Warning",
+        "threshold_legend_mm": [
+          0.51,
+          0.81
+        ],
+        "object": "r1.9685"
+      },
+      "interpretation": "Tool accepted a through-hole header mapping. This does not qualify the child as an ordinary SMT assembly or approve its insertion/soldering process.",
+      "source_placement": [
+        {
+          "Designator": "J1",
+          "Mid X": "11.2250mm",
+          "Mid Y": "7.4650mm",
+          "Layer": "Top",
+          "Rotation": "0"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Displayed metric values are rounded report values, not independently verified minima. Source ordinary via annulus .125 mm and minimum track .127 mm can display .12/.13 mm.",
+    "Detail tables retain at most 50 lowest-level results per layer/check; the displayed counts are not exhaustive totals. Main pad-spacing notices explicitly show 150 front and 209 back actual results.",
+    "Only F/B copper detail layer lists were observed despite six-layer detection; inner-layer check coverage is unverified.",
+    "No site XY, component reference or net localization was recovered. Gerber primitive dimensions do not independently establish a native design violation.",
+    "Main source nominal thickness is 1.600 mm; saved copper/dielectric sum is 1.6168 mm. No factory stack was selected or accepted.",
+    "Child has a through-hole header; its CPL is not approval for ordinary SMT assembly.",
+    "No geometry, rules, process parameters, source files, order or quote were changed.",
+    "Both automatic SMT analyses returned results. No completed PDF download is confirmed; both reports were retained as rendered page text.",
+    "The cloud browser reported it cannot render 3D models. 2D placement preview remained placeholders under Generating PCB. Orientation and model-to-Gerber overlays could not be visually validated.",
+    "No SMT threshold edits were made. Displayed numeric legends are rounded; raw SMT thresholds were not exposed.",
+    "Bottom SMT per-component identities could not be retrieved because the loading overlay intercepted layer selection."
+  ],
+  "privacy": "This summary excludes account email, order/pricing data, and private upload/session IDs. Raw DOM snapshots are retained privately; inspect artifacts before any public publication.",
+  "observed_at_utc": "2026-10-15T13:05:00Z",
+  "rule_configuration": {
+    "panel_observed_on": "child",
+    "selected": "Built-in system rules",
+    "changed": false,
+    "main_panel_selection": "not separately verified",
+    "reference_thresholds_mil": {
+      "trace_spacing": [
+        4,
+        6,
+        8
+      ],
+      "trace_width": [
+        4,
+        5,
+        8
+      ],
+      "annular_ring": [
+        4,
+        6,
+        8
+      ],
+      "pad_spacing": [
+        4,
+        6,
+        8
+      ],
+      "slot_width": [
+        24,
+        32,
+        40
+      ]
+    }
+  },
+  "sources": [
+    "https://jlcpcb.com/help/article/dfm-analysis-result-view-help",
+    "https://jlcdfm.com/"
+  ]
+}

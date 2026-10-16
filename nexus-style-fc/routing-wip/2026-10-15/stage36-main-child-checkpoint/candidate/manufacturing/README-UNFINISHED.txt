@@ -1,0 +1,1 @@
+Engineering checkpoint exports only. Main outputs bind to stage36; child remains the sealed b49ef410 design. Not released for fabrication or assembly. Earlier JLC results are historical and do not accept these exact stage36 inputs. The child through-hole header is not an SMT placement.
