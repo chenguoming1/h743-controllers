@@ -1,0 +1,18 @@
+{
+  "status": "Final stage32 placement/source/assembly consistency evidence, not manufacturing acceptance",
+  "baseline_identity_check": {
+    "legacy_parts_unchanged": true,
+    "main_parts_lcsc_pins_notes_unchanged": true,
+    "only_footprint_variant_change": "U10: NexusFC:TPS70933DBVR_TI_DBV0005A"
+  },
+  "variant_generation_idempotent": true,
+  "named_variant_normalizer_exemption": true,
+  "generic_library_unchanged": true,
+  "sealed_make_footprints_unchanged": true,
+  "protected_hashes": {
+    "hardware/library/NexusFC.pretty/SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BL.kicad_mod": "0e848fc80f0e987752fe491671fe967ef71933de5dd38a36d0a8b7400a401754",
+    "hardware/library/NexusFC.pretty/TPS70933DBVR_TI_DBV0005A.kicad_mod": "a87cf8de859159267e49701b70f82af0d40331f130b46a90025bd9e880d9d0b3",
+    "tools/make_footprints.py": "2c64852852843b4d469a0f532fce8634bf6f1a116f451a1d76ed388362a8afdd"
+  },
+  "missing_generic_model_rebuild_caveat": "The staged tree has no generic U10 .wrl model. The pre-existing global courtyard normalizer would fall back to silk and change the generic X courtyard. That global rewrite was not run; source generic footprint stayed unchanged. Dedicated-variant exact generation passes; its normalizer exemption is narrow."
+}

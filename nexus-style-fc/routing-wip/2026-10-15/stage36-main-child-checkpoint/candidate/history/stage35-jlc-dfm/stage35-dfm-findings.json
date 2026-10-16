@@ -1,0 +1,682 @@
+{
+  "status": "TARGETED PCB FIXES CONFIRMED; AUTOMATED PCB+SMT RESULTS STILL HAVE OPEN GATES; NOT MANUFACTURING RELEASE",
+  "revision": "main-usb-dfm-stage35",
+  "input_binding": {
+    "status": "Exact sealed files accepted once; automated PCB and SMT tables returned; two targeted PCB flags cleared; U10 unresolved",
+    "destination": "https://jlcdfm.com/",
+    "revision": "main-usb-dfm-stage35",
+    "files": {
+      "ENGINEERING-CHECKPOINT-SEAL.json": "8705a184aab9fd5dfa307e4a3e10c94caeeadbb25fff6722a67d475be0ea9bfa",
+      "hardware/nexus-style-fc.kicad_pcb": "bf9a10563839b18071dedd1c4a71af60c25ac19e94f392adb1917955b1f4e95d",
+      "manufacturing/nexus-style-fc/nexus-style-fc-gerbers.zip": "bcf525a22962fea52f75eae84222c7ba2723e16b4e2caa4864729ebadd9ff457",
+      "manufacturing/nexus-style-fc/nexus-style-fc-bom-jlc.csv": "2f6a4b397ec8f024e5d7a3af2dda365843d928af03de5ace5fd50504501bd9fc",
+      "manufacturing/nexus-style-fc/nexus-style-fc-cpl-jlc.csv": "dedbc7419bcf7d472864b7e0f0e7aabdada9d939caccd508f1ec1398261b96a1"
+    },
+    "source_declarations": {
+      "layers": 6,
+      "board_thickness_mm": 1.6,
+      "finish": "ENIG",
+      "outer_copper_mm": 0.035,
+      "inner_copper_mm": 0.0152,
+      "via_process": "both-side tented; fill/plug/cap OFF",
+      "ordinary_via_diameter_drill_mm": [
+        0.45,
+        0.2
+      ],
+      "native_minimum_trace_clearance_mm": 0.127
+    },
+    "limitations": [
+      "CAD declarations are not factory acceptance",
+      "U10 TI-land update is not a guaranteed correction of old model-overlay finding",
+      "Corner/EP tenting and via/paste process remain open",
+      "No order or manufacturing release"
+    ],
+    "verified_at_utc": "2026-10-15T17:19:00Z",
+    "external_side_effects": "One distinct main revision project and automated checks; no order, quote, purchase, outreach, new account, placement edits, rule edits or publication"
+  },
+  "site": "https://jlcdfm.com/",
+  "observed_at_utc": "2026-10-15T17:19:00Z",
+  "auto_detection": {
+    "copper_layers": 6,
+    "size_mm": [
+      22.4,
+      33.1
+    ]
+  },
+  "bom_confirmation": {
+    "rows": 48,
+    "all_confirmed": true,
+    "cpl_placements": 83,
+    "BOM_CPL_unchanged_from_stage32": true,
+    "assignments_or_rotations_modified": false
+  },
+  "summary": [
+    {
+      "section": "PCB",
+      "check": "Sharp trace corner",
+      "danger": 0,
+      "warning": 2,
+      "good": 0,
+      "raw_report_row": "- row \"Sharp trace corner （Check for sharp corners in traces） null Warning No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：0 Warning：2 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "BGA pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"BGA pad （Check BGA pads on the board） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Via placed within a pad",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Via placed within a pad （Check if there is a via placed within a pad） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Trace to board edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Trace to board edge （Detect traces too close to the board edge） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Trace spacing",
+      "danger": 0,
+      "warning": 2,
+      "good": 3,
+      "raw_report_row": "- row \"Trace spacing （Measure spacing between adjacent parallel traces） 0.13mm Warning No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：0 Warning：2 Good：3\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Unconnected trace end",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Unconnected trace end （Free-standing trace ends not connected to pads） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Trace width",
+      "danger": 0,
+      "warning": 92,
+      "good": 8,
+      "raw_report_row": "- row \"Trace width （Trace width information） 0.13mm Warning No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：0 Warning：92 Good：8\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Fiducial",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Fiducial （Detect fiducial marks on the board） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Pad to board edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 55,
+      "raw_report_row": "- row \"Pad to board edge （Measure distance of pads from the board edge） 0.25mm Good No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：0 Warning：0 Good：55\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Pad spacing",
+      "danger": 7,
+      "warning": 77,
+      "good": 16,
+      "raw_report_row": "- row \"Pad spacing （Measure pad to pad spacing） 0.08mm Danger No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：7 Warning：77 Good：16\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Plated through-hole to trace clearance",
+      "danger": 0,
+      "warning": 0,
+      "good": 100,
+      "raw_report_row": "- row \"Plated through-hole to trace clearance （Measure clearance of plated through-holes to traces） 0.25mm Good No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：0 Warning：0 Good：100\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Annular ring",
+      "danger": 0,
+      "warning": 100,
+      "good": 0,
+      "raw_report_row": "- row \"Annular ring （Annular ring width of pads compared to holes） 0.12mm Warning No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：0 Warning：100 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "tht to smd",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"tht to smd （Detect clearance of vias to pads） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Via to pad",
+      "danger": 3,
+      "warning": 1,
+      "good": 7,
+      "raw_report_row": "- row \"Via to pad （Detect clearance of vias to pads） 0mm Danger No nexus-style-fc-B_Cu.gbl nexus-style-fc-F_Cu.gtl Danger：3 Warning：1 Good：7\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Soldermask bridge",
+      "danger": 0,
+      "warning": 0,
+      "good": 60,
+      "raw_report_row": "- row \"Soldermask bridge （Detect distance between parallel soldermask opening edges） 0.2mm Good No nexus-style-fc-B_Mask.gbs nexus-style-fc-F_Mask.gts Danger：0 Warning：0 Good：60\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Solder mask opening exposing trace",
+      "danger": 0,
+      "warning": 83,
+      "good": 4,
+      "raw_report_row": "- row \"Solder mask opening exposing trace （Detect clearance of solder mask openings to nearby traces） 0.1mm Warning No nexus-style-fc-B_Mask.gbs nexus-style-fc-F_Mask.gts Danger：0 Warning：83 Good：4\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Soldermask opening with multiple segments",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Soldermask opening with multiple segments （Check if solder mask openings are constructed from multiple geometric shapes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Negative soldermask expansion",
+      "danger": 0,
+      "warning": 10,
+      "good": 0,
+      "raw_report_row": "- row \"Negative soldermask expansion （Detect solder mask openings smaller than their corresponding pads） 0.04mm Warning No nexus-style-fc-B_Mask.gbs nexus-style-fc-F_Mask.gts Danger：0 Warning：10 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Silkscreen to pad",
+      "danger": 100,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Silkscreen to pad （Detect clearance of silkscreen to pads） 0mm Danger No nexus-style-fc-B_Silkscreen.gbo nexus-style-fc-F_Silkscreen.gto Danger：100 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Silkscreen to hole",
+      "danger": 100,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Silkscreen to hole （Detect clearance of silkscreen to holes） 0mm Danger No nexus-style-fc-B_Silkscreen.gbo nexus-style-fc-F_Silkscreen.gto Danger：100 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Silkscreen line width",
+      "danger": 0,
+      "warning": 44,
+      "good": 4,
+      "raw_report_row": "- row \"Silkscreen line width （Check silkscreen line width） 0.15mm Warning No nexus-style-fc-B_Silkscreen.gbo nexus-style-fc-F_Silkscreen.gto Danger：0 Warning：44 Good：4\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Unconnected via",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Unconnected via （Detect isolated unconnected vias） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Missing plated through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Missing plated through-hole （Detect top and bottom pads at the same location without plated through-holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Unconnected via",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Unconnected via （Detect isolated unconnected vias） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Plated through-hole spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 1,
+      "raw_report_row": "- row \"Plated through-hole spacing （Measure spacing between plated through-holes） 0.25mm Good No nexus-style-fc-PTH.drl Danger：0 Warning：0 Good：1\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Short slot detection",
+      "danger": 0,
+      "warning": 4,
+      "good": 0,
+      "raw_report_row": "- row \"Short slot detection （Detect slots shorter than twice their width） 0.25mm Warning No nexus-style-fc-PTH.drl Danger：0 Warning：4 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Slot width check",
+      "danger": 4,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Slot width check （Measure slot width） 0.6mm Danger No nexus-style-fc-PTH.drl Danger：4 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Via to PTH spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Via to PTH spacing （Measure spacing of vias to plated through-holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "PCB",
+      "check": "Unconnected via",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Unconnected via （Detect isolated unconnected vias） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Component through-hole （Detect misalignment of component through-hole pins to pad holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component collision warning",
+      "danger": 0,
+      "warning": 0,
+      "good": 2,
+      "raw_report_row": "- row \"Component collision warning （Component collision warning;Component 1;Component 2） 0mm Good No component_+_top Danger：0 Warning：0 Good：2\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 100,
+      "raw_report_row": "- row \"Component spacing （Component to component spacing;Component 1;Component 2） 0.5mm Good No component_+_top component_+_bottom Danger：0 Warning：0 Good：100\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component to board edge distance",
+      "danger": 4,
+      "warning": 7,
+      "good": 3,
+      "raw_report_row": "- row \"Component to board edge distance （Measure distance from component outline to the board edge） 0.33mm Danger No component_+_top component_+_bottom Danger：4 Warning：7 Good：3\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Lead to hole distance",
+      "danger": 10,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Lead to hole distance （Detect clearance of component leads to holes） 0mm Danger No component_+_top component_+_bottom Danger：10 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 7,
+      "good": 0,
+      "raw_report_row": "- row \"Component through-hole （Detect misalignment of component through-hole pins to pad holes） 0.96mm Warning No component_+_top component_+_bottom Danger：0 Warning：7 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Coponent pad spacing",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Coponent pad spacing （Detect clearance between pads of the same component） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component clipped by board outline",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Component clipped by board outline （Detect component boundary clipping by the board outline） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Pin inner edge",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Pin inner edge （Measure if component pin edges extend past pad edges） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Pin left edge",
+      "danger": 9,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Pin left edge （Measure if component pin edges extend past pad edges） 0mm Danger No component_+_top component_+_bottom Danger：9 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Pin without pad",
+      "danger": 1,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Pin without pad （Detect if component pins without pads） null Danger No component_+_top Danger：1 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Pin outer edge",
+      "danger": 2,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Pin outer edge （Measure if component pin edges extend past pad edges） 0.15mm Danger No component_+_top Danger：2 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Pin right edge",
+      "danger": 3,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Pin right edge （Measure if component pin edges extend past pad edges） 0mm Danger No component_+_top component_+_bottom Danger：3 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Component through-hole （Detect misalignment of component through-hole pins to pad holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Component through-hole （Detect misalignment of component through-hole pins to pad holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Component through-hole",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Component through-hole （Detect misalignment of component through-hole pins to pad holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Missing hole for component pin",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Missing hole for component pin （Detect component through-hole pins without corresponding holes） No No No Danger：0 Warning：0 Good：0\":"
+    },
+    {
+      "section": "SMT",
+      "check": "Lead area overlapping pad",
+      "danger": 4,
+      "warning": 0,
+      "good": 0,
+      "raw_report_row": "- row \"Lead area overlapping pad （Detect insufficient overlap between component pins and pads） 0.02mm Danger No component_+_top Danger：4 Warning：0 Good：0\":"
+    }
+  ],
+  "changes_from_stage32": [
+    {
+      "section": "PCB",
+      "check": "Unconnected trace end",
+      "stage32_DWG": [
+        0,
+        1,
+        0
+      ],
+      "stage35_DWG": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "section": "PCB",
+      "check": "Pad spacing",
+      "stage32_DWG": [
+        7,
+        79,
+        14
+      ],
+      "stage35_DWG": [
+        7,
+        77,
+        16
+      ]
+    },
+    {
+      "section": "PCB",
+      "check": "Solder mask opening exposing trace",
+      "stage32_DWG": [
+        1,
+        82,
+        4
+      ],
+      "stage35_DWG": [
+        0,
+        83,
+        4
+      ]
+    }
+  ],
+  "localized_details": {
+    "s35MaskDetail": {
+      "check": "Solder mask opening exposing trace",
+      "verified_side": "B.Mask",
+      "displayed_rows": [
+        "1 Warning 0.1mm r17.7165 i274x.RoundRect.d17",
+        "2 Warning 0.12mm r17.7165 oval22.0472x55.1181",
+        "3 Warning 0.13mm surface i274x.RoundRect.d37",
+        "4 Warning 0.13mm surface oval59.0551x11.811",
+        "5 Warning 0.13mm surface oval59.0551x11.811",
+        "6 Warning 0.13mm surface oval59.0551x11.811",
+        "7 Warning 0.13mm surface oval59.0551x11.811",
+        "8 Warning 0.13mm surface oval22.0472x55.1181",
+        "9 Warning 0.13mm surface oval59.0551x11.811",
+        "10 Warning 0.13mm surface i274x.RoundRect.d17",
+        "11 Warning 0.13mm surface oval59.0551x11.811",
+        "12 Warning 0.13mm surface oval59.0551x11.811",
+        "13 Warning 0.13mm surface oval11.811x59.0551",
+        "14 Warning 0.13mm surface i274x.RoundRect.d23",
+        "15 Warning 0.13mm surface oval11.811x59.0551",
+        "16 Warning 0.13mm surface oval11.811x59.0551",
+        "17 Warning 0.13mm surface oval33.4646x11.0236",
+        "18 Warning 0.13mm surface oval22.0472x55.1181",
+        "19 Warning 0.13mm surface oval22.0472x55.1181",
+        "20 Warning 0.13mm surface oval22.0472x55.1181",
+        "21 Warning 0.13mm surface i274x.RoundRect.d17",
+        "22 Warning 0.13mm surface i274x.RoundRect.d17",
+        "23 Warning 0.13mm surface oval11.0236x33.4646",
+        "24 Warning 0.13mm surface i274x.RoundRect.d28",
+        "25 Warning 0.13mm surface oval59.0551x11.811",
+        "26 Warning 0.13mm surface oval59.0551x11.811",
+        "27 Warning 0.13mm surface oval59.0551x11.811",
+        "28 Warning 0.13mm surface oval59.0551x11.811",
+        "29 Warning 0.13mm surface oval59.0551x11.811",
+        "30 Warning 0.13mm surface oval11.811x59.0551",
+        "31 Warning 0.13mm surface oval11.811x59.0551",
+        "32 Warning 0.13mm surface oval11.811x59.0551",
+        "33 Warning 0.13mm surface oval11.811x59.0551",
+        "34 Warning 0.13mm surface oval11.811x59.0551",
+        "35 Warning 0.13mm surface oval11.811x59.0551",
+        "36 Warning 0.13mm surface oval59.0551x11.811",
+        "37 Warning 0.13mm surface oval22.0472x55.1181",
+        "38 Warning 0.13mm surface oval11.811x59.0551",
+        "39 Warning 0.13mm surface oval11.811x59.0551",
+        "40 Warning 0.13mm surface oval11.811x59.0551",
+        "41 Warning 0.13mm surface oval59.0551x11.811",
+        "42 Warning 0.13mm surface oval59.0551x11.811",
+        "43 Warning 0.13mm surface oval59.0551x11.811",
+        "44 Warning 0.13mm surface oval59.0551x11.811",
+        "45 Warning 0.13mm surface oval59.0551x11.811",
+        "46 Warning 0.13mm surface i274x.RoundRect.d37",
+        "47 Warning 0.13mm surface i274x.RoundRect.d17",
+        "48 Warning 0.13mm surface i274x.RoundRect.d17",
+        "49 Warning 0.13mm surface oval59.0551x11.811",
+        "50 Warning 0.13mm surface i274x.RoundRect.d16"
+      ],
+      "receipt": "  - generic: Soldermask layer analysis > Solder mask opening exposing trace\n  - paragraph: Detect clearance of solder mask openings to nearby traces\n  - generic: Layer\n  - generic \"nexus-style-fc-B_Mask.gbs\": nexus-style-fc-B_Mask.gbs (0, 50, 0)\n  - generic \"nexus-style-fc-F_Mask.gts\": nexus-style-fc-F_Mask.gts (0, 33, 4)\n  - table:\n    - rowgroup:\n      - row \"No. All Value Object 1 Object 2\":\n        - columnheader \"No.\"\n        - columnheader \"All\":\n          - combobox:\n            - option \"All\" [selected]\n            - option \"Good\"\n            - option \"Warning\"\n            - option \"Danger\"\n        - columnheader \"Value\"\n        - columnheader \"Object 1\"\n        - columnheader \"Object 2\"\n  - table:\n    - rowgroup:\n      - row \"1 Warning 0.1mm r17.7165 i274x.RoundRect.d17\":\n        - cell \"1\"\n        - cell \"Warning\"\n        - cell \"0.1mm\"\n        - cell \"r17.7165\"\n        - cell \"i274x.RoundRect.d17\"\n      - row \"2 Warning 0.12mm r17.7165 oval22.0472x55.1181\":\n        - cell \"2\"\n        - cell \"Warning\"\n        - cell \"0.12mm\"\n        - cell \"r17.7165\"\n        - cell \"oval22.0472x55.1181\"\n      - row \"3 Warning 0.13mm surface i274x.RoundRect.d37\":\n        - cell \"3\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d37\"\n      - row \"4 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"4\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"5 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"5\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"6 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"6\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"7 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"7\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"8 Warning 0.13mm surface oval22.0472x55.1181\":\n        - cell \"8\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval22.0472x55.1181\"\n      - row \"9 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"9\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"10 Warning 0.13mm surface i274x.RoundRect.d17\":\n        - cell \"10\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d17\"\n      - row \"11 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"11\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"12 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"12\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"13 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"13\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"14 Warning 0.13mm surface i274x.RoundRect.d23\":\n        - cell \"14\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d23\"\n      - row \"15 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"15\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"16 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"16\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"17 Warning 0.13mm surface oval33.4646x11.0236\":\n        - cell \"17\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval33.4646x11.0236\"\n      - row \"18 Warning 0.13mm surface oval22.0472x55.1181\":\n        - cell \"18\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval22.0472x55.1181\"\n      - row \"19 Warning 0.13mm surface oval22.0472x55.1181\":\n        - cell \"19\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval22.0472x55.1181\"\n      - row \"20 Warning 0.13mm surface oval22.0472x55.1181\":\n        - cell \"20\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval22.0472x55.1181\"\n      - row \"21 Warning 0.13mm surface i274x.RoundRect.d17\":\n        - cell \"21\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d17\"\n      - row \"22 Warning 0.13mm surface i274x.RoundRect.d17\":\n        - cell \"22\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d17\"\n      - row \"23 Warning 0.13mm surface oval11.0236x33.4646\":\n        - cell \"23\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.0236x33.4646\"\n      - row \"24 Warning 0.13mm surface i274x.RoundRect.d28\":\n        - cell \"24\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d28\"\n      - row \"25 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"25\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"26 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"26\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"27 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"27\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"28 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"28\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"29 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"29\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"30 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"30\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"31 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"31\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"32 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"32\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"33 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"33\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"34 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"34\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"35 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"35\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"36 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"36\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"37 Warning 0.13mm surface oval22.0472x55.1181\":\n        - cell \"37\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval22.0472x55.1181\"\n      - row \"38 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"38\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"39 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"39\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"40 Warning 0.13mm surface oval11.811x59.0551\":\n        - cell \"40\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval11.811x59.0551\"\n      - row \"41 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"41\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"42 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"42\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"43 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"43\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"44 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"44\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"45 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"45\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"46 Warning 0.13mm surface i274x.RoundRect.d37\":\n        - cell \"46\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d37\"\n      - row \"47 Warning 0.13mm surface i274x.RoundRect.d17\":\n        - cell \"47\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d17\"\n      - row \"48 Warning 0.13mm surface i274x.RoundRect.d17\":\n        - cell \"48\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d17\"\n      - row \"49 Warning 0.13mm surface oval59.0551x11.811\":\n        - cell \"49\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"oval59.0551x11.811\"\n      - row \"50 Warning 0.13mm surface i274x.RoundRect.d16\":\n        - cell \"50\"\n        - cell \"Warning\"\n        - cell \"0.13mm\"\n        - cell \"surface\"\n        - cell \"i274x.RoundRect.d16\"\n  - checkbox \"Smart layer display\" [checked]\n  - text: Smart layer display\n  - checkbox \"Auto fit view\" [checked]\n  - text: Auto fit view\n  - button \"First\"\n  - button \"Previous\"\n  - button \"Next\"\n  - button \"Last\"\n  - button \"All\"\n  - generic: \"Note: This analysis item has 162 results, only showing the first 50 results 。\"\n  - generic \"If solder mask openings are too close to traces, the nearby traces may be exposed, causing oxidation or shorts during soldering.\"\n  - generic: Alert value：\n  - generic: Danger\n  - generic: Warning\n  - generic: Good\n  - generic: 0.08mm\n  - generic: 0.15mm\n  - text: \n\n"
+    },
+    "s35Overlap": {
+      "check": "Lead area overlapping pad",
+      "verified_side": "top",
+      "displayed_rows": [
+        "1 Danger 0.66 U10 i274x.RoundRect.d13",
+        "2 Danger 0.66 U10 i274x.RoundRect.d13",
+        "3 Danger 0.66 U10 i274x.RoundRect.d13",
+        "4 Danger 0.66 U10 i274x.RoundRect.d13"
+      ],
+      "receipt": "  - generic: Component assembly analysis > Lead area overlapping pad\n  - paragraph: Detect insufficient overlap between component pins and pads\n  - generic: Layer\n  - generic \"component_+_top\": component_+_top (4, 0, 0)\n  - table:\n    - rowgroup:\n      - row \"No. All Value Object 1 Object 2\":\n        - columnheader \"No.\"\n        - columnheader \"All\":\n          - combobox:\n            - option \"All\" [selected]\n            - option \"Good\"\n            - option \"Warning\"\n            - option \"Danger\"\n        - columnheader \"Value\"\n        - columnheader \"Object 1\"\n        - columnheader \"Object 2\"\n  - table:\n    - rowgroup:\n      - row \"1 Danger 0.66 U10 i274x.RoundRect.d13\":\n        - cell \"1\"\n        - cell \"Danger\"\n        - cell \"0.66\"\n        - cell \"U10\"\n        - cell \"i274x.RoundRect.d13\"\n      - row \"2 Danger 0.66 U10 i274x.RoundRect.d13\":\n        - cell \"2\"\n        - cell \"Danger\"\n        - cell \"0.66\"\n        - cell \"U10\"\n        - cell \"i274x.RoundRect.d13\"\n      - row \"3 Danger 0.66 U10 i274x.RoundRect.d13\":\n        - cell \"3\"\n        - cell \"Danger\"\n        - cell \"0.66\"\n        - cell \"U10\"\n        - cell \"i274x.RoundRect.d13\"\n      - row \"4 Danger 0.66 U10 i274x.RoundRect.d13\":\n        - cell \"4\"\n        - cell \"Danger\"\n        - cell \"0.66\"\n        - cell \"U10\"\n        - cell \"i274x.RoundRect.d13\"\n  - checkbox \"Smart layer display\" [checked]\n  - text: Smart layer display\n  - checkbox \"Auto fit view\" [checked]\n  - text: Auto fit view\n  - button \"First\"\n  - button \"Previous\"\n  - button \"Next\"\n  - button \"Last\"\n  - button \"All\"\n  - generic \"If the lead/pad overlap area is insufficient, solderability may be affected. The result is a ratio, e.g. 0.75 means the lead/pad overlap is 75% of the lead area.\"\n  - generic: Alert value：\n  - generic: Danger\n  - generic: Warning\n  - generic: Good\n  - generic: \"0.75\"\n  - generic: \"0.9\"\n  - text: \n"
+    },
+    "s35NoPad": {
+      "check": "Pin without pad",
+      "verified_side": "top",
+      "displayed_rows": [
+        "1 Danger null U10 null"
+      ],
+      "receipt": "  - generic: Component assembly analysis > Pin without pad\n  - paragraph: Detect if component pins without pads\n  - generic: Layer\n  - generic \"component_+_top\": component_+_top (1, 0, 0)\n  - table:\n    - rowgroup:\n      - row \"No. All Value Object 1 Object 2\":\n        - columnheader \"No.\"\n        - columnheader \"All\":\n          - combobox:\n            - option \"All\" [selected]\n            - option \"Good\"\n            - option \"Warning\"\n            - option \"Danger\"\n        - columnheader \"Value\"\n        - columnheader \"Object 1\"\n        - columnheader \"Object 2\"\n  - table:\n    - rowgroup:\n      - row \"1 Danger null U10 null\":\n        - cell \"1\"\n        - cell \"Danger\"\n        - cell \"null\"\n        - cell \"U10\"\n        - cell \"null\"\n  - checkbox \"Smart layer display\" [checked]\n  - text: Smart layer display\n  - checkbox \"Auto fit view\" [checked]\n  - text: Auto fit view\n  - button \"First\"\n  - button \"Previous\"\n  - button \"Next\"\n  - button \"Last\"\n  - button \"All\"\n  - generic \"Most pins require pads, so missing pads are generally due to misalignment or orientation issues, unless by special design.\"\n  - generic: Alert value：\n  - generic: Danger\n  - generic: Warning\n  - generic: Good\n  - text: \n"
+    },
+    "s35Outer": {
+      "check": "Pin outer edge",
+      "verified_side": "top",
+      "displayed_rows": [
+        "1 Danger 0.15mm U10 null",
+        "2 Danger 0.15mm U10 null"
+      ],
+      "receipt": "  - generic: Component assembly analysis > Pin outer edge\n  - paragraph: Measure if component pin edges extend past pad edges\n  - generic: Layer\n  - generic \"component_+_top\": component_+_top (2, 0, 0)\n  - table:\n    - rowgroup:\n      - row \"No. All Value Object 1 Object 2\":\n        - columnheader \"No.\"\n        - columnheader \"All\":\n          - combobox:\n            - option \"All\" [selected]\n            - option \"Good\"\n            - option \"Warning\"\n            - option \"Danger\"\n        - columnheader \"Value\"\n        - columnheader \"Object 1\"\n        - columnheader \"Object 2\"\n  - table:\n    - rowgroup:\n      - row \"1 Danger 0.15mm U10 null\":\n        - cell \"1\"\n        - cell \"Danger\"\n        - cell \"0.15mm\"\n        - cell \"U10\"\n        - cell \"null\"\n      - row \"2 Danger 0.15mm U10 null\":\n        - cell \"2\"\n        - cell \"Danger\"\n        - cell \"0.15mm\"\n        - cell \"U10\"\n        - cell \"null\"\n  - checkbox \"Smart layer display\" [checked]\n  - text: Smart layer display\n  - checkbox \"Auto fit view\" [checked]\n  - text: Auto fit view\n  - button \"First\"\n  - button \"Previous\"\n  - button \"Next\"\n  - button \"Last\"\n  - button \"All\"\n  - generic \"Checks if a pin's outer edge extends past its corresponding pad edge, as this can affect solderability if excessive, unless by special design.\"\n  - generic: Alert value：\n  - generic: Danger\n  - generic: Warning\n  - generic: Good\n  - text: \n"
+    },
+    "s35Misalign": {
+      "check": "Component through-hole misalignment",
+      "verified_side": "top",
+      "displayed_rows": [
+        "1 Warning 0.96mm U10 null",
+        "2 Warning null F2 null",
+        "3 Warning null SW1 null"
+      ],
+      "receipt": "  - generic: Component assembly analysis > Component through-hole\n  - paragraph: Detect misalignment of component through-hole pins to pad holes\n  - generic: Layer\n  - generic \"component_+_top\": component_+_top (0, 3, 0)\n  - generic \"component_+_bottom\": component_+_bottom (0, 4, 0)\n  - table:\n    - rowgroup:\n      - row \"No. All Value Object 1 Object 2\":\n        - columnheader \"No.\"\n        - columnheader \"All\":\n          - combobox:\n            - option \"All\" [selected]\n            - option \"Good\"\n            - option \"Warning\"\n            - option \"Danger\"\n        - columnheader \"Value\"\n        - columnheader \"Object 1\"\n        - columnheader \"Object 2\"\n  - table:\n    - rowgroup:\n      - row \"1 Warning 0.96mm U10 null\":\n        - cell \"1\"\n        - cell \"Warning\"\n        - cell \"0.96mm\"\n        - cell \"U10\"\n        - cell \"null\"\n      - row \"2 Warning null F2 null\":\n        - cell \"2\"\n        - cell \"Warning\"\n        - cell \"null\"\n        - cell \"F2\"\n        - cell \"null\"\n      - row \"3 Warning null SW1 null\":\n        - cell \"3\"\n        - cell \"Warning\"\n        - cell \"null\"\n        - cell \"SW1\"\n        - cell \"null\"\n  - checkbox \"Smart layer display\" [checked]\n  - text: Smart layer display\n  - checkbox \"Auto fit view\" [checked]\n  - text: Auto fit view\n  - button \"First\"\n  - button \"Previous\"\n  - button \"Next\"\n  - button \"Last\"\n  - button \"All\"\n  - generic \"Misalignment between component through-hole lpins and pad holes can make components difficult to insert. Larger offsets make insertion more difficult. Misalignment is rarely a design issue, usually caused by component positioning/rotation.\"\n  - generic: Alert value：\n  - generic: Danger\n  - generic: Warning\n  - generic: Good\n  - text: \n"
+    }
+  },
+  "U10": {
+    "LCSC": "C89347",
+    "MPN": "TPS70933DBVR",
+    "footprint": "TPS70933DBVR_TI_DBV0005A",
+    "source_placement": {
+      "Designator": "U10",
+      "Mid X": "9.4500mm",
+      "Mid Y": "26.1000mm",
+      "Layer": "Top",
+      "Rotation": "0"
+    },
+    "unchanged_from_stage32": true,
+    "pin_without_pad_dangers": 1,
+    "lead_overlap_ratio": 0.66,
+    "lead_overlap_dangers": 4,
+    "overlap_danger_cutoff": 0.75,
+    "overlap_good_boundary": 0.9,
+    "outer_edge_extension_mm": 0.15,
+    "outer_edge_dangers": 2,
+    "misalignment_warning_mm": 0.96
+  },
+  "targeted_fix_result": {
+    "mask_opening_exposing_trace_dangers": {
+      "stage32": 1,
+      "stage35": 0
+    },
+    "unconnected_trace_end_warnings": {
+      "stage32": 1,
+      "stage35": 0
+    },
+    "native_context_from_owner": "SW-to-U5.3 mask gap increased from about 0.0087 to 0.235 mm; front sensor dead leaf and its via/drill removed; USB bevel and DP/DN net naming updated."
+  },
+  "rule_thresholds_observed": {
+    "mask_opening_exposing_trace_displayed_mm": [
+      0.08,
+      0.15
+    ],
+    "U10_overlap_ratio": [
+      0.75,
+      0.9
+    ],
+    "mode": "unchanged default generic rules; no edits"
+  },
+  "matched_bom_rows": [
+    "C2,C13,C16,C17,C29,C30 C1,C3,C4,C7,C8,C10,C20,C22 100nF C_0402_1005Metric CL05B104KO5NNNC C1525 100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C5,C9 4.7uF C_0603_1608Metric CL10A475KA8NQNC C69335 25V 4.7uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C6,C18,C25 1uF C_0402_1005Metric CL05A105KA5NQNC C52923 1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C11,C12 30pF C_0402_1005Metric 0402CG300J500NT C1570 30pF 50V C0G ±5% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C14 2.2uF C_0402_1005Metric CL05A225MQ5NSNC C12530 2.2uF 6.3V X5R ±20% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C15 10nF C_0402_1005Metric CL05B103KB5NNNC C15195 10nF 50V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C19 10uF C_0603_1608Metric CL10A106KP8NNNC C19702 10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C21 10uF C_0603_1608Metric CL10A106MA8NRNC C96446 10uF 25V X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C23 3.3nF C_0402_1005Metric CL05B332KB5NNNC C26404 3.3nF 50V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C27,C31 22uF C_0805_2012Metric_Samsung_CL21_MinLand CL21A226MAYNNNE C602037 22uF 25V X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C26 C24 22uF C_0805_2012Metric CL21A226MAYNNNE C602037 22uF 25V X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "C28 22uF C_0603_1608Metric CL10A226MP8NUNE C86295 10V 22uF X5R ±20% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS Search",
+    "D1 LED1yellow-green LED0603-RD_GREEN__NexusMain_D1 XL-1608SYGC-04 C965806 -40℃~+85℃ 120° 2.4V 20mA 50mW 50mcd 565nm~575nm 572nm Discrete Diode Top-mount Water Clear Yellow Green 0603 LED Indication - Discrete ROHS Search",
+    "D2 LED2red LED0603-RD_RED__NexusMain_D2 XL-1608SURC-06 C965799 -40℃~+85℃ 120° 2.3V 20mA 225mcd 50mW 620nm~630nm 625nm Discrete Diode Red Top-mount Water Clear 0603 LED Indication - Discrete ROHS Search",
+    "D3 PowerLEDblue LED0603-RD_BLUE__NexusMain_D3 XL-1608UBC-04 C965807 -40℃~+85℃ 120° 20mA 3.3V 300mcd 455nm~475nm 470nm 70mW Blue Discrete Diode Top-mount Water Clear 0603 LED Indication - Discrete ROHS Search",
+    "D4 SMF13A SOD-123FL_L2.8-W1.8-LS3.6-RD SMF13A C353315 -55℃~+150℃ 13V 15.9V 1uA 200W@10/1000us 21.5V 9.3A@10/1000us TVS Unidirectional SOD-123FL ESD and Surge Protection (TVS/ESD) ROHS Search",
+    "D5,D6 B5819WS SOD-323_L1.8-W1.3-LS2.5-RD B5819WS C22624 -55℃~+125℃ 1.5A 1A 40V 600mV@1A Independent SOD-323 Schottky Diodes ROHS Search",
+    "F2 F1 0.5APTC F0805 SMD0805P050TF C20978 -40℃~+85℃ 1.5mm 100ms 100mΩ 1A 1mm 2.2mm 30A 500mA 500mW 6V 850mΩ 0805 Resettable Fuses ROHS Search",
+    "J2 DSM(UART1) CONN-SMD_B3B-ZR-SM4-TF B3B-ZR-SM4-TF(LF)(SN) C489717 -25℃~+85℃ 1 1.5mm 1A 1x3P 3 3P 5.2mm 50V 5mm 7.5mm Auxiliary Solder Pin Brass PA6T Surface Mount,Vertical Tin UL94V-0 White ZH SMD,P=1.5mm Wire To Board Connector ROHS Search",
+    "J3 A-CRSF(UART4) CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN BM04B-GHS-TBT(LF)(SN) C161692 -25℃~+85℃ 1 1.25mm 1A 1x4P 4 4.05mm 4.32mm 4P 50V 8.25mm Auxiliary Solder Pin GH PA9T Phosphor bronze Surface Mount,Vertical Tin UL94V-0 White SMD,P=1.25mm Wire To Board Connector ROHS Search",
+    "J4 C(UART3) CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN__NexusMain_J4 BM04B-GHS-TBT(LF)(SN) C161692 -25℃~+85℃ 1 1.25mm 1A 1x4P 4 4.05mm 4.32mm 4P 50V 8.25mm Auxiliary Solder Pin GH PA9T Phosphor bronze Surface Mount,Vertical Tin UL94V-0 White SMD,P=1.25mm Wire To Board Connector ROHS Search",
+    "J5 B(UART6) CONN-SMD_4P-P1.25_BM04B-GHS-TBT-LF-SN BM04B-GHS-TBT(LF)(SN) C161692 -25℃~+85℃ 1 1.25mm 1A 1x4P 4 4.05mm 4.32mm 4P 50V 8.25mm Auxiliary Solder Pin GH PA9T Phosphor bronze Surface Mount,Vertical Tin UL94V-0 White SMD,P=1.25mm Wire To Board Connector ROHS Search",
+    "J6 USB-Cvertical USB-C-SMD_TYPE-C-31-D-06__NexusMain_J6 TYPE-C-31-D-06 C2689964 -25℃~+85℃ 1 10,000 cycles 16P 5A 5V 6.4mm Female Surface Mount,Vertical Type-C SMD USB Connectors ROHS Search",
+    "L1 2.2uH3A IND-SMD_L4.6-W4.1 MHCI04020-2R2M-R8 C142096 2.2uH 3A 58mΩ 5A Magnetic Shielded Inductor ±20% SMD,4.6x4.1mm Power Inductors ROHS Search",
+    "L2 2.2uH IND-SMD_L2.0-W1.6 CKCSA201610-2.2uH/M C5291913 1.3A 1.7A 185mΩ 2.2uH Magnetic Shielded Inductor ±20% 0806 Power Inductors ROHS Search",
+    "R2,R3,R4,R22 1k R_0402_1005Metric 0402WGF1001TCE C11702 -55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R5,R17,R19 R1,R8,R9,R10 10k R_0402_1005Metric 0402WGF1002TCE C25744 -55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R6,R7 2.2k R_0402_1005Metric 0402WGF2201TCE C25879 -55℃~+155℃ 2.2kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R11 120k R_0402_1005Metric 0402WGF1203TCE C25750 -55℃~+155℃ 120kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R12 22k R_0402_1005Metric 0402WGF2202TCE C25768 -55℃~+155℃ 22kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R13 100k R_0402_1005Metric 0402WGF1003TCE C25741 -55℃~+155℃ 100kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R14 27k R_0402_1005Metric 0402WGF2702TCE C25771 -55℃~+155℃ 27kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R15 27.4k R_0402_1005Metric 0402WGF2742TCE C26971 -55℃~+155℃ 27.4kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R16 52.3k R_0402_1005Metric 0402WGF5232TCE C26982 -55℃~+155℃ 50V 52.3kΩ 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R18 21k R_0402_1005Metric 0402WGF2102TCE C25766 -55℃~+155℃ 21kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "R20,R21 5.1k R_0402_1005Metric 0402WGF5101TCE C25905 -55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS Search",
+    "SW1 BOOT SW-SMD_L3.9-W3.0-P4.45 TS-1088-AR02016 C720477 -30℃~+80℃ 1.6N 100,000 cycles 12V 2mm 3.9mm 3mm 50mA Black Round Button SMD(SMT) Tab SPST Surface Mount,Vertical Without Bracket SMD,4x3mm Tactile Switches ROHS Search",
+    "U1 STM32F722RET6 LQFP-64_L10.0-W10.0-P0.50-LS12.0-BL STM32F722RET6 C118207 -40℃~+85℃ 1.7V~3.6V 12bit 12bit 216MHz 256KB 32 Bit 50 512KB ARM Cortex-M7 Built-in FLASH LQFP-64(10x10) Microcontrollers (MCU/MPU/SOC) ROHS Search",
+    "U2 ICM-42688-P LGA-14_L3.0-W2.5-P0.50-TL ICM-42688-P C1850418 -40℃~+85℃ 1.71V~3.6V 16bit 2KB 7.5uA IMU (accelerometer + gyroscope) SPI、I2C X,Y,Z X,Y,Z ±16g ±2000dps Motion Event Detection, Synchronization, Timestamp Support LGA-14(2.5x3) Accelerometers ROHS Search",
+    "U3 DPS368XTSA1 LGA-8_L2.5-W2.0-P0.65-TR_DPS368 DPS368XTSA1 C3232508 -40℃~+85℃ 0.5pa/K 1.7V~3.6V 100pa 27.6ms 30Kpa~1.2bar 500nA 6pa I2C、SPI No VLGA-8(2x2.5) Pressure Sensors ROHS Search",
+    "U4 W25N01GVZEIG WSON-8_L8.0-W6.10-P1.27-BL-EP W25N01GVZEIG C907680 -40℃~+85℃ 10 Years 100,000 cycles 104MHz 10uA 1Gbit 2.7V~3.6V 2ms 700us SPI WSON-8-EP(6x8) NAND FLASH ROHS Search",
+    "U5 TPS62130RGTR QFN-16_L3.0-W3.0-P0.50-TL-EP1.7 TPS62130RGTR C43590 -40℃~+85℃@(TA) 1 17uA 2.5MHz 3A 3V~17V 900mV~6V Adjustable Buck Buck Built-in Yes QFN-16-EP(3x3) DC-DC Converters ROHS Search",
+    "U7 USBLC6-2SC6 SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BL USBLC6-2SC6 C7519 -40℃~+125℃ 150nA 17V 2 3.5pF 5.25V 5A 6V ESD IEC 61000-4-2 Unidirectional SOT-23-6L ESD and Surge Protection (TVS/ESD) ROHS Search",
+    "U9 TPS2116DRLR SOT-583-8_L2.1-W1.6-P0.50-LS1.6-BL TPS2116DRLR C3235557 Operating status indication SOT-583 Power Management - Specialized ROHS Search",
+    "U10 TPS70933DBVR TPS70933DBVR_TI_DBV0005A TPS70933DBVR C89347 -40℃~+125℃@(Tj) 1 1.4uA 150mA 190uVrms 3.3V 30V 80dB@(10Hz) 960mV@(150mA) Fixed Positive Under Voltage Lockout、Over Current Protection、Over Temperature Protection、Enable SOT-23-5 Voltage Regulators - Linear, Low Drop Out (LDO) Regulators ROHS Search",
+    "U11,U12,U13,U15 SRV05-4 SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR SRV05-4.TCT C13612 -55℃~+125℃ 12A@8/20us 17.5V 300W@8/20us 3pF 5V 5uA 6V Four channels IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4 TVS Unidirectional SOT-23-6L ESD and Surge Protection (TVS/ESD) ROHS Search",
+    "U14 TPS629210DRLR SOT-5X3-8_L2.1-W1.2-P0.50-LS1.6-BL_DRL0008A TPS629210DRLR C5219301 -40℃~+150℃ 1A 2.5MHz 3V~17V 400mV~5.5V 4uA Adjustable Buck Buck Built-in SOT-5x3(DRL)-8 DC-DC Converters ROHS Search",
+    "Y1 8MHz20pF CRYSTAL-SMD_4P-L3.2-W2.5-BL 3225 8M 20PF 10PPM C5181477 -40℃~+80℃ 20pF 8MHz ±10ppm ±30ppm SMD3225-4P Crystals ROHS Search"
+  ],
+  "limitations": [
+    "Results apply only to source bf9a1056 and ZIP bcf525a2, not a later candidate. Child was unchanged and not repeated.",
+    "The two targeted check categories cleared in the returned generic-rule table; this is not an all-clear for the board.",
+    "Six copper layers detected; retrieved routing report distributions name only F_Cu/B_Cu. Equivalent inner-layer coverage is not proven.",
+    "The configured generic rules were not modified. No factory-specific stack, copper, ENIG, tenting, fill/plug/cap, corner/EP or stencil process acceptance was obtained.",
+    "Many counts cap at 50 per layer. B.Mask detail says 162 results and shows first 50, all warnings; global category has zero dangers.",
+    "Site geometry/model rendering remains unavailable: unsupported-3D notice, Generating PCB preview and Loading components overlay. Screenshot graphics in detail panels are explanatory examples, not the actual board.",
+    "Bottom-side SMT component localization was not repeated or verified in this focused recheck. Aggregate top/bottom results are retained.",
+    "No site XY/net/lead-number details or model-orientation proof obtained. U10 model/CPL mismatch remains a possibility, not a diagnosis.",
+    "One bounded PDF export was attempted. Download wait timed out after 15 seconds and site remained Exporting PDF. No recovery loop or second export was attempted. Actual report DOM/text were preserved.",
+    "Combined report labels U10 overlap as 0.02mm; detailed result and tooltip define dimensionless 0.66. Preserve discrepancy; use detailed ratio for threshold comparison.",
+    "Native gap 0.235 mm and removal of the complete sensor dead leaf are design-owner/native verification results, not measurements obtained from the JLC viewer.",
+    "Site report timestamp 2026-10-15 10:17:47 has unstated timezone; captured approximately 17:18 UTC."
+  ],
+  "pdf_download_confirmed": false,
+  "privacy": "Public files contain no account email, project/session URL/ID, customer identifier, order/pricing fields or tokens; exact continuation is private.",
+  "actions": "One ZIP/BOM/CPL submission each in a distinct main stage35 project; no order, quote, purchase, factory outreach, source/placement/rule edits or publication."
+}

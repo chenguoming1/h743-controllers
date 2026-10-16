@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "source_sha256": "bf9a10563839b18071dedd1c4a71af60c25ac19e94f392adb1917955b1f4e95d",
+  "source": "/workspace/shared/nexus-main-placement-fix/stage35/hardware/nexus-style-fc.kicad_pcb",
+  "native_drc_receipt": "/workspace/shared/nexus-main-placement-fix/stage35/native-drc.json",
+  "native_drc_receipt_sha256": "1fa1528637b9d34240e01627fc289a63b2ced75bcab1eda9973d5000ceb0275c",
+  "native_drc_result": {
+    "errors": 0,
+    "warnings": 56,
+    "opens": 0,
+    "schematic_parity": 0,
+    "warning_types": {
+      "track_not_centered_on_via": 7,
+      "silk_edge_clearance": 3,
+      "footprint_type_mismatch": 1,
+      "silk_overlap": 30,
+      "silk_over_copper": 15
+    }
+  },
+  "dfm": {
+    "gerber_gap_mm": 0.235,
+    "sensor_pads_connected": 15,
+    "retained_sensor_via_contact_sets_unchanged": 6,
+    "all_three_sw_pins_contact_L1": true,
+    "dead_leaf_primitives_via_and_drill_absent": true,
+    "front_0p25mm_free_endpoints": 0
+  },
+  "usb": {
+    "native_partners": {
+      "USB_DP": "USB_DN",
+      "USB_DN": "USB_DP"
+    },
+    "net_codes": {
+      "USB_DP": 22,
+      "USB_DN": 23
+    },
+    "copper_items_unchanged": 102,
+    "tapers_unchanged": 4,
+    "pad_contacts_preserved": 10,
+    "four_bevels_preserved": true,
+    "four_bevel_In4_sampled_center_and_edges_covered": true,
+    "both_In3_trunk_In4_sampled_center_and_edges_covered": true,
+    "all_reference_coverage_rows_unchanged_from_stage33": true
+  },
+  "read_only_board_and_manufacturing_verification": true,
+  "no_new_native_refill_or_drc_run": true,
+  "limits": "Native accepted-run receipt inspected, not rerun. Projected return coverage is not impedance/return-current qualification. No new JLC/assembler acceptance or fabrication release is asserted."
+}

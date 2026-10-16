@@ -1,0 +1,31 @@
+Stage36 read-only return-path verification
+PCB SHA256: bed37199e8d62b8135a27b9e182f8e8f584f1a9fb722cb6efb5d4c87b2a320b8
+
+Verified against the saved, filled PCB; no board writes, refill or DRC performed by this review.
+
+ADC grounds:
+- C29.2 to GND via (111.775,119.600): direct F.Cu, 0.20 mm width, 0.779 mm centerline.
+- C30.2 to retained GND via (114.400,113.600): direct F.Cu, 0.25 mm width, 0.731 mm centerline.
+- R17.2 to retained GND via (110.375,122.525): direct F.Cu, 0.20 mm width, 1.567 mm centerline.
+These are explicit trace-centerline witnesses, not estimates of complete loop impedance or shortest paths through planes.
+
+Filled-plane contacts:
+All three vias above and retained C2 (106.65,110.10), C21 (104.60,106.60), C24 (104.35,110.95) and U5 EP (102.675,108.225) occupy the same connected polygon 0 in both In1.Cu and In4.Cu GND fills.
+Angular sampling at one-degree intervals gives 360/360 copper points at radii 0.225, 0.25, 0.30 and 0.40 mm for C29, C30, C2, C21 and EP. The R17 return via has full coverage through 0.25 mm radius, and 293/360 points at 0.40 mm. C24 has full coverage at its 0.225 mm annulus, 326/360 at 0.25 mm and 287/360 at 0.40 mm; its explicit In4 return remains present. These results support solid plane attachment rather than a merely touching endpoint.
+
+Reset/crystal retention:
+All NRST, OSC_IN and OSC_OUT track/via records are unchanged from stage35. C10, C11, C12 and Y1 positions and rotations are unchanged. The old GND via at (110.590858,121.956), reused for DSM_TX, has an explicit replacement return from GND via (110.375,122.525) through (110.85,122.35), (111.075,122.125) to the retained junction (111.176,121.956), on B.Cu at 0.20 mm. The retained C10 and crystal-ground tree joins that junction. The existing MCU-ground segment b3bcbf59 now ends at the center of the new C29 stitch, eliminating the former off-center touch.
+
+Packing margin:
+Saved-board native shape distance from the new C29 ground-via annulus to C12.1 is 0.127367 mm on both B.Cu and B.Paste. This clears the 0.127 mm copper rule by only 0.000367 mm and the separate 0.10 mm pad/paste screening margin. It is a tight layout margin, not manufacturing qualification.
+
+Remaining NRST constraint:
+C10 remains at its original B-side location (111.75,122.05); the reset routing was not shortened in this revision. Tested local C10 alternatives required changes that could not restore all nearby B_TX, 5V and MCU-ground paths simultaneously. The last proposed shifted-crystal arrangement also overlapped C25's courtyard by 0.20 x 0.15 mm and C11's courtyard by 0.01 mm. None of those rejected arrangements is part of stage36.
+
+Limits:
+The implementation owner reports native DRC 0 errors / 0 opens / 0 parity errors with 61 warnings. This review verifies saved geometry and filled-plane contact only. It does not establish load-current capability, thermal performance, SI/PI, EMI, assembler acceptance, or fabrication readiness.
+
+Evidence:
+stage36-return-proof.json
+stage36-proof.log
+stage36-compare.log
