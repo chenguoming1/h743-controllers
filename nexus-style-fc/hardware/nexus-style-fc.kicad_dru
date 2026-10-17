@@ -6,3 +6,9 @@
 (rule "F722 copper edge" (constraint edge_clearance (min 0.3mm)))
 (rule "F722 drill-to-copper" (constraint hole_clearance (min 0.2mm)))
 (rule "F722 through-via annulus" (constraint annular_width (min 0.125mm)))
+
+# Keep outer ground pours back from solder-mask pad openings.
+(rule "Outer pad to pour mask clearance"
+  (layer outer)
+  (condition "A.Type == 'Zone' && B.Type == 'Pad'")
+  (constraint clearance (min 0.17mm)))

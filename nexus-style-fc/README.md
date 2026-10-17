@@ -41,11 +41,13 @@ This checks paths, Python syntax, ERC and DRC with schematic parity and writes r
 
 ## Current evidence and remaining gates
 
-The latest [pad-spacing correction](docs/validation/reviews/pad-spacing-2026-10-17/REVIEW.md) and [input binding](docs/validation/reviews/pad-spacing-2026-10-17/input-binding.json) cover the current main PCB/CAM. JLCDFM pad spacing is green: zero danger and zero warnings, down from four danger and 69 warnings. Trace width, trace spacing and sharp corners remain green. Native copper DRC has zero violations and zero opens; the same 10 schematic parity warnings remain.
+The latest [owner VX/3V3 cleanup recheck](docs/validation/reviews/owner-vx-recheck-2026-10-17/REVIEW.md) and [input binding](docs/validation/reviews/owner-vx-recheck-2026-10-17/input-binding.json) cover the current main PCB/CAM. The owner's In3 VX cross-feed/trunk-entry and 3V3 cleanup preserve the component placements, vias, physical slots, keepouts and DRC rules. Native DRC has zero violations and zero opens; exactly the same ten schematic-parity warnings remain. Cached ground pours were refreshed, with no route correction during the recheck.
 
-Main PCB SHA-256: `d559c9f926ca5481d2b7a4804515600edb6ee63832a2dd913d03a1fc9e044461`. Vias and routes were adjusted, including relocating the A_TX layer transition. C31, R20, R21 and U10 shift 0.025 mm; Y1 shifts 0.03 mm. Pad geometry, part identities, orientations, via dimensions, outline, stack, rules, schematic and project are preserved. All outer traces remain at least 0.14 mm. The child is unchanged at `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`.
+Main PCB SHA-256: `6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e`. There are 227 vias; the removed GND stitch is not restored. The [preceding corner-width revision](docs/validation/reviews/vx-corner-width-2026-10-17/REVIEW.md) retains its own source binding. Main project, schematic, rules, BOM/CPL and the child PCB/CAM are unchanged. **C8's via-in-pad still requires epoxy filling and copper capping (POFV), to be confirmed in the production order.** Ordinary tenting does not cover the hole inside the solder-pad aperture.
 
-The 51-group BOM remains byte-identical. The corrected 83-placement CPL was regenerated with only those five coordinate changes; all sides and rotations are unchanged. SMT analysis was not rerun for this revision. Historical reports retain their original input bindings.
+Fresh [PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634325109695401986) matches all 29 preceding category counts, including green width, spacing, pad spacing, corners and mask-to-trace.
+
+The 51-group / 83-part BOM and 83-placement CPL are byte-identical to the preceding revision. Matching main Gerbers were regenerated and screened; SMT was not rerun. The child remains unchanged at `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. Historical reports retain their original input bindings.
 
 Other PCB and prior assembly/model findings remain open. Real assembly fit, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit, firmware orientation and physical qualification remain unverified. Retained header rating is 3 A/contact; no 10 A system rating is established.
 

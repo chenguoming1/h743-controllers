@@ -2,12 +2,16 @@
 
 **Do not order, fabricate or assemble.** Main CAM is regenerated from the current saved PCB; child CAM remains byte-identical.
 
-- Main PCB SHA-256: `d559c9f926ca5481d2b7a4804515600edb6ee63832a2dd913d03a1fc9e044461`
+- Main PCB SHA-256: `6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e`
 - Child PCB SHA-256: `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`
 
-The [Pad-spacing correction](../docs/validation/reviews/pad-spacing-2026-10-17/REVIEW.md) and [exact input binding](../docs/validation/reviews/pad-spacing-2026-10-17/input-binding.json) record the current PCB, regenerated Gerber ZIP, native connectivity/DRC and fresh PCB website check. Existing schematic/footprint/library warnings remain. The [earlier trace DFM correction](../docs/validation/reviews/trace-dfm-2026-10-17/REVIEW.md) is bound to its recorded earlier PCB/CAM. Other fabrication, assembly/model and process findings remain open.
+The [owner VX/3V3 cleanup recheck](../docs/validation/reviews/owner-vx-recheck-2026-10-17/REVIEW.md) and [exact input binding](../docs/validation/reviews/owner-vx-recheck-2026-10-17/input-binding.json) record the current PCB and regenerated Gerber ZIP. Native DRC has zero violations/opens and the same ten inherited parity findings. The owner's route geometry is preserved; cached ground pours were refreshed. Main project, rules, schematic, 51-group/83-part BOM, 83-placement CPL and child PCB/CAM remain unchanged. There are 227 vias. Earlier reports retain their predecessor bindings. Other fabrication, assembly/model and process findings remain open.
 
-Each folder has a Gerber/drill ZIP, JLC BOM and CPL. Main BOM has 51 groups/83 parts. The main CPL retains the 25 reviewed rotation corrections: bottom-side angle convention and U10 library offset. The BOM is byte-identical. The CPL updates only C31, R20, R21, U10 and Y1 coordinates for the small placement shifts; all sides, rotations and reference coverage remain unchanged.
+Fresh [PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634325109695401986) matches all 29 preceding category counts, including green width, spacing, pad spacing, corners and mask-to-trace.
+
+Each folder has a Gerber/drill ZIP, JLC BOM and CPL. Main BOM has 51 groups/83 parts. The main CPL retains the 25 reviewed rotation corrections: bottom-side angle convention and U10 library offset. The BOM is byte-identical. The BOM and CPL are byte-identical to the preceding C9/C11 placement revision. Mask-to-trace warnings are now zero; five unconfirmed negative-expansion flags remain. Spacing, width and corners remain green.
+
+**C8 pad 2 contains a 0.20 mm drill via. Specify epoxy-filled and copper-capped via-in-pad (POFV) and confirm the production files. Ordinary tenting is insufficient because the pad mask opening exposes the hole. No factory process selection has been confirmed.**
 
 The [CPL review](../docs/validation/reviews/cpl-2026-10-17/REVIEW.md) used predecessor CAM and a 48-group BOM. The later [pre-fix PCB/SMT recheck](../docs/validation/reviews/jlcdfm-current-2026-10-17/REVIEW.md) matched all 51 groups and screened the corrected placements on the fabrication-cleanup PCB. That recheck and the [fabrication-cleanup binding](../docs/validation/fabrication-fixes/INPUT-BINDING.json) retain their original hashes and apply to earlier copper. SMT was not rerun for this export. Supplier acceptance is not established.
 
