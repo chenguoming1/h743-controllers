@@ -5,7 +5,7 @@
       "Application": "Pcbnew",
       "Version": "10.0.6"
     },
-    "CreationDate": "2026-10-17T19:22:17+08:00"
+    "CreationDate": "2026-10-17T21:05:40+08:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -19,7 +19,8 @@
     },
     "LayerNumber": 6,
     "BoardThickness": 1.6,
-    "Finish": "ENIG"
+    "Finish": "ENIG",
+    "ImpedanceControlled": true
   },
   "DesignRules": [
     {
@@ -131,6 +132,8 @@
       "Type": "Dielectric",
       "Thickness": 0.1164,
       "Material": "2116",
+      "DielectricConstant": "4.16",
+      "LossTangent": "0.02",
       "Name": "F.Cu/In1.Cu",
       "Notes": "Type: dielectric layer 1 (from F.Cu to In1.Cu)"
     },
@@ -141,8 +144,10 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 0.55,
+      "Thickness": 0.13,
       "Material": "FR4",
+      "DielectricConstant": "4.6",
+      "LossTangent": "0.02",
       "Name": "In1.Cu/In2.Cu",
       "Notes": "Type: dielectric layer 2 (from In1.Cu to In2.Cu)"
     },
@@ -153,10 +158,30 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 0.1532,
+      "Thickness": 0.1164,
       "Material": "2116",
-      "Name": "In2.Cu/In3.Cu",
-      "Notes": "Type: dielectric layer 3 (from In2.Cu to In3.Cu)"
+      "DielectricConstant": "4.16",
+      "LossTangent": "0.02",
+      "Name": "In2.Cu/In3.Cu (1/3)",
+      "Notes": "Type: dielectric layer 3 - 1/3 (from In2.Cu to In3.Cu)"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.7,
+      "Material": "FR4 core",
+      "DielectricConstant": "4.6",
+      "LossTangent": "0.02",
+      "Name": "In2.Cu/In3.Cu (2/3)",
+      "Notes": "Type: dielectric layer 3 - 2/3 (from In2.Cu to In3.Cu)"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.1164,
+      "Material": "2116",
+      "DielectricConstant": "4.16",
+      "LossTangent": "0.02",
+      "Name": "In2.Cu/In3.Cu (3/3)",
+      "Notes": "Type: dielectric layer 3 - 3/3 (from In2.Cu to In3.Cu)"
     },
     {
       "Type": "Copper",
@@ -165,8 +190,10 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 0.55,
+      "Thickness": 0.13,
       "Material": "FR4",
+      "DielectricConstant": "4.6",
+      "LossTangent": "0.02",
       "Name": "In3.Cu/In4.Cu",
       "Notes": "Type: dielectric layer 4 (from In3.Cu to In4.Cu)"
     },
@@ -179,6 +206,8 @@
       "Type": "Dielectric",
       "Thickness": 0.1164,
       "Material": "2116",
+      "DielectricConstant": "4.16",
+      "LossTangent": "0.02",
       "Name": "In4.Cu/B.Cu",
       "Notes": "Type: dielectric layer 5 (from In4.Cu to B.Cu)"
     },

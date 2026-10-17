@@ -1,20 +1,22 @@
 # Matching review-only manufacturing files
 
-**Do not order, fabricate or assemble.** Main CAM is unchanged; child CAM is regenerated for the four-layer power upgrade.
+**Do not order, fabricate or assemble: existing engineering qualification gates remain open.** Main CAM is regenerated for the USB 90 ohm correction; child CAM retains the latest owner cleanup.
 
-- Main PCB SHA-256: `6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e`
-- Child PCB SHA-256: `12d537492ebb7aa347e30c78c758efbdbd6e238425f0095282cbf7188e872e23`
+- Main PCB SHA-256: `9b65ab90e9dfeecf8a440e4f1b522658419ee2d56a4e27513e03e35bf77e16ac`
+- Main ZIP SHA-256: `bb8fd82bbd7b350da7e54eec824241b7af8f125061c9c5e2e6cc442fd68b9331`
+- Child PCB SHA-256: `6d9314f769088949b64ade2e3b34fc67641186d3c02edc409738440645df874f`
+- Child ZIP SHA-256: `220a5538215ab0a829b9129b38530612ca728193e13607ce38c0b8052dd3a36c`
 
-The [owner VX/3V3 cleanup recheck](../docs/validation/reviews/owner-vx-recheck-2026-10-17/REVIEW.md) and [exact input binding](../docs/validation/reviews/owner-vx-recheck-2026-10-17/input-binding.json) record the current main PCB and Gerber ZIP. Native main DRC has zero violations/opens and the same ten inherited parity findings. The owner's route geometry is preserved. Main project, rules, schematic, 51-group/83-part BOM and 83-placement CPL remain unchanged. There are 227 main vias. Earlier reports retain their predecessor bindings. Other fabrication, assembly/model and process findings remain open.
+The [USB correction review](../docs/validation/reviews/usb-compliance-2026-10-17/REVIEW.md) and its input/applied bindings describe current main source and the 16-member CAM ZIP. Native main DRC has zero violations/opens and ten inherited parity findings. All footprints, non-USB routed copper and 227 vias are preserved. Main BOM/CPL remain 51 groups / 83 parts / 83 placements and byte-identical; SMT was not rerun.
 
-The [child power-upgrade review](../docs/validation/reviews/child-full-load-2026-10-17/REVIEW.md) binds the current child PCB and 14-member Gerber/drill/job ZIP, including both inner planes. **Use the [four-layer fabrication settings](nexus-header-board/FABRICATION-NOTES.md): nominal 1.6 mm, 2 oz outer and 2 oz inner, JLC041622-3313 stack reference.** The child BOM/CPL are unchanged. Native child DRC has zero errors/opens/parity issues and 11 inherited missing-courtyard warnings. Calculated electrical loss is reduced; temperature rise and complete-system current capacity remain unqualified.
+**Main: use [JLC06161H-2116A fabrication requirements](nexus-style-fc/FABRICATION-NOTES.md)**, six layers, nominal 1.6 mm order category (vendor special finished thickness 1.56 mm ±10%), 1 oz outer / 0.5 oz inner. Request **90 Ω differential ±10%** for USB on In3, width 0.143 mm / gap 0.154 mm, referenced to In4 ground across 0.130 mm core. Local calculated impedance is about 90 Ω; supplier process/coupon and prototype USB electrical qualification remain pending. The job's impedance-controlled flag is an order requirement, not a measured result.
 
-Fresh [PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634325109695401986) matches all 29 preceding category counts, including green width, spacing, pad spacing, corners and mask-to-trace.
+Fresh [main PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634351113752236033) exactly matches all 29 predecessor category triples, including green width, spacing, pad spacing, corners and mask-to-trace. Existing annular, mask, slot, via-to-pad and silk findings remain.
 
-Each folder has a Gerber/drill ZIP, JLC BOM and CPL. Main BOM has 51 groups/83 parts. The main CPL retains the 25 reviewed rotation corrections: bottom-side angle convention and U10 library offset. The BOM is byte-identical. The BOM and CPL are byte-identical to the preceding C9/C11 placement revision. Mask-to-trace warnings are now zero; five unconfirmed negative-expansion flags remain. Spacing, width and corners remain green.
+The [latest child cleanup check](../docs/validation/reviews/child-dfm-20261017-200904/REVIEW.md) binds the current 14-member child ZIP. It has zero native errors/opens/parity issues, 11 inherited courtyard warnings and fresh JLCDFM zero danger / 38 warnings. **Child: use its separate [four-layer settings](nexus-header-board/FABRICATION-NOTES.md): nominal 1.6 mm, 2 oz outer AND inner, JLC041622-3313.** Child source/CAM/BOM/CPL are unchanged by the USB correction. Earlier power-loss calculations retain their earlier PCB binding; thermal/contact/BEC/system current qualification remains open.
 
-**C8 pad 2 contains a 0.20 mm drill via. Specify epoxy-filled and copper-capped via-in-pad (POFV) and confirm the production files. Ordinary tenting is insufficient because the pad mask opening exposes the hole. No factory process selection has been confirmed.**
+**C8 pad 2 contains a 0.20 mm drill via. Specify epoxy-filled and copper-capped via-in-pad (POFV) and confirm production files. Ordinary tenting is insufficient inside the solder-pad aperture.**
 
-The [CPL review](../docs/validation/reviews/cpl-2026-10-17/REVIEW.md) used predecessor CAM and a 48-group BOM. The later [pre-fix PCB/SMT recheck](../docs/validation/reviews/jlcdfm-current-2026-10-17/REVIEW.md) matched all 51 groups and screened the corrected placements on the fabrication-cleanup PCB. That recheck and the [fabrication-cleanup binding](../docs/validation/fabrication-fixes/INPUT-BINDING.json) retain their original hashes and apply to earlier copper. SMT was not rerun for this export. Supplier acceptance is not established.
+Each folder contains matching Gerber/drill ZIP, BOM and CPL. Earlier [CPL](../docs/validation/reviews/cpl-2026-10-17/REVIEW.md), [PCB/SMT](../docs/validation/reviews/jlcdfm-current-2026-10-17/REVIEW.md) and other historical reports retain their original source bindings. Remaining release gates are listed in [validation](../docs/validation/README.md).
 
-Run `tools/export_fab.py` only when intentionally replacing matching exports; do not mix exports with reports for other Git revisions.
+Run `tools/export_fab.py` only when intentionally replacing matching exports; do not mix exports with reports for other revisions.
