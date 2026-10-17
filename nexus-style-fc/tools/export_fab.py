@@ -26,7 +26,7 @@ ROOT = os.path.normpath(os.path.join(HERE, ".."))
 K = os.environ.get("KICAD_CLI") or shutil.which("kicad-cli") or "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
 BOARDS = [
     ("nexus-style-fc", "hardware/nexus-style-fc.kicad_pcb", "design", 6),
-    ("nexus-header-board", "hardware/header-board/nexus-header-board.kicad_pcb", "design_header", 2),
+    ("nexus-header-board", "hardware/header-board/nexus-header-board.kicad_pcb", "design_header", 4),
 ]
 
 

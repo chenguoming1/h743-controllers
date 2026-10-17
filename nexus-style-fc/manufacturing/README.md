@@ -1,11 +1,13 @@
 # Matching review-only manufacturing files
 
-**Do not order, fabricate or assemble.** Main CAM is regenerated from the current saved PCB; child CAM remains byte-identical.
+**Do not order, fabricate or assemble.** Main CAM is unchanged; child CAM is regenerated for the four-layer power upgrade.
 
 - Main PCB SHA-256: `6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e`
-- Child PCB SHA-256: `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`
+- Child PCB SHA-256: `12d537492ebb7aa347e30c78c758efbdbd6e238425f0095282cbf7188e872e23`
 
-The [owner VX/3V3 cleanup recheck](../docs/validation/reviews/owner-vx-recheck-2026-10-17/REVIEW.md) and [exact input binding](../docs/validation/reviews/owner-vx-recheck-2026-10-17/input-binding.json) record the current PCB and regenerated Gerber ZIP. Native DRC has zero violations/opens and the same ten inherited parity findings. The owner's route geometry is preserved; cached ground pours were refreshed. Main project, rules, schematic, 51-group/83-part BOM, 83-placement CPL and child PCB/CAM remain unchanged. There are 227 vias. Earlier reports retain their predecessor bindings. Other fabrication, assembly/model and process findings remain open.
+The [owner VX/3V3 cleanup recheck](../docs/validation/reviews/owner-vx-recheck-2026-10-17/REVIEW.md) and [exact input binding](../docs/validation/reviews/owner-vx-recheck-2026-10-17/input-binding.json) record the current main PCB and Gerber ZIP. Native main DRC has zero violations/opens and the same ten inherited parity findings. The owner's route geometry is preserved. Main project, rules, schematic, 51-group/83-part BOM and 83-placement CPL remain unchanged. There are 227 main vias. Earlier reports retain their predecessor bindings. Other fabrication, assembly/model and process findings remain open.
+
+The [child power-upgrade review](../docs/validation/reviews/child-full-load-2026-10-17/REVIEW.md) binds the current child PCB and 14-member Gerber/drill/job ZIP, including both inner planes. **Use the [four-layer fabrication settings](nexus-header-board/FABRICATION-NOTES.md): nominal 1.6 mm, 2 oz outer and 2 oz inner, JLC041622-3313 stack reference.** The child BOM/CPL are unchanged. Native child DRC has zero errors/opens/parity issues and 11 inherited missing-courtyard warnings. Calculated electrical loss is reduced; temperature rise and complete-system current capacity remain unqualified.
 
 Fresh [PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634325109695401986) matches all 29 preceding category counts, including green width, spacing, pad spacing, corners and mask-to-trace.
 

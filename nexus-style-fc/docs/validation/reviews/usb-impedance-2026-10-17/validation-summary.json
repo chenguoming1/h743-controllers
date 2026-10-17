@@ -1,0 +1,57 @@
+{
+  "source_sha256": "6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e",
+  "source_unchanged": true,
+  "analytic_parallel_plates": [
+    {
+      "dielectric": [
+        [
+          0,
+          0.2,
+          4.6
+        ]
+      ],
+      "expected_F_per_m": 4.0729263966479997e-10,
+      "calculated_F_per_m": 4.0729263966479997e-10,
+      "relative_error": 0.0
+    },
+    {
+      "dielectric": [
+        [
+          0,
+          0.08,
+          4.0
+        ],
+        [
+          0.08,
+          0.2,
+          2.0
+        ]
+      ],
+      "expected_F_per_m": 2.2135469547e-10,
+      "calculated_F_per_m": 2.2135469546999998e-10,
+      "relative_error": 1.1102230246251565e-16
+    }
+  ],
+  "ideal_case_mesh_change_ohm": {
+    "CAD ideal solid In2/In4 planes": 0.004959633641320238,
+    "CAD ideal In2 absent; solid In1/In4 planes": 0.010753470221089856,
+    "JLC3313 standard ideal planes at current width": 0.0009250508101246169,
+    "JLC3313 standard ideal planes at synthesized 0.1171 width": 0.0038203287506490824
+  },
+  "ideal_case_domain_width_change_ohm": {
+    "CAD ideal solid In2/In4 planes": 3.310063334538427e-08,
+    "CAD ideal In2 absent; solid In1/In4 planes": 0.0002181509553054184
+  },
+  "jlc_independent_cross_check": {
+    "manufacturer_synthesized_width_mm": 0.1171,
+    "gap_mm": 0.127,
+    "manufacturer_target_ohm": 90,
+    "our_etched_model_ohm": 90.586904189844,
+    "stack_name": "JLC06161H-3313 standard, 1 oz outer / 0.5 oz inner, L4 with L3/L5 references",
+    "production_stack_selected": false
+  },
+  "max_float_charge_C_per_m": 8.401053096241687e-24,
+  "max_equation_residual_C_per_m": 1.1229369644497747e-24,
+  "actual_slices_etched_estimate_min_ohm": 83.0040504070684,
+  "actual_slices_etched_estimate_max_ohm": 91.76051700002894
+}

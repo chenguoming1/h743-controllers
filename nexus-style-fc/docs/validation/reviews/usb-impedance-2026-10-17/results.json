@@ -1,0 +1,1058 @@
+{
+  "source_sha256": "6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e",
+  "method": "Quasi-static 2D finite-volume differential impedance sensitivity study.\n\nSolve div(epsilon grad V)=0 with the pair at +0.5/-0.5 V. Solve the identical\ngeometry in vacuum. Cdiff=2U/Vdiff^2; Zdiff=1/(c sqrt(Cdiff*Cdiff_vacuum)).\nExact odd-mode for symmetric sections; an energy-based differential estimate\nfor asymmetric sections, which may also convert differential/common modes.\nMetal is perfect; signal cross sections optionally use the stated etch taper.\nOther metal is rectangular. Floating foreign conductors have zero\nnet charge. Crossings are treated as longitudinally uniform 2D sections, not\ntheir real finite 3D extent. No loss, etch, roughness, vias, masks, pads or ESD.\n",
+  "results": [
+    {
+      "name": "CAD ideal solid In2/In4 planes",
+      "mesh_mm": 0.01,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 81.01066871792102,
+      "effective_er": 4.339132263397222,
+      "dielectric": {
+        "capacitance_F_per_m": 8.577061499207992e-11,
+        "nodes": 11997,
+        "unknowns": 11243,
+        "max_residual_C_per_m": 5.1549596979651777e-26,
+        "charge_C_per_m": {
+          "0": 3.7522563387290037e-26,
+          "1": 8.577061499208006e-11,
+          "2": -8.57706149920798e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9766766667980715e-11,
+        "nodes": 11997,
+        "unknowns": 11243,
+        "max_residual_C_per_m": 1.2391767254914822e-26,
+        "charge_C_per_m": {
+          "0": -4.023713236976869e-26,
+          "1": 1.9766766667980735e-11,
+          "2": -1.9766766667980754e-11
+        }
+      },
+      "elapsed_s": 0.0426508329983335
+    },
+    {
+      "name": "CAD ideal solid In2/In4 planes",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 81.63404578215042,
+      "effective_er": 4.338540380250773,
+      "dielectric": {
+        "capacitance_F_per_m": 8.510984476226008e-11,
+        "nodes": 24583,
+        "unknowns": 23289,
+        "max_residual_C_per_m": 5.999299694878818e-26,
+        "charge_C_per_m": {
+          "0": -3.4752833306013804e-25,
+          "1": 8.51098447622598e-11,
+          "2": -8.510984476226024e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.961716091192417e-11,
+        "nodes": 24583,
+        "unknowns": 23289,
+        "max_residual_C_per_m": 1.3732490638087374e-26,
+        "charge_C_per_m": {
+          "0": 5.967530602389991e-26,
+          "1": 1.9617160911924198e-11,
+          "2": -1.9617160911924108e-11
+        }
+      },
+      "elapsed_s": 0.08942433400079608
+    },
+    {
+      "name": "CAD ideal solid In2/In4 planes",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 81.88302351910741,
+      "effective_er": 4.338222317535549,
+      "dielectric": {
+        "capacitance_F_per_m": 8.484794507181731e-11,
+        "nodes": 59064,
+        "unknowns": 56464,
+        "max_residual_C_per_m": 1.4727515330323225e-25,
+        "charge_C_per_m": {
+          "0": 3.875523743778839e-25,
+          "1": 8.484794507181718e-11,
+          "2": -8.484794507181699e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9558228892247644e-11,
+        "nodes": 59064,
+        "unknowns": 56464,
+        "max_residual_C_per_m": 2.178351256880854e-26,
+        "charge_C_per_m": {
+          "0": -7.066379330698257e-26,
+          "1": 1.9558228892247453e-11,
+          "2": -1.9558228892247473e-11
+        }
+      },
+      "elapsed_s": 0.24296070900163613
+    },
+    {
+      "name": "CAD ideal In2 absent; solid In1/In4 planes",
+      "mesh_mm": 0.01,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 92.15828500819826,
+      "effective_er": 4.385621104270309,
+      "dielectric": {
+        "capacitance_F_per_m": 7.579847478116584e-11,
+        "nodes": 19809,
+        "unknowns": 18999,
+        "max_residual_C_per_m": 5.492996255234949e-26,
+        "charge_C_per_m": {
+          "0": -1.8811492690262336e-25,
+          "1": 7.579847478116577e-11,
+          "2": -7.57984747811659e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.7283407065731316e-11,
+        "nodes": 19809,
+        "unknowns": 18999,
+        "max_residual_C_per_m": 8.748413257565604e-27,
+        "charge_C_per_m": {
+          "0": 1.5341766884738238e-26,
+          "1": 1.7283407065731384e-11,
+          "2": -1.728340706573141e-11
+        }
+      },
+      "elapsed_s": 0.07172408301266842
+    },
+    {
+      "name": "CAD ideal In2 absent; solid In1/In4 planes",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 92.8513772005108,
+      "effective_er": 4.384968250664771,
+      "dielectric": {
+        "capacitance_F_per_m": 7.52270746833919e-11,
+        "nodes": 38688,
+        "unknowns": 37324,
+        "max_residual_C_per_m": 6.456418256796665e-26,
+        "charge_C_per_m": {
+          "0": 1.199068575935938e-26,
+          "1": 7.522707468339153e-11,
+          "2": -7.522707468339156e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.7155671462840647e-11,
+        "nodes": 38688,
+        "unknowns": 37324,
+        "max_residual_C_per_m": 2.3955976380557258e-26,
+        "charge_C_per_m": {
+          "0": 1.1435327682083787e-26,
+          "1": 1.7155671462840608e-11,
+          "2": -1.7155671462840528e-11
+        }
+      },
+      "elapsed_s": 0.1503422079840675
+    },
+    {
+      "name": "CAD ideal In2 absent; solid In1/In4 planes",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 93.1287017355214,
+      "effective_er": 4.384624485408371,
+      "dielectric": {
+        "capacitance_F_per_m": 7.500011870652682e-11,
+        "nodes": 90522,
+        "unknowns": 87824,
+        "max_residual_C_per_m": 1.8175126092446564e-25,
+        "charge_C_per_m": {
+          "0": -6.014780412384335e-25,
+          "1": 7.500011870652894e-11,
+          "2": -7.500011870652982e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.7105254727313675e-11,
+        "nodes": 90522,
+        "unknowns": 87824,
+        "max_residual_C_per_m": 2.97012862212824e-26,
+        "charge_C_per_m": {
+          "0": 2.4867420087463e-25,
+          "1": 1.710525472731319e-11,
+          "2": -1.710525472731338e-11
+        }
+      },
+      "elapsed_s": 0.41012733400566503
+    },
+    {
+      "name": "JLC3313 standard ideal planes at current width",
+      "mesh_mm": 0.01,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 73.88835785603035,
+      "effective_er": 4.324569883667833,
+      "dielectric": {
+        "capacitance_F_per_m": 9.388035912035821e-11,
+        "nodes": 11439,
+        "unknowns": 10689,
+        "max_residual_C_per_m": 7.431700815906108e-26,
+        "charge_C_per_m": {
+          "0": -4.098092959577895e-26,
+          "1": 9.38803591203582e-11,
+          "2": -9.388035912035824e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 2.1708600310728405e-11,
+        "nodes": 11439,
+        "unknowns": 10689,
+        "max_residual_C_per_m": 1.1309109937248425e-26,
+        "charge_C_per_m": {
+          "0": 1.4230311173088408e-27,
+          "1": 2.1708600310728447e-11,
+          "2": -2.170860031072845e-11
+        }
+      },
+      "elapsed_s": 0.03498949998174794
+    },
+    {
+      "name": "JLC3313 standard ideal planes at current width",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 74.46879782781772,
+      "effective_er": 4.32402363320815,
+      "dielectric": {
+        "capacitance_F_per_m": 9.314273443983317e-11,
+        "nodes": 23777,
+        "unknowns": 22487,
+        "max_residual_C_per_m": 6.785465962349055e-26,
+        "charge_C_per_m": {
+          "0": -4.6673349887853774e-26,
+          "1": 9.314273443983316e-11,
+          "2": -9.314273443983387e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 2.1540755171758206e-11,
+        "nodes": 23777,
+        "unknowns": 22487,
+        "max_residual_C_per_m": 1.2172543083692926e-26,
+        "charge_C_per_m": {
+          "0": -4.243396207938948e-26,
+          "1": 2.154075517175816e-11,
+          "2": -2.154075517175829e-11
+        }
+      },
+      "elapsed_s": 0.07911520800553262
+    },
+    {
+      "name": "JLC3313 standard ideal planes at current width",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 74.699844936944,
+      "effective_er": 4.323724620926335,
+      "dielectric": {
+        "capacitance_F_per_m": 9.285143278307676e-11,
+        "nodes": 57780,
+        "unknowns": 55184,
+        "max_residual_C_per_m": 1.252748234386849e-25,
+        "charge_C_per_m": {
+          "0": 6.761936213698575e-25,
+          "1": 9.285143278307764e-11,
+          "2": -9.285143278307653e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 2.1474871996631423e-11,
+        "nodes": 57780,
+        "unknowns": 55184,
+        "max_residual_C_per_m": 2.541214248424485e-26,
+        "charge_C_per_m": {
+          "0": -4.41794647436107e-26,
+          "1": 2.1474871996630893e-11,
+          "2": -2.1474871996631035e-11
+        }
+      },
+      "elapsed_s": 0.21454912499757484
+    },
+    {
+      "name": "JLC3313 standard ideal planes at synthesized 0.1171 width",
+      "mesh_mm": 0.01,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 85.92839466965638,
+      "effective_er": 4.331075231886178,
+      "dielectric": {
+        "capacitance_F_per_m": 8.078681054638533e-11,
+        "nodes": 11439,
+        "unknowns": 10719,
+        "max_residual_C_per_m": 5.169878828456423e-26,
+        "charge_C_per_m": {
+          "0": 1.2520701680054747e-26,
+          "1": 8.078681054638533e-11,
+          "2": -8.078681054638528e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.8652830122094825e-11,
+        "nodes": 11439,
+        "unknowns": 10719,
+        "max_residual_C_per_m": 9.083870015692511e-27,
+        "charge_C_per_m": {
+          "0": 2.8997540799792868e-27,
+          "1": 1.865283012209483e-11,
+          "2": -1.8652830122094844e-11
+        }
+      },
+      "elapsed_s": 0.035560958000132814
+    },
+    {
+      "name": "JLC3313 standard ideal planes at synthesized 0.1171 width",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 86.74092595038398,
+      "effective_er": 4.330403320776596,
+      "dielectric": {
+        "capacitance_F_per_m": 8.002384539508813e-11,
+        "nodes": 23777,
+        "unknowns": 22587,
+        "max_residual_C_per_m": 7.431700815906108e-26,
+        "charge_C_per_m": {
+          "0": 2.3565345998827828e-26,
+          "1": 8.002384539508811e-11,
+          "2": -8.002384539508788e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.8479536308118523e-11,
+        "nodes": 23777,
+        "unknowns": 22587,
+        "max_residual_C_per_m": 9.863873523822415e-27,
+        "charge_C_per_m": {
+          "0": -5.177271934252541e-26,
+          "1": 1.8479536308118414e-11,
+          "2": -1.8479536308118556e-11
+        }
+      },
+      "elapsed_s": 0.08162087501841597
+    },
+    {
+      "name": "JLC3313 standard ideal planes at synthesized 0.1171 width",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 87.0654545012656,
+      "effective_er": 4.330034559527486,
+      "dielectric": {
+        "capacitance_F_per_m": 7.972216916029773e-11,
+        "nodes": 57780,
+        "unknowns": 55520,
+        "max_residual_C_per_m": 1.589285763563649e-25,
+        "charge_C_per_m": {
+          "0": -9.238675466166673e-25,
+          "1": 7.972216916029635e-11,
+          "2": -7.972216916029756e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.841143946181284e-11,
+        "nodes": 57780,
+        "unknowns": 55520,
+        "max_residual_C_per_m": 2.668427695640937e-26,
+        "charge_C_per_m": {
+          "0": 1.6404500574729354e-25,
+          "1": 1.841143946181247e-11,
+          "2": -1.841143946181241e-11
+        }
+      },
+      "elapsed_s": 0.22300416699727066
+    },
+    {
+      "name": "CAD slice y=116.0, foreign nets floating",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 80.03929362567771,
+      "effective_er": 4.341009603786145,
+      "dielectric": {
+        "capacitance_F_per_m": 8.683032433064814e-11,
+        "nodes": 63024,
+        "unknowns": 57249,
+        "max_residual_C_per_m": 8.724170523020214e-26,
+        "charge_C_per_m": {
+          "0": 3.7987039145510705e-12,
+          "1": 8.49309723733731e-11,
+          "2": -8.872967628792279e-11,
+          "3": 3.99352944659085e-26,
+          "4": 1.9721522630525295e-30,
+          "5": 1.4544622940012405e-30,
+          "6": 5.0487097934144756e-27,
+          "7": 5.546678239835239e-32,
+          "8": 1.8175355256292112e-27
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 2.0002334077979556e-11,
+        "nodes": 63024,
+        "unknowns": 57249,
+        "max_residual_C_per_m": 1.6155871338926322e-26,
+        "charge_C_per_m": {
+          "0": 8.465841577986122e-13,
+          "1": 1.9579041999079986e-11,
+          "2": -2.0425626156878948e-11,
+          "3": -2.271919407036514e-28,
+          "4": -2.304952957442644e-30,
+          "5": 2.157041537713704e-31,
+          "6": 1.2874209973206913e-27,
+          "7": -1.348150961071065e-32,
+          "8": -1.4136387421560532e-27
+        }
+      },
+      "elapsed_s": 0.22910545801278204
+    },
+    {
+      "name": "CAD slice y=116.0, foreign nets floating",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 80.30209930930926,
+      "effective_er": 4.34065716679459,
+      "dielectric": {
+        "capacitance_F_per_m": 8.654264032649272e-11,
+        "nodes": 164198,
+        "unknowns": 149626,
+        "max_residual_C_per_m": 2.285529856789569e-25,
+        "charge_C_per_m": {
+          "0": 3.757392279543192e-12,
+          "1": 8.466394418672422e-11,
+          "2": -8.842133646626722e-11,
+          "3": -7.204508875202457e-26,
+          "4": -2.662405555120915e-29,
+          "5": -4.6345578181734444e-30,
+          "6": -8.875631816822648e-26,
+          "7": 3.397340421899084e-31,
+          "8": -1.0602290566170399e-27
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.993768155396644e-11,
+        "nodes": 164198,
+        "unknowns": 149626,
+        "max_residual_C_per_m": 3.150394911090633e-26,
+        "charge_C_per_m": {
+          "0": 8.374952864141813e-13,
+          "1": 1.9518933910758346e-11,
+          "2": -2.035642919717414e-11,
+          "3": 4.67005655890839e-28,
+          "4": -3.4512664603419266e-31,
+          "5": -1.7256332301709633e-31,
+          "6": 3.281661365719409e-27,
+          "7": 4.5451946687538766e-32,
+          "8": -2.0194839173657902e-27
+        }
+      },
+      "elapsed_s": 0.6991013330116402
+    },
+    {
+      "name": "CAD slice y=116.0, foreign nets AC-grounded",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 79.99194639678642,
+      "effective_er": 4.341284970078975,
+      "dielectric": {
+        "capacitance_F_per_m": 8.68844747657574e-11,
+        "nodes": 63024,
+        "unknowns": 57243,
+        "max_residual_C_per_m": 6.462348535570529e-26,
+        "charge_C_per_m": {
+          "0": 3.678248751864775e-12,
+          "1": 8.504535038982587e-11,
+          "2": -8.872359914168873e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 2.0013538702154542e-11,
+        "nodes": 63024,
+        "unknowns": 57243,
+        "max_residual_C_per_m": 1.4041377361200808e-26,
+        "charge_C_per_m": {
+          "0": 8.217262763869221e-13,
+          "1": 1.9602675563960825e-11,
+          "2": -2.0424401840348048e-11
+        }
+      },
+      "elapsed_s": 0.2106855410092976
+    },
+    {
+      "name": "CAD slice y=116.0, foreign nets AC-grounded",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 80.25480096503202,
+      "effective_er": 4.340931198089742,
+      "dielectric": {
+        "capacitance_F_per_m": 8.659637776397842e-11,
+        "nodes": 164198,
+        "unknowns": 149620,
+        "max_residual_C_per_m": 1.3434150090529465e-25,
+        "charge_C_per_m": {
+          "0": 3.6378694175464857e-12,
+          "1": 8.477744305520764e-11,
+          "2": -8.841531247275459e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.994880218375398e-11,
+        "nodes": 164198,
+        "unknowns": 149620,
+        "max_residual_C_per_m": 2.339298163065701e-26,
+        "charge_C_per_m": {
+          "0": 8.128266427022612e-13,
+          "1": 1.954238886240184e-11,
+          "2": -2.0355215505105768e-11
+        }
+      },
+      "elapsed_s": 0.6195125419762917
+    },
+    {
+      "name": "CAD slice y=118.1, foreign nets floating",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 80.87779947296153,
+      "effective_er": 4.344868957260782,
+      "dielectric": {
+        "capacitance_F_per_m": 8.596829467962829e-11,
+        "nodes": 53025,
+        "unknowns": 48187,
+        "max_residual_C_per_m": 2.8901374725200534e-25,
+        "charge_C_per_m": {
+          "0": 6.279935624880383e-12,
+          "1": 8.282832686718789e-11,
+          "2": -8.910826249206799e-11,
+          "3": -4.622231866529366e-31,
+          "4": -3.1059662649085854e-25,
+          "5": -2.6253290925755273e-25,
+          "6": 3.697785493223493e-31,
+          "7": -3.534096855390133e-28
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9786165135306385e-11,
+        "nodes": 53025,
+        "unknowns": 48187,
+        "max_residual_C_per_m": 6.280912156414877e-26,
+        "charge_C_per_m": {
+          "0": 1.4630740286649675e-12,
+          "1": 1.9054628120974064e-11,
+          "2": -2.0517702149638752e-11,
+          "3": 8.589647551967072e-32,
+          "4": -3.937993638863291e-27,
+          "5": 1.6054897143058032e-26,
+          "6": -3.0814879110195774e-32,
+          "7": 6.310887241768094e-29
+        }
+      },
+      "elapsed_s": 0.19500545802293345
+    },
+    {
+      "name": "CAD slice y=118.1, foreign nets floating",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 81.15097426520671,
+      "effective_er": 4.344526368994856,
+      "dielectric": {
+        "capacitance_F_per_m": 8.56755256517387e-11,
+        "nodes": 132163,
+        "unknowns": 120956,
+        "max_residual_C_per_m": 7.674130587401182e-25,
+        "charge_C_per_m": {
+          "0": 6.23230935244828e-12,
+          "1": 8.25593709755161e-11,
+          "2": -8.879168032796258e-11,
+          "3": 1.4236474148910447e-30,
+          "4": 3.3523433028272118e-25,
+          "5": -4.289383840484938e-25,
+          "6": -3.636155735003101e-30,
+          "7": 1.3328593854614215e-26
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9720337356718697e-11,
+        "nodes": 132163,
+        "unknowns": 120956,
+        "max_residual_C_per_m": 3.384416378952682e-25,
+        "charge_C_per_m": {
+          "0": 1.4523899262805358e-12,
+          "1": 1.899414239357929e-11,
+          "2": -2.044653231985937e-11,
+          "3": -1.3327435215159672e-31,
+          "4": -8.634303488697436e-25,
+          "5": 4.90734591919887e-26,
+          "6": 4.437342591868191e-31,
+          "7": -6.815758221109542e-28
+        }
+      },
+      "elapsed_s": 0.5613192089949735
+    },
+    {
+      "name": "CAD slice y=118.1, foreign nets AC-grounded",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 80.45226391948968,
+      "effective_er": 4.344397000647308,
+      "dielectric": {
+        "capacitance_F_per_m": 8.641831220356238e-11,
+        "nodes": 53025,
+        "unknowns": 48182,
+        "max_residual_C_per_m": 6.765310381022187e-26,
+        "charge_C_per_m": {
+          "0": 3.7548990314897246e-12,
+          "1": 8.45408626878175e-11,
+          "2": -8.82957617193068e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.98919003467423e-11,
+        "nodes": 53025,
+        "unknowns": 48182,
+        "max_residual_C_per_m": 2.1615509792238756e-26,
+        "charge_C_per_m": {
+          "0": 8.560237226942004e-13,
+          "1": 1.9463888485395398e-11,
+          "2": -2.031991220808925e-11
+        }
+      },
+      "elapsed_s": 0.17066066697589122
+    },
+    {
+      "name": "CAD slice y=118.1, foreign nets AC-grounded",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 80.72462868874892,
+      "effective_er": 4.344051777821389,
+      "dielectric": {
+        "capacitance_F_per_m": 8.61233149029952e-11,
+        "nodes": 132163,
+        "unknowns": 120951,
+        "max_residual_C_per_m": 1.564507686144175e-25,
+        "charge_C_per_m": {
+          "0": 3.719271680889697e-12,
+          "1": 8.426367906255185e-11,
+          "2": -8.798295074343995e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9825572831037343e-11,
+        "nodes": 132163,
+        "unknowns": 120951,
+        "max_residual_C_per_m": 3.979558401314085e-26,
+        "charge_C_per_m": {
+          "0": 8.481320650358937e-13,
+          "1": 1.9401506798519453e-11,
+          "2": -2.024963886355617e-11
+        }
+      },
+      "elapsed_s": 0.50726274997578
+    },
+    {
+      "name": "CAD slice y=120.2, foreign nets floating",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 88.5586437022876,
+      "effective_er": 4.377128062001259,
+      "dielectric": {
+        "capacitance_F_per_m": 7.880303914698424e-11,
+        "nodes": 51611,
+        "unknowns": 48079,
+        "max_residual_C_per_m": 1.439965139212412e-25,
+        "charge_C_per_m": {
+          "0": 8.404057049376762e-12,
+          "1": 7.460101062229799e-11,
+          "2": -8.300506767167023e-11,
+          "3": -3.1524143950079985e-25,
+          "4": -1.2243121249030103e-25,
+          "5": -2.2971629560035864e-27
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.8003366141166734e-11,
+        "nodes": 51611,
+        "unknowns": 48079,
+        "max_residual_C_per_m": 2.7181093799482304e-26,
+        "charge_C_per_m": {
+          "0": 1.9825098651031343e-12,
+          "1": 1.7012111208614787e-11,
+          "2": -1.8994621073718313e-11,
+          "3": -1.1475717360431103e-25,
+          "4": -2.8398992587956425e-27,
+          "5": -1.274799222837155e-27
+        }
+      },
+      "elapsed_s": 0.21888724999735132
+    },
+    {
+      "name": "CAD slice y=120.2, foreign nets floating",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 88.8510169746777,
+      "effective_er": 4.376770887793311,
+      "dielectric": {
+        "capacitance_F_per_m": 7.854052510898664e-11,
+        "nodes": 128736,
+        "unknowns": 120933,
+        "max_residual_C_per_m": 1.7986628699461985e-25,
+        "charge_C_per_m": {
+          "0": 8.340665523766303e-12,
+          "1": 7.437019234710805e-11,
+          "2": -8.271085787087129e-11,
+          "3": -5.856503360360792e-26,
+          "4": 2.2083056636394916e-25,
+          "5": 2.102787628957129e-26
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.794485640727366e-11,
+        "nodes": 128736,
+        "unknowns": 120933,
+        "max_residual_C_per_m": 6.192003637300508e-26,
+        "charge_C_per_m": {
+          "0": 1.9681194982498135e-12,
+          "1": 1.6960796658147456e-11,
+          "2": -1.8928916156399052e-11,
+          "3": -2.3118042144044884e-25,
+          "4": -3.7840079901641494e-26,
+          "5": -3.0923347484663663e-28
+        }
+      },
+      "elapsed_s": 0.6241549580008723
+    },
+    {
+      "name": "CAD slice y=120.2, foreign nets AC-grounded",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 88.5041609433507,
+      "effective_er": 4.376985157843142,
+      "dielectric": {
+        "capacitance_F_per_m": 7.885026275913123e-11,
+        "nodes": 51611,
+        "unknowns": 48076,
+        "max_residual_C_per_m": 6.271817406858215e-26,
+        "charge_C_per_m": {
+          "0": 8.349756138834516e-12,
+          "1": 7.467538468971585e-11,
+          "2": -8.302514082854643e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.801474300588821e-11,
+        "nodes": 51611,
+        "unknowns": 48076,
+        "max_residual_C_per_m": 1.6663543957714235e-26,
+        "charge_C_per_m": {
+          "0": 1.9687697428040115e-12,
+          "1": 1.7030358134485853e-11,
+          "2": -1.8999127877290263e-11
+        }
+      },
+      "elapsed_s": 0.20331375001114793
+    },
+    {
+      "name": "CAD slice y=120.2, foreign nets AC-grounded",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 88.79638446075244,
+      "effective_er": 4.376627883231847,
+      "dielectric": {
+        "capacitance_F_per_m": 7.8587563745181e-11,
+        "nodes": 128736,
+        "unknowns": 120930,
+        "max_residual_C_per_m": 1.4863401631812216e-25,
+        "charge_C_per_m": {
+          "0": 8.286625205775118e-12,
+          "1": 7.444425114229875e-11,
+          "2": -8.27308763480693e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.795619043745372e-11,
+        "nodes": 128736,
+        "unknowns": 120930,
+        "max_residual_C_per_m": 3.1456926562942716e-26,
+        "charge_C_per_m": {
+          "0": 1.954439097672202e-12,
+          "1": 1.6978970888616256e-11,
+          "2": -1.8933409986290496e-11
+        }
+      },
+      "elapsed_s": 0.5454456669976935
+    },
+    {
+      "name": "CAD slice y=113.4, foreign nets floating",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 87.01953574197283,
+      "effective_er": 4.360864714985345,
+      "dielectric": {
+        "capacitance_F_per_m": 8.00476970863458e-11,
+        "nodes": 58681,
+        "unknowns": 54256,
+        "max_residual_C_per_m": 7.602555554485346e-26,
+        "charge_C_per_m": {
+          "0": 1.2153897926441435e-11,
+          "1": 7.397074812312247e-11,
+          "2": -8.612464604956837e-11,
+          "3": -3.4394335467636115e-28,
+          "4": 1.6640547479094111e-25,
+          "5": 2.662405555120915e-30,
+          "6": -4.859383176161433e-28,
+          "7": -1.5651000359584874e-27
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.8355923037758075e-11,
+        "nodes": 58681,
+        "unknowns": 54256,
+        "max_residual_C_per_m": 2.038562855298545e-26,
+        "charge_C_per_m": {
+          "0": 3.0243256957562567e-12,
+          "1": 1.6843760189879868e-11,
+          "2": -1.9868085885636123e-11,
+          "3": 1.9760965675786346e-28,
+          "4": -6.54312789226516e-26,
+          "5": 6.656013887802287e-31,
+          "6": -3.463099373920242e-28,
+          "7": 7.573064690121713e-29
+        }
+      },
+      "elapsed_s": 0.22512154199648649
+    },
+    {
+      "name": "CAD slice y=113.4, foreign nets floating",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 87.27797736003818,
+      "effective_er": 4.360559201642959,
+      "dielectric": {
+        "capacitance_F_per_m": 7.980786954741597e-11,
+        "nodes": 149894,
+        "unknowns": 139361,
+        "max_residual_C_per_m": 3.311164357709974e-25,
+        "charge_C_per_m": {
+          "0": 1.2127429720115811e-11,
+          "1": 7.374415468735969e-11,
+          "2": -8.587158440747846e-11,
+          "3": 5.413163531626583e-27,
+          "4": -3.562369630233254e-25,
+          "5": -1.0772881736924442e-29,
+          "6": 4.221983564742855e-27,
+          "7": 4.758408980293143e-27
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.8302209844403944e-11,
+        "nodes": 149894,
+        "unknowns": 139361,
+        "max_residual_C_per_m": 2.9845272470068614e-26,
+        "charge_C_per_m": {
+          "0": 3.017872805358739e-12,
+          "1": 1.6793273441722315e-11,
+          "2": -1.9811146247083867e-11,
+          "3": 1.5934990285464438e-28,
+          "4": 1.9528409480927191e-25,
+          "5": -2.2926270057985656e-30,
+          "6": -6.200446715037153e-28,
+          "7": 3.6476928257419586e-27
+        }
+      },
+      "elapsed_s": 0.6466759579780046
+    },
+    {
+      "name": "CAD slice y=113.4, foreign nets AC-grounded",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 82.7506162341133,
+      "effective_er": 4.342520591744462,
+      "dielectric": {
+        "capacitance_F_per_m": 8.399994539066728e-11,
+        "nodes": 58681,
+        "unknowns": 54251,
+        "max_residual_C_per_m": 6.927503771930999e-26,
+        "charge_C_per_m": {
+          "0": 2.7280887980194663e-12,
+          "1": 8.263590099165537e-11,
+          "2": -8.536398978967857e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9343591726509953e-11,
+        "nodes": 58681,
+        "unknowns": 54251,
+        "max_residual_C_per_m": 1.6963664905872638e-26,
+        "charge_C_per_m": {
+          "0": 6.706093283657589e-13,
+          "1": 1.9008287062326977e-11,
+          "2": -1.9678896390692757e-11
+        }
+      },
+      "elapsed_s": 0.20682845800183713
+    },
+    {
+      "name": "CAD slice y=113.4, foreign nets AC-grounded",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 82.99964887047028,
+      "effective_er": 4.342234078284435,
+      "dielectric": {
+        "capacitance_F_per_m": 8.374514862788084e-11,
+        "nodes": 149894,
+        "unknowns": 139356,
+        "max_residual_C_per_m": 1.172285905874528e-25,
+        "charge_C_per_m": {
+          "0": 2.7318263171561483e-12,
+          "1": 8.23792354693032e-11,
+          "2": -8.511106178646368e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9286189348172484e-11,
+        "nodes": 149894,
+        "unknowns": 139356,
+        "max_residual_C_per_m": 3.936251923531549e-26,
+        "charge_C_per_m": {
+          "0": 6.716145196123004e-13,
+          "1": 1.8950382088365066e-11,
+          "2": -1.9621996607978527e-11
+        }
+      },
+      "elapsed_s": 0.5972192090121098
+    },
+    {
+      "name": "CAD slice y=123.4, foreign nets floating",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 82.77326105657646,
+      "effective_er": 4.351569034349987,
+      "dielectric": {
+        "capacitance_F_per_m": 8.406441019558523e-11,
+        "nodes": 51712,
+        "unknowns": 47244,
+        "max_residual_C_per_m": 4.9016537725831165e-25,
+        "charge_C_per_m": {
+          "0": 1.108595698988257e-11,
+          "1": 7.852143170064185e-11,
+          "2": -8.960738869052793e-11,
+          "3": -4.5084978455191267e-26,
+          "4": 8.837261622392698e-25,
+          "5": -4.417621069237666e-28,
+          "6": -3.6484816866471796e-30
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.931818374751862e-11,
+        "nodes": 51712,
+        "unknowns": 47244,
+        "max_residual_C_per_m": 2.897450534760817e-26,
+        "charge_C_per_m": {
+          "0": 2.6558393943698454e-12,
+          "1": 1.7990264050334197e-11,
+          "2": -2.0646103444703203e-11,
+          "3": -9.718766352322865e-28,
+          "4": -7.43573978374084e-25,
+          "5": -1.33317492982351e-28,
+          "6": 1.8981965531880597e-30
+        }
+      },
+      "elapsed_s": 0.18956995802000165
+    },
+    {
+      "name": "CAD slice y=123.4, foreign nets floating",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 83.05080329749941,
+      "effective_er": 4.351261410070274,
+      "dielectric": {
+        "capacitance_F_per_m": 8.378051915202275e-11,
+        "nodes": 129630,
+        "unknowns": 118840,
+        "max_residual_C_per_m": 4.457947099426792e-25,
+        "charge_C_per_m": {
+          "0": 1.1016579526356272e-11,
+          "1": 7.82722293888442e-11,
+          "2": -8.92888089152044e-11,
+          "3": -9.380502796164096e-26,
+          "4": -8.401053096241687e-24,
+          "5": -5.490471900338242e-28,
+          "6": 2.026386450286474e-29
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9254306109517255e-11,
+        "nodes": 129630,
+        "unknowns": 118840,
+        "max_residual_C_per_m": 1.7416598054871144e-25,
+        "charge_C_per_m": {
+          "0": 2.6398713077717125e-12,
+          "1": 1.7934370455631808e-11,
+          "2": -2.057424176340308e-11,
+          "3": 8.835242138475332e-27,
+          "4": 3.3361874314882854e-24,
+          "5": -1.203012880462043e-28,
+          "6": -1.1364527415840201e-29
+        }
+      },
+      "elapsed_s": 0.5622034580155741
+    },
+    {
+      "name": "CAD slice y=123.4, foreign nets AC-grounded",
+      "mesh_mm": 0.005,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 81.13681639792838,
+      "effective_er": 4.345151698084143,
+      "dielectric": {
+        "capacitance_F_per_m": 8.569664219971967e-11,
+        "nodes": 51712,
+        "unknowns": 47240,
+        "max_residual_C_per_m": 7.108583389127582e-26,
+        "charge_C_per_m": {
+          "0": 1.4744210186117014e-12,
+          "1": 8.495943169041352e-11,
+          "2": -8.643385270902593e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.9722359115219127e-11,
+        "nodes": 51712,
+        "unknowns": 47240,
+        "max_residual_C_per_m": 1.9387045606711586e-26,
+        "charge_C_per_m": {
+          "0": 2.6972366587621146e-13,
+          "1": 1.9587497282281055e-11,
+          "2": -1.985722094815724e-11
+        }
+      },
+      "elapsed_s": 0.16789087501820177
+    },
+    {
+      "name": "CAD slice y=123.4, foreign nets AC-grounded",
+      "mesh_mm": 0.0025,
+      "halfspan_mm": 2.5,
+      "differential_ohm": 81.4065067708259,
+      "effective_er": 4.344833285866218,
+      "dielectric": {
+        "capacitance_F_per_m": 8.540960952749038e-11,
+        "nodes": 129630,
+        "unknowns": 118836,
+        "max_residual_C_per_m": 1.0259532766863045e-25,
+        "charge_C_per_m": {
+          "0": 1.4255767710043382e-12,
+          "1": 8.469682114198534e-11,
+          "2": -8.612239791299922e-11
+        }
+      },
+      "vacuum": {
+        "capacitance_F_per_m": 1.965774148465687e-11,
+        "nodes": 129630,
+        "unknowns": 118836,
+        "max_residual_C_per_m": 3.582600792328053e-26,
+        "charge_C_per_m": {
+          "0": 2.5869798872576267e-13,
+          "1": 1.9528392490295412e-11,
+          "2": -1.9787090479018797e-11
+        }
+      },
+      "elapsed_s": 0.4843912500073202
+    }
+  ]
+}

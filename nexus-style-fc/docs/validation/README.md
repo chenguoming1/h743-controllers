@@ -4,6 +4,7 @@ This is the single evidence location. **The working design is `../../hardware/`,
 
 ## Current checks
 
+- [Four-layer child power upgrade](reviews/child-full-load-2026-10-17/REVIEW.md): current child PCB/CAM, dedicated inner VX/GND planes and 27 added power vias; unchanged interface/signals, no native errors/opens/parity issues; 19.6 A electrical stress loss reduced from 0.767 to 0.282 W on the same grid. Requires specified 2 oz inner copper; thermal/contact/BEC limits remain open.
 - [Owner VX/3V3 cleanup recheck](reviews/owner-vx-recheck-2026-10-17/REVIEW.md): current PCB/CAM, preserved owner route geometry, native zero violations/opens, matching refreshed pours/exports and identical fresh PCB DFM category counts
 - [Uniform VX corner links](reviews/vx-corner-width-2026-10-17/REVIEW.md): predecessor PCB/CAM, only the In2/In3 child-board corner links at 0.60 mm, one VX via shifted 0.06 mm; other VX widths unchanged, zero native DRC violations/opens; fresh PCB DFM preserves all danger/warning counts
 - [Rounded slot keepouts](reviews/rounded-keepout-2026-10-17/REVIEW.md): predecessor PCB/CAM, R0.35 mm keepout corners preserving nominal 0.35 mm slot buffer and the owner's 0.60 mm VX entry; 227 vias, zero native DRC violations/opens; fresh PCB DFM preserves all predecessor category counts

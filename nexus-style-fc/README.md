@@ -11,7 +11,7 @@ A KiCad 10 F722 controller based on the RadioMaster Nexus form factor and Rotorf
 - [Review-only Gerber, BOM and CPL files](manufacturing/README.md)
 - [Validation, exact source provenance and open gates](docs/validation/README.md)
 
-There is one working design in this project root. `hardware/`, `tools/` and `manufacturing/` hold the current trace-corrected main and matched b49ef410 child. Work directly here on a Git branch; use commits, branches and pull requests for revisions. Older project snapshots are available in Git history, rather than additional working version folders. The other repository projects are unchanged.
+There is one working design in this project root. `hardware/`, `tools/` and `manufacturing/` hold the current trace-corrected main and four-layer power-upgraded child. Work directly here on a Git branch; use commits, branches and pull requests for revisions. Older project snapshots are available in Git history, rather than additional working version folders. The other repository projects are unchanged.
 
 ## Source layout
 
@@ -43,11 +43,13 @@ This checks paths, Python syntax, ERC and DRC with schematic parity and writes r
 
 The latest [owner VX/3V3 cleanup recheck](docs/validation/reviews/owner-vx-recheck-2026-10-17/REVIEW.md) and [input binding](docs/validation/reviews/owner-vx-recheck-2026-10-17/input-binding.json) cover the current main PCB/CAM. The owner's In3 VX cross-feed/trunk-entry and 3V3 cleanup preserve the component placements, vias, physical slots, keepouts and DRC rules. Native DRC has zero violations and zero opens; exactly the same ten schematic-parity warnings remain. Cached ground pours were refreshed, with no route correction during the recheck.
 
-Main PCB SHA-256: `6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e`. There are 227 vias; the removed GND stitch is not restored. The [preceding corner-width revision](docs/validation/reviews/vx-corner-width-2026-10-17/REVIEW.md) retains its own source binding. Main project, schematic, rules, BOM/CPL and the child PCB/CAM are unchanged. **C8's via-in-pad still requires epoxy filling and copper capping (POFV), to be confirmed in the production order.** Ordinary tenting does not cover the hole inside the solder-pad aperture.
+Main PCB SHA-256: `6295c7ebda6c8a4035064f235072d56e1d6e0ff1b7e6b0402f908ce372ae901e`. There are 227 vias; the removed GND stitch is not restored. The [preceding corner-width revision](docs/validation/reviews/vx-corner-width-2026-10-17/REVIEW.md) retains its own source binding. Main project, schematic, rules and BOM/CPL are unchanged. **C8's via-in-pad still requires epoxy filling and copper capping (POFV), to be confirmed in the production order.** Ordinary tenting does not cover the hole inside the solder-pad aperture.
 
 Fresh [PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634325109695401986) matches all 29 preceding category counts, including green width, spacing, pad spacing, corners and mask-to-trace.
 
-The 51-group / 83-part BOM and 83-placement CPL are byte-identical to the preceding revision. Matching main Gerbers were regenerated and screened; SMT was not rerun. The child remains unchanged at `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. Historical reports retain their original input bindings.
+The 51-group / 83-part main BOM and 83-placement CPL are byte-identical to the preceding revision. Matching main Gerbers were regenerated and screened; SMT was not rerun. Historical reports retain their original input bindings.
+
+The [child power upgrade](docs/validation/reviews/child-full-load-2026-10-17/REVIEW.md) replaces b49ef410 with a **four-layer, nominal 1.6 mm, 2 oz outer / 2 oz inner** design: In1 VX, In2 GND, a rear VX pour and 27 added power vias. Child SHA-256: `12d537492ebb7aa347e30c78c758efbdbd6e238425f0095282cbf7188e872e23`. Outline, header/joint geometry, signal routes and BOM/CPL are preserved. Native child DRC has no errors, opens or parity issues; 11 inherited missing-courtyard warnings remain. Calculated loss at the 19.6 A imposed stress case falls from 0.767 to 0.282 W on the same grid; the finer-grid result is 0.275 W. This is a copper-resistance improvement, not a thermal or complete-system current rating. Matching four-layer Gerbers and [required fabrication settings](manufacturing/nexus-header-board/FABRICATION-NOTES.md) are included; default thin inner copper would not match the analysis.
 
 Other PCB and prior assembly/model findings remain open. Real assembly fit, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit, firmware orientation and physical qualification remain unverified. Retained header rating is 3 A/contact; no 10 A system rating is established.
 
