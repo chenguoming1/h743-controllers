@@ -43,9 +43,11 @@ This checks paths, Python syntax, ERC and DRC with schematic parity and writes r
 
 The latest [fabrication cleanup report](docs/validation/fabrication-fixes/REPORT.md) and [input hashes](docs/validation/fabrication-fixes/INPUT-BINDING.json) bind the current source and review exports. Main native DRC is now zero errors/warnings/opens/parity; both boards have zero ERC findings under unchanged settings. Child retains 11 intentional bare-contact courtyard warnings and zero parity findings.
 
-Main PCB SHA-256: `7a5abe70f1c7f0ac5693cfa4a3156432f6321f5907bbcb0e0892687da51a5d60`. Child remains `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. Main pad geometry, part selection, placement and CPL are unchanged; new main-only artwork footprint names are synchronized in source/schematic/BOM. Main CAM is regenerated.
+Main PCB SHA-256: `7a5abe70f1c7f0ac5693cfa4a3156432f6321f5907bbcb0e0892687da51a5d60`. Child remains `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. The fabrication cleanup preserves main pad geometry, part selection and placement; new main-only artwork footprint names are synchronized in source/schematic/BOM. Main CAM is regenerated. The restored CPL correction changes 25 rotation fields only, preserving all 83 coordinates and sides.
 
-Stage36 external PCB/SMT screening applies to the predecessor, not these new CAM bytes. U10 model alignment, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit and physical qualification remain open. Retained header rating is 3 A/contact; no 10 A system rating is established.
+The [17 October CPL review](docs/validation/reviews/cpl-2026-10-17/REVIEW.md) verifies bottom-side rotation and U10's 270° library offset against the unchanged native component/pad placements. Its JLCDFM run used the predecessor stage36 PCB/CAM and 48-group BOM; it does not validate the current regenerated CAM or 51-group artwork BOM. The current corrected CPL retains the reviewed 83 placements and angle corrections. Historical input bindings retain their original CPL hashes.
+
+Stage36 external PCB/SMT screening applies to the predecessor, not these new CAM bytes. Remaining clearance/model findings, real assembly fit, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit, firmware orientation and physical qualification remain open. Retained header rating is 3 A/contact; no 10 A system rating is established.
 
 ## Attribution and sibling project
 

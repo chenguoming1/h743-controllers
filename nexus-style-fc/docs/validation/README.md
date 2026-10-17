@@ -8,11 +8,12 @@ This is the single evidence location. **The working design is `../../hardware/`,
 
 - [Consolidation report](consolidation/REPORT.md): fresh read-only KiCad 10.0.7 ERC/DRC, native/source/BOM/CPL checks and path inventory
 - [Main stage36 engineering report](stage36/MAIN-PLACEMENT-CHECKPOINT.md) and [original source seal](stage36/ENGINEERING-CHECKPOINT-SEAL.json)
-- [Stage36 predecessor PCB/SMT JLCDFM](reviews/jlcdfm-main-stage36/REVIEW-STATUS.md): completed numerical screening; unresolved U10/model and process findings, not current CAM approval
+- [17 October CPL correction and assembly check](reviews/cpl-2026-10-17/REVIEW.md): verified bottom angles and U10 offset for the unchanged pad placements; 83 placements checked on predecessor CAM with its 48-group BOM
+- [Stage36 predecessor PCB/SMT JLCDFM](reviews/jlcdfm-main-stage36/REVIEW-STATUS.md): completed numerical screening; historical findings and process limits, not current CAM approval
 - [Child b49ef410 JLCDFM](reviews/jlcdfm-child-b49ef410/REVIEW-STATUS.md), [child engineering review](child-b49ef410/ENGINEERING-REVIEW.md) and [mechanical proposal](child-b49ef410/verification/mechanical/PCB_ONLY_PROPOSAL.md)
-- [Stage35 DFM](reviews/jlcdfm-main-stage35/REVIEW-STATUS.md) and [stage10 DFM](reviews/jlcdfm-stage10/REVIEW-STATUS.md) are historical main-board evidence, not fresh stage36 assembly validation
+- [Stage35 DFM](reviews/jlcdfm-main-stage35/REVIEW-STATUS.md) and [stage10 DFM](reviews/jlcdfm-stage10/REVIEW-STATUS.md) are historical main-board evidence
 
-The consolidation preserved the owner-restored source. The current fabrication cleanup adds main-only artwork identities and reviewed symbol filters while retaining parts, pad geometry and placement. Historical seals below remain predecessor evidence. Excluded historical generators have not been restored.
+The consolidation preserved the owner-restored source. The current fabrication cleanup adds main-only artwork identities and reviewed symbol filters while retaining parts, pad geometry and placement. The restored CPL correction changes 25 rotation fields only; coordinates, sides and reference coverage are preserved. The current BOM has 51 groups/83 parts. The CPL review's website result remains bound to its recorded predecessor PCB/CAM and 48-group BOM; it is not screening of the current CAM. Historical seals and input bindings retain their original hashes, including the pre-correction CPL entry in the fabrication-cleanup binding. Excluded historical generators have not been restored.
 
 ## How evidence is bound to a revision
 
@@ -26,8 +27,8 @@ Reports, seals, hashes and historical reproduction scripts retain their original
 
 The inherited detailed reviews do not supersede these current limits:
 
-- Stage36 PCB-only DFM still shows six pad-spacing danger counts; no stage36 assembly result
-- U10 external model/overlap and real assembly fit remain unqualified
+- Original stage36 PCB DFM still shows six pad-spacing danger counts; the fresh assembly check retains edge, lead-clearance and model findings
+- U10's CPL orientation and model overlap are corrected in the predecessor preview; current-CAM screening and real assembly fit remain unqualified
 - C10/NRST local placement remains unresolved; no electrical redesign was attempted here
 - Matched main/child fit, edge access and mechanical/vibration tests remain open
 - Supplier stackup, board thickness, copper weight, tenting/stencil and other process approval remain open

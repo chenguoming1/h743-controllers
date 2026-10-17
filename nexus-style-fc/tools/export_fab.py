@@ -10,6 +10,8 @@ For each board writes manufacturing/<board>/:
   <board>-bom-jlc.csv              Comment, Designator, Footprint, LCSC Part #
   <board>-cpl-jlc.csv              Designator, Mid X, Mid Y, Layer, Rotation (same origin as the Gerbers)
 Parts without an LCSC number (test pads, the header joint, tab pads) are left out of BOM/CPL.
+Verified JLC library rotation corrections are applied only to assembly output;
+see docs/validation/reviews/cpl-2026-10-17/REVIEW.md.
 """
 import csv
 import importlib
@@ -35,6 +37,24 @@ def run(*args):
 def layers(n):
     cu = ["F.Cu"] + [f"In{i}.Cu" for i in range(1, n - 1)] + ["B.Cu"]
     return ",".join(cu + ["F.Mask", "B.Mask", "F.Paste", "B.Paste", "F.Silkscreen", "B.Silkscreen", "Edge.Cuts"])
+
+
+def jlc_rotation(name, part, rotation, layer):
+    angle = float(rotation)
+    if layer == "Bottom":
+        # Native KiCad bottom angles use the opposite handedness and zero from
+        # JLC's component-side view. Verified against native pin 1 / cathodes
+        # for every bottom IC, D4-D6 and Y1 in a fresh JLCDFM import.
+        angle = 180 - angle
+    if name == "nexus-style-fc" and part["ref"] == "U10":
+        # C89347's JLC zero has three leads on the right and pin 1 lower-right.
+        # This native footprint has three pads below and pin 1 lower-left.
+        # Reimport of 270 degrees verified the clockwise correction in JLCDFM.
+        if (part.get("lcsc"), part.get("fp"), layer) != (
+                "C89347", "NexusFC:TPS70933DBVR_TI_DBV0005A", "Top"):
+            raise ValueError("U10 part, footprint or side changed; reverify its JLC rotation correction")
+        angle -= 90
+    return f"{angle % 360:.0f}"
 
 
 def main():
@@ -87,7 +107,7 @@ def bom_cpl(name, pcb, mod, out):
                     continue
                 layer = "Top" if r["Side"].lower().startswith("top") else "Bottom"
                 w.writerow([r["Ref"], f'{float(r["PosX"]):.4f}mm', f'{float(r["PosY"]):.4f}mm', layer,
-                            f'{float(r["Rot"]) % 360:.0f}'])
+                            jlc_rotation(name, parts[r["Ref"]], r["Rot"], layer)])
         print(f"{name}: BOM ({len(groups)} lines, {len(parts)} parts), CPL -> {out}")
 
 
