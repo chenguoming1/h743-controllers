@@ -41,11 +41,11 @@ This checks paths, Python syntax, ERC and DRC with schematic parity and writes r
 
 ## Current evidence and remaining gates
 
-The latest [Final outer-layer 0.14 mm routing](docs/validation/reviews/width-final-2026-10-17/REVIEW.md) and [input binding](docs/validation/reviews/width-final-2026-10-17/input-binding.json) cover the current saved PCB and regenerated main CAM. Native copper DRC has zero violations and zero opens; 10 schematic footprint-parity warnings remain. All outer-layer tracks are now at least 0.14 mm. Small local route adjustments and a 0.016 mm IMU_CS via shift preserve the existing 0.127 mm clearance rule. Component pads, schematic, project and the owner-edited SPI1_SCK route remain unchanged. The child is unchanged.
+The latest [owner cleanup DFM recheck](docs/validation/reviews/cleanup-recheck2-2026-10-17/REVIEW.md) and [input binding](docs/validation/reviews/cleanup-recheck2-2026-10-17/input-binding.json) cover the current saved PCB and regenerated main CAM. Native copper DRC has zero violations and zero opens; the same 10 schematic parity warnings remain. All outer-layer tracks remain at least 0.14 mm. This export preserves the owner's source geometry, schematic, project and rules. The child is unchanged.
 
-Main PCB SHA-256: `1d7d22a14a0940b6d75dfd2947ed16a6a38db063f3496ff68edf55b36f60e853`. Child remains `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. The earlier [0.14 mm width correction](docs/validation/reviews/width-014-2026-10-17/REVIEW.md), [TAIL cleanup](docs/validation/reviews/tail-route-2026-10-17/REVIEW.md) and [corner/spacing correction](docs/validation/reviews/trace-dfm-2026-10-17/REVIEW.md) retain their original revision bindings.
+Main PCB SHA-256: `9f336260cb2f4fe6d2f12909121a6c1ba38d13a411f395b185c95ba06c104a24`. Child remains `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`. The earlier [final width correction](docs/validation/reviews/width-final-2026-10-17/REVIEW.md), [TAIL cleanup](docs/validation/reviews/tail-route-2026-10-17/REVIEW.md) and [corner/spacing correction](docs/validation/reviews/trace-dfm-2026-10-17/REVIEW.md) retain their original revision bindings.
 
-The latest reupload report records the PCB findings for these exact inputs. The 51-group BOM and corrected 83-placement CPL reproduce byte-for-byte; SMT analysis was not repeated for this export.
+The latest recheck report records PCB findings for these exact inputs. The 51-group BOM and corrected 83-placement CPL reproduce byte-for-byte; SMT analysis was not repeated for this export.
 
 Other PCB and prior assembly/model findings remain open. Real assembly fit, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit, firmware orientation and physical qualification remain unverified. Retained header rating is 3 A/contact; no 10 A system rating is established.
 
