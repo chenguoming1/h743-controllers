@@ -1,0 +1,139 @@
+{
+  "pcb_sha256": "174cf3e5ef3cf131f5c89ad007134af777607d1f6ef57a4b0432d228e979b443",
+  "status": "pass",
+  "drill_pasted_smd": {
+    "before": {
+      "contact_pairs": 14,
+      "unique_vias": 14,
+      "same_net_pairs": 14,
+      "different_net_pairs": 0
+    },
+    "after": {
+      "contact_pairs": 14,
+      "unique_vias": 14,
+      "same_net_pairs": 14,
+      "different_net_pairs": 0
+    },
+    "new_contacts": []
+  },
+  "power_width_preservation": {
+    "status": "pass",
+    "failing_nets": [],
+    "per_net": {
+      "VX": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.18,
+        "candidate_minimum_mm": 0.18,
+        "required_floor_mm": 0.18,
+        "baseline_items": 77,
+        "candidate_items": 77,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V_BUCK": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 30,
+        "candidate_items": 30,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 4,
+        "candidate_items": 4,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "5V": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 86,
+        "candidate_items": 86,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 21,
+        "candidate_items": 21,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VBUS_C": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 11,
+        "candidate_items": 11,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "VSYS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.1874,
+        "candidate_minimum_mm": 0.1874,
+        "required_floor_mm": 0.1874,
+        "baseline_items": 58,
+        "candidate_items": 58,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_DSM": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 13,
+        "candidate_items": 14,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3_SENS": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 71,
+        "candidate_items": 71,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "SW_3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.25,
+        "candidate_minimum_mm": 0.25,
+        "required_floor_mm": 0.25,
+        "baseline_items": 3,
+        "candidate_items": 3,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      },
+      "3V3": {
+        "status": "pass",
+        "baseline_minimum_mm": 0.127,
+        "candidate_minimum_mm": 0.127,
+        "required_floor_mm": 0.127,
+        "baseline_items": 139,
+        "candidate_items": 139,
+        "candidate_missing_baseline_routes": false,
+        "below_floor": []
+      }
+    },
+    "policy": "Each named power net must retain at least max(0.127 mm, its actual baseline minimum track/arc width). Missing all baseline routes also fails.",
+    "limitation": "An aggregate minimum-width floor cannot establish branch-specific ampacity or preserve high-current trunk topology. Review width-binned lengths and geometry separately; no current-capacity qualification is claimed."
+  },
+  "subminimum_tracks": [],
+  "nonconforming_vias": []
+}

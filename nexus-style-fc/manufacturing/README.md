@@ -1,14 +1,14 @@
 # Matching review-only manufacturing files
 
-**Do not order, fabricate or assemble.** Main CAM was regenerated from the current fabrication-cleanup PCB; child CAM remains byte-identical.
+**Do not order, fabricate or assemble.** Main CAM is regenerated from the current saved PCB; child CAM remains byte-identical.
 
-The [17 October CPL review](../docs/validation/reviews/cpl-2026-10-17/REVIEW.md) corrects the main bottom-side angle convention and U10's library offset. The restored correction changes 25 rotation fields only, preserving all 83 coordinates/sides and the child CPL. The exporter retains these corrections. Its website check used the predecessor PCB/CAM and 48-group BOM; current regenerated CAM and the 51-group artwork BOM require their own screening.
-
-- Main PCB SHA-256: `7a5abe70f1c7f0ac5693cfa4a3156432f6321f5907bbcb0e0892687da51a5d60`
+- Main PCB SHA-256: `1d7d22a14a0940b6d75dfd2947ed16a6a38db063f3496ff68edf55b36f60e853`
 - Child PCB SHA-256: `b49ef4108ab0b85d4cd96fac22553e3bc16b214f5acde148a8680e1212097ee6`
 
-Each folder has a Gerber/drill ZIP, JLC BOM and CPL. Main BOM has 51 groups/83 parts; the group increase reflects artwork-only footprint names, with no selected-part change. Main CPL has the 25 reviewed rotation corrections; all other placement fields are unchanged.
+The [Final outer-layer 0.14 mm routing](../docs/validation/reviews/width-final-2026-10-17/REVIEW.md) and [exact input binding](../docs/validation/reviews/width-final-2026-10-17/input-binding.json) record the current PCB, regenerated Gerber ZIP, native connectivity/DRC and fresh PCB website check. Existing schematic/footprint/library warnings remain. The [earlier trace DFM correction](../docs/validation/reviews/trace-dfm-2026-10-17/REVIEW.md) is bound to its recorded earlier PCB/CAM. Other fabrication, assembly/model and process findings remain open.
 
-[Fabrication-cleanup input hashes](../docs/validation/fabrication-fixes/INPUT-BINDING.json) and [verification/open gates](../docs/validation/fabrication-fixes/REPORT.md) record the newer PCB/CAM/BOM checkpoint before the CPL correction. Their CPL hash is historical. The corrected main CPL SHA-256 is `a10c80abb5c3d631555b580210867ee7d5d8c59c95325255dc70e814855deb21`, as recorded in the CPL review. Stage36 website results and the CPL preview check are predecessor-input evidence; no website check or supplier acceptance of these current CAM bytes is claimed. Remaining assembly clearance/model and process findings stay open.
+Each folder has a Gerber/drill ZIP, JLC BOM and CPL. Main BOM has 51 groups/83 parts. The main CPL retains the 25 reviewed rotation corrections: bottom-side angle convention and U10 library offset. All coordinates, sides and reference coverage remain unchanged, and the complete BOM/CPL reproduce byte-for-byte for this export.
+
+The [CPL review](../docs/validation/reviews/cpl-2026-10-17/REVIEW.md) used predecessor CAM and a 48-group BOM. The later [pre-fix PCB/SMT recheck](../docs/validation/reviews/jlcdfm-current-2026-10-17/REVIEW.md) matched all 51 groups and screened the corrected placements on the fabrication-cleanup PCB. That recheck and the [fabrication-cleanup binding](../docs/validation/fabrication-fixes/INPUT-BINDING.json) retain their original hashes and apply to earlier copper. SMT was not rerun for this export. Supplier acceptance is not established.
 
 Run `tools/export_fab.py` only when intentionally replacing matching exports; do not mix exports with reports for other Git revisions.

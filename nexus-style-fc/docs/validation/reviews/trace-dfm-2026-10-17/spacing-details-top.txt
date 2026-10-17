@@ -1,0 +1,43 @@
+ Trace spacing
+  - paragraph: Measure spacing between adjacent parallel traces
+  - generic: Layer
+  - generic "nexus-style-fc-F_Cu.gtl": Top copper (0, 0, 1)
+  - generic "nexus-style-fc-B_Cu.gbl": Bottom copper (0, 0, 3)
+  - table:
+    - rowgroup:
+      - row "No. All Value Object 1 Object 2":
+        - columnheader "No."
+        - columnheader "All":
+          - combobox:
+            - option "All" [selected]
+            - option "Good"
+            - option "Warning"
+            - option "Danger"
+        - columnheader "Value"
+        - columnheader "Object 1"
+        - columnheader "Object 2"
+  - table:
+    - rowgroup:
+      - row "1 Good 0.16mm r5 r9.84252":
+        - cell "1"
+        - cell "Good"
+        - cell "0.16mm"
+        - cell "r5"
+        - cell "r9.84252"
+  - checkbox "Smart layer display" [checked]
+  - text: Smart layer display
+  - checkbox "Auto fit view" [checked]
+  - text: Auto fit view
+  - button "First"
+  - button "Previous"
+  - button "Next"
+  - button "Last"
+  - button "All"
+  - generic "If traces are too close, dry film breakage may happen during electroplating, resulting in short circuits and lowering yield."
+  - generic: Alert value：
+  - generic: Danger
+  - generic: Warning
+  - generic: Good
+  - generic: 0.1mm
+  - generic: 0.15mm
+  - text: 

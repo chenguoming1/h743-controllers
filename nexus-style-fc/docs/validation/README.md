@@ -4,7 +4,14 @@ This is the single evidence location. **The working design is `../../hardware/`,
 
 ## Current checks
 
-- [Fabrication cleanup](fabrication-fixes/REPORT.md): current native checks, regenerated main CAM, source/BOM/CPL consistency and open gates
+- [Final outer-layer 0.14 mm routing](reviews/width-final-2026-10-17/REVIEW.md): current PCB/CAM, all outer tracks at least 0.14 mm, local route adjustments and 0.016 mm IMU_CS via shift; native/website checks
+- [Partial-segment 0.14 mm width improvement](reviews/width-profile-2026-10-17/REVIEW.md): earlier PCB/CAM, 57.8 mm widened across 25 nets with short narrow necks retained; fresh native/website checks
+- [Gerber regeneration and JLCDFM reupload](reviews/gerber-reupload-2026-10-17/REVIEW.md): earlier saved PCB/CAM, unchanged assembly files and native/website PCB check
+- [0.14 mm outer trace widths](reviews/width-014-2026-10-17/REVIEW.md): earlier copper/CAM, 456 clearance-safe width changes, 70 constrained sections retained, native checks and website comparison
+- [TAIL loop cleanup](reviews/tail-route-2026-10-17/REVIEW.md): earlier copper/CAM, preserved protection and exact connectivity; incoming schematic/library warnings retained
+- [Trace DFM correction](reviews/trace-dfm-2026-10-17/REVIEW.md): earlier corner/spacing correction and its exact PCB screening
+- [Fabrication cleanup](fabrication-fixes/REPORT.md): predecessor copper checks, artwork changes and open gates
+- [Pre-fix JLCDFM PCB/SMT recheck](reviews/jlcdfm-current-2026-10-17/REVIEW.md): earlier Gerbers, unchanged 51-group BOM and corrected 83-placement CPL screened; remaining assembly flags recorded
 
 - [Consolidation report](consolidation/REPORT.md): fresh read-only KiCad 10.0.7 ERC/DRC, native/source/BOM/CPL checks and path inventory
 - [Main stage36 engineering report](stage36/MAIN-PLACEMENT-CHECKPOINT.md) and [original source seal](stage36/ENGINEERING-CHECKPOINT-SEAL.json)
@@ -13,7 +20,7 @@ This is the single evidence location. **The working design is `../../hardware/`,
 - [Child b49ef410 JLCDFM](reviews/jlcdfm-child-b49ef410/REVIEW-STATUS.md), [child engineering review](child-b49ef410/ENGINEERING-REVIEW.md) and [mechanical proposal](child-b49ef410/verification/mechanical/PCB_ONLY_PROPOSAL.md)
 - [Stage35 DFM](reviews/jlcdfm-main-stage35/REVIEW-STATUS.md) and [stage10 DFM](reviews/jlcdfm-stage10/REVIEW-STATUS.md) are historical main-board evidence
 
-The consolidation preserved the owner-restored source. The current fabrication cleanup adds main-only artwork identities and reviewed symbol filters while retaining parts, pad geometry and placement. The restored CPL correction changes 25 rotation fields only; coordinates, sides and reference coverage are preserved. The current BOM has 51 groups/83 parts. The CPL review's website result remains bound to its recorded predecessor PCB/CAM and 48-group BOM; it is not screening of the current CAM. Historical seals and input bindings retain their original hashes, including the pre-correction CPL entry in the fabrication-cleanup binding. Excluded historical generators have not been restored.
+The consolidation preserved the owner-restored source. The current fabrication cleanup adds main-only artwork identities and reviewed symbol filters while retaining parts, pad geometry and placement. The restored CPL correction changes 25 rotation fields only; coordinates, sides and reference coverage are preserved. The current BOM has 51 groups/83 parts. The CPL review's website result remains bound to its recorded predecessor PCB/CAM and 48-group BOM. The subsequent PCB/SMT recheck screens the fabrication-cleanup CAM and 51-group BOM with the corrected CPL. The latest width pass brings all outer-layer tracks to at least 0.14 mm using local routing adjustments and one small via shift; assembly files are unchanged and its own report binds the new PCB analysis. SMT was not rerun for this export. Historical seals and input bindings retain their original hashes, including the pre-correction CPL entry in the fabrication-cleanup binding. Excluded historical generators have not been restored.
 
 ## How evidence is bound to a revision
 
@@ -27,8 +34,8 @@ Reports, seals, hashes and historical reproduction scripts retain their original
 
 The inherited detailed reviews do not supersede these current limits:
 
-- Original stage36 PCB DFM still shows six pad-spacing danger counts; the fresh assembly check retains edge, lead-clearance and model findings
-- U10's CPL orientation and model overlap are corrected in the predecessor preview; current-CAM screening and real assembly fit remain unqualified
+- Current PCB DFM retains four pad-spacing, three via-to-pad and four slot-width danger flags, plus capped silkscreen findings; the prior assembly DFM recorded 24 danger flags and 13 warnings
+- U10's CPL orientation and model overlap were clear in the prior assembly preview; real assembly fit remains unqualified
 - C10/NRST local placement remains unresolved; no electrical redesign was attempted here
 - Matched main/child fit, edge access and mechanical/vibration tests remain open
 - Supplier stackup, board thickness, copper weight, tenting/stencil and other process approval remain open
