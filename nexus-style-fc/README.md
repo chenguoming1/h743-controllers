@@ -1,14 +1,16 @@
 # Nexus-style FBL controller
 
+Latest assembly sourcing update: [R23 replacement, 18 October 2026](docs/validation/reviews/r23-replacement-2026-10-18/REVIEW.md). R23 is C2766886 / Uniroyal 0402WGJ012KTCE, 0.12 Ω ±5%. Only component metadata and BOM change; Gerbers, routing and CPL remain unchanged.
+
 A KiCad 10 F722 controller based on the RadioMaster Nexus form factor and Rotorflight RDMS-NEXUS_F7 resource map. Orientation, bring-up and physical qualification remain unverified.
 
-**Unfinished engineering design. Do not fabricate, assemble or fly.**
+**Two-board prototype package prepared. Factory process review and physical bring-up remain required before relying on this design; flight qualification is unverified.**
 
 ## Open the current design
 
 - [Main KiCad project](hardware/nexus-style-fc.kicad_pro), [main PCB](hardware/nexus-style-fc.kicad_pcb), [main schematic](hardware/nexus-style-fc.kicad_sch)
 - [Servo-header child project](hardware/header-board/nexus-header-board.kicad_pro), [child PCB](hardware/header-board/nexus-header-board.kicad_pcb), [child schematic](hardware/header-board/nexus-header-board.kicad_sch)
-- [Review-only Gerber, BOM and CPL files](manufacturing/README.md)
+- [Current prototype Gerber, BOM and CPL files](manufacturing/README.md)
 - [Validation, exact source provenance and open gates](docs/validation/README.md)
 
 There is one working design in this project root. `hardware/`, `tools/` and `manufacturing/` hold the current trace-corrected main and four-layer power-upgraded child. Work directly here on a Git branch; use commits, branches and pull requests for revisions. Older project snapshots are available in Git history, rather than additional working version folders. The other repository projects are unchanged.
@@ -21,7 +23,7 @@ There is one working design in this project root. `hardware/`, `tools/` and `man
 | `hardware/header-board/` | Matching child board and its separate KiCad project |
 | `hardware/library/` | Shared local symbols, footprints and 3D models |
 | `tools/` | Part/placement definitions, legacy generators, routing helpers and read-only validation |
-| `manufacturing/` | Exact matching review exports; not approved for ordering |
+| `manufacturing/` | Matching prototype order exports and explicit factory requirements |
 | `firmware/RDMS-NEXUS_F7.config` | Unchanged upstream resource-map reference |
 | `docs/validation/` | Current validation plus revision-labelled historical evidence |
 
@@ -41,13 +43,13 @@ This checks paths, Python syntax, ERC and DRC with schematic parity and writes r
 
 ## Current evidence and remaining gates
 
-The latest [USB 90 ohm correction](docs/validation/reviews/usb-compliance-2026-10-17/REVIEW.md) binds the current main PCB/CAM. The In3 matched USB trunk uses **0.143 mm width / 0.154 mm gap**, a pour-only clearance corridor and continuous In4 ground 0.130 mm away. Local six-layer estimates are approximately **89.7–90.0 Ω**; factory controlled-impedance acceptance and assembled USB electrical tests remain pending. Main fabrication requires **JLC06161H-2116A**, six layers, nominal 1.6 mm category, 1 oz outer / 0.5 oz inner; read the [exact fabrication requirements](manufacturing/nexus-style-fc/FABRICATION-NOTES.md). Generic six-layer/default 3313 settings do not match this calculation.
+Latest source/CAM binding and checks: [standard-stack adaptation](docs/validation/reviews/standard-stack-2026-10-17/REVIEW.md). Main uses standard JLC06161H-3313 with In1/In2 copper content exchanged and a 0.132/0.165 mm L4 USB trunk. Components, vias, outline, VCAP and power-track widths are preserved.
 
-Main PCB SHA-256: `9b65ab90e9dfeecf8a440e4f1b522658419ee2d56a4e27513e03e35bf77e16ac`. Native DRC has zero violations/opens and ten inherited parity findings. All 89 footprints, 2,093 non-USB copper route/via objects and 227 vias are preserved. The 51-group / 83-part main BOM and 83-placement CPL are unchanged. Fresh [PCB DFM](https://jlcdfm.com/viewer?pcbUploadFileId=634351113752236033) matches all 29 preceding category triples, including green width, spacing, pad spacing, corners and mask-to-trace. SMT was not rerun. **C8 still requires confirmed epoxy-filled and copper-capped via-in-pad (POFV).**
+The [order-fixes review](docs/validation/reviews/order-fixes-2026-10-17/REVIEW.md) documents the preceding electrical/mechanical fixes for **two assembled main prototypes plus matching child PCBs**. It includes C9/R23 VCAP damping, a 7.4 V BEC-appropriate TVS, improved mating clearance, 0.26 mm child header rings and round USB shell holes. Native main ERC/DRC/opens/parity are all zero. Child ERC/errors/opens/parity are zero with 11 bare-contact courtyard warnings. Fresh main BOM/CPL has 53 groups / 84 placements, all groups matched in JLCDFM; both current Gerber ZIPs were freshly analyzed.
 
-The [child power upgrade](docs/validation/reviews/child-full-load-2026-10-17/REVIEW.md) established a **four-layer, nominal 1.6 mm, 2 oz outer / 2 oz inner** design with dedicated VX/GND planes and 27 added power vias. The owner's subsequent cleanup is bound by the [latest child DFM check](docs/validation/reviews/child-dfm-20261017-200904/REVIEW.md), current child SHA-256 `6d9314f769088949b64ade2e3b34fc67641186d3c02edc409738440645df874f`. That check has zero native errors/opens/parity issues, 11 inherited courtyard warnings, and JLCDFM zero danger / 38 warnings. The earlier electrical-loss calculation remains bound to its earlier PCB hash; it is not a current thermal/system current rating. The child retains its separate [JLC041622-3313 / 2 oz fabrication settings](manufacturing/nexus-header-board/FABRICATION-NOTES.md) and is unchanged by the USB correction.
+The owner's 5V_BUCK widening and USB centerlines are preserved. Main requires the [six-layer standard JLC06161H-3313 stack and nominal 90 Ω USB routing](manufacturing/nexus-style-fc/FABRICATION-NOTES.md), and filled/capped POFV for **all 228 main vias**. Child requires its separate [four-layer JLC041622-3313, 2 oz outer AND inner settings](manufacturing/nexus-header-board/FABRICATION-NOTES.md). Current-source child copper-loss calculation is about 0.275 W at the imposed 19.6 A dual-feed stress condition; it is not a thermal or connector/BEC rating. Retained contacts are 3 A each.
 
-Other PCB and prior assembly/model findings remain open. Real assembly fit, pasted-via process, NRST, factory stack/tolerance, current/contact, mechanical fit, firmware orientation and physical qualification remain unverified. Retained header rating is 3 A/contact; no 10 A system rating is established.
+Use [ORDER-INSTRUCTIONS.txt](manufacturing/ORDER-INSTRUCTIONS.txt) for the exact files/settings. Factory acceptance of stack/impedance, POFV, paired-board fit, short USB shell-leg soldering and dense placement remains necessary. The full VCAP/USB/electrical, transient, mechanical, firmware and flight behavior needs prototype testing. Historical reports remain evidence of their named revisions and do not bind the new exports.
 
 ## Attribution and sibling project
 

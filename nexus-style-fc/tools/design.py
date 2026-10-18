@@ -316,7 +316,7 @@ PARTS.sort(key=_prio)
 # are verified independently. Board origin=(100,100), DESIGN_SHIFT=0.8 mm.
 MAIN_INPUT_CAP_PLACEMENT = {
     'C27': ('xy', 1.87, 23.52, 0.0, 'B'),
-    'C31': ('xy', 5.82, 25.5, 180.0, 'B'),
+    'C31': ('xy', 5.79, 25.415, 180.0, 'B'),
     'D5': ('xy', 2.28, 25.38, 0.0, 'B'),
 }
 
@@ -360,7 +360,7 @@ MAIN_ROUTED_PLACEMENT = {
     'C6': ('xy', 10.8, 18.25, 0.0, 'B'),
     'C7': ('xy', 10.68, 19.31, 0.0, 'B'),
     'C8': ('xy', 19.04, 18.38, 0.0, 'B'),
-    'C9': ('xy', 6.2, 7.35, 90.0, 'B'),
+    'C9': ('xy', 6.225, 6.13, 90.0, 'B'),
     'C10': ('xy', 11.75, 21.25, 0.0, 'B'),
     'C11': ('xy', 17.45, 19.7, 90.0, 'B'),
     'C12': ('xy', 12.35, 19.7, 270.0, 'B'),
@@ -382,7 +382,7 @@ MAIN_ROUTED_PLACEMENT = {
     'C28': ('xy', 5.0, 23.3, 0.0, 'B'),
     'C29': ('xy', 11.0, 18.4, 270.0, 'F'),
     'C30': ('xy', 14.39, 13.36, 0.0, 'F'),
-    'C31': ('xy', 5.82, 25.5, 180.0, 'B'),
+    'C31': ('xy', 5.79, 25.415, 180.0, 'B'),
     'D1': ('xy', 8.0, 24.3, 0.0, 'F'),
     'D2': ('xy', 14.4, 24.3, 0.0, 'F'),
     'D3': ('xy', 11.2, 24.3, 0.0, 'F'),
@@ -421,6 +421,7 @@ MAIN_ROUTED_PLACEMENT = {
     'R20': ('xy', 6.88, 28.79, 90.0, 'B'),
     'R21': ('xy', 9.92, 29.21, 90.0, 'B'),
     'R22': ('xy', 0.95, 18.28, 90.0, 'F'),
+    'R23': ('xy', 6.225, 7.835, 90.0, 'B'),
     'SW1': ('xy', 17.0, 29.0, 0.0, 'F'),
     'TP1': ('xy', 21.15, 26.2, 0.0, 'F'),
     'TP2': ('xy', 21.15, 28.4, 0.0, 'F'),
@@ -457,6 +458,20 @@ def get_main_parts():
     extra.update(ref="C31", place=MAIN_INPUT_CAP_PLACEMENT["C31"],
                  note="Main VSYS local parallel input bulk; Samsung CL21A226MAYNNNE; 22 uF, 25 V, X5R, +/-20%; JLC/LCSC C602037")
     selected.append(extra)
+    # Main only: provide controlled damping for the LQFP64 VCAP1 branch.
+    # C5 remains the original 0603 bulk capacitor on 3V3.
+    by_ref["C9"].update(
+        fp="NexusFC:C_0402_1005Metric__VCAP_Dense", lcsc="C368809",
+        pins={"1": "VCAP_C", "2": "GND"},
+        note="VCAP1: Samsung CL05A475KP5NRNC, 4.7uF +/-10%, 10V X5R; 120mOhm series R23")
+    selected.append(dict(
+        ref="R23", sym="Device:R", value="0.12",
+        fp="NexusFC:R_0402_1005Metric__VCAP_Dense", lcsc="C2766886",
+        pins={"1": "VCAP", "2": "VCAP_C"}, group="MCU",
+        note="VCAP1 damping: 120 mOhm +/-5%, 0402WGJ012KTCE; C9 branch only; retain 4.7uF"))
+    by_ref["D4"].update(sym="NexusReviewed:SMF9_0A_C1973343", value="SMF9.0A",
+        fp="NexusFC:SOD-123FL_L2.8-W1.8-LS3.6-RD__Littelfuse_SMF9", lcsc="C1973343",
+        note="Littelfuse SMF9.0A: 9V standoff, 15.4V clamp at 13A; regulated 7.4V BEC input only")
     by_ref["D5"]["place"] = MAIN_INPUT_CAP_PLACEMENT["D5"]
     for ref, (original_fp, lcsc, variant_fp) in MAIN_ANNOTATION_FOOTPRINTS.items():
         p = by_ref[ref]

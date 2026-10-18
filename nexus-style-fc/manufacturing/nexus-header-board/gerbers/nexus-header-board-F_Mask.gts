@@ -1,19 +1,19 @@
 G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,10.0.6*
-G04 #@! TF.CreationDate,2026-10-17T20:09:06+08:00*
+G04 #@! TF.CreationDate,2026-10-17T22:21:08+08:00*
 G04 #@! TF.ProjectId,nexus-header-board,6e657875-732d-4686-9561-6465722d626f,rev?*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Soldermask,Top*
 G04 #@! TF.FilePolarity,Negative*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 10.0.6) date 2026-10-17 20:09:06*
+G04 Created by KiCad (PCBNEW 10.0.6) date 2026-10-17 22:21:08*
 %MOMM*%
 %LPD*%
 G01*
 G04 APERTURE LIST*
 %ADD10R,7.892000X1.546000*%
-%ADD11R,1.500000X1.500000*%
-%ADD12C,1.500000*%
+%ADD11R,1.520000X1.520000*%
+%ADD12C,1.520000*%
 G04 APERTURE END LIST*
 D10*
 X16825000Y1052000D03*

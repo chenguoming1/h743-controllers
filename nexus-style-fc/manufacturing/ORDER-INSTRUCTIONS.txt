@@ -1,0 +1,57 @@
+TWO ASSEMBLED MAIN PROTOTYPES + MATCHING CHILD PCBS
+Current file bindings: docs/validation/reviews/r23-replacement-2026-10-18/binding.json.
+These are prototype order files; factory process acceptance and bench qualification remain necessary.
+
+MAIN QUOTE UPLOAD: nexus-style-fc/nexus-style-fc-jlc-quote.zip
+Contains identical current CAM plus IMPEDANCE-CONTROL.jpg for the 90 ohm requirement.
+Original DFM CAM archive retained as nexus-style-fc-gerbers.zip.
+6 layers, ENIG, nominal 1.6 mm category, 1 oz outer / 0.5 oz inner.
+Required standard JLC06161H-3313 stack (catalogued finished 1.54 mm +/-10%).
+USB differential trunk L4/In3, drawn width 0.132 mm / edge gap 0.165 mm;
+nearest reference L3/In2 GND across 0.1088 mm PP, far reference L5/In4.
+90 ohm differential is a nominal design target. No paid impedance test, coupon or report ordered.
+Require manual production stack/file confirmation.
+Use standard 3313; do not substitute a special stack or change trace dimensions without review.
+
+POFV: epoxy-fill AND copper-cap ALL 228 main-board 0.20 mm VIA holes.
+Do not fill component holes (four 0.85 mm USB shell holes) or NPTH.
+Ordinary tenting / ink plugging is not equivalent to filled-and-capped via-in-pad.
+
+Assemble TWO main boards, BOTH SIDES, using exact 53-group BOM / 84-placement CPL.
+C9=C368809 Samsung CL05A475KP5NRNC, 4.7uF 0402.
+R23=C2766886 Uniroyal 0402WGJ012KTCE, 0.12 ohm (120 mOhm), +/-5%, 0402.
+C5 remains C69335 4.7uF 0603; do not change it with C9.
+D4=C1973343 Littelfuse SMF9.0A, cathode VX, anode GND.
+Regulated BEC input 7.4 V; no raw flight battery or supply above 9 V.
+U10 CPL rotation already corrected to 270 degrees. Verify both-side pin-1/polarity in factory preview.
+No automatic substitutions or rotation correction without review.
+Confirm parts inventory including attrition before payment. R23 replacement showed
+6,075 in stock / 6,057 available on 18 Oct; current assembly BOM requests 20 incl. setup.
+The original 0.15 ohm C423234 is superseded. No stock is reserved by these files.
+
+J6: four 0.85 mm round PTH shell holes. Drawing recommends 0.8 +/-0.1 mm PCB,
+with 0.95 mm shell legs. Legs do not protrude through this 1.6 mm board.
+Factory must accept shell soldering/barrel-fill method, inspect joints, and confirm retention.
+Dense placement requires factory panel rails/tooling and stencil review; existing DFM
+edge, lead-to-hole and pin-edge flags need disposition using the exact production files.
+
+CHILD: nexus-header-board/nexus-header-board-gerbers.zip
+4 layers, ENIG, nominal 1.6 mm, 2 oz outer AND 2 oz inner, JLC041622-3313.
+In1 VX / In2 GND. Do not substitute default 0.5 oz inner copper.
+Power model assumes >=60um outer, >=55um inner and >=18um LOCAL barrel copper.
+Average plating specification alone does not guarantee that local minimum.
+Header holes 1.00 mm / lands 1.52 mm, nominal radial annulus 0.26 mm.
+32 vias, all 0.60 mm copper / 0.30 mm drill; no POFV requirement on child.
+Child header can be hand soldered if ordering bare child boards; supplied child BOM/CPL optional.
+
+MATING FIT: two child tabs 8.4 mm wide; main slots 9.8 x 2.2 mm, R0.5;
+matching center pitch 11.20 mm. Maintain the specified contour and reliefs.
+Agree matched pitch, finished tab/slot dimensions, thickness and routing radii.
+Require an insertion-fit check of the paired boards before committing volume.
+
+After delivery: inspect solder and check shorts, then current-limited power with no motors/servos.
+Verify 5V/3V3 rails, VCAP startup/stability (~1.2V internal core, allowed datasheet limits),
+NRST and SWD/BOOT programming; test USB in both cable orientations and both power sources.
+Then add peripherals and test servo current/sag/temperature incrementally with blades removed.
+The stress calculation is NOT a 20A continuous BEC/header/system rating.
+This text is prepared for the order; no supplier acceptance or payment has been performed.

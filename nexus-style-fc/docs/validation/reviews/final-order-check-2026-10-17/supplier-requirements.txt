@@ -1,0 +1,20 @@
+FINAL ORDER REVIEW - HOLD PENDING ENGINEERING/FACTORY ITEMS
+
+MAIN BOARD: nexus-style-fc-gerbers.zip
+6 layers; nominal 1.6 mm category; ENIG; outer 1 oz, inner 0.5 oz.
+Required stack JLC06161H-2116A (special finished thickness 1.56 mm +/-10% as catalogued). USB_DP/USB_DN matched trunk on L4/In3: 0.143 mm nominal width / 0.154 mm gap, nearest ground L5/In4 across 0.130 mm core, far reference L2/In1. Require 90 ohm differential +/-10%; confirm stack and production coupon/report. Do not substitute default 3313 stack or modify routing without review.
+
+Specify epoxy-filled AND copper-capped (POFV) for ALL 0.20 mm VIA holes on the MAIN board (227 vias). This covers the 15 unique via holes intersecting 16 nominal pasted-pad apertures, including C8. Do not fill component holes or USB shell mounting slots. Ordinary tenting or ink plugging is not equivalent.
+
+USB J6 has four 0.85 x 0.60 mm plated mounting slots. Request explicit acceptance of short slots (length/width 1.42, below the generic 2x guidance), finished slot tolerance, shell-pin fit and assembly method.
+
+MAIN ASSEMBLY: double-sided, exact 51-group BOM / 83-placement CPL; no automatic substitutions or rotation correction without review. U10 is already corrected to 270 degrees in the CPL. Match both sides against pin-1/polarity marks in the factory preview. Request production-file/assembly-preview confirmation. Actual inventory and factory stencil review remain unverified.
+
+BEFORE ASSEMBLY RELEASE: resolve C9 VCAP capacitor ESR. U1 is STM32F722RET6 LQFP64; ST DS11853 Rev9 Table19 specifies 4.7 uF and ESR 0.1-0.2 ohm. C9 is currently Samsung CL10A475KA8NQNC / C69335 shared with C5. No verified ESR acceptance is established; do not silently substitute both C5/C9 or add an arbitrary resistor.
+
+CHILD BOARD: nexus-header-board-gerbers.zip
+4 layers; nominal 1.6 mm; ENIG; outer AND inner 2 oz; stack JLC041622-3313. Do not use default 0.5 oz inner. Child power calculation assumes at least 60 um outer, 55 um inner and 18 um local hole-wall plating; public 18 um AVERAGE plating does not guarantee that local minimum. Obtain acceptance/inspection for required bounds.
+
+Fit: child tabs 9.30 mm wide (two, 11.20 mm pitch), main slots 9.80 x 2.10 mm R0.50. Default independent routing and thickness tolerances do not guarantee insertion. Agree matched finished slot/tab/thickness/radius/pitch tolerances before production. Child 1.00 mm header holes / 1.50 mm pads have 0.25 mm nominal radial annulus; obtain acceptance for 2 oz (published guidance 0.254 mm).
+
+These requirements do not establish full-load/thermal or flight readiness. C9, protection coordination, fit, supplier process, physical assembly, firmware and bench qualification remain open. This text is prepared for review; it was not sent to supplier or accepted in an order.

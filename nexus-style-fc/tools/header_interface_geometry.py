@@ -5,18 +5,18 @@ Use apply_header_interface.py to preserve routed copper; never rebuild a routed 
 from math import sqrt
 WIDTH, TOP, CHILD_THICKNESS, MAIN_THICKNESS = 22.4, 8.4, 1.6, 1.6
 TAB_LENGTH = 2.6
-TABS = ((0.95, 10.25), (12.15, 21.45))
-# Contact registration stays at the routed baseline, independently of enlarged tabs.
+TABS = ((1.4, 9.8), (12.6, 21.0))
+# Physical tabs and contact registration share the original 8.4 mm envelope.
 CONTACT_TABS = ((1.4, 9.8), (12.6, 21.0))
 CHILD_PAD_TOP, CHILD_PAD_BOTTOM = 0.8, 2.346
 SLOT_CENTERS = ((5.6, 2.4), (16.8, 2.4))
-SLOT_LENGTH, SLOT_WIDTH, SLOT_RADIUS, ROOT_RADIUS = 9.8, 2.1, 0.5, 0.5
+SLOT_LENGTH, SLOT_WIDTH, SLOT_RADIUS, ROOT_RADIUS = 9.8, 2.2, 0.5, 0.5
 CONTACT_EDGE = 0.254
 MAIN_INNER_Y, MAIN_OUTER_Y = (3.8, 4.65), (0.35, 1.0)
 MAIN_OUTER_STRIP_WIDTH = 9.8
 CHILD_STRIP_WIDTH = 7.892
 # Preserve the existing routed-main keepout envelope after reducing the physical slots.
-SLOT_ROUTE_KEEPOUT_X, SLOT_ROUTE_KEEPOUT_Y = 0.60, 0.35
+SLOT_ROUTE_KEEPOUT_X, SLOT_ROUTE_KEEPOUT_Y = 0.60, 0.30
 MODEL_FILE = 'nexus-header-board-root-relief-candidate.wrl'
 INNER = ((('3','SBUS'),('4','RPM'),('5','ESC'),('6','TAIL'),('1','VX')),
          (('2','GND'),('7','S3'),('8','S2'),('9','S1')))

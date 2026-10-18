@@ -38,6 +38,9 @@ def check(inventory=None):
     for file in sorted((ROOT / 'tools').glob('*.py')):
         ast.parse(file.read_text(), filename=str(file))
     for file in sorted((ROOT / 'hardware').rglob('*')):
+        # Editor histories are owner snapshots, not current project dependencies.
+        if '.history' in file.relative_to(ROOT / 'hardware').parts:
+            continue
         if not file.is_file() or file.suffix.lower() in ('.step', '.wrl'):
             continue
         if file.name.endswith('lib-table'):
